@@ -1,0 +1,25 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Secrets
+.env
+
+# Generated pipeline outputs — reset with: git clean -fdx --exclude=venv
+data/pipeline_outputs/parsed/
+data/pipeline_outputs/extracted/
+
+# Generated schemas — reset removes current.json and history/
+schemas/current.json
+schemas/history/
+
+# Generated reports
+reports/eval_*.json
+reports/iteration_*.md
+reports/changelog_*.md
+reports/iteration_log.md
+
+# macOS
+.DS_Store
