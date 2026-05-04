@@ -12,7 +12,7 @@ Each subdirectory is a standalone sample project. They are organized into four c
 
 | Category | What you'll find |
 |---|---|
-| **Workflows** | Reusable integration patterns — quickstart, RAG, serverless, Snowflake |
+| **Workflows** | Reusable integration patterns — quickstart, RAG, serverless, Snowflake, word-level grounding |
 | **Use Cases** | Domain-specific extraction demos — invoices, food labels, utility bills, certificates |
 | **Events** | Demos and tutorials built for specific conferences and courses |
 | **Other** | Standalone utilities, such as the SEC EDGAR pipeline |
@@ -56,8 +56,28 @@ Asynchronous job submission for large PDFs (up to 1 GB / 1,000 pages) that excee
 ### [Serverless Document Processing with Lambda + S3](Workflows/Serverless_Document_Processing_ADE_Lambda_S3/)
 Deploys ADE as a Docker-based AWS Lambda function triggered by S3 uploads. Supports both parse-only and structured extraction modes. Includes `build.sh` and `deploy.sh` scripts.
 
+### [ADE Lambda S3](Workflows/ADE_Lambda_S3/)
+Deploys ADE as a serverless Docker-based Lambda function to automatically process documents from S3 buckets at scale. Supports parse and structured extraction modes with batch processing, auto-triggers on S3 uploads, and customizable Pydantic schemas.
+
 ### [Snowflake Intelligence Agent End-to-End](Workflows/Snowflake_Intelligence_Agent_End_to_End/)
 Full Snowflake-native pipeline: upload documents to a Snowflake stage, apply ADE to parse and extract, enable RAG with Cortex Search, query structured fields with Cortex Analyst, and surface everything through a Cortex Agent. Uses FDA medical device documents as the example.
+
+### [Document Intelligence in Snowflake](Workflows/Snowflake/Document_Intelligence_in_Snowflake/)
+Transforms unstructured FDA documents into AI-ready assets inside Snowflake using ADE and Snowflake Cortex. Covers parse, structured extraction, Cortex Search for RAG, Cortex Analyst for text-to-SQL, PubMed Knowledge Extension enrichment, and a Cortex Agent with Snowflake Intelligence UI.
+
+### [High Volume ADE with Snowflake Insertion](Workflows/Snowflake/High_Volume_ADE_with_Snowflake_Insertion/)
+End-to-end pipeline that parses documents with ADE and inserts structured rows into Snowflake tables. Uses invoices as the example, but the pattern — Pydantic schema, row builder, buffered uploader — is modular and adapts to any document type.
+
+### [ADE LLM Retrieval](Workflows/ADE_LLM_Retrieval/)
+Integrates ADE with OpenAI LLMs for intelligent document processing: parse with visual grounding, extract fields via GPT, build a FAISS-backed RAG pipeline with LangChain, and evaluate answer quality with automated LLM grading.
+
+### [Retrieval-Augmented Generation](Workflows/Retrieval_Augmented_Generation/)
+Two complementary RAG samples:
+- **[ADE Local RAG with OpenAI + ChromaDB](Workflows/Retrieval_Augmented_Generation/ADE_Local_RAG_OpenAI_ChromaDB/)** — Parses SEC 10-K filings with ADE, stores chunks with OpenAI embeddings in a local Chroma vector database, and enables semantic search with grounding crops.
+- **[Chunking for RAG Applications](Workflows/Retrieval_Augmented_Generation/Chunking_for_RAG_Applications/)** — Async batch parser that processes documents in parallel and writes chunks with bounding-box coordinates to CSV, ready to load into any vector database.
+
+### [Word-Level Grounding](Workflows/Word-Level_Grounding/)
+Goes beyond chunk-level grounding to pinpoint the exact words in a document that correspond to extracted field values. Uses Tesseract OCR and fuzzy matching to highlight matched words with confidence-scored color coding — useful for audit trails, compliance, and explainable AI.
 
 ---
 
@@ -90,6 +110,9 @@ End-to-end tutorial: extract structured data from PDFs, evaluate accuracy agains
 
 ### [Snowflake Intelligence Webinar 2026](Events/Snowflake_Intelligence_Webinar_2026/)
 Webinar demo: SQL setup script and schema for parsing FINRA award documents inside the Snowflake ADE native application.
+
+### [Deep Learning AI Dev Day 2026](Events/Deep_Learning_AI_Dev_Day_2026/)
+Conference demo: production-ready multi-agent loan origination system powered by LandingAI ADE and Google ADK. Parses a mixed financial document packet, classifies and extracts structured fields, then runs loan scenarios through a Claude LoanDecisionAgent reviewed by a Claude ManagerReviewAgent. Features visual grounding, per-field confidence scores, live progress, results history, and a chat interface for running unlimited scenarios without re-uploading the PDF.
 
 ---
 
