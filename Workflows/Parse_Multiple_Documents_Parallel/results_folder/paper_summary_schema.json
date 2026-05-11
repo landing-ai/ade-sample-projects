@@ -1,0 +1,91 @@
+{
+  "description": "Structured summary for a research paper / clinical review.",
+  "properties": {
+    "title": {
+      "description": "The paper's title, plain text.",
+      "title": "Title",
+      "type": "string"
+    },
+    "authors": {
+      "description": "List of author names in order. Empty list if not found.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Authors",
+      "type": "array"
+    },
+    "publication_year": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "4-digit publication year, or null if not found.",
+      "title": "Publication Year"
+    },
+    "study_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Type of study, e.g. 'systematic review', 'randomized controlled trial', 'observational study', 'meta-analysis', 'narrative review'.",
+      "title": "Study Type"
+    },
+    "interventions_studied": {
+      "description": "Treatments, drugs, or interventions evaluated. Empty list if none.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Interventions Studied",
+      "type": "array"
+    },
+    "sample_size": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Total participants/patients across all groups, or null if not applicable.",
+      "title": "Sample Size"
+    },
+    "key_findings": {
+      "description": "3-5 short bullet points capturing the paper's main results.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Key Findings",
+      "type": "array"
+    },
+    "conclusion": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "One-paragraph plain-text summary of the paper's conclusion.",
+      "title": "Conclusion"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "title": "PaperSummary",
+  "type": "object"
+}
