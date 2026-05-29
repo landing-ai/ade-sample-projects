@@ -1,4 +1,4 @@
-# Verifiable, Hierarchical RAG on Medical Literature
+# Verifiable, Hierarchical RAG on Scientific Literature
 
 A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page — not the whole paragraph or table — using DPT-3's hierarchical structure tree and line-level grounding map.
 
@@ -20,6 +20,18 @@ This demo wires those three together into a single workflow:
 6. The page renders with a dual overlay: gray outline for the parent element (the v1 view), yellow fill for the precise lines or cell (the v2 win).
 
 For a quote inside a table cell, the win is dramatic: highlighting the whole 49-cell table vs. a single cell yields ~**32× more precise** highlights. For prose, single-line-of-paragraph wins are ~3–8×.
+
+## What this looks like in the UI
+
+Beyond "look, a tighter rectangle," the app surfaces things v1 chunk-level RAG fundamentally can't do:
+
+1. **Synchronized markdown + image view.** The element's source text (with the quote marked) sits next to the rasterized page (with the matching pixel region highlighted). The viewer sees the *words* being grounded, not just a yellow rectangle.
+2. **Granularity zoom — `Page` · `Element` · `Lines / cells`.** A 3-position radio that re-renders the same answer at three scales. Turns the precision metric from a number into a visible motion.
+3. **Structural element-type badges.** `Body text · p.3`, `Table cell · r1c5 · p.1`, `Figure · p.4`, etc. — reframes the demo from "spatial precision" to "structural precision."
+4. **Multi-quote / non-contiguous evidence.** When an answer combines facts from two non-adjacent passages, the LLM returns both quotes; both are highlighted on the page in distinct brand colors and listed individually in the Sources radio. v1 chunks can't span gaps.
+5. **Context-cost metric.** A tile next to the precision metrics showing how many tokens you'd actually need to send to the LLM (just the precise span vs. the parent element's full text).
+
+Plus the always-on basics: HITL Accept / Reject buttons logged to `verifications.jsonl`, a Sources radio with one click-to-highlight per retrieved passage, and a brand-themed UI per the 2026 LandingAI brand book.
 
 ## Quick start
 
@@ -94,20 +106,22 @@ chroma/                     ← embedded chunks, persistent
    ├─ parse_helpers.find_quote_span  → spans into source markdown
    ├─ parse_helpers.get_grounding    → element-level + precise boxes
    ├─ parse_helpers.cluster_matches  → de-dup nested matches (e.g. table + cell)
-   └─ parse_helpers.render_dual_overlay → gray chunk box + yellow precise boxes
+   └─ parse_helpers.render_overlays  → page-level / element-level / precise overlays,
+                                       multi-quote with per-quote colors
 ```
 
 ## File structure
 
 | File | Purpose |
 |---|---|
-| `app.py` | Streamlit UI: hero, sample chips, question input, dual overlay, HITL log |
+| `app.py` | Streamlit UI: hero, sample chips, 3-column answer layout, sources radio, granularity zoom, HITL log |
 | `ingest.py` | Parallel parse + cache + pre-rasterize |
 | `build_index.py` | Walk cached parses, chunk, embed, store in ChromaDB |
-| `query_engine.py` | Retrieval + Claude tool-forced JSON Q&A |
-| `parse_helpers.py` | Spans, grounding, dual overlay, precision metric — the core RAG-with-grounding library |
+| `query_engine.py` | Retrieval + Claude tool-forced JSON Q&A (single- or multi-quote) |
+| `parse_helpers.py` | Spans, grounding, multi-axis overlay rendering, precision metric — the core RAG-with-grounding library |
 | `.env.example` | API key template |
 | `.streamlit/config.toml` | Brand theme (Forest primary) |
+| `static/landing_ai_logo.svg` | LandingAI horizontal wordmark — painted in the upper-right via CSS `::before` |
 
 ## Sample queries to try
 
@@ -115,12 +129,13 @@ chroma/                     ← embedded chunks, persistent
 |---|---|---|
 | `Did the studies find a benefit for marathon runners taking vitamin C?` | Line-level grounding in a dense paragraph | ~3–5× |
 | `In the Vitamin C meta-analyses Table 1, what was the relative risk for incidence of colds in the general community studies?` | Cell-level grounding inside a 49-cell table | **~32×** |
-| `What is the main finding regarding high-dose vitamin C therapy in children?` | Line-level grounding in a discussion paragraph | ~5–8× |
+| `Does vitamin C work for either preventing or shortening the common cold?` | **Multi-quote / non-contiguous evidence** — two highlights in distinct colors across two passages | qualitative |
+| `What do the coronal sinus CT scans look like during the acute and recovery phases of a cold?` | Figure grounding — the highlight is the whole CT-scan image, not text | qualitative |
 | `Is echinacea effective for preventing the common cold?` | Cross-document retrieval | qualitative |
 
 ## Tech notes
 
-### The DPT-3 response shape (v3 design / v2 endpoint on staging)
+### The DPT-3 response shape
 
 ```json
 {
@@ -147,7 +162,7 @@ The published spec describes visual elements (figures, logos, cards, scan codes,
 
 ### Auth
 
-`Authorization: Basic <pat_xxx>` — the raw personal access token, no base64 wrapping. Staging keys are separate from production. The app uses `python-dotenv` with `override=True` so `.env` wins over any pre-existing shell `VISION_AGENT_API_KEY` (a common gotcha when developers have a production key in their shell profile).
+`Authorization: Basic <pat_xxx>` — the raw personal access token, no base64 wrapping. The app uses `python-dotenv` with `override=True` so the value in `.env` wins over any pre-existing shell `VISION_AGENT_API_KEY` (a common gotcha when developers already have one exported in their shell profile).
 
 ### Known issues
 
