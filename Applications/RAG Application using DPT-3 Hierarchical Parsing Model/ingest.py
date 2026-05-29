@@ -28,7 +28,7 @@ INPUT_DIR = PROJECT_ROOT / "input"
 PARSED_DIR = PROJECT_ROOT / "parsed"
 PAGES_DIR = PROJECT_ROOT / "pages"
 
-API_URL = "https://api.va.staging.landing.ai/v2/ade/parse"
+API_URL = "https://api.va.landing.ai/v2/ade/parse"
 RASTER_DPI = 144  # pre-rasterized PNG resolution; coordinate scaling handled later
 MAX_WORKERS = 4   # concurrent parses; bumped any higher tends to trip rate limits
 
