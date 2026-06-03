@@ -9,30 +9,6 @@ A Streamlit app that turns 8 medical journal PDFs about the common cold and vita
 ## Demo
 [![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
-## What It Does
-
-Ask a medical question and get an answer you can verify at a glance — the app shows you
-the exact spot on the source page that backs every answer, down to a single line or one
-cell of a table.
-
-**Ask**
-- Pick a sample question or type your own.
-- Set how many passages to pull in with a slider.
-- Get a short answer with the exact sentence from a paper quoted as its proof.
-- Mark each answer **Accept** or **Reject** — saved to a log (`verifications.jsonl`).
-
-**See the proof** (appears the moment an answer lands)
-- The exact text it used, side by side with a picture of the real page — the same spot
-  highlighted on both.
-- A zoom toggle — **Page · Block · Lines/cells** — that tightens the highlight from the
-  whole page, to the block, to the single line or table cell.
-- A label saying what it found and where: `Body text · p.3`, `Table cell · r3c2 · p.1`,
-  `Figure · p.4`.
-- Tiles showing how much tighter the highlight got, and how little text you'd need to
-  hand an AI to back the answer.
-- A list of every passage it pulled — click any one to highlight it on the page. When an
-  answer draws on two far-apart places, it highlights both, in different colors.
-
 ## Quick start
 
 ### 1. Install
