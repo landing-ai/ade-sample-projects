@@ -2,6 +2,10 @@
 
 A Streamlit app that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map.
 
+![The proof view: the passages it pulled (left), the exact quote marked in the parsed text (center), and the matching region highlighted on the real source page (right), with the Page · Element · Lines/cells zoom set to the precise level.](demo/proof-view.png)
+
+*Every answer resolves back to the exact spot on the source page — here, a flowchart question grounded to the precise lines and the figure on the original page.*
+
 ## Demo
 [![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
