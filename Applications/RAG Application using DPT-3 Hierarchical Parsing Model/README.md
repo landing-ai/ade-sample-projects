@@ -69,7 +69,7 @@ python ingest.py
 ```
 
 This:
-- Sends each PDF to `https://api.va.landing.ai/v2/ade/parse` (the DPT-3 endpoint)
+- Sends each PDF to `https://api.ade.landing.ai/v2/parse` (the DPT-3 endpoint)
 - Caches the full JSON response (markdown + structure + grounding + metadata) to `parsed/<doc>.json`
 - Pre-rasterizes each page to PNG at 144 dpi in `pages/<doc>/page_<n>.png` for fast Streamlit rendering
 - Runs 4 PDFs in parallel; idempotent (skips work for any doc already cached)
@@ -158,7 +158,7 @@ The published spec describes visual elements (figures, logos, cards, scan codes,
 
 ### Endpoint
 
-`https://api.va.landing.ai/v2/ade/parse`. The response shape returns four top-level fields: `structure`, `grounding`, `markdown`, and `metadata`.
+`https://api.ade.landing.ai/v2/parse`. The response shape returns four top-level fields: `structure`, `grounding`, `markdown`, and `metadata`.
 
 ### Auth
 
