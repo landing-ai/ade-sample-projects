@@ -66,6 +66,16 @@ streamlit run app.py
 
 Open the browser tab Streamlit shows you. Try a sample chip — `Table 1 — general community RR` is the headline showpiece for cell-level grounding.
 
+### Verification log
+
+Every Accept / Reject click in the UI appends one line of JSON to `verifications.jsonl`:
+
+```json
+{"ts":"2026-05-26T17:42:11","question":"...","quote":"RR = 0.98 (0.95, 1.00)","source_doc":"Vitamin_C...","source_element_id":"47","judgment":"accept"}
+```
+
+Use this to build a labeled set of "grounded answers that were right" vs "grounded answers that were wrong" for model evaluation.
+
 ## Architecture
 
 ```
@@ -115,28 +125,3 @@ This sample is built on LandingAI's DPT-3 Parse API. For how the API itself work
 response shape (`markdown`, `structure`, `grounding`, `metadata`), spans, and line- and
 cell-level grounding — see the developer announcement:
 **[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
-
-The notes below are the practical details this app relies on.
-
-### Endpoint
-
-`https://api.ade.landing.ai/v2/parse`. The response shape returns four top-level fields: `structure`, `grounding`, `markdown`, and `metadata`.
-
-### Auth
-
-`Authorization: Basic <pat_xxx>` — the raw personal access token, no base64 wrapping. The app uses `python-dotenv` with `override=True` so the value in `.env` wins over any pre-existing shell `VISION_AGENT_API_KEY` (a common gotcha when developers already have one exported in their shell profile).
-
-### Known issues
-
-- **Transient 502 from upstream `parse3-service`** for some pages on some documents. The app handles `206 Partial Content` cleanly: failed page nodes get a `status: "failed"` + `reason`, their children list is empty, and the rest of the doc is usable. Recovery: delete `parsed/<doc>.json` and re-run `ingest.py` — 502s are not sticky.
-- The Anthropic SDK strictly validates the model ID. If you pin a model that doesn't exist for your workspace, you'll get a 404. Default is `claude-sonnet-4-6`; override with `ANTHROPIC_MODEL` in `.env`.
-
-## Verification log
-
-Every Accept / Reject click in the UI appends one line of JSON to `verifications.jsonl`:
-
-```json
-{"ts":"2026-05-26T17:42:11","question":"...","quote":"RR = 0.98 (0.95, 1.00)","source_doc":"Vitamin_C...","source_element_id":"47","judgment":"accept"}
-```
-
-Use this to build a labeled set of "grounded answers that were right" vs "grounded answers that were wrong" for model evaluation.
