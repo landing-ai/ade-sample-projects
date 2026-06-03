@@ -6,6 +6,13 @@ A Streamlit app that turns 8 medical journal PDFs about the common cold and vita
 
 *Every answer resolves back to the exact spot on the source page — here, a flowchart question grounded to the precise lines and the figure on the original page.*
 
+## How DPT-3 Parse works
+
+This sample is built on LandingAI's DPT-3 Parse API. For how the API itself works — the
+response shape (`markdown`, `structure`, `grounding`, `metadata`), spans, and line- and
+cell-level grounding — see the developer announcement:
+**[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
+
 ## Demo
 [![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
@@ -116,12 +123,3 @@ chroma/                     ← embedded chunks, persistent
 | `Does vitamin C work for either preventing or shortening the common cold?` | **Multi-quote / non-contiguous evidence** — two highlights in distinct colors across two passages | qualitative |
 | `What do the coronal sinus CT scans look like during the acute and recovery phases of a cold?` | Figure grounding — the highlight is the whole CT-scan image, not text | qualitative |
 | `Is echinacea effective for preventing the common cold?` | Cross-document retrieval | qualitative |
-
-## Tech notes
-
-### How DPT-3 Parse works
-
-This sample is built on LandingAI's DPT-3 Parse API. For how the API itself works — the
-response shape (`markdown`, `structure`, `grounding`, `metadata`), spans, and line- and
-cell-level grounding — see the developer announcement:
-**[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
