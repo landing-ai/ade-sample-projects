@@ -1,37 +1,33 @@
 # Verifiable, Hierarchical RAG on Scientific Literature
 
-A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page — not the whole paragraph or table — using DPT-3's hierarchical structure tree and line-level grounding map.
+A Streamlit app that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map.
 
-## What this shows
+## Demo
+[![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
-The point of DPT-3's new Parse API is *progressive disclosure*: one response gives you three independently useful representations of a document.
+## What It Does
 
-- **`markdown`** — clean CommonMark for your LLM context (no anchor tags or chunk IDs in the body)
-- **`structure`** — a logical tree (Document → Page → element → table cells / visual lines), each node with a half-open `span: [start, end)` into the markdown
-- **`grounding`** — a flat map keyed by element ID, with each entry exposing both the element-level `box` (what v1-style chunk grounding would have given) and a `parts` array with one bounding box per visual line for text
+Ask a medical question and get an answer you can verify at a glance — the app shows you
+the exact spot on the source page that backs every answer, down to a single line or one
+cell of a table.
 
-This demo wires those three together into a single workflow:
+**Ask**
+- Pick a sample question or type your own.
+- Set how many passages to pull in with a slider.
+- Get a short answer with the exact sentence from a paper quoted as its proof.
+- Mark each answer **Accept** or **Reject** — saved to a log (`verifications.jsonl`).
 
-1. Ask a medical question (sample chips or freeform).
-2. ChromaDB retrieves the most relevant elements across the corpus (filtering out marginalia like page headers).
-3. Claude (`claude-sonnet-4-6`) answers using tool-forced JSON output, and is *required* to include a verbatim quote.
-4. The app finds that quote's span in the source markdown.
-5. `get_grounding(spans, parse_response)` walks the structure tree to find every element overlapping the quote, then returns both element-level and precise (line/cell) boxes.
-6. The page renders with a dual overlay: gray outline for the parent element (the v1 view), yellow fill for the precise lines or cell (the v2 win).
-
-For a quote inside a table cell, the win is dramatic: highlighting the whole 49-cell table vs. a single cell yields ~**32× more precise** highlights. For prose, single-line-of-paragraph wins are ~3–8×.
-
-## What this looks like in the UI
-
-Beyond "look, a tighter rectangle," the app surfaces things v1 chunk-level RAG fundamentally can't do:
-
-1. **Synchronized markdown + image view.** The element's source text (with the quote marked) sits next to the rasterized page (with the matching pixel region highlighted). The viewer sees the *words* being grounded, not just a yellow rectangle.
-2. **Granularity zoom — `Page` · `Element` · `Lines / cells`.** A 3-position radio that re-renders the same answer at three scales. Turns the precision metric from a number into a visible motion.
-3. **Structural element-type badges.** `Body text · p.3`, `Table cell · r1c5 · p.1`, `Figure · p.4`, etc. — reframes the demo from "spatial precision" to "structural precision."
-4. **Multi-quote / non-contiguous evidence.** When an answer combines facts from two non-adjacent passages, the LLM returns both quotes; both are highlighted on the page in distinct brand colors and listed individually in the Sources radio. v1 chunks can't span gaps.
-5. **Context-cost metric.** A tile next to the precision metrics showing how many tokens you'd actually need to send to the LLM (just the precise span vs. the parent element's full text).
-
-Plus the always-on basics: HITL Accept / Reject buttons logged to `verifications.jsonl`, a Sources radio with one click-to-highlight per retrieved passage, and a brand-themed UI per the 2026 LandingAI brand book.
+**See the proof** (appears the moment an answer lands)
+- The exact text it used, side by side with a picture of the real page — the same spot
+  highlighted on both.
+- A zoom toggle — **Page · Block · Lines/cells** — that tightens the highlight from the
+  whole page, to the block, to the single line or table cell.
+- A label saying what it found and where: `Body text · p.3`, `Table cell · r3c2 · p.1`,
+  `Figure · p.4`.
+- Tiles showing how much tighter the highlight got, and how little text you'd need to
+  hand an AI to back the answer.
+- A list of every passage it pulled — click any one to highlight it on the page. When an
+  answer draws on two far-apart places, it highlights both, in different colors.
 
 ## Quick start
 
@@ -73,8 +69,6 @@ This:
 - Caches the full JSON response (markdown + structure + grounding + metadata) to `parsed/<doc>.json`
 - Pre-rasterizes each page to PNG at 144 dpi in `pages/<doc>/page_<n>.png` for fast Streamlit rendering
 - Runs 4 PDFs in parallel; idempotent (skips work for any doc already cached)
-
-Total cost for the 8-doc sample corpus: ~170 credits (a one-time spend; the cache is durable).
 
 ### 5. Build the retrieval index
 
@@ -135,26 +129,14 @@ chroma/                     ← embedded chunks, persistent
 
 ## Tech notes
 
-### The DPT-3 response shape
+### How DPT-3 Parse works
 
-```json
-{
-  "structure": { "type": "document", "children": [ /* pages → elements */ ] },
-  "grounding": { "<id>": { "page": 0, "span": [s,e], "box": [l,t,r,b], "parts": [...] } },
-  "markdown": "...",
-  "metadata": { "run_id": "...", "version": "...", "credit_usage": 4.8, /* ... */ }
-}
-```
+This sample is built on LandingAI's DPT-3 Parse API. For how the API itself works — the
+response shape (`markdown`, `structure`, `grounding`, `metadata`), spans, and line- and
+cell-level grounding — see the developer announcement:
+**[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
 
-- **Spans are half-open** `[start, end)` Unicode code-point offsets into the root markdown.
-- **Text elements** expose one `parts` entry per visual line. **Tables and visuals** (figure/logo/card/scan_code/attestation) have `parts: []` — use the element-level `box`.
-- **Table cells** (`td`/`th`) live as children of their parent table; each has its own grounding entry, so you get cell-level boxes even though the table itself doesn't have `parts`.
-- **Page break marker** in the markdown: `<!-- page -->` between pages, absent for single-page documents.
-- **HTTP**: 200 OK, 206 partial (some pages failed — surfaced in `metadata.failed_pages` and as `status: "failed"` page nodes), 422 validation, 429 rate limit.
-
-### Spec-vs-reality quirk
-
-The published spec describes visual elements (figures, logos, cards, scan codes, attestations) as rendering in `> [!FIGURE]` GitHub admonition blocks. The actual output uses **markdown image syntax** instead: `![alt]\n<any text inside the visual>`. Slice the markdown by element span rather than parse for admonition syntax — `parse_helpers.iter_chunks` does this correctly.
+The notes below are the practical details this app relies on.
 
 ### Endpoint
 
@@ -178,7 +160,3 @@ Every Accept / Reject click in the UI appends one line of JSON to `verifications
 ```
 
 Use this to build a labeled set of "grounded answers that were right" vs "grounded answers that were wrong" for model evaluation.
-
-## License
-
-This sample is published under the same license as [landing-ai/ade-sample-projects](https://github.com/landing-ai/ade-sample-projects).
