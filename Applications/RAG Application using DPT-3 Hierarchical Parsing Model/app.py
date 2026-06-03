@@ -540,7 +540,7 @@ def render() -> None:
     # Hero — sage card per brand book "industry panel" pattern
     st.html(
         '<div class="hero-card">'
-        '<div class="eyebrow">DPT-3 · Parse API v3</div>'
+        '<div class="eyebrow">DPT-3 · Parse API v2</div>'
         '<h1 class="display display-hero">'
         'Verifiable, Hierarchical RAG on Scientific Literature'
         '</h1>'

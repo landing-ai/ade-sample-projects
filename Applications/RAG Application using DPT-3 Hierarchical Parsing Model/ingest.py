@@ -1,4 +1,4 @@
-"""Parse every PDF in input/ via the DPT-3 v2 staging endpoint, cache the JSON
+"""Parse every PDF in input/ via the DPT-3 Parse API v2 endpoint, cache the JSON
 in parsed/, and pre-rasterize each page to pages/<basename>/page_<n>.png.
 
 Both caches are checked before any work — re-running this script is free.
@@ -28,7 +28,7 @@ INPUT_DIR = PROJECT_ROOT / "input"
 PARSED_DIR = PROJECT_ROOT / "parsed"
 PAGES_DIR = PROJECT_ROOT / "pages"
 
-API_URL = "https://api.va.landing.ai/v2/ade/parse"
+API_URL = "https://api.ade.landing.ai/v2/parse"
 RASTER_DPI = 144  # pre-rasterized PNG resolution; coordinate scaling handled later
 MAX_WORKERS = 4   # concurrent parses; bumped any higher tends to trip rate limits
 
@@ -56,7 +56,7 @@ def get_api_key() -> str:
 
 
 def parse_pdf(pdf_path: Path, api_key: str) -> dict:
-    """POST one PDF to /v2/ade/parse. Returns the parsed JSON.
+    """POST one PDF to /v2/parse. Returns the parsed JSON.
 
     Treats 200 and 206 (partial success) as successful — the caller inspects
     metadata.failed_pages to surface partial failures.
