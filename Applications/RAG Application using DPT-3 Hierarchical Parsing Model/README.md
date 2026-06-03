@@ -1,6 +1,6 @@
 # Verifiable, Hierarchical RAG on Scientific Literature
 
-A Streamlit app that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map. For how DPT-3 works, see the blog:
+A Streamlit app that turns 8 medical journal PDFs about the common cold into a verifiable Q&A app. Every answer is grounded back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map. For how DPT-3 works, see the blog:
 **[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
 
 ![The proof view: the passages it pulled (left), the exact quote marked in the parsed text (center), and the matching region highlighted on the real source page (right), with the Page · Element · Lines/cells zoom set to the precise level.](demo/proof-view.png)
