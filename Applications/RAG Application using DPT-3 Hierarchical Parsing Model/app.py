@@ -22,7 +22,7 @@ load_dotenv(override=True)
 VERIFICATIONS_LOG = Path("verifications.jsonl")
 PARSED_DIR = Path("parsed")
 PAGES_DIR = Path("pages")
-LOGO_PATH = Path("static/landing_ai_logo.svg")
+LOGO_PATH = Path("static/landing_ai_logo.png")
 
 
 def _logo_data_url() -> str:
@@ -112,6 +112,22 @@ html, body, [class*="css"], .stApp {
   border-radius: 16px;
   padding: 36px 40px 32px 40px;
   margin: 0 0 28px 0;
+  position: relative;   /* anchor for the brand wordmark in the corner */
+}
+/* LandingAI wordmark in the hero card's top-right — more noticeable than the
+   page corner, and sits on the sage panel where the black mark reads cleanly. */
+.hero-card::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 36px;
+  width: 150px;
+  height: 30px;
+  background-image: url("__LOGO_URL__");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  pointer-events: none;
 }
 .hero-card .eyebrow {
   background: rgba(3, 34, 29, 0.08);
@@ -305,23 +321,9 @@ h3 { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
 footer { visibility: hidden; }
 .stDeployButton { display: none; }
 
-/* LandingAI wordmark — painted by a pseudo-element on the Streamlit root
-   container so we don't need to insert any HTML (Streamlit's HTML sanitizer
-   sometimes strips empty divs, which broke earlier attempts). */
-.stApp::before {
-  content: "";
-  position: fixed;
-  top: 18px;
-  right: 28px;
-  z-index: 1000;
-  pointer-events: none;
-  width: 130px;
-  height: 24px;
-  background-image: url("__LOGO_URL__");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
+/* The brand wordmark now lives in the hero card (.hero-card::after). Hide
+   Streamlit's top-right toolbar (Deploy + ⋮ menu) so the page corner stays clean. */
+[data-testid="stToolbar"], [data-testid="stDecoration"] { display: none !important; }
 """
 
 
@@ -534,8 +536,8 @@ def resolve_all_quotes(answer, source_parse: dict):
 def render() -> None:
     inject_brand_css()
 
-    # Brand wordmark is painted by `.stApp::before` (see inject_brand_css);
-    # no HTML insertion needed here.
+    # Brand wordmark is painted into the hero card's top-right corner by
+    # `.hero-card::after` (see inject_brand_css); no HTML insertion needed here.
 
     # Hero — sage card per brand book "industry panel" pattern
     st.html(
