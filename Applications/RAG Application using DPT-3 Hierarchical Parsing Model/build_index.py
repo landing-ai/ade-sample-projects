@@ -19,6 +19,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -30,6 +31,11 @@ from parse_helpers import iter_units
 PARSED_DIR = Path("parsed")
 CHROMA_DIR = "chroma"
 COLLECTION_NAME = "medical_corpus"
+
+# How to index text elements. "whole" (default) = one unit per paragraph.
+# "linewin" = line-window units (opt-in; better for long/dense prose, ~5x larger
+# index). See docs/chunking-notes.md and the README. Toggle with TEXT_MODE=linewin.
+TEXT_MODE = os.environ.get("TEXT_MODE", "whole")
 
 
 def main() -> int:
@@ -54,7 +60,7 @@ def main() -> int:
         doc_id = parse_path.stem
         with open(parse_path) as f:
             parse = json.load(f)
-        for u in iter_units(parse, doc_id):
+        for u in iter_units(parse, doc_id, text_mode=TEXT_MODE):
             counts_by_type[u.unit_type] = counts_by_type.get(u.unit_type, 0) + 1
             ids.append(u.id)
             docs.append(u.text)
@@ -72,7 +78,7 @@ def main() -> int:
     if not ids:
         sys.exit("No chunks to index.")
 
-    print(f"Indexing {len(ids)} chunks from {len(parses)} document(s)...")
+    print(f"Indexing {len(ids)} units from {len(parses)} document(s) (text_mode={TEXT_MODE})...")
     print(f"  by type: {counts_by_type}")
 
     BATCH = 100
