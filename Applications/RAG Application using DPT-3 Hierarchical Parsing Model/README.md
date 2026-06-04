@@ -11,6 +11,40 @@ A Streamlit app that turns 8 medical journal PDFs about the common cold into a v
 ## Demo
 [![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
+## How indexing and retrieval work
+
+DPT-3 parses each document down to fine-grained structure — **text to the line, tables to
+the cell** (every line and cell has its own span and bounding box; cells also carry their
+row, column, and header). The app keeps indexing and retrieval as two stages:
+**retrieve small, read big, ground precise.**
+
+```mermaid
+flowchart TD
+    A[PDF] -->|DPT-3 Parse v2| B["structure tree<br/>text → lines · tables → cells"]
+    B -->|build_index.py| C["small-to-big units:<br/>a row's cells → one sentence;<br/>text / figures kept whole"]
+    C -->|embed| D[(ChromaDB)]
+    Q([question]) -->|embed| D
+    D -->|nearest small units| E[matched row / line]
+    E -->|merge to parent| F["whole table / paragraph<br/>= full context"]
+    F --> G["Claude → verbatim quote"]
+    G -->|resolve via line / cell boxes| H["highlight exact line / cell"]
+```
+
+**Indexing — `build_index.py`.** From the parsed structure it builds searchable units: for
+a table, the cells of each row are assembled into **one short sentence** (e.g.
+`Coronavirus 229E. Serology: 10 (5); Total: 10 (5)`); text, figures, and other elements
+stay whole. Each unit points back to its parent element, and all units are embedded into
+ChromaDB.
+
+**Retrieval — `query_engine.py`.** The question is embedded and matched against those small
+units; each match is then **merged back to its parent element** so the model still sees
+full context. Claude answers with a verbatim quote, which `parse_helpers` resolves — via
+DPT-3's line and cell boxes — to the **exact line or table cell** to highlight.
+
+Searching a small unit (a row's sentence, a single line) matches a specific question far
+better than searching a whole table or paragraph; merging to the parent keeps the
+surrounding context the model needs.
+
 ## Quick start
 
 ### 1. Install
@@ -58,7 +92,7 @@ This:
 python build_index.py
 ```
 
-Walks every cached parse and emits one chunk per top-level element (text, table, figure, marginalia, logo, card, scan_code, attestation). Tables stay whole — their cells remain queryable via grounding, not as separate chunks. Embeds with ChromaDB's default Sentence Transformers (`all-MiniLM-L6-v2`), persists to `chroma/`.
+Walks every cached parse and builds the small-to-big search index — for a table, the cells of each row become one short sentence; text and other elements stay whole — embedded with ChromaDB's Sentence Transformers (`all-MiniLM-L6-v2`) into `chroma/`. See [How indexing and retrieval work](#how-indexing-and-retrieval-work).
 
 ### 6. Run the app
 
@@ -85,9 +119,9 @@ input/                      ← your PDFs
    ↓ ingest.py (parallel)
 parsed/<doc>.json           ← cached DPT-3 parse responses
    ↓ build_index.py
-chroma/                     ← embedded chunks, persistent
+chroma/                     ← embedded small-to-big units
    ↓ app.py
-   ├─ ChromaDB retrieval (filters marginalia)
+   ├─ ChromaDB retrieval: match a small unit, merge to its parent (filters marginalia)
    ├─ Claude with tool-forced JSON ({answer, exact_quote, source_doc, element_id})
    ├─ parse_helpers.find_quote_span  → spans into source markdown
    ├─ parse_helpers.get_grounding    → element-level + precise boxes
@@ -102,8 +136,8 @@ chroma/                     ← embedded chunks, persistent
 |---|---|
 | `app.py` | Streamlit UI: hero, sample chips, 3-column answer layout, sources radio, granularity zoom, HITL log |
 | `ingest.py` | Parallel parse + cache + pre-rasterize |
-| `build_index.py` | Walk cached parses, chunk, embed, store in ChromaDB |
-| `query_engine.py` | Retrieval + Claude tool-forced JSON Q&A (single- or multi-quote) |
+| `build_index.py` | Walk cached parses, build small-to-big units (table rows + whole elements), embed into ChromaDB |
+| `query_engine.py` | Small-to-big retrieval (match small unit → merge to parent) + Claude tool-forced JSON Q&A |
 | `parse_helpers.py` | Spans, grounding, multi-axis overlay rendering, precision metric — the core RAG-with-grounding library |
 | `.env.example` | API key template |
 | `.streamlit/config.toml` | Brand theme (Forest primary) |
