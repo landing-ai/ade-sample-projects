@@ -6,11 +6,7 @@ A Streamlit demo that turns 8 medical journal PDFs about the common cold and vit
 
 *The proof view — the answer's exact words highlighted on the original source page, down to the precise line or table cell.*
 
-## Demo
 
-<!-- After uploading demo/verifiable-rag-demo.mp4 as an unlisted YouTube video,
-     replace both VIDEO_ID occurrences below with the real video id. -->
-[![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
 ## How indexing and retrieval work
 
