@@ -11,8 +11,10 @@ Usage:
 """
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
 
 import anthropic
@@ -23,6 +25,7 @@ load_dotenv(override=True)
 
 CHROMA_DIR = "chroma"
 COLLECTION_NAME = "medical_corpus"
+PARSED_DIR = "parsed"
 DEFAULT_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
 DEFAULT_K = 6
 
@@ -146,23 +149,49 @@ def _get_collection():
     return client.get_collection(COLLECTION_NAME)
 
 
+@lru_cache(maxsize=64)
+def _doc_markdown(doc_id: str) -> str:
+    with open(f"{PARSED_DIR}/{doc_id}.json") as f:
+        return json.load(f)["markdown"]
+
+
 def retrieve(question: str, k: int = DEFAULT_K, exclude_marginalia: bool = True) -> list[RetrievedChunk]:
+    """Small-to-big retrieval. Match fine-grained units (table rows / elements),
+    then merge to their parent element so the LLM gets full context and grounding
+    still resolves to the precise line/cell.
+
+    A parent's rank = its best (closest) unit. So a table whose *Coronavirus 229E*
+    row is the top hit surfaces at rank 1, even though the whole-table embedding
+    would have ranked 5th."""
     coll = _get_collection()
-    where = {"element_type": {"$ne": "marginalia"}} if exclude_marginalia else None
-    result = coll.query(query_texts=[question], n_results=k, where=where)
-    out: list[RetrievedChunk] = []
+    # Pull a wide pool of small units, then collapse to distinct parent elements.
+    n_candidates = max(k * 8, 48)
+    where = {"parent_type": {"$ne": "marginalia"}} if exclude_marginalia else None
+    result = coll.query(query_texts=[question], n_results=n_candidates, where=where)
     if not result["ids"] or not result["ids"][0]:
-        return out
+        return []
+
+    best: dict[tuple[str, str], tuple[float, dict]] = {}
     for i in range(len(result["ids"][0])):
         meta = result["metadatas"][0][i]
+        dist = result["distances"][0][i]
+        key = (meta["doc_id"], meta["parent_id"])
+        if key not in best or dist < best[key][0]:
+            best[key] = (dist, meta)
+
+    parents = sorted(best.values(), key=lambda dm: dm[0])[:k]
+    out: list[RetrievedChunk] = []
+    for dist, meta in parents:
+        s, e = meta["parent_span_start"], meta["parent_span_end"]
+        text = _doc_markdown(meta["doc_id"])[s:e].strip()
         out.append(RetrievedChunk(
             doc_id=meta["doc_id"],
-            element_id=meta["element_id"],
-            element_type=meta["element_type"],
+            element_id=meta["parent_id"],
+            element_type=meta["parent_type"],
             page=meta["page"],
-            span=[meta["span_start"], meta["span_end"]],
-            text=result["documents"][0][i],
-            distance=result["distances"][0][i],
+            span=[s, e],
+            text=text,
+            distance=dist,
         ))
     return out
 

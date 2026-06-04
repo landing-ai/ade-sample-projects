@@ -324,6 +324,37 @@ footer { visibility: hidden; }
 /* The brand wordmark now lives in the hero card (.hero-card::after). Hide
    Streamlit's top-right toolbar (Deploy + ⋮ menu) so the page corner stays clean. */
 [data-testid="stToolbar"], [data-testid="stDecoration"] { display: none !important; }
+
+/* ---- rebuilt answer / proof layout ---- */
+.answer-card {
+  font-size: 16px; line-height: 1.7; color: var(--headline);
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-left: 4px solid var(--forest); border-radius: 12px;
+  padding: 15px 20px; max-width: 1000px; margin: 2px 0 12px 0;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 2px 0; }
+.chip {
+  font-family: 'Urbanist', system-ui, sans-serif; font-size: 12.5px;
+  color: var(--forest); background: var(--forest-light);
+  border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+}
+.chip b { font-weight: 700; }
+.quote-callout {
+  font-family: Georgia, 'Times New Roman', serif; font-style: italic;
+  font-size: 15px; line-height: 1.6; color: var(--headline);
+  background: #fffdf0; border: 1px solid #ece6c2; border-radius: 10px;
+  padding: 12px 18px; max-width: 1000px; margin: 12px 0;
+}
+.quote-src {
+  display: block; font-style: normal; font-family: 'Urbanist', sans-serif;
+  font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--muted); margin-top: 6px;
+}
+.sublabel {
+  font-family: 'Urbanist', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 6px;
+}
 """
 
 
@@ -722,7 +753,7 @@ def render() -> None:
 
     st.markdown('<div class="label">Answer</div>', unsafe_allow_html=True)
     st.markdown(
-        f"<p style='font-size:15.5px; line-height:1.7; color:{COLOR_HEADLINE}; max-width:980px;'>{answer.answer}</p>",
+        f"<div class='answer-card'>{answer.answer}</div>",
         unsafe_allow_html=True,
     )
     if not has_grounded_answer:
@@ -761,36 +792,54 @@ def render() -> None:
             element_token_total += count_tokens(md_full[outer.span[0]:outer.span[1]])
         token_ratio = (element_token_total / precise_tokens) if precise_tokens else 0.0
 
-        st.markdown('<div class="label" style="margin-top:18px;">Precision win</div>', unsafe_allow_html=True)
-        st.caption(
-            "How much of the source page each grounding mode highlights, "
-            "and how many tokens you'd send to the LLM. "
-            "Compared against v1-style chunk grounding (the parent paragraph or whole table) "
-            "vs v2 line/cell grounding (the specific sentence or one cell)."
+        # Compact metric chips, then the verbatim proof quote
+        chips = (
+            '<div class="chips">'
+            f'<span class="chip"><b>{metric["ratio"]:.0f}×</b> tighter highlight</span>'
+            f'<span class="chip">{metric["chunk_pct"]:.1f}% &rarr; <b>{metric["precise_pct"]:.3f}%</b> of page</span>'
+            f'<span class="chip"><b>{precise_tokens}</b> tokens to prove it'
+            + (f' &middot; {token_ratio:.0f}&times; cheaper' if token_ratio > 1 else '')
+            + '</span></div>'
         )
-        m1, m2, m3, m4 = st.columns(4)
-        m1.metric(
-            "Element-level",
-            f"{metric['chunk_pct']:.2f}%",
-            help="Page area highlighted if we grounded to the parent element (the whole paragraph, or the whole table). This is what v1 chunk-level RAG would have shown.",
+        st.markdown(chips, unsafe_allow_html=True)
+        _pq = answer_quote_groups[0][0]
+        st.markdown(
+            f'<div class="quote-callout">&ldquo;{_html_escape(_pq.text.strip())}&rdquo;'
+            f'<span class="quote-src">{short_doc_name(_pq.source_doc)}</span></div>',
+            unsafe_allow_html=True,
         )
-        m2.metric(
-            "Line / cell",
-            f"{metric['precise_pct']:.3f}%",
-            help="Page area highlighted with v2's precise grounding — just the visual lines that contain the quote, or a single table cell.",
-        )
-        m3.metric(
-            "More precise",
-            f"{metric['ratio']:.1f}×",
-            help="Element-level area ÷ precise area. Higher = tighter highlight. 32× means the v2 box is 32 times smaller than the v1 box would have been.",
-        )
-        m4.metric(
-            "Context cost",
-            f"{precise_tokens} tokens",
-            delta=(f"{token_ratio:.1f}× cheaper" if token_ratio > 1 else None),
-            delta_color="normal",
-            help="Tokens needed to send just the precise quote to the LLM. The delta compares against sending the whole parent element instead.",
-        )
+
+        # Why retrieval found this — the unit-shape contrast behind small-to-big.
+        # Only shown when the answer grounds to a table (the most striking case).
+        tbl = next((m for m in primary_matches if m.element_type == "table"), None)
+        if tbl is not None:
+            rows = ph.table_row_sentences(primary_parse, tbl.element_id)
+            if rows:
+                with st.expander("🔍 How the app found the right cell in this table"):
+                    st.markdown(
+                        "To answer a question about a table, the app first turns it into text it "
+                        "can search. **How** it turns the table into text decides whether it finds "
+                        "the answer:"
+                    )
+                    c_blob, c_rows = st.columns(2)
+                    with c_blob:
+                        st.markdown("**❌ The whole table as one block**")
+                        st.caption(
+                            "One value is buried among 100+ cells, so the table as a whole barely "
+                            "looks like a match for your question."
+                        )
+                        st.code(md_full[tbl.span[0]:tbl.span[1]].strip(), language="markdown")
+                    with c_rows:
+                        st.markdown("**✅ Each row as its own sentence**")
+                        st.caption(
+                            "What this app does. The matching row now reads like plain language, so "
+                            "it stands out as the best match — and points straight at the cell."
+                        )
+                        st.code("\n".join(rows), language="text")
+                    st.caption(
+                        "Same search both ways — only the *shape of the text* changed. That's what "
+                        "let your question land on the exact cell instead of getting lost in the table."
+                    )
 
         # Verification — gets plenty of room at full width
         st.markdown('<div class="label" style="margin-top:18px;">Verification</div>', unsafe_allow_html=True)
@@ -808,9 +857,9 @@ def render() -> None:
 
     # ============ 3-column exploration row (Sources | Markdown | Image) ============
     st.divider()
-    left, center, right = st.columns([4, 4, 6])
+    page_col, text_col, src_col = st.columns([7, 5, 4])
 
-    with left:
+    with src_col:
         st.markdown('<div class="label">Sources</div>', unsafe_allow_html=True)
         st.caption("Pick a source to highlight it on the page →")
 
@@ -902,17 +951,17 @@ def render() -> None:
                 st.session_state.selected_view = new_view
                 st.rerun()
 
-    # ---- CENTER: source markdown panel (Feature 1) ----
-    with center:
+    # ---- source markdown panel (Feature 1) ----
+    with text_col:
         st.markdown('<div class="label">Source markdown</div>', unsafe_allow_html=True)
         if not active_parse or not quote_render_set:
             st.info("Source text appears here once an answer resolves.")
         else:
             st.html(render_markdown_panel_html(quote_render_set, active_parse))
 
-    # ---- RIGHT: zoom radio + page image (Features 2 + 4 colors) ----
-    with right:
-        st.markdown('<div class="label">Source page</div>', unsafe_allow_html=True)
+    # ---- source page image — the hero (Features 2 + 4 colors) ----
+    with page_col:
+        st.markdown('<div class="label">Source page — the proof</div>', unsafe_allow_html=True)
         if not active_parse or not quote_render_set:
             st.info("No page to highlight yet — ask a question to see the source page here.")
             return

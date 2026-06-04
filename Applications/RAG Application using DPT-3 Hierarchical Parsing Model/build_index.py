@@ -1,8 +1,14 @@
 """Build a ChromaDB index from cached parses in parsed/.
 
-One chunk per top-level structural element (text, table, figure, marginalia,
-logo, card, scan_code, attestation). Tables are emitted whole; their cells
-remain queryable via the grounding map, not as separate chunks.
+Small-to-big units: every table becomes one *header-aware sentence per row*
+(e.g. "Coronavirus 229E. Serology: 10 (5); Total: 10 (5)"); every other leaf
+element (text, figure, marginalia, ...) stays whole. Each unit stores a
+`parent_*` pointer so retrieval can match the precise small unit, then expand to
+the parent element for context + grounding (see query_engine.retrieve).
+
+A pipe-delimited table embeds as a blur of all its cells and retrieves poorly;
+one clean sentence per row retrieves precisely — the win is the unit shape, not a
+bigger model.
 
 Embedding: ChromaDB's default (sentence-transformers/all-MiniLM-L6-v2).
 First run downloads the ~80MB model.
@@ -19,7 +25,7 @@ from pathlib import Path
 import chromadb
 from tqdm import tqdm
 
-from parse_helpers import iter_chunks
+from parse_helpers import iter_units
 
 PARSED_DIR = Path("parsed")
 CHROMA_DIR = "chroma"
@@ -48,17 +54,19 @@ def main() -> int:
         doc_id = parse_path.stem
         with open(parse_path) as f:
             parse = json.load(f)
-        for chunk in iter_chunks(parse, doc_id):
-            counts_by_type[chunk.element_type] = counts_by_type.get(chunk.element_type, 0) + 1
-            ids.append(f"{chunk.doc_id}::{chunk.element_id}")
-            docs.append(chunk.text)
+        for u in iter_units(parse, doc_id):
+            counts_by_type[u.unit_type] = counts_by_type.get(u.unit_type, 0) + 1
+            ids.append(u.id)
+            docs.append(u.text)
             metas.append({
-                "doc_id": chunk.doc_id,
-                "element_id": chunk.element_id,
-                "element_type": chunk.element_type,
-                "page": chunk.page,
-                "span_start": chunk.span[0],
-                "span_end": chunk.span[1],
+                "doc_id": u.doc_id,
+                "unit_type": u.unit_type,
+                "parent_id": u.parent_id,
+                "parent_type": u.parent_type,
+                "parent_span_start": u.parent_span[0],
+                "parent_span_end": u.parent_span[1],
+                "page": u.page,
+                "row": -1 if u.row is None else u.row,
             })
 
     if not ids:
