@@ -2,14 +2,6 @@
 
 A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page — not the whole paragraph or table — using DPT-3's hierarchical structure tree and line-level grounding map.
 
-> **Why the answers are accurate — row-wise retrieval.** The app searches each table
-> **row by row**, not table-by-table. DPT-3's line- and cell-level parsing turns every
-> row into its own searchable sentence (carrying its column headers), so a question about
-> one value lands on the **exact cell** instead of drowning in a 100-cell block — in this
-> corpus that moved the right table from search rank **5th → 1st**. A plain text extractor
-> can't do this: it has no rows, columns, or cells to turn into sentences. See
-> [How indexing and retrieval work](#how-indexing-and-retrieval-work).
-
 ![The proof view: the answer, the exact quote it used, and the matching region highlighted on the original source page.](demo/proof-view.png)
 
 *The proof view — the answer's exact words highlighted on the original source page, down to the precise line or table cell.*
