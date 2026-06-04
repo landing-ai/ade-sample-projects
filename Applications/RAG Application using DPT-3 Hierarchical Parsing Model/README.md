@@ -58,7 +58,7 @@ This:
 python build_index.py
 ```
 
-Walks every cached parse and emits one chunk per top-level element (text, table, figure, marginalia, logo, card, scan_code, attestation). Tables stay whole — their cells remain queryable via grounding, not as separate chunks. Embeds with ChromaDB's default Sentence Transformers (`all-MiniLM-L6-v2`), persists to `chroma/`.
+Walks every cached parse and emits **small-to-big** retrieval units: each table becomes one header-aware sentence per row (e.g. `Coronavirus 229E. Serology: 10 (5); Total: 10 (5)`), while text, figures, and other elements stay whole. Every unit records a pointer back to its parent element. Embeds with ChromaDB's default Sentence Transformers (`all-MiniLM-L6-v2`), persists to `chroma/`. (See [Retrieval: small-to-big](#retrieval-small-to-big).)
 
 ### 6. Run the app
 
@@ -85,9 +85,9 @@ input/                      ← your PDFs
    ↓ ingest.py (parallel)
 parsed/<doc>.json           ← cached DPT-3 parse responses
    ↓ build_index.py
-chroma/                     ← embedded chunks, persistent
+chroma/                     ← embedded small-to-big units (one per table row + one per other element)
    ↓ app.py
-   ├─ ChromaDB retrieval (filters marginalia)
+   ├─ ChromaDB retrieval: match a fine unit, then merge to its parent element (filters marginalia)
    ├─ Claude with tool-forced JSON ({answer, exact_quote, source_doc, element_id})
    ├─ parse_helpers.find_quote_span  → spans into source markdown
    ├─ parse_helpers.get_grounding    → element-level + precise boxes
@@ -96,14 +96,20 @@ chroma/                     ← embedded chunks, persistent
                                        multi-quote with per-quote colors
 ```
 
+### Retrieval: small-to-big
+
+A table embedded as one big block of pipes is a blurry match for a specific-fact question — in this corpus the microbiology table ranked **5th** for *"how many Coronavirus 229E cases?"*. So `build_index.py` indexes **fine-grained units**: each table row becomes one header-aware sentence (`Coronavirus 229E. Serology: 10 (5); Total: 10 (5)`), while text and figures stay whole. At query time `query_engine.retrieve` matches those small units, then **merges back to the parent element** so the LLM still gets full context and the answer still grounds to the precise line or cell.
+
+Same embedder as before — only the *shape of the text* changed — and the right row now ranks **1st**. A generic cross-encoder re-ranker did **not** fix this (it moved the table 5th → 6th); the win comes from DPT-3's row/column structure, not a bigger model. The app surfaces this contrast in the *"How the app found the right cell in this table"* panel.
+
 ## File structure
 
 | File | Purpose |
 |---|---|
 | `app.py` | Streamlit UI: hero, sample chips, 3-column answer layout, sources radio, granularity zoom, HITL log |
 | `ingest.py` | Parallel parse + cache + pre-rasterize |
-| `build_index.py` | Walk cached parses, chunk, embed, store in ChromaDB |
-| `query_engine.py` | Retrieval + Claude tool-forced JSON Q&A (single- or multi-quote) |
+| `build_index.py` | Walk cached parses, emit small-to-big units (table rows + whole elements), embed, store in ChromaDB |
+| `query_engine.py` | Small-to-big retrieval (match fine unit → merge to parent) + Claude tool-forced JSON Q&A (single- or multi-quote) |
 | `parse_helpers.py` | Spans, grounding, multi-axis overlay rendering, precision metric — the core RAG-with-grounding library |
 | `.env.example` | API key template |
 | `.streamlit/config.toml` | Brand theme (Forest primary) |
