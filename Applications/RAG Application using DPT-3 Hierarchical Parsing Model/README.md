@@ -1,14 +1,23 @@
 # Verifiable, Hierarchical RAG on Scientific Literature
 
-A Streamlit app that turns 8 medical journal PDFs about the common cold into a verifiable Q&A app. Every answer is grounded back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map. For how DPT-3 works, see the blog:
-**[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
+A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page — not the whole paragraph or table — using DPT-3's hierarchical structure tree and line-level grounding map.
+
+> **Why the answers are accurate — row-wise retrieval.** The app searches each table
+> **row by row**, not table-by-table. DPT-3's line- and cell-level parsing turns every
+> row into its own searchable sentence (carrying its column headers), so a question about
+> one value lands on the **exact cell** instead of drowning in a 100-cell block — in this
+> corpus that moved the right table from search rank **5th → 1st**. A plain text extractor
+> can't do this: it has no rows, columns, or cells to turn into sentences. See
+> [How indexing and retrieval work](#how-indexing-and-retrieval-work).
 
 ![The proof view: the answer, the exact quote it used, and the matching region highlighted on the original source page.](demo/proof-view.png)
 
 *The proof view — the answer's exact words highlighted on the original source page, down to the precise line or table cell.*
 
-
 ## Demo
+
+<!-- After uploading demo/verifiable-rag-demo.mp4 as an unlisted YouTube video,
+     replace both VIDEO_ID occurrences below with the real video id. -->
 [![Verifiable RAG demo — line- & cell-level grounding on medical PDFs](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
 ## How indexing and retrieval work
@@ -86,6 +95,8 @@ This:
 - Pre-rasterizes each page to PNG at 144 dpi in `pages/<doc>/page_<n>.png` for fast Streamlit rendering
 - Runs 4 PDFs in parallel; idempotent (skips work for any doc already cached)
 
+Total cost for the 8-doc sample corpus: ~170 credits (a one-time spend; the cache is durable).
+
 ### 5. Build the retrieval index
 
 ```bash
@@ -101,16 +112,6 @@ streamlit run app.py
 ```
 
 Open the browser tab Streamlit shows you. Try a sample chip — `Table 1 — general community RR` is the headline showpiece for cell-level grounding.
-
-### Verification log
-
-Every Accept / Reject click in the UI appends one line of JSON to `verifications.jsonl`:
-
-```json
-{"ts":"2026-05-26T17:42:11","question":"...","quote":"RR = 0.98 (0.95, 1.00)","source_doc":"Vitamin_C...","source_element_id":"47","judgment":"accept"}
-```
-
-Use this to build a labeled set of "grounded answers that were right" vs "grounded answers that were wrong" for model evaluation.
 
 ## Architecture
 
@@ -130,18 +131,20 @@ chroma/                     ← embedded small-to-big units
                                        multi-quote with per-quote colors
 ```
 
+(The retrieval + grounding logic is explained in [How indexing and retrieval work](#how-indexing-and-retrieval-work).)
+
 ## File structure
 
 | File | Purpose |
 |---|---|
-| `app.py` | Streamlit UI: hero, sample chips, 3-column answer layout, sources radio, granularity zoom, HITL log |
+| `app.py` | Streamlit UI: hero, sample chips, proof-first answer layout (answer card, metric chips, quote callout, source-page hero), sources list, granularity zoom, HITL log |
 | `ingest.py` | Parallel parse + cache + pre-rasterize |
 | `build_index.py` | Walk cached parses, build small-to-big units (table rows + whole elements), embed into ChromaDB |
 | `query_engine.py` | Small-to-big retrieval (match small unit → merge to parent) + Claude tool-forced JSON Q&A |
 | `parse_helpers.py` | Spans, grounding, multi-axis overlay rendering, precision metric — the core RAG-with-grounding library |
 | `.env.example` | API key template |
 | `.streamlit/config.toml` | Brand theme (Forest primary) |
-| `static/landing_ai_logo.svg` | LandingAI horizontal wordmark — painted in the upper-right via CSS `::before` |
+| `static/landing_ai_logo.png` | LandingAI wordmark — shown in the hero card's top-right via CSS `::after` |
 
 ## Sample queries to try
 
@@ -152,3 +155,41 @@ chroma/                     ← embedded small-to-big units
 | `Does vitamin C work for either preventing or shortening the common cold?` | **Multi-quote / non-contiguous evidence** — two highlights in distinct colors across two passages | qualitative |
 | `What do the coronal sinus CT scans look like during the acute and recovery phases of a cold?` | Figure grounding — the highlight is the whole CT-scan image, not text | qualitative |
 | `Is echinacea effective for preventing the common cold?` | Cross-document retrieval | qualitative |
+
+## Tech notes
+
+### How DPT-3 Parse works
+
+This sample is built on LandingAI's DPT-3 Parse API. For how the API itself works — the
+response shape (`markdown`, `structure`, `grounding`, `metadata`), spans, and line- and
+cell-level grounding — see the developer announcement:
+**[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
+
+The notes below are the practical details this app relies on.
+
+### Endpoint
+
+`https://api.ade.landing.ai/v2/parse`. The response shape returns four top-level fields: `structure`, `grounding`, `markdown`, and `metadata`.
+
+### Auth
+
+`Authorization: Basic <pat_xxx>` — the raw personal access token, no base64 wrapping. The app uses `python-dotenv` with `override=True` so the value in `.env` wins over any pre-existing shell `VISION_AGENT_API_KEY` (a common gotcha when developers already have one exported in their shell profile).
+
+### Known issues
+
+- **Transient 502 from upstream `parse3-service`** for some pages on some documents. The app handles `206 Partial Content` cleanly: failed page nodes get a `status: "failed"` + `reason`, their children list is empty, and the rest of the doc is usable. Recovery: delete `parsed/<doc>.json` and re-run `ingest.py` — 502s are not sticky.
+- The Anthropic SDK strictly validates the model ID. If you pin a model that doesn't exist for your workspace, you'll get a 404. Default is `claude-sonnet-4-6`; override with `ANTHROPIC_MODEL` in `.env`.
+
+## Verification log
+
+Every Accept / Reject click in the UI appends one line of JSON to `verifications.jsonl`:
+
+```json
+{"ts":"2026-05-26T17:42:11","question":"...","quote":"RR = 0.98 (0.95, 1.00)","source_doc":"Vitamin_C...","source_element_id":"47","judgment":"accept"}
+```
+
+Use this to build a labeled set of "grounded answers that were right" vs "grounded answers that were wrong" for model evaluation.
+
+## License
+
+This sample is published under the same license as [landing-ai/ade-sample-projects](https://github.com/landing-ai/ade-sample-projects).
