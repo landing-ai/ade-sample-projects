@@ -172,10 +172,46 @@ def _table_row_units(table: dict, markdown: str, doc_id: str, page: int) -> Iter
         )
 
 
-def iter_units(parse_response: dict, doc_id: str) -> Iterator[Unit]:
+def _text_line_window_units(node: dict, parse_response: dict, doc_id: str, page: int,
+                            window: int = 1) -> Iterator[Unit]:
+    """Line-window units for a text element (opt-in, for benchmarking).
+
+    Uses DPT-3's per-visual-line spans (`grounding[id].parts`) as boundaries, but
+    embeds each line together with `window` neighbor lines on each side — a bare line
+    is a typographic fragment, so the window restores enough context to embed well.
+    Each unit still points back to the whole element, so retrieval merges to the
+    parent (small-to-big). Falls back to the whole element if no line parts exist."""
+    markdown = parse_response["markdown"]
+    eid = str(node["id"])
+    span = node["span"]
+    parts = ((parse_response.get("grounding", {}) or {}).get(eid, {}) or {}).get("parts") or []
+    lines = [markdown[p["span"][0]:p["span"][1]].strip() for p in parts if "span" in p]
+    lines = [l for l in lines if l]
+    if len(lines) <= 1:
+        text = markdown[span[0]:span[1]].strip()
+        if text:
+            yield Unit(id=f"{doc_id}::{eid}", text=text, doc_id=doc_id, unit_type="text",
+                       page=page, parent_id=eid, parent_type=node["type"],
+                       parent_span=list(span), row=None)
+        return
+    for i in range(len(lines)):
+        lo, hi = max(0, i - window), min(len(lines), i + window + 1)
+        wtext = " ".join(lines[lo:hi]).strip()
+        if len(wtext) < 12:
+            continue
+        yield Unit(id=f"{doc_id}::{eid}L{i}", text=wtext, doc_id=doc_id,
+                   unit_type="text_linewin", page=page, parent_id=eid,
+                   parent_type=node["type"], parent_span=list(span), row=None)
+
+
+def iter_units(parse_response: dict, doc_id: str, text_mode: str = "whole") -> Iterator[Unit]:
     """Small-to-big units: tables become one header-aware sentence per row; every
     other leaf element stays whole. Retrieval matches the small unit, then callers
-    expand to `parent_*` for context + grounding (see query_engine.retrieve)."""
+    expand to `parent_*` for context + grounding (see query_engine.retrieve).
+
+    text_mode: "whole" (default) embeds each text element as one unit; "linewin"
+    embeds text as overlapping line-windows (see _text_line_window_units) — opt-in,
+    used for the line-window vs element benchmark."""
     markdown = parse_response["markdown"]
 
     def walk(node, page):
@@ -184,6 +220,10 @@ def iter_units(parse_response: dict, doc_id: str) -> Iterator[Unit]:
             page = node["page"]
         elif nt == "table":
             yield from _table_row_units(node, markdown, doc_id, page if page is not None else 0)
+            return
+        elif nt == "text" and text_mode == "linewin":
+            yield from _text_line_window_units(node, parse_response, doc_id,
+                                               page if page is not None else 0)
             return
         elif nt in LEAF_CHUNK_TYPES:
             span = node["span"]

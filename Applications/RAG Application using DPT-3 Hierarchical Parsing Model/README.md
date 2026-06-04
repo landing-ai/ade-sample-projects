@@ -42,6 +42,24 @@ Searching a small unit (a row's sentence, a single line) matches a specific ques
 better than searching a whole table or paragraph; merging to the parent keeps the
 surrounding context the model needs.
 
+### Optional: line-window text chunking (for long, dense docs)
+
+By default, **text is indexed at the paragraph (element) level**, which retrieves prose
+well when paragraphs are short and single-topic. For **long, dense documents**, you can
+opt into **line-window** chunking — it uses DPT-3's per-line spans to embed each line with
+a small window of neighbor lines, then merges back to the parent paragraph:
+
+```bash
+TEXT_MODE=linewin python build_index.py
+```
+
+In a quick benchmark on this corpus, line-window **sharpened retrieval for specific facts
+buried in long paragraphs** (e.g. *"why are the eyes closed during a sneeze?"* improved
+from ~0.70 to ~0.50 cosine distance, and two other prose queries improved) and **never
+demoted the correct paragraph** — but it grows the index ~5× (more embeddings + storage),
+so it's **off by default**. Enable it for long, multi-topic sections; skip it for short
+prose. Full write-up in [`docs/chunking-notes.md`](docs/chunking-notes.md).
+
 ## Quick start
 
 ### 1. Install
