@@ -3,9 +3,9 @@
 A Streamlit app that turns 8 medical journal PDFs about the common cold into a verifiable Q&A app. Every answer is grounded back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map. For how DPT-3 works, see the blog:
 **[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
 
-![The proof view: the passages it pulled (left), the exact quote marked in the parsed text (center), and the matching region highlighted on the real source page (right), with the Page · Element · Lines/cells zoom set to the precise level.](demo/proof-view.png)
+![The proof view: the answer, the exact quote it used, and the matching region highlighted on the original source page.](demo/proof-view.png)
 
-*Every answer resolves back to the exact spot on the source page — here, a flowchart question grounded to the precise lines and the figure on the original page.*
+*The proof view — the answer's exact words highlighted on the original source page, down to the precise line or table cell.*
 
 
 ## Demo
