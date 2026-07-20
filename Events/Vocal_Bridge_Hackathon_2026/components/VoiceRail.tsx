@@ -7,6 +7,11 @@ import { BRAND, fontStack, DISCLAIMER, type LoadedPolicy } from "@/lib/brand";
 import type { Verdict } from "@/lib/policy/schema";
 import type { GroundBox } from "@/lib/policy/grounded";
 import { Eyebrow } from "@/components/atoms";
+import { shouldRelease } from "@/lib/voice/hold-decision";
+
+// Turn-taking hold (see lib/voice/hold-decision.ts):
+const GRACE_MS = 1500; // after the answer arrives, wait this long to see if a follow-up is still coming
+const MAX_HOLD_MS = 25000; // safety cap — never hold past this (VocalBridge falls back to its own knowledge at 60s)
 
 const ERROR_COPY: Record<string, string> = {
   MICROPHONE_ERROR: "Allow microphone access to talk to your policy.",
@@ -69,6 +74,152 @@ function RailShell({
   );
 }
 
+// Manual AI-agent delegation that HOLDS the retrieved answer until the caller has replied
+// to the voice agent's follow-up. The fetch runs in parallel with the agent's filler, so a
+// fast answer (no follow-up) is delivered with no added latency; a slow answer waits for a
+// clean turn instead of cutting the caller off. Decision logic: lib/voice/hold-decision.ts.
+type HeldTurn = {
+  turnId: string;
+  baselineUser: number;
+  baselineAgent: number;
+  fetchDone: boolean;
+  graceElapsed: boolean;
+  released: boolean;
+  reply: string;
+  assessment: Verdict | null;
+  graceTimer: ReturnType<typeof setTimeout> | null;
+  maxTimer: ReturnType<typeof setTimeout> | null;
+};
+
+function useHeldDelegation({
+  policy,
+  onVerdict,
+  onHighlight,
+}: {
+  policy: LoadedPolicy;
+  onVerdict: (v: Verdict) => void;
+  onHighlight: (boxes: GroundBox[]) => void;
+}) {
+  const { pendingQuery, respond } = useAIAgent();
+  const { transcript } = useTranscript();
+  const transcriptRef = useRef(transcript);
+  useEffect(() => {
+    transcriptRef.current = transcript;
+  }, [transcript]);
+
+  const turnRef = useRef<HeldTurn | null>(null);
+
+  const roleCounts = () => {
+    let user = 0;
+    let agent = 0;
+    for (const x of transcriptRef.current) {
+      if (x.role === "user") user++;
+      else if (x.role === "agent") agent++;
+    }
+    return { user, agent };
+  };
+
+  const releaseNow = useCallback(() => {
+    const turn = turnRef.current;
+    if (!turn || turn.released) return;
+    turn.released = true;
+    if (turn.graceTimer) clearTimeout(turn.graceTimer);
+    if (turn.maxTimer) clearTimeout(turn.maxTimer);
+    // Reveal the grounded verdict + document highlight in lockstep with the SPOKEN answer,
+    // not when the fetch resolved — otherwise the page answers before the voice does.
+    if (turn.assessment) {
+      onVerdict(turn.assessment);
+      onHighlight(allBoxes(turn.assessment));
+    }
+    respond(turn.turnId, turn.reply);
+  }, [onVerdict, onHighlight, respond]);
+
+  const evaluate = useCallback(() => {
+    const turn = turnRef.current;
+    if (!turn || turn.released) return;
+    const c = roleCounts();
+    if (
+      shouldRelease({
+        fetchDone: turn.fetchDone,
+        newAgentTurns: c.agent - turn.baselineAgent,
+        newUserTurns: c.user - turn.baselineUser,
+        graceElapsed: turn.graceElapsed,
+        maxHoldElapsed: false, // the safety cap fires via maxTimer → releaseNow
+      })
+    ) {
+      releaseNow();
+    }
+  }, [releaseNow]);
+
+  // Re-check the release decision whenever the transcript moves (follow-up spoken, caller replies).
+  useEffect(() => {
+    evaluate();
+  }, [transcript, evaluate]);
+
+  // Drive each delegated query through the hold state machine.
+  useEffect(() => {
+    const q = pendingQuery;
+    if (!q) return;
+    if (turnRef.current && turnRef.current.turnId === q.turnId) return;
+    // A new delegation arrived while a prior one was still held — flush it so it can't orphan.
+    if (turnRef.current && !turnRef.current.released) releaseNow();
+
+    const c = roleCounts();
+    const turn: HeldTurn = {
+      turnId: q.turnId,
+      baselineUser: c.user,
+      baselineAgent: c.agent,
+      fetchDone: false,
+      graceElapsed: false,
+      released: false,
+      reply: "Let me pull that up again — could you say that once more?",
+      assessment: null,
+      graceTimer: null,
+      maxTimer: null,
+    };
+    turnRef.current = turn;
+    turn.maxTimer = setTimeout(releaseNow, MAX_HOLD_MS);
+
+    const history = [
+      ...transcriptRef.current.map((t) => ({ role: t.role, content: t.text })),
+      { role: "user", content: q.query },
+    ];
+    (async () => {
+      try {
+        const res = await fetch("/api/hotline/turn", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ policyId: policy.policyId, messages: history }),
+        });
+        const data = await res.json();
+        if (data.reply) turn.reply = data.reply;
+        turn.assessment = data.assessment ?? null;
+      } catch {
+        /* keep the fallback reply */
+      }
+      if (turn.released) return; // flushed by a newer turn or the safety cap
+      turn.fetchDone = true;
+      // Grace: if no follow-up has registered yet, wait a beat before delivering so a
+      // just-starting follow-up isn't cut off (the original bug).
+      turn.graceTimer = setTimeout(() => {
+        turn.graceElapsed = true;
+        evaluate();
+      }, GRACE_MS);
+      evaluate();
+    })();
+  }, [pendingQuery, policy.policyId, releaseNow, evaluate]);
+
+  // Clear timers on unmount.
+  useEffect(
+    () => () => {
+      const turn = turnRef.current;
+      if (turn?.graceTimer) clearTimeout(turn.graceTimer);
+      if (turn?.maxTimer) clearTimeout(turn.maxTimer);
+    },
+    []
+  );
+}
+
 // ---------------- Live VocalBridge ----------------
 function LiveInner({
   policy,
@@ -83,31 +234,10 @@ function LiveInner({
 }) {
   const { state, connect, disconnect, isMicrophoneEnabled, toggleMicrophone, error } = useVocalBridge();
   const { transcript } = useTranscript();
-  const transcriptRef = useRef(transcript);
-  useEffect(() => {
-    transcriptRef.current = transcript;
-  }, [transcript]);
 
-  useAIAgent({
-    onQuery: async (query: string) => {
-      const history = [...transcriptRef.current.map((t) => ({ role: t.role, content: t.text })), { role: "user", content: query }];
-      try {
-        const res = await fetch("/api/hotline/turn", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ policyId: policy.policyId, messages: history }),
-        });
-        const data = await res.json();
-        if (data.assessment) {
-          onVerdict(data.assessment);
-          onHighlight(allBoxes(data.assessment));
-        }
-        return data.reply ?? "Let me pull that up again — could you say that once more?";
-      } catch {
-        return "Let me pull that up again — could you say that once more?";
-      }
-    },
-  });
+  // Delegate policy questions to the hotline brain, holding the answer until the caller has
+  // replied to any follow-up the voice agent asks while we fetch (see useHeldDelegation).
+  useHeldDelegation({ policy, onVerdict, onHighlight });
 
   const connected = state === ConnectionState.Connected || state === ConnectionState.WaitingForAgent;
   const wave = state === ConnectionState.Connected ? "alive" : state === ConnectionState.Connecting || state === ConnectionState.WaitingForAgent ? "breath" : "idle";

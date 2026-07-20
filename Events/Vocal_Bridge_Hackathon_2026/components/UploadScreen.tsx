@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BRAND, fontStack, type LoadedPolicy } from "@/lib/brand";
 import { Eyebrow } from "@/components/atoms";
 import { EXTRACT_PASSES } from "@/lib/ade/schemas";
@@ -33,7 +33,6 @@ export function UploadScreen({
   const [extracting, setExtracting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<PolicySummary[]>([]);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     let live = true;
@@ -139,19 +138,22 @@ export function UploadScreen({
           : "Your travel protection plan — the policy PDF, plus any state endorsement. FinePrint reads every page with DPT-3, then you talk to it and watch the exact line light up. Files stay on this machine."}
       </p>
 
-      <div
-        onClick={() => inputRef.current?.click()}
+      {/* Native <label htmlFor> opens the file chooser in every browser — no programmatic
+          input.click(), which bubbles back to the container and re-fires as a non-user-gesture
+          click that WebKit/Safari suppress (dropzone appears dead). */}
+      <label
+        htmlFor="fp-policy-input"
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => {
           e.preventDefault();
           addFiles(e.dataTransfer.files);
         }}
-        style={{ border: `2px dashed ${BRAND.dark}`, background: "#fffef8", padding: "40px 24px", textAlign: "center", cursor: "pointer", borderRadius: 2 }}
+        style={{ display: "block", border: `2px dashed ${BRAND.dark}`, background: "#fffef8", padding: "40px 24px", textAlign: "center", cursor: "pointer", borderRadius: 2 }}
       >
         <div style={{ fontFamily: fontStack.accent, fontStyle: "italic", fontSize: 22, color: BRAND.dark }}>Drop your policy here</div>
         <div style={{ fontFamily: fontStack.body, fontSize: 13, color: BRAND.grey, marginTop: 6 }}>or click to browse · PDF or images · up to 8 MB each</div>
-        <input ref={inputRef} type="file" accept="application/pdf,image/png,image/jpeg,image/webp" multiple style={{ display: "none" }} onChange={(e) => { if (e.target.files) addFiles(e.target.files); e.target.value = ""; }} />
-      </div>
+      </label>
+      <input id="fp-policy-input" type="file" accept="application/pdf,image/png,image/jpeg,image/webp" multiple style={{ display: "none" }} onChange={(e) => { if (e.target.files) addFiles(e.target.files); e.target.value = ""; }} />
 
       {files.length > 0 && (
         <div style={{ marginTop: 14 }}>
