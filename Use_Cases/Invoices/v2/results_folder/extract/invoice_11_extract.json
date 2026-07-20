@@ -35,13 +35,13 @@
       }
     ],
     "order_details": {
-      "payment_terms": "Due Date: 08/30/2021",
+      "payment_terms": "08/30/2021",
       "ship_date": null,
       "ship_via": null,
       "tracking_number": null
     },
     "totals_summary": {
-      "currency": "$",
+      "currency": "USD",
       "handling_fee": null,
       "shipping": null,
       "subtotal": 1800.87,
@@ -256,7 +256,7 @@
             "start": 861
           }
         ],
-        "value": "Due Date: 08/30/2021"
+        "value": "08/30/2021"
       },
       "ship_date": {
         "ranges": null,
@@ -279,7 +279,7 @@
             "start": 1050
           }
         ],
-        "value": "$"
+        "value": "USD"
       },
       "handling_fee": {
         "ranges": null,
@@ -322,19 +322,19 @@
       }
     }
   },
-  "markdown": "<figure type=\"ILLUSTRATION\">\n\n<description>The image features a stylized, light green cartoon robot standing on the left, next to a small, simple delivery truck on the right. The robot has a rounded head with eyes shaped like dollar signs ($), a circular badge on its chest containing the number '12', and its left arm is raised in a waving or gesturing motion. Above the robot's raised arm, there is a small green circle containing a white checkmark symbol. The overall aesthetic is clean and graphic, likely representing concepts like delivery, financial services, or automated shipping.</description></figure>\n\nDollarFulfillment\n\n\nInvoice 2071221\n\n\nWest Coast\n10450 N Airport Rd Hayden, ID 83835\nUnited States\nSupport@DollarFulfillment.com\n\n\nBill To Souhail Martesse 4 Rue des Écoles 28120, Nogent-sur-Eure FRANCE\n\nInvoice Number: 2071221 \nDate: 08/30/2021 \nDue Date: 08/30/2021 \n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Unit price</td><td>Amount</td></tr>\n<tr><td>Apple iPhone 12 Pro Max 256 GB Excellent Condition</td><td>3</td><td>$600.29</td><td>$1800.87</td></tr>\n<tr><td></td><td></td><td>Total</td><td>$1800.87</td></tr>\n</table>\n\n+1 855-441-7447\nSupport@DollarFulfillment.com\n10450 N Airport Rd\nHayden, ID 83835\n\n<!-- doc_id=parse-01kxyvcxzj6mmyz0qjtzxh58dy -->",
+  "markdown": "<figure type=\"ILLUSTRATION\">\n\n<description>The image features a stylized, light green cartoon robot standing on the left, next to a small, simple delivery truck on the right. The robot has a rounded head with eyes shaped like dollar signs ($), a circular badge on its chest containing the number '12', and its left arm is raised in a waving or gesturing motion. Above the robot's raised arm, there is a small green circle containing a white checkmark symbol. The overall aesthetic is clean and graphic, likely representing concepts like delivery, financial services, or automated shipping.</description></figure>\n\nDollarFulfillment\n\n\nInvoice 2071221\n\n\nWest Coast\n10450 N Airport Rd Hayden, ID 83835\nUnited States\nSupport@DollarFulfillment.com\n\n\nBill To Souhail Martesse 4 Rue des Écoles 28120, Nogent-sur-Eure FRANCE\n\nInvoice Number: 2071221 \nDate: 08/30/2021 \nDue Date: 08/30/2021 \n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Unit price</td><td>Amount</td></tr>\n<tr><td>Apple iPhone 12 Pro Max 256 GB Excellent Condition</td><td>3</td><td>$600.29</td><td>$1800.87</td></tr>\n<tr><td></td><td></td><td>Total</td><td>$1800.87</td></tr>\n</table>\n\n+1 855-441-7447\nSupport@DollarFulfillment.com\n10450 N Airport Rd\nHayden, ID 83835\n\n<!-- doc_id=parse-01ky0wqr8gwsc1mmrba42h4s5g -->",
   "metadata": {
-    "job_id": "extract-01kxyve287jssdbm0aas07z7jn",
+    "job_id": "extract-01ky0wrw4a3ed4y0xgf2n9sfcj",
     "model_version": "extract-20260710",
-    "duration_ms": 27863,
-    "doc_id": "parse-01kxyvcxzj6mmyz0qjtzxh58dy",
+    "duration_ms": 29416,
+    "doc_id": "parse-01ky0wqr8gwsc1mmrba42h4s5g",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 1285,
-    "output_extraction_chars": 3282,
+    "output_extraction_chars": 1057,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 3.6
+      "total_credits": 1.4
     }
   },
   "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -344,5 +344,5 @@
       "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyve287jssdbm0aas07z7jn"
+  "_extract_job_id": "extract-01ky0wrw4a3ed4y0xgf2n9sfcj"
 }

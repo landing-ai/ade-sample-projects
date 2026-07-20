@@ -387,19 +387,19 @@
       }
     }
   },
-  "markdown": "The Nussbaum Center for Entrepreneurship\n1451 S Elm Eugene Street\nBox 35\nGreensboro, NC 27406 US\nlhazlett@nussbaumcfe.com\nwww.nussbaumcfe.com\n\n\nINVOICE\nBILL TO\nLeo Charles Vincent\nAbaxys Tech, LLC\n\nSHIP TO\nLeo Charles Vincent\nAbaxys Tech, LLC\n\nINVOICE: 2197 \nDATE: 04/01/2023 \nTERMS: Due on receipt \nDUE DATE: 04/01/2023 \n\n<table>\n<tr><td>DATE</td><td>ACTIVITY</td><td>DESCRIPTION</td><td>QTY</td><td>RATE</td><td>AMOUNT</td></tr>\n<tr><td></td><td>Service Revenue</td><td>Suite 2009</td><td>1</td><td>271.00</td><td>271.00</td></tr>\n<tr><td></td><td>Internet</td><td>Suite 2009 Internet Fee</td><td>1</td><td>75.00</td><td>75.00</td></tr>\n<tr><td></td><td></td><td>SUBTOTAL</td><td></td><td></td><td>346.00</td></tr>\n<tr><td></td><td></td><td>TAX</td><td></td><td></td><td>0.00</td></tr>\n<tr><td></td><td></td><td>TOTAL</td><td></td><td></td><td>346.00</td></tr>\n<tr><td></td><td></td><td>BALANCE DUE</td><td></td><td></td><td>$346.00</td></tr>\n</table>\n\nPage 1 of 1\n\n<!-- doc_id=parse-01kxyvcssf475b7qdt5k0f9tj8 -->",
+  "markdown": "The Nussbaum Center for Entrepreneurship\n1451 S Elm Eugene Street\nBox 35\nGreensboro, NC 27406 US\nlhazlett@nussbaumcfe.com\nwww.nussbaumcfe.com\n\n\nINVOICE\nBILL TO\nLeo Charles Vincent\nAbaxys Tech, LLC\n\nSHIP TO\nLeo Charles Vincent\nAbaxys Tech, LLC\n\nINVOICE: 2197 \nDATE: 04/01/2023 \nTERMS: Due on receipt \nDUE DATE: 04/01/2023 \n\n<table>\n<tr><td>DATE</td><td>ACTIVITY</td><td>DESCRIPTION</td><td>QTY</td><td>RATE</td><td>AMOUNT</td></tr>\n<tr><td></td><td>Service Revenue</td><td>Suite 2009</td><td>1</td><td>271.00</td><td>271.00</td></tr>\n<tr><td></td><td>Internet</td><td>Suite 2009 Internet Fee</td><td>1</td><td>75.00</td><td>75.00</td></tr>\n<tr><td></td><td></td><td>SUBTOTAL</td><td></td><td></td><td>346.00</td></tr>\n<tr><td></td><td></td><td>TAX</td><td></td><td></td><td>0.00</td></tr>\n<tr><td></td><td></td><td>TOTAL</td><td></td><td></td><td>346.00</td></tr>\n<tr><td></td><td></td><td>BALANCE DUE</td><td></td><td></td><td>$346.00</td></tr>\n</table>\n\nPage 1 of 1\n\n<!-- doc_id=parse-01ky0wqmbwc7fndmfq8t2w8vmc -->",
   "metadata": {
-    "job_id": "extract-01kxyvdz9sagm55t62s6wh6sxg",
+    "job_id": "extract-01ky0wrs54z0es0bm1f2sa38hx",
     "model_version": "extract-20260710",
-    "duration_ms": 28241,
-    "doc_id": "parse-01kxyvcssf475b7qdt5k0f9tj8",
+    "duration_ms": 28549,
+    "doc_id": "parse-01ky0wqmbwc7fndmfq8t2w8vmc",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 1016,
-    "output_extraction_chars": 3716,
+    "output_extraction_chars": 1153,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 4.0
+      "total_credits": 1.4
     }
   },
   "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -409,5 +409,5 @@
       "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyvdz9sagm55t62s6wh6sxg"
+  "_extract_job_id": "extract-01ky0wrs54z0es0bm1f2sa38hx"
 }

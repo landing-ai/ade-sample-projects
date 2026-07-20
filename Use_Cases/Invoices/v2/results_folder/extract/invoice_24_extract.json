@@ -4,21 +4,21 @@
       "email": null,
       "gstin": null,
       "pan": null,
-      "phone": "+49.(0)69.695977.0",
+      "phone": "",
       "representative": "Rahim Lalji, Timothy Gavey",
       "supplier_address": "Airport/Terminal 1, Hugo-Eckener-Ring 15, 60549 Frankfurt am Main, Germany",
       "supplier_name": "Frankfurt Airport Marriott Hotel"
     },
     "customer_info": {
       "customer_email": null,
-      "sold_to_address": "227 N 5th Ave 98642 Ridgefield United States",
+      "sold_to_address": "Mrs Andrea Kropp\n227 N 5th Ave\n98642 Ridgefield\nUnited States",
       "sold_to_name": "Mrs Andrea Kropp"
     },
     "invoice_info": {
       "invoice_date": "2025-08-11",
       "invoice_date_raw": "11.08.2025",
       "invoice_number": "F 247120",
-      "order_date": null,
+      "order_date": "2025-08-10",
       "po_number": null,
       "status": "PAID"
     },
@@ -101,7 +101,7 @@
             "start": 2095
           }
         ],
-        "value": "+49.(0)69.695977.0"
+        "value": ""
       },
       "representative": {
         "ranges": [
@@ -139,6 +139,10 @@
       "sold_to_address": {
         "ranges": [
           {
+            "end": 61,
+            "start": 45
+          },
+          {
             "end": 75,
             "start": 62
           },
@@ -151,17 +155,13 @@
             "start": 93
           }
         ],
-        "value": "227 N 5th Ave 98642 Ridgefield United States"
+        "value": "Mrs Andrea Kropp\n227 N 5th Ave\n98642 Ridgefield\nUnited States"
       },
       "sold_to_name": {
         "ranges": [
           {
             "end": 61,
             "start": 45
-          },
-          {
-            "end": 328,
-            "start": 270
           }
         ],
         "value": "Mrs Andrea Kropp"
@@ -196,8 +196,13 @@
         "value": "F 247120"
       },
       "order_date": {
-        "ranges": null,
-        "value": null
+        "ranges": [
+          {
+            "end": 140,
+            "start": 122
+          }
+        ],
+        "value": "2025-08-10"
       },
       "po_number": {
         "ranges": null,
@@ -208,10 +213,6 @@
           {
             "end": 806,
             "start": 800
-          },
-          {
-            "end": 1240,
-            "start": 1232
           }
         ],
         "value": "PAID"
@@ -256,8 +257,8 @@
         "total": {
           "ranges": [
             {
-              "end": 972,
-              "start": 967
+              "end": 534,
+              "start": 529
             }
           ],
           "value": 15.0
@@ -305,8 +306,8 @@
         "total": {
           "ranges": [
             {
-              "end": 1109,
-              "start": 1105
+              "end": 612,
+              "start": 608
             }
           ],
           "value": 4.0
@@ -354,8 +355,8 @@
         "total": {
           "ranges": [
             {
-              "end": 1043,
-              "start": 1037
+              "end": 694,
+              "start": 688
             }
           ],
           "value": 162.0
@@ -401,7 +402,12 @@
           "value": null
         },
         "total": {
-          "ranges": null,
+          "ranges": [
+            {
+              "end": 806,
+              "start": 800
+            }
+          ],
           "value": 181.0
         },
         "unit_price": {
@@ -488,19 +494,19 @@
       }
     }
   },
-  "markdown": "[MARRIOTT LOGO]\nMARRIOTT\nFRANKFURT AIRPORT\n\n\nMrs Andrea Kropp\n227 N 5th Ave\n98642 Ridgefield\nUnited States\n\nRoom No. 6213\nArrival 10.08.2025\nDeparture 11.08.2025\nPage No. 1 of 1\nCashier No. 20732\nBonvoy No. XXXXX2914\nReservation No. 30106470\n\nINVOICE F 247120 \nA/R No. \nGuest Name: Mrs Andrea Kropp \n\nInvoice Date: 11.08.2025 \n\n<table>\n<tr><td>Date</td><td>Description</td><td>Reference</td><td>Debit EUR</td><td>Credit EUR</td></tr>\n<tr><td>10.08.25</td><td>The Eatery Dinner Beer<br>Standard VAT</td><td>CHECK# 1226762</td><td>15.00</td><td></td></tr>\n<tr><td>10.08.25</td><td>City Tax 0%</td><td></td><td>4.00</td><td></td></tr>\n<tr><td>10.08.25</td><td>Accommodation</td><td></td><td>162.00</td><td></td></tr>\n<tr><td>11.08.25</td><td>Visa Card - CP<br>XXXXXXXXXXXX3800</td><td></td><td></td><td>181.00</td></tr>\n</table>\n\n<table>\n<tr><td>VAT Detail</td><td>Net EUR</td><td>VAT EUR</td><td>Gross EUR</td></tr>\n<tr><td>VAT - 19%</td><td>12.61</td><td>2.39</td><td>15.00</td></tr>\n<tr><td>VAT - 7%</td><td>151.40</td><td>10.60</td><td>162.00</td></tr>\n<tr><td>VAT - 0%</td><td>4.00</td><td>0.00</td><td>4.00</td></tr>\n</table>\n\n<table>\n<tr><td>Total</td><td>181.00</td><td>181.00</td></tr>\n<tr><td>Balance to pay</td><td></td><td>0.00 EUR</td></tr>\n<tr><td>Total net</td><td></td><td>168.01 EUR</td></tr>\n<tr><td>Total gross</td><td></td><td>181.00 EUR</td></tr>\n</table>\n\nHändlernummer \nTransaktionsnummer: 48079725 \nGenehmigungscode: 09362D \nGenehmigter Betrag: 181.00 \n\nKreditkarten #: XXXXXXXXXXXXX3800 \nAblaufdatum: XX/XX \nErfassungsmethode: Manual \nTransaktionsbetrag: 181.00 \n\nIch autorisiere den ausgewiesenen Betrag.\n\n\nUnterschrift Karteninhaber/in\n\n\nTSE Signature\n\n<table>\n<tr><td>StartD</td><td>2025-08-11 10:42:56</td><td></td></tr>\n<tr><td>FinishD</td><td>2025-08-11 10:42:56</td><td></td></tr>\n<tr><td>Info</td><td>Sicherheitsmodul ausgefallen</td><td></td></tr>\n<tr><td>SQ</td><td>1933779</td><td></td></tr>\n<tr><td>TN</td><td>900643357</td><td></td></tr>\n</table>\n\n**Frankfurt Airport Marriott Hotel**\nAirport/Terminal 1, Hugo-Eckener-Ring 15, 60549 Frankfurt am Main, Germany\nTel: +49.(0)69.695977.0 | Fax: +49.(0)69.695977.4999 | FrankfurtAirportMarriott.com\n\n\nUniCredit Bank - HypoVereinsbank, 60003 Frankfurt am Main\nKTO 30002890, BLZ 50320191, IBAN: DE41503201910030002890, BIC: HYVEDEMM430\nLe-Be Hotel Gesellschaft am Flughafen Frankfurt/Main mbH   Geschäftsführer: Rahim Lalji, Timothy Gavey\nSitz der Gesellschaft: Amtsgericht Frankfurt a. M. HRB 91222   Finanzamt Frankfurt am Main III, St. Nr. 014 233 56727, Ust-ID: DE 163670796\n\n\nMARRIOTTHOTELS.COM\n\n<!-- doc_id=parse-01kxyvd5rce4h9zh9kd6aqp5xg -->",
+  "markdown": "[MARRIOTT LOGO]\nMARRIOTT\nFRANKFURT AIRPORT\n\n\nMrs Andrea Kropp\n227 N 5th Ave\n98642 Ridgefield\nUnited States\n\nRoom No. 6213\nArrival 10.08.2025\nDeparture 11.08.2025\nPage No. 1 of 1\nCashier No. 20732\nBonvoy No. XXXXX2914\nReservation No. 30106470\n\nINVOICE F 247120 \nA/R No. \nGuest Name: Mrs Andrea Kropp \n\nInvoice Date: 11.08.2025 \n\n<table>\n<tr><td>Date</td><td>Description</td><td>Reference</td><td>Debit EUR</td><td>Credit EUR</td></tr>\n<tr><td>10.08.25</td><td>The Eatery Dinner Beer<br>Standard VAT</td><td>CHECK# 1226762</td><td>15.00</td><td></td></tr>\n<tr><td>10.08.25</td><td>City Tax 0%</td><td></td><td>4.00</td><td></td></tr>\n<tr><td>10.08.25</td><td>Accommodation</td><td></td><td>162.00</td><td></td></tr>\n<tr><td>11.08.25</td><td>Visa Card - CP<br>XXXXXXXXXXXX3800</td><td></td><td></td><td>181.00</td></tr>\n</table>\n\n<table>\n<tr><td>VAT Detail</td><td>Net EUR</td><td>VAT EUR</td><td>Gross EUR</td></tr>\n<tr><td>VAT - 19%</td><td>12.61</td><td>2.39</td><td>15.00</td></tr>\n<tr><td>VAT - 7%</td><td>151.40</td><td>10.60</td><td>162.00</td></tr>\n<tr><td>VAT - 0%</td><td>4.00</td><td>0.00</td><td>4.00</td></tr>\n</table>\n\n<table>\n<tr><td>Total</td><td>181.00</td><td>181.00</td></tr>\n<tr><td>Balance to pay</td><td></td><td>0.00 EUR</td></tr>\n<tr><td>Total net</td><td></td><td>168.01 EUR</td></tr>\n<tr><td>Total gross</td><td></td><td>181.00 EUR</td></tr>\n</table>\n\nHändlernummer \nTransaktionsnummer: 48079725 \nGenehmigungscode: 09362D \nGenehmigter Betrag: 181.00 \n\nKreditkarten #: XXXXXXXXXXXXX3800 \nAblaufdatum: XX/XX \nErfassungsmethode: Manual \nTransaktionsbetrag: 181.00 \n\nIch autorisiere den ausgewiesenen Betrag.\n\n\nUnterschrift Karteninhaber/in\n\n\nTSE Signature\n\n<table>\n<tr><td>StartD</td><td>2025-08-11 10:42:56</td><td></td></tr>\n<tr><td>FinishD</td><td>2025-08-11 10:42:56</td><td></td></tr>\n<tr><td>Info</td><td>Sicherheitsmodul ausgefallen</td><td></td></tr>\n<tr><td>SQ</td><td>1933779</td><td></td></tr>\n<tr><td>TN</td><td>900643357</td><td></td></tr>\n</table>\n\n**Frankfurt Airport Marriott Hotel**\nAirport/Terminal 1, Hugo-Eckener-Ring 15, 60549 Frankfurt am Main, Germany\nTel: +49.(0)69.695977.0 | Fax: +49.(0)69.695977.4999 | FrankfurtAirportMarriott.com\n\n\nUniCredit Bank - HypoVereinsbank, 60003 Frankfurt am Main\nKTO 30002890, BLZ 50320191, IBAN: DE41503201910030002890, BIC: HYVEDEMM430\nLe-Be Hotel Gesellschaft am Flughafen Frankfurt/Main mbH   Geschäftsführer: Rahim Lalji, Timothy Gavey\nSitz der Gesellschaft: Amtsgericht Frankfurt a. M. HRB 91222   Finanzamt Frankfurt am Main III, St. Nr. 014 233 56727, Ust-ID: DE 163670796\n\n\nMARRIOTTHOTELS.COM\n\n<!-- doc_id=parse-01ky0wqzqdp2qm9ssx5gc7980c -->",
   "metadata": {
-    "job_id": "extract-01kxyve8ndydm3cr8zkft1cvz1",
+    "job_id": "extract-01ky0ws2rjr4nkqjbpp7kd9919",
     "model_version": "extract-20260710",
-    "duration_ms": 29273,
-    "doc_id": "parse-01kxyvd5rce4h9zh9kd6aqp5xg",
+    "duration_ms": 30401,
+    "doc_id": "parse-01ky0wqzqdp2qm9ssx5gc7980c",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 2627,
-    "output_extraction_chars": 4971,
+    "output_extraction_chars": 1542,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 5.5
+      "total_credits": 2.1
     }
   },
   "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -510,5 +516,5 @@
       "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyve8ndydm3cr8zkft1cvz1"
+  "_extract_job_id": "extract-01ky0ws2rjr4nkqjbpp7kd9919"
 }

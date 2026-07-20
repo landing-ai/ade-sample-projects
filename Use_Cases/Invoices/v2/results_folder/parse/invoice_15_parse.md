@@ -52,4 +52,4 @@ Have a great day! Thank. you for shopping on http://www.daraz.pk/
 
 **This is a computer generated copy. No signature is required**
 
-<!-- doc_id=parse-01kxyvd0c7g0zdjyhtaavhb0ee -->
+<!-- doc_id=parse-01ky0wqtqdk59w6y9q09f3xg29 -->

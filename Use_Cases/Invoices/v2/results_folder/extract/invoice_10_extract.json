@@ -27,101 +27,101 @@
         "amount": 322.0,
         "description": "Room Chrg - Premium Retail",
         "line_number": "1",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 322.0,
+        "quantity": 1,
+        "sku": null,
         "total": 322.0,
-        "unit_price": null
+        "unit_price": 322.0
       },
       {
         "amount": 4.0,
         "description": "City/Local Tax",
         "line_number": "2",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 4.0,
+        "quantity": 1,
+        "sku": null,
         "total": 4.0,
-        "unit_price": null
+        "unit_price": 4.0
       },
       {
         "amount": 38.8,
         "description": "Occupancy/Tourism",
         "line_number": "3",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 38.8,
+        "quantity": 1,
+        "sku": null,
         "total": 38.8,
-        "unit_price": null
+        "unit_price": 38.8
       },
       {
         "amount": 322.0,
         "description": "Room Chrg - Premium Retail",
         "line_number": "4",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 322.0,
+        "quantity": 1,
+        "sku": null,
         "total": 322.0,
-        "unit_price": null
+        "unit_price": 322.0
       },
       {
         "amount": 4.0,
         "description": "City/Local Tax",
         "line_number": "5",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 4.0,
+        "quantity": 1,
+        "sku": null,
         "total": 4.0,
-        "unit_price": null
+        "unit_price": 4.0
       },
       {
         "amount": 38.8,
         "description": "Occupancy/Tourism",
         "line_number": "6",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 38.8,
+        "quantity": 1,
+        "sku": null,
         "total": 38.8,
-        "unit_price": null
+        "unit_price": 38.8
       },
       {
         "amount": 265.0,
         "description": "Room Chrg - Premium Retail",
         "line_number": "7",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 265.0,
+        "quantity": 1,
+        "sku": null,
         "total": 265.0,
-        "unit_price": null
+        "unit_price": 265.0
       },
       {
         "amount": 4.0,
         "description": "City/Local Tax",
         "line_number": "8",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 4.0,
+        "quantity": 1,
+        "sku": null,
         "total": 4.0,
-        "unit_price": null
+        "unit_price": 4.0
       },
       {
         "amount": 31.93,
         "description": "Occupancy/Tourism",
         "line_number": "9",
-        "price": null,
-        "quantity": null,
-        "sku": "RT459",
+        "price": 31.93,
+        "quantity": 1,
+        "sku": null,
         "total": 31.93,
-        "unit_price": null
+        "unit_price": 31.93
       },
       {
         "amount": -1030.53,
         "description": "Visa-8366",
         "line_number": "10",
-        "price": null,
-        "quantity": null,
-        "sku": "VI",
+        "price": -1030.53,
+        "quantity": 1,
+        "sku": null,
         "total": -1030.53,
-        "unit_price": null
+        "unit_price": -1030.53
       }
     ],
     "order_details": {
@@ -288,21 +288,21 @@
           "value": "1"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 667,
+              "start": 661
+            }
+          ],
+          "value": 322.0
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 617,
-              "start": 612
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -314,8 +314,13 @@
           "value": 322.0
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 667,
+              "start": 661
+            }
+          ],
+          "value": 322.0
         }
       },
       {
@@ -342,21 +347,21 @@
           "value": "2"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 754,
+              "start": 750
+            }
+          ],
+          "value": 4.0
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 718,
-              "start": 713
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -368,8 +373,13 @@
           "value": 4.0
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 754,
+              "start": 750
+            }
+          ],
+          "value": 4.0
         }
       },
       {
@@ -396,21 +406,21 @@
           "value": "3"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 845,
+              "start": 840
+            }
+          ],
+          "value": 38.8
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 805,
-              "start": 800
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -422,8 +432,13 @@
           "value": 38.8
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 845,
+              "start": 840
+            }
+          ],
+          "value": 38.8
         }
       },
       {
@@ -450,21 +465,21 @@
           "value": "4"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 946,
+              "start": 940
+            }
+          ],
+          "value": 322.0
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 896,
-              "start": 891
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -476,8 +491,13 @@
           "value": 322.0
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 946,
+              "start": 940
+            }
+          ],
+          "value": 322.0
         }
       },
       {
@@ -504,21 +524,21 @@
           "value": "5"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1033,
+              "start": 1029
+            }
+          ],
+          "value": 4.0
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 997,
-              "start": 992
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -530,8 +550,13 @@
           "value": 4.0
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1033,
+              "start": 1029
+            }
+          ],
+          "value": 4.0
         }
       },
       {
@@ -558,21 +583,21 @@
           "value": "6"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1124,
+              "start": 1119
+            }
+          ],
+          "value": 38.8
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 1084,
-              "start": 1079
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -584,8 +609,13 @@
           "value": 38.8
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1124,
+              "start": 1119
+            }
+          ],
+          "value": 38.8
         }
       },
       {
@@ -612,21 +642,21 @@
           "value": "7"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1225,
+              "start": 1219
+            }
+          ],
+          "value": 265.0
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 1175,
-              "start": 1170
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -638,8 +668,13 @@
           "value": 265.0
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1225,
+              "start": 1219
+            }
+          ],
+          "value": 265.0
         }
       },
       {
@@ -666,21 +701,21 @@
           "value": "8"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1312,
+              "start": 1308
+            }
+          ],
+          "value": 4.0
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 1276,
-              "start": 1271
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -692,8 +727,13 @@
           "value": 4.0
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1312,
+              "start": 1308
+            }
+          ],
+          "value": 4.0
         }
       },
       {
@@ -720,21 +760,21 @@
           "value": "9"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1403,
+              "start": 1398
+            }
+          ],
+          "value": 31.93
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 1363,
-              "start": 1358
-            }
-          ],
-          "value": "RT459"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -746,8 +786,13 @@
           "value": 31.93
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1403,
+              "start": 1398
+            }
+          ],
+          "value": 31.93
         }
       },
       {
@@ -774,21 +819,21 @@
           "value": "10"
         },
         "price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1495,
+              "start": 1487
+            }
+          ],
+          "value": -1030.53
         },
         "quantity": {
           "ranges": null,
-          "value": null
+          "value": 1
         },
         "sku": {
-          "ranges": [
-            {
-              "end": 1451,
-              "start": 1449
-            }
-          ],
-          "value": "VI"
+          "ranges": null,
+          "value": null
         },
         "total": {
           "ranges": [
@@ -800,8 +845,13 @@
           "value": -1030.53
         },
         "unit_price": {
-          "ranges": null,
-          "value": null
+          "ranges": [
+            {
+              "end": 1495,
+              "start": 1487
+            }
+          ],
+          "value": -1030.53
         }
       }
     ],
@@ -911,19 +961,19 @@
       }
     }
   },
-  "markdown": "Sheraton Tucson Hotel & Suites\n5151 East Grant Rd\nTucson, AZ 85712\nUnited States\nTel: 520-323-6262 Fax: 520-325-2989\n\n\n[Logo of an S inside a circle]\nSHERATON\nEST. 1937\n\n\nANDREA KROPP\n\n\nPage Number: 1 Invoice Nbr: 1000110140 \nGuest Number: 1076955 \nFolio ID: A \nArrive Date: 15-MAY-25 13:22 \nDepart Date: 18-MAY-25 07:50 \nNo. Of Guest: 1 \nRoom Number: 459 \nMarriott Bonvoy Number: 2914 \n\nCopy Tax Invoice\n\n\nTax ID : 86-0832296\n\nSheraton Tucso TUSSI MAY-19-2025 03:00 9999\n\n<table>\n<tr><td>Date</td><td>Reference</td><td>Description</td><td>Charges (USD)</td><td>Credits (USD)</td></tr>\n<tr><td>15-MAY-25</td><td>RT459</td><td>Room Chrg - Premium Retail</td><td>322.00</td><td></td></tr>\n<tr><td>15-MAY-25</td><td>RT459</td><td>City/Local Tax</td><td>4.00</td><td></td></tr>\n<tr><td>15-MAY-25</td><td>RT459</td><td>Occupancy/Tourism</td><td>38.80</td><td></td></tr>\n<tr><td>16-MAY-25</td><td>RT459</td><td>Room Chrg - Premium Retail</td><td>322.00</td><td></td></tr>\n<tr><td>16-MAY-25</td><td>RT459</td><td>City/Local Tax</td><td>4.00</td><td></td></tr>\n<tr><td>16-MAY-25</td><td>RT459</td><td>Occupancy/Tourism</td><td>38.80</td><td></td></tr>\n<tr><td>17-MAY-25</td><td>RT459</td><td>Room Chrg - Premium Retail</td><td>265.00</td><td></td></tr>\n<tr><td>17-MAY-25</td><td>RT459</td><td>City/Local Tax</td><td>4.00</td><td></td></tr>\n<tr><td>17-MAY-25</td><td>RT459</td><td>Occupancy/Tourism</td><td>31.93</td><td></td></tr>\n<tr><td>18-MAY-25</td><td>VI</td><td>Visa-8366</td><td></td><td>-1030.53</td></tr>\n</table>\n\n***For Authorization Purpose Only***\n\n***For Authorization Purpose Only***\nxxxxxx8366\nDate: 15-MAY-25\nTime: 13:18\nCode: 07081D\nAuthorized: 1181.70\n\nApprove EMV Receipt for VI - 8366: Signature Captured\nApplication Label: VISA CREDIT   AID: A0000000031010\nARC: 00   IAD: 0601120360A000   TSI: 6800   TVR: 8000008000\n\n\n** Total: 1030.53, -1030.53 \n*** Balance: 0.00 \n\n[SIGNED]\n[ILLEGIBLE_SIGNATURE]\n\n\nI agreed to pay all room & incidental charges.\n\n\nContinued on the next page\n\n\n<!-- PAGE BREAK -->\n\nSheraton Tucson Hotel & Suites\n5151 East Grant Rd\nTucson, AZ 85712\nUnited States\nTel: 520-323-6262 Fax: 520-325-2989\n\n\n[S logo inside a circle]\nSHERATON\nEST. 1937\n\n\nANDREA KROPP\n\n\nPage Number : 2 Invoice Nbr : 1000110140 \nGuest Number : 1076955 \nFolio ID : A \nArrive Date : 15-MAY-25 13:22 \nDepart Date : 18-MAY-25 07:50 \nNo. Of Guest : 1 \nRoom Number : 459 \nMarriott Bonvoy Number : 2914 \n\nEXPENSE SUMMARY REPORT\n\n\nCurrency: USD \n\n<table>\n<tr><td>Date</td><td>RM &amp; TX</td><td>FD &amp; BV</td><td>TEL</td><td>Other</td><td>Total</td><td>Payment</td></tr>\n<tr><td>05-15-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>364.80</td><td>364.80</td><td>0.00</td></tr>\n<tr><td>05-16-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>364.80</td><td>364.80</td><td>0.00</td></tr>\n<tr><td>05-17-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>300.93</td><td>300.93</td><td>0.00</td></tr>\n<tr><td>05-18-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>-1030.53</td></tr>\n<tr><td>Total</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1030.53</td><td>1030.53</td><td>-1030.53</td></tr>\n</table>\n\n\n Signature________________\n\nBring the Sheraton sleep experience home with you. Visit SheratonStore.com.\n\n<!-- doc_id=parse-01kxyvcxcfme0tftn3nvxpm8g3 -->",
+  "markdown": "Sheraton Tucson Hotel & Suites\n5151 East Grant Rd\nTucson, AZ 85712\nUnited States\nTel: 520-323-6262 Fax: 520-325-2989\n\n\n[Logo of an S inside a circle]\nSHERATON\nEST. 1937\n\n\nANDREA KROPP\n\n\nPage Number: 1 Invoice Nbr: 1000110140 \nGuest Number: 1076955 \nFolio ID: A \nArrive Date: 15-MAY-25 13:22 \nDepart Date: 18-MAY-25 07:50 \nNo. Of Guest: 1 \nRoom Number: 459 \nMarriott Bonvoy Number: 2914 \n\nCopy Tax Invoice\n\n\nTax ID : 86-0832296\n\nSheraton Tucso TUSSI MAY-19-2025 03:00 9999\n\n<table>\n<tr><td>Date</td><td>Reference</td><td>Description</td><td>Charges (USD)</td><td>Credits (USD)</td></tr>\n<tr><td>15-MAY-25</td><td>RT459</td><td>Room Chrg - Premium Retail</td><td>322.00</td><td></td></tr>\n<tr><td>15-MAY-25</td><td>RT459</td><td>City/Local Tax</td><td>4.00</td><td></td></tr>\n<tr><td>15-MAY-25</td><td>RT459</td><td>Occupancy/Tourism</td><td>38.80</td><td></td></tr>\n<tr><td>16-MAY-25</td><td>RT459</td><td>Room Chrg - Premium Retail</td><td>322.00</td><td></td></tr>\n<tr><td>16-MAY-25</td><td>RT459</td><td>City/Local Tax</td><td>4.00</td><td></td></tr>\n<tr><td>16-MAY-25</td><td>RT459</td><td>Occupancy/Tourism</td><td>38.80</td><td></td></tr>\n<tr><td>17-MAY-25</td><td>RT459</td><td>Room Chrg - Premium Retail</td><td>265.00</td><td></td></tr>\n<tr><td>17-MAY-25</td><td>RT459</td><td>City/Local Tax</td><td>4.00</td><td></td></tr>\n<tr><td>17-MAY-25</td><td>RT459</td><td>Occupancy/Tourism</td><td>31.93</td><td></td></tr>\n<tr><td>18-MAY-25</td><td>VI</td><td>Visa-8366</td><td></td><td>-1030.53</td></tr>\n</table>\n\n***For Authorization Purpose Only***\n\n***For Authorization Purpose Only***\nxxxxxx8366\nDate: 15-MAY-25\nTime: 13:18\nCode: 07081D\nAuthorized: 1181.70\n\nApprove EMV Receipt for VI - 8366: Signature Captured\nApplication Label: VISA CREDIT   AID: A0000000031010\nARC: 00   IAD: 0601120360A000   TSI: 6800   TVR: 8000008000\n\n\n** Total: 1030.53, -1030.53 \n*** Balance: 0.00 \n\n[SIGNED]\n[ILLEGIBLE_SIGNATURE]\n\n\nI agreed to pay all room & incidental charges.\n\n\nContinued on the next page\n\n\n<!-- PAGE BREAK -->\n\nSheraton Tucson Hotel & Suites\n5151 East Grant Rd\nTucson, AZ 85712\nUnited States\nTel: 520-323-6262 Fax: 520-325-2989\n\n\n[S logo inside a circle]\nSHERATON\nEST. 1937\n\n\nANDREA KROPP\n\n\nPage Number : 2 Invoice Nbr : 1000110140 \nGuest Number : 1076955 \nFolio ID : A \nArrive Date : 15-MAY-25 13:22 \nDepart Date : 18-MAY-25 07:50 \nNo. Of Guest : 1 \nRoom Number : 459 \nMarriott Bonvoy Number : 2914 \n\nEXPENSE SUMMARY REPORT\n\n\nCurrency: USD \n\n<table>\n<tr><td>Date</td><td>RM &amp; TX</td><td>FD &amp; BV</td><td>TEL</td><td>Other</td><td>Total</td><td>Payment</td></tr>\n<tr><td>05-15-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>364.80</td><td>364.80</td><td>0.00</td></tr>\n<tr><td>05-16-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>364.80</td><td>364.80</td><td>0.00</td></tr>\n<tr><td>05-17-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>300.93</td><td>300.93</td><td>0.00</td></tr>\n<tr><td>05-18-2025</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>-1030.53</td></tr>\n<tr><td>Total</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1030.53</td><td>1030.53</td><td>-1030.53</td></tr>\n</table>\n\n\n Signature________________\n\nBring the Sheraton sleep experience home with you. Visit SheratonStore.com.\n\n<!-- doc_id=parse-01ky0wqqp94zesc39091jw3err -->",
   "metadata": {
-    "job_id": "extract-01kxyve1qvydqbfm1br83mte5w",
+    "job_id": "extract-01ky0wrvkvg62nf06gahp97btg",
     "model_version": "extract-20260710",
-    "duration_ms": 30635,
-    "doc_id": "parse-01kxyvcxcfme0tftn3nvxpm8g3",
+    "duration_ms": 31991,
+    "doc_id": "parse-01ky0wqqp94zesc39091jw3err",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 3293,
-    "output_extraction_chars": 8289,
+    "output_extraction_chars": 2348,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 9.0
+      "total_credits": 3.1
     }
   },
   "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -933,5 +983,5 @@
       "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyve1qvydqbfm1br83mte5w"
+  "_extract_job_id": "extract-01ky0wrvkvg62nf06gahp97btg"
 }
