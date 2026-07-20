@@ -1,0 +1,374 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": null,
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-336-862-5235",
+      "representative": null,
+      "supplier_address": "4917 Old Randleman Rd Greensboro, North Carolina 27406 United States",
+      "supplier_name": "Roofing Renovations INC"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "1901 Lendew St Suite 7 Greensboro, NC 27408",
+      "sold_to_name": "Real Property Management"
+    },
+    "invoice_info": {
+      "invoice_date": "2020-01-29",
+      "invoice_date_raw": "01/29/2020",
+      "invoice_number": "0001131",
+      "order_date": null,
+      "po_number": null,
+      "status": "UNPAID"
+    },
+    "line_items": [
+      {
+        "amount": 2650.0,
+        "description": "Replace HVAC Unit.",
+        "line_number": "1",
+        "price": 2650.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 2650.0,
+        "unit_price": 2650.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Due on Receipt",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": "T8EW3A3"
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 2650.0,
+      "tax": 0.0,
+      "total_due": 2650.0,
+      "total_due_raw": "$2,650.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": null,
+        "value": null
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 69,
+            "start": 57
+          }
+        ],
+        "value": "+1-336-862-5235"
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 93,
+            "start": 72
+          },
+          {
+            "end": 120,
+            "start": 94
+          },
+          {
+            "end": 126,
+            "start": 121
+          },
+          {
+            "end": 140,
+            "start": 127
+          }
+        ],
+        "value": "4917 Old Randleman Rd Greensboro, North Carolina 27406 United States"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 56,
+            "start": 33
+          }
+        ],
+        "value": "Roofing Renovations INC"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 200,
+            "start": 178
+          },
+          {
+            "end": 215,
+            "start": 201
+          },
+          {
+            "end": 221,
+            "start": 216
+          }
+        ],
+        "value": "1901 Lendew St Suite 7 Greensboro, NC 27408"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 177,
+            "start": 153
+          }
+        ],
+        "value": "Real Property Management"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 247,
+            "start": 237
+          }
+        ],
+        "value": "2020-01-29"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 247,
+            "start": 237
+          }
+        ],
+        "value": "01/29/2020"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 271,
+            "start": 264
+          }
+        ],
+        "value": "0001131"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 812,
+            "start": 803
+          }
+        ],
+        "value": "UNPAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 506,
+              "start": 497
+            }
+          ],
+          "value": 2650.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 460,
+              "start": 442
+            }
+          ],
+          "value": "Replace HVAC Unit."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 478,
+              "start": 469
+            }
+          ],
+          "value": 2650.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 488,
+              "start": 487
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 506,
+              "start": 497
+            }
+          ],
+          "value": 2650.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 478,
+              "start": 469
+            }
+          ],
+          "value": 2650.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 311,
+            "start": 303
+          },
+          {
+            "end": 322,
+            "start": 312
+          }
+        ],
+        "value": "Due on Receipt"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": [
+          {
+            "end": 848,
+            "start": 840
+          }
+        ],
+        "value": "T8EW3A3"
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 785,
+            "start": 769
+          },
+          {
+            "end": 290,
+            "start": 273
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 568,
+            "start": 560
+          }
+        ],
+        "value": 2650.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 621,
+            "start": 617
+          }
+        ],
+        "value": 0.0
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 680,
+            "start": 672
+          }
+        ],
+        "value": 2650.0
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 812,
+            "start": 803
+          },
+          {
+            "end": 301,
+            "start": 291
+          }
+        ],
+        "value": "$2,650.00"
+      }
+    }
+  },
+  "markdown": "![RR logo] ROOFING-RENOVATIONS\n\n\nRoofing Renovations INC\n336-862-5235\n\n\n4917 Old Randleman Rd\nGreensboro, North Carolina\n27406\nUnited States\n\n\nBilled To\nReal Property Management\n1901 Lendew St Suite 7\nGreensboro, NC\n27408\n\nDate of Issue\n01/29/2020\n\nInvoice Number\n0001131\n\nAmount Due (USD) \n$2,650.00 \n\nDue Date\n01/29/2020\n\nReference\n7783 Newhaven Dr\n\n<table>\n<tr><td>Description</td><td>Rate</td><td>Qty</td><td>Line Total</td></tr>\n<tr><td>Replace HVAC Unit.</td><td>$2,650.00</td><td>1</td><td>$2,650.00</td></tr>\n<tr><td></td><td>Subtotal</td><td></td><td>2,650.00</td></tr>\n<tr><td></td><td>Tax</td><td></td><td>0.00</td></tr>\n<tr><td></td><td>Total</td><td></td><td>2,650.00</td></tr>\n<tr><td></td><td>Amount Paid</td><td></td><td>0.00</td></tr>\n<tr><td></td><td>Amount Due (USD)</td><td></td><td>$2,650.00</td></tr>\n</table>\n\nNotes \nT8EW3A3 \n\nTerms\nThank you for trusting us with all your home improvement needs.\n\n<!-- doc_id=parse-01kxyvcqer68813wm0x18dwr79 -->",
+  "metadata": {
+    "job_id": "extract-01kxyvdxrwvn05nehtxstk9j8g",
+    "model_version": "extract-20260710",
+    "duration_ms": 32019,
+    "doc_id": "parse-01kxyvcqer68813wm0x18dwr79",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 969,
+    "output_extraction_chars": 3257,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.5
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyvdxrwvn05nehtxstk9j8g"
+}

@@ -1,0 +1,605 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "steve@brainlesstees.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-360-721-6459",
+      "representative": "Stephen Miller",
+      "supplier_address": "12401 NE 60th Way\nUnit A8\nVancouver, WA 98682",
+      "supplier_name": "Brainless Tees, Inc."
+    },
+    "customer_info": {
+      "customer_email": "andrea.kropp@ridgefieldsd.org",
+      "sold_to_address": null,
+      "sold_to_name": "Andrea Kropp\nRidgefield Tennis"
+    },
+    "invoice_info": {
+      "invoice_date": "2018-08-21",
+      "invoice_date_raw": "8/21/2018",
+      "invoice_number": "1009748",
+      "order_date": null,
+      "po_number": null,
+      "status": "Paid"
+    },
+    "line_items": [
+      {
+        "amount": 41.85,
+        "description": "Sport-Tek Competitor Tee, SKU ST350",
+        "line_number": "1",
+        "price": 13.95,
+        "quantity": 3,
+        "sku": "ST350",
+        "total": 41.85,
+        "unit_price": 13.95
+      },
+      {
+        "amount": 167.4,
+        "description": "Sport-Tek Competitor Tee, SKU ST350",
+        "line_number": "2",
+        "price": 13.95,
+        "quantity": 12,
+        "sku": "ST350",
+        "total": 167.4,
+        "unit_price": 13.95
+      },
+      {
+        "amount": 55.8,
+        "description": "Sport-Tek Competitor Tee, SKU ST350",
+        "line_number": "3",
+        "price": 13.95,
+        "quantity": 4,
+        "sku": "ST350",
+        "total": 55.8,
+        "unit_price": 13.95
+      },
+      {
+        "amount": 13.95,
+        "description": "Sport-Tek Competitor Tee, SKU ST350",
+        "line_number": "4",
+        "price": 13.95,
+        "quantity": 1,
+        "sku": "ST350",
+        "total": 13.95,
+        "unit_price": 13.95
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Payment is due upon approval.",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 279.0,
+      "tax": 23.44,
+      "total_due": 302.44,
+      "total_due_raw": "$0.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 235,
+            "start": 212
+          }
+        ],
+        "value": "steve@brainlesstees.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 211,
+            "start": 199
+          }
+        ],
+        "value": "+1-360-721-6459"
+      },
+      "representative": {
+        "ranges": [
+          {
+            "end": 250,
+            "start": 236
+          }
+        ],
+        "value": "Stephen Miller"
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 170,
+            "start": 153
+          },
+          {
+            "end": 178,
+            "start": 171
+          },
+          {
+            "end": 198,
+            "start": 179
+          }
+        ],
+        "value": "12401 NE 60th Way\nUnit A8\nVancouver, WA 98682"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 152,
+            "start": 132
+          }
+        ],
+        "value": "Brainless Tees, Inc."
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": [
+          {
+            "end": 314,
+            "start": 285
+          }
+        ],
+        "value": "andrea.kropp@ridgefieldsd.org"
+      },
+      "sold_to_address": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 266,
+            "start": 254
+          },
+          {
+            "end": 284,
+            "start": 267
+          }
+        ],
+        "value": "Andrea Kropp\nRidgefield Tennis"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 53,
+            "start": 31
+          }
+        ],
+        "value": "2018-08-21"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 53,
+            "start": 31
+          }
+        ],
+        "value": "8/21/2018"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 30,
+            "start": 12
+          }
+        ],
+        "value": "1009748"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 1230,
+            "start": 1226
+          },
+          {
+            "end": 124,
+            "start": 120
+          }
+        ],
+        "value": "Paid"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 651,
+              "start": 645
+            }
+          ],
+          "value": 41.85
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 586,
+              "start": 551
+            }
+          ],
+          "value": "Sport-Tek Competitor Tee, SKU ST350"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 636,
+              "start": 630
+            }
+          ],
+          "value": 13.95
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 611,
+              "start": 610
+            }
+          ],
+          "value": 3
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 586,
+              "start": 551
+            }
+          ],
+          "value": "ST350"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 651,
+              "start": 645
+            }
+          ],
+          "value": 41.85
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 636,
+              "start": 630
+            }
+          ],
+          "value": 13.95
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 772,
+              "start": 765
+            }
+          ],
+          "value": 167.4
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 705,
+              "start": 670
+            }
+          ],
+          "value": "Sport-Tek Competitor Tee, SKU ST350"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "2"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 756,
+              "start": 750
+            }
+          ],
+          "value": 13.95
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 731,
+              "start": 729
+            }
+          ],
+          "value": 12
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 705,
+              "start": 670
+            }
+          ],
+          "value": "ST350"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 772,
+              "start": 765
+            }
+          ],
+          "value": 167.4
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 756,
+              "start": 750
+            }
+          ],
+          "value": 13.95
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 891,
+              "start": 885
+            }
+          ],
+          "value": 55.8
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 826,
+              "start": 791
+            }
+          ],
+          "value": "Sport-Tek Competitor Tee, SKU ST350"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "3"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 876,
+              "start": 870
+            }
+          ],
+          "value": 13.95
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 851,
+              "start": 850
+            }
+          ],
+          "value": 4
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 826,
+              "start": 791
+            }
+          ],
+          "value": "ST350"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 891,
+              "start": 885
+            }
+          ],
+          "value": 55.8
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 876,
+              "start": 870
+            }
+          ],
+          "value": 13.95
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1011,
+              "start": 1005
+            }
+          ],
+          "value": 13.95
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 945,
+              "start": 910
+            }
+          ],
+          "value": "Sport-Tek Competitor Tee, SKU ST350"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "4"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 996,
+              "start": 990
+            }
+          ],
+          "value": 13.95
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 970,
+              "start": 969
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 945,
+              "start": 910
+            }
+          ],
+          "value": "ST350"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1011,
+              "start": 1005
+            }
+          ],
+          "value": 13.95
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 996,
+              "start": 990
+            }
+          ],
+          "value": 13.95
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 1352,
+            "start": 1293
+          }
+        ],
+        "value": "Payment is due upon approval."
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 1281,
+            "start": 1268
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1171,
+            "start": 1154
+          }
+        ],
+        "value": 279.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1171,
+            "start": 1154
+          }
+        ],
+        "value": 23.44
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1246,
+            "start": 1239
+          }
+        ],
+        "value": 302.44
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1281,
+            "start": 1268
+          }
+        ],
+        "value": "$0.00"
+      }
+    }
+  },
+  "markdown": "BT [LOGO]\n\n\nInvoice # 1009748 \nIssued date 8/21/2018 \nDue Date 9/5/2018 \nSubject RHS Tennis Practice Shirts \n\n[STAMPED]\nPaid\n\n\nFROM\nBrainless Tees, Inc.\n12401 NE 60th Way\nUnit A8\nVancouver, WA 98682\n360-721-6459\nsteve@brainlesstees.com\nStephen Miller\nTO\nAndrea Kropp\nRidgefield Tennis\nandrea.kropp@ridgefieldsd.org\n\nITEM OVERVIEW\n\n<table>\n<tr><td>1009748 Ridgefield Tennis Seps</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>ITEM DESCRIPTION</td><td>COLOR</td><td>QTY</td><td>SIZE</td><td>UNIT PRICE</td><td>SUBTOTAL</td></tr>\n<tr><td>Sport-Tek Competitor Tee, SKU ST350</td><td>Silver</td><td>3</td><td>S</td><td>$13.95</td><td>$41.85</td></tr>\n<tr><td>Sport-Tek Competitor Tee, SKU ST350</td><td>Silver</td><td>12</td><td>M</td><td>$13.95</td><td>$167.40</td></tr>\n<tr><td>Sport-Tek Competitor Tee, SKU ST350</td><td>Silver</td><td>4</td><td>L</td><td>$13.95</td><td>$55.80</td></tr>\n<tr><td>Sport-Tek Competitor Tee, SKU ST350</td><td>Silver</td><td>1</td><td>XL</td><td>$13.95</td><td>$13.95</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Subtotal<br>Tax</td><td>$279.00<br>$23.44</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Paid</td><td>$302.44</td></tr>\n</table>\n\n\n Total: $0.00\n\n**TERMS**\nThanks you for your business! Payment is due upon approval.\n\n\n**NOTES**\nemail andrea.kropp@ridgefieldsd.org when complete\n\n<!-- doc_id=parse-01kxyvd4dzrg8h4awgf74a60jn -->",
+  "metadata": {
+    "job_id": "extract-01kxyve7nwe0cxkqyjt1sy9cyj",
+    "model_version": "extract-20260710",
+    "duration_ms": 26327,
+    "doc_id": "parse-01kxyvd4dzrg8h4awgf74a60jn",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1464,
+    "output_extraction_chars": 5167,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 5.5
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyve7nwe0cxkqyjt1sy9cyj"
+}

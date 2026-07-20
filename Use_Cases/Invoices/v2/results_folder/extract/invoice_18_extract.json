@@ -1,0 +1,441 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "accounting@howardct.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-866-695-8195",
+      "representative": null,
+      "supplier_address": "1925 Holmes Rd #400 Elgin IL 60123",
+      "supplier_name": "HOWARD CUSTOM TRANSFERS, INC."
+    },
+    "customer_info": {
+      "customer_email": "pololifeshop@gmail.com",
+      "sold_to_address": "227 N 5th Avenue Ridgefield, WA 98642",
+      "sold_to_name": "Meridian Venture Services, LLC"
+    },
+    "invoice_info": {
+      "invoice_date": null,
+      "invoice_date_raw": null,
+      "invoice_number": "00000116271",
+      "order_date": null,
+      "po_number": null,
+      "status": "PAID"
+    },
+    "line_items": [
+      {
+        "amount": 144.0,
+        "description": "Polo Bear Gang **NEW ACCOUNT**",
+        "line_number": "02102007-DP",
+        "price": 6.0,
+        "quantity": 24,
+        "sku": null,
+        "total": 144.0,
+        "unit_price": 6.0
+      },
+      {
+        "amount": 126.0,
+        "description": "Water polo stamps **NEW ACCOUNT**",
+        "line_number": "02102008-DP",
+        "price": 5.25,
+        "quantity": 24,
+        "sku": null,
+        "total": 126.0,
+        "unit_price": 5.25
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Prepay",
+      "ship_date": "2020-02-10",
+      "ship_via": "Ground",
+      "tracking_number": "1Z77Y5Y70365096016"
+    },
+    "totals_summary": {
+      "currency": "$",
+      "handling_fee": 3.0,
+      "shipping": 24.31,
+      "subtotal": 270.0,
+      "tax": null,
+      "total_due": 247.31,
+      "total_due_raw": "$0.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 2255,
+            "start": 2190
+          }
+        ],
+        "value": "accounting@howardct.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 2189,
+            "start": 2059
+          }
+        ],
+        "value": "+1-866-695-8195"
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 108,
+            "start": 89
+          },
+          {
+            "end": 123,
+            "start": 109
+          }
+        ],
+        "value": "1925 Holmes Rd #400 Elgin IL 60123"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 15,
+            "start": 9
+          },
+          {
+            "end": 38,
+            "start": 16
+          }
+        ],
+        "value": "HOWARD CUSTOM TRANSFERS, INC."
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": [
+          {
+            "end": 510,
+            "start": 480
+          }
+        ],
+        "value": "pololifeshop@gmail.com"
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 256,
+            "start": 218
+          },
+          {
+            "end": 217,
+            "start": 192
+          }
+        ],
+        "value": "227 N 5th Avenue Ridgefield, WA 98642"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 191,
+            "start": 152
+          }
+        ],
+        "value": "Meridian Venture Services, LLC"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": null,
+        "value": null
+      },
+      "invoice_date_raw": {
+        "ranges": null,
+        "value": null
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 87,
+            "start": 67
+          }
+        ],
+        "value": "00000116271"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 55,
+            "start": 51
+          }
+        ],
+        "value": "PAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 997,
+              "start": 990
+            }
+          ],
+          "value": 144.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 888,
+              "start": 858
+            }
+          ],
+          "value": "Polo Bear Gang **NEW ACCOUNT**"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 810,
+              "start": 799
+            }
+          ],
+          "value": "02102007-DP"
+        },
+        "price": {
+          "ranges": null,
+          "value": 6.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 932,
+              "start": 930
+            }
+          ],
+          "value": 24
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 997,
+              "start": 990
+            }
+          ],
+          "value": 144.0
+        },
+        "unit_price": {
+          "ranges": null,
+          "value": 6.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1220,
+              "start": 1213
+            }
+          ],
+          "value": 126.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1108,
+              "start": 1075
+            }
+          ],
+          "value": "Water polo stamps **NEW ACCOUNT**"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1027,
+              "start": 1016
+            }
+          ],
+          "value": "02102008-DP"
+        },
+        "price": {
+          "ranges": null,
+          "value": 5.25
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1155,
+              "start": 1153
+            }
+          ],
+          "value": 24
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1220,
+              "start": 1213
+            }
+          ],
+          "value": 126.0
+        },
+        "unit_price": {
+          "ranges": null,
+          "value": 5.25
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 357,
+            "start": 344
+          }
+        ],
+        "value": "Prepay"
+      },
+      "ship_date": {
+        "ranges": [
+          {
+            "end": 981,
+            "start": 972
+          },
+          {
+            "end": 532,
+            "start": 511
+          }
+        ],
+        "value": "2020-02-10"
+      },
+      "ship_via": {
+        "ranges": [
+          {
+            "end": 963,
+            "start": 957
+          },
+          {
+            "end": 550,
+            "start": 533
+          }
+        ],
+        "value": "Ground"
+      },
+      "tracking_number": {
+        "ranges": [
+          {
+            "end": 586,
+            "start": 551
+          }
+        ],
+        "value": "1Z77Y5Y70365096016"
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 2038,
+            "start": 2033
+          }
+        ],
+        "value": "$"
+      },
+      "handling_fee": {
+        "ranges": [
+          {
+            "end": 1681,
+            "start": 1676
+          }
+        ],
+        "value": 3.0
+      },
+      "shipping": {
+        "ranges": [
+          {
+            "end": 1563,
+            "start": 1557
+          }
+        ],
+        "value": 24.31
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1327,
+            "start": 1320
+          }
+        ],
+        "value": 270.0
+      },
+      "tax": {
+        "ranges": null,
+        "value": null
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1800,
+            "start": 1793
+          }
+        ],
+        "value": 247.31
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 2038,
+            "start": 2033
+          }
+        ],
+        "value": "$0.00"
+      }
+    }
+  },
+  "markdown": "[h logo]\nHOWARD\nCUSTOM TRANSFERS, INC.\n\n\n[STAMPED]\nPAID\n\n\n*116271*\nInvoice: 00000116271\n\n1925 Holmes Rd #400\nElgin IL 60123\n\n\n### Customer Information\n\nSold To: Meridian Venture Services, LLC\nAddress: 227 N 5th Avenue\nCity, State, ZIP: Ridgefield, WA 98642\nContact: Andrea Kropp\nOffice Phone: 360-624-2355\nHome Phone: [None]\nCell Phone: [None]\nTerms: Prepay\n\nShip To: Meridian Venture Services, LLC \nAddress: 227 N 5th Avenue \nCity, State, ZIP: Ridgefield, WA 98642 \nFax: [None] \nEmail: pololifeshop@gmail.com \nShip Date: 2/10/2020 \nShipping: Ground \nUPS Tracking #: 1Z77Y5Y70365096016 \n\nOrder Information\n\n<table>\n<tr><td>Order ID</td><td>Customer</td><td>Description</td><td>Product Line</td><td>Colors</td><td>Qty</td><td>Status</td><td>Shipping</td><td>Ship Date</td><td>Total</td></tr>\n<tr><td>02102007-DP</td><td>Meridian Venture Services, LLC</td><td>Polo Bear Gang **NEW ACCOUNT**</td><td>Heat Transfers</td><td>2</td><td>24</td><td>Shipped</td><td>Ground</td><td>2/10/2020</td><td>$144.00</td></tr>\n<tr><td>02102008-DP</td><td>Meridian Venture Services, LLC</td><td>Water polo stamps **NEW ACCOUNT**</td><td>Digital Transfers</td><td>0</td><td>24</td><td>Shipped</td><td>Ground</td><td>2/10/2020</td><td>$126.00</td></tr>\n<tr><td>Total:</td><td colspan=\"3\"></td><td></td><td></td><td></td><td></td><td></td><td>$270.00</td></tr>\n<tr><td>Discount:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>($50.00)</td></tr>\n<tr><td>Freight Cost:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>$24.31</td></tr>\n<tr><td>Handling Fee:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>$3.00</td></tr>\n<tr><td>Grand Total:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>$247.31</td></tr>\n<tr><td>Amount Paid:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>($247.31)</td></tr>\n<tr><td>Balance Due:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>$0.00</td></tr>\n</table>\n\nPlease remit payment per your terms. If you have any questions or concerns please feel free to contact us at (866)695-8195 or send\nan email to accounting@howardct.com. Thank you for your business!\n\n<!-- doc_id=parse-01kxyvd27xn0cm2ppp89mphq3g -->",
+  "metadata": {
+    "job_id": "extract-01kxyve5tcw118202k4kjfe1z6",
+    "model_version": "extract-20260710",
+    "duration_ms": 26040,
+    "doc_id": "parse-01kxyvd27xn0cm2ppp89mphq3g",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 2305,
+    "output_extraction_chars": 3923,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 4.4
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyve5tcw118202k4kjfe1z6"
+}

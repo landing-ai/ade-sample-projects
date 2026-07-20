@@ -1,0 +1,348 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "Support@DollarFulfillment.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-855-441-7447",
+      "representative": null,
+      "supplier_address": "10450 N Airport Rd Hayden, ID 83835 United States",
+      "supplier_name": "DollarFulfillment"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "4 Rue des Écoles 28120, Nogent-sur-Eure FRANCE",
+      "sold_to_name": "Souhail Martesse"
+    },
+    "invoice_info": {
+      "invoice_date": "2021-08-30",
+      "invoice_date_raw": "08/30/2021",
+      "invoice_number": "2071221",
+      "order_date": null,
+      "po_number": null,
+      "status": null
+    },
+    "line_items": [
+      {
+        "amount": 1800.87,
+        "description": "Apple iPhone 12 Pro Max 256 GB Excellent Condition",
+        "line_number": "1",
+        "price": 600.29,
+        "quantity": 3,
+        "sku": null,
+        "total": 1800.87,
+        "unit_price": 600.29
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Due Date: 08/30/2021",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "$",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 1800.87,
+      "tax": null,
+      "total_due": 1800.87,
+      "total_due_raw": "$1800.87"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 742,
+            "start": 713
+          },
+          {
+            "end": 1199,
+            "start": 1170
+          }
+        ],
+        "value": "Support@DollarFulfillment.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 1169,
+            "start": 1154
+          }
+        ],
+        "value": "+1-855-441-7447"
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 698,
+            "start": 663
+          },
+          {
+            "end": 712,
+            "start": 699
+          },
+          {
+            "end": 1285,
+            "start": 1152
+          }
+        ],
+        "value": "10450 N Airport Rd Hayden, ID 83835 United States"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 631,
+            "start": 614
+          }
+        ],
+        "value": "DollarFulfillment"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 816,
+            "start": 745
+          }
+        ],
+        "value": "4 Rue des Écoles 28120, Nogent-sur-Eure FRANCE"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 816,
+            "start": 745
+          }
+        ],
+        "value": "Souhail Martesse"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 860,
+            "start": 843
+          }
+        ],
+        "value": "2021-08-30"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 860,
+            "start": 843
+          }
+        ],
+        "value": "08/30/2021"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 649,
+            "start": 634
+          },
+          {
+            "end": 842,
+            "start": 818
+          }
+        ],
+        "value": "2071221"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1074,
+              "start": 1066
+            }
+          ],
+          "value": 1800.87
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1031,
+              "start": 981
+            }
+          ],
+          "value": "Apple iPhone 12 Pro Max 256 GB Excellent Condition"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1057,
+              "start": 1050
+            }
+          ],
+          "value": 600.29
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1041,
+              "start": 1040
+            }
+          ],
+          "value": 3
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1074,
+              "start": 1066
+            }
+          ],
+          "value": 1800.87
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1057,
+              "start": 1050
+            }
+          ],
+          "value": 600.29
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 882,
+            "start": 861
+          }
+        ],
+        "value": "Due Date: 08/30/2021"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 1057,
+            "start": 1050
+          }
+        ],
+        "value": "$"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1074,
+            "start": 1066
+          }
+        ],
+        "value": 1800.87
+      },
+      "tax": {
+        "ranges": null,
+        "value": null
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1133,
+            "start": 1125
+          }
+        ],
+        "value": 1800.87
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1133,
+            "start": 1125
+          }
+        ],
+        "value": "$1800.87"
+      }
+    }
+  },
+  "markdown": "<figure type=\"ILLUSTRATION\">\n\n<description>The image features a stylized, light green cartoon robot standing on the left, next to a small, simple delivery truck on the right. The robot has a rounded head with eyes shaped like dollar signs ($), a circular badge on its chest containing the number '12', and its left arm is raised in a waving or gesturing motion. Above the robot's raised arm, there is a small green circle containing a white checkmark symbol. The overall aesthetic is clean and graphic, likely representing concepts like delivery, financial services, or automated shipping.</description></figure>\n\nDollarFulfillment\n\n\nInvoice 2071221\n\n\nWest Coast\n10450 N Airport Rd Hayden, ID 83835\nUnited States\nSupport@DollarFulfillment.com\n\n\nBill To Souhail Martesse 4 Rue des Écoles 28120, Nogent-sur-Eure FRANCE\n\nInvoice Number: 2071221 \nDate: 08/30/2021 \nDue Date: 08/30/2021 \n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Unit price</td><td>Amount</td></tr>\n<tr><td>Apple iPhone 12 Pro Max 256 GB Excellent Condition</td><td>3</td><td>$600.29</td><td>$1800.87</td></tr>\n<tr><td></td><td></td><td>Total</td><td>$1800.87</td></tr>\n</table>\n\n+1 855-441-7447\nSupport@DollarFulfillment.com\n10450 N Airport Rd\nHayden, ID 83835\n\n<!-- doc_id=parse-01kxyvcxzj6mmyz0qjtzxh58dy -->",
+  "metadata": {
+    "job_id": "extract-01kxyve287jssdbm0aas07z7jn",
+    "model_version": "extract-20260710",
+    "duration_ms": 27863,
+    "doc_id": "parse-01kxyvcxzj6mmyz0qjtzxh58dy",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1285,
+    "output_extraction_chars": 3282,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.6
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyve287jssdbm0aas07z7jn"
+}

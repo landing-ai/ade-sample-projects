@@ -1,0 +1,364 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "billing@zoom.us",
+      "gstin": null,
+      "pan": null,
+      "phone": null,
+      "representative": null,
+      "supplier_address": "55 Almaden Blvd, 6th Floor San Jose, CA 95113",
+      "supplier_name": "Zoom Video Communications Inc."
+    },
+    "customer_info": {
+      "customer_email": "leo.charles@outlook.com",
+      "sold_to_address": "1061 Midvale Ave, Morrisville, North Carolina 27560 United States",
+      "sold_to_name": "Abaxys Tech LLC"
+    },
+    "invoice_info": {
+      "invoice_date": "2020-07-29",
+      "invoice_date_raw": "07/29/2020",
+      "invoice_number": "INV33543191",
+      "order_date": "",
+      "po_number": "",
+      "status": "PAID"
+    },
+    "line_items": [
+      {
+        "amount": 149.9,
+        "description": "Standard Pro Annual",
+        "line_number": "1",
+        "price": 149.9,
+        "quantity": 1,
+        "sku": null,
+        "total": 149.9,
+        "unit_price": 149.9
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Due Upon Receipt",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 149.9,
+      "tax": 0.0,
+      "total_due": 149.9,
+      "total_due_raw": "$0.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 124,
+            "start": 108
+          }
+        ],
+        "value": "billing@zoom.us"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": null,
+        "value": null
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 87,
+            "start": 49
+          },
+          {
+            "end": 107,
+            "start": 88
+          }
+        ],
+        "value": "55 Almaden Blvd, 6th Floor San Jose, CA 95113"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 48,
+            "start": 17
+          }
+        ],
+        "value": "Zoom Video Communications Inc."
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": [
+          {
+            "end": 405,
+            "start": 381
+          }
+        ],
+        "value": "leo.charles@outlook.com"
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 330,
+            "start": 312
+          },
+          {
+            "end": 365,
+            "start": 331
+          },
+          {
+            "end": 380,
+            "start": 366
+          }
+        ],
+        "value": "1061 Midvale Ave, Morrisville, North Carolina 27560 United States"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 311,
+            "start": 274
+          }
+        ],
+        "value": "Abaxys Tech LLC"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 151,
+            "start": 126
+          }
+        ],
+        "value": "2020-07-29"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 151,
+            "start": 126
+          }
+        ],
+        "value": "07/29/2020"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 152
+          }
+        ],
+        "value": "INV33543191"
+      },
+      "order_date": {
+        "ranges": [
+          {
+            "end": 151,
+            "start": 126
+          }
+        ],
+        "value": ""
+      },
+      "po_number": {
+        "ranges": [
+          {
+            "end": 430,
+            "start": 407
+          }
+        ],
+        "value": ""
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 1696,
+            "start": 1691
+          }
+        ],
+        "value": "PAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 747,
+              "start": 740
+            }
+          ],
+          "value": 149.9
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 701,
+              "start": 631
+            }
+          ],
+          "value": "Standard Pro Annual"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 701,
+              "start": 631
+            }
+          ],
+          "value": 149.9
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 701,
+              "start": 631
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 777,
+              "start": 770
+            }
+          ],
+          "value": 149.9
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 701,
+              "start": 631
+            }
+          ],
+          "value": 149.9
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 208,
+            "start": 176
+          }
+        ],
+        "value": "Due Upon Receipt"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 273,
+            "start": 259
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 747,
+            "start": 740
+          }
+        ],
+        "value": 149.9
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 761,
+            "start": 756
+          }
+        ],
+        "value": 0.0
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 777,
+            "start": 770
+          }
+        ],
+        "value": 149.9
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1696,
+            "start": 1691
+          }
+        ],
+        "value": "$0.00"
+      }
+    }
+  },
+  "markdown": "zoom\n\n\nINVOICE\n\n\nZoom Video Communications Inc. \n55 Almaden Blvd, 6<sup>th</sup> Floor \nSan Jose, CA 95113 \nbilling@zoom.us \n\nInvoice Date: 07/29/2020 \nInvoice #: INV33543191 \nPayment Terms: Due Upon Receipt \nDue Date: 07/29/2020 \nAccount Number: 3003959185 \nCurrency: USD \nAccount Information: Abaxys Tech LLC \n1061 Midvale Ave, \nMorrisville, North Carolina 27560 \nUnited States \nleo.charles@outlook.com \n\nPurchase Order Number: \nTaxExemptCertificateID: \nZoom W-9 \n\n<table>\n<tr><td colspan=\"5\">CHARGE DETAILS</td></tr>\n<tr><td>Charge Description</td><td>Service Period</td><td>Subtotal</td><td>Tax</td><td>TOTAL</td></tr>\n<tr><td>Charge Name: Standard Pro Annual<br>Quantity: 1<br>Unit Price: $149.90</td><td>07/29/2020-07/28/2021</td><td>$149.90</td><td>$0.00</td><td>$149.90</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">INVOICE TOTALS</td></tr>\n<tr><td rowspan=\"3\"></td><td>Subtotal:</td><td>$149.90</td></tr>\n<tr><td>Total (Including Tax):</td><td>$149.90</td></tr>\n<tr><td>Invoice Balance:</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">TAX DETAILS</td></tr>\n<tr><td>Charge Name</td><td>Tax Name</td><td>Jurisdiction</td><td>Charge Amount</td><td>Tax Amount</td></tr>\n<tr><td colspan=\"3\"></td><td>Total Tax</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">TRANSACTIONS</td></tr>\n<tr><td colspan=\"5\">Invoice Total</td><td>$149.90</td></tr>\n<tr><td>Transaction Date</td><td>Transaction Number</td><td>Transaction Type</td><td colspan=\"2\">Description</td><td>Applied<br>Amount</td></tr>\n<tr><td>07/29/2020</td><td>P-35558908</td><td>Payment</td><td colspan=\"2\"></td><td>($149.90)</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Invoice Balance</td><td>$0.00</td></tr>\n</table>\n\n<!-- doc_id=parse-01kxyvcpq6768hfy418nxv4jt6 -->",
+  "metadata": {
+    "job_id": "extract-01kxyvdx956yhpznwmbjpd1mq1",
+    "model_version": "extract-20260710",
+    "duration_ms": 31839,
+    "doc_id": "parse-01kxyvcpq6768hfy418nxv4jt6",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1765,
+    "output_extraction_chars": 3241,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.6
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyvdx956yhpznwmbjpd1mq1"
+}

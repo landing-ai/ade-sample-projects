@@ -1,0 +1,372 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": null,
+      "gstin": "4012118-6",
+      "pan": null,
+      "phone": null,
+      "representative": null,
+      "supplier_address": "12/B, 12th floor\nExecutive Tower, Dolmen City\nPlot # HC-3, Block 4, Scheme #5\nClifton, Saddar Town, Karachi South",
+      "supplier_name": "Jade E-Services Pakistan Private Limited"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "R 44 block-D sadat e amroha society karachi, Karachi -\nCantonment, Sindh\nPakistan",
+      "sold_to_name": "Nazish"
+    },
+    "invoice_info": {
+      "invoice_date": "2019-04-04",
+      "invoice_date_raw": "2019-04-04T23:55:50+08:00",
+      "invoice_number": "0000329003",
+      "order_date": "2019-03-29",
+      "po_number": "102618708576448",
+      "status": null
+    },
+    "line_items": [
+      {
+        "amount": 147.0,
+        "description": "11% off on Bundle of Knorr Chilli Garlic Ketchup 300gm and Knorr Tomato Ketchup 300gm",
+        "line_number": "1",
+        "price": 147.0,
+        "quantity": 1,
+        "sku": "100858625_PK-1 246231949",
+        "total": 147.0,
+        "unit_price": 147.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Cash On Delivery",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "PKR",
+      "handling_fee": null,
+      "shipping": 0,
+      "subtotal": 147,
+      "tax": null,
+      "total_due": 147,
+      "total_due_raw": "Rs 147.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": null,
+        "value": null
+      },
+      "gstin": {
+        "ranges": [
+          {
+            "end": 187,
+            "start": 164
+          }
+        ],
+        "value": "4012118-6"
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": null,
+        "value": null
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 66,
+            "start": 50
+          },
+          {
+            "end": 95,
+            "start": 67
+          },
+          {
+            "end": 127,
+            "start": 96
+          },
+          {
+            "end": 163,
+            "start": 128
+          }
+        ],
+        "value": "12/B, 12th floor\nExecutive Tower, Dolmen City\nPlot # HC-3, Block 4, Scheme #5\nClifton, Saddar Town, Karachi South"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 49,
+            "start": 9
+          }
+        ],
+        "value": "Jade E-Services Pakistan Private Limited"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 307,
+            "start": 252
+          },
+          {
+            "end": 326,
+            "start": 308
+          },
+          {
+            "end": 336,
+            "start": 327
+          }
+        ],
+        "value": "R 44 block-D sadat e amroha society karachi, Karachi -\nCantonment, Sindh\nPakistan"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 251,
+            "start": 244
+          }
+        ],
+        "value": "Nazish"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 402,
+            "start": 362
+          }
+        ],
+        "value": "2019-04-04"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 402,
+            "start": 362
+          }
+        ],
+        "value": "2019-04-04T23:55:50+08:00"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 361,
+            "start": 337
+          }
+        ],
+        "value": "0000329003"
+      },
+      "order_date": {
+        "ranges": [
+          {
+            "end": 472,
+            "start": 434
+          }
+        ],
+        "value": "2019-03-29"
+      },
+      "po_number": {
+        "ranges": [
+          {
+            "end": 433,
+            "start": 403
+          }
+        ],
+        "value": "102618708576448"
+      },
+      "status": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 887,
+              "start": 878
+            }
+          ],
+          "value": 147.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 790,
+              "start": 705
+            }
+          ],
+          "value": "11% off on Bundle of Knorr Chilli Garlic Ketchup 300gm and Knorr Tomato Ketchup 300gm"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 672,
+              "start": 671
+            }
+          ],
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 887,
+              "start": 878
+            }
+          ],
+          "value": 147.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 833,
+              "start": 832
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 823,
+              "start": 799
+            }
+          ],
+          "value": "100858625_PK-1 246231949"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 887,
+              "start": 878
+            }
+          ],
+          "value": 147.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 851,
+              "start": 842
+            }
+          ],
+          "value": 147.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 506,
+            "start": 474
+          }
+        ],
+        "value": "Cash On Delivery"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 1007,
+            "start": 1005
+          }
+        ],
+        "value": "PKR"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": [
+          {
+            "end": 1140,
+            "start": 1136
+          }
+        ],
+        "value": 0
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1022,
+            "start": 1016
+          }
+        ],
+        "value": 147
+      },
+      "tax": {
+        "ranges": null,
+        "value": null
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1190,
+            "start": 1184
+          }
+        ],
+        "value": 147
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1190,
+            "start": 1184
+          }
+        ],
+        "value": "Rs 147.00"
+      }
+    }
+  },
+  "markdown": "d\naraz\n\n\nJade E-Services Pakistan Private Limited\n12/B, 12th floor\nExecutive Tower, Dolmen City\nPlot # HC-3, Block 4, Scheme #5\nClifton, Saddar Town, Karachi South\nSNTN/PNTN # : 4012118-6\nSTRN # : 1700401211818\n\nSALES INVOICE \nBilling Address \nNazish \nR 44 block-D sadat e amroha society karachi, Karachi - \nCantonment, Sindh \nPakistan \nInvoice No.: 0000329003 \nInvoice Date: 2019-04-04T23:55:50+08:00 \nOrder Number: 102618708576448 \nOrder Date: 2019-03-29T00:16:24+08:00 \n\nType of Supply: Cash On Delivery\n\n\n<table>\n<tr><td>S/N</td><td>Item ID</td><td>Description</td><td>Item SKU</td><td>Qty</td><td>Unit Price*</td><td>Discount*</td><td>Total Price*</td></tr>\n<tr><td>1</td><td>102618708776448</td><td>11% off on Bundle of Knorr Chilli Garlic Ketchup 300gm and Knorr Tomato Ketchup 300gm</td><td>100858625_PK-1 246231949</td><td>1</td><td>Rs 147.00</td><td>- Rs 0.00</td><td>Rs 147.00</td></tr>\n<tr><td colspan=\"7\">TOTAL:</td><td>Rs 147.00</td></tr>\n</table>\n\n<table>\n<tr><td>Total Unit Price*</td><td>Rs</td><td>147.00</td></tr>\n<tr><td>Total Discount*</td><td>Rs</td><td>- 0.00</td></tr>\n<tr><td>Total Shipping*</td><td>Rs</td><td>0.00</td></tr>\n<tr><td>Total</td><td>Rs</td><td>147.00</td></tr>\n</table>\n\n*Total charges for this shipment includes prepaid custom duties and other taxes as applicable for the merchandise to be delivered to the\naddress in the country specified by the customer.\n\n\nFor return policy and return form, please visit: https://pages.daraz.pk/wow/i/pk/help/returns-refunds?hybrid=1/\nNEED HELP? Contact us at https://www.daraz.pk/contact-us/\nLIKE US on FACEBOOK: https://www.facebook.com/darazpk/\nFOLLOW US on TWITTER: https://twitter.com/darazpk\n\n\nHave a great day! Thank. you for shopping on http://www.daraz.pk/\n\n\n**This is a computer generated copy. No signature is required**\n\n<!-- doc_id=parse-01kxyvd0c7g0zdjyhtaavhb0ee -->",
+  "metadata": {
+    "job_id": "extract-01kxyve46gbfbhhwjf2yar51x9",
+    "model_version": "extract-20260710",
+    "duration_ms": 28114,
+    "doc_id": "parse-01kxyvd0c7g0zdjyhtaavhb0ee",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1858,
+    "output_extraction_chars": 3632,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 4.1
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyve46gbfbhhwjf2yar51x9"
+}

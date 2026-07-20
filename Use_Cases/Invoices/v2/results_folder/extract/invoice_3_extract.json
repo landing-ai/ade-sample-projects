@@ -1,0 +1,547 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "Mat@CustomEandP.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-336-701-5589",
+      "representative": "Mathew",
+      "supplier_address": "PO Box 533\nSummerfield, NC 27358",
+      "supplier_name": "CUSTOM ELECTRIC & PLUMBING, INC."
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "1000 Sarah Dr\nSummerfield, NC 27358 USA",
+      "sold_to_name": "Leo Vincent"
+    },
+    "invoice_info": {
+      "invoice_date": "2022-10-03",
+      "invoice_date_raw": "10/03/2022",
+      "invoice_number": "52255",
+      "order_date": "",
+      "po_number": null,
+      "status": "UNPAID"
+    },
+    "line_items": [
+      {
+        "amount": 1400.0,
+        "description": "Provide and install new 60 Amp 240Vac breaker and 6/2 Copper SE cable feeding new Tesla Wall connector. Install new customer supplied Tesla wall connector. Note: drywall may need to be cut to facilitate work. No drywall repairs or painting are included in this quote.",
+        "line_number": "1",
+        "price": 1400.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 1400.0,
+        "unit_price": 1400.0
+      },
+      {
+        "amount": 150.0,
+        "description": "Permit and inspection fees",
+        "line_number": "2",
+        "price": 150.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 150.0,
+        "unit_price": 150.0
+      },
+      {
+        "amount": 0.0,
+        "description": "Payment Terms: by Cash or Check, All sales final. $750.00 deposit at acceptance of contract balance due upon substantial completion of work. Agreement to include conditions of agreement addendum Clarifications: It is agreed that during the performance of the work drywall will/may be cut at the discretion of the contractor, this quotation does not include any drywall or painting repair or touchup. Parking to be provided onsite for all working personnel. Work will be completed during normal hours from 8:00 AM to 5:00 PM Monday thru Friday, unless approved otherwise. No additional components will be installed outside the scope of work enclosed. All fixtures and lamps are to be furnished on-site by others. Excluded from Bid: Repairs or corrections to existing plumbing, gas, or electrical system deficiencies or code violations.",
+        "line_number": "3",
+        "price": 0.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 0.0,
+        "unit_price": 0.0
+      },
+      {
+        "amount": null,
+        "description": "Repairs to any underground utilities (such as sprinkler lines, electrical lines, cable, etc.) not located and clearly marked prior to arrival on-site. Engineered drawings Utility power consumption.",
+        "line_number": "4",
+        "price": null,
+        "quantity": null,
+        "sku": null,
+        "total": null,
+        "unit_price": null
+      }
+    ],
+    "order_details": {
+      "payment_terms": "by Cash or Check, All sales final.",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 1550,
+      "tax": 0,
+      "total_due": 1550,
+      "total_due_raw": "$1,550.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 102,
+            "start": 83
+          }
+        ],
+        "value": "Mat@CustomEandP.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 82,
+            "start": 70
+          }
+        ],
+        "value": "+1-336-701-5589"
+      },
+      "representative": {
+        "ranges": [
+          {
+            "end": 348,
+            "start": 342
+          }
+        ],
+        "value": "Mathew"
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 47,
+            "start": 37
+          },
+          {
+            "end": 69,
+            "start": 48
+          }
+        ],
+        "value": "PO Box 533\nSummerfield, NC 27358"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 36,
+            "start": 0
+          }
+        ],
+        "value": "CUSTOM ELECTRIC & PLUMBING, INC."
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 250,
+            "start": 237
+          },
+          {
+            "end": 276,
+            "start": 251
+          }
+        ],
+        "value": "1000 Sarah Dr\nSummerfield, NC 27358 USA"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 236,
+            "start": 225
+          }
+        ],
+        "value": "Leo Vincent"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 309,
+            "start": 293
+          }
+        ],
+        "value": "2022-10-03"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 309,
+            "start": 293
+          }
+        ],
+        "value": "10/03/2022"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 292,
+            "start": 278
+          }
+        ],
+        "value": "52255"
+      },
+      "order_date": {
+        "ranges": [
+          {
+            "end": 309,
+            "start": 293
+          }
+        ],
+        "value": ""
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": null,
+        "value": "UNPAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 753,
+              "start": 745
+            }
+          ],
+          "value": 1400.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 709,
+              "start": 436
+            }
+          ],
+          "value": "Provide and install new 60 Amp 240Vac breaker and 6/2 Copper SE cable feeding new Tesla Wall connector. Install new customer supplied Tesla wall connector. Note: drywall may need to be cut to facilitate work. No drywall repairs or painting are included in this quote."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 736,
+              "start": 728
+            }
+          ],
+          "value": 1400.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 719,
+              "start": 718
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 753,
+              "start": 745
+            }
+          ],
+          "value": 1400.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 736,
+              "start": 728
+            }
+          ],
+          "value": 1400.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 838,
+              "start": 832
+            }
+          ],
+          "value": 150.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 798,
+              "start": 772
+            }
+          ],
+          "value": "Permit and inspection fees"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "2"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 823,
+              "start": 817
+            }
+          ],
+          "value": 150.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 808,
+              "start": 807
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 838,
+              "start": 832
+            }
+          ],
+          "value": 150.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 823,
+              "start": 817
+            }
+          ],
+          "value": 150.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1760,
+              "start": 1756
+            }
+          ],
+          "value": 0.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1724,
+              "start": 857
+            }
+          ],
+          "value": "Payment Terms: by Cash or Check, All sales final. $750.00 deposit at acceptance of contract balance due upon substantial completion of work. Agreement to include conditions of agreement addendum Clarifications: It is agreed that during the performance of the work drywall will/may be cut at the discretion of the contractor, this quotation does not include any drywall or painting repair or touchup. Parking to be provided onsite for all working personnel. Work will be completed during normal hours from 8:00 AM to 5:00 PM Monday thru Friday, unless approved otherwise. No additional components will be installed outside the scope of work enclosed. All fixtures and lamps are to be furnished on-site by others. Excluded from Bid: Repairs or corrections to existing plumbing, gas, or electrical system deficiencies or code violations."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "3"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1747,
+              "start": 1743
+            }
+          ],
+          "value": 0.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1734,
+              "start": 1733
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1760,
+              "start": 1756
+            }
+          ],
+          "value": 0.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1747,
+              "start": 1743
+            }
+          ],
+          "value": 0.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": null,
+          "value": null
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1979,
+              "start": 1779
+            }
+          ],
+          "value": "Repairs to any underground utilities (such as sprinkler lines, electrical lines, cable, etc.) not located and clearly marked prior to arrival on-site. Engineered drawings Utility power consumption."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "4"
+        },
+        "price": {
+          "ranges": null,
+          "value": null
+        },
+        "quantity": {
+          "ranges": null,
+          "value": null
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": null,
+          "value": null
+        },
+        "unit_price": {
+          "ranges": null,
+          "value": null
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 1724,
+            "start": 857
+          }
+        ],
+        "value": "by Cash or Check, All sales final."
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": null,
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 2130,
+            "start": 2122
+          }
+        ],
+        "value": 1550
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 2198,
+            "start": 2194
+          }
+        ],
+        "value": 0
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 2248,
+            "start": 2240
+          }
+        ],
+        "value": 1550
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 2305,
+            "start": 2296
+          }
+        ],
+        "value": "$1,550.00"
+      }
+    }
+  },
+  "markdown": "**CUSTOM ELECTRIC & PLUMBING, INC.**\nPO Box 533\nSummerfield, NC 27358\n336.701.5589\nMat@CustomEandP.com\nwww.ElectricianOrPlumber.com\n\n\nC\nE\n&\nP\nUSTOM [LIGHTBULB]\nLECTRIC [FAUCET HANDLE]\nLUMBING, INC. [FAUCET]\n\n\nINVOICE\nBILL TO\nLeo Vincent\n1000 Sarah Dr\nSummerfield, NC 27358 USA\n\nINVOICE: 52255\nDATE: 10/03/2022\nDUE DATE: 11/01/2022\n\nSALES REP\nMathew\n\n<table>\n<tr><td>DESCRIPTION</td><td>QTY</td><td>RATE</td><td>AMOUNT</td></tr>\n<tr><td>Provide and install new 60 Amp 240Vac breaker and 6/2 Copper SE cable feeding new Tesla Wall connector.<br>Install new customer supplied Tesla wall connector.<br>Note: drywall may need to be cut to facilitate work. No drywall repairs or painting are included in this quote.</td><td>1</td><td>1,400.00</td><td>1,400.00</td></tr>\n<tr><td>Permit and inspection fees</td><td>1</td><td>150.00</td><td>150.00</td></tr>\n<tr><td>Payment Terms: by Cash or Check, All sales final.<br>$750.00 deposit at acceptance of contract<br>balance due upon substantial completion of work.<br>Agreement to include conditions of agreement addendum<br>Clarifications:<br>It is agreed that during the performance of the work drywall will/may be cut at the discretion of the contractor, this quotation does not include any drywall or painting repair or touchup.<br>Parking to be provided onsite for all working personnel.<br>Work will be completed during normal hours from 8:00 AM to 5:00 PM Monday thru Friday, unless approved otherwise.<br>No additional components will be installed outside the scope of work enclosed.<br>All fixtures and lamps are to be furnished on-site by others.<br>Excluded from Bid:<br>Repairs or corrections to existing plumbing, gas, or electrical system deficiencies or code violations.</td><td>1</td><td>0.00</td><td>0.00</td></tr>\n<tr><td>Repairs to any underground utilities (such as sprinkler lines, electrical lines, cable, etc.) not located and clearly marked prior to arrival on-site.<br>Engineered drawings Utility power consumption.</td><td></td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>Thank you for supporting your local veteran owned and</td><td>SUBTOTAL</td><td>1,550.00</td></tr>\n<tr><td>operated small business.</td><td>TAX</td><td>0.00</td></tr>\n<tr><td></td><td>TOTAL</td><td>1,550.00</td></tr>\n<tr><td></td><td>BALANCE DUE</td><td>$1,550.00</td></tr>\n</table>\n\nPage 1 of 1\n\n<!-- doc_id=parse-01kxyvcr87v7z1e66nw8bzh3r6 -->",
+  "metadata": {
+    "job_id": "extract-01kxyvdy9bjy0djb9a3746e93a",
+    "model_version": "extract-20260710",
+    "duration_ms": 30755,
+    "doc_id": "parse-01kxyvcr87v7z1e66nw8bzh3r6",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 2387,
+    "output_extraction_chars": 7387,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 7.9
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyvdy9bjy0djb9a3746e93a"
+}

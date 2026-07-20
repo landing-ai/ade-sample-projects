@@ -1,0 +1,706 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "info@thomann.de",
+      "gstin": "DE 257375233",
+      "pan": null,
+      "phone": "",
+      "representative": "Eduardo Mourao",
+      "supplier_address": "Hans-Thomann-Str. 1, D-96138 Burgebrach",
+      "supplier_name": "Thomann GmbH"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "Av. da Repùblica, N°. 181, LJ 101 \nPT-4450 Matosinhos",
+      "sold_to_name": "Gnr-Grupo Novo Rock, Lda"
+    },
+    "invoice_info": {
+      "invoice_date": "2019-02-23",
+      "invoice_date_raw": "23.02.2019",
+      "invoice_number": "40458946",
+      "order_date": "",
+      "po_number": "201908.660583 / 1233",
+      "status": null
+    },
+    "line_items": [
+      {
+        "amount": 3.66,
+        "description": "Dunlop Nylon Max Grip Jazz III Players Pack - 6-piece plectrum set. Colour: Red, gauge: 1,38mm",
+        "line_number": "001.00",
+        "price": 3.66,
+        "quantity": 1,
+        "sku": "242900",
+        "total": 3.66,
+        "unit_price": 3.66
+      },
+      {
+        "amount": 4.8,
+        "description": "Dunlop Tortex standard picks - 0.88mm, 12-pack.",
+        "line_number": "002.00",
+        "price": 4.8,
+        "quantity": 1,
+        "sku": "151423",
+        "total": 4.8,
+        "unit_price": 4.8
+      },
+      {
+        "amount": 47.15,
+        "description": "Fender Vintage Bass Bridge, Incl screws, dimension width 8cm, lenght 4cm, stringspacing 2cm",
+        "line_number": "003.00",
+        "price": 47.15,
+        "quantity": 1,
+        "sku": "119582",
+        "total": 47.15,
+        "unit_price": 47.15
+      },
+      {
+        "amount": 13.58,
+        "description": "Electro Harmonix 24DC-100 EU AC power supply, Original AC power supply matches Deluxe Memory Man, Bass/Micro Synth, Q-Tron, Q-Tron+, Stereo Polychorus, Worm, Deluxe Electric Mistress, Stereo Memoroy Man, Stereo Polyphase, XO Deluxe Memory Man, XO Q-Tron+",
+        "line_number": "004.00",
+        "price": 13.58,
+        "quantity": 1,
+        "sku": "180181",
+        "total": 13.58,
+        "unit_price": 13.58
+      },
+      {
+        "amount": 8.05,
+        "description": "the sssnake DD1015, Minijack Mono - Minijack Mono Patchkabel, Length 15cm, 6 pcs. per Set",
+        "line_number": "005.00",
+        "price": 8.05,
+        "quantity": 1,
+        "sku": "378874",
+        "total": 8.05,
+        "unit_price": 8.05
+      }
+    ],
+    "order_details": {
+      "payment_terms": null,
+      "ship_date": null,
+      "ship_via": "UPS",
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "EUR",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 77.24,
+      "tax": null,
+      "total_due": 77.24,
+      "total_due_raw": "77,24 EUR"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 2299,
+            "start": 2283
+          }
+        ],
+        "value": "info@thomann.de"
+      },
+      "gstin": {
+        "ranges": [
+          {
+            "end": 2800,
+            "start": 2775
+          }
+        ],
+        "value": "DE 257375233"
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 2324,
+            "start": 2300
+          }
+        ],
+        "value": ""
+      },
+      "representative": {
+        "ranges": [
+          {
+            "end": 501,
+            "start": 472
+          }
+        ],
+        "value": "Eduardo Mourao"
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 97,
+            "start": 44
+          }
+        ],
+        "value": "Hans-Thomann-Str. 1, D-96138 Burgebrach"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 97,
+            "start": 44
+          }
+        ],
+        "value": "Thomann GmbH"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 173,
+            "start": 139
+          },
+          {
+            "end": 193,
+            "start": 175
+          }
+        ],
+        "value": "Av. da Repùblica, N°. 181, LJ 101 \nPT-4450 Matosinhos"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 125,
+            "start": 100
+          }
+        ],
+        "value": "Gnr-Grupo Novo Rock, Lda"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 236,
+            "start": 219
+          }
+        ],
+        "value": "2019-02-23"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 236,
+            "start": 219
+          }
+        ],
+        "value": "23.02.2019"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 41,
+            "start": 20
+          },
+          {
+            "end": 265,
+            "start": 100
+          }
+        ],
+        "value": "40458946"
+      },
+      "order_date": {
+        "ranges": [
+          {
+            "end": 236,
+            "start": 219
+          }
+        ],
+        "value": ""
+      },
+      "po_number": {
+        "ranges": [
+          {
+            "end": 471,
+            "start": 439
+          }
+        ],
+        "value": "201908.660583 / 1233"
+      },
+      "status": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 837,
+              "start": 829
+            }
+          ],
+          "value": 3.66
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 971,
+              "start": 877
+            }
+          ],
+          "value": "Dunlop Nylon Max Grip Jazz III Players Pack - 6-piece plectrum set. Colour: Red, gauge: 1,38mm"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 772,
+              "start": 766
+            }
+          ],
+          "value": "001.00"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 837,
+              "start": 829
+            }
+          ],
+          "value": 3.66
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 803,
+              "start": 796
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 787,
+              "start": 781
+            }
+          ],
+          "value": "242900"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 837,
+              "start": 829
+            }
+          ],
+          "value": 3.66
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 820,
+              "start": 812
+            }
+          ],
+          "value": 3.66
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1197,
+              "start": 1189
+            }
+          ],
+          "value": 4.8
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1163,
+              "start": 1026
+            }
+          ],
+          "value": "Dunlop Tortex standard picks - 0.88mm, 12-pack."
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1005,
+              "start": 999
+            }
+          ],
+          "value": "002.00"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1197,
+              "start": 1189
+            }
+          ],
+          "value": 4.8
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1163,
+              "start": 1026
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1163,
+              "start": 1026
+            }
+          ],
+          "value": "151423"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1197,
+              "start": 1189
+            }
+          ],
+          "value": 4.8
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1180,
+              "start": 1172
+            }
+          ],
+          "value": 4.8
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1289,
+              "start": 1280
+            }
+          ],
+          "value": 47.15
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1420,
+              "start": 1329
+            }
+          ],
+          "value": "Fender Vintage Bass Bridge, Incl screws, dimension width 8cm, lenght 4cm, stringspacing 2cm"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1222,
+              "start": 1216
+            }
+          ],
+          "value": "003.00"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1289,
+              "start": 1280
+            }
+          ],
+          "value": 47.15
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1253,
+              "start": 1246
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1237,
+              "start": 1231
+            }
+          ],
+          "value": "119582"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1289,
+              "start": 1280
+            }
+          ],
+          "value": 47.15
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1271,
+              "start": 1262
+            }
+          ],
+          "value": 47.15
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1521,
+              "start": 1512
+            }
+          ],
+          "value": 13.58
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1815,
+              "start": 1561
+            }
+          ],
+          "value": "Electro Harmonix 24DC-100 EU AC power supply, Original AC power supply matches Deluxe Memory Man, Bass/Micro Synth, Q-Tron, Q-Tron+, Stereo Polychorus, Worm, Deluxe Electric Mistress, Stereo Memoroy Man, Stereo Polyphase, XO Deluxe Memory Man, XO Q-Tron+"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1454,
+              "start": 1448
+            }
+          ],
+          "value": "004.00"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1521,
+              "start": 1512
+            }
+          ],
+          "value": 13.58
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1485,
+              "start": 1478
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1469,
+              "start": 1463
+            }
+          ],
+          "value": "180181"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1521,
+              "start": 1512
+            }
+          ],
+          "value": 13.58
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1503,
+              "start": 1494
+            }
+          ],
+          "value": 13.58
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1905,
+              "start": 1897
+            }
+          ],
+          "value": 8.05
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 2034,
+              "start": 1945
+            }
+          ],
+          "value": "the sssnake DD1015, Minijack Mono - Minijack Mono Patchkabel, Length 15cm, 6 pcs. per Set"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1840,
+              "start": 1834
+            }
+          ],
+          "value": "005.00"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1905,
+              "start": 1897
+            }
+          ],
+          "value": 8.05
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1871,
+              "start": 1864
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1855,
+              "start": 1849
+            }
+          ],
+          "value": "378874"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1905,
+              "start": 1897
+            }
+          ],
+          "value": 8.05
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1888,
+              "start": 1880
+            }
+          ],
+          "value": 8.05
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": [
+          {
+            "end": 557,
+            "start": 533
+          }
+        ],
+        "value": "UPS"
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 820,
+            "start": 812
+          }
+        ],
+        "value": "EUR"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 2131,
+            "start": 2122
+          }
+        ],
+        "value": 77.24
+      },
+      "tax": {
+        "ranges": null,
+        "value": null
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 2131,
+            "start": 2122
+          }
+        ],
+        "value": 77.24
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 2131,
+            "start": 2122
+          }
+        ],
+        "value": "77,24 EUR"
+      }
+    }
+  },
+  "markdown": "th●mann\n\n\n[BARCODE]\nInvoice Nr.: 40458946\n\n\nThomann GmbH, Hans-Thomann-Str. 1, D-96138 Burgebrach\n\n\nGnr-Grupo Novo Rock, Lda \nJorge Romão \nAv. da República, N°. 181, LJ 101 \n\nPT-4450 Matosinhos\n\n\nInvoice Nr.: 40458946 \nDate: 23.02.2019 \nYour customer no.: 10649971 \n\nYour VAT No.: PT502208171\nfornecimento Inter-comunitario Isento de IVA\n\nDelivery address: \nFilipe Louro \nRua Tullins Fures 223 2<sup>o</sup>esq \nPT-4450 Leça da Palmeira \n\nOrder No.: 201908.660583 / 1233 \nSales Person: Eduardo Mourao \nTelephone: 0049 9546 9223 645 \nMethod of Shipment: UPS \nYour Reference: \nPlease Include your customer no.: 10649971 with \npayment by bank transfer! \n\n<table>\n<tr><td>Pos.</td><td>Article</td><td>Amount Unit</td><td>Unit Price</td><td>Total Price</td></tr>\n<tr><td>001.00</td><td>242900</td><td>1 piece</td><td>3,66 EUR</td><td>3,66 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">Dunlop Nylon Max Grip Jazz III Players Pack - 6-piece plectrum set. Colour: Red, gauge: 1,38mm</td><td></td></tr>\n<tr><td>002.00</td><td colspan=\"2\">151423                                                                         1 piece<br>Dunlop Tortex standard picks - 0.88mm, 12-pack.</td><td>4,80 EUR</td><td>4,80 EUR</td></tr>\n<tr><td>003.00</td><td>119582</td><td>1 piece</td><td>47,15 EUR</td><td>47,15 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">Fender Vintage Bass Bridge, Incl screws, dimension width 8cm, lenght 4cm, stringspacing 2cm</td><td></td></tr>\n<tr><td>004.00</td><td>180181</td><td>1 piece</td><td>13,58 EUR</td><td>13,58 EUR</td></tr>\n<tr><td></td><td colspan=\"4\">Electro Harmonix 24DC-100 EU AC power supply, Original AC power supply matches Deluxe Memory Man, Bass/Micro Synth, Q-Tron, Q-Tron+, Stereo Polychorus, Worm, Deluxe Electric Mistress, Stereo Memoroy Man, Stereo Polyphase, XO Deluxe Memory Man, XO Q-Tron+</td></tr>\n<tr><td>005.00</td><td>378874</td><td>1 piece</td><td>8,05 EUR</td><td>8,05 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">the sssnake DD1015, Minijack Mono - Minijack Mono Patchkabel, Length 15cm, 6 pcs. per Set</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>Amount carried forward :</td><td>77,24 EUR</td></tr>\n</table>\n\nThomann GmbH\nHans-Thomann-Str.1\nD-96138 Burgebrach\nBank   Sparkasse Bamberg\nIBAN   DE97 7705 0000 0000 1030 85\nBIC   BYLADEM1SKB\n\n\ninfo@thomann.de \nTel +49 (0)9546 9223-66 \nFax +49 (0)9546 9223-24 \nRaiffeisenbank Burgebrach \nDE58 7706 2014 0000 0056 30 \n[ILLEGIBLE_TEXT] \n\nGeschäftsführer: Hans Thomann \nAmtsgericht Bamberg: HRB 5862 \nSitz der Gesellschaft: Burgebrach \n\nPostbank Nürnberg\nDE41 7601 0085 0283 5648 54\nPBNKDEFF\n\n\nRaiffeisenbank Burgebrach\nDE58 7706 2014 0000 0056 30\nGENODEF1BGB\nPostbank Nürnberg\nDE41 7601 0085 0283 5648 54\nPBNKDEFF\nEs gelten unsere umseitig abgedrucktenAllgemeinen Geschäftsbedingungen.\n\n\nUSt.-IdNr.: DE 257375233 \nSteuernummer: 207/132/90050 \nWEEE-Reg.-Nr.: DE 18280160 \n\nDeutsche Bank 24 \nDE19 7607 0024 0811 5008 00 \nDEUTDEDB760 \n\nMUSIC IS OUR PASSION\n\n<!-- doc_id=parse-01kxyvczrdre4qsdbsa5yr9ms0 -->",
+  "metadata": {
+    "job_id": "extract-01kxyve3qmdyp7wpcfpdvtff82",
+    "model_version": "extract-20260710",
+    "duration_ms": 32556,
+    "doc_id": "parse-01kxyvczrdre4qsdbsa5yr9ms0",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 2990,
+    "output_extraction_chars": 6626,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 7.3
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.pan' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.pan' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyve3qmdyp7wpcfpdvtff82"
+}
