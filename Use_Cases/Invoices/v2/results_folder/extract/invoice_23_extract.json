@@ -1,0 +1,385 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "sales@alamy.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-866-671-7305",
+      "representative": null,
+      "supplier_address": "49 Flatbush Ave, 130, Brooklyn, NY 11217, USA",
+      "supplier_name": "Alamy Inc"
+    },
+    "customer_info": {
+      "customer_email": "andr3akropp@gmail.com",
+      "sold_to_address": "227 N 5th Ave Ridgefield WA 98642-3846 United States",
+      "sold_to_name": "andr3akropp@gmail.com"
+    },
+    "invoice_info": {
+      "invoice_date": "2024-05-06",
+      "invoice_date_raw": "06 May 2024",
+      "invoice_number": "IY04370868",
+      "order_date": null,
+      "po_number": "OY92605918",
+      "status": "Paid"
+    },
+    "line_items": [
+      {
+        "amount": 45.0,
+        "description": "Vector Seamless Dash Diagonal Parallel Line Halfton Pattern",
+        "line_number": "1",
+        "price": 45.0,
+        "quantity": 1.0,
+        "sku": "GMM2C6",
+        "total": 45.0,
+        "unit_price": 45.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": null,
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 45.0,
+      "tax": 4.5,
+      "total_due": 49.5,
+      "total_due_raw": "$ 49.50"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 1816,
+            "start": 1801
+          }
+        ],
+        "value": "sales@alamy.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 1800,
+            "start": 1776
+          }
+        ],
+        "value": "+1-866-671-7305"
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 43,
+            "start": 22
+          },
+          {
+            "end": 63,
+            "start": 44
+          },
+          {
+            "end": 67,
+            "start": 64
+          }
+        ],
+        "value": "49 Flatbush Ave, 130, Brooklyn, NY 11217, USA"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 21,
+            "start": 8
+          }
+        ],
+        "value": "Alamy Inc"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": [
+          {
+            "end": 404,
+            "start": 370
+          }
+        ],
+        "value": "andr3akropp@gmail.com"
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 325,
+            "start": 311
+          },
+          {
+            "end": 337,
+            "start": 326
+          },
+          {
+            "end": 341,
+            "start": 338
+          },
+          {
+            "end": 353,
+            "start": 342
+          },
+          {
+            "end": 368,
+            "start": 354
+          }
+        ],
+        "value": "227 N 5th Ave Ridgefield WA 98642-3846 United States"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 404,
+            "start": 370
+          }
+        ],
+        "value": "andr3akropp@gmail.com"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 194,
+            "start": 183
+          }
+        ],
+        "value": "2024-05-06"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 194,
+            "start": 183
+          }
+        ],
+        "value": "06 May 2024"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 236,
+            "start": 226
+          }
+        ],
+        "value": "IY04370868"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": [
+          {
+            "end": 433,
+            "start": 405
+          }
+        ],
+        "value": "OY92605918"
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 207,
+            "start": 203
+          }
+        ],
+        "value": "Paid"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 608,
+              "start": 601
+            }
+          ],
+          "value": 45.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1175,
+              "start": 830
+            }
+          ],
+          "value": "Vector Seamless Dash Diagonal Parallel Line Halfton Pattern"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 530,
+              "start": 511
+            }
+          ],
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 608,
+              "start": 601
+            }
+          ],
+          "value": 45.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 530,
+              "start": 511
+            }
+          ],
+          "value": 1.0
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 592,
+              "start": 576
+            },
+            {
+              "end": 1175,
+              "start": 830
+            }
+          ],
+          "value": "GMM2C6"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 608,
+              "start": 601
+            }
+          ],
+          "value": 45.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 608,
+              "start": 601
+            }
+          ],
+          "value": 45.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 277,
+            "start": 263
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1627,
+            "start": 1609
+          }
+        ],
+        "value": 45.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1652,
+            "start": 1628
+          }
+        ],
+        "value": 4.5
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1668,
+            "start": 1653
+          }
+        ],
+        "value": 49.5
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 277,
+            "start": 263
+          }
+        ],
+        "value": "$ 49.50"
+      }
+    }
+  },
+  "markdown": "alamy\n\n\n**Alamy Inc**\n49 Flatbush Ave, 130,\nBrooklyn, NY 11217,\nUSA\n\n\nYour Alamy invoice\n\n\nFederal Tax ID: 46-052-1136 \n\n<table>\n<tr><td>Invoice number:</td><td>Invoice date:</td><td>06 May 2024</td><td>Paid</td></tr>\n<tr><td>IY04370868</td><td></td><td></td><td>Total: $ 49.50</td></tr>\n</table>\n\nInvoice to: \n227 N 5th Ave \nRidgefield \nWA \n98642-3846 \nUnited States \n\nOrdered by: andr3akropp@gmail.com \nOrder reference: OY92605918 \nRemittance advice to be sent to: customerfinance@alamy.com \n\n<table>\n<tr><td>Your order (1 item)</td><td></td><td></td></tr>\n<tr><td></td><td>Image ID: GMM2C6</td><td>$ 45.00</td></tr>\n</table>\n\n[PATTERN_BLOCK]\n\n\n<figure type=\"ILLUSTRATION\">Image ID: GMM2C6\n\nImage details\nImage title: Vector Seamless Dash Diagonal Parallel Line Halfton Pattern\nCredit line: YAY Media AS / Alamy Stock Vector\n\n\n\n<description>The image displays a textual header and metadata for a stock vector asset. The content is presented as a list of fields including the unique image identifier 'GMM2C6', the descriptive title 'Vector Seamless Dash Diagonal Parallel Line Halfton Pattern', and the credit line 'YAY Media AS / Alamy Stock Vector'.</description></figure>\n\nLicense details \nCountry: Worldwide \nUsage: Standard \nStart date: 06 May 2024 \nDuration: In perpetuity \nAdditional details: Standard Lice \n\nStandard License for 1 user only. Allowed usage: across websites, social media,\nshort-form video on video sharing sites, digital publishing, digital marketing, and print\nruns up to 100,000. Restrictions stated prior to or at time of purchase may limit the\nscope of permissible usage.\n\n\nPaid \nSubtotal: $ 45.00 \nSales tax @ 10%: $ 4.50 \nTotal: $ 49.50 \n\nPaid by credit card \nCard category: VISA \nCard number: ************8366 \nExpiry: 02 / 2028 \n\nGet in touch\n866 671 7305 (toll free)\nsales@alamy.com\n\n\nLicense agreement\nhttps://www.alamy.com/terms/default.asp\n\n<!-- doc_id=parse-01kxyvd51b0t24v03q3hprrvaf -->",
+  "metadata": {
+    "job_id": "extract-01kxyve86kt4g149qbj3eyqfxt",
+    "model_version": "extract-20260710",
+    "duration_ms": 28070,
+    "doc_id": "parse-01kxyvd51b0t24v03q3hprrvaf",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1926,
+    "output_extraction_chars": 3338,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.8
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyve86kt4g149qbj3eyqfxt"
+}

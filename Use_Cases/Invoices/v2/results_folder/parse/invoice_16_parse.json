@@ -1,0 +1,957 @@
+{
+  "markdown": "Walmart ✳\n\n\nINVOICE\n# 1\n\n\nWalmart Invoice\n\n\nBill To: \nMansoer Walizada \n10517 San Vincente \nAve, South Gate, CA \n90280, USA \n\nShip To: \nMansoer Walizada \n10517 San Vincente \nAve, South Gate, CA \n90280, USA \n\nDate: Mar 20, 2023 \nPayment Terms: MasterCard 8453 \nDue Date: Mar 20, 2023 \nBalance Due: 0,00 US$ \n\n<table>\n<tr><td>Item</td><td>Quantity</td><td>Rate</td><td>Amount</td></tr>\n<tr><td>Lenovo ThinkPad X1 Carbon Gen 10 21CB - 180-degree hinge design - Intel Core i7 1260P / 2.1 GHz - Evo - Win 10 Pro 64-bit (includes Win 11 Pro License) - Intel Iris Xe Graphics - 16 GB RAM - 512 GB SSD TCG Opal Encryption 2, NVMe, Performance - 14&quot; IPS touchscreen 1920 x 1200 - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - deep black paint - kbd: US - with 3 Years Lenovo Premier Support + 3 Years Lenovo Sealed Battery Add On<br>Serial Number: PF4AJSC9</td><td>1</td><td>1 529,94 US$</td><td>1 529,94 US$</td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>Subtotal:</td><td>1 529,94 US$</td></tr>\n<tr><td>Tax (7.25%):</td><td>110,92 US$</td></tr>\n<tr><td>Total:</td><td>1 640,86 US$</td></tr>\n<tr><td>Amount Paid:</td><td>1 640,86 US$</td></tr>\n</table>\n\nNotes:\nTo ensure we are able to help you as best we can, please include your reference number: HEUQ5GZ6R\n\n\nTerms:\n© 2023 Walmart. All Rights Reserved.\n\n<!-- doc_id=parse-01kxyvd105j42zatevbf7310na -->",
+  "metadata": {
+    "job_id": "parse-01kxyvd105j42zatevbf7310na",
+    "model_version": "dpt-3-pro-20260710",
+    "page_count": 1,
+    "output_markdown_chars": 1373,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "failed_pages": [],
+    "duration_ms": 14036,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.9
+    }
+  },
+  "structure": {
+    "type": "document",
+    "children": [
+      {
+        "type": "page",
+        "grounding": {
+          "page": 1,
+          "range": {
+            "start": 0,
+            "end": 1326
+          },
+          "box": {
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "xmax": 1.0,
+            "ymax": 1.0
+          }
+        },
+        "status": "ok",
+        "children": [
+          {
+            "type": "logo",
+            "id": "logo-0",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 0,
+                "end": 10
+              },
+              "box": {
+                "xmin": 0.06285144,
+                "ymin": 0.01240282,
+                "xmax": 0.32096344,
+                "ymax": 0.06913438
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 0,
+                  "end": 10
+                },
+                "box": {
+                  "xmin": 0.06933838,
+                  "ymin": 0.01803393,
+                  "xmax": 0.31296135,
+                  "ymax": 0.06316715
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-0",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 12,
+                "end": 24
+              },
+              "box": {
+                "xmin": 0.74128979,
+                "ymin": 0.02651004,
+                "xmax": 0.93350607,
+                "ymax": 0.09031403
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 12,
+                  "end": 20
+                },
+                "box": {
+                  "xmin": 0.74687809,
+                  "ymin": 0.03108335,
+                  "xmax": 0.92754484,
+                  "ymax": 0.06418502
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 20,
+                  "end": 24
+                },
+                "box": {
+                  "xmin": 0.89188904,
+                  "ymin": 0.07099219,
+                  "xmax": 0.92085424,
+                  "ymax": 0.0875163
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-1",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 26,
+                "end": 42
+              },
+              "box": {
+                "xmin": 0.08395508,
+                "ymin": 0.07601231,
+                "xmax": 0.21955696,
+                "ymax": 0.09806715
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 26,
+                  "end": 42
+                },
+                "box": {
+                  "xmin": 0.08903274,
+                  "ymin": 0.0799443,
+                  "xmax": 0.21079035,
+                  "ymax": 0.09301391
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-2",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 44,
+                "end": 124
+              },
+              "box": {
+                "xmin": 0.08240052,
+                "ymin": 0.13467258,
+                "xmax": 0.24362746,
+                "ymax": 0.22534418
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 44,
+                  "end": 53
+                },
+                "box": {
+                  "xmin": 0.08942494,
+                  "ymin": 0.14048201,
+                  "xmax": 0.14115756,
+                  "ymax": 0.15381188
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 53,
+                  "end": 71
+                },
+                "box": {
+                  "xmin": 0.08896516,
+                  "ymin": 0.15971915,
+                  "xmax": 0.22751276,
+                  "ymax": 0.17287862
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 71,
+                  "end": 91
+                },
+                "box": {
+                  "xmin": 0.0897674,
+                  "ymin": 0.17506803,
+                  "xmax": 0.23210993,
+                  "ymax": 0.18817686
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 91,
+                  "end": 112
+                },
+                "box": {
+                  "xmin": 0.08888246,
+                  "ymin": 0.19014569,
+                  "xmax": 0.23679405,
+                  "ymax": 0.20372512
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 112,
+                  "end": 124
+                },
+                "box": {
+                  "xmin": 0.08894962,
+                  "ymin": 0.20521302,
+                  "xmax": 0.17668925,
+                  "ymax": 0.21909623
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-3",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 126,
+                "end": 206
+              },
+              "box": {
+                "xmin": 0.29517782,
+                "ymin": 0.13553408,
+                "xmax": 0.45490044,
+                "ymax": 0.2246294
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 126,
+                  "end": 135
+                },
+                "box": {
+                  "xmin": 0.30209681,
+                  "ymin": 0.1399607,
+                  "xmax": 0.36431311,
+                  "ymax": 0.15587815
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 135,
+                  "end": 153
+                },
+                "box": {
+                  "xmin": 0.30188697,
+                  "ymin": 0.15936325,
+                  "xmax": 0.43955795,
+                  "ymax": 0.17293802
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 153,
+                  "end": 173
+                },
+                "box": {
+                  "xmin": 0.3032315,
+                  "ymin": 0.17487248,
+                  "xmax": 0.44449086,
+                  "ymax": 0.18834752
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 173,
+                  "end": 194
+                },
+                "box": {
+                  "xmin": 0.3022266,
+                  "ymin": 0.1901331,
+                  "xmax": 0.44874846,
+                  "ymax": 0.20412691
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 194,
+                  "end": 206
+                },
+                "box": {
+                  "xmin": 0.3023496,
+                  "ymin": 0.20532419,
+                  "xmax": 0.3893532,
+                  "ymax": 0.21945542
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-4",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 208,
+                "end": 306
+              },
+              "box": {
+                "xmin": 0.62505621,
+                "ymin": 0.12935673,
+                "xmax": 0.92562371,
+                "ymax": 0.24093436
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 208,
+                  "end": 227
+                },
+                "box": {
+                  "xmin": 0.70993288,
+                  "ymin": 0.13625436,
+                  "xmax": 0.91653081,
+                  "ymax": 0.15196103
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 227,
+                  "end": 259
+                },
+                "box": {
+                  "xmin": 0.63228433,
+                  "ymin": 0.16376025,
+                  "xmax": 0.91647835,
+                  "ymax": 0.18010508
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 259,
+                  "end": 283
+                },
+                "box": {
+                  "xmin": 0.67663455,
+                  "ymin": 0.19096476,
+                  "xmax": 0.91645277,
+                  "ymax": 0.20648185
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 283,
+                  "end": 306
+                },
+                "box": {
+                  "xmin": 0.63510285,
+                  "ymin": 0.22005206,
+                  "xmax": 0.91788975,
+                  "ymax": 0.23744726
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "id": "table-0",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 308,
+                "end": 956
+              },
+              "box": {
+                "xmin": 0.05563235,
+                "ymin": 0.28525531,
+                "xmax": 0.94506609,
+                "ymax": 0.48043007
+              }
+            },
+            "children": [
+              {
+                "type": "table_cell",
+                "id": "table_cell-0",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 324,
+                    "end": 328
+                  },
+                  "box": {
+                    "xmin": 0.06086855,
+                    "ymin": 0.29076122,
+                    "xmax": 0.58108507,
+                    "ymax": 0.31729667
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 0,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-1",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 337,
+                    "end": 345
+                  },
+                  "box": {
+                    "xmin": 0.58105323,
+                    "ymin": 0.29080666,
+                    "xmax": 0.66823267,
+                    "ymax": 0.31728372
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 0,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-2",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 354,
+                    "end": 358
+                  },
+                  "box": {
+                    "xmin": 0.66821667,
+                    "ymin": 0.29081428,
+                    "xmax": 0.80429679,
+                    "ymax": 0.31728155
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 0,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-3",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 367,
+                    "end": 373
+                  },
+                  "box": {
+                    "xmin": 0.80423709,
+                    "ymin": 0.29082616,
+                    "xmax": 0.93864515,
+                    "ymax": 0.31727817
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 0,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-4",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 392,
+                    "end": 839
+                  },
+                  "box": {
+                    "xmin": 0.06099187,
+                    "ymin": 0.31728372,
+                    "xmax": 0.58127707,
+                    "ymax": 0.47740338
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 1,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-5",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 848,
+                    "end": 849
+                  },
+                  "box": {
+                    "xmin": 0.58108507,
+                    "ymin": 0.31728155,
+                    "xmax": 0.66832914,
+                    "ymax": 0.47695269
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 1,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-6",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 858,
+                    "end": 870
+                  },
+                  "box": {
+                    "xmin": 0.66823267,
+                    "ymin": 0.31727817,
+                    "xmax": 0.80423709,
+                    "ymax": 0.47687717
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 1,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-7",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 879,
+                    "end": 891
+                  },
+                  "box": {
+                    "xmin": 0.80387714,
+                    "ymin": 0.31727482,
+                    "xmax": 0.9387017,
+                    "ymax": 0.47675959
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 1,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-8",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 910,
+                    "end": 910
+                  },
+                  "box": {
+                    "xmin": 0.06173591,
+                    "ymin": 0.47695269,
+                    "xmax": 0.58128124,
+                    "ymax": 0.48042738
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 2,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-9",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 919,
+                    "end": 919
+                  },
+                  "box": {
+                    "xmin": 0.58127707,
+                    "ymin": 0.47687717,
+                    "xmax": 0.66833128,
+                    "ymax": 0.48042756
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 2,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-10",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 928,
+                    "end": 928
+                  },
+                  "box": {
+                    "xmin": 0.66832914,
+                    "ymin": 0.47675959,
+                    "xmax": 0.80387714,
+                    "ymax": 0.48042785
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 2,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-11",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 937,
+                    "end": 937
+                  },
+                  "box": {
+                    "xmin": 0.80386886,
+                    "ymin": 0.47664263,
+                    "xmax": 0.93870304,
+                    "ymax": 0.48042814
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 2,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "id": "table-1",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 958,
+                "end": 1171
+              },
+              "box": {
+                "xmin": 0.64540923,
+                "ymin": 0.53453702,
+                "xmax": 0.92717564,
+                "ymax": 0.6468423
+              }
+            },
+            "children": [
+              {
+                "type": "table_cell",
+                "id": "table_cell-12",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 974,
+                    "end": 983
+                  },
+                  "box": {
+                    "xmin": 0.65551118,
+                    "ymin": 0.5387472,
+                    "xmax": 0.75200157,
+                    "ymax": 0.55880177
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 0,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-13",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 992,
+                    "end": 1004
+                  },
+                  "box": {
+                    "xmin": 0.75199116,
+                    "ymin": 0.5385763,
+                    "xmax": 0.92156553,
+                    "ymax": 0.55878847
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 0,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-14",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1023,
+                    "end": 1035
+                  },
+                  "box": {
+                    "xmin": 0.65553662,
+                    "ymin": 0.55878847,
+                    "xmax": 0.75199116,
+                    "ymax": 0.58566143
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 1,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-15",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1044,
+                    "end": 1054
+                  },
+                  "box": {
+                    "xmin": 0.75197721,
+                    "ymin": 0.55876508,
+                    "xmax": 0.92157687,
+                    "ymax": 0.58562677
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 1,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-16",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1073,
+                    "end": 1079
+                  },
+                  "box": {
+                    "xmin": 0.65557086,
+                    "ymin": 0.58562677,
+                    "xmax": 0.75197721,
+                    "ymax": 0.61241485
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 2,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-17",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1088,
+                    "end": 1100
+                  },
+                  "box": {
+                    "xmin": 0.75196332,
+                    "ymin": 0.58556579,
+                    "xmax": 0.92158816,
+                    "ymax": 0.61234605
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 2,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-18",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1119,
+                    "end": 1131
+                  },
+                  "box": {
+                    "xmin": 0.65560497,
+                    "ymin": 0.61234605,
+                    "xmax": 0.75196332,
+                    "ymax": 0.64261661
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 3,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-19",
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1140,
+                    "end": 1152
+                  },
+                  "box": {
+                    "xmin": 0.7519476,
+                    "ymin": 0.61222495,
+                    "xmax": 0.921601,
+                    "ymax": 0.64259336
+                  }
+                },
+                "atomic_grounding": [],
+                "row": 3,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-5",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 1173,
+                "end": 1278
+              },
+              "box": {
+                "xmin": 0.0831587,
+                "ymin": 0.68777883,
+                "xmax": 0.81117117,
+                "ymax": 0.73551846
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 1173,
+                  "end": 1180
+                },
+                "box": {
+                  "xmin": 0.08774894,
+                  "ymin": 0.69192995,
+                  "xmax": 0.13930374,
+                  "ymax": 0.70740753
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 1180,
+                  "end": 1278
+                },
+                "box": {
+                  "xmin": 0.08845559,
+                  "ymin": 0.71306619,
+                  "xmax": 0.80754379,
+                  "ymax": 0.72974088
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "text-6",
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 1280,
+                "end": 1324
+              },
+              "box": {
+                "xmin": 0.08315471,
+                "ymin": 0.74437279,
+                "xmax": 0.35819721,
+                "ymax": 0.78990036
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 1280,
+                  "end": 1287
+                },
+                "box": {
+                  "xmin": 0.08856038,
+                  "ymin": 0.74891544,
+                  "xmax": 0.1419146,
+                  "ymax": 0.76311675
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 1287,
+                  "end": 1324
+                },
+                "box": {
+                  "xmin": 0.08769201,
+                  "ymin": 0.76874075,
+                  "xmax": 0.35321113,
+                  "ymax": 0.78559862
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

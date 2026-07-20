@@ -1,0 +1,529 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "customerservice@fromuthtennis.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-800-523-8414",
+      "representative": "Erik Arndt",
+      "supplier_address": "1100 Rocky Drive, West Lawn PA, 19609",
+      "supplier_name": "FROMUTH"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "227 N 5th Avenue\nRidgefield, WA, 98642",
+      "sold_to_name": "Andrea Kropp"
+    },
+    "invoice_info": {
+      "invoice_date": "2024-04-26",
+      "invoice_date_raw": "04/26/24",
+      "invoice_number": "301236",
+      "order_date": null,
+      "po_number": null,
+      "status": null
+    },
+    "line_items": [
+      {
+        "amount": 60.0,
+        "description": "Nike Air Zoom Vapor Pro 2 (W) (Sundial)",
+        "line_number": "001",
+        "price": 60.0,
+        "quantity": 1,
+        "sku": "JIVPY4-YEL-10",
+        "total": 60.0,
+        "unit_price": 60.0
+      },
+      {
+        "amount": 0.0,
+        "description": "2-DAY AIR",
+        "line_number": "002",
+        "price": 0.0,
+        "quantity": 1,
+        "sku": "XBLUE",
+        "total": 0.0,
+        "unit_price": 0.0
+      },
+      {
+        "amount": 0.0,
+        "description": "",
+        "line_number": "003",
+        "price": 0.0,
+        "quantity": 1,
+        "sku": "XPULL",
+        "total": 0.0,
+        "unit_price": 0.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Credit Card",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": 20.0,
+      "subtotal": 60.0,
+      "tax": 6.96,
+      "total_due": 86.96,
+      "total_due_raw": "USD 86.96"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 1616,
+            "start": 1573
+          }
+        ],
+        "value": "customerservice@fromuthtennis.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 1570,
+            "start": 1549
+          }
+        ],
+        "value": "+1-800-523-8414"
+      },
+      "representative": {
+        "ranges": [
+          {
+            "end": 212,
+            "start": 187
+          }
+        ],
+        "value": "Erik Arndt"
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 367,
+            "start": 330
+          }
+        ],
+        "value": "1100 Rocky Drive, West Lawn PA, 19609"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 16,
+            "start": 0
+          }
+        ],
+        "value": "FROMUTH"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 428,
+            "start": 412
+          },
+          {
+            "end": 450,
+            "start": 429
+          }
+        ],
+        "value": "227 N 5th Avenue\nRidgefield, WA, 98642"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 411,
+            "start": 399
+          }
+        ],
+        "value": "Andrea Kropp"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 86,
+            "start": 62
+          }
+        ],
+        "value": "2024-04-26"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 86,
+            "start": 62
+          }
+        ],
+        "value": "04/26/24"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 61,
+            "start": 37
+          }
+        ],
+        "value": "301236"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 816,
+              "start": 811
+            }
+          ],
+          "value": 60.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 759,
+              "start": 692
+            }
+          ],
+          "value": "Nike Air Zoom Vapor Pro 2 (W) (Sundial)"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 683,
+              "start": 680
+            }
+          ],
+          "value": "001"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 802,
+              "start": 797
+            }
+          ],
+          "value": 60.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 788,
+              "start": 787
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 759,
+              "start": 692
+            }
+          ],
+          "value": "JIVPY4-YEL-10"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 816,
+              "start": 811
+            }
+          ],
+          "value": 60.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 802,
+              "start": 797
+            }
+          ],
+          "value": 60.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 932,
+              "start": 928
+            }
+          ],
+          "value": 0.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 882,
+              "start": 847
+            }
+          ],
+          "value": "2-DAY AIR"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 838,
+              "start": 835
+            }
+          ],
+          "value": "002"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 919,
+              "start": 915
+            }
+          ],
+          "value": 0.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 906,
+              "start": 905
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 896,
+              "start": 891
+            }
+          ],
+          "value": "XBLUE"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 932,
+              "start": 928
+            }
+          ],
+          "value": 0.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 919,
+              "start": 915
+            }
+          ],
+          "value": 0.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1045,
+              "start": 1041
+            }
+          ],
+          "value": 0.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1000,
+              "start": 963
+            }
+          ],
+          "value": ""
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 954,
+              "start": 951
+            }
+          ],
+          "value": "003"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1032,
+              "start": 1028
+            }
+          ],
+          "value": 0.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1019,
+              "start": 1018
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1000,
+              "start": 963
+            }
+          ],
+          "value": "XPULL"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1045,
+              "start": 1041
+            }
+          ],
+          "value": 0.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1032,
+              "start": 1028
+            }
+          ],
+          "value": 0.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 474,
+            "start": 452
+          }
+        ],
+        "value": "Credit Card"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 558,
+            "start": 545
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": [
+          {
+            "end": 1232,
+            "start": 1223
+          }
+        ],
+        "value": 20.0
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1138,
+            "start": 1129
+          }
+        ],
+        "value": 60.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1417,
+            "start": 1409
+          }
+        ],
+        "value": 6.96
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1511,
+            "start": 1502
+          }
+        ],
+        "value": 86.96
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1511,
+            "start": 1502
+          }
+        ],
+        "value": "USD 86.96"
+      }
+    }
+  },
+  "markdown": "[F_ICON] FROMUTH\n\n\nOriginal INVOICE \nDocument Number: 301236 \nDocument Date: 04/26/24 \nPage: 1/1 \nCustomer No.: C0440318 \nName - Business Partner: RIDGEFIELD HIGH SCHOOL \nYour Reference \nYour Contact: Erik Arndt \n610-894-7082 \nerika@fromuthtennis.com \nShip To.: \nAndrea Kropp \nAndrea Kropp \n227 N 5th Ave \nRidgefield, WA, 98642 \n\n1100 Rocky Drive, West Lawn PA, 19609\nUSA 1-800-523-8414\n\n\nBill To.:\nAndrea Kropp\n227 N 5th Avenue\nRidgefield, WA, 98642\n\nTerms...: Credit Card \nPayment Method...: Credit Card \n\n<table>\n<tr><td></td><td colspan=\"5\">Currency: USD</td></tr>\n<tr><td colspan=\"2\">Description</td><td>Manufac</td><td>Quantity</td><td>Price</td><td>Total</td></tr>\n<tr><td>001</td><td>Nike Air Zoom Vapor Pro 2 (W) (Sundial)<br>Item Code: JIVPY4-YEL-10</td><td>DR6192-700</td><td>1</td><td>60.00</td><td>60.00</td></tr>\n<tr><td>002</td><td>***2-DAY AIR***<br>Item Code: XBLUE</td><td>XBLUE</td><td>1</td><td>0.00</td><td>0.00</td></tr>\n<tr><td>003</td><td>/////////////////<br>Item Code: XPULL</td><td></td><td>1</td><td>0.00</td><td>0.00</td></tr>\n<tr><td></td><td></td><td></td><td colspan=\"2\">Invoice Subtotal:</td><td>USD 60.00</td></tr>\n<tr><td></td><td></td><td></td><td colspan=\"2\">Shipping Expenses:</td><td>USD 20.00</td></tr>\n<tr><td></td><td></td><td></td><td colspan=\"2\">Total Before Tax:</td><td>USD 80.00</td></tr>\n<tr><td></td><td></td><td></td><td colspan=\"2\">Total Tax Amount:</td><td>USD 6.96</td></tr>\n<tr><td></td><td></td><td></td><td colspan=\"2\">▎ Total Amount:___</td><td>USD 86.96</td></tr>\n</table>\n\nBy AvaTax DGW.\n\n\nPhone: 1-800-523-8414\n\n\nE-Mail:   customerservice@fromuthtennis.com\n\n\nWebsite.: www.fromuthtennis.com\n\n\nPage 1 of 1\n\n<!-- doc_id=parse-01kxyvctd8efserw6f9tcwe494 -->",
+  "metadata": {
+    "job_id": "extract-01kxyvdzry0vkv71kvwwscynv4",
+    "model_version": "extract-20260710",
+    "duration_ms": 29867,
+    "doc_id": "parse-01kxyvctd8efserw6f9tcwe494",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1714,
+    "output_extraction_chars": 4318,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 4.7
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01kxyvdzry0vkv71kvwwscynv4"
+}
