@@ -1,0 +1,418 @@
+{
+  "extraction": {
+    "account_info": {
+      "account_holder": "KAREN G PEREZ",
+      "account_number": "9100 7883 2561",
+      "service_address": "13619 TORTONA LN APT 3121 WINDERMERE FL 34786",
+      "service_address_city": "WINDERMERE",
+      "service_address_primary": "13619 TORTONA LN APT 3121",
+      "service_address_state": "FL",
+      "service_address_zip": "34786"
+    },
+    "billing_summary": {
+      "bill_date": "2022-02-23",
+      "due_date": "2022-03-16",
+      "service_end_date": "02-21-2022",
+      "service_start_date": "01-25-2022",
+      "total_amount_due": "$170.95"
+    },
+    "electric_charges": {
+      "meter_number": "1262413",
+      "total_electric_charges": "$154.26",
+      "usage_kwh": "1,059 kWh"
+    },
+    "gas_charges": {
+      "meter_number": null,
+      "total_gas_charges": "0",
+      "usage_therms": "0"
+    },
+    "provider_info": {
+      "phone_number": "800-700-8744",
+      "provider": "Duke Energy",
+      "usage_bar_chart": false,
+      "website": "duke-energy.com"
+    }
+  },
+  "extraction_metadata": {
+    "account_info": {
+      "account_holder": {
+        "ranges": [
+          {
+            "end": 127,
+            "start": 96
+          },
+          {
+            "end": 2582,
+            "start": 2569
+          }
+        ],
+        "value": "KAREN G PEREZ"
+      },
+      "account_number": {
+        "ranges": [
+          {
+            "end": 271,
+            "start": 240
+          },
+          {
+            "end": 2567,
+            "start": 2553
+          },
+          {
+            "end": 2842,
+            "start": 2811
+          },
+          {
+            "end": 4334,
+            "start": 4301
+          },
+          {
+            "end": 7873,
+            "start": 7844
+          }
+        ],
+        "value": "9100 7883 2561"
+      },
+      "service_address": {
+        "ranges": [
+          {
+            "end": 154,
+            "start": 128
+          },
+          {
+            "end": 175,
+            "start": 155
+          },
+          {
+            "end": 2608,
+            "start": 2583
+          },
+          {
+            "end": 2633,
+            "start": 2609
+          },
+          {
+            "end": 2725,
+            "start": 2699
+          },
+          {
+            "end": 2746,
+            "start": 2726
+          }
+        ],
+        "value": "13619 TORTONA LN APT 3121 WINDERMERE FL 34786"
+      },
+      "service_address_city": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 155
+          },
+          {
+            "end": 2633,
+            "start": 2609
+          },
+          {
+            "end": 2746,
+            "start": 2726
+          }
+        ],
+        "value": "WINDERMERE"
+      },
+      "service_address_primary": {
+        "ranges": [
+          {
+            "end": 154,
+            "start": 128
+          },
+          {
+            "end": 2608,
+            "start": 2583
+          },
+          {
+            "end": 2725,
+            "start": 2699
+          }
+        ],
+        "value": "13619 TORTONA LN APT 3121"
+      },
+      "service_address_state": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 155
+          },
+          {
+            "end": 2633,
+            "start": 2609
+          },
+          {
+            "end": 2746,
+            "start": 2726
+          }
+        ],
+        "value": "FL"
+      },
+      "service_address_zip": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 155
+          },
+          {
+            "end": 2633,
+            "start": 2609
+          },
+          {
+            "end": 2746,
+            "start": 2726
+          }
+        ],
+        "value": "34786"
+      }
+    },
+    "billing_summary": {
+      "bill_date": {
+        "ranges": [
+          {
+            "end": 200,
+            "start": 176
+          }
+        ],
+        "value": "2022-02-23"
+      },
+      "due_date": {
+        "ranges": [
+          {
+            "end": 551,
+            "start": 544
+          }
+        ],
+        "value": "2022-03-16"
+      },
+      "service_end_date": {
+        "ranges": [
+          {
+            "end": 230,
+            "start": 201
+          }
+        ],
+        "value": "02-21-2022"
+      },
+      "service_start_date": {
+        "ranges": [
+          {
+            "end": 230,
+            "start": 201
+          }
+        ],
+        "value": "01-25-2022"
+      },
+      "total_amount_due": {
+        "ranges": [
+          {
+            "end": 551,
+            "start": 544
+          }
+        ],
+        "value": "$170.95"
+      }
+    },
+    "electric_charges": {
+      "meter_number": {
+        "ranges": [
+          {
+            "end": 7984,
+            "start": 7937
+          },
+          {
+            "end": 8343,
+            "start": 8328
+          }
+        ],
+        "value": "1262413"
+      },
+      "total_electric_charges": {
+        "ranges": [
+          {
+            "end": 455,
+            "start": 449
+          },
+          {
+            "end": 8891,
+            "start": 8884
+          }
+        ],
+        "value": "$154.26"
+      },
+      "usage_kwh": {
+        "ranges": [
+          {
+            "end": 2094,
+            "start": 2089
+          },
+          {
+            "end": 8150,
+            "start": 8141
+          }
+        ],
+        "value": "1,059 kWh"
+      }
+    },
+    "gas_charges": {
+      "meter_number": {
+        "ranges": null,
+        "value": null
+      },
+      "total_gas_charges": {
+        "ranges": null,
+        "value": "0"
+      },
+      "usage_therms": {
+        "ranges": null,
+        "value": "0"
+      }
+    },
+    "provider_info": {
+      "phone_number": {
+        "ranges": [
+          {
+            "end": 60,
+            "start": 48
+          },
+          {
+            "end": 4284,
+            "start": 4272
+          },
+          {
+            "end": 5072,
+            "start": 5023
+          },
+          {
+            "end": 7154,
+            "start": 7113
+          },
+          {
+            "end": 7743,
+            "start": 7711
+          },
+          {
+            "end": 7827,
+            "start": 7815
+          },
+          {
+            "end": 4444,
+            "start": 4301
+          },
+          {
+            "end": 4888,
+            "start": 4445
+          }
+        ],
+        "value": "800-700-8744"
+      },
+      "provider": {
+        "ranges": [
+          {
+            "end": 23,
+            "start": 19
+          },
+          {
+            "end": 31,
+            "start": 24
+          },
+          {
+            "end": 2474,
+            "start": 2321
+          },
+          {
+            "end": 4300,
+            "start": 4224
+          },
+          {
+            "end": 5593,
+            "start": 5395
+          },
+          {
+            "end": 7842,
+            "start": 7766
+          }
+        ],
+        "value": "Duke Energy"
+      },
+      "usage_bar_chart": {
+        "ranges": [
+          {
+            "end": 614,
+            "start": 572
+          },
+          {
+            "end": 1133,
+            "start": 616
+          }
+        ],
+        "value": false
+      },
+      "website": {
+        "ranges": [
+          {
+            "end": 47,
+            "start": 32
+          },
+          {
+            "end": 3903,
+            "start": 3655
+          },
+          {
+            "end": 4300,
+            "start": 4224
+          },
+          {
+            "end": 4444,
+            "start": 4301
+          },
+          {
+            "end": 4888,
+            "start": 4445
+          },
+          {
+            "end": 5209,
+            "start": 4889
+          },
+          {
+            "end": 7219,
+            "start": 6849
+          },
+          {
+            "end": 7842,
+            "start": 7766
+          }
+        ],
+        "value": "duke-energy.com"
+      }
+    }
+  },
+  "markdown": "[Duke Energy logo]\nDUKE\nENERGY®\nduke-energy.com\n800.700.8744\n\n\nYour Energy Bill\n\n\nPage 1 of 3\n\n\nService address: KAREN G PEREZ \n13619 TORTONA LN APT 3121 \nWINDERMERE FL 34786 \nBill date: Feb 23, 2022 \nFor service: Jan 25 - Feb 21 \n28 days \nAccount number: 9100 7883 2561 \n\nBilling summary\n\n<table>\n<tr><td>Previous Amount Due</td><td>$91.39</td></tr>\n<tr><td>Payment Received Feb 17</td><td>-91.39</td></tr>\n<tr><td>Current Electric Charges</td><td>154.26</td></tr>\n<tr><td>Taxes</td><td>16.69</td></tr>\n<tr><td>Total Amount Due Mar 16</td><td>$170.95</td></tr>\n</table>\n\n<figure type=\"CHART\">Your usage snapshot. \n\n<description>This is a line chart titled 'Electric usage history' showing electricity consumption in kWh over a period from February 2021 to February 2022. The Y-axis represents kWh, with major tick marks at intervals including 0, 138, 276, 414, 553, 691, 829, 967, 1105, and 1243. The X-axis represents months from Feb to Feb. A dark blue line represents the 2021 data, while a green line segment represents the data for January and February 2022. The line shows fluctuations in usage, peaking in July.</description><table><thead><tr><th>Month</th><th>Year</th><th>Usage (kWh)</th></tr></thead><tbody><tr><td>Feb</td><td>2021</td><td>~691</td></tr><tr><td>Mar</td><td>2021</td><td>~829</td></tr><tr><td>Apr</td><td>2021</td><td>~829</td></tr><tr><td>May</td><td>2021</td><td>~800</td></tr><tr><td>Jun</td><td>2021</td><td>~829</td></tr><tr><td>Jul</td><td>2021</td><td>~1105</td></tr><tr><td>Aug</td><td>2021</td><td>~1050</td></tr><tr><td>Sep</td><td>2021</td><td>~900</td></tr><tr><td>Oct</td><td>2021</td><td>~900</td></tr><tr><td>Nov</td><td>2021</td><td>~829</td></tr><tr><td>Dec</td><td>2021</td><td>~829</td></tr><tr><td>Jan</td><td>2022</td><td>~967</td></tr><tr><td>Feb</td><td>2022</td><td>~1000</td></tr></tbody></table></figure>\n\nAverage temperature in degrees\n68° 70° 72° 78° 81° 82° 82° 80° 77° 66° 68° 60° 61°\n\n<table>\n<tr><td></td><td>Current Month</td><td>Feb 2021</td><td>12-Month Usage</td><td>Avg Monthly Usage</td></tr>\n<tr><td>Electric (kWh)</td><td>1,059</td><td>644</td><td>10,870</td><td>906</td></tr>\n<tr><td>Avg. Daily (kWh)</td><td>38</td><td>22</td><td>29</td><td></td></tr>\n<tr><td colspan=\"3\">12-month usage based on most recent history</td><td></td><td></td></tr>\n</table>\n\nPlease return this portion with your payment. Thank you for your business.\n\n\n[Company logo consisting of blue and green swirling shapes]\nDUKE\nENERGY®\n\n\nDuke Energy Return Mail\nPO Box 1090\nCharlotte, NC 28201-1090\n\n\nAccount number\n9100 7883 2561\n\nKAREN G PEREZ\n13619 TORTONA LN APT 3121\nWINDERMERE FL 34786-7459\n\n\nYour Energy Bill  Page 1 of 3 \nService address: KAREN G PEREZ \n13619 TORTONA LN APT 3121 \nWINDERMERE FL 34786 \nBill date: Feb 23, 2022 \nFor service: Jan 25 - Feb 21 \n28 days \nAccount number: 9100 7883 2561 \n\n$$\nThank you for your payment.\n\n\nDo you or someone you know need help with energy bills or other\n**essentials as a result of the pandemic?** Help is available through\nnew and existing assistance programs for those who qualify. To get\nstarted, visit 211.org, dial 211 or text your zip code to 898211.\n\n\nDuke Energy Florida utilized fuel in the following proportions to\ngenerate your power: Coal 11%, Purchased Power 10%, Gas\n77%, Oil 0%, Nuclear 0%, Solar 2% (For prior 12 months ending\nDecember 31, 2021).\n\n\nWinter's cold weather can bring higher energy bills. Get lots of ideas\nand resources to help control your energy use and save at duke-\nenergy.com/BetterWinterBills.\n\n\nGo solar with no rooftop panels to install or long-term contracts, and\nsave over time. Whether you rent or own your home, support clean\nenergy by enrolling at duke-energy.com/CECSolar.\n\n\n**Mail your payment at least 7 days before the due date** or\npay instantly at duke-energy.com/billing. Late payments\nare subject to a $5.00 or 1.5%, late charge, whichever is\ngreater.\n\n\nAmount due \n$170.95 by Mar 16 \nAfter Mar 16, the amount due will increase to $175.95. \n\n$___\nAdd here, to help others with a\ncontribution to Share the Light\n$___\n**Amount enclosed**\n\n\nDuke Energy Payment Processing\nPO Box 1094\nCharlotte, NC 28201-1094\n\n\n889100788325610006600000000000000000001709500000170952\n\n\n<!-- PAGE BREAK -->\n\n[DUKE ENERGY LOGO]\nDUKE\nENERGY®\nduke-energy.com\n800.700.8744\n\n\nPage 2 of 3\n\n\nAccount number **9100 7883 2561**\n200210436563\n\n\nWe're here for you\n\n\nReport an emergency\nElectric outage: duke-energy.com/outages\n800.228.8485\n\nConvenient ways to pay your bill \nOnline: duke-energy.com/billing \nAutomatically from your bank account: duke-energy.com/automatic-draft \nSpeedpay (fee applies): duke-energy.com/pay-now, 800.700.8744 \nBy mail payable to Duke Energy: P.O. Box 1094, Charlotte, NC 28201-1094 \nIn person: duke-energy.com/location \n\n**Help managing your account** (not applicable for all customers) \nRegister for free paperless billing  duke-energy.com/paperless \nHome  duke-energy.com/manage-home \nBusiness  duke-energy.com/manage-bus \n\n### General questions or concerns \nOnline: duke-energy.com \nHome: Mon - Fri (7 a.m. to 7 p.m.): 800.700.8744 \nBusiness: Mon - Fri (7 a.m. to 6 p.m.): 877.372.8477 \nFor hearing impaired TDD/TTY: 800.222.3448 or 711 \nInternational: 1.407.629.1010 \n\n<table>\n<tr><td>Call before you dig<br>Call</td><td>800.432.4770 or 811</td></tr>\n<tr><td>Check utility rates<br>Check rates and charges</td><td>duke-energy.com/rates</td></tr>\n</table>\n\n**Correspond with Duke Energy** (not for payment)\nP.O. Box 14042\nSt Petersburg, FL 33733\n\n\n**Important to know**\n**Your next meter reading: Mar 23**\nPlease be sure we can safely access your meter.\nDon't worry if your digital meter flashes eights from\ntime to time. That's a normal part of the energy\nmeasuring process.\n\n\n**Your electric service may be disconnected if**\n**your payment is past due**\nIf payment for your electric service is past due, we\nmay begin disconnection procedures. The due\ndate on your bill applies to current charges only.\nAny unpaid, past due charges are not extended to\nthe new due date and may result in disconnection.\nThe reconnection fee is $13 between the hours\nof 7 a.m. and 7 p.m. Monday through Friday and\n$14 after 7 p.m. or on the weekends.\n\n\n**Electric service does not depend on**\n**payment for other products or services**\nNon-payment for non-regulated products or\nservices (such as surge protection or equipment\nservice contracts) may result in removal from the\nprogram but will not result in disconnection of\nelectric service.\n\n\n**When you pay by check**\nWe may process the payment as a regular check\nor convert it into a one-time electronic check\npayment.\n\n\n**Asset Securitization Charge**\nA charge to recover cost associated with nuclear\nasset-recovery bonds. Duke Energy Florida is\nacting as the collection agent for Special Purpose\nEntity (SPE) until the bonds have been paid in full\nor legally discharged.\n\n\n**Medical Essential Program**\nIdentifies customers who are dependent on\ncontinuously electric-powered medical equipment.\nThe program does not automatically extend\nelectric bill due dates, nor does it provide priority\nrestoration. To learn more or find out if you\nqualify, call 800.700.8744 or visit duke-\nenergy.com/home/billing/special-assistance/\nmedically-essential.\n\n\n**Special Needs Customers**\nFlorida Statutes offer a program for customers who\nneed special assistance during emergency\nevacuations and sheltering. Customers with\nspecial needs may contact their local emergency\nmanagement agency for registration and more\ninformation.\n\n\n**Para nuestros clientes que hablan Español**\nRepresentantes bilingües están disponibles\npara asistirle de lunes a viernes de 7 a.m. - 7\np.m. Para obtener más información o\nreportar problemas con su servicio eléctrico,\nfavor de llamar al 800.700.8744.\n\n\n<!-- PAGE BREAK -->\n\n[DUKE ENERGY LOGO]\nDUKE\nENERGY®\nduke-energy.com\n800.700.8744\n\n\nPage 3 of 3\n\n\nAccount number 9100 7883 2561\n\n\nYour usage snapshot - Continued\n\n<table>\n<tr><td colspan=\"2\">Current electric usage for meter number 1262413</td></tr>\n<tr><td>Actual reading on Feb 21</td><td>28474</td></tr>\n<tr><td>Previous reading on Jan 25</td><td>- 27415</td></tr>\n<tr><td>Energy Used</td><td>1,059 kWh</td></tr>\n<tr><td>Billed kWh 1,059.000 kWh</td><td></td></tr>\n</table>\n\nBilling details - Electric\n\n<table>\n<tr><td>Billing Period - Jan 25 to Feb 21</td><td></td></tr>\n<tr><td>Meter - 1262413</td><td></td></tr>\n<tr><td>Customer Charge</td><td>$12.45</td></tr>\n<tr><td>Energy Charge<br>1,000.000 kWh @ 9.337c</td><td>93.37</td></tr>\n<tr><td>Energy Charge<br>59.000 kWh @ 10.487c</td><td>6.20</td></tr>\n<tr><td>Fuel Charge</td><td></td></tr>\n<tr><td>1,000.000 kWh @ 3.681c</td><td>36.81</td></tr>\n<tr><td>Fuel Charge</td><td></td></tr>\n<tr><td>59.000 kWh @ 4.751c</td><td>2.80</td></tr>\n<tr><td>Asset Securitization Charge</td><td></td></tr>\n<tr><td>1,059.000 kWh @ 0.248c</td><td>2.63</td></tr>\n<tr><td>Total Current Charges</td><td>$154.26</td></tr>\n</table>\n\nBilling details - Taxes\n\n<table>\n<tr><td>Regulatory Assessment Fee</td><td>$0.11</td></tr>\n<tr><td>Gross Receipts Tax</td><td>3.96</td></tr>\n<tr><td>County Utility Tax</td><td>12.62</td></tr>\n<tr><td>Total Taxes</td><td>$16.69</td></tr>\n</table>\n\n<figure type=\"ILLUSTRATION\">\n\n<description>The image features a circular blue icon containing a stylized white lightbulb graphic positioned above two sentences of explanatory text.</description> A kilowatt-hour (kWh) is a measure of the energy used by a 1,000-watt appliance in one hour. A 10-watt LED lightbulb would take 100 hours to use 1 kWh.</figure>\n\nYour current rate is Residential Service (RS-1).\n\n<!-- doc_id=parse-01ky3aka1tabyy0v53b7kjprtz -->",
+  "metadata": {
+    "job_id": "extract-01ky3am8jvbrgtwj782t0jdwg8",
+    "model_version": "extract-20260710",
+    "duration_ms": 53540,
+    "doc_id": "parse-01ky3aka1tabyy0v53b7kjprtz",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 9614,
+    "output_extraction_chars": 821,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.8
+    }
+  },
+  "schema_violation_error": "The value at 'gas_charges.meter_number' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'gas_charges.meter_number' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky3am8jvbrgtwj782t0jdwg8"
+}
