@@ -1,0 +1,413 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "lhazlett@nussbaumcfe.com",
+      "gstin": null,
+      "pan": null,
+      "phone": null,
+      "representative": null,
+      "supplier_address": "1451 S Elm Eugene Street\nBox 35\nGreensboro, NC 27406 US",
+      "supplier_name": "The Nussbaum Center for Entrepreneurship"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": null,
+      "sold_to_name": "Leo Charles Vincent\nAbaxys Tech, LLC"
+    },
+    "invoice_info": {
+      "invoice_date": "2023-04-01",
+      "invoice_date_raw": "04/01/2023",
+      "invoice_number": "2197",
+      "order_date": null,
+      "po_number": null,
+      "status": "UNPAID"
+    },
+    "line_items": [
+      {
+        "amount": 271.0,
+        "description": "Suite 2009",
+        "line_number": "1",
+        "price": 271.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 271.0,
+        "unit_price": 271.0
+      },
+      {
+        "amount": 75.0,
+        "description": "Suite 2009 Internet Fee",
+        "line_number": "2",
+        "price": 75.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 75.0,
+        "unit_price": 75.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Due on receipt",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 346.0,
+      "tax": 0.0,
+      "total_due": 346.0,
+      "total_due_raw": "$346.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 121,
+            "start": 97
+          }
+        ],
+        "value": "lhazlett@nussbaumcfe.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": null,
+        "value": null
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 65,
+            "start": 41
+          },
+          {
+            "end": 72,
+            "start": 66
+          },
+          {
+            "end": 96,
+            "start": 73
+          }
+        ],
+        "value": "1451 S Elm Eugene Street\nBox 35\nGreensboro, NC 27406 US"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 40,
+            "start": 0
+          }
+        ],
+        "value": "The Nussbaum Center for Entrepreneurship"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 179,
+            "start": 160
+          },
+          {
+            "end": 196,
+            "start": 180
+          }
+        ],
+        "value": "Leo Charles Vincent\nAbaxys Tech, LLC"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 276,
+            "start": 259
+          }
+        ],
+        "value": "2023-04-01"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 276,
+            "start": 259
+          }
+        ],
+        "value": "04/01/2023"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 258,
+            "start": 244
+          }
+        ],
+        "value": "2197"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 934,
+            "start": 927
+          }
+        ],
+        "value": "UNPAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 522,
+              "start": 516
+            }
+          ],
+          "value": 271.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 482,
+              "start": 472
+            }
+          ],
+          "value": "Suite 2009"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 507,
+              "start": 501
+            }
+          ],
+          "value": 271.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 492,
+              "start": 491
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 522,
+              "start": 516
+            }
+          ],
+          "value": 271.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 507,
+              "start": 501
+            }
+          ],
+          "value": 271.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 628,
+              "start": 623
+            }
+          ],
+          "value": 75.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 590,
+              "start": 567
+            }
+          ],
+          "value": "Suite 2009 Internet Fee"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "2"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 614,
+              "start": 609
+            }
+          ],
+          "value": 75.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 600,
+              "start": 599
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 628,
+              "start": 623
+            }
+          ],
+          "value": 75.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 614,
+              "start": 609
+            }
+          ],
+          "value": 75.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 299,
+            "start": 277
+          }
+        ],
+        "value": "Due on receipt"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": null,
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 706,
+            "start": 700
+          }
+        ],
+        "value": 346.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 777,
+            "start": 773
+          }
+        ],
+        "value": 0.0
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 852,
+            "start": 846
+          }
+        ],
+        "value": 346.0
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 934,
+            "start": 927
+          }
+        ],
+        "value": "$346.00"
+      }
+    }
+  },
+  "markdown": "The Nussbaum Center for Entrepreneurship\n1451 S Elm Eugene Street\nBox 35\nGreensboro, NC 27406 US\nlhazlett@nussbaumcfe.com\nwww.nussbaumcfe.com\n\n\nINVOICE\nBILL TO\nLeo Charles Vincent\nAbaxys Tech, LLC\n\nSHIP TO\nLeo Charles Vincent\nAbaxys Tech, LLC\n\nINVOICE: 2197 \nDATE: 04/01/2023 \nTERMS: Due on receipt \nDUE DATE: 04/01/2023 \n\n<table>\n<tr><td>DATE</td><td>ACTIVITY</td><td>DESCRIPTION</td><td>QTY</td><td>RATE</td><td>AMOUNT</td></tr>\n<tr><td></td><td>Service Revenue</td><td>Suite 2009</td><td>1</td><td>271.00</td><td>271.00</td></tr>\n<tr><td></td><td>Internet</td><td>Suite 2009 Internet Fee</td><td>1</td><td>75.00</td><td>75.00</td></tr>\n<tr><td></td><td></td><td>SUBTOTAL</td><td></td><td></td><td>346.00</td></tr>\n<tr><td></td><td></td><td>TAX</td><td></td><td></td><td>0.00</td></tr>\n<tr><td></td><td></td><td>TOTAL</td><td></td><td></td><td>346.00</td></tr>\n<tr><td></td><td></td><td>BALANCE DUE</td><td></td><td></td><td>$346.00</td></tr>\n</table>\n\nPage 1 of 1\n\n<!-- doc_id=parse-01ky0wqmbwc7fndmfq8t2w8vmc -->",
+  "metadata": {
+    "job_id": "extract-01ky0wrs54z0es0bm1f2sa38hx",
+    "model_version": "extract-20260710",
+    "duration_ms": 28549,
+    "doc_id": "parse-01ky0wqmbwc7fndmfq8t2w8vmc",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1016,
+    "output_extraction_chars": 1153,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.4
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky0wrs54z0es0bm1f2sa38hx"
+}

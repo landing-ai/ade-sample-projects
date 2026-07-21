@@ -1,0 +1,585 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "Tanamallory@gmail.com",
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-503-310-4017",
+      "representative": null,
+      "supplier_address": "15807 NE Lucia Falls Rd Battle Ground, WA 98604-8258",
+      "supplier_name": "Three 60 Decks"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "227 N. 5th Ave. Ridgefield, WA 98642",
+      "sold_to_name": "Karl & Andrea Kropp"
+    },
+    "invoice_info": {
+      "invoice_date": "2024-08-08",
+      "invoice_date_raw": "08/08/2024",
+      "invoice_number": "2990",
+      "order_date": "",
+      "po_number": "Kropp",
+      "status": "PAID"
+    },
+    "line_items": [
+      {
+        "amount": 20660.5,
+        "description": "Deck Replace (3) existing deck per sketch (600sf). Price includes: - demo and disposal of existing - new pressure treated framing, footings/piers and brackets - Trex Select Decking with picture framing (Lava Rock) - Trex hidden fastening system - Trex fascia & stair risers - Trex 50 year materials warranty - Trex 5 year labor warranty for Pro Platinum installation",
+        "line_number": "1",
+        "price": 29515.0,
+        "quantity": 0.7,
+        "sku": null,
+        "total": 20660.5,
+        "unit_price": 29515.0
+      },
+      {
+        "amount": 8507.8,
+        "description": "Railing 118LF of American Structures aluminum picket railing, 36\"h, TR200 toprail on deck, Black. This is quoted with a TOP of deck surface mount posts.",
+        "line_number": "2",
+        "price": 12154.0,
+        "quantity": 0.7,
+        "sku": null,
+        "total": 8507.8,
+        "unit_price": 12154.0
+      },
+      {
+        "amount": 1872.5,
+        "description": "Deck Add Metal roofing panel under the upper side deck, white. Includes a gutter and downspout, color white",
+        "line_number": "3",
+        "price": 2675.0,
+        "quantity": 0.7,
+        "sku": null,
+        "total": 1872.5,
+        "unit_price": 2675.0
+      },
+      {
+        "amount": 2610.0,
+        "description": "Lighting Dekor Dot lighting along edge of front entry deck/bridge and upper deck. 28 lights total with all wiring, timers and/or remotes.",
+        "line_number": "4",
+        "price": 2610.0,
+        "quantity": 1.0,
+        "sku": null,
+        "total": 2610.0,
+        "unit_price": 2610.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Due on receipt",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 33650.8,
+      "tax": 2927.62,
+      "total_due": 36578.42,
+      "total_due_raw": "$0.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 100,
+            "start": 79
+          }
+        ],
+        "value": "Tanamallory@gmail.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 78,
+            "start": 68
+          }
+        ],
+        "value": "+1-503-310-4017"
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 38,
+            "start": 15
+          },
+          {
+            "end": 67,
+            "start": 39
+          }
+        ],
+        "value": "15807 NE Lucia Falls Rd Battle Ground, WA 98604-8258"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 14,
+            "start": 0
+          }
+        ],
+        "value": "Three 60 Decks"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 191,
+            "start": 176
+          },
+          {
+            "end": 212,
+            "start": 192
+          },
+          {
+            "end": 370,
+            "start": 223
+          }
+        ],
+        "value": "227 N. 5th Ave. Ridgefield, WA 98642"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 156
+          },
+          {
+            "end": 370,
+            "start": 223
+          }
+        ],
+        "value": "Karl & Andrea Kropp"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 316,
+            "start": 300
+          }
+        ],
+        "value": "2024-08-08"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 316,
+            "start": 300
+          }
+        ],
+        "value": "08/08/2024"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 299,
+            "start": 284
+          }
+        ],
+        "value": "2990"
+      },
+      "order_date": {
+        "ranges": [
+          {
+            "end": 316,
+            "start": 300
+          }
+        ],
+        "value": ""
+      },
+      "po_number": {
+        "ranges": [
+          {
+            "end": 376,
+            "start": 371
+          }
+        ],
+        "value": "Kropp"
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 1936,
+            "start": 1924
+          }
+        ],
+        "value": "PAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 905,
+              "start": 895
+            }
+          ],
+          "value": 20660.5
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 855,
+              "start": 461
+            }
+          ],
+          "value": "Deck Replace (3) existing deck per sketch (600sf). Price includes: - demo and disposal of existing - new pressure treated framing, footings/piers and brackets - Trex Select Decking with picture framing (Lava Rock) - Trex hidden fastening system - Trex fascia & stair risers - Trex 50 year materials warranty - Trex 5 year labor warranty for Pro Platinum installation"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 886,
+              "start": 877
+            }
+          ],
+          "value": 29515.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 868,
+              "start": 864
+            }
+          ],
+          "value": 0.7
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 905,
+              "start": 895
+            }
+          ],
+          "value": 20660.5
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 886,
+              "start": 877
+            }
+          ],
+          "value": 29515.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1133,
+              "start": 1124
+            }
+          ],
+          "value": 8507.8
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1084,
+              "start": 924
+            }
+          ],
+          "value": "Railing 118LF of American Structures aluminum picket railing, 36\"h, TR200 toprail on deck, Black. This is quoted with a TOP of deck surface mount posts."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "2"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1115,
+              "start": 1106
+            }
+          ],
+          "value": 12154.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1097,
+              "start": 1093
+            }
+          ],
+          "value": 0.7
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1133,
+              "start": 1124
+            }
+          ],
+          "value": 8507.8
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1115,
+              "start": 1106
+            }
+          ],
+          "value": 12154.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1313,
+              "start": 1304
+            }
+          ],
+          "value": 1872.5
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1265,
+              "start": 1152
+            }
+          ],
+          "value": "Deck Add Metal roofing panel under the upper side deck, white. Includes a gutter and downspout, color white"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "3"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1295,
+              "start": 1287
+            }
+          ],
+          "value": 2675.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1278,
+              "start": 1274
+            }
+          ],
+          "value": 0.7
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1313,
+              "start": 1304
+            }
+          ],
+          "value": 1872.5
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1295,
+              "start": 1287
+            }
+          ],
+          "value": 2675.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1517,
+              "start": 1508
+            }
+          ],
+          "value": 2610.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1472,
+              "start": 1332
+            }
+          ],
+          "value": "Lighting Dekor Dot lighting along edge of front entry deck/bridge and upper deck. 28 lights total with all wiring, timers and/or remotes."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "4"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1499,
+              "start": 1491
+            }
+          ],
+          "value": 2610.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1482,
+              "start": 1481
+            }
+          ],
+          "value": 1.0
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1517,
+              "start": 1508
+            }
+          ],
+          "value": 2610.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1499,
+              "start": 1491
+            }
+          ],
+          "value": 2610.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 359,
+            "start": 338
+          }
+        ],
+        "value": "Due on receipt"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": null,
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1583,
+            "start": 1574
+          }
+        ],
+        "value": 33650.8
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1643,
+            "start": 1635
+          }
+        ],
+        "value": 2927.62
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1720,
+            "start": 1711
+          }
+        ],
+        "value": 36578.42
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1865,
+            "start": 1860
+          }
+        ],
+        "value": "$0.00"
+      }
+    }
+  },
+  "markdown": "Three 60 Decks\n15807 NE Lucia Falls Rd\nBattle Ground, WA 98604-8258\n5033104017\nTanamallory@gmail.com\n\n\nTHREE 60 DECKS\nRAILINGS & COVERS\n\n\nINVOICE\n\n\nBILL TO\nKarl & Andrea Kropp\n227 N. 5th Ave.\nRidgefield, WA 98642\n\nSHIP TO \nKarl & Andrea Kropp \n227 N. 5th Ave. \nRidgefield, WA 98642 \n\nINVOICE # 2990 \nDATE 08/08/2024 \nDUE DATE 08/08/2024 \nTERMS Due on receipt \n\nPO NUMBER\nKropp\n\n<table>\n<tr><td>ACTIVITY</td><td>QTY</td><td>RATE</td><td>AMOUNT</td></tr>\n<tr><td>Deck<br>Replace (3) existing deck per sketch (600sf). Price includes:<br>- demo and disposal of existing<br>- new pressure treated framing, footings/piers and brackets<br>- Trex Select Decking with picture framing (Lava Rock)<br>- Trex hidden fastening system<br>- Trex fascia &amp; stair risers<br>- Trex 50 year materials warranty<br>- Trex 5 year labor warranty for Pro Platinum installation</td><td>0.70</td><td>29,515.00</td><td>20,660.50T</td></tr>\n<tr><td>Railing<br>118LF of American Structures aluminum picket railing, 36&quot;h, TR200 toprail on deck, Black. This is quoted with a TOP of deck surface mount posts.</td><td>0.70</td><td>12,154.00</td><td>8,507.80T</td></tr>\n<tr><td>Deck<br>Add Metal roofing panel under the upper side deck, white.<br>Includes a gutter and downspout, color white</td><td>0.70</td><td>2,675.00</td><td>1,872.50T</td></tr>\n<tr><td>Lighting<br>Dekor Dot lighting along edge of front entry deck/bridge and upper deck. 28 lights total with all wiring, timers and/or remotes.</td><td>1</td><td>2,610.00</td><td>2,610.00T</td></tr>\n<tr><td colspan=\"2\">SUBTOTAL</td><td></td><td>33,650.80</td></tr>\n<tr><td colspan=\"2\">TAX</td><td></td><td>2,927.62</td></tr>\n<tr><td colspan=\"2\">Pay invoice   TOTAL</td><td></td><td>36,578.42</td></tr>\n<tr><td colspan=\"2\">Pay invoice<br>PAYMENT</td><td></td><td>36,578.42</td></tr>\n<tr><td colspan=\"2\">BALANCE DUE</td><td></td><td>$0.00</td></tr>\n</table>\n\n[STAMPED]\ners and brackets\nLava Rock)\n[PAID stamp]\ninstallation\ncket railing 36\"h\n\n\nOR 205891 | WA THREE6D788BG\n\n<!-- doc_id=parse-01ky0wr1a5pd99h7vrjkj8979c -->",
+  "metadata": {
+    "job_id": "extract-01ky0ws3tfh8h3zr86p84syk14",
+    "model_version": "extract-20260710",
+    "duration_ms": 30244,
+    "doc_id": "parse-01ky0wr1a5pd99h7vrjkj8979c",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 2047,
+    "output_extraction_chars": 2196,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.7
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky0ws3tfh8h3zr86p84syk14"
+}

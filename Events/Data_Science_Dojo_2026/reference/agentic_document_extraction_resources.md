@@ -2,7 +2,7 @@
 
 ## Agentic Document Extraction Workflows
 
-Parse - https://docs.landing.ai/ade/ade-separate-apis
+Parse - https://docs.landing.ai/ade/parse
 Build Schema - https://docs.landing.ai/ade/ade-extract-schema-api
 Extract - https://docs.landing.ai/ade/ade-extract
 

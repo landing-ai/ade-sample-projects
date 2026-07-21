@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model PolicyDoc {
+  id         String   @id @default(cuid())
+  filename   String
+  mimeType   String
+  filePath   String
+  pageCount  Int?
+  pageOffset Int      @default(0)
+  createdAt  DateTime @default(now())
+  policy     Policy?  @relation(fields: [policyId], references: [id], onDelete: Cascade)
+  policyId   String?
+}
+
+model Policy {
+  id         String   @id @default(cuid())
+  name       String?
+  extracted  String   @default("")   // GroundedPolicy JSON (fields with refs + boxes)
+  incomplete String?                 // JSON array of failed pass labels
+  passStatus String   @default("{}") // JSON {parse,benefits,constraints: "pending|running|done|failed"}
+  createdAt  DateTime @default(now())
+  docs       PolicyDoc[]
+  sessions   HotlineSession[]
+}
+
+model HotlineSession {
+  id         String   @id @default(cuid())
+  policyId   String
+  policy     Policy   @relation(fields: [policyId], references: [id], onDelete: Cascade)
+  channel    String   // "vocalbridge" | "browser"
+  transcript String   // JSON [{role,content,timestamp?}]
+  createdAt  DateTime @default(now())
+}

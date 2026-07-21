@@ -1,0 +1,386 @@
+{
+  "extraction": {
+    "account_info": {
+      "account_holder": "MITCHELL JOHNSON",
+      "account_number": "44-6011-0985-0021-7",
+      "service_address": "435 W 57 ST 2H NEW YORK NY 10019-1723",
+      "service_address_city": "NEW YORK",
+      "service_address_primary": "435 W 57 ST 2H",
+      "service_address_state": "NY",
+      "service_address_zip": "10019-1723"
+    },
+    "billing_summary": {
+      "bill_date": "2023-03-28",
+      "due_date": "2023-04-07",
+      "service_end_date": "03-27-2023",
+      "service_start_date": "02-24-2023",
+      "total_amount_due": "$44.89"
+    },
+    "electric_charges": {
+      "meter_number": "013641924",
+      "total_electric_charges": "$44.89",
+      "usage_kwh": "89"
+    },
+    "gas_charges": {
+      "meter_number": null,
+      "total_gas_charges": "0.00",
+      "usage_therms": "0.00"
+    },
+    "provider_info": {
+      "phone_number": "1-800-752-6633",
+      "provider": "Con Edison",
+      "usage_bar_chart": true,
+      "website": "conEd.com"
+    }
+  },
+  "extraction_metadata": {
+    "account_info": {
+      "account_holder": {
+        "ranges": [
+          {
+            "end": 112,
+            "start": 95
+          },
+          {
+            "end": 3088,
+            "start": 3072
+          },
+          {
+            "end": 3386,
+            "start": 3364
+          }
+        ],
+        "value": "MITCHELL JOHNSON"
+      },
+      "account_number": {
+        "ranges": [
+          {
+            "end": 149,
+            "start": 113
+          },
+          {
+            "end": 2938,
+            "start": 2902
+          },
+          {
+            "end": 3424,
+            "start": 3389
+          }
+        ],
+        "value": "44-6011-0985-0021-7"
+      },
+      "service_address": {
+        "ranges": [
+          {
+            "end": 3103,
+            "start": 3089
+          },
+          {
+            "end": 3126,
+            "start": 3104
+          }
+        ],
+        "value": "435 W 57 ST 2H NEW YORK NY 10019-1723"
+      },
+      "service_address_city": {
+        "ranges": [
+          {
+            "end": 3126,
+            "start": 3104
+          }
+        ],
+        "value": "NEW YORK"
+      },
+      "service_address_primary": {
+        "ranges": [
+          {
+            "end": 1680,
+            "start": 1577
+          },
+          {
+            "end": 3103,
+            "start": 3089
+          }
+        ],
+        "value": "435 W 57 ST 2H"
+      },
+      "service_address_state": {
+        "ranges": [
+          {
+            "end": 3126,
+            "start": 3104
+          }
+        ],
+        "value": "NY"
+      },
+      "service_address_zip": {
+        "ranges": [
+          {
+            "end": 3126,
+            "start": 3104
+          }
+        ],
+        "value": "10019-1723"
+      }
+    },
+    "billing_summary": {
+      "bill_date": {
+        "ranges": [
+          {
+            "end": 308,
+            "start": 269
+          }
+        ],
+        "value": "2023-03-28"
+      },
+      "due_date": {
+        "ranges": [
+          {
+            "end": 1008,
+            "start": 904
+          },
+          {
+            "end": 93,
+            "start": 72
+          },
+          {
+            "end": 2966,
+            "start": 2939
+          },
+          {
+            "end": 3069,
+            "start": 3030
+          }
+        ],
+        "value": "2023-04-07"
+      },
+      "service_end_date": {
+        "ranges": [
+          {
+            "end": 683,
+            "start": 639
+          },
+          {
+            "end": 3660,
+            "start": 3578
+          }
+        ],
+        "value": "03-27-2023"
+      },
+      "service_start_date": {
+        "ranges": [
+          {
+            "end": 683,
+            "start": 639
+          },
+          {
+            "end": 3660,
+            "start": 3578
+          }
+        ],
+        "value": "02-24-2023"
+      },
+      "total_amount_due": {
+        "ranges": [
+          {
+            "end": 858,
+            "start": 842
+          },
+          {
+            "end": 71,
+            "start": 43
+          },
+          {
+            "end": 2966,
+            "start": 2939
+          },
+          {
+            "end": 3029,
+            "start": 2987
+          }
+        ],
+        "value": "$44.89"
+      }
+    },
+    "electric_charges": {
+      "meter_number": {
+        "ranges": [
+          {
+            "end": 3865,
+            "start": 3856
+          }
+        ],
+        "value": "013641924"
+      },
+      "total_electric_charges": {
+        "ranges": [
+          {
+            "end": 759,
+            "start": 753
+          }
+        ],
+        "value": "$44.89"
+      },
+      "usage_kwh": {
+        "ranges": [
+          {
+            "end": 3985,
+            "start": 3979
+          }
+        ],
+        "value": "89"
+      }
+    },
+    "gas_charges": {
+      "meter_number": {
+        "ranges": null,
+        "value": null
+      },
+      "total_gas_charges": {
+        "ranges": null,
+        "value": "0.00"
+      },
+      "usage_therms": {
+        "ranges": null,
+        "value": "0.00"
+      }
+    },
+    "provider_info": {
+      "phone_number": {
+        "ranges": [
+          {
+            "end": 3340,
+            "start": 3260
+          },
+          {
+            "end": 7192,
+            "start": 7167
+          },
+          {
+            "end": 8600,
+            "start": 8539
+          },
+          {
+            "end": 7887,
+            "start": 7280
+          }
+        ],
+        "value": "1-800-752-6633"
+      },
+      "provider": {
+        "ranges": [
+          {
+            "end": 40,
+            "start": 14
+          },
+          {
+            "end": 2967,
+            "start": 2835
+          },
+          {
+            "end": 3386,
+            "start": 3247
+          },
+          {
+            "end": 6372,
+            "start": 5109
+          },
+          {
+            "end": 6934,
+            "start": 6373
+          },
+          {
+            "end": 7164,
+            "start": 6935
+          },
+          {
+            "end": 7279,
+            "start": 7165
+          },
+          {
+            "end": 7887,
+            "start": 7280
+          },
+          {
+            "end": 8416,
+            "start": 8295
+          },
+          {
+            "end": 8650,
+            "start": 8417
+          }
+        ],
+        "value": "Con Edison"
+      },
+      "usage_bar_chart": {
+        "ranges": [
+          {
+            "end": 1680,
+            "start": 1577
+          },
+          {
+            "end": 2174,
+            "start": 1682
+          }
+        ],
+        "value": true
+      },
+      "website": {
+        "ranges": [
+          {
+            "end": 8414,
+            "start": 8395
+          },
+          {
+            "end": 1349,
+            "start": 1027
+          },
+          {
+            "end": 2174,
+            "start": 1350
+          },
+          {
+            "end": 3386,
+            "start": 3247
+          },
+          {
+            "end": 7164,
+            "start": 6935
+          },
+          {
+            "end": 7887,
+            "start": 7280
+          },
+          {
+            "end": 8650,
+            "start": 8417
+          }
+        ],
+        "value": "conEd.com"
+      }
+    }
+  },
+  "markdown": "Page 1 of 2\n\n\n[CONEDISON LOGO] conEdison\n\n\nCurrent balance due  $44.89 \nDirect Pay  04/07/23 \n\nMITCHELL JOHNSON \nAccount Number: 44-6011-0985-0021-7 \n\n<table>\n<tr><td>Your bill breakdown</td><td>[$ icon]</td></tr>\n<tr><td>Last billing period</td><td></td></tr>\n<tr><td>Your billing summary as of Mar 28, 2023</td><td></td></tr>\n<tr><td>Your previous charges and payments</td><td></td></tr>\n<tr><td>Total charges from your last bill</td><td>$46.16</td></tr>\n<tr><td>Payments through Mar 24, thank you</td><td>-$46.16</td></tr>\n<tr><td>Balance from previous bill</td><td>None</td></tr>\n<tr><td colspan=\"2\">Your new charges</td></tr>\n<tr><td>Billing period: Feb 24, 2023 to Mar 27, 2023</td><td></td></tr>\n<tr><td>Electricity charges - for 31 days</td><td>$44.89</td></tr>\n<tr><td>Total from this billing period</td><td>$44.89</td></tr>\n<tr><td>Total amount due</td><td>$44.89</td></tr>\n<tr><td colspan=\"2\">Direct Payment Plan - The amount of $44.89 will be automatically deducted from your bank on Apr 7, 2023.</td></tr>\n</table>\n\n# Messages For You\n\n📢 **We're here to help.** If you have trouble paying your bill, a fewminutes is all it takes to set up a payment plan. *Need a few more days to*\n*pay your bill? No problem.* Visit **conEd.com/PaymentPlans** to schedule an\nextension, enroll in a payment agreement and manage your energy bill\nonline.\n\n\n📢 Supply costs are higher for electric and gas this winter. Weather and\nincreased energy usage can also impact your bill. Visit\n**conEd.com/UnderstandYourRate** to learn about rising energy costs and\nhow to manage your bill.\n\n\n<figure type=\"CHART\">Service delivered to: 435 W 57 STRE 2H. Next billing date: Tuesday, Apr 25, 2023. \n\n<description>The image is a combination chart showing electric usage. On the left, a text box states '2.87 kWh'. The main chart displays average daily electric usage in kWh on the left y-axis (ranging from 0 to 15) and temperature in degrees on the right y-axis (ranging from 0 to 100). The x-axis lists months from Mar to Mar. Blue vertical bars represent electric usage per month, with a peak in August. An orange line plot represents temperature trends over the same period.</description> <table><tr><th>Month</th><th>Electric Usage (kWh)</th><th>Temperature (deg)</th></tr><tr><td>Mar</td><td>4.5</td><td>45</td></tr><tr><td>Apr</td><td>3.75</td><td>50</td></tr><tr><td>May</td><td>5.6</td><td>60</td></tr><tr><td>Jun</td><td>11.25</td><td>75</td></tr><tr><td>Jul</td><td>12</td><td>80</td></tr><tr><td>Aug</td><td>15</td><td>80</td></tr><tr><td>Sep</td><td>10.5</td><td>75</td></tr><tr><td>Oct</td><td>3.75</td><td>60</td></tr><tr><td>Nov</td><td>3</td><td>55</td></tr><tr><td>Dec</td><td>3.75</td><td>45</td></tr><tr><td>Jan</td><td>3</td><td>40</td></tr><tr><td>Feb</td><td>3</td><td>42</td></tr><tr><td>Mar</td><td>3</td><td>45</td></tr></table></figure>\n\nconEdison [LOGO]\nPO Box 1702\nNew York, NY 10116- 1702\n\n\nAccount number: 44-6011-0985-0021-7 \nDirect Pay 04/07/23 $44.89 \n\nYour Energy Bill\n\n\nThe amount of $44.89 will be automatically\ndeducted from your bank on Apr 7, 2023.\n\n\nMITCHELL JOHNSON\n435 W 57 ST 2H\nNEW YORK NY 10019-1723\n\n\n**Direct Payment Plan**\n**Do not mail a payment**\n\n\n✚\n\n\n0020 446011098500217 10000004489\n\n\n10000004489\n\n\nM97\n0014317\n\n\n[BARCODE]\n\n\nQuestions? Contact Us: 🖥️ conEd.com/ContactUs 📞 1-212-243-1900 or 1-800-752-6633\n\n\n<!-- PAGE BREAK -->\n\nName: MITCHELL JOHNSON\n\n\nAccount number: 44-6011-0985-0021-7\n\n\nPage 2 of 2\n\n\n<table>\n<tr><td colspan=\"9\">Your electricity breakdown Rate: EL1 Residential or Religious [Lightbulb icon]</td></tr>\n<tr><td colspan=\"9\">Electric Meter Detail - billing period from Feb 24, 2023 to Mar 27, 2023 (31 days)</td></tr>\n<tr><td>Meter #</td><td>New Reading</td><td>Reading Type</td><td>Date</td><td>Prior Reading</td><td>Reading Type</td><td>Date</td><td>Reading Diff</td><td>Total Usage</td></tr>\n<tr><td>013641924</td><td>5047</td><td>Actual</td><td>Mar 27, 23</td><td>4958</td><td>Actual</td><td>Feb 24, 23</td><td>89</td><td>89 kWh</td></tr>\n</table>\n\nYour Supply Charges\n\n<table>\n<tr><td>Supply 89 kWh @11.1124¢/kWh</td><td>$9.89</td></tr>\n<tr><td>Merchant function charge</td><td>$0.43</td></tr>\n<tr><td>GRT &amp; other tax surcharges</td><td>$0.25</td></tr>\n<tr><td>Total electricity supply charges</td><td>$10.57</td></tr>\n<tr><td colspan=\"2\">Your total electricity supply cost for this bill is 11.9¢ per kWh. You can compare this<br>price with those offered by energy services companies (ESCOs). For a list of ESCOs,<br>visit PowerYourWay.com or call 1-800-780-2884.</td></tr>\n</table>\n\n<table>\n<tr><td>Your Delivery Charges</td><td></td></tr>\n<tr><td>Basic service charge</td><td>$18.85</td></tr>\n<tr><td>Delivery 89 kWh @12.9888¢/kWh</td><td>$11.56</td></tr>\n<tr><td>System Benefit Charge @0.5169¢/kWh</td><td>$0.46</td></tr>\n<tr><td>GRT &amp; other tax surcharges</td><td>$1.52</td></tr>\n<tr><td>Total electricity delivery charges</td><td>$32.39</td></tr>\n<tr><td>Sales tax @4.5000%</td><td>$1.93</td></tr>\n<tr><td>Total sales tax</td><td>$1.93</td></tr>\n<tr><td>Your electricity total</td><td>$44.89</td></tr>\n</table>\n\n# Understanding your bill\n\n**Basic service charge (Electric):** Charge for basic system infrastructure and customer-related services, including customer accounting, and metering services. A billing and payment processing charge of$1.28, which may be avoided by switching to an energy services company (ESCO), is also included.\n**Billing charges:** These charges are for the electricity you need (supply) and getting the electricity to you (delivery). Rates are based on a 30 day period. When your billing period is more or less than 30\ndays, we prorate your bill accordingly.\n**Delivery:** Charge for maintaining the system through which Con Edison delivers electricity to you.\n**Electricity Supply:** Charge for the electricity supplied to you by Con Edison.\n**GRT & other tax surcharges:**Taxes on Con Edison gross receipts from sales of utility services and other tax surcharges.\n**Merchant Function Charge (Electric):** Charge associated with procuring electricity, credit and collection related activities and uncollectible accounts.\n**Sales tax:** Tax collected on behalf of New York City.\n**System Benefit Charge (Electric):** The System Benefits Charge recovers costs associated with clean energy activities conducted by the New York State Energy Research and Development Authority\n(NYSERDA) and energy efficiency programs implemented by the Company.\n**Temperature Data*** Source: Central Park Weather station\n\n\n📢 Get Smarter with your smart meter.\nLearn how much energy you are using, and how to avoid seasonal spikes in energy use. Log in or create an account at conEd.com/EnergyUsage.\n\n\n📢 **Looking for LED light bulbs or a new thermostat?** Con Edison residential customers are eligible for instant rebates and additional savings on\nenergy-efficient equipment from top brands. Shop the Con Edison Marketplace at: **marketplace.conEd.com.**\n\n\n📢 We have 662-231-8098 as your primary phone number and MDJOHNSONDAWGS@GMAIL.COM as your email address. Need to update? Please go to\nconEd.com or call us.\n\n\nⓘ How to get in touch with us\n\n\n**Email or chat:** conEd.com/ContactUs\n\n\n**Phone:** 1-800-752-6633\n\n\n**Mail:** Con Edison, PO Box 138, New York, NY 10276-0138\n\n\n# Ways to pay your bill\n\n\n 1. **Auto Pay:** Pay your bill automatically from your checking or savings accountat no charge. Enroll at conEd.com/MyAccount or call 1-212-243-1900.\n 2. **Online:** Pay at conEd.com/MyAccount using your bank account, credit card ordebit card at no charge.\n 3. **App:** Download the Con Edison app from the App Store or Google Play Store.\n 4. **Phone:** Pay by phone at 1-888-925-5016 using your bank account, credit cardor debit card at no charge.\n 5. **In Person:** Our walk-in centers are open Monday through Friday from 8.30a.m. to 5 p.m.\n\n\n**Bronx:** 1775 Grand Concourse\n**Brooklyn:** 345 Jay Street\n**Manhattan:** 122 East 124th Street\n**Queens:** 89-67 162nd Street\n**Staten Island:** 1140 Richmond Terrace\n**Westchester:** 1 Bogopa Plaza\n\n\n**6.** **Mail:** Send a check or money order, payable to Con Edison, using the\nenvelope provided to authorize us to make a one-time electronic fund\ntransfer from your account or to process the payment as a check. You\nwill not get the check back. Do not send cash.\nCon Edison\nPO Box 1702\nNew York, NY 10116-1702\n\n\n[ConEd Logo]\nSave a stamp. Pay your bill online at\nConEd.com/MyAccount\n\n\n[QR_CODE]\n**Go Paperless!**\nScan the QR Code with your **smart** device or\nvisit conEd.com/MyAccount to enroll in eBill\n\n\n**Questions?** Call toll free 1-800-75-CONED (1-800-752-6633)\n\n<!-- doc_id=parse-01ky3ak9f53ck7cdmsk6nmz2ag -->",
+  "metadata": {
+    "job_id": "extract-01ky3am83jkwqjpwnj8p57qbr9",
+    "model_version": "extract-20260710",
+    "duration_ms": 35003,
+    "doc_id": "parse-01ky3ak9f53ck7cdmsk6nmz2ag",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 8650,
+    "output_extraction_chars": 806,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.6
+    }
+  },
+  "schema_violation_error": "The value at 'gas_charges.meter_number' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'gas_charges.meter_number' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky3am83jkwqjpwnj8p57qbr9"
+}
