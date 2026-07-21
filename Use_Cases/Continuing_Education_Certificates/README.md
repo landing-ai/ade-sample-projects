@@ -1,138 +1,82 @@
-# 🧠 Agentic Document Extraction (ADE) - CME Certificate Parser
+# CME Certificate Extraction — LandingAI ADE
 
-This example demonstrates how to extract structured information from CME (Continuing Medical Education) certificates using [LandingAI's Agentic Document Extraction (ADE)](https://docs.landing.ai/ade/ade-overview) service via the `landingai-ade` Python package.
+This use case extracts structured fields from **Continuing Medical Education
+(CME) certificates** using LandingAI's **Agentic Document Extraction (ADE)**. It
+parses each certificate and pulls 8 fields: recipient name, issuing organization,
+activity title, award date, credit awarded (raw + numeric), and AMA PRA
+Category 1 / Category 2 indicators.
 
-Try the Visual Playground at [Agentic Document Extraction Playground](https://va.landing.ai/demo/doc-extraction)
+It ships **two independent implementations of the same task** so you can compare
+approaches side by side:
 
-## 📌 What This Notebook Does
+| | `v1/` | `v2/` |
+|---|---|---|
+| Model family | **DPT-2** | **DPT-3** |
+| Interface | `landingai-ade` **Python SDK** | **v2 REST APIs** (direct calls) |
+| APIs used | Parse + Extract (SDK) | **Parse Jobs** + **Extract Jobs** (async) |
+| Form factor | Jupyter notebook + helpers | Standalone Python scripts |
+| Service tier | n/a | `standard` |
 
-- **Parses** PDF and image files (`.pdf`, `.png`, `.jpg`, `.jpeg`) using the LandingAI ADE API
-- **Extracts** structured data using a custom `pydantic` schema:
-  - Recipient name
-  - Issuing organization
-  - Activity title
-  - Award date
-  - Credit value (string and numeric)
-  - AMA PRA Category 1 & 2 indicators
-- **Processes** multiple documents from a directory
-- **Saves** organized outputs:
-  - Full parse responses (JSON)
-  - Markdown-only outputs (TXT)
-  - Extraction results (JSON)
-  - Summary CSV file
+Both read the **same inputs** and use the **same 8-field schema**, so the results
+are directly comparable.
 
-## 📦 Setup
-
-### Prerequisites
-
-Install the required dependencies:
-
-```bash
-pip install landingai-ade pillow pandas python-dotenv
-```
-
-Or use the provided virtual environment:
-
-```bash
-# From the repository root
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install landingai-ade pillow pandas python-dotenv
-```
-
-### API Key
-
-1. Get your API key from the [Visual Playground](https://va.landing.ai/settings/api-key)
-2. Store it securely in a `.env` file in the same directory as the notebook:
-
-   ```
-   VISION_AGENT_API_KEY=your_api_key_here
-   ```
-
-See [API Key Configuration Guide](https://docs.landing.ai/ade/agentic-api-key) for other configuration options.
-
-## 📁 Directory Structure
+## Folder layout
 
 ```
 Continuing_Education_Certificates/
-├── input_folder/              # Your CME certificate files (.pdf, .png, .jpg, .jpeg)
-├── results_folder/            # Organized outputs (auto-created)
-│   ├── parse/                 # Full parse response JSON files
-│   ├── markdown/              # Markdown-only text files
-│   ├── extract/               # Extraction result JSON files
-│   └── cme_output.csv         # Summary CSV with all extractions
-├── field_extraction_notebook_cme.ipynb  # Main notebook
-├── README.md                  # This file
-└── .env                       # Your API key (create this)
+├── input_folder/                 # 5 CME certificate images (shared by both versions)
+├── README.md                     # this file
+├── v1/                           # DPT-2, via the Python SDK
+│   ├── field_extraction_notebook_cme.ipynb   # walkthrough notebook
+│   └── results_folder/           # generated outputs
+└── v2/                           # DPT-3, via the v2 REST APIs
+    ├── README.md                 # detailed v2 walkthrough
+    ├── process_certificates.py   # end-to-end pipeline
+    ├── ade_v2_client.py          # thin REST client for the v2 Jobs APIs
+    ├── schema/
+    │   └── cme_demo_schema.json   # extraction schema (JSON Schema)
+    └── results_folder/           # generated outputs (parse / extract / csv_summaries)
 ```
 
-## 🚀 How It Works
+## The two versions
 
-The notebook uses a **two-step process**:
+### `v1/` — DPT-2 via the Python SDK
+The original sample. It uses the `landingai-ade` SDK to parse each certificate and
+extract fields against a Pydantic schema, driven from a Jupyter notebook. Open
+`v1/field_extraction_notebook_cme.ipynb` to run it.
 
-### Step 1: Parse
-Converts documents into structured markdown with chunk and grounding metadata:
-- **Input**: PDF or image file
-- **Output**:
-  - Full parse response (JSON) with chunks, grounding coordinates, and metadata
-  - Markdown text (TXT) for easy reading
+### `v2/` — DPT-3 via the v2 REST APIs
+A newer sample that calls the **v2 REST endpoints directly** — submitting each
+image to **Parse Jobs**, polling for results, then running **Extract Jobs**
+against a JSON Schema — using the **DPT-3** model family. It runs as a plain
+Python script. See [`v2/README.md`](v2/README.md) for the full walkthrough.
 
-### Step 2: Extract
-Applies a custom Pydantic schema to extract specific fields:
-- **Input**: Markdown from Step 1 + Pydantic schema
-- **Output**: Structured data matching your schema with field-level metadata
+## Cost comparison (high level)
 
-## 🧩 Extraction Schema
+Both versions were run over the same 5 certificates (**5 pages total**) with the
+same 8-field schema. Costs below are **credits as reported by each API**.
 
-The schema is defined using Pydantic:
+| Stage | v1 (DPT-2) | v2 (DPT-3) | Difference |
+|---|--:|--:|--:|
+| Parse | 15.0 | 3.9 | **−74%** |
+| Extract | 3.0 | 2.9 | **−3%** |
+| **Total** | **18.1** | **6.8** | **−62%** |
+| **Credits per page** | **3.6** | **1.4** | **−62%** |
 
-```python
-from pydantic import BaseModel, Field
-from datetime import date
+For this set of certificates, **v2 (DPT-3) costs about 62% fewer credits than v1
+(DPT-2)**. Nearly all of the savings come from the parse step: DPT-2 charged a
+flat 3.0 credits per page, while DPT-3 Parse Jobs (standard tier) is
+complexity-aware and much cheaper for these single-page documents.
 
-class CME(BaseModel):
-    recipient_name: str = Field(description="Full name of the individual who received the certificate...")
-    issuing_org: str = Field(description="Full name of the organization issuing the certificate.")
-    activity_title: str = Field(description="Title of the CME activity or material completed...")
-    date_awarded: date = Field(description="Date when the certificate or credit was awarded.")
-    credit_awarded: str = Field(description="Amount and type of CME credit awarded...")
-    credit_numeric: float = Field(description="Amount of CME credit awarded.")
-    ama_pra_cat1: bool = Field(description="True if the CME credits awarded qualify for AMA PRA Category 1.")
-    ama_pra_cat2: bool = Field(description="True if the CME credits awarded qualify for AMA PRA Category 2.")
-```
+> **Notes.** This is a credits-to-credits comparison on one small sample, not a
+> dollar quote. `v2` runs on the `standard` service tier (the lowest-cost tier).
+> The two versions use different model families and pricing, so treat the numbers
+> as directional guidance for this dataset rather than a universal benchmark.
 
-## 📤 Output Files
+## Getting started
 
-For each input file (e.g., `CME_Mendez_ex1.png`), the notebook generates:
+Each version authenticates with a `VISION_AGENT_API_KEY` (environment variable or
+a local `.env` file). Pick a folder and follow its instructions:
 
-1. **Parse outputs:**
-   - `results_folder/parse/CME_Mendez_ex1.json` - Full response with chunks and grounding
-   - `results_folder/markdown/CME_Mendez_ex1.md` - Extracted text only
-
-2. **Extract outputs:**
-   - `results_folder/extract/CME_Mendez_ex1.json` - Structured data with metadata
-
-3. **Summary:**
-   - `results_folder/cme_output.csv` - All extractions in a single CSV file
-
-## 🎯 Running the Notebook
-
-1. Place your CME certificates in `input_folder/`
-2. Ensure your API key is set in `.env`
-3. Select the Python kernel: "Python (ade-helper-scripts)" or your preferred kernel
-4. Run all cells in sequence
-
-The notebook will:
-- Parse all documents in the input folder
-- Extract structured data using the CME schema
-- Save organized outputs
-- Create a summary CSV file
-
-## 🧠 Additional Resources
-
-- [LandingAI ADE Documentation](https://docs.landing.ai/ade/ade-overview)
-- [landingai-ade Python Library](https://github.com/landing-ai/ade-python)
-- [Parse API Documentation](https://docs.landing.ai/ade/ade-python#parse%3A-getting-started)
-- [Extract API Documentation](https://docs.landing.ai/ade/ade-python#extract%3A-getting-started)
-- [API Key Configuration Guide](https://docs.landing.ai/ade/agentic-api-key)
-
+- **v1:** open `v1/field_extraction_notebook_cme.ipynb`.
+- **v2:** see [`v2/README.md`](v2/README.md), then run `python v2/process_certificates.py`.

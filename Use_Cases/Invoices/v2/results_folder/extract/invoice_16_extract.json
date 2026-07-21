@@ -1,0 +1,350 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": null,
+      "gstin": null,
+      "pan": null,
+      "phone": null,
+      "representative": null,
+      "supplier_address": null,
+      "supplier_name": "Walmart"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "10517 San Vincente Ave, South Gate, CA 90280, USA",
+      "sold_to_name": "Mansoer Walizada"
+    },
+    "invoice_info": {
+      "invoice_date": "2023-03-20",
+      "invoice_date_raw": "Mar 20, 2023",
+      "invoice_number": "1",
+      "order_date": null,
+      "po_number": null,
+      "status": "PAID"
+    },
+    "line_items": [
+      {
+        "amount": 1529.94,
+        "description": "Lenovo ThinkPad X1 Carbon Gen 10 21CB - 180-degree hinge design - Intel Core i7 1260P / 2.1 GHz - Evo - Win 10 Pro 64-bit (includes Win 11 Pro License) - Intel Iris Xe Graphics - 16 GB RAM - 512 GB SSD TCG Opal Encryption 2, NVMe, Performance - 14\" IPS touchscreen 1920 x 1200 - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - deep black paint - kbd: US - with 3 Years Lenovo Premier Support + 3 Years Lenovo Sealed Battery Add On Serial Number: PF4AJSC9",
+        "line_number": "1",
+        "price": null,
+        "quantity": 1.0,
+        "sku": null,
+        "total": 1529.94,
+        "unit_price": 1529.94
+      }
+    ],
+    "order_details": {
+      "payment_terms": "MasterCard 8453",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 1529.94,
+      "tax": 110.92,
+      "total_due": 1640.86,
+      "total_due_raw": "0,00 US$"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": null,
+        "value": null
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": null,
+        "value": null
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "value": "Walmart"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 91,
+            "start": 72
+          },
+          {
+            "end": 112,
+            "start": 92
+          },
+          {
+            "end": 124,
+            "start": 113
+          },
+          {
+            "end": 308,
+            "start": 195
+          }
+        ],
+        "value": "10517 San Vincente Ave, South Gate, CA 90280, USA"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 71,
+            "start": 54
+          }
+        ],
+        "value": "Mansoer Walizada"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 227,
+            "start": 208
+          }
+        ],
+        "value": "2023-03-20"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 227,
+            "start": 208
+          }
+        ],
+        "value": "Mar 20, 2023"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 23,
+            "start": 20
+          }
+        ],
+        "value": "1"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 1152,
+            "start": 1140
+          }
+        ],
+        "value": "PAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 891,
+              "start": 879
+            }
+          ],
+          "value": 1529.94
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 839,
+              "start": 392
+            }
+          ],
+          "value": "Lenovo ThinkPad X1 Carbon Gen 10 21CB - 180-degree hinge design - Intel Core i7 1260P / 2.1 GHz - Evo - Win 10 Pro 64-bit (includes Win 11 Pro License) - Intel Iris Xe Graphics - 16 GB RAM - 512 GB SSD TCG Opal Encryption 2, NVMe, Performance - 14\" IPS touchscreen 1920 x 1200 - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - deep black paint - kbd: US - with 3 Years Lenovo Premier Support + 3 Years Lenovo Sealed Battery Add On Serial Number: PF4AJSC9"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": null,
+          "value": null
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 849,
+              "start": 848
+            }
+          ],
+          "value": 1.0
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 891,
+              "start": 879
+            }
+          ],
+          "value": 1529.94
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 870,
+              "start": 858
+            }
+          ],
+          "value": 1529.94
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 259,
+            "start": 228
+          }
+        ],
+        "value": "MasterCard 8453"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 1004,
+            "start": 992
+          },
+          {
+            "end": 1054,
+            "start": 1044
+          },
+          {
+            "end": 1100,
+            "start": 1088
+          },
+          {
+            "end": 1152,
+            "start": 1140
+          },
+          {
+            "end": 306,
+            "start": 284
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1004,
+            "start": 992
+          }
+        ],
+        "value": 1529.94
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1054,
+            "start": 1044
+          }
+        ],
+        "value": 110.92
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1100,
+            "start": 1088
+          }
+        ],
+        "value": 1640.86
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 306,
+            "start": 284
+          }
+        ],
+        "value": "0,00 US$"
+      }
+    }
+  },
+  "markdown": "Walmart ✳\n\n\nINVOICE\n# 1\n\n\nWalmart Invoice\n\n\nBill To: \nMansoer Walizada \n10517 San Vincente \nAve, South Gate, CA \n90280, USA \n\nShip To: \nMansoer Walizada \n10517 San Vincente \nAve, South Gate, CA \n90280, USA \n\nDate: Mar 20, 2023 \nPayment Terms: MasterCard 8453 \nDue Date: Mar 20, 2023 \nBalance Due: 0,00 US$ \n\n<table>\n<tr><td>Item</td><td>Quantity</td><td>Rate</td><td>Amount</td></tr>\n<tr><td>Lenovo ThinkPad X1 Carbon Gen 10 21CB - 180-degree hinge design - Intel Core i7 1260P / 2.1 GHz - Evo - Win 10 Pro 64-bit (includes Win 11 Pro License) - Intel Iris Xe Graphics - 16 GB RAM - 512 GB SSD TCG Opal Encryption 2, NVMe, Performance - 14&quot; IPS touchscreen 1920 x 1200 - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - deep black paint - kbd: US - with 3 Years Lenovo Premier Support + 3 Years Lenovo Sealed Battery Add On<br>Serial Number: PF4AJSC9</td><td>1</td><td>1 529,94 US$</td><td>1 529,94 US$</td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>Subtotal:</td><td>1 529,94 US$</td></tr>\n<tr><td>Tax (7.25%):</td><td>110,92 US$</td></tr>\n<tr><td>Total:</td><td>1 640,86 US$</td></tr>\n<tr><td>Amount Paid:</td><td>1 640,86 US$</td></tr>\n</table>\n\nNotes:\nTo ensure we are able to help you as best we can, please include your reference number: HEUQ5GZ6R\n\n\nTerms:\n© 2023 Walmart. All Rights Reserved.\n\n<!-- doc_id=parse-01ky0wqvandkvahbpcyh1dpn4p -->",
+  "metadata": {
+    "job_id": "extract-01ky0wryks8km6rsek5av73rt9",
+    "model_version": "extract-20260710",
+    "duration_ms": 35882,
+    "doc_id": "parse-01ky0wqvandkvahbpcyh1dpn4p",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1373,
+    "output_extraction_chars": 1354,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.7
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky0wryks8km6rsek5av73rt9"
+}

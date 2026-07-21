@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@700;800&family=Inter:wght@400;500&family=Playfair+Display:ital@1&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.fp-pulse {
+  animation: fpPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes fpPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* --- The one highlight primitive, three moods (CONCEPT §4c) --- */
+
+/* read: a brisk monochrome sweep — a machine reading the page, ~1s total, then clean */
+.fp-read {
+  animation: fpRead 1.1s ease-out both;
+}
+@keyframes fpRead {
+  0%   { opacity: 0; }
+  25%  { opacity: 0.9; }
+  70%  { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+
+/* answer: blooms once and holds — the cited line, spoken and shown */
+.fp-answer {
+  animation: fpBloom 260ms ease-out both;
+}
+@keyframes fpBloom {
+  0%   { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* spotlight: the coverage-map hover/click — a calm steady mark */
+.fp-spot { transition: opacity 160ms ease-out; }
+
+/* voice waveform state: the connection lifecycle is the visual script */
+.fp-breath { animation: fpBreath 2.4s ease-in-out infinite; }
+@keyframes fpBreath { 0%,100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+.fp-alive { animation: fpAlive 1s ease-in-out infinite; }
+@keyframes fpAlive { 0%,100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fp-pulse, .fp-read, .fp-answer, .fp-breath, .fp-alive { animation: none !important; }
+  .fp-read { opacity: 0.7; }
+  .fp-answer { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  .fp-stage-grid { grid-template-columns: 1fr !important; }
+  .fp-rail { position: static !important; max-height: none !important; }
+}
+
+button:focus-visible, textarea:focus-visible, input:focus-visible {
+  outline: 2px solid #ABC2EB;
+  outline-offset: 2px;
+}

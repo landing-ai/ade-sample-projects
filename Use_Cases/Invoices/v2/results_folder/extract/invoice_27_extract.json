@@ -1,0 +1,491 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": null,
+      "gstin": null,
+      "pan": null,
+      "phone": null,
+      "representative": null,
+      "supplier_address": "PO Box 24651 Seattle WA 98124-0651",
+      "supplier_name": "Amazon Advertising LLC"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "227 N 5th Ave PO Box 1168 Ridgefield WA 98642",
+      "sold_to_name": "Meridian Venture Services LLC"
+    },
+    "invoice_info": {
+      "invoice_date": "2025-03-02",
+      "invoice_date_raw": "02-Mar-2025",
+      "invoice_number": "TRX5FPX4C-20",
+      "order_date": null,
+      "po_number": null,
+      "status": null
+    },
+    "line_items": [
+      {
+        "amount": 64.3,
+        "description": "Tennis Book - High School(2)",
+        "line_number": "1",
+        "price": 0.95,
+        "quantity": 68,
+        "sku": null,
+        "total": 64.3,
+        "unit_price": 0.95
+      },
+      {
+        "amount": 32.59,
+        "description": "Spiro Coloring - Keywords",
+        "line_number": "2",
+        "price": 0.76,
+        "quantity": 43,
+        "sku": null,
+        "total": 32.59,
+        "unit_price": 0.76
+      },
+      {
+        "amount": 7.03,
+        "description": "Spiro Coloring - Product Targeting",
+        "line_number": "3",
+        "price": 0.35,
+        "quantity": 20,
+        "sku": null,
+        "total": 7.03,
+        "unit_price": 0.35
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Automatic charge to credit card",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 103.93,
+      "tax": 0.0,
+      "total_due": 103.93,
+      "total_due_raw": "103.93 USD"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": null,
+        "value": null
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": null,
+        "value": null
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 254,
+            "start": 241
+          },
+          {
+            "end": 277,
+            "start": 255
+          }
+        ],
+        "value": "PO Box 24651 Seattle WA 98124-0651"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 240,
+            "start": 217
+          }
+        ],
+        "value": "Amazon Advertising LLC"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 403,
+            "start": 389
+          },
+          {
+            "end": 416,
+            "start": 404
+          },
+          {
+            "end": 437,
+            "start": 417
+          }
+        ],
+        "value": "227 N 5th Ave PO Box 1168 Ridgefield WA 98642"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 336,
+            "start": 306
+          }
+        ],
+        "value": "Meridian Venture Services LLC"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 116,
+            "start": 91
+          }
+        ],
+        "value": "2025-03-02"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 116,
+            "start": 91
+          }
+        ],
+        "value": "02-Mar-2025"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 90,
+            "start": 62
+          }
+        ],
+        "value": "TRX5FPX4C-20"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1080,
+              "start": 1071
+            }
+          ],
+          "value": 64.3
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1007,
+              "start": 979
+            }
+          ],
+          "value": "Tennis Book - High School(2)"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1062,
+              "start": 1054
+            }
+          ],
+          "value": 0.95
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1045,
+              "start": 1043
+            }
+          ],
+          "value": 68
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1080,
+              "start": 1071
+            }
+          ],
+          "value": 64.3
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1062,
+              "start": 1054
+            }
+          ],
+          "value": 0.95
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1383,
+              "start": 1374
+            }
+          ],
+          "value": 32.59
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1310,
+              "start": 1285
+            }
+          ],
+          "value": "Spiro Coloring - Keywords"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "2"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1365,
+              "start": 1357
+            }
+          ],
+          "value": 0.76
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1348,
+              "start": 1346
+            }
+          ],
+          "value": 43
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1383,
+              "start": 1374
+            }
+          ],
+          "value": 32.59
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1365,
+              "start": 1357
+            }
+          ],
+          "value": 0.76
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1508,
+              "start": 1500
+            }
+          ],
+          "value": 7.03
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1436,
+              "start": 1402
+            }
+          ],
+          "value": "Spiro Coloring - Product Targeting"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "3"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1491,
+              "start": 1483
+            }
+          ],
+          "value": 0.35
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1474,
+              "start": 1472
+            }
+          ],
+          "value": 20
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1508,
+              "start": 1500
+            }
+          ],
+          "value": 7.03
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1491,
+              "start": 1483
+            }
+          ],
+          "value": 0.35
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 2262,
+            "start": 2219
+          }
+        ],
+        "value": "Automatic charge to credit card"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 181,
+            "start": 160
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1897,
+            "start": 1887
+          }
+        ],
+        "value": 103.93
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1993,
+            "start": 1985
+          }
+        ],
+        "value": 0.0
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 209,
+            "start": 0
+          },
+          {
+            "end": 2058,
+            "start": 2048
+          }
+        ],
+        "value": 103.93
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 61,
+            "start": 32
+          }
+        ],
+        "value": "103.93 USD"
+      }
+    }
+  },
+  "markdown": "amazonadvertising\n\n\nTAX INVOICE\nBilled Amount Due: 103.93 USD\nInvoice Number: TRX5FPX4C-20\nInvoice Date: 02-Mar-2025\nInvoice Period: 04-Feb-2025 to 02-Mar-2025\nInvoice Currency: USD\nPayment Method: Credit Card\n\nFrom \nAmazon Advertising LLC \nPO Box 24651 \nSeattle WA 98124-0651 \nTax Number 91-2000471 \n\nTo \nMeridian Venture Services LLC \nMeridian Venture Services LLC \nSponsored ads - KDP \n227 N 5th Ave \nPO Box 1168 \nRidgefield WA 98642 \n\n**Summary of Portfolio Charges**\nPortfolio subtotals exclude advertising charges and adjustments. Tax is calculated on the overall invoice and therefore not reflected in the portfolio subtotal.\n\n<table>\n<tr><td>Portfolio name:</td><td>Amount (ex. Tax)</td></tr>\n<tr><td>Tennis</td><td>64.30 USD</td></tr>\n<tr><td>Spirograph</td><td>39.62 USD</td></tr>\n</table>\n\nTotal Amount: 103.92 USD \n\n\n Portfolio name: Tennis\n\n<table>\n<tr><td>Campaign</td><td>Campaign type</td><td>Clicks</td><td>Average CPC</td><td>Amount (ex. Tax)</td></tr>\n<tr><td>Tennis Book - High School(2)</td><td>SPONSORED PRODUCTS</td><td>68</td><td>0.95 USD</td><td>64.30 USD</td></tr>\n</table>\n\nPortfolio total: 64.30 USD \n\n\n Portfolio name: Spirograph\n\n<table>\n<tr><td>Campaign</td><td>Campaign type</td><td>Clicks</td><td>Average CPC</td><td>Amount (ex. Tax)</td></tr>\n<tr><td>Spiro Coloring - Keywords</td><td>SPONSORED PRODUCTS</td><td>43</td><td>0.76 USD</td><td>32.59 USD</td></tr>\n<tr><td>Spiro Coloring - Product Targeting</td><td>SPONSORED PRODUCTS</td><td>20</td><td>0.35 USD</td><td>7.03 USD</td></tr>\n</table>\n\nPortfolio total: 39.62 USD\n\nRegulatory fees\n\n\n<table>\n<tr><td>Jurisdiction</td><td>Amount (ex. Tax)</td></tr>\n<tr><td>CA</td><td>0.01 USD</td></tr>\n</table>\n\nRegulatory fees total: 0.01 USD \n\n<table>\n<tr><td>Total Campaign charges</td><td>103.92 USD</td></tr>\n<tr><td>Total Regulatory fees</td><td>0.01 USD</td></tr>\n<tr><td>Subtotal (excluding tax)</td><td>103.93 USD</td></tr>\n<tr><td>Tax Rate - Tax</td><td>0%</td></tr>\n<tr><td>Tax Amount - Tax</td><td>0.00 USD</td></tr>\n<tr><td>Total Amount (tax included)</td><td>103.93 USD</td></tr>\n</table>\n\n<!-- PAGE BREAK -->\n\nThe total amount due will be automatically charged to your credit card. No further action is required for this invoice\nAutomatic charge to the credit card on file\n\n\nFrequently Asked Questions\n\n\nWhy doesn't my invoice match what I see in Campaign Manager?\nYour invoice is the definitive source for your campaign charges. It includes any adjustments, promotions, taxes and other\nfees. Please note that it can take up to 72 hours to complete traffic validation, and delayed data can result in charges or\ncorrections being included on a subsequent invoice; this may result in a difference in the amount you see on an invoice\nand the amount you see in the campaign manager for a particular date range.\n\n\n**How is my invoice amount calculated?**\nInvoices are issued based on clicks generated during your billing cycle. Your billing cycle is determined by the payment\nmethod you have selected. Your invoice includes all applicable charges, credits, and promotions. Charges for campaigns\nrunning in multiple countries will show up on separate invoices.\n\n\n**Campaigns are paused but I am still being charged?**\nIf you have paused your campaigns, please note that spend can accrue for up to 72 hours for clicks generated while the\ncampaign was still active and are within the billable period or clicks that are reported late. For details on how to verify\ncampaign delivery and spends during the Invoice Period, please visit the Help page then navigate to the Billing and\nPayments section to troubleshoot your invoice.\n\n\n**Where can I find more details regarding my billing and payment status?**\nPlease visit the Billing and Payments section within your Amazon Advertising account to learn more about your invoice and\npayment history, update your payment method, and learn about promotions. You can also visit [billing help page](https://advertising.amazon.com/help) for\ninformation regarding your charges.\n\n\n**How is my invoice period determined?**\nYour invoice period is based on the time of the occurrence of the clicks and/or impressions, as well as your chosen\npayment method. Please note that network delays can sometimes affect the recording of these events, which could result\nin a slight shift in your invoice period. Your invoice serves as the final and official source of information regarding your\ninvoice period.\n\n<!-- doc_id=parse-01ky0wr20qs56398y7nsqk082r -->",
+  "metadata": {
+    "job_id": "extract-01ky0ws4atgpq35zyztfh8tsvk",
+    "model_version": "extract-20260710",
+    "duration_ms": 28792,
+    "doc_id": "parse-01ky0wr20qs56398y7nsqk082r",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 4464,
+    "output_extraction_chars": 1342,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.3
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky0ws4atgpq35zyztfh8tsvk"
+}

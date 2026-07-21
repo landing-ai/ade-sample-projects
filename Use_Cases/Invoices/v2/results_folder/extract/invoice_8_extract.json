@@ -1,0 +1,545 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": null,
+      "gstin": null,
+      "pan": null,
+      "phone": "+1-360-892-1500",
+      "representative": null,
+      "supplier_address": "15721 NE Fourth Plain Blvd.\nVancouver, WA 98682",
+      "supplier_name": "East Padden Animal Hospital"
+    },
+    "customer_info": {
+      "customer_email": null,
+      "sold_to_address": "227 N 5th Ave \nPO Box 1168 \nRidgefield, WA 98642",
+      "sold_to_name": "Andrea Kropp"
+    },
+    "invoice_info": {
+      "invoice_date": "2023-08-18",
+      "invoice_date_raw": "08-18-23",
+      "invoice_number": "412824",
+      "order_date": null,
+      "po_number": null,
+      "status": "PAID"
+    },
+    "line_items": [
+      {
+        "amount": 42.0,
+        "description": "Selarid Feline 5-15lb Revolution Ge* ntents of one tube (follow label directions for administration technique) to e monthly to prevent fleas, roundworms, hookworms, heartworms, and . Wait at least 2 hours after application for bathing.",
+        "line_number": "1",
+        "price": 21.0,
+        "quantity": 2.0,
+        "sku": "Selarid Feline 5-15lb Revolution Generic",
+        "total": 42.0,
+        "unit_price": 21.0
+      },
+      {
+        "amount": 45.0,
+        "description": "HCP Combo Vaccine (1 Year) vaccine was given under the skin of the right front leg.",
+        "line_number": "2",
+        "price": 45.0,
+        "quantity": 1.0,
+        "sku": "HCP Combo Vaccine (1 Year)",
+        "total": 45.0,
+        "unit_price": 45.0
+      },
+      {
+        "amount": 0.0,
+        "description": "Technician Appointment",
+        "line_number": "3",
+        "price": 0.0,
+        "quantity": 1.0,
+        "sku": null,
+        "total": 0.0,
+        "unit_price": 0.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": null,
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 87.0,
+      "tax": 3.53,
+      "total_due": 90.53,
+      "total_due_raw": "0.00"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": null,
+        "value": null
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 100,
+            "start": 88
+          },
+          {
+            "end": 3076,
+            "start": 2763
+          }
+        ],
+        "value": "+1-360-892-1500"
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 67,
+            "start": 40
+          },
+          {
+            "end": 87,
+            "start": 68
+          }
+        ],
+        "value": "15721 NE Fourth Plain Blvd.\nVancouver, WA 98682"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 39,
+            "start": 10
+          },
+          {
+            "end": 3743,
+            "start": 3525
+          }
+        ],
+        "value": "East Padden Animal Hospital"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": null,
+        "value": null
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 184,
+            "start": 170
+          },
+          {
+            "end": 197,
+            "start": 185
+          },
+          {
+            "end": 219,
+            "start": 198
+          }
+        ],
+        "value": "227 N 5th Ave \nPO Box 1168 \nRidgefield, WA 98642"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 169,
+            "start": 151
+          }
+        ],
+        "value": "Andrea Kropp"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 264,
+            "start": 249
+          }
+        ],
+        "value": "2023-08-18"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 264,
+            "start": 249
+          }
+        ],
+        "value": "08-18-23"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 297,
+            "start": 281
+          }
+        ],
+        "value": "412824"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 1585,
+            "start": 1580
+          }
+        ],
+        "value": "PAID"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 763,
+              "start": 758
+            }
+          ],
+          "value": 42.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 749,
+              "start": 503
+            },
+            {
+              "end": 2535,
+              "start": 2402
+            },
+            {
+              "end": 2616,
+              "start": 2536
+            },
+            {
+              "end": 2676,
+              "start": 2617
+            }
+          ],
+          "value": "Selarid Feline 5-15lb Revolution Ge* ntents of one tube (follow label directions for administration technique) to e monthly to prevent fleas, roundworms, hookworms, heartworms, and . Wait at least 2 hours after application for bathing."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 763,
+              "start": 758
+            }
+          ],
+          "value": 21.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 749,
+              "start": 503
+            }
+          ],
+          "value": 2.0
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 749,
+              "start": 503
+            },
+            {
+              "end": 2535,
+              "start": 2402
+            }
+          ],
+          "value": "Selarid Feline 5-15lb Revolution Generic"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 763,
+              "start": 758
+            }
+          ],
+          "value": 42.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 763,
+              "start": 758
+            }
+          ],
+          "value": 21.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 938,
+              "start": 933
+            }
+          ],
+          "value": 45.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 915,
+              "start": 827
+            },
+            {
+              "end": 2709,
+              "start": 2679
+            },
+            {
+              "end": 2762,
+              "start": 2710
+            },
+            {
+              "end": 2852,
+              "start": 2763
+            },
+            {
+              "end": 2939,
+              "start": 2853
+            },
+            {
+              "end": 3032,
+              "start": 2940
+            }
+          ],
+          "value": "HCP Combo Vaccine (1 Year) vaccine was given under the skin of the right front leg."
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "2"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 938,
+              "start": 933
+            }
+          ],
+          "value": 45.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 915,
+              "start": 827
+            }
+          ],
+          "value": 1.0
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 915,
+              "start": 827
+            },
+            {
+              "end": 2709,
+              "start": 2679
+            }
+          ],
+          "value": "HCP Combo Vaccine (1 Year)"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 938,
+              "start": 933
+            }
+          ],
+          "value": 45.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 938,
+              "start": 933
+            }
+          ],
+          "value": 45.0
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1037,
+              "start": 1033
+            }
+          ],
+          "value": 0.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1015,
+              "start": 993
+            }
+          ],
+          "value": "Technician Appointment"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "3"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1037,
+              "start": 1033
+            }
+          ],
+          "value": 0.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 984,
+              "start": 983
+            }
+          ],
+          "value": 1.0
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1037,
+              "start": 1033
+            }
+          ],
+          "value": 0.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1037,
+              "start": 1033
+            }
+          ],
+          "value": 0.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": null,
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1557,
+            "start": 1552
+          }
+        ],
+        "value": 87.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1571,
+            "start": 1566
+          }
+        ],
+        "value": 3.53
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 1658,
+            "start": 1637
+          }
+        ],
+        "value": 90.53
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 1598,
+            "start": 1594
+          }
+        ],
+        "value": "0.00"
+      }
+    }
+  },
+  "markdown": "INVOICE\n\n\n*East Padden Animal Hospital*\n15721 NE Fourth Plain Blvd.\nVancouver, WA 98682\n360-892-1500\n\n\nYour OTHER Family Doctor. We love what we do!\n\n\nFOR: Andrea Kropp \n227 N 5th Ave \nPO Box 1168 \nRidgefield, WA 98642 \n\nPrinted: 08-18-23 at 3:14p \nDate: 08-18-23 \nAccount: 41283 \nInvoice: 412824 \n\n<table>\n<tr><td>Date</td><td>For</td><td>Qty</td><td>Description<br>Price</td><td>Discount</td><td>Price</td></tr>\n<tr><td>08-18-23</td><td>Zazzles<br>Apply co<br>skin onc<br>ear mite</td><td colspan=\"3\">2 Selarid Feline 5-15lb Revolution Ge*<br>ntents of one tube (follow label directions for administration technique) to<br>e monthly to prevent fleas, roundworms, hookworms, heartworms, and<br>. Wait at least 2 hours after application for bathing.</td><td>42.00</td></tr>\n<tr><td>08-18-23</td><td>The HCP</td><td colspan=\"2\">1 HCP Combo Vaccine (1 Year)<br>vaccine was given under the skin of the right front leg.</td><td></td><td>45.00</td></tr>\n<tr><td>08-18-23</td><td></td><td>1</td><td>Technician Appointment</td><td></td><td>0.00</td></tr>\n<tr><td>08-18-23</td><td></td><td></td><td>Visa payment</td><td></td><td>-90.53</td></tr>\n</table>\n\nMerchant ID: 4445060632312, Approval code: 00301D, Transaction ID: 753403776\nRef #: 153071494, Act #: ************3800, Entry: Contactlcc, Card: VISA\nYour card balance is not available\nI AGREE TO PAY ABOVE TOTAL AMOUNT ACCORDING TO CARD ISSUER AGREEMENT\n\n\nX ___________________\n\n\n<table>\n<tr><td>Old balance</td><td>Charges</td><td>Tax</td><td>Payments</td><td>New balance</td></tr>\n<tr><td>0.00</td><td>87.00</td><td>*3.53</td><td>90.53</td><td>0.00</td></tr>\n</table>\n\nPatient: Zazzles \nTotal charges: 90.53 \n\n\n Reminders for: **Zazzles** (Weight: 9.9 lbs - 12y) Last done\n\n<table>\n<tr><td>07-28-19</td><td>Cardiopet proBNP</td><td></td></tr>\n<tr><td>07-28-19</td><td>Blood Pressure</td><td></td></tr>\n<tr><td>10-17-23</td><td>Monthly Topical Parasite Contr</td><td>08-18-23</td></tr>\n<tr><td>07-26-24</td><td>Purevax Rabies Vaccine(1 year)</td><td>07-27-23</td></tr>\n<tr><td>07-26-24</td><td>Annual Wellness Exam</td><td>07-27-23</td></tr>\n</table>\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td colspan=\"2\">Reminders for: **Zazzles** (Weight: 9.9 lbs - 12y)</td><td>Last done</td></tr>\n<tr><td>07-26-24</td><td>Annual Labwork</td><td>07-27-23</td></tr>\n<tr><td>08-17-24</td><td>HCP Combo Vaccine - 3 year</td><td></td></tr>\n</table>\n\n# Doctor's Instructions\n\n**Selarid Feline 5-15lb Revolution Generic**Apply contents of one tube (follow label directions for administration technique) to skin\nonce monthly to prevent fleas, ticks, roundworms, hookworms, heartworms, and ear\nmites. Wait at least 2 hours after application for bathing.\n\n\n**HCP Combo Vaccine (1 Year)**\nHCP 1 year - Zazzles has been vaccinated with an HCP\n(Rhinotracheitis-Calici-Panleukopenia) vaccination today. It was given in the right front\nleg. The site may be slightly tender for a day or two. If you are concerned about your\ncat's comfort, please call us. This vaccine will need a booster in 1 year. Please call us at\n360-892-1500 to schedule an appointment.\n\n\n<table>\n<tr><td colspan=\"2\">Zazzles&#x27;s weight history (in lbs)___</td></tr>\n<tr><td>07-27-23</td><td>9.90</td></tr>\n</table>\n\n** If Zazzles leaves with a pressure bandage, or “band-aid” in place, please be sure to\nremove this in 15 minutes or when you arrive at home. Failure to do so can result in\nswelling of the limb, discomfort, and further complications. **\n\n\nVisit our Online Pharmacy: https://eastpaddenah.securevetsource.com/index.pml\n\n\nThank you for choosing East Padden Animal Hospital for all of your pet's medical needs.\nWe appreciate your confidence in our care and welcome any feedback you may have!\n\n<!-- doc_id=parse-01ky0wqpcj919jfad59bgnbq45 -->",
+  "metadata": {
+    "job_id": "extract-01ky0wrtkw1231gehha507mwbg",
+    "model_version": "extract-20260710",
+    "duration_ms": 36365,
+    "doc_id": "parse-01ky0wqpcj919jfad59bgnbq45",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 3743,
+    "output_extraction_chars": 1630,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.4
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky0wrtkw1231gehha507mwbg"
+}
