@@ -338,19 +338,19 @@
       }
     }
   },
-  "markdown": "zoom\n\n\nINVOICE\n\n\nZoom Video Communications Inc. \n55 Almaden Blvd, 6<sup>th</sup> Floor \nSan Jose, CA 95113 \nbilling@zoom.us \n\nInvoice Date: 07/29/2020 \nInvoice #: INV33543191 \nPayment Terms: Due Upon Receipt \nDue Date: 07/29/2020 \nAccount Number: 3003959185 \nCurrency: USD \nAccount Information: Abaxys Tech LLC \n1061 Midvale Ave, \nMorrisville, North Carolina 27560 \nUnited States \nleo.charles@outlook.com \n\nPurchase Order Number: \nTaxExemptCertificateID: \nZoom W-9 \n\n<table>\n<tr><td colspan=\"5\">CHARGE DETAILS</td></tr>\n<tr><td>Charge Description</td><td>Service Period</td><td>Subtotal</td><td>Tax</td><td>TOTAL</td></tr>\n<tr><td>Charge Name: Standard Pro Annual<br>Quantity: 1<br>Unit Price: $149.90</td><td>07/29/2020-07/28/2021</td><td>$149.90</td><td>$0.00</td><td>$149.90</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">INVOICE TOTALS</td></tr>\n<tr><td rowspan=\"3\"></td><td>Subtotal:</td><td>$149.90</td></tr>\n<tr><td>Total (Including Tax):</td><td>$149.90</td></tr>\n<tr><td>Invoice Balance:</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">TAX DETAILS</td></tr>\n<tr><td>Charge Name</td><td>Tax Name</td><td>Jurisdiction</td><td>Charge Amount</td><td>Tax Amount</td></tr>\n<tr><td colspan=\"3\"></td><td>Total Tax</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">TRANSACTIONS</td></tr>\n<tr><td colspan=\"5\">Invoice Total</td><td>$149.90</td></tr>\n<tr><td>Transaction Date</td><td>Transaction Number</td><td>Transaction Type</td><td colspan=\"2\">Description</td><td>Applied<br>Amount</td></tr>\n<tr><td>07/29/2020</td><td>P-35558908</td><td>Payment</td><td colspan=\"2\"></td><td>($149.90)</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Invoice Balance</td><td>$0.00</td></tr>\n</table>\n\n<!-- doc_id=parse-01kxyvcpq6768hfy418nxv4jt6 -->",
+  "markdown": "zoom\n\n\nINVOICE\n\n\nZoom Video Communications Inc. \n55 Almaden Blvd, 6<sup>th</sup> Floor \nSan Jose, CA 95113 \nbilling@zoom.us \n\nInvoice Date: 07/29/2020 \nInvoice #: INV33543191 \nPayment Terms: Due Upon Receipt \nDue Date: 07/29/2020 \nAccount Number: 3003959185 \nCurrency: USD \nAccount Information: Abaxys Tech LLC \n1061 Midvale Ave, \nMorrisville, North Carolina 27560 \nUnited States \nleo.charles@outlook.com \n\nPurchase Order Number: \nTaxExemptCertificateID: \nZoom W-9 \n\n<table>\n<tr><td colspan=\"5\">CHARGE DETAILS</td></tr>\n<tr><td>Charge Description</td><td>Service Period</td><td>Subtotal</td><td>Tax</td><td>TOTAL</td></tr>\n<tr><td>Charge Name: Standard Pro Annual<br>Quantity: 1<br>Unit Price: $149.90</td><td>07/29/2020-07/28/2021</td><td>$149.90</td><td>$0.00</td><td>$149.90</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">INVOICE TOTALS</td></tr>\n<tr><td rowspan=\"3\"></td><td>Subtotal:</td><td>$149.90</td></tr>\n<tr><td>Total (Including Tax):</td><td>$149.90</td></tr>\n<tr><td>Invoice Balance:</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">TAX DETAILS</td></tr>\n<tr><td>Charge Name</td><td>Tax Name</td><td>Jurisdiction</td><td>Charge Amount</td><td>Tax Amount</td></tr>\n<tr><td colspan=\"3\"></td><td>Total Tax</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">TRANSACTIONS</td></tr>\n<tr><td colspan=\"5\">Invoice Total</td><td>$149.90</td></tr>\n<tr><td>Transaction Date</td><td>Transaction Number</td><td>Transaction Type</td><td colspan=\"2\">Description</td><td>Applied<br>Amount</td></tr>\n<tr><td>07/29/2020</td><td>P-35558908</td><td>Payment</td><td colspan=\"2\"></td><td>($149.90)</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Invoice Balance</td><td>$0.00</td></tr>\n</table>\n\n<!-- doc_id=parse-01ky0wqh3mfvz7gc1tsne0gjed -->",
   "metadata": {
-    "job_id": "extract-01kxyvdx956yhpznwmbjpd1mq1",
+    "job_id": "extract-01ky0wrq3g4pyk5q2apee86tbm",
     "model_version": "extract-20260710",
-    "duration_ms": 31839,
-    "doc_id": "parse-01kxyvcpq6768hfy418nxv4jt6",
+    "duration_ms": 31084,
+    "doc_id": "parse-01ky0wqh3mfvz7gc1tsne0gjed",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 1765,
-    "output_extraction_chars": 3241,
+    "output_extraction_chars": 1036,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 3.6
+      "total_credits": 1.4
     }
   },
   "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -360,5 +360,5 @@
       "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyvdx956yhpznwmbjpd1mq1"
+  "_extract_job_id": "extract-01ky0wrq3g4pyk5q2apee86tbm"
 }

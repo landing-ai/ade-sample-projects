@@ -6,12 +6,12 @@
       "pan": null,
       "phone": "+1-336-862-5235",
       "representative": null,
-      "supplier_address": "4917 Old Randleman Rd Greensboro, North Carolina 27406 United States",
+      "supplier_address": "4917 Old Randleman Rd\nGreensboro, North Carolina\n27406\nUnited States",
       "supplier_name": "Roofing Renovations INC"
     },
     "customer_info": {
       "customer_email": null,
-      "sold_to_address": "1901 Lendew St Suite 7 Greensboro, NC 27408",
+      "sold_to_address": "1901 Lendew St Suite 7\nGreensboro, NC\n27408",
       "sold_to_name": "Real Property Management"
     },
     "invoice_info": {
@@ -35,10 +35,10 @@
       }
     ],
     "order_details": {
-      "payment_terms": "Due on Receipt",
+      "payment_terms": "Due on 01/29/2020",
       "ship_date": null,
       "ship_via": null,
-      "tracking_number": "T8EW3A3"
+      "tracking_number": null
     },
     "totals_summary": {
       "currency": "USD",
@@ -96,7 +96,7 @@
             "start": 127
           }
         ],
-        "value": "4917 Old Randleman Rd Greensboro, North Carolina 27406 United States"
+        "value": "4917 Old Randleman Rd\nGreensboro, North Carolina\n27406\nUnited States"
       },
       "supplier_name": {
         "ranges": [
@@ -128,7 +128,7 @@
             "start": 216
           }
         ],
-        "value": "1901 Lendew St Suite 7 Greensboro, NC 27408"
+        "value": "1901 Lendew St Suite 7\nGreensboro, NC\n27408"
       },
       "sold_to_name": {
         "ranges": [
@@ -264,7 +264,7 @@
             "start": 312
           }
         ],
-        "value": "Due on Receipt"
+        "value": "Due on 01/29/2020"
       },
       "ship_date": {
         "ranges": null,
@@ -275,13 +275,8 @@
         "value": null
       },
       "tracking_number": {
-        "ranges": [
-          {
-            "end": 848,
-            "start": 840
-          }
-        ],
-        "value": "T8EW3A3"
+        "ranges": null,
+        "value": null
       }
     },
     "totals_summary": {
@@ -348,19 +343,19 @@
       }
     }
   },
-  "markdown": "![RR logo] ROOFING-RENOVATIONS\n\n\nRoofing Renovations INC\n336-862-5235\n\n\n4917 Old Randleman Rd\nGreensboro, North Carolina\n27406\nUnited States\n\n\nBilled To\nReal Property Management\n1901 Lendew St Suite 7\nGreensboro, NC\n27408\n\nDate of Issue\n01/29/2020\n\nInvoice Number\n0001131\n\nAmount Due (USD) \n$2,650.00 \n\nDue Date\n01/29/2020\n\nReference\n7783 Newhaven Dr\n\n<table>\n<tr><td>Description</td><td>Rate</td><td>Qty</td><td>Line Total</td></tr>\n<tr><td>Replace HVAC Unit.</td><td>$2,650.00</td><td>1</td><td>$2,650.00</td></tr>\n<tr><td></td><td>Subtotal</td><td></td><td>2,650.00</td></tr>\n<tr><td></td><td>Tax</td><td></td><td>0.00</td></tr>\n<tr><td></td><td>Total</td><td></td><td>2,650.00</td></tr>\n<tr><td></td><td>Amount Paid</td><td></td><td>0.00</td></tr>\n<tr><td></td><td>Amount Due (USD)</td><td></td><td>$2,650.00</td></tr>\n</table>\n\nNotes \nT8EW3A3 \n\nTerms\nThank you for trusting us with all your home improvement needs.\n\n<!-- doc_id=parse-01kxyvcqer68813wm0x18dwr79 -->",
+  "markdown": "![RR logo] ROOFING-RENOVATIONS\n\n\nRoofing Renovations INC\n336-862-5235\n\n\n4917 Old Randleman Rd\nGreensboro, North Carolina\n27406\nUnited States\n\n\nBilled To\nReal Property Management\n1901 Lendew St Suite 7\nGreensboro, NC\n27408\n\nDate of Issue\n01/29/2020\n\nInvoice Number\n0001131\n\nAmount Due (USD) \n$2,650.00 \n\nDue Date\n01/29/2020\n\nReference\n7783 Newhaven Dr\n\n<table>\n<tr><td>Description</td><td>Rate</td><td>Qty</td><td>Line Total</td></tr>\n<tr><td>Replace HVAC Unit.</td><td>$2,650.00</td><td>1</td><td>$2,650.00</td></tr>\n<tr><td></td><td>Subtotal</td><td></td><td>2,650.00</td></tr>\n<tr><td></td><td>Tax</td><td></td><td>0.00</td></tr>\n<tr><td></td><td>Total</td><td></td><td>2,650.00</td></tr>\n<tr><td></td><td>Amount Paid</td><td></td><td>0.00</td></tr>\n<tr><td></td><td>Amount Due (USD)</td><td></td><td>$2,650.00</td></tr>\n</table>\n\nNotes \nT8EW3A3 \n\nTerms\nThank you for trusting us with all your home improvement needs.\n\n<!-- doc_id=parse-01ky0wqhwxygvxnbwt1rj22c44 -->",
   "metadata": {
-    "job_id": "extract-01kxyvdxrwvn05nehtxstk9j8g",
+    "job_id": "extract-01ky0wrqmcnqvth8y3jp6nyb4x",
     "model_version": "extract-20260710",
-    "duration_ms": 32019,
-    "doc_id": "parse-01kxyvcqer68813wm0x18dwr79",
+    "duration_ms": 27713,
+    "doc_id": "parse-01ky0wqhwxygvxnbwt1rj22c44",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 969,
-    "output_extraction_chars": 3257,
+    "output_extraction_chars": 1035,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 3.5
+      "total_credits": 1.3
     }
   },
   "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -370,5 +365,5 @@
       "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyvdxrwvn05nehtxstk9j8g"
+  "_extract_job_id": "extract-01ky0wrqmcnqvth8y3jp6nyb4x"
 }

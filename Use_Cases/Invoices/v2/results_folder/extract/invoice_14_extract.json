@@ -2,16 +2,16 @@
   "extraction": {
     "company_info": {
       "email": "info@thomann.de",
-      "gstin": "DE 257375233",
+      "gstin": null,
       "pan": null,
       "phone": "",
       "representative": "Eduardo Mourao",
-      "supplier_address": "Hans-Thomann-Str. 1, D-96138 Burgebrach",
+      "supplier_address": "Thomann GmbH, Hans-Thomann-Str. 1, D-96138 Burgebrach",
       "supplier_name": "Thomann GmbH"
     },
     "customer_info": {
       "customer_email": null,
-      "sold_to_address": "Av. da Repùblica, N°. 181, LJ 101 \nPT-4450 Matosinhos",
+      "sold_to_address": "Gnr-Grupo Novo Rock, Lda \nJorge Rom\u0010o \nAv. da Rep\u0010blica, N\u0010. 181, LJ 101 \n\nPT-4450 Matosinhos",
       "sold_to_name": "Gnr-Grupo Novo Rock, Lda"
     },
     "invoice_info": {
@@ -86,7 +86,7 @@
       "shipping": null,
       "subtotal": 77.24,
       "tax": null,
-      "total_due": 77.24,
+      "total_due": null,
       "total_due_raw": "77,24 EUR"
     }
   },
@@ -102,13 +102,8 @@
         "value": "info@thomann.de"
       },
       "gstin": {
-        "ranges": [
-          {
-            "end": 2800,
-            "start": 2775
-          }
-        ],
-        "value": "DE 257375233"
+        "ranges": null,
+        "value": null
       },
       "pan": {
         "ranges": null,
@@ -117,8 +112,8 @@
       "phone": {
         "ranges": [
           {
-            "end": 2324,
-            "start": 2300
+            "end": 532,
+            "start": 502
           }
         ],
         "value": ""
@@ -139,7 +134,7 @@
             "start": 44
           }
         ],
-        "value": "Hans-Thomann-Str. 1, D-96138 Burgebrach"
+        "value": "Thomann GmbH, Hans-Thomann-Str. 1, D-96138 Burgebrach"
       },
       "supplier_name": {
         "ranges": [
@@ -159,6 +154,14 @@
       "sold_to_address": {
         "ranges": [
           {
+            "end": 125,
+            "start": 100
+          },
+          {
+            "end": 138,
+            "start": 126
+          },
+          {
             "end": 173,
             "start": 139
           },
@@ -167,7 +170,7 @@
             "start": 175
           }
         ],
-        "value": "Av. da Repùblica, N°. 181, LJ 101 \nPT-4450 Matosinhos"
+        "value": "Gnr-Grupo Novo Rock, Lda \nJorge Rom\u0010o \nAv. da Rep\u0010blica, N\u0010. 181, LJ 101 \n\nPT-4450 Matosinhos"
       },
       "sold_to_name": {
         "ranges": [
@@ -633,8 +636,8 @@
       "currency": {
         "ranges": [
           {
-            "end": 820,
-            "start": 812
+            "end": 2131,
+            "start": 2122
           }
         ],
         "value": "EUR"
@@ -661,13 +664,8 @@
         "value": null
       },
       "total_due": {
-        "ranges": [
-          {
-            "end": 2131,
-            "start": 2122
-          }
-        ],
-        "value": 77.24
+        "ranges": null,
+        "value": null
       },
       "total_due_raw": {
         "ranges": [
@@ -680,27 +678,27 @@
       }
     }
   },
-  "markdown": "th●mann\n\n\n[BARCODE]\nInvoice Nr.: 40458946\n\n\nThomann GmbH, Hans-Thomann-Str. 1, D-96138 Burgebrach\n\n\nGnr-Grupo Novo Rock, Lda \nJorge Romão \nAv. da República, N°. 181, LJ 101 \n\nPT-4450 Matosinhos\n\n\nInvoice Nr.: 40458946 \nDate: 23.02.2019 \nYour customer no.: 10649971 \n\nYour VAT No.: PT502208171\nfornecimento Inter-comunitario Isento de IVA\n\nDelivery address: \nFilipe Louro \nRua Tullins Fures 223 2<sup>o</sup>esq \nPT-4450 Leça da Palmeira \n\nOrder No.: 201908.660583 / 1233 \nSales Person: Eduardo Mourao \nTelephone: 0049 9546 9223 645 \nMethod of Shipment: UPS \nYour Reference: \nPlease Include your customer no.: 10649971 with \npayment by bank transfer! \n\n<table>\n<tr><td>Pos.</td><td>Article</td><td>Amount Unit</td><td>Unit Price</td><td>Total Price</td></tr>\n<tr><td>001.00</td><td>242900</td><td>1 piece</td><td>3,66 EUR</td><td>3,66 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">Dunlop Nylon Max Grip Jazz III Players Pack - 6-piece plectrum set. Colour: Red, gauge: 1,38mm</td><td></td></tr>\n<tr><td>002.00</td><td colspan=\"2\">151423                                                                         1 piece<br>Dunlop Tortex standard picks - 0.88mm, 12-pack.</td><td>4,80 EUR</td><td>4,80 EUR</td></tr>\n<tr><td>003.00</td><td>119582</td><td>1 piece</td><td>47,15 EUR</td><td>47,15 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">Fender Vintage Bass Bridge, Incl screws, dimension width 8cm, lenght 4cm, stringspacing 2cm</td><td></td></tr>\n<tr><td>004.00</td><td>180181</td><td>1 piece</td><td>13,58 EUR</td><td>13,58 EUR</td></tr>\n<tr><td></td><td colspan=\"4\">Electro Harmonix 24DC-100 EU AC power supply, Original AC power supply matches Deluxe Memory Man, Bass/Micro Synth, Q-Tron, Q-Tron+, Stereo Polychorus, Worm, Deluxe Electric Mistress, Stereo Memoroy Man, Stereo Polyphase, XO Deluxe Memory Man, XO Q-Tron+</td></tr>\n<tr><td>005.00</td><td>378874</td><td>1 piece</td><td>8,05 EUR</td><td>8,05 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">the sssnake DD1015, Minijack Mono - Minijack Mono Patchkabel, Length 15cm, 6 pcs. per Set</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>Amount carried forward :</td><td>77,24 EUR</td></tr>\n</table>\n\nThomann GmbH\nHans-Thomann-Str.1\nD-96138 Burgebrach\nBank   Sparkasse Bamberg\nIBAN   DE97 7705 0000 0000 1030 85\nBIC   BYLADEM1SKB\n\n\ninfo@thomann.de \nTel +49 (0)9546 9223-66 \nFax +49 (0)9546 9223-24 \nRaiffeisenbank Burgebrach \nDE58 7706 2014 0000 0056 30 \n[ILLEGIBLE_TEXT] \n\nGeschäftsführer: Hans Thomann \nAmtsgericht Bamberg: HRB 5862 \nSitz der Gesellschaft: Burgebrach \n\nPostbank Nürnberg\nDE41 7601 0085 0283 5648 54\nPBNKDEFF\n\n\nRaiffeisenbank Burgebrach\nDE58 7706 2014 0000 0056 30\nGENODEF1BGB\nPostbank Nürnberg\nDE41 7601 0085 0283 5648 54\nPBNKDEFF\nEs gelten unsere umseitig abgedrucktenAllgemeinen Geschäftsbedingungen.\n\n\nUSt.-IdNr.: DE 257375233 \nSteuernummer: 207/132/90050 \nWEEE-Reg.-Nr.: DE 18280160 \n\nDeutsche Bank 24 \nDE19 7607 0024 0811 5008 00 \nDEUTDEDB760 \n\nMUSIC IS OUR PASSION\n\n<!-- doc_id=parse-01kxyvczrdre4qsdbsa5yr9ms0 -->",
+  "markdown": "th●mann\n\n\n[BARCODE]\nInvoice Nr.: 40458946\n\n\nThomann GmbH, Hans-Thomann-Str. 1, D-96138 Burgebrach\n\n\nGnr-Grupo Novo Rock, Lda \nJorge Romão \nAv. da República, N°. 181, LJ 101 \n\nPT-4450 Matosinhos\n\n\nInvoice Nr.: 40458946 \nDate: 23.02.2019 \nYour customer no.: 10649971 \n\nYour VAT No.: PT502208171\nfornecimento Inter-comunitario Isento de IVA\n\nDelivery address: \nFilipe Louro \nRua Tullins Fures 223 2<sup>o</sup>esq \nPT-4450 Leça da Palmeira \n\nOrder No.: 201908.660583 / 1233 \nSales Person: Eduardo Mourao \nTelephone: 0049 9546 9223 645 \nMethod of Shipment: UPS \nYour Reference: \nPlease Include your customer no.: 10649971 with \npayment by bank transfer! \n\n<table>\n<tr><td>Pos.</td><td>Article</td><td>Amount Unit</td><td>Unit Price</td><td>Total Price</td></tr>\n<tr><td>001.00</td><td>242900</td><td>1 piece</td><td>3,66 EUR</td><td>3,66 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">Dunlop Nylon Max Grip Jazz III Players Pack - 6-piece plectrum set. Colour: Red, gauge: 1,38mm</td><td></td></tr>\n<tr><td>002.00</td><td colspan=\"2\">151423                                                                         1 piece<br>Dunlop Tortex standard picks - 0.88mm, 12-pack.</td><td>4,80 EUR</td><td>4,80 EUR</td></tr>\n<tr><td>003.00</td><td>119582</td><td>1 piece</td><td>47,15 EUR</td><td>47,15 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">Fender Vintage Bass Bridge, Incl screws, dimension width 8cm, lenght 4cm, stringspacing 2cm</td><td></td></tr>\n<tr><td>004.00</td><td>180181</td><td>1 piece</td><td>13,58 EUR</td><td>13,58 EUR</td></tr>\n<tr><td></td><td colspan=\"4\">Electro Harmonix 24DC-100 EU AC power supply, Original AC power supply matches Deluxe Memory Man, Bass/Micro Synth, Q-Tron, Q-Tron+, Stereo Polychorus, Worm, Deluxe Electric Mistress, Stereo Memoroy Man, Stereo Polyphase, XO Deluxe Memory Man, XO Q-Tron+</td></tr>\n<tr><td>005.00</td><td>378874</td><td>1 piece</td><td>8,05 EUR</td><td>8,05 EUR</td></tr>\n<tr><td></td><td colspan=\"3\">the sssnake DD1015, Minijack Mono - Minijack Mono Patchkabel, Length 15cm, 6 pcs. per Set</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>Amount carried forward :</td><td>77,24 EUR</td></tr>\n</table>\n\nThomann GmbH\nHans-Thomann-Str.1\nD-96138 Burgebrach\nBank   Sparkasse Bamberg\nIBAN   DE97 7705 0000 0000 1030 85\nBIC   BYLADEM1SKB\n\n\ninfo@thomann.de \nTel +49 (0)9546 9223-66 \nFax +49 (0)9546 9223-24 \nRaiffeisenbank Burgebrach \nDE58 7706 2014 0000 0056 30 \n[ILLEGIBLE_TEXT] \n\nGeschäftsführer: Hans Thomann \nAmtsgericht Bamberg: HRB 5862 \nSitz der Gesellschaft: Burgebrach \n\nPostbank Nürnberg\nDE41 7601 0085 0283 5648 54\nPBNKDEFF\n\n\nRaiffeisenbank Burgebrach\nDE58 7706 2014 0000 0056 30\nGENODEF1BGB\nPostbank Nürnberg\nDE41 7601 0085 0283 5648 54\nPBNKDEFF\nEs gelten unsere umseitig abgedrucktenAllgemeinen Geschäftsbedingungen.\n\n\nUSt.-IdNr.: DE 257375233 \nSteuernummer: 207/132/90050 \nWEEE-Reg.-Nr.: DE 18280160 \n\nDeutsche Bank 24 \nDE19 7607 0024 0811 5008 00 \nDEUTDEDB760 \n\nMUSIC IS OUR PASSION\n\n<!-- doc_id=parse-01ky0wqt0ydae82gfb26eyn0zf -->",
   "metadata": {
-    "job_id": "extract-01kxyve3qmdyp7wpcfpdvtff82",
+    "job_id": "extract-01ky0wrxgzn9rkry22gxb7x556",
     "model_version": "extract-20260710",
-    "duration_ms": 32556,
-    "doc_id": "parse-01kxyvczrdre4qsdbsa5yr9ms0",
+    "duration_ms": 33525,
+    "doc_id": "parse-01ky0wqt0ydae82gfb26eyn0zf",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 2990,
-    "output_extraction_chars": 6626,
+    "output_extraction_chars": 2218,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 7.3
+      "total_credits": 2.9
     }
   },
-  "schema_violation_error": "The value at 'company_info.pan' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
   "warnings": [
     {
       "code": "nonconformant_output",
-      "msg": "The value at 'company_info.pan' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyve3qmdyp7wpcfpdvtff82"
+  "_extract_job_id": "extract-01ky0wrxgzn9rkry22gxb7x556"
 }

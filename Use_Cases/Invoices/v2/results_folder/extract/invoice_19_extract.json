@@ -254,8 +254,12 @@
       "currency": {
         "ranges": [
           {
-            "end": 1075,
-            "start": 1075
+            "end": 667,
+            "start": 655
+          },
+          {
+            "end": 1100,
+            "start": 1084
           },
           {
             "end": 277,
@@ -310,19 +314,19 @@
       }
     }
   },
-  "markdown": "[SUNSET_OVER_FIELD_WITH_RV_ICON] HARVEST HOSTS\n\n\n[CAMPER VAN AND TENT ICON]\nCAMPERSCARD\n[BW LOGO]\nBOONDOCKERS\nWelcome\n[TENT ICON]\nCampScanner\n[CAMPER VAN ICON] BRIT\n[CAMPER VAN ICON] ISTOPS\n\n\nINVOICE \n\nInvoice # 1457274 \nInvoice Date Aug 31, 2024 \nInvoice Amount $172.83 (USD) \nCustomer ID 16Bj5ATG7ptQz8kux \nPAID \n\nHarvest Hosts\n1300 N. Frontage Rd, #1594\nVail, Colorado 81657\nUnited States\n\n\n**BILLED TO**\nAndrea Kropp\n227 N 5th Ave, PO Box 1168\nRidgefield, Washington 98642\nUnited States\n\n\nSUBSCRIPTION \nID: 16Bj5ATG7ptQz8kux \nBilling Period: Aug 31, 2024 to Aug 31, 2025 \nNext Billing Date: Aug 31, 2025 \n\n<table>\n<tr><td>DESCRIPTION</td><td></td><td>AMOUNT (USD)</td></tr>\n<tr><td>Harvest Hosts</td><td></td><td>$159.00</td></tr>\n<tr><td>Annual Harvest Hosts + Golf + Boondockers Welcome Subscription (Billed Every 365 Days)</td><td></td><td></td></tr>\n<tr><td></td><td>Sub Total</td><td>$159.00</td></tr>\n<tr><td></td><td>Tax @ 8.7%</td><td>$13.83</td></tr>\n<tr><td></td><td>Total</td><td>$172.83</td></tr>\n<tr><td></td><td>Payments</td><td>($172.83)</td></tr>\n<tr><td></td><td>Amount Due (USD)</td><td>$0.00</td></tr>\n</table>\n\n**PAYMENTS**\n**$172.83** was paid on 31 Aug, 2024 21:19 UTC by Visa card ending 8366.\n\n<!-- doc_id=parse-01kxyvd2rmkc4d2t624p6pp6p7 -->",
+  "markdown": "[SUNSET_OVER_FIELD_WITH_RV_ICON] HARVEST HOSTS\n\n\n[CAMPER VAN AND TENT ICON]\nCAMPERSCARD\n[BW LOGO]\nBOONDOCKERS\nWelcome\n[TENT ICON]\nCampScanner\n[CAMPER VAN ICON] BRIT\n[CAMPER VAN ICON] ISTOPS\n\n\nINVOICE \n\nInvoice # 1457274 \nInvoice Date Aug 31, 2024 \nInvoice Amount $172.83 (USD) \nCustomer ID 16Bj5ATG7ptQz8kux \nPAID \n\nHarvest Hosts\n1300 N. Frontage Rd, #1594\nVail, Colorado 81657\nUnited States\n\n\n**BILLED TO**\nAndrea Kropp\n227 N 5th Ave, PO Box 1168\nRidgefield, Washington 98642\nUnited States\n\n\nSUBSCRIPTION \nID: 16Bj5ATG7ptQz8kux \nBilling Period: Aug 31, 2024 to Aug 31, 2025 \nNext Billing Date: Aug 31, 2025 \n\n<table>\n<tr><td>DESCRIPTION</td><td></td><td>AMOUNT (USD)</td></tr>\n<tr><td>Harvest Hosts</td><td></td><td>$159.00</td></tr>\n<tr><td>Annual Harvest Hosts + Golf + Boondockers Welcome Subscription (Billed Every 365 Days)</td><td></td><td></td></tr>\n<tr><td></td><td>Sub Total</td><td>$159.00</td></tr>\n<tr><td></td><td>Tax @ 8.7%</td><td>$13.83</td></tr>\n<tr><td></td><td>Total</td><td>$172.83</td></tr>\n<tr><td></td><td>Payments</td><td>($172.83)</td></tr>\n<tr><td></td><td>Amount Due (USD)</td><td>$0.00</td></tr>\n</table>\n\n**PAYMENTS**\n**$172.83** was paid on 31 Aug, 2024 21:19 UTC by Visa card ending 8366.\n\n<!-- doc_id=parse-01ky0wqx2y1dvmrqfrxh5azf3t -->",
   "metadata": {
-    "job_id": "extract-01kxyve68n6338vsy0pvx97kwm",
+    "job_id": "extract-01ky0ws04v7y5zzz3z98pn4znz",
     "model_version": "extract-20260710",
-    "duration_ms": 25642,
-    "doc_id": "parse-01kxyvd2rmkc4d2t624p6pp6p7",
+    "duration_ms": 28214,
+    "doc_id": "parse-01ky0wqx2y1dvmrqfrxh5azf3t",
     "range_units": "unicode_codepoints",
     "input_markdown_chars": 1270,
-    "output_extraction_chars": 3305,
+    "output_extraction_chars": 1080,
     "openapi_spec": "https://api.ade.landing.ai/openapi.json",
     "billing": {
       "service_tier": "standard",
-      "total_credits": 3.6
+      "total_credits": 1.4
     }
   },
   "schema_violation_error": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
@@ -332,5 +336,5 @@
       "msg": "The value at 'company_info.email' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
     }
   ],
-  "_extract_job_id": "extract-01kxyve68n6338vsy0pvx97kwm"
+  "_extract_job_id": "extract-01ky0ws04v7y5zzz3z98pn4znz"
 }
