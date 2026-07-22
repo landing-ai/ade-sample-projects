@@ -15,6 +15,9 @@ __pycache__/
 
 # Results and outputs
 results_folder/
+# ...but keep the v2 sample outputs in the repo (parity with other use cases)
+!v2/results_folder/
+!v2/results_folder/**
 
 # Jupyter Notebook
 .ipynb_checkpoints/
