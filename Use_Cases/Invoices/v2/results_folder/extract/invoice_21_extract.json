@@ -1,0 +1,390 @@
+{
+  "extraction": {
+    "company_info": {
+      "email": "billing@midjourney.com",
+      "gstin": null,
+      "pan": null,
+      "phone": null,
+      "representative": null,
+      "supplier_address": "611 Gateway Blvd\nSuite 120\nSouth San Francisco, California 94080\nUnited States",
+      "supplier_name": "Midjourney Inc"
+    },
+    "customer_info": {
+      "customer_email": "andr3akropp@gmail.com",
+      "sold_to_address": "227 N 5th Ave\nPO Box 1168\nRidgefield, Washington 98642\nUnited States",
+      "sold_to_name": "Andrea Kropp"
+    },
+    "invoice_info": {
+      "invoice_date": "2024-07-01",
+      "invoice_date_raw": "July 1, 2024",
+      "invoice_number": "8E8C6122-0016",
+      "order_date": null,
+      "po_number": null,
+      "status": "DUE"
+    },
+    "line_items": [
+      {
+        "amount": 30.0,
+        "description": "Standard Plan Jul 1 – Aug 1, 2024",
+        "line_number": "1",
+        "price": 30.0,
+        "quantity": 1,
+        "sku": null,
+        "total": 30.0,
+        "unit_price": 30.0
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Due on Receipt",
+      "ship_date": null,
+      "ship_via": null,
+      "tracking_number": null
+    },
+    "totals_summary": {
+      "currency": "USD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 30.0,
+      "tax": 2.61,
+      "total_due": 32.61,
+      "total_due_raw": "$32.61 USD"
+    }
+  },
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 217,
+            "start": 195
+          }
+        ],
+        "value": "billing@midjourney.com"
+      },
+      "gstin": {
+        "ranges": null,
+        "value": null
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": null,
+        "value": null
+      },
+      "representative": {
+        "ranges": null,
+        "value": null
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 132,
+            "start": 116
+          },
+          {
+            "end": 142,
+            "start": 133
+          },
+          {
+            "end": 180,
+            "start": 143
+          },
+          {
+            "end": 194,
+            "start": 181
+          }
+        ],
+        "value": "611 Gateway Blvd\nSuite 120\nSouth San Francisco, California 94080\nUnited States"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 115,
+            "start": 101
+          }
+        ],
+        "value": "Midjourney Inc"
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": [
+          {
+            "end": 348,
+            "start": 327
+          }
+        ],
+        "value": "andr3akropp@gmail.com"
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 271,
+            "start": 258
+          },
+          {
+            "end": 283,
+            "start": 272
+          },
+          {
+            "end": 312,
+            "start": 284
+          },
+          {
+            "end": 326,
+            "start": 313
+          }
+        ],
+        "value": "227 N 5th Ave\nPO Box 1168\nRidgefield, Washington 98642\nUnited States"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 257,
+            "start": 245
+          }
+        ],
+        "value": "Andrea Kropp"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 75,
+            "start": 47
+          }
+        ],
+        "value": "2024-07-01"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 75,
+            "start": 47
+          }
+        ],
+        "value": "July 1, 2024"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 46,
+            "start": 16
+          }
+        ],
+        "value": "8E8C6122-0016"
+      },
+      "order_date": {
+        "ranges": null,
+        "value": null
+      },
+      "po_number": {
+        "ranges": null,
+        "value": null
+      },
+      "status": {
+        "ranges": [
+          {
+            "end": 377,
+            "start": 350
+          }
+        ],
+        "value": "DUE"
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 586,
+              "start": 580
+            }
+          ],
+          "value": 30.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 533,
+              "start": 497
+            }
+          ],
+          "value": "Standard Plan Jul 1 – Aug 1, 2024"
+        },
+        "line_number": {
+          "ranges": null,
+          "value": "1"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 586,
+              "start": 580
+            }
+          ],
+          "value": 30.0
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 543,
+              "start": 542
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": null,
+          "value": null
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 586,
+              "start": 580
+            }
+          ],
+          "value": 30.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 558,
+              "start": 552
+            }
+          ],
+          "value": 30.0
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 377,
+            "start": 350
+          },
+          {
+            "end": 100,
+            "start": 0
+          },
+          {
+            "end": 1322,
+            "start": 997
+          }
+        ],
+        "value": "Due on Receipt"
+      },
+      "ship_date": {
+        "ranges": null,
+        "value": null
+      },
+      "ship_via": {
+        "ranges": null,
+        "value": null
+      },
+      "tracking_number": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 978,
+            "start": 968
+          },
+          {
+            "end": 377,
+            "start": 350
+          },
+          {
+            "end": 1320,
+            "start": 1277
+          }
+        ],
+        "value": "USD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 658,
+            "start": 652
+          }
+        ],
+        "value": 30.0
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 834,
+            "start": 829
+          }
+        ],
+        "value": 2.61
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 900,
+            "start": 894
+          }
+        ],
+        "value": 32.61
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 978,
+            "start": 968
+          },
+          {
+            "end": 377,
+            "start": 350
+          },
+          {
+            "end": 1320,
+            "start": 1277
+          }
+        ],
+        "value": "$32.61 USD"
+      }
+    }
+  },
+  "markdown": "Invoice\n\n\n[⛵]\n\n\nInvoice number: 8E8C6122-0016 \nDate of issue: July 1, 2024 \nDate due: July 1, 2024 \n\nMidjourney Inc\n611 Gateway Blvd\nSuite 120\nSouth San Francisco, California 94080\nUnited States\nbilling@midjourney.com\nUS EIN 85-3078202\n\nBill to\nAndrea Kropp\n227 N 5th Ave\nPO Box 1168\nRidgefield, Washington 98642\nUnited States\nandr3akropp@gmail.com\n\n$32.61 USD due July 1, 2024\n\n\nPay online\n\n\n<table>\n<tr><td>Description</td><td>Qty</td><td>Unit price</td><td>Tax</td><td>Amount</td></tr>\n<tr><td>Standard Plan<br>Jul 1 – Aug 1, 2024</td><td>1</td><td>$30.00</td><td>8.7%</td><td>$30.00</td></tr>\n<tr><td></td><td>Subtotal</td><td colspan=\"2\"></td><td>$30.00</td></tr>\n<tr><td></td><td>Total excluding tax</td><td colspan=\"2\"></td><td>$30.00</td></tr>\n<tr><td></td><td colspan=\"3\">Sales Tax - Washington (8.7% on $30.00)</td><td>$2.61</td></tr>\n<tr><td></td><td>Total</td><td></td><td></td><td>$32.61</td></tr>\n<tr><td></td><td>Amount due</td><td colspan=\"2\"></td><td>$32.61 USD</td></tr>\n</table>\n\nYou can modify or cancel your subscription from the account page at https://www.midjourney.com/account/\nFor any account related issues, please reach out through the support channel on the Midjourney Discord server. For billing\ninquiries please contact billing@midjourney.com.\n\n\n8E8C6122-0016 · $32.61 USD due July 1, 2024\n\n\nPage 1 of 1\n\n<!-- doc_id=parse-01ky0wqy5p0htwcs7z8y99cebc -->",
+  "metadata": {
+    "job_id": "extract-01ky0ws14dxxsh41kcjn0xctbn",
+    "model_version": "extract-20260710",
+    "duration_ms": 31785,
+    "doc_id": "parse-01ky0wqy5p0htwcs7z8y99cebc",
+    "range_units": "unicode_codepoints",
+    "input_markdown_chars": 1384,
+    "output_extraction_chars": 1089,
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.4
+    }
+  },
+  "schema_violation_error": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true).",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.gstin' was not found in the document, so null was returned. Since the schema requires a non-null value, verify the document indeed doesn't contain this data, and if so, update the schema to allow null (e.g. type: ['string', 'null'] or nullable: true)."
+    }
+  ],
+  "_extract_job_id": "extract-01ky0ws14dxxsh41kcjn0xctbn"
+}
