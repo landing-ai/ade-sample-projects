@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "description": "Income and employment fields extracted from a borrower's loan documents (pay stubs, W-2s, tax returns, and employment verification letters). Any field not present in a given document should be null.",
+  "properties": {
+    "document_type": {
+      "type": "string",
+      "description": "The kind of income/employment document, e.g. 'pay stub', 'W-2', 'tax return', 'employment verification letter'."
+    },
+    "employee_name": {
+      "type": "string",
+      "description": "Full name of the employee / borrower."
+    },
+    "employer_name": {
+      "type": "string",
+      "description": "Name of the employer or company issuing the document."
+    },
+    "employer_address": {
+      "type": "string",
+      "description": "Employer's mailing address, as a single line."
+    },
+    "mailing_address": {
+      "type": "string",
+      "description": "Employee's / borrower's mailing or home address, as a single line."
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Employee's job title or position."
+    },
+    "employment_status": {
+      "type": "string",
+      "description": "Employment status, e.g. 'full-time', 'part-time', 'contractor', 'active', 'terminated'."
+    },
+    "employment_start_date": {
+      "type": "string",
+      "description": "Date employment began, in YYYY-MM-DD format if available."
+    },
+    "pay_period_start": {
+      "type": "string",
+      "description": "Start date of the pay period (pay stub), in YYYY-MM-DD format if available."
+    },
+    "pay_period_end": {
+      "type": "string",
+      "description": "End date of the pay period (pay stub), in YYYY-MM-DD format if available."
+    },
+    "pay_date": {
+      "type": "string",
+      "description": "Date wages were paid (pay stub), in YYYY-MM-DD format if available."
+    },
+    "gross_pay_current": {
+      "type": "number",
+      "description": "Gross pay for the current pay period, as a number without currency symbols."
+    },
+    "net_pay_current": {
+      "type": "number",
+      "description": "Net (take-home) pay for the current pay period, as a number without currency symbols."
+    },
+    "gross_pay_ytd": {
+      "type": "number",
+      "description": "Year-to-date gross earnings, as a number without currency symbols."
+    },
+    "total_deductions": {
+      "type": "number",
+      "description": "Total deductions for the current pay period, as a number without currency symbols."
+    },
+    "annual_wages_w2": {
+      "type": "number",
+      "description": "Annual wages, tips, and other compensation from W-2 Box 1, as a number without currency symbols."
+    },
+    "tax_year": {
+      "type": "integer",
+      "description": "The tax year the document covers, e.g. 2025."
+    }
+  },
+  "required": []
+}
