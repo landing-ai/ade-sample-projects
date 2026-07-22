@@ -1,14 +1,15 @@
 """Build a ChromaDB index from cached parses in parsed/.
 
-Small-to-big units: every table becomes one *header-aware sentence per row*
-(e.g. "Coronavirus 229E. Serology: 10 (5); Total: 10 (5)"); every other leaf
-element (text, figure, marginalia, ...) stays whole. Each unit stores a
-`parent_*` pointer so retrieval can match the precise small unit, then expand to
-the parent element for context + grounding (see query_engine.retrieve).
+Block-level indexing: one chunk per top-level structural element (text, table,
+figure, marginalia, logo, card, scan_code, attestation). We retrieve whole
+blocks, then ground the answer's verbatim quote down to the exact line or cell
+(see query_engine + parse_helpers). Retrieve the block, highlight the line.
 
-A pipe-delimited table embeds as a blur of all its cells and retrieves poorly;
-one clean sentence per row retrieves precisely — the win is the unit shape, not a
-bigger model.
+Reads the DPT-3 (dpt-3-pro-20260710+) parse response: `structure` is a tree of
+elements, each with an `id` and a `span` into `markdown`. `iter_chunks` walks it
+and emits one chunk per leaf element. Tables are emitted whole — their
+`table_cell` children are not indexed separately, but stay queryable at grounding
+time via the parallel `grounding` tree (flattened by parse_helpers.grounding_map).
 
 Embedding: ChromaDB's default (sentence-transformers/all-MiniLM-L6-v2).
 First run downloads the ~80MB model.
@@ -19,23 +20,17 @@ Usage:
 from __future__ import annotations
 
 import json
-import os
 import sys
 from pathlib import Path
 
 import chromadb
 from tqdm import tqdm
 
-from parse_helpers import iter_units
+from parse_helpers import iter_chunks
 
 PARSED_DIR = Path("parsed")
 CHROMA_DIR = "chroma"
 COLLECTION_NAME = "medical_corpus"
-
-# How to index text elements. "whole" (default) = one unit per paragraph.
-# "linewin" = line-window units (opt-in; better for long/dense prose, ~5x larger
-# index). See docs/chunking-notes.md and the README. Toggle with TEXT_MODE=linewin.
-TEXT_MODE = os.environ.get("TEXT_MODE", "whole")
 
 
 def main() -> int:
@@ -60,25 +55,23 @@ def main() -> int:
         doc_id = parse_path.stem
         with open(parse_path) as f:
             parse = json.load(f)
-        for u in iter_units(parse, doc_id, text_mode=TEXT_MODE):
-            counts_by_type[u.unit_type] = counts_by_type.get(u.unit_type, 0) + 1
-            ids.append(u.id)
-            docs.append(u.text)
+        for chunk in iter_chunks(parse, doc_id):
+            counts_by_type[chunk.element_type] = counts_by_type.get(chunk.element_type, 0) + 1
+            ids.append(f"{chunk.doc_id}::{chunk.element_id}")
+            docs.append(chunk.text)
             metas.append({
-                "doc_id": u.doc_id,
-                "unit_type": u.unit_type,
-                "parent_id": u.parent_id,
-                "parent_type": u.parent_type,
-                "parent_span_start": u.parent_span[0],
-                "parent_span_end": u.parent_span[1],
-                "page": u.page,
-                "row": -1 if u.row is None else u.row,
+                "doc_id": chunk.doc_id,
+                "element_id": chunk.element_id,
+                "element_type": chunk.element_type,
+                "page": chunk.page,
+                "span_start": chunk.span[0],
+                "span_end": chunk.span[1],
             })
 
     if not ids:
         sys.exit("No chunks to index.")
 
-    print(f"Indexing {len(ids)} units from {len(parses)} document(s) (text_mode={TEXT_MODE})...")
+    print(f"Indexing {len(ids)} chunks from {len(parses)} document(s)...")
     print(f"  by type: {counts_by_type}")
 
     BATCH = 100

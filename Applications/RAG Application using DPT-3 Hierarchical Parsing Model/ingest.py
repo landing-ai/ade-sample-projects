@@ -111,7 +111,11 @@ def process_one(pdf_path: Path, api_key: str) -> Result:
 
     meta = parse_data.get("metadata", {})
     page_count = meta.get("page_count", 0)
-    credits = float(meta.get("credit_usage", 0.0))
+    # DPT-3 (dpt-3-pro-20260710+) reports credits under metadata.billing.total_credits;
+    # older parses used metadata.credit_usage. Support both.
+    credits = float(
+        meta.get("billing", {}).get("total_credits", meta.get("credit_usage", 0.0))
+    )
     failed_pages = list(meta.get("failed_pages", []))
 
     # Rasterize (with cache)

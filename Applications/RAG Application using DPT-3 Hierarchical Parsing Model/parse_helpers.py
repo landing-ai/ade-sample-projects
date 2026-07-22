@@ -10,9 +10,7 @@ Centralizes:
 """
 from __future__ import annotations
 
-import re
-from dataclasses import dataclass, field
-from pathlib import Path
+from dataclasses import dataclass
 from typing import Iterator
 
 from PIL import Image, ImageDraw
@@ -21,6 +19,11 @@ LEAF_CHUNK_TYPES = {
     "text", "marginalia", "figure", "table",
     "logo", "card", "scan_code", "attestation",
 }
+
+# Table-cell element types. DPT-3 (dpt-3-pro-20260710+) emits `table_cell`;
+# earlier parses used HTML-style `td`/`th`. Accept all so cached parses from
+# either era keep resolving.
+CELL_TYPES = {"table_cell", "td", "th"}
 
 
 @dataclass
@@ -57,7 +60,7 @@ def _spans_overlap(a: list[int], b: list[int]) -> bool:
 
 def iter_elements(structure: dict) -> Iterator[tuple[dict, int]]:
     """Yield (node, page_number) for every non-document, non-page element.
-    Includes intermediate nodes like `table` and their `td`/`th` cell children."""
+    Includes intermediate nodes like `table` and their `table_cell` children."""
     def walk(node, current_page):
         ntype = node.get("type")
         if ntype == "page":
@@ -98,157 +101,6 @@ def iter_chunks(parse_response: dict, doc_id: str) -> Iterator[Chunk]:
             yield from walk(child, current_page)
 
     yield from walk(structure, None)
-
-
-# ---- Small-to-big retrieval units --------------------------------------------
-
-@dataclass
-class Unit:
-    """A retrieval unit for small-to-big indexing.
-
-    Either a whole leaf element (text/figure/...) or a single table row rewritten
-    as a header-aware sentence. `parent_*` points at the element to expand to for
-    LLM context and grounding — for a table row that's the table; for everything
-    else it's the element itself."""
-    id: str
-    text: str           # the text we embed (the "small" unit)
-    doc_id: str
-    unit_type: str      # 'text' | 'table_row' | 'figure' | ...
-    page: int
-    parent_id: str
-    parent_type: str    # element type to expand to ('table' for rows, else == unit_type)
-    parent_span: list[int]
-    row: int | None = None
-
-
-def _table_row_units(table: dict, markdown: str, doc_id: str, page: int) -> Iterator[Unit]:
-    """Rewrite each *data* row of a table into a header-aware sentence, e.g.
-    'Coronavirus 229E. Serology: 10 (5); Total no. of patients (%): 10 (5)'.
-
-    Header rows (everything before the first row that has a row label AND a numeric
-    value) supply the column labels. A pipe-delimited table embeds as a blur of all
-    its cells; one clean sentence per row embeds — and retrieves — precisely."""
-    cells = [c for c in table.get("children", []) if c.get("row") is not None]
-    if not cells:
-        return
-    grid: dict[tuple[int, int], str] = {}
-    spans_by_row: dict[int, list[list[int]]] = {}
-    for c in cells:
-        grid[(c["row"], c["col"])] = markdown[c["span"][0]:c["span"][1]].replace("\n", " ").strip()
-        spans_by_row.setdefault(c["row"], []).append(c["span"])
-    rows = sorted(spans_by_row)
-    cols = sorted({col for (_, col) in grid})
-    data_rows = [
-        r for r in rows
-        if grid.get((r, 0), "") and any(re.search(r"\d", grid.get((r, col), "")) for col in cols if col > 0)
-    ]
-    first_data = min(data_rows) if data_rows else (rows[-1] + 1 if rows else 0)
-    header: dict[int, str] = {}
-    for col in cols:
-        seen = [grid.get((hr, col), "") for hr in rows if hr < first_data and grid.get((hr, col), "")]
-        header[col] = seen[-1] if seen else ""
-
-    tid = str(table["id"])
-    tspan = list(table["span"])
-    for r in rows:
-        if r < first_data:
-            continue
-        label = grid.get((r, 0), "").strip()
-        pairs = []
-        for col in cols:
-            if col == 0:
-                continue
-            v = grid.get((r, col), "").strip()
-            if v:
-                h = header.get(col, "").strip()
-                pairs.append(f"{h}: {v}" if h else v)
-        if not (label or pairs):
-            continue
-        sentence = ((label + ". ") if label else "") + "; ".join(pairs)
-        yield Unit(
-            id=f"{doc_id}::t{tid}r{r}", text=sentence, doc_id=doc_id,
-            unit_type="table_row", page=page, parent_id=tid,
-            parent_type="table", parent_span=tspan, row=r,
-        )
-
-
-def _text_line_window_units(node: dict, parse_response: dict, doc_id: str, page: int,
-                            window: int = 1) -> Iterator[Unit]:
-    """Line-window units for a text element (opt-in, for benchmarking).
-
-    Uses DPT-3's per-visual-line spans (`grounding[id].parts`) as boundaries, but
-    embeds each line together with `window` neighbor lines on each side — a bare line
-    is a typographic fragment, so the window restores enough context to embed well.
-    Each unit still points back to the whole element, so retrieval merges to the
-    parent (small-to-big). Falls back to the whole element if no line parts exist."""
-    markdown = parse_response["markdown"]
-    eid = str(node["id"])
-    span = node["span"]
-    parts = ((parse_response.get("grounding", {}) or {}).get(eid, {}) or {}).get("parts") or []
-    lines = [markdown[p["span"][0]:p["span"][1]].strip() for p in parts if "span" in p]
-    lines = [l for l in lines if l]
-    if len(lines) <= 1:
-        text = markdown[span[0]:span[1]].strip()
-        if text:
-            yield Unit(id=f"{doc_id}::{eid}", text=text, doc_id=doc_id, unit_type="text",
-                       page=page, parent_id=eid, parent_type=node["type"],
-                       parent_span=list(span), row=None)
-        return
-    for i in range(len(lines)):
-        lo, hi = max(0, i - window), min(len(lines), i + window + 1)
-        wtext = " ".join(lines[lo:hi]).strip()
-        if len(wtext) < 12:
-            continue
-        yield Unit(id=f"{doc_id}::{eid}L{i}", text=wtext, doc_id=doc_id,
-                   unit_type="text_linewin", page=page, parent_id=eid,
-                   parent_type=node["type"], parent_span=list(span), row=None)
-
-
-def iter_units(parse_response: dict, doc_id: str, text_mode: str = "whole") -> Iterator[Unit]:
-    """Small-to-big units: tables become one header-aware sentence per row; every
-    other leaf element stays whole. Retrieval matches the small unit, then callers
-    expand to `parent_*` for context + grounding (see query_engine.retrieve).
-
-    text_mode: "whole" (default) embeds each text element as one unit; "linewin"
-    embeds text as overlapping line-windows (see _text_line_window_units) — opt-in,
-    used for the line-window vs element benchmark."""
-    markdown = parse_response["markdown"]
-
-    def walk(node, page):
-        nt = node.get("type")
-        if nt == "page":
-            page = node["page"]
-        elif nt == "table":
-            yield from _table_row_units(node, markdown, doc_id, page if page is not None else 0)
-            return
-        elif nt == "text" and text_mode == "linewin":
-            yield from _text_line_window_units(node, parse_response, doc_id,
-                                               page if page is not None else 0)
-            return
-        elif nt in LEAF_CHUNK_TYPES:
-            span = node["span"]
-            text = markdown[span[0]:span[1]].strip()
-            if text:
-                yield Unit(
-                    id=f"{doc_id}::{node['id']}", text=text, doc_id=doc_id,
-                    unit_type=nt, page=page if page is not None else 0,
-                    parent_id=str(node["id"]), parent_type=nt,
-                    parent_span=list(span), row=None,
-                )
-            return
-        for child in node.get("children", []):
-            yield from walk(child, page)
-
-    yield from walk(parse_response["structure"], None)
-
-
-def table_row_sentences(parse_response: dict, table_element_id: str) -> list[str]:
-    """The header-aware row sentences for one table element — used by the UI to
-    contrast 'whole pipe-table' vs 'one searchable fact per row'."""
-    node = find_element_node(parse_response, table_element_id)
-    if not node or node.get("type") != "table":
-        return []
-    return [u.text for u in _table_row_units(node, parse_response["markdown"], "", 0)]
 
 
 def find_quote_span(quote: str, markdown: str) -> list[list[int]] | None:
@@ -303,17 +155,52 @@ def find_quote_span(quote: str, markdown: str) -> list[list[int]] | None:
     return [[orig_start, orig_end]]
 
 
+def grounding_map(parse_response: dict) -> dict[str, dict]:
+    """Flatten the grounding into an id-keyed lookup: {id: {box, page, parts}}.
+
+    DPT-3 (dpt-3-pro-20260710+) returns `grounding` as a tree parallel to
+    `structure`: page nodes carry the `page` index, and each element node carries
+    its `box` and per-visual-line `parts`. We flatten that tree so span→box
+    resolution stays a simple dict lookup and injects `page` (which lives only on
+    the page ancestor) onto every element.
+
+    Older parses returned `grounding` already flat as {id: {box, page, parts}};
+    those are passed through unchanged."""
+    root = parse_response.get("grounding") or {}
+    # Legacy flat form has no tree markers — return as-is.
+    if root and "type" not in root and "children" not in root:
+        return root
+
+    out: dict[str, dict] = {}
+
+    def walk(node: dict, page: int | None):
+        if node.get("type") == "page":
+            page = node.get("page")
+        eid = node.get("id")
+        if eid is not None:
+            out[str(eid)] = {
+                "box": node.get("box"),
+                "page": page,
+                "parts": node.get("parts", []) or [],
+            }
+        for child in node.get("children", []):
+            walk(child, page)
+
+    walk(root, None)
+    return out
+
+
 def get_grounding(spans: list[list[int]], parse_response: dict) -> list[GroundingMatch]:
     """For each element whose span overlaps any query span, return a
     GroundingMatch with both the chunk-level box and the precise lines/cells
     that actually contain the overlap.
 
     For text and marginalia: precise_boxes = parts entries that overlap.
-    For tables: parts is empty, but td/th children get matched separately
+    For tables: parts is empty, but table cells get matched separately
     (each cell has its own grounding entry).
     For other non-text elements: precise_boxes = [chunk_box]."""
     structure = parse_response["structure"]
-    grounding = parse_response["grounding"]
+    grounding = grounding_map(parse_response)
     markdown = parse_response["markdown"]
     matches: dict[str, GroundingMatch] = {}
 
@@ -323,7 +210,7 @@ def get_grounding(spans: list[list[int]], parse_response: dict) -> list[Groundin
         etype = elem["type"]
         # Never highlight a blank table cell: when a quote spans a whole row, the
         # empty cells overlap too, but they aren't the answer. Drop them.
-        if etype in ("td", "th") and not markdown[elem["span"][0]:elem["span"][1]].strip():
+        if etype in CELL_TYPES and not markdown[elem["span"][0]:elem["span"][1]].strip():
             continue
         eid = str(elem["id"])
         if eid in matches:
@@ -355,8 +242,8 @@ def cluster_matches(
     has the smallest (v2 precise view).
 
     For a quote inside a table cell, get_grounding returns both the `table` and
-    the `td`; this collapses that pair into (table, td). For a quote inside a
-    paragraph, both outer and inner are the paragraph itself."""
+    the `table_cell`; this collapses that pair into (table, cell). For a quote
+    inside a paragraph, both outer and inner are the paragraph itself."""
     if not matches:
         return []
     sorted_m = sorted(matches, key=lambda m: (m.span[0], -m.span[1]))
@@ -528,10 +415,10 @@ def render_overlays(
                 outline_width=2,
             )
         else:  # level == "precise" — ONLY the relevant answer highlight, no gray box
-            cells = [m for m in page_matches if m.element_type in ("td", "th")]
+            cells = [m for m in page_matches if m.element_type in CELL_TYPES]
             # Prefer data/value cells (col > 0); fall back to any matched cell.
             value_cells = [m for m in cells if m.col not in (0, None)] or cells
-            lines = [m for m in page_matches if m.element_type not in ("table", "td", "th")]
+            lines = [m for m in page_matches if m.element_type not in ({"table"} | CELL_TYPES)]
             precise_boxes = (
                 [b for m in value_cells for b in m.precise_boxes]
                 + [b for m in lines for b in m.precise_boxes]
