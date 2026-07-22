@@ -7,6 +7,10 @@ resolves to a real DPT-3 line box — the voice cannot claim anything the page d
 Built on **LandingAI DPT-3** (Parse v2 + Extract v2) and **VocalBridge** WebRTC voice, with Claude
 doing the clause-level reasoning. Supersedes the v1 app in `../fineprint/`.
 
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/lzkpyK5B7VI/maxresdefault.jpg)](https://youtu.be/lzkpyK5B7VI)
+
 See `docs/CONCEPT.md` (thesis + design), `docs/PLAN.md` (PM/SM delivery plan), and
 `docs/API-CONTRACT.md` (the verified DPT-3 v2 response shapes).
 
