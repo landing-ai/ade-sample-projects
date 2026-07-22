@@ -1,6 +1,6 @@
 # Verifiable, Hierarchical RAG on Scientific Literature
 
-A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's hierarchical structure tree and line-level grounding map. For how the API itself works, see the blog:
+A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Retrieval works at the **block** level (whole paragraphs and tables), and every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's parallel `structure` and `grounding` trees. **Retrieve the block, highlight the line.** For how the API itself works, see the blog:
 **[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
 
 ![The proof view: the answer, the exact quote it used, and the matching region highlighted on the original source page.](demo/proof-view.png)
@@ -11,55 +11,43 @@ A Streamlit demo that turns 8 medical journal PDFs about the common cold and vit
 
 ## How indexing and retrieval work
 
-DPT-3 parses each document down to fine-grained structure — **text to the line, tables to
-the cell** (every line and cell has its own span and bounding box; cells also carry their
-row, column, and header). The app keeps indexing and retrieval as two stages:
-**retrieve small, read big, ground precise.**
+DPT-3 returns each document as two **parallel trees** with matching element ids:
+
+- **`structure`** — every element (paragraph, table, `table_cell`, figure, marginalia) with
+  its `id` and a `span` (offsets into the Markdown). Table cells also carry `row`, `col`,
+  and `rowspan`/`colspan`.
+- **`grounding`** — the same elements, carrying the geometry: each element's page bounding
+  `box`, plus `parts` (a box + span for every visual **line**).
+
+The bridge is `span ↔ id ↔ box`. Indexing and grounding use *different* granularities:
+**index the block, highlight the line.**
 
 ```mermaid
 flowchart TD
-    A[PDF] -->|DPT-3 Parse v2| B["structure tree<br/>text → lines · tables → cells"]
-    B -->|build_index.py| C["small-to-big units:<br/>a row's cells → one sentence;<br/>text / figures kept whole"]
+    A[PDF] -->|DPT-3 Parse| B["structure tree + grounding tree<br/>elements · lines · cells"]
+    B -->|build_index.py| C["block chunks: one per element<br/>(paragraph · whole table · figure)"]
     C -->|embed| D[(ChromaDB)]
     Q([question]) -->|embed| D
-    D -->|nearest small units| E[matched row / line]
-    E -->|merge to parent| F["whole table / paragraph<br/>= full context"]
-    F --> G["Claude → verbatim quote"]
-    G -->|resolve via line / cell boxes| H["highlight exact line / cell"]
+    D -->|top-k blocks| E["retrieved blocks = full context"]
+    E --> F["Claude → verbatim quote"]
+    F -->|resolve quote → span → line / cell box| G["highlight exact line / cell"]
 ```
 
-**Indexing — `build_index.py`.** From the parsed structure it builds searchable units: for
-a table, the cells of each row are assembled into **one short sentence** (e.g.
-`Coronavirus 229E. Serology: 10 (5); Total: 10 (5)`); text, figures, and other elements
-stay whole. Each unit points back to its parent element, and all units are embedded into
-ChromaDB.
+**Indexing — `build_index.py`.** Each top-level element becomes **one searchable chunk**: a
+paragraph, a whole table, a figure caption. `parse_helpers.iter_chunks` walks the
+`structure` tree and emits one chunk per leaf element (tables are kept whole — their cells
+aren't indexed separately, but stay reachable at grounding time). Chunks are embedded into
+ChromaDB with Sentence Transformers.
 
-**Retrieval — `query_engine.py`.** The question is embedded and matched against those small
-units; each match is then **merged back to its parent element** so the model still sees
-full context. Claude answers with a verbatim quote, which `parse_helpers` resolves — via
-DPT-3's line and cell boxes — to the **exact line or table cell** to highlight.
+**Retrieval — `query_engine.py`.** The question is embedded and matched against those block
+chunks; the top-k blocks (minus headers/footers) go to Claude as context. A whole paragraph
+or table is a clean, self-contained unit both to match against and for the model to read.
 
-Searching a small unit (a row's sentence, a single line) matches a specific question far
-better than searching a whole table or paragraph; merging to the parent keeps the
-surrounding context the model needs.
-
-### Optional: line-window text chunking (for long, dense docs)
-
-By default, **text is indexed at the paragraph (element) level**, which retrieves prose
-well when paragraphs are short and single-topic. For **long, dense documents**, you can
-opt into **line-window** chunking — it uses DPT-3's per-line spans to embed each line with
-a small window of neighbor lines, then merges back to the parent paragraph:
-
-```bash
-TEXT_MODE=linewin python build_index.py
-```
-
-In a quick benchmark on this corpus, line-window **sharpened retrieval for specific facts
-buried in long paragraphs** (e.g. *"why are the eyes closed during a sneeze?"* improved
-from ~0.70 to ~0.50 cosine distance, and two other prose queries improved) and **never
-demoted the correct paragraph** — but it grows the index ~5× (more embeddings + storage),
-so it's **off by default**. Enable it for long, multi-topic sections; skip it for short
-prose. Full write-up in [`docs/chunking-notes.md`](docs/chunking-notes.md).
+**Grounding — `parse_helpers.py`.** Claude answers with a verbatim quote. The app
+string-matches that quote back to a `span`, then resolves it — via `grounding_map` and
+DPT-3's per-line and per-cell boxes — to the **exact line or table cell** to highlight. So
+the block is what gets retrieved and read, but the highlight is line-precise: the answer
+points at the single line or cell that proves it, not the whole block.
 
 ## Quick start
 
@@ -102,7 +90,7 @@ This:
 - Pre-rasterizes each page to PNG at 144 dpi in `pages/<doc>/page_<n>.png` for fast Streamlit rendering
 - Runs 4 PDFs in parallel; idempotent (skips work for any doc already cached)
 
-Total cost for the 8-doc sample corpus: ~170 credits (a one-time spend; the cache is durable).
+Total cost for the 8-doc sample corpus: ~270 credits (76 pages, `dpt-3-pro`; a one-time spend, and the cache is durable). Credit usage is reported per document under `metadata.billing.total_credits`.
 
 ### 5. Build the retrieval index
 
@@ -110,7 +98,7 @@ Total cost for the 8-doc sample corpus: ~170 credits (a one-time spend; the cach
 python build_index.py
 ```
 
-Walks every cached parse and builds the small-to-big search index — for a table, the cells of each row become one short sentence; text and other elements stay whole — embedded with ChromaDB's Sentence Transformers (`all-MiniLM-L6-v2`) into `chroma/`. See [How indexing and retrieval work](#how-indexing-and-retrieval-work).
+Walks every cached parse and builds the block-level search index — one chunk per structural element (paragraph, whole table, figure), embedded with ChromaDB's Sentence Transformers (`all-MiniLM-L6-v2`) into `chroma/`. See [How indexing and retrieval work](#how-indexing-and-retrieval-work).
 
 ### 6. Run the app
 
@@ -118,7 +106,7 @@ Walks every cached parse and builds the small-to-big search index — for a tabl
 streamlit run app.py
 ```
 
-Open the browser tab Streamlit shows you. Try a sample chip — `Table 1 — general community RR` is the headline showpiece for cell-level grounding.
+Open the browser tab Streamlit shows you. Try a sample chip — `marathon runners` is the headline showpiece: one sentence highlighted inside a dense paragraph (line-level grounding).
 
 ### Verification log
 
@@ -138,12 +126,12 @@ input/                      ← your PDFs
    ↓ ingest.py (parallel)
 parsed/<doc>.json           ← cached DPT-3 parse responses
    ↓ build_index.py
-chroma/                     ← embedded small-to-big units
+chroma/                     ← embedded block chunks (one per element)
    ↓ app.py
-   ├─ ChromaDB retrieval: match a small unit, merge to its parent (filters marginalia)
+   ├─ ChromaDB retrieval: top-k blocks (filters marginalia)
    ├─ Claude with tool-forced JSON ({answer, exact_quote, source_doc, element_id})
    ├─ parse_helpers.find_quote_span  → spans into source markdown
-   ├─ parse_helpers.get_grounding    → element-level + precise boxes
+   ├─ parse_helpers.get_grounding    → element-level + precise line/cell boxes
    ├─ parse_helpers.cluster_matches  → de-dup nested matches (e.g. table + cell)
    └─ parse_helpers.render_overlays  → page-level / element-level / precise overlays,
                                        multi-quote with per-quote colors
@@ -157,8 +145,8 @@ chroma/                     ← embedded small-to-big units
 |---|---|
 | `app.py` | Streamlit UI: hero, sample chips, proof-first answer layout (answer card, metric chips, quote callout, source-page hero), sources list, granularity zoom, HITL log |
 | `ingest.py` | Parallel parse + cache + pre-rasterize |
-| `build_index.py` | Walk cached parses, build small-to-big units (table rows + whole elements), embed into ChromaDB |
-| `query_engine.py` | Small-to-big retrieval (match small unit → merge to parent) + Claude tool-forced JSON Q&A |
+| `build_index.py` | Walk cached parses, build block chunks (one per structural element), embed into ChromaDB |
+| `query_engine.py` | Block-level top-k retrieval + Claude tool-forced JSON Q&A |
 | `parse_helpers.py` | Spans, grounding, multi-axis overlay rendering, precision metric — the core RAG-with-grounding library |
 | `.env.example` | API key template |
 | `.streamlit/config.toml` | Brand theme (Forest primary) |
@@ -168,8 +156,9 @@ chroma/                     ← embedded small-to-big units
 
 | Query | What it demonstrates | Expected win |
 |---|---|---|
-| `Did the studies find a benefit for marathon runners taking vitamin C?` | Line-level grounding in a dense paragraph | ~3–5× |
-| `In the Vitamin C meta-analyses Table 1, what was the relative risk for incidence of colds in the general community studies?` | Cell-level grounding inside a 49-cell table | **~32×** |
+| `Did the studies find a benefit for marathon runners taking vitamin C?` | **Line-level grounding** — one sentence highlighted inside a dense paragraph | **~3–5×** |
+| `Why are the eyes closed during a sneeze?` | Line-level grounding for prose buried in a long paragraph | ~4× |
+| `In the Vitamin C meta-analyses Table 1, what was the relative risk for incidence of colds in the general community studies?` | Grounding into tabular data; when Claude quotes a specific cell value verbatim, the highlight narrows to that **single cell** | up to ~30× |
 | `Does vitamin C work for either preventing or shortening the common cold?` | **Multi-quote / non-contiguous evidence** — two highlights in distinct colors across two passages | qualitative |
 | `What do the coronal sinus CT scans look like during the acute and recovery phases of a cold?` | Figure grounding — the highlight is the whole CT-scan image, not text | qualitative |
 | `Is echinacea effective for preventing the common cold?` | Cross-document retrieval | qualitative |

@@ -459,6 +459,7 @@ def humanize_element_type(t: str) -> str:
         "marginalia": "Header / footer",
         "figure": "Figure",
         "table": "Table",
+        "table_cell": "Table cell",
         "td": "Table cell",
         "th": "Header cell",
         "logo": "Logo",
@@ -478,7 +479,7 @@ def badge_for_grounding(
     """Build a structural badge for a set of grounding matches.
 
     Uses cluster_matches to pick the most specific element in the cluster
-    (a td/th if present, else the outer element) and decorates with row/col
+    (a table cell if present, else the outer element) and decorates with row/col
     for table cells when the structure node exposes them."""
     if not matches:
         return fallback
@@ -488,7 +489,7 @@ def badge_for_grounding(
     outer, inner = clusters[0]
     label_type = humanize_element_type(inner.element_type)
     extra = ""
-    if inner.element_type in ("td", "th"):
+    if inner.element_type in ph.CELL_TYPES:
         node = ph.find_element_node(parse, inner.element_id)
         if node and "row" in node and "col" in node:
             extra = f" · r{node['row']}c{node['col']}"
@@ -808,38 +809,6 @@ def render() -> None:
             f'<span class="quote-src">{short_doc_name(_pq.source_doc)}</span></div>',
             unsafe_allow_html=True,
         )
-
-        # Why retrieval found this — the unit-shape contrast behind small-to-big.
-        # Only shown when the answer grounds to a table (the most striking case).
-        tbl = next((m for m in primary_matches if m.element_type == "table"), None)
-        if tbl is not None:
-            rows = ph.table_row_sentences(primary_parse, tbl.element_id)
-            if rows:
-                with st.expander("🔍 How the app found the right cell in this table"):
-                    st.markdown(
-                        "To answer a question about a table, the app first turns it into text it "
-                        "can search. **How** it turns the table into text decides whether it finds "
-                        "the answer:"
-                    )
-                    c_blob, c_rows = st.columns(2)
-                    with c_blob:
-                        st.markdown("**❌ The whole table as one block**")
-                        st.caption(
-                            "One value is buried among 100+ cells, so the table as a whole barely "
-                            "looks like a match for your question."
-                        )
-                        st.code(md_full[tbl.span[0]:tbl.span[1]].strip(), language="markdown")
-                    with c_rows:
-                        st.markdown("**✅ Each row as its own sentence**")
-                        st.caption(
-                            "What this app does. The matching row now reads like plain language, so "
-                            "it stands out as the best match — and points straight at the cell."
-                        )
-                        st.code("\n".join(rows), language="text")
-                    st.caption(
-                        "Same search both ways — only the *shape of the text* changed. That's what "
-                        "let your question land on the exact cell instead of getting lost in the table."
-                    )
 
         # Verification — gets plenty of room at full width
         st.markdown('<div class="label" style="margin-top:18px;">Verification</div>', unsafe_allow_html=True)
