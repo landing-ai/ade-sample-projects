@@ -204,7 +204,14 @@ def main():
     if not documents:
         raise SystemExit("No files to process — check INPUT_DIR / DOCUMENT_PATHS.")
 
-    classes = json.dumps(load_classes(CLASSES_FILE))
+    # The API expects `classes` as a JSON array of {"class", "description"}
+    # objects. classes.json stays a friendly {name: description} map; convert here.
+    classes = json.dumps(
+        [
+            {"class": name, "description": description}
+            for name, description in load_classes(CLASSES_FILE).items()
+        ]
+    )
 
     print(f"Found {len(documents)} file(s) to process.")
     print(f"Parse filter (classes of interest): {sorted(PARSE_CLASSES)}")
