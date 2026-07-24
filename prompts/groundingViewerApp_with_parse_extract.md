@@ -12,7 +12,7 @@ against.
 
 ---
 
-I checked the conversation and updated `ADE.md`. Now can you create a full-stack app that does the following:
+Using the ADE document processing skill, can you create a full-stack app that does the following:
 
 - Show a side-by-side UI where I can upload a doc, see the doc on the left side, and on the right side I can switch between **parse markdown / schema / extract** response views.
 - The markdown should be rendered as a markdown view (e.g. with HTML tables).
