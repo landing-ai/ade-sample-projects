@@ -1,0 +1,637 @@
+/* LandingAI brand tokens (colors, type scale, radii). */
+:root {
+  --forest: #03221d;
+  --forest-mid: #43574c;
+  --forest-light: #c7dccd;
+  --volt: #dbff9b;
+  --ice: #d7caff;
+  --iris: #4a3882;
+  --sky: #abc2eb;
+  --mist: #e7e7d9;
+  --stone: #797665;
+  --surface: #f6f6ef;
+  --surface-2: #edeee8;
+  --border: #e0e2da;
+  --text: #0a0a08;
+  --muted: #4a5450;
+  --subtle: #7a8680;
+  --danger: #d94f4f;
+
+  --f-head: "Urbanist", system-ui, sans-serif;
+  --f-body: "Inter", system-ui, sans-serif;
+  --f-mono: "SF Mono", "Fira Code", ui-monospace, monospace;
+
+  --radius: 10px;
+  --radius-lg: 16px;
+  --top-h: 84px;
+  --bottom-h: 60px;
+
+  /* Set at runtime from localStorage: splitter position and field-pane text
+     size are both user-adjustable. */
+  --right-w: 560px;
+  --fields-fs: 15px;
+
+  --changed: #1f5fd0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--f-body);
+  color: var(--text);
+  background: var(--surface);
+  font-size: 14px;
+}
+
+/* Flex column rather than fixed bar heights + calc(): the top bar's controls
+   wrap on narrow windows, and a fixed height made the wrapped rows overflow
+   and overlap each other -- which silently swallowed clicks on Parse+Extract. */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button,
+select,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ---------------------------------------------------------------- top bar */
+
+.topbar {
+  min-height: var(--top-h);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 10px 20px;
+  background: var(--forest);
+  color: var(--surface);
+  border-bottom: 1px solid var(--forest);
+}
+
+.brand {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.brand span {
+  display: block;
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--forest-light);
+  letter-spacing: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-group label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--forest-light);
+}
+
+.controls select,
+.controls input[type="text"] {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--forest-mid);
+  color: var(--surface);
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  min-width: 180px;
+}
+
+.controls select option {
+  color: var(--text);
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--volt);
+  color: var(--forest);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--forest-mid);
+  color: var(--surface);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--forest-light);
+  white-space: nowrap;
+  padding-bottom: 8px;
+}
+
+.progress-wrap {
+  margin-left: auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.progress {
+  min-width: 150px;
+}
+
+.progress-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--forest-light);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.progress-track {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--forest-mid);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--volt);
+  transition: width 0.25s ease;
+}
+
+/* ------------------------------------------------------------------- main */
+
+.main {
+  display: grid;
+  /* 6px middle track is the drag handle. Right width is user-set. */
+  grid-template-columns: minmax(0, 1fr) 6px var(--right-w);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.splitter {
+  cursor: col-resize;
+  background: var(--border);
+  position: relative;
+}
+
+.splitter:hover,
+.splitter.dragging {
+  background: var(--forest-mid);
+}
+
+/* Wider invisible grab area than the visible 6px line. */
+.splitter::after {
+  content: "";
+  position: absolute;
+  inset: 0 -4px;
+}
+
+body.resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+.pane {
+  min-width: 0;
+  /* min-height:0 is load-bearing: without it a flex child refuses to shrink
+     below its content, .pane-body never becomes the scroll container, and the
+     whole page grows instead -- which lets scrollIntoView drag the fixed top
+     bar off screen. */
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pane-right {
+  background: #fff;
+  font-size: var(--fields-fs);
+}
+
+.pane-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  min-height: 44px;
+}
+
+.pane-title {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.pane-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+}
+
+.spacer {
+  margin-left: auto;
+}
+
+/* document viewer */
+
+.page-wrap {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  line-height: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  background: #fff;
+}
+
+.page-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hl {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+/* Three highlight themes: color and formatting both vary, so reviewers can
+   pick what reads best on their documents. */
+.theme-volt .hl {
+  background: rgba(219, 255, 155, 0.35);
+  border: 1.5px solid #43574c;
+}
+
+.theme-ice .hl {
+  background: rgba(215, 202, 255, 0.4);
+  border: 1.5px solid #4a3882;
+}
+
+/* Red outline: no fill, so dense text underneath stays fully legible. */
+.theme-outline .hl {
+  background: none;
+  border: 2px solid #d94f4f;
+}
+
+.hl-pulse {
+  animation: pulse 0.5s ease-out;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 6px rgba(67, 87, 76, 0.28);
+  }
+  to {
+    box-shadow: 0 0 0 0 rgba(67, 87, 76, 0);
+  }
+}
+
+.theme-picker {
+  display: flex;
+  gap: 4px;
+}
+
+.swatch {
+  width: 26px;
+  height: 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 0;
+  position: relative;
+}
+
+.swatch i {
+  position: absolute;
+  inset: 4px;
+  border-radius: 3px;
+  display: block;
+}
+
+.swatch[data-theme="theme-volt"] i {
+  background: rgba(219, 255, 155, 0.9);
+  border: 1.5px solid #43574c;
+}
+
+.swatch[data-theme="theme-ice"] i {
+  background: rgba(215, 202, 255, 0.9);
+  border: 1.5px solid #4a3882;
+}
+
+.swatch[data-theme="theme-outline"] i {
+  background: none;
+  border: 2px solid #d94f4f;
+}
+
+.swatch.active {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 2px var(--forest-light);
+}
+
+/* field list */
+
+.fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.field-row:hover {
+  background: var(--surface);
+}
+
+.field-row.selected {
+  background: var(--forest-light);
+  border-color: var(--forest-mid);
+  border-radius: var(--radius);
+}
+
+.field-row.is-override {
+  border-left: 3px solid var(--iris);
+}
+
+.field-top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.field-label {
+  font-weight: 600;
+  font-size: var(--fields-fs);
+}
+
+.field-path {
+  font-family: var(--f-mono);
+  font-size: calc(var(--fields-fs) - 4px);
+  color: var(--subtle);
+  margin-left: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45%;
+  direction: rtl;
+  text-align: right;
+}
+
+.field-value {
+  font-family: var(--f-mono);
+  font-size: calc(var(--fields-fs) - 1px);
+  color: var(--muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.field-value.empty {
+  color: var(--subtle);
+  font-style: italic;
+}
+
+.field-row input.override {
+  font-family: var(--f-mono);
+  font-size: calc(var(--fields-fs) - 1px);
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* The ADE value lives in the placeholder, deliberately faint: it is a hint,
+   not content the reviewer entered. */
+.field-row input.override::placeholder {
+  color: #b3b9b5;
+}
+
+/* Only a value that actually differs from what ADE extracted gets the strong
+   treatment -- retyping the same value stays neutral. */
+.field-row input.override.changed {
+  color: var(--changed);
+  font-weight: 700;
+}
+
+.field-row input.override:focus {
+  outline: none;
+  border-color: var(--forest-mid);
+  box-shadow: 0 0 0 2px var(--forest-light);
+}
+
+.field-row.is-override input.override {
+  border-color: var(--iris);
+}
+
+.field-row.is-changed {
+  border-left-color: var(--changed);
+}
+
+/* Array element grouping: repeated leaf labels ("Container number" six times)
+   are unreadable without a visible index, which was the real problem rather
+   than elements being missing. */
+.array-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 4px;
+  margin-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.array-group-title {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: calc(var(--fields-fs) - 1px);
+  color: var(--forest);
+}
+
+.array-group-count {
+  font-size: calc(var(--fields-fs) - 4px);
+  color: var(--subtle);
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.field-row.in-array {
+  padding-left: 22px;
+  border-left: 2px solid var(--mist);
+}
+
+.field-row.in-array.is-changed {
+  border-left-color: var(--changed);
+}
+
+.font-ctl {
+  display: flex;
+  gap: 2px;
+}
+
+.font-ctl button {
+  width: 26px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.btn-danger {
+  background: #fbe9e9;
+  border-color: var(--danger);
+  color: #8e2e2e;
+}
+
+.btn-danger.confirming {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------- bottom */
+
+.bottombar {
+  min-height: var(--bottom-h);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 8px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.doc-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc-pos {
+  font-size: 12px;
+  color: var(--muted);
+  min-width: 130px;
+}
+
+.status {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: auto;
+  text-align: right;
+  max-width: 45%;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+/* --------------------------------------------------------------- notices */
+
+.notice {
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 12.5px;
+  margin-bottom: 12px;
+  background: var(--mist);
+  border: 1px solid var(--border);
+}
+
+.notice.warn {
+  background: #fdf3e3;
+  border-color: #f5d8b2;
+}
+
+.notice.error {
+  background: #fbe9e9;
+  border-color: var(--danger);
+}
+
+.empty-state {
+  color: var(--subtle);
+  text-align: center;
+  padding: 48px 20px;
+  font-size: 13px;
+}
+
+kbd {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--subtle);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}

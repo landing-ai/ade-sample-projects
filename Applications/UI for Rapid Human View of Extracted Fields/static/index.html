@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ADE Human Review</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        LandingAI
+        <span>Extraction Review</span>
+      </div>
+
+      <div class="controls">
+        <div class="field-group">
+          <label for="folder">Folder</label>
+          <select id="folder"></select>
+        </div>
+        <div class="field-group">
+          <label for="folder-path">or path</label>
+          <input
+            type="text"
+            id="folder-path"
+            placeholder="/absolute/path/to/folder"
+            title="Absolute path to a folder containing documents/ — overrides the dropdown"
+          />
+        </div>
+        <div class="field-group">
+          <label for="schema">Schema</label>
+          <select id="schema"></select>
+        </div>
+        <button id="run" class="btn btn-primary">Parse+Extract</button>
+        <label class="checkbox">
+          <input type="checkbox" id="force" />
+          Force re-run
+        </label>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress">
+          <div class="progress-label">
+            <span>Parsed</span><span id="parse-count">0/0</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="parse-bar"></div></div>
+        </div>
+        <div class="progress">
+          <div class="progress-label">
+            <span>Extracted</span><span id="extract-count">0/0</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="extract-bar"></div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="pane">
+        <div class="pane-head">
+          <span class="pane-title" id="doc-title">Document</span>
+          <div class="spacer"></div>
+          <button class="btn" id="page-prev" title="Previous page (PageUp)">&#8592;</button>
+          <span id="page-pos" style="font-size: 12px; color: var(--muted)">–</span>
+          <button class="btn" id="page-next" title="Next page (PageDown)">&#8594;</button>
+          <div class="theme-picker" id="theme-picker">
+            <button class="swatch" data-theme="theme-volt" title="Volt fill"><i></i></button>
+            <button class="swatch" data-theme="theme-ice" title="Ice fill"><i></i></button>
+            <button class="swatch" data-theme="theme-outline" title="Red outline"><i></i></button>
+          </div>
+        </div>
+        <div class="pane-body" id="doc-body">
+          <div class="empty-state">
+            Pick a folder and schema, then press <strong>Parse+Extract</strong>.
+          </div>
+        </div>
+      </section>
+
+      <div class="splitter" id="splitter" title="Drag to resize panes"></div>
+
+      <section class="pane pane-right">
+        <div class="pane-head">
+          <span class="pane-title">Extracted fields</span>
+          <div class="spacer"></div>
+          <span class="hint" id="override-summary"></span>
+          <div class="font-ctl">
+            <button id="font-down" title="Smaller text">A&minus;</button>
+            <button id="font-up" title="Larger text">A+</button>
+          </div>
+        </div>
+        <div class="pane-body" id="fields-body">
+          <div class="empty-state">No document loaded.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottombar">
+      <div class="doc-nav">
+        <button class="btn" id="doc-prev" title="Previous document ([)">&#8592;</button>
+        <span class="doc-pos" id="doc-pos">No documents</span>
+        <button class="btn" id="doc-next" title="Next document (])">&#8594;</button>
+      </div>
+      <button class="btn btn-primary" id="submit-file">Submit Final for this File</button>
+      <button class="btn" id="submit-batch">Submit Batch</button>
+      <div class="hint">
+        <kbd>&uarr;</kbd><kbd>&darr;</kbd> field
+        <kbd>Enter</kbd> edit
+        <kbd>Esc</kbd> exit
+        <kbd>[</kbd><kbd>]</kbd> document
+      </div>
+      <div class="status" id="status"></div>
+      <button
+        class="btn btn-danger"
+        id="reset"
+        title="Delete all generated results for the selected folder. Source documents are never touched."
+      >
+        Clear &amp; reset
+      </button>
+    </footer>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
