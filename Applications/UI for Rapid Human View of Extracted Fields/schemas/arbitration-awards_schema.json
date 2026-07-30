@@ -1,0 +1,427 @@
+{
+  "description": "Unified schema for FINRA arbitration award documents, including expungement awards. Supports both single-arbitrator and panel formats, variable fee breakdowns, and expungement-specific findings.",
+  "type": "object",
+  "properties": {
+    "document": {
+      "description": "Document metadata.",
+      "type": "object",
+      "properties": {
+        "document_type": {
+          "description": "High-level document label (e.g., Arbitration Award, Expungement Award).",
+          "type": "string"
+        },
+        "awarding_body": {
+          "description": "Issuing organization (often FINRA Dispute Resolution Services).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_type",
+        "awarding_body"
+      ]
+    },
+    "case": {
+      "description": "Case identifiers and dispute context.",
+      "type": "object",
+      "properties": {
+        "case_number": {
+          "description": "FINRA case or arbitration number.",
+          "type": "string"
+        },
+        "hearing_site_state": {
+          "description": "State of the hearing location/site.",
+          "type": "string"
+        },
+        "hearing_site_city": {
+          "description": "City of the hearing location/site.",
+          "type": "string"
+        },
+        "nature_of_dispute": {
+          "description": "Nature of dispute / dispute type.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_number",
+        "hearing_site_state",
+        "hearing_site_city",
+        "nature_of_dispute"
+      ]
+    },
+    "parties": {
+      "description": "Parties and representation.",
+      "type": "object",
+      "properties": {
+        "claimants": {
+          "description": "List of claimants.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Claimant name.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "respondents": {
+          "description": "List of respondents.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Respondent name.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "representation": {
+          "description": "Counsel / representation by side.",
+          "type": "object",
+          "properties": {
+            "claimant_representation": {
+              "description": "Claimant counsel or pro se details.",
+              "type": "string"
+            },
+            "respondent_representation": {
+              "description": "Respondent counsel or pro se details.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "claimant_representation",
+            "respondent_representation"
+          ]
+        }
+      },
+      "required": [
+        "claimants",
+        "respondents",
+        "representation"
+      ]
+    },
+    "timeline": {
+      "description": "Key filing and hearing dates.",
+      "type": "object",
+      "properties": {
+        "statement_of_claim_filed_date": {
+          "description": "Statement of Claim filed date.",
+          "format": "date",
+          "type": "string"
+        },
+        "claimant_submission_agreement_signed_date": {
+          "description": "Claimant submission agreement signed date.",
+          "format": "date",
+          "type": "string"
+        },
+        "statement_of_answer_filed_date": {
+          "description": "Statement of Answer filed date.",
+          "format": "date",
+          "type": "string"
+        },
+        "respondent_submission_agreement_signed_date": {
+          "description": "Respondent submission agreement signed date.",
+          "format": "date",
+          "type": "string"
+        },
+        "hearing_date": {
+          "description": "Hearing date (often present in expungement awards).",
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement_of_claim_filed_date",
+        "claimant_submission_agreement_signed_date",
+        "statement_of_answer_filed_date",
+        "respondent_submission_agreement_signed_date",
+        "hearing_date"
+      ]
+    },
+    "case_summary": {
+      "description": "Narrative case summary.",
+      "type": "object",
+      "properties": {
+        "claimant_assertions": {
+          "description": "Claims/allegations/causes of action asserted by claimant.",
+          "type": "string"
+        },
+        "respondent_response": {
+          "description": "Denials/defenses/response by respondent.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimant_assertions",
+        "respondent_response"
+      ]
+    },
+    "relief_requested": {
+      "description": "Relief requested by parties.",
+      "type": "object",
+      "properties": {
+        "claimant_requested_relief": {
+          "description": "Relief sought by claimants.",
+          "type": "string"
+        },
+        "respondent_requested_relief": {
+          "description": "Relief sought by respondents.",
+          "type": "string"
+        },
+        "claimant_damages_dismissed": {
+          "description": "Whether claimant damages were dismissed (if explicitly stated).",
+          "type": "boolean"
+        },
+        "respondent_cost_assessment_request": {
+          "description": "Whether respondent requested costs/fees be assessed to claimant.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "claimant_requested_relief",
+        "respondent_requested_relief",
+        "claimant_damages_dismissed",
+        "respondent_cost_assessment_request"
+      ]
+    },
+    "decision": {
+      "description": "Award decision details.",
+      "type": "object",
+      "properties": {
+        "disposition": {
+          "description": "Outcome/disposition signals.",
+          "type": "object",
+          "properties": {
+            "claimant_claims_denied_in_entirety": {
+              "description": "True if all claimant claims were denied in entirety.",
+              "type": "boolean"
+            },
+            "claimant_injunction_denied": {
+              "description": "True if injunction request was denied.",
+              "type": "boolean"
+            },
+            "other_relief_denied": {
+              "description": "True if other relief was denied.",
+              "type": "boolean"
+            },
+            "other_claims_denied_text": {
+              "description": "Narrative denial language when provided instead of checkboxes/booleans.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "claimant_claims_denied_in_entirety",
+            "claimant_injunction_denied",
+            "other_relief_denied",
+            "other_claims_denied_text"
+          ]
+        },
+        "monetary_awards": {
+          "description": "Monetary awards (damages/fees/costs/reimbursements).",
+          "type": "object",
+          "properties": {
+            "compensatory_damages": {
+              "description": "Damages awarded to compensate claimant for losses caused by respondent misconduct.",
+              "type": "number"
+            },
+            "punitive_damages": {
+              "description": "Punitive or exemplary damages awarded, if any.",
+              "type": "number"
+            },
+            "attorneys_fees_to_respondents": {
+              "description": "Attorneys' fees awarded to respondents.",
+              "type": "number"
+            },
+            "costs_to_respondents": {
+              "description": "Costs awarded to respondents.",
+              "type": "number"
+            },
+            "reimbursement_to_claimant": {
+              "description": "Procedural or administrative costs reimbursed to claimant (not compensatory damages).",
+              "type": "number"
+            },
+            "filing_fee_retained_by_finra": {
+              "description": "Filing fee retained by FINRA (if stated).",
+              "type": "number"
+            }
+          },
+          "required": [
+            "compensatory_damages",
+            "punitive_damages",
+            "attorneys_fees_to_respondents",
+            "costs_to_respondents",
+            "reimbursement_to_claimant",
+            "filing_fee_retained_by_finra"
+          ]
+        },
+        "expungement": {
+          "description": "Expungement-specific findings and conditions.",
+          "type": "object",
+          "properties": {
+            "expungement_recommendation": {
+              "description": "Expungement recommendation text.",
+              "type": "string"
+            },
+            "occurrence_number": {
+              "description": "Occurrence/disclosure number referenced for expungement.",
+              "type": "string"
+            },
+            "affirmative_finding_of_fact": {
+              "description": "Affirmative finding of fact supporting expungement.",
+              "type": "string"
+            },
+            "reasons_for_finding": {
+              "description": "Reasons supporting the affirmative finding.",
+              "type": "string"
+            },
+            "expungement_condition": {
+              "description": "Any expungement conditions (e.g., court confirmation language).",
+              "type": "string"
+            }
+          },
+          "required": [
+            "expungement_recommendation",
+            "occurrence_number",
+            "affirmative_finding_of_fact",
+            "reasons_for_finding",
+            "expungement_condition"
+          ]
+        }
+      },
+      "required": [
+        "disposition",
+        "monetary_awards",
+        "expungement"
+      ]
+    },
+    "fees": {
+      "description": "Fees and assessments, including hearing session fee split.",
+      "type": "object",
+      "properties": {
+        "filing_fee": {
+          "description": "Filing fee assessed (if stated).",
+          "type": "number"
+        },
+        "initial_claim_filing_fee": {
+          "description": "Initial claim filing fee (if stated).",
+          "type": "number"
+        },
+        "member_surcharge": {
+          "description": "FINRA member surcharge (if stated).",
+          "type": "number"
+        },
+        "member_process_fee": {
+          "description": "FINRA member process fee (if stated).",
+          "type": "number"
+        },
+        "member_surcharge_fee_paid_by_respondent": {
+          "description": "Member surcharge fee paid by respondent (if stated).",
+          "type": "number"
+        },
+        "total_hearing_session_fees": {
+          "description": "Total hearing session fees assessed (if stated).",
+          "type": "number"
+        },
+        "hearing_session_fees": {
+          "description": "Breakdown of hearing session fees paid by each side (when stated).",
+          "type": "object",
+          "properties": {
+            "paid_by_claimants": {
+              "description": "Hearing session fees paid by claimants.",
+              "type": "number"
+            },
+            "paid_by_respondents": {
+              "description": "Hearing session fees paid by respondents.",
+              "type": "number"
+            },
+            "paid_by_finra_or_other": {
+              "description": "Hearing session fees paid/waived by FINRA or another party (if stated).",
+              "type": "number"
+            },
+            "allocation_basis": {
+              "description": "Narrative basis for allocation (e.g., split equally, joint and several).",
+              "type": "string"
+            }
+          },
+          "required": [
+            "paid_by_claimants",
+            "paid_by_respondents",
+            "paid_by_finra_or_other",
+            "allocation_basis"
+          ]
+        }
+      },
+      "required": [
+        "filing_fee",
+        "initial_claim_filing_fee",
+        "member_surcharge",
+        "member_process_fee",
+        "member_surcharge_fee_paid_by_respondent",
+        "total_hearing_session_fees",
+        "hearing_session_fees"
+      ]
+    },
+    "arbitrators": {
+      "description": "Arbitrator(s) or panel members.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Arbitrator name.",
+            "type": "string"
+          },
+          "role": {
+            "description": "Arbitrator role (e.g., Sole Public Arbitrator, Chairperson, Panelist).",
+            "type": "string"
+          },
+          "signature_date": {
+            "description": "Date the arbitrator signed the award (if present).",
+            "format": "date",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "role",
+          "signature_date"
+        ]
+      }
+    },
+    "service": {
+      "description": "Service details.",
+      "type": "object",
+      "properties": {
+        "date_of_service": {
+          "description": "Date of service of the award.",
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date_of_service"
+      ]
+    }
+  },
+  "required": [
+    "document",
+    "case",
+    "parties",
+    "timeline",
+    "case_summary",
+    "relief_requested",
+    "decision",
+    "fees",
+    "arbitrators",
+    "service"
+  ]
+}

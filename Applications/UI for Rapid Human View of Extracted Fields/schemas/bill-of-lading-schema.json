@@ -1,0 +1,488 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "bill_of_lading_number": {
+      "description": "Unique identification number assigned to the Bill of Lading document.",
+      "x-alternativeNames": [
+        "Bill of Lading Number",
+        "B/L No.",
+        "Waybill Number"
+      ],
+      "type": "string"
+    },
+    "vessel": {
+      "description": "Name of the vessel carrying the cargo.",
+      "x-alternativeNames": [
+        "Vessel",
+        "Ocean Vessel",
+        "Ship Name"
+      ],
+      "type": "string"
+    },
+    "voyage_number": {
+      "description": "Unique identifier for the specific journey or trip of the vessel.",
+      "x-alternativeNames": [
+        "Voyage No.",
+        "Voyage Number",
+        "Trip Number"
+      ],
+      "type": "string"
+    },
+    "port_of_loading": {
+      "description": "The specific port where the cargo is loaded onto the main vessel for ocean transport.",
+      "x-alternativeNames": [
+        "Loading Port",
+        "Origin Port",
+        "Port of Origin"
+      ],
+      "type": "object",
+      "properties": {
+        "city": {
+          "description": "The city name of the port of loading.",
+          "x-alternativeNames": [
+            "Loading City",
+            "Port City",
+            "Origin City"
+          ],
+          "type": "string"
+        },
+        "country": {
+          "description": "The country name of the port of loading.",
+          "x-alternativeNames": [
+            "Loading Country",
+            "Port Country",
+            "Origin Country"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "city",
+        "country"
+      ]
+    },
+    "port_of_discharge": {
+      "description": "The specific port where the cargo is unloaded from the main vessel.",
+      "x-alternativeNames": [
+        "Unloading Port",
+        "Destination Port",
+        "Port of Destination"
+      ],
+      "type": "object",
+      "properties": {
+        "city": {
+          "description": "The city name of the port of discharge.",
+          "x-alternativeNames": [
+            "Discharge City",
+            "Destination City",
+            "Port City"
+          ],
+          "type": "string"
+        },
+        "country": {
+          "description": "The country name of the port of discharge.",
+          "x-alternativeNames": [
+            "Discharge Country",
+            "Destination Country",
+            "Port Country"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "city",
+        "country"
+      ]
+    },
+    "shipper": {
+      "description": "Details about the party responsible for initiating the shipment.",
+      "x-alternativeNames": [
+        "Shipper Information",
+        "Sender Details",
+        "Consignor"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Full name of the shipper or consignor.",
+          "x-alternativeNames": [
+            "Shipper Name",
+            "Sender Name",
+            "Consignor Name"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "Complete physical address of the shipper or consignor.",
+          "x-alternativeNames": [
+            "Shipper Address",
+            "Sender Address",
+            "Consignor Address"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address"
+      ]
+    },
+    "consignee": {
+      "description": "Details about the party to whom the goods are being shipped.",
+      "x-alternativeNames": [
+        "Consignee Information",
+        "Receiver Details",
+        "Recipient"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Full name of the consignee or recipient of the goods.",
+          "x-alternativeNames": [
+            "Consignee Name",
+            "Receiver Name",
+            "Recipient Name"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "The full address of the consignee, including street, city, state, and postal code.",
+          "x-alternativeNames": [
+            "Consignee Address",
+            "Receiver Address",
+            "Delivery Address"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address"
+      ]
+    },
+    "notify_party": {
+      "description": "Details of the party to be notified upon arrival of the shipment.",
+      "x-alternativeNames": [
+        "Notify Party",
+        "Notification Contact",
+        "Alert Party"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The full name of the party designated to receive notifications about the shipment.",
+          "x-alternativeNames": [
+            "Notify Party Name",
+            "Notification Contact Name",
+            "Alert Party Name"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "The full address of the party designated to receive notifications about the shipment.",
+          "x-alternativeNames": [
+            "Notify Party Address",
+            "Notification Contact Address",
+            "Alert Party Address"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address"
+      ]
+    },
+    "containers": {
+      "description": "A list of containers used in the shipment.",
+      "x-alternativeNames": [
+        "Container Details",
+        "Shipping Containers",
+        "Container List"
+      ],
+      "type": "array",
+      "items": {
+        "description": "Item in containers",
+        "type": "object",
+        "properties": {
+          "container_number": {
+            "description": "The unique identification number of the shipping container.",
+            "x-alternativeNames": [
+              "Container Number",
+              "Container No.",
+              "Container ID"
+            ],
+            "type": "string"
+          },
+          "marks_and_numbers": {
+            "description": "Identifying marks, numbers, or symbols on the container for tracking and identification.",
+            "x-alternativeNames": [
+              "Marks and Numbers",
+              "Marks & Numbers",
+              "Container Seal Numbers"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_number",
+          "marks_and_numbers"
+        ]
+      }
+    },
+    "goods": {
+      "description": "Overall description of the goods being shipped.",
+      "x-alternativeNames": [
+        "Goods Details",
+        "Shipment Contents",
+        "Cargo Information"
+      ],
+      "type": "object",
+      "properties": {
+        "itemized_list": {
+          "description": "An optional itemized list of individual goods or product details within the shipment.",
+          "x-alternativeNames": [
+            "Itemized Goods",
+            "Detailed Contents",
+            "Product List"
+          ],
+          "type": "array",
+          "items": {
+            "description": "Item in itemized_list",
+            "type": "object",
+            "properties": {
+              "description": {
+                "description": "Detailed textual description of a specific item or group of goods.",
+                "x-alternativeNames": [
+                  "Item Description",
+                  "Product Name",
+                  "Goods Description"
+                ],
+                "type": "string"
+              },
+              "number_of_packages": {
+                "description": "The total count of packages for this specific item.",
+                "x-alternativeNames": [
+                  "Number of Packages",
+                  "No. of Packages",
+                  "Packages Count"
+                ],
+                "type": "string"
+              },
+              "gross_weight": {
+                "description": "The gross weight of this specific item, including its packaging.",
+                "x-alternativeNames": [
+                  "Gross Weight",
+                  "Item Weight",
+                  "Package Weight"
+                ],
+                "type": "string"
+              },
+              "measurement": {
+                "description": "The measurement or volume of this specific item.",
+                "x-alternativeNames": [
+                  "Measurement",
+                  "Volume",
+                  "Cubic Measurement"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "description",
+              "number_of_packages",
+              "gross_weight",
+              "measurement"
+            ]
+          }
+        },
+        "overall_description": {
+          "description": "A general description of the entire shipment, including type of goods, packaging, etc.",
+          "x-alternativeNames": [
+            "Description of Goods",
+            "Commodity Description",
+            "Cargo Description"
+          ],
+          "type": "string"
+        },
+        "total_number_of_packages": {
+          "description": "The total count of packages or shipping units for the entire shipment.",
+          "x-alternativeNames": [
+            "Total Number of Packages",
+            "Total Packages",
+            "Packages Count"
+          ],
+          "type": "string"
+        },
+        "total_gross_weight": {
+          "description": "The total gross weight of all goods in the shipment, including packaging.",
+          "x-alternativeNames": [
+            "Total Gross Weight",
+            "Total Weight",
+            "Cargo Weight"
+          ],
+          "type": "string"
+        },
+        "total_measurement": {
+          "description": "The total measurement or volume of all goods in the shipment, typically in cubic meters or feet.",
+          "x-alternativeNames": [
+            "Total Measurement",
+            "Total Volume",
+            "Total Cubic Measurement"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemized_list",
+        "overall_description",
+        "total_number_of_packages",
+        "total_gross_weight",
+        "total_measurement"
+      ]
+    },
+    "freight_charges": {
+      "description": "A collection of all freight-related charges and their associated details for the shipment.",
+      "x-alternativeNames": [
+        "Freight and Charges",
+        "Freight Details",
+        "Charges Information"
+      ],
+      "type": "array",
+      "items": {
+        "description": "Item in freight_charges",
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "The specific type or description of a freight charge (e.g., ocean freight, terminal handling, documentation fee).",
+            "x-alternativeNames": [
+              "Freight Charge Type",
+              "Charge Description",
+              "Type of Charge"
+            ],
+            "type": "string"
+          },
+          "amount": {
+            "description": "The monetary value of a specific freight charge.",
+            "x-alternativeNames": [
+              "Amount",
+              "Charge Amount",
+              "Total Charge"
+            ],
+            "type": "string"
+          },
+          "currency": {
+            "description": "The currency in which the freight charges are denominated.",
+            "x-alternativeNames": [
+              "Currency",
+              "Freight Currency",
+              "Payment Currency"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "amount",
+          "currency"
+        ]
+      }
+    },
+    "booking_number": {
+      "description": "Reference number assigned to the shipment booking.",
+      "x-alternativeNames": [
+        "Booking Number",
+        "Booking No.",
+        "Booking Ref"
+      ],
+      "type": "string"
+    },
+    "place_of_receipt": {
+      "description": "The location where the cargo was first received by the carrier for transport.",
+      "x-alternativeNames": [
+        "Place of Receipt",
+        "Origin Location",
+        "Receiving Location"
+      ],
+      "type": "string"
+    },
+    "place_of_delivery": {
+      "description": "The final destination where the cargo is to be delivered to the consignee.",
+      "x-alternativeNames": [
+        "Place of Delivery",
+        "Final Destination",
+        "Delivery Location"
+      ],
+      "type": "string"
+    },
+    "shipped_on_board_date": {
+      "description": "Date when the goods were loaded onto the vessel.",
+      "format": "YYYY-MM-DD",
+      "x-alternativeNames": [
+        "Shipped on Board Date",
+        "Date Laden on Board",
+        "On Board Date"
+      ],
+      "type": "string"
+    },
+    "place_of_issue": {
+      "description": "Geographic location where the Bill of Lading was issued.",
+      "x-alternativeNames": [
+        "Place of Issue",
+        "Place of Issue of B/L",
+        "City of Issue"
+      ],
+      "type": "string"
+    },
+    "date_of_issue": {
+      "description": "Date when the Bill of Lading document was officially issued.",
+      "format": "YYYY-MM-DD",
+      "x-alternativeNames": [
+        "Date of Issue",
+        "Date of Issue of B/L",
+        "Document Date"
+      ],
+      "type": "string"
+    },
+    "freight_payable_at": {
+      "description": "Specifies the location where the freight charges are to be paid.",
+      "x-alternativeNames": [
+        "Freight Payable At",
+        "Payable At",
+        "Payment Location"
+      ],
+      "type": "string"
+    },
+    "declared_value": {
+      "description": "The value of the goods declared for customs or insurance purposes.",
+      "x-alternativeNames": [
+        "Declared Value",
+        "Value Declared",
+        "Shipment Value"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "bill_of_lading_number",
+    "vessel",
+    "voyage_number",
+    "port_of_loading",
+    "port_of_discharge",
+    "shipper",
+    "consignee",
+    "notify_party",
+    "containers",
+    "goods",
+    "freight_charges",
+    "booking_number",
+    "place_of_receipt",
+    "place_of_delivery",
+    "shipped_on_board_date",
+    "place_of_issue",
+    "date_of_issue",
+    "freight_payable_at",
+    "declared_value"
+  ]
+}
