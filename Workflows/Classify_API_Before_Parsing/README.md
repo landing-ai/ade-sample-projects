@@ -13,6 +13,16 @@ spend the more expensive parse step only on documents "of interest".
 
 ---
 
+## Watch the demo
+
+<div align="center">
+  <a href="https://youtu.be/oGJhA2Ydza4" target="_blank">
+    <img src="https://img.youtube.com/vi/oGJhA2Ydza4/maxresdefault.jpg" alt="Watch the ADE Classify API demo" width="100%" style="max-width:600px;">
+  </a>
+</div>
+
+---
+
 ## How it works
 
 For each input file the pipeline:
