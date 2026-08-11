@@ -4,12 +4,12 @@ loader.py
 Buffered Upload and COPY Logic for ADE → Snowflake
 
 This module manages the buffered construction, staging, and loading of structured data 
-(main records, line items, chunk metadata, and markdown) from parsed ADE documents 
+(main records, line items, block metadata, and markdown) from parsed ADE documents 
 into Snowflake tables.
 
 Core Responsibilities:
 -----------------------
-• Collect and buffer row-level data (main, lines, chunks, markdown) per document
+• Collect and buffer row-level data (main, lines, blocks, markdown) per document
 • Write batched shards to local disk in CSV or JSONL format
 • Upload shards to a Snowflake staging area using PUT
 • Perform COPY INTO to load staged data into Snowflake tables
@@ -31,7 +31,7 @@ Initialize a `Loader` with:
     - Column definitions (`cols_main`, `cols_lines`) for CSV output
 
 Then:
-    - Use `.add_main(row)`, `.add_line(row)`, `.add_chunk(row)`, or `.add_markdown(record)`
+    - Use `.add_main(row)`, `.add_line(row)`, `.add_block(row)`, or `.add_markdown(record)`
     - Call `.maybe_copy()` after each file (or manually trigger with `.copy_all()`)
     - Finalize the run by calling `.close()` to flush and copy all remaining data
 
@@ -91,13 +91,13 @@ class Loader:
         # In-memory buffers for row data
         self._main_rows = []       # rows for INVOICES_MAIN
         self._lines_rows = []      # rows for INVOICE_LINE_ITEMS
-        self._chunks_jsonl = []    # rows for PARSED_CHUNKS
+        self._blocks_jsonl = []    # rows for PARSED_BLOCKS
         self._markdown_jsonl = []  # rows for MARKDOWN
 
         # Track which files have been staged and are ready for COPY
         self._main_ready = []
         self._lines_ready = []
-        self._chunks_ready = []
+        self._blocks_ready = []
         self._markdown_ready = []
 
         # Track when the last file was flushed to measure duration-based flush threshold
@@ -109,7 +109,7 @@ class Loader:
 
     def add_main(self, row):       self._csv_add(row, self._main_rows, self._flush_main)
     def add_line(self, row):       self._csv_add(row, self._lines_rows, self._flush_lines)
-    def add_chunk(self, rec):      self._jsonl_add(rec, self._chunks_jsonl, self._flush_chunks)
+    def add_block(self, rec):      self._jsonl_add(rec, self._blocks_jsonl, self._flush_blocks)
     def add_markdown(self, rec):   self._jsonl_add(rec, self._markdown_jsonl, self._flush_markdown)
 
     def maybe_copy(self):
@@ -185,14 +185,14 @@ class Loader:
         self._file_started = time.monotonic()
         self._put_and_track(path, "lines", self._lines_ready)
 
-    def _flush_chunks(self):
-        if not self._chunks_jsonl: return
-        payload = ("\n".join(json.dumps(r, ensure_ascii=False, default=str) for r in self._chunks_jsonl)).encode("utf-8")
+    def _flush_blocks(self):
+        if not self._blocks_jsonl: return
+        payload = ("\n".join(json.dumps(r, ensure_ascii=False, default=str) for r in self._blocks_jsonl)).encode("utf-8")
         gz = gzip.compress(payload)
-        path = self._write_gz(gz, "chunks_json")
-        self._chunks_jsonl.clear()
+        path = self._write_gz(gz, "blocks_json")
+        self._blocks_jsonl.clear()
         self._file_started = time.monotonic()
-        self._put_and_track(path, "chunks_json", self._chunks_ready)
+        self._put_and_track(path, "blocks_json", self._blocks_ready)
 
     def _flush_markdown(self):
         if not self._markdown_jsonl: return
@@ -250,19 +250,19 @@ class Loader:
         """Attempt COPY for all 4 table types."""
         self._copy_if_ready(self._main_ready,    self.S.table_main,    "main",        True)
         self._copy_if_ready(self._lines_ready,   self.S.table_lines,   "lines",       True)
-        self._copy_if_ready(self._chunks_ready,  self.S.table_chunks,  "chunks_json", False)
+        self._copy_if_ready(self._blocks_ready,  self.S.table_blocks,  "blocks_json", False)
         self._copy_if_ready(self._markdown_ready,self.S.table_markdown,"markdown",    False)
 
     def _final_flush_and_copy(self):
         """Flush all buffers and issue COPY commands (force=True)."""
         self._flush_main()
         self._flush_lines()
-        self._flush_chunks()
+        self._flush_blocks()
         self._flush_markdown()
 
         self._copy_if_ready(self._main_ready,    self.S.table_main,    "main",        True, force=True)
         self._copy_if_ready(self._lines_ready,   self.S.table_lines,   "lines",       True, force=True)
-        self._copy_if_ready(self._chunks_ready,  self.S.table_chunks,  "chunks_json", False, force=True)
+        self._copy_if_ready(self._blocks_ready,  self.S.table_blocks,  "blocks_json", False, force=True)
         self._copy_if_ready(self._markdown_ready,self.S.table_markdown,"markdown",    False, force=True)
 
         self.conn.close()

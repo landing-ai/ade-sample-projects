@@ -33,7 +33,7 @@ CREATE FILE FORMAT IF NOT EXISTS CSV_STD
   NULL_IF = ('', 'NULL')
   EMPTY_FIELD_AS_NULL = TRUE;
 
--- JSON format for structured fields (e.g. markdown, chunk output)
+-- JSON format for structured fields (e.g. markdown, block output)
 CREATE FILE FORMAT IF NOT EXISTS JSON_STD
   TYPE = JSON
   STRIP_OUTER_ARRAY = FALSE;
@@ -56,14 +56,14 @@ CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.MARKDOWN (
 );
 
 
--- Table 2 of 4: Individual parsed chunks (text spans with metadata)
+-- Table 2 of 4: Individual parsed blocks (text spans with metadata)
 -- Often used for debugging, LLM groundings or RAG applications
-CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.PARSED_CHUNKS (
+CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.PARSED_BLOCKS (
     RUN_ID          STRING,
     INVOICE_UUID    VARCHAR NOT NULL,
     DOCUMENT_NAME   STRING,
-    chunk_id        STRING,
-    chunk_type      STRING,
+    block_id        STRING,
+    block_type      STRING,
     text            STRING,
     page            NUMBER,
     -- Normalized 0-1 bounding box. DPT-3 grounding boxes use xmin/ymin/xmax/ymax;
@@ -73,7 +73,7 @@ CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.PARSED_CHUNKS (
     box_r           FLOAT,
     box_b           FLOAT,
 
-    CONSTRAINT PK_PARSED_CHUNKS PRIMARY KEY (CHUNK_ID)
+    CONSTRAINT PK_PARSED_BLOCKS PRIMARY KEY (BLOCK_ID)
 );
 
 -- Table 3 of 4: Main invoice-level fields (1 row per invoice)

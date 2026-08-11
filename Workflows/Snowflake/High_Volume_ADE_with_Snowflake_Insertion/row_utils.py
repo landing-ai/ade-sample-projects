@@ -12,13 +12,13 @@ Includes:
 - JSON serialization helpers for structured record storage
 
 Used primarily by:
-- `row_builder.py` to construct main, line item, and chunk-level records
+- `row_builder.py` to construct main, line item, and block-level records
 - Markdown and metrics logic for enhanced traceability and diagnostics
 
 Functions:
 - `_dig`, `_add_meta`, `_to_int`, `_to_float`, `_enum_to_str`, `_asdict`, `_jsonify`
-- `iter_parse_chunks` — walks a DPT-3 parse `structure` tree and yields one
-  block-level chunk dict per element (id, type, text, page, box l/t/r/b)
+- `iter_parse_blocks` — walks a DPT-3 parse `structure` tree and yields one
+  block dict per element (id, type, text, page, box l/t/r/b)
 - `_strip_anchor` — removes the `<a id='...'></a>` prefix ADE embeds in markdown
 - `pkg_version` — resolves version of a given installed Python package
 - `_first` — returns the first item in a list or None
@@ -36,7 +36,7 @@ import importlib
 from typing import Any, Dict, Iterator, Optional, Tuple
 from importlib.metadata import version as _pkg_version, PackageNotFoundError
 
-# Matches the anchor tag ADE prepends to each chunk's markdown, e.g.
+# Matches the anchor tag ADE prepends to each block's markdown, e.g.
 # "<a id='abc'></a>Some text" -> "Some text".
 _ANCHOR_RE = re.compile(r"<a id='[^']*'>\s*</a>")
 
@@ -146,7 +146,7 @@ def _jsonify(x: Any) -> Any:
         return str(v)
 
 def _strip_anchor(md: Optional[str]) -> Optional[str]:
-    """Remove the ``<a id='...'></a>`` anchor ADE prepends to chunk markdown."""
+    """Remove the ``<a id='...'></a>`` anchor ADE prepends to block markdown."""
     if md is None:
         return None
     return _ANCHOR_RE.sub("", md).strip()
@@ -168,18 +168,39 @@ def _ltbr_from_grounding(grounding: Any) -> Tuple[Optional[float], Optional[floa
     )
 
 
-def iter_parse_chunks(parse_result: Any) -> Iterator[Dict[str, Any]]:
+def _text_from_range(md: str, grounding: Any) -> Optional[str]:
+    """
+    Slice a block's text out of the document-level markdown using its
+    ``grounding.range`` (``start``/``end``). DPT-3 blocks do not duplicate
+    text — they reference ranges into the top-level markdown, and the parse
+    metadata reports ``range_units = unicode_codepoints`` so Python string
+    slicing lines up exactly.
+    """
+    rng = getattr(grounding, "range", None) if grounding is not None else None
+    if rng is None or not md:
+        return None
+    start = _to_int(getattr(rng, "start", None))
+    end = _to_int(getattr(rng, "end", None))
+    if start is None or end is None:
+        return None
+    return md[start:end]
+
+
+def iter_parse_blocks(parse_result: Any) -> Iterator[Dict[str, Any]]:
     """
     Walk a DPT-3 ``V2ParseResponse.structure`` tree and yield one dict per
-    block-level element (the direct children of each page). Each dict has:
-    ``id``, ``type``, ``text``, ``page``, ``box_l``, ``box_t``, ``box_r``,
-    ``box_b``.
+    block (the direct children of each page). Each dict has: ``id``, ``type``,
+    ``text``, ``page``, ``box_l``, ``box_t``, ``box_r``, ``box_b``.
+
+    Text comes from the block's own ``markdown`` when present, otherwise it is
+    sliced from the document-level markdown via the block's ``grounding.range``.
 
     We emit page-level blocks (not every nested descendant such as individual
     table cells) to mirror the granularity of the flat chunk list from earlier
     ADE versions. To capture the full hierarchy instead, recurse into each
     element's ``children``.
     """
+    md = getattr(parse_result, "markdown", None) or ""
     structure = getattr(parse_result, "structure", None)
     pages = getattr(structure, "children", None) or []
     for page_node in pages:
@@ -188,10 +209,11 @@ def iter_parse_chunks(parse_result: Any) -> Iterator[Dict[str, Any]]:
             grounding = getattr(el, "grounding", None)
             el_page = _to_int(getattr(grounding, "page", None))
             l, t, r, b = _ltbr_from_grounding(grounding)
+            text = getattr(el, "markdown", None) or _text_from_range(md, grounding)
             yield {
                 "id": getattr(el, "id", None),
                 "type": getattr(el, "type", None),
-                "text": _strip_anchor(getattr(el, "markdown", None)),
+                "text": _strip_anchor(text),
                 "page": el_page if el_page is not None else page_idx,
                 "box_l": l,
                 "box_t": t,
@@ -200,6 +222,16 @@ def iter_parse_chunks(parse_result: Any) -> Iterator[Dict[str, Any]]:
             }
 
 def _add_meta(row: Dict[str, Any], meta: Any, section: str, field: str, out_prefix: str) -> None:
+    """
+    Record extraction evidence for one field into ``{out_prefix}_ref`` and
+    ``{out_prefix}_conf``.
+
+    DPT-3 ``extraction_metadata`` mirrors the schema nesting; each leaf field
+    carries ``ranges`` (character ranges into the parse markdown that locate the
+    evidence) and ``value``. There is no confidence score, so ``_conf`` stays
+    null unless a legacy ``confidence``/``score`` key is present. Legacy
+    ``chunk_references`` are still honored as a fallback.
+    """
     if not meta:
         row[f"{out_prefix}_ref"] = None
         row[f"{out_prefix}_conf"] = None
@@ -211,16 +243,18 @@ def _add_meta(row: Dict[str, Any], meta: Any, section: str, field: str, out_pref
         row[f"{out_prefix}_conf"] = None
         return
 
-    refs = node.get("chunk_references") if isinstance(node, dict) else _dig(node, "chunk_references", default=None)
+    # DPT-3 evidence: `ranges` (list of {start, end}). Fall back to legacy refs.
+    refs = node.get("ranges") if isinstance(node, dict) else _dig(node, "ranges", default=None)
+    if refs is None:
+        refs = node.get("chunk_references") if isinstance(node, dict) else _dig(node, "chunk_references", default=None)
     if refs is None:
         refs = node.get("chunk_reference") if isinstance(node, dict) else _dig(node, "chunk_reference", default=None)
         if refs is not None and not isinstance(refs, list):
             refs = [refs]
 
-    first_ref = _first(refs or [], default=None)
     conf = node.get("confidence") if isinstance(node, dict) else _dig(node, "confidence", default=None)
     if conf is None:
         conf = node.get("score") if isinstance(node, dict) else _dig(node, "score", default=None)
 
-    row[f"{out_prefix}_ref"] = _jsonify(first_ref) if first_ref is not None else None
+    row[f"{out_prefix}_ref"] = _jsonify(refs) if refs else None
     row[f"{out_prefix}_conf"] = _to_float(conf)

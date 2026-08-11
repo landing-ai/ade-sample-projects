@@ -123,8 +123,9 @@ The following Snowflake tables will be populated:
   `SCHEMA_VIOLATION_ERROR` (non-null when DPT-3 extract returns HTTP 206 /
   partial extraction).
 - `INVOICE_LINE_ITEMS` – Itemized rows (quantity, price, description)
-- `PARSED_CHUNKS` – Block-level chunks with page, box, and text. Chunks are
-  derived by walking the DPT-3 parse `structure` tree; grounding boxes
+- `PARSED_BLOCKS` – Parsed blocks with page, box, and text. Blocks are
+  derived by walking the DPT-3 parse `structure` tree; block text is sliced
+  from the document markdown via each block's `range`, and grounding boxes
   (`xmin/ymin/xmax/ymax`) map to `box_l/box_t/box_r/box_b`.
 - `MARKDOWN` – Parsed markdown with visual grounding
 

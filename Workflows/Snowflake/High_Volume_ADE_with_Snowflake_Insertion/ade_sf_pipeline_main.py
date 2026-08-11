@@ -28,7 +28,7 @@ Expected Workflow:
 
 2. Each document will be:
     - Parsed with ADE
-    - Converted to structured rows (main, line items, chunks, markdown)
+    - Converted to structured rows (main, line items, blocks, markdown)
     - Written to local CSV/JSONL shards and staged to Snowflake via COPY INTO
 
 3. Metrics are returned as a `Metrics` object with:
@@ -126,14 +126,14 @@ def run_pipeline_streaming(
         sent_at = datetime.now(timezone.utc)
         pages = get_doc_pages(parse_result)
 
-        main_row, line_rows, chunk_rows, markdown_record, _uuid = rows_from_doc_fn(
+        main_row, line_rows, block_rows, markdown_record, _uuid = rows_from_doc_fn(
             fp=fp, parse_result=parse_result, extract_result=extract_result,
             run_id=run_id, sent_at=sent_at, sdk_version=sdk_version,
         )
 
         if main_row: loader.add_main(main_row)
         for r in (line_rows or []): loader.add_line(r)
-        for r in (chunk_rows or []): loader.add_chunk(r)
+        for r in (block_rows or []): loader.add_block(r)
         if markdown_record: loader.add_markdown(markdown_record)
 
         loader.maybe_copy()

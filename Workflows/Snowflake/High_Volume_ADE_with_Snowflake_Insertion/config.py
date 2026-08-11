@@ -60,7 +60,7 @@ class Settings(BaseSettings):
     # --- Snowflake table and stage names ---
     table_main: str = "INVOICES_MAIN"
     table_lines: str = "INVOICE_LINE_ITEMS"
-    table_chunks: str = "PARSED_CHUNKS"
+    table_blocks: str = "PARSED_BLOCKS"
     table_markdown: str = "MARKDOWN"
 
     stage_ingest_name: str = "INGEST_TMP"

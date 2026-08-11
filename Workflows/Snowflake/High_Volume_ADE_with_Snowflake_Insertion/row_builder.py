@@ -8,7 +8,7 @@ from Agentic Document Extraction (ADE) outputs. It translates a parsed document
 into four categories of Snowflake-compatible rows:
   1. `main_row`: high-level invoice metadata (e.g., totals, customer, supplier)
   2. `line_rows`: individual line items or products
-  3. `chunk_rows`: visual chunks with location and type metadata
+  3. `block_rows`: parsed blocks with location and type metadata
   4. `markdown_record`: full parse output in JSON-compatible format (for traceability)
 
 Core Function:
@@ -16,7 +16,7 @@ Core Function:
 `rows_from_doc(fp, parse_result, extract_result, run_id, sent_at, sdk_version)`:
     - Primary entry point
     - Accepts a DPT-3 parse result and extract result for a single document
-    - Returns a tuple of (main_row, line_rows, chunk_rows, markdown_record, invoice_uuid)
+    - Returns a tuple of (main_row, line_rows, block_rows, markdown_record, invoice_uuid)
 
 Key Features:
 -------------
@@ -46,7 +46,7 @@ import os
 import uuid
 
 from row_utils import (
-    iter_parse_chunks,
+    iter_parse_blocks,
     _add_meta,
     _dig,
     _enum_to_str,
@@ -64,7 +64,7 @@ def rows_from_doc(
     sdk_version: str,
 ) -> Tuple[Dict[str, Any], List[Dict[str, Any]], List[Dict[str, Any]], Dict[str, Any], str]:
     """
-    Returns: (main_row, line_rows, chunk_rows, markdown_record, invoice_uuid)
+    Returns: (main_row, line_rows, block_rows, markdown_record, invoice_uuid)
     """
     doc_name = os.path.basename(fp)
     invoice_uuid = str(uuid.uuid4())
@@ -84,21 +84,21 @@ def rows_from_doc(
         "MARKDOWN": markdown,
     }
 
-    chunk_rows: List[Dict[str, Any]] = []
-    for ch in iter_parse_chunks(parse_result):
-        chunk_id_obj = ch.get("id") or f"{invoice_uuid}:{uuid.uuid4().hex[:12]}"
-        chunk_rows.append({
+    block_rows: List[Dict[str, Any]] = []
+    for blk in iter_parse_blocks(parse_result):
+        block_id_obj = blk.get("id") or f"{invoice_uuid}:{uuid.uuid4().hex[:12]}"
+        block_rows.append({
             "run_id": run_id,
             "invoice_uuid": invoice_uuid,
             "document_name": doc_name,
-            "chunk_id": str(chunk_id_obj),
-            "chunk_type": _enum_to_str(ch.get("type")),
-            "text": ch.get("text"),
-            "page": _to_int(ch.get("page")),
-            "box_l": _to_float(ch.get("box_l")),
-            "box_t": _to_float(ch.get("box_t")),
-            "box_r": _to_float(ch.get("box_r")),
-            "box_b": _to_float(ch.get("box_b")),
+            "block_id": str(block_id_obj),
+            "block_type": _enum_to_str(blk.get("type")),
+            "text": blk.get("text"),
+            "page": _to_int(blk.get("page")),
+            "box_l": _to_float(blk.get("box_l")),
+            "box_t": _to_float(blk.get("box_t")),
+            "box_r": _to_float(blk.get("box_r")),
+            "box_b": _to_float(blk.get("box_b")),
         })
 
     main_row: Dict[str, Any] = {
@@ -166,4 +166,4 @@ def rows_from_doc(
             "total": _dig(li, "total"),
         })
 
-    return main_row, line_rows, chunk_rows, markdown_record, invoice_uuid
+    return main_row, line_rows, block_rows, markdown_record, invoice_uuid
