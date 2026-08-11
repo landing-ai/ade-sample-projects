@@ -1,6 +1,6 @@
 # Verifiable, Hierarchical RAG on Scientific Literature
 
-A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Retrieval works at the **block** level (whole paragraphs and tables), and every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's parallel `structure` and `grounding` trees. **Retrieve the block, highlight the line.** 
+A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Retrieval works at the **block** level (whole paragraphs and tables), and every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's parallel `structure`trees. **Retrieve the block, highlight the line.** 
 
 <div align="center">
   <a href="https://youtu.be/WMjT06rjLSQ" target="_blank">
