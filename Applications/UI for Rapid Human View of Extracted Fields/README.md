@@ -14,6 +14,16 @@ confirm or correct a document without reaching for the mouse.
 
 ---
 
+## Watch the demo
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=9-WnQRVQ-7s" target="_blank">
+    <img src="https://img.youtube.com/vi/9-WnQRVQ-7s/maxresdefault.jpg" alt="Watch the Human-in-the-Loop Review UI demo" width="100%" style="max-width:600px;">
+  </a>
+</div>
+
+---
+
 ## Contents
 
 - [How it works](#how-it-works)
