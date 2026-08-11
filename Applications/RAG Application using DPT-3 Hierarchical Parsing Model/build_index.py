@@ -1,15 +1,15 @@
 """Build a ChromaDB index from cached parses in parsed/.
 
-Block-level indexing: one chunk per top-level structural element (text, table,
-figure, marginalia, logo, card, scan_code, attestation). We retrieve whole
-blocks, then ground the answer's verbatim quote down to the exact line or cell
-(see query_engine + parse_helpers). Retrieve the block, highlight the line.
+Block-level indexing: one chunk per top-level block (text, table, figure,
+marginalia, logo, card, scan_code, attestation). We retrieve whole blocks, then
+ground the answer's verbatim quote down to the exact line or cell (see
+query_engine + parse_helpers). Retrieve the block, highlight the line.
 
-Reads the DPT-3 (dpt-3-pro-20260710+) parse response: `structure` is a tree of
-elements, each with an `id` and a `span` into `markdown`. `iter_chunks` walks it
-and emits one chunk per leaf element. Tables are emitted whole — their
-`table_cell` children are not indexed separately, but stay queryable at grounding
-time via the parallel `grounding` tree (flattened by parse_helpers.grounding_map).
+Reads the DPT-3 (dpt-3-pro-20260710+) parse response: `structure` is a single
+tree of blocks, each with an `id` and an inline `grounding` (page, markdown
+range, and box). `iter_chunks` walks it and emits one chunk per leaf block.
+Tables are emitted whole — their `table_cell` children are not indexed
+separately, but stay queryable at grounding time via parse_helpers.get_grounding.
 
 Embedding: ChromaDB's default (sentence-transformers/all-MiniLM-L6-v2).
 First run downloads the ~80MB model.
