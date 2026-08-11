@@ -3,9 +3,13 @@
 A Streamlit demo that turns 8 medical journal PDFs about the common cold and vitamin C into a verifiable Q&A app. Retrieval works at the **block** level (whole paragraphs and tables), and every answer is grounded in a verbatim quote that gets resolved back to the **exact line or table cell** on the source page using DPT-3's parallel `structure` and `grounding` trees. **Retrieve the block, highlight the line.** For how the API itself works, see the blog:
 **[DPT-3 Parse for developers](https://landing.ai/blog/dpt3-parse-announcement-for-developers)**.
 
-![The proof view: the answer, the exact quote it used, and the matching region highlighted on the original source page.](demo/proof-view.png)
+<div align="center">
+  <a href="https://youtu.be/WMjT06rjLSQ" target="_blank">
+    <img src="https://img.youtube.com/vi/WMjT06rjLSQ/maxresdefault.jpg" alt="Watch the verifiable RAG demo" width="100%" style="max-width:600px;">
+  </a>
+</div>
 
-*The proof view — the answer's exact words highlighted on the original source page, down to the precise line or table cell.*
+*Click to watch: the answer's exact words highlighted on the original source page, down to the precise line or table cell.*
 
 
 
