@@ -1,5 +1,7 @@
 landingai-ade>=1.16.0
-snowflake-connector-python
+# [secure-local-storage] adds keyring so SSO (externalbrowser) tokens cache
+# and you're prompted once, not on every connection.
+snowflake-connector-python[secure-local-storage]
 pydantic
 pydantic-settings
 python-dotenv

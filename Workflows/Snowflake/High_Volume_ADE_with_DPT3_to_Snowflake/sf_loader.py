@@ -64,16 +64,27 @@ def _load_private_key(path: str) -> bytes:
 
 
 def sf_connect(s: Settings):
-    return snowflake.connector.connect(
+    common = dict(
         user=s.SNOWFLAKE_USER,
         account=s.SNOWFLAKE_ACCOUNT_IDENTIFIER,
-        private_key=_load_private_key(s.PRIVATE_KEY_FILE),
         role=s.ROLE,
         warehouse=s.WAREHOUSE,
         database=s.DATABASE,
         schema=s.SNOWFLAKE_SCHEMA,
         client_session_keep_alive=True,
     )
+    auth = (s.SNOWFLAKE_AUTH or "keypair").lower()
+    if auth == "externalbrowser":
+        # Google/Okta/SSO: a browser window opens to sign in. The connector caches
+        # the token so you're only prompted once per run.
+        return snowflake.connector.connect(
+            **common, authenticator="externalbrowser",
+            client_store_temporary_credential=True,
+        )
+    if auth == "password":
+        return snowflake.connector.connect(**common, password=s.SNOWFLAKE_PASSWORD)
+    # default: RSA key-pair
+    return snowflake.connector.connect(**common, private_key=_load_private_key(s.PRIVATE_KEY_FILE))
 
 
 @contextmanager
@@ -98,9 +109,10 @@ def fq_stage(s: Settings, short: str) -> str:
     return f'@"{s.DATABASE}"."{s.SNOWFLAKE_SCHEMA}"."{short}"'
 
 
-def ensure_formats_and_stages(s: Settings) -> None:
-    """Idempotently create the file formats and ingest stage the loader needs."""
-    with sfcursor(settings=s) as cur:
+def ensure_formats_and_stages(s: Settings, conn=None) -> None:
+    """Idempotently create the file formats and ingest stage the loader needs.
+    Pass an existing ``conn`` to reuse a connection (avoids extra SSO prompts)."""
+    with sfcursor(conn, s) as cur:
         cur.execute(
             f"CREATE FILE FORMAT IF NOT EXISTS {s.csv_file_format_name} "
             f"TYPE=CSV FIELD_DELIMITER=',' SKIP_HEADER=1 "
@@ -130,12 +142,15 @@ class Loader:
     """Buffers rows, stages gzipped shards, and COPYs them into Snowflake."""
 
     def __init__(self, run_id: str, settings: Settings,
-                 cols_main: List[str], cols_lines: List[str]):
+                 cols_main: List[str], cols_lines: List[str], conn=None):
         self.run_id = run_id
         self.S = settings
         self.cols_main = cols_main
         self.cols_lines = cols_lines
-        self.conn = sf_connect(settings)
+        # Reuse a shared connection when provided (one SSO login for the whole run);
+        # only close it in close() if we opened it ourselves.
+        self._owns_conn = conn is None
+        self.conn = conn if conn is not None else sf_connect(settings)
 
         self._main_rows: List[dict] = []
         self._lines_rows: List[dict] = []
@@ -167,7 +182,8 @@ class Loader:
         self._copy(self._lines_ready, self.S.table_lines, "lines", True, force=True)
         self._copy(self._blocks_ready, self.S.table_blocks, "blocks_json", False, force=True)
         self._copy(self._markdown_ready, self.S.table_markdown, "markdown", False, force=True)
-        self.conn.close()
+        if self._owns_conn:
+            self.conn.close()
 
     # ---- buffering ----
     def _hit_threshold(self) -> bool:

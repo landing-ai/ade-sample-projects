@@ -27,7 +27,10 @@ from typing import Any, List
 from config import Settings
 from ade_client import build_client, parse_and_extract
 from row_builder import rows_from_doc
-from sf_loader import Loader, COLS_MAIN, COLS_LINES, ensure_formats_and_stages, put_original_to_raw_stage
+from sf_loader import (
+    Loader, COLS_MAIN, COLS_LINES, ensure_formats_and_stages,
+    put_original_to_raw_stage, sf_connect,
+)
 from metrics import Metrics
 
 
@@ -39,14 +42,22 @@ def _sdk_version() -> str:
 
 
 def run_streaming(files: List[str], schema_cls: Any, settings: Settings,
-                  archive_originals: bool = True) -> Metrics:
-    """Run the full high-volume pipeline over ``files`` and return Metrics."""
+                  archive_originals: bool = True, conn=None) -> Metrics:
+    """Run the full high-volume pipeline over ``files`` and return Metrics.
+
+    Pass an existing Snowflake ``conn`` to reuse one connection across setup,
+    loading, and verification — a single SSO login for the whole run. If None,
+    one connection is opened here and closed at the end."""
     client = build_client(settings)
     sdk_version = _sdk_version()
 
+    owns_conn = conn is None
+    if owns_conn:
+        conn = sf_connect(settings)
+
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S") + "_" + uuid.uuid4().hex[:6]
-    ensure_formats_and_stages(settings)
-    loader = Loader(run_id, settings, cols_main=COLS_MAIN, cols_lines=COLS_LINES)
+    ensure_formats_and_stages(settings, conn)
+    loader = Loader(run_id, settings, cols_main=COLS_MAIN, cols_lines=COLS_LINES, conn=conn)
 
     metrics = Metrics(total_docs=len(files))
     metrics.start()
@@ -95,4 +106,6 @@ def run_streaming(files: List[str], schema_cls: Any, settings: Settings,
         loader.close()
     finally:
         metrics.stop()
+        if owns_conn:
+            conn.close()
     return metrics

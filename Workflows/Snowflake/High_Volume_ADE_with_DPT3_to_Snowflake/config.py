@@ -37,14 +37,21 @@ class Settings(BaseSettings):
     # Number of documents parsed+extracted concurrently.
     MAX_WORKERS: int = 16
 
-    # ---- Snowflake connection (RSA key-pair auth) ----
+    # ---- Snowflake connection ----
     SNOWFLAKE_USER: str = "MACHINE_USER"
     SNOWFLAKE_ACCOUNT_IDENTIFIER: str = "YOUR_ORG-YOUR_ACCOUNT"
-    PRIVATE_KEY_FILE: str = "/absolute/path/to/rsa_key.p8"
     ROLE: str = "ADE_DEMOS"
     WAREHOUSE: str = "ADE_WH"
     DATABASE: str = "ADE_DEMO"
     SNOWFLAKE_SCHEMA: str = "INVOICES"
+
+    # Auth method:
+    #   "keypair"        -> RSA key-pair, set PRIVATE_KEY_FILE (best for services/production)
+    #   "externalbrowser"-> Google/Okta/SSO; a browser window opens to sign in
+    #   "password"       -> username + SNOWFLAKE_PASSWORD
+    SNOWFLAKE_AUTH: str = "keypair"
+    PRIVATE_KEY_FILE: str = "/absolute/path/to/rsa_key.p8"
+    SNOWFLAKE_PASSWORD: str = ""
 
     # ---- Loader thresholds (control how eagerly shards flush to Snowflake) ----
     # In streaming mode the pipeline forces a COPY per file so rows land in

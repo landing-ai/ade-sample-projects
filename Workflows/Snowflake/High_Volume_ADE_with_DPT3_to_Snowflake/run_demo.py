@@ -49,11 +49,11 @@ def replicate(files: List[str], n: int) -> List[str]:
     return out
 
 
-def verify_counts(settings: Settings) -> None:
+def verify_counts(settings: Settings, conn=None) -> None:
     from sf_loader import sfcursor, fq_table
     tables = [settings.table_main, settings.table_lines, settings.table_blocks, settings.table_markdown]
     print("\nRow counts in Snowflake:")
-    with sfcursor(settings=settings) as cur:
+    with sfcursor(conn, settings) as cur:
         for t in tables:
             cur.execute(f"SELECT COUNT(*) FROM {fq_table(settings, t)}")
             print(f"  {t:22} {cur.fetchone()[0]:>10,}")
@@ -86,12 +86,18 @@ def main() -> None:
     print(f"Processing {len(files)} document(s) with {settings.MAX_WORKERS} workers "
           f"(model: {settings.PARSE_MODEL}) -> {settings.DATABASE}.{settings.SNOWFLAKE_SCHEMA}\n")
 
-    metrics = run_streaming(files, InvoiceExtractionSchema, settings,
-                            archive_originals=not args.no_archive)
-    print(metrics.summary())
-
-    if args.verify:
-        verify_counts(settings)
+    # One shared connection for the whole run — a single SSO login covers setup,
+    # loading, and verification.
+    from sf_loader import sf_connect
+    conn = sf_connect(settings)
+    try:
+        metrics = run_streaming(files, InvoiceExtractionSchema, settings,
+                                archive_originals=not args.no_archive, conn=conn)
+        print(metrics.summary())
+        if args.verify:
+            verify_counts(settings, conn=conn)
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":
