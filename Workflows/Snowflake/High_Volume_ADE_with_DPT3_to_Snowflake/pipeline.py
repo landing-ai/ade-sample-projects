@@ -24,6 +24,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from importlib.metadata import version as _pkg_version, PackageNotFoundError
 from typing import Any, List
 
+from tqdm.auto import tqdm   # progress bar (nice widget in notebooks, text in a terminal)
+
 from config import Settings
 from ade_client import build_client, parse_and_extract
 from row_builder import rows_from_doc
@@ -93,6 +95,7 @@ def run_streaming(files: List[str], schema_cls: Any, settings: Settings,
     try:
         with ThreadPoolExecutor(max_workers=settings.MAX_WORKERS) as pool:
             futures = {pool.submit(_work, fp): fp for fp in files}
+            bar = tqdm(total=len(files), desc="Parsing + extracting → Snowflake", unit="doc")
             for fut in as_completed(futures):
                 fp = futures[fut]
                 try:
@@ -100,8 +103,13 @@ def run_streaming(files: List[str], schema_cls: Any, settings: Settings,
                     metrics.record(ok=True, pages=pages, parse_sec=latency, rows=rows)
                 except Exception as e:
                     metrics.record(ok=False, pages=0, parse_sec=0.0, rows=0)
-                    print(f"\n  FAILED {fp}: {e}")
-                metrics.print_live()
+                    bar.write(f"  ❌ FAILED {fp.split('/')[-1]}: {e}")
+                bar.update(1)
+                bar.set_postfix({
+                    "docs/s": f"{metrics.docs_ok / metrics.wall:.1f}",
+                    "rows→Snowflake": metrics.rows_landed,
+                })
+            bar.close()
 
         loader.close()
     finally:
