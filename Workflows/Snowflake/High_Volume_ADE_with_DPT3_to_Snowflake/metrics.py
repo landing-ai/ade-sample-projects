@@ -75,6 +75,7 @@ class Metrics:
     def summary(self) -> str:
         w = self.wall
         avg_doc = (self.parse_sec_sum / self.docs_ok) if self.docs_ok else 0.0
+        overlap = (self.parse_sec_sum / w) if w else 0.0
         return (
             "\n"
             "==================== Run summary ====================\n"
@@ -85,6 +86,12 @@ class Metrics:
             f"  Wall time:        {w:.1f}s\n"
             f"  Throughput:       {self.docs_ok / w:.1f} docs/s, "
             f"{self.pages / w:.1f} pages/s, {self.rows_landed / w:.0f} rows/s\n"
-            f"  Avg parse+extract:{avg_doc:.2f}s/doc (overlapped across workers)\n"
+            f"  Avg parse+extract:{avg_doc:.2f}s/doc\n"
+            # The scalability story on any batch size: total work compressed by
+            # concurrency + overlapped loading. e.g. 129s of work in 47s wall = 2.7x.
+            f"  Concurrency:      {self.parse_sec_sum:.0f}s of parse+extract done in "
+            f"{w:.0f}s wall  ->  {overlap:.1f}x overlap\n"
+            "  (point --input at a larger folder to scale; the pattern streams the\n"
+            "   same way whether it's 4 documents or 4,000)\n"
             "====================================================="
         )

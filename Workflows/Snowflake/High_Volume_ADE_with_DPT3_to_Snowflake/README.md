@@ -92,25 +92,27 @@ worksheet alongside and `SELECT COUNT(*)` while step 5 runs to see rows climb.
 **CLI:**
 
 ```bash
-python run_demo.py                 # process ./input_documents
-python run_demo.py --replicate 250 # simulate volume from the sample invoices
+python run_demo.py --verify        # process ./input_documents, then COUNT(*) per table
 python run_demo.py --workers 24    # more concurrency
-python run_demo.py --verify        # SELECT COUNT(*) per table afterwards
 ```
 
-While it runs you get a live throughput line — the thing to watch (and record):
+While it runs you get a live throughput line, and the summary shows the
+scalability story — how much parse+extract work got compressed into the wall
+clock by running concurrently and overlapping the loading:
 
 ```
-  187/250 docs |  12.4 docs/s |  12.4 pages/s |   9,214 rows -> Snowflake ( 611 rows/s) | ok=187 fail=0 |  15.1s
+  4/4 docs |  0.4 docs/s | ... | 61 rows -> Snowflake | ok=4 fail=0 | 10.2s
+  ...
+  Concurrency:  129s of parse+extract done in 47s wall  ->  2.7x overlap
 ```
 
-> `--replicate N` fans the sample invoices out to N unique-named copies so you
-> can see the rate without hundreds of real PDFs. Each copy is parsed
-> independently and **consumes ADE credits** — use a modest N to demo.
+The pattern streams the same way whether it's 4 documents or 4,000 — the demo
+ships with 4 sample invoices to keep it runnable and cheap.
 
-### Bring your own documents
+### Scale it up with your own documents
 
-Drop PDFs/images into a folder and point at it:
+Point `--input` at a folder of real PDFs/images — genuine distinct rows, real
+throughput:
 
 ```bash
 python run_demo.py --input /path/to/your/invoices --verify
@@ -118,6 +120,11 @@ python run_demo.py --input /path/to/your/invoices --verify
 
 Swap `invoice_schema.py` for your own Pydantic schema (and update `COLS_MAIN`
 / `COLS_LINES` in `sf_loader.py` + the DDL) to handle a different document type.
+
+> **Note:** `--replicate N` exists to *stress-test the rate* by fanning the
+> samples out to N unique-named copies. It's synthetic — the copies are the same
+> few invoices repeated (and each still spends ADE credits) — so use it to
+> benchmark throughput, not to populate realistic-looking data.
 
 ---
 
