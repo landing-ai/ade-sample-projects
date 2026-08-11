@@ -31,7 +31,7 @@ from ade_client import build_client, parse_and_extract
 from row_builder import rows_from_doc
 from sf_loader import (
     Loader, COLS_MAIN, COLS_LINES, ensure_formats_and_stages,
-    put_original_to_raw_stage, sf_connect,
+    put_original_to_raw_stage, sf_connect, sfcursor, fq_table,
 )
 from metrics import Metrics
 
@@ -112,6 +112,15 @@ def run_streaming(files: List[str], schema_cls: Any, settings: Settings,
             bar.close()
 
         loader.close()
+        # Refresh the raw stage's directory table so the archived originals show
+        # up immediately when browsing the stage in Snowsight (PUT doesn't
+        # auto-update it).
+        if archive_originals and settings.stage_raw_name:
+            try:
+                with sfcursor(conn, settings) as cur:
+                    cur.execute(f"ALTER STAGE {fq_table(settings, settings.stage_raw_name)} REFRESH")
+            except Exception:
+                pass
     finally:
         metrics.stop()
         if owns_conn:
