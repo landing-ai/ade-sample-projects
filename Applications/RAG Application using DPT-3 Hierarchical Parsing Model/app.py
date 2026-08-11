@@ -391,7 +391,9 @@ def load_parse(doc_id: str) -> dict:
 
 @st.cache_data
 def load_page_image(doc_id: str, page: int) -> Image.Image:
-    return Image.open(PAGES_DIR / doc_id / f"page_{page}.png")
+    """`page` is 1-indexed, matching the API's grounding; ingest.py names the
+    rasterized files from a 0-indexed loop."""
+    return Image.open(PAGES_DIR / doc_id / f"page_{page - 1}.png")
 
 
 def short_doc_name(doc_id: str) -> str:
@@ -780,7 +782,7 @@ def render() -> None:
                 primary_matches.extend(m)
                 primary_spans.extend(s)
 
-        metric = ph.precision_metric(primary_matches, primary_parse)
+        metric = ph.precision_metric(primary_matches)
         md_full = primary_parse["markdown"]
         precise_tokens = sum(count_tokens(md_full[sp[0]:sp[1]]) for sp in primary_spans)
         element_token_total = 0
@@ -969,11 +971,6 @@ def render() -> None:
         except FileNotFoundError:
             st.error("Page image not found.")
             return
-        pmeta = ph.get_page_meta(active_parse, page)
-        if not pmeta:
-            st.error("No page metadata.")
-            return
-
         # Build the quote_groups arg for render_overlays
         overlay_groups = [
             (matches, (quote_color(color_idx)[0], quote_color(color_idx)[1]))
@@ -983,8 +980,6 @@ def render() -> None:
             img,
             overlay_groups,
             page,
-            pmeta["width"],
-            pmeta["height"],
             level=zoom_level,
         )
         st.image(out_img, caption=f"{short_doc_name(active_doc)} — page {page}", width="stretch")
