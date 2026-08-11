@@ -36,9 +36,16 @@ def _coerce_int(x: Any) -> Optional[int]:
 def get_doc_pages(doc: Any) -> int:
     """
     Return the number of pages in a parsed document.
-    Returns the maximum value found, or 0 if none are valid.
+
+    Prefers the authoritative `metadata.page_count` from the DPT-3
+    `V2ParseResponse`. Falls back to scanning per-element grounding in the
+    structure tree (page numbers are 0-indexed, so max + 1 = total count).
     """
-    return max(
-        (g.page for chunk in doc.chunks for g in (chunk.grounding or [])),
-        default=0
-        ) + 1  # Pages are 0-indexed, so +1 gives total count
+    page_count = _coerce_int(getattr(getattr(doc, "metadata", None), "page_count", None))
+    if page_count:
+        return page_count
+
+    # Fallback: count the page nodes directly under the structure tree.
+    structure = getattr(doc, "structure", None)
+    pages = getattr(structure, "children", None) or []
+    return len(pages) if pages else 1

@@ -49,7 +49,7 @@ CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.MARKDOWN (
   INVOICE_UUID            VARCHAR NOT NULL,
   DOCUMENT_NAME           VARCHAR,
   SENT_AT                 TIMESTAMP_TZ,
-  AGENTIC_DOC_VERSION     VARCHAR,
+  ADE_SDK_VERSION         VARCHAR,
   MARKDOWN                VARIANT, --This will hold the parsing output for all pages of the document
 
   CONSTRAINT PK_MARKDOWN PRIMARY KEY (INVOICE_UUID)
@@ -66,6 +66,8 @@ CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.PARSED_CHUNKS (
     chunk_type      STRING,
     text            STRING,
     page            NUMBER,
+    -- Normalized 0-1 bounding box. DPT-3 grounding boxes use xmin/ymin/xmax/ymax;
+    -- they map to box_l/box_t/box_r/box_b respectively.
     box_l           FLOAT,
     box_t           FLOAT,
     box_r           FLOAT,
@@ -80,7 +82,8 @@ CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.INVOICES_MAIN (
   INVOICE_UUID            VARCHAR NOT NULL,
   DOCUMENT_NAME           VARCHAR,
   SENT_AT                 TIMESTAMP_TZ,
-  AGENTIC_DOC_VERSION     VARCHAR,
+  ADE_SDK_VERSION         VARCHAR,
+  SCHEMA_VIOLATION_ERROR  VARCHAR,   -- non-null when DPT-3 extract returns HTTP 206 (partial extraction)
 
   -- DocumentInfo
   INVOICE_DATE_RAW        VARCHAR,
@@ -135,7 +138,7 @@ CREATE OR REPLACE TABLE DEMOS_ADE_FINANCE.INVOICES.INVOICE_LINE_ITEMS (
   INVOICE_UUID            VARCHAR NOT NULL,        -- FK to invoices_main (logical)
   DOCUMENT_NAME           VARCHAR,
   SENT_AT                 TIMESTAMP_TZ,
-  AGENTIC_DOC_VERSION     VARCHAR,
+  ADE_SDK_VERSION         VARCHAR,
 
   LINE_INDEX              NUMBER(9,0),             -- 0-based index
 

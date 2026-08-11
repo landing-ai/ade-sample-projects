@@ -10,8 +10,8 @@ Functions:
     using `importlib.metadata` for compatibility with modern Python packaging.
 
 Use Case:
-Primarily used in the ADE → Snowflake pipeline to record the version 
-of `agentic-doc` used for each document parse, ensuring reproducibility 
+Primarily used in the ADE → Snowflake pipeline to record the version
+of `landingai-ade` used for each document parse, ensuring reproducibility
 and traceability in downstream data.
 
 """

@@ -5,7 +5,8 @@ ade_sf_pipeline_main.py
 Streaming ADE → Snowflake Orchestration
 
 This script provides a minimal, production-grade pipeline that:
-- Parses documents using LandingAI's Agentic Document Extraction (ADE)
+- Parses documents using LandingAI's Agentic Document Extraction (ADE) via the
+  `landingai-ade` SDK's DPT-3 endpoints (`client.v2.parse` / `client.v2.extract`)
 - Extracts structured information into rows using a schema-driven function
 - Writes results to Snowflake (via staged CSV/JSONL files and COPY INTO)
 
@@ -44,7 +45,7 @@ Configuration:
 
 Dependencies:
 -------------
-- LandingAI `agentic-doc` SDK
+- LandingAI `landingai-ade` SDK (DPT-3 `client.v2` endpoints)
 - Snowflake Python Connector
 - Your own config, loader, row_builder, doc_utils modules
 
@@ -63,10 +64,16 @@ from doc_utils import get_doc_pages
 from row_builder import rows_from_doc
 from sf_utils import ensure_formats_and_stages, put_original_to_raw_stage
 
+# DPT-3 model versions used for parse and extract. Pin to a dated snapshot
+# (e.g. "dpt-3-pro-20260401") in production for reproducibility.
+PARSE_MODEL = "dpt-3-pro-latest"
+EXTRACT_MODEL = "dpt-3-pro-latest"
+
+
 def run_pipeline_streaming(
     files: Iterable[str],
     schema_cls: Any,  # REQUIRED
-    rows_from_doc_fn: Callable[[str, Any, str, datetime, str],
+    rows_from_doc_fn: Callable[[str, Any, Any, str, datetime, str],
                                Tuple[Dict[str, Any], List[Dict[str, Any]], List[Dict[str, Any]], Dict[str, Any], str]],
     settings: Optional[Settings] = None,
     cols_main: Optional[List[str]] = None,
@@ -76,10 +83,11 @@ def run_pipeline_streaming(
 ) -> Metrics:
     """
     Per-file concurrent pipeline:
-      - parse([fp], extraction_model=schema_cls) for each fp (ThreadPoolExecutor)
+      - client.v2.parse(document=fp) then client.v2.extract(schema=schema_cls,
+        markdown=...) for each fp (ThreadPoolExecutor)
       - build rows, stage shards, copy to tables
     """
-    from agentic_doc.parse import parse
+    from landingai_ade import LandingAIADE
 
     if settings is None:
         settings = Settings()
@@ -88,7 +96,11 @@ def run_pipeline_streaming(
     if schema_cls is None:
         raise ValueError("schema_cls is required.")
 
-    agentic_version = get_installed_version("agentic-doc")
+    # The SDK reads VISION_AGENT_API_KEY from the environment; pass it explicitly
+    # so the key sourced via Settings (.env) is always honored.
+    client = LandingAIADE(apikey=settings.VISION_AGENT_API_KEY)
+
+    sdk_version = get_installed_version("landingai-ade")
     file_list = [str(fp) for fp in files]
 
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S") + "_" + uuid.uuid4().hex[:6] + run_id_suffix
@@ -102,16 +114,21 @@ def run_pipeline_streaming(
 
     def _work(fp: str):
         t_parse0 = time.perf_counter()
-        doc = parse([fp], extraction_model=schema_cls)[0]
+        # DPT-3 splits parsing and extraction into two calls.
+        parse_result = client.v2.parse(document=fp, model=PARSE_MODEL)
+        extract_result = client.v2.extract(
+            schema=schema_cls, markdown=parse_result.markdown, model=EXTRACT_MODEL
+        )
         parse_latency = time.perf_counter() - t_parse0
 
         put_original_to_raw_stage(fp, settings, loader.conn)
 
         sent_at = datetime.now(timezone.utc)
-        pages = get_doc_pages(doc)
+        pages = get_doc_pages(parse_result)
 
         main_row, line_rows, chunk_rows, markdown_record, _uuid = rows_from_doc_fn(
-            fp=fp, doc=doc, run_id=run_id, sent_at=sent_at, agentic_version=agentic_version
+            fp=fp, parse_result=parse_result, extract_result=extract_result,
+            run_id=run_id, sent_at=sent_at, sdk_version=sdk_version,
         )
 
         if main_row: loader.add_main(main_row)

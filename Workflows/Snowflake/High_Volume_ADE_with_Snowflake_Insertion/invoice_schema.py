@@ -20,8 +20,9 @@ and validation. The schema serves as the authoritative structure guiding
 schema-first document parsing and is referenced during ADE pipeline execution.
 
 Usage:
-- Passed as the `extraction_model` when calling `parse()` from `agentic_doc`
-- Enables consistent and robust parsing across invoice variants
+- Passed as the `schema` argument to `client.v2.extract()` from `landingai-ade`
+  (the DPT-3 Extract endpoint accepts a Pydantic model directly)
+- Enables consistent and robust extraction across invoice variants
 """
 
 from typing import Optional, List

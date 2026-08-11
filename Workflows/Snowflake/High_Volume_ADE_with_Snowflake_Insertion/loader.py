@@ -58,8 +58,8 @@ from config import Settings
 # --- Column orders for Snowflake COPY (must match table definitions) ---
 
 COLS_MAIN = [
-    "run_id", "invoice_uuid", "document_name", "sent_at", "agentic_doc_version",
-    "invoice_date_raw", "invoice_date", "invoice_number", "order_date", "po_number", "status", 
+    "run_id", "invoice_uuid", "document_name", "sent_at", "ade_sdk_version", "schema_violation_error",
+    "invoice_date_raw", "invoice_date", "invoice_number", "order_date", "po_number", "status",
     "sold_to_name", "sold_to_address", "customer_email",
     "supplier_name",  "supplier_address", "representative", "email", "phone", "gstin", "pan",
     "payment_terms", "ship_via",  "ship_date", "tracking_number",
@@ -68,7 +68,7 @@ COLS_MAIN = [
 ]
 
 COLS_LINES = [
-    "run_id", "invoice_uuid", "document_name", "sent_at", "agentic_doc_version",
+    "run_id", "invoice_uuid", "document_name", "sent_at", "ade_sdk_version",
     "line_index", "line_number", "sku", "description", "quantity", "unit_price", "price", "amount", "total",
 ]
 

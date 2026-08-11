@@ -13,22 +13,24 @@ into four categories of Snowflake-compatible rows:
 
 Core Function:
 --------------
-`rows_from_doc(fp, doc, run_id, sent_at, agentic_version)`:
+`rows_from_doc(fp, parse_result, extract_result, run_id, sent_at, sdk_version)`:
     - Primary entry point
-    - Accepts a single parsed document
+    - Accepts a DPT-3 parse result and extract result for a single document
     - Returns a tuple of (main_row, line_rows, chunk_rows, markdown_record, invoice_uuid)
 
 Key Features:
 -------------
 • UUID generation per document to ensure traceability across tables
-• Includes metadata such as run_id, file name, agentic-doc version, timestamp
+• Includes metadata such as run_id, file name, landingai-ade version, timestamp
 • References (e.g., total_due_ref) and confidences are preserved where available
 • Uses helper functions (_dig, _to_float, _first, _jsonify) for robust handling
 
 Assumptions:
 ------------
-• Input `doc` is the result of Agentic parsing: `doc = parse([path], extraction_model=schema)[0]`
-• Field references and metadata follow ADE schema conventions
+• `parse_result` is a DPT-3 `V2ParseResponse` (client.v2.parse) with `.markdown`
+  and a `.structure` tree of page/element nodes
+• `extract_result` is a DPT-3 `V2ExtractResult` (client.v2.extract) whose
+  `.extraction` and `.extraction_metadata` are plain dicts
 • Extraction schema class (e.g., `InvoiceExtractionSchema`) defines accessible fields
 
 Related:
@@ -44,7 +46,7 @@ import os
 import uuid
 
 from row_utils import (
-    get_ltbr_page,
+    iter_parse_chunks,
     _add_meta,
     _dig,
     _enum_to_str,
@@ -55,10 +57,11 @@ from row_utils import (
 # ---- main adaptor: build rows from one doc ----
 def rows_from_doc(
     fp: str,
-    doc: Any,
+    parse_result: Any,
+    extract_result: Any,
     run_id: str,
     sent_at: datetime,
-    agentic_version: str,
+    sdk_version: str,
 ) -> Tuple[Dict[str, Any], List[Dict[str, Any]], List[Dict[str, Any]], Dict[str, Any], str]:
     """
     Returns: (main_row, line_rows, chunk_rows, markdown_record, invoice_uuid)
@@ -66,40 +69,36 @@ def rows_from_doc(
     doc_name = os.path.basename(fp)
     invoice_uuid = str(uuid.uuid4())
 
-    markdown = getattr(doc, "markdown", None)
-    chunks = getattr(doc, "chunks", None) or []
-    f = getattr(doc, "extraction", None)
-    m = getattr(doc, "extraction_metadata", None)
+    markdown = getattr(parse_result, "markdown", None)
+    f = getattr(extract_result, "extraction", None)
+    m = getattr(extract_result, "extraction_metadata", None)
+    # DPT-3 surfaces partial-extraction (HTTP 206) details on the result object.
+    schema_violation = getattr(extract_result, "schema_violation_error", None)
 
     markdown_record = {
         "RUN_ID": run_id,
         "INVOICE_UUID": invoice_uuid,
         "DOCUMENT_NAME": doc_name,
         "SENT_AT": sent_at,
-        "AGENTIC_DOC_VERSION": agentic_version,
+        "ADE_SDK_VERSION": sdk_version,
         "MARKDOWN": markdown,
     }
 
     chunk_rows: List[Dict[str, Any]] = []
-    for ch in chunks:
-        page, l, t, r, b = get_ltbr_page(ch)
-        chunk_id_obj = getattr(ch, "chunk_id", None) or getattr(ch, "id", None)
-        if not chunk_id_obj:
-            chunk_id_obj = f"{invoice_uuid}:{uuid.uuid4().hex[:12]}"
-        ct = getattr(ch, "chunk_type", None) or getattr(ch, "type", None)
-
+    for ch in iter_parse_chunks(parse_result):
+        chunk_id_obj = ch.get("id") or f"{invoice_uuid}:{uuid.uuid4().hex[:12]}"
         chunk_rows.append({
             "run_id": run_id,
             "invoice_uuid": invoice_uuid,
             "document_name": doc_name,
             "chunk_id": str(chunk_id_obj),
-            "chunk_type": _enum_to_str(ct),
-            "text": getattr(ch, "text", None),
-            "page": _to_int(page),
-            "box_l": _to_float(l),
-            "box_t": _to_float(t),
-            "box_r": _to_float(r),
-            "box_b": _to_float(b),
+            "chunk_type": _enum_to_str(ch.get("type")),
+            "text": ch.get("text"),
+            "page": _to_int(ch.get("page")),
+            "box_l": _to_float(ch.get("box_l")),
+            "box_t": _to_float(ch.get("box_t")),
+            "box_r": _to_float(ch.get("box_r")),
+            "box_b": _to_float(ch.get("box_b")),
         })
 
     main_row: Dict[str, Any] = {
@@ -107,7 +106,8 @@ def rows_from_doc(
         "invoice_uuid": invoice_uuid,
         "document_name": doc_name,
         "sent_at": sent_at,
-        "agentic_doc_version": agentic_version,
+        "ade_sdk_version": sdk_version,
+        "schema_violation_error": schema_violation,
 
         "invoice_date_raw": _dig(f, "invoice_info", "invoice_date_raw"),
         "invoice_date": _dig(f, "invoice_info", "invoice_date"),
@@ -153,7 +153,7 @@ def rows_from_doc(
             "invoice_uuid": invoice_uuid,
             "document_name": doc_name,
             "sent_at": sent_at,
-            "agentic_doc_version": agentic_version,
+            "ade_sdk_version": sdk_version,
             "line_index": idx,
 
             "line_number": _dig(li, "line_number"),

@@ -17,7 +17,9 @@ Used primarily by:
 
 Functions:
 - `_dig`, `_add_meta`, `_to_int`, `_to_float`, `_enum_to_str`, `_asdict`, `_jsonify`
-- `get_ltbr_page` — extracts layout metadata (box coordinates + page) from a chunk
+- `iter_parse_chunks` — walks a DPT-3 parse `structure` tree and yields one
+  block-level chunk dict per element (id, type, text, page, box l/t/r/b)
+- `_strip_anchor` — removes the `<a id='...'></a>` prefix ADE embeds in markdown
 - `pkg_version` — resolves version of a given installed Python package
 - `_first` — returns the first item in a list or None
 
@@ -27,11 +29,16 @@ and inconsistent schema returns in the document parsing workflow.
 
 
 import math
+import re
 import json
 import dataclasses
 import importlib
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Iterator, Optional, Tuple
 from importlib.metadata import version as _pkg_version, PackageNotFoundError
+
+# Matches the anchor tag ADE prepends to each chunk's markdown, e.g.
+# "<a id='abc'></a>Some text" -> "Some text".
+_ANCHOR_RE = re.compile(r"<a id='[^']*'>\s*</a>")
 
 # --- Core utility functions ---
 
@@ -138,47 +145,59 @@ def _jsonify(x: Any) -> Any:
     except Exception:
         return str(v)
 
-def get_ltbr_page(ch):
-    gs = getattr(ch, "grounding", None)
-    if gs is None:
-        return (None, None, None, None, None)
-    if isinstance(gs, dict):
-        gs = [gs]
-    if not isinstance(gs, (list, tuple)) or not gs:
-        return (None, None, None, None, None)
+def _strip_anchor(md: Optional[str]) -> Optional[str]:
+    """Remove the ``<a id='...'></a>`` anchor ADE prepends to chunk markdown."""
+    if md is None:
+        return None
+    return _ANCHOR_RE.sub("", md).strip()
 
-    pages, ls, ts, rs, bs = [], [], [], [], []
-    for g in gs:
-        page0 = g.get("page") if isinstance(g, dict) else getattr(g, "page", None)
-        box = g.get("box") if isinstance(g, dict) else getattr(g, "box", None)
-        if not box:
-            continue
-        l = box.get("l") if isinstance(box, dict) else getattr(box, "l", None)
-        t = box.get("t") if isinstance(box, dict) else getattr(box, "t", None)
-        r = box.get("r") if isinstance(box, dict) else getattr(box, "r", None)
-        b = box.get("b") if isinstance(box, dict) else getattr(box, "b", None)
-        if None in (l, t, r, b):
-            continue
-        pages.append(page0)
-        ls.append(float(l)); ts.append(float(t)); rs.append(float(r)); bs.append(float(b))
 
-    if not ls:
-        return (None, None, None, None, None)
-
-    page_0based = None
-    try:
-        pmin = min(p for p in pages if p is not None)
-        page_0based = int(pmin)
-    except Exception:
-        pass
-
+def _ltbr_from_grounding(grounding: Any) -> Tuple[Optional[float], Optional[float], Optional[float], Optional[float]]:
+    """
+    Map a DPT-3 ``V2ParseNodeGrounding.box`` (xmin/ymin/xmax/ymax, normalized
+    0-1) to the (left, top, right, bottom) convention used by our tables.
+    """
+    box = getattr(grounding, "box", None) if grounding is not None else None
+    if box is None:
+        return (None, None, None, None)
     return (
-        page_0based,
-        min(ls),
-        min(ts),
-        max(rs),
-        max(bs),
+        _to_float(getattr(box, "xmin", None)),
+        _to_float(getattr(box, "ymin", None)),
+        _to_float(getattr(box, "xmax", None)),
+        _to_float(getattr(box, "ymax", None)),
     )
+
+
+def iter_parse_chunks(parse_result: Any) -> Iterator[Dict[str, Any]]:
+    """
+    Walk a DPT-3 ``V2ParseResponse.structure`` tree and yield one dict per
+    block-level element (the direct children of each page). Each dict has:
+    ``id``, ``type``, ``text``, ``page``, ``box_l``, ``box_t``, ``box_r``,
+    ``box_b``.
+
+    We emit page-level blocks (not every nested descendant such as individual
+    table cells) to mirror the granularity of the flat chunk list from earlier
+    ADE versions. To capture the full hierarchy instead, recurse into each
+    element's ``children``.
+    """
+    structure = getattr(parse_result, "structure", None)
+    pages = getattr(structure, "children", None) or []
+    for page_node in pages:
+        page_idx = _to_int(getattr(page_node, "page", None))
+        for el in (getattr(page_node, "children", None) or []):
+            grounding = getattr(el, "grounding", None)
+            el_page = _to_int(getattr(grounding, "page", None))
+            l, t, r, b = _ltbr_from_grounding(grounding)
+            yield {
+                "id": getattr(el, "id", None),
+                "type": getattr(el, "type", None),
+                "text": _strip_anchor(getattr(el, "markdown", None)),
+                "page": el_page if el_page is not None else page_idx,
+                "box_l": l,
+                "box_t": t,
+                "box_r": r,
+                "box_b": b,
+            }
 
 def _add_meta(row: Dict[str, Any], meta: Any, section: str, field: str, out_prefix: str) -> None:
     if not meta:
