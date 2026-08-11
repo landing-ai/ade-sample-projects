@@ -32,8 +32,8 @@ This example runs the full two-step flow on the sample `ibm_annual_report.pdf`:
 ## Watch the demo
 
 <div align="center">
-  <a href="https://youtu.be/WMjT06rjLSQ" target="_blank">
-    <img src="https://img.youtube.com/vi/WMjT06rjLSQ/maxresdefault.jpg" alt="Watch the ADE Section API demo" width="100%" style="max-width:600px;">
+  <a href="https://youtu.be/e3XQEc7iaAw" target="_blank">
+    <img src="https://img.youtube.com/vi/e3XQEc7iaAw/maxresdefault.jpg" alt="Watch the ADE Section API demo" width="100%" style="max-width:600px;">
   </a>
 </div>
 
