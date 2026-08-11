@@ -50,13 +50,18 @@ def replicate(files: List[str], n: int) -> List[str]:
 
 
 def verify_counts(settings: Settings, conn=None) -> None:
-    from sf_loader import sfcursor, fq_table
+    from sf_loader import sfcursor, fq_table, fq_stage
     tables = [settings.table_main, settings.table_lines, settings.table_blocks, settings.table_markdown]
     print("\nRow counts in Snowflake:")
     with sfcursor(conn, settings) as cur:
         for t in tables:
             cur.execute(f"SELECT COUNT(*) FROM {fq_table(settings, t)}")
             print(f"  {t:22} {cur.fetchone()[0]:>10,}")
+        # Also show the stage holding the archived original documents.
+        if settings.stage_raw_name:
+            cur.execute(f"LIST {fq_stage(settings, settings.stage_raw_name)}")
+            n = len(cur.fetchall())
+            print(f"  {settings.stage_raw_name + ' (stage)':22} {n:>10,}  original file(s)")
 
 
 def main() -> None:
