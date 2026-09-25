@@ -1,0 +1,16 @@
+{
+  "slug": "invoice",
+  "title": "Invoice",
+  "source": {
+    "file": "invoice_1.pdf",
+    "pages": 1,
+    "orientation": "portrait"
+  },
+  "fields": [
+    { "path": "invoice_number", "label": "Invoice number" },
+    { "path": "invoice_date",   "label": "Invoice date" },
+    { "path": "vendor_name",    "label": "Vendor" },
+    { "path": "total_amount",   "label": "Total amount" },
+    { "path": "balance_due",    "label": "Balance due" }
+  ]
+}

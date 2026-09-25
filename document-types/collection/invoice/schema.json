@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "description": "The invoice number or identifier",
+      "x-alternativeNames": ["Invoice #", "Invoice Number", "Invoice No"]
+    },
+    "invoice_date": {
+      "type": "string",
+      "description": "The date the invoice was issued, as YYYY-MM-DD"
+    },
+    "vendor_name": {
+      "type": "string",
+      "description": "The name of the company issuing the invoice"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "The name of the company or person being billed"
+    },
+    "payment_terms": {
+      "type": "string",
+      "description": "The payment terms stated on the invoice"
+    },
+    "currency": {
+      "type": "string",
+      "description": "The three-letter currency code, e.g. USD"
+    },
+    "total_amount": {
+      "type": "number",
+      "description": "The total amount due, including tax, as a number"
+    },
+    "balance_due": {
+      "type": "number",
+      "description": "The outstanding invoice balance as a number"
+    }
+  }
+}

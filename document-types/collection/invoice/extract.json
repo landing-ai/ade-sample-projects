@@ -1,0 +1,115 @@
+{
+  "extraction": {
+    "balance_due": 0.0,
+    "currency": "USD",
+    "customer_name": "Abaxys Tech LLC",
+    "invoice_date": "2020-07-29",
+    "invoice_number": "INV33543191",
+    "payment_terms": "Due Upon Receipt",
+    "total_amount": 149.9,
+    "vendor_name": "Zoom Video Communications Inc."
+  },
+  "extraction_metadata": {
+    "balance_due": {
+      "ranges": [
+        {
+          "end": 1010,
+          "start": 1005
+        },
+        {
+          "end": 1710,
+          "start": 1705
+        }
+      ],
+      "value": 0.0
+    },
+    "currency": {
+      "ranges": [
+        {
+          "end": 272,
+          "start": 258
+        }
+      ],
+      "value": "USD"
+    },
+    "customer_name": {
+      "ranges": [
+        {
+          "end": 310,
+          "start": 273
+        }
+      ],
+      "value": "Abaxys Tech LLC"
+    },
+    "invoice_date": {
+      "ranges": [
+        {
+          "end": 151,
+          "start": 126
+        }
+      ],
+      "value": "2020-07-29"
+    },
+    "invoice_number": {
+      "ranges": [
+        {
+          "end": 175,
+          "start": 152
+        }
+      ],
+      "value": "INV33543191"
+    },
+    "payment_terms": {
+      "ranges": [
+        {
+          "end": 208,
+          "start": 176
+        }
+      ],
+      "value": "Due Upon Receipt"
+    },
+    "total_amount": {
+      "ranges": [
+        {
+          "end": 776,
+          "start": 769
+        },
+        {
+          "end": 961,
+          "start": 954
+        },
+        {
+          "end": 1372,
+          "start": 1365
+        }
+      ],
+      "value": 149.9
+    },
+    "vendor_name": {
+      "ranges": [
+        {
+          "end": 48,
+          "start": 17
+        }
+      ],
+      "value": "Zoom Video Communications Inc."
+    }
+  },
+  "markdown": "zoom\n\n\nINVOICE\n\n\nZoom Video Communications Inc. \n55 Almaden Blvd, 6<sup>th</sup> Floor \nSan Jose, CA 95113 \nbilling@zoom.us \n\nInvoice Date: 07/29/2020 \nInvoice #: INV33543191 \nPayment Terms: Due Upon Receipt \nDue Date: 07/29/2020 \nAccount Number 3003959185 \nCurrency: USD \nAccount Information: Abaxys Tech LLC \n1061 Midvale Ave, \nMorrisville, North Carolina 27560 \nUnited States \nleo.charles@outlook.com \n\nPurchase Order Number: \nTaxExemptCertificateID: \nZoom W-9 \n\n<table>\n<tr><td colspan=\"5\">CHARGE DETAILS</td></tr>\n<tr><td>Charge Description</td><td>Service Period</td><td>Subtotal</td><td>Tax</td><td>TOTAL</td></tr>\n<tr><td>Charge Name: Standard Pro Annual<br>Quantity: 1<br>Unit Price: $149.90</td><td>07/29/2020-07/28/2021</td><td>$149.90</td><td>$0.00</td><td>$149.90</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">INVOICE TOTALS</td></tr>\n<tr><td rowspan=\"3\"></td><td>Subtotal:</td><td>$149.90</td></tr>\n<tr><td>Total (Including Tax):</td><td>$149.90</td></tr>\n<tr><td>Invoice Balance:</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">TAX DETAILS</td></tr>\n<tr><td>Charge Name</td><td>Tax Name</td><td>Jurisdiction</td><td>Charge<br>Amount</td><td>Tax<br>Amount</td></tr>\n<tr><td colspan=\"3\"></td><td>Total<br>Tax</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">TRANSACTIONS</td></tr>\n<tr><td colspan=\"5\">Invoice Total</td><td>$149.90</td></tr>\n<tr><td>Transaction<br>Date</td><td>Transaction Number</td><td>Transaction<br>Type</td><td colspan=\"2\">Description</td><td>Applied<br>Amount</td></tr>\n<tr><td>07/29/2020</td><td>P-35558908</td><td>Payment</td><td colspan=\"2\"></td><td>($149.90)</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Invoice Balance</td><td>$0.00</td></tr>\n</table>\n\n<!-- doc_id=parse-01m3dctqdt6nns13q6ztw9mh35 -->",
+  "metadata": {
+    "job_id": "extract-01m3dctyxgp218fynkgsgf82q7",
+    "model_version": "extract-20260819",
+    "duration_ms": 14747,
+    "doc_id": "parse-01m3dctqdt6nns13q6ztw9mh35",
+    "billing": {
+      "service_tier": "priority",
+      "total_credits": 1.2
+    },
+    "input_markdown_chars": 1779,
+    "output_extraction_chars": 232,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "schema_violation_error": null,
+  "warnings": []
+}
