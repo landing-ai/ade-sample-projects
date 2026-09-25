@@ -3,7 +3,8 @@
 
     python document-types/scripts/build_images.py invoice
 
-Reads  collection/<slug>/parse.json, extract.json, manifest.json, source/<doc>
+Reads  collection/<slug>/parse-<model>.json, extract-<model>.json, manifest.json,
+       source/<doc>
 Writes collection/<slug>/images/
 
 Produces, for each field named in the manifest:
@@ -161,18 +162,26 @@ def save(img: Image.Image, path: Path, max_width: int | None = None) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug", help="folder name under document-types/collection/")
+    parser.add_argument(
+        "--model",
+        default="pro",
+        help="which parse model's output to render (default: pro)",
+    )
     args = parser.parse_args()
 
     folder = COLLECTION / args.slug
-    for required in ("parse.json", "extract.json", "manifest.json"):
-        if not (folder / required).is_file():
+    parse_path = folder / f"parse-{args.model}.json"
+    extract_path = folder / f"extract-{args.model}.json"
+    for required in (parse_path, extract_path, folder / "manifest.json"):
+        if not required.is_file():
             sys.exit(
-                f"Missing {folder / required}.\n"
-                f"Run: python document-types/scripts/run_ade.py {args.slug}"
+                f"Missing {required}.\n"
+                f"Run: python document-types/scripts/run_ade.py {args.slug} "
+                f"--model {args.model}"
             )
 
-    parse = json.loads((folder / "parse.json").read_text(encoding="utf-8"))
-    extract = json.loads((folder / "extract.json").read_text(encoding="utf-8"))
+    parse = json.loads(parse_path.read_text(encoding="utf-8"))
+    extract = json.loads(extract_path.read_text(encoding="utf-8"))
     manifest = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
 
     sources = sorted(p for p in (folder / "source").iterdir() if p.is_file())
@@ -180,25 +189,40 @@ def main() -> None:
         sys.exit(f"No document in {folder / 'source'}")
     document = sources[0]
 
-    fields = [f["path"] for f in manifest.get("fields", [])]
-    if not fields:
+    field_specs = manifest.get("fields", [])
+    if not field_specs:
         sys.exit("manifest.json lists no fields; nothing to illustrate.")
 
     resolved = flatten(extract.get("extraction_metadata") or {})
-    images_dir = folder / "images"
+    # Per model: two parse models must not overwrite each other's renders.
+    images_dir = folder / "images" / args.model
 
     located: dict[int, list[dict]] = {}
-    print(f"Resolving {len(fields)} field(s) ...")
-    for path in fields:
+    print(f"Resolving {len(field_specs)} field(s) ...")
+    for spec in field_specs:
+        path = spec["path"]
         meta = resolved.get(path)
         if not meta:
             print(f"  {path}: NOT IN EXTRACTION — check the path against extract.json")
             continue
-        if not meta.get("ranges"):
+        ranges = meta.get("ranges")
+        if not ranges:
             print(f"  {path}: value present but ungrounded (synthesized); no image")
             continue
 
-        hit = locate(parse, meta["ranges"][0])
+        # A value printed in several places has several ranges, and their order is not
+        # guaranteed stable across runs — on the sample invoice the total appears both
+        # in CHARGE DETAILS and in INVOICE TOTALS. Set "occurrence" in the manifest to
+        # pin which one gets boxed; otherwise the first is used.
+        index = int(spec.get("occurrence", 0))
+        if index >= len(ranges):
+            print(f"  {path}: occurrence {index} requested but only {len(ranges)} found")
+            continue
+        if len(ranges) > 1 and "occurrence" not in spec:
+            print(f"  {path}: {len(ranges)} occurrences, boxing the first "
+                  f"(set \"occurrence\" in manifest.json to pin one)")
+
+        hit = locate(parse, ranges[index])
         if not hit:
             print(f"  {path}: range did not fall inside any block")
             continue
@@ -239,7 +263,7 @@ def main() -> None:
             draw_box(annotated, item["box"])
         save(annotated, images_dir / f"page-{page_number}.png", MAX_PAGE_WIDTH_PX)
 
-    print(f"\nWrote {folder / 'images'}")
+    print(f"\nWrote {images_dir}")
     print("Open the images and check them. A wrong crop is not visible from a listing.")
 
 

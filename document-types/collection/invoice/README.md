@@ -54,4 +54,20 @@ region instead of the value. Line-level grounding is what makes the crop tight.
 .venv/bin/python document-types/scripts/build_images.py invoice # free
 ```
 
-The first run cost 3.10 credits (parse and extract, synchronous, priority tier).
+Both calls run through the jobs API at the **standard** service tier: 1.60 credits for
+this document, against 3.10 for the same work synchronously. Synchronous calls always
+bill at priority whatever tier you ask for, so the jobs API is the only route to the
+cheaper rate. Web content is never urgent.
+
+Output files carry the parse model — `parse-pro.json`, `extract-pro.json`,
+`images/pro/` — so a Verity run can sit beside the Pro one without overwriting it once
+that model is GA.
+
+## A note on repeated values
+
+`total_amount` and `balance_due` each appear **twice** on this invoice: in CHARGE DETAILS
+and again in INVOICE TOTALS. ADE returns both locations, and their order is not
+guaranteed stable between runs — re-parsing moved the box from one to the other.
+
+`manifest.json` pins both to `"occurrence": 0` so the rendered box does not wander.
+`build_images.py` warns whenever a field has several occurrences and none is pinned.

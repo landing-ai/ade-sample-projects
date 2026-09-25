@@ -7,10 +7,27 @@
     "orientation": "portrait"
   },
   "fields": [
-    { "path": "invoice_number", "label": "Invoice number" },
-    { "path": "invoice_date",   "label": "Invoice date" },
-    { "path": "vendor_name",    "label": "Vendor" },
-    { "path": "total_amount",   "label": "Total amount" },
-    { "path": "balance_due",    "label": "Balance due" }
+    {
+      "path": "invoice_number",
+      "label": "Invoice number"
+    },
+    {
+      "path": "invoice_date",
+      "label": "Invoice date"
+    },
+    {
+      "path": "vendor_name",
+      "label": "Vendor"
+    },
+    {
+      "path": "total_amount",
+      "label": "Total amount",
+      "occurrence": 0
+    },
+    {
+      "path": "balance_due",
+      "label": "Balance due",
+      "occurrence": 0
+    }
   ]
 }

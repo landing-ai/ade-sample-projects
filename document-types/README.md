@@ -33,9 +33,9 @@ oversight.
 | `schema.json` | ● | you |
 | `manifest.json` | ● | you |
 | `README.md` | ● | you |
-| `parse.json`, `parse.md` | ● | `run_ade.py` |
-| `extract.json` | ● | `run_ade.py` |
-| `images/` | ● | `build_images.py` |
+| `parse-<model>.json`, `parse-<model>.md` | ● | `run_ade.py` |
+| `extract-<model>.json` | ● | `run_ade.py` |
+| `images/<model>/` | ● | `build_images.py` |
 | `cost.md` | — | you |
 | `accuracy.md`, `ground-truth.json` | — | you |
 
@@ -46,7 +46,7 @@ generated output produces a reduced page — the website treats the presence of 
 ## Why two scripts
 
 `run_ade.py` spends credits. `build_images.py` does not, and never calls the API — it
-reads the committed `parse.json` and `extract.json`.
+reads the committed parse and extract output.
 
 Image generation gets re-run often: adjusting crop padding, box weight, resolution, or
 which fields are featured. Tying that to the API would mean paying to change a stroke
@@ -79,6 +79,18 @@ These documents and their extracted values go on a public website.
 
 Each folder's `README.md` records where its document came from and that it is cleared.
 That record travels with the document rather than living in a separate tracker.
+
+## Service tier and models
+
+Everything runs through the **jobs APIs at the `standard` service tier**, which costs half
+of priority. Synchronous calls always bill at priority whatever tier is requested, so the
+jobs API is the only route to the cheaper rate. Nothing here is urgent.
+
+Output files and image directories carry the parse model that produced them —
+`parse-pro.json`, `images/pro/`. A document type can therefore hold more than one model's
+results side by side without either overwriting the other.
+
+**Pro only for now.** Verity is in Preview and still changing; it is added once GA.
 
 ## API version
 

@@ -4,11 +4,15 @@
     python document-types/scripts/run_ade.py invoice
 
 Reads  collection/<slug>/source/<doc>  and  collection/<slug>/schema.json
-Writes collection/<slug>/parse.json, parse.md, extract.json
+Writes collection/<slug>/parse-<model>.json, parse-<model>.md, extract-<model>.json
 
 This is the script that spends credits. Image generation is deliberately separate
 (build_images.py) so that re-rendering never costs anything and never depends on a
 fresh parse returning identical output.
+
+Runs through the **jobs APIs at the standard service tier**, which costs half of
+priority. Synchronous calls always bill at priority regardless of what you ask for, so
+the jobs API is the only way to get the cheaper rate. Web content is never urgent.
 
 ADE v2 (DPT-3) only.
 """
@@ -26,10 +30,18 @@ from dotenv import load_dotenv
 REPO_ROOT = Path(__file__).resolve().parents[2]
 COLLECTION = REPO_ROOT / "document-types" / "collection"
 
-# Pinned rather than -latest: the committed output and the images built from it are a
-# record of one model's behaviour, and a silent model bump would make them disagree.
-PARSE_MODEL = "dpt-3-pro-latest"
+# Output files carry the parse model, because a document type may eventually be parsed
+# by more than one and the results must not overwrite each other.
+#
+# Verity is in Preview and changing; it gets added here once it is GA, at which point a
+# folder can hold parse-pro.json and parse-verity.json side by side.
+PARSE_MODELS = {
+    "pro": "dpt-3-pro-latest",
+}
+
 EXTRACT_MODEL = "extract-latest"
+SERVICE_TIER = "standard"   # half the credits of priority; turnaround is slower
+JOB_TIMEOUT_S = 900
 
 SOURCE_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".tif", ".tiff"}
 
@@ -66,9 +78,29 @@ def find_source(folder: Path) -> Path:
     return docs[0]
 
 
+def write_json(obj, path: Path) -> None:
+    """Serialize an SDK response model to disk. The jobs APIs do not accept save_to,
+    so unlike the sync calls this is written by hand."""
+    if hasattr(obj, "model_dump_json"):
+        path.write_text(obj.model_dump_json(indent=2), encoding="utf-8")
+    else:
+        path.write_text(json.dumps(obj, indent=2, default=str), encoding="utf-8")
+
+
+def credits_of(result) -> float:
+    billing = getattr(getattr(result, "metadata", None), "billing", None)
+    return float(getattr(billing, "total_credits", 0) or 0)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug", help="folder name under document-types/collection/")
+    parser.add_argument(
+        "--model",
+        default="pro",
+        choices=sorted(PARSE_MODELS),
+        help="parse model; names the output files (default: pro)",
+    )
     args = parser.parse_args()
 
     folder = COLLECTION / args.slug
@@ -81,34 +113,47 @@ def main() -> None:
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
 
     document = find_source(folder)
+    parse_model = PARSE_MODELS[args.model]
     load_api_key()
 
     from landingai_ade import LandingAIADE  # imported late so --help works without a key
 
     client = LandingAIADE()
 
-    print(f"Parsing {document.name} with {PARSE_MODEL} ...")
-    parse_result = client.v2.parse(
+    print(f"Parsing {document.name} with {parse_model} ({SERVICE_TIER} tier) ...")
+    parse_job = client.v2.parse_jobs.create(
         document=document,
-        model=PARSE_MODEL,
-        save_to=str(folder / "parse.json"),
+        model=parse_model,
+        service_tier=SERVICE_TIER,
     )
+    parse_done = client.v2.parse_jobs.wait(
+        parse_job.job_id, timeout=JOB_TIMEOUT_S, raise_on_failure=True
+    )
+    parse_result = parse_done.result
 
+    write_json(parse_result, folder / f"parse-{args.model}.json")
     # Keep the trailing `doc_id` comment: v2 Extract reads it to link the extraction
     # back to this parse job.
-    (folder / "parse.md").write_text(parse_result.markdown, encoding="utf-8")
+    (folder / f"parse-{args.model}.md").write_text(parse_result.markdown, encoding="utf-8")
 
-    pages = parse_result.metadata.page_count
     failed = parse_result.metadata.failed_pages or []
-    print(f"  {pages} page(s) parsed" + (f", FAILED: {failed}" if failed else ""))
+    print(f"  {parse_result.metadata.page_count} page(s)" + (f", FAILED: {failed}" if failed else ""))
 
-    print(f"Extracting with {EXTRACT_MODEL} ...")
-    extract_result = client.v2.extract(
+    print(f"Extracting with {EXTRACT_MODEL} ({SERVICE_TIER} tier) ...")
+    extract_job = client.v2.extract_jobs.create(
         markdown=parse_result.markdown,
         schema=schema,
         model=EXTRACT_MODEL,
-        save_to=str(folder / "extract.json"),
+        service_tier=SERVICE_TIER,
     )
+    extract_done = client.v2.extract_jobs.wait(
+        extract_job.job_id, timeout=JOB_TIMEOUT_S, raise_on_failure=True
+    )
+    extract_result = extract_done.result
+
+    # Named for the parse model it came from: an extraction is only meaningful against
+    # the markdown that produced it.
+    write_json(extract_result, folder / f"extract-{args.model}.json")
 
     if getattr(extract_result, "schema_violation_error", None):
         print(f"  partial extraction: {extract_result.schema_violation_error}")
@@ -118,13 +163,10 @@ def main() -> None:
     found = sum(1 for v in extract_result.extraction.values() if v not in (None, "", []))
     print(f"  {found}/{len(extract_result.extraction)} top-level fields populated")
 
-    credits = 0.0
-    for result in (parse_result, extract_result):
-        billing = getattr(result.metadata, "billing", None)
-        if billing and billing.total_credits:
-            credits += billing.total_credits
-    print(f"\nWrote parse.json, parse.md, extract.json to {folder}")
-    print(f"Credits used: {credits:.2f}")
+    total = credits_of(parse_result) + credits_of(extract_result)
+    print(f"\nWrote parse-{args.model}.json, parse-{args.model}.md, "
+          f"extract-{args.model}.json to {folder}")
+    print(f"Credits used: {total:.2f} ({SERVICE_TIER} tier)")
     print(f"\nNext: python document-types/scripts/build_images.py {args.slug}")
 
 
