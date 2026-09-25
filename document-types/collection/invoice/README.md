@@ -4,7 +4,8 @@ Source assets for `landing.ai/document-type/invoice`.
 
 ## Sample document
 
-`source/invoice_1.pdf` — a single-page Zoom subscription invoice.
+`source/invoice_4.pdf` — a single-page A.E. Blake Sales invoice, bilingual
+French/English, with a three-row line-item table.
 
 > **This is a development placeholder, not the final sample.**
 >
@@ -13,10 +14,10 @@ Source assets for `landing.ai/document-type/invoice`.
 > to prove the pipeline end to end and to give the page template something real to render
 > against.
 >
-> It should be replaced before the page ships. It is a real third-party invoice carrying a
-> real-looking email address and account number, and it was not gathered with publication
-> on a LandingAI marketing page in mind. A purpose-sourced or synthesised invoice, with
-> its provenance recorded here, is what belongs in this folder.
+> It should be replaced before the page ships. It is a real third-party invoice naming two
+> real companies and carrying real contact details, and it was not gathered with
+> publication on a LandingAI marketing page in mind. A purpose-sourced or synthesised
+> invoice, with its provenance recorded here, is what belongs in this folder.
 
 **Replacement checklist**
 
@@ -27,25 +28,32 @@ Source assets for `landing.ai/document-type/invoice`.
 
 ## Why this document
 
-It is the simplest case in the pilot — one page, portrait, a short schema — and it is the
-baseline the template has to get right before the harder types are attempted.
+One page and portrait, so it is the simplest case in the pilot — but it carries a real
+line-item table, which the schema and the page both need to handle. A one-line invoice
+would not have shown whether nested array fields can be grounded and boxed. They can:
+`line_items[1].description` resolves to the second row of the table.
 
-It also exercises both box-resolution paths in `build_images.py`, which is why it was
-useful for developing the script:
+It exercises both box-resolution paths in `build_images.py`:
 
-| Field | Resolved via | Why |
-|---|---|---|
-| `invoice_number`, `invoice_date`, `vendor_name` | `atomic_grounding` | Line-level boxes inside a text block |
-| `total_amount`, `balance_due` | `table_cell` children | Values inside table cells |
-
-The text block holding the invoice metadata covers seven lines — Invoice Date through
-Currency and the billing address — so boxing the block would have pointed at the whole
-region instead of the value. Line-level grounding is what makes the crop tight.
+| Field | Resolved via |
+|---|---|
+| `invoice_info.invoice_number`, `company_info.supplier_name`, `customer_info.sold_to_name` | `atomic_grounding` line-level boxes |
+| `line_items[1].description`, `totals_summary.total_due` | `table_cell` children |
 
 ## Extraction
 
-`schema.json` defines eight fields; all eight populated on this document.
-`manifest.json` names the five featured on the page.
+`schema.json` is the schema from `Use_Cases/Invoices/v2/schema/invoice_demo_schema.json`,
+unchanged: six top-level groups — `invoice_info`, `customer_info`, `company_info`,
+`order_details`, `totals_summary`, `line_items` — with currency in `totals_summary` and a
+nested array of line items. All six groups populate on this document, with three line
+items.
+
+`company_info.pan` comes back null with a schema warning. PAN is an Indian tax
+identifier and this is a Canadian invoice, so that is correct behaviour, not a failure.
+
+`manifest.json` names the five fields featured on the page. **Currency is in the schema
+but not featured**: on this invoice it shares a table cell with `total_due`, so both
+would render the identical crop.
 
 ## Regenerating
 
@@ -54,8 +62,9 @@ region instead of the value. Line-level grounding is what makes the crop tight.
 .venv/bin/python document-types/scripts/build_images.py invoice # free
 ```
 
-Both calls run through the jobs API at the **standard** service tier: 1.60 credits for
-this document, against 3.10 for the same work synchronously. Synchronous calls always
+Both calls run through the jobs API at the **standard** service tier. This document cost
+3.10 credits; the cost is dominated by the extract step, which scales with schema size,
+and this schema is 13 KB. Synchronous calls always
 bill at priority whatever tier you ask for, so the jobs API is the only route to the
 cheaper rate. Web content is never urgent.
 
@@ -65,9 +74,7 @@ that model is GA.
 
 ## A note on repeated values
 
-`total_amount` and `balance_due` each appear **twice** on this invoice: in CHARGE DETAILS
-and again in INVOICE TOTALS. ADE returns both locations, and their order is not
-guaranteed stable between runs — re-parsing moved the box from one to the other.
-
-`manifest.json` pins both to `"occurrence": 0` so the rendered box does not wander.
-`build_images.py` warns whenever a field has several occurrences and none is pinned.
+A value printed in more than one place comes back with several ranges, and their order is
+not guaranteed stable between runs — on an earlier sample, re-parsing moved a box from one
+occurrence to the other. Set `"occurrence"` on a field in `manifest.json` to pin which one
+is boxed. `build_images.py` warns whenever a field has several and none is pinned.

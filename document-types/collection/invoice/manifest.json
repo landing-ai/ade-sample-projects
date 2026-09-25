@@ -2,32 +2,31 @@
   "slug": "invoice",
   "title": "Invoice",
   "source": {
-    "file": "invoice_1.pdf",
+    "file": "invoice_4.pdf",
     "pages": 1,
     "orientation": "portrait"
   },
   "fields": [
     {
-      "path": "invoice_number",
+      "path": "invoice_info.invoice_number",
       "label": "Invoice number"
     },
     {
-      "path": "invoice_date",
-      "label": "Invoice date"
+      "path": "company_info.supplier_name",
+      "label": "Supplier"
     },
     {
-      "path": "vendor_name",
-      "label": "Vendor"
+      "path": "customer_info.sold_to_name",
+      "label": "Sold to"
     },
     {
-      "path": "total_amount",
-      "label": "Total amount",
-      "occurrence": 0
+      "path": "line_items[1].description",
+      "label": "Line item description"
     },
     {
-      "path": "balance_due",
-      "label": "Balance due",
-      "occurrence": 0
+      "path": "totals_summary.total_due",
+      "label": "Total due"
     }
-  ]
+  ],
+  "notes": "currency is in the schema but not featured: on this invoice it shares a table cell with total_due, so both fields render the identical crop."
 }

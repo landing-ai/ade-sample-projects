@@ -1,116 +1,583 @@
 {
   "extraction": {
-    "balance_due": 0.0,
-    "currency": "USD",
-    "customer_name": "Abaxys Tech LLC",
-    "invoice_date": "2020-07-29",
-    "invoice_number": "INV33543191",
-    "payment_terms": "Due Upon Receipt",
-    "total_amount": 149.9,
-    "vendor_name": "Zoom Video Communications Inc."
-  },
-  "extraction_metadata": {
-    "balance_due": {
-      "ranges": [
-        {
-          "end": 1010,
-          "start": 1005
-        },
-        {
-          "end": 1710,
-          "start": 1705
-        }
-      ],
-      "value": 0.0
+    "company_info": {
+      "email": "torontosales@aeblake.ca",
+      "gstin": "R100064716",
+      "pan": null,
+      "phone": "+1-416-431-0440",
+      "representative": "Perry Chan OR Jeff Kang",
+      "supplier_address": "100 Consilium Place\nSuite 200\nScarborough, ON\nM1H 3E3",
+      "supplier_name": "A.E. Blake Sales Ltd."
     },
-    "currency": {
-      "ranges": [
-        {
-          "end": 272,
-          "start": 258
-        }
-      ],
-      "value": "USD"
+    "customer_info": {
+      "customer_email": "ap@nelsonindust.com",
+      "sold_to_address": "1155 Squires Beach Road\nPICKERING, Ontario, Canada\nL1W 3T9",
+      "sold_to_name": "NELSON INDUSTRIAL FABRICATORS"
     },
-    "customer_name": {
-      "ranges": [
-        {
-          "end": 310,
-          "start": 273
-        }
-      ],
-      "value": "Abaxys Tech LLC"
+    "invoice_info": {
+      "invoice_date": "2022-01-24",
+      "invoice_date_raw": "Jan 24 2022",
+      "invoice_number": "138277",
+      "order_date": "2022-01-19",
+      "po_number": "P.067967",
+      "status": null
     },
-    "invoice_date": {
-      "ranges": [
-        {
-          "end": 151,
-          "start": 126
-        }
-      ],
-      "value": "2020-07-29"
+    "line_items": [
+      {
+        "amount": 734.27,
+        "description": "HD Graphite Canvas 6\"x 50yds 50 yards/roll",
+        "line_number": "30",
+        "price": 734.27,
+        "quantity": 1,
+        "sku": "110947",
+        "total": 734.27,
+        "unit_price": 734.27
+      },
+      {
+        "amount": 1369.0,
+        "description": "3M 777F RBC Belt 6\"x202\" 60YF 10belts/case (±10%)",
+        "line_number": "40",
+        "price": 68.45,
+        "quantity": 20,
+        "sku": "102044",
+        "total": 1369.0,
+        "unit_price": 68.45
+      },
+      {
+        "amount": 639.8,
+        "description": "3M 777F RBC Belt 6\"x202\" 80YF 10belts/case (±10%)",
+        "line_number": "50",
+        "price": 63.98,
+        "quantity": 10,
+        "sku": "102046",
+        "total": 639.8,
+        "unit_price": 63.98
+      }
+    ],
+    "order_details": {
+      "payment_terms": "Net 30 Days",
+      "ship_date": "2022-01-24",
+      "ship_via": "UPS 3rd Party 139 2X5",
+      "tracking_number": "I078685"
     },
-    "invoice_number": {
-      "ranges": [
-        {
-          "end": 175,
-          "start": 152
-        }
-      ],
-      "value": "INV33543191"
-    },
-    "payment_terms": {
-      "ranges": [
-        {
-          "end": 208,
-          "start": 176
-        }
-      ],
-      "value": "Due Upon Receipt"
-    },
-    "total_amount": {
-      "ranges": [
-        {
-          "end": 961,
-          "start": 954
-        },
-        {
-          "end": 1372,
-          "start": 1365
-        }
-      ],
-      "value": 149.9
-    },
-    "vendor_name": {
-      "ranges": [
-        {
-          "end": 48,
-          "start": 17
-        }
-      ],
-      "value": "Zoom Video Communications Inc."
+    "totals_summary": {
+      "currency": "CAD",
+      "handling_fee": null,
+      "shipping": null,
+      "subtotal": 2743.07,
+      "tax": 356.6,
+      "total_due": 3099.67,
+      "total_due_raw": "$ 3,099.67 CAD"
     }
   },
-  "markdown": "zoom\n\n\nINVOICE\n\n\nZoom Video Communications Inc. \n55 Almaden Blvd, 6<sup>th</sup> Floor \nSan Jose, CA 95113 \nbilling@zoom.us \n\nInvoice Date: 07/29/2020 \nInvoice #: INV33543191 \nPayment Terms: Due Upon Receipt \nDue Date: 07/29/2020 \nAccount Number 3003959185 \nCurrency: USD \nAccount Information: Abaxys Tech LLC \n1061 Midvale Ave, \nMorrisville, North Carolina 27560 \nUnited States \nleo.charles@outlook.com \n\nPurchase Order Number: \nTaxExemptCertificateID: \nZoom W-9 \n\n<table>\n<tr><td colspan=\"5\">CHARGE DETAILS</td></tr>\n<tr><td>Charge Description</td><td>Service Period</td><td>Subtotal</td><td>Tax</td><td>TOTAL</td></tr>\n<tr><td>Charge Name: Standard Pro Annual<br>Quantity: 1<br>Unit Price: $149.90</td><td>07/29/2020-07/28/2021</td><td>$149.90</td><td>$0.00</td><td>$149.90</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">INVOICE TOTALS</td></tr>\n<tr><td rowspan=\"3\"></td><td>Subtotal:</td><td>$149.90</td></tr>\n<tr><td>Total (Including Tax):</td><td>$149.90</td></tr>\n<tr><td>Invoice Balance:</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">TAX DETAILS</td></tr>\n<tr><td>Charge Name</td><td>Tax Name</td><td>Jurisdiction</td><td>Charge<br>Amount</td><td>Tax<br>Amount</td></tr>\n<tr><td colspan=\"3\"></td><td>Total<br>Tax</td><td>$0.00</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">TRANSACTIONS</td></tr>\n<tr><td colspan=\"5\">Invoice Total</td><td>$149.90</td></tr>\n<tr><td>Transaction<br>Date</td><td>Transaction Number</td><td>Transaction<br>Type</td><td colspan=\"2\">Description</td><td>Applied<br>Amount</td></tr>\n<tr><td>07/29/2020</td><td>P-35558908</td><td>Payment</td><td colspan=\"2\"></td><td>($149.90)</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Invoice Balance</td><td>$0.00</td></tr>\n</table>\n\n<!-- doc_id=parse-01m3dd7yz03pmjyfp1wskcnx5t -->",
+  "extraction_metadata": {
+    "company_info": {
+      "email": {
+        "ranges": [
+          {
+            "end": 172,
+            "start": 149
+          }
+        ],
+        "value": "torontosales@aeblake.ca"
+      },
+      "gstin": {
+        "ranges": [
+          {
+            "end": 2157,
+            "start": 2075
+          }
+        ],
+        "value": "R100064716"
+      },
+      "pan": {
+        "ranges": null,
+        "value": null
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 120,
+            "start": 103
+          }
+        ],
+        "value": "+1-416-431-0440"
+      },
+      "representative": {
+        "ranges": [
+          {
+            "end": 1003,
+            "start": 980
+          }
+        ],
+        "value": "Perry Chan OR Jeff Kang"
+      },
+      "supplier_address": {
+        "ranges": [
+          {
+            "end": 102,
+            "start": 83
+          },
+          {
+            "end": 148,
+            "start": 139
+          },
+          {
+            "end": 188,
+            "start": 173
+          },
+          {
+            "end": 196,
+            "start": 189
+          }
+        ],
+        "value": "100 Consilium Place\nSuite 200\nScarborough, ON\nM1H 3E3"
+      },
+      "supplier_name": {
+        "ranges": [
+          {
+            "end": 82,
+            "start": 61
+          }
+        ],
+        "value": "A.E. Blake Sales Ltd."
+      }
+    },
+    "customer_info": {
+      "customer_email": {
+        "ranges": [
+          {
+            "end": 345,
+            "start": 316
+          }
+        ],
+        "value": "ap@nelsonindust.com"
+      },
+      "sold_to_address": {
+        "ranges": [
+          {
+            "end": 315,
+            "start": 292
+          },
+          {
+            "end": 372,
+            "start": 346
+          },
+          {
+            "end": 380,
+            "start": 373
+          },
+          {
+            "end": 520,
+            "start": 454
+          }
+        ],
+        "value": "1155 Squires Beach Road\nPICKERING, Ontario, Canada\nL1W 3T9"
+      },
+      "sold_to_name": {
+        "ranges": [
+          {
+            "end": 291,
+            "start": 262
+          }
+        ],
+        "value": "NELSON INDUSTRIAL FABRICATORS"
+      }
+    },
+    "invoice_info": {
+      "invoice_date": {
+        "ranges": [
+          {
+            "end": 242,
+            "start": 225
+          }
+        ],
+        "value": "2022-01-24"
+      },
+      "invoice_date_raw": {
+        "ranges": [
+          {
+            "end": 242,
+            "start": 225
+          }
+        ],
+        "value": "Jan 24 2022"
+      },
+      "invoice_number": {
+        "ranges": [
+          {
+            "end": 224,
+            "start": 214
+          }
+        ],
+        "value": "138277"
+      },
+      "order_date": {
+        "ranges": [
+          {
+            "end": 749,
+            "start": 738
+          }
+        ],
+        "value": "2022-01-19"
+      },
+      "po_number": {
+        "ranges": [
+          {
+            "end": 729,
+            "start": 721
+          }
+        ],
+        "value": "P.067967"
+      },
+      "status": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "line_items": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1350,
+              "start": 1343
+            }
+          ],
+          "value": 734.27
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1295,
+              "start": 1250
+            }
+          ],
+          "value": "HD Graphite Canvas 6\"x 50yds 50 yards/roll"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1226,
+              "start": 1224
+            }
+          ],
+          "value": "30"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1321,
+              "start": 1314
+            }
+          ],
+          "value": 734.27
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1305,
+              "start": 1304
+            }
+          ],
+          "value": 1
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1241,
+              "start": 1235
+            }
+          ],
+          "value": "110947"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1350,
+              "start": 1343
+            }
+          ],
+          "value": 734.27
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1321,
+              "start": 1314
+            }
+          ],
+          "value": 734.27
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1504,
+              "start": 1495
+            }
+          ],
+          "value": 1369.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1447,
+              "start": 1395
+            }
+          ],
+          "value": "3M 777F RBC Belt 6\"x202\" 60YF 10belts/case (±10%)"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1371,
+              "start": 1369
+            }
+          ],
+          "value": "40"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1473,
+              "start": 1467
+            }
+          ],
+          "value": 68.45
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1458,
+              "start": 1456
+            }
+          ],
+          "value": 20
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1386,
+              "start": 1380
+            }
+          ],
+          "value": "102044"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1504,
+              "start": 1495
+            }
+          ],
+          "value": 1369.0
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1473,
+              "start": 1467
+            }
+          ],
+          "value": 68.45
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1656,
+              "start": 1649
+            }
+          ],
+          "value": 639.8
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1601,
+              "start": 1549
+            }
+          ],
+          "value": "3M 777F RBC Belt 6\"x202\" 80YF 10belts/case (±10%)"
+        },
+        "line_number": {
+          "ranges": [
+            {
+              "end": 1525,
+              "start": 1523
+            }
+          ],
+          "value": "50"
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 1627,
+              "start": 1621
+            }
+          ],
+          "value": 63.98
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1612,
+              "start": 1610
+            }
+          ],
+          "value": 10
+        },
+        "sku": {
+          "ranges": [
+            {
+              "end": 1540,
+              "start": 1534
+            }
+          ],
+          "value": "102046"
+        },
+        "total": {
+          "ranges": [
+            {
+              "end": 1656,
+              "start": 1649
+            }
+          ],
+          "value": 639.8
+        },
+        "unit_price": {
+          "ranges": [
+            {
+              "end": 1627,
+              "start": 1621
+            }
+          ],
+          "value": 63.98
+        }
+      }
+    ],
+    "order_details": {
+      "payment_terms": {
+        "ranges": [
+          {
+            "end": 971,
+            "start": 960
+          }
+        ],
+        "value": "Net 30 Days"
+      },
+      "ship_date": {
+        "ranges": [
+          {
+            "end": 1801,
+            "start": 1755
+          }
+        ],
+        "value": "2022-01-24"
+      },
+      "ship_via": {
+        "ranges": [
+          {
+            "end": 1069,
+            "start": 1048
+          }
+        ],
+        "value": "UPS 3rd Party 139 2X5"
+      },
+      "tracking_number": {
+        "ranges": [
+          {
+            "end": 2209,
+            "start": 2192
+          }
+        ],
+        "value": "I078685"
+      }
+    },
+    "totals_summary": {
+      "currency": {
+        "ranges": [
+          {
+            "end": 2054,
+            "start": 2040
+          }
+        ],
+        "value": "CAD"
+      },
+      "handling_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "shipping": {
+        "ranges": null,
+        "value": null
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 1856,
+            "start": 1846
+          }
+        ],
+        "value": 2743.07
+      },
+      "tax": {
+        "ranges": [
+          {
+            "end": 1943,
+            "start": 1935
+          }
+        ],
+        "value": 356.6
+      },
+      "total_due": {
+        "ranges": [
+          {
+            "end": 2054,
+            "start": 2040
+          }
+        ],
+        "value": 3099.67
+      },
+      "total_due_raw": {
+        "ranges": [
+          {
+            "end": 2054,
+            "start": 2040
+          }
+        ],
+        "value": "$ 3,099.67 CAD"
+      }
+    }
+  },
+  "markdown": "○\nLES VENTES A.E. BLAKE\nA.E. BLAKE SALES\nInvoice - Facture\n\n\nA.E. Blake Sales Ltd.\n100 Consilium Place\nTel. 416 431 0440\nFax. 416 431 0450\nSuite 200\ntorontosales@aeblake.ca\nScarborough, ON\nM1H 3E3\nwww.aeblake.ca\n\n\nNO: 138277\nDATE: Jan 24 2022\n\nVendu à - Sold To\nNELSON INDUSTRIAL FABRICATORS\n1155 Squires Beach Road\nInvoices: ap@nelsonindust.com\nPICKERING, Ontario, Canada\nL1W 3T9\n\nLivré à - Ship To\nNELSON INDUSTRIAL FABRICATORS\n1155 Squires Beach Road\nInvoices: ap@nelsonindust.com\nPICKERING, Ontario, Canada\nL1W 3T9\n\n<table>\n<tr><td>COMPTE CLIENT/<br>CUSTOMER ACCOUNT</td><td>BON D'ACHAT CLIENT/<br>CUSTOMER PO</td><td>DATE COMMANDÉ/<br>ORDER DATE</td><td>COMMANDE AEB/<br>AEB ORDER</td></tr>\n<tr><td>10101978</td><td>P.067967</td><td>Jan 19 2022</td><td>50002892</td></tr>\n</table>\n\n<table>\n<tr><td>TERMES/<br>TERMS</td><td>REPRÉSENTANT/<br>REPRESENTATIVE</td><td>CONDITIONS D'EXPÉDITION/<br>SHIPPING TERMS</td><td>LIVRÉ PAR/<br>SHIP VIA</td></tr>\n<tr><td>Net 30 Days</td><td>Perry Chan OR Jeff Kang</td><td>Prepaid on orders over $600</td><td>UPS 3rd Party 139 2X5</td></tr>\n</table>\n\n<table>\n<tr><td>#</td><td>ITEM</td><td>DESCRIPTION</td><td>QTÉ/QTY</td><td>PRIX/PRICE</td><td>U/M</td><td>EXTENSION</td></tr>\n<tr><td>30</td><td>110947</td><td>HD Graphite Canvas 6\"x 50yds<br>50 yards/roll</td><td>1</td><td>$734.27</td><td>Each</td><td>$734.27</td></tr>\n<tr><td>40</td><td>102044</td><td>3M 777F RBC Belt 6\"x202\" 60YF<br>10belts/case (±10%)</td><td>20</td><td>$68.45</td><td>Each</td><td>$1,369.00</td></tr>\n<tr><td>50</td><td>102046</td><td>3M 777F RBC Belt 6\"x202\" 80YF<br>10belts/case (±10%)</td><td>10</td><td>$63.98</td><td>Each</td><td>$639.80</td></tr>\n</table>\n\nCourrier / Carrier: JD SMITH \n\nBon d'emballage / Packing Slip: 50002892-10659\nDate D'expédition / Shipping Date: Jan 24 2022\n\n<table>\n<tr><td></td><td>S. Total:</td><td>$ 2,743.07</td></tr>\n<tr><td>http://www.aeblake.ca/en/terms.php</td><td>13% HST:</td><td>$ 356.60</td></tr>\n<tr><td>Merci - Thank you  Votre contact - Your contact: DRAKE</td><td>Total:</td><td>$ 3,099.67 CAD</td></tr>\n</table>\n\nNo. T.P.S. - G.S.T. No. : R100064716 No. T.V.Q. - Q.S.T. No. : M1000098741TQ0001JT\n\n\nPage 1/1\n\n\nMontréal - Toronto\n\n\nWaybill: I078685 \n\n<!-- doc_id=parse-01m3ddqk841d9t1tmhrdhh49t1 -->",
   "metadata": {
-    "job_id": "extract-01m3dd87zqm96wd5mvmpnyvha1",
+    "job_id": "extract-01m3ddrkbapxs8z7qcnjj3ty6v",
     "version": null,
     "model_version": "extract-20260819",
-    "duration_ms": 12864,
-    "doc_id": "parse-01m3dd7yz03pmjyfp1wskcnx5t",
+    "duration_ms": 20159,
+    "doc_id": "parse-01m3ddqk841d9t1tmhrdhh49t1",
     "credit_usage": 0.0,
     "billing": {
       "service_tier": "standard",
-      "total_credits": 0.6,
+      "total_credits": 2.0,
       "input_markdown_chars": null,
       "output_extraction_chars": null
     },
-    "input_markdown_chars": 1779,
-    "output_extraction_chars": 232,
+    "input_markdown_chars": 2259,
+    "output_extraction_chars": 1467,
     "range_units": "unicode_codepoints",
     "openapi_spec": "https://api.ade.landing.ai/openapi.json"
   },
   "output_ref": null,
-  "schema_violation_error": null,
-  "warnings": []
+  "schema_violation_error": "The value at 'company_info.pan' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'company_info.pan' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
 }
