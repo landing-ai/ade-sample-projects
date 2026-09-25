@@ -54,8 +54,55 @@ five featured fields are pinned.
 
 ## Extraction
 
-`schema.json` defines seven flat fields; all seven populate. There are no nested objects
-or arrays, unlike the invoice — that is deliberate, not an oversight.
+`schema.json` has seven company-level fields plus an `installment_lending` object built
+around **page 35**, the Installment Lending Portfolio slide. That page carries a pie
+chart, three bullet figures, and a 5×7 data table under a stacked bar chart, so it
+exercises far more of ADE than a flat schema would.
+
+All of it extracts correctly:
+
+- **Pie chart** — six credit tiers with their shares (Premier 52.35% down to D 0.40%),
+  and each tier's FICO range pulled from the *legend*, which is a separate region of the
+  slide.
+- **Data table** — all 5 rows × 7 origination years, matching the printed values.
+- **Bullets** — $1.6B indirect, $186MM direct, weighted average FICO over 780.
+
+## Featured fields must share a page
+
+A web page can realistically embed one page overlay, so every featured field has to live
+on the same page. `manifest.json` declares `"feature_page": 35` and `build_images.py`
+warns if any field resolves elsewhere. An earlier version of this manifest featured
+fields from pages 1, 4 and 6 and could not be illustrated with a single image.
+
+## Grounding is off by one in this document's arrays
+
+Worth knowing before trusting any array field on a chart-heavy document.
+
+The **values** extracted from page 35 are all correct. The **grounding ranges** for array
+elements are shifted by exactly one position:
+
+| Field | Value | Grounded to |
+|---|---|---|
+| `balances_by_origination_year[0].credit_tier` | `Premier (FICO 780+)` | `18,429,225` |
+| `balances_by_origination_year[0].pre_2020` | `18429225` | `38,573,958` |
+| `balances_by_origination_year[0].year_2025` | `322236185` | `A+ (FICO 740 - 779)` |
+| `portfolio_by_credit_tier[0].tier` | `Premier` | `52.35%` |
+| `portfolio_by_credit_tier[0].share_of_portfolio_percent` | `52.35` | `A+` |
+
+Each field grounds to the *next* cell in reading order, and the last column of a row
+grounds to the following row's label. It is systematic, not random.
+
+`fico_range` is the exception and grounds correctly, because it comes from the legend
+rather than from the pie or the table.
+
+This is not a script bug — the ranges come back this way from Extract. It is also not
+universal: `line_items[1].description` on the invoice sample grounds correctly. It
+appears to affect dense tabular and chart regions.
+
+**What this means for the pages:** featured fields are chosen for grounding accuracy, not
+just for interest. `build_images.py` compares every extracted value against the text it
+boxed and warns on a mismatch, which is what caught this. Never feature a field without
+reading its crop.
 
 ## Cost
 

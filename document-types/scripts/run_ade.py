@@ -101,6 +101,13 @@ def main() -> None:
         choices=sorted(PARSE_MODELS),
         help="parse model; names the output files (default: pro)",
     )
+    parser.add_argument(
+        "--extract-only",
+        action="store_true",
+        help="reuse the committed parse output and only re-run extraction. Use this "
+             "when iterating on schema.json: re-parsing a long document is the "
+             "expensive half and the markdown does not change.",
+    )
     args = parser.parse_args()
 
     folder = COLLECTION / args.slug
@@ -120,28 +127,39 @@ def main() -> None:
 
     client = LandingAIADE()
 
-    print(f"Parsing {document.name} with {parse_model} ({SERVICE_TIER} tier) ...")
-    parse_job = client.v2.parse_jobs.create(
-        document=document,
-        model=parse_model,
-        service_tier=SERVICE_TIER,
-    )
-    parse_done = client.v2.parse_jobs.wait(
-        parse_job.job_id, timeout=JOB_TIMEOUT_S, raise_on_failure=True
-    )
-    parse_result = parse_done.result
+    parse_md_path = folder / f"parse-{args.model}.md"
+    parse_credits = 0.0
 
-    write_json(parse_result, folder / f"parse-{args.model}.json")
-    # Keep the trailing `doc_id` comment: v2 Extract reads it to link the extraction
-    # back to this parse job.
-    (folder / f"parse-{args.model}.md").write_text(parse_result.markdown, encoding="utf-8")
+    if args.extract_only:
+        if not parse_md_path.is_file():
+            sys.exit(f"--extract-only needs {parse_md_path}, which does not exist.")
+        markdown = parse_md_path.read_text(encoding="utf-8")
+        print(f"Reusing {parse_md_path.name} ({len(markdown):,} chars); not re-parsing.")
+    else:
+        print(f"Parsing {document.name} with {parse_model} ({SERVICE_TIER} tier) ...")
+        parse_job = client.v2.parse_jobs.create(
+            document=document,
+            model=parse_model,
+            service_tier=SERVICE_TIER,
+        )
+        parse_done = client.v2.parse_jobs.wait(
+            parse_job.job_id, timeout=JOB_TIMEOUT_S, raise_on_failure=True
+        )
+        parse_result = parse_done.result
 
-    failed = parse_result.metadata.failed_pages or []
-    print(f"  {parse_result.metadata.page_count} page(s)" + (f", FAILED: {failed}" if failed else ""))
+        write_json(parse_result, folder / f"parse-{args.model}.json")
+        # Keep the trailing `doc_id` comment: v2 Extract reads it to link the extraction
+        # back to this parse job.
+        parse_md_path.write_text(parse_result.markdown, encoding="utf-8")
+        markdown = parse_result.markdown
+        parse_credits = credits_of(parse_result)
+
+        failed = parse_result.metadata.failed_pages or []
+        print(f"  {parse_result.metadata.page_count} page(s)" + (f", FAILED: {failed}" if failed else ""))
 
     print(f"Extracting with {EXTRACT_MODEL} ({SERVICE_TIER} tier) ...")
     extract_job = client.v2.extract_jobs.create(
-        markdown=parse_result.markdown,
+        markdown=markdown,
         schema=schema,
         model=EXTRACT_MODEL,
         service_tier=SERVICE_TIER,
@@ -163,9 +181,10 @@ def main() -> None:
     found = sum(1 for v in extract_result.extraction.values() if v not in (None, "", []))
     print(f"  {found}/{len(extract_result.extraction)} top-level fields populated")
 
-    total = credits_of(parse_result) + credits_of(extract_result)
-    print(f"\nWrote parse-{args.model}.json, parse-{args.model}.md, "
-          f"extract-{args.model}.json to {folder}")
+    total = parse_credits + credits_of(extract_result)
+    written = (f"extract-{args.model}.json" if args.extract_only else
+               f"parse-{args.model}.json, parse-{args.model}.md, extract-{args.model}.json")
+    print(f"\nWrote {written} to {folder}")
     print(f"Credits used: {total:.2f} ({SERVICE_TIER} tier)")
     print(f"\nNext: python document-types/scripts/build_images.py {args.slug}")
 

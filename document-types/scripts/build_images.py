@@ -290,6 +290,24 @@ def main() -> None:
     if not located:
         sys.exit("\nNothing could be located. Images not written.")
 
+    # A web page can realistically embed one page overlay, so every featured field
+    # should live on the same page. Declaring it in the manifest turns that from an
+    # assumption into something the script checks.
+    feature_page = manifest.get("feature_page")
+    if feature_page is not None:
+        stray = {p: [i["path"] for i in items]
+                 for p, items in located.items() if p != feature_page}
+        if stray:
+            print(f"\n  WARNING: manifest declares feature_page {feature_page}, but "
+                  f"fields also resolved on {sorted(stray)}:")
+            for page_number, paths in sorted(stray.items()):
+                for path in paths:
+                    print(f"      page {page_number}: {path}")
+            print("      A page overlay can only show one page. Either pick fields from "
+                  "one page or change feature_page.")
+        elif len(located) == 1:
+            print(f"\n  All featured fields are on page {feature_page}, as declared.")
+
     print("\nWriting images ...")
     for page_number, items in sorted(located.items()):
         page_img = render_page(document, page_number)

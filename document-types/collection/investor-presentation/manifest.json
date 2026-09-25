@@ -14,32 +14,33 @@
       "clearance_note": "Investor relations material published by a public company (NYSE American: PRK) for general distribution. No personal data beyond named executives in their professional capacity."
     }
   },
+  "feature_page": 35,
   "fields": [
     {
-      "path": "company_name",
-      "label": "Company name",
+      "path": "installment_lending.indirect_loans",
+      "label": "Indirect loans",
       "occurrence": 0
     },
     {
-      "path": "ticker",
-      "label": "Ticker",
+      "path": "installment_lending.weighted_average_fico",
+      "label": "Weighted average FICO",
       "occurrence": 0
     },
     {
-      "path": "total_assets",
-      "label": "Total assets",
-      "occurrence": 1
-    },
-    {
-      "path": "headquarters",
-      "label": "Headquarters",
+      "path": "installment_lending.portfolio_by_credit_tier[0].fico_range",
+      "label": "Premier FICO range",
       "occurrence": 0
     },
     {
-      "path": "as_of_date",
-      "label": "As-of date",
+      "path": "installment_lending.portfolio_by_credit_tier[3].fico_range",
+      "label": "Tier B FICO range",
+      "occurrence": 0
+    },
+    {
+      "path": "installment_lending.portfolio_by_credit_tier[5].share_of_portfolio_percent",
+      "label": "Tier D share",
       "occurrence": 0
     }
   ],
-  "notes": "total_assets is pinned to occurrence 1: occurrence 0 grounds to a table cell reading '$ 9,805', which supports the value but does not show it."
+  "notes": "All featured fields are on page 35 (Installment Lending Portfolio) so one page overlay shows every one; feature_page is enforced by build_images.py. Fields were chosen for grounding accuracy, not just interest: on this document the array elements of balances_by_origination_year and the tier/share pairs ground one cell off \u2014 see README.md. Values are correct throughout; only the ranges are shifted."
 }
