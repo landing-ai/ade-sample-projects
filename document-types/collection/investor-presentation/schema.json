@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "The full legal name of the company presenting"
+    },
+    "ticker": {
+      "type": ["string", "null"],
+      "description": "Stock ticker symbol, including the exchange if stated, e.g. 'NYSE American: PRK'"
+    },
+    "fiscal_period": {
+      "type": ["string", "null"],
+      "description": "The fiscal period the presentation covers, e.g. 'Q4 2025'"
+    },
+    "as_of_date": {
+      "type": ["string", "null"],
+      "description": "The as-of date for the financial figures, as YYYY-MM-DD"
+    },
+    "headquarters": {
+      "type": ["string", "null"],
+      "description": "City and state of the company headquarters"
+    },
+    "total_assets": {
+      "type": ["string", "null"],
+      "description": "Total assets as stated, including units, e.g. '$9.8 billion'"
+    },
+    "business_description": {
+      "type": ["string", "null"],
+      "description": "One sentence describing what the company does"
+    }
+  }
+}

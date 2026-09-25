@@ -113,6 +113,23 @@ def locate(parse: dict, field_range: dict) -> tuple[int, dict] | None:
     return None
 
 
+def value_appears_in(value: Any, source: str) -> bool:
+    """Is the extracted value visible in the text that was boxed? Compared loosely:
+    ADE normalizes as it extracts, so "2025-12-31" may be grounded to "December 31,
+    2025" and 3099.67 to "$ 3,099.67"."""
+    if value is None:
+        return True
+    text = source.lower()
+    literal = str(value).lower().strip()
+    if literal and literal in text:
+        return True
+    # Numbers: compare digits only, so thousands separators and currency do not matter.
+    digits = "".join(c for c in literal if c.isdigit())
+    if digits and len(digits) >= 3:
+        return digits in "".join(c for c in text if c.isdigit())
+    return False
+
+
 def flatten(metadata: Any, prefix: str = "") -> dict[str, dict]:
     """Walk extraction_metadata into {dotted.path: {value, ranges}}."""
     out: dict[str, dict] = {}
@@ -248,6 +265,23 @@ def main() -> None:
         if not hit:
             print(f"  {path}: range did not fall inside any block")
             continue
+
+        # A value can be grounded to text that supports it without containing it --
+        # "$9.8 billion" grounded to a table cell reading "$ 9,805". Both are right, but
+        # a crop whose text does not match the value shown beside it reads as a mistake.
+        # Warn, and name the alternatives, since another occurrence often matches.
+        source = extract["markdown"][ranges[index]["start"]:ranges[index]["end"]]
+        if not value_appears_in(meta["value"], source):
+            better = [
+                i for i, r in enumerate(ranges)
+                if i != index and value_appears_in(
+                    meta["value"], extract["markdown"][r["start"]:r["end"]]
+                )
+            ]
+            print(f"  {path}: value {meta['value']!r} is NOT in the boxed text "
+                  f"{source.strip()[:40]!r}")
+            if better:
+                print(f"      occurrence {better[0]} does contain it — consider pinning it")
 
         page_number, box = hit
         located.setdefault(page_number, []).append({"path": path, "box": box})

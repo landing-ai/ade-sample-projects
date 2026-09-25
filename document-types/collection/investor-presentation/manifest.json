@@ -1,0 +1,45 @@
+{
+  "slug": "investor-presentation",
+  "title": "Investor presentation",
+  "source": {
+    "file": "Q4-2025-Investor-Slides.pdf",
+    "pages": 43,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://s201.q4cdn.com/960710146/files/doc_presentations/2026/Feb/09/Q4-2025-Investor-Slides.pdf",
+      "publisher": "Park National Corporation",
+      "title": "Q4 2025 Investor Slides",
+      "retrieved": "2026-09-25",
+      "clearance": "public",
+      "clearance_note": "Investor relations material published by a public company (NYSE American: PRK) for general distribution. No personal data beyond named executives in their professional capacity."
+    }
+  },
+  "fields": [
+    {
+      "path": "company_name",
+      "label": "Company name",
+      "occurrence": 0
+    },
+    {
+      "path": "ticker",
+      "label": "Ticker",
+      "occurrence": 0
+    },
+    {
+      "path": "total_assets",
+      "label": "Total assets",
+      "occurrence": 1
+    },
+    {
+      "path": "headquarters",
+      "label": "Headquarters",
+      "occurrence": 0
+    },
+    {
+      "path": "as_of_date",
+      "label": "As-of date",
+      "occurrence": 0
+    }
+  ],
+  "notes": "total_assets is pinned to occurrence 1: occurrence 0 grounds to a table cell reading '$ 9,805', which supports the value but does not show it."
+}

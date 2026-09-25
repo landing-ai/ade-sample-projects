@@ -77,8 +77,23 @@ These documents and their extracted values go on a public website.
 - Realistic samples will contain plausible personal data. It must be obviously
   non-real on inspection and must not collide with a real identifier.
 
-Each folder's `README.md` records where its document came from and that it is cleared.
-That record travels with the document rather than living in a separate tracker.
+Provenance lives in `manifest.json` under `source.origin`, so the authoring tooling can
+read it and put an attribution on the page without anyone retyping it:
+
+```json
+"origin": {
+  "url": "https://…",
+  "publisher": "Park National Corporation",
+  "title": "Q4 2025 Investor Slides",
+  "retrieved": "2026-09-25",
+  "clearance": "public",
+  "clearance_note": "Investor relations material published for general distribution."
+}
+```
+
+`clearance` is `public`, `synthetic`, `cleared`, or `PLACEHOLDER` for a sample still
+awaiting a proper one — greppable across the collection, so outstanding work is visible
+rather than buried in prose. Each folder's `README.md` carries the human-readable version.
 
 ## Highlight style
 
