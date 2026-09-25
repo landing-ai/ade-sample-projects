@@ -41,8 +41,18 @@ COLLECTION = REPO_ROOT / "document-types" / "collection"
 
 # One look across the whole library. Changing these changes every page, which is the
 # point — the images sit side by side and must not drift.
-BOX_RGB = (220, 38, 38)
-BOX_WIDTH_PX = 3
+#
+# Highlighter, not error marker: a translucent fill marks the *region* a value came
+# from, which an outline alone does not. Side by side at page scale the difference is
+# large — an outline makes the eye find a line and then work out what it encloses.
+# Amber rather than red because red reads as "something is wrong", and the message here
+# is that the value was found correctly.
+BOX_RGB = (217, 119, 6)            # amber border
+FILL_RGBA = (250, 204, 21, 70)     # translucent yellow, ~27% alpha
+# Fraction of the image's short side, not a pixel count: a fixed width is proportionally
+# far heavier on a 240px crop than on a 1200px page render.
+BOX_WIDTH_FRAC = 0.0035
+BOX_WIDTH_MIN_PX = 2
 CROP_PAD_X = 0.035          # fraction of page width added around a crop
 CROP_PAD_Y = 0.020          # fraction of page height
 RENDER_SCALE = 2.0          # 144 DPI; sharp on high-DPI screens without bloating files
@@ -132,12 +142,24 @@ def render_page(document: Path, page_number: int) -> Image.Image:
         return Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
 
 
-def draw_box(img: Image.Image, box: dict) -> None:
+def stroke_width(img: Image.Image) -> int:
+    return max(BOX_WIDTH_MIN_PX, int(min(img.size) * BOX_WIDTH_FRAC))
+
+
+def highlight(img: Image.Image, xy: list[float]) -> Image.Image:
+    """Translucent fill then border. Returns a new image; alpha compositing cannot be
+    done in place on an RGB canvas."""
+    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(layer).rectangle(xy, fill=FILL_RGBA)
+    out = Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
+    ImageDraw.Draw(out).rectangle(xy, outline=BOX_RGB, width=stroke_width(out))
+    return out
+
+
+def draw_box(img: Image.Image, box: dict) -> Image.Image:
     w, h = img.size
-    ImageDraw.Draw(img).rectangle(
-        [box["xmin"] * w, box["ymin"] * h, box["xmax"] * w, box["ymax"] * h],
-        outline=BOX_RGB,
-        width=BOX_WIDTH_PX,
+    return highlight(
+        img, [box["xmin"] * w, box["ymin"] * h, box["xmax"] * w, box["ymax"] * h]
     )
 
 
@@ -239,28 +261,17 @@ def main() -> None:
         page_img = render_page(document, page_number)
 
         for item in items:
-            crop = crop_around(page_img, item["box"])
-            # Draw on the crop, not the page, so the stroke is not scaled down twice.
-            crop_box = item["box"]
-            w, h = page_img.size
-            offset_x = max(0.0, crop_box["xmin"] - CROP_PAD_X) * w
-            offset_y = max(0.0, crop_box["ymin"] - CROP_PAD_Y) * h
-            ImageDraw.Draw(crop).rectangle(
-                [
-                    crop_box["xmin"] * w - offset_x,
-                    crop_box["ymin"] * h - offset_y,
-                    crop_box["xmax"] * w - offset_x,
-                    crop_box["ymax"] * h - offset_y,
-                ],
-                outline=BOX_RGB,
-                width=BOX_WIDTH_PX,
-            )
+            # Highlight on the full page first, then crop, so the stroke is in page
+            # coordinates and every crop carries the same visual weight regardless of
+            # how large the region happens to be.
+            marked = draw_box(page_img, item["box"])
+            crop = crop_around(marked, item["box"])
             name = item["path"].replace(".", "-").replace("[", "-").replace("]", "")
             save(crop, images_dir / f"{name}.png")
 
-        annotated = page_img.copy()
+        annotated = page_img
         for item in items:
-            draw_box(annotated, item["box"])
+            annotated = draw_box(annotated, item["box"])
         save(annotated, images_dir / f"page-{page_number}.png", MAX_PAGE_WIDTH_PX)
 
     print(f"\nWrote {images_dir}")

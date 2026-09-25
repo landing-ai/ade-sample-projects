@@ -80,6 +80,24 @@ These documents and their extracted values go on a public website.
 Each folder's `README.md` records where its document came from and that it is cleared.
 That record travels with the document rather than living in a separate tracker.
 
+## Highlight style
+
+A translucent yellow fill with an amber border, not an outline. The fill marks the
+*region* a value came from; an outline only marks its boundary, which at page scale
+makes the eye find a line and then work out what it encloses. Amber rather than red,
+because red reads as "something is wrong" and the message is that the value was found
+correctly.
+
+Stroke width is a fraction of the image's short side rather than a pixel count, so a
+240px crop and a 1200px page render carry the same visual weight.
+
+The constants sit at the top of `build_images.py`. Changing them changes every page,
+which is the point — these images sit side by side in a library and must not drift.
+
+> **Untested on dark documents.** Translucent yellow over a white page is obvious;
+> over a dark slide it may be invisible or ugly. The pitch deck sample will be the
+> first real test, and may need a second treatment.
+
 ## Service tier and models
 
 Everything runs through the **jobs APIs at the `standard` service tier**, which costs half
