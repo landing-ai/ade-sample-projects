@@ -1,0 +1,843 @@
+{
+  "type": "object",
+  "properties": {
+    "tax_year": {
+      "description": "The calendar year for which the tax statement is issued.",
+      "format": "YYYY",
+      "x-alternativeNames": [
+        "Tax Year",
+        "Year",
+        "Reporting Year"
+      ],
+      "type": "string"
+    },
+    "statement_date": {
+      "description": "The date when the consolidated tax statement was generated or issued.",
+      "format": "YYYY-MM-DD",
+      "x-alternativeNames": [
+        "Statement Date",
+        "Document Date",
+        "Information As Of Date"
+      ],
+      "type": "string"
+    },
+    "includes_1099_int": {
+      "description": "Indicates if a Form 1099-INT is included in this consolidated statement.",
+      "x-alternativeNames": [
+        "Has 1099-INT",
+        "1099-INT Present",
+        "Is 1099-INT Included"
+      ],
+      "type": "boolean"
+    },
+    "includes_1099_b": {
+      "description": "Indicates if a Form 1099-B is included in this consolidated statement.",
+      "x-alternativeNames": [
+        "Has 1099-B",
+        "1099-B Present",
+        "Is 1099-B Included"
+      ],
+      "type": "boolean"
+    },
+    "includes_1099_oid": {
+      "description": "Indicates if a Form 1099-OID is included in this consolidated statement.",
+      "x-alternativeNames": [
+        "Has 1099-OID",
+        "1099-OID Present",
+        "Is 1099-OID Included"
+      ],
+      "type": "boolean"
+    },
+    "includes_1099_div": {
+      "description": "Indicates if a Form 1099-DIV is included in this consolidated statement.",
+      "x-alternativeNames": [
+        "Has 1099-DIV",
+        "1099-DIV Present",
+        "Is 1099-DIV Included"
+      ],
+      "type": "boolean"
+    },
+    "includes_1099_misc": {
+      "description": "Indicates if a Form 1099-MISC is included in this consolidated statement.",
+      "x-alternativeNames": [
+        "Has 1099-MISC",
+        "1099-MISC Present",
+        "Is 1099-MISC Included"
+      ],
+      "type": "boolean"
+    },
+    "includes_1099_cmb": {
+      "description": "Indicates if a Form 1099-CMB is included in this consolidated statement.",
+      "x-alternativeNames": [
+        "Has 1099-CMB",
+        "1099-CMB Present",
+        "Is 1099-CMB Included"
+      ],
+      "type": "boolean"
+    },
+    "brokerage_information": {
+      "description": "Contains details about the financial institution or brokerage firm issuing the consolidated tax statement.",
+      "x-alternativeNames": [
+        "Brokerage Information",
+        "Payer Information",
+        "Issuer Details"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The full legal name of the brokerage firm or financial institution that issued the tax document.",
+          "x-alternativeNames": [
+            "Brokerage Name",
+            "Payer Name",
+            "Issuer Name"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "The complete mailing address of the brokerage firm or financial institution.",
+          "x-alternativeNames": [
+            "Brokerage Address",
+            "Payer Address",
+            "Issuer Address"
+          ],
+          "type": "string"
+        },
+        "city": {
+          "description": "The city component of the brokerage firm's mailing address.",
+          "x-alternativeNames": [
+            "Brokerage City",
+            "Payer City",
+            "Issuer City"
+          ],
+          "type": "string"
+        },
+        "state": {
+          "description": "The state component of the brokerage firm's mailing address.",
+          "x-alternativeNames": [
+            "Brokerage State",
+            "Payer State",
+            "Issuer State"
+          ],
+          "type": "string"
+        },
+        "zip_code": {
+          "description": "The postal code component of the brokerage firm's mailing address.",
+          "format": "XXXXX or XXXXX-XXXX",
+          "x-alternativeNames": [
+            "Brokerage Zip Code",
+            "Payer Zip Code",
+            "Issuer Zip Code"
+          ],
+          "type": "string"
+        },
+        "phone_number": {
+          "description": "The primary contact phone number for the brokerage firm.",
+          "format": "+1-XXX-XXX-XXXX",
+          "x-alternativeNames": [
+            "Brokerage Phone Number",
+            "Payer Phone Number",
+            "Customer Service Phone"
+          ],
+          "type": "string"
+        },
+        "payer_tin": {
+          "description": "The Taxpayer Identification Number (TIN) of the brokerage firm issuing the document.",
+          "x-alternativeNames": [
+            "Payer TIN",
+            "Brokerage TIN",
+            "Brokerage Tax ID"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address",
+        "city",
+        "state",
+        "zip_code",
+        "phone_number",
+        "payer_tin"
+      ]
+    },
+    "account_holder_information": {
+      "description": "Details pertaining to the individual or entity who owns the account.",
+      "x-alternativeNames": [
+        "Account Holder Information",
+        "Recipient Information",
+        "Client Details"
+      ],
+      "type": "object",
+      "properties": {
+        "account_number": {
+          "description": "The unique identifier assigned to the account by the brokerage firm.",
+          "x-alternativeNames": [
+            "Account Number",
+            "Client Account",
+            "Customer Account"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "description": "The full name of the account holder or recipient of the tax document.",
+          "x-alternativeNames": [
+            "Account Name",
+            "Recipient Name",
+            "Customer Name"
+          ],
+          "type": "string"
+        },
+        "recipient_tin": {
+          "description": "The Taxpayer Identification Number (TIN) of the account holder, which can be an SSN, ITIN, or EIN.",
+          "x-alternativeNames": [
+            "Recipient TIN",
+            "Taxpayer Identification Number",
+            "SSN"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "The street address of the account holder.",
+          "x-alternativeNames": [
+            "Recipient Address",
+            "Account Holder Address",
+            "Customer Address"
+          ],
+          "type": "string"
+        },
+        "city": {
+          "description": "The city where the account holder resides.",
+          "x-alternativeNames": [
+            "Recipient City",
+            "Account Holder City",
+            "Customer City"
+          ],
+          "type": "string"
+        },
+        "zip_code": {
+          "description": "The postal code of the account holder's address.",
+          "format": "XXXXX-XXXX",
+          "x-alternativeNames": [
+            "Recipient Zip Code",
+            "Account Holder Zip Code",
+            "Customer Zip Code"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "account_number",
+        "name",
+        "recipient_tin",
+        "address",
+        "city",
+        "zip_code"
+      ]
+    },
+    "financial_advisor_information": {
+      "description": "Information about the financial advisor associated with the account, if present.",
+      "x-alternativeNames": [
+        "Financial Advisor",
+        "Advisor Details",
+        "Contact Person"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The full name of the financial advisor.",
+          "x-alternativeNames": [
+            "Advisor Name",
+            "Financial Advisor Name",
+            "Contact Name"
+          ],
+          "type": "string"
+        },
+        "phone_number": {
+          "description": "The primary contact phone number for the financial advisor.",
+          "format": "+1-XXX-XXX-XXXX",
+          "x-alternativeNames": [
+            "Advisor Phone",
+            "Financial Advisor Phone",
+            "Contact Phone"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "description": "The email address of the financial advisor.",
+          "format": "email",
+          "x-alternativeNames": [
+            "Advisor Email",
+            "Financial Advisor Email",
+            "Contact Email"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "phone_number",
+        "email"
+      ]
+    },
+    "form_1099_div": {
+      "description": "Contains all reported information related to dividends and distributions for Form 1099-DIV.",
+      "x-alternativeNames": [
+        "Form 1099-DIV",
+        "1099-DIV Summary",
+        "Dividend Information"
+      ],
+      "type": "object",
+      "properties": {
+        "summary": {
+          "description": "Summary of dividend and distribution amounts as reported in the boxes of Form 1099-DIV.",
+          "x-alternativeNames": [
+            "1099-DIV Summary",
+            "Dividend Summary",
+            "Form 1099-DIV Box Totals"
+          ],
+          "type": "object",
+          "properties": {
+            "total_ordinary_dividends": {
+              "description": "The total amount of ordinary dividends reported in Box 1a of Form 1099-DIV.",
+              "x-alternativeNames": [
+                "Total Ordinary Dividends",
+                "Ordinary Dividends Total",
+                "Box 1a Total Ordinary Dividends"
+              ],
+              "type": "number"
+            },
+            "qualified_dividends": {
+              "description": "The portion of ordinary dividends that are considered qualified dividends for tax purposes, reported in Box 1b.",
+              "x-alternativeNames": [
+                "Qualified Dividends",
+                "Box 1b Qualified Dividends",
+                "Qualified Dividend Amount"
+              ],
+              "type": "number"
+            },
+            "total_capital_gain_distributions": {
+              "description": "The total amount of capital gain distributions reported in Box 2a of Form 1099-DIV.",
+              "x-alternativeNames": [
+                "Total Capital Gain Distributions",
+                "Capital Gain Distributions Total",
+                "Box 2a Total Capital Gain Distributions"
+              ],
+              "type": "number"
+            },
+            "unrecaptured_section_1250_gain": {
+              "description": "The amount of unrecaptured section 1250 gain included in Box 2a, reported in Box 2b.",
+              "x-alternativeNames": [
+                "Unrecaptured Section 1250 Gain",
+                "Box 2b Unrecaptured Section 1250 Gain"
+              ],
+              "type": "number"
+            },
+            "section_897_gain": {
+              "description": "The amount of section 897 gain included in Box 2a, reported in Box 2c.",
+              "x-alternativeNames": [
+                "Section 897 Gain",
+                "Box 2c Section 897 Gain"
+              ],
+              "type": "number"
+            },
+            "collectibles_gain": {
+              "description": "The amount of collectibles gain included in Box 2a, reported in Box 2d.",
+              "x-alternativeNames": [
+                "Collectibles Gain",
+                "Box 2d Collectibles Gain"
+              ],
+              "type": "number"
+            },
+            "nondividend_distributions": {
+              "description": "Distributions that are not dividends, such as return of capital, reported in Box 3.",
+              "x-alternativeNames": [
+                "Nondividend Distributions",
+                "Box 3 Nondividend Distributions"
+              ],
+              "type": "number"
+            },
+            "federal_income_tax_withheld": {
+              "description": "The amount of federal income tax withheld from dividends and distributions, reported in Box 4.",
+              "x-alternativeNames": [
+                "Federal Income Tax Withheld",
+                "Federal Withholding",
+                "Box 4 Backup Withholding"
+              ],
+              "type": "number"
+            },
+            "investment_expenses": {
+              "description": "Expenses related to investment income, reported in Box 5.",
+              "x-alternativeNames": [
+                "Investment Expenses",
+                "Box 5 Investment Expenses"
+              ],
+              "type": "number"
+            },
+            "foreign_tax_paid": {
+              "description": "The amount of foreign tax paid on dividends and distributions, reported in Box 6.",
+              "x-alternativeNames": [
+                "Foreign Tax Paid",
+                "Box 6 Foreign Tax Paid"
+              ],
+              "type": "number"
+            },
+            "foreign_country_or_us_possession": {
+              "description": "The name of the foreign country or U.S. possession to which foreign tax was paid, reported in Box 7.",
+              "x-alternativeNames": [
+                "Foreign Country or U.S. Possession",
+                "Box 7 Foreign Country"
+              ],
+              "type": "string"
+            },
+            "cash_liquidation_distributions": {
+              "description": "Cash received from liquidation distributions, reported in Box 8.",
+              "x-alternativeNames": [
+                "Cash Liquidation Distributions",
+                "Box 8 Cash Liquidation"
+              ],
+              "type": "number"
+            },
+            "noncash_liquidation_distributions": {
+              "description": "Fair market value of noncash property received from liquidation distributions, reported in Box 9.",
+              "x-alternativeNames": [
+                "Noncash Liquidation Distributions",
+                "Box 9 Noncash Liquidation"
+              ],
+              "type": "number"
+            },
+            "exempt_interest_dividends": {
+              "description": "The amount of exempt-interest dividends, reported in Box 10.",
+              "x-alternativeNames": [
+                "Exempt-Interest Dividends",
+                "Box 10 Exempt-Interest Dividends"
+              ],
+              "type": "number"
+            },
+            "specified_private_activity_bond_interest_dividends": {
+              "description": "The portion of exempt-interest dividends that are from specified private activity bonds, reported in Box 11.",
+              "x-alternativeNames": [
+                "Specified Private Activity Bond Interest Dividends",
+                "Box 11 Specified Private Activity Bond Interest Dividends"
+              ],
+              "type": "number"
+            }
+          },
+          "required": [
+            "total_ordinary_dividends",
+            "qualified_dividends",
+            "total_capital_gain_distributions",
+            "unrecaptured_section_1250_gain",
+            "section_897_gain",
+            "collectibles_gain",
+            "nondividend_distributions",
+            "federal_income_tax_withheld",
+            "investment_expenses",
+            "foreign_tax_paid",
+            "foreign_country_or_us_possession",
+            "cash_liquidation_distributions",
+            "noncash_liquidation_distributions",
+            "exempt_interest_dividends",
+            "specified_private_activity_bond_interest_dividends"
+          ]
+        },
+        "details": {
+          "description": "A list of individual dividend or distribution transactions throughout the year.",
+          "x-alternativeNames": [
+            "Dividend Details",
+            "Distribution Details",
+            "Transaction Details"
+          ],
+          "type": "array",
+          "items": {
+            "description": "Item in details",
+            "type": "object",
+            "properties": {
+              "description": {
+                "description": "A description of the security or the type of dividend/distribution.",
+                "x-alternativeNames": [
+                  "Description",
+                  "Security Description",
+                  "Dividend Type"
+                ],
+                "type": "string"
+              },
+              "date": {
+                "description": "The date of the dividend or distribution transaction.",
+                "format": "YYYY-MM-DD",
+                "x-alternativeNames": [
+                  "Date",
+                  "Record Date",
+                  "Payment Date"
+                ],
+                "type": "string"
+              },
+              "amount": {
+                "description": "The amount of the individual dividend or distribution.",
+                "x-alternativeNames": [
+                  "Amount",
+                  "Distribution Amount",
+                  "Dividend Amount"
+                ],
+                "type": "number"
+              },
+              "type": {
+                "description": "The type of dividend (e.g., ordinary, qualified, capital gain).",
+                "x-alternativeNames": [
+                  "Type",
+                  "Dividend Category",
+                  "Distribution Type"
+                ],
+                "type": "string"
+              },
+              "CUSIP": {
+                "description": "If provided, the 9-character alphanumeric CUSIP code.",
+                "type": "string"
+              },
+              "symbol": {
+                "description": "The symbol for the security in capital letters.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "description",
+              "date",
+              "amount",
+              "type",
+              "CUSIP",
+              "symbol"
+            ]
+          }
+        }
+      },
+      "required": [
+        "summary",
+        "details"
+      ]
+    },
+    "form_1099_int": {
+      "description": "This object contains all fields related to the 1099-INT tax form, which reports interest income.",
+      "x-alternativeNames": [
+        "Form 1099-INT",
+        "Interest Income Form",
+        "Interest Statement"
+      ],
+      "type": "object",
+      "properties": {
+        "interest_income": {
+          "description": "The total amount of interest income received during the tax year.",
+          "x-alternativeNames": [
+            "Interest Income",
+            "Taxable Interest",
+            "Total Interest"
+          ],
+          "type": "number"
+        },
+        "federal_income_tax_withheld": {
+          "description": "The amount of federal income tax withheld from interest payments.",
+          "x-alternativeNames": [
+            "Federal Income Tax Withheld",
+            "Federal Tax Withheld",
+            "Withholding Tax"
+          ],
+          "type": "number"
+        }
+      },
+      "required": [
+        "interest_income",
+        "federal_income_tax_withheld"
+      ]
+    },
+    "form_1099_b": {
+      "description": "This object contains all fields related to the 1099-B tax form, which reports proceeds from broker and barter exchange transactions.",
+      "x-alternativeNames": [
+        "Form 1099-B",
+        "Broker and Barter Exchange Transactions",
+        "Investment Sales"
+      ],
+      "type": "object",
+      "properties": {
+        "summary": {
+          "description": "Summary of proceeds, gains, and losses as reported in the boxes of Form 1099-B.",
+          "x-alternativeNames": [
+            "1099-B Summary",
+            "Sales Summary",
+            "Form 1099-B Box Totals"
+          ],
+          "type": "object",
+          "properties": {
+            "proceeds_from_broker_or_barter_exchange_transactions": {
+              "description": "The total gross proceeds from sales or exchanges, reported in Box 1a.",
+              "x-alternativeNames": [
+                "Proceeds from Broker or Barter Exchange Transactions",
+                "Box 1a Proceeds"
+              ],
+              "type": "number"
+            },
+            "federal_income_tax_withheld": {
+              "description": "The amount of federal income tax withheld from the proceeds, reported in Box 4.",
+              "x-alternativeNames": [
+                "Federal Income Tax Withheld",
+                "Federal Tax Withholding",
+                "Box 4 Backup Withholding"
+              ],
+              "type": "number"
+            },
+            "wash_sale_loss_disallowed": {
+              "description": "The amount of wash sale loss disallowed, reported in Box 1g.",
+              "x-alternativeNames": [
+                "Wash Sale Loss Disallowed",
+                "Box 1g Wash Sale Loss Disallowed"
+              ],
+              "type": "number"
+            },
+            "market_discount": {
+              "description": "The amount of market discount, reported in Box 1f.",
+              "x-alternativeNames": [
+                "Market Discount",
+                "Box 1f Market Discount"
+              ],
+              "type": "number"
+            }
+          },
+          "required": [
+            "proceeds_from_broker_or_barter_exchange_transactions",
+            "federal_income_tax_withheld",
+            "wash_sale_loss_disallowed",
+            "market_discount"
+          ]
+        },
+        "details": {
+          "description": "A list of individual security sale or exchange transactions throughout the year.",
+          "x-alternativeNames": [
+            "Transaction Details",
+            "Sales Details",
+            "Security Transactions"
+          ],
+          "type": "array",
+          "items": {
+            "description": "Item in details",
+            "type": "object",
+            "properties": {
+              "description_of_property": {
+                "description": "A description of the property or security sold.",
+                "x-alternativeNames": [
+                  "Description of Property",
+                  "Security Description",
+                  "Asset Name"
+                ],
+                "type": "string"
+              },
+              "date_acquired": {
+                "description": "The date the property was acquired.",
+                "format": "YYYY-MM-DD",
+                "x-alternativeNames": [
+                  "Date Acquired",
+                  "Purchase Date",
+                  "Acquisition Date"
+                ],
+                "type": "string"
+              },
+              "date_sold": {
+                "description": "The date the property was sold.",
+                "format": "YYYY-MM-DD",
+                "x-alternativeNames": [
+                  "Date Sold",
+                  "Sale Date",
+                  "Disposition Date"
+                ],
+                "type": "string"
+              },
+              "proceeds": {
+                "description": "The gross proceeds from the sale.",
+                "x-alternativeNames": [
+                  "Proceeds",
+                  "Sales Price",
+                  "Gross Proceeds"
+                ],
+                "type": "number"
+              },
+              "cost_basis": {
+                "description": "The original cost or other basis of the property.",
+                "x-alternativeNames": [
+                  "Cost Basis",
+                  "Original Cost",
+                  "Basis Amount"
+                ],
+                "type": "number"
+              },
+              "wash_sale_loss_disallowed": {
+                "description": "Any wash sale loss disallowed for this specific transaction.",
+                "x-alternativeNames": [
+                  "Wash Sale Loss Disallowed",
+                  "Wash Sale Adjustment"
+                ],
+                "type": "number"
+              },
+              "market_discount": {
+                "description": "Any market discount for this specific transaction.",
+                "x-alternativeNames": [
+                  "Market Discount",
+                  "Discount Amount"
+                ],
+                "type": "number"
+              },
+              "gain_or_loss": {
+                "description": "The calculated gain or loss for the transaction.",
+                "x-alternativeNames": [
+                  "Gain or Loss",
+                  "Net Gain/Loss",
+                  "Profit/Loss"
+                ],
+                "type": "number"
+              },
+              "holding_period": {
+                "description": "Indicates if the holding period was short-term or long-term.",
+                "x-alternativeNames": [
+                  "Holding Period",
+                  "Term"
+                ],
+                "enum": [
+                  "short-term",
+                  "long-term",
+                  "unknown"
+                ]
+              },
+              "covered_security": {
+                "description": "Indicates if the security is a covered security and basis was reported to the IRS.",
+                "x-alternativeNames": [
+                  "Covered Security",
+                  "Basis Reported to IRS"
+                ],
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "description_of_property",
+              "date_acquired",
+              "date_sold",
+              "proceeds",
+              "cost_basis",
+              "wash_sale_loss_disallowed",
+              "market_discount",
+              "gain_or_loss",
+              "holding_period",
+              "covered_security"
+            ]
+          }
+        }
+      },
+      "required": [
+        "summary",
+        "details"
+      ]
+    },
+    "form_1099_oid": {
+      "description": "Summary information related to Original Issue Discount (OID) for the tax year.",
+      "x-alternativeNames": [
+        "Form 1099-OID",
+        "OID Information",
+        "Original Issue Discount"
+      ],
+      "type": "object",
+      "properties": {
+        "original_issue_discount_for_the_year": {
+          "description": "The total amount of original issue discount for the current tax year.",
+          "x-alternativeNames": [
+            "Original Issue Discount for the Year",
+            "OID for the Year",
+            "Annual OID"
+          ],
+          "type": "number"
+        }
+      },
+      "required": [
+        "original_issue_discount_for_the_year"
+      ]
+    },
+    "form_1099_misc": {
+      "description": "Summary information related to miscellaneous income for the tax year.",
+      "x-alternativeNames": [
+        "Form 1099-MISC",
+        "Miscellaneous Income",
+        "MISC Information"
+      ],
+      "type": "object",
+      "properties": {
+        "other_income": {
+          "description": "The total amount of other miscellaneous income reported on Form 1099-MISC.",
+          "x-alternativeNames": [
+            "Other Income",
+            "Miscellaneous Income",
+            "Additional Income"
+          ],
+          "type": "number"
+        },
+        "federal_income_tax_withheld": {
+          "description": "The amount of federal income tax withheld from miscellaneous income.",
+          "x-alternativeNames": [
+            "Federal Income Tax Withheld",
+            "Federal Tax Withholding",
+            "Withheld Federal Tax"
+          ],
+          "type": "number"
+        }
+      },
+      "required": [
+        "other_income",
+        "federal_income_tax_withheld"
+      ]
+    },
+    "form_1099_cmb": {
+      "description": "Summary information related to combined or consolidated forms, often used for specific types of income or transactions.",
+      "x-alternativeNames": [
+        "Form 1099-CMB",
+        "Combined Form",
+        "Consolidated Form"
+      ],
+      "type": "object",
+      "properties": {
+        "profit_or_loss_realized_on_closed_contracts": {
+          "description": "The total profit or loss realized from closed Section 1256 contracts during the tax year.",
+          "x-alternativeNames": [
+            "Profit or Loss Realized on Closed Contracts",
+            "Realized Profit or Loss",
+            "Closed Contracts Profit/Loss"
+          ],
+          "type": "number"
+        },
+        "aggregate_profit_or_loss_on_contracts": {
+          "description": "The total aggregate profit or loss from all Section 1256 contracts, including both realized and unrealized amounts, for the tax year.",
+          "x-alternativeNames": [
+            "Aggregate Profit or Loss on Contracts",
+            "Total Contract Profit/Loss",
+            "Combined Profit/Loss on Contracts"
+          ],
+          "type": "number"
+        }
+      },
+      "required": [
+        "profit_or_loss_realized_on_closed_contracts",
+        "aggregate_profit_or_loss_on_contracts"
+      ]
+    }
+  },
+  "required": [
+    "tax_year",
+    "statement_date",
+    "includes_1099_int",
+    "includes_1099_b",
+    "includes_1099_oid",
+    "includes_1099_div",
+    "includes_1099_misc",
+    "includes_1099_cmb",
+    "brokerage_information",
+    "account_holder_information",
+    "financial_advisor_information",
+    "form_1099_div",
+    "form_1099_int",
+    "form_1099_b",
+    "form_1099_oid",
+    "form_1099_misc",
+    "form_1099_cmb"
+  ]
+}

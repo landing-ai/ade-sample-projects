@@ -125,8 +125,15 @@ def value_appears_in(value: Any, source: str) -> bool:
         return True
     # Numbers: compare digits only, so thousands separators and currency do not matter.
     digits = "".join(c for c in literal if c.isdigit())
+    text_digits = "".join(c for c in text if c.isdigit())
     if digits and len(digits) >= 3:
-        return digits in "".join(c for c in text if c.isdigit())
+        if digits in text_digits:
+            return True
+        # Dates are reordered by normalization: "2023-09-02" is grounded to
+        # "09/02/2023". Same digits, different order, so a substring test fails on
+        # every date field. Fall back to comparing the multiset for date-shaped values.
+        if len(digits) == 8 and sorted(digits) == sorted(text_digits.strip()):
+            return True
     return False
 
 
