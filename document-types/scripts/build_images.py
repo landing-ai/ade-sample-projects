@@ -58,6 +58,8 @@ CROP_PAD_Y = 0.020          # fraction of page height
 RENDER_SCALE = 2.0          # 144 DPI; sharp on high-DPI screens without bloating files
 JPEG_QUALITY = 90
 MAX_PAGE_WIDTH_PX = 1400    # full-page renders are downscaled to this
+MAX_PREVIEW_WIDTH_PX = 700  # clean preview pages are shown small
+MAX_PREVIEW_PAGES = 4
 
 
 def overlaps(a: dict, b: dict) -> bool:
@@ -205,6 +207,30 @@ def save(img: Image.Image, path: Path, max_width: int | None = None) -> None:
     print(f"  {path.name:38} {img.width}x{img.height}  {path.stat().st_size // 1024} KB")
 
 
+def preview_pages(manifest: dict, page_count: int, feature_page: int) -> list[int]:
+    """Which pages to render as clean previews for the worked example.
+
+    A reader needs to see that this is a real document before any claim about
+    extracting from it means anything, and one page does not establish that. The
+    default takes the first page, the featured page, and interior pages spread
+    between them, capped at four -- enough to show the document has substance
+    without turning the page into a gallery. `preview_pages` in the manifest
+    overrides it when a document has a better story to tell.
+    """
+    declared = manifest.get("preview_pages")
+    if declared:
+        return sorted({p for p in declared if 1 <= p <= page_count})
+
+    wanted = {1, feature_page}
+    # Fill with pages spread across the document, skipping ones already chosen.
+    for fraction in (0.35, 0.65, 0.5, 0.2, 0.8):
+        if len(wanted) >= MAX_PREVIEW_PAGES:
+            break
+        candidate = max(1, min(page_count, round(page_count * fraction)))
+        wanted.add(candidate)
+    return sorted(wanted)[:MAX_PREVIEW_PAGES]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug", help="folder name under document-types/collection/")
@@ -297,7 +323,17 @@ def main() -> None:
         name = spec.get("name") or path.replace(".", "-").replace("[", "-").replace("]", "")
         page_number, box = hit
         located.setdefault(page_number, []).append(
-            {"path": path, "box": box, "name": name}
+            {
+                "path": path,
+                "label": spec.get("label", path),
+                "box": box,
+                "name": name,
+                "value": meta["value"],
+                "range": ranges[index],
+                "occurrence": index,
+                "page": page_number,
+                "matched": value_appears_in(meta["value"], source),
+            }
         )
         print(f"  {path}: page {page_number}  {meta['value']!r}")
 
@@ -339,6 +375,47 @@ def main() -> None:
         for item in items:
             annotated = draw_box(annotated, item["box"])
         save(annotated, images_dir / f"page-{page_number}.png", MAX_PAGE_WIDTH_PX)
+
+    # Clean previews, with no boxes drawn. These establish that the sample is a real
+    # document; the annotated page is what carries the extraction claim. Deliberately
+    # separate renders rather than reusing the annotated one.
+    page_count = (parse.get("metadata") or {}).get("page_count") or 1
+    previews = preview_pages(manifest, page_count, feature_page or 1)
+    print("\nWriting preview pages ...")
+    for page_number in previews:
+        clean = render_page(document, page_number)
+        save(clean, images_dir / f"preview-{page_number}.png", MAX_PREVIEW_WIDTH_PX)
+
+    # Everything the website needs about a featured field, with the grounding already
+    # resolved. Resolution is three-tier (atomic_grounding, then table cells, then the
+    # block box) and it belongs in one place: re-deriving it downstream is how the two
+    # repos drift apart.
+    grounding = {
+        "model": args.model,
+        "feature_page": feature_page,
+        "page_count": page_count,
+        "preview_pages": previews,
+        "fields": [
+            {
+                "path": item["path"],
+                "label": item["label"],
+                "value": item["value"],
+                "page": item["page"],
+                "box": item["box"],
+                "range": item["range"],
+                "occurrence": item["occurrence"],
+                "matched": item["matched"],
+                "image": f"{item['name']}.png",
+            }
+            for _, items in sorted(located.items())
+            for item in items
+        ],
+    }
+    grounding_path = folder / f"grounding-{args.model}.json"
+    grounding_path.write_text(
+        json.dumps(grounding, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(f"  {grounding_path.name}: {len(grounding['fields'])} field(s)")
 
     print(f"\nWrote {images_dir}")
     print("Open the images and check them. A wrong crop is not visible from a listing.")
