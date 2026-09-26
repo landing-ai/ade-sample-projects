@@ -283,8 +283,15 @@ def main() -> None:
             if better:
                 print(f"      occurrence {better[0]} does contain it — consider pinning it")
 
+        # A field can legitimately be featured twice from different occurrences -- the
+        # same figure printed in a bullet and again on a chart. The image filename
+        # derives from the path, so those would collide; "name" in the manifest
+        # overrides it.
+        name = spec.get("name") or path.replace(".", "-").replace("[", "-").replace("]", "")
         page_number, box = hit
-        located.setdefault(page_number, []).append({"path": path, "box": box})
+        located.setdefault(page_number, []).append(
+            {"path": path, "box": box, "name": name}
+        )
         print(f"  {path}: page {page_number}  {meta['value']!r}")
 
     if not located:
@@ -318,7 +325,7 @@ def main() -> None:
             # how large the region happens to be.
             marked = draw_box(page_img, item["box"])
             crop = crop_around(marked, item["box"])
-            name = item["path"].replace(".", "-").replace("[", "-").replace("]", "")
+            name = item["name"]
             save(crop, images_dir / f"{name}.png")
 
         annotated = page_img

@@ -54,65 +54,75 @@ five featured fields are pinned.
 
 ## Extraction
 
-`schema.json` has seven company-level fields plus an `installment_lending` object built
-around **page 35**, the Installment Lending Portfolio slide. That page carries a pie
-chart, three bullet figures, and a 5×7 data table under a stacked bar chart, so it
-exercises far more of ADE than a flat schema would.
+`schema.json` has seven company-level fields plus a `fee_income` object built around
+**page 20, "Diverse Fee Income"** — a slide from the main presentation rather than the
+appendix. That page carries all four element types in one place, which is why it was
+chosen:
 
-All of it extracts correctly:
+| Region | Featured field |
+|---|---|
+| Overview bullet | The 21.5% non-interest income ratio, in prose |
+| Bar chart | The same ratio, as a chart label |
+| Pie chart | Fiduciary Activities, the largest income source |
+| Footnotes | The $6.1MM pension settlement gain |
 
-- **Pie chart** — six credit tiers with their shares (Premier 52.35% down to D 0.40%),
-  and each tier's FICO range pulled from the *legend*, which is a separate region of the
-  slide.
-- **Data table** — all 5 rows × 7 origination years, matching the printed values.
-- **Bullets** — $1.6B indirect, $186MM direct, weighted average FICO over 780.
+The ratio is featured twice deliberately: the same figure grounded in a sentence and in
+a chart is a better demonstration than two unrelated values.
+
+Everything extracts correctly — all five years of the bar chart, all six pie slices with
+their percentages, the bullet figures, and the footnote detail.
 
 ## Featured fields must share a page
 
 A web page can realistically embed one page overlay, so every featured field has to live
-on the same page. `manifest.json` declares `"feature_page": 35` and `build_images.py`
-warns if any field resolves elsewhere. An earlier version of this manifest featured
-fields from pages 1, 4 and 6 and could not be illustrated with a single image.
+on the same page. `manifest.json` declares `"feature_page": 20` and `build_images.py`
+warns if any field resolves elsewhere. An earlier manifest featured fields from pages 1,
+4 and 6, which no single image could show.
 
-## Grounding is off by one in this document's arrays
+## Choosing what to feature
 
-Worth knowing before trusting any array field on a chart-heavy document.
+Reading `extract-*.json` is not enough to pick fields. Three failure modes are invisible
+until you look, and `inspect_fields.py` exists to surface all three:
 
-The **values** extracted from page 35 are all correct. The **grounding ranges** for array
-elements are shifted by exactly one position:
+```bash
+python document-types/scripts/inspect_fields.py investor-presentation --page 20 --good
+```
 
-| Field | Value | Grounded to |
-|---|---|---|
-| `balances_by_origination_year[0].credit_tier` | `Premier (FICO 780+)` | `18,429,225` |
-| `balances_by_origination_year[0].pre_2020` | `18429225` | `38,573,958` |
-| `balances_by_origination_year[0].year_2025` | `322236185` | `A+ (FICO 740 - 779)` |
-| `portfolio_by_credit_tier[0].tier` | `Premier` | `52.35%` |
-| `portfolio_by_credit_tier[0].share_of_portfolio_percent` | `52.35` | `A+` |
+**Synthesized values.** `net_interest_income_latest_year` is correct at 437.3 but has no
+ranges at all — ADE read it from the chart without being able to point at it. It cannot
+be illustrated.
 
-Each field grounds to the *next* cell in reading order, and the last column of a row
-grounds to the following row's label. It is systematic, not random.
+**Grounding off by one.** Array elements in dense tables and charts ground one cell
+adrift: in `revenue_by_year`, `year` grounds to the net interest income figure, which
+grounds to the non-interest income figure, and so on. The values are right; the ranges
+are shifted. Not universal — the pie chart array on this same page grounds correctly, as
+does `line_items` on the invoice.
 
-`fico_range` is the exception and grounds correctly, because it comes from the legend
-rather than from the pie or the table.
+**Grounded on another page.** The bar chart's series values ground to page 18, not 20.
 
-This is not a script bug — the ranges come back this way from Extract. It is also not
-universal: `line_items[1].description` on the invoice sample grounds correctly. It
-appears to affect dense tabular and chart regions.
+Two further traps this page hit: a field can ground to a whole `figure` block rather than
+to the value inside it, so featuring both the pie's `source` and its `share_percent`
+produced *identical* images; and a value printed in several places needs its occurrence
+pinned, or the box wanders between runs.
 
-**What this means for the pages:** featured fields are chosen for grounding accuracy, not
-just for interest. `build_images.py` compares every extracted value against the text it
-boxed and warns on a mismatch, which is what caught this. Never feature a field without
-reading its crop.
+`build_images.py` compares every extracted value against the text it boxed and warns on a
+mismatch, which is what caught the off-by-one. Never feature a field without reading its
+crop.
 
 ## Cost
 
 **65.50 credits** at standard tier for 43 pages, parse and extract together. By
-comparison the one-page invoice cost 3.10. Worth knowing before adding more long
-documents to the collection.
+comparison the one-page invoice cost 3.10.
+
+Iterating on the schema does not cost that again: `run_ade.py --extract-only` reuses the
+committed parse and re-runs extraction alone, at **21.30 credits**. Parsing is the
+expensive half and the markdown does not change.
 
 ## Regenerating
 
 ```bash
-.venv/bin/python document-types/scripts/run_ade.py investor-presentation      # 65.50 credits
-.venv/bin/python document-types/scripts/build_images.py investor-presentation # free
+.venv/bin/python document-types/scripts/run_ade.py investor-presentation                # 65.50 credits
+.venv/bin/python document-types/scripts/run_ade.py investor-presentation --extract-only # 21.30, schema iteration
+.venv/bin/python document-types/scripts/build_images.py investor-presentation           # free
+.venv/bin/python document-types/scripts/inspect_fields.py investor-presentation --page 20 --good
 ```

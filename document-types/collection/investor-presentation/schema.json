@@ -47,119 +47,133 @@
       ],
       "description": "One sentence describing what the company does"
     },
-    "installment_lending": {
+    "fee_income": {
       "type": "object",
-      "description": "The installment lending portfolio broken down by credit tier",
+      "description": "Fee income detail from the 'Diverse Fee Income' slide",
       "properties": {
-        "indirect_loans": {
+        "fee_income_business_lines": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Value of indirect installment loans as stated, including units, e.g. '$1.6B'"
+          "description": "The business lines responsible for generating the majority of fee income, as listed in the overview bullets"
         },
-        "direct_loans": {
+        "non_interest_income_to_operating_revenue_ratio": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Value of direct installment loans as stated, including units, e.g. '$186MM'"
+          "description": "Non-interest income to operating revenue ratio for the most recent full year, as stated in the bullets, e.g. '21.5%'"
         },
-        "weighted_average_fico": {
+        "assets_under_management": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Weighted average FICO credit score of the installment portfolio, as stated"
+          "description": "Aggregate assets under management of the wealth management business line, as stated in the bullets, including units"
         },
-        "portfolio_by_credit_tier": {
+        "net_interest_income_latest_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net interest income for the most recent year in the Non-Interest Income / Operating Revenue bar chart, in millions, as a number"
+        },
+        "non_interest_income_latest_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Non-interest income for the most recent year in the bar chart, in millions, as a number"
+        },
+        "revenue_by_year": {
           "type": "array",
-          "description": "Share of the installment loan portfolio held by each credit tier, from the pie chart",
+          "description": "Net interest income, non-interest income and their ratio for each year in the bar chart",
           "items": {
             "type": "object",
             "properties": {
-              "tier": {
+              "year": {
                 "type": "string",
-                "description": "Credit tier label, e.g. 'Premier', 'A+', 'A', 'B', 'C', 'D'"
+                "description": "The year label, e.g. '2025Y'"
               },
-              "fico_range": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "description": "FICO score range for this tier, e.g. '780+' or '740 - 779'"
-              },
-              "share_of_portfolio_percent": {
+              "net_interest_income": {
                 "type": [
                   "number",
                   "null"
                 ],
-                "description": "Percentage of the portfolio in this tier as a number, e.g. 52.35"
+                "description": "Net interest income in millions"
+              },
+              "non_interest_income": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Non-interest income in millions"
+              },
+              "non_interest_income_to_operating_revenue_percent": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The ratio plotted above the bars, as a number, e.g. 21.5"
               }
             }
           }
         },
-        "balances_by_origination_year": {
+        "largest_income_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The largest single source in the Sources of Non-Interest Income pie chart, by name"
+        },
+        "largest_income_source_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The percentage held by the largest source in the pie chart, as a number"
+        },
+        "income_sources": {
           "type": "array",
-          "description": "Installment loan balances by credit tier and origination year, in thousands of dollars, from the table beneath the bar chart",
+          "description": "Every slice of the Sources of Non-Interest Income pie chart",
           "items": {
             "type": "object",
             "properties": {
-              "credit_tier": {
+              "source": {
                 "type": "string",
-                "description": "Credit tier row label, e.g. 'Premier (FICO 780+)'"
+                "description": "The income source name, e.g. 'Fiduciary Activities'"
               },
-              "pre_2020": {
+              "share_percent": {
                 "type": [
                   "number",
                   "null"
                 ],
-                "description": "Balance originated before 2020"
-              },
-              "year_2020": {
-                "type": [
-                  "number",
-                  "null"
-                ],
-                "description": "Balance originated in 2020"
-              },
-              "year_2021": {
-                "type": [
-                  "number",
-                  "null"
-                ],
-                "description": "Balance originated in 2021"
-              },
-              "year_2022": {
-                "type": [
-                  "number",
-                  "null"
-                ],
-                "description": "Balance originated in 2022"
-              },
-              "year_2023": {
-                "type": [
-                  "number",
-                  "null"
-                ],
-                "description": "Balance originated in 2023"
-              },
-              "year_2024": {
-                "type": [
-                  "number",
-                  "null"
-                ],
-                "description": "Balance originated in 2024"
-              },
-              "year_2025": {
-                "type": [
-                  "number",
-                  "null"
-                ],
-                "description": "Balance originated in 2025"
+                "description": "Share of non-interest income as a number, e.g. 38"
               }
             }
           }
+        },
+        "aum_basis_footnote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The footnote explaining the basis on which assets under management are stated"
+        },
+        "pension_settlement_gain": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The pension settlement gain figure mentioned in the footnotes, including units"
+        },
+        "debt_securities_loss": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The loss on sale of debt securities mentioned in the footnotes, including units and the year it relates to"
         }
       }
     }

@@ -14,33 +14,32 @@
       "clearance_note": "Investor relations material published by a public company (NYSE American: PRK) for general distribution. No personal data beyond named executives in their professional capacity."
     }
   },
-  "feature_page": 35,
+  "feature_page": 20,
   "fields": [
     {
-      "path": "installment_lending.indirect_loans",
-      "label": "Indirect loans",
-      "occurrence": 0
+      "path": "fee_income.non_interest_income_to_operating_revenue_ratio",
+      "label": "Ratio, from the overview bullet",
+      "occurrence": 6,
+      "name": "bullet-ratio"
     },
     {
-      "path": "installment_lending.weighted_average_fico",
-      "label": "Weighted average FICO",
-      "occurrence": 0
+      "path": "fee_income.non_interest_income_to_operating_revenue_ratio",
+      "label": "Ratio, from the bar chart",
+      "occurrence": 2,
+      "name": "chart-ratio"
     },
     {
-      "path": "installment_lending.portfolio_by_credit_tier[0].fico_range",
-      "label": "Premier FICO range",
-      "occurrence": 0
+      "path": "fee_income.income_sources[0].source",
+      "label": "Largest income source, from the pie chart",
+      "occurrence": 0,
+      "name": "pie-largest-source"
     },
     {
-      "path": "installment_lending.portfolio_by_credit_tier[3].fico_range",
-      "label": "Tier B FICO range",
-      "occurrence": 0
-    },
-    {
-      "path": "installment_lending.portfolio_by_credit_tier[5].share_of_portfolio_percent",
-      "label": "Tier D share",
-      "occurrence": 0
+      "path": "fee_income.pension_settlement_gain",
+      "label": "Pension settlement gain, from the footnotes",
+      "occurrence": 1,
+      "name": "footnote-pension-gain"
     }
   ],
-  "notes": "All featured fields are on page 35 (Installment Lending Portfolio) so one page overlay shows every one; feature_page is enforced by build_images.py. Fields were chosen for grounding accuracy, not just interest: on this document the array elements of balances_by_origination_year and the tier/share pairs ground one cell off \u2014 see README.md. Values are correct throughout; only the ranges are shifted."
+  "notes": "Featured fields all resolve to page 20 (Diverse Fee Income) and cover all four regions of the slide: overview bullet, bar chart, pie chart and footnotes. The ratio is featured twice on purpose, from the bullet and from the chart, showing the same figure grounded in two representations. Chosen with inspect_fields.py --page 20 --good. Two things that ruled candidates out: the bar chart's series values are either synthesized or ground to page 18, and both pie fields ground to the whole figure block, so featuring source and share produced identical images."
 }
