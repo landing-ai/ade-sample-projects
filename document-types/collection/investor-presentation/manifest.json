@@ -1,0 +1,45 @@
+{
+  "slug": "investor-presentation",
+  "title": "Investor presentation",
+  "source": {
+    "file": "Q4-2025-Investor-Slides.pdf",
+    "pages": 43,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://s201.q4cdn.com/960710146/files/doc_presentations/2026/Feb/09/Q4-2025-Investor-Slides.pdf",
+      "publisher": "Park National Corporation",
+      "title": "Q4 2025 Investor Slides",
+      "retrieved": "2026-09-25",
+      "clearance": "public",
+      "clearance_note": "Investor relations material published by a public company (NYSE American: PRK) for general distribution. No personal data beyond named executives in their professional capacity."
+    }
+  },
+  "feature_page": 20,
+  "fields": [
+    {
+      "path": "fee_income.non_interest_income_to_operating_revenue_ratio",
+      "label": "Ratio, from the overview bullet",
+      "occurrence": 6,
+      "name": "bullet-ratio"
+    },
+    {
+      "path": "fee_income.non_interest_income_to_operating_revenue_ratio",
+      "label": "Ratio, from the bar chart",
+      "occurrence": 2,
+      "name": "chart-ratio"
+    },
+    {
+      "path": "fee_income.income_sources[0].source",
+      "label": "Largest income source, from the pie chart",
+      "occurrence": 0,
+      "name": "pie-largest-source"
+    },
+    {
+      "path": "fee_income.pension_settlement_gain",
+      "label": "Pension settlement gain, from the footnotes",
+      "occurrence": 1,
+      "name": "footnote-pension-gain"
+    }
+  ],
+  "notes": "Featured fields all resolve to page 20 (Diverse Fee Income) and cover all four regions of the slide: overview bullet, bar chart, pie chart and footnotes. The ratio is featured twice on purpose, from the bullet and from the chart, showing the same figure grounded in two representations. Chosen with inspect_fields.py --page 20 --good. Two things that ruled candidates out: the bar chart's series values are either synthesized or ground to page 18, and both pie fields ground to the whole figure block, so featuring source and share produced identical images."
+}

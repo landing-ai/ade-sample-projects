@@ -1,0 +1,452 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "invoice_info": {
+      "description": "Key identifiers and dates for the invoice.",
+      "x-alternativeNames": [
+        "Invoice Information",
+        "Document Details",
+        "Billing Information"
+      ],
+      "type": "object",
+      "properties": {
+        "invoice_date_raw": {
+          "description": "Invoice date as a string as found in the document. Do not reformat into another date format.",
+          "x-alternativeNames": [
+            "Invoice Date Raw",
+            "Date of Issue",
+            "Billing Date Text"
+          ],
+          "type": "string"
+        },
+        "invoice_date": {
+          "description": "Invoice date in standard format YYYY-MM-DD.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Invoice Date",
+            "Date of Invoice",
+            "Billing Date"
+          ],
+          "type": "string"
+        },
+        "invoice_number": {
+          "description": "Unique identifier for the invoice.",
+          "x-alternativeNames": [
+            "Invoice Number",
+            "Document Number",
+            "Bill Number"
+          ],
+          "type": "string"
+        },
+        "order_date": {
+          "description": "Date when the order or purchase was made.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Order Date",
+            "Purchase Date",
+            "Date of Order"
+          ],
+          "type": "string"
+        },
+        "po_number": {
+          "description": "Customer purchase order (PO) number associated with the invoice.",
+          "x-alternativeNames": [
+            "PO Number",
+            "Purchase Order Number",
+            "Customer PO"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "description": "Payment status of the invoice (e.g., PAID, UNPAID, DUE).",
+          "x-alternativeNames": [
+            "Payment Status",
+            "Invoice Status",
+            "Current Status"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "invoice_date_raw",
+        "invoice_date",
+        "invoice_number",
+        "order_date",
+        "po_number",
+        "status"
+      ]
+    },
+    "customer_info": {
+      "description": "Details about the customer billed and shipped to.",
+      "x-alternativeNames": [
+        "Customer Information",
+        "Client Details",
+        "Buyer Information"
+      ],
+      "type": "object",
+      "properties": {
+        "sold_to_name": {
+          "description": "Name of the customer or entity that is being billed.",
+          "x-alternativeNames": [
+            "Sold To Name",
+            "Bill To",
+            "Client Name"
+          ],
+          "type": "string"
+        },
+        "sold_to_address": {
+          "description": "Full address of the customer or entity that is being billed.",
+          "x-alternativeNames": [
+            "Sold To Address",
+            "Billing Address",
+            "Recipient Address"
+          ],
+          "type": "string"
+        },
+        "customer_email": {
+          "description": "Email address for contacting the customer.",
+          "format": "email",
+          "x-alternativeNames": [
+            "Customer Email",
+            "Client Email",
+            "Email Address"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "sold_to_name",
+        "sold_to_address",
+        "customer_email"
+      ]
+    },
+    "company_info": {
+      "description": "Details about the company or supplier issuing the invoice.",
+      "x-alternativeNames": [
+        "Supplier Information",
+        "Company Information",
+        "Seller Details"
+      ],
+      "type": "object",
+      "properties": {
+        "supplier_name": {
+          "description": "Name of the supplier company that issued the invoice.",
+          "x-alternativeNames": [
+            "Supplier Name",
+            "Seller Name",
+            "Company Name"
+          ],
+          "type": "string"
+        },
+        "supplier_address": {
+          "description": "Full address of the supplier company.",
+          "x-alternativeNames": [
+            "Supplier Address",
+            "Seller Address",
+            "Company Address"
+          ],
+          "type": "string"
+        },
+        "representative": {
+          "description": "Name of the sales representative or contact person for the supplier.",
+          "x-alternativeNames": [
+            "Representative",
+            "Sales Rep",
+            "Account Manager"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "description": "Email address for contacting the supplier company.",
+          "format": "email",
+          "x-alternativeNames": [
+            "Supplier Email",
+            "Company Email",
+            "Email Address"
+          ],
+          "type": "string"
+        },
+        "phone": {
+          "description": "Phone number of the supplier company for contact.",
+          "format": "+1-XXX-XXX-XXXX",
+          "x-alternativeNames": [
+            "Supplier Phone",
+            "Contact Phone",
+            "Company Phone Number"
+          ],
+          "type": "string"
+        },
+        "gstin": {
+          "description": "Goods and Services Tax Identification Number (GSTIN) of the supplier, primarily used in India.",
+          "x-alternativeNames": [
+            "Supplier GSTIN",
+            "Company GSTIN",
+            "GST Identification Number"
+          ],
+          "type": "string"
+        },
+        "pan": {
+          "description": "Permanent Account Number (PAN) of the supplier, primarily used in India for tax purposes.",
+          "x-alternativeNames": [
+            "Supplier PAN",
+            "Company PAN",
+            "Permanent Account Number"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "supplier_name",
+        "supplier_address",
+        "representative",
+        "email",
+        "phone",
+        "gstin",
+        "pan"
+      ]
+    },
+    "order_details": {
+      "description": "Key information related to the order, including payment terms and shipping specifics.",
+      "x-alternativeNames": [
+        "Order Details",
+        "Shipping Information",
+        "Terms and Conditions"
+      ],
+      "type": "object",
+      "properties": {
+        "payment_terms": {
+          "description": "Specific conditions under which payment is to be made, such as 'Net 30' or 'Due on Receipt'.",
+          "x-alternativeNames": [
+            "Payment Terms",
+            "Terms of Payment",
+            "Due Date"
+          ],
+          "type": "string"
+        },
+        "ship_via": {
+          "description": "The method or carrier used for shipping the goods (e.g., UPS Ground, FedEx Express).",
+          "x-alternativeNames": [
+            "Ship Via",
+            "Carrier Service",
+            "Shipping Method"
+          ],
+          "type": "string"
+        },
+        "ship_date": {
+          "description": "The date on which the goods were shipped or dispatched.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Ship Date",
+            "Date Shipped",
+            "Dispatch Date"
+          ],
+          "type": "string"
+        },
+        "tracking_number": {
+          "description": "The unique identifier used to track the progress of a shipment.",
+          "x-alternativeNames": [
+            "Tracking Number",
+            "Shipment ID",
+            "Consignment Number"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "payment_terms",
+        "ship_via",
+        "ship_date",
+        "tracking_number"
+      ]
+    },
+    "totals_summary": {
+      "description": "Financial totals by category, such as subtotal, total taxes, and total shipping.",
+      "x-alternativeNames": [
+        "Financial Totals",
+        "Summary of Charges",
+        "Invoice Totals"
+      ],
+      "type": "object",
+      "properties": {
+        "currency": {
+          "description": "The currency code for the invoice amounts, based on alphabetic ISO codes.",
+          "x-alternativeNames": [
+            "Currency",
+            "Payment Currency",
+            "Invoice Currency"
+          ],
+          "type": "string"
+        },
+        "total_due_raw": {
+          "description": "The total amount due as it appears in the document, including symbols or text.",
+          "x-alternativeNames": [
+            "Total Due Raw",
+            "Amount Due",
+            "Balance Due"
+          ],
+          "type": "string"
+        },
+        "total_due": {
+          "description": "The total amount due as a numeric value, without any currency symbols or text.",
+          "x-alternativeNames": [
+            "Total Due",
+            "Grand Total",
+            "Final Amount"
+          ],
+          "type": "number"
+        },
+        "subtotal": {
+          "description": "The sum of all line item amounts before taxes, shipping, or other fees are applied.",
+          "x-alternativeNames": [
+            "Subtotal",
+            "Net Amount",
+            "Goods Total"
+          ],
+          "type": "number"
+        },
+        "tax": {
+          "description": "The total amount of tax applied to the invoice, presented as a numeric value.",
+          "x-alternativeNames": [
+            "Tax",
+            "Sales Tax",
+            "VAT"
+          ],
+          "type": "number"
+        },
+        "shipping": {
+          "description": "The cost associated with shipping or delivery of goods, presented as a numeric value.",
+          "x-alternativeNames": [
+            "Shipping",
+            "Delivery Charge",
+            "Freight Cost"
+          ],
+          "type": "number"
+        },
+        "handling_fee": {
+          "description": "Any additional fee charged for handling or processing the order, presented as a numeric value.",
+          "x-alternativeNames": [
+            "Handling Fee",
+            "Processing Fee",
+            "Service Charge"
+          ],
+          "type": "number"
+        }
+      },
+      "required": [
+        "currency",
+        "total_due_raw",
+        "total_due",
+        "subtotal",
+        "tax",
+        "shipping",
+        "handling_fee"
+      ]
+    },
+    "line_items": {
+      "description": "A list of individual items or services included in the invoice, each with its own details.",
+      "x-alternativeNames": [
+        "Line Items",
+        "Product Details",
+        "Item List"
+      ],
+      "type": "array",
+      "items": {
+        "description": "Item in line_items",
+        "type": "object",
+        "properties": {
+          "line_number": {
+            "description": "The sequential number assigned to an item within the list of line items.",
+            "x-alternativeNames": [
+              "Line Number",
+              "Item Number",
+              "Entry Number"
+            ],
+            "type": "string"
+          },
+          "sku": {
+            "description": "The Stock Keeping Unit, item code, or part number identifying the product or service.",
+            "x-alternativeNames": [
+              "SKU",
+              "Item Code",
+              "Part Number"
+            ],
+            "type": "string"
+          },
+          "description": {
+            "description": "A detailed explanation of the product or service provided in the line item.",
+            "x-alternativeNames": [
+              "Description",
+              "Item Details",
+              "Service Description"
+            ],
+            "type": "string"
+          },
+          "quantity": {
+            "description": "The numerical count or amount of the specific item or service purchased.",
+            "x-alternativeNames": [
+              "Quantity",
+              "QTY",
+              "Number of Units"
+            ],
+            "type": "number"
+          },
+          "unit_price": {
+            "description": "The cost of a single unit of the item or service before any calculations.",
+            "x-alternativeNames": [
+              "Unit Price",
+              "Rate",
+              "Price Per Unit"
+            ],
+            "type": "number"
+          },
+          "price": {
+            "description": "The price of a single item, if present and distinct from unit price or extended amount.",
+            "x-alternativeNames": [
+              "Single Price",
+              "Item Price",
+              "Base Price"
+            ],
+            "type": "number"
+          },
+          "amount": {
+            "description": "The total cost for the specific line item, typically calculated as quantity multiplied by unit price.",
+            "x-alternativeNames": [
+              "Amount",
+              "Extended Amount",
+              "Line Total"
+            ],
+            "type": "number"
+          },
+          "total": {
+            "description": "The total amount for a single line item, including quantity and unit price.",
+            "x-alternativeNames": [
+              "Item Total",
+              "Line Total",
+              "Total Line Amount"
+            ],
+            "type": "number"
+          }
+        },
+        "required": [
+          "line_number",
+          "sku",
+          "description",
+          "quantity",
+          "unit_price",
+          "price",
+          "amount",
+          "total"
+        ]
+      }
+    }
+  },
+  "required": [
+    "invoice_info",
+    "customer_info",
+    "company_info",
+    "order_details",
+    "totals_summary",
+    "line_items"
+  ]
+}

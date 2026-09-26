@@ -1,0 +1,80 @@
+{
+  "slug": "consolidated-1099",
+  "title": "Consolidated 1099",
+  "source": {
+    "file": "consolidated-1099-edward-jones-redacted.pdf",
+    "pages": 13,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.scribd.com/document/868128892/XXXX8634-Consolidated-1099-Statement-Figures-Are-Final-01-23-2025",
+      "publisher": "Edward Jones",
+      "title": "2024 Consolidated 1099 Statement",
+      "retrieved": "2026-09-25",
+      "clearance": "redacted",
+      "clearance_note": "Real Edward Jones statement obtained from Scribd. It was NOT redacted at source despite the listing title: it carried the recipient's full name, full account number, home address, financial advisor's name and direct line, and the real last four of the TIN. Every one was replaced with an obviously-fake equivalent using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and page 1 was dropped entirely. Verified: no original identifier is extractable from the committed PDF, and no original identifier appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "recipient's full name",
+            "with": "JANE DOE",
+            "occurrences": 11
+          },
+          {
+            "what": "brokerage account number",
+            "with": "000-00000-0-0",
+            "occurrences": 10
+          },
+          {
+            "what": "financial advisor's name",
+            "with": "PAT EXAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "advisor's direct line",
+            "with": "(000) 000-0000",
+            "occurrences": 2
+          },
+          {
+            "what": "last four of the TIN",
+            "with": "***-**-0000",
+            "occurrences": 1
+          }
+        ],
+        "dropped_page_reason": "page 1 was a mailing panel carrying the home address; its text is rotated 90 degrees and could not be replaced cleanly, so the page was removed outright"
+      },
+      "dropped_pages": [
+        1
+      ]
+    }
+  },
+  "feature_page": 4,
+  "fields": [
+    {
+      "path": "form_1099_b.details[1].description_of_property",
+      "label": "Security sold",
+      "occurrence": 0
+    },
+    {
+      "path": "form_1099_b.details[1].date_acquired",
+      "label": "Date acquired",
+      "occurrence": 0
+    },
+    {
+      "path": "form_1099_b.details[1].proceeds",
+      "label": "Gross proceeds",
+      "occurrence": 0
+    },
+    {
+      "path": "form_1099_b.details[1].cost_basis",
+      "label": "Cost basis",
+      "occurrence": 0
+    },
+    {
+      "path": "form_1099_b.details[1].gain_or_loss",
+      "label": "Gain or loss",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features one complete long-term 1099-B line item on page 4 (printed page 4): the security, when it was acquired, what it sold for, what it cost, and the resulting gain. Every field is on the one page so a single overlay shows the whole transaction."
+}

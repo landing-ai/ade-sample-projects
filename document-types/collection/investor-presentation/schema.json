@@ -1,0 +1,181 @@
+{
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "The full legal name of the company presenting"
+    },
+    "ticker": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Stock ticker symbol, including the exchange if stated, e.g. 'NYSE American: PRK'"
+    },
+    "fiscal_period": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The fiscal period the presentation covers, e.g. 'Q4 2025'"
+    },
+    "as_of_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The as-of date for the financial figures, as YYYY-MM-DD"
+    },
+    "headquarters": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "City and state of the company headquarters"
+    },
+    "total_assets": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Total assets as stated, including units, e.g. '$9.8 billion'"
+    },
+    "business_description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "One sentence describing what the company does"
+    },
+    "fee_income": {
+      "type": "object",
+      "description": "Fee income detail from the 'Diverse Fee Income' slide",
+      "properties": {
+        "fee_income_business_lines": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The business lines responsible for generating the majority of fee income, as listed in the overview bullets"
+        },
+        "non_interest_income_to_operating_revenue_ratio": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Non-interest income to operating revenue ratio for the most recent full year, as stated in the bullets, e.g. '21.5%'"
+        },
+        "assets_under_management": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Aggregate assets under management of the wealth management business line, as stated in the bullets, including units"
+        },
+        "net_interest_income_latest_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net interest income for the most recent year in the Non-Interest Income / Operating Revenue bar chart, in millions, as a number"
+        },
+        "non_interest_income_latest_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Non-interest income for the most recent year in the bar chart, in millions, as a number"
+        },
+        "revenue_by_year": {
+          "type": "array",
+          "description": "Net interest income, non-interest income and their ratio for each year in the bar chart",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "The year label, e.g. '2025Y'"
+              },
+              "net_interest_income": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Net interest income in millions"
+              },
+              "non_interest_income": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Non-interest income in millions"
+              },
+              "non_interest_income_to_operating_revenue_percent": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The ratio plotted above the bars, as a number, e.g. 21.5"
+              }
+            }
+          }
+        },
+        "largest_income_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The largest single source in the Sources of Non-Interest Income pie chart, by name"
+        },
+        "largest_income_source_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The percentage held by the largest source in the pie chart, as a number"
+        },
+        "income_sources": {
+          "type": "array",
+          "description": "Every slice of the Sources of Non-Interest Income pie chart",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "The income source name, e.g. 'Fiduciary Activities'"
+              },
+              "share_percent": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Share of non-interest income as a number, e.g. 38"
+              }
+            }
+          }
+        },
+        "aum_basis_footnote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The footnote explaining the basis on which assets under management are stated"
+        },
+        "pension_settlement_gain": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The pension settlement gain figure mentioned in the footnotes, including units"
+        },
+        "debt_securities_loss": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The loss on sale of debt securities mentioned in the footnotes, including units and the year it relates to"
+        }
+      }
+    }
+  }
+}
