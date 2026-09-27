@@ -217,6 +217,13 @@ def preview_pages(manifest: dict, page_count: int, feature_page: int) -> list[in
     without turning the page into a gallery. `preview_pages` in the manifest
     overrides it when a document has a better story to tell.
     """
+    # A short document shows every page. Sampling three pages out of four hides
+    # one for no reason and leaves the reader wondering what was on it. This
+    # comes before the manifest override deliberately: there is no document
+    # short enough to need a subset.
+    if page_count <= MAX_PREVIEW_PAGES:
+        return list(range(1, page_count + 1))
+
     declared = manifest.get("preview_pages")
     if declared:
         return sorted({p for p in declared if 1 <= p <= page_count})
