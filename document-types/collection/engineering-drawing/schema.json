@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "properties": {
+    "issuing_department": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The municipal department that issued the standard details, as printed in the title block, e.g. 'City of Albany - Department of Engineering'"
+    },
+    "city_engineer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The name of the City Engineer printed beneath the city logo in the title block, including any professional credential, e.g. 'P.E.'"
+    },
+    "sheets": {
+      "type": "array",
+      "description": "One entry per sheet in the set, in page order, read from each sheet's title block",
+      "items": {
+        "type": "object",
+        "properties": {
+          "detail_number": {
+            "type": "string",
+            "description": "The detail number from the DETAIL No. box, e.g. 'C-1'"
+          },
+          "detail_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The detail name from the DETAIL NAME box, as a single line"
+          },
+          "file_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The CAD file name from the FILE NAME box, including the extension, e.g. 'C-1.DWG'"
+          },
+          "revision_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The date from the REVISION DATE box, as YYYY-MM-DD"
+          }
+        }
+      }
+    },
+    "drop_curb": {
+      "type": "object",
+      "description": "Specifications from the Driveway/Sidewalk Drop Curb detail, sheet DW-1",
+      "properties": {
+        "max_gradient": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The maximum gradient of the drop, as a ratio, from the MAX. GRADIENT callout, e.g. '1:12'"
+        },
+        "max_cross_slope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The maximum cross-slope that applies within the walking path, as a ratio, from the same callout as the gradient"
+        },
+        "transition_length": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The length of each sloped transition either side of the driveway, from the dimension string, in feet and inches as printed, e.g. 6'-0\""
+        },
+        "driveway_width": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The driveway width requirement from the dimension string between the two transitions"
+        },
+        "concrete_thickness": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The concrete thickness from the concrete callout, in inches as printed"
+        },
+        "concrete_reference_detail": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The detail number the concrete callout refers to for its specification"
+        },
+        "curb_material": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The curbing material named in the callout at the edge of the sidewalk"
+        },
+        "surface_finish": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The surface finish named in the callouts on the concrete panels"
+        },
+        "max_curb_reveal": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The maximum curb reveal where the ramp meets the roadway pavement, from the notes, in inches as printed"
+        },
+        "notes": {
+          "type": "array",
+          "description": "Each numbered note on the sheet, in order",
+          "items": {
+            "type": "string",
+            "description": "The note text, without its number"
+          }
+        }
+      }
+    }
+  }
+}
