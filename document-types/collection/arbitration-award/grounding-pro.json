@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "case.case_number",
+      "label": "Case number",
+      "value": "25-01517",
+      "page": 1,
+      "box": {
+        "xmin": 0.54183,
+        "ymin": 0.19487,
+        "xmax": 0.76602,
+        "ymax": 0.21485
+      },
+      "range": {
+        "end": 138,
+        "start": 116
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case-case_number.png"
+    },
+    {
+      "path": "parties.claimants[0].name",
+      "label": "Claimant",
+      "value": "Steven Damiani",
+      "page": 1,
+      "box": {
+        "xmin": 0.07835,
+        "ymin": 0.21421,
+        "xmax": 0.22732,
+        "ymax": 0.23161
+      },
+      "range": {
+        "end": 110,
+        "start": 95
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "parties-claimants-0-name.png"
+    },
+    {
+      "path": "parties.respondents[0].name",
+      "label": "Respondent firm",
+      "value": "Janney Montgomery Scott LLC",
+      "page": 1,
+      "box": {
+        "xmin": 0.07985,
+        "ymin": 0.30268,
+        "xmax": 0.35609,
+        "ymax": 0.32024
+      },
+      "range": {
+        "end": 181,
+        "start": 153
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "parties-respondents-0-name.png"
+    },
+    {
+      "path": "case.nature_of_dispute",
+      "label": "Nature of dispute",
+      "value": "Customer vs. Member and Associated Persons",
+      "page": 1,
+      "box": {
+        "xmin": 0.08017,
+        "ymin": 0.4659,
+        "xmax": 0.69222,
+        "ymax": 0.48484
+      },
+      "range": {
+        "end": 594,
+        "start": 528
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case-nature_of_dispute.png"
+    },
+    {
+      "path": "case.hearing_site_city",
+      "label": "Hearing site",
+      "value": "Providence",
+      "page": 1,
+      "box": {
+        "xmin": 0.54141,
+        "ymin": 0.28353,
+        "xmax": 0.89468,
+        "ymax": 0.30296
+      },
+      "range": {
+        "end": 292,
+        "start": 253
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case-hearing_site_city.png"
+    }
+  ]
+}

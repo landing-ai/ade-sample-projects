@@ -1,0 +1,52 @@
+{
+  "slug": "arbitration-award",
+  "title": "Arbitration Award",
+  "source": {
+    "file": "25-01517.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.finra.org/sites/default/files/aao_documents/25-01517.pdf",
+      "publisher": "FINRA Dispute Resolution Services",
+      "title": "Award, FINRA Arbitration No. 25-01517",
+      "retrieved": "2026-09-26",
+      "clearance": "public",
+      "clearance_note": "FINRA arbitration award published by FINRA in its public Arbitration Awards Online database. Used exactly as published, unredacted, by decision of the document owner: it names the claimant (a private individual), three individual respondents, the respondent member firm, counsel and their firms, and the three arbitrators, all as they appear in the public record. The PDF metadata author field carries the name of the FINRA staff member who prepared it, also left as published. The award was served on 2026-09-25, the day before retrieval."
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "case.case_number",
+      "label": "Case number",
+      "occurrence": 0
+    },
+    {
+      "path": "parties.claimants[0].name",
+      "label": "Claimant",
+      "occurrence": 0
+    },
+    {
+      "path": "parties.respondents[0].name",
+      "label": "Respondent firm",
+      "occurrence": 0
+    },
+    {
+      "path": "case.nature_of_dispute",
+      "label": "Nature of dispute",
+      "occurrence": 0
+    },
+    {
+      "path": "case.hearing_site_city",
+      "label": "Hearing site",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the case caption on page 1: case number, claimant, the respondent member firm, the nature of the dispute and the hearing site, each grounded to its own line. Page 2 carries the outcome ($642,000 compensatory damages, which grounds correctly) but was not chosen: its other fields are long narrative strings and booleans whose ranges cover only part of the value, so their crops read as mismatches. hearing_site_state is not featured because it shares a line with the city and would render the identical crop. claimants[0].name is pinned to occurrence 0, the caption; occurrences 1 and 2 are the representation paragraph. The schema is the team's arbitration-awards schema, used unchanged; it covers expungement awards too, so the expungement fields come back null on this customer case, one of them with a nonconformant_output warning because the schema marks it non-null. preview_pages skips page 4, which is mostly blank, in favour of page 5, the arbitration panel and signatures."
+}
