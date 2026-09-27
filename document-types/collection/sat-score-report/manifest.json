@@ -1,0 +1,56 @@
+{
+  "slug": "sat-score-report",
+  "title": "SAT Score Report",
+  "source": {
+    "file": "sat-score-report-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/891396937/Sat-Score-Report-6-2025",
+      "publisher": "College Board",
+      "title": "SAT Score Report, June 2025 administration",
+      "retrieved": "2026-09-27",
+      "clearance": "redacted",
+      "clearance_note": "A real student's College Board score report, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the document is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. The student's name and College Board record locator were replaced with obviously-fake equivalents using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata was cleared. The scores are left as printed: with the name and record locator gone, nothing on the page identifies the student. The QR code encodes the generic link satsuite.org/whatsnext, not a personal one. Verified: no original identifier is extractable from the committed PDF, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "student's name",
+            "with": "Jane Q Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "College Board record locator",
+            "with": "0000000000",
+            "occurrences": 1
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "total_score.score",
+      "label": "Total score",
+      "occurrence": 0
+    },
+    {
+      "path": "section_scores[0].score",
+      "label": "Reading and Writing score",
+      "occurrence": 0
+    },
+    {
+      "path": "section_scores[1].score",
+      "label": "Math score",
+      "occurrence": 0
+    },
+    {
+      "path": "test.test_date",
+      "label": "Test date",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the total score and the two section scores that sum to it (680 + 790 = 1470), plus the test date, so the overlay reads as one result. No named individual is featured; the replaced name and record locator are extracted but deliberately left off the page, since the scores make the same point. Every one of the 59 extracted leaves grounds to text containing its value, but percentile does not box the right place: the stacked '400-' / '1600' scale label was split across two atomic lines, '400-1600' took the upper line's box and '96th*' took the lower one's, so the percentile crop shows the scale label instead of the 96th pill. The value is right and the consistency check passes; only looking at the crop shows it. Percentiles are not featured for that reason. The score range and 3-year average lines are about 7pt, too small for the highlight border to leave legible at crop size."
+}

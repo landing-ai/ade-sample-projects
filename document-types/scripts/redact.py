@@ -44,6 +44,8 @@ TEXT_COLOR = (0, 0, 0)
 # Name:" became "Name:" before this was added. Trimming the top costs nothing: a glyph is
 # still removed as long as the rect crosses its body.
 FONT = "helv"
+BOLD_FONT = "hebo"
+BOLD_FLAG = 16  # PyMuPDF span flag for a bold font
 TOP_INSET_PT = 2.5
 BOTTOM_INSET_PT = 0.5
 
@@ -84,31 +86,40 @@ def main() -> None:
     total = 0
     per_rule: dict[str, int] = {}
     for page in doc:
+        spans = [s for b in page.get_text("dict")["blocks"]
+                 for l in b.get("lines", []) for s in l["spans"]]
+        pending: list[tuple[pymupdf.Point, str, str, float]] = []
         for original, replacement in rules.items():
             for rect in page.search_for(original):
-                rect.y0 += TOP_INSET_PT
-                rect.y1 -= BOTTOM_INSET_PT
-                # Size by WIDTH, not height. Height alone is not enough: a narrow
-                # rect in a mailing-address block wrapped "JANE DOE" into "JA" / "NE",
-                # fragmenting the text layer so the field no longer extracted. Measure
-                # the replacement and shrink until it fits the box it has to live in.
-                size = min(11.0, rect.height * 0.86)
+                # Match the text being replaced: its size, weight and baseline. Sizing
+                # from the rect instead drew an 8.8pt bold name at 4.3pt regular, since
+                # the inset rect is shorter than the line and the redaction annotation
+                # shrinks its text until it fits -- an edit visible at a glance.
+                span = _span_at(spans, rect)
+                size = span["size"] if span else min(11.0, rect.height * 0.86)
+                font = BOLD_FONT if span and span["flags"] & BOLD_FLAG else FONT
+                baseline = span["origin"][1] if span else rect.y1 - rect.height * 0.2
+                # Then size by WIDTH as well. A narrow rect in a mailing-address block
+                # wrapped "JANE DOE" into "JA" / "NE", fragmenting the text layer so the
+                # field no longer extracted. Shrink until it fits the original's width.
                 if replacement:
-                    width = pymupdf.get_text_length(replacement, FONT, size)
+                    width = pymupdf.get_text_length(replacement, font, size)
                     if width > rect.width:
                         size *= rect.width / width * 0.97  # a hair under, for rounding
                     size = max(size, 3.0)
-                page.add_redact_annot(
-                    rect,
-                    text=replacement,
-                    fontsize=round(size, 1),
-                    fill=FILL,
-                    text_color=TEXT_COLOR,
-                    align=pymupdf.TEXT_ALIGN_LEFT,
-                )
+                    pending.append((pymupdf.Point(rect.x0, baseline), replacement,
+                                    font, round(size, 1)))
+                rect.y0 += TOP_INSET_PT
+                rect.y1 -= BOTTOM_INSET_PT
+                page.add_redact_annot(rect, fill=FILL)
                 per_rule[original] = per_rule.get(original, 0) + 1
                 total += 1
         page.apply_redactions()
+        # Written after the redaction, not as the annotation's text, so the replacement
+        # sits on the original baseline at the original size instead of being fitted
+        # into the trimmed rect.
+        for point, text, font, size in pending:
+            page.insert_text(point, text, fontname=font, fontsize=size, color=TEXT_COLOR)
 
     # Document metadata is a separate leak path from page text, and a quiet one. This
     # statement carried the account number in /Info "author" as 04822863413 -- the same
@@ -169,6 +180,17 @@ def main() -> None:
     print(f"    grep -ril <original> {args.output.parent.parent}")
     print("Record in the manifest only WHAT was replaced and with what -- never the "
           "original values.")
+
+
+def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:
+    """The text span a search hit sits in: the one its rect overlaps most."""
+    best, best_area = None, 0.0
+    for span in spans:
+        overlap = rect & pymupdf.Rect(span["bbox"])
+        area = overlap.get_area() if not overlap.is_empty else 0.0
+        if area > best_area:
+            best, best_area = span, area
+    return best
 
 
 def _inside_repo(path: Path) -> bool:

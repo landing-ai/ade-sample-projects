@@ -1,0 +1,165 @@
+{
+  "type": "object",
+  "properties": {
+    "student": {
+      "type": "object",
+      "description": "The student the report belongs to, from the header",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The student's name as printed after 'Name:'"
+        },
+        "grade": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The student's grade level at the time of the test, as a number"
+        },
+        "record_locator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The College Board record locator, the digits after 'Record Locator:'"
+        }
+      }
+    },
+    "test": {
+      "type": "object",
+      "description": "Which SAT administration the scores are from",
+      "properties": {
+        "administration": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The test administration as printed, e.g. 'SAT June 7, 2025'"
+        },
+        "test_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the student tested, from 'Tested on:', as printed"
+        }
+      }
+    },
+    "total_score": {
+      "type": "object",
+      "description": "The total SAT score panel",
+      "properties": {
+        "score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The total score, on the 400-1600 scale"
+        },
+        "percentile": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The percentile shown beside the total score, as a number without the ordinal suffix, e.g. 96"
+        },
+        "score_range": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The total score range as printed, e.g. '1430-1510'"
+        },
+        "average_score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The 3 year average total score for all testers"
+        }
+      }
+    },
+    "section_scores": {
+      "type": "array",
+      "description": "One entry per section score, in the order printed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "description": "The section name, e.g. 'Reading and Writing' or 'Math'"
+          },
+          "score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The section score, on the 200-800 scale"
+          },
+          "percentile": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The percentile shown beside the section score, as a number without the ordinal suffix"
+          },
+          "score_range": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The section score range as printed, e.g. '650-710'"
+          },
+          "average_score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The 3 year average section score for all testers"
+          }
+        }
+      }
+    },
+    "knowledge_and_skills": {
+      "type": "array",
+      "description": "One entry per content domain in the Knowledge and Skills panel, in the order printed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "description": "The section the domain belongs to, 'Reading and Writing' or 'Math'"
+          },
+          "domain": {
+            "type": "string",
+            "description": "The content domain name, e.g. 'Algebra'"
+          },
+          "share_of_section_percent": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The domain's share of its test section, as a number, e.g. 35"
+          },
+          "question_count": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The number of questions in the domain as printed, e.g. '13-15'"
+          },
+          "performance_band": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The performance score band as printed after 'Performance:', e.g. '680-800'"
+          }
+        }
+      }
+    }
+  }
+}
