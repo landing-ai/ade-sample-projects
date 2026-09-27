@@ -1,0 +1,25 @@
+{
+  "slug": "food-sensitivity-report",
+  "title": "Food Sensitivity Report",
+  "source": {
+    "file": "1001-IgG-Food-Antibodies-Sample-Report.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.gdx.net/core/sample-reports/1001-IgG-Food-Antibodies-Sample-Report.pdf",
+      "publisher": "Genova Diagnostics",
+      "title": "1001 IgG Food Antibodies Sample Report",
+      "retrieved": "2026-09-27",
+      "clearance": "public",
+      "clearance_note": "Genova Diagnostics' own sample report, published on gdx.net among its sample reports for clinicians. The patient is 'SAMPLE PATIENT' with date of birth, sex, MRN and ID left blank. The only person named is the laboratory director, in the page footer, in a professional capacity; the CLIA and Medicare license numbers are the laboratory's. No redaction needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "report.test_name", "label": "Test profile", "occurrence": 0 },
+    { "path": "report.methodology", "label": "Methodology", "occurrence": 0 },
+    { "path": "report.patient_name", "label": "Patient", "occurrence": 0 },
+    { "path": "food_results[68].result", "label": "Gluten result (from the results grid)", "occurrence": 0 }
+  ],
+  "notes": "Features page 1, the hard page, by the document owner's decision: the header plus one value from the 87-food results grid. DPT-3 parses the whole grid as a single figure and writes its own table into the figure description, so every grid value, and the Total IgE panel, grounds to the entire grid rather than its cell. Gluten 3+ is featured to show extraction from that layout; its box is the whole grid, and its range lands one cell over in the generated table (the color word), so build_images.py warns that the value is not in the boxed text. No second grid value is featured because it would render the identical crop. The generated table also carries two wrong results, Tomato (printed VL, parsed 0) and Pear (printed 0, parsed VL), so extraction is 85 of 87 correct. specimen_type is not featured because it shares a line with test_name. The patient is the specimen 'SAMPLE PATIENT', not a real person. The folder was first named food-allergy-report; the report itself says IgG responses are distinct from IgE food allergy reactions, so the slug names what it is."
+}

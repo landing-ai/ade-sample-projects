@@ -1,0 +1,88 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "report.test_name",
+      "label": "Test profile",
+      "value": "1001 IgG Food Antibodies Profile",
+      "page": 1,
+      "box": {
+        "xmin": 0.02839,
+        "ymin": 0.2602,
+        "xmax": 0.36351,
+        "ymax": 0.27465
+      },
+      "range": {
+        "end": 216,
+        "start": 176
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-test_name.png"
+    },
+    {
+      "path": "report.methodology",
+      "label": "Methodology",
+      "value": "EIA and Chemiluminescent",
+      "page": 1,
+      "box": {
+        "xmin": 0.02877,
+        "ymin": 0.27737,
+        "xmax": 0.27385,
+        "ymax": 0.28894
+      },
+      "range": {
+        "end": 256,
+        "start": 217
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-methodology.png"
+    },
+    {
+      "path": "report.patient_name",
+      "label": "Patient",
+      "value": "SAMPLE PATIENT",
+      "page": 1,
+      "box": {
+        "xmin": 0.02792,
+        "ymin": 0.15208,
+        "xmax": 0.17105,
+        "ymax": 0.18185
+      },
+      "range": {
+        "end": 159,
+        "start": 136
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-patient_name.png"
+    },
+    {
+      "path": "food_results[68].result",
+      "label": "Gluten result (from the results grid)",
+      "value": "3+",
+      "page": 1,
+      "box": {
+        "xmin": 0.02413,
+        "ymin": 0.29007,
+        "xmax": 0.97397,
+        "ymax": 0.77535
+      },
+      "range": {
+        "end": 5674,
+        "start": 5671
+      },
+      "occurrence": 0,
+      "matched": false,
+      "image": "food_results-68-result.png"
+    }
+  ]
+}
