@@ -1,6 +1,6 @@
 ---
 name: new-document-type-assets
-description: Build a document-types/collection/<slug>/ asset folder from a public document. Pass the document type name, a URL to a public sample, and optionally a path to an existing schema, e.g. /new-document-type-assets "Bill of Lading" https://example.com/bol.pdf ~/schemas/bol.json
+description: Build a document-types/collection/<slug>/ asset folder from a public document. Pass the document type name, a URL to a public sample, optionally a path to an existing schema, and --file <path> when the document had to be downloaded by hand (Scribd and other sites that block scripts), e.g. /new-document-type-assets "Bill of Lading" https://example.com/bol.pdf ~/schemas/bol.json
 ---
 
 # New Document Type Assets
@@ -9,9 +9,15 @@ Build the asset folder behind a `landing.ai/document-type/<slug>` page.
 
 **Arguments:** `$ARGUMENTS`
 
-Expected as: `<document type name>` `<url to a public document>` `[path to an existing schema.json]`
+Expected as: `<document type name>` `<url to a public document>` `[path to an existing schema.json]` `[--file <path to a local copy>]`
 
 Example: `Bill of Lading https://example.com/sample-bol.pdf ~/schemas/bol.json`
+
+With a manual download:
+`"SAT Score Report" https://www.scribd.com/document/891396937/Sat-Score-Report-6-2025 --file ~/Downloads/sat-score-report.pdf`
+
+The URL is required even with `--file`: it is the source of record, and it goes in the
+manifest and on the page. `--file` only replaces the download.
 
 If the name or the URL is missing, stop and ask. Do not invent a document.
 
@@ -58,7 +64,20 @@ Use `.venv/bin/python` for every script in this repo.
 
 ## Step 2 — Fetch the document and establish provenance
 
-Download the document to `document-types/collection/<slug>/source/<filename>`.
+Get the document into `document-types/collection/<slug>/source/<filename>`:
+
+- **With `--file`:** copy the local file there. Do not try the URL as well. Check it is
+  a real document of the expected kind with `file` or PyMuPDF, not a saved web page.
+- **Without `--file`:** download the URL. Some sites return a bot check or a login page
+  with a `200` status instead of the document. Scribd returns a 3 KB HTML page titled
+  "Client Challenge", and its downloads need a logged-in account anyway. So check what
+  arrived: if it is HTML, or anything other than the document, **stop and ask the user
+  to download it by hand** and re-run with `--file`. Do not try to get round the block.
+
+A manual download changes how the document was obtained, not where it came from. The
+source URL is still the one given, and the retrieved date is the day the user downloaded
+it. Ask if it was not today. Say in `clearance_note` that the file was downloaded
+manually.
 
 Then establish, and be able to state:
 
@@ -74,6 +93,12 @@ PDF, a government form filled with specimen data, a vendor's own sample.
 
 **If you cannot establish this, stop and ask the user.** A document you found without a
 clear provenance story is not usable, however good a sample it is.
+
+**User-upload sites are not publishers.** On Scribd and similar sites, the account that
+uploaded a document is rarely the one that produced it, so the site's publicness does
+not make the document `public`. Treat such documents as personal records until Step 3
+shows otherwise, and expect the clearance to be `redacted`. The consolidated 1099 came
+from Scribd, was titled as redacted, and was not.
 
 Open the first page and look at it. Confirm it is a real, populated document of the type
 requested and not a blank template.
@@ -281,7 +306,8 @@ optional and has caught real errors every time it has been done.
 Write `document-types/collection/<slug>/README.md` covering:
 
 - What the document is, publisher, page count, orientation
-- Provenance table and the clearance story. If redacted, say what was replaced and with
+- Provenance table and the clearance story, including whether the file was downloaded
+  manually. If redacted, say what was replaced and with
   what — **never the originals** — and that the output was verified
 - Why this document was chosen — what it tests that the others do not
 - The featured fields and why
