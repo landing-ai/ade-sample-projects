@@ -14,7 +14,7 @@
       "clearance_note": "Fidelity's own sample statement, published on fidelity.com to show customers what a monthly statement looks like. Every page is marked '*** SAMPLE STATEMENT *** For informational purposes only'. All personal data is specimen: the account holder is 'John W. Doe, 100 Main St.', the account numbers are 111-111111, 222-222222 and 333-333333, and the phone numbers are Fidelity's and SIPC's published lines. No redaction needed."
     }
   },
-  "feature_page": 1,
+  "feature_page": 7,
   "preview_pages": [
     1,
     4,
@@ -23,30 +23,30 @@
   ],
   "fields": [
     {
-      "path": "portfolio_summary.beginning_value",
-      "label": "Beginning portfolio value",
+      "path": "stock_holdings[2].description",
+      "label": "Security (short position)",
       "occurrence": 0
     },
     {
-      "path": "portfolio_summary.additions",
-      "label": "Additions",
+      "path": "stock_holdings[2].quantity",
+      "label": "Quantity",
       "occurrence": 0
     },
     {
-      "path": "portfolio_summary.subtractions",
-      "label": "Subtractions",
+      "path": "stock_holdings[2].ending_market_value",
+      "label": "Ending market value",
       "occurrence": 0
     },
     {
-      "path": "portfolio_summary.change_in_investment_value",
-      "label": "Change in investment value",
+      "path": "stock_holdings[2].total_cost_basis",
+      "label": "Total cost basis",
       "occurrence": 0
     },
     {
-      "path": "portfolio_summary.ending_value",
-      "label": "Ending portfolio value",
+      "path": "stock_holdings[2].unrealized_gain_loss",
+      "label": "Unrealized gain",
       "occurrence": 0
     }
   ],
-  "notes": "Features the page 1 portfolio reconciliation for the period: beginning value, plus additions, minus subtractions, plus change in investment value, equals ending value ($253,221.83 + $59,269.64 - $45,430.74 + $7,161.47 = $274,222.20). Transaction costs are extracted but not featured because they are a sub-line already included in subtractions. The account holder's specimen name is extracted but not featured. The first account's beginning value extracts as 880853.95 because Fidelity's PDF prints '$88,0853.95', a typo in the sample; the column arithmetic gives 88,053.95. preview_pages shows the summary, an account summary with its allocation chart, a holdings table and the estimated cash flow table, instead of the default pick, which included a page of footnotes."
+  "notes": "Features one complete row of the page 7 stock holdings table: the ENSTAR GROUP short position. It is the hardest row on the page: a negative quantity (-100.00) and market value (-13,710.00), a cost basis carrying a superscript footnote marker (-14,510.99c), a positive unrealized gain despite the negative values, and a description that wraps onto a second line holding the ticker. The row reconciles: -13,710.00 - (-14,510.99) = 800.99. Page 1's portfolio reconciliation was the first choice and grounds perfectly, but a clean summary table is the easy case. Price is extracted but not featured, to keep to five fields. The first account's beginning value extracts as 880853.95 because Fidelity's PDF prints '$88,0853.95', a typo in the sample; the column arithmetic and page 4 give 88,053.95. preview_pages shows the summary, an account summary with its allocation chart, the featured holdings page and the estimated cash flow table, instead of the default pick, which included a page of footnotes."
 }

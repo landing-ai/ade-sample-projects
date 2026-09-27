@@ -40,30 +40,37 @@ specimen, which is the cleanest provenance a sample can have:
   consolidated 1099's rotated mailing panel was dropped, so these are the first rotated
   pages the collection keeps.
 
-## Featured fields: one reconciliation
+## Featured fields: one short position
 
-All on **page 1**, from the portfolio summary's This Period column:
+All on **page 7**, one complete row of the individual account's stock holdings table:
 
 | Field | Value |
 |---|---|
-| Beginning portfolio value | $253,221.83 |
-| Additions | 59,269.64 |
-| Subtractions | -45,430.74 |
-| Change in investment value | 7,161.47 |
-| Ending portfolio value | $274,222.20 |
+| Security (short position) | ENSTAR GROUP LIMITED COM STK USD 1.00 (ESGR) |
+| Quantity | -100.00 |
+| Ending market value | -13,710.00 |
+| Total cost basis | -14,510.99ᶜ |
+| Unrealized gain | 800.99 |
 
-The five values reconcile: $253,221.83 + $59,269.64 − $45,430.74 + $7,161.47 =
-$274,222.20, so the overlay reads as one calculation. Transaction costs (−$139.77) are
-extracted but not featured, because they are a sub-line already included in
-subtractions.
+This is the hardest row on the page, chosen for that reason:
 
-Page 1 prints $274,222.20 three times: as the headline portfolio value, and in both the
-This Period and Year-to-Date columns. `ending_value` boxes the This Period cell, the one
-the schema asks for.
+- **Signs matter.** A short position has a negative quantity, market value and cost basis,
+  and a positive gain. Dropping a minus sign anywhere turns the gain into a loss.
+- **A footnote marker sits on the number.** The cost basis is printed "-14,510.99" with a
+  superscript "c" for its cost basis footnote, and extracts as -14510.99.
+- **The description wraps.** The ticker, "(ESGR)", is on a second line under the name.
+
+The row reconciles: −$13,710.00 − (−$14,510.99) = $800.99, so the overlay reads as one
+position rather than five unrelated numbers. Price is extracted but not featured, to keep
+to five fields.
+
+Page 1 was the first choice. Its portfolio reconciliation grounds perfectly, but a clean
+summary table is the easy case, and a holdings table is where statements get difficult.
 
 ## What it surfaced
 
-**Tables ground cell by cell.** Every featured value boxes exactly its table cell, and
+**Tables ground cell by cell.** Every value on page 7 boxes its own cell, including the
+short position's negatives and the three-decimal preferred stock price, and
 across the whole document only seven ranges are flagged. Three are formatting: a line
 break inside a description cell, or a section heading ("Common Stocks") merged into the
 first holding's description. Two are the period dates, normalized to ISO. The other two
@@ -106,8 +113,8 @@ are flagged, though they are right.
 .venv/bin/python document-types/scripts/run_ade.py investment-statement                # 55.80 credits
 .venv/bin/python document-types/scripts/run_ade.py investment-statement --extract-only # 20.50, schema iteration
 .venv/bin/python document-types/scripts/build_images.py investment-statement           # free
-.venv/bin/python document-types/scripts/inspect_fields.py investment-statement --page 1 --good
+.venv/bin/python document-types/scripts/inspect_fields.py investment-statement --page 7 --good
 ```
 
 `manifest.json` sets `preview_pages` to 1, 4, 7 and 18: the summary, an account summary
-with its allocation chart, a holdings table and the estimated cash flow table.
+with its allocation chart, the featured holdings page and the estimated cash flow table.
