@@ -294,7 +294,9 @@ something that does not match the value printed beside it on the page.
 
 - The page overlay: are the boxes on the right rows?
 - Each crop: does it contain the value it claims to?
-- The previews: are they the pages you expected?
+- The previews: are they the pages you expected? A document of four pages or fewer
+  previews every page, with no manifest entry needed. `preview_pages` is for longer
+  documents where the default sampling picks a dull page over an interesting one.
 
 **A wrong crop is invisible from a listing, and no test catches it.** This step is not
 optional and has caught real errors every time it has been done.
