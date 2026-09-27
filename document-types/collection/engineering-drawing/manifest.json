@@ -1,0 +1,41 @@
+{
+  "slug": "engineering-drawing",
+  "title": "Engineering drawing",
+  "source": {
+    "file": "Standard-Construction-Street-Details.pdf",
+    "pages": 11,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.albanyny.gov/DocumentCenter/View/14719/Standard-Construction-Street-Details",
+      "publisher": "City of Albany, Department of Engineering",
+      "title": "Standard Construction Street Details",
+      "retrieved": "2026-09-25",
+      "clearance": "public",
+      "clearance_note": "Municipal construction standards published on the City of Albany, NY website for contractors and the general public. Names the Mayor and the City Engineer, but only in their official capacity in the title block. Carries the City of Albany logo on every sheet. Unlike US federal works, municipal documents are not automatically public domain, so this is publicly distributed material rather than copyright-free."
+    }
+  },
+  "feature_page": 5,
+  "fields": [
+    {
+      "path": "sheets[4].detail_name",
+      "label": "Detail name",
+      "occurrence": 0
+    },
+    {
+      "path": "drop_curb.max_curb_reveal",
+      "label": "Maximum curb reveal (from the notes)",
+      "occurrence": 0
+    },
+    {
+      "path": "sheets[4].file_name",
+      "label": "CAD file name",
+      "occurrence": 0
+    },
+    {
+      "path": "city_engineer",
+      "label": "City Engineer",
+      "occurrence": 6
+    }
+  ],
+  "notes": "Eleven AutoCAD-plotted sheets (C-1 through CW-1), one standard detail per sheet, each with a drawing, leader-line callouts, numbered notes and an identical title block (detail number, file name, date issued, revision date). The PDF has NO text layer: every label is vector geometry, so every value has to come from reading the drawing, not from embedded text. Page 5 (DW-1, Driveway/Sidewalk Drop Curb) is the feature page: an isometric view with a dense spread of leader-line callouts pointing into the drawing from all sides, and dimensions set along the skewed drawing axes rather than horizontally. It has no table; its regions are the drawing callouts, the dimension strings, three numbered notes, and the title block. Featured fields are all outside the drawing: the detail name and CAD file name from the title block table, the curb reveal limit from note 1, and the City Engineer from the text beside the logo. The drawing fields (max_gradient, transition_length, concrete_thickness and the rest) all extract correctly but are not featured: DPT-3 parses the drawing as one DIAGRAM figure and the callout labels exist only in its generated description, so every one grounds to the whole figure block and renders an identical crop of the entire drawing. city_engineer is pinned to occurrence 6 because its 11 ranges are not in page order; that is the page 5 one. max_curb_reveal is pinned to occurrence 0, the note line carrying the value; occurrence 1 is the note's second line."
+}
