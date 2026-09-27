@@ -1,0 +1,1314 @@
+{
+  "extraction": {
+    "accounts": [
+      {
+        "account_category": "GENERAL INVESTMENTS",
+        "account_name": "John W. Doe - Individual - TOD",
+        "account_number": "111-111111",
+        "beginning_value": 880853.95,
+        "ending_value": 103351.18
+      },
+      {
+        "account_category": "PERSONAL RETIREMENT",
+        "account_name": "John W. Doe - Traditional IRA",
+        "account_number": "222-222222",
+        "beginning_value": 137232.44,
+        "ending_value": 142413.12
+      },
+      {
+        "account_category": "EDUCATION (529) ACCOUNTS",
+        "account_name": "John W. Doe - Education Account",
+        "account_number": "333-333333",
+        "beginning_value": 27935.44,
+        "ending_value": 28457.9
+      }
+    ],
+    "portfolio_summary": {
+      "additions": 59269.64,
+      "beginning_value": 253221.83,
+      "change_in_investment_value": 7161.47,
+      "ending_value": 274222.2,
+      "subtractions": -45430.74,
+      "transaction_costs": -139.77
+    },
+    "statement": {
+      "account_holder": "John W. Doe",
+      "institution": "Fidelity INVESTMENTS",
+      "period_end": "2015-07-31",
+      "period_start": "2015-07-01"
+    },
+    "stock_holdings": [
+      {
+        "account_number": "111-111111",
+        "description": "Common Stocks APPLE INC",
+        "ending_market_value": 13132.75,
+        "price": 525.31,
+        "quantity": 25.0,
+        "symbol": "AAPL",
+        "total_cost_basis": 9350.12,
+        "unrealized_gain_loss": 3782.63
+      },
+      {
+        "account_number": "111-111111",
+        "description": "AMERCO COM",
+        "ending_market_value": 6094.5,
+        "price": 203.15,
+        "quantity": 30.0,
+        "symbol": "UHAL",
+        "total_cost_basis": 4149.75,
+        "unrealized_gain_loss": 1944.75
+      },
+      {
+        "account_number": "111-111111",
+        "description": "ENSTAR GROUP LIMITED COM STK USD 1.00",
+        "ending_market_value": -13710.0,
+        "price": 137.1,
+        "quantity": -100.0,
+        "symbol": "ESGR",
+        "total_cost_basis": -14510.99,
+        "unrealized_gain_loss": 800.99
+      },
+      {
+        "account_number": "111-111111",
+        "description": "BANK AMER CORP DEP SHS REPSTG 1/1200TH PFD SER 5",
+        "ending_market_value": 3034.5,
+        "price": 20.23,
+        "quantity": 150.0,
+        "symbol": "BMLPRL",
+        "total_cost_basis": 2470.16,
+        "unrealized_gain_loss": 564.34
+      },
+      {
+        "account_number": "111-111111",
+        "description": "CITIGROUP INC DEP SH REP STG 1/100TH INT NON CUMULATIVE PFD SER F 8.50%",
+        "ending_market_value": 7752.9,
+        "price": 25.843,
+        "quantity": 300.0,
+        "symbol": "CPRM",
+        "total_cost_basis": 6895.4,
+        "unrealized_gain_loss": 857.5
+      },
+      {
+        "account_number": "222-222222",
+        "description": "COMMON STOCK APPLE INC",
+        "ending_market_value": 15759.3,
+        "price": 525.31,
+        "quantity": 30.0,
+        "symbol": "AAPL",
+        "total_cost_basis": 8247.5,
+        "unrealized_gain_loss": 7511.8
+      },
+      {
+        "account_number": "222-222222",
+        "description": "EXXON MOBILE",
+        "ending_market_value": 4398.0,
+        "price": 87.96,
+        "quantity": 50.0,
+        "symbol": "XOM",
+        "total_cost_basis": 4149.75,
+        "unrealized_gain_loss": 248.25
+      },
+      {
+        "account_number": "222-222222",
+        "description": "FACEBOOK",
+        "ending_market_value": 1509.6,
+        "price": 25.16,
+        "quantity": 60.0,
+        "symbol": "FB",
+        "total_cost_basis": 1848.95,
+        "unrealized_gain_loss": -339.35
+      },
+      {
+        "account_number": "222-222222",
+        "description": "GENERAL MOTORS CO USD0.01",
+        "ending_market_value": 7432.04,
+        "price": 35.56,
+        "quantity": 209.0,
+        "symbol": "GM",
+        "total_cost_basis": 0,
+        "unrealized_gain_loss": 0
+      },
+      {
+        "account_number": "222-222222",
+        "description": "SLM CORP CPI LKD NT FLTG RATE 0.00% 03/15/2017",
+        "ending_market_value": 13859.1,
+        "price": 23.49,
+        "quantity": 590.0,
+        "symbol": "OSM",
+        "total_cost_basis": 9090.7,
+        "unrealized_gain_loss": 4768.4
+      },
+      {
+        "account_number": "222-222222",
+        "description": "STANDARD PACIFIC CORP",
+        "ending_market_value": 47113.8,
+        "price": 9.238,
+        "quantity": 5100.0,
+        "symbol": "SPF",
+        "total_cost_basis": 61354.44,
+        "unrealized_gain_loss": 863.47
+      },
+      {
+        "account_number": "222-222222",
+        "description": "WESTMORELAND COAL CO DEP SHS EACH REPSTG 1/4 OF SHS SER A CV ESCH",
+        "ending_market_value": 9144.0,
+        "price": 30.48,
+        "quantity": 300.0,
+        "symbol": "WLBPZ",
+        "total_cost_basis": 5088.4,
+        "unrealized_gain_loss": 4055.6
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "accounts": [
+      {
+        "account_category": {
+          "ranges": [
+            {
+              "end": 2109,
+              "start": 2090
+            }
+          ],
+          "value": "GENERAL INVESTMENTS"
+        },
+        "account_name": {
+          "ranges": [
+            {
+              "end": 2168,
+              "start": 2138
+            }
+          ],
+          "value": "John W. Doe - Individual - TOD"
+        },
+        "account_number": {
+          "ranges": [
+            {
+              "end": 2187,
+              "start": 2177
+            }
+          ],
+          "value": "111-111111"
+        },
+        "beginning_value": {
+          "ranges": [
+            {
+              "end": 2207,
+              "start": 2196
+            }
+          ],
+          "value": 880853.95
+        },
+        "ending_value": {
+          "ranges": [
+            {
+              "end": 2227,
+              "start": 2216
+            }
+          ],
+          "value": 103351.18
+        }
+      },
+      {
+        "account_category": {
+          "ranges": [
+            {
+              "end": 2277,
+              "start": 2258
+            }
+          ],
+          "value": "PERSONAL RETIREMENT"
+        },
+        "account_name": {
+          "ranges": [
+            {
+              "end": 2336,
+              "start": 2307
+            }
+          ],
+          "value": "John W. Doe - Traditional IRA"
+        },
+        "account_number": {
+          "ranges": [
+            {
+              "end": 2355,
+              "start": 2345
+            }
+          ],
+          "value": "222-222222"
+        },
+        "beginning_value": {
+          "ranges": [
+            {
+              "end": 2374,
+              "start": 2364
+            }
+          ],
+          "value": 137232.44
+        },
+        "ending_value": {
+          "ranges": [
+            {
+              "end": 2393,
+              "start": 2383
+            }
+          ],
+          "value": 142413.12
+        }
+      },
+      {
+        "account_category": {
+          "ranges": [
+            {
+              "end": 2448,
+              "start": 2424
+            }
+          ],
+          "value": "EDUCATION (529) ACCOUNTS"
+        },
+        "account_name": {
+          "ranges": [
+            {
+              "end": 2509,
+              "start": 2478
+            }
+          ],
+          "value": "John W. Doe - Education Account"
+        },
+        "account_number": {
+          "ranges": [
+            {
+              "end": 2528,
+              "start": 2518
+            }
+          ],
+          "value": "333-333333"
+        },
+        "beginning_value": {
+          "ranges": [
+            {
+              "end": 2546,
+              "start": 2537
+            }
+          ],
+          "value": 27935.44
+        },
+        "ending_value": {
+          "ranges": [
+            {
+              "end": 2564,
+              "start": 2555
+            }
+          ],
+          "value": 28457.9
+        }
+      }
+    ],
+    "portfolio_summary": {
+      "additions": {
+        "ranges": [
+          {
+            "end": 960,
+            "start": 951
+          }
+        ],
+        "value": 59269.64
+      },
+      "beginning_value": {
+        "ranges": [
+          {
+            "end": 894,
+            "start": 883
+          }
+        ],
+        "value": 253221.83
+      },
+      "change_in_investment_value": {
+        "ranges": [
+          {
+            "end": 1210,
+            "start": 1202
+          }
+        ],
+        "value": 7161.47
+      },
+      "ending_value": {
+        "ranges": [
+          {
+            "end": 1302,
+            "start": 1291
+          }
+        ],
+        "value": 274222.2
+      },
+      "subtractions": {
+        "ranges": [
+          {
+            "end": 1029,
+            "start": 1019
+          }
+        ],
+        "value": -45430.74
+      },
+      "transaction_costs": {
+        "ranges": [
+          {
+            "end": 1120,
+            "start": 1113
+          }
+        ],
+        "value": -139.77
+      }
+    },
+    "statement": {
+      "account_holder": {
+        "ranges": [
+          {
+            "end": 179,
+            "start": 168
+          }
+        ],
+        "value": "John W. Doe"
+      },
+      "institution": {
+        "ranges": [
+          {
+            "end": 96,
+            "start": 75
+          }
+        ],
+        "value": "Fidelity INVESTMENTS"
+      },
+      "period_end": {
+        "ranges": [
+          {
+            "end": 139,
+            "start": 117
+          }
+        ],
+        "value": "2015-07-31"
+      },
+      "period_start": {
+        "ranges": [
+          {
+            "end": 139,
+            "start": 117
+          }
+        ],
+        "value": "2015-07-01"
+      }
+    },
+    "stock_holdings": [
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 15296,
+              "start": 15277
+            }
+          ],
+          "value": "111-111111"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 15612,
+              "start": 15579
+            }
+          ],
+          "value": "Common Stocks APPLE INC"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 15660,
+              "start": 15650
+            }
+          ],
+          "value": 13132.75
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 15641,
+              "start": 15635
+            }
+          ],
+          "value": 525.31
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 15626,
+              "start": 15621
+            }
+          ],
+          "value": 25.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 15612,
+              "start": 15579
+            }
+          ],
+          "value": "AAPL"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 15684,
+              "start": 15669
+            }
+          ],
+          "value": 9350.12
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 15708,
+              "start": 15699
+            }
+          ],
+          "value": 3782.63
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 15296,
+              "start": 15277
+            }
+          ],
+          "value": "111-111111"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 15774,
+              "start": 15757
+            }
+          ],
+          "value": "AMERCO COM"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 15821,
+              "start": 15813
+            }
+          ],
+          "value": 6094.5
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 15804,
+              "start": 15797
+            }
+          ],
+          "value": 203.15
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 15788,
+              "start": 15783
+            }
+          ],
+          "value": 30.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 15774,
+              "start": 15757
+            }
+          ],
+          "value": "UHAL"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 15844,
+              "start": 15830
+            }
+          ],
+          "value": 4149.75
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 15867,
+              "start": 15859
+            }
+          ],
+          "value": 1944.75
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 15296,
+              "start": 15277
+            }
+          ],
+          "value": "111-111111"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 15952,
+              "start": 15905
+            }
+          ],
+          "value": "ENSTAR GROUP LIMITED COM STK USD 1.00"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 16002,
+              "start": 15992
+            }
+          ],
+          "value": -13710.0
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 15983,
+              "start": 15977
+            }
+          ],
+          "value": 137.1
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 15968,
+              "start": 15961
+            }
+          ],
+          "value": -100.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 15952,
+              "start": 15905
+            }
+          ],
+          "value": "ESGR"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 16027,
+              "start": 16011
+            }
+          ],
+          "value": -14510.99
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 16048,
+              "start": 16042
+            }
+          ],
+          "value": 800.99
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 15296,
+              "start": 15277
+            }
+          ],
+          "value": "111-111111"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 16327,
+              "start": 16247
+            }
+          ],
+          "value": "BANK AMER CORP DEP SHS REPSTG 1/1200TH PFD SER 5"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 16376,
+              "start": 16367
+            }
+          ],
+          "value": 3034.5
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 16358,
+              "start": 16351
+            }
+          ],
+          "value": 20.23
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 16342,
+              "start": 16336
+            }
+          ],
+          "value": 150.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 16327,
+              "start": 16247
+            }
+          ],
+          "value": "BMLPRL"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 16394,
+              "start": 16385
+            }
+          ],
+          "value": 2470.16
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 16410,
+              "start": 16403
+            }
+          ],
+          "value": 564.34
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 15296,
+              "start": 15277
+            }
+          ],
+          "value": "111-111111"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 16550,
+              "start": 16447
+            }
+          ],
+          "value": "CITIGROUP INC DEP SH REP STG 1/100TH INT NON CUMULATIVE PFD SER F 8.50%"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 16597,
+              "start": 16589
+            }
+          ],
+          "value": 7752.9
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 16580,
+              "start": 16574
+            }
+          ],
+          "value": 25.843
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 16565,
+              "start": 16559
+            }
+          ],
+          "value": 300.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 16550,
+              "start": 16447
+            }
+          ],
+          "value": "CPRM"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 16614,
+              "start": 16606
+            }
+          ],
+          "value": 6895.4
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 16629,
+              "start": 16623
+            }
+          ],
+          "value": 857.5
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 53780,
+              "start": 53748
+            }
+          ],
+          "value": "COMMON STOCK APPLE INC"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 53829,
+              "start": 53819
+            }
+          ],
+          "value": 15759.3
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 53810,
+              "start": 53803
+            }
+          ],
+          "value": 525.31
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 53794,
+              "start": 53789
+            }
+          ],
+          "value": 30.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 53780,
+              "start": 53748
+            }
+          ],
+          "value": "AAPL"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 53853,
+              "start": 53838
+            }
+          ],
+          "value": 8247.5
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 53877,
+              "start": 53868
+            }
+          ],
+          "value": 7511.8
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 53944,
+              "start": 53926
+            }
+          ],
+          "value": "EXXON MOBILE"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 53989,
+              "start": 53981
+            }
+          ],
+          "value": 4398.0
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 53972,
+              "start": 53967
+            }
+          ],
+          "value": 87.96
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 53958,
+              "start": 53953
+            }
+          ],
+          "value": 50.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 53944,
+              "start": 53926
+            }
+          ],
+          "value": "XOM"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 54012,
+              "start": 53998
+            }
+          ],
+          "value": 4149.75
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 54033,
+              "start": 54027
+            }
+          ],
+          "value": 248.25
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 54093,
+              "start": 54080
+            }
+          ],
+          "value": "FACEBOOK"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 54138,
+              "start": 54130
+            }
+          ],
+          "value": 1509.6
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 54121,
+              "start": 54116
+            }
+          ],
+          "value": 25.16
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 54107,
+              "start": 54102
+            }
+          ],
+          "value": 60.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 54093,
+              "start": 54080
+            }
+          ],
+          "value": "FB"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 54161,
+              "start": 54147
+            }
+          ],
+          "value": 1848.95
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 54183,
+              "start": 54176
+            }
+          ],
+          "value": -339.35
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 54290,
+              "start": 54220
+            }
+          ],
+          "value": "GENERAL MOTORS CO USD0.01"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 54336,
+              "start": 54328
+            }
+          ],
+          "value": 7432.04
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 54319,
+              "start": 54314
+            }
+          ],
+          "value": 35.56
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 54305,
+              "start": 54299
+            }
+          ],
+          "value": 209.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 54290,
+              "start": 54220
+            }
+          ],
+          "value": "GM"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 54352,
+              "start": 54345
+            }
+          ],
+          "value": 0
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 54368,
+              "start": 54361
+            }
+          ],
+          "value": 0
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 54460,
+              "start": 54405
+            }
+          ],
+          "value": "SLM CORP CPI LKD NT FLTG RATE 0.00% 03/15/2017"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 54507,
+              "start": 54498
+            }
+          ],
+          "value": 13859.1
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 54489,
+              "start": 54484
+            }
+          ],
+          "value": 23.49
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 54475,
+              "start": 54469
+            }
+          ],
+          "value": 590.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 54460,
+              "start": 54405
+            }
+          ],
+          "value": "OSM"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 54524,
+              "start": 54516
+            }
+          ],
+          "value": 9090.7
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 54541,
+              "start": 54533
+            }
+          ],
+          "value": 4768.4
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 54605,
+              "start": 54578
+            }
+          ],
+          "value": "STANDARD PACIFIC CORP"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 54654,
+              "start": 54645
+            }
+          ],
+          "value": 47113.8
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 54636,
+              "start": 54631
+            }
+          ],
+          "value": 9.238
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 54622,
+              "start": 54614
+            }
+          ],
+          "value": 5100.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 54605,
+              "start": 54578
+            }
+          ],
+          "value": "SPF"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 54672,
+              "start": 54663
+            }
+          ],
+          "value": 61354.44
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 54687,
+              "start": 54681
+            }
+          ],
+          "value": 863.47
+        }
+      },
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 52929,
+              "start": 52910
+            }
+          ],
+          "value": "222-222222"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 54812,
+              "start": 54736
+            }
+          ],
+          "value": "WESTMORELAND COAL CO DEP SHS EACH REPSTG 1/4 OF SHS SER A CV ESCH"
+        },
+        "ending_market_value": {
+          "ranges": [
+            {
+              "end": 54858,
+              "start": 54850
+            }
+          ],
+          "value": 9144.0
+        },
+        "price": {
+          "ranges": [
+            {
+              "end": 54841,
+              "start": 54836
+            }
+          ],
+          "value": 30.48
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 54827,
+              "start": 54821
+            }
+          ],
+          "value": 300.0
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 54812,
+              "start": 54736
+            }
+          ],
+          "value": "WLBPZ"
+        },
+        "total_cost_basis": {
+          "ranges": [
+            {
+              "end": 54875,
+              "start": 54867
+            }
+          ],
+          "value": 5088.4
+        },
+        "unrealized_gain_loss": {
+          "ranges": [
+            {
+              "end": 54892,
+              "start": 54884
+            }
+          ],
+          "value": 4055.6
+        }
+      }
+    ]
+  },
+  "markdown": "*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Fidelity logo]\nFidelity INVESTMENTS®\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nEnvelope # BABCEJBBPRTLA\n\nJohn W. Doe\n100 Main St.\nBoston, MA 02201\n\n\n### Contact Information\nOnline: Fidelity.com\nFAST<sup>sm</sup> Automated Telephone: (800) 544-5555\nPrivate Client Group: (800) 544-5704\n\n**Welcome to your new Fidelity statement.**\nYour account numbers can be found on page 2 in the Accounts Included in this\nReport section. Your statement also has a new look and more information. We hope\nyou find the changes beneficial and we look forward to hearing your feedback.\n\n\n<table>\n<tr><td>Your Portfolio Value:</td><td>$274,222.20</td></tr>\n<tr><td>Change from Last Period:</td><td>▲ $21,000.37</td></tr>\n</table>\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Beginning Portfolio Value</td><td>$253,221.83</td><td>$232,643.16</td></tr>\n<tr><td>Additions</td><td>59,269.64</td><td>121,433.55</td></tr>\n<tr><td>Subtractions</td><td>-45,430.74</td><td>-98,912.58</td></tr>\n<tr><td>Transaction Costs, Fees &amp; Charges</td><td>-139.77</td><td>-625.87</td></tr>\n<tr><td>Change in Investment Value<sup>*</sup></td><td>7,161.47</td><td>19,058.07</td></tr>\n<tr><td>Ending Portfolio Value<sup>**</sup></td><td>$274,222.20</td><td>$274,222.20</td></tr>\n</table>\n\n* Appreciation or depreciation of your holdings due to price changes plus any distribution and\nincome earned during the statement period.\n** Excludes unpriced securities.\n\n\nBrokerage services provided by Fidelity Brokerage Services LLC (FBS), Member NYSE, SIPC (800) 544-6666. Brokerage accounts carried with National Financial Services LLC (NFS), Member NYSE, SIPC.\n\n\n1 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Fidelity logo symbol]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nPortfolio Summary\n\n\nAccounts Included in This Report\n\n\n<table>\n<tr><td>Page</td><td>Account Type/Name</td><td>Account Number</td><td>Beginning Value</td><td>Ending Value</td></tr>\n<tr><td colspan=\"5\">GENERAL INVESTMENTS</td></tr>\n<tr><td>5</td><td>John W. Doe - Individual - TOD</td><td>111-111111</td><td>$88,0853.95</td><td>$103,351.18</td></tr>\n<tr><td colspan=\"5\">PERSONAL RETIREMENT</td></tr>\n<tr><td>23</td><td>John W. Doe - Traditional IRA</td><td>222-222222</td><td>137,232.44</td><td>142,413.12</td></tr>\n<tr><td colspan=\"5\">EDUCATION (529) ACCOUNTS</td></tr>\n<tr><td>29</td><td>John W. Doe - Education Account</td><td>333-333333</td><td>27,935.44</td><td>28,457.90</td></tr>\n<tr><td></td><td>Total Portfolio</td><td></td><td>$253,221.83</td><td>$274,222.20</td></tr>\n</table>\n\n- *Includes transfers between Fidelity accounts.*\n- **Appreciation or depreciation of your holdings due to price changes plus any distribution and\nincome earned during the statement period.**\n\n\n**Do more with your money.**\nTransfer funds, pay bills, earn credit card rewards and more. Learn more about\nthe Fidelity Cash Management Account by calling 1-800-FIDELITY or visit\nfidelit.com/cashmanagement\n\n\nThe Fidelity Portfolio Advisory Service® account offers professional money man-\nagement and access to our proprietary research through model portfolios of mutual\nfunds. Get a complimentary investment proposal by calling Fidelity at 800-544-1766.\n\n\n2 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Icon of a stylized sun]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nPortfolio Summary (continued)\n\n\nIncome Summary\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Taxable</td><td>$178.53</td><td>$2,839.92</td></tr>\n<tr><td>Dividends</td><td>178.53</td><td>1,548.74</td></tr>\n<tr><td>Interest</td><td>—</td><td>10.25</td></tr>\n<tr><td>Short-term Capital Gains</td><td>—</td><td>255.68</td></tr>\n<tr><td>Long-term Capital Gains</td><td>—</td><td>1,025.25</td></tr>\n<tr><td>Tax-exempt</td><td>$372.10</td><td>$3,384.74</td></tr>\n<tr><td>Dividends</td><td>—</td><td>1,725.87</td></tr>\n<tr><td>Interest</td><td>372.10</td><td>1,658.87</td></tr>\n<tr><td>Tax-deferred</td><td>$500.31</td><td>$7,020.49</td></tr>\n<tr><td>Return of Capital</td><td>$4,000.00</td><td>$8,500.00</td></tr>\n<tr><td>Liquidations</td><td>—</td><td>$1,576.16</td></tr>\n<tr><td>Total</td><td>$5,050.94</td><td>$23,278.62</td></tr>\n</table>\n\nTop Holdings\n\n<table>\n<tr><td>Description</td><td>Value</td><td>Percent of Portfolio</td></tr>\n<tr><td>Johnson &amp; Johnson (JNJ)</td><td>$47,113.80</td><td>17%</td></tr>\n<tr><td>Apple Inc (AAPL)</td><td>28,892.05</td><td>9</td></tr>\n<tr><td>NH Portfolio 2015 Delphi</td><td>21,221.14</td><td>7</td></tr>\n<tr><td>Corp Jr Sb Nt Slm Corp</td><td>15,375.00</td><td>5</td></tr>\n<tr><td>Spi Lkd Nt (OSM)</td><td>13,859.10</td><td>5</td></tr>\n<tr><td>Total</td><td>$126,461.09</td><td>45%</td></tr>\n</table>\n\n<figure type=\"CHART\">\n\n<description>The figure is a pie chart titled \"Asset Allocation\" representing the distribution of various asset classes. The chart is divided into five slices of different sizes and shades, each labeled with a percentage and an asset type.</description><table><thead><tr><th>Asset Type</th><th>Percentage</th></tr></thead><tbody><tr><td>Domestic Stock</td><td>42%</td></tr><tr><td>Foreign Stock</td><td>28%</td></tr><tr><td>Bonds</td><td>20%</td></tr><tr><td>Short-term</td><td>6%</td></tr><tr><td>Other</td><td>4%</td></tr></tbody></table></figure>\n\n<table>\n<tr><td>Asset Class</td><td>Percent of Portfolio</td></tr>\n<tr><td>Domestic Stock</td><td>42%</td></tr>\n<tr><td>Foreign Stock</td><td>28</td></tr>\n<tr><td>Bonds</td><td>20</td></tr>\n<tr><td>Short-term</td><td>6</td></tr>\n<tr><td>Other</td><td>4</td></tr>\n</table>\n\n*IMPORTANT: If you have any unsettled trades pending, the asset allocation presented above*\nmay be materially impacted and, depending on the size and scope of such unsettled trades,\nrendered unreliable. Asset allocation includes Other Holdings and Assets Held Away when\napplicable. Please note that, due to rounding, percentages may not add to 100%. For further\ndetails, please see \"Frequently Asked Questions\" at Fidelity.com/Statements.\n\n\n3 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[sunburst logo]\nFidelity INVESTMENTS\n\n\n**INVESTMENT REPORT**\nJuly 1 – July 31, 2015\n\n\nAccount Value:  $103,351.18 \nChange in Account Value  ▲ $15,297.23 \n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Beginning Account Value</td><td>$88,053.95</td><td>$76,911.26</td></tr>\n<tr><td>Additions</td><td>$59,269.64</td><td>$107,124.70</td></tr>\n<tr><td>Deposits</td><td>9,465.00</td><td>35,871.01</td></tr>\n<tr><td>Securities Transferred In</td><td>49,804.64</td><td>71,253.69</td></tr>\n<tr><td>Subtractions</td><td>-$45,430.74</td><td>-$94,297.76</td></tr>\n<tr><td>Withdrawals</td><td>-5,485.00</td><td>-32,581.02</td></tr>\n<tr><td>Securities Transferred Out</td><td>-5,000.00</td><td>-5,000.00</td></tr>\n<tr><td>Cards, Checking &amp; Bill Payments</td><td>-33,842.96</td><td>-54,258.13</td></tr>\n<tr><td>Trans. Costs, Fees &amp; Charges</td><td>-139.77</td><td>-625.87</td></tr>\n<tr><td>Taxes Withheld</td><td>-963.01</td><td>-1,832.74</td></tr>\n<tr><td>Change in Investment Value<sup>*</sup></td><td>$1,458.33</td><td>$13,612.98</td></tr>\n<tr><td>Ending Account Value</td><td>$103,351.18</td><td>$103,351.18</td></tr>\n</table>\n\n- *Appreciation or depreciation of your holdings due to price changes plus any distribution\nand income earned during the statement period.\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\n<figure type=\"CHART\">\n\n<description>The figure presents the 'Account Holdings' data, visualized through a pie chart and a corresponding summary table. The pie chart displays the distribution of assets, with Bonds comprising the largest share at 37%, followed by Stocks at 32%, Mutual Funds at 12%, Exchange Traded Products at 11%, Other at 5%, and Core Account at 3%. Below the chart, a table provides the specific monetary values for each category.</description><table><thead><tr><th>Holding Type</th><th>Value</th><th>Percent of Account</th></tr></thead><tbody><tr><td>Bonds</td><td>50,656</td><td>37%</td></tr><tr><td>Stocks</td><td>43,724</td><td>32</td></tr><tr><td>Mutual Funds</td><td>16,387</td><td>12</td></tr><tr><td>Exchange Traded Products</td><td>14,462</td><td>11</td></tr><tr><td>Other</td><td>6,740</td><td>5</td></tr><tr><td>Core Account</td><td>3,500</td><td>3</td></tr><tr><td><strong>Ending Market Value of Holdings</strong></td><td><strong>$108,051</strong></td><td><strong>100%</strong></td></tr></tbody></table></figure>\n\nTop Holdings\n\n<table>\n<tr><td>Description</td><td>Value</td><td>Percent of Account</td></tr>\n<tr><td>Apple Inc (AAPL)</td><td>13,132.75</td><td>12%</td></tr>\n<tr><td>Doubleline Total Return Bond (DBLTX)</td><td>11,361.52</td><td>11</td></tr>\n<tr><td>New York NY City Indl Dev Agy Rev</td><td>10,744.20</td><td>10</td></tr>\n<tr><td>Spdr Sertr Barclays Cap High Yield (JNK)</td><td>10,165.00</td><td>9</td></tr>\n<tr><td>Federal Natl Mtg Assn</td><td>10,000.00</td><td>9</td></tr>\n<tr><td>Total</td><td>$55,403.47</td><td>51%</td></tr>\n</table>\n\n4 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID_LOGO]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nAccount Summary (continued)\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nCore Account Cash Flow\nCore Account: *FDIC Insured Deposit at Fifth Third Bank*\n\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Beginning Core Account Balance</td><td>$27,907.16</td><td>$15,061.66</td></tr>\n<tr><td colspan=\"3\">INVESTMENT ACTIVITY</td></tr>\n<tr><td>Securities Bought</td><td>-22,712.90</td><td>-102,997.45</td></tr>\n<tr><td>Securities Sold</td><td>25,801.00</td><td>155,987.33</td></tr>\n<tr><td>Dividends, Interest and Other Income<sup>D</sup></td><td>4,550.63</td><td>16,258.13</td></tr>\n<tr><td>Transaction Costs</td><td>-95.40</td><td>-445.18</td></tr>\n<tr><td>Other Activity</td><td>594.10</td><td>1,641.58</td></tr>\n<tr><td>Total Investment Activity</td><td>$8,137.43</td><td>$70,444.41</td></tr>\n<tr><td colspan=\"3\">CASH MANAGEMENT ACTIVITY</td></tr>\n<tr><td>Deposits</td><td>9,465.00</td><td>55,000.00</td></tr>\n<tr><td>Withdrawals</td><td>-5,485.00</td><td>-33,587.28</td></tr>\n<tr><td>Taxes Withheld</td><td>-963.01</td><td>-4,520.22</td></tr>\n<tr><td>Checking Activity</td><td>-24,432.10</td><td>-49,584.12</td></tr>\n<tr><td>Debit Card Activity</td><td>-3,065.81</td><td>-14,358.77</td></tr>\n<tr><td>Bill Payments</td><td>-6,345.05</td><td>-14,958.62</td></tr>\n<tr><td>Fees &amp; Charges</td><td>-44.37</td><td>-325.69</td></tr>\n<tr><td>Margin Interest</td><td>-1,673.75</td><td>-19,670.87</td></tr>\n<tr><td>Total Cash Management Activity</td><td>-$32,544.09</td><td>-$82,005.57</td></tr>\n<tr><td>Ending Core Account Balance</td><td>$3,500.50</td><td>$3,500.50</td></tr>\n</table>\n\nD Includes dividend reinvestments.\n\nIncome Summary\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Taxable</td><td>$178.53</td><td>$2,839.92</td></tr>\n<tr><td>Dividends</td><td>178.53</td><td>1,548.74</td></tr>\n<tr><td>Interest</td><td>—</td><td>10.25</td></tr>\n<tr><td>Short-term Capital Gains</td><td>—</td><td>255.68</td></tr>\n<tr><td>Long-term Capital Gains</td><td>—</td><td>1,025.25</td></tr>\n<tr><td>Tax-exempt</td><td>$372.10</td><td>3,384.74</td></tr>\n<tr><td>Dividends</td><td>—</td><td>1,725.87</td></tr>\n<tr><td>Interest</td><td>372.10</td><td>1,658.87</td></tr>\n<tr><td>Return of Capital</td><td>$4,000.00</td><td>$8,500.00</td></tr>\n<tr><td>Liquidations</td><td>—</td><td>$1,533.47</td></tr>\n<tr><td>Total</td><td>$4,550.63</td><td>$16,258.13</td></tr>\n</table>\n\nRealized Gains and Losses from Sales\n(May not reflect all gains and losses due to incomplete cost basis)\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Net Short-term Gain/Loss</td><td>—</td><td>$115.89</td></tr>\n<tr><td>Short-term Gain</td><td>—</td><td>255.68</td></tr>\n<tr><td>Short-term Loss</td><td>—</td><td>-148.54</td></tr>\n<tr><td>Short-term Disallowed Loss</td><td>—</td><td>8.75</td></tr>\n<tr><td>Net Long-term Gain/Loss</td><td>—</td><td>507.97</td></tr>\n<tr><td>Long-term Gain</td><td>—</td><td>1,025.25</td></tr>\n<tr><td>Long-term Loss</td><td>—</td><td>-850.45</td></tr>\n<tr><td>Long-term Disallowed Loss</td><td>—</td><td>333.17</td></tr>\n<tr><td>Net Gain/Loss</td><td>—</td><td>$623.86</td></tr>\n</table>\n\n5 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Icon of a stylized sun]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nHoldings\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nCore Account\n\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price</td><td>Ending Value</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Est. Yield<br>(EY)</td></tr>\n<tr><td>FDIC INSURED DEPOSIT AT FIFTH THIRD BANK<br>IRA NOT COVERED BY SIPC (QPIKQ)<sup>q</sup><br>— Interest rate: 0.010%<sup>h</sup></td><td>3,500.500</td><td>$1.000</td><td>$3,500.50</td><td>N/A</td><td>---</td><td>---</td><td>---</td></tr>\n<tr><td>Total Core Account (3% of account holdings)</td><td></td><td></td><td>$3,500.50</td><td></td><td></td><td></td><td></td></tr>\n</table>\n\nMutual Funds\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price<br>Per Unit</td><td>Ending<br>Market Value</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Est. Yield<br>(EY)</td></tr>\n<tr><td colspan=\"8\">Bond Funds</td></tr>\n<tr><td>DOUBLELINE TOTAL RETURN BOND FD CL I<br>(DBLTX)</td><td>1,015.328</td><td>$11.190</td><td>$11,361.52</td><td>$7,536.91c</td><td>$3,824.61</td><td>$531.72</td><td>4.68%</td></tr>\n<tr><td>— 30-day yield: 4.83%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"8\">Short-term Funds</td></tr>\n<tr><td>FIDELITY INSTL MMKT PORT CL I (FMPXX)<br>— 7-day yield: 0.01%</td><td>5,025.810</td><td>$1.000</td><td>$5,025.81</td><td>N/A</td><td>N/A</td><td>—</td><td></td></tr>\n<tr><td>Total Mutual Funds (12% of account holdings)</td><td></td><td></td><td>$16,387.33</td><td>$7,536.91</td><td>$3,824.61</td><td>$531.72</td><td></td></tr>\n</table>\n\nExchange Traded Products<sup>E</sup> (e.g. ETF, ETN)\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price Per Unit</td><td>Ending Market Value</td><td>Total Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td></td></tr>\n<tr><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF (JNK)</td><td>250.00</td><td>$40.66</td><td>$10,165.00</td><td>$10,000.00</td><td>$165.00</td><td></td></tr>\n<tr><td>VANGUARD INTL EQUITY INDEX FDS MSCI EUROPE ETF (VJK)</td><td>100.00</td><td>42.97</td><td>4,297.00</td><td>5,000.00</td><td>-703.00</td><td></td></tr>\n<tr><td>Total Exchange Traded Products (11% of account holdings)</td><td></td><td></td><td>$14,462.00</td><td>$15,000.00</td><td>-$538.00</td><td></td></tr>\n</table>\n\n6 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID_LOGO]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nHoldings (continued)\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nStocks\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price<br>Per Unit</td><td>Ending<br>Market Value</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Est. Yield<br>(EY)</td></tr>\n<tr><td>Common Stocks<br>APPLE INC (AAPL)</td><td>25.00</td><td>525.31</td><td>$13,132.75</td><td>$9,350.12<sup>c</sup></td><td>$3,782.63</td><td>$304.68</td><td>2.32%</td></tr>\n<tr><td>AMERCO COM (UHAL)</td><td>30.00</td><td>203.15A</td><td>6,094.50</td><td>4,149.75<sup>c</sup></td><td>1,944.75</td><td>—</td><td></td></tr>\n<tr><td>ENSTAR GROUP LIMITED COM STK USD 1.00<br>(ESGR)</td><td>-100.00</td><td>137.10</td><td>-13,710.00</td><td>-14,510.99<sup>c</sup></td><td>800.99</td><td>—</td><td></td></tr>\n<tr><td>Total Common Stock (24% of account holdings)</td><td></td><td></td><td>$5,517.25</td><td>$-1,011.12</td><td>$6,528.37</td><td>$304.68</td><td></td></tr>\n<tr><td>Preferred Stocks<br>BANK AMER CORP DEP SHS REPSTG 1/1200TH<br>PFD SER 5 (BMLPRL)</td><td>150.00</td><td>$20.230</td><td>$3,034.50</td><td>$2,470.16</td><td>$564.34</td><td></td><td></td></tr>\n<tr><td>CITIGROUP INC DEP SH REP STG 1/100TH INT<br>NON CUMULATIVE PFD SER F 8.50% (CPRM)<br>ISIN: US1729675561</td><td>300.00</td><td>25.843</td><td>7,752.90</td><td>6,895.40</td><td>857.50</td><td></td><td></td></tr>\n<tr><td>Total Preferred Stock (8% of account holdings)</td><td></td><td></td><td>$10,787.40</td><td>$9,365.56</td><td>$1,421.84</td><td></td><td></td></tr>\n<tr><td>Total Stocks (32% of account holdings)</td><td></td><td></td><td>$43,724.65</td><td>$37,376.42</td><td>$6,348.23</td><td>$304.68</td><td></td></tr>\n</table>\n\nBonds\n\n<table>\n<tr><td>Description</td><td>Maturity</td><td>Quantity</td><td>Price<br>Per Unit</td><td>Ending Market Value<br>Accrued Interest (AI)</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Coupon<br>Rate</td></tr>\n<tr><td>Asset Backed Securities<br>FEDERAL NATL MTG ASSN<br>CUSIP: 3136FPEX1<br>Int. Semi-Annually</td><td>12/17/13</td><td>10,000.00</td><td>$100.00</td><td>$10,000.00</td><td>$10,250.00<sup>t</sup></td><td>-$250.00</td><td>$125.00</td><td>1.25%</td></tr>\n<tr><td colspan=\"2\">Total Asset Backed Securities (7% of account holdings)</td><td></td><td></td><td>$10,000.00</td><td>$10,250.00</td><td>-$250.00</td><td>$125.00</td><td></td></tr>\n</table>\n\n7 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[SUN_LOGO]\nFidelity\nINVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nHoldings (continued)\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nBonds (continued)\n\n<table>\n<tr><td>Description</td><td>Maturity</td><td>Quantity</td><td>Price<br>Per Unit</td><td>Ending Market Value<br>Accrued Interest (AI)</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Coupon<br>Rate</td></tr>\n<tr><td>Corporate Bonds<br>SABRATEK CORP NT CV<br>CUSIP: 78571UAA6<br>Int. Semi-Annually</td><td>12/15/13</td><td>5,000.00</td><td>$101.250</td><td>$5,062.50</td><td>$10,000.00<sup>t</sup></td><td>-$4,937.50</td><td>$300.00</td><td>6.00%</td></tr>\n<tr><td>CALPINE CORP ESCROW 4 131347BD7<br>CUSIP: 131ESC9D9<br>Fixed Coupon; Unrated; At Maturity</td><td>11/15/13</td><td>10,000.00</td><td>99.500</td><td>9,950.00</td><td>10,000.00</td><td>-50.00</td><td>125.00</td><td>4.50</td></tr>\n<tr><td>Total Corporate Bonds (11% of account holdings)</td><td></td><td></td><td></td><td>$15,012.50</td><td>$20,000.00</td><td>-$4,987.50</td><td>$750.00</td><td></td></tr>\n<tr><td colspan=\"3\">Municipal Bonds<br>NEW YORK N Y CITY INDL DEV AGY REV   3/1/14   10,000.000<br>CUSIP: 64971PEN1<br>Fixed Coupon; MBIA Insured; Moodys BAA1; S&amp;P BBB; Int. Semi-Annually</td><td>$107.442</td><td>$10,744.20</td><td>$10,000.00<sup>B</sup></td><td>$744.20</td><td>$500.00</td><td>5.000%</td></tr>\n<tr><td>Total Municipal Bonds (8% of account holdings)</td><td></td><td></td><td></td><td>$10,744.20</td><td>$10,000.00</td><td>$744.20</td><td>$500.00</td><td></td></tr>\n<tr><td>Other Bonds<br>TXU SR NT-P<br>CUSIP: 873168AL2<br>Fixed Coupon</td><td>11/15/14</td><td>5,000.00</td><td>$100.00</td><td>$5,000.00</td><td>$10,000.00</td><td>-$5,000.00</td><td>$227.50</td><td>5.55%</td></tr>\n<tr><td>Total Other Bonds (4% of account holdings)</td><td></td><td></td><td></td><td>$5,000.00</td><td>$10,000.00</td><td>-$5,000.00</td><td>$227.50</td><td></td></tr>\n<tr><td>US Treasury/Agency Securities<br>UNITED STATES TREAS BILLS<br>CUSIP: 912796BL2<br>Fixed Coupon</td><td>11/21/13</td><td>10,000.00</td><td>$99.00</td><td>$9,900.00</td><td>$10,000.00</td><td>-$100.00</td><td>—</td><td>0.00%</td></tr>\n<tr><td>Total US Treasury/Agency Securities (7% of account holdings)</td><td></td><td></td><td></td><td>$9,900.00</td><td>$10,000.00</td><td>-$100.00</td><td>—</td><td></td></tr>\n<tr><td>Total Bonds (37% of account holdings)</td><td></td><td></td><td></td><td>$50,656.70<br>$582.57</td><td>$60,250.00</td><td>-$9,593.30</td><td>$1,652.50</td><td></td></tr>\n</table>\n\n8 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID_ICON]\nFidelity\nINVESTMENTS®\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nHoldings (continued)\n\n\nAccount 111-111111\nJohn W. Doe - Individual TOD\n\nOther\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price Per Unit</td><td>Ending Market Value Accrued Interest (AI)</td><td>Total Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Est. Yield<br>(EY)</td></tr>\n<tr><td>ADI NET LEASE INC &amp; GROWTH LP XIX UNIT LTP PARTNERSHIP INT BASED ON MGMTS UNCONFIRMED EST OF NET ASSETS</td><td>5.000</td><td>$291.000A</td><td>$1,455.00</td><td>unknown</td><td>unknown</td><td>—</td><td>—</td></tr>\n<tr><td>VENTAS INC (VTR)</td><td>500.000</td><td>10.57</td><td>5,285.00</td><td>unknown<sup>c</sup></td><td>unknown</td><td>—</td><td>—</td></tr>\n<tr><td>Total Other (5% of account holdings)</td><td></td><td></td><td>$6,740.00</td><td>—</td><td>—</td><td>—</td><td></td></tr>\n<tr><td>Total Holdings</td><td></td><td></td><td>$108,051.18</td><td>$120,163.33</td><td>$41.54</td><td>$2,488.45</td><td></td></tr>\n</table>\n\n9 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[VISUAL_SYMBOL]\nFidelity\nINVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nHoldings (continued)\n\n\nAccount 111-111111\nJohn W. Doe - Individual TOD\n\nA Investments such as direct participation program securities (e.g., partnerships, limited liability\ncompanies, and real estate investment trusts which are not listed on any exchange), commodity\npools, private equity, private debt and hedge funds are generally illiquid investments and their\ncurrent values may be different from the purchase price. Unless otherwise indicated, the values\nshown in this statement for such investments have been provided by the management, admin-\nistrator or sponsor of each program or a third-party vendor without independent verification by\nFidelity Brokerage Services (FBS) and represent their estimate of the value of the investor's\nparticipation in the program, as of a date no greater than 18 months from the date of this state-\nment. Therefore, the estimated values shown herein may not necessarily reflect actual market\nvalues or be realized upon liquidation. If an estimated value is not provided, valuation informa-\ntion is not available.\nAI **Accrued Interest** Presented for domestic fixed income securities and represents interest\naccumulated since the last coupon date, but not yet paid by the issuer or received by NFS. AI is\ncalculated for the following securities: fixed rate bonds and Certificates of Deposit (CDs). There\nis no guarantee that AI will be paid by the issuer. AI for treasury and GNMA securities,\nhowever, is backed by the full faith and credit of the United States Government. AI totals\nrepresent accruals for only those securities with listed AI in the Holdings section of this\nstatement. Please refer to the Help/Glossary section of Fidelity.com for additional information.\nB See Cost Basis Information and Endnotes for important information about the adjusted cost\nbasis information provided.\nC Cost basis information (or proceeds from short sales) has been provided by you and has\nnot been adjusted except as otherwise indicated. When positions are transferred between\naccounts, in certain cases, cost basis information may be automatically transferred and deemed\nto be customer-provided.\nE Includes exchange-traded funds (ETFs), exchange-traded notes (ETNs), and other exchange-\ntraded vehicles\n\n\n**EAI** *Estimated Annual Income (EAI) & Estimated Yield (EY)* EAI is an estimate of annual income\nfor a specific security position over the next rolling 12 months. EY is calculated by dividing the\n**EY** current EAI for a security position by its statement closing date market value. EY reflects only\nthe income generated by an investment; it does not reflect changes in its price, which may\nfluctuate. For certain types of securities, EAI and EY could include the return of principal or\ncapital gains which would render them overstated. EAI and EY are estimates provided for\ninformational purposes only and should not be relied on for making investment, trading, or tax\ndecisions. There is no guarantee that your investments will actually generate the EAI or EY\npresented. Actual income and yield might be lower or higher. EAI and EY should not be\nconfused with a security's 30-day Yield or 7-day Yield, if provided, as such yield quotations\nreflect the actual historical performance of a security. For additional information, including\ncalculation details, refer to the \"Additional Information and Endnotes\" section at the end\nof your statement.\n**h** *The stated Interest Rate is the interest rate effective for Cash Balances in your FDIC-Insured\nDeposit Sweep on the last day of the statement period.*\n**M** Position held in margin account. All other positions held in cash account.\n**q** Customers are responsible for monitoring their total assets at the Program Bank to determine\nthe extent of available FDIC insurance. Subject to the terms of the customer agreement, cus-\ntomers are reminded that funds are swept to a Program Bank on the business day following\nthe date that funds are credited to your account and until swept to a Program Bank, funds are\ncovered by SIPC. For additional information, please see the FDIC-Insured Deposit Sweep\nDisclosures on Fidelity.com.\n**t** Third party provided.\n\n\n10 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID ICON]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT \nJuly 1 – July 31, 2015 \n\nActivity\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nSecurities Bought & Sold\n\n\n<table>\n<tr><td>Settlement Date</td><td>Security Name</td><td>Symbol/ CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Price</td><td>Cost Basis of Close</td><td>Transaction Cost</td><td>Transaction Total</td></tr>\n<tr><td>7/11</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You bought<br>Wash sale of 8/8/11: $2,805.50</td><td>100</td><td>$37.17900</td><td></td><td>-$7.95</td><td>-$3,725.85</td></tr>\n<tr><td>7/11</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You bought<br>Wash sale of 8/8/11: $7,780.04</td><td>100</td><td>37.17900</td><td></td><td>-7.95</td><td>-3,725.85</td></tr>\n<tr><td>7/11</td><td>SABRA HEALTH CARE REIT INC COM USD0.01</td><td>SBRA</td><td>You bought</td><td>200</td><td>11.04000</td><td></td><td>-7.95</td><td>-2,215.95</td></tr>\n<tr><td>7/11</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You sold<br>LT loss: $8,781.90<br>LT disallowed loss: $8,781.90</td><td>-200</td><td>36.88200</td><td>$6000<sup>4</sup></td><td>-7.95</td><td>7,368.45</td></tr>\n<tr><td>7/11</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You sold<br>LT loss: $5,210.22<br>LT disallowed loss: $5,210.22</td><td>-500</td><td>36.88100</td><td>15500<sup>4</sup></td><td>-7.95</td><td>18,432.55</td></tr>\n<tr><td>7/11</td><td>SABRA HEALTH CARE REIT INC COM USD0.01</td><td>SBRA</td><td>You bought</td><td>50</td><td>11.03400</td><td></td><td>-7.95</td><td>-559.65</td></tr>\n<tr><td>7/11</td><td>SABRA HEALTH CARE REIT INC COM USD0.01</td><td>SBRA</td><td>You bought</td><td>50</td><td>11.03000</td><td></td><td>-7.95</td><td>-559.45</td></tr>\n<tr><td>7/11</td><td>SABRA HEALTH CARE REIT INC COM USD0.01</td><td>SBRA</td><td>You bought</td><td>150</td><td>11.05000</td><td></td><td>-7.95</td><td>-1,665.45</td></tr>\n<tr><td>7/12</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You bought<br>Wash sale of 8/8/11: $2,070.58</td><td>50</td><td>37.29900</td><td></td><td>-7.95</td><td>-1,872.90</td></tr>\n<tr><td>7/18</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You bought</td><td>50</td><td>38.27900</td><td></td><td>-7.95</td><td>-1,921.90</td></tr>\n<tr><td>7/23</td><td>MGM RESORTS INTERNATIONAL<br>4.25000% 4/15/2015 SR CV NT<br>TRADE EXECUTED BY MLCO</td><td></td><td>You bought<br>Accrued Interest: -347.44</td><td>5000</td><td>109.00000</td><td></td><td></td><td>-5,450.00</td></tr>\n<tr><td>7/30</td><td></td><td>FMPXX</td><td>You bought</td><td>1000</td><td>1.00000</td><td></td><td>-7.95</td><td>-1,007.95</td></tr>\n<tr><td colspan=\"2\">Total Securities Bought</td><td></td><td></td><td></td><td></td><td></td><td>-$95.4</td><td>-$22,712.90</td></tr>\n<tr><td colspan=\"2\">Total Securities Sold</td><td></td><td></td><td></td><td></td><td></td><td></td><td>$25,801.00</td></tr>\n<tr><td colspan=\"2\">Net Securities Bought &amp; Sold</td><td></td><td></td><td></td><td></td><td></td><td></td><td>$3,088.10</td></tr>\n</table>\n\n11 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID ICON]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT \nJuly 1 – July 31, 2015 \n\nActivity (continued)\n\n\nAccount 111-111111\nJohn W. Doe - Individual TOD\n\nTrades Pending Settlement\n\n\n<table>\n<tr><td>Settlement Date</td><td>Security Name</td><td>Symbol/ CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Unit Price</td><td>Cost Basis of Close</td><td>Transaction Total</td></tr>\n<tr><td>8/2</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You bought</td><td>100</td><td>$37.179</td><td></td><td>-$3,717.90</td></tr>\n<tr><td>8/2</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>SBRA</td><td>You bought</td><td>100</td><td>37.179</td><td></td><td>-$3,717.90</td></tr>\n<tr><td>8/2</td><td>SABRA HEALTH CARE REIT INC COM USD0.01</td><td>SBRA</td><td>You bought</td><td>200</td><td>11.040</td><td></td><td>-2,208.00</td></tr>\n<tr><td>8/2</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>JNK</td><td>You sold<br>LT loss: $5,210.22<br>LT disallowed loss: $5,210.22</td><td>-200</td><td>36.882</td><td></td><td>7,376.40</td></tr>\n<tr><td colspan=\"2\">Total Trades Pending Settlement</td><td></td><td></td><td></td><td></td><td></td><td>$1,450.50</td></tr>\n</table>\n\nSecurities Transferred In\n\n<table>\n<tr><td>Settlement<br>Date</td><td>Security Name</td><td>Symbol/<br>CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Price</td><td>Transaction<br>Amount</td></tr>\n<tr><td>7/31</td><td>Z70-666580-1</td><td></td><td>Trans. from account 222-222222</td><td></td><td></td><td>$39,508.64</td></tr>\n<tr><td>7/31</td><td>ENSTAR GROUP LIMITED COM STK USD 1.00<br>Z70-666580-1</td><td>ESGR</td><td>Trans. from account 222-222222</td><td>100.000</td><td>$102.960</td><td>10,296.00</td></tr>\n<tr><td colspan=\"2\">Total Securities Transferred In</td><td></td><td></td><td></td><td></td><td>$49,804.64</td></tr>\n</table>\n\nSecurities Transferred Out\n\n<table>\n<tr><td>Settlement</td><td></td><td>Symbol/</td><td></td><td></td><td></td><td>Transaction</td></tr>\n<tr><td>Date</td><td>Security Name</td><td>CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Price</td><td>Amount</td></tr>\n<tr><td>7/31</td><td>ENSTAR GROUP LIMITED COM STK USD 1.00</td><td>ESGR</td><td>Trans. to account 222-222222</td><td></td><td></td><td>-$5,000.00</td></tr>\n<tr><td colspan=\"2\">Total Securities Transferred Out</td><td></td><td></td><td></td><td></td><td>-$5,000.00</td></tr>\n</table>\n\n12 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID_LOGO]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT \nJuly 1 – July 31, 2015 \n\nActivity (continued)\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nDividends, Interest & Other Income\n(Including dividend reinvestments)\n\n\n<table>\n<tr><td>Settlement Date</td><td>Security Name</td><td>Symbol/ CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Price</td><td>Transaction<br>Amount</td></tr>\n<tr><td>7/01</td><td>DOUBLELINE TOTAL RETURN BOND FD CL I</td><td>DBLTX</td><td>Dividend received</td><td></td><td></td><td>$9,746.03</td></tr>\n<tr><td>7/04</td><td>NEW YORK NY CITY INDL DEV AGY REV</td><td>64971PEN1</td><td>Muni exempt interest</td><td></td><td></td><td>18.18</td></tr>\n<tr><td>7/12</td><td>STAR GAS PARTNERS LP SBI</td><td>SGU</td><td>Return of capital</td><td></td><td></td><td>$7,905.00</td></tr>\n<tr><td colspan=\"3\">Total Dividends, Interest &amp; Other Income</td><td></td><td></td><td></td><td>$41,301.03</td></tr>\n</table>\n\nMargin Activity\n\n\nInterest Paid\n\n<table>\n<tr><td>Period</td><td>Period Balance</td><td>Interest Rate</td><td>Average Daily Balance</td><td>Interest Paid</td><td>Period</td><td>Period Balance</td><td>Interest<br>Rate</td><td>Average<br>Daily Balance</td></tr>\n<tr><td>7/1-7/31</td><td>999,047</td><td>2.000%</td><td>$1,004,247</td><td>-$1,673.75</td><td>Total this period<br>Total year-to-date</td><td></td><td></td><td></td></tr>\n</table>\n\n-$1,637.75\n-$19,670.87\n\n13 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[VISUAL_SYMBOL]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nActivity (continued)\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nOther Activity\n\n\n<table>\n<tr><td>Settlement Date</td><td>Security Name</td><td>Symbol/ CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Price</td><td>Cost Basis of Close</td><td>Transaction Cost</td><td>Transaction Total</td></tr>\n<tr><td>7/30</td><td>REFCO INC COM<br>ESCROW PAYMENT AT $0.148525 PER SHARE<br>MER PAYOUT<br>#REORCM0050704800000</td><td>RFX</td><td>Merger</td><td>-4000</td><td></td><td>unknown</td><td></td><td>$594.10</td></tr>\n<tr><td>7/30</td><td>REFCO INC COM<br>ESCROW PAYMENT AT $0.148525 PER SHARE<br>MER FROM 758ESC982<br>REORUM0050704800002</td><td>RFX</td><td>Merger</td><td>4000</td><td></td><td></td><td></td><td>0.00</td></tr>\n<tr><td colspan=\"2\">Total Other Activity</td><td></td><td></td><td></td><td></td><td></td><td></td><td>$594.10</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">Deposits</td><td></td><td></td></tr>\n<tr><td>Date</td><td>Reference</td><td>Transaction Description</td><td>Transaction Total</td></tr>\n<tr><td>7/1</td><td></td><td>Wire transfer from bank</td><td>$5,000.00</td></tr>\n<tr><td>7/2</td><td></td><td>Deposit received</td><td>15.00</td></tr>\n<tr><td>7/3</td><td></td><td>Wire transfer from bank</td><td>400.00</td></tr>\n<tr><td>7/12</td><td></td><td>Wire transfer from bank</td><td>1,000.00</td></tr>\n<tr><td>7/16</td><td></td><td>Wire transfer from bank</td><td>1,500.00</td></tr>\n</table>\n\n<table>\n<tr><td>Date</td><td>Reference</td><td>Transaction Description</td><td>Transaction Total</td></tr>\n<tr><td>7/18</td><td></td><td>Wire transfer from bank</td><td>300.00</td></tr>\n<tr><td>7/19</td><td></td><td>Wire transfer from bank</td><td>250.00</td></tr>\n<tr><td>7/25</td><td></td><td>Wire transfer from bank</td><td>500.00</td></tr>\n<tr><td>7/26</td><td></td><td>Wire transfer from bank</td><td>500.00</td></tr>\n<tr><td colspan=\"3\">Total Deposits &amp; EFT In</td><td>$9,465.00</td></tr>\n</table>\n\nWithdrawals\n\n<table>\n<tr><td>Date</td><td>Reference</td><td>Transaction Description</td><td>Transaction Total</td></tr>\n<tr><td>7/2</td><td></td><td>Wire transfer to bank</td><td>-$3,000.00</td></tr>\n<tr><td>7/3</td><td></td><td>Wire transfer to bank</td><td>-750.00</td></tr>\n<tr><td>7/8</td><td></td><td>Wire transfer to bank</td><td>-25.00</td></tr>\n</table>\n\n<table>\n<tr><td>Date</td><td>Reference</td><td>Transaction Description</td><td>Transaction Total</td></tr>\n<tr><td>7/17</td><td></td><td>Wire transfer to bank</td><td>-$1,000.00</td></tr>\n<tr><td>7/29</td><td>Electronic remit</td><td>Debit American Express</td><td>-210.00</td></tr>\n<tr><td>7/30</td><td></td><td>Wire transfer to bank</td><td>-500.00</td></tr>\n<tr><td colspan=\"3\">Total Withdrawals &amp; EFT Out</td><td>-$5,485.00</td></tr>\n</table>\n\n14 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[SUN_LOGO]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nActivity (continued)\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nDebit Card Summary \n\n<table>\n<tr><td>Beginning Balance</td><td>$0.00</td></tr>\n<tr><td>Cash Advances</td><td>-507.00</td></tr>\n<tr><td>Fees</td><td>0.00</td></tr>\n<tr><td>Total Purchases</td><td>-1,173.71</td></tr>\n<tr><td>Other Card Activity</td><td>86.58</td></tr>\n<tr><td>Total Payments</td><td>1,594.13</td></tr>\n<tr><td>Ending Balance</td><td>$0.00</td></tr>\n</table>\n\nDebit Card Activity\n\n\nVISA<sup>®</sup> PLATINUM CHECK CARD (ACCOUNT ...9999)\nVisa<sup>®</sup> Platinum Rewards Ending Point Balance: 12*\n\n\n<table>\n<tr><td>Trans. Date</td><td>Post Date</td><td>Location Reference/ Description</td><td>Transaction Total</td></tr>\n<tr><td>8/1</td><td>8/4</td><td>ATM0058 1224 JONES RD, HOUSTON, TX, 7425612ZF6JW2BKA</td><td>-$304.00</td></tr>\n<tr><td>8/11</td><td>8/15</td><td>POS6600 TARGET T2066 W, HOUSTON, TX, 24251312ZF6JW2JQK</td><td>-$528.12</td></tr>\n<tr><td>8/11</td><td>8/15</td><td>STARBUCKS CORP00064139, SPRING, TX, 24161312ZF6JW2QJE</td><td>-$639.56</td></tr>\n<tr><td colspan=\"3\">VISA® Platinum Check Card (...9999) Subtotal</td><td>-$1,471.68</td></tr>\n</table>\n\n* Please refer to the Platinum Card Rewards Program Terms & Conditions for additional information about your Rewards Points, including information\non expiration. Rewards Points have no cash or dollar value. Ending point balance shown is the most current value available on the closing date of this\nstatement. Please call 800-323-5353 for the most up to date balance information as amount may have changed.\n\n\nVISA® GOLD CHECK CARD (ACCOUNT ...8888)\n\n<table>\n<tr><td>Trans. Date</td><td>Post Date</td><td>Location Reference/ Description</td><td>Transaction Total</td></tr>\n<tr><td>8/3</td><td>8/6</td><td>ATM0213 1224 TOWN CEN, HOUSTON, TX, 9842312ZF6JW2ZAD</td><td>-$203.00</td></tr>\n<tr><td>8/6</td><td>8/10</td><td>BEST DONUTS, SPRING, TX, 5465542ASKD620ASD</td><td>-6.03</td></tr>\n<tr><td>8/11</td><td>8/15</td><td>MARSHALLS #0506, THE WOODLANDS, TX, 16510SKJF351321DDS</td><td>86.58</td></tr>\n<tr><td colspan=\"3\">VISA® Gold Check Card (...8888) Subtotal</td><td>-$122.45</td></tr>\n<tr><td colspan=\"2\">Total Debit Card Activity</td><td></td><td>-$1,594.13</td></tr>\n</table>\n\nBill Payments\n\n<table>\n<tr><td>Post Date</td><td>Payee</td><td>Payee Account</td><td>Amount</td><td>YTD Payments</td></tr>\n<tr><td>7/10</td><td>American Express*</td><td>*********9999</td><td>-$1,231.12</td><td>-$2,455.86</td></tr>\n<tr><td>7/15</td><td>FIA Card Service</td><td>*********8888</td><td>-504.78</td><td>-3,605.16</td></tr>\n</table>\n\n<table>\n<tr><td>Post Date</td><td>Payee</td><td>Payee Account</td><td>Amount</td><td>YTD Payments</td></tr>\n<tr><td>7/18</td><td>Citi Visa</td><td>*********7777</td><td>-4,609.15</td><td>-8,897.60</td></tr>\n<tr><td colspan=\"2\">Total Bill Payments</td><td></td><td>-6,345.05</td><td>-14,958.62</td></tr>\n<tr><td colspan=\"2\">* recurring payment</td><td></td><td></td><td></td></tr>\n</table>\n\n15 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[sunburst logo]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nActivity (continued)\n\n\nAccount 111-111111\nJohn W. Doe - Individual TOD\n\n<table>\n<tr><td>Checking<br>Check Num.</td><td>Activity<br>Post Date</td><td>Code</td><td>Description</td><td>Transaction Total</td></tr>\n<tr><td>1076</td><td>7/30</td><td>13</td><td>Check paid</td><td>-$430.72</td></tr>\n<tr><td>1542 *</td><td>7/05</td><td>04</td><td>Check paid</td><td>-1,984.21</td></tr>\n<tr><td>1548 *</td><td>7/23</td><td>01</td><td>Check paid</td><td>-846.50</td></tr>\n</table>\n\nFees and Charges\n\n<table>\n<tr><td>Date</td><td>Description</td><td>Amount</td></tr>\n<tr><td>7/1</td><td>Advisor Fee</td><td>-$44.37</td></tr>\n<tr><td>7/14</td><td>ATM fee rebate</td><td>2.25</td></tr>\n</table>\n\nTaxes Withheld\n\n<table>\n<tr><td>Date</td><td>Security</td><td>Description</td><td>Amount</td></tr>\n<tr><td>7/11</td><td>TRANSOCEAN LIMITED COM CHF157</td><td>Foreign tax paid</td><td>-$440.12</td></tr>\n<tr><td>7/15</td><td colspan=\"2\">SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF State tax paid</td><td>-123.78</td></tr>\n</table>\n\n<table>\n<tr><td>Check Num.</td><td>Post Date</td><td>Code</td><td>Description</td><td>Transaction Total</td></tr>\n<tr><td>1549</td><td>7/30</td><td>01</td><td>Check paid</td><td>-17,165.00</td></tr>\n<tr><td colspan=\"2\">Total Checking Activity</td><td></td><td></td><td>-$24,432.10</td></tr>\n</table>\n\n* *Check number has been skipped.*\n\n\n<table>\n<tr><td>Date</td><td>Description</td><td>Amount</td></tr>\n<tr><td>7/17</td><td>Baidu.com Inc Spon</td><td>-2.25</td></tr>\n<tr><td colspan=\"2\">Total Fees and Charges</td><td>-$44.37</td></tr>\n</table>\n\n<table>\n<tr><td>Date</td><td>Security</td><td>Description</td><td>Amount</td></tr>\n<tr><td>7/15</td><td>SPDR SER TR BARCLAYS CAP HIGH YIELD BD ETF</td><td>Federal tax paid</td><td>-399.11</td></tr>\n<tr><td colspan=\"2\">Total Federal Taxes Withheld</td><td></td><td>-$399.11</td></tr>\n<tr><td colspan=\"2\">Total State Taxes Withheld</td><td></td><td>-$123.78</td></tr>\n<tr><td colspan=\"2\">Total Foreign Taxes Withheld</td><td></td><td>-$440.12</td></tr>\n<tr><td colspan=\"2\">Total Taxes Withheld</td><td></td><td>-$963.01</td></tr>\n</table>\n\n16 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Company logo icon]\nFidelity INVESTMENTS®\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nActivity\n\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\nDaily Additions and Subtractions\nFidelity NY Muni Money Market @ $1 per share (the following is provided to you in accordance with industry regulations)\n\n\n<table>\n<tr><td>Date</td><td>Total Additions</td><td>Total Subtractions</td><td>Net Activity</td><td>Daily Balance</td></tr>\n<tr><td>7/01</td><td>$7,200,370.31</td><td></td><td>$7,200,370.31</td><td>$12,250,595.08</td></tr>\n<tr><td>7/03</td><td>999,999.99</td><td>-999,999.99</td><td>13,969.00</td><td>12,256,594.81</td></tr>\n</table>\n\nf  FIFO (First In, First Out)\n\n\n*Cost basis and gain/loss information is provided as a service to our customers and is based on*\n*standards for filing US Federal Tax Returns as determined by Fidelity. This information is not*\n*intended to address tax law or reporting requirements applicable in your country of tax residence.*\n\n\n<table>\n<tr><td>Date</td><td>Total Additions</td><td>Total Subtractions</td><td>Net Activity</td><td>Daily Balance</td></tr>\n<tr><td>7/29</td><td>$999.99</td><td>-$999.99</td><td>-$999.99</td><td>$999.99</td></tr>\n<tr><td>7/31</td><td>999.99</td><td></td><td>999.99</td><td>999.99</td></tr>\n</table>\n\nB See Cost Basis Information and Endnotes for important information about the adjusted cost basis\ninformation provided.\nn Exercise for a stock option. Stock Option Exercise. Please see your exercise transaction confirma-\ntion statement and specific plan section of this statement for your total cost, tax withholding and\nany applicable fees.\n\n\n17 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[sunburst logo]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nEstimated Cash Flow\n(Rolling as of July 31, 2015)\n\nAccount 111-111111 \nJohn W. Doe - Individual TOD \n\n<table>\n<tr><td>Month</td><td>Bond &amp; CD Income</td><td>Bond &amp; CD Principal</td><td>Stock Income</td><td>Mutual Fund Income</td><td>Total Est. Cash Flow</td></tr>\n<tr><td>August 2015</td><td>—</td><td>—</td><td>$76</td><td>$44</td><td>$120</td></tr>\n<tr><td>September</td><td>$413</td><td>—</td><td>193</td><td>44</td><td>650</td></tr>\n<tr><td>October</td><td>—</td><td>—</td><td>—</td><td>44</td><td>44</td></tr>\n<tr><td>November</td><td>—</td><td>—</td><td>76</td><td>44</td><td>120</td></tr>\n<tr><td>December</td><td>413</td><td>—</td><td>193</td><td>44</td><td>650</td></tr>\n<tr><td>January 2016</td><td>—</td><td>—</td><td>—</td><td>44</td><td>44</td></tr>\n<tr><td>February</td><td>—</td><td>—</td><td>76</td><td>44</td><td>120</td></tr>\n<tr><td>March</td><td>413</td><td>—</td><td>193</td><td>44</td><td>650</td></tr>\n<tr><td>April</td><td>—</td><td>—</td><td>—</td><td>44</td><td>44</td></tr>\n<tr><td>May</td><td>---</td><td>---</td><td>76</td><td>44</td><td>120</td></tr>\n<tr><td>June</td><td>413</td><td>---</td><td>193</td><td>44</td><td>650</td></tr>\n<tr><td>July</td><td>---</td><td>---</td><td>---</td><td>44</td><td>44</td></tr>\n<tr><td>Total</td><td>$1,653</td><td>---</td><td>$1,075</td><td>$532</td><td>$3,259</td></tr>\n</table>\n\nThe table above presents the estimated monthly interest and dividend income and return of principal that your current holdings may generate over the next rolling 12 months.\nThe cash flows displayed are estimates provided for informational purposes only and there is no guarantee that you will actually receive any of the amounts displayed. These\nestimates should not be relied upon for making investment, trading or tax decisions. The estimates for fixed rate domestic bond and CD income are calculated using the\nsecurity's coupon rate. The estimates for domestic common stock and mutual fund income are calculated using an indicated annual dividend (IAD). The IAD is an estimate of a\nsecurity's dividend payments for the next 12 months calculated based on prior and/or declared dividends for that security. IADs are sourced from third party vendors believed to\nbe reliable, but no assurance can be made as to accuracy. There are circumstances in which these estimates will not be presented for a specific security you hold.\n*Please refer to the Help/Glossary section of Fidelity.com for additional information on these calculations.*\n\n\n**Bond & CD Income** includes interest payments for fixed rate bonds and Certificates of Deposit (CDs).\n**Bond & CD Principal** includes maturing principal payments for CDs and the following bonds: fixed rate, floating rate, variable rate, discount,and zero coupon.\n**Stock Income** includes estimated dividend payments for common stock, ADR's, and REITs.\n**Mutual Fund Income** includes estimated dividend payments for Fidelity and non-Fidelity mutual funds.\n\n\n***The table above does not include cash flow from the following securities:*** *preferred stocks, international stocks, exchange trade products (ETF's & ETN's), UITs, variable*\n*rate bonds, and international bonds, but may be included in future enhancements.*\n\n\n18 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[SUN_LOGO]\nFidelity® INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nAccount Value: \nChange in Account Value \n\n$142,413.12\n▼ $5,180.68\n\nAccount 222-222222 \nJohn W. Doe - Traditional IRA \n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Beginning Account Value</td><td>$147,593.80</td><td>$131,068.99</td></tr>\n<tr><td>Additions</td><td>—</td><td>12,345.97</td></tr>\n<tr><td>Contributions</td><td>—</td><td>5,000.00</td></tr>\n<tr><td>Securities Transferred In</td><td>—</td><td>5,509.48</td></tr>\n<tr><td>Other Additions</td><td>—</td><td>1,836.49</td></tr>\n<tr><td>Subtractions</td><td>—</td><td>-4,614.82</td></tr>\n<tr><td>Distributions</td><td>—</td><td>-4,065.21</td></tr>\n<tr><td>Securities Transferred Out</td><td>—</td><td>-692.22</td></tr>\n<tr><td>Cards, Checking &amp; Bill Payments</td><td>—</td><td>-461.48</td></tr>\n<tr><td>Trans. Costs, Fees &amp; Charges</td><td>—</td><td>-230.74</td></tr>\n<tr><td>Taxes Withheld</td><td>—</td><td>-461.48</td></tr>\n<tr><td>Other Subtractions</td><td>—</td><td>-461.48</td></tr>\n<tr><td>Change in Investment Value</td><td>-5,180.68</td><td>3,612.98</td></tr>\n<tr><td>Ending Account Value</td><td>$142,413.12</td><td>$142,413.12</td></tr>\n</table>\n\n<figure type=\"CHART\">\n\n<description>The figure titled \"Account Holdings\" displays a pie chart representing the percentage distribution of different account holdings alongside a corresponding data table. The pie chart is divided into four slices: a large slice representing 70% Stocks (gray), a second slice representing 25% Bonds (light gray), a third slice representing 4% Other (dark gray), and a small slice representing 1% Core Account (light gray). Below the chart is a table detailing the market value and percentage for each holding type.</description> <table><thead><tr><th>Holding Type</th><th>Market Value</th><th>Percent of Account*</th></tr></thead><tbody><tr><td>Stocks</td><td>$99,215</td><td>70%</td></tr><tr><td>Bonds</td><td>35,475</td><td>25</td></tr><tr><td>Other</td><td>5,651</td><td>4</td></tr><tr><td>Core Account</td><td>2,070</td><td>1</td></tr><tr><td>Total</td><td>$142,413</td><td>100%</td></tr></tbody></table></figure>\n\n*Percent of Account based on positive values only.*\n\n\nTop Holdings\n\n<table>\n<tr><td>Description</td><td>Market Value</td><td>Percent of Account</td></tr>\n<tr><td>Johnson and Johnsn (JNJ)</td><td>$47,113.80</td><td>33%</td></tr>\n<tr><td>Apple Inc (AAPL)</td><td>15,759.30</td><td>11</td></tr>\n<tr><td>Delphi Corp Jr Sb Nt</td><td>15,375.00</td><td>11</td></tr>\n<tr><td>Slm Corp Spi Lkd Nt (Osm)</td><td>13,859.10</td><td>10</td></tr>\n<tr><td>Gen Motors Corp Bond</td><td>10,100.00</td><td>7</td></tr>\n<tr><td>Total</td><td>$102,207.20</td><td>72%</td></tr>\n</table>\n\n19 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID_LOGO]\nFidelity\nINVESTMENTS\n\n\n**INVESTMENT REPORT**\nJuly 1 – July 31, 2015\n\n\nAccount Summary (continued)\n\n\nAccount 222-222222 \nJohn W. Doe - Traditional IRA \n\nCore Account Cash Flow\n\n Core Account: *Fidelity Cash Reserves*\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Beginning Core Account Balance</td><td>$1,570.57</td><td>$794.51</td></tr>\n<tr><td colspan=\"3\">INVESTMENT ACTIVITY</td></tr>\n<tr><td>Securities Bought</td><td>—</td><td>-15,000.00</td></tr>\n<tr><td>Securities Sold</td><td>—</td><td>11,278.12</td></tr>\n<tr><td>Dividends, Interest and Other Income<sup>*</sup></td><td>500.31</td><td>7,020.49</td></tr>\n<tr><td>Transaction Costs</td><td>—</td><td>-230.74</td></tr>\n<tr><td>Other Activity</td><td>—</td><td>500.00</td></tr>\n<tr><td>Total Investment Activity</td><td>$500.31</td><td>$3,567.87</td></tr>\n<tr><td colspan=\"3\">CASH MANAGEMENT ACTIVITY</td></tr>\n<tr><td>Contributions</td><td>---</td><td>5,000.00</td></tr>\n<tr><td>Distributions</td><td>---</td><td>-4,065.21</td></tr>\n<tr><td>Taxes Withheld</td><td>---</td><td>-1,016.30</td></tr>\n<tr><td>Checking Activity</td><td>---</td><td>-1,258.12</td></tr>\n<tr><td>Debit Card Activity</td><td>---</td><td>-125.12</td></tr>\n<tr><td>Deferred Debit Card Activity</td><td>---</td><td>-275.89</td></tr>\n<tr><td>Bill Payments</td><td>---</td><td>-400.00</td></tr>\n<tr><td>Fees &amp; Charges</td><td>---</td><td>-112.13</td></tr>\n<tr><td>Total Cash Management Activity</td><td>---</td><td>-$2,252.77</td></tr>\n<tr><td>Ending Core Account Balance</td><td>$2,070.88</td><td>$2,070.88</td></tr>\n</table>\n\n* *Includes dividend reinvestments.*\n\n\nIncome Summary\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Taxable</td><td>—</td><td>—</td></tr>\n<tr><td>Dividends</td><td>—</td><td>—</td></tr>\n<tr><td>Interest</td><td>—</td><td>—</td></tr>\n<tr><td>Short-term Capital Gains</td><td>—</td><td>—</td></tr>\n<tr><td>Long-term Capital Gains</td><td>—</td><td>—</td></tr>\n<tr><td>Tax-exempt</td><td>—</td><td>—</td></tr>\n<tr><td>Dividends</td><td>—</td><td>—</td></tr>\n<tr><td>Interest</td><td>—</td><td>—</td></tr>\n<tr><td>Tax-deferred</td><td>$500.31</td><td>$7,020.49</td></tr>\n<tr><td>Tax-free</td><td>---</td><td>---</td></tr>\n<tr><td>Return of Capital</td><td>---</td><td>---</td></tr>\n<tr><td>Liquidations</td><td>---</td><td>---</td></tr>\n<tr><td>Royalty Trust Payments</td><td>---</td><td>---</td></tr>\n<tr><td>Total</td><td>$500.31</td><td>$7,020.49</td></tr>\n<tr><td colspan=\"2\">Minimum Required Distribution (MRD) Estimate</td><td></td></tr>\n<tr><td colspan=\"2\">Total 2015 MRD for this account:</td><td>$6,097.82</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">This Period</td><td>Year-to-Date</td></tr>\n<tr><td>MRD Distributions</td><td>—</td><td>$4,065.21</td></tr>\n<tr><td>This estimate was calculated using the following information:<br>2014 Year-end Balance: $123,123.00</td><td></td><td></td></tr>\n<tr><td>Life Expectancy Factor: 23.8</td><td></td><td></td></tr>\n<tr><td>IRS Table: Uniform Lifetime Table</td><td colspan=\"2\"></td></tr>\n</table>\n\n*For more information on MRD, please see “Additional Information About Your Investment Report” at*\nthe end of this statement or visit Fidelity.com/RDC.\n\n\n20 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Icon of a stylized sun]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nHoldings\n\n\nAccount 222-222222 \nJohn W. Doe - Traditional IRA \n\nCore Account\n\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price</td><td>Ending Value</td><td>Total<br>Cost Basis</td><td>Unrealized Gain/Loss</td><td>Est. Annual Income (EAI)</td><td>Est. Yield (EY)</td></tr>\n<tr><td>FIDELITY CASH RESERVES (FDRXX)<br>— 7-day yield: 0.010%</td><td>2,070.880</td><td>$1.000</td><td>$2,070.88</td><td>N/A</td><td>—</td><td>—</td><td>0.010%</td></tr>\n<tr><td>Total Core Account (1% of account holdings)</td><td></td><td></td><td>$2,070.88</td><td></td><td></td><td></td><td></td></tr>\n</table>\n\nStocks\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price<br>Per Unit</td><td>Ending<br>Market Value</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Est. Yield<br>(EY)</td></tr>\n<tr><td>COMMON STOCK<br>APPLE INC (AAPL)</td><td>30.00</td><td>$525.31</td><td>$15,759.30</td><td>$8,247.50<sup>t</sup></td><td>$7,511.80</td><td>$365.62</td><td>2.32%</td></tr>\n<tr><td>EXXON MOBILE (XOM)</td><td>50.00</td><td>87.96</td><td>4,398.00</td><td>4,149.75<sup>t</sup></td><td>248.25</td><td>125.78</td><td>2.86</td></tr>\n<tr><td>FACEBOOK (FB)</td><td>60.00</td><td>25.16</td><td>1,509.60</td><td>1,848.95<sup>t</sup></td><td>-339.35</td><td></td><td></td></tr>\n<tr><td>GENERAL MOTORS CO USD0.01 (GM)<br>ISIN: US37045V1008<br>SEDOL: B3SMT78</td><td>209.00</td><td>35.56</td><td>7,432.04</td><td>unknown</td><td>unknown</td><td></td><td></td></tr>\n<tr><td>SLM CORP CPI LKD NT FLTG RATE 0.00%<br>03/15/2017 (OSM)</td><td>590.00</td><td>23.49</td><td>13,859.10</td><td>9,090.70</td><td>4,768.40</td><td></td><td></td></tr>\n<tr><td>STANDARD PACIFIC CORP (SPF)</td><td>5,100.00</td><td>9.238</td><td>47,113.80</td><td>61,354.44</td><td>863.47</td><td>1,352.17</td><td>2.87</td></tr>\n<tr><td>WESTMORELAND COAL CO DEP SHS EACH<br>REPSTG 1/4 OF SHS SER A CV ESCH (WLBPZ)</td><td>300.00</td><td>30.48</td><td>9,144.00</td><td>5,088.40</td><td>4,055.60</td><td></td><td></td></tr>\n<tr><td>Total Stocks (70% of account holdings)</td><td></td><td></td><td>$99,215.84</td><td>$89,779.74</td><td>$17,108.17</td><td>$1,843.57</td><td></td></tr>\n</table>\n\n21 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[Fidelity logo]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\nHoldings (continued)\n\n\nAccount 222-222222 \nJohn W. Doe - Traditional IRA \n\nBonds\n\n<table>\n<tr><td>Description</td><td>Maturity</td><td>Quantity</td><td>Price<br>Per Unit</td><td>Ending Market Value<br>Accrued Interest (AI)</td><td>Total<br>Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Coupon<br>Rate</td></tr>\n<tr><td>SABRATEK CORP NT CV<br>CUSIP: 78571UAA6<br>Semi-Annual Interest</td><td>4/15/15</td><td>10000.00</td><td>100.00</td><td>$10,000.00</td><td>$10,000.00<sup>t</sup></td><td>—</td><td>600.00</td><td>6.00%</td></tr>\n<tr><td>DELPHI CORP JR SB NT<br>CUSIP: 247126AF2<br>Fixed Coupon; Quarterly Interest</td><td>10/15/33</td><td>15000.00</td><td>102.50</td><td>15,375.00</td><td>15,025.00</td><td>350.00</td><td>1,237.50</td><td>8.250</td></tr>\n<tr><td>ESCROW GEN MOTORS CORP BOND<br>CUSIP: 370ESCAT2<br>Fixed Coupon; Semi-Annual Interest;</td><td>3/15/36</td><td>10000.00</td><td>101.00</td><td>10,100.00</td><td>9,900.00</td><td>999,999.99</td><td>999,999.99</td><td>7.750</td></tr>\n<tr><td>Total Bonds (25% of account holdings)</td><td></td><td></td><td></td><td>$35,475.00</td><td>$34,925.00</td><td>$550.00</td><td>$2,612.50</td><td></td></tr>\n</table>\n\nOther\n\n<table>\n<tr><td>Description</td><td>Quantity</td><td>Price Per Unit</td><td>Ending Market Value</td><td>Total Cost Basis</td><td>Unrealized<br>Gain/Loss</td><td>Est. Annual<br>Income (EAI)</td><td>Est. Yield<br>(EY)</td></tr>\n<tr><td>GENERAL MTRS CO WTS EXP 07/10/2016 (GMWSA)</td><td>190.000</td><td>$15.290</td><td>$2,905.10</td><td>unknown</td><td>unknown</td><td>—</td><td></td></tr>\n<tr><td>GENERAL MTRS CO WTS EXP 07/10/2019 (GMWSB)</td><td>190.000</td><td>10.570</td><td>2,008.30</td><td>unknown</td><td>unknown</td><td>—</td><td></td></tr>\n<tr><td>SOUTHWEST ROYALTIES INSTITUTIONAL INCOME FUND LP IX-B</td><td>6.000</td><td>123.000A</td><td>738.00</td><td>unknown</td><td>unknown</td><td>—</td><td></td></tr>\n<tr><td colspan=\"8\">Based on an independent appraisal</td></tr>\n<tr><td>Total Other (4% of account holdings)</td><td></td><td></td><td>$5,651.40</td><td>—</td><td>—</td><td>—</td><td></td></tr>\n<tr><td>Total Holdings</td><td></td><td></td><td>$142,413.12</td><td>$109,600.63</td><td>$17,658.17</td><td>$4,456.07</td><td></td></tr>\n</table>\n\nt Third party provided.\nAll positions held in cash account unless indicated otherwise.\n\n\n22 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[PYRAMID_LOGO]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT\nJuly 1 – July 31, 2015\n\n\nActivity\n\n\nAccount 222-222222 \nJohn W. Doe - Traditional IRA \n\nDividends, Interest & Other Income\n(Including dividend reinvestments)\n\n\n<table>\n<tr><td>Settlement Date</td><td>Security Name</td><td>Symbol/<br>CUSIP</td><td>Transaction Description</td><td>Quantity</td><td>Price</td><td>Transaction<br>Cost</td><td>Transaction Total</td></tr>\n<tr><td>7/08</td><td>GMAC LLC NT 7.25%</td><td>GKM</td><td>Interest</td><td></td><td></td><td></td><td>$37.61</td></tr>\n<tr><td>7/09</td><td>SPDR SER TR BARCLAYS CAP<br>HIGH YIELD BD ETF</td><td></td><td>Dividend received</td><td></td><td></td><td></td><td>397.99</td></tr>\n<tr><td>7/15</td><td>SLM CORP<br>CPI LKD NT FLTG RATE 0.00% 03/15/2017</td><td>OSM</td><td>Interest</td><td></td><td></td><td></td><td>64.99</td></tr>\n<tr><td>7/31</td><td>FIDELITY CASH RESERVES</td><td>FDRXX</td><td>Dividend received</td><td></td><td></td><td></td><td>0.02</td></tr>\n<tr><td colspan=\"2\">Total Dividends, Interest &amp; Other Income</td><td></td><td></td><td></td><td></td><td></td><td>$500.31</td></tr>\n</table>\n\nDaily Additions and Subtractions\n*Fidelity NY Muni Money Market @ $1 per share (the following is provided to you in accordance with industry regulations)*\n\n\n<table>\n<tr><td>Date</td><td>Total Additions</td><td>Total Subtractions</td><td>Net Activity</td><td>Daily Balance</td><td>Date</td><td>Total Additions</td><td>Total Subtractions</td><td>Net Activity</td><td>Daily Balance</td></tr>\n<tr><td>7/08</td><td>$37.61</td><td>—</td><td>$37.61</td><td>$1,608.18</td><td>7/15</td><td>$64.69</td><td>—</td><td>$64.69</td><td>$2,070.86</td></tr>\n<tr><td>7/09</td><td>397.99</td><td>—</td><td>397.99</td><td>2,006.17</td><td>7/31</td><td>0.02</td><td>—</td><td>0.02</td><td>2,070.88</td></tr>\n</table>\n\n23 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[sunburst logo]\nFidelity INVESTMENTS\n\n\nINVESTMENT REPORT \nJuly 1 – July 31, 2015 \n\nEstimated Cash Flow\n(Rolling as of July 31, 2015)\n\nAccount 222-222222 \nJohn W. Doe - Traditional IRA \n\n<table>\n<tr><td>Month</td><td>Bond &amp; CD Income</td><td>Bond &amp; CD Principal</td><td>Stock Income</td><td>Mutual Fund Income</td><td>Total Est.<br>Cash Flow</td></tr>\n<tr><td>August 2015</td><td>—</td><td>—</td><td>$767</td><td>—</td><td>$767</td></tr>\n<tr><td>September</td><td>$326</td><td>—</td><td>—</td><td>—</td><td>326</td></tr>\n<tr><td>October</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>\n<tr><td>November</td><td>653</td><td>—</td><td>767</td><td>—</td><td>1,420</td></tr>\n<tr><td>December</td><td>326</td><td>---</td><td>---</td><td>---</td><td>326</td></tr>\n<tr><td>January 2016</td><td>---</td><td>---</td><td>---</td><td>---</td><td>—</td></tr>\n<tr><td>February</td><td>---</td><td>---</td><td>767</td><td>---</td><td>767</td></tr>\n<tr><td>March</td><td>326</td><td>---</td><td>---</td><td>---</td><td>326</td></tr>\n<tr><td>April</td><td>---</td><td>---</td><td>---</td><td>---</td><td>—</td></tr>\n<tr><td>May</td><td>653</td><td>—</td><td>767</td><td>—</td><td>1,420</td></tr>\n<tr><td>June</td><td>326</td><td>—</td><td>—</td><td>—</td><td>326</td></tr>\n<tr><td>July</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>\n<tr><td>Total</td><td>$2,612</td><td>—</td><td>$3,069</td><td>—</td><td>$5,682</td></tr>\n</table>\n\nThe table above presents the estimated monthly interest and dividend income and return of principal that your current holdings may generate over the next rolling 12 months.\nThe cash flows displayed are estimates provided for informational purposes only and there is no guarantee that you will actually receive any of the amounts displayed. These\nestimates should not be relied upon for making investment, trading or tax decisions. The estimates for fixed rate domestic bond and CD income are calculated using the\nsecurity's coupon rate. The estimates for domestic common stock and mutual fund income are calculated using an indicated annual dividend (IAD). The IAD is an estimate of a\nsecurity's dividend payments for the next 12 months calculated based on prior and/or declared dividends for that security. IADs are sourced from third party vendors believed to\nbe reliable, but no assurance can be made as to accuracy. There are circumstances in which these estimates will not be presented for a specific security you hold.\n*Please refer to the Help/Glossary section of Fidelity.com for additional information on these calculations.*\n\n\n**Bond & CD Income** includes interest payments for fixed rate bonds and Certificates of Deposit (CDs).\n**Bond & CD Principal** includes maturing principal payments for CDs and the following bonds: fixed rate, floating rate, variable rate, discount,and zero coupon.\n**Stock Income** includes estimated dividend payments for common stock, ADR's, and REITs.\n**Mutual Fund Income** includes estimated dividend payments for Fidelity and non-Fidelity mutual funds.\n\n\n***The table above does not include cash flow from the following securities:*** *preferred stocks, international stocks, exchange trade products (ETF's & ETN's), UITs, variable*\n*rate bonds, and international bonds, but may be included in future enhancements.*\n\n\n24 of 28\n\n\n<!-- PAGE BREAK -->\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n[sunburst logo]\nFidelity INVESTMENTS\n\n\n**INVESTMENT REPORT**\nJuly 1 – July 31, 2015\n\n\n$28,457.90\n\nAccount Value: \n\nAccount 333-333333 \nJohn W. Doe - Education Account \n\nChange in Account Value \n\n▲ $522.46 \n\nCollege Investment Details\n\n\n<table>\n<tr><td></td><td>This Period</td><td>Year-to-Date</td></tr>\n<tr><td>Beginning Account Value</td><td>$27,935.44</td><td>$24,662.91</td></tr>\n<tr><td>Contributions</td><td>—</td><td>1,962.88</td></tr>\n<tr><td>Distributions</td><td>—</td><td>—</td></tr>\n<tr><td>Change in Investment Value</td><td>522.46</td><td>1,832.11</td></tr>\n<tr><td>Ending Account Value</td><td>$28,457.90</td><td>$28,457.90</td></tr>\n</table>\n\nCollege Investment Details\n\n<table>\n<tr><td></td><td>Year-to-Date</td></tr>\n<tr><td>2015 Plan Contribution Cap:</td><td>$350,000.00</td></tr>\n<tr><td>Total Contributions Over Life of Plan:</td><td>23,662.88</td></tr>\n<tr><td>2015 Remaining to Contribute:</td><td>$324,003.79</td></tr>\n</table>\n\nContribution Elections\n\n\n<table>\n<tr><td>Description</td><td>Percent of Contributions</td></tr>\n<tr><td>NH PORTFOLIO 2015 (FIDELITY FUNDS)</td><td>75%</td></tr>\n<tr><td>NH MODERATE GROWTH PORT (FIDELITY FDS)</td><td>25%</td></tr>\n</table>\n\nHoldings\n\n<table>\n<tr><td>Description</td><td>Percent of<br>Total Value</td><td>Quantity</td><td>Unit Price</td><td>Ending Value</td></tr>\n<tr><td>NH Portfolio 2015 (Fidelity Funds)</td><td>50%</td><td>1,200.291</td><td>$17.680</td><td>$21,221.14</td></tr>\n<tr><td>NH Moderate Growth Port (Fidelity Funds)</td><td>25%</td><td>463.301</td><td>15.620</td><td>7,236.76</td></tr>\n<tr><td>Total Value</td><td></td><td></td><td></td><td>28,457.90</td></tr>\n</table>\n\n25 of 28\n\n\n<!-- PAGE BREAK -->\n\n[SUN_SYMBOL]\nFidelity® INVESTMENTS\n\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\nINVESTMENT REPORT\nJuly 1 - July 31, 2015\n\n\nAdditional Information and Endnotes\n\n\n- Because you may own one or more products or account positions in your\nFidelity account that are eligible for FDIC insurance coverage, we want to\nremind you about current FDIC coverage limits and why you should monitor\nyour balances.\n\n\nGenerally, deposits at a bank held in nonretirement and qualified retirement\naccounts such as traditional or Roth IRAs are eligible for up to $250,000\ncoverage per account owner, per depository institution. Certain holdings at\nFidelity are eligible for \"passthrough\" FDIC insurance coverage subject to\nthese same limits. Eligible positions include: 1) Certificates of deposit (CDs) -\nBrokered CDs that are issued by an FDIC insured institution, 2) Core\nbalances in the Fidelity(R) Cash Management Account, eligible Fidelity IRAs\nor Fidelity Health Savings Accounts(1), and 3) Any 529 Bank Deposit\nPortfolio investments.\n\n\nYou are responsible for monitoring your FDIC coverage. Generally, all the\nassets you hold at a depository institution are counted toward the FDIC\ncoverage limit. Therefore, when considering whether your holdings will be\nFDIC insured, you must take into consideration both the combined balance of\nall bank deposits (including bank CDs) made directly through a particular\ninstitution as well as those deposits coming about indirectly through Fidelity\nor another brokerage firm. For more information about FDIC insurance\ncoverage, please visit the FDIC Web site at www.FDIC.gov.\n\n\n- * Cash Balances in an account with the FDIC-Insured Deposit Sweep\nProgram are swept to an FDIC-insured account at a Program Bank. Funds\nare swept to the Program Bank on the business day following the date that\nfunds are credited to your account and, until swept to the Program Bank,\nfunds are covered by SIPC. Once at the Program Bank, the deposit is not\ncovered by SIPC; however, the deposit is eligible for FDIC insurance\ncoverage subject to the applicable coverage limits. All assets of the account\nholder at the Program Bank will generally be counted toward the aggregate\nlimit. For additional information, please see the FDIC-Insured Deposit Sweep\nProgram Disclosure document that can be found at\nhttp://personal.fidelity.comaccountspdfRollover_Sep_Supplemental.pdf\n\n\nCost basis and gain/loss information is provided as a service to our customer, and\nis based on standards for filing US Federal Tax Returns as determined by Fidelity.\nThis information is not intended to address tax law or reporting requirements\napplicable in your country of tax residence.\n\n\nAmortization, accretion and similar adjustments to cost basis are provided for\nmany fixed income securities (and some bond-like equities), however they are not\nprovided for certain fixed income securities, such as short-term instruments, Unit\nInvestment Trusts, foreign fixed income securities, or those that are subject to\nearly prepayment of principal (pay downs).\n\n\n**B** Adjusted cost basis information is shown where this indicator is displayed.\nAdjusted cost basis reflects any cumulative original issue discount, premium,\nor acquisition premium (including any year-to-date amount). It assumes such\namounts were amortized or accrued for tax purposes from the acquisition\ndate through the disposition date. Premium amortization was calculated using\nthe yield-to-maturity method. Acquisition premium was calculated using the\nratable accrual method. Any market discount accretion for this position was\ncalculated using the straight-line method and, if applicable, recognized upon\ndisposition. Gain/loss displayed for this transaction is calculated using the\ncost basis adjustments, as described above. The adjusted cost basis used\nhere may not reflect all adjustments necessary for tax purposes (such as\nwash sale adjustments) and may not apply if you are using an alternative\namortization calculation method. Refer to IRS Publication 550, Investment\nIncome and Expenses, for additional information.\n\n\nIf total cost basis information is provided for multiple tax lots, that total cost basis\ninformation (and any associated gain/loss displayed) may have been calculated\nusing a combination of adjusted cost basis information (as described above) and\nnon-adjusted cost basis information. Total cost basis information (and any\nassociated gain/loss displayed) is calculated using adjusted cost basis for lots for\nwhich adjusted cost basis is provided and non-adjusted cost basis for lots for\nwhich adjusted cost basis is not provided or not applicable.\n\n\n26 of 28\n\n\n<!-- PAGE BREAK -->\n\n[sunburst logo]\nFidelity INVESTMENTS\n\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\nINVESTMENT REPORT\nJuly 1 - July 31, 2015\n\n\nAdditional Information and Endnotes (continued)\n\n\n**About Your MRD Estimate:**\nEach year your annual MRD estimate is calculated on or after January 1 using\nyour prior year-end account balance divided by the applicable life expectancy\nfactor. The life expectancy factor used is based on both your date of birth and the\nbeneficiary information we have on file as of December 31st of the prior year.\nPlease contact Fidelity if there is a change in your beneficiary information as this\ncalculation will not be updated until the calendar year following the year in which\nyou change your beneficiary designation.\n\n\nYear-to-Date distributions include any distributions taken after January 1st of the\ncurrent year through midnight of the statement end date.\n\n\nIt is your responsibility to satisfy IRS minimum distribution requirements.\nLearn more about MRD s at www.Fidelity.com/RDC or call a Fidelity\nrepresentative at the number listed on the front of your statement. If you\nneed specific tax advice be sure to consult with your tax adviser.\n\n\nEAI for fixed rate domestic bonds and CDs is calculated using the coupon rate.\nFor all other securities, EAI is calculated using an indicated annual dividend (IAD).\nThe IAD is an estimate of a security's dividend payments for the next 12 months\ncalculated based on prior and/or declared dividends for that security. IADs are\nsourced from third party vendors believed to be reliable, but no assurance can be\nmade as to accuracy. This third party data may not be promptly updated to reflect\nvarious corporate actions (for example, when an issuer has missed a scheduled\ndividend payment, announced changes to a payment schedule, or declared a\nstock split) and, as a result, the EAI and EY may be over or understated. Interest\nand dividend rates are subject to change at any time, and may be affected by\ncurrent and future economic, political and business conditions. **Please refer to**\n**the Help/Glossary on Fidelity.com for additional information regarding these**\n**calculations.**\n\n\n**EAI and EY are not provided for:** preferred stocks, exchange traded products\n(ETFs & ETNs), UITs, variable rate bonds, and international stocks & bonds, but\nmay be included in the future. EAI is not displayed for amounts less than $10.\n\n\nFor more information about your statement, please refer to our **Frequently Asked**\n**Questions** document at **Fidelity.com/statements**.\n\n\n27 of 28\n\n\n<!-- PAGE BREAK -->\n\n[PYRAMID_LOGO]\nFidelity INVESTMENTS®\n\n\n*** SAMPLE STATEMENT ***\nFor informational purposes only\n\n\n# Information About Your Fidelity Statement\n\nTDD Service for the Hearing-Impaired Call 800-544-0118. 9 am - 9 pm ET. 7 days a week.\n**Lost or Stolen Cards** For 24-Hour worldwide customer service, call 800-529-2164 for American Express or\n800-323-5353 for VISA® Gold Check Card.\n**Additional Investments with Fidelity** Make checks payable to Fidelity Investments. Include your account\nnumber on the check. For retirement and health savings accounts (HSA), designate in the memo field whether\nyour contribution is for the current or prior year. Mail checks or other inquiries to: Fidelity Investments, P.O. Box\n770001, Cincinnati, OH 45277-0003.\n**Income Summary** Shows income by tax status for the statement and year-to-date periods. Except for interest\nincome earned on, or distributed by, tax-exempt securities, Fidelity reports dividends and capital gains held in\ntaxable accounts as taxable income. A portion of income reported as tax-exempt income may be subject to\nalternative minimum taxes and/or state and local taxes. In Traditional IRAs, Rollover IRAs, SEP-IRAs, SIMPLE\nIRAs and Keoghs, earnings are reported as tax-deferred income. In Roth IRAs and HSAs, earnings are reported\nas tax-exempt income as they may be federally tax-exempt if certain conditions are met.\n\n\n**Cost Basis, Gain/Loss, and Holding Period Information** NFS is required to report certain cost basis and\nholding period information to the IRS on Form 1099-B. Unless otherwise specified, NFS applies the average\ncost method for open-end mutual funds and the first-in, first-out (FIFO) method for all other securities. Cost\nbasis is adjusted for wash sales on securities with the same CUSIP held in the same account (unless your\naccount receives mark-to-market reporting). Your statement may not reflect all adjustments required for tax\npurposes. Customers should consult their tax advisors for further information.\n**Cost** Fidelity provides purchase cost information for securities held in retirement and HSA accounts. Such\ninformation may be adjusted for certain transactions and does not reflect dividends or capital gains\nreinvestments. Fidelity reports transaction profit or loss information when securities are sold within a retirement\nor HSA account. Transaction profit or loss is calculated by subtracting purchase cost from sales proceeds\n\n\nusing the FIFO method if shares were purchased at different times or prices. **Statement Mailing** We deliver\nstatements at least four times during the calendar year for any account with a balance.\n**Statement Discrepancies** Please review your statement and report any inaccuracies or discrepancies.\nInquiries, concerns or questions regarding your brokerage account or the activity therein should be\ndirected to FBS by calling 800-544-6666, and NFS, who carries your brokerage accounts, by calling\n866-408-1138. Any oral communications regarding inaccuracies or discrepancies should be reconfirmed in\nwriting to protect your rights, including those under the Securities Investor Protection Act (SIPA).\n**Material Changes** Please advise us of material changes in your investment objectives or financial situation\nrelated to your brokerage account(s)\n\n\n**Mutual Funds and Performance An investment in a money market fund is not insured or guaranteed by**\nthe Federal Deposit Insurance Corporation (FDIC) or any other government agency. Although the fund\nseeks to preserve the value of your investment at $1.00 per share, it is possible to lose money by\ninvesting in the fund. Before investing, consider the funds' investment objectives, risks, charges and\nexpenses. Contact Fidelity for a prospectus containing this information. Read it carefully. Performance\ndata shown represents past performance and is no guarantee of future results. Investment return and\nprincipal value will fluctuate, so you may have a gain or loss when shares are sold. Current\nperformance may be higher or lower than that quoted. Visit Fidelity.com/performance for most recent\nmonth-end performance.\n\n\n**Sales Loads & Fees** Each fund reserves the right to terminate or modify its exchange privilege in the future. In\nconnection with access to, purchase of, and/or maintenance of positions in mutual fund and other investment\nproducts (\"funds\") or platforms, some funds, or their investment affiliates, pay FBS or NFS sales loads and\n12b-1 fees described in the prospectus as well as program participation and maintenance fees. Additional\ninformation about the source(s) and amount(s) of compensation as well as other remuneration received by FBS\nor NFS will be furnished to you upon written request. At the time you purchase shares of funds those shares will\nbe assigned either a load, transaction fee (TF) or no transaction fee (NTF) status. When you subsequently sell\nthose shares, any fees applicable to your transaction will be assessed based on the status assigned to the\nshares at the time of purchase.\n\n\n# Additional Information About Your Brokerage Account, If Applicable\n\n**Customer Free Credit Balance** You are entitled to your free credit balance in your brokerage account, subject\nto open commitments in your cash accounts. Free credit balances are not segregated and may be used by NFS\nin accordance with federal securities law. **There is no free credit balance in a retirement account or HSA.**\n**Assets Separate from Your Brokerage Account** Only securities in the margin portion of your brokerage\naccount contribute to margin and maintenance requirements. Other Assets, which may be reported on your\nstatement, including insurance products that are distributed by FBS and Fidelity Insurance Agency, Inc. and\nmutual fund only accounts held directly with the fund (Fidelity Mutual Fund Accounts) are not carried by NFS,\nnot covered by the Securities Investor Protection Corporation (SIPC) and do not count toward your margin and\nmaintenance requirements. Assets held in brokerage accounts managed by Strategic Advisers, Inc. (SAI) are\ncarried by NFS and covered by SIPC but do not contribute to your margin and maintenance requirements.\n**Short Account Balances** Securities sold short are held in a segregated short account. These securities are\nmarked-to-market for margin purposes, and any increase or decrease from the previous week's value is\ntransferred weekly to your margin account. Fidelity represents your short account balance as of the last weekly\nmark-to-market, not as of the statement end date.\n\n\n**Information About Your Option Transactions** Each transaction confirmation previously delivered to you\ncontains full information about commissions and other charges, and such information is available promptly\nupon request. Assignments of American and European-style options are allocated among customer short\npositions pursuant to a random allocation procedure, a description is available upon request. Short positions in\nAmerican-style options are liable for assignment anytime. The writer of a European-style option is subject to\nexercise assignment only during the exercise period. For more information, please call Fidelity at\n800-544-6666.\n\n\n**Equity Dividend Reinvestment** Shares credited to your account from resulted from transactions by FBS\nacting as agent for your account, or the Depository Trust Company (DTC).\nPrice Information/Total Market Value The Total Market Value has been calculated out to 2 decimal places.\n\n\n**Price Information/Total Market Value** The Total Market Value has been calculated out to 9 decimal places;\nhowever, the individual unit price is displayed in 5 decimal places. The Total Market Value represents prices\nobtained from various sources, may be impacted by the frequency with which such prices are reported and\nsuch prices are not guaranteed. Prices received from pricing vendors are generally based on current market\nquotes, but when such quotes are not available the pricing vendors use a variety of techniques to estimate\nvalue. These estimates, particularly for fixed income securities, may be based on certain minimum principal\namounts (e.g. $1 million) and may not reflect all of the factors that affect the value of the security, including\nliquidity risk. The prices provided are not firm bids or offers. Certain securities may reflect N/A or unavailable\nwhere the price for such security is generally not available from a pricing source. The Market Value of a\nsecurity, including those priced at par value, may differ from its purchase price and may not closely reflect the\nvalue at which the security may be sold or purchased based on various market factors. The sale or redemption\nof any fixed income security prior to maturity may result in a loss. Prices for Certificates of Deposits (CDs) on\nyour statement are generally estimates and are not based on actual market prices. The secondary market for\nCDs is generally illiquid. You should always request a current valuation for your securities prior to making a\nfinancial decision or placing an order.\n\n\n**Executing Orders on the Floor of the NYSE** The Floor broker may permit the specialist to trade on parity with\nthe order for some or all of the executions associated with filling that order, where such permission would not\nbe inconsistent with the broker's best execution obligations.\n**Agency Trades** Individual securities trades placed for your Fidelity® Personalized Portfolios account are\ncompleted on an agency basis by FBS.\n**SIPC** Securities in accounts carried by NFS, a Fidelity Investments company, are protected in accordance with\nthe SIPC up to $500,000 (including cash claims limited to $250,000). For details, including the SIPC brochure,\nplease see www.sipc.org or call 1-202-371-8300. NFS has arranged for additional protection for cash and\ncovered securities to supplement its SIPC coverage. Neither coverage protects against a decline in the market\nvalue of securities.\n**Fidelity Investments** Fidelity Distributors Corporation (FDC) is the distributor for Fidelity Funds with marketing\nand shareholder services provided by FBS or NFS. **Brokerage services are provided by FBS, which clears**\n**all transactions through its affiliate, NFS. NFS carries all brokerage accounts. FBS and NFS are**\n**members of the NYSE and SIPC.** FBS, NFS, and FDC are direct or indirect subsidiaries of FMR LLC. Upon\nwritten request, Fidelity will mail an NFS financial statement, which is also available for inspection at its office.\nFidelity is not affiliated with any of the entities that are subsidiaries of FMR LLC.\n\n\n**SAI Services** Fidelity Portfolio Advisory Service®, Fidelity® Strategic Disciplines, Fidelity Wealth Management\nAdvisory<sup>SM</sup>, and BlackRock® Diversified Income Portfolio are services offered through SAI, a registered\ninvestment adviser and a Fidelity Investments company. Fidelity® Personalized Portfolios may be offered\nthrough the following Fidelity Investments companies: SAI, Fidelity Personal Trust Company, FSB (FPTC),\na federal savings bank, or Fidelity Management Trust Company (FMTC). Non-deposit investment products\nand trust services offered through FPTC and FMTC and their affiliates are not insured or guaranteed by the\nFDIC or any other government agency, are not obligations of any bank, and are subject to risk, including\npossible loss of principal. **These advisory services are provided for a fee.**\n\n\n**Ratings Information from Standard & Poors (\"S&P\")** may not be reproduced. S&P credit ratings are\nstatements of opinion and are not statements of fact or recommendations to purchase, hold, or sell securities,\nnor do they address the suitability of securities for investment purposes, and should not be relied on as\ninvestment advice. S&P does not guarantee the accuracy, completeness, timeliness or availability of any\ninformation, including ratings, and is not responsible for errors or omissions (negligent or otherwise). S&P gives\nno express or implied warranties, including but not limited to any warranties of merchantability or fitness for a\nparticular purpose or use. S&P shall not be liable for any direct, indirect, incidental, exemplary, compensatory,\npunitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or\nprofits and opportunity costs) in connection with any use of ratings.\n\n\n**Miscellaneous** Mutual fund shares, other securities held in your account, and insurance products are neither\ndeposits nor obligations of, nor endorsed or guaranteed by, any bank or other depositing institution, nor are they\nfederally insured by the FDIC or any other agency. If you request a reprint of your statement, the disclosure\ninformation may not be the same as the information originally provided. To confirm that an authorized, direct\ndeposit has been made to your Fidelity Account or Fidelity Mutual Fund Account, call Fidelity at\n1-800-544-5555.\n\n\n729384.2 - SAMPLE\n\n\n28 of 28\n\n\nFidelity Investments (with pyramid logo) is a trademark of FMR LLC.\n\n<!-- doc_id=parse-01m3hw44hqasftr2rdh8jw4agg -->",
+  "metadata": {
+    "job_id": "extract-01m3hw5652jceax2241b1yy14v",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 50052,
+    "doc_id": "parse-01m3hw44hqasftr2rdh8jw4agg",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 20.5,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 85023,
+    "output_extraction_chars": 3445,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

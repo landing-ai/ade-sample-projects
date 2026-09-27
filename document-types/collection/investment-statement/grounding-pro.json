@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 7,
+  "page_count": 28,
+  "preview_pages": [
+    1,
+    4,
+    7,
+    18
+  ],
+  "fields": [
+    {
+      "path": "stock_holdings[2].description",
+      "label": "Security (short position)",
+      "value": "ENSTAR GROUP LIMITED COM STK USD 1.00",
+      "page": 7,
+      "box": {
+        "xmin": 0.03841,
+        "ymin": 0.35575,
+        "xmax": 0.27168,
+        "ymax": 0.39248
+      },
+      "range": {
+        "end": 15952,
+        "start": 15905
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "stock_holdings-2-description.png"
+    },
+    {
+      "path": "stock_holdings[2].quantity",
+      "label": "Quantity",
+      "value": -100.0,
+      "page": 7,
+      "box": {
+        "xmin": 0.2716,
+        "ymin": 0.35574,
+        "xmax": 0.41537,
+        "ymax": 0.39246
+      },
+      "range": {
+        "end": 15968,
+        "start": 15961
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "stock_holdings-2-quantity.png"
+    },
+    {
+      "path": "stock_holdings[2].ending_market_value",
+      "label": "Ending market value",
+      "value": -13710.0,
+      "page": 7,
+      "box": {
+        "xmin": 0.49652,
+        "ymin": 0.35573,
+        "xmax": 0.60613,
+        "ymax": 0.39244
+      },
+      "range": {
+        "end": 16002,
+        "start": 15992
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "stock_holdings-2-ending_market_value.png"
+    },
+    {
+      "path": "stock_holdings[2].total_cost_basis",
+      "label": "Total cost basis",
+      "value": -14510.99,
+      "page": 7,
+      "box": {
+        "xmin": 0.60605,
+        "ymin": 0.35572,
+        "xmax": 0.70445,
+        "ymax": 0.39243
+      },
+      "range": {
+        "end": 16027,
+        "start": 16011
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "stock_holdings-2-total_cost_basis.png"
+    },
+    {
+      "path": "stock_holdings[2].unrealized_gain_loss",
+      "label": "Unrealized gain",
+      "value": 800.99,
+      "page": 7,
+      "box": {
+        "xmin": 0.70436,
+        "ymin": 0.35571,
+        "xmax": 0.81469,
+        "ymax": 0.39243
+      },
+      "range": {
+        "end": 16048,
+        "start": 16042
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "stock_holdings-2-unrealized_gain_loss.png"
+    }
+  ]
+}
