@@ -192,6 +192,23 @@ Rules for the selection:
 - **Watch grounding quality by source.** Ruled tables in real forms ground reliably.
   Array elements read off charts and dense slide tables often ground one cell adrift —
   values right, ranges shifted.
+- **Prefer an impersonal field when one carries the same point.** These values are
+  published on a marketing page and indexed, which is a wider audience than the source
+  record has, even when the source is a public one. A date, a case number, an amount, a
+  reference or an organization name demonstrates grounding exactly as well as a person's
+  name does. Feature a named individual only when the document type cannot be shown
+  without one, and say so in `notes` when you do. The arbitration award features a
+  private claimant by the document owner's explicit decision; that is the exception, and
+  the filing and signature dates on the same page would have made the same point.
+- **Count the schema leaves, do not estimate them.** Two READMEs shipped with invented
+  figures: 59 leaf fields against an actual 50, and 316 against an actual 66. The website
+  prints this number on the page. Read it from the sync output, or count it:
+
+  ```bash
+  python3 -c "import json;d=json.load(open('document-types/collection/<slug>/schema.json'))
+  f=lambda n: sum(map(f,n['properties'].values())) if n.get('type')=='object' and 'properties' in n else (f(n['items']) if n.get('type')=='array' and 'items' in n else 1)
+  print(f(d))"
+  ```
 
 ---
 
