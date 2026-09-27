@@ -37,7 +37,7 @@ The collection's first legal document, and the first whose value is mostly in pr
   action, relief requested, the award itself and the fee allocation.
 - **A real team schema.** `schema.json` is the team's arbitration-awards schema from
   `Applications/UI for Rapid Human View of Extracted Fields/schemas/`, used unchanged:
-  10 top-level groups, 59 leaf fields. It is written to cover expungement awards as well
+  10 top-level groups, 50 leaf fields. It is written to cover expungement awards as well
   as customer cases.
 - **Clean input.** A born-digital Word export, the opposite of the engineering drawing,
   so any grounding trouble here comes from the schema and the prose rather than from

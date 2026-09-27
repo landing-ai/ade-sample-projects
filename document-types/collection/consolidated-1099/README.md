@@ -59,7 +59,7 @@ Page 4 of the file is "Page 4 of 10" on the page.
 The pilot's medium-length case with a long schema — and the one where the schema is
 someone else's, not written for this exercise. `schema.json` is the marketing team's
 existing consolidated-1099 schema, used unchanged: 17 top-level groups covering 1099-INT,
-1099-B, 1099-OID, 1099-DIV and 1099-MISC, resolving to **316 leaf fields**.
+1099-B, 1099-OID, 1099-DIV and 1099-MISC, resolving to **66 leaf fields**.
 
 All 17 populate.
 
