@@ -1,0 +1,196 @@
+{
+  "type": "object",
+  "properties": {
+    "statement": {
+      "type": "object",
+      "description": "Who issued the statement, to whom, and for what period",
+      "properties": {
+        "institution": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The brokerage or investment firm that issued the statement"
+        },
+        "account_holder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The name of the account holder the statement is addressed to"
+        },
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The first day of the statement period, as YYYY-MM-DD"
+        },
+        "period_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The last day of the statement period, as YYYY-MM-DD"
+        }
+      }
+    },
+    "portfolio_summary": {
+      "type": "object",
+      "description": "The portfolio value reconciliation for the statement period across all accounts, from the first page, This Period column",
+      "properties": {
+        "beginning_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Beginning portfolio value for the period, in dollars"
+        },
+        "additions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total additions for the period, in dollars"
+        },
+        "subtractions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total subtractions for the period, in dollars, as a negative number"
+        },
+        "transaction_costs": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Transaction costs, fees and charges for the period, in dollars, as a negative number"
+        },
+        "change_in_investment_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Change in investment value for the period, in dollars"
+        },
+        "ending_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Ending portfolio value for the period, in dollars"
+        }
+      }
+    },
+    "accounts": {
+      "type": "array",
+      "description": "Every account included in the report, from the Accounts Included in this Report table",
+      "items": {
+        "type": "object",
+        "properties": {
+          "account_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The account name as printed, e.g. 'John W. Doe - Individual - TOD'"
+          },
+          "account_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The account number as printed"
+          },
+          "account_category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The heading the account is listed under, e.g. 'General Investments' or 'Retirement'"
+          },
+          "beginning_value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The account's beginning value for the period, in dollars"
+          },
+          "ending_value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The account's ending value for the period, in dollars"
+          }
+        }
+      }
+    },
+    "stock_holdings": {
+      "type": "array",
+      "description": "Every stock position in the Holdings sections, across all accounts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The account number the holding belongs to, from the page header"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The security name as printed"
+          },
+          "symbol": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The ticker symbol or CUSIP shown with the security"
+          },
+          "quantity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The quantity held at the end of the period"
+          },
+          "price": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The price per unit at the end of the period, in dollars"
+          },
+          "ending_market_value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The ending market value of the position, in dollars"
+          },
+          "total_cost_basis": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The total cost basis of the position, in dollars, or null if not available"
+          },
+          "unrealized_gain_loss": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The unrealized gain or loss on the position, in dollars, negative for a loss"
+          }
+        }
+      }
+    }
+  }
+}

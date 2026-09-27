@@ -1,0 +1,52 @@
+{
+  "slug": "investment-statement",
+  "title": "Investment Statement",
+  "source": {
+    "file": "sample-new-fidelity-acnt-stmt.pdf",
+    "pages": 28,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.fidelity.com/bin-public/060_www_fidelity_com/documents/sample-new-fidelity-acnt-stmt.pdf",
+      "publisher": "Fidelity Investments",
+      "title": "Sample Fidelity Portfolio Account Statement",
+      "retrieved": "2026-09-27",
+      "clearance": "public",
+      "clearance_note": "Fidelity's own sample statement, published on fidelity.com to show customers what a monthly statement looks like. Every page is marked '*** SAMPLE STATEMENT *** For informational purposes only'. All personal data is specimen: the account holder is 'John W. Doe, 100 Main St.', the account numbers are 111-111111, 222-222222 and 333-333333, and the phone numbers are Fidelity's and SIPC's published lines. No redaction needed."
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [
+    1,
+    4,
+    7,
+    18
+  ],
+  "fields": [
+    {
+      "path": "portfolio_summary.beginning_value",
+      "label": "Beginning portfolio value",
+      "occurrence": 0
+    },
+    {
+      "path": "portfolio_summary.additions",
+      "label": "Additions",
+      "occurrence": 0
+    },
+    {
+      "path": "portfolio_summary.subtractions",
+      "label": "Subtractions",
+      "occurrence": 0
+    },
+    {
+      "path": "portfolio_summary.change_in_investment_value",
+      "label": "Change in investment value",
+      "occurrence": 0
+    },
+    {
+      "path": "portfolio_summary.ending_value",
+      "label": "Ending portfolio value",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the page 1 portfolio reconciliation for the period: beginning value, plus additions, minus subtractions, plus change in investment value, equals ending value ($253,221.83 + $59,269.64 - $45,430.74 + $7,161.47 = $274,222.20). Transaction costs are extracted but not featured because they are a sub-line already included in subtractions. The account holder's specimen name is extracted but not featured. The first account's beginning value extracts as 880853.95 because Fidelity's PDF prints '$88,0853.95', a typo in the sample; the column arithmetic gives 88,053.95. preview_pages shows the summary, an account summary with its allocation chart, a holdings table and the estimated cash flow table, instead of the default pick, which included a page of footnotes."
+}
