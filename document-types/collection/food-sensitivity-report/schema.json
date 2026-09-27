@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "The laboratory, test and patient, from the page 1 header",
+      "properties": {
+        "laboratory": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The name of the laboratory that issued the report"
+        },
+        "test_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The test profile name as printed, e.g. '1001 IgG Food Antibodies Profile'"
+        },
+        "specimen_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The specimen type printed after the test name, e.g. 'Serum'"
+        },
+        "methodology": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The assay methodology as printed after 'Methodology:'"
+        },
+        "patient_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The patient name as printed after 'Patient:'"
+        }
+      }
+    },
+    "total_ige": {
+      "type": "object",
+      "description": "The Total IgE panel on page 1",
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The Total IgE result, as a number"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The unit of the Total IgE result, from the reference range, e.g. 'kU/l'"
+        },
+        "reference_range": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The reference range as printed, e.g. '<=114.0 kU/l'"
+        },
+        "within_reference_range": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the result is printed in the Inside column, false if in the Outside column"
+        }
+      }
+    },
+    "food_results": {
+      "type": "array",
+      "description": "Every food tested in the IgG Food Antibody Results grid on page 1, in the order printed, column by column",
+      "items": {
+        "type": "object",
+        "properties": {
+          "food": {
+            "type": "string",
+            "description": "The food name as printed, e.g. 'Cow's milk'"
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The category heading the food is listed under, e.g. 'Dairy' or 'Nuts and Grains'"
+          },
+          "result": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The IgG reactivity code printed beside the food: '0', 'VL', '1+', '2+' or '3+'"
+          }
+        }
+      }
+    },
+    "high_reactive_foods": {
+      "type": "array",
+      "description": "The foods listed under '3+ High' in the Summary of IgG Test Results on page 2",
+      "items": {
+        "type": "string",
+        "description": "A food name"
+      }
+    }
+  }
+}
