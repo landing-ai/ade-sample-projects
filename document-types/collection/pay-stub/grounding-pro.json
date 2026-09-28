@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "totals.gross_pay",
+      "label": "Gross pay",
+      "value": 5361.6,
+      "page": 1,
+      "box": {
+        "xmin": 0.4054,
+        "ymin": 0.46594,
+        "xmax": 0.52627,
+        "ymax": 0.48244
+      },
+      "range": {
+        "end": 1162,
+        "start": 1153
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-gross_pay.png"
+    },
+    {
+      "path": "taxes[0].amount",
+      "label": "Medicare tax",
+      "value": 77.74,
+      "page": 1,
+      "box": {
+        "xmin": 0.62941,
+        "ymin": 0.29966,
+        "xmax": 0.76654,
+        "ymax": 0.31484
+      },
+      "range": {
+        "end": 730,
+        "start": 724
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "taxes-0-amount.png"
+    },
+    {
+      "path": "totals.total_taxes",
+      "label": "Total taxes",
+      "value": 1387.3,
+      "page": 1,
+      "box": {
+        "xmin": 0.62932,
+        "ymin": 0.46597,
+        "xmax": 0.76655,
+        "ymax": 0.48245
+      },
+      "range": {
+        "end": 1194,
+        "start": 1185
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_taxes.png"
+    },
+    {
+      "path": "deductions[0].amount",
+      "label": "401(k) deduction",
+      "value": 268.08,
+      "page": 1,
+      "box": {
+        "xmin": 0.25784,
+        "ymin": 0.52008,
+        "xmax": 0.38058,
+        "ymax": 0.70302
+      },
+      "range": {
+        "end": 1450,
+        "start": 1443
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "deductions-0-amount.png"
+    },
+    {
+      "path": "totals.net_pay",
+      "label": "Net pay",
+      "value": 3706.22,
+      "page": 1,
+      "box": {
+        "xmin": 0.44755,
+        "ymin": 0.8395,
+        "xmax": 0.64034,
+        "ymax": 0.8604
+      },
+      "range": {
+        "end": 1898,
+        "start": 1889
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-net_pay.png"
+    }
+  ]
+}

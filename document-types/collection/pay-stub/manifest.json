@@ -1,0 +1,81 @@
+{
+  "slug": "pay-stub",
+  "title": "Pay Stub",
+  "source": {
+    "file": "lenovo-pay-stub-2026-02-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/993398120/Lenovo-PayStub-2026-03",
+      "publisher": "Lenovo",
+      "title": "Direct Deposit Earnings Statement, pay date 02/06/2026",
+      "retrieved": "2026-09-27",
+      "clearance": "redacted",
+      "clearance_note": "A Lenovo employee's direct deposit earnings statement, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the statement is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. The employee's name, home street address, city and ZIP, the last four of their SSN, their employee ID and the statement's direct deposit advice number were replaced with obviously-fake equivalents using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata was cleared. The pay amounts are left as printed: with the identifiers gone, nothing on the page identifies the employee. Lenovo's name, address, phone number and EIN are the employer's published details and are left as printed. Verified: no original identifier is extractable from the committed PDF, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "employee's name",
+            "with": "Jane Q Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "employee's street address",
+            "with": "100 Main St",
+            "occurrences": 1
+          },
+          {
+            "what": "employee's city, state and ZIP",
+            "with": "Anytown, NC 00000",
+            "occurrences": 1
+          },
+          {
+            "what": "last four of the employee's SSN",
+            "with": "XXX-XX-0000",
+            "occurrences": 1
+          },
+          {
+            "what": "employee ID",
+            "with": "0000",
+            "occurrences": 1
+          },
+          {
+            "what": "direct deposit advice number",
+            "with": "DD00000000",
+            "occurrences": 1
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "totals.gross_pay",
+      "label": "Gross pay",
+      "occurrence": 0
+    },
+    {
+      "path": "taxes[0].amount",
+      "label": "Medicare tax",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.total_taxes",
+      "label": "Total taxes",
+      "occurrence": 0
+    },
+    {
+      "path": "deductions[0].amount",
+      "label": "401(k) deduction",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.net_pay",
+      "label": "Net pay",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields. Features the paycheck calculation: gross pay $5,361.60, less total taxes $1,387.30 and the 401(k) deduction $268.08, equals net pay $3,706.22. The Medicare tax ($77.74) is included because the Taxes table prints its amounts about half a line below their codes, so 'FICA' appears to have no amount and each amount sits between two codes; the parse resolved the offset, returning an empty FICA row and each amount on its own code's row, which the rates confirm (Medicare 1.45% and Social Security 6.2% of gross). No person is featured. All 33 extracted leaves ground to text containing their value. The labels' text layer is scrambled (a font with a shifted encoding, so 'Amount' extracts from the PDF as '$PRXQW'); the parse reads every label correctly."
+}
