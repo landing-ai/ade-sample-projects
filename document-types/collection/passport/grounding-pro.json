@@ -64,25 +64,6 @@
       "image": "document_info-issuing_country.png"
     },
     {
-      "path": "personal_info.nationality",
-      "label": "Nationality",
-      "value": "JAPAN",
-      "page": 1,
-      "box": {
-        "xmin": 0.3328,
-        "ymin": 0.45376,
-        "xmax": 0.44226,
-        "ymax": 0.49148
-      },
-      "range": {
-        "end": 194,
-        "start": 189
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "personal_info-nationality.png"
-    },
-    {
       "path": "personal_info.sex",
       "label": "Sex",
       "value": "F",
@@ -100,6 +81,25 @@
       "occurrence": 0,
       "matched": true,
       "image": "personal_info-sex.png"
+    },
+    {
+      "path": "document_info.date_of_issue",
+      "label": "Date of issue",
+      "value": "2025-03-24",
+      "page": 1,
+      "box": {
+        "xmin": 0.3312,
+        "ymin": 0.58968,
+        "xmax": 0.56773,
+        "ymax": 0.62824
+      },
+      "range": {
+        "end": 320,
+        "start": 309
+      },
+      "occurrence": 0,
+      "matched": false,
+      "image": "document_info-date_of_issue.png"
     }
   ]
 }

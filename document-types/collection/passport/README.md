@@ -47,27 +47,33 @@ The collection's first **passport**, and its first document in two scripts:
   schema, identical to the one used for `drivers-license-usa`, so the two pages show one
   schema across two very different documents.
 
-## Featured fields: the document and the holder's status
+## Featured fields: the document and when it was issued
 
-All on the identity page. The request named no fields, so these were chosen:
+All on the identity page. The request named no fields; nationality was in the first
+choice and was swapped for the date of issue at the document owner's request:
 
 | Field | Value |
 |---|---|
 | Document type | Passport |
 | Passport number | ZZ0000826 |
 | Issuing country | JAPAN |
-| Nationality | JAPAN |
 | Sex | F |
+| Date of issue | 2025-03-24 |
 
 No name is featured, although the name is specimen data.
 
-**One value, two places.** Issuing country and nationality are both "JAPAN", and they
-ground to different text: issuing country to the country name in the page header, and
-nationality to the Nationality field. Each box sits where its meaning is. The page's own
-Issuing country field prints the three-letter code "JPN"; extraction took the header's
-"JAPAN" instead, which is also right.
+**The date of issue is flagged, and correct.** Extraction returns it as the ISO date
+2025-03-24 and grounds it to the printed "24 MAR 2025", so `build_images.py` warns that the
+value is not in the boxed text. It is the same date in another format, and the box sits on
+the issue date rather than the expiry date printed directly beneath it; the crop was
+checked by eye.
 
 ## What it surfaced
+
+**One value, two places.** Issuing country and nationality are both "JAPAN", and they
+ground to different text: issuing country to the country name in the page header, and
+nationality to the Nationality field. The page's own Issuing country field prints the
+three-letter code "JPN"; extraction took the header's "JAPAN" instead, which is also right.
 
 **The parse reads both scripts and the handwriting.** Every bilingual label comes back
 intact, as do the Registered Domicile, "TOKYO", and the handwritten signature, returned as
