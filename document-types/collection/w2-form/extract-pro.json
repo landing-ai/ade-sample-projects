@@ -1,0 +1,453 @@
+{
+  "extraction": {
+    "box_12": [
+      {
+        "amount": 220.0,
+        "box": "12a",
+        "code": null
+      },
+      {
+        "amount": 2600.0,
+        "box": "12b",
+        "code": null
+      },
+      {
+        "amount": 5242.0,
+        "box": "12c",
+        "code": null
+      },
+      {
+        "amount": 421.0,
+        "box": "12d",
+        "code": null
+      }
+    ],
+    "box_13": {
+      "retirement_plan": true,
+      "statutory_employee": true,
+      "third_party_sick_pay": true
+    },
+    "box_14_other": "Other Income $100",
+    "control_number": "4",
+    "employee": {
+      "address": "11512 Holly Springs New Hill Rd\nCalifornia CA 95070",
+      "first_name": "John",
+      "last_name": "Doe",
+      "ssn": "4453453"
+    },
+    "employer": {
+      "address": "14560 Westcott Dr Saratoga\nCalifornia CA 95070",
+      "ein": "23454535",
+      "name": "Company Inc",
+      "state_id_number": "42377"
+    },
+    "federal": {
+      "allocated_tips": 433.0,
+      "dependent_care_benefits": null,
+      "federal_income_tax_withheld": 232.3,
+      "medicare_tax_withheld": 33.68,
+      "medicare_wages_and_tips": 2323.0,
+      "nonqualified_plans": null,
+      "social_security_tax_withheld": 144.02,
+      "social_security_tips": 422.0,
+      "social_security_wages": 2323.0,
+      "wages_tips_other_compensation": 2323.0
+    },
+    "state_and_local": {
+      "local_income_tax": 675.0,
+      "local_wages": 255.0,
+      "locality_name": "Test",
+      "state": "CA",
+      "state_income_tax": 23.23,
+      "state_wages": 120.0
+    },
+    "tax_year": "2024"
+  },
+  "extraction_metadata": {
+    "box_12": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 965,
+              "start": 959
+            }
+          ],
+          "value": 220.0
+        },
+        "box": {
+          "ranges": [
+            {
+              "end": 950,
+              "start": 947
+            }
+          ],
+          "value": "12a"
+        },
+        "code": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1218,
+              "start": 1211
+            }
+          ],
+          "value": 2600.0
+        },
+        "box": {
+          "ranges": [
+            {
+              "end": 1202,
+              "start": 1199
+            }
+          ],
+          "value": "12b"
+        },
+        "code": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1318,
+              "start": 1311
+            }
+          ],
+          "value": 5242.0
+        },
+        "box": {
+          "ranges": [
+            {
+              "end": 1302,
+              "start": 1299
+            }
+          ],
+          "value": "12c"
+        },
+        "code": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1355,
+              "start": 1349
+            }
+          ],
+          "value": 421.0
+        },
+        "box": {
+          "ranges": [
+            {
+              "end": 1340,
+              "start": 1337
+            }
+          ],
+          "value": "12d"
+        },
+        "code": {
+          "ranges": null,
+          "value": null
+        }
+      }
+    ],
+    "box_13": {
+      "retirement_plan": {
+        "ranges": [
+          {
+            "end": 1157,
+            "start": 1112
+          }
+        ],
+        "value": true
+      },
+      "statutory_employee": {
+        "ranges": [
+          {
+            "end": 1157,
+            "start": 1112
+          }
+        ],
+        "value": true
+      },
+      "third_party_sick_pay": {
+        "ranges": [
+          {
+            "end": 1190,
+            "start": 1166
+          }
+        ],
+        "value": true
+      }
+    },
+    "box_14_other": {
+      "ranges": [
+        {
+          "end": 1290,
+          "start": 1261
+        }
+      ],
+      "value": "Other Income $100"
+    },
+    "control_number": {
+      "ranges": [
+        {
+          "end": 738,
+          "start": 720
+        }
+      ],
+      "value": "4"
+    },
+    "employee": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1103,
+            "start": 1008
+          }
+        ],
+        "value": "11512 Holly Springs New Hill Rd\nCalifornia CA 95070"
+      },
+      "first_name": {
+        "ranges": [
+          {
+            "end": 860,
+            "start": 820
+          }
+        ],
+        "value": "John"
+      },
+      "last_name": {
+        "ranges": [
+          {
+            "end": 882,
+            "start": 869
+          }
+        ],
+        "value": "Doe"
+      },
+      "ssn": {
+        "ranges": [
+          {
+            "end": 104,
+            "start": 96
+          }
+        ],
+        "value": "4453453"
+      }
+    },
+    "employer": {
+      "address": {
+        "ranges": [
+          {
+            "end": 445,
+            "start": 337
+          }
+        ],
+        "value": "14560 Westcott Dr Saratoga\nCalifornia CA 95070"
+      },
+      "ein": {
+        "ranges": [
+          {
+            "end": 211,
+            "start": 164
+          }
+        ],
+        "value": "23454535"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 445,
+            "start": 337
+          }
+        ],
+        "value": "Company Inc"
+      },
+      "state_id_number": {
+        "ranges": [
+          {
+            "end": 1481,
+            "start": 1446
+          }
+        ],
+        "value": "42377"
+      }
+    },
+    "federal": {
+      "allocated_tips": {
+        "ranges": [
+          {
+            "end": 701,
+            "start": 678
+          }
+        ],
+        "value": 433.0
+      },
+      "dependent_care_benefits": {
+        "ranges": null,
+        "value": null
+      },
+      "federal_income_tax_withheld": {
+        "ranges": [
+          {
+            "end": 306,
+            "start": 270
+          }
+        ],
+        "value": 232.3
+      },
+      "medicare_tax_withheld": {
+        "ranges": [
+          {
+            "end": 621,
+            "start": 592
+          }
+        ],
+        "value": 33.68
+      },
+      "medicare_wages_and_tips": {
+        "ranges": [
+          {
+            "end": 583,
+            "start": 550
+          }
+        ],
+        "value": 2323.0
+      },
+      "nonqualified_plans": {
+        "ranges": null,
+        "value": null
+      },
+      "social_security_tax_withheld": {
+        "ranges": [
+          {
+            "end": 531,
+            "start": 494
+          }
+        ],
+        "value": 144.02
+      },
+      "social_security_tips": {
+        "ranges": [
+          {
+            "end": 669,
+            "start": 640
+          }
+        ],
+        "value": 422.0
+      },
+      "social_security_wages": {
+        "ranges": [
+          {
+            "end": 485,
+            "start": 454
+          }
+        ],
+        "value": 2323.0
+      },
+      "wages_tips_other_compensation": {
+        "ranges": [
+          {
+            "end": 261,
+            "start": 220
+          }
+        ],
+        "value": 2323.0
+      }
+    },
+    "state_and_local": {
+      "local_income_tax": {
+        "ranges": [
+          {
+            "end": 1646,
+            "start": 1617
+          }
+        ],
+        "value": 675.0
+      },
+      "local_wages": {
+        "ranges": [
+          {
+            "end": 1608,
+            "start": 1572
+          }
+        ],
+        "value": 255.0
+      },
+      "locality_name": {
+        "ranges": [
+          {
+            "end": 1679,
+            "start": 1655
+          }
+        ],
+        "value": "Test"
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 1437,
+            "start": 1423
+          }
+        ],
+        "value": "CA"
+      },
+      "state_income_tax": {
+        "ranges": [
+          {
+            "end": 1563,
+            "start": 1535
+          }
+        ],
+        "value": 23.23
+      },
+      "state_wages": {
+        "ranges": null,
+        "value": 120.0
+      }
+    },
+    "tax_year": {
+      "ranges": [
+        {
+          "end": 1811,
+          "start": 1807
+        }
+      ],
+      "value": "2024"
+    }
+  },
+  "markdown": "<table>\n<tr><td>22222</td><td>VOID [ ]</td></tr>\n</table>\n\na Employee's social security number \n4453453 \n\nFor Official Use Only\nOMB No. 1545-0008\n\n\n<table>\n<tr><td>b Employer identification number (EIN) 23454535</td><td>1 Wages, tips, other compensation 2323.00</td><td>2 Federal income tax withheld 232.30</td></tr>\n<tr><td rowspan=\"3\">c Employer's name, address, and ZIP code<br>Company Inc<br>14560 Westcott Dr Saratoga<br>California CA 95070</td><td>3 Social security wages 2323.00</td><td>4 Social security tax withheld 144.02</td></tr>\n<tr><td>5 Medicare wages and tips 2323.00</td><td>6 Medicare tax withheld 33.68</td></tr>\n<tr><td>7 Social security tips 422.00</td><td>8 Allocated tips 433.00</td></tr>\n<tr><td>d Control number 4</td><td>9</td><td>10 Dependent care benefits</td></tr>\n</table>\n\n<table>\n<tr><td>e Employee's first name and initial\nJohn</td><td>Last name\nDoe</td><td>Suff.</td><td colspan=\"2\">11 Nonqualified plans</td><td>12a</td><td>220.00</td></tr>\n<tr><td rowspan=\"4\" colspan=\"3\">11512 Holly Springs New Hill Rd<br>California CA 95070<br><br>f Employee's address and ZIP code</td><td>13 Statutory employee\n[x]\nRetirement plan\n[x]</td><td>Third-party sick pay\n[x]</td><td>12b</td><td>2600.00</td></tr>\n<tr><td rowspan=\"3\" colspan=\"2\">14 Other<br>Other Income $100</td><td>12c</td><td>5242.00</td></tr>\n<tr><td>12d</td><td>421.00</td></tr>\n<tr><td colspan=\"2\"></td></tr>\n</table>\n\n<table>\n<tr><td>15 State<br>CA</td><td>Employer's state ID number<br>42377</td><td>16 State wages, tips, etc.<br>120.00</td><td>17 State income tax<br>23.23</td><td>18 Local wages, tips, etc.<br>255.00</td><td>19 Local income tax<br>675.00</td><td>20 Locality name<br>Test</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n</table>\n\nForm\nW-2\nWage and Tax Statement\n\n\n2024\n\n\nDepartment of the Treasury—Internal Revenue Service\nFor Privacy Act and Paperwork Reduction\nAct Notice, see the separate instructions.\n\n\n**Copy A—For Social Security Administration.** Send this entire page with\nForm W-3 to the Social Security Administration; photocopies are **not** acceptable.\n\n\nCat. No. 10134D\n\n\nDo Not Cut, Fold, or Staple Forms on This Page\n\n<!-- doc_id=parse-01m3jst9xkg9gaywy5m8mn93g5 -->",
+  "metadata": {
+    "job_id": "extract-01m3jstkcv17nzw6wskvfsbebe",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 15711,
+    "doc_id": "parse-01m3jst9xkg9gaywy5m8mn93g5",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.6,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 2225,
+    "output_extraction_chars": 1083,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

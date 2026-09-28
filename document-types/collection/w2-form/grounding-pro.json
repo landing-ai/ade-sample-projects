@@ -1,0 +1,86 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "federal.wages_tips_other_compensation",
+      "label": "Wages (box 1)",
+      "value": 2323.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.53868,
+        "ymin": 0.08766,
+        "xmax": 0.75533,
+        "ymax": 0.15043
+      },
+      "range": {
+        "end": 261,
+        "start": 220
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "federal-wages_tips_other_compensation.png"
+    },
+    {
+      "path": "federal.federal_income_tax_withheld",
+      "label": "Federal income tax withheld (box 2)",
+      "value": 232.3,
+      "page": 1,
+      "box": {
+        "xmin": 0.75532,
+        "ymin": 0.08766,
+        "xmax": 0.97176,
+        "ymax": 0.15046
+      },
+      "range": {
+        "end": 306,
+        "start": 270
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "federal-federal_income_tax_withheld.png"
+    },
+    {
+      "path": "federal.social_security_tax_withheld",
+      "label": "Social Security tax withheld (box 4)",
+      "value": 144.02,
+      "page": 1,
+      "box": {
+        "xmin": 0.75531,
+        "ymin": 0.15043,
+        "xmax": 0.9718,
+        "ymax": 0.2131
+      },
+      "range": {
+        "end": 531,
+        "start": 494
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "federal-social_security_tax_withheld.png"
+    },
+    {
+      "path": "federal.medicare_tax_withheld",
+      "label": "Medicare tax withheld (box 6)",
+      "value": 33.68,
+      "page": 1,
+      "box": {
+        "xmin": 0.7553,
+        "ymin": 0.21305,
+        "xmax": 0.97184,
+        "ymax": 0.27566
+      },
+      "range": {
+        "end": 621,
+        "start": 592
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "federal-medicare_tax_withheld.png"
+    }
+  ]
+}

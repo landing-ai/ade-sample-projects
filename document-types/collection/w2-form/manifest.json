@@ -1,0 +1,25 @@
+{
+  "slug": "w2-form",
+  "title": "W-2 Form",
+  "source": {
+    "file": "w2-form-2048x1388.jpg",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://remotepeople.com/wp-content/uploads/2025/01/w2-form-2048x1388.avif",
+      "publisher": "Remote People",
+      "title": "Form W-2 example image",
+      "retrieved": "2026-09-27",
+      "clearance": "public",
+      "clearance_note": "An example Form W-2 (2024) image published on the Remote People blog, listed as the W-2 source in the Marketing Document Summary sheet. The form layout is the IRS's, and every value is obvious test data: employee 'John Doe', employer 'Company Inc', a 7-digit 'SSN' (4453453) and an 8-digit 'EIN' (23454535), neither a valid format, and locality 'Test'. Two caveats. The publisher is a blog that made an illustration, not a vendor distributing a specimen for reuse. And the two street addresses use real road names with arbitrary numbers; the employee's pairs a North Carolina road with a California ZIP, but the employer's Saratoga address could not be ruled out as matching a real building. Despite the .avif name, the server returns a JPEG, saved here as .jpg."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "federal.wages_tips_other_compensation", "label": "Wages (box 1)", "occurrence": 0 },
+    { "path": "federal.federal_income_tax_withheld", "label": "Federal income tax withheld (box 2)", "occurrence": 0 },
+    { "path": "federal.social_security_tax_withheld", "label": "Social Security tax withheld (box 4)", "occurrence": 0 },
+    { "path": "federal.medicare_tax_withheld", "label": "Medicare tax withheld (box 6)", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields. Features wages and the three taxes withheld from them, which tell one story: $2,323.00 of wages, $232.30 federal (10%), $144.02 Social Security (6.2%) and $33.68 Medicare (1.45%). No person is featured. The box 12 codes (A, A, D, A) extract as null because the parse drops them: each sits beside a small vertical 'Code' label and only the box number and amount survive. Box 16 state wages (120.00) is in the parse but extracts synthesized, with no range. The box 13 checkboxes extract correctly as true but ground to the whole box, so they are not featured."
+}
