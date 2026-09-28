@@ -1,0 +1,83 @@
+{
+  "slug": "employment-offer-letter",
+  "title": "Employment Offer Letter",
+  "source": {
+    "file": "employment-offer-letter-redacted.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/850511200",
+      "publisher": "Aerial Telecom Solutions Pvt. Ltd.",
+      "title": "Offer Letter, Ref No. ATS/OL/74, 20-Mar-2025",
+      "retrieved": "2026-09-27",
+      "clearance": "redacted",
+      "clearance_note": "A real offer letter from an Indian telecom services company, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the letter is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. The source url is recorded in its id-only form because Scribd's title slug carried the candidate's full name. The candidate's name, home address (including a relative's name in the care-of line) and first name in the salutation were replaced with obviously-fake equivalents using document-types/scripts/redact.py, which removes the underlying text rather than covering it. The authorized signatory's handwritten signature on page 4 was an image and was deleted with redact.py --remove-images. The PDF metadata, whose author field named a person, was cleared. The company's name, logo, address, phone number, website and CIN are business details and are left as printed, as are the terms and the salary figures. Verified: no original identifier is extractable from the committed PDF, no image remains in the signature area, and no original identifier appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "candidate's full name",
+            "with": "Jonny Doe",
+            "occurrences": 2
+          },
+          {
+            "what": "candidate's first name in the salutation",
+            "with": "Dear Jonny",
+            "occurrences": 1
+          },
+          {
+            "what": "care-of line with a relative's name and house number",
+            "with": "C/O Sample Relative, H.No-000, Example Colony,",
+            "occurrences": 1
+          },
+          {
+            "what": "locality, city and PIN code line",
+            "with": "Sample Nagar, Jalandhar, Punjab-000000",
+            "occurrences": 1
+          }
+        ],
+        "removed_images": [
+          {
+            "what": "authorized signatory's handwritten signature",
+            "page": 4
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "offer.designation",
+      "label": "Designation",
+      "occurrence": 1
+    },
+    {
+      "path": "offer.place_of_posting",
+      "label": "Place of posting",
+      "occurrence": 0
+    },
+    {
+      "path": "offer.date_of_joining",
+      "label": "Date of joining",
+      "occurrence": 0
+    },
+    {
+      "path": "offer.annual_ctc",
+      "label": "Annual cost to company (Rs.)",
+      "occurrence": 2
+    },
+    {
+      "path": "letter_date",
+      "label": "Letter date",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features the terms of the offer: the designation, where the candidate is posted, when they join, the annual cost to company, and the letter date. No person is featured. designation and annual_ctc each appear more than once and are pinned to their page 1 occurrences. The page 5 annexure extracts completely (15 salary components in the right sections, with totals) but is not on the requested page. preview_pages shows page 5, the salary annexure table, in place of page 4, the signature page, whose signature was removed."
+}

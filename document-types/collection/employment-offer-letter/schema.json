@@ -1,0 +1,156 @@
+{
+  "type": "object",
+  "properties": {
+    "employer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The company making the offer, by its legal name"
+    },
+    "reference_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The letter's reference number, as printed after 'Ref No.'"
+    },
+    "letter_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date of the letter, as printed"
+    },
+    "candidate_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The name of the person receiving the offer"
+    },
+    "offer": {
+      "type": "object",
+      "description": "The terms of the offer from the body of the letter",
+      "properties": {
+        "designation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The job title being offered"
+        },
+        "place_of_posting": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The city or location where the candidate will be posted"
+        },
+        "date_of_joining": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the candidate is to join, as printed"
+        },
+        "annual_ctc": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The annual cost to company in rupees, as a number"
+        },
+        "probation_months": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The length of the probation period in months"
+        },
+        "notice_period_days": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The notice period in days after confirmation, as stated under Termination of Service"
+        },
+        "retirement_age": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The retirement age in years"
+        }
+      }
+    },
+    "compensation": {
+      "type": "object",
+      "description": "The salary breakdown in Annexure I, in rupees",
+      "properties": {
+        "components": {
+          "type": "array",
+          "description": "Every earnings, employee deduction and employer contribution line in Annexure I, excluding subtotal and total rows",
+          "items": {
+            "type": "object",
+            "properties": {
+              "component": {
+                "type": "string",
+                "description": "The component name, e.g. 'Basic', 'HRA', 'EPF'"
+              },
+              "section": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Which part of the table the line is in: 'Earnings', 'Employee Part' or 'Employer Part'"
+              },
+              "monthly": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The monthly amount"
+              },
+              "annual": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The annual amount"
+              }
+            }
+          }
+        },
+        "gross_salary_monthly": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Gross Salary (A), monthly"
+        },
+        "take_home_monthly": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Employee Take Home (A-B), monthly"
+        },
+        "take_home_annual": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Employee Take Home (A-B), annual"
+        },
+        "total_cost_to_company_annual": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "TCTC (Total Cost to Company), annual"
+        }
+      }
+    }
+  }
+}
