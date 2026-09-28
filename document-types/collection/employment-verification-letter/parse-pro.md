@@ -1,50 +1,59 @@
-Premier
-Contracting Services
+Deloitte.
 
 
-07/03/2025
+**Deloitte Consulting India Private Limited**
+Opposite to Meenakshi Tech park, 4th Floor,
+Survey No 41, Gachibowli Village, Ranga
+Reddy, Hyderabad, Telangana - 500032
+Tel: +91 040 67621000
+www.deloitte.com
 
 
-# Employment Verification Letter
+April 25, 2022
 
 
-To Whom It May Concern,
+To Whom It May Concern
 
 
-This letter is to confirm the employment of Johnathan Quincy Sampleton, who is
-currently employed with Premier Contracting Service, LLC.
+This is to certify that **Mr. Johnathon Q Samplewood (Employee ID - 00000000)** is employed with our
+organization since **June 05, 2017** and is currently designated as **XIN-DC SENIOR CONSULTANT**.
 
 
-Below are the details of his employment:
-- **Employee Name**: Johnathan Quincy Sampleton
-- **Employment Dates**: 2023 to Present
-- **Job Title**: Carpet Clean Tech
-- **Salary**: $750.00-$800.00 weekly
-- **Duties**: Carpet cleaning and repairs; compensated for jobs completed
+As declared by the employee, his residential address as per our records is:-
 
 
-John exhibits commendable qualities such as responsibility, good
-communication skills, and punctuality. He is a valued member of our team,
-and his contributions are essential to the success of our projects and goals.
+Plot no:000, Sample Green Park,
+Anytown,
+Hyderabad, Telangana, 000000, IN
 
 
-We provide this letter to support Johnathan Quincy Sampleton.
-He is in good standing with Premier Contracting Service, LLC.
+Below is the office location details:
+Deloitte Towers, Meenakshi Techpark,
+Survey No. 41, Gachibowli Village, Ranga Reddy District,
+Hyderabad, Telangana - 500032 , India
 
 
-If you require any additional information, please do not hesitate to contact us
-at 832.426.4346 or via email at
-officeadmin@premiercontractingservicellc.com.
+We are not responsible for receiving employee's personal documents or communications via post or courier at
+our office address.
+
+
+This certificate is issued to him only to serve as current proof of employment with us.
 
 
 Sincerely,
-**Premier Contracting Service, LLC**
+For Deloitte Consulting India Private Limited
 
 
-Premier Contracting Service, LLC 
-602 Texas Pkwy 
-Missouri City, TX 77489 
-Office: 832-426-4346 | Fax: 832-767-5948 
-officeadmin@Premiercontractingservicellc.com 
+Date: 04.25.2022; 19:22:46 IST
 
-<!-- doc_id=parse-01m3jxjff0jbygcgdrehytxg7z -->
+Executive Manager
+Employee Life Cycle Events
+Core Talent Services
+ushydhrecc@deloitte.com
+
+
+Regd. Off.: Floor 4, Deloitte Tower 1, Survey No. 41, Gachibowli Village, Ranga Reddy District, Hyderabad - 500032, Telangana, India
+GST Reg No: 36AABCD0476H1ZT
+CIN: U72900TG2000PTC039976
+
+<!-- doc_id=parse-01m3jzbab2cyjfcg2ntjy1x57y -->

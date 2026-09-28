@@ -7,14 +7,13 @@
 # Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
 
 name: Employment Verification Letter
-url: https://www.scribd.com/document/884065116
+url: https://www.scribd.com/document/571883179/Employment-Letter
 # The Scribd url's title slug named the employee, so the id-only form is recorded.
 
 # A local copy, for sites that block scripted downloads (Scribd and similar).
 # The url above is still required: it is the source of record and goes on the
 # published page.
-# file: manual download of the Scribd document. The local filename is omitted
-#   because it contained the employee's name.
+file: /Users/andreakropp/Downloads/571883179-Employment-Letter.pdf
 
 # An existing schema to use unchanged. A schema the team already runs beats a
 # new one written for the sample. Omit this and one gets written.
@@ -22,7 +21,7 @@ url: https://www.scribd.com/document/884065116
 
 # Which page the worked example features. Omit and the skill picks the page
 # where the best-grounded fields are.
-# feature_page: 2
+feature_page: 1
 
 # The values you want shown beside the page overlay, 3 to 5, all on one page.
 # Omit and the skill picks them.

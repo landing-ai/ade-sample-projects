@@ -6,11 +6,11 @@
         "string",
         "null"
       ],
-      "description": "The date the letter was written, as printed"
+      "description": "The date the letter was issued, as printed at the top"
     },
     "employer": {
       "type": "object",
-      "description": "The employer confirming the employment",
+      "description": "The employer issuing the letter",
       "properties": {
         "name": {
           "type": [
@@ -19,97 +19,90 @@
           ],
           "description": "The employer's legal name"
         },
-        "address": {
+        "office_location": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The employer's address, as one line"
+          "description": "The office location given in the body of the letter, as one line"
         },
         "phone": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The contact phone number given for verification"
+          "description": "The employer's phone number from the letterhead"
         },
-        "email": {
+        "signatory_title": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The contact email address given for verification"
+          "description": "The title of the person who signed the letter, e.g. 'Executive Manager'"
+        },
+        "contact_email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The contact email printed beneath the signature"
         }
       }
     },
     "employee": {
       "type": "object",
-      "description": "The employee and the terms of their employment",
+      "description": "The employee whose employment is being certified",
       "properties": {
         "name": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The employee's full name"
+          "description": "The employee's full name, without any title such as 'Mr.'"
         },
-        "job_title": {
+        "employee_id": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The employee's job title"
+          "description": "The employee ID, exactly as printed"
         },
-        "employment_start": {
+        "employed_since": {
           "type": [
             "string",
             "null"
           ],
-          "description": "When employment began, as printed, e.g. a year or a date"
+          "description": "The date employment began, as printed"
+        },
+        "designation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's current designation or job title"
         },
         "currently_employed": {
           "type": [
             "boolean",
             "null"
           ],
-          "description": "True if the letter says the employee is currently employed"
+          "description": "True if the letter certifies that the person is currently employed"
         },
-        "pay_minimum": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "description": "The lower end of the stated pay, in dollars, or the pay if a single figure is given"
-        },
-        "pay_maximum": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "description": "The upper end of the stated pay, in dollars, or null if a single figure is given"
-        },
-        "pay_period": {
+        "residential_address": {
           "type": [
             "string",
             "null"
           ],
-          "description": "The period the pay covers, e.g. 'weekly', 'hourly', 'annual'"
-        },
-        "duties": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The employee's duties, as described"
-        },
-        "in_good_standing": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "description": "True if the letter states the employee is in good standing"
+          "description": "The employee's residential address as per the employer's records, as one line"
         }
       }
+    },
+    "purpose": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "What the letter states it is issued for"
     }
   }
 }
