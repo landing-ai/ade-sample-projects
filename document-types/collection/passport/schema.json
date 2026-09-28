@@ -1,0 +1,173 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "document_type": {
+      "description": "The type of identity document being processed.",
+      "x-alternativeNames": [
+        "Document Type",
+        "ID Type"
+      ],
+      "enum": [
+        "Passport",
+        "Driver License",
+        "Identity Card"
+      ]
+    },
+    "document_info": {
+      "description": "Information pertaining to the identity document itself.",
+      "x-alternativeNames": [
+        "Document Details",
+        "ID Information"
+      ],
+      "type": "object",
+      "properties": {
+        "document_number": {
+          "description": "The unique identification number of the document. Retain all original formatting.",
+          "x-alternativeNames": [
+            "Document Number",
+            "ID Number",
+            "Passport Number",
+            "License Number"
+          ],
+          "type": "string"
+        },
+        "issuing_country": {
+          "description": "The country that issued the document.",
+          "x-alternativeNames": [
+            "Country of Issue",
+            "Nationality"
+          ],
+          "type": "string"
+        },
+        "date_of_issue": {
+          "description": "Date when the document was issued.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Issue Date",
+            "Date Issued"
+          ],
+          "type": "string"
+        },
+        "date_of_expiry": {
+          "description": "Date when the document expires.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Expiry Date",
+            "Date of Expiration"
+          ],
+          "type": "string"
+        },
+        "state_issuing": {
+          "description": "The state or province that issued the document (if applicable, e.g., for driver's licenses).",
+          "x-alternativeNames": [
+            "Issuing State",
+            "State of Issue"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_number",
+        "issuing_country",
+        "date_of_issue",
+        "date_of_expiry",
+        "state_issuing"
+      ]
+    },
+    "personal_info": {
+      "description": "Personal information of the document holder.",
+      "x-alternativeNames": [
+        "Personal Details",
+        "Holder Information"
+      ],
+      "type": "object",
+      "properties": {
+        "given_names": {
+          "description": "The given names (first and middle names) of the document holder.",
+          "x-alternativeNames": [
+            "First Name",
+            "Middle Name",
+            "Given Name"
+          ],
+          "type": "string"
+        },
+        "surname": {
+          "description": "The last name of the document holder.",
+          "x-alternativeNames": [
+            "Last Name",
+            "Family Name"
+          ],
+          "type": "string"
+        },
+        "date_of_birth": {
+          "description": "Birth date of the document holder.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Birth Date",
+            "DOB"
+          ],
+          "type": "string"
+        },
+        "sex": {
+          "description": "Sex of the document holder (e.g., M, F, X).",
+          "x-alternativeNames": [
+            "Gender"
+          ],
+          "type": "string"
+        },
+        "nationality": {
+          "description": "The nationality of the document holder.",
+          "x-alternativeNames": [
+            "Citizenship"
+          ],
+          "type": "string"
+        },
+        "place_of_birth": {
+          "description": "The city and/or country where the document holder was born.",
+          "x-alternativeNames": [
+            "Birthplace"
+          ],
+          "type": "string"
+        },
+        "height": {
+          "description": "Height of the document holder. Return without punctuation marks. Return 6'3\" as 6 feet 3 inches and 4'11\" as 4 feet 11 inches.",
+          "x-alternativeNames": [
+            "Height"
+          ],
+          "type": "string"
+        },
+        "weight": {
+          "description": "Weight of the document holder. Remove units. Assumes pounds.",
+          "x-alternativeNames": [
+            "Weight"
+          ],
+          "type": "number"
+        },
+        "eye_color": {
+          "description": "Eye color of the document holder.",
+          "x-alternativeNames": [
+            "Eye Colour"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "given_names",
+        "surname",
+        "date_of_birth",
+        "sex",
+        "nationality",
+        "place_of_birth",
+        "height",
+        "weight",
+        "eye_color"
+      ]
+    }
+  },
+  "required": [
+    "document_type",
+    "document_info",
+    "personal_info"
+  ]
+}

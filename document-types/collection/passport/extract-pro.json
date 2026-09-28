@@ -1,0 +1,166 @@
+{
+  "extraction": {
+    "document_info": {
+      "date_of_expiry": "2030-03-24",
+      "date_of_issue": "2025-03-24",
+      "document_number": "ZZ0000826",
+      "issuing_country": "JAPAN",
+      "state_issuing": null
+    },
+    "document_type": "Passport",
+    "personal_info": {
+      "date_of_birth": "2000-02-20",
+      "eye_color": null,
+      "given_names": "SAKURA",
+      "height": null,
+      "nationality": "JAPAN",
+      "place_of_birth": null,
+      "sex": "F",
+      "surname": "GAIMU",
+      "weight": null
+    }
+  },
+  "extraction_metadata": {
+    "document_info": {
+      "date_of_expiry": {
+        "ranges": [
+          {
+            "end": 357,
+            "start": 346
+          }
+        ],
+        "value": "2030-03-24"
+      },
+      "date_of_issue": {
+        "ranges": [
+          {
+            "end": 320,
+            "start": 309
+          }
+        ],
+        "value": "2025-03-24"
+      },
+      "document_number": {
+        "ranges": [
+          {
+            "end": 114,
+            "start": 105
+          }
+        ],
+        "value": "ZZ0000826"
+      },
+      "issuing_country": {
+        "ranges": [
+          {
+            "end": 9,
+            "start": 4
+          }
+        ],
+        "value": "JAPAN"
+      },
+      "state_issuing": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "document_type": {
+      "ranges": [
+        {
+          "end": 46,
+          "start": 38
+        }
+      ],
+      "value": "Passport"
+    },
+    "personal_info": {
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 238,
+            "start": 227
+          }
+        ],
+        "value": "2000-02-20"
+      },
+      "eye_color": {
+        "ranges": null,
+        "value": null
+      },
+      "given_names": {
+        "ranges": [
+          {
+            "end": 171,
+            "start": 165
+          }
+        ],
+        "value": "SAKURA"
+      },
+      "height": {
+        "ranges": null,
+        "value": null
+      },
+      "nationality": {
+        "ranges": [
+          {
+            "end": 194,
+            "start": 189
+          }
+        ],
+        "value": "JAPAN"
+      },
+      "place_of_birth": {
+        "ranges": null,
+        "value": null
+      },
+      "sex": {
+        "ranges": [
+          {
+            "end": 205,
+            "start": 204
+          }
+        ],
+        "value": "F"
+      },
+      "surname": {
+        "ranges": [
+          {
+            "end": 149,
+            "start": 144
+          }
+        ],
+        "value": "GAIMU"
+      },
+      "weight": {
+        "ranges": null,
+        "value": null
+      }
+    }
+  },
+  "markdown": "日本国\nJAPAN\n[PASSPORT_EMBLEM]\n[ICON]\n旅券\nPASSPORT\n型 / Type\nPP\n発行国 / Issuing country\nJPN\n旅券番号 / Passport No.\nZZ0000826\n[PORTRAIT_IMAGE]\n姓 / Surname\nGAIMU\n名 / Given name\nSAKURA\n国籍 / Nationality\nJAPAN\n性別 / Sex\nF\n生年月日 / Date of birth\n20 FEB 2000\n本籍 / Registered Domicile\nTOKYO\n[SMALL_PORTRAIT]\n発行年月日 / Date of issue\n24 MAR 2025\n有効期間満了日 / Date of expiry\n24 MAR 2030\n所持人自署 / Signature of bearer\n外務 さくら\n発行官庁 / Authority\nMINISTRY OF\nFOREIGN AFFAIRS\nPPJPNGAIMU<<SAKURA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\nZZ00008268JPN0002200F3003242<<<<<<<<<<<<<<<<<<06\n[PASSPORT_WATERMARK]\n\n<!-- doc_id=parse-01m3k8ww1et8jb4t6vp5e77x3w -->",
+  "metadata": {
+    "job_id": "extract-01m3k8x556p33d52qy98qgkvvd",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 16921,
+    "doc_id": "parse-01m3k8ww1et8jb4t6vp5e77x3w",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.5,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 606,
+    "output_extraction_chars": 369,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'document_info.state_issuing' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'document_info.state_issuing' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}
