@@ -2,62 +2,16 @@
   "slug": "itin-number",
   "title": "ITIN Number",
   "source": {
-    "file": "itin-assignment-notice-redacted.pdf",
-    "pages": 1,
+    "file": "irs-cp565-specimen.pdf",
+    "pages": 2,
     "orientation": "portrait",
     "origin": {
-      "url": "https://www.scribd.com/document/894287956",
-      "publisher": "Presented as the Internal Revenue Service (see clearance_note)",
-      "title": "Notice CP565, ITIN assignment, dated 11/05/2023",
+      "url": "https://www.irs.gov/pub/notices/cp565_english.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "Notice CP565, We renewed your Individual Taxpayer Identification Number (official sample)",
       "retrieved": "2026-09-27",
-      "clearance": "redacted",
-      "clearance_note": "A letter presented as an IRS CP565 notice assigning an Individual Taxpayer Identification Number, uploaded to Scribd by a third party and downloaded manually, because Scribd blocks scripted requests. The source url is recorded in its id-only form because Scribd's title slug carried a person's name. It shows several signs of not being a genuine IRS notice: the PDF was created in Apple Pages on a Russian-language macOS, where IRS notices come from IRS print systems; the header recipient and the mailing-block name are two different people; the ITIN's middle group was outside the ranges the IRS assigns; and the file was created on 11 May 2023, which matches the notice date 11/05/2023 only if that date is read day-first, where US notices are month-first. It is used at the document owner's decision; an official IRS sample of this notice exists at https://www.irs.gov/pub/notices/cp565_english.pdf. Both names, the mailing address, the ITIN, the case reference number and the mail sort code line were replaced using document-types/scripts/redact.py, which removes the underlying text rather than covering it: names and address with obviously-fake equivalents, and the numbers with plausible random stand-ins of the same shape. The ITIN stand-in uses middle group 93, which the IRS does not assign. The Intelligent Mail barcode, an image encoding routing data, was deleted with redact.py --remove-images, and the PDF metadata, whose title named a person, was cleared. The IRS seal and logo and the IRS contact details are left as printed. Verified: no original identifier is extractable from the committed PDF, no image remains in the barcode area, and no original identifier appears anywhere in this collection folder.",
-      "redactions": {
-        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
-        "replaced": [
-          {
-            "what": "recipient name in the header",
-            "with": "Jane Q Sample",
-            "occurrences": 1
-          },
-          {
-            "what": "name in the mailing address block",
-            "with": "JOHN Q SAMPLE",
-            "occurrences": 1
-          },
-          {
-            "what": "mailing address street",
-            "with": "10 MAIN ST APT 1",
-            "occurrences": 1
-          },
-          {
-            "what": "mailing address city, state and ZIP",
-            "with": "ANYTOWN, NJ 00000",
-            "occurrences": 1
-          },
-          {
-            "what": "ITIN",
-            "with": "981-93-3299",
-            "occurrences": 1
-          },
-          {
-            "what": "case reference number",
-            "with": "77582342621020",
-            "occurrences": 1
-          },
-          {
-            "what": "mail sort code line",
-            "with": "287327.453204.6306.386  6  MB  3.797  130",
-            "occurrences": 1
-          }
-        ],
-        "removed_images": [
-          {
-            "what": "Intelligent Mail barcode",
-            "page": 1
-          }
-        ]
-      }
+      "clearance": "public",
+      "clearance_note": "The IRS's own published sample of Notice CP565, served from irs.gov and linked from the CP565 help page. A work of the United States government, so it carries no copyright. Every value on it is specimen data the IRS printed for illustration: the recipient is 'JOHN SMITH' at '123 N HARRIS ST, HARVARD, TX 12345', the case reference number is 99999, and the ITIN itself is printed as the placeholder 'NNN-NN-NNNN'. No real person's data appears on the notice, so no redaction was needed. The PDF's metadata named the IRS employee who produced the file; that dictionary and the XML metadata were cleared before committing, and nothing on the page was altered."
     }
   },
   "feature_page": 1,
@@ -65,7 +19,7 @@
     {
       "path": "itin",
       "label": "ITIN",
-      "occurrence": 0
+      "occurrence": 1
     },
     {
       "path": "notice.notice_number",
@@ -78,15 +32,15 @@
       "occurrence": 0
     },
     {
-      "path": "notice.form",
-      "label": "Form",
-      "occurrence": 0
-    },
-    {
       "path": "notice.case_reference_number",
       "label": "Case reference number",
       "occurrence": 0
+    },
+    {
+      "path": "recipient.date_of_birth",
+      "label": "Date of birth",
+      "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields. Features the notice's identity: the ITIN it assigns, the notice number, its date, the form it answers and the case reference. No person is featured. The ITIN and case reference shown are plausible stand-ins, not the originals. Both mailing addresses ground line by line and are not featured."
+  "notes": "Replaces an earlier sample that was probably not a genuine IRS notice. Features the notice's identity and the number it confirms: the ITIN, the notice number, its date, the case reference and the date of birth the IRS uses alongside the ITIN to match tax documents. No name is featured, although the specimen's name is the IRS's own illustrative data. The ITIN is printed by the IRS as the placeholder NNN-NN-NNNN, which is the real value on the real page."
 }
