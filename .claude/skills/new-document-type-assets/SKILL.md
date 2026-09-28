@@ -147,8 +147,27 @@ real last four of their TIN.
 
 If it contains personal data:
 
-1. Write a rules file mapping each original string to an obviously-fake replacement of
-   similar shape. **Keep it outside this repo** — it is the personal data in plain text.
+1. Write a rules file mapping each original string to a replacement of similar shape.
+   **Keep it outside this repo** — it is the personal data in plain text.
+
+   - **Names and addresses: obviously fake.** Jane Q Sample, 100 Main St, Anytown. A
+     realistic-looking fake name can belong to a real person.
+   - **Numeric identifiers: plausible, not zeros.** Account, invoice, order, meter,
+     licence, policy and reference numbers get a realistic stand-in of the same shape
+     from `plausible.py`. A page showing account number 0000000000 reads as a redaction,
+     not as a document.
+
+     ```
+     .venv/bin/python document-types/scripts/plausible.py <original> [<original> ...]
+     ```
+
+     It keeps length, separators and letter prefixes, draws every digit at random (never
+     from the original, which a short number could be brute-forced back from), and uses
+     reserved ranges where they exist: SSNs from 987-65-4320–4329, phone numbers in
+     555-0100–0199.
+   - **One stand-in per identifier.** When the same number is printed in several formats
+     (`70 023 651 18` and `7002365118`), generate it once and use `reformat()` for the
+     other forms, or the document stops agreeing with itself.
 2. Run `redact.py`, which uses PyMuPDF redaction annotations. These *remove* the
    underlying text rather than drawing a box over it; text hidden under a filled
    rectangle is still extractable, and that is the usual way a "redacted" PDF leaks.
