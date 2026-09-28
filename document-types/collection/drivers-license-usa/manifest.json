@@ -1,0 +1,26 @@
+{
+  "slug": "drivers-license-usa",
+  "title": "Driver's License - US State",
+  "source": {
+    "file": "texas-dl-specimen-2025.png",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.dps.texas.gov/news/dps-rolls-out-new-driver-license-design",
+      "publisher": "Texas Department of Public Safety",
+      "title": "DPS Rolls Out New Driver License Design (news release, August 18, 2025)",
+      "retrieved": "2026-09-27",
+      "clearance": "public",
+      "clearance_note": "The official specimen of Texas's 2025 driver license design, published by the Texas Department of Public Safety in its news release announcing the design. Every field is specimen data: 'SAMPLE JANE', DL 12345678, 123 Sample Street, Sample City, TX 12345, with 'SAMPLE' printed across the portrait. The portrait is DPS's specimen model, not a license holder, and the director's printed signature is part of the card design. The request gave a Google Images thumbnail (encrypted-tbn0.gstatic.com) as the url; that is a cache of this image, not its publisher, so the DPS release is recorded instead. The file is cropped from the release's 1080x742 banner image (8.18.2025-New-DL-Design-PR.jpg) to the card, box (22, 300, 622, 685), so the banner's headline text is not parsed as part of the card. No redaction needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "document_info.document_number", "label": "License number", "occurrence": 0 },
+    { "path": "document_info.state_issuing", "label": "Issuing state", "occurrence": 0 },
+    { "path": "personal_info.sex", "label": "Sex", "occurrence": 0 },
+    { "path": "personal_info.height", "label": "Height", "occurrence": 0 },
+    { "path": "personal_info.eye_color", "label": "Eye color", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields. Features the card's identity and the holder's physical description: license number, issuing state, sex, height and eye color. No name is featured, although the name is specimen data. The supplied schema (doc42-driver-license-schema.json) is used unchanged. place_of_birth and weight are not printed on a Texas license and come back null; place_of_birth is required by the schema, so extraction returns a nonconformant_output warning. nationality ('American') is not printed either and comes back synthesized with no range. issuing_country ('USA') is synthesized because the small 'USA' beside TEXAS is not in the parse. Dates are normalized to ISO, so they no longer match the printed text and are flagged."
+}
