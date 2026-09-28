@@ -1,0 +1,40 @@
+{
+  "slug": "utility-bill",
+  "title": "Utility Bill",
+  "source": {
+    "file": "pseg-electric-gas-bill-redacted.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/500641462/PSEG-Sample-Electric-Bill",
+      "publisher": "PSE&G (Public Service Electric and Gas Company)",
+      "title": "Your energy bill, June 2020",
+      "retrieved": "2026-09-27",
+      "clearance": "redacted",
+      "clearance_note": "A real PSE&G residential electric and gas bill, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the bill is treated as a personal record. The local copy used is Use_Cases/Utility_Bills/input_folder/electric2.pdf from this repo, where the same bill is already committed unredacted. The customer's name, service address, account number (in both its spaced and unspaced forms), invoice number, point-of-delivery ID and both meter numbers were replaced with obviously-fake equivalents using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata was cleared. PSE&G's name, logo, phone numbers, PO box and the bill's amounts, dates and usage are left as printed. Verified: no original identifier is extractable from the committed PDF, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "customer's name", "with": "JANE SAMPLE", "occurrences": 5 },
+          { "what": "service address street line", "with": "100 MAIN ST APT A", "occurrences": 2 },
+          { "what": "service address town, state and ZIP", "with": "ANYTOWN NJ 00000-0000", "occurrences": 2 },
+          { "what": "account number, spaced form", "with": "00 000 000 00", "occurrences": 1 },
+          { "what": "account number", "with": "0000000000", "occurrences": 5 },
+          { "what": "invoice number", "with": "000000000000", "occurrences": 3 },
+          { "what": "point-of-delivery ID", "with": "PE000000000000000000", "occurrences": 1 },
+          { "what": "electric meter number", "with": "000000000", "occurrences": 1 },
+          { "what": "gas meter number", "with": "0000000", "occurrences": 1 }
+        ]
+      }
+    }
+  },
+  "feature_page": 4,
+  "fields": [
+    { "path": "account_info.account_number", "label": "Account number", "occurrence": 4 },
+    { "path": "electric_charges.meter_number", "label": "Meter number", "occurrence": 0 },
+    { "path": "electric_charges.total_delivery_charges", "label": "Delivery charges", "occurrence": 0 },
+    { "path": "electric_charges.monthly_service_charge", "label": "Service charges", "occurrence": 0 },
+    { "path": "electric_charges.total_electric_charges", "label": "Total electric charges", "occurrence": 0 }
+  ],
+  "notes": "The request named page 4 and five fields: account number, meter number, delivery charges, service charges and total electric charges. All five ship. The supplied schema (Use_Cases/Utility_Bills/utility_bill.json) had no field for delivery or service charges, so at the document owner's decision this copy adds electric_charges.monthly_service_charge and electric_charges.total_delivery_charges and nothing else; extraction was re-run on the same parse. total_electric_charges extracts correctly but the parse folds the 'Total electric charges $46.42' bar into the usage chart figure below it, so its box covers the bar and the whole chart. account_number is pinned to occurrence 4, the page 4 header. The account numbers and meter numbers shown are the redacted stand-ins."
+}
