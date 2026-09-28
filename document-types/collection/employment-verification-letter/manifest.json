@@ -1,0 +1,33 @@
+{
+  "slug": "employment-verification-letter",
+  "title": "Employment Verification Letter",
+  "source": {
+    "file": "employment-verification-letter-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/884065116",
+      "publisher": "Premier Contracting Service, LLC",
+      "title": "Employment Verification Letter, 07/03/2025",
+      "retrieved": "2026-09-27",
+      "clearance": "redacted",
+      "clearance_note": "A real employment verification letter from a small contracting business, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the letter is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. The employee's name was replaced with an obviously-fake equivalent using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata, whose author field named a person, was cleared. The employer's name, logo, address, phone numbers and email are business details and are left as printed, as are the job title, dates, pay and duties. Verified: no original identifier is extractable from the committed PDF, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "employee's full name", "with": "Johnathan Quincy Sampleton", "occurrences": 3 },
+          { "what": "employee's first name", "with": "John", "occurrences": 1 }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "letter_date", "label": "Letter date", "occurrence": 0 },
+    { "path": "employee.job_title", "label": "Job title", "occurrence": 0 },
+    { "path": "employee.employment_start", "label": "Employed since", "occurrence": 0 },
+    { "path": "employee.pay_minimum", "label": "Weekly pay (lower end of range)", "occurrence": 0 },
+    { "path": "employee.duties", "label": "Duties", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields. Features what a lender or landlord verifying employment reads: the letter date, job title, start of employment, pay and duties. No person is featured. pay_minimum, pay_maximum and pay_period all ground to the one Salary line and would render identical crops, so only the lower end of the range is featured. currently_employed and in_good_standing extract correctly as true but ground to the sentences that state them, and the employer address grounds to its two footer lines separately; none is featured."
+}

@@ -1,0 +1,192 @@
+{
+  "extraction": {
+    "employee": {
+      "currently_employed": true,
+      "duties": "Carpet cleaning and repairs; compensated for jobs completed",
+      "employment_start": "2023",
+      "in_good_standing": true,
+      "job_title": "Carpet Clean Tech",
+      "name": "Johnathan Quincy Sampleton",
+      "pay_maximum": 800.0,
+      "pay_minimum": 750.0,
+      "pay_period": "weekly"
+    },
+    "employer": {
+      "address": "602 Texas Pkwy Missouri City, TX 77489",
+      "email": "officeadmin@premiercontractingservicellc.com",
+      "name": "Premier Contracting Service, LLC",
+      "phone": "832.426.4346"
+    },
+    "letter_date": "07/03/2025"
+  },
+  "extraction_metadata": {
+    "employee": {
+      "currently_employed": {
+        "ranges": [
+          {
+            "end": 241,
+            "start": 184
+          }
+        ],
+        "value": true
+      },
+      "duties": {
+        "ranges": [
+          {
+            "end": 518,
+            "start": 445
+          }
+        ],
+        "value": "Carpet cleaning and repairs; compensated for jobs completed"
+      },
+      "employment_start": {
+        "ranges": [
+          {
+            "end": 372,
+            "start": 333
+          }
+        ],
+        "value": "2023"
+      },
+      "in_good_standing": {
+        "ranges": [
+          {
+            "end": 863,
+            "start": 802
+          }
+        ],
+        "value": true
+      },
+      "job_title": {
+        "ranges": [
+          {
+            "end": 407,
+            "start": 373
+          }
+        ],
+        "value": "Carpet Clean Tech"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 332,
+            "start": 285
+          }
+        ],
+        "value": "Johnathan Quincy Sampleton"
+      },
+      "pay_maximum": {
+        "ranges": [
+          {
+            "end": 444,
+            "start": 408
+          }
+        ],
+        "value": 800.0
+      },
+      "pay_minimum": {
+        "ranges": [
+          {
+            "end": 444,
+            "start": 408
+          }
+        ],
+        "value": 750.0
+      },
+      "pay_period": {
+        "ranges": [
+          {
+            "end": 444,
+            "start": 408
+          }
+        ],
+        "value": "weekly"
+      }
+    },
+    "employer": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1125,
+            "start": 1110
+          },
+          {
+            "end": 1150,
+            "start": 1126
+          }
+        ],
+        "value": "602 Texas Pkwy Missouri City, TX 77489"
+      },
+      "email": {
+        "ranges": [
+          {
+            "end": 1023,
+            "start": 978
+          },
+          {
+            "end": 1288,
+            "start": 1037
+          }
+        ],
+        "value": "officeadmin@premiercontractingservicellc.com"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 241,
+            "start": 184
+          },
+          {
+            "end": 1288,
+            "start": 1037
+          }
+        ],
+        "value": "Premier Contracting Service, LLC"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 977,
+            "start": 946
+          },
+          {
+            "end": 1192,
+            "start": 1151
+          }
+        ],
+        "value": "832.426.4346"
+      }
+    },
+    "letter_date": {
+      "ranges": [
+        {
+          "end": 41,
+          "start": 31
+        }
+      ],
+      "value": "07/03/2025"
+    }
+  },
+  "markdown": "Premier\nContracting Services\n\n\n07/03/2025\n\n\n# Employment Verification Letter\n\n\nTo Whom It May Concern,\n\n\nThis letter is to confirm the employment of Johnathan Quincy Sampleton, who is\ncurrently employed with Premier Contracting Service, LLC.\n\n\nBelow are the details of his employment:\n- **Employee Name**: Johnathan Quincy Sampleton\n- **Employment Dates**: 2023 to Present\n- **Job Title**: Carpet Clean Tech\n- **Salary**: $750.00-$800.00 weekly\n- **Duties**: Carpet cleaning and repairs; compensated for jobs completed\n\n\nJohn exhibits commendable qualities such as responsibility, good\ncommunication skills, and punctuality. He is a valued member of our team,\nand his contributions are essential to the success of our projects and goals.\n\n\nWe provide this letter to support Johnathan Quincy Sampleton.\nHe is in good standing with Premier Contracting Service, LLC.\n\n\nIf you require any additional information, please do not hesitate to contact us\nat 832.426.4346 or via email at\nofficeadmin@premiercontractingservicellc.com.\n\n\nSincerely,\n**Premier Contracting Service, LLC**\n\n\nPremier Contracting Service, LLC \n602 Texas Pkwy \nMissouri City, TX 77489 \nOffice: 832-426-4346 | Fax: 832-767-5948 \nofficeadmin@Premiercontractingservicellc.com \n\n<!-- doc_id=parse-01m3jxjff0jbygcgdrehytxg7z -->",
+  "metadata": {
+    "job_id": "extract-01m3jxjrfxenztdzrs51adsdm4",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 11804,
+    "doc_id": "parse-01m3jxjff0jbygcgdrehytxg7z",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1288,
+    "output_extraction_chars": 502,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

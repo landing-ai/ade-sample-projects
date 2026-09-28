@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "letter_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date the letter was written, as printed"
+    },
+    "employer": {
+      "type": "object",
+      "description": "The employer confirming the employment",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's legal name"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's address, as one line"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The contact phone number given for verification"
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The contact email address given for verification"
+        }
+      }
+    },
+    "employee": {
+      "type": "object",
+      "description": "The employee and the terms of their employment",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's full name"
+        },
+        "job_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's job title"
+        },
+        "employment_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "When employment began, as printed, e.g. a year or a date"
+        },
+        "currently_employed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the letter says the employee is currently employed"
+        },
+        "pay_minimum": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The lower end of the stated pay, in dollars, or the pay if a single figure is given"
+        },
+        "pay_maximum": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The upper end of the stated pay, in dollars, or null if a single figure is given"
+        },
+        "pay_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The period the pay covers, e.g. 'weekly', 'hourly', 'annual'"
+        },
+        "duties": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's duties, as described"
+        },
+        "in_good_standing": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the letter states the employee is in good standing"
+        }
+      }
+    }
+  }
+}
