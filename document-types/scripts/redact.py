@@ -61,6 +61,12 @@ def main() -> None:
              "data but no demonstration value -- a mailing panel, for instance, whose "
              "rotated text cannot be replaced cleanly anyway.",
     )
+    parser.add_argument(
+        "--remove-images", nargs="*", default=[], metavar="PAGE:X0,Y0,X1,Y1",
+        help="Delete every image lying entirely inside this rectangle on this 1-indexed "
+             "page (PDF points, after any --drop-pages). Use for a signature or a photo. "
+             "Only wholly contained images go, so a watermark behind the area survives.",
+    )
     args = parser.parse_args()
 
     rules: dict[str, str] = json.loads(args.rules.read_text(encoding="utf-8"))
@@ -82,6 +88,19 @@ def main() -> None:
         for index in sorted((n - 1 for n in args.drop_pages), reverse=True):
             doc.delete_page(index)
         print(f"Dropped page(s) {sorted(args.drop_pages)}; {doc.page_count} remain.\n")
+
+    # Signatures arrive as images, which the text rules cannot touch. An offer letter's
+    # signature sat over a corner of a full-page watermark: blanking the area would have
+    # left a white patch on the watermark, and deleting every overlapping image would have
+    # taken the watermark with it. So delete only images wholly inside the area.
+    regions = [_parse_region(spec) for spec in args.remove_images]
+    for page_no, region in regions:
+        page = doc[page_no - 1]
+        removed = [xref for xref, *_ in page.get_images(full=True)
+                   if any(region.contains(r) for r in page.get_image_rects(xref))]
+        for xref in removed:
+            page.delete_image(xref)
+        print(f"Removed {len(removed)} image(s) inside {tuple(region)} on page {page_no}.")
 
     total = 0
     per_rule: dict[str, int] = {}
@@ -168,6 +187,19 @@ def main() -> None:
         sys.exit(1)
     print(f"\nVerified: no original string is extractable from {args.output.name}")
 
+    if regions:
+        # delete_image leaves a 1x1 blank image in the deleted one's place, so an image
+        # counts as surviving only if it still has real pixels.
+        verify = pymupdf.open(args.output)
+        left = [(n, xref) for n, region in regions
+                for xref, _, w, h, *_ in verify[n - 1].get_images(full=True)
+                if w * h > 1
+                and any(region.contains(r) for r in verify[n - 1].get_image_rects(xref))]
+        verify.close()
+        if left:
+            sys.exit(f"FAILED — images still inside a removed region: {left}")
+        print("Verified: no image remains inside a removed region.")
+
     # Clearing the PDF is only half the job. The rules file is a verbatim copy of the
     # personal data, and it is easy to "document the provenance" by pasting the same
     # before/after map into a manifest or README sitting next to the redacted PDF --
@@ -191,6 +223,16 @@ def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:
         if area > best_area:
             best, best_area = span, area
     return best
+
+
+def _parse_region(spec: str) -> tuple[int, pymupdf.Rect]:
+    """'4:50,332,131,373' -> (4, Rect(50, 332, 131, 373))."""
+    try:
+        page, coords = spec.split(":")
+        x0, y0, x1, y1 = (float(v) for v in coords.split(","))
+    except ValueError:
+        sys.exit(f"--remove-images expects PAGE:X0,Y0,X1,Y1, got {spec!r}")
+    return int(page), pymupdf.Rect(x0, y0, x1, y1)
 
 
 def _inside_repo(path: Path) -> bool:
