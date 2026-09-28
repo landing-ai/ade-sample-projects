@@ -46,23 +46,34 @@ The collection's first **image input** and first **government tax form**:
 - **Small, awkward details.** Box 12's letter codes sit beside a tiny vertical "Code"
   label, and box 13 is three checkboxes.
 
-## Featured fields: wages and what was withheld
+## Featured fields: one of each kind of box
 
-All on **page 1**. The request named no feature page or fields, so these were chosen:
+All on **page 1**, chosen by the document owner after the first build:
 
 | Field | Value |
 |---|---|
 | Wages (box 1) | 2,323.00 |
-| Federal income tax withheld (box 2) | 232.30 |
-| Social Security tax withheld (box 4) | 144.02 |
-| Medicare tax withheld (box 6) | 33.68 |
+| Social security wages (box 3) | 2,323.00 |
+| Third-party sick pay checked (box 13) | true |
+| Other (box 14 write-in) | Other Income $100 |
+| Local income tax (box 19) | 675.00 |
 
-They tell one story: the wages, and each tax taken from them at its rate. Federal is 10%
-of $2,323.00, Social Security is 6.2% ($144.026, printed truncated to $144.02) and Medicare
-is 1.45% ($33.6835, printed $33.68). No person is featured.
-
+Together they cover each kind of box on the form: printed amounts, a checkbox, a free-text
+write-in, and a box from the state and local row along the bottom. No person is featured.
 Each box covers the whole form box, label and value together, so a crop reads as "Social
-security tax withheld 144.02" rather than a bare number.
+security wages 2323.00" rather than a bare number.
+
+**The checkbox is featured through Third-party sick pay** because it has its own tight
+range, covering just its label and the ticked box. `build_images.py` warns that "True" is
+not in the boxed text, which is expected: a checkbox never prints the word. The crop was
+checked by eye. Statutory employee and Retirement plan share a single range covering both
+boxes, so either would show two ticks in one crop.
+
+**What was asked for and dropped.** The owner also asked for box 12c, its code "D" and
+its amount 5,242.00. The amount grounds correctly, but the code extracts as null (below),
+and the owner chose to leave box 12 out rather than show the amount without its code.
+The first build featured boxes 1, 2, 4 and 6 instead: wages and the three taxes taken from
+them.
 
 ## What it surfaced
 
@@ -76,8 +87,9 @@ is.
 as "16 State wages, tips, etc. 120.00", and extraction returns the right value, but with no
 range. Every neighbouring box in the same row grounds normally.
 
-**Checkboxes read correctly but box as a group.** All three box 13 checkboxes extract as
-true, which matches the page, but they ground to the whole of box 13 and are not featured.
+**Checkboxes read correctly, and one boxes on its own.** All three box 13 checkboxes
+extract as true, which matches the page. Third-party sick pay has its own range; the other
+two share one.
 
 **Everything else grounds to its own box.** 32 of the 42 extracted values are `ok`,
 including both addresses, the control number and the whole state and local row apart

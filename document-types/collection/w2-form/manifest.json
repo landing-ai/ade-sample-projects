@@ -16,10 +16,31 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "federal.wages_tips_other_compensation", "label": "Wages (box 1)", "occurrence": 0 },
-    { "path": "federal.federal_income_tax_withheld", "label": "Federal income tax withheld (box 2)", "occurrence": 0 },
-    { "path": "federal.social_security_tax_withheld", "label": "Social Security tax withheld (box 4)", "occurrence": 0 },
-    { "path": "federal.medicare_tax_withheld", "label": "Medicare tax withheld (box 6)", "occurrence": 0 }
+    {
+      "path": "federal.wages_tips_other_compensation",
+      "label": "Wages (box 1)",
+      "occurrence": 0
+    },
+    {
+      "path": "federal.social_security_wages",
+      "label": "Social security wages (box 3)",
+      "occurrence": 0
+    },
+    {
+      "path": "box_13.third_party_sick_pay",
+      "label": "Third-party sick pay checked (box 13)",
+      "occurrence": 0
+    },
+    {
+      "path": "box_14_other",
+      "label": "Other (box 14 write-in)",
+      "occurrence": 0
+    },
+    {
+      "path": "state_and_local.local_income_tax",
+      "label": "Local income tax (box 19)",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields. Features wages and the three taxes withheld from them, which tell one story: $2,323.00 of wages, $232.30 federal (10%), $144.02 Social Security (6.2%) and $33.68 Medicare (1.45%). No person is featured. The box 12 codes (A, A, D, A) extract as null because the parse drops them: each sits beside a small vertical 'Code' label and only the box number and amount survive. Box 16 state wages (120.00) is in the parse but extracts synthesized, with no range. The box 13 checkboxes extract correctly as true but ground to the whole box, so they are not featured."
+  "notes": "Fields chosen by the document owner after the first build: boxes 1, 3, 13, 14 and 19. The first build featured boxes 1, 2, 4 and 6. The owner also asked for box 12c's code 'D' with its amount; it was dropped because the parse loses the box 12 codes (each sits beside a small vertical 'Code' label), so the code extracts as null, and the owner chose not to feature box 12 at all. Box 13 is featured through third_party_sick_pay, which extracts true and has its own tight range covering the label and the ticked box. build_images.py flags it because the word 'True' never appears on the page, which is expected for a checkbox; the crop was checked by eye. statutory_employee and retirement_plan share one range covering both boxes, so either would show two ticks in one crop. Box 16 state wages (120.00) is in the parse but extracts synthesized, with no range."
 }

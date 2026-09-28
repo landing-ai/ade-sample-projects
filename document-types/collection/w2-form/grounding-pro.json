@@ -26,61 +26,80 @@
       "image": "federal-wages_tips_other_compensation.png"
     },
     {
-      "path": "federal.federal_income_tax_withheld",
-      "label": "Federal income tax withheld (box 2)",
-      "value": 232.3,
+      "path": "federal.social_security_wages",
+      "label": "Social security wages (box 3)",
+      "value": 2323.0,
       "page": 1,
       "box": {
-        "xmin": 0.75532,
-        "ymin": 0.08766,
-        "xmax": 0.97176,
-        "ymax": 0.15046
+        "xmin": 0.53865,
+        "ymin": 0.1504,
+        "xmax": 0.75532,
+        "ymax": 0.21315
       },
       "range": {
-        "end": 306,
-        "start": 270
+        "end": 485,
+        "start": 454
       },
       "occurrence": 0,
       "matched": true,
-      "image": "federal-federal_income_tax_withheld.png"
+      "image": "federal-social_security_wages.png"
     },
     {
-      "path": "federal.social_security_tax_withheld",
-      "label": "Social Security tax withheld (box 4)",
-      "value": 144.02,
+      "path": "box_13.third_party_sick_pay",
+      "label": "Third-party sick pay checked (box 13)",
+      "value": true,
       "page": 1,
       "box": {
-        "xmin": 0.75531,
-        "ymin": 0.15043,
-        "xmax": 0.9718,
-        "ymax": 0.2131
+        "xmin": 0.68762,
+        "ymin": 0.46317,
+        "xmax": 0.75529,
+        "ymax": 0.526
       },
       "range": {
-        "end": 531,
-        "start": 494
+        "end": 1190,
+        "start": 1166
       },
       "occurrence": 0,
-      "matched": true,
-      "image": "federal-social_security_tax_withheld.png"
+      "matched": false,
+      "image": "box_13-third_party_sick_pay.png"
     },
     {
-      "path": "federal.medicare_tax_withheld",
-      "label": "Medicare tax withheld (box 6)",
-      "value": 33.68,
+      "path": "box_14_other",
+      "label": "Other (box 14 write-in)",
+      "value": "Other Income $100",
       "page": 1,
       "box": {
-        "xmin": 0.7553,
-        "ymin": 0.21305,
-        "xmax": 0.97184,
-        "ymax": 0.27566
+        "xmin": 0.53888,
+        "ymin": 0.52598,
+        "xmax": 0.75523,
+        "ymax": 0.68283
       },
       "range": {
-        "end": 621,
-        "start": 592
+        "end": 1290,
+        "start": 1261
       },
       "occurrence": 0,
       "matched": true,
-      "image": "federal-medicare_tax_withheld.png"
+      "image": "box_14_other.png"
+    },
+    {
+      "path": "state_and_local.local_income_tax",
+      "label": "Local income tax (box 19)",
+      "value": 675.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.74268,
+        "ymin": 0.68309,
+        "xmax": 0.88274,
+        "ymax": 0.74518
+      },
+      "range": {
+        "end": 1646,
+        "start": 1617
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "state_and_local-local_income_tax.png"
     }
   ]
 }
