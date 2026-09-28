@@ -1,0 +1,171 @@
+{
+  "extraction": {
+    "document_info": {
+      "date_of_expiry": "2028-01-01",
+      "date_of_issue": "2025-01-04",
+      "document_number": "12345678",
+      "issuing_country": "USA",
+      "state_issuing": "Texas"
+    },
+    "document_type": "Driver License",
+    "personal_info": {
+      "date_of_birth": "1990-01-01",
+      "eye_color": "BRO",
+      "given_names": "JANE",
+      "height": "5 feet 10 inches",
+      "nationality": "American",
+      "place_of_birth": null,
+      "sex": "F",
+      "surname": "SAMPLE",
+      "weight": null
+    }
+  },
+  "extraction_metadata": {
+    "document_info": {
+      "date_of_expiry": {
+        "ranges": [
+          {
+            "end": 180,
+            "start": 163
+          }
+        ],
+        "value": "2028-01-01"
+      },
+      "date_of_issue": {
+        "ranges": [
+          {
+            "end": 162,
+            "start": 145
+          }
+        ],
+        "value": "2025-01-04"
+      },
+      "document_number": {
+        "ranges": [
+          {
+            "end": 56,
+            "start": 42
+          }
+        ],
+        "value": "12345678"
+      },
+      "issuing_country": {
+        "ranges": null,
+        "value": "USA"
+      },
+      "state_issuing": {
+        "ranges": [
+          {
+            "end": 5,
+            "start": 0
+          }
+        ],
+        "value": "Texas"
+      }
+    },
+    "document_type": {
+      "ranges": [
+        {
+          "end": 20,
+          "start": 6
+        }
+      ],
+      "value": "Driver License"
+    },
+    "personal_info": {
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 73,
+            "start": 57
+          }
+        ],
+        "value": "1990-01-01"
+      },
+      "eye_color": {
+        "ranges": [
+          {
+            "end": 240,
+            "start": 229
+          }
+        ],
+        "value": "BRO"
+      },
+      "given_names": {
+        "ranges": [
+          {
+            "end": 99,
+            "start": 93
+          }
+        ],
+        "value": "JANE"
+      },
+      "height": {
+        "ranges": [
+          {
+            "end": 228,
+            "start": 215
+          }
+        ],
+        "value": "5 feet 10 inches"
+      },
+      "nationality": {
+        "ranges": null,
+        "value": "American"
+      },
+      "place_of_birth": {
+        "ranges": null,
+        "value": null
+      },
+      "sex": {
+        "ranges": [
+          {
+            "end": 214,
+            "start": 206
+          }
+        ],
+        "value": "F"
+      },
+      "surname": {
+        "ranges": [
+          {
+            "end": 29,
+            "start": 23
+          }
+        ],
+        "value": "SAMPLE"
+      },
+      "weight": {
+        "ranges": null,
+        "value": null
+      }
+    }
+  },
+  "markdown": "TEXAS\nDRIVER LICENSE\n★\nSAMPLE\nJane Sample\n4d DL 12345678\n3 DOB 01/01/1990\n9 Class A\n1 SAMPLE\n2 JANE\n8 123 SAMPLE STREET\n11 SAMPLE CITY, TX 12345\n4a Iss 01/04/2025\n4b Exp 01/01/2028\nCOMMUNICATION\nIMPEDIMENT\n15 Sex F\n16 Hgt 5'-10\"\n18 Eyes BRO\n9a End NONE\n12 Rest NONE\n5 DD 12345678901234567890\n★\nDISABLED VETERAN\n♥ DONOR\norero\n[PHOTO OF PERSON]\n\n<!-- doc_id=parse-01m3k85tzm22cdyyxancvegerk -->",
+  "metadata": {
+    "job_id": "extract-01m3k860h2m4e4bmeapknpjsjv",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 14718,
+    "doc_id": "parse-01m3k85tzm22cdyyxancvegerk",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.5,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 392,
+    "output_extraction_chars": 392,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'personal_info.place_of_birth' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'personal_info.place_of_birth' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}
