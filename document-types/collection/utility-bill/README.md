@@ -33,12 +33,19 @@ underlying text rather than covering it, 21 replacements across the four pages:
 | Customer's name | JANE SAMPLE | 5 |
 | Service address, street | 100 MAIN ST APT A | 2 |
 | Service address, town, state and ZIP | ANYTOWN NJ 00000-0000 | 2 |
-| Account number, spaced | 00 000 000 00 | 1 |
-| Account number | 0000000000 | 5 |
-| Invoice number | 000000000000 | 3 |
-| Point-of-delivery ID | PE000000000000000000 | 1 |
-| Electric meter number | 000000000 | 1 |
-| Gas meter number | 0000000 | 1 |
+| Account number, spaced | 68 736 306 51 | 1 |
+| Account number | 6873630651 | 5 |
+| Invoice number | 183722332744 | 3 |
+| Point-of-delivery ID | PE975560397498155489 | 1 |
+| Electric meter number | 245603755 | 1 |
+| Gas meter number | 7651211 | 1 |
+
+**The numbers are plausible stand-ins, not zeros.** The name and address are obviously
+fake, but the account, invoice, point-of-delivery and meter numbers are random numbers of
+the same shape from `document-types/scripts/plausible.py`, so the bill still reads as a
+bill. The account number is one stand-in printed in both its forms, spaced and unspaced.
+None is derived from the original. This sample was first redacted with all-zero
+stand-ins and redone this way, which is now the default for every redaction.
 
 The PDF metadata was also cleared. PSE&G's name, logo, phone numbers and PO box, and the
 bill's amounts, dates and usage, are left as printed.
@@ -69,14 +76,15 @@ All on **page 4**, as the request asked, with the request's own field names as l
 
 | Field | Value |
 |---|---|
-| Account number | 0000000000 |
-| Meter number | 000000000 |
+| Account number | 6873630651 |
+| Meter number | 245603755 |
 | Delivery charges | $16.71 |
 | Service charges | $4.95 |
 | Total electric charges | $46.42 |
 
-The account and meter numbers shown are the redacted stand-ins. The account number is
-pinned to its page 4 occurrence, in the page header.
+The account and meter numbers shown are plausible stand-ins, not the originals. The
+account number is pinned to its page 4 occurrence, in the page header, and the total to
+its page 4 occurrence, the bar; the total is also printed on page 2's summary.
 
 ## The schema was extended
 
@@ -111,8 +119,8 @@ printed "June 19, 2020". The values are right.
 **A yes-or-no about charts.** `usage_bar_chart` extracts as true and grounds to the three
 chart figures, which the consistency check flags.
 
-30 of 42 rows in the grounding check are `ok`; the 12 flagged are the dates and the chart
-boolean.
+32 of 45 rows in the grounding check are `ok`; the 13 flagged are the dates, the chart
+boolean, and the service address, which this run grounds line by line.
 
 ## Extraction
 
@@ -122,9 +130,12 @@ Gas extracts from page 3: $20.67 for 17.806 therms.
 
 ## Cost
 
-**12.60 credits** at standard tier in total: the first run was 9.00 (5.50 to parse, 3.50 to
-extract), and re-extracting with the two added fields was 3.60. Regenerating from scratch
-costs 9.10.
+**25.30 credits** at standard tier in total, across four runs: the first run with the team
+schema (9.00), a re-extraction with the two added fields (3.60), a full re-run after the
+numbers were re-redacted with plausible stand-ins (9.10), and one more re-extraction
+(3.60). That last one was needed because the full re-run returned the account number with
+page 1 ranges only; range selection varies between runs, and the repeat restored the page 4
+range. Regenerating from scratch costs 9.10 (5.50 to parse, 3.60 to extract).
 
 ## Regenerating
 

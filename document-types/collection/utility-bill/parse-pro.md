@@ -9,8 +9,8 @@ Please pay by  July 6, 2020
 Your energy bill
 
 
-Bill date: June 19, 2020 
-For the period: May 19, 2020 to June 17, 2020 
+Bill date: June 19, 2020
+For the period: May 19, 2020 to June 17, 2020
 
 ❗ Message Center
 This bill reflects changes in the Supply and Delivery portions of
@@ -46,10 +46,11 @@ pseg.com/gassafety.
 
 
 
-▶ JANE SAMPLE 
+▶ JANE SAMPLE
 
-[FOLDER_ICON] ACCOUNT NUMBER: 00 000 000 00 
-[HOME_ICON] SERVICE ADDRESS: 100 MAIN ST APT A ANYTOWN NJ 00000-0000 
+📁 ACCOUNT NUMBER 68 736 306 51
+
+🏠 SERVICE ADDRESS 100 MAIN ST APT A ANYTOWN NJ 00000-0000
 
 Snapshot of what you owe
 
@@ -62,7 +63,7 @@ Snapshot of what you owe
 
 <figure type="CHART">
 
-<description>The figure presents a comparative summary of energy usage, specifically electricity and gas, relative to the same month in the previous year. The layout consists of two horizontal rows, each representing a utility type.</description> <table><thead><tr><th>Energy Type</th><th>Icon</th><th>Usage Status</th><th>Percentage</th><th>Direction</th><th>Comparison</th></tr></thead><tbody><tr><td>ELECTRIC</td><td>Plug icon</td><td>You used</td><td>24.6%</td><td>Up arrow (more)</td><td>electric compared to this month last year.</td></tr><tr><td>GAS</td><td>Flame/drop icon</td><td>You used</td><td>5.6%</td><td>Down arrow (less)</td><td>gas compared to this month last year.</td></tr></tbody></table></figure>
+<description>The figure is a comparative chart titled 'How much energy you're using' displaying energy consumption changes for electric and gas. The chart is presented as a table:</description><table><thead><tr><th>Energy Type</th><th>Usage Change</th><th>Direction</th><th>Comparison Period</th></tr></thead><tbody><tr><td>Electric</td><td>24.6%</td><td>more</td><td>compared to this month last year</td></tr><tr><td>Gas</td><td>5.6%</td><td>less</td><td>compared to this month last year</td></tr></tbody></table></figure>
 
 This month was 1°F colder compared to this month last year.
 
@@ -88,7 +89,7 @@ JANE SAMPLE
 ANYTOWN NJ 00000-0000
 
 
-Account number: 0000000000 
+Account number: 6873630651 
 Total amount due by Jul 6, 2020: $67.09 
 Amount enclosed 
 
@@ -97,7 +98,7 @@ PO BOX 14444
 NEW BRUNSWICK NJ 08906-4444
 
 
-0000000000
+6873630651
 
 
 0000067091 0000000004
@@ -106,8 +107,8 @@ NEW BRUNSWICK NJ 08906-4444
 <!-- PAGE BREAK -->
 
 JANE SAMPLE
-**Your account number:** 0000000000
-Invoice Number: 000000000000
+**Your account number:** 6873630651
+Invoice Number: 183722332744
 
 
 Balance remaining from your last bill
@@ -179,22 +180,22 @@ from a checking or savings
 account stored in My
 Account. Visit pseg.com/
 myaccount
-Mobile: Download our Mobile
+**Mobile:** Download our Mobile
 App "PSE&G"
-Pay by text: Text PAY to
+**Pay by text:** Text PAY to
 4PSEG (47734)
-Voice: Ask Alexa
+**Voice:** Ask Alexa
 
 
-[✓] **Automatic Bill Pay**
+✅ Automatic Bill Pay
 Automatic payments from your
 bank. Skip checks and stamps.
-Never worry about due dates.
+Never worry about due dates
 **Enroll at:**
 pseg.com/autopay
 
 
-[CREDIT_CARD_ICON] **Credit Card**
+💳 Credit Card
 Pay your bill with a credit
 card online or by phone.
 Because we don't use
@@ -204,14 +205,17 @@ service, there is a fee.
 
 
 My Account: 
-pseg.com/myaccount 
+pseg.com/myaccount
 
 Phone: 
 1-888-575-6273 
 
-![Phone Icon]  Phone
-Bank Account: 1-800-553-7734 
-Credit Card: 1-888-575-6273 
+📞 Phone
+Bank Account:
+1-800-553-7734
+Credit Card:
+1-888-575-6273
+
 
 ✉️ By Mail
 Make your check payable to
@@ -226,24 +230,24 @@ you prefer not to authorize us,
 call 1-800-436-PSEG.
 
 
-👤 **In Person**
+👤 In Person
 Payments are accepted
 at any customer service
 center or authorized
 location.
-**Locations can be**
-**found at:**
+Locations can be
+found at:
 pseg.com/csc
 
 
-**GO PAPERLESS!** To sign up visit **pseg.com/paperless** [🌿]
+**GO PAPERLESS!** To sign up visit **pseg.com/paperless** [LEAF_ICON]
 
 
 <!-- PAGE BREAK -->
 
 JANE SAMPLE
-**Your account number:** 0000000000
-Invoice Number: 000000000000
+Your account number: 6873630651
+Invoice Number: 183722332744
 
 
 [FLAME_ICON]
@@ -253,7 +257,7 @@ Your rate: Residential Service Gas-Heating - RSG (HTG)
 
 
 <table>
-<tr><td colspan="2">*Meter # 0000000*</td><td>Usage</td></tr>
+<tr><td colspan="2">Meter # 7651211</td><td>Usage</td></tr>
 <tr><td></td><td>Estimated reading Jun 17, 2020</td><td>9200</td></tr>
 <tr><td>Less</td><td>Estimated reading May 18, 2020</td><td>9183</td></tr>
 <tr><td></td><td>Difference</td><td>17</td></tr>
@@ -283,7 +287,7 @@ therms
 
 We measure the volume of gas you use in cubic
 feet (CCF) and then convert it to therms.
-[🔥]
+[Flame icon]
 If you used a standard gas clothes
 dryer, it would take about 6 hours to
 equal 1 therm of energy.
@@ -312,30 +316,30 @@ Page 3 of 4
 <!-- PAGE BREAK -->
 
 JANE SAMPLE
-Your account number: 0000000000
-Invoice Number: 000000000000
+Your account number: 6873630651
+Invoice Number: 183722332744
 
 
-🔌 Details of your electric charges
-Your rate: Residential Service (RS)
+[🔌]  Details of your electric charges 
+Your rate: Residential Service (RS) 
 
+<table>
+<tr><td>Meter # 245603755</td><td>Usage</td><td></td></tr>
+<tr><td>Actual reading Jun 17, 2020</td><td>12772</td><td></td></tr>
+<tr><td>Less Actual reading May 18, 2020</td><td>12534</td><td></td></tr>
+<tr><td>Total electric you used in 30 days</td><td>238</td><td>kWh</td></tr>
+</table>
 
-Meter # 000000000 Usage 
-Actual reading Jun 17, 2020 12772 
-Less Actual reading May 18, 2020 12534 
-Total electric you used in 30 days 238 kWh 
-
-**Delivery charges**
+Delivery charges
 
 <table>
 <tr><td>Monthly service charge</td><td></td><td>$4.95</td></tr>
-<tr><td colspan="3">Charges for delivering electric to you:<br>kWh charges</td></tr>
-<tr><td>For the first</td><td>103 kWh x $0.049417</td><td>$5.09</td></tr>
+<tr><td>Charges for delivering electric to you:<br>kWh charges<br>For the first</td><td>103 kWh x $0.049417</td><td>$5.09</td></tr>
 <tr><td>For the next</td><td>135 kWh x $0.049407</td><td>$6.67</td></tr>
 <tr><td colspan="2">Total electric delivery charges</td><td>$16.71</td></tr>
 </table>
 
-**Supply charges**
+Supply charges
 
  Cost of electric supplied by PSE&G:
 
@@ -346,9 +350,9 @@ Total electric you used in 30 days 238 kWh
 <tr><td colspan="2">Total electric supply charges</td><td>$29.71</td></tr>
 </table>
 
-<figure type="CHART">Total electric charges: $46.42. How much electric are you using? 
+<figure type="CHART">Total electric charges: $46.42. How much electric are you using? The chart displays average daily electricity usage in kWh (orange bars) alongside average daily temperature in degrees Fahrenheit (grey line) from June 2019 to June 2020. 
 
-<description>This chart displays average daily electricity usage in kWh (represented by orange bars) and average daily temperature (represented by a gray line) from June 2019 to June 2020. The x-axis lists the months, and the y-axis on the left shows kWh (0-20), while the y-axis on the right shows temperature in degrees (0-80). An 'E' indicates an estimated reading for June 2020.</description> <table><thead><tr><th>Month</th><th>Average Daily Usage (kWh)</th><th>Average Daily Temperature (°F)</th></tr></thead><tbody><tr><td>Jun 2019</td><td>~6</td><td>~70</td></tr><tr><td>Jul 2019</td><td>~14</td><td>~80</td></tr><tr><td>Aug 2019</td><td>~18</td><td>~80</td></tr><tr><td>Sep 2019</td><td>~9</td><td>~75</td></tr><tr><td>Oct 2019</td><td>~6</td><td>~70</td></tr><tr><td>Nov 2019</td><td>~6</td><td>~60</td></tr><tr><td>Dec 2019</td><td>~7</td><td>~50</td></tr><tr><td>Jan 2020</td><td>~7</td><td>~40</td></tr><tr><td>Feb 2020</td><td>~7</td><td>~40</td></tr><tr><td>Mar 2020</td><td>~7</td><td>~40</td></tr><tr><td>Apr 2020</td><td>~7</td><td>~50</td></tr><tr><td>May 2020</td><td>~6</td><td>~55</td></tr><tr><td>Jun 2020 (E)</td><td>~8</td><td>~75</td></tr></tbody></table> Visit MyAccount for more details regarding your energy usage.</figure>
+<description>This combo chart features a primary y-axis on the left representing electricity usage in kWh (0-20) and a secondary y-axis on the right representing temperature in degrees (0°-80°). The x-axis plots months from Jun 2019 to Jun 2020. Orange vertical bars represent average daily usage, peaking in August 2019. A grey line graph overlays the bars, representing average daily temperature, which dips in winter months. The legend indicates: Orange bar = Average daily usage, Grey line = Average daily temperature, E = Estimated reading.</description> <table><thead><tr><th>Month</th><th>Average Daily Usage (kWh)</th><th>Average Daily Temperature (°F)</th></tr></thead><tbody><tr><td>Jun 2019</td><td>~6</td><td>~70</td></tr><tr><td>Jul 2019</td><td>~15</td><td>~80</td></tr><tr><td>Aug 2019</td><td>~19</td><td>~80</td></tr><tr><td>Sep 2019</td><td>~10</td><td>~75</td></tr><tr><td>Oct 2019</td><td>~6</td><td>~70</td></tr><tr><td>Nov 2019</td><td>~7</td><td>~60</td></tr><tr><td>Dec 2019</td><td>~8</td><td>~45</td></tr><tr><td>Jan 2020</td><td>~8</td><td>~45</td></tr><tr><td>Feb 2020</td><td>~8</td><td>~40</td></tr><tr><td>Mar 2020</td><td>~7</td><td>~45</td></tr><tr><td>Apr 2020</td><td>~7</td><td>~55</td></tr><tr><td>May 2020</td><td>~7</td><td>~60</td></tr><tr><td>Jun 2020</td><td>~8</td><td>~75</td></tr></tbody></table> Visit MyAccount for more details regarding your energy usage.</figure>
 
 # Explaining electric charges
 
@@ -368,7 +372,7 @@ price with ours. This month, your cost for energy
 supply is $29.71 (or an average of 0.124832 per
 kWh). This *price to compare* varies month to
 month, depending on your usage.
-**Your PoD ID is:** PE000000000000000000 —
+**Your PoD ID is:** PE975560397498155489 —
 Your PoD ID is your Point of Delivery
 identification within PSE&G's system. You will
 need this number if you are considering
@@ -377,4 +381,4 @@ enrolling with another supplier.
 
 Page 4 of 4
 
-<!-- doc_id=parse-01m3k70ew4dvk439xhtm0expqh -->
+<!-- doc_id=parse-01m3k7n75jq2aaq3pfx93br4w9 -->
