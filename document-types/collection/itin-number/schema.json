@@ -2,43 +2,32 @@
   "type": "object",
   "properties": {
     "itin": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "The Individual Taxpayer Identification Number assigned, exactly as printed, in NNN-NN-NNNN form"
+      "type": ["string", "null"],
+      "description": "The Individual Taxpayer Identification Number the notice confirms, exactly as printed"
     },
     "notice": {
       "type": "object",
-      "description": "The notice's own identifiers, from the header",
+      "description": "The notice's own identifiers, from the block at the top right",
       "properties": {
         "notice_number": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The notice number, e.g. 'CP565'"
         },
         "notice_date": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The date of the notice, as printed"
         },
         "form": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The form the notice responds to, e.g. 'W-7'"
         },
         "case_reference_number": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The case reference number, exactly as printed"
+        },
+        "page_count": {
+          "type": ["string", "null"],
+          "description": "The page marker printed in the header, e.g. 'Page 1 of 2'"
         }
       }
     },
@@ -46,26 +35,21 @@
       "type": "object",
       "description": "Who the notice is for and where it was mailed",
       "properties": {
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The name printed after 'Recipient:' in the header"
+        "full_name": {
+          "type": ["string", "null"],
+          "description": "The full name given in the ITIN and personal information table, first middle and last joined by single spaces"
         },
         "mailing_name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The name in the mailing address block"
+          "type": ["string", "null"],
+          "description": "The name as printed in the mailing address block"
         },
         "mailing_address": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The street, city, state and ZIP of the mailing address, as one line"
+          "type": ["string", "null"],
+          "description": "The street, city, state and ZIP of the recipient's mailing address, as one line"
+        },
+        "date_of_birth": {
+          "type": ["string", "null"],
+          "description": "The recipient's date of birth, as printed"
         }
       }
     },
@@ -74,31 +58,19 @@
       "description": "The issuing agency and how to contact it",
       "properties": {
         "agency": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The issuing agency, e.g. 'Internal Revenue Service'"
         },
         "assistance_phone": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The phone number given for assistance"
         },
         "international_phone": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The phone number given for international callers"
         },
         "mailing_address": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": ["string", "null"],
           "description": "The address given for writing to the agency, as one line"
         }
       }

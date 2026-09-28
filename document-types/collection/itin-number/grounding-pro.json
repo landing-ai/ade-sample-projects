@@ -1,27 +1,28 @@
 {
   "model": "pro",
   "feature_page": 1,
-  "page_count": 1,
+  "page_count": 2,
   "preview_pages": [
-    1
+    1,
+    2
   ],
   "fields": [
     {
       "path": "itin",
       "label": "ITIN",
-      "value": "981-93-3299",
+      "value": "NNN-NN-NNNN",
       "page": 1,
       "box": {
-        "xmin": 0.41825,
-        "ymin": 0.41812,
-        "xmax": 0.64456,
-        "ymax": 0.44982
+        "xmin": 0.09261,
+        "ymin": 0.27431,
+        "xmax": 0.28729,
+        "ymax": 0.29568
       },
       "range": {
-        "end": 634,
-        "start": 623
+        "end": 683,
+        "start": 672
       },
-      "occurrence": 0,
+      "occurrence": 1,
       "matched": true,
       "image": "itin.png"
     },
@@ -31,14 +32,14 @@
       "value": "CP565",
       "page": 1,
       "box": {
-        "xmin": 0.6099,
-        "ymin": 0.08452,
-        "xmax": 0.77308,
-        "ymax": 0.09453
+        "xmin": 0.74714,
+        "ymin": 0.04748,
+        "xmax": 0.94217,
+        "ymax": 0.06301
       },
       "range": {
-        "end": 166,
-        "start": 137
+        "end": 160,
+        "start": 155
       },
       "occurrence": 0,
       "matched": true,
@@ -47,59 +48,59 @@
     {
       "path": "notice.notice_date",
       "label": "Notice date",
-      "value": "11/05/2023",
+      "value": "January 26, 2017",
       "page": 1,
       "box": {
-        "xmin": 0.60984,
-        "ymin": 0.07271,
-        "xmax": 0.78384,
-        "ymax": 0.08327
+        "xmin": 0.74716,
+        "ymin": 0.06301,
+        "xmax": 0.94216,
+        "ymax": 0.07862
       },
       "range": {
-        "end": 136,
-        "start": 104
+        "end": 215,
+        "start": 199
       },
       "occurrence": 0,
       "matched": true,
       "image": "notice-notice_date.png"
     },
     {
-      "path": "notice.form",
-      "label": "Form",
-      "value": "W-7",
-      "page": 1,
-      "box": {
-        "xmin": 0.61004,
-        "ymin": 0.09635,
-        "xmax": 0.67058,
-        "ymax": 0.10624
-      },
-      "range": {
-        "end": 177,
-        "start": 167
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "notice-form.png"
-    },
-    {
       "path": "notice.case_reference_number",
       "label": "Case reference number",
-      "value": "77582342621020",
+      "value": "99999",
       "page": 1,
       "box": {
-        "xmin": 0.61,
-        "ymin": 0.12034,
-        "xmax": 0.70612,
-        "ymax": 0.12995
+        "xmin": 0.74724,
+        "ymin": 0.12049,
+        "xmax": 0.94214,
+        "ymax": 0.13606
       },
       "range": {
-        "end": 217,
-        "start": 202
+        "end": 376,
+        "start": 371
       },
       "occurrence": 0,
       "matched": true,
       "image": "notice-case_reference_number.png"
+    },
+    {
+      "path": "recipient.date_of_birth",
+      "label": "Date of birth",
+      "value": "January 20, 1990",
+      "page": 1,
+      "box": {
+        "xmin": 0.74726,
+        "ymin": 0.13604,
+        "xmax": 0.94214,
+        "ymax": 0.1515
+      },
+      "range": {
+        "end": 433,
+        "start": 417
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "recipient-date_of_birth.png"
     }
   ]
 }
