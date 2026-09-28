@@ -74,8 +74,12 @@ These documents and their extracted values go on a public website.
 - **Never a customer document.** No exceptions.
 - **Never a blank form.** A blank form has nothing to extract and demonstrates nothing.
 - Synthetic, vendor-supplied, or explicitly cleared documents only.
-- Realistic samples will contain plausible personal data. It must be obviously
-  non-real on inspection and must not collide with a real identifier.
+- Realistic samples will contain personal data, which is replaced before anything is
+  parsed. Names and addresses become obviously fake ("Jane Q Sample", "100 Main St").
+  Numeric identifiers such as account, invoice and meter numbers become plausible,
+  randomly drawn stand-ins of the same shape (`scripts/plausible.py`), using reserved
+  ranges where they exist (SSNs 987-65-4320–4329, phone numbers 555-0100–0199), so the
+  sample still reads as a real document.
 
 Provenance lives in `manifest.json` under `source.origin`, so the authoring tooling can
 read it and put an attribution on the page without anyone retyping it:

@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 4,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "account_info.account_number",
+      "label": "Account number",
+      "value": "6873630651",
+      "page": 4,
+      "box": {
+        "xmin": 0.68822,
+        "ymin": 0.04242,
+        "xmax": 0.91347,
+        "ymax": 0.05355
+      },
+      "range": {
+        "end": 10202,
+        "start": 10171
+      },
+      "occurrence": 4,
+      "matched": true,
+      "image": "account_info-account_number.png"
+    },
+    {
+      "path": "electric_charges.meter_number",
+      "label": "Meter number",
+      "value": "245603755",
+      "page": 4,
+      "box": {
+        "xmin": 0.08519,
+        "ymin": 0.13796,
+        "xmax": 0.38551,
+        "ymax": 0.1558
+      },
+      "range": {
+        "end": 10344,
+        "start": 10327
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "electric_charges-meter_number.png"
+    },
+    {
+      "path": "electric_charges.total_delivery_charges",
+      "label": "Delivery charges",
+      "value": "$16.71",
+      "page": 4,
+      "box": {
+        "xmin": 0.472,
+        "ymin": 0.30622,
+        "xmax": 0.56866,
+        "ymax": 0.32274
+      },
+      "range": {
+        "end": 10969,
+        "start": 10963
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "electric_charges-total_delivery_charges.png"
+    },
+    {
+      "path": "electric_charges.monthly_service_charge",
+      "label": "Service charges",
+      "value": "$4.95",
+      "page": 4,
+      "box": {
+        "xmin": 0.47196,
+        "ymin": 0.23462,
+        "xmax": 0.5686,
+        "ymax": 0.25159
+      },
+      "range": {
+        "end": 10687,
+        "start": 10682
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "electric_charges-monthly_service_charge.png"
+    },
+    {
+      "path": "electric_charges.total_electric_charges",
+      "label": "Total electric charges",
+      "value": "$46.42",
+      "page": 4,
+      "box": {
+        "xmin": 0.0814,
+        "ymin": 0.4216,
+        "xmax": 0.61031,
+        "ymax": 0.68859
+      },
+      "range": {
+        "end": 11587,
+        "start": 11330
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "electric_charges-total_electric_charges.png"
+    }
+  ]
+}
