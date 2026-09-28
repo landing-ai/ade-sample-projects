@@ -45,7 +45,10 @@ TEXT_COLOR = (0, 0, 0)
 # still removed as long as the rect crosses its body.
 FONT = "helv"
 BOLD_FONT = "hebo"
+MONO_FONT = "cour"
+MONO_BOLD_FONT = "cobo"
 BOLD_FLAG = 16  # PyMuPDF span flag for a bold font
+MONO_FLAG = 8   # PyMuPDF span flag for a monospaced font
 TOP_INSET_PT = 2.5
 BOTTOM_INSET_PT = 0.5
 
@@ -60,6 +63,12 @@ def main() -> None:
         help="1-indexed pages to remove entirely. Use for pages that carry personal "
              "data but no demonstration value -- a mailing panel, for instance, whose "
              "rotated text cannot be replaced cleanly anyway.",
+    )
+    parser.add_argument(
+        "--remove-images", nargs="*", default=[], metavar="PAGE:X0,Y0,X1,Y1",
+        help="Delete every image lying entirely inside this rectangle on this 1-indexed "
+             "page (PDF points, after any --drop-pages). Use for a signature or a photo. "
+             "Only wholly contained images go, so a watermark behind the area survives.",
     )
     args = parser.parse_args()
 
@@ -83,6 +92,19 @@ def main() -> None:
             doc.delete_page(index)
         print(f"Dropped page(s) {sorted(args.drop_pages)}; {doc.page_count} remain.\n")
 
+    # Signatures arrive as images, which the text rules cannot touch. An offer letter's
+    # signature sat over a corner of a full-page watermark: blanking the area would have
+    # left a white patch on the watermark, and deleting every overlapping image would have
+    # taken the watermark with it. So delete only images wholly inside the area.
+    regions = [_parse_region(spec) for spec in args.remove_images]
+    for page_no, region in regions:
+        page = doc[page_no - 1]
+        removed = [xref for xref, *_ in page.get_images(full=True)
+                   if any(region.contains(r) for r in page.get_image_rects(xref))]
+        for xref in removed:
+            page.delete_image(xref)
+        print(f"Removed {len(removed)} image(s) inside {tuple(region)} on page {page_no}.")
+
     total = 0
     per_rule: dict[str, int] = {}
     for page in doc:
@@ -97,7 +119,7 @@ def main() -> None:
                 # shrinks its text until it fits -- an edit visible at a glance.
                 span = _span_at(spans, rect)
                 size = span["size"] if span else min(11.0, rect.height * 0.86)
-                font = BOLD_FONT if span and span["flags"] & BOLD_FLAG else FONT
+                font = _replacement_font(span)
                 baseline = span["origin"][1] if span else rect.y1 - rect.height * 0.2
                 # Then size by WIDTH as well. A narrow rect in a mailing-address block
                 # wrapped "JANE DOE" into "JA" / "NE", fragmenting the text layer so the
@@ -178,6 +200,19 @@ def main() -> None:
         sys.exit(1)
     print(f"\nVerified: no original string is extractable from {args.output.name}")
 
+    if regions:
+        # delete_image leaves a 1x1 blank image in the deleted one's place, so an image
+        # counts as surviving only if it still has real pixels.
+        verify = pymupdf.open(args.output)
+        left = [(n, xref) for n, region in regions
+                for xref, _, w, h, *_ in verify[n - 1].get_images(full=True)
+                if w * h > 1
+                and any(region.contains(r) for r in verify[n - 1].get_image_rects(xref))]
+        verify.close()
+        if left:
+            sys.exit(f"FAILED — images still inside a removed region: {left}")
+        print("Verified: no image remains inside a removed region.")
+
     # Clearing the PDF is only half the job. The rules file is a verbatim copy of the
     # personal data, and it is easy to "document the provenance" by pasting the same
     # before/after map into a manifest or README sitting next to the redacted PDF --
@@ -190,6 +225,22 @@ def main() -> None:
     print(f"    grep -ril <original> {args.output.parent.parent}")
     print("Record in the manifest only WHAT was replaced and with what -- never the "
           "original values.")
+
+
+def _replacement_font(span: dict | None) -> str:
+    """A base-14 font matching the replaced span's weight and, for monospace, its family.
+
+    A pay stub set in Courier had its name replaced in Helvetica, which reads as an edit
+    among fixed-width text. Its regular Courier spans do not set the monospace flag, so
+    the font name is checked as well.
+    """
+    if not span:
+        return FONT
+    bold = bool(span["flags"] & BOLD_FLAG)
+    mono = bool(span["flags"] & MONO_FLAG) or "courier" in span["font"].lower()
+    if mono:
+        return MONO_BOLD_FONT if bold else MONO_FONT
+    return BOLD_FONT if bold else FONT
 
 
 def _merge_line_rects(rects: list[pymupdf.Rect]) -> list[pymupdf.Rect]:
@@ -220,6 +271,16 @@ def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:
         if area > best_area:
             best, best_area = span, area
     return best
+
+
+def _parse_region(spec: str) -> tuple[int, pymupdf.Rect]:
+    """'4:50,332,131,373' -> (4, Rect(50, 332, 131, 373))."""
+    try:
+        page, coords = spec.split(":")
+        x0, y0, x1, y1 = (float(v) for v in coords.split(","))
+    except ValueError:
+        sys.exit(f"--remove-images expects PAGE:X0,Y0,X1,Y1, got {spec!r}")
+    return int(page), pymupdf.Rect(x0, y0, x1, y1)
 
 
 def _inside_repo(path: Path) -> bool:

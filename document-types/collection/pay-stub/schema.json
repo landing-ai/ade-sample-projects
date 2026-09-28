@@ -1,0 +1,215 @@
+{
+  "type": "object",
+  "properties": {
+    "employer": {
+      "type": "object",
+      "description": "The employer, from the top left of the statement",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's name"
+        },
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer identification number, as printed after 'Ein:'"
+        }
+      }
+    },
+    "employee": {
+      "type": "object",
+      "description": "The employee, from the address block and the Miscellaneous section",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's name, from the address block"
+        },
+        "employee_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee ID, from the Miscellaneous section"
+        }
+      }
+    },
+    "pay_period": {
+      "type": "object",
+      "description": "The pay date and the period it covers",
+      "properties": {
+        "pay_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The pay date, as printed"
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The first day of the pay period, as printed"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The last day of the pay period, as printed"
+        }
+      }
+    },
+    "earnings": {
+      "type": "array",
+      "description": "Each line in the Earnings table, excluding the totals row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pay_code": {
+            "type": "string",
+            "description": "The pay code, e.g. 'Regular Pay'"
+          },
+          "hours": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Hours for this pay code"
+          },
+          "rate": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Hourly rate, in dollars"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Amount for this pay code, in dollars"
+          }
+        }
+      }
+    },
+    "taxes": {
+      "type": "array",
+      "description": "Each tax in the Taxes table that has an amount, excluding the totals row. Match each amount to its tax code carefully: the amounts are printed slightly below their codes.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The tax code, e.g. 'Med', 'SS', 'Federal', 'State'"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "This period's amount, in dollars"
+          },
+          "year_to_date": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The year-to-date amount, in dollars"
+          }
+        }
+      }
+    },
+    "deductions": {
+      "type": "array",
+      "description": "Each line in the Payroll Deductions table, excluding the totals row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The deduction code, e.g. '401K'"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "This period's amount, in dollars"
+          },
+          "year_to_date": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The year-to-date amount, in dollars"
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "Totals for the period and year to date",
+      "properties": {
+        "gross_pay": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "This period's total earnings, from the Earnings totals row, in dollars"
+        },
+        "total_taxes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "This period's total taxes, from the Taxes totals row, in dollars"
+        },
+        "net_pay": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net pay for the period, from Total Pay Amounts, in dollars"
+        },
+        "net_pay_ytd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net pay year to date, in dollars"
+        },
+        "gross_pay_ytd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Gross pay year to date, in dollars"
+        }
+      }
+    },
+    "hours_worked": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Hours worked, from the Miscellaneous section"
+    },
+    "pto_available": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "PTO available, from the Miscellaneous section"
+    }
+  }
+}

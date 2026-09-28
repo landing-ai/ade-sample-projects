@@ -1,0 +1,272 @@
+{
+  "type": "object",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year printed at the bottom of the form, e.g. '2024'"
+    },
+    "employee": {
+      "type": "object",
+      "description": "The employee, from boxes a, e and f",
+      "properties": {
+        "ssn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box a, the employee's social security number, exactly as printed"
+        },
+        "first_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box e, the employee's first name and initial"
+        },
+        "last_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box e, the employee's last name"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box f, the employee's address and ZIP code, as one line"
+        }
+      }
+    },
+    "employer": {
+      "type": "object",
+      "description": "The employer, from boxes b, c and 15",
+      "properties": {
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box b, the employer identification number, exactly as printed"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box c, the employer's name"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box c, the employer's address and ZIP code, as one line"
+        },
+        "state_id_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box 15, the employer's state ID number"
+        }
+      }
+    },
+    "control_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Box d, the control number"
+    },
+    "federal": {
+      "type": "object",
+      "description": "Federal wage and tax amounts, boxes 1 to 11, in dollars",
+      "properties": {
+        "wages_tips_other_compensation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 1"
+        },
+        "federal_income_tax_withheld": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 2"
+        },
+        "social_security_wages": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 3"
+        },
+        "social_security_tax_withheld": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4"
+        },
+        "medicare_wages_and_tips": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 5"
+        },
+        "medicare_tax_withheld": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 6"
+        },
+        "social_security_tips": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 7"
+        },
+        "allocated_tips": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 8"
+        },
+        "dependent_care_benefits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 10, or null if blank"
+        },
+        "nonqualified_plans": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 11, or null if blank"
+        }
+      }
+    },
+    "box_12": {
+      "type": "array",
+      "description": "Every filled entry in boxes 12a to 12d, in order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "box": {
+            "type": "string",
+            "description": "Which box, e.g. '12a'"
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The letter code, e.g. 'D'"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount, in dollars"
+          }
+        }
+      }
+    },
+    "box_13": {
+      "type": "object",
+      "description": "The three checkboxes in box 13",
+      "properties": {
+        "statutory_employee": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the Statutory employee box is checked"
+        },
+        "retirement_plan": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the Retirement plan box is checked"
+        },
+        "third_party_sick_pay": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the Third-party sick pay box is checked"
+        }
+      }
+    },
+    "box_14_other": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Box 14, Other, as printed"
+    },
+    "state_and_local": {
+      "type": "object",
+      "description": "The first state and local row, boxes 15 to 20",
+      "properties": {
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box 15, the state abbreviation"
+        },
+        "state_wages": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 16, state wages, tips, etc., in dollars"
+        },
+        "state_income_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 17, state income tax, in dollars"
+        },
+        "local_wages": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 18, local wages, tips, etc., in dollars"
+        },
+        "local_income_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 19, local income tax, in dollars"
+        },
+        "locality_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box 20, the locality name"
+        }
+      }
+    }
+  }
+}
