@@ -33,13 +33,6 @@
           ],
           "description": "The employer's phone number from the letterhead"
         },
-        "signatory_title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The title of the person who signed the letter, e.g. 'Executive Manager'"
-        },
         "contact_email": {
           "type": [
             "string",
@@ -103,6 +96,43 @@
         "null"
       ],
       "description": "What the letter states it is issued for"
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Every signature block on the letter, whether or not it has been signed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "is_signed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "True if a handwritten or digital signature is present in the block, false if the signature line is empty"
+          },
+          "signature_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The date and time stamped with the signature, as printed"
+          },
+          "signed_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The name of the person who signed, if it is printed or legible; null otherwise"
+          },
+          "signer_title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The signer's title or role printed with the signature, e.g. 'Executive Manager'"
+          }
+        }
+      }
     }
   }
 }

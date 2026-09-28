@@ -12,10 +12,10 @@
       "value": "April 25, 2022",
       "page": 1,
       "box": {
-        "xmin": 0.08946,
-        "ymin": 0.22722,
-        "xmax": 0.19722,
-        "ymax": 0.24181
+        "xmin": 0.08993,
+        "ymin": 0.22735,
+        "xmax": 0.19751,
+        "ymax": 0.24161
       },
       "range": {
         "end": 234,
@@ -27,20 +27,20 @@
     },
     {
       "path": "employer.name",
-      "label": "Employer (sign-off)",
+      "label": "Employer (letterhead)",
       "value": "Deloitte Consulting India Private Limited",
       "page": 1,
       "box": {
-        "xmin": 0.086,
-        "ymin": 0.65619,
-        "xmax": 0.43582,
-        "ymax": 0.67232
+        "xmin": 0.5888,
+        "ymin": 0.06824,
+        "xmax": 0.84435,
+        "ymax": 0.08026
       },
       "range": {
-        "end": 1066,
-        "start": 1021
+        "end": 57,
+        "start": 12
       },
-      "occurrence": 1,
+      "occurrence": 0,
       "matched": true,
       "image": "employer-name.png"
     },
@@ -50,10 +50,10 @@
       "value": "XIN-DC SENIOR CONSULTANT",
       "page": 1,
       "box": {
-        "xmin": 0.08836,
-        "ymin": 0.34466,
-        "xmax": 0.80946,
-        "ymax": 0.35985
+        "xmin": 0.08843,
+        "ymin": 0.34496,
+        "xmax": 0.80922,
+        "ymax": 0.35956
       },
       "range": {
         "end": 460,
@@ -64,42 +64,42 @@
       "image": "employee-designation.png"
     },
     {
-      "path": "purpose",
-      "label": "Purpose",
-      "value": "current proof of employment",
+      "path": "signatures[0].is_signed",
+      "label": "Signed",
+      "value": true,
       "page": 1,
       "box": {
-        "xmin": 0.08807,
-        "ymin": 0.60068,
-        "xmax": 0.70459,
-        "ymax": 0.61782
+        "xmin": 0.08599,
+        "ymin": 0.68161,
+        "xmax": 0.30896,
+        "ymax": 0.75164
       },
       "range": {
-        "end": 1007,
-        "start": 920
+        "end": 1077,
+        "start": 1069
       },
       "occurrence": 0,
-      "matched": true,
-      "image": "purpose.png"
+      "matched": false,
+      "image": "signatures-0-is_signed.png"
     },
     {
-      "path": "employer.signatory_title",
-      "label": "Signatory title",
-      "value": "Executive Manager",
+      "path": "signatures[0].signature_date",
+      "label": "Signature date",
+      "value": "04.25.2022; 19:22:46 IST",
       "page": 1,
       "box": {
-        "xmin": 0.08686,
-        "ymin": 0.77794,
-        "xmax": 0.23824,
-        "ymax": 0.79248
+        "xmin": 0.08685,
+        "ymin": 0.7531,
+        "xmax": 0.24983,
+        "ymax": 0.76366
       },
       "range": {
-        "end": 1118,
-        "start": 1101
+        "end": 1130,
+        "start": 1100
       },
       "occurrence": 0,
       "matched": true,
-      "image": "employer-signatory_title.png"
+      "image": "signatures-0-signature_date.png"
     }
   ]
 }

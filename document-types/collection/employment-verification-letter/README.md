@@ -36,13 +36,14 @@ underlying text rather than covering it:
 | Residential address, city and PIN code | Hyderabad, Telangana, 000000, IN |
 
 The city is kept: the office is in Hyderabad too. **The signatory's handwritten signature
-was an image** and was deleted with `redact.py --remove-images`. The signatory is not named
-on the page; their title and the team mailbox beneath the signature stay. The company's
+is kept**, at the document owner's request, so the page can show signature detection. It
+is illegible, and the signatory is not named anywhere on the page; their title and the team
+mailbox beneath the signature stay. The company's
 letterhead, office address, phone, GST and CIN numbers stay, as do the start date and the
 designation.
 
-**Verified:** no original identifier is extractable from the committed PDF, no image
-remains in the signature area, and no original identifier appears anywhere in this folder.
+**Verified:** no original identifier is extractable from the committed PDF, and none
+appears anywhere in this folder.
 The original values are deliberately not recorded here or in `manifest.json`. The rules
 file used by `redact.py` stays outside the repo.
 
@@ -72,7 +73,7 @@ designated as XIN-DC SENIOR CONSULTANT.") and in address blocks, not in labelled
 It shows extraction reading values out of running prose, and the redaction problems that
 justified, tightly set text causes.
 
-## Featured fields: what a verifier reads
+## Featured fields: the letter and its attestation
 
 All on **page 1**, which the request asked for. The request named no fields, so these
 were chosen:
@@ -80,51 +81,70 @@ were chosen:
 | Field | Value |
 |---|---|
 | Letter date | April 25, 2022 |
-| Employer (sign-off) | Deloitte Consulting India Private Limited |
+| Employer (letterhead) | Deloitte Consulting India Private Limited |
 | Designation | XIN-DC SENIOR CONSULTANT |
-| Purpose | current proof of employment |
-| Signatory title | Executive Manager |
+| Signed | true |
+| Signature date | 04.25.2022; 19:22:46 IST |
 
-When the letter was issued, by whom, for what role, for what purpose, and who signed it.
-No person is featured. The start date grounds to the same line as the designation and
-would render an identical crop, so it is left out; the designation's crop shows both. The
-employer's name is pinned to the sign-off line rather than the letterhead.
+When the letter was issued, by whom, for what role, and whether and when it was signed. No
+person is featured.
+
+**Signed** is the attestation. It grounds to the parse's `[SIGNED]` label, whose box is
+exactly the signature image, so the crop shows the signature itself beside "true".
+`build_images.py` flags it because the word "true" is not on the page, which is expected
+for a yes-or-no value; the crop was checked by eye.
+
+The start date grounds to the same line as the designation and would render an identical
+crop, so it is left out; the designation's crop shows both. The employer's name grounds
+only to the letterhead in this run, so it is pinned there.
 
 ## What it surfaced
 
-**Everything extracts correctly,** all 13 fields, including the purpose paraphrased from
-the closing sentence and the employee's name without its "Mr.".
+**The parse labels the signature.** DPT-3 marks the signature block `[SIGNED]` and
+`[ILLEGIBLE_SIGNATURE]` in the markdown, so extraction can answer "is this signed?" with a
+location: the signature image. It does not guess a name from an unreadable signature:
+`signed_by` is null, which is correct, since no name is printed.
 
-**Two values share one line.** The start date and the designation are in the same
-sentence and ground to the same line, so they cannot be featured side by side.
+**The signature date is a separate stamp.** "Date: 04.25.2022; 19:22:46 IST", in small type
+under the signature, extracts and grounds exactly. It is the signing time, distinct from the
+letter date at the top.
 
-**Addresses ground line by line.** Both the residential and the office address come back
-with one range per line, and `currently_employed` grounds to the sentences that state it;
-the consistency check flags all three.
+**Titles spread over lines are joined.** The signer's title is printed on three lines
+("Executive Manager", "Employee Life Cycle Events", "Core Talent Services"), and
+`signer_title` returns them as one value with one range per line, so it is flagged.
+
+**Two values share one line.** The start date and the designation are in the same sentence
+and ground to the same line, so they cannot be featured side by side.
+
+**Everything extracts correctly,** all 16 fields, including the purpose paraphrased from
+the closing sentence and the employee's name without its "Mr.". Addresses ground line by
+line and `currently_employed` grounds to the sentences that state it, so the consistency
+check flags them; 10 of the 23 rows in the grounding check are `ok`.
 
 ## Extraction
 
-`schema.json` was written for this letter, with **13 leaf fields**: the letter date, the
-employer (name, office location, phone, signatory title, contact email), the employee
-(name, ID, start date, designation, current employment, residential address) and the
-purpose. Everything populates, with no warnings.
+`schema.json` was written for this letter, with **16 leaf fields**: the letter date, the
+employer (name, office location, phone, contact email), the employee (name, ID, start
+date, designation, current employment, residential address), the purpose, and a
+`signatures` array with `is_signed`, `signature_date`, `signed_by` and `signer_title` for
+each signature block. The array was added at the document owner's request, to show
+attestation. Everything populates, with no warnings.
 
 ## Cost
 
-**1.90 credits** at standard tier for 1 page: 0.90 to parse, 1.00 to extract.
+**2.00 credits** at standard tier for 1 page: 0.90 to parse, 1.10 to extract.
 
 ## Regenerating
 
 ```bash
 # Redaction, from the manual download, with the rules file kept outside the repo.
-# --remove-images arrives with the employment-offer-letter PR; until it is merged, run
-# that branch's redact.py for the image and this one for the text.
+# The signature image is kept, so no --remove-images.
 .venv/bin/python document-types/scripts/redact.py <original>.pdf \
     document-types/collection/employment-verification-letter/source/employment-verification-letter-redacted.pdf \
-    --rules <outside-the-repo>/rules.json --remove-images 1:50,535,192,598
+    --rules <outside-the-repo>/rules.json
 
-.venv/bin/python document-types/scripts/run_ade.py employment-verification-letter                # 1.90 credits
-.venv/bin/python document-types/scripts/run_ade.py employment-verification-letter --extract-only # 1.00, schema iteration
+.venv/bin/python document-types/scripts/run_ade.py employment-verification-letter                # 2.00 credits
+.venv/bin/python document-types/scripts/run_ade.py employment-verification-letter --extract-only # 1.10, schema iteration
 .venv/bin/python document-types/scripts/build_images.py employment-verification-letter           # free
 .venv/bin/python document-types/scripts/inspect_fields.py employment-verification-letter --page 1
 ```

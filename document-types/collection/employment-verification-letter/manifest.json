@@ -11,29 +11,72 @@
       "title": "Employment certificate, April 25, 2022",
       "retrieved": "2026-09-27",
       "clearance": "redacted",
-      "clearance_note": "A real employment certificate issued by Deloitte Consulting India, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the letter is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. The employee's name, employee ID and residential address were replaced with obviously-fake equivalents using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the signatory's handwritten signature, an image, was deleted with redact.py --remove-images. The signatory is not named on the page; their title and the team mailbox beneath the signature are left as printed, as are the company's letterhead, office address, phone number, registration details, the start date and the designation. Verified: no original identifier is extractable from the committed PDF, no image remains in the signature area, and no original identifier appears anywhere in this collection folder. This replaces an earlier sample for this slug, a small contractor's letter.",
+      "clearance_note": "A real employment certificate issued by Deloitte Consulting India, uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the letter is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. The employee's name, employee ID and residential address were replaced with obviously-fake equivalents using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata was cleared. The signatory's handwritten signature is kept, by the document owner's decision, to demonstrate signature detection: it is illegible, and the signatory is not named anywhere on the page. The signatory's title, the team mailbox, the company's letterhead, office address, phone, registration details, the start date and the designation are left as printed. Verified: no original identifier is extractable from the committed PDF, and none appears anywhere in this collection folder. This replaces an earlier sample for this slug, a small contractor's letter.",
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
         "replaced": [
-          { "what": "employee's full name", "with": "Johnathon Q Samplewood", "occurrences": 1 },
-          { "what": "employee ID", "with": "00000000", "occurrences": 1 },
-          { "what": "residential address, first line", "with": "Plot no:000, Sample Green Park,", "occurrences": 1 },
-          { "what": "residential address, locality", "with": "Anytown,", "occurrences": 1 },
-          { "what": "residential address, city line with PIN code", "with": "Hyderabad, Telangana, 000000, IN", "occurrences": 1 }
+          {
+            "what": "employee's full name",
+            "with": "Johnathon Q Samplewood",
+            "occurrences": 1
+          },
+          {
+            "what": "employee ID",
+            "with": "00000000",
+            "occurrences": 1
+          },
+          {
+            "what": "residential address, first line",
+            "with": "Plot no:000, Sample Green Park,",
+            "occurrences": 1
+          },
+          {
+            "what": "residential address, locality",
+            "with": "Anytown,",
+            "occurrences": 1
+          },
+          {
+            "what": "residential address, city line with PIN code",
+            "with": "Hyderabad, Telangana, 000000, IN",
+            "occurrences": 1
+          }
         ],
-        "removed_images": [
-          { "what": "signatory's handwritten signature", "page": 1 }
+        "kept": [
+          {
+            "what": "signatory's handwritten signature, illegible, signatory not named",
+            "why": "demonstrates signature detection"
+          }
         ]
       }
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "letter_date", "label": "Letter date", "occurrence": 0 },
-    { "path": "employer.name", "label": "Employer (sign-off)", "occurrence": 1 },
-    { "path": "employee.designation", "label": "Designation", "occurrence": 0 },
-    { "path": "purpose", "label": "Purpose", "occurrence": 0 },
-    { "path": "employer.signatory_title", "label": "Signatory title", "occurrence": 0 }
+    {
+      "path": "letter_date",
+      "label": "Letter date",
+      "occurrence": 0
+    },
+    {
+      "path": "employer.name",
+      "label": "Employer (letterhead)",
+      "occurrence": 0
+    },
+    {
+      "path": "employee.designation",
+      "label": "Designation",
+      "occurrence": 0
+    },
+    {
+      "path": "signatures[0].is_signed",
+      "label": "Signed",
+      "occurrence": 0
+    },
+    {
+      "path": "signatures[0].signature_date",
+      "label": "Signature date",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features what a verifier reads: when the letter was issued, by whom, the designation, what it is for, and who signed. No person is featured. employed_since grounds to the same line as designation and would render an identical crop; that line shows both, so only designation is featured. employer.name is pinned to occurrence 1, the sign-off line, rather than the letterhead. The residential and office addresses ground line by line, and currently_employed grounds to the sentences that state it; none is featured. The Scribd url keeps its title slug here because 'Employment-Letter' names nobody."
+  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features when the letter was issued, by whom, for what role, and the attestation: whether it is signed and when. The signature is kept at the document owner's request to show signature detection. signatures[0].is_signed grounds to the parse's [SIGNED] attestation label, whose box is exactly the signature image; build_images.py flags it because the word 'true' is not on the page, which is expected for a boolean, and the crop was checked by eye. signed_by is correctly null: the signature is illegible and no name is printed. No person is featured. employer.name grounds only to the letterhead in this run (the sign-off line is not among its ranges), so it is pinned to occurrence 0. employed_since grounds to the same line as designation and would render an identical crop; that line shows both, so only designation is featured."
 }
