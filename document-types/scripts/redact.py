@@ -112,7 +112,7 @@ def main() -> None:
                  for l in b.get("lines", []) for s in l["spans"]]
         pending: list[tuple[pymupdf.Point, str, str, float]] = []
         for original, replacement in rules.items():
-            for rect in page.search_for(original):
+            for rect in _merge_line_rects(page.search_for(original)):
                 # Match the text being replaced: its size, weight and baseline. Sizing
                 # from the rect instead drew an 8.8pt bold name at 4.3pt regular, since
                 # the inset rect is shorter than the line and the redaction annotation
@@ -133,6 +133,16 @@ def main() -> None:
                                     font, round(size, 1)))
                 rect.y0 += TOP_INSET_PT
                 rect.y1 -= BOTTOM_INSET_PT
+                # The insets alone are not enough on tightly set lines. apply_redactions
+                # removes every character whose bbox touches the rect, and a character's
+                # bbox is the font's full ascender-to-descender height, so on an
+                # employment certificate the characters of the line below overlapped the
+                # name's rect and "2017 and is currently designa" was erased. Removal is
+                # by overlap, so a band through the middle of the letters still takes
+                # every character of the match while staying clear of neighbouring lines.
+                if span:
+                    rect.y0 = max(rect.y0, baseline - span["size"] * 0.6)
+                    rect.y1 = min(rect.y1, baseline - span["size"] * 0.1)
                 page.add_redact_annot(rect, fill=FILL)
                 per_rule[original] = per_rule.get(original, 0) + 1
                 total += 1
@@ -231,6 +241,25 @@ def _replacement_font(span: dict | None) -> str:
     if mono:
         return MONO_BOLD_FONT if bold else MONO_FONT
     return BOLD_FONT if bold else FONT
+
+
+def _merge_line_rects(rects: list[pymupdf.Rect]) -> list[pymupdf.Rect]:
+    """Join the per-word rects search_for returns for one match on a justified line.
+
+    On a justified line the spaces are wider than the font's own, and search_for returns
+    one rect per word. An employment certificate's name came back as three rects, and
+    each got its own copy of the replacement, drawn on top of one another. Consecutive
+    rects on the same line with no more than a line-height's gap belong to one match.
+    """
+    merged: list[pymupdf.Rect] = []
+    for rect in rects:
+        last = merged[-1] if merged else None
+        same_line = last is not None and abs(rect.y0 - last.y0) < 1 and abs(rect.y1 - last.y1) < 1
+        if same_line and 0 <= rect.x0 - last.x1 <= rect.height:
+            last.include_rect(rect)
+        else:
+            merged.append(pymupdf.Rect(rect))
+    return merged
 
 
 def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:

@@ -1,0 +1,138 @@
+{
+  "type": "object",
+  "properties": {
+    "letter_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date the letter was issued, as printed at the top"
+    },
+    "employer": {
+      "type": "object",
+      "description": "The employer issuing the letter",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's legal name"
+        },
+        "office_location": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The office location given in the body of the letter, as one line"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's phone number from the letterhead"
+        },
+        "contact_email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The contact email printed beneath the signature"
+        }
+      }
+    },
+    "employee": {
+      "type": "object",
+      "description": "The employee whose employment is being certified",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's full name, without any title such as 'Mr.'"
+        },
+        "employee_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee ID, exactly as printed"
+        },
+        "employed_since": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date employment began, as printed"
+        },
+        "designation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's current designation or job title"
+        },
+        "currently_employed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the letter certifies that the person is currently employed"
+        },
+        "residential_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employee's residential address as per the employer's records, as one line"
+        }
+      }
+    },
+    "purpose": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "What the letter states it is issued for"
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Every signature block on the letter, whether or not it has been signed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "is_signed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "True if a handwritten or digital signature is present in the block, false if the signature line is empty"
+          },
+          "signature_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The date and time stamped with the signature, as printed"
+          },
+          "signed_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The name of the person who signed, if it is printed or legible; null otherwise"
+          },
+          "signer_title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The signer's title or role printed with the signature, e.g. 'Executive Manager'"
+          }
+        }
+      }
+    }
+  }
+}

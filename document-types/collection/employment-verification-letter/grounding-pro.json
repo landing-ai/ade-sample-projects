@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "letter_date",
+      "label": "Letter date",
+      "value": "April 25, 2022",
+      "page": 1,
+      "box": {
+        "xmin": 0.08993,
+        "ymin": 0.22735,
+        "xmax": 0.19751,
+        "ymax": 0.24161
+      },
+      "range": {
+        "end": 234,
+        "start": 220
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_date.png"
+    },
+    {
+      "path": "employer.name",
+      "label": "Employer (letterhead)",
+      "value": "Deloitte Consulting India Private Limited",
+      "page": 1,
+      "box": {
+        "xmin": 0.5888,
+        "ymin": 0.06824,
+        "xmax": 0.84435,
+        "ymax": 0.08026
+      },
+      "range": {
+        "end": 57,
+        "start": 12
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employer-name.png"
+    },
+    {
+      "path": "employee.designation",
+      "label": "Designation",
+      "value": "XIN-DC SENIOR CONSULTANT",
+      "page": 1,
+      "box": {
+        "xmin": 0.08843,
+        "ymin": 0.34496,
+        "xmax": 0.80922,
+        "ymax": 0.35956
+      },
+      "range": {
+        "end": 460,
+        "start": 363
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employee-designation.png"
+    },
+    {
+      "path": "signatures[0].is_signed",
+      "label": "Signed",
+      "value": true,
+      "page": 1,
+      "box": {
+        "xmin": 0.08599,
+        "ymin": 0.68161,
+        "xmax": 0.30896,
+        "ymax": 0.75164
+      },
+      "range": {
+        "end": 1077,
+        "start": 1069
+      },
+      "occurrence": 0,
+      "matched": false,
+      "image": "signatures-0-is_signed.png"
+    },
+    {
+      "path": "signatures[0].signature_date",
+      "label": "Signature date",
+      "value": "04.25.2022; 19:22:46 IST",
+      "page": 1,
+      "box": {
+        "xmin": 0.08685,
+        "ymin": 0.7531,
+        "xmax": 0.24983,
+        "ymax": 0.76366
+      },
+      "range": {
+        "end": 1130,
+        "start": 1100
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "signatures-0-signature_date.png"
+    }
+  ]
+}
