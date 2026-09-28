@@ -9,17 +9,44 @@ Build the asset folder behind a `landing.ai/document-type/<slug>` page.
 
 **Arguments:** `$ARGUMENTS`
 
-Expected as: `<document type name>` `<url to a public document>` `[path to an existing schema.json]` `[--file <path to a local copy>]`
+Two forms. **A request file is preferred**, and is the only form that lets the user
+specify a feature page or the fields to feature:
 
-Example: `Bill of Lading https://example.com/sample-bol.pdf ~/schemas/bol.json`
+```
+/new-document-type-assets document-types/requests/bill-of-lading.yaml
+```
 
-With a manual download:
-`"SAT Score Report" https://www.scribd.com/document/891396937/Sat-Score-Report-6-2025 --file ~/Downloads/sat-score-report.pdf`
+Or inline: `<document type name>` `<url>` `[path to a schema.json]` `[--file <local copy>]`
 
-The URL is required even with `--file`: it is the source of record, and it goes in the
-manifest and on the page. `--file` only replaces the download.
+```
+Bill of Lading https://example.com/sample-bol.pdf ~/schemas/bol.json
+"SAT Score Report" https://www.scribd.com/... --file ~/Downloads/sat.pdf
+```
+
+The URL is required either way: it is the source of record, and it goes in the manifest
+and on the page. `--file` only replaces the download, for sites that block scripts.
 
 If the name or the URL is missing, stop and ask. Do not invent a document.
+
+### Reading a request file
+
+`document-types/requests/_template.yaml` documents every key. Only `name` and `url` are
+required; an absent key means you decide that thing, exactly as you did before request
+files existed.
+
+| Key | Effect |
+|---|---|
+| `name`, `url` | Required. As the inline arguments. |
+| `file` | A local copy to use instead of downloading. |
+| `schema` | Use this schema unchanged. Skips writing one in Step 4. |
+| `feature_page` | Feature this page, subject to the check in Step 6. |
+| `fields` | Feature these, subject to the check in Step 6. |
+| `notes` | Context the document does not carry. Read it before Step 6. |
+
+**A request states intent, and Step 6 decides whether the run can honour it.** Never
+silently substitute a field the user asked for. Copy the request file into the repo at
+`document-types/requests/<slug>.yaml` if it is not already there, so the folder ships
+with the ask that produced it.
 
 ---
 
@@ -156,9 +183,15 @@ Sweep every file in the folder, on digits as well as literals, before you commit
 
 ## Step 4 — Schema
 
-If the user supplied a schema path, copy it to
-`document-types/collection/<slug>/schema.json` and use it unchanged. An existing schema
-from the team is better than a new one: it is what they actually run.
+If the request file names a `schema`, or a schema path was passed inline, copy it to
+`document-types/collection/<slug>/schema.json` and use it unchanged. Do not improve it,
+reorder it or add fields to it. An existing schema from the team is better than a new
+one: it is what they actually run, and the page is evidence about their workflow rather
+than about a schema written for the occasion.
+
+If it fails against this document — a required field absent, a type that does not fit —
+report that in Step 10 and leave the schema alone. That failure is a finding about the
+schema, and quietly patching it hides the thing worth knowing.
 
 Otherwise write one. Aim for the fields a real consumer of this document needs, not every
 field on the page. Nested objects and arrays are fine. Give every field a `description`.
@@ -191,8 +224,43 @@ reading `extract-pro.json`.
 
 ```
 .venv/bin/python document-types/scripts/inspect_fields.py <slug> --good
-.venv/bin/python document-types/scripts/inspect_fields.py <slug> --page N --good
+.venv/bin/python document-types/scripts/inspect_fields.py <slug> --page N
 ```
+
+Each row gives the field, the occurrence, the page, and a match column reading `ok`,
+`OFF` or `SYNTH`. Only `ok` can be featured. Run it **without** `--good` when checking a
+request: `--good` hides exactly the rows you need to see, which are the failures.
+
+### If the request named a feature page or fields
+
+Check the request against that output before anything else. This is a verification step,
+not a selection step: the user has already chosen, and your job is to find out whether
+the run supports the choice.
+
+For every requested field, find its row:
+
+- **`ok` on the requested page** — honour it. Use the label the user gave.
+- **`OFF`** — the range points at text that supports the value without containing it. The
+  crop will read as a mistake. Cannot be featured.
+- **`SYNTH`** — no coordinates at all. Cannot be illustrated.
+- **`ok` on a different page** — cannot appear on this overlay, which embeds one page.
+
+If any requested field fails, or the requested `feature_page` leaves fewer than three
+usable fields, **stop and report to the user before writing the manifest.** Give them:
+
+1. Which requested fields survived and which did not, with the reason for each.
+2. The nearest usable alternatives, from the same page and preferably from the same part
+   of the document, so the overlay still tells one story.
+3. If the requested page is the problem, which page their fields do resolve on.
+
+Then wait. Do not substitute a field the user did not choose, and do not quietly move the
+feature page. A page featuring values nobody picked is worse than a page that took an
+extra round trip, because nothing about it announces that a choice was made.
+
+Record the outcome in the manifest's `notes`: what was asked for, what shipped, and why
+they differ. The request file says what was wanted; the manifest says what happened.
+
+### If the request named neither, choose them yourself
 
 Three failure modes are invisible in the extraction JSON:
 
@@ -330,12 +398,18 @@ Before committing:
 - [ ] `feature_page` matches where the fields actually resolved
 - [ ] No label contains a comma
 - [ ] Clearance is `public` or `redacted`, never a placeholder
+- [ ] The request file is committed at `document-types/requests/<slug>.yaml`
+- [ ] Every difference between the request and the manifest is explained in `notes`
 
 Commit on the branch. Report to the user:
 
 - The folder path and what is in it
 - Credits used
 - The featured fields and the page they are on
+- **Every part of the request that did not survive the run**, with the reason: a field
+  that came back `SYNTH` or `OFF`, a feature page that had too few usable fields, a
+  supplied schema that did not fit the document. Say this even when they already agreed
+  to the substitution mid-run, because the report is what gets read later.
 - Anything you could not establish — especially provenance or clearance doubts
 - Whatever the grounding did that was unexpected
 
