@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "document_type",
+      "label": "Document type",
+      "value": "Passport",
+      "page": 1,
+      "box": {
+        "xmin": 0.16032,
+        "ymin": 0.21425,
+        "xmax": 0.29217,
+        "ymax": 0.25035
+      },
+      "range": {
+        "end": 46,
+        "start": 38
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_type.png"
+    },
+    {
+      "path": "document_info.document_number",
+      "label": "Passport number",
+      "value": "ZZ0000826",
+      "page": 1,
+      "box": {
+        "xmin": 0.66971,
+        "ymin": 0.2445,
+        "xmax": 0.84877,
+        "ymax": 0.28703
+      },
+      "range": {
+        "end": 114,
+        "start": 105
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_info-document_number.png"
+    },
+    {
+      "path": "document_info.issuing_country",
+      "label": "Issuing country",
+      "value": "JAPAN",
+      "page": 1,
+      "box": {
+        "xmin": 0.70137,
+        "ymin": 0.15423,
+        "xmax": 0.83184,
+        "ymax": 0.19791
+      },
+      "range": {
+        "end": 9,
+        "start": 4
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_info-issuing_country.png"
+    },
+    {
+      "path": "personal_info.nationality",
+      "label": "Nationality",
+      "value": "JAPAN",
+      "page": 1,
+      "box": {
+        "xmin": 0.3328,
+        "ymin": 0.45376,
+        "xmax": 0.44226,
+        "ymax": 0.49148
+      },
+      "range": {
+        "end": 194,
+        "start": 189
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "personal_info-nationality.png"
+    },
+    {
+      "path": "personal_info.sex",
+      "label": "Sex",
+      "value": "F",
+      "page": 1,
+      "box": {
+        "xmin": 0.33046,
+        "ymin": 0.52174,
+        "xmax": 0.35816,
+        "ymax": 0.5586
+      },
+      "range": {
+        "end": 205,
+        "start": 204
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "personal_info-sex.png"
+    }
+  ]
+}
