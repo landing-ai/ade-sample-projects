@@ -45,7 +45,10 @@ TEXT_COLOR = (0, 0, 0)
 # still removed as long as the rect crosses its body.
 FONT = "helv"
 BOLD_FONT = "hebo"
+MONO_FONT = "cour"
+MONO_BOLD_FONT = "cobo"
 BOLD_FLAG = 16  # PyMuPDF span flag for a bold font
+MONO_FLAG = 8   # PyMuPDF span flag for a monospaced font
 TOP_INSET_PT = 2.5
 BOTTOM_INSET_PT = 0.5
 
@@ -97,7 +100,7 @@ def main() -> None:
                 # shrinks its text until it fits -- an edit visible at a glance.
                 span = _span_at(spans, rect)
                 size = span["size"] if span else min(11.0, rect.height * 0.86)
-                font = BOLD_FONT if span and span["flags"] & BOLD_FLAG else FONT
+                font = _replacement_font(span)
                 baseline = span["origin"][1] if span else rect.y1 - rect.height * 0.2
                 # Then size by WIDTH as well. A narrow rect in a mailing-address block
                 # wrapped "JANE DOE" into "JA" / "NE", fragmenting the text layer so the
@@ -180,6 +183,22 @@ def main() -> None:
     print(f"    grep -ril <original> {args.output.parent.parent}")
     print("Record in the manifest only WHAT was replaced and with what -- never the "
           "original values.")
+
+
+def _replacement_font(span: dict | None) -> str:
+    """A base-14 font matching the replaced span's weight and, for monospace, its family.
+
+    A pay stub set in Courier had its name replaced in Helvetica, which reads as an edit
+    among fixed-width text. Its regular Courier spans do not set the monospace flag, so
+    the font name is checked as well.
+    """
+    if not span:
+        return FONT
+    bold = bool(span["flags"] & BOLD_FLAG)
+    mono = bool(span["flags"] & MONO_FLAG) or "courier" in span["font"].lower()
+    if mono:
+        return MONO_BOLD_FONT if bold else MONO_FONT
+    return BOLD_FONT if bold else FONT
 
 
 def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:
