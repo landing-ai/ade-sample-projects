@@ -61,6 +61,12 @@ The collection's first **credit report**, and a web page rather than a form:
 - **Many repeated records.** Eleven tradelines, each with the same fifteen fields, across
   six pages, plus a collection account in a different layout.
 
+> **`suppress_caption` on the score.** The web page writes a caption under any
+> crop whose grounded text differs from its value. The score's range covers the
+> chart's `Rating` label, so that caption would tell a reader the range landed on
+> text beside the value, while the crop plainly shows 766. The field carries
+> `suppress_caption: true` so the page prints the crop and no caption.
+
 ## Featured fields: the score and the account summary tiles
 
 All on page 1. The request named no fields, so these were chosen:
