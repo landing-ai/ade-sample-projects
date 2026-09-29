@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "title": "Bank statement",
+  "properties": {
+    "bank_name": {"type": "string", "description": "Name of the bank issuing the statement."},
+    "account_holder": {"type": "string", "description": "Account holder's name as printed in the address block."},
+    "account_number": {"type": "string", "description": "Account number of the deposit account, as printed."},
+    "account_type": {"type": "string", "description": "Account product name, e.g. TRUE CHECKING."},
+    "statement_date": {"type": "string", "description": "Statement date exactly as printed."},
+    "activity_summary": {
+      "type": "object",
+      "description": "The account activity summary, exactly as printed. Do not compute or correct the figures.",
+      "properties": {
+        "period_start_date": {"type": "string", "description": "Date of the previous balance, as YYYY-MM-DD."},
+        "period_end_date": {"type": "string", "description": "Date of the ending balance, as YYYY-MM-DD."},
+        "days_in_period": {"type": "integer", "description": "Number of days in the statement period."},
+        "previous_balance": {"type": "number", "description": "Previous balance, in dollars."},
+        "deposits_count": {"type": "integer", "description": "Number of deposits and credits."},
+        "deposits_total": {"type": "number", "description": "Total deposits and credits, in dollars."},
+        "withdrawals_count": {"type": "integer", "description": "Number of checks and withdrawals."},
+        "withdrawals_total": {"type": "number", "description": "Total checks and withdrawals, in dollars."},
+        "ending_balance": {"type": "number", "description": "Ending balance, in dollars."},
+        "average_balance": {"type": "number", "description": "Average balance, in dollars."},
+        "service_charge": {"type": "number", "description": "Total service charge, in dollars."},
+        "interest_year_to_date": {"type": "number", "description": "Year-to-date interest earned, in dollars."}
+      }
+    },
+    "transactions": {
+      "type": "array",
+      "description": "Every row of the TRANSACTIONS table across all pages, in order, excluding the Previous Balance row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {"type": "string", "description": "Transaction date, as YYYY-MM-DD."},
+          "description": {"type": "string", "description": "Description as printed, joined into one line if it wraps."},
+          "debit": {"type": ["number", "null"], "description": "Amount in the Debits column, or null if empty."},
+          "credit": {"type": ["number", "null"], "description": "Amount in the Credits column, or null if empty."},
+          "balance": {"type": "number", "description": "Running balance after the transaction, in dollars."}
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "description": "Every check in the CHECKS section.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "number": {"type": "string", "description": "Check number, without any sequence-break asterisk."},
+          "date": {"type": "string", "description": "Date the check cleared, as YYYY-MM-DD."},
+          "amount": {"type": "number", "description": "Check amount, in dollars."},
+          "break_in_sequence": {"type": "boolean", "description": "True if the check number is marked with an asterisk, indicating a break in sequence."}
+        }
+      }
+    },
+    "overdraft_line": {
+      "type": "object",
+      "description": "The linked overdraft line of credit (e.g. Ready Reserve), if the statement includes one.",
+      "properties": {
+        "account_number": {"type": "string", "description": "Account number of the credit line."},
+        "credit_limit": {"type": "number", "description": "Credit limit, in dollars."},
+        "available_credit": {"type": "number", "description": "Available credit, in dollars."},
+        "new_balance": {"type": "number", "description": "New balance, in dollars."},
+        "payment_due_date": {"type": "string", "description": "Current payment due date, as YYYY-MM-DD."},
+        "total_due": {"type": "number", "description": "Total due, in dollars."},
+        "annual_percentage_rate": {"type": "number", "description": "Annual percentage rate, as a percentage, e.g. 18.0."}
+      }
+    }
+  }
+}
