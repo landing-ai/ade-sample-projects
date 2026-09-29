@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "title": "Sanctions screening record",
+  "properties": {
+    "report_datetime": {"type": "string", "description": "Date and time the report was generated, as YYYY-MM-DD HH:MM:SS."},
+    "subject_name": {"type": "string", "description": "Full name of the sanctioned subject, as printed in the report heading."},
+    "listing": {
+      "type": "object",
+      "description": "The sanctions list entry the subject appears on.",
+      "properties": {
+        "entity_type": {"type": "string", "description": "Type of listed entity, e.g. Individual, Entity, Vessel."},
+        "list_name": {"type": "string", "description": "Name of the sanctions list, e.g. SDN (OFAC)."},
+        "programs": {"type": "array", "description": "Every sanctions program the listing falls under.", "items": {"type": "string"}},
+        "date_of_publication": {"type": "string", "description": "Date of publication of the listing, as YYYY-MM-DD."},
+        "remark": {"type": "string", "description": "The listing's remark, in full, as printed."}
+      }
+    },
+    "names": {
+      "type": "array",
+      "description": "Every name and alias listed for the subject, in the order printed.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "full_name": {"type": "string", "description": "Full name as printed."},
+          "name_type": {"type": "string", "description": "Name or Alias."},
+          "alias_quality": {"type": "string", "description": "Alias quality, Weak or Strong. Empty string for the primary name."}
+        }
+      }
+    },
+    "birth_data": {
+      "type": "object",
+      "description": "Birth data for the subject.",
+      "properties": {
+        "birthdates": {"type": "array", "description": "Every birthdate listed, as YYYY-MM-DD.", "items": {"type": "string"}},
+        "place_of_birth": {"type": "string", "description": "Place of birth as printed."},
+        "country_of_birth": {"type": "string", "description": "Country of birth."}
+      }
+    },
+    "has_historical_records": {"type": "boolean", "description": "True if the Historical data section lists any records."},
+    "sanctions_data_updated": {"type": "string", "description": "When the sanctions list data for this subject was last updated, as YYYY-MM-DD HH:MM."},
+    "source_change_check": {"type": "string", "description": "When the report last checked the original source for changes, as YYYY-MM-DD HH:MM."},
+    "lists_checked": {
+      "type": "array",
+      "description": "Every sanctions list the service includes, with the date its latest changes were published.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "list": {"type": "string", "description": "Name of the list or issuing authority."},
+          "latest_change_date": {"type": "string", "description": "Date the list's latest changes were published, as YYYY-MM-DD."}
+        }
+      }
+    }
+  }
+}
