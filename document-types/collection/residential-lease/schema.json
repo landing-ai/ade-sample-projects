@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "properties": {
+    "agreement_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date the agreement is made, from the opening line, as YYYY-MM-DD"
+    },
+    "parties": {
+      "type": "object",
+      "description": "The parties to the lease",
+      "properties": {
+        "management": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The owner's authorized agent named as Management"
+        },
+        "tenant": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The tenant's name"
+        }
+      }
+    },
+    "property": {
+      "type": "object",
+      "description": "The leased property, from Term and Description",
+      "properties": {
+        "unit_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The unit number, or null if blank"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The property address as written after 'located at'"
+        }
+      }
+    },
+    "term": {
+      "type": "object",
+      "description": "The lease term",
+      "properties": {
+        "lease_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "'fixed' if the fixed-term box is checked, 'month-to-month' if the periodic box is checked"
+        },
+        "length": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The length of the term as written, e.g. '12 Months'"
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the term commences, as YYYY-MM-DD"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the term ends, as YYYY-MM-DD"
+        }
+      }
+    },
+    "rent": {
+      "type": "object",
+      "description": "Rent and charges, from the Rent section",
+      "properties": {
+        "monthly_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The monthly rent, in dollars"
+        },
+        "due_day": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The calendar day of each month rent is due, as written, e.g. '1st'"
+        },
+        "late_charge": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The late charge for rent paid late, in dollars"
+        },
+        "late_after_day": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The calendar day after which the late charge applies, as written, e.g. '5th'"
+        },
+        "insufficient_funds_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The service fee for insufficient funds, in dollars"
+        }
+      }
+    },
+    "security_deposit": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The security deposit received from the tenant, in dollars, from the Security Deposit section"
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Every signature line on the signature page, whether signed or not",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The role printed under the line, e.g. 'Tenant' or 'Management/Agent'"
+          },
+          "is_signed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "True if the signature line carries a signature"
+          },
+          "printed_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The printed name for this signature line, or null if blank"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "property.address",
+      "label": "Property address",
+      "value": "909 Shall Court Studio Jacksonville AR 72076",
+      "page": 1,
+      "box": {
+        "xmin": 0.05401,
+        "ymin": 0.21693,
+        "xmax": 0.94615,
+        "ymax": 0.28367
+      },
+      "range": {
+        "end": 670,
+        "start": 473
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-address.png"
+    },
+    {
+      "path": "parties.tenant",
+      "label": "Tenant",
+      "value": "Jane Q Sample",
+      "page": 1,
+      "box": {
+        "xmin": 0.04472,
+        "ymin": 0.11286,
+        "xmax": 0.94654,
+        "ymax": 0.21316
+      },
+      "range": {
+        "end": 471,
+        "start": 178
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "parties-tenant.png"
+    },
+    {
+      "path": "term.length",
+      "label": "Lease term",
+      "value": "12 Months",
+      "page": 1,
+      "box": {
+        "xmin": 0.05326,
+        "ymin": 0.26533,
+        "xmax": 0.94331,
+        "ymax": 0.30077
+      },
+      "range": {
+        "end": 703,
+        "start": 671
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "term-length.png"
+    },
+    {
+      "path": "security_deposit",
+      "label": "Security deposit",
+      "value": 700.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.05384,
+        "ymin": 0.55864,
+        "xmax": 0.94563,
+        "ymax": 0.57736
+      },
+      "range": {
+        "end": 2357,
+        "start": 2265
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "security_deposit.png"
+    }
+  ]
+}

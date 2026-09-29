@@ -1,0 +1,57 @@
+{
+  "slug": "residential-lease",
+  "title": "Residential Lease",
+  "source": {
+    "file": "residential-lease-redacted.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/746241294/Residential-Lease-Rental-Agreement",
+      "publisher": "Arkansas REALTORS® Association (form); completed by a Century 21 Prestige Realty agent",
+      "title": "Residential Lease/Rental Agreement, executed November 17, 2023",
+      "retrieved": "2026-09-28",
+      "clearance": "redacted",
+      "clearance_note": "A real residential lease on the Arkansas REALTORS® Association's standard form, completed and e-signed through a Century 21 brokerage, uploaded to Scribd by a third party and downloaded manually, because Scribd blocks scripted requests. At the document owner's decision only the tenant's name is replaced; every other detail is kept as printed, including the rental property's address (the page is a proof-of-address example), the agent's and principal broker's names, e-signatures and contact details, the form serial number and the e-signature session ID. The tenant's name was replaced with 'Jane Q Sample' using document-types/scripts/redact.py, which removes the underlying text rather than covering it: in bold italic where it is printed, and, where it was the tenant's typed e-signature, in the openly licensed Indie Flower handwriting font in the original navy, so the page still shows that the tenant signed. The PDF metadata was cleared. Verified: the tenant's name is not extractable from the committed PDF and appears nowhere in this collection folder.",
+      "redactions": {
+        "note": "The original value is deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "tenant's name, printed and as the typed e-signature",
+            "with": "Jane Q Sample",
+            "occurrences": 3
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "property.address",
+      "label": "Property address",
+      "occurrence": 0
+    },
+    {
+      "path": "parties.tenant",
+      "label": "Tenant",
+      "occurrence": 0
+    },
+    {
+      "path": "term.length",
+      "label": "Lease term",
+      "occurrence": 0
+    },
+    {
+      "path": "security_deposit",
+      "label": "Security deposit",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Built as a proof-of-address example. The document owner asked for page 1 with the property address highlighted; the other fields were chosen to support it: who the tenant is, how long the lease runs, and the deposit paid. The tenant shown is the stand-in name. property.address grounds to the opening lines of the Term and Description paragraph, which contain the typed address: values typed onto the form's blank lines parse into the surrounding paragraph, so the box is those three lines rather than the address alone. parties.tenant grounds to the whole opening block, for the same reason. Every rent-section value grounds to the entire Rent paragraph and would render identical crops, so none is featured. The signatures array pairs names and roles across the signature page's two columns (the tenant's name under Management, the agents under Tenant) and is not featured. An earlier version of this folder replaced every name, contact detail and identifier; the owner asked for only the tenant's name to be replaced. preview_pages includes page 6, the signature page, in place of the default's page 3."
+}

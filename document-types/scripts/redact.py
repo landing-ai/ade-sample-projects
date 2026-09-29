@@ -45,10 +45,16 @@ TEXT_COLOR = (0, 0, 0)
 # still removed as long as the rect crosses its body.
 FONT = "helv"
 BOLD_FONT = "hebo"
+ITALIC_FONT = "heit"
+BOLD_ITALIC_FONT = "hebi"
 MONO_FONT = "cour"
 MONO_BOLD_FONT = "cobo"
 BOLD_FLAG = 16  # PyMuPDF span flag for a bold font
 MONO_FLAG = 8   # PyMuPDF span flag for a monospaced font
+ITALIC_FLAG = 2  # PyMuPDF span flag for an italic font
+# Typed e-signatures are set in handwriting fonts. Replacing one in Helvetica turns a
+# signature into a printed name, which on a lease erased the evidence that it was signed.
+HANDWRITING_HINTS = ("hand", "script", "brush", "signature", "cursive", "bradley", "autograph")
 TOP_INSET_PT = 2.5
 BOTTOM_INSET_PT = 0.5
 
@@ -70,7 +76,16 @@ def main() -> None:
              "page (PDF points, after any --drop-pages). Use for a signature or a photo. "
              "Only wholly contained images go, so a watermark behind the area survives.",
     )
+    parser.add_argument(
+        "--handwriting-font", type=Path, metavar="FONT.ttf",
+        help="Font file for replacing text set in a handwriting font, such as a typed "
+             "e-signature, so it still reads as a signature. Use an openly licensed font "
+             "(e.g. SIL OFL): it is embedded in the published PDF.",
+    )
     args = parser.parse_args()
+    if args.handwriting_font and not args.handwriting_font.is_file():
+        sys.exit(f"--handwriting-font: no such file {args.handwriting_font}")
+    handwriting = str(args.handwriting_font) if args.handwriting_font else None
 
     rules: dict[str, str] = json.loads(args.rules.read_text(encoding="utf-8"))
 
@@ -110,7 +125,16 @@ def main() -> None:
     for page in doc:
         spans = [s for b in page.get_text("dict")["blocks"]
                  for l in b.get("lines", []) for s in l["spans"]]
-        pending: list[tuple[pymupdf.Point, str, str, float]] = []
+        # A filled form types each value over a line of underscores, and the two overlap
+        # completely, so redacting the value also takes the underscores beneath it: a
+        # lease came back with gaps in the fill lines under the tenant and the address.
+        # Remember every underscore now, and put back the ones a redaction removed.
+        underscores = [(pymupdf.Rect(c["bbox"]), c["origin"], s["size"], s["color"])
+                       for b in page.get_text("rawdict")["blocks"]
+                       for l in b.get("lines", []) for s in l["spans"]
+                       for c in s["chars"] if c["c"] == "_"]
+        redacted: list[pymupdf.Rect] = []
+        pending: list[tuple[pymupdf.Point, str, str, float, str | None, tuple]] = []
         for original, replacement in rules.items():
             for rect in _merge_line_rects(page.search_for(original)):
                 # Match the text being replaced: its size, weight and baseline. Sizing
@@ -119,39 +143,60 @@ def main() -> None:
                 # shrinks its text until it fits -- an edit visible at a glance.
                 span = _span_at(spans, rect)
                 size = span["size"] if span else min(11.0, rect.height * 0.86)
-                font = _replacement_font(span)
+                font, fontfile = _replacement_font(span, handwriting)
                 baseline = span["origin"][1] if span else rect.y1 - rect.height * 0.2
                 # Then size by WIDTH as well. A narrow rect in a mailing-address block
                 # wrapped "JANE DOE" into "JA" / "NE", fragmenting the text layer so the
                 # field no longer extracted. Shrink until it fits the original's width.
                 if replacement:
-                    width = pymupdf.get_text_length(replacement, font, size)
+                    if fontfile:
+                        width = pymupdf.Font(fontfile=fontfile).text_length(replacement, size)
+                    else:
+                        width = pymupdf.get_text_length(replacement, font, size)
                     if width > rect.width:
                         size *= rect.width / width * 0.97  # a hair under, for rounding
                     size = max(size, 3.0)
+                    # In the original's colour: a lease's e-signatures are navy ink, and
+                    # a black stand-in signature beside two navy ones reads as an edit.
+                    color = _rgb(span["color"]) if span else TEXT_COLOR
                     pending.append((pymupdf.Point(rect.x0, baseline), replacement,
-                                    font, round(size, 1)))
-                rect.y0 += TOP_INSET_PT
-                rect.y1 -= BOTTOM_INSET_PT
-                # The insets alone are not enough on tightly set lines. apply_redactions
-                # removes every character whose bbox touches the rect, and a character's
-                # bbox is the font's full ascender-to-descender height, so on an
-                # employment certificate the characters of the line below overlapped the
-                # name's rect and "2017 and is currently designa" was erased. Removal is
-                # by overlap, so a band through the middle of the letters still takes
-                # every character of the match while staying clear of neighbouring lines.
+                                    font, round(size, 1), fontfile, color))
+                # apply_redactions removes every character whose bbox touches the rect,
+                # and a character's bbox is the font's full ascender-to-descender height,
+                # so on an employment certificate the characters of the line below
+                # overlapped the name's rect and "2017 and is currently designa" was
+                # erased. Removal is by overlap, so when the span is known a band through
+                # the middle of the letters takes every character of the match while
+                # staying clear of neighbouring lines. The band replaces the fixed insets
+                # rather than following them: on a lease's 2pt "Prepared by" line the
+                # insets alone emptied the rect, and the agent's name survived.
                 if span:
-                    rect.y0 = max(rect.y0, baseline - span["size"] * 0.6)
-                    rect.y1 = min(rect.y1, baseline - span["size"] * 0.1)
+                    rect.y0 = baseline - span["size"] * 0.6
+                    rect.y1 = baseline - span["size"] * 0.1
+                else:
+                    rect.y0 += TOP_INSET_PT
+                    rect.y1 -= BOTTOM_INSET_PT
                 page.add_redact_annot(rect, fill=FILL)
+                redacted.append(pymupdf.Rect(rect))
                 per_rule[original] = per_rule.get(original, 0) + 1
                 total += 1
         page.apply_redactions()
+        # Only the ones actually removed: some touch a rect and survive, and drawing
+        # those again left a stray raised underscore beside the tenant's name.
+        survivors = {(round(c["origin"][0], 1), round(c["origin"][1], 1))
+                     for b in page.get_text("rawdict")["blocks"]
+                     for l in b.get("lines", []) for s in l["spans"]
+                     for c in s["chars"] if c["c"] == "_"}
+        for bbox, origin, size, color in underscores:
+            gone = (round(origin[0], 1), round(origin[1], 1)) not in survivors
+            if gone and any(bbox.intersects(r) for r in redacted):
+                page.insert_text(origin, "_", fontname=FONT, fontsize=size, color=_rgb(color))
         # Written after the redaction, not as the annotation's text, so the replacement
         # sits on the original baseline at the original size instead of being fitted
         # into the trimmed rect.
-        for point, text, font, size in pending:
-            page.insert_text(point, text, fontname=font, fontsize=size, color=TEXT_COLOR)
+        for point, text, font, size, fontfile, color in pending:
+            page.insert_text(point, text, fontname=font, fontfile=fontfile,
+                             fontsize=size, color=color)
 
     # Document metadata is a separate leak path from page text, and a quiet one. This
     # statement carried the account number in /Info "author" as 04822863413 -- the same
@@ -227,20 +272,33 @@ def main() -> None:
           "original values.")
 
 
-def _replacement_font(span: dict | None) -> str:
-    """A base-14 font matching the replaced span's weight and, for monospace, its family.
+def _replacement_font(span: dict | None, handwriting: str | None = None) -> tuple[str, str | None]:
+    """The font to write a replacement in, as (fontname, fontfile or None).
 
-    A pay stub set in Courier had its name replaced in Helvetica, which reads as an edit
-    among fixed-width text. Its regular Courier spans do not set the monospace flag, so
-    the font name is checked as well.
+    Matches the replaced span's weight, slant and, for monospace, its family. A pay stub
+    set in Courier had its name replaced in Helvetica, which reads as an edit among
+    fixed-width text; its regular Courier spans do not set the monospace flag, so the
+    font name is checked as well. Text in a handwriting font, such as a typed
+    e-signature, uses the --handwriting-font file when one is given.
     """
     if not span:
-        return FONT
+        return FONT, None
+    name = span["font"].lower()
+    if handwriting and any(hint in name for hint in HANDWRITING_HINTS):
+        return "handwriting", handwriting
     bold = bool(span["flags"] & BOLD_FLAG)
-    mono = bool(span["flags"] & MONO_FLAG) or "courier" in span["font"].lower()
+    italic = bool(span["flags"] & ITALIC_FLAG) or "italic" in name or "oblique" in name
+    mono = bool(span["flags"] & MONO_FLAG) or "courier" in name
     if mono:
-        return MONO_BOLD_FONT if bold else MONO_FONT
-    return BOLD_FONT if bold else FONT
+        return (MONO_BOLD_FONT if bold else MONO_FONT), None
+    if italic:
+        return (BOLD_ITALIC_FONT if bold else ITALIC_FONT), None
+    return (BOLD_FONT if bold else FONT), None
+
+
+def _rgb(color: int) -> tuple[float, float, float]:
+    """A PyMuPDF span colour (0xRRGGBB) as the 0-1 RGB tuple insert_text takes."""
+    return tuple(((color >> shift) & 0xFF) / 255 for shift in (16, 8, 0))
 
 
 def _merge_line_rects(rects: list[pymupdf.Rect]) -> list[pymupdf.Rect]:
