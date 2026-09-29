@@ -1,0 +1,82 @@
+{
+  "slug": "credit-report",
+  "title": "Credit Report",
+  "source": {
+    "file": "credit-report-redacted.pdf",
+    "pages": 8,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/978216898",
+      "publisher": "Unknown. A consumer credit report built on TransUnion data, rendered as a web page and saved to PDF; the uploader is not the consumer bureau or a report provider",
+      "title": "Consumer credit report, VantageScore 3.0, report date January 30, 2022",
+      "retrieved": "2026-09-28",
+      "clearance": "redacted",
+      "clearance_note": "A real individual's consumer credit report, uploaded to Scribd by a third party under a title naming the individual and a sequence number, and downloaded manually, because Scribd blocks scripted requests. Provenance is poor: a numbered upload of a named person's full credit report, with their SSN, date of birth and address history, is the pattern of a leaked or fraud-traded identity record, not something the consumer published. It is used at the document owner's decision, on the condition that every identifying detail is replaced: the name, SSN, date of birth, employer and job title, all six addresses and all twelve account numbers. The credit data is kept as printed (score, balances, limits, creditor names, dates and payment history), because it identifies no one once the identity is gone. Creditor and collection-agency addresses and phone numbers are business contact details and are kept. Replacements were made with document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata was cleared. Verified: no original value is extractable from the committed PDF, and none appears anywhere in this collection folder. The URL is recorded without the listing's title slug, which carries the individual's name.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "consumer's name",
+            "with": "Jane Q Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "Social Security number",
+            "with": "987-65-4323 (reserved range)",
+            "occurrences": 1
+          },
+          {
+            "what": "date of birth",
+            "with": "1957-01-16",
+            "occurrences": 1
+          },
+          {
+            "what": "job title",
+            "with": "Clerk (employer name removed)",
+            "occurrences": 1
+          },
+          {
+            "what": "six reported home addresses",
+            "with": "100 Main St to 600 Maple Dr, Anytown, with ZIP 000000000; the states are kept",
+            "occurrences": 6
+          },
+          {
+            "what": "account numbers (9, 12 and 16 digits)",
+            "with": "plausible random stand-ins of the same length (scripts/plausible.py)",
+            "occurrences": 12
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [
+    1,
+    2,
+    5,
+    8
+  ],
+  "fields": [
+    {
+      "path": "account_summary.total_balances",
+      "label": "Total balances",
+      "occurrence": 1
+    },
+    {
+      "path": "account_summary.total_monthly_payments",
+      "label": "Monthly payments",
+      "occurrence": 1
+    },
+    {
+      "path": "account_summary.open_accounts",
+      "label": "Open accounts",
+      "occurrence": 1
+    },
+    {
+      "path": "account_summary.closed_accounts",
+      "label": "Closed accounts",
+      "occurrence": 1
+    }
+  ],
+  "notes": "The request named no fields. The four headline tiles of the Account Summary on page 1 were chosen (balances, payments, open and closed accounts): they are impersonal, they are the part of a credit report an underwriter reads first, and they tell one story. Each value is printed twice, in the tiles and again in the detail table beneath; occurrence 1 is the tile, and the tile boxes include the small label above each figure. Total accounts is printed only in the detail table and was left out so the overlay stays on the tiles. The consumer's identity block on the same page grounds cleanly but is stand-in data and is not featured. The credit score (766) cannot be featured: it is printed inside a chart, and its only range grounds to the chart's data-point labels (OFF). The first extraction returned total balances of 2842 and payments of 2066, recomputed from the collection accounts, against the printed $4,180 and $2,170 (which are right: they include the collection account); telling the schema to take the totals as printed fixed both. The same pass stopped the charged-off BP-VISA credit card being listed as a collection. preview_pages shows the summary, a typical tradeline page, the page with the charged-off account and the collections page."
+}
