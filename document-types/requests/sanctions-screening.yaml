@@ -1,0 +1,14 @@
+# Request copied from sanctions_report.yaml on 2026-09-29. See _template.yaml for what
+# every field means.
+#
+# sanctions.lursoft.lv answers scripted requests with a Cloudflare challenge, so the
+# PDF was downloaded by hand from the url and passed as the local file.
+#
+# Run it with:   /new-document-type-assets document-types/requests/sanctions-screening.yaml
+
+name: Sanctions Screening
+url: https://sanctions.lursoft.lv/person/boutov/SDN-8279?pdf=1
+
+feature_page: 1
+
+notes: "This person is a well known arms dealer and I found several sanctions reporting services using him as an example report. Other examples: https://ebcglobal.co.uk/wp-content/uploads/2024/10/International-Sanctions-Report-Example.avif and https://sanctionssearch.ofac.treas.gov/Details.aspx?id=8279. I think it is ok to use this without any redactions."
