@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "title": "Bank statement",
+  "properties": {
+    "bank_name": {"type": "string", "description": "Name of the bank issuing the statement."},
+    "product_name": {"type": "string", "description": "Name of the account product, e.g. Manulife One."},
+    "account_number": {"type": "string", "description": "Account number as printed."},
+    "statement_period": {"type": "string", "description": "Month the statement covers, as YYYY-MM."},
+    "statement_date": {"type": "string", "description": "Date the statement was prepared, as YYYY-MM-DD."},
+    "account_holders": {"type": "array", "description": "Every borrower or account holder named on the statement.", "items": {"type": "string"}},
+    "snapshot": {
+      "type": "object",
+      "description": "The account snapshot on the first page, exactly as printed.",
+      "properties": {
+        "opening_total_borrowings": {"type": "number", "description": "Total borrowings at the end of the previous month, in dollars."},
+        "money_in": {"type": "number", "description": "Money that went into the account during the month, in dollars."},
+        "money_out": {"type": "number", "description": "Money that came out of the account during the month, in dollars."},
+        "closing_total_borrowings": {"type": "number", "description": "Total borrowings at the end of the month, in dollars."},
+        "reduction_in_borrowings": {"type": "number", "description": "Reduction in borrowings during the month, in dollars."},
+        "interest_charges": {"type": "number", "description": "Amount needed to pay the month's interest charges, in dollars."},
+        "borrowing_limit": {"type": "number", "description": "Maximum borrowing limit, in dollars."},
+        "available_limit": {"type": "number", "description": "Available limit at the end of the month, in dollars."}
+      }
+    },
+    "main_account_transactions": {
+      "type": "array",
+      "description": "Every row of the main account's transaction table, in order, excluding the opening and closing balance rows.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {"type": "string", "description": "Transaction date, as YYYY-MM-DD."},
+          "description": {"type": "string", "description": "Transaction description as printed."},
+          "money_out": {"type": ["number", "null"], "description": "Amount in the Money out column, or null if empty."},
+          "money_in": {"type": ["number", "null"], "description": "Amount in the Money in column, or null if empty."},
+          "borrowings_balance": {"type": "number", "description": "Running borrowings balance after the transaction, in dollars."}
+        }
+      }
+    },
+    "sub_accounts": {
+      "type": "array",
+      "description": "Every sub-account with its own transaction table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Sub-account name, e.g. fixed-rate sub-account."},
+          "opening_balance": {"type": "number", "description": "Opening borrowings balance, in dollars."},
+          "closing_balance": {"type": "number", "description": "Closing borrowings balance, in dollars."},
+          "interest_rate": {"type": "number", "description": "Borrowing interest rate for the month, as a percentage, e.g. 3.79."},
+          "interest_charged": {"type": "number", "description": "Interest charged for the month, in dollars."}
+        }
+      }
+    },
+    "total_interest_charged": {"type": "number", "description": "Total interest charged for the month across all accounts, in dollars."},
+    "total_interest_year_to_date": {"type": "number", "description": "Total interest charged since January, across all accounts, in dollars."}
+  }
+}
