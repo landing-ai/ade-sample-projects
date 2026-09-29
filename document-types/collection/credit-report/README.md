@@ -61,19 +61,22 @@ The collection's first **credit report**, and a web page rather than a form:
 - **Many repeated records.** Eleven tradelines, each with the same fifteen fields, across
   six pages, plus a collection account in a different layout.
 
-## Featured fields: the account summary tiles
+## Featured fields: the score and the account summary tiles
 
 All on page 1. The request named no fields, so these were chosen:
 
 | Field | Value |
 |---|---|
+| Credit score | 766 |
 | Total balances | $4,180 |
 | Monthly payments | $2,170 |
 | Open accounts | 8 |
 | Closed accounts | 4 |
 
-The four headline tiles, the part of the report an underwriter reads first, and all
-impersonal. Each value is printed twice; occurrence 1 is the tile, and each box takes in
+The score and the four headline tiles, the part of the report an underwriter reads
+first, and all impersonal. The score's box is loose and its grounding is flagged; see
+below. It is featured at the document owner's decision, because it is the value anyone
+opening a credit report looks for first. Each value is printed twice; occurrence 1 is the tile, and each box takes in
 the small label above the figure. The identity block on the same page grounds cleanly but
 is stand-in data and is not featured.
 
@@ -90,9 +93,14 @@ and not to compute them, fixed both.
 credit card with status Charge Off, under collections as well as among the accounts. A
 description saying that collections are the accounts in the Collections section fixed it.
 
-**The score cannot be illustrated.** 766, the rating GREAT and the 300–850 scale are
-printed inside the gauge graphic. Extraction reads them correctly, but grounds them to the
-chart's data-point labels rather than to the figures, so they cannot be featured.
+**The score grounds to the whole chart.** 766, the rating GREAT and the 300–850 scale
+are drawn inside the gauge graphic. The parse turns the chart into a small data table
+(score model / 766, Rating / GREAT, Range / 300–850), and extraction reads every value
+correctly, but its range for the score points one cell off, at the Rating label. The table
+has no box of its own, so the highlight falls back to the whole chart: gauge, line chart
+and report date. 766 is plainly inside it and the crop reads as right, but
+`build_images.py` warns that the value is not in the boxed text, and the box is about
+twenty times the area of the tiles'. Featured anyway, at the document owner's decision.
 
 **The tradelines extract completely.** All eleven accounts come back with every balance,
 limit, high balance, account number, status, late-payment count and remark matching the

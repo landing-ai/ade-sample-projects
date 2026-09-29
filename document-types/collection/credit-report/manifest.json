@@ -58,6 +58,11 @@
   ],
   "fields": [
     {
+      "path": "credit_score.score",
+      "label": "Credit score",
+      "occurrence": 0
+    },
+    {
       "path": "account_summary.total_balances",
       "label": "Total balances",
       "occurrence": 1
@@ -78,5 +83,5 @@
       "occurrence": 1
     }
   ],
-  "notes": "The request named no fields. The four headline tiles of the Account Summary on page 1 were chosen (balances, payments, open and closed accounts): they are impersonal, they are the part of a credit report an underwriter reads first, and they tell one story. Each value is printed twice, in the tiles and again in the detail table beneath; occurrence 1 is the tile, and the tile boxes include the small label above each figure. Total accounts is printed only in the detail table and was left out so the overlay stays on the tiles. The consumer's identity block on the same page grounds cleanly but is stand-in data and is not featured. The credit score (766) cannot be featured: it is printed inside a chart, and its only range grounds to the chart's data-point labels (OFF). The first extraction returned total balances of 2842 and payments of 2066, recomputed from the collection accounts, against the printed $4,180 and $2,170 (which are right: they include the collection account); telling the schema to take the totals as printed fixed both. The same pass stopped the charged-off BP-VISA credit card being listed as a collection. preview_pages shows the summary, a typical tradeline page, the page with the charged-off account and the collections page."
+  "notes": "The request named no fields. The credit score and the four headline tiles of the Account Summary on page 1 were chosen (balances, payments, open and closed accounts): they are impersonal, they are the part of a credit report an underwriter reads first, and they tell one story. Each value is printed twice, in the tiles and again in the detail table beneath; occurrence 1 is the tile, and the tile boxes include the small label above each figure. Total accounts is printed only in the detail table and was left out so the overlay stays on the tiles. The consumer's identity block on the same page grounds cleanly but is stand-in data and is not featured. The credit score (766) is featured at the document owner's decision, although it grounds OFF: the score is drawn as a gauge graphic, the parse renders the chart as a small data table, and the extracted range points one cell off, at the Rating label. That table has no box of its own, so the highlight falls back to the whole chart figure (gauge, line chart and report date). 766 is plainly inside the box, but the box is far looser than the tiles' and build_images.py warns that the value is not in the boxed text. The first extraction returned total balances of 2842 and payments of 2066, recomputed from the collection accounts, against the printed $4,180 and $2,170 (which are right: they include the collection account); telling the schema to take the totals as printed fixed both. The same pass stopped the charged-off BP-VISA credit card being listed as a collection. preview_pages shows the summary, a typical tradeline page, the page with the charged-off account and the collections page."
 }
