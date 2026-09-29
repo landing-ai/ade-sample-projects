@@ -10,61 +10,80 @@
   ],
   "fields": [
     {
-      "path": "activity_summary.previous_balance",
-      "label": "Previous balance",
-      "value": 3005.93,
+      "path": "bank_name",
+      "label": "Institution",
+      "value": "CARSON BANK",
       "page": 1,
       "box": {
-        "xmin": 0.06784,
-        "ymin": 0.55799,
-        "xmax": 0.4869,
-        "ymax": 0.57437
+        "xmin": 0.06829,
+        "ymin": 0.0917,
+        "xmax": 0.48123,
+        "ymax": 0.11921
       },
       "range": {
-        "end": 683,
-        "start": 641
+        "end": 102,
+        "start": 91
       },
       "occurrence": 0,
       "matched": true,
-      "image": "activity_summary-previous_balance.png"
+      "image": "bank_name.png"
     },
     {
-      "path": "activity_summary.deposits_total",
-      "label": "Deposits and credits",
-      "value": 18041.5,
+      "path": "account_holder",
+      "label": "Account holder",
+      "value": "JOHN TEST",
       "page": 1,
       "box": {
-        "xmin": 0.06776,
-        "ymin": 0.57472,
-        "xmax": 0.48853,
-        "ymax": 0.59102
+        "xmin": 0.12714,
+        "ymin": 0.24127,
+        "xmax": 0.20847,
+        "ymax": 0.25276
       },
       "range": {
-        "end": 720,
-        "start": 685
+        "end": 225,
+        "start": 216
       },
       "occurrence": 0,
       "matched": true,
-      "image": "activity_summary-deposits_total.png"
+      "image": "account_holder.png"
     },
     {
-      "path": "activity_summary.withdrawals_total",
-      "label": "Checks and withdrawals",
-      "value": 14365.21,
+      "path": "account_number",
+      "label": "Account number",
+      "value": "6547",
       "page": 1,
       "box": {
-        "xmin": 0.06706,
-        "ymin": 0.59086,
-        "xmax": 0.48961,
-        "ymax": 0.60693
+        "xmin": 0.74063,
+        "ymin": 0.34571,
+        "xmax": 0.92616,
+        "ymax": 0.35959
       },
       "range": {
-        "end": 759,
-        "start": 722
+        "end": 323,
+        "start": 302
       },
       "occurrence": 0,
       "matched": true,
-      "image": "activity_summary-withdrawals_total.png"
+      "image": "account_number.png"
+    },
+    {
+      "path": "statement_date",
+      "label": "Statement date",
+      "value": "July 31, 20XX",
+      "page": 1,
+      "box": {
+        "xmin": 0.0701,
+        "ymin": 0.34498,
+        "xmax": 0.31311,
+        "ymax": 0.36041
+      },
+      "range": {
+        "end": 300,
+        "start": 271
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "statement_date.png"
     },
     {
       "path": "activity_summary.ending_balance",
@@ -84,25 +103,6 @@
       "occurrence": 0,
       "matched": true,
       "image": "activity_summary-ending_balance.png"
-    },
-    {
-      "path": "activity_summary.average_balance",
-      "label": "Average balance",
-      "value": 5032.2,
-      "page": 1,
-      "box": {
-        "xmin": 0.27209,
-        "ymin": 0.45922,
-        "xmax": 0.50132,
-        "ymax": 0.4739
-      },
-      "range": {
-        "end": 506,
-        "start": 497
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "activity_summary-average_balance.png"
     }
   ]
 }

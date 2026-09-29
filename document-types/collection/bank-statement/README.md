@@ -43,22 +43,24 @@ The collection's first **standard checking statement**:
   credit, each with its own account number and summary.
 - **Checks in a three-column list,** with asterisks marking breaks in the number sequence.
 
-## Featured fields: the account activity summary
+## Featured fields: what a lender verifies
 
-All on page 1. The request named no page or fields, so these were chosen:
+All on page 1. At the document owner's request, these are the fields a lender reads from a
+bank statement to verify an applicant's funds:
 
 | Field | Value |
 |---|---|
-| Previous balance | $3,005.93 |
-| Deposits and credits | $18,041.50 |
-| Checks and withdrawals | $14,365.21 |
+| Institution | CARSON BANK |
+| Account holder | JOHN TEST |
+| Account number | 6547 |
+| Statement date | July 31, 20XX |
 | Ending balance | $6,682.22 |
-| Average balance | $5,032.20 |
 
-The month on the account as one story, which reconciles: $3,005.93 plus $18,041.50 less
-$14,365.21 is $6,682.22. The four balance lines ground to their whole row of the summary
-table (label, date and amount), so each box spans the row; the average balance grounds to
-its value alone.
+Inflows and outflows are extracted but not featured; for lending, what matters is who
+holds the account, where, and what was in it on the statement date. The account holder
+is specimen data. The ending balance grounds to its whole row of the summary table
+(label, date and amount). The statement date is kept as printed, since the sample's year
+is "20XX".
 
 ## What it surfaced
 
@@ -73,6 +75,10 @@ catch every one of these.
 **The register extracts completely.** All 47 transactions match the page on date,
 description, amount and running balance, including across the page break and where
 descriptions wrap. All 8 checks come back, with both sequence breaks flagged.
+
+**The bank name is read from artwork.** The CARSON BANK wordmark is vector drawing
+with no text behind it, so a PDF text extractor finds nothing there. The parse reads the
+name off the drawing, and extraction grounds the institution to it.
 
 **The chart labels ground too.** The pie chart's "$18,041.50" and "$14,365.21" labels are
 the second occurrence of the deposits and withdrawals totals, so the values are found in
