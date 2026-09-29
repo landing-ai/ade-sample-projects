@@ -52,21 +52,32 @@ The collection's first **HELOC statement**:
   fixed-rate, two variable), with interest moving between them.
 - **Summaries that should agree with the detail,** and do not quite (see below).
 
-## Featured fields: the month's snapshot
+## Featured fields: what a lender verifies
 
-All on page 1. The request named no page or fields, so these were chosen:
+All on page 1. At the document owner's request, these are the fields a lender reads from
+a HELOC statement:
 
 | Field | Value |
 |---|---|
-| Borrowings at start of month | $155,268.51 |
-| Money in | $5,089.78 |
-| Money out | $3,967.76 |
-| Borrowings at end of month | $154,146.49 |
-| Reduction in borrowings | $1,122.02 |
+| Institution | Manulife Bank |
+| Maximum borrowing limit | $240,000.00 |
+| Available credit | $85,853.51 |
+| Statement date | 2023-05-01 |
+| Outstanding balance | $154,146.49 |
 
-The month's movement on the account, as one story that reconciles: $155,268.51 plus
-$3,967.76 out, less $5,089.78 in, is $154,146.49, a reduction of $1,122.02. Every value
-sits in its own ruled table cell, and every box lands on it.
+The outstanding balance is the total borrowings at the end of the month, across the main
+account and all three sub-accounts. All five were already in the schema, so extraction
+was not re-run.
+
+**The statement date is flagged, and correct.** It is extracted as the ISO date
+2023-05-01 and grounds to the printed "Prepared on May 1, 2023", so `build_images.py`
+warns that the value is not in the boxed text. It is the same date in another format; the
+crop was checked by eye. The borrowing limit and available credit boxes are taller than
+their values because those table cells carry extra space above the text.
+
+An earlier version featured the snapshot's movement for the month instead, which
+reconciles: $155,268.51 plus $3,967.76 out, less $5,089.78 in, is $154,146.49, a
+reduction of $1,122.02.
 
 ## What it surfaced
 

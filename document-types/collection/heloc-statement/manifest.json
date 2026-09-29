@@ -17,30 +17,30 @@
   "feature_page": 1,
   "fields": [
     {
-      "path": "snapshot.opening_total_borrowings",
-      "label": "Borrowings at start of month",
+      "path": "bank_name",
+      "label": "Institution",
       "occurrence": 0
     },
     {
-      "path": "snapshot.money_in",
-      "label": "Money in",
+      "path": "snapshot.borrowing_limit",
+      "label": "Maximum borrowing limit",
       "occurrence": 0
     },
     {
-      "path": "snapshot.money_out",
-      "label": "Money out",
+      "path": "snapshot.available_limit",
+      "label": "Available credit",
+      "occurrence": 0
+    },
+    {
+      "path": "statement_date",
+      "label": "Statement date",
       "occurrence": 0
     },
     {
       "path": "snapshot.closing_total_borrowings",
-      "label": "Borrowings at end of month",
-      "occurrence": 0
-    },
-    {
-      "path": "snapshot.reduction_in_borrowings",
-      "label": "Reduction in borrowings",
+      "label": "Outstanding balance",
       "occurrence": 0
     }
   ],
-  "notes": "Title is 'HELOC Statement', with HELOC capitalized, at the document owner's request. First built as the bank-statement sample; the document owner moved it here because Manulife One is not a standard bank statement but an all-in-one account secured on the borrower's home: a revolving home-equity line of credit (the $240,000 borrowing limit) combined with fixed- and variable-rate mortgage sub-accounts and everyday banking. The PDF's own metadata calls it a sample mortgage statement; for a US audience HELOC is the closer description, since it has no payment coupon or principal, interest and escrow split. The parse and extraction were not re-run for the move. The request named no page or fields. The page 1 snapshot was chosen because it tells one story, the month's movement on the account, and it reconciles: 155,268.51 + 3,967.76 out \u2212 5,089.78 in = 154,146.49, a reduction of 1,122.02. This is an all-in-one mortgage account, so the running balance is borrowings and money in reduces it. The sample itself does not fully add up elsewhere: three of the 30 April rows in the main account's running balance differ from the arithmetic by a few dollars, and the four accounts' closing balances on pages 2 and 3 sum to 153,739.85, 406.64 less than the snapshot's 154,146.49. Extraction returns every figure as printed. statement_date and statement_period read OFF only because they are normalized (2023-05-01, 2023-04) from the printed 'Prepared on May 1, 2023' and 'Statement for April 2023'. account_holders includes the mailing panel's 'Client name' as well as the two borrowers."
+  "notes": "Title is 'HELOC Statement', with HELOC capitalized, at the document owner's request. First built as the bank-statement sample; the document owner moved it here because Manulife One is not a standard bank statement but an all-in-one account secured on the borrower's home: a revolving home-equity line of credit (the $240,000 borrowing limit) combined with fixed- and variable-rate mortgage sub-accounts and everyday banking. The PDF's own metadata calls it a sample mortgage statement; for a US audience HELOC is the closer description, since it has no payment coupon or principal, interest and escrow split. The parse and extraction were not re-run for the move. The request named no page or fields. At the document owner's request the featured fields are the ones a lender reads from a HELOC statement: the institution, the maximum borrowing limit, the available credit, the statement date and the outstanding balance (total borrowings at the end of the month). They were already in the schema, so extraction was not re-run. statement_date is featured although inspect_fields.py marks it OFF: it is extracted as the ISO date 2023-05-01 and grounds to the printed 'Prepared on May 1, 2023', the same date in another format; the crop was checked by eye. An earlier version featured the snapshot's movement for the month (borrowings at start and end, money in, money out and the reduction), which reconciles: 155,268.51 + 3,967.76 out - 5,089.78 in = 154,146.49. This is an all-in-one mortgage account, so the running balance is borrowings and money in reduces it. The sample itself does not fully add up elsewhere: three of the 30 April rows in the main account's running balance differ from the arithmetic by a few dollars, and the four accounts' closing balances on pages 2 and 3 sum to 153,739.85, 406.64 less than the snapshot's 154,146.49. Extraction returns every figure as printed. statement_period reads OFF for the same reason as statement_date, normalized to 2023-04 from 'Statement for April 2023'. account_holders includes the mailing panel's 'Client name' as well as the two borrowers."
 }
