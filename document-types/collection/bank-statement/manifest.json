@@ -1,0 +1,46 @@
+{
+  "slug": "bank-statement",
+  "title": "Bank Statement",
+  "source": {
+    "file": "carson-bank-sample-statement.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.carsonbank.com/wp-content/uploads/2021/01/Sample-Statement.pdf",
+      "publisher": "Carson Bank",
+      "title": "Sample Statement (TRUE CHECKING)",
+      "retrieved": "2026-09-29",
+      "clearance": "public",
+      "clearance_note": "Carson Bank's own sample checking statement, published on its website. The account holder and address are specimen data ('JOHN TEST', '123 TEST', 'YOUR CITY, KS'), the statement date is printed 'July 31, 20XX' and the account numbers are four-digit placeholders. The transactions name a retailer, C&J Clark, and a store number; that is an organization, not a person. No redaction was needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "bank_name",
+      "label": "Institution",
+      "occurrence": 0
+    },
+    {
+      "path": "account_holder",
+      "label": "Account holder",
+      "occurrence": 0
+    },
+    {
+      "path": "account_number",
+      "label": "Account number",
+      "occurrence": 0
+    },
+    {
+      "path": "statement_date",
+      "label": "Statement date",
+      "occurrence": 0
+    },
+    {
+      "path": "activity_summary.ending_balance",
+      "label": "Ending balance",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no page or fields. At the document owner's request the featured fields are the ones a lender reads from a bank statement to verify an applicant's funds: the institution, account holder, account number, statement date and ending balance. Inflows and outflows are extracted but not featured. The account holder is specimen data. The ending balance grounds to its whole summary row (label, date and amount). The institution grounds to the CARSON BANK wordmark, which is vector artwork with no text layer: the parse read the name off the drawing. This replaces a first build from Manulife Bank's Manulife One sample, which is a home-equity line of credit rather than a standard bank statement and now lives at heloc-statement. The sample does not agree with itself, and extraction returns every figure as printed: the summary's previous and ending balances are 3,005.93 and 6,682.22, while the transaction register runs from 445.28 to 942.82 (its own running balance is internally consistent), the page 3 daily balance summary follows neither, and the summary's 6.00 service charge differs from the register's 10.00 service charge and 3.00 paper statement charge. The deposits and withdrawals totals are printed a second time as the pie chart's labels, and occurrence 1 grounds there. The period start and end dates read OFF only because they are normalized to ISO dates; the statement date is kept as printed, 'July 31, 20XX'."
+}

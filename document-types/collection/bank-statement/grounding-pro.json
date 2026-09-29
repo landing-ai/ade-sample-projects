@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "bank_name",
+      "label": "Institution",
+      "value": "CARSON BANK",
+      "page": 1,
+      "box": {
+        "xmin": 0.06829,
+        "ymin": 0.0917,
+        "xmax": 0.48123,
+        "ymax": 0.11921
+      },
+      "range": {
+        "end": 102,
+        "start": 91
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bank_name.png"
+    },
+    {
+      "path": "account_holder",
+      "label": "Account holder",
+      "value": "JOHN TEST",
+      "page": 1,
+      "box": {
+        "xmin": 0.12714,
+        "ymin": 0.24127,
+        "xmax": 0.20847,
+        "ymax": 0.25276
+      },
+      "range": {
+        "end": 225,
+        "start": 216
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_holder.png"
+    },
+    {
+      "path": "account_number",
+      "label": "Account number",
+      "value": "6547",
+      "page": 1,
+      "box": {
+        "xmin": 0.74063,
+        "ymin": 0.34571,
+        "xmax": 0.92616,
+        "ymax": 0.35959
+      },
+      "range": {
+        "end": 323,
+        "start": 302
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_number.png"
+    },
+    {
+      "path": "statement_date",
+      "label": "Statement date",
+      "value": "July 31, 20XX",
+      "page": 1,
+      "box": {
+        "xmin": 0.0701,
+        "ymin": 0.34498,
+        "xmax": 0.31311,
+        "ymax": 0.36041
+      },
+      "range": {
+        "end": 300,
+        "start": 271
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "statement_date.png"
+    },
+    {
+      "path": "activity_summary.ending_balance",
+      "label": "Ending balance",
+      "value": 6682.22,
+      "page": 1,
+      "box": {
+        "xmin": 0.06573,
+        "ymin": 0.607,
+        "xmax": 0.48846,
+        "ymax": 0.62367
+      },
+      "range": {
+        "end": 801,
+        "start": 761
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "activity_summary-ending_balance.png"
+    }
+  ]
+}
