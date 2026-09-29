@@ -93,8 +93,8 @@ as not matching their boxed text, though they are right.
 ## Extraction
 
 **26 leaf fields**, written when this was the bank-statement sample and unchanged: the
-bank, product and account, the statement date and period, the account holders, the eight-
-value snapshot, the main account's transactions, the sub-accounts and the interest
+bank, product and account, the statement date and period, the account holders, the
+eight-value snapshot, the main account's transactions, the sub-accounts and the interest
 totals. Everything extracts correctly apart from the two small misses above.
 
 ## Cost
