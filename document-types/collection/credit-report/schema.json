@@ -1,0 +1,244 @@
+{
+  "type": "object",
+  "title": "Consumer credit report",
+  "properties": {
+    "report_date": {
+      "type": "string",
+      "description": "Report Date printed at the top of the report, as YYYY-MM-DD."
+    },
+    "credit_bureau": {
+      "type": "string",
+      "description": "Credit bureau whose data the report is based on, e.g. TransUnion."
+    },
+    "credit_score": {
+      "type": "object",
+      "description": "The headline credit score.",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "description": "The credit score value."
+        },
+        "scoring_model": {
+          "type": "string",
+          "description": "Scoring model and version, e.g. VantageScore 3.0."
+        },
+        "rating": {
+          "type": "string",
+          "description": "Rating band printed with the score, e.g. GREAT."
+        },
+        "range_min": {
+          "type": "integer",
+          "description": "Lowest possible score on the scale."
+        },
+        "range_max": {
+          "type": "integer",
+          "description": "Highest possible score on the scale."
+        }
+      }
+    },
+    "consumer": {
+      "type": "object",
+      "description": "Identifying information about the person the report covers.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Reported name."
+        },
+        "date_of_birth": {
+          "type": "string",
+          "description": "Date of birth as YYYY-MM-DD."
+        },
+        "ssn": {
+          "type": "string",
+          "description": "Social Security number as printed."
+        },
+        "employment": {
+          "type": "string",
+          "description": "Employment information as printed."
+        },
+        "addresses": {
+          "type": "array",
+          "description": "Every reported address, in the order printed.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string",
+                "description": "Full address as printed."
+              },
+              "date_reported": {
+                "type": "string",
+                "description": "Date the address was reported, as YYYY-MM-DD. Empty string if none is printed."
+              }
+            }
+          }
+        }
+      }
+    },
+    "account_summary": {
+      "type": "object",
+      "description": "The Account Summary totals, exactly as printed on the report. Do not compute or correct them.",
+      "properties": {
+        "total_balances": {
+          "type": "number",
+          "description": "Balances total as printed in the Account Summary, in dollars."
+        },
+        "total_monthly_payments": {
+          "type": "number",
+          "description": "Payments total as printed in the Account Summary, in dollars."
+        },
+        "total_accounts": {
+          "type": "integer",
+          "description": "Total number of accounts."
+        },
+        "open_accounts": {
+          "type": "integer",
+          "description": "Number of open accounts."
+        },
+        "closed_accounts": {
+          "type": "integer",
+          "description": "Number of closed accounts."
+        },
+        "delinquent_accounts": {
+          "type": "integer",
+          "description": "Number of delinquent accounts."
+        },
+        "derogatory_accounts": {
+          "type": "integer",
+          "description": "Number of derogatory accounts."
+        },
+        "collections": {
+          "type": "integer",
+          "description": "Number of collection accounts."
+        },
+        "public_records": {
+          "type": "integer",
+          "description": "Number of public records."
+        },
+        "inquiries_2_years": {
+          "type": "integer",
+          "description": "Number of inquiries in the last two years."
+        }
+      }
+    },
+    "accounts": {
+      "type": "array",
+      "description": "Every credit account (tradeline) in the report, excluding collections.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "creditor": {
+            "type": "string",
+            "description": "Creditor name as printed."
+          },
+          "account_number": {
+            "type": "string",
+            "description": "Account number as printed."
+          },
+          "account_type": {
+            "type": "string",
+            "description": "Account type, e.g. Credit Card or Charge Account."
+          },
+          "account_status": {
+            "type": "string",
+            "description": "Account status, e.g. Open, Closed or Charge Off."
+          },
+          "responsibility": {
+            "type": "string",
+            "description": "Responsibility, e.g. Individual."
+          },
+          "open_date": {
+            "type": "string",
+            "description": "Date opened, as YYYY-MM-DD."
+          },
+          "last_activity": {
+            "type": "string",
+            "description": "Date of last activity, as YYYY-MM-DD."
+          },
+          "balance": {
+            "type": "number",
+            "description": "Current balance, in dollars."
+          },
+          "credit_limit": {
+            "type": "number",
+            "description": "Credit limit, in dollars."
+          },
+          "high_balance": {
+            "type": "number",
+            "description": "Highest balance, in dollars."
+          },
+          "monthly_payment": {
+            "type": "number",
+            "description": "Monthly payment amount, in dollars."
+          },
+          "amount_past_due": {
+            "type": "number",
+            "description": "Amount past due, in dollars."
+          },
+          "payment_status": {
+            "type": "string",
+            "description": "Current payment status, e.g. As Agreed."
+          },
+          "times_late_30_60_90": {
+            "type": "string",
+            "description": "Times 30/60/90 days late, as printed, e.g. 0/0/0."
+          },
+          "remarks": {
+            "type": "string",
+            "description": "Remarks as printed. Empty string if none."
+          }
+        }
+      }
+    },
+    "collections": {
+      "type": "array",
+      "description": "Every account listed in the Collections section, handled by a collection agency. Charged-off credit accounts listed among the regular accounts are not collections.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "collection_agency": {
+            "type": "string",
+            "description": "Collection agency name."
+          },
+          "original_creditor": {
+            "type": "string",
+            "description": "Original creditor."
+          },
+          "date_opened": {
+            "type": "string",
+            "description": "Date opened, as YYYY-MM-DD."
+          },
+          "unpaid_balance": {
+            "type": "number",
+            "description": "Unpaid balance, in dollars."
+          },
+          "status": {
+            "type": "string",
+            "description": "Status as printed."
+          }
+        }
+      }
+    },
+    "hard_inquiries": {
+      "type": "array",
+      "description": "Every hard inquiry.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "creditor": {
+            "type": "string",
+            "description": "Inquiring creditor."
+          },
+          "industry": {
+            "type": "string",
+            "description": "Industry of the inquirer, e.g. Finance."
+          },
+          "date": {
+            "type": "string",
+            "description": "Date of the inquiry, as YYYY-MM-DD."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 8,
+  "preview_pages": [
+    1,
+    2,
+    5,
+    8
+  ],
+  "fields": [
+    {
+      "path": "credit_score.score",
+      "label": "Credit score",
+      "value": 766,
+      "page": 1,
+      "box": {
+        "xmin": 0.14594,
+        "ymin": 0.07075,
+        "xmax": 0.8917,
+        "ymax": 0.23227
+      },
+      "range": {
+        "end": 761,
+        "start": 755
+      },
+      "occurrence": 0,
+      "matched": false,
+      "image": "credit_score-score.png"
+    },
+    {
+      "path": "account_summary.total_balances",
+      "label": "Total balances",
+      "value": 4180,
+      "page": 1,
+      "box": {
+        "xmin": 0.11363,
+        "ymin": 0.56545,
+        "xmax": 0.19316,
+        "ymax": 0.58522
+      },
+      "range": {
+        "end": 1834,
+        "start": 1827
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "account_summary-total_balances.png"
+    },
+    {
+      "path": "account_summary.total_monthly_payments",
+      "label": "Monthly payments",
+      "value": 2170,
+      "page": 1,
+      "box": {
+        "xmin": 0.33613,
+        "ymin": 0.565,
+        "xmax": 0.41557,
+        "ymax": 0.58528
+      },
+      "range": {
+        "end": 1851,
+        "start": 1845
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "account_summary-total_monthly_payments.png"
+    },
+    {
+      "path": "account_summary.open_accounts",
+      "label": "Open accounts",
+      "value": 8,
+      "page": 1,
+      "box": {
+        "xmin": 0.5407,
+        "ymin": 0.54932,
+        "xmax": 0.61957,
+        "ymax": 0.58377
+      },
+      "range": {
+        "end": 1870,
+        "start": 1853
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "account_summary-open_accounts.png"
+    },
+    {
+      "path": "account_summary.closed_accounts",
+      "label": "Closed accounts",
+      "value": 4,
+      "page": 1,
+      "box": {
+        "xmin": 0.74542,
+        "ymin": 0.54923,
+        "xmax": 0.83178,
+        "ymax": 0.58401
+      },
+      "range": {
+        "end": 1890,
+        "start": 1871
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "account_summary-closed_accounts.png"
+    }
+  ]
+}
