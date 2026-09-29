@@ -110,6 +110,15 @@ def main() -> None:
     for page in doc:
         spans = [s for b in page.get_text("dict")["blocks"]
                  for l in b.get("lines", []) for s in l["spans"]]
+        # A filled form types each value over a line of underscores, and the two overlap
+        # completely, so redacting the value also takes the underscores beneath it: a
+        # lease came back with gaps in the fill lines under the tenant and the address.
+        # Remember every underscore now, and put back the ones a redaction removed.
+        underscores = [(pymupdf.Rect(c["bbox"]), c["origin"], s["size"], s["color"])
+                       for b in page.get_text("rawdict")["blocks"]
+                       for l in b.get("lines", []) for s in l["spans"]
+                       for c in s["chars"] if c["c"] == "_"]
+        redacted: list[pymupdf.Rect] = []
         pending: list[tuple[pymupdf.Point, str, str, float]] = []
         for original, replacement in rules.items():
             for rect in _merge_line_rects(page.search_for(original)):
@@ -131,22 +140,37 @@ def main() -> None:
                     size = max(size, 3.0)
                     pending.append((pymupdf.Point(rect.x0, baseline), replacement,
                                     font, round(size, 1)))
-                rect.y0 += TOP_INSET_PT
-                rect.y1 -= BOTTOM_INSET_PT
-                # The insets alone are not enough on tightly set lines. apply_redactions
-                # removes every character whose bbox touches the rect, and a character's
-                # bbox is the font's full ascender-to-descender height, so on an
-                # employment certificate the characters of the line below overlapped the
-                # name's rect and "2017 and is currently designa" was erased. Removal is
-                # by overlap, so a band through the middle of the letters still takes
-                # every character of the match while staying clear of neighbouring lines.
+                # apply_redactions removes every character whose bbox touches the rect,
+                # and a character's bbox is the font's full ascender-to-descender height,
+                # so on an employment certificate the characters of the line below
+                # overlapped the name's rect and "2017 and is currently designa" was
+                # erased. Removal is by overlap, so when the span is known a band through
+                # the middle of the letters takes every character of the match while
+                # staying clear of neighbouring lines. The band replaces the fixed insets
+                # rather than following them: on a lease's 2pt "Prepared by" line the
+                # insets alone emptied the rect, and the agent's name survived.
                 if span:
-                    rect.y0 = max(rect.y0, baseline - span["size"] * 0.6)
-                    rect.y1 = min(rect.y1, baseline - span["size"] * 0.1)
+                    rect.y0 = baseline - span["size"] * 0.6
+                    rect.y1 = baseline - span["size"] * 0.1
+                else:
+                    rect.y0 += TOP_INSET_PT
+                    rect.y1 -= BOTTOM_INSET_PT
                 page.add_redact_annot(rect, fill=FILL)
+                redacted.append(pymupdf.Rect(rect))
                 per_rule[original] = per_rule.get(original, 0) + 1
                 total += 1
         page.apply_redactions()
+        # Only the ones actually removed: some touch a rect and survive, and drawing
+        # those again left a stray raised underscore beside the tenant's name.
+        survivors = {(round(c["origin"][0], 1), round(c["origin"][1], 1))
+                     for b in page.get_text("rawdict")["blocks"]
+                     for l in b.get("lines", []) for s in l["spans"]
+                     for c in s["chars"] if c["c"] == "_"}
+        for bbox, origin, size, color in underscores:
+            gone = (round(origin[0], 1), round(origin[1], 1)) not in survivors
+            if gone and any(bbox.intersects(r) for r in redacted):
+                rgb = tuple(((color >> shift) & 0xFF) / 255 for shift in (16, 8, 0))
+                page.insert_text(origin, "_", fontname=FONT, fontsize=size, color=rgb)
         # Written after the redaction, not as the annotation's text, so the replacement
         # sits on the original baseline at the original size instead of being fitted
         # into the trimmed rect.
