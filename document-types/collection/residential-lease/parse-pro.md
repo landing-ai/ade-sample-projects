@@ -1,35 +1,27 @@
-Alex Q Sample
-
-
 Residential Lease/Rental Agreement
+Page 1 of 6
 CENTURY 21
 Prestige Realty
-
 [REALTOR LOGO]
-REALTOR®
+REALTOR
 [EQUAL HOUSING OPPORTUNITY LOGO]
 Copyright
 2023
 Arkansas
 REALTORS®
 Association
-Page 1 of 6
 
 
-Form Serial Number: 511613-318086-5101236 
-This Residential Lease/Rental Agreement is made this (month) November (day) 17 (year) 2023 
-between Owner by and through its authorized agent, Century 21 Prestige Realty 
-(hereinafter called "Management") and Jane Q Sample 
-(hereinafter called "Tenant"). 
+Form Serial Number: 004747-900170-0246857 This Residential Lease/Rental Agreement is made this (month) November (day) 17 (year) 2023 between Owner by and through its authorized agent, Century 21 Prestige Realty (hereinafter called "Management") and Jane Q Sample (hereinafter called "Tenant").
 
-1. TERM AND DESCRIPTION: Owner/Management hereby leases to Tenant, based on Tenant's representation, Unit Number ___ in the Property known as  located at 100 Main Street Studio Anytown AR 00000 
-[x] for the term of 12 Months 
-commencing on (month) November (day) 17 , (year) 2023 , 
-and ending on (month) November (day) 30 , (year) 2024 , or 
-[ ] on a periodic month-to-month basis, beginning on (month) ___ (day) ___ , (year) ___ , 
-and cancelable by Tenant or Owner/Management upon thirty (30)-day written notice from rental due date. 
+1. TERM AND DESCRIPTION: Owner/Management hereby leases to Tenant, based on Tenant's  representation, Unit Number in the Property known as  located at 909 Shall Court Studio Jacksonville AR 72076  
+ [x] for the term of 12 Months  
+ commencing on (month) November (day) 17 , (year) 2023 ,  
+ and ending on (month) November (day) 30 , (year) 2024 , or  
+ [ ] on a periodic month-to-month basis, beginning on (month) (day) (year) ,  
+ and cancelable by Tenant or Owner/Management upon thirty (30)-day written notice from rental due date. 
 
-2. RENT: Tenant is taking possession of the Property on (month) November (day) 17, (year) 2023 . Thereafter rent in equal monthly amounts in the amount of $800.00  is due and payable in advance without deduction or demand on the 1st  calendar day of each month. Tenant agrees to pay the rent promptly when due and further agrees to pay a late charge in the amount of $50.00  for rental installments or partial installments paid after the 5th  calendar day of each month. In the event of an insufficient funds, Tenant agrees to pay a service fee of $35.00 . Tenant also understands that the late charge will apply to insufficient funds not replaced prior to the fifth calendar day after due date.  All monies paid to Management will be applied to monies owed by tenant first, any monies left will be applied to the current monies owed.  This to include but not limited to security deposits, late fees, damages and rent unless other arrangements are in writing stating differently.  Rent and rent installments and other charges as they may apply are to be paid at Management's office or at such place as Management by written notice may designate. 
+2. RENT: Tenant is taking possession of the Property on (month) November (day) 17 , (year) 2023 . Thereafter rent in equal monthly amounts in the amount of $800.00 is due and payable in advance without  deduction or demand on the 1st calendar day of each month. Tenant agrees to pay the rent promptly  when due and further agrees to pay a late charge in the amount of $50.00 for rental installments or partial  installments paid after the 5th calendar day of each month. In the event of an insufficient funds, Tenant agrees  to pay a service fee of $35.00 . Tenant also understands that the late charge will apply to insufficient funds not  replaced prior to the fifth calendar day after due date. All monies paid to Management will be applied to monies owed  by tenant first, any monies left will be applied to the current monies owed. This to include but not limited to security  deposits, late fees, damages and rent unless other arrangements are in writing stating differently. Rent and rent  installments and other charges as they may apply are to be paid at Management's office or at such place as  Management by written notice may designate. 
 
 **3. SECURITY DEPOSIT:** Management, on behalf of Owner, acknowledges receipt from Tenant the amount of
 $700.00 as Security Deposit, which Tenant acknowledges does not exceed two months' rent. The
@@ -63,29 +55,27 @@ in as good condition as when received, reasonable wear excepted.
 Page 1 of 6
 
 
-Serial#: 511613-318086-5101236
+Serial#: 004747-900170-0246857
 
 
-ample.com | 5015550142
-
-
-[DOCUMENT_ICON]
+📄
 Form
 Simplicity
 
 
-epared by: Alex Q Sample | CENTURY 21 PRESTIGE REALTY | agent@example
+[ILLEGIBLE_TEXT]
+Prepared by: Marlena Johnson | CENTURY 21 PRESTIGE REALTY
+marlenafjohnson@gmail.com | 5018136518
 
 
-Electronically Signed using eSignOnline™ | Session ID : 036c330d-1e06-4896-b9c0-05f6e7b7d3fe
-
-
-Pr
+Electronically Signed using eSignOnline™ [ Session ID : 8c32ef06-185f-4550-8e43-f1b759c74078 ]
 
 
 <!-- PAGE BREAK -->
 
-Residential Lease/Rental Agreement
+# Residential Lease/Rental Agreement
+
+Page 2 of 6
 
 
 [REALTOR LOGO]
@@ -100,21 +90,17 @@ REALTORS®
 Association
 
 
-Page 2 of 6
-
-
-**Form Serial Number:** 511613-318086-5101236
+Form Serial Number: 004747-900170-0246857
 5. USE: Tenant, Tenant's family and guests agree to use the Property lawfully, complying with ordinances and laws
 of the municipality, or other governmental entity having jurisdiction over the Property. Tenant or Tenant's guests
 will not at any time do any act or thing to cause a disturbance, interfere with the rights and quiet enjoyment of other
 Tenants, interfere with Management in the operation and maintenance of the Property and any improvements on or
 about the Property, or use the Property for purposes or in a manner deemed hazardous by Owner's insurance
 representatives. Tenant agrees to keep the Property clean, sanitary and in compliance with applicable health laws
-and ordinances. Tenant agrees that the Property will be occupied only by the 7 persons identified in the
+and ordinances. Tenant agrees that the Property will be occupied only by the 1 persons identified in the
 application, which is incorporated herein by reference, unless guests staying in the Property over 14 days are
 registered, in advance, with Management. Further, Tenant agrees not to assign this Residential Lease/Rental
 Agreement, sublet the Property or permit use of the Property for any purpose other than a private dwelling.
-
 
 **6. NUISANCE:** Tenant acknowledges that should any nuisance abatement or similar proceeding be commenced or
 threatened against Tenant, Owner, Management, or the Property by any municipal, county, state or federal nuisance
@@ -131,11 +117,11 @@ Management prompt notice of defects in, or accidents to, the water pipes, electr
 apparatus, or any other part of the Property in order that the same may be repaired with due diligence.
 
 
-8. MAINTENANCE: The ___ owner ___ agrees to maintain the Property in good repair and condition,
+8. MAINTENANCE: The **owner** agrees to maintain the Property in good repair and condition,
 including but not limited to the cost of maintenance of the plumbing lines and fixtures, electrical panel, wiring and fixtures,
-appliances, heating, ventilation and air conditioning systems and ________________________________________________
-________________________. The ___ owner ___ agrees to maintain and pay cost of lawn care and
-landscaping. The ___ owner ___ agrees to pay all Property taxes and Property insurance, as well as maintain the
+appliances, heating, ventilation and air conditioning systems and ___
+. The **owner** agrees to maintain and pay cost of lawn care and
+landscaping. The **owner** agrees to pay all Property taxes and Property insurance, as well as maintain the
 exterior of the Property, the roof, the foundation and the structural stability of the Property. Unless set forth herein, neither
 Management nor the Owner of the Property shall have any responsibility to repair or maintain any portion of the Property,
 such being the sole responsibility of Tenant. In addition, Tenant is solely responsible for the conduct and safety of all
@@ -145,15 +131,8 @@ indemnify Management for any causes of action arising out of this lease, related
 regarding damage or injury to persons or property.
 
 
-9. UTILITIES: The **Owner** shall furnish the utilities checked: 
- [ ] None
- [x] Water
- [ ] Propane 
- [x] Natural Gas
- [x] Electricity
- [x] Trash Collection
- [x] Pest Control
- [ ] Other ___ 
+9. UTILITIES: The Owner shall furnish the utilities checked: [ ] None [x] Water [ ] Propane 
+[x] Natural Gas [x] Electricity [x] Trash Collection [x] Pest Control [ ] Other . 
 If Owner agrees to furnish the utilities indicated, then Owner will furnish the utilities at reasonable times in reasonable amounts but shall not be responsible for failure to furnish such utilities if the failure is beyond Owner's control. 
 Tenant agrees to exercise reasonable prudence in consuming utilities and to comply with explicit instructions given by Management and any governing body in regard to utilities conservation and the protection of Management's and Owner's equipment. 
 
@@ -172,27 +151,19 @@ request of Tenant.
 Page 2 of 6
 
 
-Serial#: 511613-318086-5101236
+Serial#: 004747-900170-0246857
 
 
-example.com | 5015550142
-
-
-CENTURY 21 PRESTIGE REALTY | agent@example.com
-
-
-Electronically Signed using eSignOnline™ | Session ID : 036c330d-1e06-4896-b
-
-
-[DOCUMENT_ICON]
+📄
 Form
 Simplicity
 
 
-Prepared by: Alex Q Sample
+Prepared by: Marlena Johnson | CENTURY 21 PRESTIGE REALTY | marlenafjohnson@gmail.com | 5018136518
 
 
-9c0-05f6e7b7d3fe
+
+Electronically Signed using eSignOnline™ | Session ID : 8c32ef06-185f-4550-8e43-f1b759c74078 |
 
 
 <!-- PAGE BREAK -->
@@ -214,7 +185,7 @@ REALTORS®
 Association
 
 
-Form Serial Number: 511613-318086-5101236 
+Form Serial Number: 004747-900170-0246857 
 12. LOCKS AND KEYS: Should Tenant change the locks or locking devices, Tenant agrees to provide 
 Management with the key(s) to such locks or devices and further to leave said locks or devices with Management 
 at the termination of this tenancy. Tenant recognizes the right of Owner and Management to recover all 
@@ -276,10 +247,7 @@ month and Management's intent by acceptance of the rent due.
 Page 3 of 6
 
 
-Serial#: 511613-318086-5101236
-
-
-| 5015550142
+Serial#: 004747-900170-0246857
 
 
 📄
@@ -287,10 +255,11 @@ Form
 Simplicity
 
 
-Electronically Signed using eSignOnline™ | Session ID : 036c330d-1e06-4896-b9c0-05f6e7b7d3fe
+Serial#: 004747-900170-0246857
+Prepared by: Marlena Johnson | CENTURY 21 PRESTIGE REALTY | marlenafjohnson@gmail.com | 5018136518
 
 
-Prepared by: Alex Q Sample | CENTURY 21 PRESTIGE REALTY | agent@example.com
+Electronically Signed using eSignOnline™ [ Session ID : 8c32ef06-185f-4550-8e43-f1b759c74078 ]
 
 
 <!-- PAGE BREAK -->
@@ -300,9 +269,9 @@ Prepared by: Alex Q Sample | CENTURY 21 PRESTIGE REALTY | agent@example.com
 Page 4 of 6
 
 
-[REALTOR LOGO]
+[REALTOR logo]
 REALTOR®
-[EQUAL HOUSING OPPORTUNITY LOGO]
+[Equal Housing Opportunity logo]
 EQUAL HOUSING
 OPPORTUNITY
 Copyright
@@ -312,7 +281,7 @@ REALTORS®
 Association
 
 
-Form Serial Number: 511613-318086-5101236 
+Form Serial Number: 004747-900170-0246857 
  19. SALE OF PROPERTY: This Property is listed for sale 
  [ ] NO 
  [x] YES  
@@ -332,7 +301,7 @@ Tenant, Owner and Management agree that Owner and Management must comply with al
 laws while performing this Residential Lease/Rental Agreement.
 
 
-21. DEFAULT AND TERMINATION: Tenant's failure to comply with the provisions and conditions of this
+**21. DEFAULT AND TERMINATION:** Tenant's failure to comply with the provisions and conditions of this
 Residential Lease/Rental Agreement, or to comply within reasonable time after Management's request for
 compliance, shall constitute Tenant's default of this Residential Lease/Rental Agreement. In the event of such
 default, Management may terminate this Residential Lease/Rental Agreement during the term for good cause by
@@ -379,21 +348,19 @@ comply with all rules and policies as now exist or as may be promulgated by Mana
 Page 4 of 6
 
 
-Serial#: 511613-318086-5101236
+Serial#: 004747-900170-0246857
 
 
-| 5015550142
-
-
-[📄]
+📄
 Form
 Simplicity
 
 
-Electronically Signed using eSignOnline™ | Session ID : 036c330d-1e06-4896-b9c0-05f6e7b7d3fe |
+Serial#: 004747-900170-0240857
+Prepared by: Marlena Johnson | CENTURY 21 PRESTIGE REALTY | marlenafjohnson@gmail.com | 5018136518
 
 
-Prepared by: Alex Q Sample | CENTURY 21 PRESTIGE REALTY | agent@example.com
+Electronically Signed using eSignOnline™ [ Session ID : 8c32ef06-185f-4550-8e43-f1b759c74078 ]
 
 
 <!-- PAGE BREAK -->
@@ -415,23 +382,26 @@ REALTORS®
 Association
 
 
-**Form Serial Number:** 511613-318086-5101236
-26. **SPECIAL CONDITIONS:** Amending #2, late fee of $50 will be charged on the 6th and $8 per
-day beginning on the 7th until account is paid in full. A $10 charge will be added to the
-account for any notices posted. Effective 01/01/2024 rent will increase to $825.
+**Form Serial Number:** 004747-900170-0246857
+26. **SPECIAL CONDITIONS:** *Amending #2, late fee of $50 will be charged on the 6th and $8 per*
+*day beginning on the 7th until account is paid in full. A $10 charge will be added to the*
+*account for any notices posted. Effective 01/01/2024 rent will increase to $825.*
 27. **GOVERNING LAW:** This Residential Lease/Rental Agreement shall be governed by the laws of the State of
 Arkansas.
-28. **SEVERABILITY:** The invalidity or unenforceability of any provisions of this Residential Lease/Rental
+
+
+**28. SEVERABILITY:** The invalidity or unenforceability of any provisions of this Residential Lease/Rental
 Agreement shall not affect the validity or enforceability of any other provision of this Residential Lease/Rental
 Agreement, which shall remain in full force and effect
-29. **MERGER CLAUSE:** This Residential Lease/Rental Agreement, when executed by both Owner (or
+
+
+**29. MERGER CLAUSE:** This Residential Lease/Rental Agreement, when executed by both Owner (or
 Management) and Tenant, shall contain the entire understanding and agreement between Owner (or Management)
 and Tenant with respect to all matters referred to herein and shall supersede all prior or contemporaneous
 agreements, representations, discussions and understandings, oral or written, with respect to such matters. This
 Residential Lease/Rental Agreement shall not supersede any agency agreements entered into by Owner (or
 Management) and Tenant. This Residential Lease/Rental Agreement shall not be modified except by a written
 agreement signed by Owner (or Management) and Tenant.
-30. **ATTORNEY'S FEES:** Should Owner (or Management) and Tenant initiate any type of administrative
 
 
 **30. ATTORNEY'S FEES:** Should Owner (or Management) and Tenant initiate any type of administrative
@@ -467,11 +437,10 @@ of which shall be regarded as an original hereof but all of which together const
 Page 5 of 6
 
 
-Serial#: **511613-318086-5101236**
-Prepared by: Alex Q Sample
+Serial#: 004747-900170-0246857
 
 
-| 5015550142
+ESTIGE REALTY | marlenafjohnson@gmail.com | 5018136518
 
 
 📄
@@ -479,10 +448,10 @@ Form
 Simplicity
 
 
-Electronically Signed using eSignOnline™ | Session ID : 036c330d-1e06-4896-b9c0-05f6e7b7d3fe
+Electronically Signed using eSignOnline™ [ Session ID : 8c32ef06-185f-4550-8e43-f1b759c74078 ]
 
 
-CENTURY 21 PRESTIGE REALTY | agent@example.com
+Prepared by: Marlena Johnson | CENTURY 21 PRE
 
 
 <!-- PAGE BREAK -->
@@ -525,12 +494,12 @@ NOT USED ON ANY OTHER FORM. THE SERIAL NUMBER BELOW SHOULD BE AN ORIGINAL PRINTI
 MAY HAVE BEEN ALTERED. DO NOT SIGN THIS FORM IF IT WAS PREPARED AFTER DECEMBER 31, 2023.
 
 
-**FORM SERIAL NUMBER:** 511613-318086-5101236
+**FORM SERIAL NUMBER: 004747-900170-0246857**
 REAL ESTATE LICENSEES ARE REGULATED BY THE ARKANSAS REAL ESTATE COMMISSION. IF A LICENSEE HAS NOT PROPERLY REPRESENTED YOU, YOU MAY FILE A
 COMPLAINT AT AREC.ARKANSAS.GOV.
 
 
-The above Residential Lease/Rental Agreement is executed on (month) November  (day) 17 , (year) 2023 , at 1:00  [ ] (a.m.) [x] (p.m.) .
+The above Residential Lease/Rental Agreement is executed on  (month) November  (day) 17 , (year) 2023 , at 1:00  [ ] (a.m.) [x] (p.m.) .
 TOTAL FUNDS COLLECTED TODAY FROM TENANT: $ 
 Prorated Rent $ 
 Full Rent $ 
@@ -544,14 +513,14 @@ Management as Authorized Agent of Owner
 Signature: Jane Q Sample 
 Printed Name: Jane Q Sample 
 Tenant 
-Signature: Pat Q Example 
-Printed Name: Pat Q Example 
+Signature: Michelle L. Kirk 
+Printed Name: Michelle L. Kirk 
 Management/Agent Principal or Executive Broker 
 Signature: 
 Printed Name: 
 Tenant 
-Signature: Alex Q Sample 
-Printed Name: Alex Q Sample 
+Signature: Marlena Johnson 
+Printed Name: Marlena Johnson 
 Management/Agent 
 Signature: 
 Printed Name: 
@@ -561,14 +530,7 @@ Tenant phone number(s):
 Tenant email address(es): 
 Page 6 of 6 
 
-Serial#: **511613-318086-5101236**
-Prepared by: Alex Q Sample
-
-
-CENTURY 21 PRESTIGE REALTY | agent@example.com
-
-
-| 5015550142
+Serial#: 004747-900170-0246857
 
 
 [DOCUMENT_ICON]
@@ -576,7 +538,11 @@ Form
 Simplicity
 
 
-Electronically Signed using eSignOnline™ | Session ID : 036c330d-1e06-4896-b9c0-05f6e7b7d3fe
+Prepared by: Marlena Johnson | CENTURY 21 PRESTIGE REALTY | marlenajohnson@gmail.com | 5018136518
+Electronically Signed using eSignOnline™ | Session ID : 8c32ef06-185f-4550-8e43-f1b759c74078 |
 
 
-<!-- doc_id=parse-01m3nqqzfrh05709fm4cpnjj56 -->
+Flex
+
+
+<!-- doc_id=parse-01m3nrfsh49h6b9w6y1wj8z71c -->

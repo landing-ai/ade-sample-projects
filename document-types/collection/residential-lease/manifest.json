@@ -11,49 +11,14 @@
       "title": "Residential Lease/Rental Agreement, executed November 17, 2023",
       "retrieved": "2026-09-28",
       "clearance": "redacted",
-      "clearance_note": "A real residential lease on the Arkansas REALTORS® Association's standard form, completed and e-signed through a Century 21 brokerage, uploaded to Scribd by a third party and downloaded manually, because Scribd blocks scripted requests. Scribd is a user-upload site, so the lease is treated as a personal record. The tenant's, agent's and principal broker's names (including their typed e-signatures), the agent's personal email and mobile number from every page's footer, the rental property's address, the form serial number and the e-signature session ID were replaced using document-types/scripts/redact.py, which removes the underlying text rather than covering it: names, address and email with obviously-fake equivalents, the phone number in the 555-01xx range, the serial number with a plausible random stand-in, and the session ID with a freshly generated random ID. The PDF metadata was cleared. The brokerage's name, logo and office address, and the lease's terms and amounts, are left as printed. Verified: no original identifier is extractable from the committed PDF, and none appears anywhere in this collection folder.",
+      "clearance_note": "A real residential lease on the Arkansas REALTORS® Association's standard form, completed and e-signed through a Century 21 brokerage, uploaded to Scribd by a third party and downloaded manually, because Scribd blocks scripted requests. At the document owner's decision only the tenant's name is replaced; every other detail is kept as printed, including the rental property's address (the page is a proof-of-address example), the agent's and principal broker's names, e-signatures and contact details, the form serial number and the e-signature session ID. The tenant's name was replaced with 'Jane Q Sample' using document-types/scripts/redact.py, which removes the underlying text rather than covering it: in bold italic where it is printed, and, where it was the tenant's typed e-signature, in the openly licensed Indie Flower handwriting font in the original navy, so the page still shows that the tenant signed. The PDF metadata was cleared. Verified: the tenant's name is not extractable from the committed PDF and appears nowhere in this collection folder.",
       "redactions": {
-        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "note": "The original value is deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
         "replaced": [
           {
-            "what": "tenant's name, including the typed e-signature",
+            "what": "tenant's name, printed and as the typed e-signature",
             "with": "Jane Q Sample",
             "occurrences": 3
-          },
-          {
-            "what": "agent's name, including the typed e-signature and page footers",
-            "with": "Alex Q Sample",
-            "occurrences": 9
-          },
-          {
-            "what": "principal broker's name, including the typed e-signature",
-            "with": "Pat Q Example",
-            "occurrences": 2
-          },
-          {
-            "what": "agent's personal email address, page footers",
-            "with": "agent@example.com",
-            "occurrences": 6
-          },
-          {
-            "what": "agent's mobile number, page footers",
-            "with": "5015550142",
-            "occurrences": 6
-          },
-          {
-            "what": "rental property address",
-            "with": "100 Main Street Studio Anytown AR 00000",
-            "occurrences": 1
-          },
-          {
-            "what": "form serial number",
-            "with": "511613-318086-5101236",
-            "occurrences": 12
-          },
-          {
-            "what": "e-signature session ID",
-            "with": "036c330d-1e06-4896-b9c0-05f6e7b7d3fe",
-            "occurrences": 6
           }
         ]
       }
@@ -68,8 +33,13 @@
   ],
   "fields": [
     {
-      "path": "parties.management",
-      "label": "Management",
+      "path": "property.address",
+      "label": "Property address",
+      "occurrence": 0
+    },
+    {
+      "path": "parties.tenant",
+      "label": "Tenant",
       "occurrence": 0
     },
     {
@@ -78,15 +48,10 @@
       "occurrence": 0
     },
     {
-      "path": "rent.monthly_amount",
-      "label": "Monthly rent",
-      "occurrence": 0
-    },
-    {
       "path": "security_deposit",
       "label": "Security deposit",
       "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields. Features the lease's basics on page 1: who manages it, how long it runs, the rent and the deposit. No person is featured. Every rent-section value (monthly amount, due day, late charge, late-after day, insufficient-funds fee) grounds to the whole Rent paragraph: the typed values are overlaid on the form's blank lines and parse into the paragraph's text, so they would all render the same crop, and only the monthly rent is featured. term.length grounds to two lines. The signatures array extracts every signature line, but pairs names and roles across the signature page's two columns: the tenant's name comes back under Management and both agents under Tenant, and the is_signed flags follow the wrong lines. It is not featured. preview_pages includes page 6, the signature page, in place of the default's page 3."
+  "notes": "Built as a proof-of-address example. The document owner asked for page 1 with the property address highlighted; the other fields were chosen to support it: who the tenant is, how long the lease runs, and the deposit paid. The tenant shown is the stand-in name. property.address grounds to the opening lines of the Term and Description paragraph, which contain the typed address: values typed onto the form's blank lines parse into the surrounding paragraph, so the box is those three lines rather than the address alone. parties.tenant grounds to the whole opening block, for the same reason. Every rent-section value grounds to the entire Rent paragraph and would render identical crops, so none is featured. The signatures array pairs names and roles across the signature page's two columns (the tenant's name under Management, the agents under Tenant) and is not featured. An earlier version of this folder replaced every name, contact detail and identifier; the owner asked for only the tenant's name to be replaced. preview_pages includes page 6, the signature page, in place of the default's page 3."
 }

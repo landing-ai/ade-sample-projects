@@ -19,50 +19,43 @@ signature page.
 
 ## Redaction
 
-This is a real lease, uploaded to Scribd by a third party. Scribd is a user-upload site,
-so the uploader is not the publisher, and the lease is treated as a personal record.
-Scribd also blocks scripted requests, so the file was downloaded by hand.
-
-Eight identifiers were replaced using `document-types/scripts/redact.py`, which removes
-the underlying text rather than covering it, 45 replacements across six pages:
+This is a real lease, uploaded to Scribd by a third party and downloaded by hand, because
+Scribd blocks scripted requests. **At the document owner's decision only the tenant's name
+is replaced.** Every other detail is kept as printed: the rental property's address, which
+is what the page demonstrates, the agent's and principal broker's names, e-signatures and
+contact details, the form serial number and the e-signature session ID.
 
 | What | Replaced with | Occurrences |
 |---|---|---|
-| Tenant's name, including the typed e-signature | Jane Q Sample | 3 |
-| Agent's name, including the e-signature and page footers | Alex Q Sample | 9 |
-| Principal broker's name, including the e-signature | Pat Q Example | 2 |
-| Agent's personal email, page footers | agent@example.com | 6 |
-| Agent's mobile number, page footers | 5015550142 | 6 |
-| Rental property address | 100 Main Street Studio Anytown AR 00000 | 1 |
-| Form serial number | 511613-318086-5101236 | 12 |
-| E-signature session ID | 036c330d-1e06-4896-b9c0-05f6e7b7d3fe | 6 |
+| Tenant's name, printed and as the typed e-signature | Jane Q Sample | 3 |
 
-Names, the address and the email are obviously fake. The phone number is in the 555-01xx
-range reserved for fiction, the serial number is a plausible random stand-in from
-`plausible.py`, and the session ID is a freshly generated random ID: `plausible.py` keeps
-letters, and a session ID's hex letters would have stayed in their original positions.
-The PDF metadata was also cleared. The brokerage's name, logo and office address, and the
-lease's terms and amounts, are left as printed.
+The replacement was made with `document-types/scripts/redact.py`, which removes the
+underlying text rather than covering it, and the PDF metadata was cleared.
 
-The e-signatures were typed text in a script font, so they came out in Helvetica and now
-read as typed names rather than signatures.
+**The tenant's signature still reads as a signature.** It was a typed e-signature in a
+handwriting font, so replacing it in Helvetica would have turned it into a printed name
+and removed the evidence that the tenant signed. `redact.py` now takes
+`--handwriting-font`: text set in a handwriting font is replaced in that font instead, and
+in the original's colour. The stand-in signature is in Indie Flower, an openly licensed
+(SIL OFL) handwriting font kept at `document-types/scripts/fonts/`, in the same navy as the
+two real signatures beside it. The printed name keeps its bold italic.
 
-**Verified:** no original identifier is extractable from the committed PDF, and none
-appears anywhere in this folder. The original values are deliberately not recorded here
-or in `manifest.json`. The rules file used by `redact.py` stays outside the repo.
+**Verified:** the tenant's name is not extractable from the committed PDF and appears
+nowhere in this folder. The rules file used by `redact.py` stays outside the repo.
 
-**This sample fixed two more things in `redact.py`:**
+An earlier version of this folder replaced every name, contact detail and identifier in
+the lease. The owner asked for only the tenant's name to be replaced, and for the
+signatures to stay.
+
+**This sample also fixed two things in `redact.py`:**
 
 - **A 2pt line escaped redaction.** Each page carries a near-invisible "Prepared by" line
-  in 2-point type. The script trimmed a fixed 3pt from every redaction rectangle before
-  narrowing it to the letters, and on text that small the fixed trim emptied the rectangle,
-  so the agent's name survived and verification failed. The narrowing to the letters now
-  replaces the fixed trim instead of following it.
+  in 2-point type. On text that small, the fixed trim the script took off every redaction
+  rectangle emptied it, and the name survived. The narrowing to the letters now replaces
+  the fixed trim.
 - **Fill lines were broken.** A filled form types each value over a line of underscores,
-  and the two overlap completely, so redacting the value took the underscores beneath it
-  and left gaps in the lines under the tenant and the address. The script now records the
-  underscores before redacting and draws back only the ones actually removed. The document
-  keeps exactly its original 2,301 underscores.
+  and redacting the value took the underscores beneath it. The script now draws back
+  exactly the underscores it removed; the lease keeps its original 2,301.
 
 ## Why this document
 
@@ -71,28 +64,32 @@ sense: every value is typed on top of the form's own underscore lines, in bold i
 inside long clauses. That makes it a test of whether a value typed into a sentence can be
 found as precisely as a value in a table cell.
 
-## Featured fields: the lease's basics
+## Featured fields: proof of address
 
-All on **page 1**. The request named no fields, so these were chosen:
+All on **page 1**. The owner asked for the property address to be highlighted, for use as
+a **proof-of-address** example; the other fields support it:
 
 | Field | Value |
 |---|---|
-| Management | Century 21 Prestige Realty |
+| Property address | 909 Shall Court Studio Jacksonville AR 72076 |
+| Tenant | Jane Q Sample |
 | Lease term | 12 Months |
-| Monthly rent | 800.00 |
 | Security deposit | 700.00 |
 
-Who manages the lease, how long it runs, and what it costs to move in and to stay. No
-person is featured.
+Where the tenant lives, who the tenant is (the stand-in name), for how long, and the
+deposit paid. The address box covers the opening lines of the Term and Description
+paragraph, which contain the typed address, and the tenant box covers the opening block;
+see below.
 
 ## What it surfaced
 
-**Typed-in values ground to the paragraph they are typed into.** The whole Rent section,
-monthly rent, due day, late charge, the day after which it applies, and the
-insufficient-funds fee, grounds to the entire paragraph: the typed values parse into the
-paragraph's text, so each one's range is the paragraph. All five would render the same
-crop, so only the monthly rent is featured, and its box covers the whole section.
-Management and the security deposit, whose lines stand alone, ground to their own line.
+**Typed-in values ground to the paragraph they are typed into.** The address, typed onto
+the form's blank line, grounds to the opening lines of the Term and Description paragraph
+around it, and the tenant's name to the whole opening block. The Rent section is the
+extreme case: monthly rent, due day, late charge, the day after which it applies, and the
+insufficient-funds fee all ground to the entire paragraph and would render the same crop,
+so none is featured. The security deposit and the lease term, whose lines stand apart,
+ground to their own line.
 
 **Every value is right, but the signatures are paired wrongly.** The signature page sets
 Management signatures down the left and Tenant signatures down the right. Extraction
@@ -114,7 +111,7 @@ no warnings.
 
 ## Cost
 
-**16.50 credits** at standard tier for 6 pages: 10.00 to parse, 6.50 to extract.
+**16.40 credits** at standard tier for 6 pages, 10.00 to parse and 6.40 to extract. The earlier, fully redacted version cost another 16.50.
 
 ## Regenerating
 
@@ -122,10 +119,11 @@ no warnings.
 # Redaction, from the manual download, with the rules file kept outside the repo:
 .venv/bin/python document-types/scripts/redact.py <original>.pdf \
     document-types/collection/residential-lease/source/residential-lease-redacted.pdf \
-    --rules <outside-the-repo>/rules.json
+    --rules <outside-the-repo>/rules.json \
+    --handwriting-font document-types/scripts/fonts/IndieFlower-Regular.ttf
 
-.venv/bin/python document-types/scripts/run_ade.py residential-lease                # 16.50 credits
-.venv/bin/python document-types/scripts/run_ade.py residential-lease --extract-only # 6.50, schema iteration
+.venv/bin/python document-types/scripts/run_ade.py residential-lease                # 16.40 credits
+.venv/bin/python document-types/scripts/run_ade.py residential-lease --extract-only # 6.40, schema iteration
 .venv/bin/python document-types/scripts/build_images.py residential-lease           # free
 .venv/bin/python document-types/scripts/inspect_fields.py residential-lease --page 1
 ```

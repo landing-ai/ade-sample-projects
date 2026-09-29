@@ -10,23 +10,42 @@
   ],
   "fields": [
     {
-      "path": "parties.management",
-      "label": "Management",
-      "value": "Century 21 Prestige Realty",
+      "path": "property.address",
+      "label": "Property address",
+      "value": "909 Shall Court Studio Jacksonville AR 72076",
       "page": 1,
       "box": {
-        "xmin": 0.05164,
-        "ymin": 0.1545,
-        "xmax": 0.9491,
-        "ymax": 0.17426
+        "xmin": 0.05401,
+        "ymin": 0.21693,
+        "xmax": 0.94615,
+        "ymax": 0.28367
       },
       "range": {
-        "end": 409,
-        "start": 331
+        "end": 670,
+        "start": 473
       },
       "occurrence": 0,
       "matched": true,
-      "image": "parties-management.png"
+      "image": "property-address.png"
+    },
+    {
+      "path": "parties.tenant",
+      "label": "Tenant",
+      "value": "Jane Q Sample",
+      "page": 1,
+      "box": {
+        "xmin": 0.04472,
+        "ymin": 0.11286,
+        "xmax": 0.94654,
+        "ymax": 0.21316
+      },
+      "range": {
+        "end": 471,
+        "start": 178
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "parties-tenant.png"
     },
     {
       "path": "term.length",
@@ -34,37 +53,18 @@
       "value": "12 Months",
       "page": 1,
       "box": {
-        "xmin": 0.05333,
-        "ymin": 0.26546,
-        "xmax": 0.94423,
-        "ymax": 0.30087
+        "xmin": 0.05326,
+        "ymin": 0.26533,
+        "xmax": 0.94331,
+        "ymax": 0.30077
       },
       "range": {
-        "end": 721,
-        "start": 691
+        "end": 703,
+        "start": 671
       },
       "occurrence": 0,
       "matched": true,
       "image": "term-length.png"
-    },
-    {
-      "path": "rent.monthly_amount",
-      "label": "Monthly rent",
-      "value": 800.0,
-      "page": 1,
-      "box": {
-        "xmin": 0.05167,
-        "ymin": 0.36384,
-        "xmax": 0.9463,
-        "ymax": 0.54136
-      },
-      "range": {
-        "end": 2181,
-        "start": 1035
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "rent-monthly_amount.png"
     },
     {
       "path": "security_deposit",
@@ -72,14 +72,14 @@
       "value": 700.0,
       "page": 1,
       "box": {
-        "xmin": 0.05447,
-        "ymin": 0.55853,
-        "xmax": 0.94597,
-        "ymax": 0.57753
+        "xmin": 0.05384,
+        "ymin": 0.55864,
+        "xmax": 0.94563,
+        "ymax": 0.57736
       },
       "range": {
-        "end": 2379,
-        "start": 2287
+        "end": 2357,
+        "start": 2265
       },
       "occurrence": 0,
       "matched": true,
