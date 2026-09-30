@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "issuing_bank",
+      "label": "Issuing bank",
+      "value": "BARCLAYS BANK D.C.O.",
+      "page": 1,
+      "box": {
+        "xmin": 0.39243,
+        "ymin": 0.14523,
+        "xmax": 0.60357,
+        "ymax": 0.17371
+      },
+      "range": {
+        "end": 223,
+        "start": 202
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuing_bank.png"
+    },
+    {
+      "path": "principal_amount",
+      "label": "Principal",
+      "value": 100000,
+      "page": 1,
+      "box": {
+        "xmin": 0.21517,
+        "ymin": 0.43475,
+        "xmax": 0.78042,
+        "ymax": 0.47064
+      },
+      "range": {
+        "end": 540,
+        "start": 490
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "principal_amount.png"
+    },
+    {
+      "path": "interest_rate_percent",
+      "label": "Interest rate",
+      "value": 3.65,
+      "page": 1,
+      "box": {
+        "xmin": 0.24091,
+        "ymin": 0.58612,
+        "xmax": 0.50354,
+        "ymax": 0.62659
+      },
+      "range": {
+        "end": 689,
+        "start": 664
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "interest_rate_percent.png"
+    },
+    {
+      "path": "term_days",
+      "label": "Term in days",
+      "value": 180,
+      "page": 1,
+      "box": {
+        "xmin": 0.21608,
+        "ymin": 0.54022,
+        "xmax": 0.86069,
+        "ymax": 0.58835
+      },
+      "range": {
+        "end": 663,
+        "start": 598
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "term_days.png"
+    },
+    {
+      "path": "value_at_maturity",
+      "label": "Value at maturity",
+      "value": 101800,
+      "page": 1,
+      "box": {
+        "xmin": 0.13797,
+        "ymin": 0.08794,
+        "xmax": 0.44432,
+        "ymax": 0.12986
+      },
+      "range": {
+        "end": 163,
+        "start": 132
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "value_at_maturity.png"
+    }
+  ]
+}

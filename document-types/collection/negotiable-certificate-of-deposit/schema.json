@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "title": "Negotiable certificate of deposit",
+  "properties": {
+    "issuing_bank": {"type": "string", "description": "Name of the bank issuing the certificate."},
+    "amalgamated_with": {"type": ["string", "null"], "description": "Bank the issuer is amalgamated with, if printed."},
+    "place_of_issue": {"type": "string", "description": "City or office where the certificate was issued."},
+    "certificate_number": {"type": "string", "description": "Certificate number."},
+    "issue_date": {"type": "string", "description": "Date of issue, as YYYY-MM-DD."},
+    "maturity_date": {"type": "string", "description": "Date the certificate is due, as YYYY-MM-DD."},
+    "currency": {"type": "string", "description": "Currency of the deposit, e.g. Rand."},
+    "principal_amount": {"type": "number", "description": "Sum deposited, in the certificate's currency."},
+    "principal_amount_words": {"type": "string", "description": "The sum deposited written in words, as printed."},
+    "value_at_maturity": {"type": "number", "description": "Value at maturity, in the certificate's currency."},
+    "term_days": {"type": "integer", "description": "Term in days after the date of issue."},
+    "interest_rate_percent": {"type": "number", "description": "Interest rate per annum, as a percentage, e.g. 3.65."},
+    "payable_to": {"type": "string", "description": "Whether the certificate is payable to the bearer or to the order of a named party, as selected on the certificate."},
+    "place_of_repayment": {"type": "string", "description": "Branch where the certificate is to be presented for repayment."},
+    "signatories": {"type": "array", "description": "Every signature on the certificate, by the title printed beneath it.", "items": {"type": "object", "properties": {"title": {"type": "string", "description": "Title printed under the signature, e.g. General Manager."}}}},
+    "revenue_stamps": {"type": "array", "description": "Every revenue stamp affixed, by its printed value.", "items": {"type": "object", "properties": {"value": {"type": "string", "description": "Stamp value as printed, e.g. R4."}}}}
+  }
+}
