@@ -1,0 +1,87 @@
+{
+  "slug": "ira-statement",
+  "title": "IRA Statement",
+  "source": {
+    "file": "ira-statement-redacted.pdf",
+    "pages": 10,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.scribd.com/document/970556624",
+      "publisher": "Commonwealth Financial Network (broker-dealer), with the account carried by National Financial Services LLC and advised by SageRock Wealth Partners",
+      "title": "Premiere Select Rollover IRA statement, September 1 to September 30, 2025",
+      "retrieved": "2026-09-29",
+      "clearance": "redacted",
+      "clearance_note": "A real account holder's monthly Rollover IRA statement for September 2025, issued through Commonwealth Financial Network, carried by National Financial Services LLC and advised by SageRock Wealth Partners. It was uploaded to Scribd by a third party under a title ending in the account number's last digits, and downloaded manually, because Scribd blocks scripted requests. Scribd is not the publisher, so it is treated as a personal record, and the url is recorded without its title slug. Replaced with document-types/scripts/redact.py, which removes the underlying text rather than covering it: the account holder's name (in every page header and the mailing block), the mailing address, the account number (every page), the mail envelope code (every page), the three designated beneficiaries' names, the two financial advisors' names, their rep code and the advisor's email address. The PDF metadata was cleared. Kept as printed: every balance, holding, transaction and fee, the beneficiaries' allocations, relationships and designations, and the firms' names, business addresses, phone numbers and website. Verified: no original value is extractable from the committed PDF, no other line of text changed, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "account holder's name",
+            "with": "JOHN Q SAMPLE",
+            "occurrences": 10
+          },
+          {
+            "what": "mailing address (PO box, city and ZIP)",
+            "with": "100 MAIN ST, ANYTOWN MI 00000 (state kept)",
+            "occurrences": 2
+          },
+          {
+            "what": "account number",
+            "with": "a plausible random stand-in of the same shape (scripts/plausible.py)",
+            "occurrences": 9
+          },
+          {
+            "what": "mail envelope code",
+            "with": "random letters of the same length",
+            "occurrences": 11
+          },
+          {
+            "what": "three designated beneficiaries' names",
+            "with": "JANE Q SAMPLE, ALEX Q SAMPLE, SAM Q SAMPLE",
+            "occurrences": 3
+          },
+          {
+            "what": "financial advisors' names, rep code and email",
+            "with": "A ADVISOR / B ADVISOR, a random rep code, advisor@example.com",
+            "occurrences": 3
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "account_holder",
+      "label": "Account holder",
+      "occurrence": 0
+    },
+    {
+      "path": "account_number",
+      "label": "Account number",
+      "occurrence": 0
+    },
+    {
+      "path": "period_end_date",
+      "label": "Statement date",
+      "occurrence": 0
+    },
+    {
+      "path": "ending_value",
+      "label": "Account value",
+      "occurrence": 0
+    },
+    {
+      "path": "broker_dealer",
+      "label": "Provider",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no page or fields. Following the lending framing the document owner chose for the 401(k), bank and HELOC statements, page 1 features what a lender reads when verifying retirement assets: the account holder (the stand-in name), the account number, the statement date, the account value and the provider (Commonwealth Financial Network, the broker-dealer). The account holder's box covers the whole header line, which also carries the account type. period_end_date is featured although inspect_fields.py marks it OFF: it is extracted as the ISO date 2025-09-30 and grounds to the printed 'STATEMENT FOR THE PERIOD SEPTEMBER 1, 2025 TO SEPTEMBER 30, 2025', which contains it; the crop was checked by eye. The provider grounds to the firm's name in the return-address block. The nine holdings sum to the 164,145.49 total. Seven of the nine holding descriptions absorb the 'Estimated Yield ... Dividend Option Cash' lines printed beneath the security name and two do not, and the cash sweep's estimated annual income comes back as 0 where nothing is printed. preview_pages shows the summary, the account overview, the beneficiary summary and the holdings.",
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ]
+}

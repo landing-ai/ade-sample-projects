@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "title": "IRA statement",
+  "properties": {
+    "account_holder": {"type": "string", "description": "Account holder's name as printed in the statement header."},
+    "account_type": {"type": "string", "description": "Account type as printed, e.g. Premiere Select Rollover IRA."},
+    "account_number": {"type": "string", "description": "Account number as printed."},
+    "broker_dealer": {"type": "string", "description": "Broker-dealer the securities are offered through."},
+    "custodian": {"type": "string", "description": "Firm the account is carried with (clearing firm or custodian)."},
+    "advisory_firm": {"type": "string", "description": "Wealth management or advisory firm named on the statement."},
+    "period_start_date": {"type": "string", "description": "First day of the statement period, as YYYY-MM-DD."},
+    "period_end_date": {"type": "string", "description": "Last day of the statement period, as YYYY-MM-DD."},
+    "beginning_value": {"type": "number", "description": "Beginning value of the portfolio for the period, in dollars."},
+    "ending_value": {"type": "number", "description": "Total value of the portfolio at the end of the period, in dollars."},
+    "change_in_value": {
+      "type": "object",
+      "description": "The Change in Account Value table, current period column, exactly as printed.",
+      "properties": {
+        "additions_withdrawals": {"type": "number", "description": "Additions and withdrawals, in dollars."},
+        "income": {"type": "number", "description": "Income, in dollars."},
+        "taxes_fees_expenses": {"type": "number", "description": "Taxes, fees and expenses, in dollars, negative if printed in parentheses."},
+        "change_in_value": {"type": "number", "description": "Change in value, in dollars."}
+      }
+    },
+    "retirement_activity": {
+      "type": "object",
+      "description": "Retirement contributions and distributions, year-to-date.",
+      "properties": {
+        "contributions_current_year": {"type": "number", "description": "Contributions for the current year, year-to-date, in dollars."},
+        "contributions_prior_year": {"type": "number", "description": "Contributions for the prior year, year-to-date, in dollars."},
+        "distributions_current_year": {"type": "number", "description": "Distributions for the current year, year-to-date, in dollars."}
+      }
+    },
+    "allocation": {
+      "type": "array",
+      "description": "Every asset class in the Account Allocation table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_class": {"type": "string", "description": "Asset class name."},
+          "percent": {"type": "number", "description": "Percent of the account, e.g. 96.3."},
+          "current_value": {"type": "number", "description": "Current period value, in dollars."}
+        }
+      }
+    },
+    "holdings": {
+      "type": "array",
+      "description": "Every security in Holdings, including the cash sweep.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {"type": "string", "description": "Security description, joined into one line if it wraps."},
+          "symbol": {"type": "string", "description": "Ticker symbol or CUSIP."},
+          "quantity": {"type": "number", "description": "Quantity held."},
+          "price": {"type": "number", "description": "Price at the end of the period, in dollars."},
+          "market_value": {"type": "number", "description": "Current market value, in dollars."},
+          "estimated_annual_income": {"type": ["number", "null"], "description": "Estimated annual income, in dollars, or null if not printed."}
+        }
+      }
+    },
+    "beneficiaries": {
+      "type": "array",
+      "description": "Every designated beneficiary in the Beneficiary Summary.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Beneficiary name."},
+          "allocation_percent": {"type": "number", "description": "Allocation as a percentage, e.g. 100."},
+          "relationship": {"type": "string", "description": "Relationship, e.g. Spouse or Non-Spouse."},
+          "designation": {"type": "string", "description": "Primary or Contingent."}
+        }
+      }
+    }
+  }
+}
