@@ -1,0 +1,77 @@
+{
+  "slug": "401k-statement",
+  "title": "401(k) Statement",
+  "source": {
+    "file": "401k-statement-redacted.pdf",
+    "pages": 7,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/816135454/Safari",
+      "publisher": "Voya Financial, recordkeeper for the Publix Super Markets, Inc. 401(k) SMART Plan",
+      "title": "401(k) SMART Plan Statement, January 1 to March 31, 2023",
+      "retrieved": "2026-09-29",
+      "clearance": "redacted",
+      "clearance_note": "A real participant's quarterly 401(k) statement for the Publix Super Markets, Inc. 401(k) SMART Plan, administered by Voya Financial. It was saved to PDF from Safari on an iPhone and uploaded to Scribd under the title 'Safari', and was downloaded manually, because Scribd blocks scripted requests. Scribd is not the publisher, so the document is treated as a personal record. The participant's name (on every page), home street address, city and ZIP, and employee number were replaced with document-types/scripts/redact.py, which removes the underlying text rather than covering it; the PDF metadata was cleared. The plan, sponsor, recordkeeper, balances, funds, contribution rates, payroll location code and the two scanned plan-sponsor inserts (pages 6 and 7) are kept as printed; none identifies the participant once the name, address and employee number are gone. Verified: no original value is extractable from the committed PDF, no other line of text changed, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "participant's name",
+            "with": "JANE Q SAMPLE",
+            "occurrences": 5
+          },
+          {
+            "what": "street address",
+            "with": "100 MAIN ST",
+            "occurrences": 1
+          },
+          {
+            "what": "city, state and ZIP",
+            "with": "ANYTOWN FL  00000 (state kept)",
+            "occurrences": 1
+          },
+          {
+            "what": "employee number",
+            "with": "a plausible random stand-in, keeping the leading zeros (scripts/plausible.py)",
+            "occurrences": 1
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "participant_name",
+      "label": "Account holder",
+      "occurrence": 0
+    },
+    {
+      "path": "period_end_date",
+      "label": "Statement date",
+      "occurrence": 4
+    },
+    {
+      "path": "activity_summary.closing_value",
+      "label": "Account balance",
+      "occurrence": 0
+    },
+    {
+      "path": "recordkeeper",
+      "label": "Plan provider",
+      "occurrence": 0
+    },
+    {
+      "path": "activity_summary.employee_contributions",
+      "label": "Employee contributions",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no page or fields. At the document owner's request the featured fields are the account holder (the stand-in name), the statement date, the account balance on the closing date (the closing value in Your Total Account Value), the plan provider (Voya, the recordkeeper) and the employee contributions. They were already in the schema, so extraction was not re-run. period_end_date is featured although inspect_fields.py marks it OFF: it is extracted as the ISO date 2023-03-31 and occurrence 4 grounds to the printed period 'January 1, 2023 - March 31, 2023', which contains it; the crop was checked by eye. The plan provider grounds to the VOYA logo at the foot of the page, which the parse reads as text. An earlier version featured the participant, the plan, the account value and both contribution lines; plan_sponsor, tried before that, grounds to the whole orange panel of sponsor banner and balance chart. The large account value in the orange banner is not used because account_value grounds to a neighbouring block; the closing value in the summary table carries the same figure. The summary reconciles: 11,412.38 + 542.08 + 572.87 + 1,122.69 = 13,650.02. The period dates read OFF only because they are normalized to ISO dates. Pages 6 and 7 are scanned images of plan-sponsor inserts; the parse reads page 6's fund performance table as a table. preview_pages shows the summary, holdings, account activity and the scanned performance page.",
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
+  ]
+}

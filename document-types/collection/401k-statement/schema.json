@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "title": "401(k) plan statement",
+  "properties": {
+    "plan_name": {"type": "string", "description": "Name of the 401(k) plan, as printed."},
+    "plan_sponsor": {"type": "string", "description": "Employer sponsoring the plan."},
+    "recordkeeper": {"type": "string", "description": "Company administering the plan and issuing the statement, e.g. Voya."},
+    "participant_name": {"type": "string", "description": "Participant's name as printed."},
+    "employee_number": {"type": "string", "description": "Employee number as printed, including leading zeros."},
+    "period_start_date": {"type": "string", "description": "First day of the statement period, as YYYY-MM-DD."},
+    "period_end_date": {"type": "string", "description": "Last day of the statement period, as YYYY-MM-DD."},
+    "account_value": {"type": "number", "description": "Account value at the end of the period, in dollars."},
+    "activity_summary": {
+      "type": "object",
+      "description": "The Your Total Account Value summary, exactly as printed.",
+      "properties": {
+        "opening_value": {"type": "number", "description": "Opening value at the start of the period, in dollars."},
+        "employee_contributions": {"type": "number", "description": "Employee contributions, in dollars."},
+        "employer_contributions": {"type": "number", "description": "Employer contributions, in dollars."},
+        "other_credits": {"type": "number", "description": "Other credits and payments, in dollars."},
+        "investment_gain_loss": {"type": "number", "description": "Investment gain or loss, in dollars."},
+        "distributions_debits": {"type": "number", "description": "Distributions and debits, in dollars."},
+        "closing_value": {"type": "number", "description": "Closing value at the end of the period, in dollars."}
+      }
+    },
+    "personal_investment_performance": {"type": "number", "description": "Current period personal investment performance, as a percentage, e.g. 9.48."},
+    "holdings": {
+      "type": "array",
+      "description": "Every fund in Your Asset Allocation & Balance By Fund.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fund_name": {"type": "string", "description": "Fund name, joined into one line if it wraps."},
+          "asset_type": {"type": "string", "description": "Asset type heading the fund sits under, e.g. Stock Funds or Employer Stock."},
+          "units": {"type": "number", "description": "Units or shares held."},
+          "price": {"type": "number", "description": "Unit or share price, in dollars."},
+          "market_value": {"type": "number", "description": "Market value, in dollars."}
+        }
+      }
+    },
+    "contribution_rates": {
+      "type": "array",
+      "description": "Every row of Your Current Payroll Contributions.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {"type": "string", "description": "Contribution category, e.g. Employee Pre-Tax."},
+          "percent": {"type": "number", "description": "Contribution rate as a percentage, e.g. 6."}
+        }
+      }
+    },
+    "estimated_monthly_income": {
+      "type": "object",
+      "description": "Your Estimated Monthly Income in Retirement.",
+      "properties": {
+        "single_life_annuity": {"type": "number", "description": "Single life annuity monthly payment, in dollars."},
+        "joint_survivor_annuity": {"type": "number", "description": "Qualified joint and 100% survivor annuity monthly payment, in dollars."}
+      }
+    }
+  }
+}

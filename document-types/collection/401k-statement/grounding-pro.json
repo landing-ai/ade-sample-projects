@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "participant_name",
+      "label": "Account holder",
+      "value": "JANE Q SAMPLE",
+      "page": 1,
+      "box": {
+        "xmin": 0.11412,
+        "ymin": 0.14004,
+        "xmax": 0.21319,
+        "ymax": 0.14998
+      },
+      "range": {
+        "end": 302,
+        "start": 289
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "participant_name.png"
+    },
+    {
+      "path": "period_end_date",
+      "label": "Statement date",
+      "value": "2023-03-31",
+      "page": 1,
+      "box": {
+        "xmin": 0.08701,
+        "ymin": 0.33625,
+        "xmax": 0.31116,
+        "ymax": 0.3502
+      },
+      "range": {
+        "end": 685,
+        "start": 653
+      },
+      "occurrence": 4,
+      "matched": false,
+      "image": "period_end_date.png"
+    },
+    {
+      "path": "activity_summary.closing_value",
+      "label": "Account balance",
+      "value": 13650.02,
+      "page": 1,
+      "box": {
+        "xmin": 0.32013,
+        "ymin": 0.56784,
+        "xmax": 0.43516,
+        "ymax": 0.58726
+      },
+      "range": {
+        "end": 1190,
+        "start": 1180
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "activity_summary-closing_value.png"
+    },
+    {
+      "path": "recordkeeper",
+      "label": "Plan provider",
+      "value": "Voya",
+      "page": 1,
+      "box": {
+        "xmin": 0.78494,
+        "ymin": 0.94409,
+        "xmax": 0.91294,
+        "ymax": 0.97429
+      },
+      "range": {
+        "end": 2669,
+        "start": 2664
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "recordkeeper.png"
+    },
+    {
+      "path": "activity_summary.employee_contributions",
+      "label": "Employee contributions",
+      "value": 542.08,
+      "page": 1,
+      "box": {
+        "xmin": 0.32037,
+        "ymin": 0.49116,
+        "xmax": 0.43522,
+        "ymax": 0.5062
+      },
+      "range": {
+        "end": 891,
+        "start": 884
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "activity_summary-employee_contributions.png"
+    }
+  ]
+}
