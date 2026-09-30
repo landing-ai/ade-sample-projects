@@ -1,0 +1,138 @@
+{
+  "type": "object",
+  "title": "Retirement plan statement",
+  "properties": {
+    "provider": {
+      "type": "string",
+      "description": "Retirement plan provider issuing the statement."
+    },
+    "account_holder": {
+      "type": "string",
+      "description": "Name printed after 'Account holder:'. The SAMPLE watermark is not a name. Empty string if the name is blank."
+    },
+    "period_start_date": {
+      "type": "string",
+      "description": "First day of the statement period, as YYYY-MM-DD."
+    },
+    "period_end_date": {
+      "type": "string",
+      "description": "Last day of the statement period, as YYYY-MM-DD."
+    },
+    "total_balance": {
+      "type": "number",
+      "description": "Total portfolio balance at the end of the period, in dollars."
+    },
+    "personal_rate_of_return": {
+      "type": "number",
+      "description": "Personal rate of return for the quarter, as a percentage, e.g. 5.45."
+    },
+    "retirement_income_projection": {
+      "type": "object",
+      "description": "The projected lifetime retirement income on the first page.",
+      "properties": {
+        "average_monthly_contribution": {
+          "type": "number",
+          "description": "Average monthly contribution the projection is based on, in dollars."
+        },
+        "estimated_monthly_income": {
+          "type": "number",
+          "description": "Estimated monthly lifetime income at retirement, in dollars."
+        }
+      }
+    },
+    "portfolio_summary": {
+      "type": "object",
+      "description": "The quarter's column of the Summary of your portfolio activity.",
+      "properties": {
+        "beginning_balance": {
+          "type": "number",
+          "description": "Beginning balance, in dollars."
+        },
+        "employee_contributions": {
+          "type": "number",
+          "description": "Your contributions, in dollars."
+        },
+        "employer_contributions": {
+          "type": "number",
+          "description": "Employer contributions, in dollars."
+        },
+        "gains_losses": {
+          "type": "number",
+          "description": "Gains or losses, in dollars."
+        },
+        "ending_balance": {
+          "type": "number",
+          "description": "Ending balance, in dollars."
+        }
+      }
+    },
+    "asset_allocation": {
+      "type": "array",
+      "description": "Every asset class in How your portfolio is allocated.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_class": {
+            "type": "string",
+            "description": "Asset class name."
+          },
+          "value": {
+            "type": "number",
+            "description": "Value at the end of the period, in dollars."
+          },
+          "percent": {
+            "type": "number",
+            "description": "Percent of total portfolio, e.g. 70.09."
+          }
+        }
+      }
+    },
+    "plans": {
+      "type": "array",
+      "description": "Every retirement plan in the statement, in order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plan_name": {
+            "type": "string",
+            "description": "Plan name from the plan's numbered section heading, e.g. RETIREMENT PLAN or MATCHING PLAN. Not the TIAA or CREF contract labels."
+          },
+          "beginning_balance": {
+            "type": "number",
+            "description": "Balance at the start of the period, in dollars."
+          },
+          "employee_contributions": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Your contributions line in the plan's Summary of your activity, in dollars. Null if the summary has no such line."
+          },
+          "employer_contributions": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Employer contributions line in the plan's Summary of your activity, in dollars. Null if the summary has no such line."
+          },
+          "gains_losses": {
+            "type": "number",
+            "description": "Gains or losses this period, in dollars."
+          },
+          "ending_balance": {
+            "type": "number",
+            "description": "Balance at the end of the period, in dollars."
+          },
+          "vested_status": {
+            "type": "string",
+            "description": "The Vested percent printed in the plan's What you have vested table, e.g. 100%. 'Not displayed' when the plan states that a vested percentage is not currently displayed."
+          },
+          "tax_treatment": {
+            "type": "string",
+            "description": "Tax treatment of the plan's investments as printed, e.g. Pre-Tax or After-Tax - ROTH."
+          }
+        }
+      }
+    }
+  }
+}
