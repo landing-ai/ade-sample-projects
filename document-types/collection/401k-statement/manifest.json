@@ -43,31 +43,31 @@
   "fields": [
     {
       "path": "participant_name",
-      "label": "Participant",
+      "label": "Account holder",
       "occurrence": 0
     },
     {
-      "path": "plan_name",
-      "label": "Plan",
-      "occurrence": 0
+      "path": "period_end_date",
+      "label": "Statement date",
+      "occurrence": 4
     },
     {
       "path": "activity_summary.closing_value",
-      "label": "Account value",
+      "label": "Account balance",
+      "occurrence": 0
+    },
+    {
+      "path": "recordkeeper",
+      "label": "Plan provider",
       "occurrence": 0
     },
     {
       "path": "activity_summary.employee_contributions",
       "label": "Employee contributions",
       "occurrence": 0
-    },
-    {
-      "path": "activity_summary.employer_contributions",
-      "label": "Employer contributions",
-      "occurrence": 0
     }
   ],
-  "notes": "The request named no page or fields. Following the lending framing used for the bank and HELOC statements, page 1's featured fields are the ones a lender reads when verifying retirement assets: the participant, the plan, the account value (the closing value in Your Total Account Value) and the quarter's employee and employer contributions. The participant is the stand-in name. plan_sponsor was tried first but grounds to the whole orange panel, the sponsor banner together with the Account Balance History chart, so it was swapped for the participant. The large account value in the orange banner is not used because account_value grounds to a neighbouring block; the closing value in the summary table carries the same figure. The summary reconciles: 11,412.38 + 542.08 + 572.87 + 1,122.69 = 13,650.02. The period dates read OFF only because they are normalized to ISO dates. Pages 6 and 7 are scanned images of plan-sponsor inserts; the parse reads page 6's fund performance table as a table. preview_pages shows the summary, holdings, account activity and the scanned performance page.",
+  "notes": "The request named no page or fields. At the document owner's request the featured fields are the account holder (the stand-in name), the statement date, the account balance on the closing date (the closing value in Your Total Account Value), the plan provider (Voya, the recordkeeper) and the employee contributions. They were already in the schema, so extraction was not re-run. period_end_date is featured although inspect_fields.py marks it OFF: it is extracted as the ISO date 2023-03-31 and occurrence 4 grounds to the printed period 'January 1, 2023 - March 31, 2023', which contains it; the crop was checked by eye. The plan provider grounds to the VOYA logo at the foot of the page, which the parse reads as text. An earlier version featured the participant, the plan, the account value and both contribution lines; plan_sponsor, tried before that, grounds to the whole orange panel of sponsor banner and balance chart. The large account value in the orange banner is not used because account_value grounds to a neighbouring block; the closing value in the summary table carries the same figure. The summary reconciles: 11,412.38 + 542.08 + 572.87 + 1,122.69 = 13,650.02. The period dates read OFF only because they are normalized to ISO dates. Pages 6 and 7 are scanned images of plan-sponsor inserts; the parse reads page 6's fund performance table as a table. preview_pages shows the summary, holdings, account activity and the scanned performance page.",
   "preview_pages": [
     1,
     3,

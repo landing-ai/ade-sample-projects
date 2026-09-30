@@ -59,29 +59,36 @@ The collection's first **401(k) statement**, and different from the TIAA stateme
 
 ## Featured fields: what a lender verifies
 
-All on page 1. The request named no page or fields; following the lending framing used
-for the bank and HELOC statements, these are the fields a lender reads to verify
-retirement assets:
+All on page 1, as the document owner asked:
 
 | Field | Value |
 |---|---|
-| Participant | JANE Q SAMPLE |
-| Plan | 401(k) SMART Plan |
-| Account value | $13,650.02 |
+| Account holder | JANE Q SAMPLE |
+| Statement date | 2023-03-31 |
+| Account balance | $13,650.02 |
+| Plan provider | Voya |
 | Employee contributions | $542.08 |
-| Employer contributions | $572.87 |
 
-The participant is the stand-in name. The account value is the closing value in the
-summary table. The summary reconciles: $11,412.38 opening, plus $542.08 and $572.87 in
-contributions and $1,122.69 in gains, is $13,650.02.
+The account holder is the stand-in name. The account balance is the closing value in the
+summary table, on March 31, 2023. The plan provider is Voya, the recordkeeper, boxed on
+the VOYA logo at the foot of the page, which the parse reads as text. All five were
+already in the schema, so extraction was not re-run.
+
+**The statement date is flagged, and correct.** It is extracted as the ISO date
+2023-03-31 and boxed on the printed period "January 1, 2023 - March 31, 2023", so
+`build_images.py` warns that the value is not in the boxed text. The box contains the
+date in another format; the crop was checked by eye.
+
+The summary reconciles: $11,412.38 opening, plus $542.08 and $572.87 in contributions and
+$1,122.69 in gains, is $13,650.02.
 
 ## What it surfaced
 
 **The employer's name is inside a panel that grounds as one block.** The plan sponsor,
 "PUBLIX SUPER MARKETS, INC. 401(K) SMART PLAN", is printed as the banner of the orange
 panel that also holds the Account Balance History chart, and extraction grounds it to the
-whole panel. It extracts correctly but its box is far too loose to feature, so the
-participant is featured instead.
+whole panel. It extracts correctly but its box is far too loose to feature, so it is
+not featured.
 
 **The headline figure grounds to its neighbour.** The large "$13,650.02" in the orange
 account value banner is not where `account_value` points; its range lands on a nearby
