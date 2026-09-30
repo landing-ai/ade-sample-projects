@@ -1,0 +1,33 @@
+{
+  "slug": "retirement-statement",
+  "title": "Retirement Statement",
+  "source": {
+    "file": "tiaa-participant-statement-sample.pdf",
+    "pages": 15,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.tiaa.org/public/pdf/p/PDF_Participant-statement-sample2.PDF",
+      "publisher": "TIAA",
+      "title": "Your quarterly retirement savings portfolio statement, January 1 to March 31, 2021 (sample)",
+      "retrieved": "2026-09-29",
+      "clearance": "redacted",
+      "clearance_note": "TIAA's own sample participant statement, published on its public site, marked SAMPLE on every page, with the account holder's name and plan numbers left blank. Downloaded manually, because the site does not answer scripted requests. The published file was not fully scrubbed: page 1 carried invisible mail-merge control data (text hidden under the page's grey balance panel and near the footer) that included what appears to be a real participant's first and last name, personal email address and a 12-digit PIN, plus delivery and package IDs built from the PIN. Those spans were deleted outright rather than replaced, since they are delivery data and not statement content; nothing visible on the page changed. Deleted with PyMuPDF redaction annotations, which remove the underlying text, and the PDF metadata and XMP were cleared. Verified: none of the values is present in the page text or in the raw PDF bytes, no other line of text changed, and none appears anywhere in this collection folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The script and its inputs stay outside the repo.",
+        "removed": [
+          {"what": "invisible mail-merge control data on page 1: a participant's name, email address and PIN, with delivery, package and routing IDs", "with": "nothing (deleted)", "occurrences": 4}
+        ]
+      }
+    }
+  },
+  "feature_page": 2,
+  "preview_pages": [1, 2, 3, 9],
+  "fields": [
+    {"path": "portfolio_summary.beginning_balance", "label": "Beginning balance", "occurrence": 0},
+    {"path": "portfolio_summary.employee_contributions", "label": "Your contributions", "occurrence": 0},
+    {"path": "portfolio_summary.employer_contributions", "label": "Employer contributions", "occurrence": 0},
+    {"path": "portfolio_summary.gains_losses", "label": "Gains and losses", "occurrence": 0},
+    {"path": "portfolio_summary.ending_balance", "label": "Ending balance", "occurrence": 0}
+  ],
+  "notes": "The request named no page or fields. Page 2's Summary of your portfolio activity was chosen: it tells the quarter as one story that reconciles (460,806.88 + 8,250.02 + 7,425.03 + 25,492.73 = 501,974.66), and its split between the participant's and the employer's contributions is what distinguishes a workplace retirement statement from the brokerage statement at investment-statement. The asset allocation table on the same page grounds one cell adrift (each value's range points at the next cell), so none of it is featured. The schema was revised twice with extract-only runs. The first run returned 'SAMPLE' as the account holder, reading the watermark, and 0 as the vested percent for three plans whose statement says vesting is not currently displayed; the second fixed the account holder but still returned 0, and named the first plan 'TIAA CREF' after its contract labels. Making vesting a text field (vested_status: '100%' or 'Not displayed') and anchoring plan_name to the numbered plan heading fixed both. preview_pages shows the cover, the summary, the first plan's holdings and a plan's contribution transactions."
+}
