@@ -1,0 +1,27 @@
+{
+  "slug": "negotiable-certificate-of-deposit",
+  "title": "Negotiable Certificate of Deposit",
+  "source": {
+    "file": "occ-first-negotiable-cd.jpg",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.occ.gov/images/history/img-barclays-cd-600px.jpg",
+      "publisher": "Office of the Comptroller of the Currency (image credited to A. P. Faure / South African Financial Markets Journal)",
+      "title": "Barclays Bank D.C.O. negotiable certificate of deposit No. 301, Johannesburg, 25 July 1964",
+      "retrieved": "2026-09-30",
+      "clearance": "public",
+      "clearance_note": "A 1964 Barclays Bank D.C.O. negotiable certificate of deposit, published by the US Office of the Comptroller of the Currency on its history page 'The Negotiable CD: National Bank Innovation in the 1960s' (https://www.occ.gov/about/who-we-are/history/history-of-the-occ/1936-1966/1936-1966-negotiable-cd.html). The OCC credits the image to A. P. Faure / South African Financial Markets Journal, so it is a third-party image the OCC republishes rather than a US government work, and the credit line should accompany it. The certificate is payable to the bearer and names no individual; the two signatures are the bank's General Manager and Chief Accountant signing in their official capacity. The request's notes describe it as the first negotiable CD ever issued; the OCC page says First National City Bank issued the first, in February 1961, and presents this 1964 certificate as an early international one. No redaction was needed.",
+      "credit": "A. P. Faure / South African Financial Markets Journal, via the Office of the Comptroller of the Currency"
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "issuing_bank", "label": "Issuing bank", "occurrence": 0},
+    {"path": "principal_amount", "label": "Principal", "occurrence": 0},
+    {"path": "interest_rate_percent", "label": "Interest rate", "occurrence": 0},
+    {"path": "term_days", "label": "Term in days", "occurrence": 0},
+    {"path": "value_at_maturity", "label": "Value at maturity", "occurrence": 0}
+  ],
+  "notes": "The request named no fields. These tell the instrument's whole story, and it reconciles: R100,000 at 3.65% for 180 days earns R1,800 (100,000 x 0.0365 x 180/365), which gives the printed value at maturity of R101,800. The maturity date is not featured: it is extracted as the ISO date 1965-01-21 and marked OFF against the printed '21st January 1965', and the value at maturity carries the same point. The principal grounds to the whole 'the sum of R100,000-00 (One hundred thousand Rand)' line. The handwritten issue date '25th July 1964' parses in two fragments ('25th.' near the top and 'ly 1964.' at the end of the markdown), yet extraction assembles 1964-07-25. The second signature's printed title, Chief Accountant, is missing from the parse, so only the General Manager is extracted as a signatory. The request's notes call this the first negotiable CD ever issued; the OCC page credits First National City Bank with the first, in 1961."
+}
