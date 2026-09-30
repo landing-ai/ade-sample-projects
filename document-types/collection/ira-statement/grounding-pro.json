@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 10,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "account_holder",
+      "label": "Account holder",
+      "value": "JOHN Q SAMPLE",
+      "page": 1,
+      "box": {
+        "xmin": 0.48332,
+        "ymin": 0.37851,
+        "xmax": 0.76078,
+        "ymax": 0.39771
+      },
+      "range": {
+        "end": 912,
+        "start": 867
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_holder.png"
+    },
+    {
+      "path": "account_number",
+      "label": "Account number",
+      "value": "B19-187999",
+      "page": 1,
+      "box": {
+        "xmin": 0.48341,
+        "ymin": 0.39839,
+        "xmax": 0.64058,
+        "ymax": 0.41866
+      },
+      "range": {
+        "end": 940,
+        "start": 913
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_number.png"
+    },
+    {
+      "path": "period_end_date",
+      "label": "Statement date",
+      "value": "2025-09-30",
+      "page": 1,
+      "box": {
+        "xmin": 0.48466,
+        "ymin": 0.3423,
+        "xmax": 0.91053,
+        "ymax": 0.36519
+      },
+      "range": {
+        "end": 866,
+        "start": 801
+      },
+      "occurrence": 0,
+      "matched": false,
+      "image": "period_end_date.png"
+    },
+    {
+      "path": "ending_value",
+      "label": "Account value",
+      "value": 164145.49,
+      "page": 1,
+      "box": {
+        "xmin": 0.71937,
+        "ymin": 0.51302,
+        "xmax": 0.93418,
+        "ymax": 0.54377
+      },
+      "range": {
+        "end": 1079,
+        "start": 1068
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ending_value.png"
+    },
+    {
+      "path": "broker_dealer",
+      "label": "Provider",
+      "value": "Commonwealth Financial Network",
+      "page": 1,
+      "box": {
+        "xmin": 0.0611,
+        "ymin": 0.09422,
+        "xmax": 0.25073,
+        "ymax": 0.10687
+      },
+      "range": {
+        "end": 58,
+        "start": 28
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "broker_dealer.png"
+    }
+  ]
+}
