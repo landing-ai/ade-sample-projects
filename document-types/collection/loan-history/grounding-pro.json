@@ -1,0 +1,106 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "payments[7].date_due",
+      "label": "Date due",
+      "value": "2010-09-01",
+      "page": 1,
+      "box": {
+        "xmin": 0.01901,
+        "ymin": 0.34933,
+        "xmax": 0.10346,
+        "ymax": 0.37385
+      },
+      "range": {
+        "end": 1897,
+        "start": 1887
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payments-7-date_due.png"
+    },
+    {
+      "path": "payments[7].date_received",
+      "label": "Date received",
+      "value": "2010-09-20",
+      "page": 1,
+      "box": {
+        "xmin": 0.10346,
+        "ymin": 0.34935,
+        "xmax": 0.18731,
+        "ymax": 0.37386
+      },
+      "range": {
+        "end": 1916,
+        "start": 1906
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payments-7-date_received.png"
+    },
+    {
+      "path": "payments[7].late_fee",
+      "label": "Late fee",
+      "value": 22.25,
+      "page": 1,
+      "box": {
+        "xmin": 0.7133,
+        "ymin": 0.34944,
+        "xmax": 0.77899,
+        "ymax": 0.37393
+      },
+      "range": {
+        "end": 2029,
+        "start": 2024
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payments-7-late_fee.png"
+    },
+    {
+      "path": "payments[7].principal",
+      "label": "Applied to principal",
+      "value": 0.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.50494,
+        "ymin": 0.34941,
+        "xmax": 0.58252,
+        "ymax": 0.3739
+      },
+      "range": {
+        "end": 1985,
+        "start": 1981
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payments-7-principal.png"
+    },
+    {
+      "path": "payments[7].principal_balance",
+      "label": "Principal balance",
+      "value": 49864.47,
+      "page": 1,
+      "box": {
+        "xmin": 0.31663,
+        "ymin": 0.34938,
+        "xmax": 0.42242,
+        "ymax": 0.37389
+      },
+      "range": {
+        "end": 1957,
+        "start": 1949
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payments-7-principal_balance.png"
+    }
+  ]
+}

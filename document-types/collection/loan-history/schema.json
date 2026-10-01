@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "title": "Loan payment history",
+  "properties": {
+    "servicer_name": {"type": "string", "description": "Servicing company name as printed."},
+    "servicer_address": {"type": "string", "description": "Servicing company address as printed."},
+    "loan_number": {"type": "string", "description": "Loan number."},
+    "borrower_number": {"type": "string", "description": "Borrower number."},
+    "borrower_name": {"type": "string", "description": "Borrower name."},
+    "date_range_start": {"type": "string", "description": "Start of the report's date range, as YYYY-MM-DD."},
+    "date_range_end": {"type": "string", "description": "End of the report's date range, as YYYY-MM-DD."},
+    "payments": {
+      "type": "array",
+      "description": "Every payment row, across all pages, in order. Exclude the Total row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date_due": {"type": "string", "description": "Date due, as YYYY-MM-DD."},
+          "date_received": {"type": "string", "description": "Date received, as YYYY-MM-DD."},
+          "payment_number": {"type": "number", "description": "Payment number as printed, e.g. 0.3 or 12.0."},
+          "reference_number": {"type": ["string", "null"], "description": "Reference number as printed, or null if blank."},
+          "principal_balance": {"type": "number", "description": "Principal balance after the payment, in dollars."},
+          "total_received": {"type": "number", "description": "Total received, in dollars."},
+          "principal": {"type": "number", "description": "Amount applied to principal, in dollars."},
+          "interest": {"type": "number", "description": "Amount applied to interest, in dollars."},
+          "impound": {"type": "number", "description": "Amount applied to impound (escrow), in dollars."},
+          "late_fee": {"type": "number", "description": "Late fee, in dollars."},
+          "fees": {"type": "number", "description": "Other fees, in dollars."},
+          "other_payments": {"type": "number", "description": "Other payments, in dollars."},
+          "reversed_nsf": {"type": "boolean", "description": "Whether the payment was reversed or returned NSF."}
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "The Total row at the end of the report, exactly as printed.",
+      "properties": {
+        "total_received": {"type": "number", "description": "Total received, in dollars."},
+        "principal": {"type": "number", "description": "Total principal, in dollars."},
+        "interest": {"type": "number", "description": "Total interest, in dollars."},
+        "impound": {"type": "number", "description": "Total impound, in dollars."},
+        "late_fee": {"type": "number", "description": "Total late fees, in dollars."},
+        "fees": {"type": "number", "description": "Total other fees, in dollars."},
+        "other_payments": {"type": "number", "description": "Total other payments, in dollars."}
+      }
+    }
+  }
+}
