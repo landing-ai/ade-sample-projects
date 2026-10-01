@@ -1,0 +1,26 @@
+{
+  "slug": "rate-lock",
+  "title": "Rate Lock",
+  "source": {
+    "file": "wheda-sample-rate-lock-confirmation.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.wheda.com/globalassets/documents/mortgage-lending/sample-rate-lock-confirmation---correspondent-channel.pdf",
+      "publisher": "Wisconsin Housing and Economic Development Authority (WHEDA)",
+      "title": "Sample Rate Lock Confirmation, Correspondent Channel",
+      "retrieved": "2026-10-01",
+      "clearance": "public",
+      "clearance_note": "WHEDA's own sample rate lock confirmation for its correspondent lending channel, published in its mortgage lending materials. The borrower and property are placeholders ('John S Correspondent', 123 Main Street, Waukesha). The loan officer contact is a named WHEDA staff member with a work phone and email, which WHEDA itself publishes as a business contact in the sample; it is kept, as business contacts were on the residential lease. No redaction was needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "reference_number", "label": "Reference number", "occurrence": 0},
+    {"path": "rate_lock.loan_program", "label": "Loan program", "occurrence": 0},
+    {"path": "rate_lock.interest_rate_percent", "label": "Locked rate", "occurrence": 0},
+    {"path": "rate_lock.expiration_date", "label": "Lock expiration date", "occurrence": 0},
+    {"path": "borrower.middle_credit_score", "label": "Middle credit score", "occurrence": 0}
+  ],
+  "notes": "The request named no fields. These tell the lock as a loan processor reads it: which lock, on which program, at what rate, until when, and the credit score the pricing assumed. The Rate Lock table's data row parses as one run of text ('$95,000.00 4.625% 102.000 2/24/2014 45 days 4/10/2014' in a single cell), so loan amount, rate, price, lock date and lock period all ground to the same box; only the rate is featured from it, and its box shows the whole row. The expiration date parses as its own block and is featured although inspect_fields.py marks it OFF: it is extracted as the ISO date 2014-04-10 against the printed '4/10/2014'; the crop was checked by eye. Property type and occupancy ground to their labels, one cell adrift, and the property address grounds across two lines; none is featured. The loan officer is a WHEDA staff member named in WHEDA's own sample and is not featured."
+}

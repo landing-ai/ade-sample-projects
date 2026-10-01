@@ -1,0 +1,42 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+
+name: Rate Lock
+url: https://www.wheda.com/globalassets/documents/mortgage-lending/sample-rate-lock-confirmation---correspondent-channel.pdf
+
+# A local copy, for sites that block scripted downloads (Scribd and similar).
+# The url above is still required: it is the source of record and goes on the
+# published page.
+# file: ~/Downloads/bol.pdf
+
+# An existing schema to use unchanged. A schema the team already runs beats a
+# new one written for the sample. Omit this and one gets written.
+# schema: ~/schemas/bill-of-lading.json
+
+# Which page the worked example features. Omit and the skill picks the page
+# where the best-grounded fields are.
+# feature_page: 2
+
+# The values you want shown beside the page overlay, 3 to 5, all on one page.
+# Omit and the skill picks them.
+#
+# These are a request, not an instruction. Three failure modes are invisible
+# until after the ADE run: a value can be synthesized with no coordinates at
+# all, grounded to text that supports it without containing it, or grounded on
+# a different page. If a field you asked for turns out to be any of those, the
+# skill stops and tells you, with the nearest usable alternatives. It does not
+# quietly substitute.
+# fields:
+#   - path: shipment.bol_number
+#     label: B/L number
+#   - path: parties.consignee.name
+#     label: Consignee
+#     occurrence: 0          # when the value appears more than once
+
+# Anything the skill should know that the document does not say.
+# notes: Page 1 is a cover sheet; the cargo detail starts on page 2.
