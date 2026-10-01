@@ -1,0 +1,26 @@
+{
+  "slug": "loan-history",
+  "title": "Loan History",
+  "source": {
+    "file": "loan-servicing-soft-loan-payment-history-sample.pdf",
+    "pages": 2,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.loanservicingsoft.com/reports/Loan_Payment_History-LOAN_SERVICING_SOFT-www.loanservicingsoft.com.pdf",
+      "publisher": "Loan Servicing Soft Inc.",
+      "title": "Loan Payment History (sample report), loan C-2, 02/19/2010 to 12/19/2014",
+      "retrieved": "2026-10-01",
+      "clearance": "public",
+      "clearance_note": "A sample Loan Payment History report published by Loan Servicing Soft, a loan servicing software vendor, on its sample reports page (https://www.loanservicingsoft.com/reports.html) as demonstration output of its product. The data is fictitious: the servicer is 'YOUR SERVICING COMPANY NAME' at 1234 Main St, and the borrower is 'Irene Impound', a pun on the report's impound (escrow) column. No redaction was needed. It was chosen after web research found that the most authoritative version of this document, the loan payment history in bankruptcy Official Form 410A, is published only blank."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "payments[7].date_due", "label": "Date due", "occurrence": 0},
+    {"path": "payments[7].date_received", "label": "Date received", "occurrence": 0},
+    {"path": "payments[7].late_fee", "label": "Late fee", "occurrence": 0},
+    {"path": "payments[7].principal", "label": "Applied to principal", "occurrence": 0},
+    {"path": "payments[7].principal_balance", "label": "Principal balance", "occurrence": 0}
+  ],
+  "notes": "The request named no page or fields. One row is featured, payment 7 of September 2010, because it is the kind of row a servicing review is looking for: due 09/01/2010, received 09/20/2010 with a 22.25 late fee, and short of the scheduled payment, so nothing was applied to principal and the balance stayed at 49,864.47. Every value in the report grounds to its own cell. All 57 rows extract correctly across the page break, and the column sums equal the printed Total row to the cent (30,581.66 received: 1,570.25 principal, 23,238.12 interest, 5,641.65 impound and 131.64 late fees). Blank reference numbers come back as empty strings rather than null."
+}
