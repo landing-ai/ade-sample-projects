@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "title": "Mortgage rate lock confirmation",
+  "properties": {
+    "lender": {"type": "string", "description": "Lender or housing finance agency issuing the confirmation."},
+    "confirmation_datetime": {"type": "string", "description": "Date and time of the confirmation as printed."},
+    "reference_number": {"type": "string", "description": "Reference number of the lock."},
+    "borrower_name": {"type": "string", "description": "Borrower's name."},
+    "rate_lock": {
+      "type": "object",
+      "description": "The Rate Lock table.",
+      "properties": {
+        "loan_program": {"type": "string", "description": "Loan program, joined into one line if it wraps."},
+        "payment_type": {"type": "string", "description": "Payment type, e.g. P&I."},
+        "loan_amount": {"type": "number", "description": "Loan amount, in dollars."},
+        "interest_rate_percent": {"type": "number", "description": "Locked interest rate, as a percentage, e.g. 4.625."},
+        "price_points": {"type": "number", "description": "Point or price value in the Point column, as printed, e.g. 102.000."},
+        "lock_date": {"type": "string", "description": "Lock date, as YYYY-MM-DD."},
+        "lock_period_days": {"type": "integer", "description": "Lock period, in days."},
+        "expiration_date": {"type": "string", "description": "Lock expiration date, as YYYY-MM-DD."}
+      }
+    },
+    "pricing_adjustments_total": {
+      "type": "object",
+      "description": "The Total row of the pricing adjustments table.",
+      "properties": {
+        "rate_percent": {"type": "number", "description": "Total rate adjustment, as a percentage."},
+        "points": {"type": "number", "description": "Total point adjustment."}
+      }
+    },
+    "loan_officer": {
+      "type": "object",
+      "description": "Loan Officer Information.",
+      "properties": {
+        "name": {"type": "string", "description": "Contact name."},
+        "company": {"type": "string", "description": "Broker name."},
+        "phone": {"type": "string", "description": "Phone number as printed."},
+        "email": {"type": "string", "description": "Email address."}
+      }
+    },
+    "borrower": {
+      "type": "object",
+      "description": "Borrower Information.",
+      "properties": {
+        "middle_credit_score": {"type": "integer", "description": "Primary wage earner middle credit score."},
+        "first_time_home_buyer": {"type": "boolean", "description": "First time home buyer."},
+        "self_employed": {"type": "boolean", "description": "Self employed."},
+        "total_income": {"type": "number", "description": "Total monthly income, in dollars."}
+      }
+    },
+    "property": {
+      "type": "object",
+      "description": "Subject Property Information.",
+      "properties": {
+        "address": {"type": "string", "description": "Property street address, city, state and ZIP."},
+        "county": {"type": "string", "description": "County."},
+        "property_type": {"type": "string", "description": "Property type, e.g. SFR."},
+        "occupancy": {"type": "string", "description": "Property purpose, e.g. Primary Residence."}
+      }
+    },
+    "loan": {
+      "type": "object",
+      "description": "Loan Information.",
+      "properties": {
+        "loan_purpose": {"type": "string", "description": "Loan purpose, e.g. Purchase."},
+        "amortization_type": {"type": "string", "description": "Amortization type, e.g. Fixed."},
+        "term_months": {"type": "integer", "description": "Term in months."},
+        "lien_position": {"type": "string", "description": "Lien position."},
+        "sales_price": {"type": "number", "description": "Sales price, in dollars."},
+        "ltv_percent": {"type": "number", "description": "Loan-to-value ratio, as a percentage."},
+        "cltv_percent": {"type": "number", "description": "Combined loan-to-value ratio, as a percentage."},
+        "doc_type": {"type": "string", "description": "Documentation type."}
+      }
+    }
+  }
+}
