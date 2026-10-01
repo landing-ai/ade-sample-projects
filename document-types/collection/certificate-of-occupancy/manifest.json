@@ -1,0 +1,26 @@
+{
+  "slug": "certificate-of-occupancy",
+  "title": "Certificate of Occupancy",
+  "source": {
+    "file": "certificate-of-occupancy.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://resources.finalsite.net/images/v1582305033/publicprep/w9uf0livvpbwada6gzn2/CertificateOfOccupancy.pdf",
+      "publisher": "NYC Department of Buildings (certificate); posted by Public Prep, the charter school network occupying the building",
+      "title": "Temporary Certificate of Occupancy 220152652T005, 192 East 151st Street, Bronx, effective April 16, 2019",
+      "retrieved": "2026-10-01",
+      "clearance": "public",
+      "clearance_note": "A New York City Department of Buildings Temporary Certificate of Occupancy for a school building, posted on the website of Public Prep, the charter school network that occupies it (hosted on Finalsite, a school website platform). Certificates of occupancy are public records, also available through the Department of Buildings' BIS system. The document is a scan with no text layer. It names no private individual: it describes the building, its permitted uses and capacities, and carries the signatures of the Borough Commissioner and the Commissioner in their official capacity. No redaction was needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "property.address", "label": "Property address", "occurrence": 0},
+    {"path": "co_number", "label": "CO number", "occurrence": 0},
+    {"path": "certificate_type", "label": "Certificate type", "occurrence": 0},
+    {"path": "effective_date", "label": "Effective date", "occurrence": 0},
+    {"path": "expiration_date", "label": "Expiration date", "occurrence": 0}
+  ],
+  "notes": "The request named no page or fields. These tell the certificate's status as a real-estate, lending or insurance reviewer reads it: which property, which certificate, and whether it is temporary and when it lapses. The certificate is temporary, valid for 90 days, with 18 outstanding requirements before a final certificate. The use tables on pages 2 and 3 are a scan in which the Floor To column runs into Maximum persons permitted ('001 234'); all 26 rows extract with the right capacities. Blank cells are not always null: three blank Maximum persons cells come back as 0, and the blank Floor To on the cellar and roof rows is filled in from Floor From. issuing_authority grounds to the NYC Buildings logo text and reads OFF."
+}

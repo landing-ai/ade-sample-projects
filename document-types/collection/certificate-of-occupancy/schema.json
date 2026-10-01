@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "title": "Certificate of occupancy",
+  "properties": {
+    "issuing_authority": {"type": "string", "description": "Agency issuing the certificate."},
+    "co_number": {"type": "string", "description": "Certificate of Occupancy number."},
+    "certificate_type": {"type": "string", "description": "Certificate type, e.g. Temporary or Final."},
+    "effective_date": {"type": "string", "description": "Effective date, as YYYY-MM-DD."},
+    "expiration_date": {"type": ["string", "null"], "description": "Expiration date, as YYYY-MM-DD, or null if none."},
+    "property": {
+      "type": "object",
+      "description": "The premises the certificate covers.",
+      "properties": {
+        "borough": {"type": "string", "description": "Borough."},
+        "address": {"type": "string", "description": "Street address."},
+        "bin": {"type": "string", "description": "Building Identification Number (BIN)."},
+        "block": {"type": "string", "description": "Tax block number."},
+        "lot": {"type": "string", "description": "Tax lot number."},
+        "building_type": {"type": "string", "description": "Building type, e.g. Altered to comply as new."}
+      }
+    },
+    "building": {
+      "type": "object",
+      "description": "Building characteristics in section B.",
+      "properties": {
+        "construction_classification": {"type": "string", "description": "Construction classification code."},
+        "occupancy_group": {"type": "string", "description": "Building occupancy group classification."},
+        "stories": {"type": "integer", "description": "Number of stories."},
+        "height_feet": {"type": "number", "description": "Height in feet."},
+        "dwelling_units": {"type": "integer", "description": "Number of dwelling units."}
+      }
+    },
+    "fire_protection_equipment": {"type": "array", "description": "Every fire protection system listed.", "items": {"type": "string"}},
+    "legal_limitations": {"type": "string", "description": "Legal limitations on the certificate, as printed."},
+    "outstanding_requirements": {"type": ["integer", "null"], "description": "Number of outstanding requirements for a final certificate, or null if none are stated."},
+    "borough_comments": {"type": "string", "description": "Borough comments, as printed."},
+    "permissible_uses": {
+      "type": "array",
+      "description": "Every row of the Permissible Use and Occupancy table, across all pages, in order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "floor_from": {"type": "string", "description": "Floor From, as printed, e.g. CEL or 001."},
+          "floor_to": {"type": ["string", "null"], "description": "Floor To, as printed, or null if blank."},
+          "max_persons": {"type": ["integer", "null"], "description": "Maximum persons permitted, or null if blank."},
+          "live_load_psf": {"type": "string", "description": "Live load in pounds per square foot, as printed, e.g. 120 or OG."},
+          "occupancy_group": {"type": ["string", "null"], "description": "Building code occupancy group, or null if blank."},
+          "zoning_use_group": {"type": ["string", "null"], "description": "Zoning use group, or null if blank."},
+          "description": {"type": "string", "description": "Description of use."}
+        }
+      }
+    }
+  }
+}
