@@ -1,0 +1,46 @@
+{
+  "slug": "compliance-inspection-report",
+  "title": "Compliance Inspection Report",
+  "source": {
+    "file": "ecology-construction-stormwater-inspection-war313805.pdf",
+    "pages": 7,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://apps.ecology.wa.gov/paris/DownloadDocument.aspx?id=521477",
+      "publisher": "Washington State Department of Ecology",
+      "title": "Construction Stormwater General Permit Inspection Report, permit WAR313805 (Good Neighbor Village), December 4, 2024",
+      "retrieved": "2026-10-01",
+      "clearance": "public",
+      "clearance_note": "A Washington State Department of Ecology inspection report for a construction site covered by the state's Construction Stormwater General Permit (an NPDES permit), published as a public record in Ecology's PARIS facility and permit database and downloaded directly. It records an unannounced compliance inspection of the Good Neighbor Village project on December 4, 2024: general data, background, a violations table citing permit conditions with the action and deadline for each, the inspector's sign-off, and four GPS-stamped photos. The only person named is the Ecology inspector, acting in an official capacity; no on-site representative was present. The photos show the site, the public road and machinery, with no people and no legible plates. No redaction was needed. The document checks construction against environmental permit conditions (erosion and sediment control) rather than building code; it was chosen after web research found no published, completed example of the building-standards equivalent, Form HUD-92051."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "permit_number",
+      "label": "Permit number",
+      "occurrence": 0
+    },
+    {
+      "path": "inspection_date",
+      "label": "Inspection date",
+      "occurrence": 0
+    },
+    {
+      "path": "inspection_type",
+      "label": "Inspection type",
+      "occurrence": 0
+    },
+    {
+      "path": "receiving_waters",
+      "label": "Receiving waters",
+      "occurrence": 0
+    },
+    {
+      "path": "weather",
+      "label": "Weather at inspection",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no page or fields. Page 1's general data is featured: which permit, when, what kind of inspection, the receiving waters and the weather, which matters in a stormwater inspection. The inspector is named on the same page but is not featured, since the inspection date carries the same point without a person. inspection_date is featured although inspect_fields.py marks it OFF: it is extracted as the ISO date 2024-12-04 and grounds to the cell 'Inspection Date and Entry/Exit Time: December 4, 2024, 11:28/11:47', which contains it; the entry and exit times ground to the same cell. The page 2 violations table was tried first and grounds correctly, but every value grounds to a whole table cell, including its empty space, and a violation's condition, requirement and finding all share the first cell, so the overlay highlighted most of the page. The schema was revised once: the first version split each violation into a finding, an action and a due date, but the table has three columns (violation and action, complete or submit date, guidance), so the first violation's due date came back null with a nonconformant_output warning; the revision matches the table's columns. Where a nullable field has nothing to report, extraction returns the string 'null' rather than a JSON null, for the absent on-site representative and the first violation's due date."
+}

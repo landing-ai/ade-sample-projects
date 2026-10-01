@@ -1,0 +1,134 @@
+{
+  "type": "object",
+  "title": "Compliance inspection report",
+  "properties": {
+    "agency": {
+      "type": "string",
+      "description": "Regulatory agency conducting the inspection."
+    },
+    "report_title": {
+      "type": "string",
+      "description": "Title of the report as printed."
+    },
+    "permit_type": {
+      "type": "string",
+      "description": "Permit the site is inspected against, e.g. Construction Stormwater General Permit."
+    },
+    "permit_number": {
+      "type": "string",
+      "description": "Permit number."
+    },
+    "project_name": {
+      "type": "string",
+      "description": "Name of the project inspected."
+    },
+    "inspection_date": {
+      "type": "string",
+      "description": "Inspection date, as YYYY-MM-DD."
+    },
+    "entry_time": {
+      "type": "string",
+      "description": "Entry time, as HH:MM."
+    },
+    "exit_time": {
+      "type": "string",
+      "description": "Exit time, as HH:MM."
+    },
+    "inspection_type": {
+      "type": "string",
+      "description": "Inspection type, e.g. Unannounced."
+    },
+    "inspector": {
+      "type": "string",
+      "description": "Inspector's name."
+    },
+    "on_site_representative": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "On-site representative's name. Null when the report gives n/a or no name."
+    },
+    "receiving_waters": {
+      "type": "string",
+      "description": "Receiving waters."
+    },
+    "weather": {
+      "type": "string",
+      "description": "Weather at the time of inspection, as printed."
+    },
+    "precipitation_past_24_hours": {
+      "type": "boolean",
+      "description": "Whether there was precipitation in the past 24 hours."
+    },
+    "uic_present": {
+      "type": "boolean",
+      "description": "Whether an underground injection control (UIC) well is present."
+    },
+    "violations": {
+      "type": "array",
+      "description": "Every row of the Violations and action required to achieve compliance table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "permit_condition": {
+            "type": "string",
+            "description": "Permit condition cited, e.g. S9.D.2."
+          },
+          "requirement": {
+            "type": "string",
+            "description": "Name of the requirement, e.g. Establish Construction Access."
+          },
+          "finding_and_action": {
+            "type": "string",
+            "description": "The first column's text after the heading: what was observed and what the permittee must do, as printed."
+          },
+          "complete_or_submit": {
+            "type": "string",
+            "description": "The Complete or submit date column, as printed, including any instruction and any date."
+          },
+          "due_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A calendar date in the Complete or submit date column, as YYYY-MM-DD, or null if the column gives no date."
+          },
+          "guidance": {
+            "type": "string",
+            "description": "The Guidance column, as printed."
+          }
+        }
+      }
+    },
+    "report_signed_date": {
+      "type": "string",
+      "description": "Date the inspector signed the report, as YYYY-MM-DD."
+    },
+    "photos": {
+      "type": "array",
+      "description": "Every photo in the report.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "description": "Photo number."
+          },
+          "description": {
+            "type": "string",
+            "description": "Photo description."
+          },
+          "latitude": {
+            "type": "number",
+            "description": "Latitude from the photo caption."
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Longitude from the photo caption."
+          }
+        }
+      }
+    }
+  }
+}
