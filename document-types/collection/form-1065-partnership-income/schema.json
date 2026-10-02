@@ -1,0 +1,579 @@
+{
+  "type": "object",
+  "description": "IRS Form 1065, U.S. Return of Partnership Income, page 1",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The calendar or tax year of the return"
+    },
+    "tax_year_beginning": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year beginning date, as YYYY-MM-DD"
+    },
+    "tax_year_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year ending date, as YYYY-MM-DD"
+    },
+    "partnership": {
+      "type": "object",
+      "description": "The partnership filing the return",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of partnership"
+        },
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Number, street, and room or suite no."
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City or town"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as a two-letter code"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code, as printed"
+        },
+        "principal_business_activity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box A: principal business activity, as printed"
+        },
+        "principal_product_or_service": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box B: principal product or service"
+        },
+        "business_code_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box C: business code number"
+        },
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box D: employer identification number, as NN-NNNNNNN"
+        },
+        "date_business_started": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box E: date business started, as YYYY-MM-DD"
+        },
+        "total_assets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box F: total assets, in USD"
+        }
+      }
+    },
+    "applicable_boxes": {
+      "type": "object",
+      "description": "Row G: check applicable boxes",
+      "properties": {
+        "initial_return": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(1) Initial return' checkbox in row G is checked; false if it is empty"
+        },
+        "final_return": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(2) Final return' checkbox in row G is checked; false if it is empty"
+        },
+        "name_change": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(3) Name change' checkbox in row G is checked; false if it is empty"
+        },
+        "address_change": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(4) Address change' checkbox in row G is checked; false if it is empty"
+        },
+        "amended_return": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(5) Amended return' checkbox in row G is checked; false if it is empty"
+        }
+      }
+    },
+    "accounting_method": {
+      "type": "object",
+      "description": "Row H: check accounting method",
+      "properties": {
+        "cash": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(1) Cash' checkbox in row H is checked; false if it is empty"
+        },
+        "accrual": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(2) Accrual' checkbox in row H is checked; false if it is empty"
+        },
+        "other": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the '(3) Other (specify)' checkbox in row H is checked; false if it is empty"
+        },
+        "other_detail": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The method written after 'Other (specify)', if any"
+        }
+      }
+    },
+    "number_of_schedules_k1": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Row I: number of Schedules K-1 attached"
+    },
+    "schedules_c_and_m3_attached": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the 'Schedules C and M-3 are attached' checkbox in row J is checked; false if it is empty"
+    },
+    "aggregated_activities_465": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the '(1) Aggregated activities for section 465 at-risk purposes' checkbox in row K is checked; false if it is empty"
+    },
+    "grouped_activities_469": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the '(2) Grouped activities for section 469 passive activity purposes' checkbox in row K is checked; false if it is empty"
+    },
+    "income": {
+      "type": "object",
+      "description": "Lines 1a through 8",
+      "properties": {
+        "gross_receipts_or_sales": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1a: gross receipts or sales, in USD"
+        },
+        "returns_and_allowances": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1b: returns and allowances, in USD"
+        },
+        "balance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1c: balance, in USD"
+        },
+        "cost_of_goods_sold": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2: cost of goods sold, in USD"
+        },
+        "gross_profit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3: gross profit, in USD"
+        },
+        "ordinary_income_from_other_partnerships": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 4: ordinary income (loss) from other partnerships, estates, and trusts, in USD"
+        },
+        "net_farm_profit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5: net farm profit (loss), in USD"
+        },
+        "net_gain_form_4797": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 6: net gain (loss) from Form 4797, in USD"
+        },
+        "other_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7: other income (loss), in USD"
+        },
+        "total_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8: total income (loss), in USD"
+        }
+      }
+    },
+    "deductions": {
+      "type": "object",
+      "description": "Lines 9 through 23",
+      "properties": {
+        "salaries_and_wages": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 9: salaries and wages, in USD"
+        },
+        "guaranteed_payments_to_partners": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 10: guaranteed payments to partners, in USD"
+        },
+        "repairs_and_maintenance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11: repairs and maintenance, in USD"
+        },
+        "bad_debts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 12: bad debts, in USD"
+        },
+        "rent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13: rent, in USD"
+        },
+        "taxes_and_licenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 14: taxes and licenses, in USD"
+        },
+        "interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15: interest, in USD"
+        },
+        "depreciation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16a: depreciation, in USD"
+        },
+        "depreciation_reported_elsewhere": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16b: less depreciation reported on Form 1125-A and elsewhere, in USD"
+        },
+        "net_depreciation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16c: net depreciation, in USD"
+        },
+        "depletion": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 17: depletion, in USD"
+        },
+        "retirement_plans": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 18: retirement plans, in USD"
+        },
+        "employee_benefit_programs": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 19: employee benefit programs, in USD"
+        },
+        "energy_efficient_buildings_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 20: energy efficient commercial buildings deduction, in USD"
+        },
+        "other_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 21: other deductions, in USD"
+        },
+        "total_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 22: total deductions, in USD"
+        },
+        "ordinary_business_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23: ordinary business income (loss); negative for a loss, in USD"
+        }
+      }
+    },
+    "tax_and_payment": {
+      "type": "object",
+      "description": "Lines 24 through 32",
+      "properties": {
+        "lookback_interest_completed_contracts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 24: interest due under the look-back method, completed long-term contracts, in USD"
+        },
+        "lookback_interest_income_forecast": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25: interest due under the look-back method, income forecast method, in USD"
+        },
+        "bba_aar_imputed_underpayment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 26: BBA AAR imputed underpayment, in USD"
+        },
+        "other_taxes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 27: other taxes, in USD"
+        },
+        "total_balance_due": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 28: total balance due, in USD"
+        },
+        "elective_payment_election_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 29: elective payment election amount from Form 3800, in USD"
+        },
+        "payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 30: payment, in USD"
+        },
+        "amount_owed": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 31: amount owed, in USD"
+        },
+        "overpayment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 32: overpayment, in USD"
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "description": "Sign Here",
+      "properties": {
+        "partner_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the partner or LLC member signature line carries a signature"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date beside the partner's signature, as YYYY-MM-DD"
+        },
+        "irs_may_discuss_with_preparer": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if 'Yes' is checked for 'May the IRS discuss this return with the preparer'"
+        }
+      }
+    },
+    "paid_preparer": {
+      "type": "object",
+      "description": "Paid Preparer Use Only",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Print/type preparer's name"
+        },
+        "signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the preparer's signature line carries a signature"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The preparer's date, as YYYY-MM-DD"
+        },
+        "self_employed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the 'self-employed' checkbox is checked"
+        },
+        "ptin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The preparer's PTIN"
+        },
+        "firm_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's name"
+        },
+        "firm_ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's EIN"
+        },
+        "firm_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's address, as one line"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's phone number"
+        }
+      }
+    }
+  }
+}
