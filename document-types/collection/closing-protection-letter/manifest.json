@@ -1,0 +1,26 @@
+{
+  "slug": "closing-protection-letter",
+  "title": "Closing Protection Letter",
+  "source": {
+    "file": "sample-cpl.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://covenantreal.com/wp-content/uploads/2023/03/Sample-CPL.pdf",
+      "publisher": "Covenant Real Estate Services LLC",
+      "title": "Sample CPL (Fidelity National Title Insurance Company, Virginia)",
+      "retrieved": "2026-10-02",
+      "clearance": "public",
+      "clearance_note": "A settlement agent's own sample closing protection letter, published on its website for lenders and watermarked SAMPLE. The transaction data is specimen: borrowers 'John Doe and Jane Doe', addressee 'Lending Bank, LLC', property '1212 ABC Drive'. The settlement agent is the publisher itself. The signature is the insurer's facsimile corporate signature for its chief underwriting counsel, printed on its letters of this form. Downloaded by script; no redaction needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "addressee.name", "label": "Lender protected", "occurrence": 0 },
+    { "path": "settlement_agent.name", "label": "Settlement agent", "occurrence": 0 },
+    { "path": "file_number", "label": "File number", "occurrence": 0 },
+    { "path": "loan_number", "label": "Loan number", "occurrence": 0 },
+    { "path": "max_aggregate_funds", "label": "Maximum funds covered", "occurrence": 0 }
+  ],
+  "notes": "The request named no page or fields. Features what the letter is for, all on page 1: which lender it protects, against which settlement agent's handling of which file and loan, and up to what amount. No person is featured; the borrowers are specimen names but are left out anyway. settlement_agent.name is pinned to occurrence 0, the block under 'SETTLEMENT AGENT OR APPROVED ATTORNEY'; the name is printed twice. Addresses span two lines and read OFF. is_sample grounds to the SAMPLE watermark and is_signed to the [SIGNED] attestation on page 2; both are correct but OFF because a boolean is not printed."
+}
