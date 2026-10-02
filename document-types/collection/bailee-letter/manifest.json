@@ -1,0 +1,26 @@
+{
+  "slug": "bailee-letter",
+  "title": "Bailee Letter",
+  "source": {
+    "file": "bailee-letter-ocrolus-sample.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://drive.google.com/file/d/1UF9p9L2zcjz8UlyrZucuDTAqiT4lIAg_/edit",
+      "publisher": "Ocrolus",
+      "title": "Bailee Letter sample document",
+      "retrieved": "2026-10-02",
+      "clearance": "public",
+      "clearance_note": "The sample document Ocrolus links from its public bailee-letter documentation page (docs.ocrolus.com/docs/bailee-letter), shared from Google Drive and downloaded by script. Every value is synthetic: 'Fake Home Mortgage', 'ABC Sample Inc.', 'XYZ Bank', borrower 'John Sample' at '123 Fake Street', signers 'Jack Sample' and 'James Fake', and loan number 123456789. The signatures are drawn to go with those invented names. The PDF metadata carries only the Google Docs renderer and the title 'Untitled document'. No redaction needed. Ocrolus is a document-AI vendor, so this is a competitor's published sample."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "loan_number", "label": "Loan number", "occurrence": 0 },
+    { "path": "letter_date", "label": "Letter date", "occurrence": 0 },
+    { "path": "payee.name", "label": "Investor (payee)", "occurrence": 0 },
+    { "path": "warehouse_lender_name", "label": "Warehouse lender", "occurrence": 0 },
+    { "path": "funding_expiration_days", "label": "Funding window (business days)", "occurrence": 1 }
+  ],
+  "notes": "The request named no page or fields, and asked that the schema follow Ocrolus's bailee-letter field list; schema.json covers 20 of its 21 fields (signature blocks as an array; mortgagor address line 2 is left out because the sample has none) plus the payee address, purchase price, bank name and the party the bailee acts for. Page 1 features the deal itself: the loan, the date, the investor it is tendered to, the warehouse lender holding the security interest, and how long the investor has to fund. funding_expiration_days is pinned to occurrence 1, the sentence giving 'ten (10) business days'; occurrence 0 grounds to a sentence about 'ten days' worded as an option to purchase, which reads OFF. No person is featured. Page 3's signature blocks extract with the companies paired wrongly: see README."
+}

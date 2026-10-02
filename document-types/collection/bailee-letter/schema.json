@@ -1,0 +1,189 @@
+{
+  "type": "object",
+  "description": "A bailee letter: a warehouse lender's conditional tender of a mortgage note to an investor, who holds it as bailee until it pays",
+  "properties": {
+    "letter_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date of the letter, as YYYY-MM-DD"
+    },
+    "loan_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The loan number"
+    },
+    "loan_amount": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The loan amount in USD, from the schedule of loans"
+    },
+    "purchase_price": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The amount to be wired to release the security interest, in USD"
+    },
+    "bank_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The bank named after 'Bank Name'"
+    },
+    "payee": {
+      "type": "object",
+      "description": "The investor the note is tendered to, from the 'Investor' lines",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The investor's name"
+        },
+        "address_line_1": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The investor's street address"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as a two-letter code"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code"
+        }
+      }
+    },
+    "lender_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The lender that originated the mortgage and is selling it to the investor"
+    },
+    "warehouse_lender_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The warehouse lender that holds the security interest in the note until it is paid"
+    },
+    "bailee_agent_for": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The party the investor holds the note as bailee and agent for"
+    },
+    "mortgagor": {
+      "type": "object",
+      "description": "The borrower on the mortgage note",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The borrower's name"
+        },
+        "address_line_1": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The borrower's street address"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as a two-letter code"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code"
+        }
+      }
+    },
+    "funding_expiration_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The number of business days the investor has to fund the purchase before the collateral must be returned"
+    },
+    "signature_blocks": {
+      "type": "array",
+      "description": "Each signature block, in the order printed",
+      "items": {
+        "type": "object",
+        "description": "A signature block",
+        "properties": {
+          "company_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The company the signer signs for"
+          },
+          "signer_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The printed name of the signer"
+          },
+          "signer_title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The signer's title"
+          },
+          "is_signed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "True if the block carries a signature"
+          }
+        }
+      }
+    }
+  }
+}
