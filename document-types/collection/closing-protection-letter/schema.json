@@ -1,0 +1,182 @@
+{
+  "type": "object",
+  "description": "A closing protection letter (CPL) from a title insurer to a lender",
+  "properties": {
+    "letter_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date of the letter, as YYYY-MM-DD"
+    },
+    "insurer": {
+      "type": "object",
+      "description": "The title insurance company issuing the letter",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The insurer's name, as in the opening paragraph"
+        },
+        "claims_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The address written notice of a claim must be sent to"
+        },
+        "correspondence_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The address for correspondence and inquiries in the page footer"
+        },
+        "correspondence_phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The telephone number in the page footer"
+        }
+      }
+    },
+    "addressee": {
+      "type": "object",
+      "description": "The lender the letter is addressed to",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The addressee's name, without the 'successors and/or assigns' language"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The addressee's street address, city, state and ZIP as one line"
+        }
+      }
+    },
+    "settlement_agent": {
+      "type": "object",
+      "description": "The settlement agent or approved attorney conducting the closing",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The settlement agent's name"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The settlement agent's street address, city, state and ZIP as one line"
+        },
+        "agent_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The settlement agent number in the footer line"
+        }
+      }
+    },
+    "file_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The file number"
+    },
+    "loan_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The loan number"
+    },
+    "borrowers": {
+      "type": "array",
+      "description": "Each buyer or borrower named",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A buyer's or borrower's name"
+      }
+    },
+    "property_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The property address, as one line"
+    },
+    "max_aggregate_funds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The cap on the aggregate funds the addressee may transmit, in USD, from the Requirements"
+    },
+    "claim_notice_deadline": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "How long after the transmittal of funds a written notice of claim must be received, e.g. 'one year'"
+    },
+    "governing_jurisdiction": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The state or commonwealth whose closings the letter covers"
+    },
+    "form_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The form number and edition printed after the last paragraph, e.g. 'CPL12345(01/2020)'"
+    },
+    "letter_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The letter ID in the footer line"
+    },
+    "signatory_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The title printed under the insurer's signature"
+    },
+    "is_signed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the letter carries a signature for the insurer"
+    },
+    "is_sample": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the document is marked as a sample or specimen"
+    }
+  }
+}
