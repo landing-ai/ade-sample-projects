@@ -1,0 +1,447 @@
+{
+  "type": "object",
+  "description": "An ALTA Commitment for Title Insurance",
+  "properties": {
+    "commitment_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The commitment number printed in the header box, e.g. 'ABC-12345'"
+    },
+    "commitment_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Commitment Date from Schedule A, as YYYY-MM-DD"
+    },
+    "form_edition": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The ALTA form and edition named in the page footer, e.g. 'ALTA Commitment for Title Insurance (Adapted 08-1-2016)'"
+    },
+    "underwriter": {
+      "type": "object",
+      "description": "The title insurance company that issues the commitment",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The underwriter's name, as printed in the header box after 'AS AN AGENT FOR'"
+        },
+        "state_of_incorporation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The state the underwriter is incorporated in, from the Commitment to Issue Policy paragraph"
+        }
+      }
+    },
+    "issuing_agent": {
+      "type": "object",
+      "description": "The title agent that issued the commitment on the underwriter's behalf",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The issuing agent's name, from the 'Issued By' block"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The issuing agent's street address, city, state and ZIP as one line"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The issuing agent's phone number"
+        },
+        "agent_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The agent number from Schedule A, e.g. 'CA1040'"
+        }
+      }
+    },
+    "attestation": {
+      "type": "object",
+      "description": "Signatures and seals on the commitment jacket, the first page carrying the underwriter's 'IN WITNESS WHEREOF' clause",
+      "properties": {
+        "is_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the jacket carries an officer's signature (handwritten or facsimile) beneath the IN WITNESS WHEREOF clause"
+        },
+        "signatory_titles": {
+          "type": "array",
+          "description": "The titles printed under each signature on the jacket, e.g. 'President'",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "An officer title"
+          }
+        },
+        "has_seal_or_stamp": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the jacket carries a corporate seal or stamp"
+        }
+      }
+    },
+    "proposed_policies": {
+      "type": "array",
+      "description": "Each policy to be issued, from Schedule A item 2",
+      "items": {
+        "type": "object",
+        "description": "A proposed policy",
+        "properties": {
+          "proposed_insured": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The proposed insured's name; null if left blank"
+          },
+          "proposed_policy_amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The proposed policy amount in USD"
+          }
+        }
+      }
+    },
+    "estate_or_interest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The estate or interest in the land, from Schedule A item 3, e.g. 'Fee Simple'"
+    },
+    "vested_owners": {
+      "type": "array",
+      "description": "The parties in whom title is vested at the Commitment Date, from Schedule A item 4",
+      "items": {
+        "type": "object",
+        "description": "A vested owner",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The owner's name as printed"
+          },
+          "vesting_description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The words describing how the owner holds title, e.g. 'an unmarried man'"
+          }
+        }
+      }
+    },
+    "property": {
+      "type": "object",
+      "description": "The land the commitment covers",
+      "properties": {
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The street address the land is also known by"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as printed"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code"
+        },
+        "county": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "County, from the legal description"
+        },
+        "apn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The assessor's parcel number (APN)"
+        },
+        "legal_description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The legal description in Exhibit A, first paragraph only"
+        },
+        "improvements": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What the improvements on the land are commonly known as, from the lender notes, e.g. 'Mobile Home (Residential)'"
+        }
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "description": "The Schedule B, Part I requirements, one per numbered item or bullet",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A requirement, as printed"
+      }
+    },
+    "schedule_b_exceptions": {
+      "type": "array",
+      "description": "The Schedule B, Part II exceptions, one per numbered item",
+      "items": {
+        "type": "object",
+        "description": "An exception",
+        "properties": {
+          "number": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The exception's item number"
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A one-line summary of the exception"
+          }
+        }
+      }
+    },
+    "deeds_of_trust": {
+      "type": "array",
+      "description": "Each deed of trust listed among the Schedule B, Part II exceptions",
+      "items": {
+        "type": "object",
+        "description": "A deed of trust",
+        "properties": {
+          "exception_number": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The exception item number it appears under"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount secured, in USD"
+          },
+          "dated": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The date of the deed of trust, as YYYY-MM-DD"
+          },
+          "trustors": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The trustors, as printed"
+          },
+          "trustee": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The trustee"
+          },
+          "beneficiary": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The beneficiary's name only, without the nominee language"
+          },
+          "recorded_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The recording date, as YYYY-MM-DD"
+          },
+          "instrument_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The instrument number it was recorded as"
+          },
+          "in_foreclosure": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "True if a notice of default or a notice of trustee's sale is recorded against it"
+          }
+        }
+      }
+    },
+    "judgments": {
+      "type": "array",
+      "description": "Judgments listed among the exceptions",
+      "items": {
+        "type": "object",
+        "description": "A judgment",
+        "properties": {
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The kind of judgment, e.g. 'child, family, or spousal support'"
+          },
+          "recorded_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The recording date, as YYYY-MM-DD"
+          },
+          "instrument_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The instrument number"
+          },
+          "case_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The court case number"
+          },
+          "creditor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The creditor"
+          }
+        }
+      }
+    },
+    "property_taxes": {
+      "type": "object",
+      "description": "The tax note in the lender notes",
+      "properties": {
+        "fiscal_year": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The fiscal year the taxes are for, e.g. '2025-2026'"
+        },
+        "installments": {
+          "type": "array",
+          "description": "Each tax installment",
+          "items": {
+            "type": "object",
+            "description": "An installment",
+            "properties": {
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The installment amount in USD"
+              },
+              "due_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The due date, as YYYY-MM-DD"
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "'Paid' or 'Open', as printed"
+              }
+            }
+          }
+        },
+        "land_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Assessed land value in USD"
+        },
+        "improvement_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Assessed improvement value in USD"
+        },
+        "total_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total assessed value in USD"
+        }
+      }
+    }
+  }
+}
