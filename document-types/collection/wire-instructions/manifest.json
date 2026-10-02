@@ -1,0 +1,41 @@
+{
+  "slug": "wire-instructions",
+  "title": "Wire Instructions",
+  "source": {
+    "file": "wire-instructions-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://adc-tenbox-prod.imgix.net/resi/propertyDocuments/1300098/PRELIMINARY_TITLE_REPORT/40C02EC5FCCE4D3BBF40A5C6B9BEF65F.v1.pdf",
+      "publisher": "First Integrity Title Company",
+      "title": "Wire Instructions (page 11 of a preliminary title report)",
+      "retrieved": "2026-10-02",
+      "clearance": "redacted",
+      "clearance_note": "Page 11 of the title commitment in document-types/collection/commitment-for-title-insurance, split out on its own: the title agent's wire instructions for closing funds, posted with the preliminary title report on a residential property-auction listing and downloaded by script. The page carried the title company's real trust-account number, the property's address and the order number. The account number and the ABA routing number were replaced with random stand-ins of the same shape; the routing stand-in fails the ABA checksum, so it cannot route a wire. The order number and the property address use the same stand-ins as the commitment folder, so the two samples still agree with each other. The page has no text layer (Microsoft Print To PDF writes glyphs as vector paths), so it was redacted with document-types/scripts/redact_outlined.py, which deletes the glyph paths and draws the replacements. PDF metadata was cleared. Verified by OCR, on literals and bare digits: no original value survives in the committed PDF or anywhere in this folder. The title company's and the receiving bank's names, addresses and published phone numbers are kept: they are businesses, and with the account number replaced the page cannot be used to send money anywhere real.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file stays outside the repo.",
+        "replaced": [
+          { "what": "beneficiary bank account number", "with": "random stand-in of the same shape", "occurrences": 1 },
+          { "what": "ABA routing number", "with": "random 9-digit stand-in that fails the ABA checksum", "occurrences": 1 },
+          { "what": "reference order number", "with": "FIN-78796415 (as in the commitment folder)", "occurrences": 1 },
+          { "what": "property street address", "with": "100 SAMPLE RD", "occurrences": 1 },
+          { "what": "city", "with": "Anytown", "occurrences": 1 },
+          { "what": "ZIP code", "with": "90000", "occurrences": 1 }
+        ]
+      },
+      "split_from": {
+        "document": "commitment-for-title-insurance",
+        "page": 11
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "receiving_bank.name", "label": "Receiving bank", "occurrence": 0 },
+    { "path": "aba_routing_number", "label": "ABA routing number", "occurrence": 0 },
+    { "path": "account_number", "label": "Account number", "occurrence": 0 },
+    { "path": "account_name", "label": "Account name", "occurrence": 0 },
+    { "path": "reference_number", "label": "Reference order number", "occurrence": 0 }
+  ],
+  "notes": "The request named no fields and asked for page 11 of the title commitment on its own, reusing that folder's redaction. Features the complete payment route, top to bottom of the instruction block: the bank, the routing number, the account, whose account it is, and the reference to quote. account_type (IOLTA) is correct but grounds to the same line as account_name, so it would repeat that crop. issuer.name came back as 'FIN TITLE', read off the logo, rather than the company named in the opening paragraph. wire_only and ach_accepted are correct and ground to the sentences that state them, but read OFF because the boolean is not printed."
+}

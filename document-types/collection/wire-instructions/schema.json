@@ -1,0 +1,123 @@
+{
+  "type": "object",
+  "description": "Wire transfer instructions issued by an escrow or title company for closing funds",
+  "properties": {
+    "issuer": {
+      "type": "object",
+      "description": "The company issuing the instructions and receiving the funds",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The issuing company's name, from the letterhead or the opening paragraph"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The issuing company's address from the letterhead, as one line"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The main phone number from the letterhead"
+        }
+      }
+    },
+    "receiving_bank": {
+      "type": "object",
+      "description": "The bank the funds are wired to",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The bank's name, from 'Wire To'"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The bank's street address, city, state and ZIP as one line"
+        },
+        "attention": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The department named after 'Attn', if any"
+        }
+      }
+    },
+    "aba_routing_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The ABA routing number, digits only"
+    },
+    "account_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The beneficiary bank account number"
+    },
+    "account_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The beneficiary account name, as printed"
+    },
+    "account_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The kind of account named in the account name, e.g. 'IOLTA', 'escrow' or 'trust'; null if none is named"
+    },
+    "reference_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The order, file or escrow number to quote as the wire reference"
+    },
+    "property_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The property address the funds relate to, as one line"
+    },
+    "attention": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The team or unit named on the 'Attention' line"
+    },
+    "wire_only": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the instructions say closing funds must be sent by wire transfer"
+    },
+    "ach_accepted": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "False if the instructions say ACH transfers are not accepted; true if they say ACH is accepted; null if not stated"
+    }
+  }
+}
