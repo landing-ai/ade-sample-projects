@@ -1,0 +1,121 @@
+{
+  "slug": "commitment-for-title-insurance",
+  "title": "Commitment for Title Insurance",
+  "source": {
+    "file": "commitment-for-title-insurance-redacted.pdf",
+    "pages": 11,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://adc-tenbox-prod.imgix.net/resi/propertyDocuments/1300098/PRELIMINARY_TITLE_REPORT/40C02EC5FCCE4D3BBF40A5C6B9BEF65F.v1.pdf",
+      "publisher": "First Integrity Title Company, as agent for Westcor Land Title Insurance Company",
+      "title": "ALTA Commitment for Title Insurance (2016), with lender notes",
+      "retrieved": "2026-10-02",
+      "clearance": "redacted",
+      "clearance_note": "A real title commitment, issued by First Integrity Title Company on Westcor's ALTA form and posted as the preliminary title report on a residential property-auction listing, from which it was downloaded by script. Its distribution for bidders is public, but it is a foreclosure file: it named three private homeowners as vested owners and trustors, and a named debtor under a child-support judgment, and it identified the property by street address, assessor's parcel number, legal description and county recording numbers. Every one of those was replaced. The PDF has no text layer -- its producer, Microsoft Print To PDF, emits each glyph as a vector path -- so document-types/scripts/redact.py could not see it; the new document-types/scripts/redact_outlined.py locates each string by OCR, deletes the glyph paths underneath it from the content stream, and draws the replacement in Helvetica. The page of wire instructions, which carried the title company's real trust-account and routing numbers, was dropped. PDF metadata, which carried a title-company employee's name, was cleared. Verified by OCR of every page, on literals and bare digits: no original value survives in the committed PDF, and none appears anywhere in this folder. Corporate officers' names and facsimile signatures on the jacket and Schedule A are kept: they sign in a corporate capacity and are printed on every commitment the companies issue.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_outlined.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "vested owners' and trustors' names (three people)",
+            "with": "Jonah Q Sample, Robert James Q Sample, Jane Q Sample",
+            "occurrences": 9
+          },
+          {
+            "what": "judgment debtor's full name",
+            "with": "Jonah Quinn Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "property street address",
+            "with": "100 SAMPLE RD",
+            "occurrences": 2
+          },
+          {
+            "what": "city",
+            "with": "Anytown",
+            "occurrences": 3
+          },
+          {
+            "what": "ZIP code",
+            "with": "90000",
+            "occurrences": 2
+          },
+          {
+            "what": "county",
+            "with": "Sample",
+            "occurrences": 3
+          },
+          {
+            "what": "assessor's parcel number",
+            "with": "plausible random stand-in of the same shape",
+            "occurrences": 3
+          },
+          {
+            "what": "legal description section, township, range, parcel map number and map page",
+            "with": "different numbers",
+            "occurrences": 6
+          },
+          {
+            "what": "county recording instrument numbers (8 distinct)",
+            "with": "same year prefix, random remaining digits",
+            "occurrences": 9
+          },
+          {
+            "what": "MERS MIN",
+            "with": "plausible random stand-in of the same shape",
+            "occurrences": 1
+          },
+          {
+            "what": "court case number",
+            "with": "plausible random stand-in",
+            "occurrences": 1
+          },
+          {
+            "what": "commitment / order number, including in the recorded-documents link",
+            "with": "FIN-78796415",
+            "occurrences": 10
+          }
+        ],
+        "dropped_page_reason": "page 11 was wire instructions carrying the title company's real trust-account and routing numbers; it adds nothing to a title commitment and publishing those numbers invites wire fraud"
+      },
+      "dropped_pages": [
+        11
+      ]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "commitment_number",
+      "label": "Commitment number",
+      "occurrence": 0
+    },
+    {
+      "path": "underwriter.name",
+      "label": "Underwriter",
+      "occurrence": 0
+    },
+    {
+      "path": "form_edition",
+      "label": "Form edition",
+      "occurrence": 0
+    },
+    {
+      "path": "attestation.is_signed",
+      "label": "Signed",
+      "occurrence": 0
+    },
+    {
+      "path": "attestation.has_seal_or_stamp",
+      "label": "Seal or stamp",
+      "occurrence": 0
+    }
+  ],
+  "preview_pages": [
+    1,
+    4,
+    7,
+    8
+  ],
+  "notes": "The request named feature page 1 and no fields, and asked that two booleans be featured: whether the document is signed and whether it carries a seal or stamp. Both are honoured on page 1. attestation.is_signed grounds to the parse's [SIGNED] attestation label and attestation.has_seal_or_stamp to its [SEALED] label, the corporate seal on the jacket; inspect_fields.py and build_images.py flag both as OFF because the word 'true' is not on the page, which is expected for a boolean, and both crops were checked by eye. The other three fields identify the commitment: its number, the underwriter, and the ALTA form it is written on. No person is featured. issuing_agent.name was not used: its value spans two lines, so each of its two ranges holds only part of it and both read OFF."
+}
