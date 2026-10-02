@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "partnership.name",
+      "label": "Partnership name",
+      "value": "Sample Software Service",
+      "page": 1,
+      "box": {
+        "xmin": 0.24714,
+        "ymin": 0.10588,
+        "xmax": 0.8003,
+        "ymax": 0.13611
+      },
+      "range": {
+        "end": 494,
+        "start": 448
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "partnership-name.png"
+    },
+    {
+      "path": "partnership.ein",
+      "label": "EIN",
+      "value": "12-3456789",
+      "page": 1,
+      "box": {
+        "xmin": 0.80123,
+        "ymin": 0.10609,
+        "xmax": 0.94312,
+        "ymax": 0.13403
+      },
+      "range": {
+        "end": 804,
+        "start": 761
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "partnership-ein.png"
+    },
+    {
+      "path": "schedules_c_and_m3_attached",
+      "label": "Schedules C and M-3 attached (row J)",
+      "value": true,
+      "page": 1,
+      "box": {
+        "xmin": 0.05646,
+        "ymin": 0.25953,
+        "xmax": 0.93916,
+        "ymax": 0.27264
+      },
+      "range": {
+        "end": 1270,
+        "start": 1218
+      },
+      "occurrence": 0,
+      "matched": false,
+      "image": "schedules_c_and_m3_attached.png"
+    },
+    {
+      "path": "income.total_income",
+      "label": "Total income (line 8)",
+      "value": 15000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.82376,
+        "ymin": 0.4092,
+        "xmax": 0.94309,
+        "ymax": 0.42416
+      },
+      "range": {
+        "end": 2653,
+        "start": 2644
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-total_income.png"
+    },
+    {
+      "path": "deductions.ordinary_business_income",
+      "label": "Ordinary business income (line 23)",
+      "value": -76000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.82365,
+        "ymin": 0.65121,
+        "xmax": 0.94319,
+        "ymax": 0.66649
+      },
+      "range": {
+        "end": 4561,
+        "start": 4551
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "deductions-ordinary_business_income.png"
+    }
+  ]
+}

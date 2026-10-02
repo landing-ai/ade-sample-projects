@@ -1,0 +1,810 @@
+{
+  "extraction": {
+    "accounting_method": {
+      "accrual": false,
+      "cash": true,
+      "other": false,
+      "other_detail": ""
+    },
+    "aggregated_activities_465": true,
+    "applicable_boxes": {
+      "address_change": false,
+      "amended_return": false,
+      "final_return": false,
+      "initial_return": true,
+      "name_change": true
+    },
+    "deductions": {
+      "bad_debts": 4000.0,
+      "depletion": 9000.0,
+      "depreciation": 4000.0,
+      "depreciation_reported_elsewhere": 4000.0,
+      "employee_benefit_programs": 11000.0,
+      "energy_efficient_buildings_deduction": 12000.0,
+      "guaranteed_payments_to_partners": 2000.0,
+      "interest": 7000.0,
+      "net_depreciation": 8000.0,
+      "ordinary_business_income": -76000.0,
+      "other_deductions": 13000.0,
+      "rent": 5000.0,
+      "repairs_and_maintenance": 3000.0,
+      "retirement_plans": 10000.0,
+      "salaries_and_wages": 1000.0,
+      "taxes_and_licenses": 6000.0,
+      "total_deductions": 91000.0
+    },
+    "grouped_activities_469": false,
+    "income": {
+      "balance": 2000.0,
+      "cost_of_goods_sold": 1000.0,
+      "gross_profit": 1000.0,
+      "gross_receipts_or_sales": 1000.0,
+      "net_farm_profit": 3000.0,
+      "net_gain_form_4797": 4000.0,
+      "ordinary_income_from_other_partnerships": 2000.0,
+      "other_income": 5000.0,
+      "returns_and_allowances": 1000.0,
+      "total_income": 15000.0
+    },
+    "number_of_schedules_k1": 1,
+    "paid_preparer": {
+      "date": "2023-01-01",
+      "firm_address": "123 Sample Street Ave., Suite #12, Sample City, NY 12345-6789",
+      "firm_ein": "12-3456789",
+      "firm_name": "Sample Mortgage LLC",
+      "name": "John Sample",
+      "phone": "(800) 123-4567",
+      "ptin": "P00001234",
+      "self_employed": true,
+      "signed": true
+    },
+    "partnership": {
+      "business_code_number": "12345",
+      "city": "Sample City",
+      "date_business_started": "2000-12-01",
+      "ein": "12-3456789",
+      "name": "Sample Software Service",
+      "principal_business_activity": "Sofware",
+      "principal_product_or_service": "Sample",
+      "state": "NY",
+      "street_address": "123 Fake Memorial Ave., Unit #1",
+      "total_assets": 50000.0,
+      "zip": "12345-6789"
+    },
+    "schedules_c_and_m3_attached": true,
+    "signature": {
+      "date": "2023-01-01",
+      "irs_may_discuss_with_preparer": true,
+      "partner_signed": true
+    },
+    "tax_and_payment": {
+      "amount_owed": 0.0,
+      "bba_aar_imputed_underpayment": 3000.0,
+      "elective_payment_election_amount": 1000.0,
+      "lookback_interest_completed_contracts": 1000.0,
+      "lookback_interest_income_forecast": 2000.0,
+      "other_taxes": 4000.0,
+      "overpayment": 0.0,
+      "payment": 0.0,
+      "total_balance_due": 10000.0
+    },
+    "tax_year": 2023,
+    "tax_year_beginning": "2023-01-01",
+    "tax_year_ending": "2023-12-31"
+  },
+  "extraction_metadata": {
+    "accounting_method": {
+      "accrual": {
+        "ranges": [
+          {
+            "end": 1080,
+            "start": 1065
+          }
+        ],
+        "value": false
+      },
+      "cash": {
+        "ranges": [
+          {
+            "end": 1064,
+            "start": 1052
+          }
+        ],
+        "value": true
+      },
+      "other": {
+        "ranges": [
+          {
+            "end": 1109,
+            "start": 1081
+          }
+        ],
+        "value": false
+      },
+      "other_detail": {
+        "ranges": [
+          {
+            "end": 1109,
+            "start": 1081
+          }
+        ],
+        "value": ""
+      }
+    },
+    "aggregated_activities_465": {
+      "ranges": [
+        {
+          "end": 1358,
+          "start": 1296
+        }
+      ],
+      "value": true
+    },
+    "applicable_boxes": {
+      "address_change": {
+        "ranges": [
+          {
+            "end": 1000,
+            "start": 978
+          }
+        ],
+        "value": false
+      },
+      "amended_return": {
+        "ranges": [
+          {
+            "end": 1023,
+            "start": 1001
+          }
+        ],
+        "value": false
+      },
+      "final_return": {
+        "ranges": [
+          {
+            "end": 957,
+            "start": 937
+          }
+        ],
+        "value": false
+      },
+      "initial_return": {
+        "ranges": [
+          {
+            "end": 936,
+            "start": 914
+          }
+        ],
+        "value": true
+      },
+      "name_change": {
+        "ranges": [
+          {
+            "end": 977,
+            "start": 958
+          }
+        ],
+        "value": true
+      }
+    },
+    "deductions": {
+      "bad_debts": {
+        "ranges": [
+          {
+            "end": 3146,
+            "start": 3138
+          }
+        ],
+        "value": 4000.0
+      },
+      "depletion": {
+        "ranges": [
+          {
+            "end": 3804,
+            "start": 3796
+          }
+        ],
+        "value": 9000.0
+      },
+      "depreciation": {
+        "ranges": [
+          {
+            "end": 3516,
+            "start": 3504
+          }
+        ],
+        "value": 4000.0
+      },
+      "depreciation_reported_elsewhere": {
+        "ranges": [
+          {
+            "end": 3653,
+            "start": 3641
+          }
+        ],
+        "value": 4000.0
+      },
+      "employee_benefit_programs": {
+        "ranges": [
+          {
+            "end": 4001,
+            "start": 3992
+          }
+        ],
+        "value": 11000.0
+      },
+      "energy_efficient_buildings_deduction": {
+        "ranges": [
+          {
+            "end": 4141,
+            "start": 4132
+          }
+        ],
+        "value": 12000.0
+      },
+      "guaranteed_payments_to_partners": {
+        "ranges": [
+          {
+            "end": 2966,
+            "start": 2958
+          }
+        ],
+        "value": 2000.0
+      },
+      "interest": {
+        "ranges": [
+          {
+            "end": 3416,
+            "start": 3408
+          }
+        ],
+        "value": 7000.0
+      },
+      "net_depreciation": {
+        "ranges": [
+          {
+            "end": 3682,
+            "start": 3674
+          }
+        ],
+        "value": 8000.0
+      },
+      "ordinary_business_income": {
+        "ranges": [
+          {
+            "end": 4561,
+            "start": 4551
+          }
+        ],
+        "value": -76000.0
+      },
+      "other_deductions": {
+        "ranges": [
+          {
+            "end": 4251,
+            "start": 4242
+          }
+        ],
+        "value": 13000.0
+      },
+      "rent": {
+        "ranges": [
+          {
+            "end": 3223,
+            "start": 3215
+          }
+        ],
+        "value": 5000.0
+      },
+      "repairs_and_maintenance": {
+        "ranges": [
+          {
+            "end": 3063,
+            "start": 3055
+          }
+        ],
+        "value": 3000.0
+      },
+      "retirement_plans": {
+        "ranges": [
+          {
+            "end": 3901,
+            "start": 3892
+          }
+        ],
+        "value": 10000.0
+      },
+      "salaries_and_wages": {
+        "ranges": [
+          {
+            "end": 2861,
+            "start": 2853
+          }
+        ],
+        "value": 1000.0
+      },
+      "taxes_and_licenses": {
+        "ranges": [
+          {
+            "end": 3315,
+            "start": 3307
+          }
+        ],
+        "value": 6000.0
+      },
+      "total_deductions": {
+        "ranges": [
+          {
+            "end": 4415,
+            "start": 4406
+          }
+        ],
+        "value": 91000.0
+      }
+    },
+    "grouped_activities_469": {
+      "ranges": [
+        {
+          "end": 1427,
+          "start": 1359
+        }
+      ],
+      "value": false
+    },
+    "income": {
+      "balance": {
+        "ranges": [
+          {
+            "end": 1771,
+            "start": 1763
+          }
+        ],
+        "value": 2000.0
+      },
+      "cost_of_goods_sold": {
+        "ranges": [
+          {
+            "end": 1882,
+            "start": 1874
+          }
+        ],
+        "value": 1000.0
+      },
+      "gross_profit": {
+        "ranges": [
+          {
+            "end": 1996,
+            "start": 1988
+          }
+        ],
+        "value": 1000.0
+      },
+      "gross_receipts_or_sales": {
+        "ranges": [
+          {
+            "end": 1743,
+            "start": 1662
+          }
+        ],
+        "value": 1000.0
+      },
+      "net_farm_profit": {
+        "ranges": [
+          {
+            "end": 2282,
+            "start": 2274
+          }
+        ],
+        "value": 3000.0
+      },
+      "net_gain_form_4797": {
+        "ranges": [
+          {
+            "end": 2421,
+            "start": 2413
+          }
+        ],
+        "value": 4000.0
+      },
+      "ordinary_income_from_other_partnerships": {
+        "ranges": [
+          {
+            "end": 2156,
+            "start": 2148
+          }
+        ],
+        "value": 2000.0
+      },
+      "other_income": {
+        "ranges": [
+          {
+            "end": 2531,
+            "start": 2523
+          }
+        ],
+        "value": 5000.0
+      },
+      "returns_and_allowances": {
+        "ranges": [
+          {
+            "end": 1743,
+            "start": 1662
+          }
+        ],
+        "value": 1000.0
+      },
+      "total_income": {
+        "ranges": [
+          {
+            "end": 2653,
+            "start": 2644
+          }
+        ],
+        "value": 15000.0
+      }
+    },
+    "number_of_schedules_k1": {
+      "ranges": [
+        {
+          "end": 1217,
+          "start": 1110
+        }
+      ],
+      "value": 1
+    },
+    "paid_preparer": {
+      "date": {
+        "ranges": [
+          {
+            "end": 6540,
+            "start": 6522
+          }
+        ],
+        "value": "2023-01-01"
+      },
+      "firm_address": {
+        "ranges": [
+          {
+            "end": 6816,
+            "start": 6740
+          }
+        ],
+        "value": "123 Sample Street Ave., Suite #12, Sample City, NY 12345-6789"
+      },
+      "firm_ein": {
+        "ranges": [
+          {
+            "end": 6709,
+            "start": 6686
+          }
+        ],
+        "value": "12-3456789"
+      },
+      "firm_name": {
+        "ranges": [
+          {
+            "end": 6665,
+            "start": 6632
+          }
+        ],
+        "value": "Sample Mortgage LLC"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 6469,
+            "start": 6428
+          }
+        ],
+        "value": "John Sample"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 6861,
+            "start": 6837
+          }
+        ],
+        "value": "(800) 123-4567"
+      },
+      "ptin": {
+        "ranges": [
+          {
+            "end": 6601,
+            "start": 6587
+          }
+        ],
+        "value": "P00001234"
+      },
+      "self_employed": {
+        "ranges": [
+          {
+            "end": 6578,
+            "start": 6549
+          }
+        ],
+        "value": true
+      },
+      "signed": {
+        "ranges": [
+          {
+            "end": 6513,
+            "start": 6478
+          }
+        ],
+        "value": true
+      }
+    },
+    "partnership": {
+      "business_code_number": {
+        "ranges": [
+          {
+            "end": 390,
+            "start": 384
+          }
+        ],
+        "value": "12345"
+      },
+      "city": {
+        "ranges": [
+          {
+            "end": 740,
+            "start": 637
+          }
+        ],
+        "value": "Sample City"
+      },
+      "date_business_started": {
+        "ranges": [
+          {
+            "end": 839,
+            "start": 805
+          }
+        ],
+        "value": "2000-12-01"
+      },
+      "ein": {
+        "ranges": [
+          {
+            "end": 804,
+            "start": 761
+          }
+        ],
+        "value": "12-3456789"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 494,
+            "start": 448
+          }
+        ],
+        "value": "Sample Software Service"
+      },
+      "principal_business_activity": {
+        "ranges": [
+          {
+            "end": 319,
+            "start": 311
+          }
+        ],
+        "value": "Sofware"
+      },
+      "principal_product_or_service": {
+        "ranges": [
+          {
+            "end": 359,
+            "start": 352
+          }
+        ],
+        "value": "Sample"
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 740,
+            "start": 637
+          }
+        ],
+        "value": "NY"
+      },
+      "street_address": {
+        "ranges": [
+          {
+            "end": 618,
+            "start": 513
+          }
+        ],
+        "value": "123 Fake Memorial Ave., Unit #1"
+      },
+      "total_assets": {
+        "ranges": [
+          {
+            "end": 885,
+            "start": 840
+          }
+        ],
+        "value": 50000.0
+      },
+      "zip": {
+        "ranges": [
+          {
+            "end": 740,
+            "start": 637
+          }
+        ],
+        "value": "12345-6789"
+      }
+    },
+    "schedules_c_and_m3_attached": {
+      "ranges": [
+        {
+          "end": 1270,
+          "start": 1218
+        }
+      ],
+      "value": true
+    },
+    "signature": {
+      "date": {
+        "ranges": [
+          {
+            "end": 6263,
+            "start": 6253
+          }
+        ],
+        "value": "2023-01-01"
+      },
+      "irs_may_discuss_with_preparer": {
+        "ranges": [
+          {
+            "end": 6360,
+            "start": 6332
+          }
+        ],
+        "value": true
+      },
+      "partner_signed": {
+        "ranges": [
+          {
+            "end": 6195,
+            "start": 6185
+          }
+        ],
+        "value": true
+      }
+    },
+    "tax_and_payment": {
+      "amount_owed": {
+        "ranges": [
+          {
+            "end": 5638,
+            "start": 5634
+          }
+        ],
+        "value": 0.0
+      },
+      "bba_aar_imputed_underpayment": {
+        "ranges": [
+          {
+            "end": 5035,
+            "start": 5027
+          }
+        ],
+        "value": 3000.0
+      },
+      "elective_payment_election_amount": {
+        "ranges": [
+          {
+            "end": 5377,
+            "start": 5369
+          }
+        ],
+        "value": 1000.0
+      },
+      "lookback_interest_completed_contracts": {
+        "ranges": [
+          {
+            "end": 4757,
+            "start": 4749
+          }
+        ],
+        "value": 1000.0
+      },
+      "lookback_interest_income_forecast": {
+        "ranges": [
+          {
+            "end": 4914,
+            "start": 4906
+          }
+        ],
+        "value": 2000.0
+      },
+      "other_taxes": {
+        "ranges": [
+          {
+            "end": 5139,
+            "start": 5131
+          }
+        ],
+        "value": 4000.0
+      },
+      "overpayment": {
+        "ranges": [
+          {
+            "end": 5799,
+            "start": 5795
+          }
+        ],
+        "value": 0.0
+      },
+      "payment": {
+        "ranges": [
+          {
+            "end": 5473,
+            "start": 5469
+          }
+        ],
+        "value": 0.0
+      },
+      "total_balance_due": {
+        "ranges": [
+          {
+            "end": 5256,
+            "start": 5247
+          }
+        ],
+        "value": 10000.0
+      }
+    },
+    "tax_year": {
+      "ranges": [
+        {
+          "end": 180,
+          "start": 100
+        }
+      ],
+      "value": 2023
+    },
+    "tax_year_beginning": {
+      "ranges": [
+        {
+          "end": 180,
+          "start": 100
+        }
+      ],
+      "value": "2023-01-01"
+    },
+    "tax_year_ending": {
+      "ranges": [
+        {
+          "end": 180,
+          "start": 100
+        }
+      ],
+      "value": "2023-12-31"
+    }
+  },
+  "markdown": "Form 1065\nDepartment of the Treasury\nInternal Revenue Service\n\n\nU.S. Return of Partnership Income\n\n\nFor calendar year 2023, or tax year beginning 01/01, 2023, ending 12/31, 20 23. \nGo to www.irs.gov/Form1065 for instructions and the latest information. \n\nOMB No. 1545-0123\n2023\n\n\nA Principal business activity \nSofware \nB Principal product or service \nSample \nC Business code number \n12345 \n\n<table>\n<tr><td rowspan=\"3\">Type<br>or<br>Print</td><td>Name of partnership<br>Sample Software Service</td></tr>\n<tr><td>Number, street, and room or suite no. If a P.O. box, see instructions.<br>123 Fake Memorial Ave., Unit #1</td></tr>\n<tr><td>City or town, state or province, country, and ZIP or foreign postal code<br>Sample City, NY, 12345-6789</td></tr>\n</table>\n\nEmployer identification number: 12-3456789 \nDate business started: 12/01/2000 \nTotal assets (see instructions): $ 50,000.00 \n\nG Check applicable boxes: \n[x] (1) Initial return\n[ ] (2) Final return\n[x] (3) Name change\n[ ] (4) Address change\n[ ] (5) Amended return\nH Check accounting method: \n[x] (1) Cash\n[ ] (2) Accrual\n[ ] (3) Other (specify): ___\nI Number of Schedules K-1. Attach one for each person who was a partner at any time during the tax year: 1 \nJ Check if Schedules C and M-3 are attached ... [x] \nK Check if partnership: \n[x] (1) Aggregated activities for section 465 at-risk purposes\n[ ] (2) Grouped activities for section 469 passive activity purposes\n\n<table>\n<tr><td colspan=\"6\">**Caution:** Include **only** trade or business income and expenses on lines 1a through 23 below. See instructions for more information.</td></tr>\n<tr><td rowspan=\"8\">Income</td><td>1a</td><td colspan=\"2\">Gross receipts or sales 1,000.00 b Less returns and allowances 1,000.00 c Balance</td><td>1c</td><td>2,000.00</td></tr>\n<tr><td>2</td><td colspan=\"2\">Cost of goods sold (attach Form 1125-A) ...</td><td>2</td><td>1,000.00</td></tr>\n<tr><td>3</td><td colspan=\"2\">Gross profit. Subtract line 2 from line 1c ...</td><td>3</td><td>1,000.00</td></tr>\n<tr><td>4</td><td colspan=\"2\">Ordinary income (loss) from other partnerships, estates, and trusts (attach statement) . . .</td><td>4</td><td>2,000.00</td></tr>\n<tr><td>5</td><td colspan=\"2\">Net farm profit (loss) (attach Schedule F (Form 1040)) ...</td><td>5</td><td>3,000.00</td></tr>\n<tr><td>6</td><td colspan=\"2\">Net gain (loss) from Form 4797, Part II, line 17 (attach Form 4797) ...</td><td>6</td><td>4,000.00</td></tr>\n<tr><td>7</td><td colspan=\"2\">Other income (loss) (attach statement) ...</td><td>7</td><td>5,000.00</td></tr>\n<tr><td>8</td><td colspan=\"2\">**Total income (loss).** Combine lines 3 through 7...</td><td>8</td><td>15,000.00</td></tr>\n<tr><td rowspan=\"15\">Deductions (see instructions for limitations)</td><td>9</td><td colspan=\"2\">Salaries and wages (other than to partners) (less employment credits) ...</td><td>9</td><td>1,000.00</td></tr>\n<tr><td>10</td><td colspan=\"2\">Guaranteed payments to partners ...</td><td>10</td><td>2,000.00</td></tr>\n<tr><td>11</td><td colspan=\"2\">Repairs and maintenance ...</td><td>11</td><td>3,000.00</td></tr>\n<tr><td>12</td><td colspan=\"2\">Bad debts ...</td><td>12</td><td>4,000.00</td></tr>\n<tr><td>13</td><td colspan=\"2\">Rent...</td><td>13</td><td>5,000.00</td></tr>\n<tr><td>14</td><td colspan=\"2\">Taxes and licenses ...</td><td>14</td><td>6,000.00</td></tr>\n<tr><td>15</td><td colspan=\"2\">Interest (see instructions) ...</td><td>15</td><td>7,000.00</td></tr>\n<tr><td>16a</td><td>Depreciation (if required, attach Form 4562) ...</td><td>16a 4,000.00</td><td></td><td></td></tr>\n<tr><td>b</td><td>Less depreciation reported on Form 1125-A and elsewhere on return ...</td><td>16b 4,000.00</td><td>16c</td><td>8,000.00</td></tr>\n<tr><td>17</td><td colspan=\"2\">Depletion (Do not deduct oil and gas depletion.) ...</td><td>17</td><td>9,000.00</td></tr>\n<tr><td>18</td><td colspan=\"2\">Retirement plans, etc. ...</td><td>18</td><td>10,000.00</td></tr>\n<tr><td>19</td><td colspan=\"2\">Employee benefit programs ...</td><td>19</td><td>11,000.00</td></tr>\n<tr><td>20</td><td colspan=\"2\">Energy efficient commercial buildings deduction (attach Form 7205)...</td><td>20</td><td>12,000.00</td></tr>\n<tr><td>21</td><td colspan=\"2\">Other deductions (attach statement) ...</td><td>21</td><td>13,000.00</td></tr>\n<tr><td>22</td><td colspan=\"2\">**Total deductions.** Add the amounts shown in the far right column for lines 9 through 21...</td><td>22</td><td>91,000.00</td></tr>\n<tr><td></td><td>23</td><td colspan=\"2\">Ordinary business income (loss). Subtract line 22 from line 8 ...</td><td>23</td><td>-76,000.00</td></tr>\n<tr><td rowspan=\"9\">Tax and Payment</td><td>24</td><td colspan=\"2\">Interest due under the look-back method—completed long-term contracts (attach Form 8697) .</td><td>24</td><td>1,000.00</td></tr>\n<tr><td>25</td><td colspan=\"2\">Interest due under the look-back method—income forecast method (attach Form 8866) . . .</td><td>25</td><td>2,000.00</td></tr>\n<tr><td>26</td><td colspan=\"2\">BBA AAR imputed underpayment (see instructions) ...</td><td>26</td><td>3,000.00</td></tr>\n<tr><td>27</td><td colspan=\"2\">Other taxes (see instructions) ...</td><td>27</td><td>4,000.00</td></tr>\n<tr><td>28</td><td colspan=\"2\">Total balance due. Add lines 24 through 27 ...</td><td>28</td><td>10,000.00</td></tr>\n<tr><td>29</td><td colspan=\"2\">Elective payment election amount from Form 3800 ...</td><td>29</td><td>1,000.00</td></tr>\n<tr><td>30</td><td colspan=\"2\">Payment (see instructions) ...</td><td>30</td><td>0.00</td></tr>\n<tr><td>31</td><td colspan=\"2\">**Amount owed.** If the sum of line 29 and line 30 is smaller than line 28, enter amount owed . . .</td><td>31</td><td>0.00</td></tr>\n<tr><td>32</td><td colspan=\"2\">**Overpayment.** If the sum of line 29 and line 30 is larger than line 28, enter overpayment...</td><td>32</td><td>0.00</td></tr>\n</table>\n\n[SIGNED]\nSign\nHere\nUnder penalties of perjury, I declare that I have examined this return, including accompanying schedules and statements, and to the best of my knowledge\nand belief, it is true, correct, and complete. Declaration of preparer (other than partner or limited liability company member) is based on all information of\nwhich preparer has any knowledge.\nSample Doe\nSignature of partner or limited liability company member\n01/01/2023\nDate\nMay the IRS discuss this return\nwith the preparer shown below?\nSee instructions. ☑ Yes □ No\n\n\n<table>\n<tr><td rowspan=\"3\">Paid<br>Preparer<br>Use Only</td><td>Print/Type preparer's name<br>John Sample</td><td>Preparer's signature<br>John Sample</td><td>Date<br>01/01/2023</td><td>Check [x] if<br>self-employed</td><td>PTIN P00001234</td></tr>\n<tr><td colspan=\"3\">Firm's name   Sample Mortgage LLC</td><td colspan=\"2\">Firm's EIN   12-3456789</td></tr>\n<tr><td colspan=\"3\">Firm's address 123 Sample Street Ave., Suite #12, Sample City, NY 12345-6789</td><td colspan=\"2\">Phone no. (800) 123-4567</td></tr>\n</table>\n\nFor Paperwork Reduction Act Notice, see separate instructions.\n\n\nCat. No. 11390Z\n\n\nForm **1065** (2023)\n\n\n<!-- doc_id=parse-01m3ywwng3q76333z56hejqtm4 -->",
+  "metadata": {
+    "job_id": "extract-01m3ywxbq6fbv3xevehppghp2x",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 24714,
+    "doc_id": "parse-01m3ywwng3q76333z56hejqtm4",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.7,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 7036,
+    "output_extraction_chars": 2213,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

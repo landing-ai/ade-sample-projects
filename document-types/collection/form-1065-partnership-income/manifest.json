@@ -1,0 +1,46 @@
+{
+  "slug": "form-1065-partnership-income",
+  "title": "Form 1065 - Partnership Income",
+  "source": {
+    "file": "form-1065-2023-ocrolus-sample.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://drive.google.com/file/d/1PHpnyYjTsGCb4puiZJtKtZKu8Gu2ilsw/edit",
+      "publisher": "Ocrolus",
+      "title": "IRS Form 1065 (2023) sample document",
+      "retrieved": "2026-10-02",
+      "clearance": "public",
+      "clearance_note": "Page 1 of the 2023 IRS Form 1065, filled with synthetic data, and the sample Ocrolus links from its public documentation page for this form (docs.ocrolus.com/docs/irs-form-1065-2023-us-return-of-partnership-income). Shared from Google Drive and downloaded by script. Every value is a placeholder: partnership 'Sample Software Service' at '123 Fake Memorial Ave.', EIN 12-3456789, preparer 'John Sample' with PTIN P00001234, firm 'Sample Mortgage LLC', phone (800) 123-4567, and round-number line amounts. The signatures are drawn to go with those invented names. The PDF metadata carries only the print driver and Acrobat Distiller. No redaction needed. Ocrolus is a document-AI vendor, so this is a competitor's published sample."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "partnership.name",
+      "label": "Partnership name",
+      "occurrence": 0
+    },
+    {
+      "path": "partnership.ein",
+      "label": "EIN",
+      "occurrence": 0
+    },
+    {
+      "path": "schedules_c_and_m3_attached",
+      "label": "Schedules C and M-3 attached (row J)",
+      "occurrence": 0
+    },
+    {
+      "path": "income.total_income",
+      "label": "Total income (line 8)",
+      "occurrence": 0
+    },
+    {
+      "path": "deductions.ordinary_business_income",
+      "label": "Ordinary business income (line 23)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request asked that the featured fields include the cash accounting method checkbox in row H. It could not be illustrated: accounting_method.cash extracts correctly (true) and its range is exactly '[x] (1) Cash', but the parse's line-level boxes for rows G-I sit one row low, so its box lands on row I (the Schedules K-1 count). client.v2.ground returns the same shifted line. At the requester's choice it was replaced by the row J checkbox, schedules_c_and_m3_attached (true), the only checkbox on its line, whose box is correct. It grounds to the row J line and reads OFF only because the word 'true' is not on the page, which is expected for a boolean; the crop was checked by eye. The other four fields are the return's headline: who is filing, its EIN, its total income and the bottom line. No person is featured. Every checkbox in rows G, H, J and K extracts correctly as checked or unchecked."
+}
