@@ -83,9 +83,40 @@ the intended page URL. `Bill of Lading` → `bill-of-lading`.
 Check `document-types/collection/<slug>/` does not already exist. If it does, stop and
 ask whether to replace it.
 
-Create a branch: `git checkout -b document-type-<slug>`.
+**Branch and working directory.** Each document type gets its own git worktree, so
+several builds can run at once:
 
-Use `.venv/bin/python` for every script in this repo.
+```
+.venv/bin/python document-types/scripts/ship.py start <slug>     # prints the worktree path
+```
+
+This creates `<repo>-worktrees/<slug>` on branch `document-type-<slug>`, links `.venv`
+and `.env` into it, and copies the request file across. **Work inside that directory
+from here on**, using paths relative to it. If you were started inside the slug's
+worktree already, as the `/build-document-types` orchestrator does, skip this and stay
+where you are. Never build in the main checkout while other builds are running.
+
+Use `.venv/bin/python` for every script in this repo. In a worktree it is the linked one.
+
+### Pausing
+
+This skill stops and waits in several places: a download blocked by a bot check,
+provenance you cannot establish, a requested field or feature page the run cannot
+honour, and an existing folder. When you run as a subagent, you cannot ask the operator
+yourself. End your turn with exactly this block and nothing after it, and the
+orchestrator will put the question to the operator and resume you with the answer:
+
+```
+PAUSE <slug>
+step: <step number and name>
+question: <one sentence the operator can answer>
+options:
+  - <option, with its consequence>
+  - <option, with its consequence>
+context: <the facts the operator needs, with no personal-data values>
+```
+
+Leave the worktree as it is when you pause. Do not commit partial work.
 
 ---
 
@@ -409,18 +440,32 @@ Write `document-types/collection/<slug>/README.md` covering:
 
 ## Step 10 — Verify and report
 
-Before committing:
+Before committing, run the mechanical gates:
 
-- [ ] `git status` — no `.env`, no rules file, no credential-shaped paths staged
-- [ ] Personal-data sweep across every file in the folder, literals **and** bare digits
+```
+.venv/bin/python document-types/scripts/ship.py check <slug> \
+    [--rules <outside-the-repo>/rules.json] [--verify-also <terms>] [--include <paths>]
+```
+
+It checks:
+- the folder is complete and the request file is present
+- clearance is `public` or `redacted`, never a placeholder
+- a redacted document records its redactions, and its source PDF carries no metadata
+- 1–5 featured fields, all on `feature_page`, with no comma in any label
+- no credential- or rules-shaped path is in the change set
+- the personal-data sweep, literals **and** runs of digits
+
+A redacted folder needs `--rules` to be swept at all. Pass `--include` for anything else
+this document changed, such as a redaction script. Fix every failure.
+
+Then, by eye, since no script can:
+
 - [ ] Every crop and the page overlay opened and read
-- [ ] `feature_page` matches where the fields actually resolved
-- [ ] No label contains a comma
-- [ ] Clearance is `public` or `redacted`, never a placeholder
-- [ ] The request file is committed at `document-types/requests/<slug>.yaml`
 - [ ] Every difference between the request and the manifest is explained in `notes`
 
-Commit on the branch. Report to the user:
+Commit with `ship.py ship <slug>` and the same flags. It re-runs the check, refuses
+files outside this document type, and commits on `document-type-<slug>`. It pushes and
+opens the PR only with `--push --pr`, and only when the user has asked. Report:
 
 - The folder path and what is in it
 - Credits used
@@ -435,4 +480,7 @@ Commit on the branch. Report to the user:
 Then tell them the next step: run `/new-document-type <slug>` in the **website** repo,
 which reads this folder and builds the page.
 
-Do not push or open a PR unless asked.
+Do not push or open a PR unless asked. When asked, it is
+`ship.py ship <slug> --push --pr [--base <branch>]`. Pass `--base` when this document's
+branch is stacked on another unmerged one, such as a redaction script change. After the
+PR merges, `ship.py cleanup <slug> --delete-branch` removes the worktree.
