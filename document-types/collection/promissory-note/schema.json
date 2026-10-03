@@ -1,0 +1,186 @@
+{
+  "type": "object",
+  "description": "A residential mortgage promissory note (fixed rate)",
+  "properties": {
+    "note_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date of the note, as YYYY-MM-DD"
+    },
+    "city": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The city printed under the date line"
+    },
+    "state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The state printed under the date line"
+    },
+    "property_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The property address, as one line"
+    },
+    "loan_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The loan number; null if blacked out or illegible"
+    },
+    "principal_amount": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Section 1: the principal amount borrowed, in USD"
+    },
+    "lender": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Section 1: the lender's name, as printed"
+    },
+    "interest_rate_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Section 2: the yearly interest rate, as a percent number (3.875 for 3.875%)"
+    },
+    "first_payment_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Section 3(A): the date monthly payments begin, as YYYY-MM-DD"
+    },
+    "payment_day_of_month": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Section 3(A): the day of each month payments are due"
+    },
+    "maturity_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Section 3(A): the maturity date, as YYYY-MM-DD"
+    },
+    "payment_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Section 3(A): where payments are made, as one line"
+    },
+    "monthly_payment": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Section 3(B): the monthly payment of principal and interest, in USD"
+    },
+    "late_charge_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Section 6(A): the number of calendar days after the due date before a late charge applies"
+    },
+    "late_charge_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Section 6(A): the late charge, as a percent of the overdue payment"
+    },
+    "va_guaranteed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the note says the loan is guaranteed by, or subject to the regulations of, the Department of Veterans Affairs"
+    },
+    "assumable_without_approval": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "False if the note says the loan is not assumable without the approval of the Department of Veterans Affairs or its agent"
+    },
+    "form": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The uniform instrument form named in the page footer, e.g. 'Multistate Fixed Rate Note - Single Family - Fannie Mae/Freddie Mac Uniform Instrument Form 3200 1/01'"
+    },
+    "borrower": {
+      "type": "object",
+      "description": "The borrower who signed the note",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The borrower's printed name under the signature line"
+        },
+        "is_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the borrower's signature line carries a signature"
+        },
+        "initialed_pages": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The number of pages carrying the borrower's initials"
+        }
+      }
+    },
+    "loan_originator": {
+      "type": "object",
+      "description": "The loan originator named under the signature",
+      "properties": {
+        "lender_nmls_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The lender's NMLS ID"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The loan originator's name"
+        },
+        "nmls_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The loan originator's NMLS ID"
+        }
+      }
+    }
+  }
+}
