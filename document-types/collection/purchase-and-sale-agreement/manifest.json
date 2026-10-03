@@ -1,0 +1,56 @@
+{
+  "slug": "purchase-and-sale-agreement",
+  "title": "Purchase and Sale Agreement",
+  "source": {
+    "file": "purchase-and-sale-agreement-az-realtors.pdf",
+    "pages": 10,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1876769/000109690622001941/here_ex6z17.pdf",
+      "publisher": "Here Collection LLC, filed with the SEC (form by the Arizona Association of REALTORS)",
+      "title": "Residential Resale Real Estate Purchase Contract (Exhibit 6.17 to Form 1-A POS, filed 2022-08-18)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A fully executed Arizona Association of REALTORS residential resale purchase contract, filed publicly on SEC EDGAR by Here Collection LLC as exhibit EX1A-6 (material contract) to its Form 1-A POS, accession 0001096906-22-001941; the filing index lists here_ex6z17.pdf. Downloaded by script. Buyer and seller are both LLCs. The other people named act in a professional capacity: the seller's listing agent and brokerage with their license numbers, the escrow officer at the title company, and the LLC signers whose e-signatures and initials appear on the form. No private individual's personal data is present. Page 1 of the filed PDF, a one-page Buyer Attachment that is not part of the contract, was dropped so the sample is the ten-page contract alone. PDF metadata (PDFium creator/producer and a creation date) was cleared. Contract pages are otherwise unchanged.",
+      "dropped_pages": [
+        1
+      ],
+      "dropped_page_reason": "page 1 was the Buyer Attachment, a one-page advisory checklist given to buyers that is expressly not part of the contract's terms"
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "price_and_payment.full_purchase_price",
+      "label": "Full purchase price",
+      "occurrence": 0
+    },
+    {
+      "path": "price_and_payment.earnest_money",
+      "label": "Earnest money",
+      "occurrence": 0
+    },
+    {
+      "path": "price_and_payment.cash_at_closing",
+      "label": "Cash due at closing",
+      "occurrence": 0
+    },
+    {
+      "path": "premises.assessor_parcel_number",
+      "label": "Assessor's parcel number",
+      "occurrence": 0
+    },
+    {
+      "path": "premises.legal_description",
+      "label": "Legal description",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested five as suggestions only: full purchase price, earnest money, cash at closing, assessor's number and seller. The first four ground ok on page 1 and ship. The seller does not: its extraction range runs from the '1. PROPERTY' heading through the city line, so the crop boxed the heading. inspect_fields.py marks it ok because the over-wide range contains the value; the crop showed otherwise. The buyer, tried next, also failed by eye: its line box lands one line low, on the printed 'BUYER'S NAME(S)' caption under the value. The legal description (Rockcliff Lot 37) was featured in its place, so the overlay reads as the deal: which parcel, for how much, and how the price splits between earnest money and cash at closing ($10,000 + $835,000 = $845,000). No person is featured. As the request warned, the close-of-escrow date is assembled from split month, day and year blanks and grounds OFF, so it was not featured. The request's page numbers (2-11) refer to the filed PDF; with the Buyer Attachment dropped the contract's first page is page 1 here. preview_pages shows the property and price page, title and escrow, the typed additional terms, and the signature page, instead of the default sample of three prose pages.",
+  "preview_pages": [
+    1,
+    3,
+    8,
+    10
+  ]
+}
