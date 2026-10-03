@@ -1,0 +1,27 @@
+{
+  "slug": "form-1120",
+  "title": "Form 1120",
+  "source": {
+    "file": "form-1120-2024-irs-ats-alternate-scenario-1.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-wi/ty24-f1120-ats-scenario-1-alternate.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "TY2024 Form 1120 MeF Assurance Testing System (ATS) Alternate Scenario 1",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "IRS Modernized e-File Assurance Testing System test scenario for tax year 2024, linked from the IRS TY2024 Form 1120 ATS page. US government work, public domain. Downloaded by script. The source PDF is 32 pages (cover sheets, Form 1120 and its schedules, then Schedules B, D, G, M-3 and O and Forms 1125-A, 3800, 4562, 8594, 8916-A, 8453-CORP and 8949); this folder keeps source pages 4-9 only, the six pages of Form 1120 itself (page 1, Schedule C, Schedule J, Schedule K and Schedule L/M-1/M-2), split out with PyMuPDF. Every value is IRS test data: the fictitious corporation Help For Some, Inc. at 33 Any Street, Anytown MD, with EIN 00-0000011, and a fictitious preparer firm with EIN 00-0000051 and a 555 phone number. No individual is named and the signature lines are blank. No redaction needed. The PDF metadata was reset to the IRS as author and a title naming the scenario."
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [1, 3, 4, 6],
+  "fields": [
+    { "path": "corporation.total_assets", "label": "Total assets (item D)", "occurrence": 0 },
+    { "path": "income.total_income", "label": "Total income (line 11)", "occurrence": 0 },
+    { "path": "deductions.total_deductions", "label": "Total deductions (line 27)", "occurrence": 0 },
+    { "path": "tax_and_payments.total_tax", "label": "Total tax (line 31)", "occurrence": 0 },
+    { "path": "tax_and_payments.total_payments_and_credits", "label": "Total payments and credits (line 33)", "occurrence": 0 }
+  ],
+  "notes": "The request named no fields or feature page; its notes suggested total assets (D), total income (11), total deductions (27), total tax (31) and total payments (33), all on page 1. That is what shipped: all five read ok and each grounds to its own amount cell. Together they run the return from balance-sheet size through income and deductions to tax and payments. Values that repeat on page 1 (lines 1a/1c, 28/30, 36/37) were avoided. No person is featured; the corporation is fictitious IRS test data. Previews skip page 2 (Schedule C), which carries an 'INTERNAL USE ONLY / DRAFT AS OF May 23, 2024' watermark. Known extraction faults, left visible rather than hidden: blank amount lines extract as 0 rather than null despite the schema asking for null, and line 37's 1,280,196 is printed in the Refunded column (the Credited to 2025 estimated tax box is empty, and the parse reads it so) but extraction assigns it to credited_to_next_year_estimated_tax and gives refunded 0."
+}

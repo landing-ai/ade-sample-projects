@@ -1,0 +1,822 @@
+{
+  "extraction": {
+    "corporation": {
+      "city": "Anytown",
+      "date_incorporated": "1983-05-30",
+      "ein": "00-0000011",
+      "name": "Help For Some, Inc.",
+      "state": "MD",
+      "street_address": "33 Any Street",
+      "total_assets": 87608959,
+      "zip": "20901"
+    },
+    "deductions": {
+      "bad_debts": 0,
+      "charitable_contributions": 0,
+      "compensation_of_officers": 19684243,
+      "depreciation": 1061357,
+      "employee_benefit_programs": 5149,
+      "interest": 716219,
+      "other_deductions": 8321851,
+      "pension_profit_sharing_plans": 25701,
+      "rents": 0,
+      "repairs_and_maintenance": 225729,
+      "salaries_and_wages": 2753221,
+      "taxes_and_licenses": 7621914,
+      "total_deductions": 40415384
+    },
+    "income": {
+      "balance": 684525,
+      "capital_gain_net_income": 30486445,
+      "cost_of_goods_sold": 219245,
+      "dividends_and_inclusions": 0,
+      "gross_profit": 465280,
+      "gross_receipts": 684525,
+      "gross_rents": 265386,
+      "gross_royalties": 0,
+      "interest": 1018387,
+      "net_gain_form_4797": 0,
+      "other_income": 45018745,
+      "returns_and_allowances": 0,
+      "total_income": 77254243
+    },
+    "preparer": {
+      "firm_ein": "00-0000051",
+      "firm_name": "Electronic Tax Filers, Inc.",
+      "firm_phone": "512-555-1212",
+      "ptin": "P1000001"
+    },
+    "schedule_j": {
+      "estimated_tax_payments": 9000000,
+      "income_tax": 7736160,
+      "total_payments": 9000000,
+      "total_tax": 7719804
+    },
+    "schedule_k": {
+      "accounting_method": "accrual",
+      "business_activity": "Textile",
+      "business_activity_code": "313000",
+      "product_or_service": "Textile"
+    },
+    "schedule_l": {
+      "accounts_payable_end": 20596725,
+      "cash_beginning": 348325,
+      "cash_end": 724013,
+      "retained_earnings_unappropriated_end": 37306580,
+      "total_assets_beginning": 87608959,
+      "total_assets_end": 87608959,
+      "total_liabilities_and_equity_end": 87608959
+    },
+    "schedule_m2": {
+      "balance_beginning": 30720012,
+      "balance_end": 37306580,
+      "cash_distributions": 763902,
+      "net_income_per_books": 7250945
+    },
+    "schedule_m3_attached": true,
+    "tax_and_payments": {
+      "amount_owed": 0,
+      "credited_to_next_year_estimated_tax": 1280196,
+      "overpayment": 1280196,
+      "refunded": 0,
+      "taxable_income": 36838859,
+      "taxable_income_before_nol": 36838859,
+      "total_payments_and_credits": 9000000,
+      "total_tax": 7719804
+    },
+    "tax_year": 2024,
+    "tax_year_beginning": "2024-01-01",
+    "tax_year_ending": "2024-12-31"
+  },
+  "extraction_metadata": {
+    "corporation": {
+      "city": {
+        "ranges": [
+          {
+            "end": 949,
+            "start": 856
+          }
+        ],
+        "value": "Anytown"
+      },
+      "date_incorporated": {
+        "ranges": [
+          {
+            "end": 1044,
+            "start": 1014
+          }
+        ],
+        "value": "1983-05-30"
+      },
+      "ein": {
+        "ranges": [
+          {
+            "end": 1013,
+            "start": 970
+          }
+        ],
+        "value": "00-0000011"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 731,
+            "start": 704
+          }
+        ],
+        "value": "Help For Some, Inc."
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 949,
+            "start": 856
+          }
+        ],
+        "value": "MD"
+      },
+      "street_address": {
+        "ranges": [
+          {
+            "end": 837,
+            "start": 750
+          }
+        ],
+        "value": "33 Any Street"
+      },
+      "total_assets": {
+        "ranges": [
+          {
+            "end": 1091,
+            "start": 1045
+          }
+        ],
+        "value": 87608959
+      },
+      "zip": {
+        "ranges": [
+          {
+            "end": 949,
+            "start": 856
+          }
+        ],
+        "value": "20901"
+      }
+    },
+    "deductions": {
+      "bad_debts": {
+        "ranges": [
+          {
+            "end": 3302,
+            "start": 3302
+          }
+        ],
+        "value": 0
+      },
+      "charitable_contributions": {
+        "ranges": [
+          {
+            "end": 3700,
+            "start": 3700
+          }
+        ],
+        "value": 0
+      },
+      "compensation_of_officers": {
+        "ranges": [
+          {
+            "end": 2978,
+            "start": 2968
+          }
+        ],
+        "value": 19684243
+      },
+      "depreciation": {
+        "ranges": [
+          {
+            "end": 3873,
+            "start": 3864
+          }
+        ],
+        "value": 1061357
+      },
+      "employee_benefit_programs": {
+        "ranges": [
+          {
+            "end": 4270,
+            "start": 4265
+          }
+        ],
+        "value": 5149
+      },
+      "interest": {
+        "ranges": [
+          {
+            "end": 3599,
+            "start": 3592
+          }
+        ],
+        "value": 716219
+      },
+      "other_deductions": {
+        "ranges": [
+          {
+            "end": 4528,
+            "start": 4519
+          }
+        ],
+        "value": 8321851
+      },
+      "pension_profit_sharing_plans": {
+        "ranges": [
+          {
+            "end": 4166,
+            "start": 4160
+          }
+        ],
+        "value": 25701
+      },
+      "rents": {
+        "ranges": [
+          {
+            "end": 3384,
+            "start": 3384
+          }
+        ],
+        "value": 0
+      },
+      "repairs_and_maintenance": {
+        "ranges": [
+          {
+            "end": 3216,
+            "start": 3209
+          }
+        ],
+        "value": 225729
+      },
+      "salaries_and_wages": {
+        "ranges": [
+          {
+            "end": 3109,
+            "start": 3100
+          }
+        ],
+        "value": 2753221
+      },
+      "taxes_and_licenses": {
+        "ranges": [
+          {
+            "end": 3488,
+            "start": 3479
+          }
+        ],
+        "value": 7621914
+      },
+      "total_deductions": {
+        "ranges": [
+          {
+            "end": 4653,
+            "start": 4643
+          }
+        ],
+        "value": 40415384
+      }
+    },
+    "income": {
+      "balance": {
+        "ranges": [
+          {
+            "end": 1568,
+            "start": 1561
+          }
+        ],
+        "value": 684525
+      },
+      "capital_gain_net_income": {
+        "ranges": [
+          {
+            "end": 2341,
+            "start": 2331
+          }
+        ],
+        "value": 30486445
+      },
+      "cost_of_goods_sold": {
+        "ranges": [
+          {
+            "end": 1690,
+            "start": 1683
+          }
+        ],
+        "value": 219245
+      },
+      "dividends_and_inclusions": {
+        "ranges": [
+          {
+            "end": 1934,
+            "start": 1934
+          }
+        ],
+        "value": 0
+      },
+      "gross_profit": {
+        "ranges": [
+          {
+            "end": 1815,
+            "start": 1808
+          }
+        ],
+        "value": 465280
+      },
+      "gross_receipts": {
+        "ranges": [
+          {
+            "end": 1335,
+            "start": 1328
+          }
+        ],
+        "value": 684525
+      },
+      "gross_rents": {
+        "ranges": [
+          {
+            "end": 2115,
+            "start": 2108
+          }
+        ],
+        "value": 265386
+      },
+      "gross_royalties": {
+        "ranges": [
+          {
+            "end": 2203,
+            "start": 2203
+          }
+        ],
+        "value": 0
+      },
+      "interest": {
+        "ranges": [
+          {
+            "end": 2024,
+            "start": 2015
+          }
+        ],
+        "value": 1018387
+      },
+      "net_gain_form_4797": {
+        "ranges": [
+          {
+            "end": 2487,
+            "start": 2487
+          }
+        ],
+        "value": 0
+      },
+      "other_income": {
+        "ranges": [
+          {
+            "end": 2623,
+            "start": 2613
+          }
+        ],
+        "value": 45018745
+      },
+      "returns_and_allowances": {
+        "ranges": [
+          {
+            "end": 1446,
+            "start": 1446
+          }
+        ],
+        "value": 0
+      },
+      "total_income": {
+        "ranges": [
+          {
+            "end": 2747,
+            "start": 2737
+          }
+        ],
+        "value": 77254243
+      }
+    },
+    "preparer": {
+      "firm_ein": {
+        "ranges": [
+          {
+            "end": 7274,
+            "start": 7251
+          }
+        ],
+        "value": "00-0000051"
+      },
+      "firm_name": {
+        "ranges": [
+          {
+            "end": 7230,
+            "start": 7189
+          }
+        ],
+        "value": "Electronic Tax Filers, Inc."
+      },
+      "firm_phone": {
+        "ranges": [
+          {
+            "end": 7401,
+            "start": 7377
+          }
+        ],
+        "value": "512-555-1212"
+      },
+      "ptin": {
+        "ranges": [
+          {
+            "end": 7158,
+            "start": 7142
+          }
+        ],
+        "value": "P1000001"
+      }
+    },
+    "schedule_j": {
+      "estimated_tax_payments": {
+        "ranges": [
+          {
+            "end": 16061,
+            "start": 16052
+          }
+        ],
+        "value": 9000000
+      },
+      "income_tax": {
+        "ranges": [
+          {
+            "end": 11940,
+            "start": 11931
+          }
+        ],
+        "value": 7736160
+      },
+      "total_payments": {
+        "ranges": [
+          {
+            "end": 17587,
+            "start": 17578
+          }
+        ],
+        "value": 9000000
+      },
+      "total_tax": {
+        "ranges": [
+          {
+            "end": 15805,
+            "start": 15796
+          }
+        ],
+        "value": 7719804
+      }
+    },
+    "schedule_k": {
+      "accounting_method": {
+        "ranges": [
+          {
+            "end": 17863,
+            "start": 17852
+          }
+        ],
+        "value": "accrual"
+      },
+      "business_activity": {
+        "ranges": [
+          {
+            "end": 17993,
+            "start": 17965
+          }
+        ],
+        "value": "Textile"
+      },
+      "business_activity_code": {
+        "ranges": [
+          {
+            "end": 17964,
+            "start": 17928
+          }
+        ],
+        "value": "313000"
+      },
+      "product_or_service": {
+        "ranges": [
+          {
+            "end": 18023,
+            "start": 17994
+          }
+        ],
+        "value": "Textile"
+      }
+    },
+    "schedule_l": {
+      "accounts_payable_end": {
+        "ranges": [
+          {
+            "end": 32616,
+            "start": 32606
+          }
+        ],
+        "value": 20596725
+      },
+      "cash_beginning": {
+        "ranges": [
+          {
+            "end": 30489,
+            "start": 30482
+          }
+        ],
+        "value": 348325
+      },
+      "cash_end": {
+        "ranges": [
+          {
+            "end": 30514,
+            "start": 30507
+          }
+        ],
+        "value": 724013
+      },
+      "retained_earnings_unappropriated_end": {
+        "ranges": [
+          {
+            "end": 33778,
+            "start": 33768
+          }
+        ],
+        "value": 37306580
+      },
+      "total_assets_beginning": {
+        "ranges": [
+          {
+            "end": 32482,
+            "start": 32472
+          }
+        ],
+        "value": 87608959
+      },
+      "total_assets_end": {
+        "ranges": [
+          {
+            "end": 32510,
+            "start": 32500
+          }
+        ],
+        "value": 87608959
+      },
+      "total_liabilities_and_equity_end": {
+        "ranges": [
+          {
+            "end": 34133,
+            "start": 34123
+          }
+        ],
+        "value": 87608959
+      }
+    },
+    "schedule_m2": {
+      "balance_beginning": {
+        "ranges": [
+          {
+            "end": 36068,
+            "start": 36058
+          }
+        ],
+        "value": 30720012
+      },
+      "balance_end": {
+        "ranges": [
+          {
+            "end": 36723,
+            "start": 36713
+          }
+        ],
+        "value": 37306580
+      },
+      "cash_distributions": {
+        "ranges": [
+          {
+            "end": 36128,
+            "start": 36121
+          }
+        ],
+        "value": 763902
+      },
+      "net_income_per_books": {
+        "ranges": [
+          {
+            "end": 36206,
+            "start": 36197
+          }
+        ],
+        "value": 7250945
+      }
+    },
+    "schedule_m3_attached": {
+      "ranges": [
+        {
+          "end": 646,
+          "start": 617
+        },
+        {
+          "end": 1179,
+          "start": 968
+        }
+      ],
+      "value": true
+    },
+    "tax_and_payments": {
+      "amount_owed": {
+        "ranges": [
+          {
+            "end": 6051,
+            "start": 6051
+          }
+        ],
+        "value": 0
+      },
+      "credited_to_next_year_estimated_tax": {
+        "ranges": [
+          {
+            "end": 6381,
+            "start": 6372
+          }
+        ],
+        "value": 1280196
+      },
+      "overpayment": {
+        "ranges": [
+          {
+            "end": 6230,
+            "start": 6221
+          }
+        ],
+        "value": 1280196
+      },
+      "refunded": {
+        "ranges": [
+          {
+            "end": 6381,
+            "start": 6372
+          }
+        ],
+        "value": 0
+      },
+      "taxable_income": {
+        "ranges": [
+          {
+            "end": 5379,
+            "start": 5369
+          }
+        ],
+        "value": 36838859
+      },
+      "taxable_income_before_nol": {
+        "ranges": [
+          {
+            "end": 4834,
+            "start": 4824
+          }
+        ],
+        "value": 36838859
+      },
+      "total_payments_and_credits": {
+        "ranges": [
+          {
+            "end": 5731,
+            "start": 5722
+          }
+        ],
+        "value": 9000000
+      },
+      "total_tax": {
+        "ranges": [
+          {
+            "end": 5497,
+            "start": 5488
+          }
+        ],
+        "value": 7719804
+      }
+    },
+    "tax_year": {
+      "ranges": [
+        {
+          "end": 95,
+          "start": 78
+        },
+        {
+          "end": 263,
+          "start": 173
+        },
+        {
+          "end": 403,
+          "start": 398
+        },
+        {
+          "end": 7525,
+          "start": 7505
+        },
+        {
+          "end": 7579,
+          "start": 7563
+        },
+        {
+          "end": 7595,
+          "start": 7582
+        },
+        {
+          "end": 11641,
+          "start": 11621
+        },
+        {
+          "end": 11694,
+          "start": 11681
+        },
+        {
+          "end": 17628,
+          "start": 17608
+        },
+        {
+          "end": 17647,
+          "start": 17631
+        },
+        {
+          "end": 17700,
+          "start": 17687
+        },
+        {
+          "end": 22247,
+          "start": 22227
+        },
+        {
+          "end": 22266,
+          "start": 22250
+        },
+        {
+          "end": 22319,
+          "start": 22306
+        },
+        {
+          "end": 30136,
+          "start": 30123
+        },
+        {
+          "end": 36764,
+          "start": 36744
+        },
+        {
+          "end": 36783,
+          "start": 36767
+        }
+      ],
+      "value": 2024
+    },
+    "tax_year_beginning": {
+      "ranges": [
+        {
+          "end": 263,
+          "start": 173
+        }
+      ],
+      "value": "2024-01-01"
+    },
+    "tax_year_ending": {
+      "ranges": [
+        {
+          "end": 263,
+          "start": 173
+        }
+      ],
+      "value": "2024-12-31"
+    }
+  },
+  "markdown": "July 11, 2024\nForm 1120\nDepartment of the Treasury\nInternal Revenue Service\n\n\n**Tax Year 2024**\n**1120 MeF ATS Alternate Scenario 1**\n**U.S. Corporation Income Tax Return**\nFor calendar year 2024 or tax year beginning January 01 , 2024, ending December 31 , 20 24\nGo to *www.irs.gov/Form1120* for instructions and the latest information.\n\n\nVersion A, Cycle 5\nOMB No. 1545-0123\n\n\nOMB No. 1545-0123 \n2024 \n\nA Check if:  \n [ ] 1a Consolidated return (attach Form 851)  \n [ ] b Life/nonlife consolidated return . . .  \n [ ] 2 Personal holding co. (attach Sch. PH) .  \n [ ] 3 Personal service corp. (see instructions) .  \n [x] 4 Schedule M-3 attached \n\n<table>\n<tr><td rowspan=\"3\">TYPE<br>OR<br>PRINT</td><td>Name<br>Help For Some, Inc.</td></tr>\n<tr><td>Number, street, and room or suite no. If a P.O. box, see instructions.<br>33 Any Street</td></tr>\n<tr><td>City or town, state or province, country, and ZIP or foreign postal code<br>Anytown, MD 20901</td></tr>\n</table>\n\nEmployer identification number: 00-0000011 \nDate incorporated: 05/30/1983 \nTotal assets (see instructions): $ 87,608,959 \n\n4 Schedule M-3 attached [x] \nE Check if:\n[ ] (1) Initial return \n[ ] (2) Final return \n[ ] (3) Name change \n[ ] (4) Address change \n\n<table>\n<tr><td rowspan=\"13\">Income</td><td>1a</td><td>Gross receipts or sales ...</td><td>1a</td><td>684,525</td><td></td><td></td></tr>\n<tr><td>b</td><td>Returns and allowances ...</td><td>1b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Balance. Subtract line 1b from line 1a ...</td><td>...</td><td>...</td><td>1c</td><td>684,525</td></tr>\n<tr><td>2</td><td>Cost of goods sold (attach Form 1125-A) ...</td><td>...</td><td>...</td><td>2</td><td>219,245</td></tr>\n<tr><td>3</td><td>Gross profit. Subtract line 2 from line 1c ...</td><td>...</td><td>...</td><td>3</td><td>465,280</td></tr>\n<tr><td>4</td><td>Dividends and inclusions (Schedule C, line 23) ...</td><td></td><td>...</td><td>4</td><td></td></tr>\n<tr><td>5</td><td>Interest ...</td><td></td><td>...</td><td>5</td><td>1,018,387</td></tr>\n<tr><td>6</td><td>Gross rents ...</td><td></td><td>...</td><td>6</td><td>265,386</td></tr>\n<tr><td>7</td><td>Gross royalties ...</td><td></td><td>...</td><td>7</td><td></td></tr>\n<tr><td>8</td><td>Capital gain net income (attach Schedule D (Form 1120)) ...</td><td></td><td>...</td><td>8</td><td>30,486,445</td></tr>\n<tr><td>9</td><td>Net gain or (loss) from Form 4797, Part II, line 17 (attach Form 4797) ...</td><td>...</td><td>...</td><td>9</td><td></td></tr>\n<tr><td>10</td><td>Other income (see instructions—attach statement) ...</td><td>...</td><td>...</td><td>10</td><td>45,018,745</td></tr>\n<tr><td>11</td><td>Total income. Add lines 3 through 10 ...</td><td>...</td><td>...</td><td>11</td><td>77,254,243</td></tr>\n<tr><td rowspan=\"20\">Deductions (See instructions on limitations on deductions.)</td><td>12</td><td>Compensation of officers (see instructions—attach Form 1125-E) ...</td><td>...</td><td>...</td><td>12</td><td>19,684,243</td></tr>\n<tr><td>13</td><td>Salaries and wages (less employment credits) ...</td><td>...</td><td>...</td><td>13</td><td>2,753,221</td></tr>\n<tr><td>14</td><td>Repairs and maintenance...</td><td>...</td><td>...</td><td>14</td><td>225,729</td></tr>\n<tr><td>15</td><td>Bad debts...</td><td>...</td><td>...</td><td>15</td><td></td></tr>\n<tr><td>16</td><td>Rents...</td><td>...</td><td>...</td><td>16</td><td></td></tr>\n<tr><td>17</td><td>Taxes and licenses...</td><td>...</td><td>...</td><td>17</td><td>7,621,914</td></tr>\n<tr><td>18</td><td>Interest (see instructions)...</td><td>...</td><td>...</td><td>18</td><td>716,219</td></tr>\n<tr><td>19</td><td>Charitable contributions...</td><td>...</td><td>...</td><td>19</td><td></td></tr>\n<tr><td>20</td><td colspan=\"3\">Depreciation from Form 4562 not claimed on Form 1125-A or elsewhere on return (attach Form 4562) . . .</td><td>20</td><td>1,061,357</td></tr>\n<tr><td>21</td><td>Depletion...</td><td>...</td><td>...</td><td>21</td><td></td></tr>\n<tr><td>22</td><td>Advertising...</td><td>...</td><td>...</td><td>22</td><td></td></tr>\n<tr><td>23</td><td>Pension, profit-sharing, etc., plans...</td><td>...</td><td>...</td><td>23</td><td>25,701</td></tr>\n<tr><td>24</td><td>Employee benefit programs...</td><td></td><td>...</td><td>24</td><td>5,149</td></tr>\n<tr><td>25</td><td>Energy efficient commercial buildings deduction (attach Form 7205)...</td><td></td><td>...</td><td>25</td><td></td></tr>\n<tr><td>26</td><td>Other deductions (attach statement)...</td><td></td><td>...</td><td>26</td><td>8,321,851</td></tr>\n<tr><td>27</td><td>Total deductions. Add lines 12 through 26...</td><td></td><td>...</td><td>27</td><td>40,415,384</td></tr>\n<tr><td>28</td><td colspan=\"3\">Taxable income before net operating loss deduction and special deductions. Subtract line 27 from line 11. ...</td><td>28</td><td>36,838,859</td></tr>\n<tr><td>29a</td><td>Net operating loss deduction (see instructions) ...</td><td>29a</td><td></td><td></td><td></td></tr>\n<tr><td>b</td><td>Special deductions (Schedule C, line 24) ...</td><td>29b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Add lines 29a and 29b ...</td><td>...</td><td>...</td><td>29c</td><td></td></tr>\n<tr><td rowspan=\"8\">Tax, Refundable Credits, and<br>Payments</td><td>30</td><td>Taxable income. Subtract line 29c from line 28. See instructions ...</td><td>...</td><td>...</td><td>30</td><td>36,838,859</td></tr>\n<tr><td>31</td><td>Total tax (Schedule J, line 12) ...</td><td>...</td><td>...</td><td>31</td><td>7,719,804</td></tr>\n<tr><td>32</td><td>Reserved for future use...</td><td>...</td><td>...</td><td>32</td><td></td></tr>\n<tr><td>33</td><td>Total payments and credits (Schedule J, line 23)...</td><td>...</td><td>...</td><td>33</td><td>9,000,000</td></tr>\n<tr><td>34</td><td>Estimated tax penalty. See instructions. Check if Form 2220 is attached...</td><td>...</td><td>... [ ]</td><td>34</td><td></td></tr>\n<tr><td>35</td><td colspan=\"2\">**Amount owed.** If line 33 is smaller than the total of lines 31 and 34, enter amount owed...</td><td>...</td><td>35</td><td></td></tr>\n<tr><td>36</td><td colspan=\"2\">**Overpayment.** If line 33 is larger than the total of lines 31 and 34, enter amount overpaid .</td><td>...</td><td>36</td><td>1,280,196</td></tr>\n<tr><td>37</td><td>Enter amount from line 36 you want: Credited to 2025 estimated tax</td><td></td><td>Refunded</td><td>37</td><td>1,280,196</td></tr>\n</table>\n\n**Sign**\n**Here**\nUnder penalties of perjury, I declare that I have examined this return, including accompanying schedules and statements, and to the best of my knowledge and belief, it is true, correct, and\ncomplete. Declaration of preparer (other than taxpayer) is based on all information of which preparer has any knowledge.\nMay the IRS discuss this return with the preparer shown below? See instructions. \n [x] Yes \n [ ] No\n\n<table>\n<tr><td></td><td></td><td></td></tr>\n<tr><td>Signature of officer</td><td>Date</td><td>Title</td></tr>\n</table>\n\n<table>\n<tr><td rowspan=\"3\">Paid<br>Preparer<br>Use Only</td><td>Print/Type preparer's name</td><td>Preparer's signature</td><td colspan=\"2\">Date</td><td>Check [ ] if self-employed</td><td>PTIN<br>P1000001</td></tr>\n<tr><td colspan=\"3\">Firm's name   Electronic Tax Filers, Inc.</td><td colspan=\"3\">Firm's EIN   00-0000051</td></tr>\n<tr><td colspan=\"3\">Firm's address   100 Efile Drive, Anytown, TX 75321</td><td colspan=\"3\">Phone no.   512-555-1212</td></tr>\n</table>\n\nFor Paperwork Reduction Act Notice, see separate instructions.\n\n\nCat. No. 11450Q\n\n\nForm **1120** (2024)\n\n\n<!-- PAGE BREAK -->\n\nJuly 11, 2024\nform 1120 (2024)\n\n\nTax Year 2024\n1120 MeF ATS Alternate Scenario 1\n\n\nVersion A, Cycle 5\n\n\nPage 2\n\n\n<table>\n<tr><td colspan=\"2\">Schedule C   Dividends, Inclusions, and Special Deductions<br>(see instructions)</td><td>(a) Dividends and inclusions</td><td>(b) %</td><td>(c) Special deductions (a) × (b)</td></tr>\n<tr><td>1</td><td>Dividends from less-than-20%-owned domestic corporations (other than debt-financed stock) ...</td><td></td><td>50</td><td></td></tr>\n<tr><td>2</td><td>Dividends from 20%-or-more-owned domestic corporations (other than debt-financed stock) ...</td><td></td><td>65</td><td></td></tr>\n<tr><td>3</td><td>Dividends on certain debt-financed stock of domestic and foreign corporations . .</td><td></td><td>See instructions</td><td></td></tr>\n<tr><td>4</td><td>Dividends on certain preferred stock of less-than-20%-owned public utilities . . .</td><td></td><td>23.3</td><td></td></tr>\n<tr><td>5</td><td>Dividends on certain preferred stock of 20%-or-more-owned public utilities ...</td><td></td><td>26.7</td><td></td></tr>\n<tr><td>6</td><td>Dividends from less-than-20%-owned foreign corporations and certain FSCs ...</td><td></td><td>50</td><td></td></tr>\n<tr><td>7</td><td>Dividends from 20%-or-more-owned foreign corporations and certain FSCs ...</td><td></td><td>65</td><td></td></tr>\n<tr><td>8</td><td>Dividends from wholly owned foreign subsidiaries ...</td><td></td><td>100</td><td></td></tr>\n<tr><td>9</td><td>Subtotal. Add lines 1 through 8. See instructions for limitations ...</td><td></td><td>See instructions</td><td></td></tr>\n<tr><td>10</td><td>Dividends from domestic corporations received by a small business investment company operating under the Small Business Investment Act of 1958 ...</td><td></td><td>100</td><td></td></tr>\n<tr><td>11</td><td>Dividends from affiliated group members ...</td><td></td><td>100</td><td></td></tr>\n<tr><td>12</td><td>Dividends from certain FSCs ...</td><td></td><td>100</td><td></td></tr>\n<tr><td>13</td><td>Foreign-source portion of dividends received from a specified 10%-owned foreign corporation (excluding hybrid dividends) (see instructions) ...</td><td></td><td>100</td><td></td></tr>\n<tr><td>14</td><td>Dividends from foreign corporations not included on line 3, 6, 7, 8, 11, 12, or 13 (including any hybrid dividends) ...</td><td></td><td></td><td></td></tr>\n<tr><td>15</td><td>Reserved for future use ...</td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>16a</td><td>Subpart F inclusions derived from the sale by a controlled foreign corporation (CFC) of the stock of a lower-tier foreign corporation treated as a dividend (attach Form(s) 5471) (see instructions) ...</td><td></td><td>100</td><td></td></tr>\n<tr><td>b</td><td>Subpart F inclusions derived from hybrid dividends of tiered corporations (attach Form(s) 5471) (see instructions) ...</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Other inclusions from CFCs under subpart F not included on line 16a, 16b, or 17 (attach Form(s) 5471) (see instructions) ...</td><td></td><td></td><td></td></tr>\n<tr><td>17</td><td>Global Intangible Low-Taxed Income (GILTI) (attach Form(s) 5471 and Form 8992) ...</td><td></td><td></td><td></td></tr>\n<tr><td>18</td><td>Gross-up for foreign taxes deemed paid ...</td><td></td><td></td><td></td></tr>\n<tr><td>19</td><td>IC-DISC and former DISC dividends not included on line 1, 2, or 3 ...</td><td></td><td></td><td></td></tr>\n<tr><td>20</td><td>Other dividends ...</td><td></td><td></td><td></td></tr>\n<tr><td>21</td><td>Deduction for dividends paid on certain preferred stock of public utilities ...</td><td></td><td></td><td></td></tr>\n<tr><td>22</td><td>Section 250 deduction (attach Form 8993) ...</td><td></td><td></td><td></td></tr>\n<tr><td>23</td><td>Total dividends and inclusions. Add column (a), lines 9 through 20. Enter here and on page 1, line 4...</td><td></td><td></td><td></td></tr>\n<tr><td>24</td><td colspan=\"2\">**Total special deductions.** Add column (c), lines 9 through 22. Enter here and on page 1, line 29b . . .</td><td>...</td><td></td></tr>\n</table>\n\nForm **1120** (2024)\n\n\n<!-- PAGE BREAK -->\n\nJuly 11, 2024\n\n\nTax Year 2024\n1120 MeF ATS Alternate Scenario 1\n\n\nVersion A, Cycle 5\n\n\nPage 3\n\n\n<table>\n<tr><td colspan=\"6\">Schedule J   Tax Computation and Payment (see instructions)</td></tr>\n<tr><td>1a</td><td>Income tax (see instructions) ...</td><td>1a</td><td>7,736,160</td><td></td><td></td></tr>\n<tr><td>b</td><td>Tax from Form 1120-L (see instructions) ...</td><td>1b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Section 1291 tax from Form 8621 ...</td><td>1c</td><td></td><td></td><td></td></tr>\n<tr><td>d</td><td>Tax adjustment from Form 8978 ...</td><td>1d</td><td></td><td></td><td></td></tr>\n<tr><td>e</td><td>Additional tax under section 197(f) ...</td><td>1e</td><td></td><td></td><td></td></tr>\n<tr><td>f</td><td>Base erosion minimum tax from Form 8991 ...</td><td>1f</td><td></td><td></td><td></td></tr>\n<tr><td>g</td><td>Chapter 1 tax recapture from Form 4255 ...</td><td>1g</td><td></td><td></td><td></td></tr>\n<tr><td>z</td><td>Other chapter 1 tax ...</td><td>1z</td><td></td><td></td><td></td></tr>\n<tr><td>2</td><td>Total income tax. Add lines 1a through 1z ...</td><td>...</td><td>...</td><td>2</td><td></td></tr>\n<tr><td>3</td><td>Corporate alternative minimum tax from Form 4626, Part II, line 13 (attach Form 4626). ...</td><td>...</td><td>...</td><td>3</td><td></td></tr>\n<tr><td>4</td><td>Add lines 2 and 3 ...</td><td>...</td><td>...</td><td>4</td><td>7,736,160</td></tr>\n<tr><td>5a</td><td>Foreign tax credit (attach Form 1118) ...</td><td>5a</td><td></td><td></td><td></td></tr>\n<tr><td>b</td><td>Credit from Form 8834 (see instructions) ...</td><td>5b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>General business credit (see instructions—attach Form 3800) ...</td><td>5c</td><td>16,356</td><td></td><td></td></tr>\n<tr><td>d</td><td>Credit for prior year minimum tax (attach Form 8827) ...</td><td>5d</td><td></td><td></td><td></td></tr>\n<tr><td>e</td><td>Bond credits from Form 8912 ...</td><td>5e</td><td></td><td></td><td></td></tr>\n<tr><td>f</td><td>Adjustment from Form 8978 ...</td><td>5f</td><td></td><td></td><td></td></tr>\n<tr><td>6</td><td>Total credits. Add lines 5a through 5f ...</td><td></td><td>...</td><td>6</td><td>16,356</td></tr>\n<tr><td>7</td><td>Subtract line 6 from line 4 ...</td><td></td><td>...</td><td>7</td><td>7,719,804</td></tr>\n<tr><td>8</td><td>Personal holding company tax (attach Schedule PH (Form 1120)) ...</td><td>.</td><td>...</td><td>8</td><td></td></tr>\n<tr><td>9a</td><td>Additions to tax from Form 4255 (see instructions) ...</td><td>9a</td><td></td><td></td><td></td></tr>\n<tr><td>b</td><td>Recapture of low-income housing credit (attach Form 8611) ...</td><td>9b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Completed long-term contract look-back interest due (attach Form 8697) ...</td><td>9c</td><td></td><td></td><td></td></tr>\n<tr><td>d</td><td>Interest due under the look-back method—income forecast method (attach Form 8866)</td><td>9d</td><td></td><td></td><td></td></tr>\n<tr><td>e</td><td>Alternative tax on qualifying shipping activities (attach Form 8902) ...</td><td>9e</td><td></td><td></td><td></td></tr>\n<tr><td>f</td><td>Interest/tax due under section 453A(c) ...</td><td>9f</td><td></td><td></td><td></td></tr>\n<tr><td>g</td><td>Interest/tax due under section 453(l) ...</td><td>9g</td><td></td><td></td><td></td></tr>\n<tr><td>z</td><td>Other (see instructions—attach statement) ...</td><td>9z</td><td></td><td></td><td></td></tr>\n<tr><td>10</td><td>Total. Add lines 9a through 9z ...</td><td>...</td><td>...</td><td>10</td><td></td></tr>\n<tr><td>11a</td><td>Total tax before deferred taxes. Add lines 7, 8, and 10 ...</td><td>11a</td><td></td><td></td><td></td></tr>\n<tr><td>b</td><td>Deferred tax on the corporation's share of undistributed earnings of a qualified electing fund ...</td><td>11b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Deferred LIFO recapture tax (section 1363(d)) ...</td><td>11c</td><td></td><td></td><td></td></tr>\n<tr><td>12</td><td colspan=\"2\">Total tax. Subtract the sum of lines 11b and 11c from 11a. Enter here and on page 1, line 31...</td><td>...</td><td>12</td><td>7,719,804</td></tr>\n<tr><td>13</td><td>Preceding year's overpayment credited to the current year ...</td><td>.</td><td>...</td><td>13</td><td></td></tr>\n<tr><td>14</td><td>Current year's estimated tax payments...</td><td>...</td><td>...</td><td>14</td><td>9,000,000</td></tr>\n<tr><td>15</td><td>Current year's refund applied for on Form 4466...</td><td>...</td><td>...</td><td>15</td><td>( )</td></tr>\n<tr><td>16</td><td>Reserved for future use...</td><td>...</td><td>...</td><td>16</td><td></td></tr>\n<tr><td>17</td><td>Tax deposited with Form 7004...</td><td>...</td><td>...</td><td>17</td><td></td></tr>\n<tr><td>18</td><td>Withholding (see instructions)...</td><td>...</td><td>...</td><td>18</td><td></td></tr>\n<tr><td>19</td><td>Total payments. Combine lines 13 through 18...</td><td>...</td><td>...</td><td>19</td><td>9,000,000</td></tr>\n<tr><td>20</td><td>Refundable credits from:</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>a</td><td>Form 2439...</td><td>20a</td><td></td><td></td><td></td></tr>\n<tr><td>b</td><td>Form 4136...</td><td>20b</td><td></td><td></td><td></td></tr>\n<tr><td>c</td><td>Credit for tax withheld under Chapter 3 or 4 from Form 1042-S, Form 8805, or Form 8288 (attach the applicable form)...</td><td>20c</td><td></td><td></td><td></td></tr>\n<tr><td>z</td><td>Other (attach statement...see instructions)</td><td>20z</td><td></td><td></td><td></td></tr>\n<tr><td>21</td><td>Total credits. Add lines 20a through 20z...</td><td>...</td><td>...</td><td>21</td><td></td></tr>\n<tr><td>22</td><td>Elective payment election amount from Form 3800...</td><td>...</td><td>...</td><td>22</td><td></td></tr>\n<tr><td>23</td><td>Total payments and credits. Add lines 19, 21, and 22. Enter here and on page 1, line 33.</td><td>...</td><td>...</td><td>23</td><td>9,000,000</td></tr>\n</table>\n\nForm **1120** (2024)\n\n\nForm 1120 (2024)\n\n\n<!-- PAGE BREAK -->\n\nJuly 11, 2024\n\n\nTax Year 2024\n1120 MeF ATS Alternate Scenario 1\n\nVersion A, Cycle 5\n\n\nPage 4\n\n\nSchedule K Other Information (see instructions) \n1 Check accounting method: \n[ ] Cash\n[x] Accrual\n[ ] Other (specify) ... \n2 See the instructions and enter the: \na Business activity code no. 313000 \nb Business activity Textile \nc Product or service Textile \n3 Is the corporation a subsidiary in an affiliated group or a parent-subsidiary controlled group? \n[ ] Yes\n[x] No\nIf \"Yes,\" enter name and EIN of the parent corporation ... \n4 At the end of the tax year: \na Did any foreign or domestic corporation, partnership (including any entity treated as a partnership), trust, or tax-exempt organization own directly 20% or more, or own, directly or indirectly, 50% or more of the total voting power of all classes of the corporation's stock entitled to vote? If \"Yes,\" complete Part I of Schedule G (Form 1120) (attach Schedule G) \n[x] Yes \n[ ] No\nb Did any individual or estate own directly 20% or more, or own, directly or indirectly, 50% or more of the total voting power of all classes of the corporation's stock entitled to vote? If \"Yes,\" complete Part II of Schedule G (Form 1120) (attach Schedule G) \n[ ] Yes\n[x] No \n5 At the end of the tax year, did the corporation: \na Own directly 20% or more, or own, directly or indirectly, 50% or more of the total voting power of all classes of stock entitled to vote of any foreign or domestic corporation not included on Form 851, Affiliations Schedule? For rules of constructive ownership, see instructions \n[ ] Yes\n[x] No\nIf \"Yes,\" complete (i) through (iv) below. \n\n<table>\n<tr><td>(i) Name of Corporation</td><td>(ii) Employer Identification Number (if any)</td><td>(iii) Country of Incorporation</td><td>(iv) Percentage Owned in Voting Stock</td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n</table>\n\n**b** Own directly an interest of 20% or more, or own, directly or indirectly, an interest of 50% or more in any foreign or domestic partnership\n(including an entity treated as a partnership) or in the beneficial interest of a trust? For rules of constructive ownership, see instructions\nIf \"Yes,\" complete (i) through (iv) below.\n\n [x]\n\n<table>\n<tr><td>(i) Name of Entity</td><td>(ii) Employer Identification Number (if any)</td><td>(iii) Country of Organization</td><td>(iv) Maximum Percentage Owned in Profit, Loss, or Capital</td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n</table>\n\n6 During this tax year, did the corporation pay dividends (other than stock dividends and distributions in exchange for stock) in\nexcess of the corporation's current and accumulated earnings and profits? See sections 301 and 316 ... [x]\nIf \"Yes,\" file **Form 5452**, Corporate Report of Nondividend Distributions. See the instructions for Form 5452.\nIf this is a consolidated return, answer here for the parent corporation and on Form 851 for each subsidiary.\n7 At any time during this tax year, did one foreign person own, directly or indirectly, at least 25% of the total voting power of all\nclasses of the corporation's stock entitled to vote or at least 25% of the total value of all classes of the corporation's stock? ... [x]\nFor rules of attribution, see section 318. If \"Yes,\" enter:\n(a) Percentage owned ___ and (b) Owner's country ___\n(c) The corporation may have to file **Form 5472**, Information Return of a 25% Foreign-Owned U.S. Corporation or a Foreign\nCorporation Engaged in a U.S. Trade or Business. Enter the number of Forms 5472 attached ___\n8 Check this box if the corporation issued publicly offered debt instruments with original issue discount ... [ ]\nIf checked, the corporation may have to file **Form 8281**, Information Return for Publicly Offered Original Issue Discount Instruments.\n9 Enter the amount of tax-exempt interest received or accrued during this tax year $ ___\n10 Enter the number of shareholders at the end of the tax year (if 100 or fewer) ___\n11 If the corporation has an NOL for the tax year and is electing to forego the carryback period, check here (see instructions) ... [ ]\nIf the corporation is filing a consolidated return, the statement required by Regulations section 1.1502-21(b)(3) must be attached\nor the election will not be valid.\n12 Enter the available NOL carryover from prior tax years (do not reduce it by any deduction reported on page 1, line 29a) $ ___\n\n\nForm **1120** (2024)\n\n\nForm 1120 (2024)\n\n\n<!-- PAGE BREAK -->\n\nJuly 11, 2024\n\n\nTax Year 2024\n1120 MeF ATS Alternate Scenario 1\n\n\nVersion A, Cycle 5\n\n\nPage 5\n\n\n<table>\n<tr><td colspan=\"4\">Schedule K Other Information (continued from page 4)</td></tr>\n<tr><td>13</td><td>Are the corporation's total receipts (page 1, line 1a, plus lines 4 through 10) for the tax year and its total assets at the end of</td><td>[x] Yes</td><td>[ ] No</td></tr>\n<tr><td></td><td>the tax year less than $250,000? . . .</td><td>[ ]</td><td>[x] ✓</td></tr>\n<tr><td></td><td>If \"Yes,\" the corporation is not required to complete Schedules L, M-1, and M-2. Instead, enter the total amount of cash distributions and the book value of property distributions (other than cash) made during this tax year $</td><td></td><td></td></tr>\n<tr><td>14</td><td>Is the corporation required to file Schedule UTP (Form 1120), Uncertain Tax Position Statement? See instructions . . .</td><td>[ ]</td><td>[x] ✓</td></tr>\n<tr><td></td><td>If “Yes,” complete and attach Schedule UTP.</td><td></td><td></td></tr>\n<tr><td>15a</td><td>Did the corporation make any payments that would require it to file Form(s) 1099? ...</td><td></td><td>✓</td></tr>\n<tr><td>b</td><td>If “Yes,” did or will the corporation file required Form(s) 1099? ...</td><td></td><td>✓</td></tr>\n<tr><td>16</td><td rowspan=\"2\">During this tax year, did the corporation have an 80%-or-more change in ownership, including a change due to redemption of its own stock? ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td>17</td><td rowspan=\"2\">During or subsequent to this tax year, but before the filing of this return, did the corporation dispose of more than 65% (by value) of its assets in a taxable, non-taxable, or tax deferred transaction? ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td>18</td><td rowspan=\"2\">Did this corporation receive assets in a section 351 transfer in which any of the transferred assets had a fair market basis or fair market value of more than $1 million? ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td>19</td><td rowspan=\"2\">During this corporation's tax year, did the corporation make any payments that would require it to file Forms 1042 and 1042-S under chapter 3 (sections 1441 through 1464) or chapter 4 (sections 1471 through 1474) of the Code? ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td>20</td><td>Is the corporation operating on a cooperative basis? ...</td><td></td><td>✓</td></tr>\n<tr><td>21</td><td rowspan=\"2\">During this tax year, did the corporation pay or accrue any interest or royalty for which the deduction is not allowed under section 267A? See instructions ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td></td><td>If “Yes,” enter the total amount of the disallowed deductions $</td><td></td><td></td></tr>\n<tr><td>22</td><td rowspan=\"3\">Does this corporation have gross receipts of at least $500 million in any of the 3 preceding tax years? (See sections 59A(e)(2) and (3).) <br>If “Yes,” complete and attach Form 8991. <br>Did the corporation have an election under section 163(j) for any real property trade or business or any farming business in <br>effect during this tax year? See instructions ...</td><td></td><td>✓</td></tr>\n<tr><td>23</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td>24</td><td>Does the corporation satisfy one or more of the following? If \"Yes,\" complete and attach Form 8990. See instructions ...</td><td></td><td>✓</td></tr>\n<tr><td>a</td><td>The corporation owns a pass-through entity with current, or prior year carryover, excess business interest expense.</td><td></td><td rowspan=\"2\"></td></tr>\n<tr><td>b</td><td>The corporation’s aggregate average annual gross receipts (determined under section 448(c)) for the 3 tax years preceding the current tax year are more than $30 million and the corporation has business interest expense.</td><td></td></tr>\n<tr><td>c</td><td>The corporation is a tax shelter and the corporation has business interest expense.</td><td></td><td></td></tr>\n<tr><td>25</td><td>Is the corporation attaching Form 8996 to certify as a Qualified Opportunity Fund? . . .</td><td>[ ]</td><td>[x]</td></tr>\n<tr><td></td><td>If “Yes,” enter amount from Form 8996, line 15 . . . $</td><td></td><td></td></tr>\n<tr><td>26</td><td rowspan=\"4\">Since December 22, 2017, did a foreign corporation directly or indirectly acquire substantially all of the properties held directly or indirectly by the corporation, and was the ownership percentage (by vote or value) for purposes of section 7874 greater than 50% (for example, the shareholders held more than 50% of the stock of the foreign corporation)? If “Yes,” list the ownership percentage by vote and by value. See instructions ...</td><td></td><td rowspan=\"2\"></td></tr>\n<tr><td></td><td></td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td></td><td>Percentage: By Vote   By Value</td><td></td><td rowspan=\"2\">✓</td></tr>\n<tr><td>27</td><td>At any time during this tax year, did the corporation (a) receive a digital asset (as a reward, award, or payment for property or services); or (b) sell, exchange, or otherwise dispose of a digital asset (or a financial interest in a digital asset)? See instructions.</td><td></td></tr>\n<tr><td>28</td><td>Is the corporation a member of a controlled group? ...</td><td></td><td>✓</td></tr>\n<tr><td></td><td>If “Yes,” attach Schedule O (Form 1120). See instructions.</td><td></td><td></td></tr>\n<tr><td>29</td><td>Corporate Alternative Minimum Tax:</td><td></td><td></td></tr>\n<tr><td>a</td><td>Was the corporation an applicable corporation under section 59(k)(1) in any prior tax year? ...</td><td></td><td>✓</td></tr>\n<tr><td>b</td><td rowspan=\"2\">If “Yes,” go to question 29b. If “No,” skip to question 29c.<br>Is the corporation an applicable corporation under section 59(k)(1) in the current tax year because the corporation was an applicable corporation in the prior tax year? ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td></td><td>If \"Yes,\" complete and attach Form 4626. If \"No,\" continue to question 29c.</td><td></td><td></td></tr>\n<tr><td>c</td><td rowspan=\"2\">Does the corporation meet the requirements of the safe harbor method as provided under section 59(k)(3)(A) for the current tax year? See instructions...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td></td><td>If \"No,\" complete and attach Form 4626. If \"Yes,\" the corporation is not required to file Form 4626.</td><td></td><td></td></tr>\n<tr><td>30</td><td>Is the corporation required to file Form 7208 relating to the excise tax on repurchase of corporate stock (see instructions):</td><td></td><td></td></tr>\n<tr><td>a</td><td>Under the rules for stock repurchased by a covered corporation (or stock acquired by its specified affiliate)? ...</td><td>[ ]</td><td>[x] ✓</td></tr>\n<tr><td>b</td><td>Under the applicable foreign corporation rules? ...</td><td>[ ]</td><td>[x] ✓</td></tr>\n<tr><td>c</td><td>Under the covered surrogate foreign corporation rules? ...</td><td>[ ]</td><td>[x] ✓</td></tr>\n<tr><td></td><td>If “Yes” to either 30a, 30b, or 30c, complete Form 7208, Excise Tax on Repurchase of Corporate Stock. See the Instructions for Form 7208.</td><td></td><td></td></tr>\n<tr><td>31</td><td rowspan=\"2\">Is this a consolidated return with gross receipts or sales of $1 billion or more and a subchapter K basis adjustment, as described in the instructions, of $10 million or more? ...</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>✓</td></tr>\n<tr><td></td><td>If “Yes,” attach a statement. See instructions.</td><td></td><td></td></tr>\n</table>\n\nForm 1120 (2024)\n\n\nForm 1120 (2024)\n\n\n<!-- PAGE BREAK -->\n\nJuly 11, 2024\n\n\nTax Year 2024\n1120 MeF ATS Alternate Scenario 1\n\n\nVersion A, Cycle 5\n\n\nPage 6\n\n\n<table>\n<tr><td colspan=\"2\">Schedule L   Balance Sheets per Books</td><td colspan=\"2\">Beginning of tax year</td><td colspan=\"2\">End of tax year</td></tr>\n<tr><td></td><td>Assets</td><td>(a)</td><td>(b)</td><td>(c)</td><td>(d)</td></tr>\n<tr><td>1</td><td>Cash...</td><td></td><td>348,325</td><td></td><td>724,013</td></tr>\n<tr><td>2a</td><td>Trade notes and accounts receivable...</td><td>675,642</td><td></td><td>679,010</td><td></td></tr>\n<tr><td>b</td><td>Less allowance for bad debts...</td><td>( 2,000 )</td><td>673,642</td><td>( 2,083 )</td><td>676,927</td></tr>\n<tr><td>3</td><td>Inventories...</td><td></td><td>75,770</td><td></td><td>94,676</td></tr>\n<tr><td>4</td><td>U.S. government obligations...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>5</td><td>Tax-exempt securities (see instructions)...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>6</td><td>Other current assets (attach statement)...</td><td></td><td>1,272,210</td><td></td><td>701,156</td></tr>\n<tr><td>7</td><td>Loans to shareholders...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>8</td><td>Mortgage and real estate loans...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>9</td><td>Other investments (attach statement)...</td><td></td><td>917,682</td><td></td><td>810,633</td></tr>\n<tr><td>10a</td><td>Buildings and other depreciable assets...</td><td>44,098,662</td><td></td><td>91,977,609</td><td></td></tr>\n<tr><td>b</td><td>Less accumulated depreciation...</td><td>( 9,561,540 )</td><td>34,537,122</td><td>( 15,000,000 )</td><td>76,977,609</td></tr>\n<tr><td>11a</td><td>Depletable assets...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>b</td><td>Less accumulated depletion ...</td><td>( )</td><td></td><td>( )</td><td></td></tr>\n<tr><td>12</td><td>Land (net of any amortization) ...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>13a</td><td>Intangible assets (amortizable only) ...</td><td>50,521,992</td><td></td><td>8,314,078</td><td></td></tr>\n<tr><td>b</td><td>Less accumulated amortization ...</td><td>( 737,784 )</td><td>49,784,208</td><td>( 690,133 )</td><td>7,623,945</td></tr>\n<tr><td>14</td><td>Other assets (attach statement) ...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>15</td><td>Total assets ...</td><td></td><td>87,608,959</td><td></td><td>87,608,959</td></tr>\n<tr><td>16</td><td>Accounts payable ...</td><td></td><td>27,514,180</td><td></td><td>20,596,725</td></tr>\n<tr><td>17</td><td>Mortgages, notes, bonds payable in less than 1 year</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>18</td><td>Other current liabilities (attach statement) ...</td><td></td><td>1,763,902</td><td></td><td>2,253,285</td></tr>\n<tr><td>19</td><td>Loans from shareholders ...</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>20</td><td>Mortgages, notes, bonds payable in 1 year or more</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>21</td><td>Other liabilities (attach statement)...</td><td></td><td>818,384</td><td></td><td>826,771</td></tr>\n<tr><td>22</td><td>Capital stock: a Preferred stock...</td><td>8,500,000</td><td></td><td>8,500,000</td><td></td></tr>\n<tr><td></td><td>b Common stock...</td><td>17,680,774</td><td>26,180,774</td><td>17,513,891</td><td>26,013,891</td></tr>\n<tr><td>23</td><td>Additional paid-in capital...</td><td></td><td>611,707</td><td></td><td>611,707</td></tr>\n<tr><td>24</td><td>Retained earnings—Appropriated (attach statement)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>25</td><td>Retained earnings—Unappropriated ...</td><td></td><td>30,720,012</td><td></td><td>37,306,580</td></tr>\n<tr><td>26</td><td>Adjustments to shareholders' equity (attach statement)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>27</td><td>Less cost of treasury stock ...</td><td></td><td>( )</td><td></td><td>( )</td></tr>\n<tr><td>28</td><td>Total liabilities and shareholders' equity ...</td><td></td><td>87,608,959</td><td></td><td>87,608,959</td></tr>\n</table>\n\n**Schedule M-1** Reconciliation of Income (Loss) per Books With Income per Return\n**Note:** The corporation may be required to file Schedule M-3. See instructions.\n\n<table>\n<tr><td>1</td><td>Net income (loss) per books...</td><td></td><td>7</td><td>Income recorded on books this year</td><td rowspan=\"2\"></td></tr>\n<tr><td>2</td><td>Federal income tax per books...</td><td></td><td></td><td>not included on this return (itemize):</td></tr>\n<tr><td>3</td><td>Excess of capital losses over capital gains...</td><td></td><td></td><td>Tax-exempt interest $</td><td></td></tr>\n<tr><td>4</td><td>Income subject to tax not recorded on books this year (itemize):</td><td></td><td></td><td>--------------------------------------------------</td><td></td></tr>\n<tr><td></td><td>---------------------------</td><td></td><td>8</td><td>Deductions on this return not charged</td><td></td></tr>\n<tr><td>5</td><td>Expenses recorded on books this year not deducted on this return (itemize):</td><td></td><td>a</td><td>against book income this year (itemize):\nDepreciation . . . $</td><td></td></tr>\n<tr><td>a</td><td>Depreciation . . . $___</td><td></td><td>b</td><td>Charitable contributions $___</td><td></td></tr>\n<tr><td>b</td><td>Charitable contributions . $___</td><td></td><td></td><td>________________________________</td><td></td></tr>\n<tr><td>c</td><td>Travel and entertainment . $___</td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td>________________________________________________</td><td></td><td>9</td><td>Add lines 7 and 8 . . . . . . . .</td><td></td></tr>\n<tr><td>6</td><td>Add lines 1 through 5 ...</td><td></td><td>10</td><td>Income (page 1, line 28)—line 6 less line 9</td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">Schedule M-2   Analysis of Unappropriated Retained Earnings per Books (Schedule L, Line 25)</td></tr>\n<tr><td>1</td><td>Balance at beginning of year ...</td><td>30,720,012</td><td>5</td><td>Distributions: a Cash ...</td><td>763,902</td></tr>\n<tr><td>2</td><td>Net income (loss) per books ...</td><td>7,250,945</td><td></td><td>b Stock ...</td><td></td></tr>\n<tr><td>3</td><td>Other increases (itemize):</td><td></td><td></td><td>c Property ...</td><td></td></tr>\n<tr><td></td><td rowspan=\"2\">---<br>---<br>---</td><td></td><td>6</td><td>Other decreases (itemize):</td><td>718,261</td></tr>\n<tr><td></td><td>817,786</td><td>7</td><td>Add lines 5 and 6 ...</td><td>1,482,163</td></tr>\n<tr><td>4</td><td>Add lines 1, 2, and 3 ...</td><td>38,788,743</td><td>8</td><td>Balance at end of year (line 4 less line 7)</td><td>37,306,580</td></tr>\n</table>\n\nForm **1120** (2024)\n\n\nForm 1120 (2024)\n\n\n<!-- doc_id=parse-01m41xnhxqatzvndn5pw0ban11 -->",
+  "metadata": {
+    "job_id": "extract-01m41xp0egn0k2q2gsakzdnn01",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 16968,
+    "doc_id": "parse-01m41xnhxqatzvndn5pw0ban11",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 9.4,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 36834,
+    "output_extraction_chars": 1980,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}
