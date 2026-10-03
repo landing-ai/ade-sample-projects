@@ -1,0 +1,237 @@
+{
+  "type": "object",
+  "description": "A UCC lien search report: a list of Uniform Commercial Code filings found against a debtor search, followed by the detail record of one selected filing",
+  "properties": {
+    "report_provider": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The company that produced the search report, from the header or footer"
+    },
+    "result_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The number of UCC search results stated in the 'UCC Search Results (n)' heading"
+    },
+    "search_results": {
+      "type": "array",
+      "description": "Every result block in the UCC Search Results table, in printed order, including those on the second page. The same document number can appear in more than one result under different debtor names; list each result block separately and do not merge them. The array length should equal the count in the 'UCC Search Results (n)' heading",
+      "items": {
+        "type": "object",
+        "properties": {
+          "debtor_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The debtor name printed in bold above the filing description. Only some results print one; leave it empty when the result has no bold name"
+          },
+          "filing_description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The filing description in the debtor column, e.g. 'UCC FINANCE STATEMENT FILED'"
+          },
+          "debtor_address": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The debtor address printed in the debtor column, on one line"
+          },
+          "document_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The value after 'DOC NUMBER:', as printed including any masking characters"
+          },
+          "original_document_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The value after 'ORIGINAL:', as printed"
+          },
+          "filing_state": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The two-letter filing state in the Filing column"
+          },
+          "date_filed": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The filing date in the Filing column, as YYYY-MM-DD"
+          },
+          "secured_party_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The creditor (secured party) name in the Creditor column"
+          },
+          "secured_party_address": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The creditor address in the Creditor column, on one line"
+          },
+          "collateral": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The collateral description following the 'COLLATERAL:' label; leave it empty when the label has no text after it"
+          },
+          "filing_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The number in 'FILING COUNT [ n ]'"
+          },
+          "debtor_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The number in 'DEBTOR COUNT [ n ]'"
+          },
+          "secured_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The number in 'SECURED COUNT [ n ]'"
+          }
+        }
+      }
+    },
+    "filing_detail": {
+      "type": "object",
+      "description": "The detailed record of one filing in the 'Additional Data Sources - UCC Report' section",
+      "properties": {
+        "original_document_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The value after 'Original Document Nr.:', as printed"
+        },
+        "original_date_filed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The value after 'Original Date Filed:', as YYYY-MM-DD"
+        },
+        "filing_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The two-letter code after 'Filing State:'"
+        },
+        "filing_state_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The full state name after 'Filing State Name:'"
+        },
+        "debtor_parties": {
+          "type": "array",
+          "description": "Each row of the Debtor Parties table",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The debtor's name, as printed"
+              },
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The debtor's full mailing address on one line, as printed"
+              }
+            }
+          }
+        },
+        "secured_parties": {
+          "type": "array",
+          "description": "Each row of the Secured Parties table",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The secured party's name, as printed"
+              },
+              "address": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The secured party's full mailing address on one line, as printed"
+              }
+            }
+          }
+        },
+        "events": {
+          "type": "array",
+          "description": "Each filing event in the Events section",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type_of_filing": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The value after 'Type Of Filing:', with whitespace and line breaks collapsed to single spaces"
+              },
+              "filing_type_code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The value after 'Filing Type Code:'"
+              },
+              "date_filed": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The value after 'Date Filed:', as YYYY-MM-DD"
+              },
+              "document_number": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The value after 'Document Number:', as printed"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

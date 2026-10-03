@@ -1,0 +1,106 @@
+{
+  "model": "pro",
+  "feature_page": 2,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "filing_detail.original_document_number",
+      "label": "Original document number",
+      "value": "98-168-XXXX",
+      "page": 2,
+      "box": {
+        "xmin": 0.15817,
+        "ymin": 0.4592,
+        "xmax": 0.42245,
+        "ymax": 0.47218
+      },
+      "range": {
+        "end": 2632,
+        "start": 2597
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "filing_detail-original_document_number.png"
+    },
+    {
+      "path": "filing_detail.original_date_filed",
+      "label": "Original date filed",
+      "value": "1998-06-17",
+      "page": 2,
+      "box": {
+        "xmin": 0.52138,
+        "ymin": 0.45925,
+        "xmax": 0.79125,
+        "ymax": 0.47213
+      },
+      "range": {
+        "end": 2665,
+        "start": 2633
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "filing_detail-original_date_filed.png"
+    },
+    {
+      "path": "filing_detail.filing_state_name",
+      "label": "Filing state",
+      "value": "Washington",
+      "page": 2,
+      "box": {
+        "xmin": 0.52166,
+        "ymin": 0.47244,
+        "xmax": 0.78949,
+        "ymax": 0.48583
+      },
+      "range": {
+        "end": 2714,
+        "start": 2684
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "filing_detail-filing_state_name.png"
+    },
+    {
+      "path": "filing_detail.events[0].filing_type_code",
+      "label": "Filing type code",
+      "value": "0801",
+      "page": 2,
+      "box": {
+        "xmin": 0.52191,
+        "ymin": 0.78728,
+        "xmax": 0.74592,
+        "ymax": 0.79984
+      },
+      "range": {
+        "end": 3559,
+        "start": 3536
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "filing_detail-events-0-filing_type_code.png"
+    },
+    {
+      "path": "filing_detail.secured_parties[0].name",
+      "label": "Secured party",
+      "value": "ANY COMPANY",
+      "page": 2,
+      "box": {
+        "xmin": 0.15927,
+        "ymin": 0.7096,
+        "xmax": 0.26123,
+        "ymax": 0.72747
+      },
+      "range": {
+        "end": 3342,
+        "start": 3331
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "filing_detail-secured_parties-0-name.png"
+    }
+  ]
+}
