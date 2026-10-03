@@ -1,0 +1,26 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Auto Loan Statement
+url: https://www.gmfinancial.com/content/dam/gmf/myaccount/documents/Sample-Statement.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: GM Financial. Provenance checked: PDF is on gmfinancial.com's own asset
+  path (publisher's domain) and serves application/pdf; no linking HTML page confirmed.
+  Source: 2 pages. Layer: text. Redaction tool expected: none. Personal data: none:
+  specimen. Not a competitor sample. Clearance expected: public. Avoid featuring the
+  payment coupon, the 'Account Details' lorem ipsum block, and any date: the template's
+  dates disagree (header 2022, coupon 2020). There is no APR on the statement. Legal-
+  size pages. Research notes: Standalone statement with vehicle, balance, term, amount
+  due; no APR; template date inconsistencies, lorem ipsum block; SAMPLE watermark; legal
+  size. Suggested fields, as suggestions only: Vehicle 2021 GMC Acadia Denali; Total
+  amount due $496.31; Principal balance $42,328.50; Term 48 Months; Account number
+  246189537458.

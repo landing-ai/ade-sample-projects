@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "title": "Auto loan statement",
+  "properties": {
+    "lender_name": {"type": "string", "description": "Name of the auto finance company issuing the statement."},
+    "statement_date": {"type": "string", "description": "Statement date printed in the page header, as YYYY-MM-DD."},
+    "account_number": {"type": "string", "description": "Loan account number as printed in the account details, digits only."},
+    "borrower_name": {"type": "string", "description": "Name of the borrower in the coupon's mailing address."},
+    "vehicle": {
+      "type": "object",
+      "description": "The financed vehicle named at the top of the statement.",
+      "properties": {
+        "year": {"type": "integer", "description": "Model year of the vehicle."},
+        "make_model": {"type": "string", "description": "Make, model and trim as printed, e.g. GMC ACADIA DENALI."}
+      }
+    },
+    "total_amount_due": {"type": "number", "description": "Total amount due shown in the statement header, in dollars."},
+    "due_date": {"type": "string", "description": "Due date shown beside the total amount due in the statement header, as YYYY-MM-DD."},
+    "account_opened_date": {"type": "string", "description": "Date the loan account was opened, as YYYY-MM-DD."},
+    "current_principal_balance": {"type": "number", "description": "Current principal balance, in dollars. Not the payoff amount."},
+    "term_months": {"type": "integer", "description": "Loan term in months."},
+    "current_due": {
+      "type": "array",
+      "description": "Each row of the Current Due section of the transaction summary, excluding the Total Current Due row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {"type": "string", "description": "Date of the row, as YYYY-MM-DD."},
+          "activity": {"type": "string", "description": "Activity description as printed."},
+          "amount": {"type": "number", "description": "Amount in dollars."}
+        }
+      }
+    },
+    "total_current_due": {"type": "number", "description": "Total Current Due from the transaction summary, in dollars."},
+    "payments_received": {
+      "type": "array",
+      "description": "Each payment listed under Payments Received in the transaction summary on the first page.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {"type": "string", "description": "Date the payment was received, as YYYY-MM-DD."},
+          "amount": {"type": "number", "description": "Payment amount in dollars."}
+        }
+      }
+    },
+    "payment_allocation": {
+      "type": "array",
+      "description": "Each payment in the Transaction Details table on the reverse side, with how it was split between principal and interest.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {"type": "string", "description": "Date of the payment, as YYYY-MM-DD, as printed in this table."},
+          "amount": {"type": "number", "description": "Total payment amount in dollars."},
+          "principal": {"type": "number", "description": "Portion applied to principal, in dollars."},
+          "interest": {"type": "number", "description": "Portion applied to interest, in dollars."}
+        }
+      }
+    },
+    "dealer_name": {"type": "string", "description": "Name of the dealer under Your Dealer, as printed."},
+    "customer_service_phone": {"type": "string", "description": "Customer service phone number."}
+  }
+}
