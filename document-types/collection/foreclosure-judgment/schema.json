@@ -1,0 +1,244 @@
+{
+  "type": "object",
+  "description": "A general judgment of foreclosure and sale of real property",
+  "properties": {
+    "court": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The court, e.g. 'Circuit Court of the State of Oregon for the County of Multnomah'"
+    },
+    "case_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The case number"
+    },
+    "plaintiff": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The plaintiff"
+    },
+    "defendants": {
+      "type": "array",
+      "description": "Each defendant named in the caption, as printed",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A defendant"
+      }
+    },
+    "property_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Paragraph 1: the address the property is commonly known as, as one line"
+    },
+    "legal_description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Paragraph 1: the legal description, as printed"
+    },
+    "deed_of_trust": {
+      "type": "object",
+      "description": "Paragraph 2: the deed of trust foreclosed",
+      "properties": {
+        "dated": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date it was executed, as YYYY-MM-DD"
+        },
+        "recorded": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date it was recorded, as YYYY-MM-DD"
+        },
+        "recording_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The recorder's fee number"
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "description": "Paragraph 3: the note",
+      "properties": {
+        "dated": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date of the note, as YYYY-MM-DD"
+        },
+        "original_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The original amount of the note, in USD"
+        }
+      }
+    },
+    "amounts_due": {
+      "type": "object",
+      "description": "Paragraph 11: the amounts due under the loan",
+      "properties": {
+        "principal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Principal, in USD"
+        },
+        "prejudgment_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Prejudgment interest, in USD"
+        },
+        "prejudgment_interest_rate_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The prejudgment interest rate, as a percent number"
+        },
+        "prejudgment_interest_per_diem": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The per-diem prejudgment interest, in USD"
+        },
+        "late_charges": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Late charges, in USD"
+        },
+        "other_costs_and_fees": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Other recoverable costs and fees, in USD"
+        },
+        "escrow_advances": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Escrow advances, in USD"
+        },
+        "suspense_balance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Suspense balance, in USD; negative when shown in parentheses"
+        },
+        "subtotal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Subtotal, in USD"
+        },
+        "total_with_prejudgment_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total plus prejudgment interest, in USD"
+        }
+      }
+    },
+    "attorney_fees_and_costs": {
+      "type": "object",
+      "description": "Paragraph 12: attorney fees and costs awarded",
+      "properties": {
+        "costs_total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total costs, in USD"
+        },
+        "attorney_fees": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Attorney fees, in USD"
+        },
+        "total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total of fees and costs, in USD"
+        }
+      }
+    },
+    "post_judgment_interest_rate_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Paragraph 13: the post-judgment interest rate, as a percent number"
+    },
+    "deficiency_judgment_allowed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "False if the judgment says the plaintiff is not entitled to a deficiency judgment"
+    },
+    "homestead_exemption_allowed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "False if the judgment says the defendants are not entitled to a homestead exemption"
+    },
+    "judgment_signed_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date and time stamped above the judge's signature, as printed"
+    },
+    "judge": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The judge's printed name"
+    },
+    "is_signed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the judgment carries the judge's signature"
+    }
+  }
+}

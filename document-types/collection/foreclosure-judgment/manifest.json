@@ -1,0 +1,39 @@
+{
+  "slug": "foreclosure-judgment",
+  "title": "Foreclosure Judgment",
+  "source": {
+    "file": "foreclosure-judgment-redacted.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://oregonsheriffssales.org/wp-content/uploads/2025/01/384277-Writ.pdf",
+      "publisher": "Multnomah County Circuit Court record, posted by the Oregon State Sheriffs' Association sales site",
+      "title": "General Judgment of Foreclosure and Sale, with Certificate of Readiness under UTCR 5.100, Multnomah County Circuit Court",
+      "retrieved": "2026-10-02",
+      "clearance": "redacted",
+      "clearance_note": "Pages 3-8 of a 13-page scanned foreclosure sale packet that the sheriffs' sales site posts publicly for a Multnomah County foreclosure sale; downloaded by script. Only the judgment and its certificate of readiness are used. It is a public court record, but the defendants are a deceased private borrower's heirs, so every defendant's and the borrower's name (in the caption, the default recital and paragraphs 2 and 3), the property's house number, street and ZIP code, the subdivision name in the legal description, the deed of trust's recording number, the case number and the law firm's file number were replaced, with document-types/scripts/redact_scan.py working on the pixels of the scan; the pages are rebuilt from the edited images alone. Verified by OCR, on literals and bare digits: no original value survives in the committed PDF or anywhere in this folder. The court, the judge, the plaintiff, its law firm and attorneys of record, and their signatures are kept: they appear in an official or professional capacity. The money award is kept: with the parties and the property replaced it identifies no one. The stand-ins are shared with the allonge-to-note, promissory-note and writ-of-execution samples from the same packet.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          { "what": "the borrower's and the defendants' names", "with": "JOHN Q SAMPLE, JOHN QUINCY SAMPLE, JAMES Q SAMPLE, JANE Q SAMPLE, JUNE Q SAMPLE (case-matched to the page)", "occurrences": 16 },
+          { "what": "property house number and street", "with": "100 Sample", "occurrences": 1 },
+          { "what": "property ZIP code", "with": "97000", "occurrences": 1 },
+          { "what": "subdivision name in the legal description", "with": "SAMPLE", "occurrences": 1 },
+          { "what": "deed of trust recording number", "with": "2019-201618", "occurrences": 1 },
+          { "what": "case number", "with": "24CV32513", "occurrences": 2 },
+          { "what": "law firm file number", "with": "84-556087", "occurrences": 6 }
+        ]
+      },
+      "split_from": { "pages": [3, 4, 5, 6, 7, 8], "of": 13 }
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    { "path": "amounts_due.principal", "label": "Principal", "occurrence": 0 },
+    { "path": "amounts_due.prejudgment_interest", "label": "Prejudgment interest", "occurrence": 0 },
+    { "path": "amounts_due.prejudgment_interest_rate_percent", "label": "Prejudgment interest rate (%)", "occurrence": 0 },
+    { "path": "amounts_due.late_charges", "label": "Late charges", "occurrence": 0 },
+    { "path": "amounts_due.other_costs_and_fees", "label": "Other costs and fees", "occurrence": 0 }
+  ],
+  "notes": "The request asked for pages 3-8 of the packet on their own and named no fields. Features the money award table on page 3 (paragraph 11): principal, prejudgment interest and its rate, late charges, and other recoverable costs and fees. Every amount in the award and fee tables grounds to its own cell. The subtotal and the total with prejudgment interest are on page 4, the table's continuation, so they are not on this overlay. No person is featured. The caption's line breaks split the defendants: defendants[0] ends '... OF JOHN' and defendants[1] begins 'Q SAMPLE. AKA ...', because the caption wraps the borrower's name across two lines. The judge's name and the signing timestamp are correct and kept; is_signed grounds to the parse's [SIGNED] label and reads OFF, as booleans do."
+}
