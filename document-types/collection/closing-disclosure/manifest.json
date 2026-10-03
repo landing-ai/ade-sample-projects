@@ -1,0 +1,26 @@
+{
+  "slug": "closing-disclosure",
+  "title": "Closing Disclosure",
+  "source": {
+    "file": "closing-disclosure.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://files.consumerfinance.gov/f/201311_cfpb_kbyo_closing-disclosure.pdf",
+      "publisher": "Consumer Financial Protection Bureau",
+      "title": "Closing Disclosure (Know Before You Owe sample, purchase loan)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "The CFPB's own filled sample of the TRID Closing Disclosure, linked from its Closing Disclosure explainer page on consumerfinance.gov and published for general use. It carries the same form pages as Regulation Z Appendix H-25(B), without the cover sheet. Every party is a specimen placeholder (borrowers Michael Jones and Mary Stone, Ficus Bank, Epsilon Title Co., 123 Anywhere Street, phone numbers such as 123-456-7890 and made-up email domains). Downloaded directly by script. No redaction was needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "loan_terms.interest_rate_percent", "label": "Interest rate", "occurrence": 0},
+    {"path": "loan_terms.monthly_principal_and_interest", "label": "Monthly principal and interest", "occurrence": 0},
+    {"path": "projected_payments[0].estimated_total_monthly_payment", "label": "Estimated total monthly payment (years 1-7)", "occurrence": 0},
+    {"path": "costs_at_closing.closing_costs", "label": "Closing costs", "occurrence": 0},
+    {"path": "costs_at_closing.cash_to_close", "label": "Cash to close", "occurrence": 0}
+  ],
+  "notes": "The request named no fields; its notes suggested loan amount, interest rate, monthly P&I, prepayment penalty and cash to close, and asked to avoid the three-column page 1 header and its dates. The featured set follows those suggestions where the grounding allows and tells page 1 the way a borrower reads it: the rate, the monthly payment it produces, the all-in monthly payment while mortgage insurance applies, and what is due at closing. Loan amount was not featured: inspect_fields.py marks it OFF (the number 162000 against the printed '$162,000'). The prepayment penalty maximum ($3,240) is OFF too, because it grounds to the whole YES bullet rather than the amount, and the YES/NO booleans ground to their YES or NO cell. The header dates are extracted as ISO dates against '4/15/2013' and are OFF as well, which matches the request's advice to avoid them."
+}

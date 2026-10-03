@@ -1,0 +1,146 @@
+{
+  "type": "object",
+  "title": "Mortgage Closing Disclosure (TRID)",
+  "properties": {
+    "closing_information": {
+      "type": "object",
+      "description": "The Closing Information block in the page 1 header.",
+      "properties": {
+        "date_issued": {"type": "string", "description": "Date Issued, as YYYY-MM-DD."},
+        "closing_date": {"type": "string", "description": "Closing Date, as YYYY-MM-DD."},
+        "disbursement_date": {"type": "string", "description": "Disbursement Date, as YYYY-MM-DD."},
+        "settlement_agent": {"type": "string", "description": "Settlement agent company name."},
+        "file_number": {"type": "string", "description": "Settlement file number (File #)."},
+        "property_address": {"type": "string", "description": "Property address, joined into one line."},
+        "sale_price": {"type": "number", "description": "Sale price of the property, in dollars."}
+      }
+    },
+    "transaction_information": {
+      "type": "object",
+      "description": "The Transaction Information block in the page 1 header.",
+      "properties": {
+        "borrowers": {"type": "string", "description": "Borrower name or names, as printed."},
+        "sellers": {"type": "string", "description": "Seller name or names, as printed."},
+        "lender": {"type": "string", "description": "Lender name."}
+      }
+    },
+    "loan_information": {
+      "type": "object",
+      "description": "The Loan Information block in the page 1 header.",
+      "properties": {
+        "loan_term": {"type": "string", "description": "Loan term, e.g. 30 years."},
+        "purpose": {"type": "string", "description": "Loan purpose, e.g. Purchase or Refinance."},
+        "product": {"type": "string", "description": "Loan product, e.g. Fixed Rate."},
+        "loan_type": {"type": "string", "enum": ["Conventional", "FHA", "VA", "Other"], "description": "The checked loan type."},
+        "loan_id": {"type": "string", "description": "Loan ID number."},
+        "mic_number": {"type": "string", "description": "Mortgage insurance case number (MIC #)."}
+      }
+    },
+    "loan_terms": {
+      "type": "object",
+      "description": "The Loan Terms table on page 1.",
+      "properties": {
+        "loan_amount": {"type": "number", "description": "Loan amount, in dollars."},
+        "interest_rate_percent": {"type": "number", "description": "Interest rate, as a percentage, e.g. 3.875."},
+        "monthly_principal_and_interest": {"type": "number", "description": "Monthly principal and interest payment, in dollars."},
+        "has_prepayment_penalty": {"type": "boolean", "description": "Whether the loan has a prepayment penalty (YES/NO)."},
+        "prepayment_penalty_max": {"type": "number", "description": "Maximum prepayment penalty, in dollars, if one applies."},
+        "has_balloon_payment": {"type": "boolean", "description": "Whether the loan has a balloon payment (YES/NO)."}
+      }
+    },
+    "projected_payments": {
+      "type": "array",
+      "description": "One entry per column of the Projected Payments table on page 1.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "years": {"type": "string", "description": "Column heading, e.g. Years 1-7."},
+          "principal_and_interest": {"type": "number", "description": "Principal and interest, in dollars."},
+          "mortgage_insurance": {"type": "number", "description": "Mortgage insurance, in dollars; 0 when shown as a dash."},
+          "estimated_escrow": {"type": "number", "description": "Estimated escrow, in dollars."},
+          "estimated_total_monthly_payment": {"type": "number", "description": "Estimated total monthly payment, in dollars."}
+        }
+      }
+    },
+    "estimated_taxes_insurance_assessments_monthly": {"type": "number", "description": "Estimated taxes, insurance and assessments per month, in dollars."},
+    "costs_at_closing": {
+      "type": "object",
+      "description": "The Costs at Closing table on page 1.",
+      "properties": {
+        "closing_costs": {"type": "number", "description": "Total closing costs, in dollars."},
+        "cash_to_close": {"type": "number", "description": "Cash to close, in dollars."}
+      }
+    },
+    "closing_cost_details": {
+      "type": "object",
+      "description": "Section totals from Closing Cost Details on page 2, borrower-paid.",
+      "properties": {
+        "origination_charges": {"type": "number", "description": "A. Origination Charges total, in dollars."},
+        "services_did_not_shop_for": {"type": "number", "description": "B. Services Borrower Did Not Shop For total, in dollars."},
+        "services_did_shop_for": {"type": "number", "description": "C. Services Borrower Did Shop For total, in dollars."},
+        "total_loan_costs": {"type": "number", "description": "D. Total Loan Costs (Borrower-Paid), in dollars."},
+        "total_other_costs": {"type": "number", "description": "I. Total Other Costs (Borrower-Paid), in dollars."},
+        "lender_credits": {"type": ["number", "null"], "description": "Lender credits, in dollars, as a positive number; null when the line is blank."},
+        "total_closing_costs": {"type": "number", "description": "J. Total Closing Costs (Borrower-Paid), in dollars."}
+      }
+    },
+    "borrower_transaction": {
+      "type": "object",
+      "description": "Borrower's Transaction in the Summaries of Transactions on page 3.",
+      "properties": {
+        "total_due_from_borrower": {"type": "number", "description": "K. Due from Borrower at Closing, in dollars."},
+        "total_paid_by_or_on_behalf_of_borrower": {"type": "number", "description": "L. Paid Already by or on Behalf of Borrower at Closing, in dollars."},
+        "deposit": {"type": "number", "description": "Earnest money deposit, in dollars."},
+        "seller_credit": {"type": "number", "description": "Seller credit, in dollars."}
+      }
+    },
+    "seller_transaction": {
+      "type": "object",
+      "description": "Seller's Transaction in the Summaries of Transactions on page 3.",
+      "properties": {
+        "total_due_to_seller": {"type": "number", "description": "M. Due to Seller at Closing, in dollars."},
+        "total_due_from_seller": {"type": "number", "description": "N. Due from Seller at Closing, in dollars."},
+        "cash_to_seller": {"type": "number", "description": "Cash to (or from) seller in the seller's calculation, in dollars."}
+      }
+    },
+    "escrow_account": {
+      "type": "object",
+      "description": "Escrow Account section on page 4.",
+      "properties": {
+        "has_escrow_account": {"type": "boolean", "description": "Whether the loan will have an escrow account."},
+        "escrowed_property_costs_year_1": {"type": "number", "description": "Escrowed property costs over year 1, in dollars."},
+        "initial_escrow_payment": {"type": "number", "description": "Initial escrow payment, in dollars."},
+        "monthly_escrow_payment": {"type": "number", "description": "Monthly escrow payment, in dollars."}
+      }
+    },
+    "late_payment": {
+      "type": "object",
+      "description": "Late Payment terms on page 4.",
+      "properties": {
+        "grace_period_days": {"type": "integer", "description": "Days late before a fee is charged."},
+        "late_fee_percent": {"type": "number", "description": "Late fee as a percentage of the monthly principal and interest payment."}
+      }
+    },
+    "loan_calculations": {
+      "type": "object",
+      "description": "Loan Calculations table on page 5.",
+      "properties": {
+        "total_of_payments": {"type": "number", "description": "Total of Payments, in dollars."},
+        "finance_charge": {"type": "number", "description": "Finance Charge, in dollars."},
+        "amount_financed": {"type": "number", "description": "Amount Financed, in dollars."},
+        "apr_percent": {"type": "number", "description": "Annual Percentage Rate, as a percentage."},
+        "total_interest_percentage": {"type": "number", "description": "Total Interest Percentage (TIP), as a percentage."}
+      }
+    },
+    "lender_contact": {
+      "type": "object",
+      "description": "The Lender column of Contact Information on page 5.",
+      "properties": {
+        "name": {"type": "string", "description": "Lender name."},
+        "nmls_id": {"type": "string", "description": "Lender NMLS ID."},
+        "contact_name": {"type": "string", "description": "Loan officer contact name."},
+        "contact_nmls_id": {"type": "string", "description": "Contact NMLS ID."}
+      }
+    }
+  }
+}
