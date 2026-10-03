@@ -1,0 +1,349 @@
+{
+  "type": "object",
+  "description": "A residential real estate purchase contract",
+  "properties": {
+    "form_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The printed title of the contract form, e.g. 'Residential Resale Real Estate Purchase Contract'"
+    },
+    "form_publisher": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The organization that drafted the pre-printed form"
+    },
+    "form_version_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The 'Document updated' date of the form as printed, e.g. 'February 2020'"
+    },
+    "buyer_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The buyer's name(s) from Section 1a"
+    },
+    "seller_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The seller's name(s) from Section 1a"
+    },
+    "premises": {
+      "type": "object",
+      "description": "The property being sold, from Section 1b",
+      "properties": {
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The premises street address"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City"
+        },
+        "county": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "County"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as a two-letter code"
+        },
+        "zip_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code as printed"
+        },
+        "assessor_parcel_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The Assessor's # (parcel number) as printed"
+        },
+        "legal_description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The legal description as written"
+        }
+      }
+    },
+    "price_and_payment": {
+      "type": "object",
+      "description": "Purchase price and how it is paid, from Section 1c",
+      "properties": {
+        "full_purchase_price": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The full purchase price, in dollars"
+        },
+        "earnest_money": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The earnest money amount, in dollars"
+        },
+        "earnest_money_terms": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The text written beside the earnest money amount"
+        },
+        "cash_at_closing": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The amount due in cash at closing, in dollars"
+        },
+        "earnest_money_form": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The checked form of earnest money: 'personal check', 'wire transfer' or 'other'"
+        },
+        "earnest_money_held_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Who holds the earnest money once deposited: 'escrow company' or 'broker trust account'"
+        },
+        "is_all_cash_sale": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the purchase is paid entirely in cash: earnest money plus cash due at closing equal the full purchase price and no loan amount is listed in Section 1c. False if a loan funds part of the price"
+        }
+      }
+    },
+    "close_of_escrow_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The agreed Close of Escrow (COE) date from Section 1d, assembled from its month, day and year blanks, as YYYY-MM-DD"
+    },
+    "addenda_incorporated": {
+      "type": "array",
+      "description": "Each addendum box checked in Section 1f, as its printed label",
+      "items": {
+        "type": "string"
+      }
+    },
+    "escrow": {
+      "type": "object",
+      "description": "The escrow company named in Section 3a",
+      "properties": {
+        "company": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Escrow or title company name"
+        },
+        "escrow_officer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The escrow officer named"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Escrow company street address, city, state and ZIP"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Escrow company phone"
+        }
+      }
+    },
+    "inspection_period_days": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The Buyer's inspection period in days, from Section 6a. The form prints a default of ten (10) days followed by a blank; when a number is written in the blank, use that number instead of the default"
+    },
+    "home_warranty_declined": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the box 'Buyer declines the purchase of a Home Warranty Plan' is checked"
+    },
+    "additional_terms": {
+      "type": "array",
+      "description": "Each additional term written in Section 8a, one per sentence",
+      "items": {
+        "type": "string"
+      }
+    },
+    "offer_expiration": {
+      "type": "object",
+      "description": "Terms of acceptance from Section 8o",
+      "properties": {
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date by which the offer must be accepted, as YYYY-MM-DD"
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The time of day, followed by whichever of the 'a.m.' or 'p.m.' boxes is checked [x], e.g. '11:00 a.m.'"
+        }
+      }
+    },
+    "seller_broker": {
+      "type": "object",
+      "description": "The broker acting for the seller, from Section 9a",
+      "properties": {
+        "agent_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Seller's agent name"
+        },
+        "agent_mls_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Agent MLS code"
+        },
+        "agent_license_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Agent state license number"
+        },
+        "firm_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Brokerage firm name"
+        },
+        "firm_license_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm state license number"
+        },
+        "firm_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm address, city, state and ZIP"
+        }
+      }
+    },
+    "buyer_broker": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The name printed on the buyer's broker line in Section 8q, or null if blank"
+    },
+    "buyer_signature": {
+      "type": "object",
+      "description": "The buyer's signature block, Section 8s",
+      "properties": {
+        "is_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the buyer's signature line carries a signature"
+        },
+        "signed_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date beside the buyer's signature, as YYYY-MM-DD"
+        },
+        "name_printed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The buyer's name printed below the signature"
+        }
+      }
+    },
+    "seller_signature": {
+      "type": "object",
+      "description": "The seller's acceptance signature block, Section 9c",
+      "properties": {
+        "is_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the seller's signature line carries a signature"
+        },
+        "signed_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date beside the seller's signature, as YYYY-MM-DD"
+        },
+        "name_printed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The seller's name printed below the signature"
+        }
+      }
+    }
+  }
+}
