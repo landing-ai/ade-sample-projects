@@ -1,0 +1,150 @@
+{
+  "type": "object",
+  "description": "A writ of execution ordering a sheriff to sell real property under a foreclosure judgment",
+  "properties": {
+    "court": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The court issuing the writ, e.g. 'Circuit Court of the State of Oregon for the County of Multnomah'"
+    },
+    "case_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The case number"
+    },
+    "plaintiff": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The plaintiff"
+    },
+    "defendants": {
+      "type": "array",
+      "description": "Each defendant named in the caption, as printed",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A defendant"
+      }
+    },
+    "directed_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The officer the writ is addressed to, after 'TO:'"
+    },
+    "judgment_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The judgment being enforced, e.g. 'General Judgment of Foreclosure and Sale'"
+    },
+    "judgment_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date the judgment was entered, as YYYY-MM-DD"
+    },
+    "deed_of_trust_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date of the deed of trust, as YYYY-MM-DD"
+    },
+    "legal_description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The legal description of the property, as printed"
+    },
+    "property_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The address the property is commonly known as, as one line"
+    },
+    "amount_to_satisfy": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The sum to be satisfied, in USD"
+    },
+    "amount_as_of": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date that sum is stated as of, as YYYY-MM-DD"
+    },
+    "post_judgment_interest_rate_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The post-judgment interest rate, as a percent number (9.0 for 9.00%)"
+    },
+    "per_diem_interest": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The per-day interest, in USD"
+    },
+    "return_within_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The number of days within which the writ must be returned"
+    },
+    "judgment_creditor": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The judgment creditor"
+    },
+    "creditor_attorney_firm": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The law firm acting for the judgment creditor"
+    },
+    "issued_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date written beside the court's signature, as YYYY-MM-DD"
+    },
+    "has_court_seal": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the writ carries the court's seal"
+    },
+    "is_signed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the writ is signed for the court"
+    }
+  }
+}
