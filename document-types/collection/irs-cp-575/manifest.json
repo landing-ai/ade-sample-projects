@@ -1,0 +1,26 @@
+{
+  "slug": "irs-cp-575",
+  "title": "IRS CP 575",
+  "source": {
+    "file": "irs-cp-575-sample.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://metroplus.org/wp-content/uploads/2024/09/Sample-IRS-Letter.pdf",
+      "publisher": "MetroPlusHealth",
+      "title": "Sample IRS Letter (CP 575 A, EIN assignment notice), provider credentialing example",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A specimen CP 575 A notice that MetroPlusHealth publishes on its provider forms page as a credentialing example for providers. Every value is placeholder data: the EIN is 88-8888888, the entity is 'ABC Behavioral LCSW PC' at '123 OLD Road TPKE, ANY VALLEY, NY 10111', the name control is ABCD, the IRS-use reference is 9999999999, and the dates fall in the year 2525. The publisher added a red 'EXAMPLE ONLY' header, two yellow callout boxes and highlights over the name and EIN, all in the text layer. No real person's or business's data appears, so no redaction was needed. The PDF metadata names only 'IRS' as author and carries no personal data; the file is committed exactly as downloaded by script."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "ein", "label": "Employer Identification Number", "occurrence": 0 },
+    { "path": "entity.legal_name", "label": "Legal name", "occurrence": 0 },
+    { "path": "notice.notice_number", "label": "Notice number", "occurrence": 0 },
+    { "path": "notice.form", "label": "Application form", "occurrence": 0 },
+    { "path": "required_filings[0].form", "label": "Required filing", "occurrence": 0 }
+  ],
+  "notes": "The request suggested, as suggestions only, the EIN, the notice number, the form (SS-4), the legal name and the required filing (Form 1120). All five ground ok on page 1 and all five ship, so the overlay tells one story: which notice this is, what application it answers, which business got which number, and what that business must now file. The EIN uses occurrence 0, the header block, rather than the repeat in the body text. The legal name is a fictitious business's name from the specimen, not a person's. The notice date is deliberately not featured: the publisher's placeholder 01-35-2525 is an invalid date, and the stub on page 3 prints a different one, 01-25-2525."
+}

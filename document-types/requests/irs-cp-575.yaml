@@ -1,0 +1,25 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: IRS CP 575
+url: https://metroplus.org/wp-content/uploads/2024/09/Sample-IRS-Letter.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: MetroPlusHealth (provider credentialing sample). Provenance checked:
+  metroplus.org provider forms page links Sample-IRS-Letter.pdf. Source: 3 pages. Layer:
+  text. Redaction tool expected: none. Personal data: none: specimen. Not a competitor
+  sample. Clearance expected: public. The publisher added a red 'EXAMPLE ONLY' header,
+  yellow callout boxes and highlights to the specimen letter; they are in the text layer
+  and may appear in the parse. The notice date is a deliberately invalid placeholder; do
+  not feature it. Research notes: Specimen values; publisher's red EXAMPLE ONLY header,
+  yellow callouts and highlights are in the text layer. Invalid fake date 01-35-2525.
+  Suggested fields, as suggestions only: EIN 88-8888888; Notice CP 575 A; Form SS-4;
+  Legal name ABC Behavioral LCSW PC; Required filing Form 1120.
