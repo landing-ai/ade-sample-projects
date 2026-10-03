@@ -1,0 +1,179 @@
+{
+  "type": "object",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year printed in the form's header box, e.g. '2025'"
+    },
+    "taxpayer_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The name(s) shown on Form 1040, printed in the 'Name(s) shown on Form 1040, 1040-SR, or 1040-NR' box"
+    },
+    "ssn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The taxpayer's social security number from the 'Your social security number' box, exactly as printed"
+    },
+    "part_i_amti": {
+      "type": "object",
+      "description": "Part I, Alternative Minimum Taxable Income",
+      "properties": {
+        "line_1a_taxable_income_adjusted": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1a: Form 1040 line 14 less Schedule 1-A line 37. Its value is printed in a small inner box labelled 1a, to the left of the main amount column, not in the right-hand column. As a number without commas. If the box is empty, return null, not 0."
+        },
+        "line_1b": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1b: line 1a subtracted from Form 1040 line 11b. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_2a_taxes_or_standard_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2a: taxes from Schedule A line 7, or the amount from Form 1040 line 12e. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "other_adjustments": {
+          "type": "array",
+          "description": "Every line from 2b through 2t that has an amount entered. Omit blank lines.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "line": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The line number as printed, e.g. '2g'"
+              },
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The line's printed description, e.g. 'Interest from specified private activity bonds'"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount entered on the line, as a number; negative if shown in parentheses"
+              }
+            }
+          }
+        },
+        "line_3_other_adjustments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3: other adjustments, including income-based related adjustments. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_4_amti": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 4: alternative minimum taxable income, lines 1b through 3 combined. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        }
+      }
+    },
+    "part_ii_amt": {
+      "type": "object",
+      "description": "Part II, Alternative Minimum Tax",
+      "properties": {
+        "line_5_exemption": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5: the exemption amount entered on line 5 (not the table of thresholds printed beside it). Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_6_amti_less_exemption": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 6: line 5 subtracted from line 4. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_7_tentative_tax_before_credit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7: AMT at 26%/28%, or from Part III line 40. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_8_amt_foreign_tax_credit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8: alternative minimum tax foreign tax credit. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_9_tentative_minimum_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 9: tentative minimum tax, line 8 subtracted from line 7. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_10_regular_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 10: regular tax from Form 1040 line 16 plus Schedule 2 line 1z, less Schedule 3 line 1. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_11_amt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11: AMT, line 10 subtracted from line 9; carried to Schedule 2 line 2. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        }
+      }
+    },
+    "part_iii_capital_gains": {
+      "type": "object",
+      "description": "Part III, Tax Computation Using Maximum Capital Gains Rates, on page 2. Often left blank.",
+      "properties": {
+        "completed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if any amount is entered on lines 12 through 40 of Part III, false if every line is blank"
+        },
+        "line_12": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 12: the amount from Form 6251 line 6. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        },
+        "line_40": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 40: the smaller of line 38 or line 39, carried to line 7. Enter the amount printed in the right-hand amount column for this line, as a number without commas or dollar signs. If the amount cell is empty, return null, not 0: return 0 only when a 0 is actually printed on the line."
+        }
+      }
+    }
+  }
+}
