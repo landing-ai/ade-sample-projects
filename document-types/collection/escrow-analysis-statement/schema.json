@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "title": "Escrow analysis statement",
+  "properties": {
+    "servicer_name": {"type": "string", "description": "Name of the mortgage servicer issuing the statement."},
+    "statement_date": {"type": "string", "description": "Statement date, as YYYY-MM-DD."},
+    "account_number": {"type": "string", "description": "Loan account number as printed."},
+    "borrower_name": {"type": "string", "description": "Borrower named in the mailing address block."},
+    "property_address": {"type": "string", "description": "Property address as printed, on one line."},
+    "analysis_result": {"type": "string", "enum": ["shortage", "surplus", "deficiency", "no shortage or surplus"], "description": "Outcome of the escrow analysis as stated in the letter."},
+    "new_monthly_payment": {
+      "type": "object",
+      "description": "Section 1, the new monthly mortgage payment and the table comparing current and new payment components.",
+      "properties": {
+        "new_total_monthly_payment": {"type": "number", "description": "The headline new monthly mortgage payment, in dollars."},
+        "effective_date": {"type": "string", "description": "Month the new payment takes effect, as YYYY-MM."},
+        "current_principal_and_interest": {"type": "number", "description": "Current principal and interest amount, in dollars."},
+        "new_principal_and_interest": {"type": "number", "description": "New principal and interest amount, in dollars."},
+        "current_escrow_payment": {"type": "number", "description": "Current monthly escrow payment, in dollars."},
+        "new_escrow_payment": {"type": "number", "description": "New monthly escrow payment, in dollars."},
+        "shortage_or_surplus_payment": {"type": ["number", "null"], "description": "Monthly surplus/shortage amount included in the new payment, in dollars. Null if blank."},
+        "current_total_monthly_payment": {"type": "number", "description": "Current total monthly payment, in dollars."},
+        "monthly_payment_difference": {"type": "number", "description": "Difference in monthly payment, in dollars. Positive when the payment increases."}
+      }
+    },
+    "annual_disbursements": {
+      "type": "array",
+      "description": "Section 2, each tax or insurance type with its current and new annual amount. Exclude the Annual Amount total row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {"type": "string", "description": "Tax or insurance type, e.g. City Tax."},
+          "current_annual_amount": {"type": "number", "description": "Current annual amount, in dollars."},
+          "new_annual_amount": {"type": "number", "description": "New annual amount, in dollars."}
+        }
+      }
+    },
+    "current_annual_escrow_total": {"type": "number", "description": "Current total annual escrow amount (Annual Amount row, CURRENT column), in dollars."},
+    "new_annual_escrow_total": {"type": "number", "description": "New total annual escrow amount (Annual Amount row, NEW column), in dollars."},
+    "escrow_details": {
+      "type": "object",
+      "description": "Section 3, the shortage calculation.",
+      "properties": {
+        "cushion_months": {"type": "number", "description": "Number of months of escrow payment the account must always maintain."},
+        "required_minimum_escrow_balance": {"type": "number", "description": "Required minimum escrow balance, in dollars."},
+        "anticipated_escrow_balance": {"type": "number", "description": "Anticipated escrow balance, in dollars."},
+        "shortage_amount": {"type": ["number", "null"], "description": "Shortage amount, in dollars. Null if there is no shortage."},
+        "surplus_amount": {"type": ["number", "null"], "description": "Surplus or overage amount, in dollars. Null if there is no surplus."}
+      }
+    },
+    "projection": {
+      "type": "object",
+      "description": "Section 4, the anticipated escrow activity over the next 12 months.",
+      "properties": {
+        "low_point_required_balance": {"type": "number", "description": "Required minimum balance at the low point (marked LP), in dollars."},
+        "anticipated_lowest_balance": {"type": "number", "description": "Anticipated lowest account balance, in dollars."},
+        "low_point_month": {"type": "string", "description": "Month the lowest balance is reached, as YYYY-MM."},
+        "rows": {
+          "type": "array",
+          "description": "Each monthly row of the anticipated escrow amounts table. Exclude the opening balance and total rows.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "month": {"type": "string", "description": "Month, as YYYY-MM."},
+              "description": {"type": ["string", "null"], "description": "Disbursement description, e.g. CITY/TWN TAX. Null if blank."},
+              "paid_in": {"type": "number", "description": "Anticipated amount paid into escrow, in dollars."},
+              "paid_out": {"type": "number", "description": "Anticipated amount paid out of escrow, in dollars."},
+              "anticipated_balance": {"type": "number", "description": "Anticipated escrow balance, in dollars."},
+              "required_balance": {"type": "number", "description": "Required escrow account balance, in dollars."}
+            }
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "description": "Section 5, escrow account history comparing estimated and actual activity over the past year.",
+      "properties": {
+        "interest_on_escrow": {"type": ["number", "null"], "description": "Interest on escrow deposited over the period, in dollars."},
+        "rows": {
+          "type": "array",
+          "description": "Each monthly row of the escrow account history table. Exclude the opening balance and totals rows.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "month": {"type": "string", "description": "Month, as YYYY-MM."},
+              "description": {"type": ["string", "null"], "description": "Disbursement description. Null if blank."},
+              "paid_to_escrow_estimated": {"type": ["number", "null"], "description": "Estimated amount paid to escrow, in dollars."},
+              "paid_to_escrow_actual": {"type": ["number", "null"], "description": "Actual amount paid to escrow, in dollars, without any * or E flag."},
+              "paid_from_escrow_estimated": {"type": ["number", "null"], "description": "Estimated amount paid from escrow, in dollars. Null if blank."},
+              "paid_from_escrow_actual": {"type": ["number", "null"], "description": "Actual amount paid from escrow, in dollars, without any * flag. Null if blank."},
+              "balance_estimated": {"type": ["number", "null"], "description": "Estimated escrow balance, in dollars."},
+              "balance_actual": {"type": ["number", "null"], "description": "Actual escrow balance, in dollars."},
+              "differs_from_projection": {"type": "boolean", "description": "True if any amount in the row carries an asterisk (*)."},
+              "estimated_not_yet_happened": {"type": "boolean", "description": "True if the row carries the letter E."}
+            }
+          }
+        }
+      }
+    }
+  }
+}

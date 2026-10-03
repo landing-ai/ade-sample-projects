@@ -1,0 +1,29 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator chose this candidate.
+
+name: Escrow Analysis Statement
+url: https://www.mortgagequestions.com/getattachment/f9ef11d4-d1dc-46a1-b478-96c6b88ed36b/Escrow-Statement-Sample-Shortage.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Proposed as an Escrow Notification Letter; the operator named the page Escrow Analysis Statement.
+  Publisher: Onity Mortgage (formerly Ocwen/PHH), the mortgage servicer. Provenance: Onity's
+  escrow guide at https://www.mortgagequestions.com/Escrow/Guide loads this exact PDF; it is
+  hosted on Onity's domain and carries Onity branding and NMLS 2726.
+  Use pages 1-2 only; page 3 is a generic FAQ. Legal-size pages (612x1008), text layer, so
+  no redaction tool should be needed: every value is specimen (borrower JOHN SMITH,
+  123 YOUR ST, account 1234567890), and the only phone, fax and PO box are Onity's own.
+  Suggested feature page 1, with a shortage-and-payment-change story: statement date,
+  new monthly payment and its effective date, new escrow payment against the old,
+  shortage amount, new annual escrow total. Suggestions only.
+  Layout risk: page 1 pairs left-column prose or callouts with right-column tables, which
+  has caused label-value pairing errors before. The page 2 history table has merged group
+  headers and * / E flags. The specimen dates disagree (statement dated March 23, 2026;
+  new payment effective November 2025).

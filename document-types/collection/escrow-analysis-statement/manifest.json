@@ -1,0 +1,27 @@
+{
+  "slug": "escrow-analysis-statement",
+  "title": "Escrow Analysis Statement",
+  "source": {
+    "file": "onity-escrow-analysis-statement-sample.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.mortgagequestions.com/getattachment/f9ef11d4-d1dc-46a1-b478-96c6b88ed36b/Escrow-Statement-Sample-Shortage.pdf",
+      "publisher": "Onity Mortgage",
+      "title": "Escrow Analysis Statement (sample, shortage)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Onity Mortgage's own sample escrow analysis statement, hosted on its MortgageQuestions.com domain and linked from its escrow guide (https://www.mortgagequestions.com/Escrow/Guide). Every personal value is specimen data: borrower 'JOHN SMITH', '123 YOUR ST.', 'CITY, ST', account number 1234567890. The only phone, fax and PO box numbers are Onity's own published contact details. No redaction was needed. The third page, a generic FAQ, was dropped; nothing else was changed.",
+      "dropped_pages": [3]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "new_monthly_payment.new_total_monthly_payment", "label": "New monthly mortgage payment", "occurrence": 1 },
+    { "path": "new_monthly_payment.current_escrow_payment", "label": "Current escrow payment", "occurrence": 0 },
+    { "path": "new_monthly_payment.new_escrow_payment", "label": "New escrow payment", "occurrence": 0 },
+    { "path": "escrow_details.shortage_amount", "label": "Shortage amount", "occurrence": 0 },
+    { "path": "new_annual_escrow_total", "label": "New annual escrow total", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested page 1 and a shortage-and-payment-change story built from the statement date, the new monthly payment and its effective date, the new escrow payment against the old, the shortage amount and the new annual escrow total. All of those shipped except the two dates. The statement date and effective date extract correctly but are normalized (2026-03-23, 2025-11) from 'March 23, 2026' and 'November 2025', so inspect_fields marks them OFF and they were not featured. The new monthly payment pins occurrence 1, the large headline figure in the Section 1 callout, rather than occurrence 0 in the payment table. The specimen's dates disagree with each other (statement dated March 2026, new payment effective November 2025); extraction reports both as printed."
+}
