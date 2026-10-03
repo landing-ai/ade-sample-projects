@@ -1,0 +1,37 @@
+{
+  "slug": "writ-of-execution",
+  "title": "Writ of Execution",
+  "source": {
+    "file": "writ-of-execution-redacted.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://oregonsheriffssales.org/wp-content/uploads/2025/01/384277-Writ.pdf",
+      "publisher": "Multnomah County Circuit Court record, posted by the Oregon State Sheriffs' Association sales site",
+      "title": "Writ of Execution (real property), Multnomah County Circuit Court",
+      "retrieved": "2026-10-02",
+      "clearance": "redacted",
+      "clearance_note": "Pages 1-2 of a 13-page scanned foreclosure sale packet that the sheriffs' sales site posts publicly for a Multnomah County foreclosure sale; downloaded by script. Only the writ is used. It is a public court record, but the defendants are a deceased private borrower's heirs, so every defendant's name in the caption, the property's house number, street and ZIP code, the subdivision name in the legal description, the case number and the law firm's file number were replaced, with document-types/scripts/redact_scan.py working on the pixels of the scan; the page is rebuilt from the edited image alone. Verified by OCR, on literals and bare digits: no original value survives in the committed PDF or anywhere in this folder. The court, the judgment creditor, its law firm and attorneys of record, and the signature over the court seal are kept: they appear in an official or professional capacity. The stand-ins are shared with the allonge-to-note, promissory-note and foreclosure-judgment samples from the same packet.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          { "what": "defendants' names in the caption (the borrower, his alias and three heirs)", "with": "JOHN Q SAMPLE, JOHN QUINCY SAMPLE, JAMES Q SAMPLE, JANE Q SAMPLE, JUNE Q SAMPLE", "occurrences": 6 },
+          { "what": "property house number and street", "with": "100 Sample", "occurrences": 1 },
+          { "what": "property ZIP code", "with": "97000", "occurrences": 1 },
+          { "what": "subdivision name in the legal description", "with": "SAMPLE", "occurrences": 1 },
+          { "what": "case number", "with": "24CV32513", "occurrences": 2 },
+          { "what": "law firm file number", "with": "84-556087", "occurrences": 2 }
+        ]
+      },
+      "split_from": { "pages": [1, 2], "of": 13 }
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    { "path": "amount_to_satisfy", "label": "Amount to satisfy", "occurrence": 0 },
+    { "path": "per_diem_interest", "label": "Per-diem interest", "occurrence": 0 },
+    { "path": "property_address", "label": "Property", "occurrence": 0 },
+    { "path": "judgment_creditor", "label": "Judgment creditor", "occurrence": 1 }
+  ],
+  "notes": "The request asked for pages 1-2 of the packet on their own and named no fields. Features page 2, what the sheriff is ordered to collect and for whom: the sum, the daily interest on it, the property, and the judgment creditor (occurrence 1, the creditor sentence on page 2; occurrence 0 is the caption on page 1). The interest rate and the return deadline are correct but print on the same lines as the sum and the per-diem interest, so they would repeat those crops. No person is featured. has_court_seal and is_signed are correct and ground to the parse's [STAMPED][SIGNED] attestation over the seal; they read OFF, as booleans do. The caption's 'AKA' splits one defendant in two: defendants[0] ends '... SAMPLE. AKA' and the alias comes back as a separate defendant."
+}
