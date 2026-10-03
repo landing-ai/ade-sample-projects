@@ -1,0 +1,1360 @@
+{
+  "extraction": {
+    "comparables": [
+      {
+        "address": "241 Rapid Creek Ln Treeville, VA 12345",
+        "adjusted_price": 490760,
+        "comparable_number": 1,
+        "comparable_weight": "Most",
+        "net_adjustment_total": 30760,
+        "proximity_to_subject": "0.17 Miles N",
+        "sale_date": "08/17/2019",
+        "sale_price": 460000
+      },
+      {
+        "address": "188 Fallen Oak Ct Treeville, VA 12345",
+        "adjusted_price": 490540,
+        "comparable_number": 2,
+        "comparable_weight": "Most",
+        "net_adjustment_total": 40540,
+        "proximity_to_subject": "0.06 Miles N",
+        "sale_date": "09/10/2019",
+        "sale_price": 450000
+      },
+      {
+        "address": "210 Cannon Ball Rd Treeville, VA 12345",
+        "adjusted_price": 534400,
+        "comparable_number": 3,
+        "comparable_weight": "Less",
+        "net_adjustment_total": 14400,
+        "proximity_to_subject": "0.4 Miles NE",
+        "sale_date": "08/31/2019",
+        "sale_price": 520000
+      }
+    ],
+    "defects": [
+      {
+        "affects_soundness": true,
+        "description": "Roof is significantly worn and has damaged flashing, but no apparent active leaks.",
+        "estimated_cost_to_repair": 1500,
+        "feature": "Roof",
+        "location": "Section of Roof",
+        "recommended_action": "Repair"
+      },
+      {
+        "affects_soundness": false,
+        "description": "Carpet is stained in one corner of the Dining Room.",
+        "estimated_cost_to_repair": 0,
+        "feature": "Flooring",
+        "location": "Dining Room",
+        "recommended_action": "None"
+      }
+    ],
+    "indicated_value_sales_comparison": 491000,
+    "parties": {
+      "amc_company_name": "XYZ Appraisal Management Company",
+      "appraiser_company_name": "ABC Appraisal Co.",
+      "appraiser_license_expires": "10/10/2020",
+      "appraiser_license_id": "XYZ12345",
+      "appraiser_license_level": "Certified Residential",
+      "appraiser_license_state": "VA",
+      "appraiser_name": "Agatha Appraiser",
+      "borrower_names": [
+        "Betty Borrower",
+        "Bob Borrower"
+      ],
+      "current_owner_of_public_record": "Jane Doe",
+      "lender_company_name": "DEF Bank",
+      "seller_name": "Jane Doe"
+    },
+    "report": {
+      "amc_reference_id": "543234",
+      "appraisal_version": 4,
+      "appraiser_reference_id": "AA12345",
+      "client_reference_id": "1234567"
+    },
+    "subject_property": {
+      "assessor_parcel_number": "1234-56-7891-000",
+      "bedrooms": 5,
+      "city": "Treeville",
+      "county": "Arboreal",
+      "dwelling_style": "Colonial",
+      "finished_area_above_grade_sq_ft": 3002,
+      "finished_area_below_grade_sq_ft": 1300,
+      "full_baths": 3,
+      "half_baths": 1,
+      "hoa_monthly_fee": 34,
+      "legal_description": "Lot 53 Sunnyside Subdivision",
+      "neighborhood_name": "Sunnyside",
+      "property_rights_appraised": "Fee Simple",
+      "site_size_sq_ft": 14950,
+      "state": "VA",
+      "street_address": "123 Falling Tree Ct",
+      "year_built": 2004,
+      "zip": "12345"
+    },
+    "summary": {
+      "as_is_overall_condition": "C5",
+      "assignment_reason": "Purchase",
+      "contract_price": 489000,
+      "effective_date": "09/20/2019",
+      "market_value_condition": "Subject to Repair",
+      "opinion_of_market_value": 491000,
+      "overall_condition": "C4",
+      "overall_quality": "Q4",
+      "property_valuation_method": "Traditional Appraisal"
+    }
+  },
+  "extraction_metadata": {
+    "comparables": [
+      {
+        "address": {
+          "ranges": [
+            {
+              "end": 37863,
+              "start": 37822
+            }
+          ],
+          "value": "241 Rapid Creek Ln Treeville, VA 12345"
+        },
+        "adjusted_price": {
+          "ranges": [
+            {
+              "end": 46470,
+              "start": 46462
+            }
+          ],
+          "value": 490760
+        },
+        "comparable_number": {
+          "ranges": [
+            {
+              "end": 37597,
+              "start": 37584
+            }
+          ],
+          "value": 1
+        },
+        "comparable_weight": {
+          "ranges": [
+            {
+              "end": 46562,
+              "start": 46558
+            }
+          ],
+          "value": "Most"
+        },
+        "net_adjustment_total": {
+          "ranges": [
+            {
+              "end": 46277,
+              "start": 46270
+            }
+          ],
+          "value": 30760
+        },
+        "proximity_to_subject": {
+          "ranges": [
+            {
+              "end": 38618,
+              "start": 38606
+            }
+          ],
+          "value": "0.17 Miles N"
+        },
+        "sale_date": {
+          "ranges": [
+            {
+              "end": 39708,
+              "start": 39698
+            }
+          ],
+          "value": "08/17/2019"
+        },
+        "sale_price": {
+          "ranges": [
+            {
+              "end": 39154,
+              "start": 39146
+            },
+            {
+              "end": 46179,
+              "start": 46171
+            }
+          ],
+          "value": 460000
+        }
+      },
+      {
+        "address": {
+          "ranges": [
+            {
+              "end": 37924,
+              "start": 37884
+            }
+          ],
+          "value": "188 Fallen Oak Ct Treeville, VA 12345"
+        },
+        "adjusted_price": {
+          "ranges": [
+            {
+              "end": 46487,
+              "start": 46479
+            }
+          ],
+          "value": 490540
+        },
+        "comparable_number": {
+          "ranges": [
+            {
+              "end": 37631,
+              "start": 37618
+            }
+          ],
+          "value": 2
+        },
+        "comparable_weight": {
+          "ranges": [
+            {
+              "end": 46575,
+              "start": 46571
+            }
+          ],
+          "value": "Most"
+        },
+        "net_adjustment_total": {
+          "ranges": [
+            {
+              "end": 46293,
+              "start": 46286
+            }
+          ],
+          "value": 40540
+        },
+        "proximity_to_subject": {
+          "ranges": [
+            {
+              "end": 38651,
+              "start": 38639
+            }
+          ],
+          "value": "0.06 Miles N"
+        },
+        "sale_date": {
+          "ranges": [
+            {
+              "end": 39738,
+              "start": 39728
+            }
+          ],
+          "value": "09/10/2019"
+        },
+        "sale_price": {
+          "ranges": [
+            {
+              "end": 39183,
+              "start": 39175
+            },
+            {
+              "end": 46196,
+              "start": 46188
+            }
+          ],
+          "value": 450000
+        }
+      },
+      {
+        "address": {
+          "ranges": [
+            {
+              "end": 37986,
+              "start": 37945
+            }
+          ],
+          "value": "210 Cannon Ball Rd Treeville, VA 12345"
+        },
+        "adjusted_price": {
+          "ranges": [
+            {
+              "end": 46504,
+              "start": 46496
+            }
+          ],
+          "value": 534400
+        },
+        "comparable_number": {
+          "ranges": [
+            {
+              "end": 37665,
+              "start": 37652
+            }
+          ],
+          "value": 3
+        },
+        "comparable_weight": {
+          "ranges": [
+            {
+              "end": 46588,
+              "start": 46584
+            }
+          ],
+          "value": "Less"
+        },
+        "net_adjustment_total": {
+          "ranges": [
+            {
+              "end": 46309,
+              "start": 46302
+            }
+          ],
+          "value": 14400
+        },
+        "proximity_to_subject": {
+          "ranges": [
+            {
+              "end": 38684,
+              "start": 38672
+            }
+          ],
+          "value": "0.4 Miles NE"
+        },
+        "sale_date": {
+          "ranges": [
+            {
+              "end": 39768,
+              "start": 39758
+            }
+          ],
+          "value": "08/31/2019"
+        },
+        "sale_price": {
+          "ranges": [
+            {
+              "end": 39212,
+              "start": 39204
+            },
+            {
+              "end": 46213,
+              "start": 46205
+            }
+          ],
+          "value": 520000
+        }
+      }
+    ],
+    "defects": [
+      {
+        "affects_soundness": {
+          "ranges": [
+            {
+              "end": 51792,
+              "start": 51789
+            }
+          ],
+          "value": true
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 51780,
+              "start": 51698
+            }
+          ],
+          "value": "Roof is significantly worn and has damaged flashing, but no apparent active leaks."
+        },
+        "estimated_cost_to_repair": {
+          "ranges": [
+            {
+              "end": 51822,
+              "start": 51816
+            }
+          ],
+          "value": 1500
+        },
+        "feature": {
+          "ranges": [
+            {
+              "end": 51665,
+              "start": 51661
+            }
+          ],
+          "value": "Roof"
+        },
+        "location": {
+          "ranges": [
+            {
+              "end": 51689,
+              "start": 51674
+            }
+          ],
+          "value": "Section of Roof"
+        },
+        "recommended_action": {
+          "ranges": [
+            {
+              "end": 51807,
+              "start": 51801
+            }
+          ],
+          "value": "Repair"
+        }
+      },
+      {
+        "affects_soundness": {
+          "ranges": [
+            {
+              "end": 51984,
+              "start": 51982
+            }
+          ],
+          "value": false
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 51973,
+              "start": 51922
+            }
+          ],
+          "value": "Carpet is stained in one corner of the Dining Room."
+        },
+        "estimated_cost_to_repair": {
+          "ranges": [
+            {
+              "end": 52006,
+              "start": 52006
+            }
+          ],
+          "value": 0
+        },
+        "feature": {
+          "ranges": [
+            {
+              "end": 51893,
+              "start": 51885
+            }
+          ],
+          "value": "Flooring"
+        },
+        "location": {
+          "ranges": [
+            {
+              "end": 51913,
+              "start": 51902
+            }
+          ],
+          "value": "Dining Room"
+        },
+        "recommended_action": {
+          "ranges": [
+            {
+              "end": 51997,
+              "start": 51993
+            }
+          ],
+          "value": "None"
+        }
+      }
+    ],
+    "indicated_value_sales_comparison": {
+      "ranges": [
+        {
+          "end": 145,
+          "start": 137
+        },
+        {
+          "end": 34765,
+          "start": 34327
+        }
+      ],
+      "value": 491000
+    },
+    "parties": {
+      "amc_company_name": {
+        "ranges": [
+          {
+            "end": 3818,
+            "start": 3786
+          }
+        ],
+        "value": "XYZ Appraisal Management Company"
+      },
+      "appraiser_company_name": {
+        "ranges": [
+          {
+            "end": 4103,
+            "start": 4086
+          }
+        ],
+        "value": "ABC Appraisal Co."
+      },
+      "appraiser_license_expires": {
+        "ranges": [
+          {
+            "end": 4687,
+            "start": 4677
+          },
+          {
+            "end": 69421,
+            "start": 69411
+          }
+        ],
+        "value": "10/10/2020"
+      },
+      "appraiser_license_id": {
+        "ranges": [
+          {
+            "end": 4607,
+            "start": 4599
+          },
+          {
+            "end": 69341,
+            "start": 69333
+          }
+        ],
+        "value": "XYZ12345"
+      },
+      "appraiser_license_level": {
+        "ranges": [
+          {
+            "end": 4569,
+            "start": 4548
+          },
+          {
+            "end": 69303,
+            "start": 69282
+          }
+        ],
+        "value": "Certified Residential"
+      },
+      "appraiser_license_state": {
+        "ranges": [
+          {
+            "end": 4642,
+            "start": 4640
+          },
+          {
+            "end": 69376,
+            "start": 69374
+          }
+        ],
+        "value": "VA"
+      },
+      "appraiser_name": {
+        "ranges": [
+          {
+            "end": 747,
+            "start": 731
+          },
+          {
+            "end": 4004,
+            "start": 3988
+          },
+          {
+            "end": 69140,
+            "start": 69124
+          }
+        ],
+        "value": "Agatha Appraiser"
+      },
+      "borrower_names": [
+        {
+          "ranges": [
+            {
+              "end": 802,
+              "start": 788
+            },
+            {
+              "end": 3157,
+              "start": 3143
+            }
+          ],
+          "value": "Betty Borrower"
+        },
+        {
+          "ranges": [
+            {
+              "end": 860,
+              "start": 848
+            },
+            {
+              "end": 3372,
+              "start": 3360
+            }
+          ],
+          "value": "Bob Borrower"
+        }
+      ],
+      "current_owner_of_public_record": {
+        "ranges": [
+          {
+            "end": 944,
+            "start": 936
+          },
+          {
+            "end": 3485,
+            "start": 3477
+          }
+        ],
+        "value": "Jane Doe"
+      },
+      "lender_company_name": {
+        "ranges": [
+          {
+            "end": 3592,
+            "start": 3584
+          }
+        ],
+        "value": "DEF Bank"
+      },
+      "seller_name": {
+        "ranges": [
+          {
+            "end": 3419,
+            "start": 3411
+          }
+        ],
+        "value": "Jane Doe"
+      }
+    },
+    "report": {
+      "amc_reference_id": {
+        "ranges": [
+          {
+            "end": 2855,
+            "start": 2831
+          },
+          {
+            "end": 6742,
+            "start": 6718
+          },
+          {
+            "end": 9723,
+            "start": 9698
+          },
+          {
+            "end": 11657,
+            "start": 11633
+          },
+          {
+            "end": 12590,
+            "start": 12565
+          },
+          {
+            "end": 15283,
+            "start": 15259
+          },
+          {
+            "end": 19568,
+            "start": 19543
+          },
+          {
+            "end": 21480,
+            "start": 21456
+          },
+          {
+            "end": 23119,
+            "start": 23094
+          },
+          {
+            "end": 25951,
+            "start": 25927
+          },
+          {
+            "end": 29766,
+            "start": 29743
+          },
+          {
+            "end": 34130,
+            "start": 34106
+          },
+          {
+            "end": 37416,
+            "start": 37392
+          },
+          {
+            "end": 44097,
+            "start": 44072
+          },
+          {
+            "end": 48792,
+            "start": 48767
+          },
+          {
+            "end": 49422,
+            "start": 49398
+          },
+          {
+            "end": 51164,
+            "start": 51140
+          },
+          {
+            "end": 52471,
+            "start": 52447
+          },
+          {
+            "end": 58951,
+            "start": 58926
+          },
+          {
+            "end": 65132,
+            "start": 65108
+          },
+          {
+            "end": 69625,
+            "start": 69601
+          }
+        ],
+        "value": "543234"
+      },
+      "appraisal_version": {
+        "ranges": [
+          {
+            "end": 2692,
+            "start": 2668
+          },
+          {
+            "end": 6579,
+            "start": 6555
+          },
+          {
+            "end": 11494,
+            "start": 11470
+          },
+          {
+            "end": 12424,
+            "start": 12400
+          },
+          {
+            "end": 15120,
+            "start": 15096
+          },
+          {
+            "end": 19402,
+            "start": 19378
+          },
+          {
+            "end": 21317,
+            "start": 21293
+          },
+          {
+            "end": 22953,
+            "start": 22929
+          },
+          {
+            "end": 25788,
+            "start": 25764
+          },
+          {
+            "end": 29606,
+            "start": 29586
+          },
+          {
+            "end": 33967,
+            "start": 33943
+          },
+          {
+            "end": 37253,
+            "start": 37229
+          },
+          {
+            "end": 43964,
+            "start": 43940
+          },
+          {
+            "end": 48626,
+            "start": 48602
+          },
+          {
+            "end": 49259,
+            "start": 49235
+          },
+          {
+            "end": 51001,
+            "start": 50977
+          },
+          {
+            "end": 52308,
+            "start": 52284
+          },
+          {
+            "end": 58785,
+            "start": 58761
+          },
+          {
+            "end": 64969,
+            "start": 64945
+          },
+          {
+            "end": 69462,
+            "start": 69442
+          }
+        ],
+        "value": 4
+      },
+      "appraiser_reference_id": {
+        "ranges": [
+          {
+            "end": 2801,
+            "start": 2770
+          },
+          {
+            "end": 6688,
+            "start": 6657
+          },
+          {
+            "end": 9667,
+            "start": 9635
+          },
+          {
+            "end": 11603,
+            "start": 11572
+          },
+          {
+            "end": 12534,
+            "start": 12502
+          },
+          {
+            "end": 15229,
+            "start": 15198
+          },
+          {
+            "end": 19512,
+            "start": 19480
+          },
+          {
+            "end": 21426,
+            "start": 21395
+          },
+          {
+            "end": 23063,
+            "start": 23031
+          },
+          {
+            "end": 25897,
+            "start": 25866
+          },
+          {
+            "end": 29714,
+            "start": 29684
+          },
+          {
+            "end": 34076,
+            "start": 34045
+          },
+          {
+            "end": 37362,
+            "start": 37331
+          },
+          {
+            "end": 44041,
+            "start": 44009
+          },
+          {
+            "end": 48736,
+            "start": 48704
+          },
+          {
+            "end": 49368,
+            "start": 49337
+          },
+          {
+            "end": 51110,
+            "start": 51079
+          },
+          {
+            "end": 52417,
+            "start": 52386
+          },
+          {
+            "end": 58895,
+            "start": 58863
+          },
+          {
+            "end": 65078,
+            "start": 65047
+          },
+          {
+            "end": 69571,
+            "start": 69540
+          }
+        ],
+        "value": "AA12345"
+      },
+      "client_reference_id": {
+        "ranges": [
+          {
+            "end": 2830,
+            "start": 2802
+          },
+          {
+            "end": 6717,
+            "start": 6689
+          },
+          {
+            "end": 9697,
+            "start": 9668
+          },
+          {
+            "end": 11632,
+            "start": 11604
+          },
+          {
+            "end": 12564,
+            "start": 12535
+          },
+          {
+            "end": 15258,
+            "start": 15230
+          },
+          {
+            "end": 19542,
+            "start": 19513
+          },
+          {
+            "end": 21455,
+            "start": 21427
+          },
+          {
+            "end": 23093,
+            "start": 23064
+          },
+          {
+            "end": 25926,
+            "start": 25898
+          },
+          {
+            "end": 29742,
+            "start": 29715
+          },
+          {
+            "end": 34105,
+            "start": 34077
+          },
+          {
+            "end": 37391,
+            "start": 37363
+          },
+          {
+            "end": 44071,
+            "start": 44042
+          },
+          {
+            "end": 48766,
+            "start": 48737
+          },
+          {
+            "end": 49397,
+            "start": 49369
+          },
+          {
+            "end": 51139,
+            "start": 51111
+          },
+          {
+            "end": 52446,
+            "start": 52418
+          },
+          {
+            "end": 58925,
+            "start": 58896
+          },
+          {
+            "end": 65107,
+            "start": 65079
+          },
+          {
+            "end": 69600,
+            "start": 69572
+          }
+        ],
+        "value": "1234567"
+      }
+    },
+    "subject_property": {
+      "assessor_parcel_number": {
+        "ranges": [
+          {
+            "end": 7136,
+            "start": 7120
+          }
+        ],
+        "value": "1234-56-7891-000"
+      },
+      "bedrooms": {
+        "ranges": [
+          {
+            "end": 15622,
+            "start": 15608
+          },
+          {
+            "end": 25762,
+            "start": 25431
+          }
+        ],
+        "value": 5
+      },
+      "city": {
+        "ranges": [
+          {
+            "end": 89,
+            "start": 0
+          },
+          {
+            "end": 5324,
+            "start": 5305
+          }
+        ],
+        "value": "Treeville"
+      },
+      "county": {
+        "ranges": [
+          {
+            "end": 5405,
+            "start": 5397
+          }
+        ],
+        "value": "Arboreal"
+      },
+      "dwelling_style": {
+        "ranges": [
+          {
+            "end": 41312,
+            "start": 41304
+          },
+          {
+            "end": 12088,
+            "start": 12063
+          }
+        ],
+        "value": "Colonial"
+      },
+      "finished_area_above_grade_sq_ft": {
+        "ranges": [
+          {
+            "end": 15508,
+            "start": 15495
+          },
+          {
+            "end": 42371,
+            "start": 42358
+          }
+        ],
+        "value": 3002
+      },
+      "finished_area_below_grade_sq_ft": {
+        "ranges": [
+          {
+            "end": 15693,
+            "start": 15680
+          },
+          {
+            "end": 16320,
+            "start": 16307
+          },
+          {
+            "end": 42551,
+            "start": 42538
+          }
+        ],
+        "value": 1300
+      },
+      "full_baths": {
+        "ranges": [
+          {
+            "end": 15734,
+            "start": 15733
+          },
+          {
+            "end": 21130,
+            "start": 21072
+          },
+          {
+            "end": 25762,
+            "start": 25431
+          }
+        ],
+        "value": 3
+      },
+      "half_baths": {
+        "ranges": [
+          {
+            "end": 15836,
+            "start": 15835
+          }
+        ],
+        "value": 1
+      },
+      "hoa_monthly_fee": {
+        "ranges": [
+          {
+            "end": 33207,
+            "start": 33204
+          }
+        ],
+        "value": 34
+      },
+      "legal_description": {
+        "ranges": [
+          {
+            "end": 6507,
+            "start": 6479
+          }
+        ],
+        "value": "Lot 53 Sunnyside Subdivision"
+      },
+      "neighborhood_name": {
+        "ranges": [
+          {
+            "end": 5502,
+            "start": 5493
+          },
+          {
+            "end": 40420,
+            "start": 40411
+          }
+        ],
+        "value": "Sunnyside"
+      },
+      "property_rights_appraised": {
+        "ranges": [
+          {
+            "end": 6313,
+            "start": 6303
+          },
+          {
+            "end": 40076,
+            "start": 40066
+          },
+          {
+            "end": 1456,
+            "start": 1418
+          }
+        ],
+        "value": "Fee Simple"
+      },
+      "site_size_sq_ft": {
+        "ranges": [
+          {
+            "end": 6944,
+            "start": 6930
+          },
+          {
+            "end": 7195,
+            "start": 7181
+          },
+          {
+            "end": 40264,
+            "start": 40250
+          }
+        ],
+        "value": 14950
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 89,
+            "start": 0
+          },
+          {
+            "end": 5324,
+            "start": 5305
+          }
+        ],
+        "value": "VA"
+      },
+      "street_address": {
+        "ranges": [
+          {
+            "end": 89,
+            "start": 0
+          },
+          {
+            "end": 5236,
+            "start": 5217
+          }
+        ],
+        "value": "123 Falling Tree Ct"
+      },
+      "year_built": {
+        "ranges": [
+          {
+            "end": 41053,
+            "start": 41049
+          },
+          {
+            "end": 12137,
+            "start": 12120
+          }
+        ],
+        "value": 2004
+      },
+      "zip": {
+        "ranges": [
+          {
+            "end": 89,
+            "start": 0
+          },
+          {
+            "end": 5324,
+            "start": 5305
+          }
+        ],
+        "value": "12345"
+      }
+    },
+    "summary": {
+      "as_is_overall_condition": {
+        "ranges": [
+          {
+            "end": 2525,
+            "start": 2491
+          },
+          {
+            "end": 52142,
+            "start": 52107
+          }
+        ],
+        "value": "C5"
+      },
+      "assignment_reason": {
+        "ranges": [
+          {
+            "end": 699,
+            "start": 691
+          },
+          {
+            "end": 3044,
+            "start": 3036
+          }
+        ],
+        "value": "Purchase"
+      },
+      "contract_price": {
+        "ranges": [
+          {
+            "end": 1012,
+            "start": 1004
+          },
+          {
+            "end": 35158,
+            "start": 35150
+          },
+          {
+            "end": 39015,
+            "start": 39007
+          },
+          {
+            "end": 46094,
+            "start": 46086
+          },
+          {
+            "end": 50310,
+            "start": 50302
+          }
+        ],
+        "value": 489000
+      },
+      "effective_date": {
+        "ranges": [
+          {
+            "end": 582,
+            "start": 572
+          },
+          {
+            "end": 12939,
+            "start": 12703
+          }
+        ],
+        "value": "09/20/2019"
+      },
+      "market_value_condition": {
+        "ranges": [
+          {
+            "end": 202,
+            "start": 185
+          },
+          {
+            "end": 12939,
+            "start": 12703
+          }
+        ],
+        "value": "Subject to Repair"
+      },
+      "opinion_of_market_value": {
+        "ranges": [
+          {
+            "end": 145,
+            "start": 137
+          },
+          {
+            "end": 50420,
+            "start": 50412
+          }
+        ],
+        "value": 491000
+      },
+      "overall_condition": {
+        "ranges": [
+          {
+            "end": 12137,
+            "start": 11807
+          },
+          {
+            "end": 1238,
+            "start": 1217
+          }
+        ],
+        "value": "C4"
+      },
+      "overall_quality": {
+        "ranges": [
+          {
+            "end": 12137,
+            "start": 11807
+          },
+          {
+            "end": 1190,
+            "start": 1171
+          }
+        ],
+        "value": "Q4"
+      },
+      "property_valuation_method": {
+        "ranges": [
+          {
+            "end": 646,
+            "start": 625
+          },
+          {
+            "end": 3102,
+            "start": 3053
+          }
+        ],
+        "value": "Traditional Appraisal"
+      }
+    }
+  },
+  "markdown": "Uniform Residential Appraisal Report\n123 FALLING TREE CT, TREEVILLE, VA 12345\n\n\nSUMMARY\n\n<table>\n<tr><td>Opinion of Market Value</td><td>$491,000</td><td>Market Value Condition</td><td>Subject to Repair</td></tr>\n<tr><td colspan=\"4\">**Final Value Condition Statement** This appraisal is made subject to the itemized list of repairs recommended below on the basis of a hypothetical condition that the repairs or alterations have been completed in a professional manner. This might have affected the assignment results.</td></tr>\n<tr><td>Effective Date of Appraisal</td><td>09/20/2019</td><td>Property Valuation Method</td><td>Traditional Appraisal</td></tr>\n<tr><td>Assignment Reason</td><td>Purchase</td><td>Appraiser Name</td><td>Agatha Appraiser</td></tr>\n<tr><td>Borrower Name</td><td>Betty Borrower</td><td></td><td></td></tr>\n<tr><td></td><td>Bob Borrower</td><td></td><td></td></tr>\n<tr><td>Current Owner of Public Record</td><td>Jane Doe</td><td></td><td></td></tr>\n<tr><td>Contract Price</td><td>$489,000</td><td></td><td></td></tr>\n<tr><td>Listing Status</td><td>Pending</td><td></td><td></td></tr>\n</table>\n\nProperty Description\nConstruction Method: Site Built\nOverall Quality: Q4\nAttachment Type: Detached\nOverall Condition: C4\n\nYes No \n[x] Planned Unit Development (PUD) \n[ ] Condominium \n[ ] Cooperative \n[ ] Condop \n[ ] Subject Site Owned in Common \nUnits Excluding ADUs: 1 \nAccessory Dwelling Units: 0 \nProperty Rights Appraised: Fee Simple \nYes No \n[x] Is the highest and best use of the subject property as improved (or as proposed per plans and specifications) the present use? \nZoning Compliance: Legal \n\n<figure type=\"ILLUSTRATION\">\n\n<description>A gray rectangular placeholder box containing a centered camera icon and the text: 'This is where the Subject Property photo would display.'</description></figure>\n\n**Apparent Defects, Damages, Deficiencies Requiring Action**\n_The items listed below represent the As Is condition as of the effective date of this report_\n\n<table>\n<tr><td>Feature</td><td>Location</td><td>Description</td><td>Affects Soundness or Structural Integrity</td><td>Recommended Action</td><td>Estimated Cost to<br>Repair</td></tr>\n<tr><td colspan=\"6\">Dwelling Exterior</td></tr>\n<tr><td>Roof</td><td>Section of Roof</td><td>Roof is significantly worn and has damaged flashing, but no apparent active leaks.</td><td>Yes</td><td>Repair</td><td>$1,500</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Total Cost</td><td>$1,500</td></tr>\n</table>\n\nAs Is Overall Condition Rating C5 \nExisting condition of the property as of the effective date of this \nappraisal, excluding all required repairs, alterations, or inspections \n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 2 of 21\n\n\n<table>\n<tr><td>Assignment Information</td><td colspan=\"2\"></td></tr>\n<tr><td>Assignment Reason</td><td>Purchase</td><td>Property Valuation Method   Traditional Appraisal</td></tr>\n<tr><td>Borrower Name</td><td>Betty Borrower</td><td rowspan=\"4\">Was a Property Data Report used in lieu of an<br>Inspection?                                 Yes No<br>                                            [ ] [x]</td></tr>\n<tr><td></td><td>Bob Borrower</td></tr>\n<tr><td>Seller Name</td><td>Jane Doe</td></tr>\n<tr><td>Current Owner of Public Record</td><td>Jane Doe</td></tr>\n</table>\n\n<table>\n<tr><td>Client/Lender</td><td></td></tr>\n<tr><td>Company Name</td><td>DEF Bank</td></tr>\n<tr><td>Company Address</td><td>200 Elm St</td></tr>\n<tr><td></td><td>Anytown, VA 12346</td></tr>\n<tr><td>Appraisal Management Company</td><td></td></tr>\n<tr><td>Company Name</td><td>XYZ Appraisal Management Company</td></tr>\n<tr><td>Company Address</td><td>300 Maple Ave</td></tr>\n<tr><td></td><td>Anytown, VA 12345</td></tr>\n<tr><td>Appraiser</td><td></td></tr>\n<tr><td>Name</td><td>Agatha Appraiser</td></tr>\n<tr><td>Designation</td><td>SRA</td></tr>\n<tr><td>Company Name</td><td>ABC Appraisal Co.</td></tr>\n<tr><td>Company Address</td><td>123 Main St</td></tr>\n<tr><td></td><td>Anytown, VA 12345</td></tr>\n<tr><td>Scope of Inspection by Appraiser</td><td></td></tr>\n<tr><td>Subject Property Inspection</td><td></td></tr>\n<tr><td>Exterior</td><td>Physical</td></tr>\n<tr><td>Interior</td><td>Physical</td></tr>\n<tr><td>Inspection Date</td><td>09/20/2019</td></tr>\n</table>\n\n<table>\n<tr><td>Credentials</td><td></td></tr>\n<tr><td>Level</td><td>Certified Residential</td></tr>\n<tr><td>ID</td><td>XYZ12345</td></tr>\n<tr><td>State</td><td>VA</td></tr>\n<tr><td>Expires</td><td>10/10/2020</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">Significant Real Property Appraisal Assistance</td></tr>\n<tr><td>Name</td><td>Andrew Appraiser</td><td rowspan=\"2\">Credentials<br>Level   None</td></tr>\n<tr><td></td><td></td></tr>\n</table>\n\n\n **Description** Andrew Appraiser, a trainee appraiser, filled out the Market section, provided the Market Analysis, assisted in measuring property, and did an exterior inspection of the comparables from the street.\nTABLE AREA 3\n\nSubject Property\n\n<table>\n<tr><td>Physical Address</td><td>123 Falling Tree Ct</td><td>Attachment Type</td><td>Detached</td></tr>\n<tr><td></td><td>Treeville, VA 12345</td><td>Units Excluding ADUs</td><td>1</td></tr>\n<tr><td>County</td><td>Arboreal</td><td>Accessory Dwelling Units</td><td>0</td></tr>\n<tr><td>Neighborhood Name</td><td>Sunnyside</td><td>Special Tax Assessments</td><td>No</td></tr>\n</table>\n\n<table>\n<tr><td></td><td>Yes</td><td>No</td></tr>\n<tr><td>Planned Unit Development (PUD)</td><td>[x]</td><td>[ ]</td></tr>\n<tr><td>Condominium</td><td>[ ]</td><td>[x]</td></tr>\n<tr><td>Cooperative</td><td>[ ]</td><td>[x]</td></tr>\n<tr><td>Condop</td><td>[ ]</td><td>[x]</td></tr>\n<tr><td>Property on Native American Lands</td><td>[ ]</td><td>[x]</td></tr>\n<tr><td>Subject Site Owned in Common</td><td>[ ]</td><td>[x]</td></tr>\n<tr><td>Homeowner Responsible for all Exterior Maintenance</td><td>[x]</td><td>[ ]</td></tr>\n<tr><td>of Dwelling(s)</td><td></td><td></td></tr>\n<tr><td>New Construction</td><td>[ ]</td><td>[x]</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">Ownership Rights</td></tr>\n<tr><td>Property Rights Appraised</td><td>Fee Simple</td><td>All Rights Included in Appraisal</td><td>Yes</td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"4\">Legal Description</td></tr>\n<tr><td>Lot 53 Sunnyside Subdivision</td><td></td><td></td><td></td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 3 of 21\n\n\n<table>\n<tr><td>Site</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Total Site Size</td><td colspan=\"2\">14,950 Sq. Ft.</td><td>Number of Parcels</td><td>1</td></tr>\n<tr><td>Assessor Parcel Number (APN)</td><td></td><td>APN Description</td><td></td><td>Parcel Size</td></tr>\n<tr><td colspan=\"2\">1234-56-7891-000</td><td>Land with Dwelling</td><td></td><td>14,950 Sq. Ft.</td></tr>\n</table>\n\n<table>\n<tr><td>Zoning</td><td></td><td colspan=\"2\">Property Access</td></tr>\n<tr><td>Compliance</td><td>Legal</td><td>Primary Access</td><td>Public Street</td></tr>\n<tr><td>Classification Code</td><td>R10</td><td>Street Type and Surface</td><td>Local Road | Asphalt</td></tr>\n<tr><td>Classification Code Description</td><td>Residential - 10 Dwelling Units</td><td>Typical for Market</td><td>Yes</td></tr>\n<tr><td></td><td>per Acre</td><td></td><td></td></tr>\n<tr><td colspan=\"2\">Property Use</td><td></td><td></td></tr>\n<tr><td>Non-Residential Use</td><td>None</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">Site Influence</td></tr>\n<tr><td>Influence</td><td>Proximity</td><td>Detail</td><td>Impact</td><td>Comment</td></tr>\n<tr><td>Residential</td><td>Bordering</td><td></td><td>Neutral</td><td>Typical residential subdivision</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">View and Impact to Value/Marketability</td></tr>\n<tr><td>View</td><td>Range of View</td><td>Impact</td></tr>\n<tr><td>Residential</td><td>Full</td><td>Neutral</td></tr>\n</table>\n\n**Site Features and Impact to Value/Marketability**\n\n<table>\n<tr><td>Feature</td><td>Detail</td><td>Impact</td><td>Comment</td></tr>\n<tr><td>Hazard Zone</td><td>No Hazard Zone Noted</td><td></td><td></td></tr>\n<tr><td>Site Characteristic</td><td>Topography | Rolling</td><td>Adverse</td><td>Steep grade is less marketable.</td></tr>\n</table>\n\n### Utilities and Impact to Value/Marketability \nBroadband Internet Available: Yes \n\n<table>\n<tr><td></td><td>Public</td><td>Private</td><td>Detail</td><td>Private Utility Impact</td><td>Comment</td></tr>\n<tr><td>Electricity</td><td>✓</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Gas</td><td>✓</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Sanitary Sewer</td><td>✓</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Water</td><td>✓</td><td></td><td></td><td></td><td></td></tr>\n</table>\n\nApparent Defects, Damages, Deficiencies (Site) \nNone \n\n<figure type=\"PHOTOGRAPH\">Site Exhibits\n\nProperty Access (Street Scene)\n\n\n\n<description>A placeholder box labeled 'Property Access (Street Scene)' contains a camera icon and the text 'This is where the Property Access photo would display.', indicating that the actual photograph is missing or yet to be inserted.</description></figure>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 4 of 21\n\n\n**Energy Efficient and Green Features**\n\n<table>\n<tr><td>Known Renewable Energy Components</td><td>None</td><td></td></tr>\n<tr><td>Known Building Certifications</td><td>None</td><td></td></tr>\n<tr><td>Green/Energy Efficiency Rating Organization</td><td>Rating</td><td>Score</td></tr>\n<tr><td>RESNET</td><td>HERS</td><td>62</td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td colspan=\"3\">Energy Efficient and Green Features Impact to Value/Marketability</td></tr>\n<tr><td>Impact to Value/Marketability Neutral</td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td colspan=\"3\">Energy Efficient and Green Features Commentary</td></tr>\n</table>\n\nOn average, homes with a HERS Index rating of 62 are 38% more energy efficient than a standard new house.\n\n<figure type=\"ILLUSTRATION\">Energy Efficient and Green Features Exhibits\n\n\n\n<description>This figure is a screenshot of a webpage titled 'RESNET HERS Index'. The webpage header includes the RESNET HERS INDEX logo, and navigation links: 'The HERS Index', 'Know Your HERS Score', 'Benefits', 'About Us', and contact/search links. The main body text reads: 'Looking for a HERS Rated Home? Homes with HERS Index scores are more energy efficient, resulting in lower energy bills and higher home comfort.' A large, dark blue location pin icon containing a white question mark is on the right side. In the lower-left area, a popup box overlays the background, displaying: 'This Home's HERS Index Score' with the number '62' inside a circle, 'Rating Company: Nations Capital Energy Solutio', and 'Rating Date: June 29, 2017'. The background shows a partial view of a house roofline.</description></figure>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 5 of 21\n\n\nSketch\n\n\nMeasurement Standard: ANSI \n\n<figure type=\"ILLUSTRATION\">Sketch\n\n\n\n<description>A gray rectangular placeholder box containing a camera icon in the center, with the text 'This is where the Sketch image would display.' below the icon.</description></figure>\n\n### Dwelling Exterior \nSubject Property Units in Structure: 1 \nDwelling Style: Colonial \nFront Door Elevation: 3-4 Ft. \nYear Built: 2004 \nConstruction Method: Site Built \nConverted Area: None \n\n<figure type=\"ILLUSTRATION\">\n\n<description>A rectangular gray placeholder box featuring a centered camera icon and the text \"This is where the Subject Property photo would display.\"</description></figure>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 6 of 21\n\n\n**Dwelling Exterior *(continued)***\n**Quality and Condition**\n**Exterior Quality Rating** Q4 **Exterior Condition Rating** C4\n*The table below supports the Exterior Quality and Condition ratings and reflects the market value condition of this report*\n\n\nExterior Features\n\n<table>\n<tr><td>Feature</td><td>Detail</td><td>Quality Comment</td><td>Condition Status</td><td>Condition Comment</td></tr>\n<tr><td>Exterior Walls and Trim</td><td>Vinyl</td><td></td><td>Typical Wear and Tear</td><td>Minor cracks to vinyl typical<br>for age.</td></tr>\n<tr><td>Foundation</td><td>Poured Concrete | Basement</td><td></td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Roof</td><td>Composition<br>Estimated Age: 10-20 years</td><td></td><td>Typical Wear and Tear</td><td>Reported condition is subject<br>to repair; see defects table<br>and commentary below.</td></tr>\n<tr><td>Windows</td><td>Vinyl Double Hung -<br>Thermal Pane</td><td>Double Thermal Pane<br>contributes to Energy<br>Efficiency.</td><td>Typical Wear and Tear</td><td>Windows same age as house.</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">Mechanical System Details</td></tr>\n<tr><td></td><td>System</td><td>Detail</td></tr>\n<tr><td>Heating</td><td>Forced Warm Air</td><td>Natural Gas</td></tr>\n<tr><td>Cooling</td><td>Centralized</td><td></td></tr>\n</table>\n\n<table>\n<tr><td>Core Heating System Below Grade</td><td>Yes No\n[x] Yes\n[ ] No</td></tr>\n<tr><td>Other Mechanical Systems</td><td>Sump Pump</td></tr>\n<tr><td></td><td>Water Heater</td></tr>\n</table>\n\n**Apparent Defects, Damages, Deficiencies (Dwelling Exterior)**\n*The items listed below represent the As Is condition as of the effective date of this report*\n\n<table>\n<tr><td>Feature</td><td>Location</td><td>Description</td><td>Affects Soundness or Structural Integrity</td><td>Recommended Action</td></tr>\n<tr><td>Roof</td><td>Section of Roof</td><td>Roof is significantly worn and has damaged flashing, but no apparent active leaks.</td><td>Yes</td><td>Repair</td></tr>\n</table>\n\n**Dwelling Exterior Commentary**\nCondition Status is reflective of noted repair having been completed.\n\n\nDwelling Exterior Exhibits\n\n<table>\n<tr><td>Dwelling Front</td><td>Dwelling Rear</td></tr>\n<tr><td>[Dwelling Front photo placeholder]</td><td>[Dwelling Rear photo placeholder]</td></tr>\n<tr><td>Apparent Defects, Damages, Deficiencies - Roof - Damaged Flashing [Roof Defect photo placeholder]</td><td></td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 7 of 21\n\n\nUnit Interior\n\n<table>\n<tr><td>Area Breakdown</td><td></td><td>Levels in Unit</td><td>3</td></tr>\n<tr><td>Finished Above Grade</td><td>3,002 Sq. Ft.</td><td>Occupancy</td><td>Owner</td></tr>\n<tr><td>Unfinished Above Grade</td><td>0 Sq. Ft.</td><td>Total Bedrooms</td><td>5</td></tr>\n<tr><td>Finished Below Grade</td><td>1,300 Sq. Ft.</td><td>Total Bathrooms - Full</td><td>3</td></tr>\n<tr><td>Unfinished Below Grade</td><td>230 Sq. Ft.</td><td>Total Bathrooms - Half</td><td>1</td></tr>\n<tr><td>Area Data Source</td><td>Physical Measurement</td><td></td><td></td></tr>\n<tr><td>Below Grade Finish Compared to Above</td><td>Similar</td><td></td><td></td></tr>\n</table>\n\nLevel and Room Detail\n\n<table>\n<tr><td>Level in Unit</td><td>Grade Level Detail</td><td>Finish</td><td>Area</td><td>Room Summary</td></tr>\n<tr><td rowspan=\"2\">Level B1</td><td rowspan=\"2\">Partially Below Grade<br>Interior and Exterior Access<br>Walk Out</td><td>Finished</td><td>1,300 Sq. Ft.</td><td>1 - Bath - Half<br>1 - Media Room<br>1 - Recreation Room<br>1 - Wet Bar</td></tr>\n<tr><td>Unfinished</td><td>230 Sq. Ft.</td><td></td></tr>\n<tr><td>Level 1</td><td>Above Grade</td><td>Finished</td><td>1,470 Sq. Ft.</td><td>1 - Bath - Full<br>1 - Bedroom<br>1 - Dining Room<br>1 - Family Room<br>1 - Kitchen<br>1 - Office</td></tr>\n<tr><td>Level 2</td><td>Above Grade</td><td>Finished</td><td>1,532 Sq. Ft.</td><td>2 - Bath - Full<br>4 - Bedroom<br>1 - Laundry Room</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">Quality and Condition</td></tr>\n<tr><td>Interior Quality Rating</td><td>Q4</td><td>Interior Condition Rating</td><td>C4</td></tr>\n</table>\n\n_The tables below support the Interior Quality and Condition ratings and reflect the market value condition of this report_\n\nKitchen and Bathroom Details\n\n<table>\n<tr><td>Room</td><td>Update Status</td><td>Time Frame</td><td>Quality Comment</td><td>Condition Status</td><td>Condition Comment</td></tr>\n<tr><td>Kitchen<br>Level 1</td><td>Not Updated</td><td></td><td>Corian Countertops,<br>Double Oven,<br>Hardwood floors.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Bath - Full<br>Level 2</td><td>Not Updated</td><td></td><td>Double Sink with<br>separate shower and<br>extra-large tub, ceramic<br>flooring.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Bath - Full<br>Level 1</td><td>Not Updated</td><td></td><td>Ceramic flooring.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Bath - Full<br>Level 2</td><td>Not Updated</td><td></td><td>Ceramic flooring.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Bath - Half<br>Level B1</td><td>Fully Updated</td><td>5-10 years</td><td>Ceramic flooring.</td><td>Typical Wear and Tear</td><td>Half bath newer than rest of house.</td></tr>\n</table>\n\nOverall Update Status for \nBathrooms: Moderately Updated \n\nInterior Features\n\n<table>\n<tr><td>Feature</td><td>Detail</td><td>Quality Comment</td><td>Condition Status</td><td>Condition Comment</td></tr>\n<tr><td rowspan=\"4\">Flooring</td><td>Carpet</td><td>Throughout all bedrooms and living areas.</td><td>Damaged and Functional</td><td>Original carpet, stained in one corner in the Dining Room.</td></tr>\n<tr><td>Ceramic Tile</td><td>All baths.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Engineered Wood</td><td>Throughout finished below grade area.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Hardwood</td><td>Kitchen and Hallways.</td><td>Typical Wear and Tear</td><td></td></tr>\n<tr><td>Walls and Ceiling</td><td>8 Ft. | 9 Ft. | 10 or more feet | 2 or more stories | Cathedral | Coffered | Flat</td><td>Cathedral ceiling in bedroom, 2 story family room, coffered ceiling in media room. 9 foot ceiling in 1st level.</td><td>Typical Wear and Tear</td><td></td></tr>\n</table>\n\nOverall Update Status for \nFlooring: Not Updated \n\n<table>\n<tr><td colspan=\"2\">Accessibility Features for Individuals with Disabilities</td></tr>\n<tr><td>Feature</td><td>Comment</td></tr>\n<tr><td>Shower</td><td>The shower has been modified.</td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 8 of 21\n\n\n**Unit Interior** *(continued)*\n**Apparent Defects, Damages, Deficiencies (Unit Interior)**\n*The items listed below represent the As Is condition as of the effective date of this report*\n\n<table>\n<tr><td>Feature</td><td>Location</td><td>Description</td><td>Affects Soundness or Structural Integrity</td><td>Recommended Action</td></tr>\n<tr><td>Flooring</td><td>Dining Room</td><td>Carpet is stained in one corner of the Dining Room.</td><td>No</td><td>None</td></tr>\n</table>\n\n**Unit Interior Commentary**\nThe below grade area has a custom finished wet bar including wood cabinets and countertops. Media room has custom cabinetry for speakers\nand media devices.\n\n\n<figure type=\"DIAGRAM\">Unit Interior Exhibits\n\n\n\n<description>This figure is a grid-based template or layout for displaying unit interior photographs, organized into six sections arranged in a 3x2 grid. Each section contains a camera icon and a placeholder text indicating the specific room being exhibited. The layout is as follows:</description>\n\n| Level B1 - Bath - Half | Level B1 - Media Room |\n| :--- | :--- |\n| [Placeholder: This is where the Half Bathroom photo would display.] | [Placeholder: This is where the Media Room photo would display.] |\n\n| Level B1 - Recreation Room | Level B1 - Wet Bar |\n| :--- | :--- |\n| [Placeholder: This is where the Recreation Room photo would display.] | [Placeholder: This is where the Wet Bar photo would display.] |\n\n| Level 1 - Bath - Full - Bath 3 | Level 1 - Family Room |\n| :--- | :--- |\n| [Placeholder: This is where the Full Bath photo would display.] | [Placeholder: This is where the Family Room photo would display.] |</figure>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 9 of 21\n\n\n<figure type=\"DIAGRAM\">Unit Interior (continued) \n\n<description>This figure is a four-panel grid layout designed to hold inspection photographs. Each panel is labeled with a specific location and contains a camera icon with placeholder text indicating the intended content. The layout is as follows: Top-left panel: 'Level 1 - Kitchen', with text 'This is where the Kitchen photo would display.' Top-right panel: 'Level 2 - Bath - Full - Bath 1', with text 'This is where the Full Bath photo would display.' Bottom-left panel: 'Level 2 - Bath - Full - Bath 2', with text 'This is where the Full Bath photo would display.' Bottom-right panel: 'Apparent Defects, Damages, Deficiencies - Flooring - Damaged Flooring', with text 'This is where the Damaged Flooring photo would display.'</description></figure>\n\n### Functional Obsolescence\n\nFunctional Issues: None\n\nVehicle Storage\n\n<table>\n<tr><td>Storage</td><td>Number of Parking Spaces</td><td>Detail</td></tr>\n<tr><td>Driveway</td><td>2</td><td>Asphalt</td></tr>\n<tr><td>Garage</td><td>2</td><td>Built-in<br>460 Sq. Ft.</td></tr>\n</table>\n\n**Apparent Defects, Damages, Deficiencies (Vehicle Storage)**\nNone\n\n\n<table>\n<tr><td>Vehicle Storage Exhibits</td><td></td></tr>\n<tr><td>Driveway - Garage</td><td></td></tr>\n<tr><td>[camera icon] This is where the Driveway - Garage photo would display.</td><td></td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 10 of 21\n\n\nSubject Property Amenities\n\n<table>\n<tr><td>Amenity Category</td><td>Subject Property Amenity</td><td>Material</td><td>Detail</td></tr>\n<tr><td>Outdoor Accessories</td><td>Fence</td><td></td><td></td></tr>\n<tr><td rowspan=\"2\">Outdoor Living</td><td>Deck</td><td>Wood</td><td>400 Sq. Ft.</td></tr>\n<tr><td>Porch</td><td>Concrete</td><td>351 Sq. Ft.</td></tr>\n<tr><td>Whole Home</td><td>Indoor Fireplace</td><td></td><td>Total Number - 1</td></tr>\n<tr><td rowspan=\"2\">Miscellaneous</td><td>Media Room</td><td></td><td></td></tr>\n<tr><td>Wet Bar</td><td></td><td></td></tr>\n</table>\n\nApparent Defects, Damages, Deficiencies (Subject Property Amenities) \nNone \n\n<figure type=\"ILLUSTRATION\">Subject Property Amenities Exhibits\n\nMedia Room\n\n\n\n<description>A placeholder box labeled 'Media Room' containing a camera icon and the instructional text: 'This is where the Media Room photo would display.'</description></figure>\n\nOverall Quality and Condition\n\n<table>\n<tr><td>Overall Quality</td><td>Q4</td><td>Overall Condition</td><td>C4</td></tr>\n<tr><td>Exterior Quality</td><td>Q4</td><td>Exterior Condition</td><td>C4</td></tr>\n<tr><td>Interior Quality</td><td>Q4</td><td>Interior Condition</td><td>C4</td></tr>\n</table>\n\n**Reconciliation of Overall Quality and Condition**\nThe Overall Quality and Condition matches the Interior Quality and Condition, as well as the Exterior Quality and Condition, since the exterior\nand interior are both of the same age.\n\n\n### Highest and Best Use \n\n*Is the present use of the subject property ...* \n\nLegally Permissible: Yes \nPhysically Possible: Yes \nFinancially Feasible: Yes \nMaximally Productive: Yes \n\nIs the highest and best use of the subject property as improved (or as proposed per plans and specifications) the present use? \n[x] Yes \n[ ] No \n\n**Highest and Best Use Commentary**\nThe highest and best use analysis as improved is physically possible and legally permissible based on its current zoning. Analysis of the market\nshown below demonstrates that the existing structure as a single family residence is its financially feasible and maximally productive use.\n\n\n### Market \n\n**Market Area Boundary** North: E. Grant Highway, South: E. Temple Ave., East: Chicken Rd., West: 10 Main Ave. \n\n**Search Criteria Description** Search Criteria limited by Detached units with a lot size of up to .6 acres and a Finished Area Above Grade  between 2700 and 3300 sq. ft. Additional factors include between 2-4 full bathrooms, 3-5 bedrooms, a basement and a 2 car garage. Searched  between closing dates of 9/30/2017 and 9/30/2019. \n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 11 of 21\n\n\n**Market** *(continued)*\n\n<table>\n<tr><td colspan=\"4\">Search Result Metrics</td></tr>\n<tr><td>Active Listings</td><td>2</td><td>Sales in Past 24 Months</td><td>35</td></tr>\n<tr><td>Median Days on Market</td><td>11</td><td>Lowest Sale Price</td><td>$400,000</td></tr>\n<tr><td>Lowest List Price</td><td>$435,000</td><td>Median Sale Price</td><td>$499,000</td></tr>\n<tr><td>Median List Price</td><td>$440,000</td><td>Highest Sale Price</td><td>$597,000</td></tr>\n<tr><td>Highest List Price</td><td>$445,000</td><td>Distressed Market Competition</td><td>No</td></tr>\n<tr><td>Pending Sales</td><td>1</td><td>Graph</td><td>Absorption Rate</td></tr>\n<tr><td></td><td></td><td></td><td>Median Days on Market</td></tr>\n<tr><td></td><td></td><td></td><td>Price Trend</td></tr>\n<tr><td></td><td></td><td></td><td>Year Built of Sales</td></tr>\n<tr><td></td><td></td><td>Price Trend Source</td><td>MLS</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">Housing Trends</td></tr>\n<tr><td>Demand/Supply</td><td>Shortage</td><td>Marketing Time</td><td>Under 3 months</td></tr>\n</table>\n\n**Market Commentary**\nDespite lack of supply, homes are not going up in value due to seasonality. This is typical for 3rd quarter, evidenced by the fact that there are\nonly 2 active listings, which have less finished area than the subject and not indicative of prices decreasing.\n\n\n<figure type=\"CHART\">Market Exhibits\n\nAbsorption Rate\n\n\n\n<description>A combined bar and line chart illustrating market absorption rate trends from 2017 Q3 to 2019 Q4. The chart features two primary metrics represented by bars: 'Count of Listings' (blue bars) and 'Count of Contracts' (orange bars). A third metric, 'Months of Housing Supply', is represented by a gray line plot with data points labeled at specific intervals. The x-axis represents time in quarters, and the y-axis (left) represents the count of listings/contracts, while the y-axis (right) represents months of housing supply.</description>\n\n<table>\n<thead>\n<tr>\n<th>Quarter</th>\n<th>Count of Listings</th>\n<th>Count of Contracts</th>\n<th>Months of Housing Supply</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2017 Q3</td>\n<td>3</td>\n<td>1</td>\n<td>9.00</td>\n</tr>\n<tr>\n<td>2017 Q4</td>\n<td>1</td>\n<td>1</td>\n<td>3.00</td>\n</tr>\n<tr>\n<td>2018 Q1</td>\n<td>6</td>\n<td>5</td>\n<td>3.60</td>\n</tr>\n<tr>\n<td>2018 Q2</td>\n<td>4</td>\n<td>5</td>\n<td>2.40</td>\n</tr>\n<tr>\n<td>2018 Q3</td>\n<td>3</td>\n<td>3</td>\n<td>3.00</td>\n</tr>\n<tr>\n<td>2018 Q4</td>\n<td>3</td>\n<td>4</td>\n<td>2.25</td>\n</tr>\n<tr>\n<td>2019 Q1</td>\n<td>10</td>\n<td>10</td>\n<td>3.00</td>\n</tr>\n<tr>\n<td>2019 Q2</td>\n<td>19</td>\n<td>13</td>\n<td>4.38</td>\n</tr>\n<tr>\n<td>2019 Q3</td>\n<td>3</td>\n<td>9</td>\n<td>1.00</td>\n</tr>\n<tr>\n<td>2019 Q4</td>\n<td>0</td>\n<td>1</td>\n<td>0.00</td>\n</tr>\n</tbody>\n</table></figure>\n\n<figure type=\"CHART\">Median Days on Market\n\n<description>A bar chart titled 'Median Days on Market' displaying quarterly data from 2017 Q3 to 2019 Q4. The Y-axis represents the number of days, ranging from 0 to 120. A dotted blue trend line overlays the bars. The data points are as follows:</description><table><thead><tr><th>Quarter</th><th>Median Days on Market</th></tr></thead><tbody><tr><td>2017 Q3</td><td>10</td></tr><tr><td>2017 Q4</td><td>37</td></tr><tr><td>2018 Q1</td><td>11</td></tr><tr><td>2018 Q2</td><td>15</td></tr><tr><td>2018 Q3</td><td>104</td></tr><tr><td>2018 Q4</td><td>22</td></tr><tr><td>2019 Q1</td><td>11</td></tr><tr><td>2019 Q2</td><td>9</td></tr><tr><td>2019 Q3</td><td>47</td></tr><tr><td>2019 Q4</td><td>11</td></tr></tbody></table></figure>\n\nAppraisal Version #4\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID AA12345\nClient Reference ID 1234567\nAMC Reference ID 543234\n\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 12 of 21\n\n\n<figure type=\"CHART\">Market (continued)\n\nPrice Trend\n\n\n\n<description>This is a combined bar and line chart illustrating market price trends from 2017 Q3 to 2019 Q4. The chart features two y-axes: the left axis represents monetary values ranging from 200,000 to 600,000, and the right axis represents percentages ranging from 70.0% to 110.0%. The chart uses blue bars for 'Median List Price' and orange bars for 'Median Sales Price' for each quarter. A grey line graph with square markers overlays the bars, representing 'Median SP%LP' (Sales Price to List Price percentage), with specific values labeled at each data point.</description>\n\n<table>\n  <thead>\n    <tr>\n      <th>Quarter</th>\n      <th>Median List Price</th>\n      <th>Median Sales Price</th>\n      <th>Median SP%LP</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>2017 Q3</td>\n      <td>530,000</td>\n      <td>535,000</td>\n      <td>101.0%</td>\n    </tr>\n    <tr>\n      <td>2017 Q4</td>\n      <td>425,000</td>\n      <td>420,000</td>\n      <td>98.8%</td>\n    </tr>\n    <tr>\n      <td>2018 Q1</td>\n      <td>475,000</td>\n      <td>480,000</td>\n      <td>99.2%</td>\n    </tr>\n    <tr>\n      <td>2018 Q2</td>\n      <td>490,000</td>\n      <td>485,000</td>\n      <td>99.0%</td>\n    </tr>\n    <tr>\n      <td>2018 Q3</td>\n      <td>465,000</td>\n      <td>455,000</td>\n      <td>94.1%</td>\n    </tr>\n    <tr>\n      <td>2018 Q4</td>\n      <td>470,000</td>\n      <td>465,000</td>\n      <td>100.5%</td>\n    </tr>\n    <tr>\n      <td>2019 Q1</td>\n      <td>475,000</td>\n      <td>475,000</td>\n      <td>100.0%</td>\n    </tr>\n    <tr>\n      <td>2019 Q2</td>\n      <td>520,000</td>\n      <td>510,000</td>\n      <td>100.0%</td>\n    </tr>\n    <tr>\n      <td>2019 Q3</td>\n      <td>490,000</td>\n      <td>470,000</td>\n      <td>96.9%</td>\n    </tr>\n    <tr>\n      <td>2019 Q4</td>\n      <td>440,000</td>\n      <td>N/A</td>\n      <td>N/A</td>\n    </tr>\n  </tbody>\n</table></figure>\n\n<figure type=\"CHART\">\n\n<description>A bar chart titled 'Year Built of Sales' displays the frequency of sales categorized by the year the property was built. The vertical axis represents the count of sales, ranging from 0 to 12. The horizontal axis lists various years ranging from 1983 to 2019. The bars are blue and represent the 'Total' count for each year.</description><table><thead><tr><th>Year</th><th>Total</th></tr></thead><tbody><tr><td>1983</td><td>2</td></tr><tr><td>1990</td><td>1</td></tr><tr><td>1997</td><td>2</td></tr><tr><td>1998</td><td>2</td></tr><tr><td>2001</td><td>2</td></tr><tr><td>2002</td><td>3</td></tr><tr><td>2003</td><td>10</td></tr><tr><td>2004</td><td>6</td></tr><tr><td>2005</td><td>10</td></tr><tr><td>2006</td><td>4</td></tr><tr><td>2007</td><td>1</td></tr><tr><td>2008</td><td>2</td></tr><tr><td>2010</td><td>1</td></tr><tr><td>2013</td><td>1</td></tr><tr><td>2015</td><td>1</td></tr><tr><td>2016</td><td>2</td></tr><tr><td>2018</td><td>1</td></tr><tr><td>2019</td><td>1</td></tr></tbody></table></figure>\n\n<table>\n<tr><td>Project Information</td><td>[ ] Planned Unit Development (PUD)</td><td>[ ] Condominium</td><td>[ ] Cooperative</td><td>[ ] Condop</td></tr>\n<tr><td>Project Information Data Source</td><td>Real Estate Agent</td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">Mandatory Fees (HOA, PUD, or Co-op)</td><td></td><td></td><td></td></tr>\n<tr><td>Monthly Amount</td><td>$34</td><td></td><td></td><td></td></tr>\n<tr><td>Common Amenities/</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Services Included</td><td>Trash Removal</td><td></td><td></td><td></td></tr>\n<tr><td>Utilities Included</td><td>None</td><td></td><td></td><td></td></tr>\n</table>\n\n**Project Factors and Impact to Value/Marketability**\n\n<table>\n<tr><td>Project Factor</td><td>Detail</td><td>Impact</td><td>Comment</td></tr>\n<tr><td>Developer/Sponsor in Control</td><td>No</td><td></td><td></td></tr>\n<tr><td>Known Legal Actions</td><td>None</td><td></td><td></td></tr>\n<tr><td>Unit Special Assessments</td><td>None</td><td></td><td></td></tr>\n<tr><td>Unit Tax Abatements or Exemptions</td><td>None</td><td></td><td></td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 13 of 21\n\n\n**Subject Listing Information** _Current and/or relevant listings of the subject property (minimum 1 year look back)_\n\n<table>\n<tr><td>Listing Status</td><td>Listing Type</td><td>Listing ID</td><td>Start Date</td><td>End Date</td><td>DOM</td><td>Starting<br>List Price</td><td>Current or<br>Final List Price</td></tr>\n<tr><td>Pending</td><td>MLS</td><td>FQ999999</td><td>09/05/2019</td><td>09/17/2019</td><td>13</td><td>$489,000</td><td>$489,000</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Total DOM</td><td>13</td><td></td><td></td></tr>\n</table>\n\n**Analysis of Subject Property Listing History** The only listing of the subject property in the past year has been for $489,000 for 13 days prior\nto contract. The contract provided to the appraiser contains no atypical terms or conditions, see Sales Contract section for further analysis.\n\n\n**Sales Contract**\n\n<table>\n<tr><td></td><td>[x] Yes\n[ ] No</td><td>Contract Price</td><td>$489,000</td></tr>\n<tr><td>Is there a sales contract?</td><td>[x] [ ]</td><td>Contract Date</td><td>09/17/2019</td></tr>\n<tr><td>Was sales contract information analyzed?</td><td>[x] [ ]</td><td>Transfer Terms</td><td>Typically Motivated</td></tr>\n<tr><td>Does this appear to be an arm's length transaction?</td><td>[x] [ ]</td><td>Personal Property Conveyed</td><td>Yes</td></tr>\n</table>\n\n*Personal property is not included in the appraiser's final opinion of value*\n\n<table>\n<tr><td>Financial Sales Concessions</td><td>Financial assistance paid by or on behalf of the seller as an inducement to purchase the subject property</td></tr>\n<tr><td>Known Sales Concessions</td><td>Yes</td></tr>\n<tr><td>Total Sales Concessions</td><td>$5,000</td></tr>\n<tr><td>Typical for Market</td><td>Yes</td></tr>\n</table>\n\n**Sales Contract Analysis**\n$5,000 concession towards repair of the carpet. Window treatments, washer and dryer, and media room projector conveyed per sales contract.\n\n\n**Prior Sale and Transfer History**\n\n\n<table>\n<tr><td colspan=\"2\">Subject Transfer History</td></tr>\n<tr><td colspan=\"2\">*Prior sales and/or transfers of the subject property (minimum 3 year look back)*</td></tr>\n<tr><td>Prior Sales or Transfers</td><td>None</td></tr>\n<tr><td>Data Source</td><td>MLS</td></tr>\n</table>\n\n**Analysis of Prior Sale and Transfer History of Subject Property** Only prior sale of the subject was when it was a new construction in 2004.\n\n**Comparable Transfer History**\n_Prior sales and/or transfers of the comparable properties from the 'Sales Comparison Approach' section (minimum 1 year look back)_\n\n<table>\n<tr><td>#</td><td>Transfer Terms</td><td>Date</td><td>Amount</td><td>Data Source</td></tr>\n<tr><td>1</td><td>Typically Motivated</td><td>09/01/2018</td><td>$430,000</td><td>MLS</td></tr>\n<tr><td>2</td><td>None</td><td></td><td></td><td>MLS</td></tr>\n<tr><td>3</td><td>None</td><td></td><td></td><td>MLS</td></tr>\n</table>\n\n**Analysis of Prior Sale and Transfer History of Comparable Sales** Prior sale of comp 1 was a typically motivated arms-length transaction.\n\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 14 of 21\n\n\nSales Comparison Approach\n\n\n<table>\n<tr><td></td><td>Subject Property</td><td colspan=\"2\">Comparable #1</td><td colspan=\"2\">Comparable #2</td><td colspan=\"2\">Comparable #3</td></tr>\n<tr><td colspan=\"8\">General Information</td></tr>\n<tr><td>Property Address</td><td>123 Falling Tree Ct<br>Treeville, VA 12345</td><td colspan=\"2\">241 Rapid Creek Ln<br>Treeville, VA 12345</td><td colspan=\"2\">188 Fallen Oak Ct<br>Treeville, VA 12345</td><td colspan=\"2\">210 Cannon Ball Rd<br>Treeville, VA 12345</td></tr>\n<tr><td></td><td>[Camera icon]</td><td colspan=\"2\">📷<br>This is where the<br>Comparable 1 photo<br>would display.</td><td colspan=\"2\">📷<br>This is where the<br>Comparable 2 photo<br>would display.</td><td colspan=\"2\">📷<br>This is where the<br>Comparable 3 photo<br>would display.</td></tr>\n<tr><td>Data Source</td><td></td><td colspan=\"2\">Assessor Record | Exterior<br>Inspection | MLS 123456</td><td colspan=\"2\">Assessor Record | Exterior<br>Inspection | MLS 33A245</td><td colspan=\"2\">Assessor Record | Exterior<br>Inspection | MLS 678A12</td></tr>\n<tr><td>Proximity to Subject</td><td></td><td colspan=\"2\">0.17 Miles N</td><td colspan=\"2\">0.06 Miles N</td><td colspan=\"2\">0.4 Miles NE</td></tr>\n<tr><td>List Price</td><td>$489,000</td><td colspan=\"2\">$460,000</td><td colspan=\"2\">$449,900</td><td colspan=\"2\">$525,000</td></tr>\n<tr><td>Listing Status</td><td>Pending</td><td colspan=\"2\">Settled Sale</td><td colspan=\"2\">Settled Sale</td><td colspan=\"2\">Settled Sale</td></tr>\n<tr><td>Contract Price</td><td>$489,000</td><td colspan=\"2\">---</td><td colspan=\"2\">---</td><td colspan=\"2\">---</td></tr>\n<tr><td>Sale Price</td><td></td><td colspan=\"2\">$460,000</td><td colspan=\"2\">$450,000</td><td colspan=\"2\">$520,000</td></tr>\n<tr><td>Transfer Terms</td><td></td><td>Typically<br>Motivated</td><td>$0</td><td>Typically<br>Motivated</td><td>$0</td><td>Typically<br>Motivated</td><td>$0</td></tr>\n<tr><td>Sales Concessions</td><td>$5,000</td><td>$8,500</td><td>$0</td><td>$11,000</td><td>$0</td><td>$10,400</td><td>$0</td></tr>\n<tr><td>Contract Date</td><td>09/17/2019</td><td>07/22/2019</td><td>$0</td><td>08/05/2019</td><td>$0</td><td>07/02/2019</td><td>$0</td></tr>\n<tr><td>Sale Date</td><td></td><td>08/17/2019</td><td>$0</td><td>09/10/2019</td><td>$0</td><td>08/31/2019</td><td>$0</td></tr>\n<tr><td>Days on Market</td><td>13</td><td>12</td><td></td><td>6</td><td></td><td>14</td><td></td></tr>\n<tr><td>Attached/Detached</td><td>Detached</td><td>Detached</td><td></td><td>Detached</td><td></td><td>Detached</td><td></td></tr>\n<tr><td>Property Rights Appraised</td><td>Fee Simple</td><td>Fee Simple</td><td></td><td>Fee Simple</td><td></td><td>Fee Simple</td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"8\">Site</td></tr>\n<tr><td>Site Size</td><td>14,950 Sq. Ft.</td><td>17,886 Sq. Ft.</td><td>$0</td><td>13,038 Sq. Ft.</td><td>$0</td><td>16,039 Sq. Ft.</td><td>$0</td></tr>\n<tr><td>Neighborhood Name</td><td>Sunnyside</td><td>Sunnyside</td><td></td><td>Sunnyside</td><td></td><td>Hilldale</td><td>$0</td></tr>\n<tr><td>Topography</td><td>Rolling</td><td>Rolling</td><td></td><td>Rolling</td><td></td><td>Flat</td><td>$(2,000)</td></tr>\n<tr><td>Site Influence (Location)</td><td>Residential</td><td>Residential</td><td></td><td>Busy Roadway</td><td>$5,000</td><td>Residential</td><td></td></tr>\n<tr><td>View | Range</td><td>Residential | Full</td><td>Residential | Full</td><td></td><td>Residential | Full</td><td></td><td>Residential | Full</td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"8\">Dwelling(s)</td></tr>\n<tr><td>Year Built</td><td>2004</td><td>2004</td><td></td><td>2004</td><td></td><td>2001</td><td>$0</td></tr>\n<tr><td>Construction Method</td><td>Site Built</td><td>Site Built</td><td></td><td>Site Built</td><td></td><td>Site Built</td><td></td></tr>\n<tr><td>Dwelling Style</td><td>Colonial</td><td>Colonial</td><td></td><td>Colonial</td><td></td><td>Colonial</td><td></td></tr>\n<tr><td>Heating</td><td>Forced Warm Air | Natural Gas</td><td>Forced Warm Air | Natural Gas</td><td></td><td>Forced Warm Air | Natural Gas</td><td></td><td>Forced Warm Air<br>| Natural Gas</td><td></td></tr>\n<tr><td>Cooling</td><td>Centralized</td><td>Centralized</td><td></td><td>Centralized</td><td></td><td>Centralized</td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">Energy Efficient and Green Features</td><td></td><td>$0</td><td></td><td>$0</td><td></td><td>$0</td></tr>\n<tr><td>Efficiency Rating</td><td>HERS | 62</td><td></td><td>None</td><td></td><td>HERS | 61</td><td></td><td>None</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"8\">Unit(s)</td></tr>\n<tr><td>Bedrooms</td><td>5</td><td>4</td><td>$10,000</td><td>4</td><td>$10,000</td><td>4</td><td>$10,000</td></tr>\n<tr><td>Baths - Full | Half</td><td>3 | 1</td><td>2 | 1</td><td>$10,000</td><td>2 | 2</td><td>$5,000</td><td>3 | 1</td><td></td></tr>\n<tr><td>Finished Area Above Grade</td><td>3,002 Sq. Ft.</td><td>3,260 Sq. Ft.</td><td>$(10,300)</td><td>2,804 Sq. Ft.</td><td>$7,900</td><td>2,816 Sq. Ft.</td><td>$7,400</td></tr>\n<tr><td>Finished Area Below Grade</td><td>1,300 Sq. Ft.</td><td>0 Sq. Ft.</td><td>$26,000</td><td>1,200 Sq. Ft.</td><td>$2,000</td><td>1,328 Sq. Ft.</td><td>$0</td></tr>\n<tr><td>Unfinished Area<br>Below Grade</td><td>230 Sq. Ft.</td><td>1,624 Sq. Ft.</td><td>$(13,940)</td><td>66 Sq. Ft.</td><td>$1,640</td><td>148 Sq. Ft.</td><td>$0</td></tr>\n<tr><td>Below Grade Exterior Access</td><td>Walk Out</td><td>Walk Up</td><td>$2,000</td><td>Walk Up</td><td>$2,000</td><td>Walk Out</td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">Quality and Condition (Ratings: 1-6, 1 is highest)</td></tr>\n<tr><td colspan=\"5\">## Exterior Quality and Condition</td></tr>\n<tr><td>Quality</td><td>Q4</td><td>Q4</td><td>Q4</td><td>Q4</td></tr>\n<tr><td>Exterior Walls and Trim</td><td>Vinyl</td><td>Vinyl</td><td>Vinyl</td><td>Vinyl</td></tr>\n<tr><td>Roof</td><td>Composition</td><td>Composition</td><td>Composition</td><td>Composition</td></tr>\n<tr><td>Condition</td><td>C4</td><td>C4</td><td>C4</td><td>C4</td></tr>\n<tr><td colspan=\"5\">## Interior Quality and Condition</td></tr>\n<tr><td>Quality</td><td>Q4</td><td>Q4</td><td>Q4</td><td>Q4</td></tr>\n<tr><td>Condition</td><td>C4</td><td>C4</td><td>C4</td><td>C4</td></tr>\n<tr><td>Kitchen</td><td>Not Updated</td><td>Partially Updated</td><td>Not Updated</td><td>Not Updated</td></tr>\n<tr><td>Overall Flooring</td><td>Not Updated</td><td>Not Updated</td><td>Not Updated</td><td>Not Updated</td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\nSingle Family Scenario 1 (SF1)\n\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 15 of 21\n\n\n**Sales Comparison Approach** *(continued)*\n\n<table>\n<tr><td></td><td>Subject Property</td><td>Comparable #1</td><td>Comparable #2</td><td>Comparable #3</td></tr>\n<tr><td rowspan=\"2\">Property Address</td><td>123 Falling Tree Ct</td><td>241 Rapid Creek Ln</td><td>188 Fallen Oak Ct</td><td>210 Cannon Ball Rd</td></tr>\n<tr><td>Treeville, VA 12345</td><td>Treeville, VA 12345</td><td>Treeville, VA 12345</td><td>Treeville, VA 12345</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"8\">Overall Quality and Condition (Ratings: 1-6, 1 is highest)</td></tr>\n<tr><td>Quality</td><td>Q4</td><td>Q4</td><td></td><td>Q4</td><td></td><td>Q4</td><td></td></tr>\n<tr><td>Condition</td><td>C4</td><td>C4</td><td>$(5,000)</td><td>C4</td><td>$(1,000)</td><td>C4</td><td>$(1,000)</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"8\">Property Amenities</td></tr>\n<tr><td>Outdoor Living</td><td>Deck | Porch</td><td>Deck | Patio</td><td>$6,000</td><td>Patio | Porch</td><td>$2,000</td><td>Deck | Patio</td><td>$6,000</td></tr>\n<tr><td>Water Features</td><td>---</td><td>---</td><td></td><td>---</td><td></td><td>Inground Pool</td><td>$(12,000)</td></tr>\n<tr><td>Miscellaneous</td><td>Media Room | Wet Bar</td><td>---</td><td>$6,000</td><td>---</td><td>$6,000</td><td>---</td><td>$6,000</td></tr>\n</table>\n\n<table>\n<tr><td>Vehicle Storage</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Type | Spaces | Detail</td><td>Driveway | 2 | Asphalt<br>Garage | 2 | Built-in 460 Sq. Ft.</td><td colspan=\"2\">Driveway | 2 | Asphalt<br>Garage | 2 | Built-in</td><td colspan=\"2\">Driveway | 2 | Asphalt<br>Garage | 2 | Built-in</td><td colspan=\"2\">Driveway | 2 | Asphalt<br>Garage | 2 | Built-in</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">Summary</td></tr>\n<tr><td>List Price</td><td>$489,000</td><td>$460,000</td><td>$449,900</td><td>$525,000</td></tr>\n<tr><td>Contract Price</td><td>$489,000</td><td>—</td><td>—</td><td>—</td></tr>\n<tr><td>Sale Price</td><td></td><td>$460,000</td><td>$450,000</td><td>$520,000</td></tr>\n<tr><td>Net Adjustment Total</td><td></td><td>$30,760</td><td>$40,540</td><td>$14,400</td></tr>\n<tr><td>Price Per Finished Area Above Grade</td><td></td><td>$141</td><td>$160</td><td>$185</td></tr>\n<tr><td>Adjusted Price</td><td></td><td>$490,760</td><td>$490,540</td><td>$534,400</td></tr>\n<tr><td>Comparable Weight</td><td></td><td>Most</td><td>Most</td><td>Less</td></tr>\n<tr><td colspan=\"5\">Indicated Value by Sales Comparison Approach</td></tr>\n<tr><td>Indicated Value</td><td>$491,000</td><td></td><td></td><td></td></tr>\n</table>\n\n**Reconciliation of Sales Comparison Approach**\nComps 1 and 2 were from the same neighborhood as the Subject. Comp 3 not given as much weight because of different subdivision.\nCondition Rating adjustments were made to all comps due to the subject's flooring having stained carpets and no updates. Comp 1 also had\na partially updated kitchen which was accounted for in the Condition Rating adjustment. Sales with property characteristics of 5 bedrooms,\nmedia room and wet bar were in the competitive market area, exhibited in #4 and 5 of the Additional Properties Analyzed Not Used, but were\nnot as comparable since they were larger, farther away, and superior quality.\n\n\n<table>\n<tr><td colspan=\"6\">Additional Properties Analyzed Not Used</td></tr>\n<tr><td>#</td><td>Property Address</td><td>Sale Date</td><td>Status</td><td>Reason Not Used</td><td>Comment</td></tr>\n<tr><td>1</td><td>101 Somewhere Ln<br>Treeville, VA 12345</td><td>—</td><td>Active</td><td>Proximity<br>Quality</td><td>Inferior quality and non-similar location</td></tr>\n<tr><td>2</td><td>955 Black Swan Rd<br>Treeville, VA 12345</td><td>—</td><td>Pending</td><td>Proximity<br>Quality</td><td>Superior quality and located further from subject</td></tr>\n<tr><td>3</td><td>325 Summit Ct<br>Treeville, VA 12345</td><td>08/21/2019</td><td>Settled Sale</td><td>Proximity</td><td>Located further from subject</td></tr>\n<tr><td>4</td><td>7464 Blank Ln<br>Treeville, VA 12345</td><td>06/02/2019</td><td>Settled Sale</td><td>Finished Area<br>Proximity</td><td>Had 5 bedrooms, but because it was larger and farther away, it was not used.</td></tr>\n<tr><td>5</td><td>8718 Mover Ln<br>Treeville, VA 12345</td><td>07/13/2019</td><td>Settled Sale</td><td>Finished Area<br>Quality</td><td>Property has a media room and wet bar, but is larger and of superior quality.</td></tr>\n</table>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 16 of 21\n\n\n**Sales Comparison Approach** *(continued)*\n\n\n<figure type=\"DIAGRAM\">Sales Comparison Map\n\n\n\n<description>This figure is a placeholder for a 'Sales Comparison Map'. It consists of a large, light-gray rectangular area containing a centered camera icon and the instructional text: 'This is where the Comparable Sales Map photo would display.'</description></figure>\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 17 of 21\n\n\n**Sales Comparison Approach** *(continued)*\n\n\n# Sales Comparison Approach Exhibits\n\nComparable #1\n[Camera icon]\nThis is where the Comparable 1 photo would display.\nComparable #3\n[Camera icon]\nThis is where the Comparable 3 photo would display.\nComparable #2\n[Camera icon]\nThis is where the Comparable 2 photo would display.\n\n\nReconciliation\n\n<table>\n<tr><td colspan=\"4\">Approaches to Value</td></tr>\n<tr><td></td><td>Sales Comparison Approach</td><td>Income Approach</td><td>Cost Approach</td></tr>\n<tr><td>Indicated Value</td><td>$491,000</td><td></td><td></td></tr>\n<tr><td>Reason for Exclusion</td><td></td><td>Not Necessary for Credible Results</td><td>Not Necessary for Credible Results</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">## Appraisal Summary</td></tr>\n<tr><td>Contract Price</td><td>$489,000</td><td>Reasonable Exposure Time</td><td>0-90 days</td></tr>\n<tr><td>Opinion of Market Value</td><td>$491,000</td><td>Effective Date of Appraisal</td><td>09/20/2019</td></tr>\n<tr><td>Market Value Condition</td><td>Subject to Repair</td><td></td><td></td></tr>\n</table>\n\n**Final Value Condition Statement** This appraisal is made subject to the itemized list of repairs recommended below on the basis of a\nhypothetical condition that the repairs or alterations have been completed in a professional manner. This might have affected the assignment\nresults.\n\n\n**Reconciliation of Market Value**\nUtilize this subsection for additional commentary as required by USPAP.\n\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 18 of 21\n\n\n**Reconciliation** *(continued)*\n\n\n**Apparent Defects, Damages, Deficiencies**\n*The items listed below represent the As Is condition as of the effective date of this report*\n\n\n<table>\n<tr><td>Feature</td><td>Location</td><td>Description</td><td>Affects Soundness or Structural Integrity</td><td>Recommended Action</td><td>Estimated Cost to<br>Repair</td></tr>\n<tr><td colspan=\"6\">## Dwelling Exterior</td></tr>\n<tr><td>Roof</td><td>Section of Roof</td><td>Roof is significantly worn and has damaged flashing, but no apparent active leaks.</td><td>Yes</td><td>Repair</td><td>$1,500</td></tr>\n<tr><td colspan=\"6\">Unit Interior</td></tr>\n<tr><td>Flooring</td><td>Dining Room</td><td>Carpet is stained in one corner of the Dining Room.</td><td>No</td><td>None</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Total Cost</td><td>$1,500</td></tr>\n</table>\n\nAs Is Overall Condition Rating: C5 \nExisting condition of the property as of the effective date of this appraisal, excluding all required repairs, alterations, or inspections \n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 19 of 21\n\n\nThis appraisal report is subject to the following scope of work, intended use, intended user, definition of market value, statement of\nassumptions and limiting conditions, and certifications. Modifications, additions, or deletions to the definition of market value or assumptions\nand limiting conditions are not permitted. The appraiser may expand the scope of work to include any additional research or analysis\nnecessary based on the complexity of this appraisal assignment. Modifications or deletions to Intended Use, Intended User, and the\ncertifications are also not permitted. However, additional Intended Use, Intended User, and certifications that do not constitute material\nalterations to this appraisal report, such as those required by law or those related to the appraiser's continuing education or membership in an\nappraisal organization, are permitted.\n\n\n# Scope of Work\n\nThe scope of work for this assignment is based on the applicable assignment elements, including: the client and any other intended users,\nthe intended use, the definition of market value that follows, the effective date, the subject property and its relevant characteristics, and the\napplicable assignment conditions. The appraiser must, at a minimum: (1) obtain and review adequate and reliable information for the subject\nproperty; (2) research, verify, and analyze adequate and reliable data for the subject market area including data for each comparable property\nreported; and (3) report his or her analyses, opinions, and conclusions in this appraisal report.\n\n\n**Intended Use**\nThe intended use of the opinions and conclusions contained in this appraisal report is for the intended user to evaluate the property that is the\nsubject of this appraisal for a mortgage finance transaction or related activities.\n\n\n**Intended User**\nThe intended user of this report is the lender/client.\n\n\n**Definition of Market Value**\nThe most probable price that a property should bring in a competitive and open market under all conditions requisite to a fair sale with the\nbuyer and seller each acting prudently and knowledgeably, and assuming the price is not affected by undue stimulus. Implicit in this definition\nis the consummation of a sale as of a specified date and the passing of title from seller to buyer under conditions whereby: (1) buyer and seller\nare typically motivated; (2) both parties are well informed or well advised, and each acting in what he or she considers his or her own best\ninterest; (3) a reasonable time is allowed for exposure in the open market; (4) payment is made in terms of cash in U.S. dollars or in terms of\nfinancial arrangements comparable thereto; and (5) the price represents the normal consideration for the property sold unaffected by special\nor creative financing or sales concessions* granted by anyone associated with the sale.\n\n\n*Adjustments to the comparables must be made for special or creative financing or sales concessions. No adjustments are necessary for costs that are\nnormally paid by sellers as a result of tradition or law in a market area; these costs are readily identifiable because the seller pays these costs in virtually all sales\ntransactions. Special or creative financing adjustments can be made to the comparable property by comparisons to financing terms offered by a third-party\ninstitutional lender that is not already involved in the property or transaction. Any adjustment should not be calculated on a mechanical dollar-for-dollar cost\nof the financing or concession, but the dollar amount of any adjustment should approximate the market's reaction to the financing or concessions based on\nthe appraiser's judgment.\n\n\n**Statement of Assumptions and Limiting Conditions**\nThe appraiser assumes that the title is good and marketable unless he or she becomes aware of information to the contrary.\nIf the appraiser has included a sketch or floor plan in this appraisal report, it shows the approximate dimensions and is included only to assist\nthe reader in visualizing the property and understanding the appraiser’s determination of its size.\n\n\nThe appraiser has relied on data provided by third parties in this appraisal report. Such data may include, but is not limited to, floor plans,\nflood maps, multiple listing real estate services, tax assessment records, public land records, satellite imagery, virtual street views, property\ndata services, surveys, engineering reports, and property data aggregations. After examination of the data and data sources, the appraiser has\nused only the data he or she considers reliable. The appraiser assumes there are no material omissions in the data relied upon and makes no\nguarantees, express or implied, regarding their accuracy. If the source date is prior to the effective date of the appraisal, the appraiser assumes\nthe property characteristics and supporting information have not changed in the interim.\n\n\nThe appraiser will not be required to give testimony or appear in court because he or she made an appraisal of the property in question,\nunless specific arrangements to do so have been made beforehand, or as otherwise required by law.\n\n\nThe appraiser has noted in this appraisal report any adverse conditions (such as needed repairs, deterioration, the presence of hazardous\nwastes, toxic substances, etc.) that the appraiser became aware of during the development of this appraisal. Unless otherwise stated in this\nappraisal report, the appraiser has no knowledge of any hidden or unapparent physical deficiencies or adverse conditions of the property\n(such as, but not limited to, needed repairs, deterioration, the presence of hazardous wastes, toxic substances, adverse environmental\nconditions, etc.) that would make the property less valuable, and assumes that there are no such conditions and makes no guarantees or\nwarranties, express or implied. The appraiser will not be responsible for any such conditions that do exist or for any engineering or testing that\nmight be required to discover whether such conditions exist. Because the appraiser is not an expert in the field of environmental hazards, this\nappraisal report must not be considered as an environmental assessment of the property.\n\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345 \nClient Reference ID: 1234567 \nAMC Reference ID: 543234 \n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 20 of 21\n\n\n# Certifications\n\n## Appraiser Certifications\n\nThe Appraiser certifies and agrees that:\n1. I have no present or prospective interest in the property that is the subject of this report, or relationship with the present or prospective\nowners or occupants of the subject property, or other parties involved in this transaction.\n2. I performed this assignment without bias with respect to the parties involved in this transaction, the property that is the subject of this\nreport, or the demographics of the area where the property is located.\n3. I am aware of and have complied with all applicable laws and regulations including antidiscrimination laws, rules, and requirements that\napply to the appraiser and to the assignment.\n4. I did not base any part of my appraisal on the actual or perceived race, color, religion, sex (including sexual orientation or gender identity),\nage (other than as applicable for legally age-restricted communities), marital status, disability, familial status, or national origin of the present\nor prospective owners or occupants of either the subject property or properties in the area of the subject property or on any other basis\nprohibited by the Fair Housing Act or the Equal Credit Opportunity Act, or any other basis prohibited by the law.\n5. I stated in this appraisal report my own personal, unbiased, and professional analyses, opinions, and conclusions, which are subject only to\nthe assumptions and limiting conditions in this appraisal report.\n6. I have, at a minimum, developed and reported this appraisal in accordance with the scope of work requirements stated in this appraisal\nreport.\n7. I meet the credential requirements for this assignment as of the date of this appraisal report and have knowledge and experience in\nappraising this type of property in this market area.\n8. I am aware of, and have access to, the necessary and appropriate public and private data sources, such as multiple listing services, tax\nassessment records, public land records, and other such data sources for the area in which the property is located.\n9. I obtained the information, estimates, and opinions furnished by other parties and expressed in this appraisal report from reliable sources\nthat I believe to be true and correct.\n10. I personally performed an onsite inspection of the interior and exterior areas of the subject property. I reported the readily observable\ncondition of the improvements in factual, specific terms. I identified and reported any known physical deficiencies that could affect the\nsoundness or structural integrity of the property.\n11. I performed this appraisal in accordance with the requirements of the Uniform Standards of Professional Appraisal Practice that were\nadopted and promulgated by the Appraisal Standards Board of The Appraisal Foundation and that were in place at the time this appraisal\nreport was transmitted.\n12. Using information available in the normal course of business, I researched, verified, analyzed, and reported on any current agreement for\nsale for the subject property, any offering for sale of the subject property in the twelve months prior to the effective date of this appraisal, and\nthe prior sales of the subject property for a minimum of three years prior to the effective date of this appraisal.\n13. Using information available in the normal course of business, I researched, verified, analyzed, and reported on the prior sales of the\ncomparable sales for a minimum of one year prior to the date of sale of the comparable sale.\n14. I based my valuation on the available properties that are most similar to the subject property.\n15. I have not used comparable sales that were the result of combining a land sale with the contract purchase price of a home that has been\nbuilt or will be built on the land.\n16. I have identified the differences between the subject and comparable properties, analyzed the market reaction to those differences, and\nreflected those differences in the analysis.\n17. To the extent possible, I verified, from a disinterested source, all information in this report that was provided by parties who have a financial\ninterest in the sale or financing of the subject property.\n18. I have taken into consideration the factors that have an impact on value with respect to the subject property, and its location, including its\nproximity to adverse influences in the development of my opinion of market value. I have noted in this appraisal report any adverse conditions\n(such as, but not limited to, needed repairs, deterioration, the presence of hazardous wastes, toxic substances, adverse environmental\nconditions, etc.) that I became aware of during the development of this appraisal. I have considered these adverse conditions in my analysis of\nthe property value and have reported on the effect of the conditions on the value and marketability of the subject property.\n19. I have not knowingly withheld any significant information from this appraisal report and, to the best of my knowledge, all statements and\ninformation in this appraisal report are true and correct.\n20. My employment and/or compensation for performing this appraisal or any future or anticipated appraisals was not conditioned on any\nagreement or understanding, written or otherwise, that I would report (or present analyses supporting) a predetermined specific value, a\npredetermined minimum value, a range or direction in value, a value that favors the cause of any party, or the attainment of a specific result or\noccurrence of a specific subsequent event (such as approval of a pending mortgage loan application).\n21. I personally prepared conclusions and opinions about the real estate that were set forth in this appraisal report. Andrew Appraiser\nprovided significant real property appraisal assistance in the development of this report. I certify that any individual so named is qualified to\nperform the assistance.\n\n\n**Appraisal Version #4**\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- PAGE BREAK -->\n\nUniform Residential Appraisal Report\n\n\nPage 21 of 21\n\n\n**Certifications** (continued)\n22. I have not authorized anyone to make a change to any item in this appraisal report; therefore, any change made to this appraisal\nunauthorized and I will take no responsibility for it.\n23. I identified the lender/client in this appraisal report who is the individual, organization, or agent for the organization that ordered and will\nreceive this appraisal report.\n24. I am aware that any disclosure or distribution of this appraisal report or any of its contents by me or by the lender/client may be subject\nto certain laws and regulations. Further, I am also subject to the provisions of the Uniform Standards of Professional Appraisal Practice that\npertain to disclosure or distribution by me.\n25. The lender/client may disclose or distribute this appraisal report to: the borrower; another lender at the request of the borrower; the\nmortgagee or its successors and assigns; mortgage insurers; government sponsored enterprises; other secondary market participants; data\ncollection or reporting services; professional appraisal organizations; any department, agency, or instrumentality of the United States; and any\nstate, the District of Columbia, or other jurisdictions. Any of the foregoing persons or entities who receive this appraisal report may choose to\nstore, copy, reproduce, analyze, use and distribute the data in the appraisal report for internal or external purposes without having to obtain\nthe appraiser's or supervisory appraiser's (if applicable) consent. Consent must be obtained before this appraisal report may be disclosed or\ndistributed to any other party (including, but not limited to, the public through advertising, public relations, news, sales, or other media). A\nperson or entity who receives a copy of an appraisal report does not become an intended user, unless the appraiser identifies such person as\nan intended user. The appraiser and supervisory appraiser (if applicable) shall have no liability for any use of this appraisal report not related to\nthe mortgage finance transaction and related activities for which this appraisal report was prepared.\n26. The borrower, another lender at the request of the borrower, the mortgagee or its successors and assigns, mortgage insurers, government\nsponsored enterprises, and other secondary market participants may choose to rely on this appraisal report as part of any mortgage finance\ntransaction that involves any one or more of these parties. A person or entity who receives a copy of an appraisal report does not become\nan intended user, unless the appraiser identifies such person as an intended user. The appraiser and supervisory appraiser (if applicable)\nhave no liability for any use of this appraisal report not related to the mortgage finance transaction and related activities for which this\nappraisal report was prepared.\n27. If this report was transmitted as an \"electronic record\" containing my \"electronic signature,\" as those terms are defined in applicable\nfederal and/or state laws (excluding audio and video recordings), or a facsimile transmission of this report containing a copy or representation\nof my signature, I agree that my electronic signature has the same force and effect as my manual handwritten signature, and that the report is\nenforceable and valid as a paper version of this report would be if delivered containing my manual handwritten signature.\n28. Any intentional or negligent misrepresentation(s) contained in this appraisal report may result in civil liability and/or criminal penalties\nincluding, but not limited to, fine or imprisonment or both under the provisions of Title 18, United States Code, Section 1001, et seq., or similar\nstate laws.\n29. I have not performed any service regarding the subject property within the three years preceding the agreement to perform this\nassignment.\n\n\nSignature\n\n<table>\n<tr><td>Appraiser</td><td></td></tr>\n<tr><td>Agatha Appraiser</td><td>09/20/2019</td></tr>\n<tr><td>Agatha Appraiser</td><td>Date of Signature and Report</td></tr>\n</table>\n\n<table>\n<tr><td>Level</td><td>Certified Residential</td></tr>\n<tr><td>ID</td><td>XYZ12345</td></tr>\n<tr><td>State</td><td>VA</td></tr>\n<tr><td>Expires</td><td>10/10/2020</td></tr>\n</table>\n\nAppraisal Version #4\n\n\nFannie Mae | Freddie Mac\nSeptember 2024\n\n\nSingle Family Scenario 1 (SF1)\n\n\nAppraiser Reference ID: AA12345\nClient Reference ID: 1234567\nAMC Reference ID: 543234\n\n<!-- doc_id=parse-01m41xnqdn85kqv9tax4688avw -->",
+  "metadata": {
+    "job_id": "extract-01m41xqc66e4hk2emmz9g79ytb",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 27774,
+    "doc_id": "parse-01m41xnqdn85kqv9tax4688avw",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 16.6,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 69675,
+    "output_extraction_chars": 2613,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

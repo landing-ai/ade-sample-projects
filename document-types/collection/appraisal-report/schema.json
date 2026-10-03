@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "title": "Uniform Residential Appraisal Report",
+  "description": "A residential real estate appraisal on the redesigned Uniform Residential Appraisal Report (URAR), as used by lenders, AMCs and underwriters to support a mortgage decision.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Identifiers printed in the report header and footer.",
+      "properties": {
+        "appraiser_reference_id": { "type": "string", "description": "Appraiser Reference ID." },
+        "client_reference_id": { "type": "string", "description": "Client Reference ID." },
+        "amc_reference_id": { "type": ["string", "null"], "description": "AMC Reference ID, or null if none." },
+        "appraisal_version": { "type": ["integer", "null"], "description": "Appraisal Version number (the # value)." }
+      },
+      "required": ["appraiser_reference_id", "client_reference_id"]
+    },
+    "summary": {
+      "type": "object",
+      "description": "The Summary section on the first page of the report.",
+      "properties": {
+        "opinion_of_market_value": { "type": "number", "description": "Opinion of Market Value in dollars, as a number." },
+        "market_value_condition": { "type": "string", "description": "Market Value Condition, e.g. As Is or Subject to Repair." },
+        "effective_date": { "type": "string", "description": "Effective Date of Appraisal, as printed (MM/DD/YYYY)." },
+        "assignment_reason": { "type": "string", "description": "Assignment Reason, e.g. Purchase or Refinance." },
+        "contract_price": { "type": ["number", "null"], "description": "Contract Price in dollars, or null if there is no contract." },
+        "property_valuation_method": { "type": "string", "description": "Property Valuation Method, e.g. Traditional Appraisal." },
+        "overall_quality": { "type": "string", "description": "Overall Quality rating (Q1-Q6)." },
+        "overall_condition": { "type": "string", "description": "Overall Condition rating (C1-C6) on which the market value is based." },
+        "as_is_overall_condition": { "type": ["string", "null"], "description": "As Is Overall Condition Rating (C1-C6), if reported separately." }
+      },
+      "required": ["opinion_of_market_value", "effective_date"]
+    },
+    "parties": {
+      "type": "object",
+      "description": "Parties named in Assignment Information and Contact Information.",
+      "properties": {
+        "borrower_names": { "type": "array", "description": "Each borrower name listed.", "items": { "type": "string" } },
+        "seller_name": { "type": ["string", "null"], "description": "Seller Name." },
+        "current_owner_of_public_record": { "type": ["string", "null"], "description": "Current Owner of Public Record." },
+        "lender_company_name": { "type": "string", "description": "Client/Lender company name." },
+        "amc_company_name": { "type": ["string", "null"], "description": "Appraisal Management Company name." },
+        "appraiser_name": { "type": "string", "description": "Appraiser name." },
+        "appraiser_company_name": { "type": "string", "description": "Appraiser's company name." },
+        "appraiser_license_level": { "type": "string", "description": "Appraiser credential level, e.g. Certified Residential." },
+        "appraiser_license_id": { "type": "string", "description": "Appraiser credential ID." },
+        "appraiser_license_state": { "type": "string", "description": "State of the appraiser credential." },
+        "appraiser_license_expires": { "type": "string", "description": "Credential expiration date, as printed." }
+      }
+    },
+    "subject_property": {
+      "type": "object",
+      "description": "The property being appraised.",
+      "properties": {
+        "street_address": { "type": "string", "description": "Street line of the subject's physical address." },
+        "city": { "type": "string", "description": "City." },
+        "state": { "type": "string", "description": "Two-letter state." },
+        "zip": { "type": "string", "description": "ZIP code." },
+        "county": { "type": "string", "description": "County." },
+        "neighborhood_name": { "type": ["string", "null"], "description": "Neighborhood Name." },
+        "legal_description": { "type": ["string", "null"], "description": "Legal Description." },
+        "assessor_parcel_number": { "type": ["string", "null"], "description": "Assessor Parcel Number (APN)." },
+        "property_rights_appraised": { "type": "string", "description": "Property Rights Appraised, e.g. Fee Simple." },
+        "site_size_sq_ft": { "type": ["number", "null"], "description": "Total Site Size in square feet." },
+        "year_built": { "type": ["integer", "null"], "description": "Year Built." },
+        "dwelling_style": { "type": ["string", "null"], "description": "Dwelling Style, e.g. Colonial." },
+        "finished_area_above_grade_sq_ft": { "type": ["number", "null"], "description": "Finished area above grade in square feet." },
+        "finished_area_below_grade_sq_ft": { "type": ["number", "null"], "description": "Finished area below grade in square feet." },
+        "bedrooms": { "type": ["integer", "null"], "description": "Total Bedrooms." },
+        "full_baths": { "type": ["integer", "null"], "description": "Total Bathrooms - Full." },
+        "half_baths": { "type": ["integer", "null"], "description": "Total Bathrooms - Half." },
+        "hoa_monthly_fee": { "type": ["number", "null"], "description": "Mandatory Fees (HOA, PUD or Co-op) monthly amount in dollars." }
+      }
+    },
+    "comparables": {
+      "type": "array",
+      "description": "The comparable sales in the Sales Comparison Approach grid, in order Comparable #1, #2, #3 and so on. Do not include the Subject Property column or the Additional Properties Analyzed Not Used.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "comparable_number": { "type": "integer", "description": "The comparable's number in the grid (1, 2, 3...)." },
+          "address": { "type": "string", "description": "Comparable street address line." },
+          "proximity_to_subject": { "type": ["string", "null"], "description": "Proximity to Subject, as printed, e.g. 0.17 Miles N." },
+          "sale_price": { "type": ["number", "null"], "description": "Sale Price in dollars, from the Summary rows of the grid." },
+          "sale_date": { "type": ["string", "null"], "description": "Sale Date, as printed." },
+          "net_adjustment_total": { "type": ["number", "null"], "description": "Net Adjustment Total in dollars from the Summary rows; negative if shown in parentheses." },
+          "adjusted_price": { "type": ["number", "null"], "description": "Adjusted Price in dollars from the Summary rows." },
+          "comparable_weight": { "type": ["string", "null"], "description": "Comparable Weight from the Summary rows, e.g. Most or Less." }
+        }
+      }
+    },
+    "indicated_value_sales_comparison": { "type": ["number", "null"], "description": "Indicated Value by Sales Comparison Approach, in dollars." },
+    "defects": {
+      "type": "array",
+      "description": "Each row of the Apparent Defects, Damages, Deficiencies table in the Reconciliation section (the full list).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "feature": { "type": "string", "description": "Feature, e.g. Roof or Flooring." },
+          "location": { "type": "string", "description": "Location." },
+          "description": { "type": "string", "description": "Description of the defect." },
+          "affects_soundness": { "type": "boolean", "description": "Affects Soundness or Structural Integrity: true for Yes." },
+          "recommended_action": { "type": "string", "description": "Recommended Action, e.g. Repair or None." },
+          "estimated_cost_to_repair": { "type": ["number", "null"], "description": "Estimated Cost to Repair in dollars, or null if blank." }
+        }
+      }
+    }
+  },
+  "required": ["report", "summary", "subject_property", "comparables"]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "appraisal-report",
+  "title": "Appraisal Report",
+  "source": {
+    "file": "appraisal-report-uad-urar-sf1.pdf",
+    "pages": 21,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://sf.freddiemac.com/docs/pdf/uad-sample-scenarios-combined.pdf",
+      "publisher": "Freddie Mac and Fannie Mae (Uniform Appraisal Dataset redesign)",
+      "title": "UAD Sample Scenarios (combined): Single Family Scenario 1 (SF1), Uniform Residential Appraisal Report",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Official GSE sample of the redesigned Uniform Residential Appraisal Report (URAR), published by Freddie Mac on its UAD page for the industry to build and test against. Downloaded by script. The source PDF is 302 pages of sample scenarios; this folder keeps pages 180-200 only, the complete 21-page URAR for Single Family Scenario 1, split out with PyMuPDF (page 179, the scenario's introduction cover, is not part of the URAR and was left out). Every value is illustrative specimen data: Betty and Bob Borrower, Agatha Appraiser, 123 Falling Tree Ct, Treeville VA 12345, DEF Bank. No redaction needed. Photo areas are grey placeholders in the original. The PDF metadata was reset to Freddie Mac as author and a title naming the scenario."
+    }
+  },
+  "feature_page": 15,
+  "fields": [
+    { "path": "comparables[0].sale_price", "label": "Comp 1 sale price", "occurrence": 1 },
+    { "path": "comparables[0].net_adjustment_total", "label": "Comp 1 net adjustment", "occurrence": 0 },
+    { "path": "comparables[0].adjusted_price", "label": "Comp 1 adjusted price", "occurrence": 0 },
+    { "path": "comparables[0].comparable_weight", "label": "Comp 1 weight", "occurrence": 0 }
+  ],
+  "notes": "Features one column of the Sales Comparison Approach Summary rows on page 15 (report page 15 of 21): Comparable #1's sale price, the net of its adjustments, the resulting adjusted price, and the weight the appraiser gave it. Read top to bottom they are the arithmetic of one comparable, 460,000 + 30,760 = 490,760. The request suggested these four plus the Indicated Value ($491,000). The Indicated Value was dropped: its extracted value grounds to the Summary on page 1 and, off-target, to a Listing Status table on page 13, never to the Indicated Value cell on page 15, so it cannot appear on this overlay. sale_price is pinned to occurrence 1, the Summary row on page 15; occurrence 0 is the Sale Price row at the top of the grid on page 14. No person is featured."
+}
