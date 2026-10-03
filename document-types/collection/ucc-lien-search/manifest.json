@@ -1,0 +1,26 @@
+{
+  "slug": "ucc-lien-search",
+  "title": "UCC Lien Search",
+  "source": {
+    "file": "microbilt-ucc-report-2024.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.microbilt.com/Cms_Data/Contents/Microbilt/Media/Docs/SampleReports/UCC-Report-2024.pdf",
+      "publisher": "MicroBilt Corporation",
+      "title": "UCC Search Report, Sample Report (2024)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "MicroBilt's own published sample of its UCC search product, linked from its UCC product page and from a reseller's (lsiservices.net) sample page, and downloaded directly by script. It is filled with specimen data: debtor and secured-party names such as ANY COMPANY and WALLY WORLD MEGA VISION CINEMA, ANYSTREET addresses with ZIP 12345, and document numbers masked as XXXX. The only phone number is MicroBilt's corporate toll-free line in the marketing footer. Nothing was redacted or changed."
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    { "path": "filing_detail.original_document_number", "label": "Original document number", "occurrence": 0 },
+    { "path": "filing_detail.original_date_filed", "label": "Original date filed", "occurrence": 0 },
+    { "path": "filing_detail.filing_state_name", "label": "Filing state", "occurrence": 0 },
+    { "path": "filing_detail.events[0].filing_type_code", "label": "Filing type code", "occurrence": 0 },
+    { "path": "filing_detail.secured_parties[0].name", "label": "Secured party", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields, but suggested four as suggestions only (original document number, filing state, type of filing, secured party) and recommended page 2's labelled detail block. Page 2 is featured, and four of the five fields are from the request's suggestions or their neighbours: the original document number, the original date filed, the filing state (the full name Washington, from Filing State Name), the filing type code 0801, and the secured party ANY COMPANY. Together they describe one filing record. The suggested 'type of filing' (UCC FINANCE STATEMENT FILED) grounds OFF: the value wraps over two lines and each of its two ranges covers only part of it, so the filing type code from the same Events row was featured in its place. The date is extracted as 1998-06-17 from the printed 06/17/1998. The secured party is a specimen organization name, not a person. The document is thin, as the request noted: every COLLATERAL label is blank, and there are no lapse dates or search through-date, so the schema does not ask for them."
+}
