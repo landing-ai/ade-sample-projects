@@ -1,0 +1,106 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "tax_year",
+      "label": "Tax year",
+      "value": "2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.82714,
+        "ymin": 0.06257,
+        "xmax": 0.91351,
+        "ymax": 0.0843
+      },
+      "range": {
+        "end": 242,
+        "start": 238
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "tax_year.png"
+    },
+    {
+      "path": "part_i_amti.line_4_amti",
+      "label": "Alternative minimum taxable income (line 4)",
+      "value": 31620,
+      "page": 1,
+      "box": {
+        "xmin": 0.82325,
+        "ymin": 0.54547,
+        "xmax": 0.94375,
+        "ymax": 0.57628
+      },
+      "range": {
+        "end": 3894,
+        "start": 3888
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_i_amti-line_4_amti.png"
+    },
+    {
+      "path": "part_ii_amt.line_5_exemption",
+      "label": "Exemption (line 5)",
+      "value": 137000,
+      "page": 1,
+      "box": {
+        "xmin": 0.82391,
+        "ymin": 0.65242,
+        "xmax": 0.94336,
+        "ymax": 0.66666
+      },
+      "range": {
+        "end": 4583,
+        "start": 4576
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_ii_amt-line_5_exemption.png"
+    },
+    {
+      "path": "part_ii_amt.line_10_regular_tax",
+      "label": "Regular tax (line 10)",
+      "value": 162,
+      "page": 1,
+      "box": {
+        "xmin": 0.82379,
+        "ymin": 0.92498,
+        "xmax": 0.9439,
+        "ymax": 0.93969
+      },
+      "range": {
+        "end": 6906,
+        "start": 6903
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_ii_amt-line_10_regular_tax.png"
+    },
+    {
+      "path": "part_ii_amt.line_11_amt",
+      "label": "AMT (line 11)",
+      "value": 0,
+      "page": 1,
+      "box": {
+        "xmin": 0.82379,
+        "ymin": 0.93965,
+        "xmax": 0.94393,
+        "ymax": 0.95482
+      },
+      "range": {
+        "end": 7084,
+        "start": 7083
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_ii_amt-line_11_amt.png"
+    }
+  ]
+}

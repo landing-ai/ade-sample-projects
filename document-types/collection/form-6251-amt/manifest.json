@@ -1,0 +1,26 @@
+{
+  "slug": "form-6251-amt",
+  "title": "Form 6251 - AMT",
+  "source": {
+    "file": "form-6251-2025-irs-ats-scenario-13.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-13.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "TY2025 Form 1040 MeF Assurance Testing System (ATS) Test Scenario 13, Form 6251 (pages 5-6)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Published by the IRS for e-file software developers as part of the Tax Year 2025 Form 1040 series MeF Assurance Testing System, and listed on irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information. A US government work, in the public domain. Downloaded by script. The source is a 9-page scenario packet; pages 5-6, the completed Form 6251 (2025), were split out on their own with PyMuPDF, and no content was altered. Every value is IRS test data for a fictitious taxpayer: the SSN is in the 400-00-13xx range the ATS reserves for test scenarios. PDF metadata names only the IRS, Acrobat and Distiller. No redaction needed. The IRS may replace this undated file in place, so the committed copy is the record."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "tax_year", "label": "Tax year", "occurrence": 0 },
+    { "path": "part_i_amti.line_4_amti", "label": "Alternative minimum taxable income (line 4)", "occurrence": 0 },
+    { "path": "part_ii_amt.line_5_exemption", "label": "Exemption (line 5)", "occurrence": 0 },
+    { "path": "part_ii_amt.line_10_regular_tax", "label": "Regular tax (line 10)", "occurrence": 0 },
+    { "path": "part_ii_amt.line_11_amt", "label": "AMT (line 11)", "occurrence": 0 }
+  ],
+  "notes": "The request suggested page 1 (source page 5) and the fields tax year, line 4 AMTI, line 5 exemption, line 10 regular tax and line 11 AMT, telling the AMT computation in order. All five ground ok on page 1 and all five shipped as asked. The story: AMTI of 31,620 sits below the 137,000 married-filing-jointly exemption, so no AMT is owed (line 11 is 0) against regular tax of 162. The operator accepted a zero AMT result. No person is featured. Page 2 (Part III) is blank on the form and is kept so the folder holds the complete form. Known extraction finding: blank amount lines (3, 8, and Part III lines 12 and 40) extract as 0 rather than null, even with descriptions asking for null; the parse correctly shows those cells empty. None of them is featured."
+}
