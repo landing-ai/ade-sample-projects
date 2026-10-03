@@ -40,6 +40,9 @@ from pathlib import Path
 
 import pymupdf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pdfmeta  # noqa: E402
+
 DPI = 300
 SCALE = 72 / DPI
 FILL = (1, 1, 1)
@@ -233,8 +236,7 @@ def main() -> None:
             page.insert_text(point, text, fontname=font, fontsize=size, color=TEXT_COLOR,
                              morph=(point, pymupdf.Matrix(squeeze, 1)))
 
-    doc.set_metadata({})
-    doc.del_xml_metadata()
+    pdfmeta.clear(doc)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(args.output, garbage=4, deflate=True, clean=True)
 
@@ -253,9 +255,8 @@ def main() -> None:
             d = "".join(c for c in term if c.isdigit())
             if _norm(term) in flat or (len(d) >= 5 and d in digits):
                 failures.append((page.number + 1, terms.index(term) + 1))
-    meta = {k: v for k, v in check.metadata.items() if v and k not in ("format",)}
-    if meta:
-        failures.append(("metadata", sorted(meta)))
+    if pdfmeta.remaining(check):
+        failures.append(("metadata", pdfmeta.remaining(check)))
     if failures:
         sys.exit(f"FAILED: originals survive (page, term #): {failures}")
     print(f"\nVerified: no original survives in {args.output} (OCR, literals and digits);"

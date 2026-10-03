@@ -33,6 +33,9 @@ from pathlib import Path
 
 import pymupdf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pdfmeta  # noqa: E402
+
 # Same grey as surrounding body text usually sits on; replacements are drawn in black on
 # white so they read as ordinary content rather than as an obvious edit.
 FILL = (1, 1, 1)
@@ -204,8 +207,7 @@ def main() -> None:
     # the hyphenated form missed it. Producers routinely stash account and customer ids
     # here. Drop the whole dictionary rather than trying to sanitise it field by field.
     scrubbed = {k: v for k, v in (doc.metadata or {}).items() if v}
-    doc.set_metadata({})
-    doc.del_xml_metadata()
+    pdfmeta.clear(doc)
     if scrubbed:
         print("Cleared document metadata (values not printed): "
               f"{', '.join(sorted(scrubbed))}\n")
@@ -226,6 +228,8 @@ def main() -> None:
     text = "\n".join(p.get_text() for p in verify)
     text += "\n" + "\n".join(str(v) for v in (verify.metadata or {}).values() if v)
     text += "\n" + (verify.get_xml_metadata() or "")
+    if pdfmeta.remaining(verify):
+        sys.exit(f"FAILED: metadata survives in {args.output}: {pdfmeta.remaining(verify)}")
     verify.close()
 
     # Compare on digits alone as well as literally: an identifier is often stored

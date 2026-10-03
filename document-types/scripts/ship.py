@@ -38,6 +38,9 @@ from pathlib import Path
 
 import pymupdf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pdfmeta  # noqa: E402
+
 REQUIRED = ["manifest.json", "schema.json", "README.md"]
 MODEL_FILES = ["parse-{m}.json", "parse-{m}.md", "extract-{m}.json", "grounding-{m}.json"]
 FORBIDDEN_NAMES = re.compile(r"(^|/)\.env|rules[^/]*\.json$|\.pem$|id_rsa|credentials", re.I)
@@ -209,9 +212,9 @@ def check(args) -> tuple[Path, dict, list[str]]:
     # The source PDF of a redacted document must carry no metadata at all.
     pdf = folder / "source" / source.get("file", "")
     if clearance == "redacted" and pdf.suffix.lower() == ".pdf" and pdf.is_file():
-        meta = {k: v for k, v in pymupdf.open(pdf).metadata.items() if v and k != "format"}
-        if meta:
-            fail.append(f"redacted source PDF still has metadata: {sorted(meta)}")
+        left = pdfmeta.remaining(pymupdf.open(pdf))
+        if left:
+            fail.append(f"redacted source PDF still has metadata: {left}")
 
     # Nothing credential- or rules-shaped about to be committed.
     changed = git("status", "--porcelain", "--untracked-files=all", cwd=root).splitlines()
