@@ -134,4 +134,9 @@ When the operator says the PRs have merged:
 .venv/bin/python document-types/scripts/ship.py cleanup <slug> --delete-branch
 ```
 
+It also removes the main checkout's untracked copy of each request file once it matches
+the merged one. Those copies, written by `/propose-document-types`, otherwise block the
+next `git pull` with "untracked working tree files would be overwritten". A copy that
+differs is kept and reported. Then `git pull` on the base branch.
+
 Leave the worktrees in place until then. They are the only copy of unpushed work.

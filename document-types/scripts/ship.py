@@ -5,7 +5,7 @@
     ship.py check   <slug> [--rules R.json] [--verify-also TERM ...] [--include PATH ...]
     ship.py ship    <slug> [--base main] [--rules ...] [--include ...] [--push] [--pr]
                            [--trailer LINE ...] [--pr-footer TEXT]
-    ship.py cleanup <slug> [--delete-branch] [--force]
+    ship.py cleanup <slug> [--delete-branch] [--force] [--base main]
 
 Every document type gets its own git worktree and branch, so several builds can run at
 once without trampling one checkout:
@@ -17,7 +17,9 @@ once without trampling one checkout:
   check    the gates a folder must pass before it leaves this machine. See check().
   ship     check, then commit whatever is not yet committed. Pushing and opening the PR
            are separate flags, because both publish: nothing leaves without --push/--pr.
-  cleanup  removes the worktree once the PR has merged.
+  cleanup  removes the worktree once the PR has merged, and the main checkout's untracked
+           copy of the request file if it matches the merged one, which would otherwise
+           block the next `git pull`.
 
 Run any subcommand from anywhere in the repo or its worktrees. `check` and `ship` act on
 the slug's worktree if there is one, otherwise on the current checkout.
@@ -348,6 +350,33 @@ def cleanup(args) -> None:
         out = subprocess.run(["git", "branch", "-d", branch(args.slug)], cwd=main,
                              capture_output=True, text=True)
         print(out.stdout.strip() or out.stderr.strip())
+    drop_merged_request(main, args.slug, args.base)
+
+
+def drop_merged_request(main: Path, slug: str, base: str) -> None:
+    """Remove the main checkout's untracked copy of the request file once the identical
+    file has merged into origin/<base>.
+
+    /propose-document-types writes request files into the main checkout, untracked, and
+    each build commits its own copy. After the merge, the untracked copy blocks the next
+    `git pull`: "untracked working tree files would be overwritten by merge". Only a
+    byte-identical, untracked copy is removed; anything else is reported and left alone."""
+    rel = f"document-types/requests/{slug}.yaml"
+    local = main / rel
+    if not local.is_file():
+        return
+    if git("ls-files", "--", rel, cwd=main):
+        return  # tracked here already: git manages it, nothing to do
+    git("fetch", "--quiet", "origin", base, cwd=main)
+    merged = subprocess.run(["git", "show", f"origin/{base}:{rel}"], cwd=main,
+                            capture_output=True)
+    if merged.returncode:
+        print(f"kept {rel}: not on origin/{base} yet")
+    elif merged.stdout == local.read_bytes():
+        local.unlink()
+        print(f"removed {rel}: identical to origin/{base}")
+    else:
+        print(f"kept {rel}: differs from origin/{base}; resolve it before pulling")
 
 
 def main() -> None:
@@ -384,6 +413,9 @@ def main() -> None:
     p.add_argument("slug")
     p.add_argument("--delete-branch", action="store_true")
     p.add_argument("--force", action="store_true")
+    p.add_argument("--base", default="main",
+                   help="branch the PR merged into; its copy of the request file is "
+                        "compared with the main checkout's untracked one")
     p.set_defaults(func=cleanup)
 
     args = parser.parse_args()
