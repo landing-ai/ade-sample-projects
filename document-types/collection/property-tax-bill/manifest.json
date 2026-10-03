@@ -1,0 +1,58 @@
+{
+  "slug": "property-tax-bill",
+  "title": "Property Tax Bill",
+  "source": {
+    "file": "clark-county-property-tax-statement-sample.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://clark.wa.gov/sites/default/files/media/document/2026-03/tax-statement-sample.pdf",
+      "publisher": "Clark County (WA) Treasurer",
+      "title": "Understanding your Tax Statement (2026 property tax statement sample)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Clark County Treasurer's own sample 2026 property tax statement, linked from the county's 'Understanding your tax bill' page on clark.wa.gov and downloaded by script. Every personal value is specimen data: owner 'SAMPLE TAXPAYER', '1234 MAIN ST' and '134 MAIN STREET', account 986123456, '#13 TOWNSVILLE ADDITION'. The only person named on the page is the elected County Treasurer, in her official capacity in the office's letterhead. The phone numbers, PO boxes and website are the Treasurer's office's own published contact details. No redaction was needed. The source is an 11-page explainer: page 1 is the annotated sample statement and pages 2-11 explain each section, so only page 1 was kept. The PDF metadata, which named the Canva author of the file, was cleared. Nothing else was changed; the teal 'Understanding your Tax Statement' banner and the lettered section callouts (A-G) are part of the publisher's page.",
+      "dropped_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "value_information[1].assessed_value",
+      "label": "Assessed value",
+      "occurrence": 0
+    },
+    {
+      "path": "value_information[1].levy_rate",
+      "label": "Levy rate",
+      "occurrence": 0
+    },
+    {
+      "path": "district_taxes[0].tax_amount",
+      "label": "School district tax",
+      "occurrence": 0
+    },
+    {
+      "path": "amounts_due.full_year_due",
+      "label": "Full year due",
+      "occurrence": 0
+    },
+    {
+      "path": "amounts_due.first_half_due",
+      "label": "First half due",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no fields formally; its notes offered four as suggestions only: first half due, full year due, assessed value and school district tax. All four ground ok on page 1 and ship, with the 2026 levy rate added as a fifth. Together they show how the bill is computed: the 2026 assessed value ($756,979) times the levy rate (6.4423487853 per $1,000) is $4,876.72, which matches the nine levy districts in the detail (school district first, $345.47) to within a cent; the three flat assessments bring it to the $5,157.93 full-year amount, payable as a $2,579.01 first half. The levy rate is extracted as a string so its 10 decimal places survive exactly. Only page 1 of the 11-page source was kept; pages 2-11 are explainers."
+}
