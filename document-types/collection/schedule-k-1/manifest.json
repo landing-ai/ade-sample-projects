@@ -1,0 +1,46 @@
+{
+  "slug": "schedule-k-1",
+  "title": "Schedule K-1",
+  "source": {
+    "file": "schedule-k-1-2025-irs-ats-1065-scenario-1.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-wi/ty25-f1065-ats-scenario01.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "TY2025 Form 1065 MeF Assurance Testing System (ATS) Scenario 1",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "IRS Modernized e-File Assurance Testing System test scenario 1 for tax year 2025 Form 1065, linked from the IRS TY2025 Form 1065 MeF ATS information page; served as application/pdf and downloaded by script. US government work, public domain. The source PDF is 28 pages (the full Form 1065 return with its schedules and attachments); this folder keeps page 12 only, the first Schedule K-1, split out with PyMuPDF. Every value is IRS test data: a fictitious partnership SAM STARLING LLP with an EIN in the 00- test range and a partner TIN of the 000-00- test form the IRS uses in ATS scenarios. No redaction needed. The PDF metadata was reset to the IRS as author and a title naming the scenario, and XMP was removed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "income.ordinary_business_income",
+      "label": "Ordinary business income (box 1)",
+      "occurrence": 0
+    },
+    {
+      "path": "partner.capital_account.beginning",
+      "label": "Beginning capital account (item L)",
+      "occurrence": 0
+    },
+    {
+      "path": "partner.capital_account.other_increase_decrease",
+      "label": "Other increase (item L)",
+      "occurrence": 0
+    },
+    {
+      "path": "partner.capital_account.withdrawals_and_distributions",
+      "label": "Withdrawals and distributions (item L)",
+      "occurrence": 0
+    },
+    {
+      "path": "partner.capital_account.ending",
+      "label": "Ending capital account (item L)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request suggested, as suggestions only, box 1 ordinary business income, box 19A distributions, item L ending capital account, item J profit share ending and item K1 nonrecourse liabilities ending. Box 1 and the ending capital account shipped. Box 19A, J profit ending and K1 nonrecourse ending were dropped because their crops would not read cleanly: the parse merged boxes 18, 19 and 20 into one table cell (and their code letters into another), so 7,514,031 can only be boxed together with 77,513 and 9,265; the J Profit row was merged into the I1/I2/J cell, so the box covers the entity type line and both 10% values; and the K1 nonrecourse range covers both the empty beginning column and the ending column. In their place the overlay features the item L capital account roll-forward, each line grounding to its own amount cell: beginning 4,488,892 plus other increase 12,143,540 less withdrawals and distributions 7,514,031 equals ending 9,118,401, and the withdrawal is the same amount as box 19 code A, so the distribution still appears on the page. The extraction itself paired every Part III code letter with the right amount (15 P 3,560; 17 A 19,946; 18 C 77,513; 19 A 7,514,031; 20 A 9,265) despite the merged cells. No person is featured. Known extraction fault, left visible: blank amount lines extract as 0 rather than null, with ranges pointing at labels or empty cells."
+}
