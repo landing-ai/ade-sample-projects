@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 3,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "amounts_due.principal",
+      "label": "Principal",
+      "value": 352970.28,
+      "page": 3,
+      "box": {
+        "xmin": 0.53395,
+        "ymin": 0.58135,
+        "xmax": 0.71509,
+        "ymax": 0.59952
+      },
+      "range": {
+        "end": 4129,
+        "start": 4118
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-principal.png"
+    },
+    {
+      "path": "amounts_due.prejudgment_interest",
+      "label": "Prejudgment interest",
+      "value": 59253.99,
+      "page": 3,
+      "box": {
+        "xmin": 0.71507,
+        "ymin": 0.59753,
+        "xmax": 0.85985,
+        "ymax": 0.66542
+      },
+      "range": {
+        "end": 4325,
+        "start": 4315
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-prejudgment_interest.png"
+    },
+    {
+      "path": "amounts_due.prejudgment_interest_rate_percent",
+      "label": "Prejudgment interest rate (%)",
+      "value": 3.875,
+      "page": 3,
+      "box": {
+        "xmin": 0.18015,
+        "ymin": 0.59952,
+        "xmax": 0.53407,
+        "ymax": 0.66852
+      },
+      "range": {
+        "end": 4297,
+        "start": 4169
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-prejudgment_interest_rate_percent.png"
+    },
+    {
+      "path": "amounts_due.late_charges",
+      "label": "Late charges",
+      "value": 98.6,
+      "page": 3,
+      "box": {
+        "xmin": 0.53407,
+        "ymin": 0.66542,
+        "xmax": 0.71507,
+        "ymax": 0.68343
+      },
+      "range": {
+        "end": 4383,
+        "start": 4377
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-late_charges.png"
+    },
+    {
+      "path": "amounts_due.other_costs_and_fees",
+      "label": "Other costs and fees",
+      "value": 31214.73,
+      "page": 3,
+      "box": {
+        "xmin": 0.53409,
+        "ymin": 0.68237,
+        "xmax": 0.71507,
+        "ymax": 0.70051
+      },
+      "range": {
+        "end": 4475,
+        "start": 4466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-other_costs_and_fees.png"
+    }
+  ]
+}

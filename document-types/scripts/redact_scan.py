@@ -193,7 +193,15 @@ def ink_metrics(image: Image.Image, rect: pymupdf.Rect) -> tuple[float, float] |
     if run:
         bands.append(run)
     band = max(bands, key=lambda b: sum(rows[y] for y in b))
-    return band[-1] - band[0] + 1, box[1] + band[-1] + 1
+    # In mixed case the busy band is the x-height: capitals and ascenders are too thin
+    # to clear the threshold. Climb from the band's top through any ink at all, up to
+    # the band's own height again, so the stand-in is sized to the capitals and the
+    # paint reaches their tops. Without this, "Name, Jr." came back half size, with
+    # the original's capitals left as specks above it.
+    top, limit = band[0], max(0, band[0] - len(band))
+    while top > limit and rows[top - 1] > 0:
+        top -= 1
+    return band[-1] - top + 1, box[1] + band[-1] + 1
 
 
 def paint(image: Image.Image, rect: pymupdf.Rect, text: str, covered: str,
