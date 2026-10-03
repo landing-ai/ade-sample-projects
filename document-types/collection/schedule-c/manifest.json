@@ -1,0 +1,26 @@
+{
+  "slug": "schedule-c",
+  "title": "Schedule C",
+  "source": {
+    "file": "schedule-c-2025-irs-ats-scenario-12.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-12-10292025.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "TY2025 Form 1040 MeF Assurance Testing System (ATS) Test Scenario 12, Schedule C (pages 8-9)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Published by the IRS for e-file software developers as part of the Tax Year 2025 Form 1040 series MeF Assurance Testing System, and linked from irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information. A US government work, in the public domain. Downloaded by script. The source is a 15-page scenario packet (cover sheet, Form 1040, Schedules 1, 2, C and SE, Forms 7206 and 7217, and a W-2); pages 8-9, the completed Schedule C (2025), were split out with PyMuPDF and no content was altered. Every value is IRS test data for a fictitious sole proprietor: the SSN is in the 400-00 range the ATS reserves for test scenarios and the address is in Anytown. No redaction needed. PDF metadata was reset to the IRS as author and a title naming the scenario. The IRS may replace this file in place, so the committed copy is the record."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "business.business_name", "label": "Business name (line C)", "occurrence": 0 },
+    { "path": "income.line_1_gross_receipts", "label": "Gross receipts (line 1)", "occurrence": 0 },
+    { "path": "income.line_7_gross_income", "label": "Gross income (line 7)", "occurrence": 0 },
+    { "path": "expenses.line_28_total_expenses", "label": "Total expenses (line 28)", "occurrence": 0 },
+    { "path": "line_31_net_profit_or_loss", "label": "Net profit (line 31)", "occurrence": 0 }
+  ],
+  "notes": "The request had no feature_page or fields keys; its notes suggested business name, line 1 gross receipts, line 7 gross income, line 28 total expenses and line 31 net profit, preferring Part I and the summary lines over the two-column Part II grid. All five ground ok on page 1 and shipped as suggested. The story runs down the page from the business to its bottom line: ENERGY BUILD takes in 35,235, spends 10,907 and nets 24,328. 35,235 is printed on lines 1, 3, 5 and 7, and lines 1 and 7 each ground to their own amount cell. No person is featured. Page 2 (Parts III to V) is blank on the form and is kept so the folder holds the complete schedule. Known extraction faults, left visible: blank amount lines extract as 0 rather than null; line 32 (at risk) extracts as all_at_risk and line J (filed required 1099s) as false, although both boxes on each line are unchecked and the parse reads them as [ ]. One extraction-only rerun with descriptions asking for null on unchecked boxes and empty cells changed nothing. None of these is featured."
+}
