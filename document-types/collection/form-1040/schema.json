@@ -1,0 +1,416 @@
+{
+  "type": "object",
+  "description": "IRS Form 1040, U.S. Individual Income Tax Return, pages 1 and 2",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The tax year printed in the form header, e.g. 2025"
+    },
+    "taxpayer": {
+      "type": "object",
+      "description": "The primary taxpayer",
+      "properties": {
+        "first_name_and_initial": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Your first name and middle initial, as printed"
+        },
+        "last_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Your last name"
+        },
+        "ssn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Your social security number, as NNN-NN-NNNN"
+        }
+      }
+    },
+    "spouse": {
+      "type": "object",
+      "description": "The spouse, on a joint return",
+      "properties": {
+        "first_name_and_initial": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Spouse's first name and middle initial, as printed"
+        },
+        "last_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Spouse's last name"
+        },
+        "ssn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Spouse's social security number, as NNN-NN-NNNN"
+        }
+      }
+    },
+    "address": {
+      "type": "object",
+      "description": "Home address",
+      "properties": {
+        "street": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Home address, number and street"
+        },
+        "apartment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Apt. no."
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City, town, or post office"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as a two-letter code"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code"
+        }
+      }
+    },
+    "filing_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "single",
+        "married_filing_jointly",
+        "married_filing_separately",
+        "head_of_household",
+        "qualifying_surviving_spouse",
+        null
+      ],
+      "description": "The Filing Status box that is checked. Only one box may be checked"
+    },
+    "digital_assets": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "yes",
+        "no",
+        null
+      ],
+      "description": "Answer to the Digital Assets question: 'yes' if the Yes box is checked, 'no' if the No box is checked"
+    },
+    "income": {
+      "type": "object",
+      "description": "Income section, lines 1a to 11a",
+      "properties": {
+        "wages_w2_box1": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1a: total amount from Form(s) W-2, box 1, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_earned_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1z: add lines 1a through 1h, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "tax_exempt_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2a: tax-exempt interest, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "taxable_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2b: taxable interest, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "qualified_dividends": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3a: qualified dividends, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "ordinary_dividends": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3b: ordinary dividends, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "ira_distributions_taxable": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 4b: IRA distributions, taxable amount, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "pensions_taxable": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5b: pensions and annuities, taxable amount, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "social_security_taxable": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 6b: social security benefits, taxable amount, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "capital_gain_or_loss": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7a: capital gain or (loss), in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "additional_income_schedule_1": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8: additional income from Schedule 1, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 9: total income, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "adjustments_to_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 10: adjustments to income from Schedule 1, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "adjusted_gross_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11a: adjusted gross income, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        }
+      }
+    },
+    "tax_and_credits": {
+      "type": "object",
+      "description": "Tax and Credits section, page 2, lines 11b to 24",
+      "properties": {
+        "standard_or_itemized_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 12e: standard deduction or itemized deductions, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "qualified_business_income_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13a: qualified business income deduction, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 14: add lines 12e, 13a and 13b, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "taxable_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15: taxable income, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16: tax, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_tax_before_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 18: add lines 16 and 17, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "child_tax_credit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 19: child tax credit or credit for other dependents, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "schedule_3_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 20: amount from Schedule 3, line 8, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 21: add lines 19 and 20, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 24: total tax, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        }
+      }
+    },
+    "payments": {
+      "type": "object",
+      "description": "Payments and Refundable Credits section, lines 25 to 33",
+      "properties": {
+        "withholding_w2": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25a: federal income tax withheld from Form(s) W-2, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "withholding_1099": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25b: federal income tax withheld from Form(s) 1099, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_withholding": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25d: add lines 25a through 25c, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "estimated_tax_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 26: estimated tax payments and amount applied from prior year, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "earned_income_credit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 27a: earned income credit, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "total_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 33: total payments, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        }
+      }
+    },
+    "refund": {
+      "type": "object",
+      "description": "Refund section",
+      "properties": {
+        "overpaid": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 34: amount overpaid, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "refund_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 35a: amount refunded to you, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        },
+        "routing_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 35b: direct deposit routing number. Null if blank"
+        },
+        "account_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "checking",
+            "savings",
+            null
+          ],
+          "description": "Line 35c: the account type whose box is checked ([x]). Null if both the Checking and Savings boxes are unchecked ([ ])"
+        },
+        "applied_to_next_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 36: amount applied to next year's estimated tax, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+        }
+      }
+    },
+    "amount_owed": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Line 37: amount you owe, in USD. Null if the amount cell for this line is empty; never write 0 for an empty line"
+    }
+  }
+}
