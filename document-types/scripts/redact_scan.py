@@ -36,6 +36,7 @@ import pymupdf
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pdfmeta  # noqa: E402
 from redact_outlined import _norm, find  # noqa: E402
 
 DPI = 300
@@ -320,8 +321,7 @@ def main() -> None:
         image.save(buf, "JPEG", quality=JPEG_QUALITY)
         new.insert_image(new.rect, stream=buf.getvalue())
 
-    out.set_metadata({})
-    out.del_xml_metadata()
+    pdfmeta.clear(out)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     out.save(args.output, garbage=4, deflate=True, clean=True)
 
@@ -340,9 +340,8 @@ def main() -> None:
             d = "".join(c for c in term if c.isdigit())
             if _norm(term) in flat or (len(d) >= 5 and d in digits):
                 failures.append((page.number + 1, i))
-    meta = {k: v for k, v in check.metadata.items() if v and k != "format"}
-    if meta:
-        failures.append(("metadata", sorted(meta)))
+    if pdfmeta.remaining(check):
+        failures.append(("metadata", pdfmeta.remaining(check)))
     if failures:
         sys.exit(f"FAILED: originals survive (page, term #): {failures}")
     print(f"\nVerified: no original survives in {args.output} (OCR, literals and digits);"
