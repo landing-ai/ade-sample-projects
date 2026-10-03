@@ -1,0 +1,26 @@
+{
+  "slug": "business-profit-and-loss-statement",
+  "title": "Business Profit and Loss Statement",
+  "source": {
+    "file": "business-profit-and-loss-statement-score-quickbooks-sample.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://s3.amazonaws.com/mentoring.redesign/s3fs-public/2017-11%20Need%20Answers%20About%20Accounting.pdf",
+      "publisher": "Champlain Valley SCORE, with Davis & Hodgdon Associates CPAs",
+      "title": "Need Answers About Accounting? (2017-2018 Education Series handout)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Workshop handout from the Champlain Valley chapter of SCORE (the SBA-affiliated small-business mentoring nonprofit), presented with Davis & Hodgdon Associates CPAs, and served from SCORE's own file store (the mentoring.redesign S3 bucket behind score.org). Every page carries the Champlain Valley SCORE and Davis & Hodgdon logos. Downloaded by script. The score.org page that links the file could not be confirmed (the chapter site refuses scripted requests), so provenance rests on SCORE's file store and the branding. The source PDF is 16 pages (a balance sheet, two QuickBooks profit and loss reports, cash-flow templates, a slide deck and a reprinted software review); this folder keeps pages 2-3 only, the two profit and loss reports, split out with PyMuPDF. The company is Craig's Design and Landscaping Services, Intuit's fictional QuickBooks Online sample company, so every figure is demonstration data. No personal data, no redaction needed. The PDF metadata was reset to the publisher and a title naming the report."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "company_name", "label": "Company", "occurrence": 0 },
+    { "path": "reports[0].columns[0].total_income", "label": "Total income (Aug 2017)", "occurrence": 0 },
+    { "path": "reports[0].columns[0].total_expenses", "label": "Total expenses (Aug 2017)", "occurrence": 0 },
+    { "path": "reports[0].columns[0].net_income", "label": "Net income (Aug 2017)", "occurrence": 0 },
+    { "path": "reports[0].columns[1].net_income", "label": "Net income (Jul 2017)", "occurrence": 0 }
+  ],
+  "notes": "The request suggested company name, total income (Aug), total expenses (Aug) and net income (Jul); all four shipped as suggested, all on page 1, the profit and loss comparison. Net income for August was added as a fifth field so the overlay reads as one story: August income of $942.00 against $961.68 of expenses gives a $19.68 loss, printed '$ -19.68' and extracted as -19.68, beside July's $112.92 profit in the prior-period column. The two net income fields share a label pattern and sit in different columns of the same row, which shows the extraction keeping comparison columns apart. company_name is pinned to occurrence 0, the report header; its second range lands on the SCORE logo text at the page break. The figures are small (hundreds of dollars a month) because the company is Intuit's QuickBooks sample company. No person is named anywhere in the document."
+}
