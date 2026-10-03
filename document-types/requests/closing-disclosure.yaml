@@ -1,0 +1,25 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Closing Disclosure
+url: https://files.consumerfinance.gov/f/201311_cfpb_kbyo_closing-disclosure.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: Consumer Financial Protection Bureau. Provenance checked: CFPB's Closing
+  Disclosure explainer page links 201311_cfpb_kbyo_closing-disclosure.pdf on
+  files.consumerfinance.gov. Source: 5 pages. Layer: text. Redaction tool expected:
+  none. Personal data: none: specimen. Not a competitor sample. Clearance expected:
+  public. Purchase-loan sample (the same form pages as Regulation Z Appendix H-25(B),
+  without the cover sheet). Avoid the page 1 header's three side-by-side columns and the
+  header dates. Research notes: Official fully filled 5-page form, no cover sheet. Same
+  content as Appendix H-25(B). Suggested fields, as suggestions only: Loan amount
+  $162,000; Interest rate 3.875%; Monthly P&I $761.78; Prepayment penalty YES, up to
+  $3,240; Cash to close $14,147.26.
