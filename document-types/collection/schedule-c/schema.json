@@ -1,0 +1,483 @@
+{
+  "type": "object",
+  "description": "IRS Schedule C (Form 1040), Profit or Loss From Business (Sole Proprietorship), pages 1 and 2",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The tax year printed in the form header, e.g. 2025"
+    },
+    "proprietor": {
+      "type": "object",
+      "description": "The sole proprietor filing the schedule",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of proprietor, as printed"
+        },
+        "ssn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Proprietor's social security number, as NNN-NN-NNNN"
+        }
+      }
+    },
+    "business": {
+      "type": "object",
+      "description": "Business information, lines A through E",
+      "properties": {
+        "principal_business_or_profession": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line A: principal business or profession, including product or service"
+        },
+        "business_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line B: the six-digit principal business code entered from the instructions, digits only"
+        },
+        "business_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line C: business name. Null if left blank"
+        },
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line D: employer ID number. Null if blank"
+        },
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line E: business street address, including suite or room number"
+        },
+        "city_state_zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line E: city, town or post office, state and ZIP code, as printed"
+        }
+      }
+    },
+    "accounting_method": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "cash",
+        "accrual",
+        "other",
+        null
+      ],
+      "description": "Line F: the accounting method whose box is checked. Null if no box is checked"
+    },
+    "materially_participated": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Line G: did the proprietor materially participate in the business during the year True if Yes is checked, false if No is checked, null if neither box is checked."
+    },
+    "started_or_acquired_this_year": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Line H: true if the box is checked (business started or acquired this year), false if unchecked"
+    },
+    "made_payments_requiring_1099": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Line I: did the business make payments that would require filing Form(s) 1099 True if Yes is checked, false if No is checked, null if neither box is checked."
+    },
+    "filed_required_1099s": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Line J: true only if the Yes box reads [x], false only if the No box reads [x]. If both Yes and No read [ ] (unchecked), return null"
+    },
+    "income": {
+      "type": "object",
+      "description": "Part I, Income",
+      "properties": {
+        "line_1_gross_receipts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1: gross receipts or sales. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_1_statutory_employee": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Line 1 checkbox: true if checked (income reported on a W-2 with the statutory employee box checked), false if unchecked"
+        },
+        "line_2_returns_and_allowances": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2: returns and allowances. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_3_net_receipts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3: line 1 minus line 2. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_4_cost_of_goods_sold": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 4: cost of goods sold, from line 42. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_5_gross_profit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5: gross profit, line 3 minus line 4. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_6_other_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 6: other income, including fuel tax credit or refund. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_7_gross_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7: gross income, lines 5 plus 6. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        }
+      }
+    },
+    "expenses": {
+      "type": "object",
+      "description": "Part II, Expenses. Each amount comes from the amount cell beside its own line number; the grid has two columns, lines 8-17 on the left and 18-27b on the right",
+      "properties": {
+        "line_8_advertising": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8: advertising. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_9_car_and_truck": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 9: car and truck expenses. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_10_commissions_and_fees": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 10: commissions and fees. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_11_contract_labor": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11: contract labor. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_12_depletion": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 12: depletion. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_13_depreciation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13: depreciation and section 179 expense deduction. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_14_employee_benefit_programs": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 14: employee benefit programs. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_15_insurance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15: insurance other than health. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_16a_mortgage_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16a: mortgage interest paid to banks. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_16b_other_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16b: other interest. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_17_legal_and_professional": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 17: legal and professional services. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_18_office_expense": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 18: office expense. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_19_pension_and_profit_sharing": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 19: pension and profit-sharing plans. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_20a_rent_vehicles_equipment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 20a: rent or lease of vehicles, machinery and equipment. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_20b_rent_other_property": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 20b: rent or lease of other business property. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_21_repairs_and_maintenance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 21: repairs and maintenance. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_22_supplies": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 22: supplies not included in Part III. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_23_taxes_and_licenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23: taxes and licenses. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_24a_travel": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 24a: travel. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_24b_deductible_meals": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 24b: deductible meals. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_25_utilities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25: utilities. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_26_wages": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 26: wages less employment credits. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_27a_energy_efficient_buildings": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 27a: energy efficient commercial buildings deduction. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_27b_other_expenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 27b: other expenses, from line 48. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_28_total_expenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 28: total expenses before expenses for business use of home. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_29_tentative_profit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 29: tentative profit or (loss), line 7 minus line 28. Negative for a loss. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_30_business_use_of_home": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 30: expenses for business use of home. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        }
+      }
+    },
+    "line_31_net_profit_or_loss": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Line 31: net profit or (loss), line 29 minus line 30. Negative for a loss. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+    },
+    "line_32_at_risk": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "all_at_risk",
+        "some_not_at_risk",
+        null
+      ],
+      "description": "Line 32 (32a or 32b): the at-risk box marked [x]. Only filled in when line 31 is a loss. If both boxes read [ ] (unchecked), return null; do not infer all_at_risk"
+    },
+    "cost_of_goods_sold": {
+      "type": "object",
+      "description": "Part III, Cost of Goods Sold, on page 2",
+      "properties": {
+        "line_35_beginning_inventory": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 35: inventory at beginning of year. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_36_purchases": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 36: purchases less cost of items withdrawn for personal use. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_40_total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 40: lines 35 through 39 added. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_41_ending_inventory": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 41: inventory at end of year. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        },
+        "line_42_cost_of_goods_sold": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 42: cost of goods sold. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        }
+      }
+    },
+    "vehicle_placed_in_service": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Part IV, line 43: date the vehicle was placed in service for business, as YYYY-MM-DD. Null if blank"
+    },
+    "other_expenses": {
+      "type": "object",
+      "description": "Part V, Other Expenses, on page 2",
+      "properties": {
+        "items": {
+          "type": "array",
+          "description": "Each other-expense line listed in Part V. Empty if none are listed",
+          "items": {
+            "type": "object",
+            "description": "One other expense",
+            "properties": {
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Description of the expense"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Amount of the expense. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+              }
+            }
+          }
+        },
+        "line_48_total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 48: total other expenses. If the amount cell for this line is empty, return null, not 0; return 0 only if a 0 is printed."
+        }
+      }
+    }
+  }
+}
