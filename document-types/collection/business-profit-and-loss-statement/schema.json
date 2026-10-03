@@ -1,0 +1,99 @@
+{
+  "type": "object",
+  "description": "A small-business profit and loss statement (income statement) as exported from accounting software, possibly containing more than one report, such as a period comparison and a year-to-date report",
+  "properties": {
+    "company_name": {
+      "type": ["string", "null"],
+      "description": "The business the statements are for, as printed in the report header"
+    },
+    "accounting_basis": {
+      "type": ["string", "null"],
+      "enum": ["accrual", "cash", null],
+      "description": "Accounting basis printed on the report, e.g. 'Accrual Basis' gives accrual"
+    },
+    "reports": {
+      "type": "array",
+      "description": "Each separate profit and loss report in the document, in order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "report_title": {
+            "type": ["string", "null"],
+            "description": "The report title as printed, e.g. 'PROFIT AND LOSS COMPARISON'"
+          },
+          "report_period": {
+            "type": ["string", "null"],
+            "description": "The period line under the title, as printed, e.g. 'August 2017' or 'January - August, 2017'"
+          },
+          "generated_at": {
+            "type": ["string", "null"],
+            "description": "The date and time the report was run, as printed in the footer"
+          },
+          "columns": {
+            "type": "array",
+            "description": "One entry per amount column. A single-period report has one column; a comparison report has one per period, e.g. the current period and the prior period (PP)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "column_label": {
+                  "type": ["string", "null"],
+                  "description": "The column heading as printed, e.g. 'AUG 2017', 'JUL 2017 (PP)' or 'TOTAL'"
+                },
+                "total_income": {
+                  "type": ["number", "null"],
+                  "description": "The Total Income line for this column"
+                },
+                "gross_profit": {
+                  "type": ["number", "null"],
+                  "description": "The Gross Profit line for this column"
+                },
+                "total_expenses": {
+                  "type": ["number", "null"],
+                  "description": "The Total Expenses line for this column"
+                },
+                "net_operating_income": {
+                  "type": ["number", "null"],
+                  "description": "The Net Operating Income line for this column. Negative when printed with a minus sign"
+                },
+                "net_income": {
+                  "type": ["number", "null"],
+                  "description": "The Net Income line for this column. Negative when printed with a minus sign"
+                },
+                "line_items": {
+                  "type": "array",
+                  "description": "Every account line with an amount in this column, including subtotal lines, in printed order. Skip lines blank in this column",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "section": {
+                        "type": ["string", "null"],
+                        "enum": ["income", "expenses", null],
+                        "description": "The section the line sits under"
+                      },
+                      "account": {
+                        "type": ["string", "null"],
+                        "description": "The account name as printed, e.g. 'Fountains and Garden Lighting' or 'Total Job Materials'"
+                      },
+                      "parent_account": {
+                        "type": ["string", "null"],
+                        "description": "The account this line is indented under, if any, e.g. 'Job Materials'"
+                      },
+                      "is_subtotal": {
+                        "type": ["boolean", "null"],
+                        "description": "True for a 'Total ...' subtotal line"
+                      },
+                      "amount": {
+                        "type": ["number", "null"],
+                        "description": "The amount in this column"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

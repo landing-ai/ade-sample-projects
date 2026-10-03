@@ -1,0 +1,29 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Business Profit and Loss Statement
+url: https://s3.amazonaws.com/mentoring.redesign/s3fs-public/2017-11%20Need%20Answers%20About%20Accounting.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: SCORE Champlain Valley chapter with Davis & Hodgdon CPAs. Provenance
+  checked: PDF is in SCORE's own file store and branded Champlain Valley SCORE; the
+  score.org page linking it could not be confirmed (chapter site now 403s to scripts).
+  Source: 16 pages; use page(s) 2-3. Layer: text. Redaction tool expected: none.
+  Personal data: none: specimen (Intuit's fictional Craig's Design and Landscaping). Not
+  a competitor sample. Clearance expected: public. Use pages 2-3 only (QuickBooks Profit
+  and Loss comparison and YTD); the rest is a balance sheet, cash-flow templates and a
+  slide deck. Amounts are small (hundreds to low thousands of dollars). The score.org
+  page that links the file could not be confirmed; provenance rests on SCORE's own file
+  store and the chapter branding on every page. Research notes: Genuine QuickBooks P&L
+  exports (period comparison and YTD). Amounts unrealistically small ($942 a month).
+  Linking page not confirmed. Suggested fields, as suggestions only: Company Craig's
+  Design and Landscaping; Total income (Aug) $942.00; Total expenses (Aug) $961.68; Net
+  income (Jul) $112.92.
