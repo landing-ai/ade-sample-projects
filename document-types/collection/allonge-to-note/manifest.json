@@ -1,0 +1,35 @@
+{
+  "slug": "allonge-to-note",
+  "title": "Allonge to Note",
+  "source": {
+    "file": "allonge-to-note-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://oregonsheriffssales.org/wp-content/uploads/2025/01/384277-Writ.pdf",
+      "publisher": "Multnomah County Circuit Court record, posted by the Oregon State Sheriffs' Association sales site",
+      "title": "Allonge to Note (Exhibit 1, page 4 of 5, to a General Judgment of Foreclosure and Sale)",
+      "retrieved": "2026-10-02",
+      "clearance": "redacted",
+      "clearance_note": "Page 12 of a 13-page scanned foreclosure sale packet (writ of execution, general judgment of foreclosure, promissory note and two allonges) that the sheriffs' sales site posts publicly for a Multnomah County foreclosure sale; downloaded by script. Only this page, the allonge with a specific endorsement, is used. The packet is a public court record, but it is a foreclosure of a deceased private borrower's home, so the borrower's name, the property's street address and its ZIP code were replaced. The scan has no text layer and no vector glyphs, so the new document-types/scripts/redact_scan.py did it in the pixels: Tesseract OCR locates each string, the pixels are painted over with the paper's tone and the stand-in is drawn at the original's cap height and ink colour, and the page is rebuilt from the edited image alone, so the original raster is not in the output. The source's /Rotate and its metadata are not carried over. The loan number was already blacked out by the filer before scanning and is left as it is. Verified by OCR, on literals and bare digits: no original value survives in the committed PDF or anywhere in this folder. The endorser's authorized representative is kept: they sign in a corporate capacity. The stand-ins are shared with the promissory-note, writ-of-execution and foreclosure-judgment samples from the same packet.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          { "what": "borrower's name", "with": "JOHN Q SAMPLE", "occurrences": 1 },
+          { "what": "property street address", "with": "100 SAMPLE AVE", "occurrences": 1 },
+          { "what": "property ZIP code", "with": "97000", "occurrences": 1 }
+        ],
+        "already_blacked_out_at_source": ["loan number"]
+      },
+      "split_from": { "pages": [12], "of": 13 }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "property_address", "label": "Property address", "occurrence": 0 },
+    { "path": "principal_balance", "label": "Principal balance", "occurrence": 0 },
+    { "path": "pay_to_the_order_of", "label": "Pay to the order of", "occurrence": 0 },
+    { "path": "endorser", "label": "Endorser (without recourse)", "occurrence": 0 }
+  ],
+  "notes": "The request asked for page 12 of the packet on its own, the allonge with a specific endorsement, and named no fields. Features the transfer: which note (by its property and principal), to whom it is endorsed, and by whom. The borrower is left out although the name is a stand-in. The signer's name and title are correct but ground to the parse's figure description of the signature, not to the printed title line, so they are not featured. without_recourse and endorsement_type are correct but read OFF, being a boolean and an inferred category. loan_number and co_borrower come back as the string 'null' rather than JSON null; the parse reads the blackout as [ILLEGIBLE_TEXT]."
+}
