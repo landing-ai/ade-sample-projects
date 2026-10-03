@@ -1,0 +1,25 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Schedule K-1
+url: https://www.irs.gov/pub/irs-wi/ty25-f1065-ats-scenario01.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: IRS (MeF ATS). Provenance checked: IRS TY2025 Form 1065 ATS page links
+  ty25-f1065-ats-scenario01.pdf; serves application/pdf. Source: 28 pages; use page(s)
+  12. Layer: text. Redaction tool expected: none. Personal data: none: specimen. Not a
+  competitor sample. Clearance expected: public. Operator accepted the recommendation
+  (the partnership K-1). Use page 12 only. Part III pairs box numbers, code letters and
+  amounts in a grid; check pairing. Research notes: Richest K-1: Parts I-III,
+  checkboxes, capital account analysis. Box/code/amount grid pairing risk. Suggested
+  fields, as suggestions only: Box 1 Ordinary business income 8,068,141; Box 19A
+  Distributions 7,514,031; L Ending capital account 9,118,401; J Profit share ending
+  10%; K1 Nonrecourse liabilities ending 1,100,000.

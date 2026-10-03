@@ -1,0 +1,618 @@
+{
+  "type": "object",
+  "description": "IRS Schedule K-1 (Form 1065), Partner's Share of Income, Deductions, Credits, etc. One page.",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year printed in the form header, e.g. 2025"
+    },
+    "tax_period_beginning": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tax year beginning date as printed, MM/DD/YYYY"
+    },
+    "tax_period_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tax year ending date as printed, MM/DD/YYYY"
+    },
+    "final_k1": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the Final K-1 box at the top is checked"
+    },
+    "amended_k1": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the Amended K-1 box at the top is checked"
+    },
+    "partnership": {
+      "type": "object",
+      "description": "Part I, Information About the Partnership",
+      "properties": {
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item A, partnership's employer identification number, as NN-NNNNNNN"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item B, the partnership's name (first line only)"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item B, the partnership's street address, city, state and ZIP, as printed after the name"
+        },
+        "irs_center": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item C, IRS center where the partnership filed its return"
+        },
+        "publicly_traded": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item D, true if the publicly traded partnership (PTP) box is checked"
+        }
+      }
+    },
+    "partner": {
+      "type": "object",
+      "description": "Part II, Information About the Partner",
+      "properties": {
+        "tin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item E, partner's SSN or TIN"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item F, the partner's name (first line only)"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item F, the partner's address as printed after the name"
+        },
+        "partner_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item G, which box is checked: 'general_partner_or_llc_member_manager' or 'limited_partner_or_other_llc_member'"
+        },
+        "domestic_or_foreign": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item H1, which box is checked: 'domestic' or 'foreign'"
+        },
+        "entity_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item I1, the type of entity this partner is, as printed, e.g. INDIVIDUAL"
+        },
+        "retirement_plan": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item I2, true if the retirement plan box is checked"
+        },
+        "share_percentages": {
+          "type": "object",
+          "description": "Item J, partner's share of profit, loss and capital, as percentages (10 for 10%)",
+          "properties": {
+            "profit_beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Profit share, beginning. A number without commas or currency symbols; null if the line is blank"
+            },
+            "profit_ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Profit share, ending. A number without commas or currency symbols; null if the line is blank"
+            },
+            "loss_beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Loss share, beginning. A number without commas or currency symbols; null if the line is blank"
+            },
+            "loss_ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Loss share, ending. A number without commas or currency symbols; null if the line is blank"
+            },
+            "capital_beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Capital share, beginning. A number without commas or currency symbols; null if the line is blank"
+            },
+            "capital_ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Capital share, ending. A number without commas or currency symbols; null if the line is blank"
+            }
+          }
+        },
+        "liabilities": {
+          "type": "object",
+          "description": "Item K1, partner's share of liabilities",
+          "properties": {
+            "nonrecourse_beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Nonrecourse, beginning column. A number without commas or currency symbols; null if the line is blank"
+            },
+            "nonrecourse_ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Nonrecourse, ending column. A number without commas or currency symbols; null if the line is blank"
+            },
+            "qualified_nonrecourse_beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Qualified nonrecourse financing, beginning column. A number without commas or currency symbols; null if the line is blank"
+            },
+            "qualified_nonrecourse_ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Qualified nonrecourse financing, ending column. A number without commas or currency symbols; null if the line is blank"
+            },
+            "recourse_beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Recourse, beginning column. A number without commas or currency symbols; null if the line is blank"
+            },
+            "recourse_ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Recourse, ending column. A number without commas or currency symbols; null if the line is blank"
+            }
+          }
+        },
+        "capital_account": {
+          "type": "object",
+          "description": "Item L, Partner's Capital Account Analysis",
+          "properties": {
+            "beginning": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Beginning capital account. A number without commas or currency symbols; null if the line is blank"
+            },
+            "contributed": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Capital contributed during the year. A number without commas or currency symbols; null if the line is blank"
+            },
+            "current_year_net_income": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Current year net income (loss). A number without commas or currency symbols; null if the line is blank"
+            },
+            "other_increase_decrease": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Other increase (decrease). A number without commas or currency symbols; null if the line is blank"
+            },
+            "withdrawals_and_distributions": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Withdrawals and distributions, as a positive number even though printed in parentheses. A number without commas or currency symbols; null if the line is blank"
+            },
+            "ending": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Ending capital account. A number without commas or currency symbols; null if the line is blank"
+            }
+          }
+        },
+        "contributed_property_with_builtin_gain": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item M, true if Yes is checked, false if No is checked"
+        }
+      }
+    },
+    "income": {
+      "type": "object",
+      "description": "Part III, boxes 1 to 11",
+      "properties": {
+        "ordinary_business_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 1, ordinary business income (loss). A number without commas or currency symbols; null if the line is blank"
+        },
+        "net_rental_real_estate_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 2, net rental real estate income (loss). A number without commas or currency symbols; null if the line is blank"
+        },
+        "other_net_rental_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 3, other net rental income (loss). A number without commas or currency symbols; null if the line is blank"
+        },
+        "guaranteed_payments_services": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4a, guaranteed payments for services. A number without commas or currency symbols; null if the line is blank"
+        },
+        "guaranteed_payments_capital": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4b, guaranteed payments for capital. A number without commas or currency symbols; null if the line is blank"
+        },
+        "total_guaranteed_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4c, total guaranteed payments. A number without commas or currency symbols; null if the line is blank"
+        },
+        "interest_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 5, interest income. A number without commas or currency symbols; null if the line is blank"
+        },
+        "ordinary_dividends": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 6a, ordinary dividends. A number without commas or currency symbols; null if the line is blank"
+        },
+        "qualified_dividends": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 6b, qualified dividends. A number without commas or currency symbols; null if the line is blank"
+        },
+        "royalties": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 7, royalties. A number without commas or currency symbols; null if the line is blank"
+        },
+        "net_short_term_capital_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 8, net short-term capital gain (loss). A number without commas or currency symbols; null if the line is blank"
+        },
+        "net_long_term_capital_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 9a, net long-term capital gain (loss). A number without commas or currency symbols; null if the line is blank"
+        },
+        "net_section_1231_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 10, net section 1231 gain (loss). A number without commas or currency symbols; null if the line is blank"
+        },
+        "other_income": {
+          "type": "array",
+          "description": "Box 11, other income (loss). One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        }
+      }
+    },
+    "deductions_and_other_items": {
+      "type": "object",
+      "description": "Part III, boxes 12 to 23",
+      "properties": {
+        "section_179_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 12, section 179 deduction. A number without commas or currency symbols; null if the line is blank"
+        },
+        "other_deductions": {
+          "type": "array",
+          "description": "Box 13, other deductions. One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "self_employment_earnings": {
+          "type": "array",
+          "description": "Box 14, self-employment earnings (loss). One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "credits": {
+          "type": "array",
+          "description": "Box 15, credits. One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "schedule_k3_attached": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Box 16, true if the Schedule K-3 box is checked"
+        },
+        "amt_items": {
+          "type": "array",
+          "description": "Box 17, alternative minimum tax (AMT) items. One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "tax_exempt_and_nondeductible": {
+          "type": "array",
+          "description": "Box 18, tax-exempt income and nondeductible expenses. One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "distributions": {
+          "type": "array",
+          "description": "Box 19, distributions. One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "other_information": {
+          "type": "array",
+          "description": "Box 20, other information. One entry per code letter and amount pair printed in this box; empty if the box is blank",
+          "items": {
+            "type": "object",
+            "description": "A code letter and its amount, read from the same row of the box",
+            "properties": {
+              "code": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code letter printed at the left of the row, e.g. A"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount printed on the same row as this code. A number without commas or currency symbols; null if the line is blank"
+              }
+            }
+          }
+        },
+        "foreign_taxes_paid": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 21, foreign taxes paid or accrued. A number without commas or currency symbols; null if the line is blank"
+        },
+        "multiple_activities_at_risk": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Box 22, true if checked"
+        },
+        "multiple_activities_passive": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Box 23, true if checked"
+        }
+      }
+    }
+  }
+}
