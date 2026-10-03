@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "ein": {
+      "type": ["string", "null"],
+      "description": "The Employer Identification Number the notice assigns, exactly as printed in the header block, e.g. '12-3456789'"
+    },
+    "notice": {
+      "type": "object",
+      "description": "The notice's own identifiers, from the header block at the top right of page 1",
+      "properties": {
+        "notice_number": {
+          "type": ["string", "null"],
+          "description": "The number of this notice, exactly as printed, e.g. 'CP 575 A'"
+        },
+        "notice_date": {
+          "type": ["string", "null"],
+          "description": "The date of this notice, exactly as printed in the page 1 header block, without reformatting"
+        },
+        "form": {
+          "type": ["string", "null"],
+          "description": "The application form the notice responds to, e.g. 'SS-4'"
+        },
+        "revision": {
+          "type": ["string", "null"],
+          "description": "The notice's form revision printed above the tear-off stub, e.g. 'CP 575 A (Rev. 7-2007)'"
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "description": "The business the EIN was assigned to, as named in the mailing address block",
+      "properties": {
+        "legal_name": {
+          "type": ["string", "null"],
+          "description": "The entity's legal name, the first line of the mailing address block"
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "The entity's street, city, state and ZIP from the mailing address block, as one line"
+        },
+        "name_control": {
+          "type": ["string", "null"],
+          "description": "The name control associated with the EIN, stated in the body text (usually four characters)"
+        }
+      }
+    },
+    "required_filings": {
+      "type": "array",
+      "description": "The forms the entity must file and their due dates, from the list after 'you must file the following forms by the dates shown'",
+      "items": {
+        "type": "object",
+        "properties": {
+          "form": {
+            "type": ["string", "null"],
+            "description": "The form to be filed, e.g. 'Form 1120'"
+          },
+          "due_date": {
+            "type": ["string", "null"],
+            "description": "The date it is due, exactly as printed"
+          }
+        }
+      }
+    },
+    "issuer": {
+      "type": "object",
+      "description": "The issuing office and how to contact it",
+      "properties": {
+        "agency": {
+          "type": ["string", "null"],
+          "description": "The issuing agency, e.g. 'Internal Revenue Service'"
+        },
+        "office_address": {
+          "type": ["string", "null"],
+          "description": "The issuing office's city, state and ZIP from the letterhead, as one line"
+        },
+        "assistance_phone": {
+          "type": ["string", "null"],
+          "description": "The phone number given for assistance in the header block"
+        }
+      }
+    }
+  }
+}
