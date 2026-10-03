@@ -1,0 +1,26 @@
+{
+  "slug": "ar-ap-aging-report",
+  "title": "Accounts Receivable and Payable Aging Report",
+  "source": {
+    "file": "CDFI-RFP-Attachment2.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://esd.ny.gov/sites/default/files/rfp/CDFI-RFP-Attachment2.pdf",
+      "publisher": "Empire State Development (New York State)",
+      "title": "Attachment 2: Sample Accounts Receivable Aging Report (CDFI RFP)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A sample accounts receivable aging report published by Empire State Development on its own domain (esd.ny.gov) as an attachment to a request for proposals for its CDFI lending program, to show applicants what an aging schedule should look like. The data is specimen data: a fictitious 'NYS CDFI' with eight sample customers. Downloaded directly by script, not manually. The page content is unchanged; the only edit was clearing the PDF's document-information metadata, whose author field named a state staff member. No redaction of page text was needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "totals.total_balance", "label": "Total accounts receivable", "occurrence": 0 },
+    { "path": "totals.current", "label": "Current", "occurrence": 0 },
+    { "path": "totals.days_1_30", "label": "1-30 days past due", "occurrence": 0 },
+    { "path": "totals.days_31_60", "label": "31-60 days past due", "occurrence": 0 },
+    { "path": "totals.over_oldest_bucket", "label": "Over 60 days past due", "occurrence": 0 }
+  ],
+  "notes": "The request named no page or fields; its notes suggested Total AR $11,200, Current $7,000, 1-30 days $3,000 and Over 60 days $300 as suggestions only. All four are featured, plus the 31-60 days total ($900), so the overlay shows the report's whole Total row: how $11,200 of receivables breaks down by age. The totals are featured rather than a customer row because they are the figures a lender reads first, and because every customer is a fictitious business, with no need to put one on the page. The report is AR only, despite the page title covering AR and AP, and its oldest bucket is 'Over 60 Days Past Due' rather than the more common 'Over 90'. The as-of date (June 30, 2016) is not featured, as the request asked."
+}

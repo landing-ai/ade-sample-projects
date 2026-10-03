@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "totals.total_balance",
+      "label": "Total accounts receivable",
+      "value": 11200,
+      "page": 1,
+      "box": {
+        "xmin": 0.49154,
+        "ymin": 0.53933,
+        "xmax": 0.56895,
+        "ymax": 0.568
+      },
+      "range": {
+        "end": 1427,
+        "start": 1420
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_balance.png"
+    },
+    {
+      "path": "totals.current",
+      "label": "Current",
+      "value": 7000,
+      "page": 1,
+      "box": {
+        "xmin": 0.56894,
+        "ymin": 0.53933,
+        "xmax": 0.64155,
+        "ymax": 0.56802
+      },
+      "range": {
+        "end": 1442,
+        "start": 1436
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-current.png"
+    },
+    {
+      "path": "totals.days_1_30",
+      "label": "1-30 days past due",
+      "value": 3000,
+      "page": 1,
+      "box": {
+        "xmin": 0.64155,
+        "ymin": 0.53933,
+        "xmax": 0.70898,
+        "ymax": 0.56803
+      },
+      "range": {
+        "end": 1457,
+        "start": 1451
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-days_1_30.png"
+    },
+    {
+      "path": "totals.days_31_60",
+      "label": "31-60 days past due",
+      "value": 900,
+      "page": 1,
+      "box": {
+        "xmin": 0.70897,
+        "ymin": 0.53933,
+        "xmax": 0.77102,
+        "ymax": 0.56805
+      },
+      "range": {
+        "end": 1471,
+        "start": 1466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-days_31_60.png"
+    },
+    {
+      "path": "totals.over_oldest_bucket",
+      "label": "Over 60 days past due",
+      "value": 300,
+      "page": 1,
+      "box": {
+        "xmin": 0.77101,
+        "ymin": 0.53933,
+        "xmax": 0.8645,
+        "ymax": 0.56807
+      },
+      "range": {
+        "end": 1485,
+        "start": 1480
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-over_oldest_bucket.png"
+    }
+  ]
+}

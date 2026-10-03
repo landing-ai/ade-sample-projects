@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "description": "An accounts receivable or accounts payable aging report: open balances per customer or vendor, split into buckets by how long they have been outstanding.",
+  "properties": {
+    "report_info": {
+      "type": "object",
+      "description": "Header information identifying the report.",
+      "properties": {
+        "report_type": {
+          "type": "string",
+          "enum": ["accounts_receivable", "accounts_payable"],
+          "description": "Whether the report ages amounts owed to the business by customers (accounts_receivable) or amounts the business owes to vendors (accounts_payable)."
+        },
+        "report_title": {
+          "type": "string",
+          "description": "The title of the aging report as printed, e.g. 'Accounts Receivable Aging Report'."
+        },
+        "company_name": {
+          "type": "string",
+          "description": "Name of the business whose receivables or payables are being aged, as printed in the report header."
+        },
+        "as_of_date": {
+          "type": "string",
+          "description": "The date the balances are aged as of, in YYYY-MM-DD format."
+        }
+      }
+    },
+    "aging_buckets": {
+      "type": "array",
+      "description": "The aging bucket column headings in the order they appear, from current to oldest, e.g. 'Current', '1-30 Days Past Due', 'Over 60 Days Past Due'.",
+      "items": {
+        "type": "string",
+        "description": "One aging bucket column heading as printed."
+      }
+    },
+    "accounts": {
+      "type": "array",
+      "description": "One entry per customer or vendor row in the report, in document order. Exclude the total row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Customer name (receivables) or vendor name (payables) for this row."
+          },
+          "classification": {
+            "type": ["string", "null"],
+            "description": "Any classification code printed for the account, such as an MWBE status (e.g. 'W' for women-owned, 'M' for minority-owned). Null if the cell is blank or a dash."
+          },
+          "program_funds_used": {
+            "type": ["number", "null"],
+            "description": "Amount of program or lender funds used for this account, if the report has such a column (e.g. 'ESD Funds Used'). Null if blank."
+          },
+          "total_balance": {
+            "type": "number",
+            "description": "Total open balance for the account across all aging buckets."
+          },
+          "current": {
+            "type": ["number", "null"],
+            "description": "Amount not yet due (the 'Current' bucket). Null if the cell shows a dash or is blank."
+          },
+          "days_1_30": {
+            "type": ["number", "null"],
+            "description": "Amount 1 to 30 days past due. Null if the cell shows a dash or is blank."
+          },
+          "days_31_60": {
+            "type": ["number", "null"],
+            "description": "Amount 31 to 60 days past due. Null if the cell shows a dash or is blank."
+          },
+          "days_61_90": {
+            "type": ["number", "null"],
+            "description": "Amount 61 to 90 days past due, only if the report has a separate 61-90 bucket. Null otherwise."
+          },
+          "over_oldest_bucket": {
+            "type": ["number", "null"],
+            "description": "Amount in the oldest, open-ended bucket, such as 'Over 60 Days Past Due' or 'Over 90 Days'. Null if the cell shows a dash or is blank."
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "The report's printed total row.",
+      "properties": {
+        "classified_account_count": {
+          "type": ["number", "null"],
+          "description": "Count printed in the total row of the classification column (e.g. number of MWBE accounts), if any."
+        },
+        "program_funds_used": {
+          "type": ["number", "null"],
+          "description": "Total program or lender funds used, if printed."
+        },
+        "total_balance": {
+          "type": "number",
+          "description": "Grand total of all open balances."
+        },
+        "current": {
+          "type": ["number", "null"],
+          "description": "Total of the 'Current' bucket."
+        },
+        "days_1_30": {
+          "type": ["number", "null"],
+          "description": "Total 1 to 30 days past due."
+        },
+        "days_31_60": {
+          "type": ["number", "null"],
+          "description": "Total 31 to 60 days past due."
+        },
+        "days_61_90": {
+          "type": ["number", "null"],
+          "description": "Total 61 to 90 days past due, only if the report has that bucket."
+        },
+        "over_oldest_bucket": {
+          "type": ["number", "null"],
+          "description": "Total of the oldest, open-ended bucket."
+        }
+      }
+    }
+  }
+}
