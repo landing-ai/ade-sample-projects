@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "title": "Property Tax Bill",
+  "description": "A county property tax statement: the taxing authority, the property and its owner, assessed values and levy rates, amounts due, past-due amounts, and the breakdown of tax by taxing district.",
+  "properties": {
+    "taxing_authority": {
+      "type": "object",
+      "description": "The office that issued the bill and receives payment.",
+      "properties": {
+        "name": {"type": "string", "description": "Name of the issuing office, e.g. the county treasurer."},
+        "phone": {"type": "string", "description": "The issuing office's phone number."},
+        "website": {"type": "string", "description": "The issuing office's website."},
+        "payment_remit_address": {"type": "string", "description": "Mailing address payments are sent to, from the payment coupon."}
+      }
+    },
+    "tax_year": {"type": "integer", "description": "The tax year the statement is for, as printed in the statement title."},
+    "property_account_number": {"type": "string", "description": "The property (parcel) account number."},
+    "property": {
+      "type": "object",
+      "description": "The property being taxed.",
+      "properties": {
+        "owner_name": {"type": "string", "description": "Name of the property owner."},
+        "escrow_company": {"type": "string", "description": "Escrow or mortgage company paying the taxes, or NONE as printed."},
+        "property_type": {"type": "string", "description": "Property type, e.g. REAL PROPERTY or PERSONAL PROPERTY."},
+        "property_address": {"type": "string", "description": "Situs address of the property."},
+        "legal_description": {"type": "string", "description": "Abbreviated legal description of the parcel."},
+        "tax_area": {"type": "string", "description": "Tax area code identifying the levy area."},
+        "tax_paid_prior_year": {"type": "number", "description": "Total tax paid in the prior year, in dollars."}
+      }
+    },
+    "value_information": {
+      "type": "array",
+      "description": "Assessed value and levy rate by year, one entry per row of the value table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "year": {"type": "integer", "description": "Tax year of the row."},
+          "assessed_value": {"type": "number", "description": "Assessed value in dollars."},
+          "percent_change": {"type": "number", "description": "Percent change in value from the prior year, as a number (9.17 for 9.17%). Null if not printed."},
+          "levy_rate": {"type": "string", "description": "Levy rate exactly as printed, with all decimal places."}
+        }
+      }
+    },
+    "amounts_due": {
+      "type": "object",
+      "description": "The account summary of amounts due.",
+      "properties": {
+        "due_date": {"type": "string", "description": "Date the first-half payment is due, as printed."},
+        "first_half_due": {"type": "number", "description": "First-half amount due, in dollars."},
+        "full_year_due": {"type": "number", "description": "Full-year amount due, in dollars."},
+        "past_due_amount": {"type": "number", "description": "Past-due amount, in dollars."}
+      }
+    },
+    "past_due_details": {
+      "type": "array",
+      "description": "Past-due amounts by year, one entry per row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "year": {"type": "string", "description": "Year label as printed, e.g. 2025 or 2023 & Prior."},
+          "taxes_fees_assessments": {"type": "number", "description": "Unpaid taxes, fees and assessments, in dollars."},
+          "interest_penalty": {"type": "number", "description": "Interest and penalty, in dollars."},
+          "total": {"type": "number", "description": "Row total, in dollars."}
+        }
+      }
+    },
+    "district_taxes": {
+      "type": "array",
+      "description": "Current-year tax and assessment detail, one entry per taxing district.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "district": {"type": "string", "description": "Name of the taxing district or assessment."},
+          "tax_amount": {"type": "number", "description": "Tax amount for that district, in dollars."}
+        }
+      }
+    },
+    "voter_approved_tax_amount": {"type": "number", "description": "Voter-approved tax amount, in dollars, from the note under the district detail."}
+  }
+}

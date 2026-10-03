@@ -1,0 +1,26 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Property Tax Bill
+url: https://clark.wa.gov/sites/default/files/media/document/2026-03/tax-statement-sample.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: Clark County (WA) Treasurer. Provenance checked: clark.wa.gov
+  'Understanding your tax bill' page links tax-statement-sample.pdf. Source: 11 pages;
+  use page(s) 1. Layer: text. Redaction tool expected: none. Personal data: none:
+  specimen (Treasurer named in professional capacity). Not a competitor sample.
+  Clearance expected: public. Use page 1 only; pages 2-11 are explainer pages. A teal
+  'Understanding your Tax Statement' banner and small lettered callouts sit on page 1.
+  Levy rates carry 10 decimal places. Research notes: Current, complete bill with escrow
+  company field, 13 taxing districts, half and full-year amounts; light lettered
+  callouts and a banner. Suggested fields, as suggestions only: First half due
+  $2,579.01; Full year due $5,157.93; Assessed value $756,979; School district tax
+  $345.47.
