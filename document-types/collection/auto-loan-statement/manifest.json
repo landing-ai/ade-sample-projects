@@ -1,0 +1,46 @@
+{
+  "slug": "auto-loan-statement",
+  "title": "Auto Loan Statement",
+  "source": {
+    "file": "gm-financial-sample-auto-loan-statement.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.gmfinancial.com/content/dam/gmf/myaccount/documents/Sample-Statement.pdf",
+      "publisher": "GM Financial",
+      "title": "GM Financial sample account statement (US retail billing statement)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "GM Financial's own sample statement, served from its MyAccount document path on gmfinancial.com as application/pdf and downloaded by script. Every page is a template: page 1 carries a large SAMPLE watermark, the dealer block reads 'Dealership name / Address line 1 / Address line 2 / City, State 01234 / 555-555-5555', the business hours read 'H a.m. to H p.m.', the second Account Details block is lorem ipsum, and the borrower is the placeholder 'JOHN Q SMITH'. The coupon's mailing address is a commercial office address in Las Colinas, Irving TX, not a residence. No redaction was needed. The page content is used exactly as published; the PDF metadata, whose author field carried a GM Financial employee's user ID, was cleared (Info dictionary and XMP)."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.make_model",
+      "label": "Vehicle",
+      "occurrence": 0
+    },
+    {
+      "path": "total_amount_due",
+      "label": "Total amount due",
+      "occurrence": 1
+    },
+    {
+      "path": "current_due[0].amount",
+      "label": "Current payment",
+      "occurrence": 0
+    },
+    {
+      "path": "payments_received[0].amount",
+      "label": "Last payment received",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no page or fields; its notes suggested the vehicle, total amount due, principal balance, term and account number as suggestions only, and asked to avoid the payment coupon, the lorem ipsum block and any date. Featured on page 1: the financed vehicle (model year and make/model), the total amount due in the statement header (occurrence 1; occurrence 0 is the same $496.31 on the payment coupon), the current payment in the transaction summary and the last payment received. Together they read as what is owed on which car this month, and that the last payment was made. Three suggested fields could not be featured. The Account Details panel (account number, account opened, current principal balance, terms) was parsed as a CHART figure with a reconstructed two-column table, so its values carry no cell-level grounding: account_number grounds to the 'Account Opened' label and current_principal_balance to 'Terms' (both OFF), and term_months has no ranges at all (SYNTH). The values themselves extract correctly. Dates are avoided as asked: the template's dates disagree (header and transactions 2022, coupon due date October 15, 2020, page-2 payment allocation 8/21/20 against 8/21/22 on page 1), and extraction returns each as printed. dealer_name extracts as 'Chevrolet Buick GMC' without 'Cadillac': the parse paired each dealer-name line with an address line as key-value text, so the third line became a key. There is no APR on the statement."
+}
