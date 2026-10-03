@@ -40,6 +40,7 @@ from redact_outlined import _norm, find  # noqa: E402
 
 DPI = 300
 DEFAULT_FONT = "/System/Library/Fonts/Supplemental/Arial.ttf"
+DEFAULT_BOLD_FONT = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 DARK = 140          # grey level below which a pixel counts as ink
 PAPER = 200         # grey level above which a pixel counts as paper
 PAD_PX = 4          # paint this far beyond the OCR box, to catch anti-aliased edges
@@ -78,14 +79,121 @@ def ocr_lines(image: Image.Image) -> list[list[dict]]:
 def line_metrics(words: list[dict], rect: pymupdf.Rect) -> tuple[float, float]:
     """(cap height, baseline) in pixels for the line a hit sits on, from its words that
     have capitals or digits and no descenders -- their boxes run cap top to baseline."""
-    line = [w for w in words if w["rect"].intersects(rect) or abs(w["rect"].y1 - rect.y1) < 12]
-    clean = [w["rect"] for w in line
-             if not (set(w["text"]) & DESCENDERS)
-             and any(c.isupper() or c.isdigit() for c in w["text"])]
+    def ok(w):
+        return (not (set(w["text"]) & DESCENDERS)
+                and any(c.isupper() or c.isdigit() for c in w["text"]))
+    # Prefer the line's OTHER words: a highlighter stroke over the hit makes its own
+    # OCR boxes taller than the type, which drew a replacement half again too large.
+    others = [w["rect"] for w in words if ok(w) and overlap(w["rect"], rect) < 0.3]
+    inside = [w["rect"] for w in words if ok(w)]
+    clean = others if len(others) >= 2 else inside
     if clean:
         return (statistics.median(r.height for r in clean),
                 statistics.median(r.y1 for r in clean))
     return rect.height * 0.8, rect.y1 - rect.height * 0.2
+
+
+def background(image: Image.Image, box: tuple) -> tuple:
+    """The tone to paint over `box` with: the non-ink pixels inside the box itself, so
+    text under a highlighter is patched in the highlighter's colour, falling back to a
+    ring around it. Near-white paper takes the 90th percentile, not the median: paper
+    beside ink is pulled a level or two darker by scanner blur and JPEG ringing, and a
+    patch even one level darker than the page shows as a faint rectangle."""
+    inside = [p for p in pixels(image.crop(box)) if sum(p) >= 3 * PAPER]
+    if len(inside) < 50:
+        ring = image.crop((box[0] - 12, box[1] - 12, box[2] + 12, box[3] + 12))
+        inside = [p for p in pixels(ring) if sum(p) >= 3 * PAPER] or [(255, 255, 255)]
+    median = tuple(int(statistics.median(c[i] for c in inside)) for i in range(3))
+    if min(median) >= 245:
+        return tuple(sorted(c[i] for c in inside)[int(len(inside) * 0.9)] for i in range(3))
+    return median
+
+
+def overlap(a: pymupdf.Rect, b: pymupdf.Rect) -> float:
+    """Share of `a`'s area that `b` covers."""
+    inter = pymupdf.Rect(a) & b
+    return 0.0 if inter.is_empty else inter.get_area() / max(a.get_area(), 1)
+
+
+def carry_punctuation(words: list[dict], rect: pymupdf.Rect, text: str, covered: str):
+    """Extend a hit over the punctuation that ends its last word ("JR.;"), and append
+    that punctuation to the replacement. Otherwise a shorter stand-in leaves the
+    original's ".;" stranded after a gap, reading as a stray mark."""
+    last = next((w for w in words if w["rect"].x0 < rect.x1 - 1 <= w["rect"].x1
+                 and w["rect"].intersects(rect)), None)
+    if not last:
+        return rect, text, covered
+    raw = last["text"]
+    tail = raw[len(raw.rstrip(".,;:")):]
+    if tail and last["rect"].x1 - rect.x1 > 1:
+        rect = pymupdf.Rect(rect.x0, rect.y0, last["rect"].x1, rect.y1)
+        text, covered = text + tail, covered + tail
+    return rect, text, covered
+
+
+def match_case(replacement: str, printed: str) -> str:
+    """Rules are written once, in capitals; a hit printed in mixed case ("Doe, Jr.")
+    gets its replacement in title case, keeping initials and number-letter codes."""
+    letters = [c for c in printed if c.isalpha()]
+    if not letters or sum(c.isupper() for c in letters) / len(letters) > 0.7:
+        return replacement
+    def title(word: str) -> str:
+        core = word.rstrip(".,;:")
+        return core.capitalize() + word[len(core):] if core.isalpha() and len(core) > 1 else word
+    return " ".join(title(w) for w in replacement.split(" "))
+
+
+def erase(image: Image.Image, spec: str, font_path: str | None) -> None:
+    """Paint over a region given in PDF points, `x0,y0,x1,y1`, and optionally redraw a
+    stand-in inside it (`...=Jonah Q Sample`) in a handwriting font, in the region's own
+    ink colour: a signature or initials that OCR cannot read and rules cannot match."""
+    coords, _, text = spec.partition("=")
+    x0, y0, x1, y1 = (float(v) * DPI / 72 for v in coords.split(","))
+    box = (int(x0), int(y0), int(x1), int(y1))
+    region = image.crop(box)
+    ink_px = [p for p, g in zip(pixels(region), pixels(region.convert("L"))) if g < DARK]
+    ink = tuple(int(statistics.median(c[i] for c in ink_px)) for i in range(3)) if ink_px else (40, 40, 60)
+    if text == "__":   # a rule line the erase above it had to cut: redraw it in its ink
+        ImageDraw.Draw(image).rectangle(box, fill=ink)
+        return
+    ImageDraw.Draw(image).rectangle(box, fill=background(image, box))
+    if text and font_path:
+        height = (box[3] - box[1]) * 0.7
+        font = ImageFont.truetype(font_path, max(8, int(height)))
+        while font.getlength(text) > (box[2] - box[0]) * 0.95 and font.size > 8:
+            font = ImageFont.truetype(font_path, font.size - 2)
+        glyphs = Image.new("L", image.size, 0)
+        ImageDraw.Draw(glyphs).text((box[0] + 4, box[1] + (box[3] - box[1] - font.size) / 2),
+                                    text, font=font, fill=255)
+        image.paste(Image.new("RGB", image.size, ink), (0, 0), glyphs.filter(ImageFilter.GaussianBlur(0.7)))
+
+
+def ink_metrics(image: Image.Image, rect: pymupdf.Rect) -> tuple[float, float] | None:
+    """(cap height, baseline) in pixels, measured from the hit's own ink: the rows that
+    carry at least a fifth of the busiest row's dark pixels span cap top (or ascender) to
+    baseline, while descenders, a neighbouring line's tails and highlighter fall below
+    that. OCR boxes proved too loose for this -- a word alone on its line, or under a
+    highlighter, drew its replacement half again too large."""
+    box = (int(rect.x0), int(rect.y0) - 2, int(rect.x1), int(rect.y1) + 2)
+    grey = image.crop(box).convert("L")
+    w, h = grey.size
+    data = pixels(grey)
+    rows = [sum(1 for x in range(w) if data[y * w + x] < DARK) for y in range(h)]
+    peak = max(rows, default=0)
+    if peak == 0:
+        return None
+    # On single-spaced lines one OCR box can take in the line above or below as well;
+    # split the busy rows into contiguous bands and keep the one with the most ink.
+    bands, run = [], []
+    for y, n in enumerate(rows):
+        if n >= peak * 0.2:
+            run.append(y)
+        elif run:
+            bands.append(run); run = []
+    if run:
+        bands.append(run)
+    band = max(bands, key=lambda b: sum(rows[y] for y in b))
+    return band[-1] - band[0] + 1, box[1] + band[-1] + 1
 
 
 def paint(image: Image.Image, rect: pymupdf.Rect, text: str, covered: str,
@@ -97,14 +205,7 @@ def paint(image: Image.Image, rect: pymupdf.Rect, text: str, covered: str,
     ink_px = [p for p, g in zip(pixels(region), pixels(grey)) if g < DARK]
     ink = tuple(int(statistics.median(c[i] for c in ink_px)) for i in range(3)) if ink_px else (30, 30, 30)
 
-    # Background: the paper's own tone around the box, taken from non-ink pixels only,
-    # so a cream or grey scan is not patched with pure white and ink never darkens it.
-    ring = image.crop((box[0] - 12, box[1] - 12, box[2] + 12, box[3] + 12))
-    paper = [p for p in pixels(ring) if sum(p) >= 3 * PAPER] or [(255, 255, 255)]
-    # The 90th percentile, not the median: paper near ink is pulled a level or two
-    # darker by scanner blur and JPEG ringing, and a patch even one level darker than
-    # the paper around it shows as a faint rectangle.
-    bg = tuple(sorted(c[i] for c in paper)[int(len(paper) * 0.9)] for i in range(3))
+    bg = background(image, box)
     ImageDraw.Draw(image).rectangle(box, fill=bg)
 
     # Size the font so a capital is as tall as the original's, then compress it
@@ -138,6 +239,20 @@ def main() -> None:
                         help="1-indexed pages of the source to keep, in order (default: all)")
     parser.add_argument("--font", default=DEFAULT_FONT,
                         help="TrueType font for the replacements (default: Arial)")
+    parser.add_argument("--bold", nargs="*", default=[], metavar="PAGE:RULE",
+                        help="Set this rule's replacement in --bold-font on this source page. "
+                             "Explicit, because stroke weight on small scanned type did not "
+                             "separate bold from regular reliably: a bold address measured "
+                             "only 1.08x the stroke of its regular neighbours.")
+    parser.add_argument("--bold-font", default=DEFAULT_BOLD_FONT,
+                        help="TrueType bold font for --bold hits (default: Arial Bold)")
+    parser.add_argument("--erase", nargs="*", default=[], metavar="PAGE:X0,Y0,X1,Y1[=TEXT]",
+                        help="Paint over a region of a source page, in PDF points on the "
+                             "upright page, and optionally redraw TEXT there in "
+                             "--handwriting-font. For signatures and initials.")
+    parser.add_argument("--handwriting-font", type=Path, metavar="FONT.ttf",
+                        help="Openly licensed handwriting font for --erase stand-ins "
+                             "(document-types/scripts/fonts/IndieFlower-Regular.ttf).")
     parser.add_argument("--verify-also", nargs="*", default=[],
                         help="Extra strings that must not survive, such as a surname "
                              "that only ever appears inside a longer rule.")
@@ -151,6 +266,10 @@ def main() -> None:
     source = pymupdf.open(args.source)
     pages = args.pages or list(range(1, source.page_count + 1))
     ordered = sorted(rules, key=len, reverse=True)
+    bold = {(int(n), r) for n, _, r in (spec.partition(":") for spec in args.bold)}
+    unknown = {r for _, r in bold} - set(rules)
+    if unknown:
+        sys.exit(f"--bold names rules that are not in --rules: {sorted(unknown)}")
     counts = {k: 0 for k in rules}
     out = pymupdf.open()
 
@@ -162,13 +281,30 @@ def main() -> None:
         for original in ordered:
             for occurrence in find(lines, original, rules[original]):
                 for rect, text, covered in occurrence:
-                    if any(rect.intersects(t) for t in taken):
+                    # Skip only a real overlap with something already painted: OCR boxes
+                    # on single-spaced lines touch by a pixel, and treating that as a
+                    # collision left the wrapped half of a name behind.
+                    if any(overlap(rect, t) > 0.5 for t in taken):
                         continue
-                    words = next((l for l in lines if any(w["rect"].intersects(rect) for w in l)), [])
-                    cap_h, baseline = line_metrics(words, rect)
-                    paint(image, rect, text, covered, cap_h, baseline, args.font)
+                    words = max(lines, key=lambda l: sum(
+                        (pymupdf.Rect(w["rect"]) & rect).get_area()
+                        for w in l if w["rect"].intersects(rect)), default=[])
+                    rect, text, covered = carry_punctuation(words, rect, text, covered)
+                    font = args.bold_font if (number, original) in bold else args.font
+                    cap_h, baseline = ink_metrics(image, rect) or line_metrics(words, rect)
+                    # Paint only this line's band, so a box that strays into the next
+                    # line does not take its tops or tails with it.
+                    rect = pymupdf.Rect(rect.x0, max(rect.y0, baseline - cap_h * 1.2),
+                                        rect.x1, min(rect.y1, baseline + cap_h * 0.35))
+                    printed = " ".join(w["text"] for w in words if w["rect"].intersects(rect))
+                    paint(image, rect, match_case(text, printed), covered, cap_h, baseline,
+                          font)
                     taken.append(pymupdf.Rect(rect))
                     counts[original] += 1
+        for spec in args.erase:
+            page_no, _, region = spec.partition(":")
+            if int(page_no) == number:
+                erase(image, region, str(args.handwriting_font) if args.handwriting_font else None)
         # A fresh page from the edited pixels alone, at the rendered page's own size.
         width, height = page.rect.width, page.rect.height
         new = out.new_page(width=width, height=height)

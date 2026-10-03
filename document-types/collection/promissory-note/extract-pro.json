@@ -1,0 +1,548 @@
+{
+  "extraction": {
+    "assumable_without_approval": false,
+    "borrower": {
+      "initialed_pages": 3,
+      "is_signed": true,
+      "name": "John Q Sample"
+    },
+    "city": "Portland",
+    "first_payment_date": "2019-05-01",
+    "form": "MULTISTATE FIXED RATE NOTE-Single Family-Fannie Mae/Freddie Mac UNIFORM INSTRUMENT Form 3200 1/01 MODIFIED",
+    "interest_rate_percent": 3.875,
+    "late_charge_days": 15,
+    "late_charge_percent": 4.0,
+    "lender": "Mortgage Express, LLC",
+    "loan_number": "",
+    "loan_originator": {
+      "lender_nmls_id": "40831",
+      "name": "Ryan Thomas Williams",
+      "nmls_id": "111026"
+    },
+    "maturity_date": "2049-04-01",
+    "monthly_payment": 1692.85,
+    "note_date": "2019-03-08",
+    "payment_address": "10260 Southwest Greenburg Road, Suite 830 Portland, OR 97223",
+    "payment_day_of_month": 1,
+    "principal_amount": 360000.0,
+    "property_address": "100 Sample Ave, Portland, OR 97000",
+    "state": "Orogon",
+    "va_guaranteed": true
+  },
+  "extraction_metadata": {
+    "assumable_without_approval": {
+      "ranges": [
+        {
+          "end": 92,
+          "start": 46
+        },
+        {
+          "end": 139,
+          "start": 93
+        }
+      ],
+      "value": false
+    },
+    "borrower": {
+      "initialed_pages": {
+        "ranges": [
+          {
+            "end": 3692,
+            "start": 3681
+          },
+          {
+            "end": 9138,
+            "start": 9127
+          },
+          {
+            "end": 10092,
+            "start": 10083
+          }
+        ],
+        "value": 3
+      },
+      "is_signed": {
+        "ranges": [
+          {
+            "end": 9758,
+            "start": 9742
+          },
+          {
+            "end": 9772,
+            "start": 9759
+          },
+          {
+            "end": 9787,
+            "start": 9773
+          }
+        ],
+        "value": true
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 9772,
+            "start": 9759
+          }
+        ],
+        "value": "John Q Sample"
+      }
+    },
+    "city": {
+      "ranges": [
+        {
+          "end": 199,
+          "start": 189
+        }
+      ],
+      "value": "Portland"
+    },
+    "first_payment_date": {
+      "ranges": [
+        {
+          "end": 1309,
+          "start": 1224
+        }
+      ],
+      "value": "2019-05-01"
+    },
+    "form": {
+      "ranges": [
+        {
+          "end": 3640,
+          "start": 3558
+        },
+        {
+          "end": 3664,
+          "start": 3641
+        }
+      ],
+      "value": "MULTISTATE FIXED RATE NOTE-Single Family-Fannie Mae/Freddie Mac UNIFORM INSTRUMENT Form 3200 1/01 MODIFIED"
+    },
+    "interest_rate_percent": {
+      "ranges": [
+        {
+          "end": 971,
+          "start": 949
+        }
+      ],
+      "value": 3.875
+    },
+    "late_charge_days": {
+      "ranges": [
+        {
+          "end": 4010,
+          "start": 3905
+        }
+      ],
+      "value": 15
+    },
+    "late_charge_percent": {
+      "ranges": [
+        {
+          "end": 4129,
+          "start": 4011
+        }
+      ],
+      "value": 4.0
+    },
+    "lender": {
+      "ranges": [
+        {
+          "end": 532,
+          "start": 425
+        }
+      ],
+      "value": "Mortgage Express, LLC"
+    },
+    "loan_number": {
+      "ranges": [
+        {
+          "end": 13,
+          "start": 7
+        },
+        {
+          "end": 21,
+          "start": 14
+        },
+        {
+          "end": 43,
+          "start": 22
+        },
+        {
+          "end": 44,
+          "start": 44
+        },
+        {
+          "end": 45,
+          "start": 45
+        },
+        {
+          "end": 92,
+          "start": 46
+        },
+        {
+          "end": 139,
+          "start": 93
+        },
+        {
+          "end": 164,
+          "start": 140
+        },
+        {
+          "end": 165,
+          "start": 165
+        },
+        {
+          "end": 166,
+          "start": 166
+        },
+        {
+          "end": 180,
+          "start": 167
+        },
+        {
+          "end": 187,
+          "start": 181
+        },
+        {
+          "end": 188,
+          "start": 188
+        },
+        {
+          "end": 199,
+          "start": 189
+        },
+        {
+          "end": 207,
+          "start": 200
+        },
+        {
+          "end": 208,
+          "start": 208
+        },
+        {
+          "end": 215,
+          "start": 209
+        },
+        {
+          "end": 223,
+          "start": 216
+        },
+        {
+          "end": 224,
+          "start": 224
+        },
+        {
+          "end": 260,
+          "start": 225
+        },
+        {
+          "end": 280,
+          "start": 261
+        },
+        {
+          "end": 281,
+          "start": 281
+        },
+        {
+          "end": 310,
+          "start": 282
+        },
+        {
+          "end": 424,
+          "start": 311
+        },
+        {
+          "end": 532,
+          "start": 425
+        },
+        {
+          "end": 541,
+          "start": 533
+        },
+        {
+          "end": 625,
+          "start": 542
+        },
+        {
+          "end": 1309,
+          "start": 1224
+        },
+        {
+          "end": 1432,
+          "start": 1310
+        },
+        {
+          "end": 1548,
+          "start": 1433
+        },
+        {
+          "end": 1662,
+          "start": 1549
+        },
+        {
+          "end": 1729,
+          "start": 1663
+        },
+        {
+          "end": 1806,
+          "start": 1730
+        },
+        {
+          "end": 1825,
+          "start": 1807
+        },
+        {
+          "end": 1881,
+          "start": 1826
+        },
+        {
+          "end": 1912,
+          "start": 1882
+        },
+        {
+          "end": 1972,
+          "start": 1913
+        },
+        {
+          "end": 3012,
+          "start": 2895
+        },
+        {
+          "end": 3135,
+          "start": 3013
+        },
+        {
+          "end": 3250,
+          "start": 3136
+        },
+        {
+          "end": 3367,
+          "start": 3251
+        },
+        {
+          "end": 3489,
+          "start": 3368
+        },
+        {
+          "end": 3555,
+          "start": 3490
+        },
+        {
+          "end": 3556,
+          "start": 3556
+        },
+        {
+          "end": 3557,
+          "start": 3557
+        },
+        {
+          "end": 3640,
+          "start": 3558
+        },
+        {
+          "end": 3664,
+          "start": 3641
+        },
+        {
+          "end": 9740,
+          "start": 9740
+        },
+        {
+          "end": 9741,
+          "start": 9741
+        },
+        {
+          "end": 9758,
+          "start": 9742
+        },
+        {
+          "end": 9772,
+          "start": 9759
+        },
+        {
+          "end": 9787,
+          "start": 9773
+        },
+        {
+          "end": 9794,
+          "start": 9788
+        },
+        {
+          "end": 9795,
+          "start": 9795
+        },
+        {
+          "end": 9796,
+          "start": 9796
+        },
+        {
+          "end": 9827,
+          "start": 9797
+        },
+        {
+          "end": 9843,
+          "start": 9828
+        }
+      ],
+      "value": ""
+    },
+    "loan_originator": {
+      "lender_nmls_id": {
+        "ranges": [
+          {
+            "end": 9843,
+            "start": 9828
+          }
+        ],
+        "value": "40831"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 9882,
+            "start": 9844
+          }
+        ],
+        "value": "Ryan Thomas Williams"
+      },
+      "nmls_id": {
+        "ranges": [
+          {
+            "end": 9899,
+            "start": 9883
+          }
+        ],
+        "value": "111026"
+      }
+    },
+    "maturity_date": {
+      "ranges": [
+        {
+          "end": 1662,
+          "start": 1549
+        },
+        {
+          "end": 1729,
+          "start": 1663
+        }
+      ],
+      "value": "2049-04-01"
+    },
+    "monthly_payment": {
+      "ranges": [
+        {
+          "end": 1972,
+          "start": 1913
+        }
+      ],
+      "value": 1692.85
+    },
+    "note_date": {
+      "ranges": [
+        {
+          "end": 180,
+          "start": 167
+        }
+      ],
+      "value": "2019-03-08"
+    },
+    "payment_address": {
+      "ranges": [
+        {
+          "end": 1806,
+          "start": 1730
+        },
+        {
+          "end": 1825,
+          "start": 1807
+        }
+      ],
+      "value": "10260 Southwest Greenburg Road, Suite 830 Portland, OR 97223"
+    },
+    "payment_day_of_month": {
+      "ranges": [
+        {
+          "end": 1309,
+          "start": 1224
+        }
+      ],
+      "value": 1
+    },
+    "principal_amount": {
+      "ranges": [
+        {
+          "end": 424,
+          "start": 311
+        }
+      ],
+      "value": 360000.0
+    },
+    "property_address": {
+      "ranges": [
+        {
+          "end": 260,
+          "start": 225
+        }
+      ],
+      "value": "100 Sample Ave, Portland, OR 97000"
+    },
+    "state": {
+      "ranges": [
+        {
+          "end": 215,
+          "start": 209
+        }
+      ],
+      "value": "Orogon"
+    },
+    "va_guaranteed": {
+      "ranges": [
+        {
+          "end": 9299,
+          "start": 9279
+        },
+        {
+          "end": 9412,
+          "start": 9300
+        },
+        {
+          "end": 9540,
+          "start": 9413
+        },
+        {
+          "end": 9653,
+          "start": 9541
+        },
+        {
+          "end": 9686,
+          "start": 9654
+        }
+      ],
+      "value": true
+    }
+  },
+  "markdown": "NOTE\n\n\nLOAN #\nCASE #:\nMIN: [ILLEGIBLE_TEXT]\n\n\nNOTICE: THIS LOAN IS NOT ASSUMABLE WITHOUT THE\nAPPROVAL OF THE DEPARTMENT OF VETERANS AFFAIRS\nOR ITS AUTHORIZED AGENT.\n\n\nMarch 8, 2019\n[Date]\n\nPortland, \n[City] \n\nOrogon\n[State]\n\n100 Sample Ave, Portland, OR 97000 \n[Property Address] \n\n1. BORROWER'S PROMISE TO PAY\nIn return for a loan that I have received, I promise to pay U.S. $360,000.00 (this amount is called \"Principal\"),\nplus interest, to the order of the Lender. The Lender is Mortgage Express, LLC, an Oregon Limited Liability\nCompany.\nI will make all payments under this Note in the form of cash, check or money order.\nI understand that the Lender may transfer this Note. The Lender or anyone who takes this Note by transfer and who\nis entitled to receive payments under this Note is called the \"Note Holder.\"\n2. INTEREST\nInterest will be charged on unpaid principal until the full amount of Principal has been paid. I will pay interest at a\nyearly rate of 3.875%.\nThe interest rate required by this Section 2 is the rate I will pay both before and after any default described in Section\n6(B) of this Note.\n3. PAYMENTS\n(A) Time and Place of Payments\nI will pay principal and interest by making a payment every month.\nI will make my monthly payment on the 1st day of each month beginning on May 1, 2019.\nI will make those payments every month until I have paid all of the principal and interest and any other charges described\nbelow that I may owe under this Note. Each monthly payment will be applied as of its scheduled due date and will be\napplied to interest before Principal. If, on April 1, 2049, I still owe amounts under this Note, I will pay those\namounts in full on that date, which is called the \"Maturity Date.\"\nI will make my monthly payments at 10260 Southwest Greenburg Road, Suite 830\nPortland, OR 97223\nor at a different place if required by the Note Holder.\n(B) Amount of Monthly Payments\nMy monthly payment will be in the amount of U.S. $1,692.85.\n4. BORROWER'S RIGHT TO PREPAY\nI have the right to make payments of Principal at any time before they are due. A payment of Principal only is known\nas a \"Prepayment.\" When I make a Prepayment, I will tell the Note Holder in writing that I am doing so. I may not designate\na payment as a Prepayment if I have not made all the monthly payments due under the Note.\nI may make a full Prepayment or partial Prepayments without paying a Prepayment charge. The Note Holder will use\nmy Prepayments to reduce the amount of Principal that I owe under this Note. However, the Note Holder may apply my\nPrepayment to the accrued and unpaid interest on the Prepayment amount, before applying my Prepayment to reduce the\nPrincipal amount of the Note. If I make a partial Prepayment, there will be no changes in the due date or in the amount\nof my monthly payment unless the Note Holder agrees in writing to those changes.\n5. LOAN CHARGES\nIf a law, which applies to this loan and which sets maximum loan charges, is finally interpreted so that the interest\nor other loan charges collected or to be collected in connection with this loan exceed the permitted limits, then: (a) any\nsuch loan charge shall be reduced by the amount necessary to reduce the charge to the permitted limit; and (b) any\nsums already collected from me which exceeded permitted limits will be refunded to me. The Note Holder may choose to\nmake this refund by reducing the Principal I owe under this Note or by making a direct payment to me. If a refund reduces\nPrincipal, the reduction will be treated as a partial Prepayment.\n\n\nMULTISTATE FIXED RATE NOTE-Single Family-Fannie Mae/Freddie Mac UNIFORM INSTRUMENT\nForm 3200 1/01 MODIFIED\nEllie Mae, Inc.\nPage 1 of 3\n\n\nJQS \nInitials. ___ \nV3200NOT 1117 \nV3200NOT (CLS) \n03/06/2019 03:25 PM PST \n\nEXHIBIT 1\nPAGE 1 OF 5\n\n\n<!-- PAGE BREAK -->\n\nLOAN # \n\n6. BORROWER'S FAILURE TO PAY AS REQUIRED\n(A) Late Charge for Overdue Payments.\nIf the Note Holder has not received the full amount of any monthly payment by the end of 15 calendar days\nafter the date it is due, I will pay a late charge to the Note Holder. The late charge may not be more than 4.000 % of\nany installment. Installment is defined as the total of principal, interest, taxes and insurance, I will pay this late charge\npromptly but only once on each late payment.\n(B) Default\nIf I do not pay the full amount of each monthly payment on the date it is due, I will be in default.\n(C) Notice of Default\nIf I am in default, the Note Holder may send me a written notice telling me that if I do not pay the overdue amount\nby a certain date, the Note Holder may require me to pay immediately the full amount of Principal which has not been\npaid and all the interest that I owe on that amount. That date must be at least 30 days after the date on which the notice\nis mailed to me or delivered by other means.\n(D) No Waiver By Note Holder\nEven if, at a time when I am in default, the Note Holder does not require me to pay immediately in full as described\nabove, the Note Holder will still have the right to do so if I am in default at a later time.\n(E) Payment of Note Holder's Costs and Expenses\nIf the Note Holder has required me to pay immediately in full as described above, the Note Holder will have the right\nto be paid back by me for all of its costs and expenses in enforcing this Note to the extent not prohibited by applicable\nlaw. Those expenses include, for example, reasonable attorneys' fees.\n7. GIVING OF NOTICES\nUnless applicable law requires a different method, any notice that must be given to me under this Note will be given\nby delivering it or by mailing it by first class mail to me at the Property Address above or at a different address if I give\nthe Note Holder a notice of my different address.\nAny notice that must be given to the Note Holder under this Note will be given by delivering it or by mailing it by first\nclass mail to the Note Holder at the address stated in Section 3(A) above or at a different address if I am given a notice\nof that different address.\n8. OBLIGATIONS OF PERSONS UNDER THIS NOTE\nIf more than one person signs this Note, each person is fully and personally obligated to keep all of the promises\nmade in this Note, including the promise to pay the full amount owed. Any person who is a guarantor, surety or endorser\nof this Note is also obligated to do these things. Any person who takes over these obligations, including the obligations\nof a guarantor, surety or endorser of this Note, is also obligated to keep all of the promises made in this Note. The Note\nHolder may enforce its rights under this Note against each person individually or against all of us together. This means\nthat any one of us may be required to pay all of the amounts owed under this Note.\n9. WAIVERS\nI and any other person who has obligations under this Note waive the rights of Presentment and Notice of Dishonor.\n\"Presentment\" means the right to require the Note Holder to demand payment of amounts due. \"Notice of Dishonor\"\nmeans the right to require the Note Holder to give notice to other persons that amounts due have not been paid.\n10. UNIFORM SECURED NOTE\nThis Note is a uniform instrument with limited variations in some jurisdictions. In addition to the protections given\nto the Note Holder under this Note, a Mortgage, Deed of Trust, or Security Deed (the \"Security Instrument\"), dated the\nsame date as this Note, protects the Note Holder from possible losses which might result if I do not keep the promises\nwhich I make in this Note. That Security Instrument describes how and under what conditions I may be required to\nmake immediate payment in full of all amounts I owe under this Note. Some of those conditions are described as\nfollows:\nIf all or any part of the Property or any interest in the Property is sold or transferred (or if Borrower is not a\nnatural person and a beneficial interest in Borrower is sold or transferred) without Lender's prior written consent,\nLender may require immediate payment in full of all sums secured by this Security Instrument. However, this\noption shall not be exercised by Lender if such exercise is prohibited by Applicable Law.\nIf Lender exercises this option, Lender shall give Borrower notice of acceleration. The notice shall provide\na period of not less than 30 days from the date the notice is given in accordance with Section 18 within which\nBorrower must pay all sums secured by this Security Instrument. If Borrower fails to pay these sums prior to the\nexpiration of this period, Lender may invoke any remedies permitted by this Security Instrument without further\nnotice or demand on Borrower.\n11. ALLONGE TO THIS NOTE\nIf an allonge providing for payment adjustments or for any other supplemental information is executed by me\ntogether with this Note, the covenants of the allonge are incorporated into and amends and supplements the covenants\nof this Note as if the allonge were a part of this Note. [Check applicable box]\n\n\n\n [ ] Graduated Payment Allonge \n [ ] Other [Specify]\n\n\nMULTISTATE FIXED RATE NOTE-Single Family-Fannie Mae/Freddie Mac UNIFORM INSTRUMENT\nForm 3200 1/01 MODIFIED\nEllie Mae, Inc.\nPage 2 of 3\n\n\nInitials: JQS \nV3200NOT 1117 \nV3200NOT (CLS) \n03/06/2019 03:25 PM PST \n\nEXHIBIT ___ 1\nPAGE ___ 2 OF ___ 5\n\n\n<!-- PAGE BREAK -->\n\nLOAN # \n\n12. V.A. REGULATIONS\nRegulations (38 C.F.R. Part 36) issued under the Department of Veterans Affairs (\"VA\") Guaranteed Loan Authority\n(38 U.S.C. Chapter 37) and in effect on the date of loan closing shall govern the rights, duties and liabilities of the parties\nto this loan and any provisions of this Note which are inconsistent with such regulations are hereby amended and\nsupplemented to conform thereto.\n\n\nWITNESS THE HAND(S) AND SEAL(S) OF THE UNDERSIGNED\n\n\n[SIGNED][SEALED]\nJohn Q Sample\nJOHN Q SAMPLE.\n(Seal)\n\n\nLender: Mortgage Express, LLC \nNMLS ID: 40831 \nLoan Originator: Ryan Thomas Williams \nNMLS ID: 111026 \n\n[Sign Original Only]\n\n\nMULTISTATE FIXED RATE NOTE-Single Family-Fannie Mae/Freddie Mac UNIFORM INSTRUMENT\nForm 3200 1/01 MODIFIED\nEllie Mae, Inc.\nPage 3 of 3\n\n\n[SIGNED][STAMPED]\nJQS\nInitials:\nV3200NOT 1117\nV3200NOT (CLS)\n03/06/2019 03:25 PM PST\n\n\nEXHIBIT 1\nPAGE 3 OF 5\n\n\n<!-- doc_id=parse-01m3zvcsm8sdk0czes115tayeq -->",
+  "metadata": {
+    "job_id": "extract-01m3zvd85ha9aanybp2rnpxbf1",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 19758,
+    "doc_id": "parse-01m3zvcsm8sdk0czes115tayeq",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.9,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 10220,
+    "output_extraction_chars": 807,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

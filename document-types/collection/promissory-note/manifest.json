@@ -1,0 +1,37 @@
+{
+  "slug": "promissory-note",
+  "title": "Promissory Note",
+  "source": {
+    "file": "promissory-note-redacted.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://oregonsheriffssales.org/wp-content/uploads/2025/01/384277-Writ.pdf",
+      "publisher": "Multnomah County Circuit Court record, posted by the Oregon State Sheriffs' Association sales site",
+      "title": "Multistate Fixed Rate Note, Fannie Mae/Freddie Mac Form 3200, VA-guaranteed (Exhibit 1, pages 1-3 of 5, to a General Judgment of Foreclosure and Sale)",
+      "retrieved": "2026-10-02",
+      "clearance": "redacted",
+      "clearance_note": "Pages 9-11 of a 13-page scanned foreclosure sale packet that the sheriffs' sales site posts publicly for a Multnomah County foreclosure sale; downloaded by script. Only the note is used. It is a public court record, but of a deceased private borrower's home loan, so the borrower's printed name, handwritten signature and handwritten initials, and the property's street address and ZIP code were replaced, with document-types/scripts/redact_scan.py working on the pixels of the scan: printed values are found by OCR and redrawn as stand-ins, and the signature and the initials on each page are painted out and redrawn as a stand-in in Indie Flower, an openly licensed handwriting font, so the note still shows that it was signed and initialled. The page is rebuilt from the edited image alone. The loan number, case number and MIN were blacked out by the filer before scanning and are left as they are. Verified by OCR, on literals and bare digits: no original value survives in the committed PDF or anywhere in this folder. The lender's office address and the loan originator's name and NMLS ID are kept: they appear in a professional capacity, and NMLS IDs are public registrations. The stand-ins are shared with the allonge-to-note, writ-of-execution and foreclosure-judgment samples from the same packet.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          { "what": "borrower's printed name", "with": "JOHN Q SAMPLE", "occurrences": 1 },
+          { "what": "borrower's handwritten signature", "with": "'John Q Sample' in a handwriting font", "occurrences": 1 },
+          { "what": "borrower's handwritten initials", "with": "'JQS' in a handwriting font", "occurrences": 3 },
+          { "what": "property house number and street", "with": "100 Sample", "occurrences": 1 },
+          { "what": "property ZIP code", "with": "97000", "occurrences": 1 }
+        ],
+        "already_blacked_out_at_source": ["loan number", "case number", "MIN"]
+      },
+      "split_from": { "pages": [9, 10, 11], "of": 13 }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "lender", "label": "Lender", "occurrence": 0 },
+    { "path": "principal_amount", "label": "Principal", "occurrence": 0 },
+    { "path": "interest_rate_percent", "label": "Interest rate (%)", "occurrence": 0 },
+    { "path": "monthly_payment", "label": "Monthly payment", "occurrence": 0 }
+  ],
+  "notes": "The request asked for pages 9-11 of the packet on their own and named no fields. Features the loan's terms, all on page 1: who lent, how much, at what rate, and the monthly payment. No person is featured. note_date (2019-03-08) is correct but reads OFF because the page prints 'March 8, 2019'. The parse read the small bold 'Oregon' under the date line as 'Orogon', and state extracts as 'Orogon'. loan_number, blacked out at source, comes back as an empty string grounded to 57 ranges spanning nearly all of page 1."
+}
