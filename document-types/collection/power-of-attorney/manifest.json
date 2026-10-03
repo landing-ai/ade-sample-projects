@@ -1,0 +1,26 @@
+{
+  "slug": "power-of-attorney",
+  "title": "Power of Attorney",
+  "source": {
+    "file": "power-of-attorney-ocrolus-sample.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://drive.google.com/file/d/1HBbJsyyhp90pAaS4sYdq-nokH1f25BeW/view",
+      "publisher": "Ocrolus",
+      "title": "Power of Attorney sample document",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "The sample document Ocrolus links from its public power-of-attorney documentation page (docs.ocrolus.com/docs/power-of-attorney), shared from Google Drive and downloaded by script. Every value is specimen: principal 'Fake Mortgage Company' at '123 Main Fake Street, Anycity', agent 'Sample Financial Services, Inc.' at '123 Fake Grant Avenue', signer 'James Doe' and notary 'John Doe', with script signatures drawn to match those invented names. The page content is used exactly as published. The PDF metadata author field carried the name of the person who prepared the file, so the metadata (Info dictionary and XMP) was cleared; the rendered page is pixel-identical to the original and its text layer unchanged. Ocrolus is a document-AI vendor, so this is a competitor's published sample."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "principal.name", "label": "Principal", "occurrence": 0 },
+    { "path": "agent.name", "label": "Agent", "occurrence": 0 },
+    { "path": "execution_date", "label": "Execution date", "occurrence": 0 },
+    { "path": "notary.acknowledgment_date", "label": "Notarized on", "occurrence": 0 },
+    { "path": "notary.commission_expiration", "label": "Notary commission expires", "occurrence": 0 }
+  ],
+  "notes": "The request named no page or fields; its notes suggested the principal, the agent, the execution date, the notary's state, county and acknowledgment date, the commission expiry, and a signed or notarized flag. Featured are five of those that tell the document's story top to bottom: who grants the power, to whom, when it was executed, when it was acknowledged before a notary, and how long that notary's commission runs. Both parties are companies, so no person is featured. The two dates are assembled from split blanks ('01 day of 01, 20 25' and '01, 15, 2025') and both ground to their lines. Notary state and county also ground ok but were left out to keep to five. The signed and notarized flags are correct but ground OFF (to the 'By:' line and a '[SIGNED]' tag), so they cannot be featured. The side-by-side signature blocks, which cross-paired on the bailee letter, were read in the right order here: see README."
+}

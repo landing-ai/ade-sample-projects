@@ -1,0 +1,132 @@
+{
+  "type": "object",
+  "description": "A corporate power of attorney: a principal (here a mortgage lender) appoints an agent to act in its name, with the execution, signature blocks and notarial acknowledgment",
+  "properties": {
+    "principal": {
+      "type": "object",
+      "description": "The party granting the power, named as 'the Principal'",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "The principal's name, from the blank before '(the \"Principal\")'"
+        },
+        "office_address": {
+          "type": ["string", "null"],
+          "description": "The address of the principal's principal offices, as printed"
+        },
+        "county": {
+          "type": ["string", "null"],
+          "description": "The county of the principal's offices, from the blank before 'County'"
+        },
+        "state": {
+          "type": ["string", "null"],
+          "description": "The state of the principal's offices, from the blank after 'State of' in the opening paragraph"
+        },
+        "representative_name": {
+          "type": ["string", "null"],
+          "description": "The authorized individual representing the principal, from the blank before '(name)'"
+        },
+        "representative_title": {
+          "type": ["string", "null"],
+          "description": "That individual's title, from the blank before '(title)'"
+        }
+      }
+    },
+    "agent": {
+      "type": "object",
+      "description": "The party appointed as attorney-in-fact, named as 'the Agent'",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "The agent's full name, from the text after 'appoint, and constitute' and before 'of'"
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "The agent's address, from the text after the agent's name and 'of'"
+        }
+      }
+    },
+    "powers_granted": {
+      "type": "array",
+      "description": "Each numbered power the agent is given, in order, summarized in a short phrase",
+      "items": {
+        "type": "string",
+        "description": "One granted power, e.g. 'execute, endorse, assign and deliver promissory notes'"
+      }
+    },
+    "is_irrevocable": {
+      "type": ["boolean", "null"],
+      "description": "True if the principal renounces the right to revoke the power of attorney"
+    },
+    "survives_incapacity": {
+      "type": ["boolean", "null"],
+      "description": "True if acts by the agent remain binding after the principal's bankruptcy, dissolution, incapacity or death (a durable power)"
+    },
+    "execution_date": {
+      "type": ["string", "null"],
+      "description": "The date the document was executed, from 'Executed this __ day of __, 20__', as YYYY-MM-DD"
+    },
+    "principal_signature": {
+      "type": "object",
+      "description": "The principal's signature block, the left-hand column under the execution line",
+      "properties": {
+        "signer_name": {
+          "type": ["string", "null"],
+          "description": "The printed name after 'Name:' in the principal's (left) signature block"
+        },
+        "signer_title": {
+          "type": ["string", "null"],
+          "description": "The title after 'Title:' in the principal's (left) signature block"
+        },
+        "is_signed": {
+          "type": ["boolean", "null"],
+          "description": "True if a signature appears on the 'By:' line of the principal's (left) block"
+        }
+      }
+    },
+    "agent_signature": {
+      "type": "object",
+      "description": "The agent's signature block, the right-hand column headed by the agent's company name",
+      "properties": {
+        "company": {
+          "type": ["string", "null"],
+          "description": "The company named at the head of the agent's (right) signature block"
+        },
+        "signer_name": {
+          "type": ["string", "null"],
+          "description": "The printed name after 'Name:' in the agent's (right) block, or null if blank"
+        },
+        "is_signed": {
+          "type": ["boolean", "null"],
+          "description": "True if a signature appears on the 'By:' line of the agent's (right) block"
+        }
+      }
+    },
+    "notary": {
+      "type": "object",
+      "description": "The notarial acknowledgment at the foot of the document",
+      "properties": {
+        "state": {
+          "type": ["string", "null"],
+          "description": "The state of the acknowledgment, from 'State of' in the notary section"
+        },
+        "county": {
+          "type": ["string", "null"],
+          "description": "The county of the acknowledgment, from 'County of' in the notary section"
+        },
+        "acknowledgment_date": {
+          "type": ["string", "null"],
+          "description": "The date the signer appeared before the notary, from 'I certify that on __, __, __', as YYYY-MM-DD"
+        },
+        "commission_expiration": {
+          "type": ["string", "null"],
+          "description": "The date the notary's commission expires, as YYYY-MM-DD"
+        },
+        "is_notarized": {
+          "type": ["boolean", "null"],
+          "description": "True if the notary has signed the acknowledgment"
+        }
+      }
+    }
+  }
+}
