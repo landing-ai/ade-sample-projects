@@ -1,0 +1,546 @@
+{
+  "type": "object",
+  "description": "IRS Form 1120, U.S. Corporation Income Tax Return: page 1, Schedule J, Schedule K and Schedule L",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The tax year of the return"
+    },
+    "tax_year_beginning": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year beginning date, as YYYY-MM-DD"
+    },
+    "tax_year_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year ending date, as YYYY-MM-DD"
+    },
+    "corporation": {
+      "type": "object",
+      "description": "The corporation filing the return",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the corporation"
+        },
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "B Employer identification number, as printed"
+        },
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Number, street, and room or suite no."
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City or town"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State, as a two-letter code"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code, as printed"
+        },
+        "date_incorporated": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "C Date incorporated, as YYYY-MM-DD"
+        },
+        "total_assets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "D Total assets, in dollars. Null if the line is blank"
+        }
+      }
+    },
+    "schedule_m3_attached": {
+      "type": "boolean",
+      "description": "Box A4, Schedule M-3 attached, is checked"
+    },
+    "income": {
+      "type": "object",
+      "description": "Income section, page 1 lines 1a-11, in dollars",
+      "properties": {
+        "gross_receipts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1a Gross receipts or sales. Null if the line is blank"
+        },
+        "returns_and_allowances": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1b Returns and allowances. Null if the line is blank"
+        },
+        "balance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1c Balance. Null if the line is blank"
+        },
+        "cost_of_goods_sold": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2 Cost of goods sold. Null if the line is blank"
+        },
+        "gross_profit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3 Gross profit. Null if the line is blank"
+        },
+        "dividends_and_inclusions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 4 Dividends and inclusions. Null if the line is blank"
+        },
+        "interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5 Interest. Null if the line is blank"
+        },
+        "gross_rents": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 6 Gross rents. Null if the line is blank"
+        },
+        "gross_royalties": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7 Gross royalties. Null if the line is blank"
+        },
+        "capital_gain_net_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8 Capital gain net income. Null if the line is blank"
+        },
+        "net_gain_form_4797": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 9 Net gain or (loss) from Form 4797. Null if the line is blank"
+        },
+        "other_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 10 Other income. Null if the line is blank"
+        },
+        "total_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11 Total income. Null if the line is blank"
+        }
+      }
+    },
+    "deductions": {
+      "type": "object",
+      "description": "Deductions section, page 1 lines 12-27, in dollars",
+      "properties": {
+        "compensation_of_officers": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 12 Compensation of officers. Null if the line is blank"
+        },
+        "salaries_and_wages": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13 Salaries and wages. Null if the line is blank"
+        },
+        "repairs_and_maintenance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 14 Repairs and maintenance. Null if the line is blank"
+        },
+        "bad_debts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15 Bad debts. Null if the line is blank"
+        },
+        "rents": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16 Rents. Null if the line is blank"
+        },
+        "taxes_and_licenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 17 Taxes and licenses. Null if the line is blank"
+        },
+        "interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 18 Interest. Null if the line is blank"
+        },
+        "charitable_contributions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 19 Charitable contributions. Null if the line is blank"
+        },
+        "depreciation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 20 Depreciation from Form 4562. Null if the line is blank"
+        },
+        "pension_profit_sharing_plans": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23 Pension, profit-sharing, etc., plans. Null if the line is blank"
+        },
+        "employee_benefit_programs": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 24 Employee benefit programs. Null if the line is blank"
+        },
+        "other_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 26 Other deductions. Null if the line is blank"
+        },
+        "total_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 27 Total deductions. Null if the line is blank"
+        }
+      }
+    },
+    "tax_and_payments": {
+      "type": "object",
+      "description": "Page 1 lines 28-37, in dollars",
+      "properties": {
+        "taxable_income_before_nol": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 28 Taxable income before net operating loss deduction and special deductions. Null if the line is blank"
+        },
+        "taxable_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 30 Taxable income. Null if the line is blank"
+        },
+        "total_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 31 Total tax (Schedule J, line 12). Null if the line is blank"
+        },
+        "total_payments_and_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 33 Total payments and credits (Schedule J, line 23). Null if the line is blank"
+        },
+        "amount_owed": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 35 Amount owed. Null if the line is blank"
+        },
+        "overpayment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 36 Overpayment. Null if the line is blank"
+        },
+        "credited_to_next_year_estimated_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 37 Amount of the overpayment credited to next year's estimated tax. Null if the line is blank"
+        },
+        "refunded": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 37 Amount of the overpayment refunded. Null if the line is blank"
+        }
+      }
+    },
+    "preparer": {
+      "type": "object",
+      "description": "Paid Preparer Use Only section",
+      "properties": {
+        "ptin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Preparer's PTIN"
+        },
+        "firm_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's name"
+        },
+        "firm_ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's EIN"
+        },
+        "firm_phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's phone number, as printed"
+        }
+      }
+    },
+    "schedule_j": {
+      "type": "object",
+      "description": "Schedule J, Tax Computation and Payment, in dollars",
+      "properties": {
+        "income_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Part I line 2 Income tax. Null if the line is blank"
+        },
+        "total_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Part I line 12 Total tax. Null if the line is blank"
+        },
+        "estimated_tax_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Part II line 14 Current year's estimated tax payments. Null if the line is blank"
+        },
+        "total_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Part II line 23 Total payments and credits. Null if the line is blank"
+        }
+      }
+    },
+    "schedule_k": {
+      "type": "object",
+      "description": "Schedule K, Other Information",
+      "properties": {
+        "accounting_method": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "cash",
+            "accrual",
+            "other",
+            null
+          ],
+          "description": "Line 1 accounting method checked"
+        },
+        "business_activity_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2a Business activity code no."
+        },
+        "business_activity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2b Business activity"
+        },
+        "product_or_service": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2c Product or service"
+        }
+      }
+    },
+    "schedule_l": {
+      "type": "object",
+      "description": "Schedule L, Balance Sheets per Books, in dollars",
+      "properties": {
+        "cash_beginning": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1 Cash, beginning of tax year, column (b). Null if the line is blank"
+        },
+        "cash_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1 Cash, end of tax year, column (d). Null if the line is blank"
+        },
+        "total_assets_beginning": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15 Total assets, beginning of tax year, column (b). Null if the line is blank"
+        },
+        "total_assets_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15 Total assets, end of tax year, column (d). Null if the line is blank"
+        },
+        "accounts_payable_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16 Accounts payable, end of tax year, column (d). Null if the line is blank"
+        },
+        "retained_earnings_unappropriated_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25 Retained earnings, unappropriated, end of tax year, column (d). Null if the line is blank"
+        },
+        "total_liabilities_and_equity_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 28 Total liabilities and shareholders' equity, end of tax year, column (d). Null if the line is blank"
+        }
+      }
+    },
+    "schedule_m2": {
+      "type": "object",
+      "description": "Schedule M-2, Analysis of Unappropriated Retained Earnings per Books, in dollars",
+      "properties": {
+        "balance_beginning": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1 Balance at beginning of year. Null if the line is blank"
+        },
+        "net_income_per_books": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2 Net income (loss) per books. Null if the line is blank"
+        },
+        "cash_distributions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5a Distributions: Cash. Null if the line is blank"
+        },
+        "balance_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8 Balance at end of year. Null if the line is blank"
+        }
+      }
+    }
+  }
+}
