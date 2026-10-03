@@ -1,0 +1,26 @@
+{
+  "slug": "form-1040",
+  "title": "Form 1040",
+  "source": {
+    "file": "form-1040-2025-irs-ats-scenario-13.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-13.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "TY2025 Form 1040 MeF Assurance Testing System (ATS) Test Scenario 13",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "IRS Modernized e-File Assurance Testing System test scenario for tax year 2025, listed on irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information. US government work, public domain. Downloaded by script. The source PDF is 9 pages (a cover sheet, then Form 1040, Schedule 3, Form 6251, Form 8911 and its Schedule A, and a W-2); this folder keeps pages 2-3 only, Form 1040 pages 1 and 2, split out with PyMuPDF. Every value is IRS test data: a fictitious married-filing-jointly couple at 13 ELM STREET, ANYTOWN TX, with SSNs in the 400-00 range the IRS reserves for ATS testing. No redaction needed. The PDF metadata was reset to the IRS author and a title naming the scenario."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "filing_status", "label": "Filing status (checkbox)", "occurrence": 0 },
+    { "path": "digital_assets", "label": "Digital assets question (checkbox)", "occurrence": 0 },
+    { "path": "income.wages_w2_box1", "label": "W-2 wages (line 1a)", "occurrence": 0 },
+    { "path": "income.total_income", "label": "Total income (line 9)", "occurrence": 0 },
+    { "path": "income.adjusted_gross_income", "label": "Adjusted gross income (line 11a)", "occurrence": 0 }
+  ],
+  "notes": "The request suggested featuring the two filled checkboxes, filing status (married filing jointly) and the digital-assets question (No), beside the income lines; this is what shipped, all on page 1. filing_status reads OFF in inspect_fields.py only because its enum value married_filing_jointly is not printed verbatim; its range is exactly the checked '[x] Married filing jointly' line, and the crop was checked by eye. The three income lines all carry 31,620 and each grounds to its own line's amount cell. No person is featured. Known extraction faults, left visible rather than hidden: blank amount lines extract as 0 rather than null despite the schema description asking for null, and refund.account_type extracts as checking although both the Checking and Savings boxes are empty (the parse reads both correctly as [ ])."
+}
