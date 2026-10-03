@@ -1,0 +1,170 @@
+{
+  "extraction": {
+    "borrower": "JOHN Q SAMPLE",
+    "co_borrower": "null",
+    "endorsement_type": "specific",
+    "endorser": "PennyMac Corp.",
+    "exhibit_reference": "EXHIBIT 1 PAGE 4 OF 5",
+    "loan_number": "null",
+    "pay_to_the_order_of": "PennyMac Loan Services, LLC",
+    "principal_balance": 360000,
+    "property_address": "100 SAMPLE AVE , PORTLAND, OR 97000",
+    "signer": {
+      "is_signed": true,
+      "name": "Kateryna Kolysnichenko",
+      "title": "Authorized Representative"
+    },
+    "without_recourse": true
+  },
+  "extraction_metadata": {
+    "borrower": {
+      "ranges": [
+        {
+          "end": 152,
+          "start": 129
+        }
+      ],
+      "value": "JOHN Q SAMPLE"
+    },
+    "co_borrower": {
+      "ranges": [
+        {
+          "end": 165,
+          "start": 153
+        }
+      ],
+      "value": "null"
+    },
+    "endorsement_type": {
+      "ranges": [
+        {
+          "end": 215,
+          "start": 167
+        },
+        {
+          "end": 250,
+          "start": 218
+        }
+      ],
+      "value": "specific"
+    },
+    "endorser": {
+      "ranges": [
+        {
+          "end": 250,
+          "start": 218
+        }
+      ],
+      "value": "PennyMac Corp."
+    },
+    "exhibit_reference": {
+      "ranges": [
+        {
+          "end": 553,
+          "start": 544
+        },
+        {
+          "end": 565,
+          "start": 554
+        }
+      ],
+      "value": "EXHIBIT 1 PAGE 4 OF 5"
+    },
+    "loan_number": {
+      "ranges": [
+        {
+          "end": 42,
+          "start": 18
+        }
+      ],
+      "value": "null"
+    },
+    "pay_to_the_order_of": {
+      "ranges": [
+        {
+          "end": 215,
+          "start": 167
+        }
+      ],
+      "value": "PennyMac Loan Services, LLC"
+    },
+    "principal_balance": {
+      "ranges": [
+        {
+          "end": 127,
+          "start": 100
+        }
+      ],
+      "value": 360000
+    },
+    "property_address": {
+      "ranges": [
+        {
+          "end": 98,
+          "start": 44
+        }
+      ],
+      "value": "100 SAMPLE AVE , PORTLAND, OR 97000"
+    },
+    "signer": {
+      "is_signed": {
+        "ranges": [
+          {
+            "end": 542,
+            "start": 288
+          }
+        ],
+        "value": true
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 542,
+            "start": 288
+          }
+        ],
+        "value": "Kateryna Kolysnichenko"
+      },
+      "title": {
+        "ranges": [
+          {
+            "end": 542,
+            "start": 288
+          }
+        ],
+        "value": "Authorized Representative"
+      }
+    },
+    "without_recourse": {
+      "ranges": [
+        {
+          "end": 250,
+          "start": 218
+        }
+      ],
+      "value": true
+    }
+  },
+  "markdown": "ALLONGE TO NOTE\n\n\nLOAN#: [ILLEGIBLE_TEXT] \n\nPROPERTY ADDRESS: 100 SAMPLE AVE , PORTLAND, OR 97000 \n\nPRINCIPAL BALANCE: $360000 \n\nBORROWER: JOHN Q SAMPLE\nCO-BORROWER:\n\nPAY TO THE ORDER OF: PennyMac Loan Services, LLC\n\n\nWITHOUT RECOURSE: PennyMac Corp.\n\n\n<figure type=\"ILLUSTRATION\">BY \n\n\n\n<description>A large, cursive, handwritten signature loops upward and then curves back down, centered above a signature line. Below the signature line is the printed text: 'TITLE: Kateryna Kolysnichenko, Authorized Representative'.</description></figure>\n\nEXHIBIT 1\nPAGE 4 OF 5\n\n\ni\n\n\n<!-- doc_id=parse-01m3ztakp1g4n78zmtdbnhdpzm -->",
+  "metadata": {
+    "job_id": "extract-01m3ztawjzcgk1chd3271f3gk1",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 15895,
+    "doc_id": "parse-01m3ztakp1g4n78zmtdbnhdpzm",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.6,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 620,
+    "output_extraction_chars": 428,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

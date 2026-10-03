@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "description": "An allonge to a promissory note: a separate page carrying an endorsement that transfers the note",
+  "properties": {
+    "loan_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The loan number; null if it is blacked out or illegible"
+    },
+    "property_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The property address, as one line"
+    },
+    "principal_balance": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The principal balance, in USD"
+    },
+    "borrower": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The borrower's name"
+    },
+    "co_borrower": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The co-borrower's name; null if the line is blank"
+    },
+    "pay_to_the_order_of": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The endorsee named after 'Pay to the order of'; null if the line is blank"
+    },
+    "endorsement_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "specific",
+        "blank",
+        null
+      ],
+      "description": "'specific' if the endorsement names an endorsee, 'blank' if the 'Pay to the order of' line is empty"
+    },
+    "without_recourse": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the endorsement is made 'without recourse'"
+    },
+    "endorser": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The party endorsing the note, named after 'Without recourse'"
+    },
+    "signer": {
+      "type": "object",
+      "description": "The person signing for the endorser",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The signer's printed name"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The signer's title"
+        },
+        "is_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the signature line carries a signature"
+        }
+      }
+    },
+    "exhibit_reference": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Any exhibit stamp, as printed, e.g. 'Exhibit 1, page 4 of 5'"
+    }
+  }
+}
