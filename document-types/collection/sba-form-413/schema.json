@@ -1,0 +1,289 @@
+{
+  "type": "object",
+  "title": "SBA Form 413 Personal Financial Statement",
+  "description": "U.S. Small Business Administration Form 413, the Personal Financial Statement an applicant, owner or guarantor completes for an SBA loan, surety bond, WOSB or 8(a) program: the program it supports, the applicant and business, the assets and liabilities columns with their totals and net worth, income, contingent liabilities, and the certification.",
+  "properties": {
+    "form_edition": {
+      "type": "string",
+      "description": "The form edition printed in the footer, e.g. 05-21 from 'SBA Form 413 (05-21)'."
+    },
+    "omb_expiration_date": {
+      "type": "string",
+      "description": "The OMB approval expiration date printed at the top of page 1, as YYYY-MM-DD."
+    },
+    "programs_selected": {
+      "type": "object",
+      "description": "Which program boxes on page 1 are checked.",
+      "properties": {
+        "loan_7a_504_surety": {
+          "type": "boolean",
+          "description": "True if the '7(a) loan / 504 loan / Surety Bonds' box is checked."
+        },
+        "disaster_business_loan": {
+          "type": "boolean",
+          "description": "True if the 'Disaster Business Loan Application' box is checked."
+        },
+        "wosb": {
+          "type": "boolean",
+          "description": "True if the 'Women Owned Small Business (WOSB) Federal Contracting Program' box is checked."
+        },
+        "business_development_8a": {
+          "type": "boolean",
+          "description": "True if the '8(a) Business Development Program' box is checked."
+        }
+      }
+    },
+    "applicant": {
+      "type": "object",
+      "description": "The person completing the statement, from the top of page 2.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Applicant's name beside 'Name'."
+        },
+        "home_address": {
+          "type": "string",
+          "description": "Home street address with city, state and ZIP code."
+        },
+        "home_phone": {
+          "type": "string",
+          "description": "Home phone number."
+        },
+        "business_phone": {
+          "type": "string",
+          "description": "Business phone number."
+        }
+      }
+    },
+    "business": {
+      "type": "object",
+      "description": "The applicant or borrower business.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Business Name of Applicant/Borrower."
+        },
+        "address": {
+          "type": "string",
+          "description": "Business address, if different than the home address."
+        },
+        "business_type": {
+          "type": "string",
+          "enum": [
+            "Corporation",
+            "S-Corp",
+            "LLC",
+            "Partnership",
+            "Sole Proprietor"
+          ],
+          "description": "The checked Business Type box."
+        }
+      }
+    },
+    "as_of_date": {
+      "type": "string",
+      "description": "The date beside 'This information is current as of [month/day/year]', as YYYY-MM-DD."
+    },
+    "assets": {
+      "type": "object",
+      "description": "The ASSETS column on page 2, in whole dollars as numbers.",
+      "properties": {
+        "cash_on_hand_and_in_banks": {
+          "type": "number",
+          "description": "Cash on Hand & in banks."
+        },
+        "savings_accounts": {
+          "type": "number",
+          "description": "Savings Accounts."
+        },
+        "ira_or_other_retirement_account": {
+          "type": "number",
+          "description": "IRA or Other Retirement Account."
+        },
+        "accounts_and_notes_receivable": {
+          "type": "number",
+          "description": "Accounts & Notes Receivable."
+        },
+        "life_insurance_cash_surrender_value": {
+          "type": "number",
+          "description": "Life Insurance - Cash Surrender Value Only."
+        },
+        "stocks_and_bonds": {
+          "type": "number",
+          "description": "Stocks and Bonds."
+        },
+        "real_estate": {
+          "type": "number",
+          "description": "Real Estate."
+        },
+        "automobiles": {
+          "type": "number",
+          "description": "Automobiles."
+        },
+        "other_personal_property": {
+          "type": "number",
+          "description": "Other Personal Property."
+        },
+        "other_assets": {
+          "type": "number",
+          "description": "Other Assets."
+        },
+        "total_assets": {
+          "type": "number",
+          "description": "The 'Total' at the foot of the ASSETS column."
+        }
+      }
+    },
+    "liabilities": {
+      "type": "object",
+      "description": "The LIABILITIES column on page 2, in whole dollars as numbers.",
+      "properties": {
+        "accounts_payable": {
+          "type": "number",
+          "description": "Accounts Payable."
+        },
+        "notes_payable_to_banks_and_others": {
+          "type": "number",
+          "description": "Notes Payable to Banks and Others."
+        },
+        "installment_account_auto": {
+          "type": "number",
+          "description": "Installment Account (Auto) balance."
+        },
+        "installment_account_auto_monthly_payment": {
+          "type": "number",
+          "description": "Mo. Payments under Installment Account (Auto)."
+        },
+        "installment_account_other": {
+          "type": "number",
+          "description": "Installment Account (Other) balance."
+        },
+        "installment_account_other_monthly_payment": {
+          "type": "number",
+          "description": "Mo. Payments under Installment Account (Other)."
+        },
+        "loans_against_life_insurance": {
+          "type": "number",
+          "description": "Loan(s) Against Life Insurance."
+        },
+        "mortgages_on_real_estate": {
+          "type": "number",
+          "description": "Mortgages on Real Estate."
+        },
+        "unpaid_taxes": {
+          "type": "number",
+          "description": "Unpaid Taxes."
+        },
+        "other_liabilities": {
+          "type": "number",
+          "description": "Other Liabilities."
+        },
+        "total_liabilities": {
+          "type": "number",
+          "description": "The 'Total Liabilities' line, not the column 'Total' below Net Worth."
+        },
+        "net_worth": {
+          "type": "number",
+          "description": "Net Worth."
+        },
+        "total": {
+          "type": "number",
+          "description": "The 'Total' below Net Worth, which must equal total assets."
+        }
+      }
+    },
+    "income": {
+      "type": "object",
+      "description": "Section 1, Source of Income, annual amounts as numbers.",
+      "properties": {
+        "salary": {
+          "type": "number",
+          "description": "Salary."
+        },
+        "net_investment_income": {
+          "type": "number",
+          "description": "Net Investment Income."
+        },
+        "real_estate_income": {
+          "type": "number",
+          "description": "Real Estate Income."
+        },
+        "other_income": {
+          "type": "number",
+          "description": "Other Income."
+        }
+      }
+    },
+    "contingent_liabilities": {
+      "type": "object",
+      "description": "The Contingent Liabilities box beside Section 1, as numbers.",
+      "properties": {
+        "as_endorser_or_co_maker": {
+          "type": "number",
+          "description": "As Endorser or Co-Maker."
+        },
+        "legal_claims_and_judgments": {
+          "type": "number",
+          "description": "Legal Claims & Judgments."
+        },
+        "provision_for_federal_income_tax": {
+          "type": "number",
+          "description": "Provision for Federal Income Tax."
+        },
+        "other_special_debt": {
+          "type": "number",
+          "description": "Other Special Debt."
+        }
+      }
+    },
+    "real_estate_owned": {
+      "type": "array",
+      "description": "Section 4, one entry per property column (A, B, C) that has any content.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "string",
+            "description": "Column label: Property A, B or C."
+          },
+          "type_of_real_estate": {
+            "type": "string",
+            "description": "Type of Real Estate as written, e.g. Primary Residence, or N/A."
+          },
+          "present_market_value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Present Market Value, if given. Null when the cell is blank."
+          },
+          "mortgage_balance": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Mortgage Balance, if given. Null when the cell is blank."
+          }
+        }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "description": "The first signer block on page 4.",
+      "properties": {
+        "print_name": {
+          "type": "string",
+          "description": "Print Name."
+        },
+        "date": {
+          "type": "string",
+          "description": "Date beside the signature, as YYYY-MM-DD."
+        },
+        "signed": {
+          "type": "boolean",
+          "description": "True only if a handwritten, drawn or typed signature appears on the Signature line. A blank line is unsigned: a 'SIGN' or 'sign here' flag tab printed beside the line is part of the form, not a signature."
+        }
+      }
+    }
+  }
+}
