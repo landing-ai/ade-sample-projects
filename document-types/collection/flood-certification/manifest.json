@@ -1,0 +1,81 @@
+{
+  "slug": "flood-certification",
+  "title": "Flood Certification",
+  "source": {
+    "file": "flood-certification.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/671333520/Flood-Certificate",
+      "publisher": "ServiceLink National Flood, on FEMA's Standard Flood Hazard Determination Form",
+      "title": "Standard Flood Hazard Determination Form (FEMA FF-206-FY-21-116)",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "A real flood determination for a residential mortgage, prepared by ServiceLink National Flood for a bank lender and found on Scribd. Scribd is a user-upload site, not the publisher, so this was treated as a personal record. Downloaded manually by the operator on 2026-10-03, because Scribd blocks scripted downloads. Before anything was parsed, the borrower's name, the property street address and ZIP+4 add-on, and the customer, loan and order numbers were replaced using document-types/scripts/redact.py, which removes the underlying text rather than covering it. Document metadata was cleared. Verified: no original value is extractable from the committed PDF or appears anywhere in this folder. The lender, the preparer, FEMA and the NFIP community and map data are kept, as are the town, state, 5-digit ZIP and HMDA census tract codes, which describe a neighbourhood rather than a person.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "borrower's name",
+            "with": "SAMPLE, JANE Q",
+            "occurrences": 2
+          },
+          {
+            "what": "property street address",
+            "with": "100 MAIN ST",
+            "occurrences": 2
+          },
+          {
+            "what": "ZIP+4 add-on of the property address (5-digit ZIP kept)",
+            "with": "a random 4-digit add-on",
+            "occurrences": 2
+          },
+          {
+            "what": "lender's customer number with the preparer",
+            "with": "a plausible random 10-digit number (plausible.py)",
+            "occurrences": 1
+          },
+          {
+            "what": "loan identifier",
+            "with": "a plausible random 11-digit number (plausible.py)",
+            "occurrences": 3
+          },
+          {
+            "what": "flood order number",
+            "with": "a plausible random 10-digit number (plausible.py)",
+            "occurrences": 3
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "nfip_community.community_name",
+      "label": "NFIP community",
+      "occurrence": 0
+    },
+    {
+      "path": "nfip_community.community_number",
+      "label": "NFIP community number",
+      "occurrence": 0
+    },
+    {
+      "path": "nfip_map.flood_zone",
+      "label": "Flood zone",
+      "occurrence": 0
+    },
+    {
+      "path": "in_special_flood_hazard_area",
+      "label": "In special flood hazard area",
+      "occurrence": 0
+    },
+    {
+      "path": "determination_date",
+      "label": "Date of determination",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the determination itself on page 1: the NFIP community the property sits in and its community number, the flood zone it was mapped to, the resulting answer to the Special Flood Hazard Area question (the checked NO box), and the date of determination. Read in order, they are the chain of reasoning the form exists to record. The request's notes suggested seven impersonal fields: NFIP community name and number, map panel number, map panel effective date, flood zone, the SFHA NO checkbox and the determination date. Five shipped. The map panel number and effective date extract correctly and their ranges are right, but the parse collapsed the whole Section II.B grid (panel number, effective date, LOMC, flood zone, No NFIP Map) into one table cell, so they would share one box with the flood zone. Three highlights on the same region would read as one, so only the flood zone was kept from that section. No personal field is featured. The origin URL is a Scribd listing; the website shows it as plain text, not as a link, as the request asks."
+}
