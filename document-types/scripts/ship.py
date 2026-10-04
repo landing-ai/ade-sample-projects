@@ -141,8 +141,12 @@ def sweep(paths: list[Path], terms: list[str]) -> list[str]:
             continue
         if p.suffix.lower() == ".pdf":
             doc = pymupdf.open(p)
+            # Form-field values live outside the page text, usually inside compressed
+            # object streams the raw bytes do not show: a filled SBA 413 carried every
+            # personal value only there.
+            fields = "".join(f"\n{w.field_value or ''}" for page in doc for w in page.widgets())
             text = "".join(page.get_text() for page in doc) + json.dumps(doc.metadata) \
-                + (doc.get_xml_metadata() or "") + p.read_bytes().decode("latin-1")
+                + (doc.get_xml_metadata() or "") + fields + p.read_bytes().decode("latin-1")
         else:
             text = p.read_text(encoding="utf-8", errors="ignore")
         flat = norm(text)
