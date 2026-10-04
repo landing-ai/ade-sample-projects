@@ -1,0 +1,29 @@
+{
+  "slug": "rent-roll",
+  "title": "Rent Roll",
+  "source": {
+    "file": "lund-pointe-rent-roll.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.neilwalter.com/wp-content/uploads/2016/02/Lund-PointeApts_OfferingMemorandum.pdf",
+      "publisher": "Neil Walter Company Commercial Real Estate",
+      "title": "Lund Pointe Apartments Offering Memorandum (Rent Roll, page 11)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Page 11 of a 17-page offering memorandum that the listing broker publishes on its own website to market the property to buyers; downloaded by script. Only the rent roll page is used. It carries no tenant names, lease dates, deposits or other personal data: just unit numbers, layouts, status, square footage and rents. The source PDF's document metadata, which named the preparer's user account, was cleared when the page was split out.",
+      "split_from": {
+        "pages": [11],
+        "of": 17
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "totals.total_units", "label": "Total units", "occurrence": 0 },
+    { "path": "totals.occupancy_percent", "label": "Occupancy", "occurrence": 0 },
+    { "path": "totals.total_square_feet", "label": "Total square feet", "occurrence": 0 },
+    { "path": "totals.total_monthly_rent", "label": "Total monthly rent", "occurrence": 0 }
+  ],
+  "notes": "Features the rent roll's totals row, so the overlay reads as one summary of the property: 25 units, 100% occupied, 23,760 square feet, $22,280 a month. The request file named no fields; its research notes suggested these four plus unit A-101's rent ($1,215). A-101's rent was dropped because inspect_fields marks every per-unit dollar and square-foot value OFF: extraction returns them as floats (1215.0) and the matcher does not equate that with '$1,215', although the boxed cell is the right one. Only rows marked ok are featured. The 'Other Charges' column repeats the Total column on every row, an error in the source; the schema extracts it as printed, and it is not featured."
+}

@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "description": "A multifamily rent roll: one row per unit giving its layout, occupancy status, size and rent, with a totals row summarising the property.",
+  "properties": {
+    "property": {
+      "type": "object",
+      "description": "The property the rent roll covers, as given in the header.",
+      "properties": {
+        "property_name": {
+          "type": "string",
+          "description": "Name of the property, e.g. 'Lund Pointe Apartments'."
+        },
+        "street_address": {
+          "type": "string",
+          "description": "Street address or address range of the property as printed, without the unit list, city, state or ZIP."
+        },
+        "city": {
+          "type": "string",
+          "description": "City the property is in."
+        },
+        "state": {
+          "type": "string",
+          "description": "Two-letter state abbreviation."
+        },
+        "zip_code": {
+          "type": "string",
+          "description": "ZIP code of the property."
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "description": "Every unit row in the rent roll, in the order printed. Excludes the totals row.",
+      "items": {
+        "type": "object",
+        "description": "One unit.",
+        "properties": {
+          "unit_number": {
+            "type": "string",
+            "description": "Unit identifier exactly as printed, e.g. 'A-101'."
+          },
+          "bedrooms": {
+            "type": "integer",
+            "description": "Number of bedrooms, from the BD/BA column (the figure before the slash)."
+          },
+          "bathrooms": {
+            "type": "number",
+            "description": "Number of bathrooms, from the BD/BA column (the figure after the slash)."
+          },
+          "status": {
+            "type": "string",
+            "description": "Occupancy or payment status of the unit as printed, e.g. 'Current', 'Vacant', 'Notice'."
+          },
+          "square_feet": {
+            "type": "number",
+            "description": "Rentable square footage of the unit."
+          },
+          "monthly_rent": {
+            "type": "number",
+            "description": "Total monthly rent charged for the unit, in dollars, from the Total column."
+          },
+          "other_charges": {
+            "type": "number",
+            "description": "Monthly charges other than base rent for the unit, in dollars, from the Other Charges column, as printed."
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "The summary row at the foot of the rent roll.",
+      "properties": {
+        "total_units": {
+          "type": "integer",
+          "description": "Number of units in the property, from the totals row, e.g. 25 for '25 Units'."
+        },
+        "occupancy_percent": {
+          "type": "number",
+          "description": "Physical occupancy as a percentage, from the totals row, e.g. 100 for '100% Occ'."
+        },
+        "total_square_feet": {
+          "type": "number",
+          "description": "Total rentable square footage of all units, from the totals row."
+        },
+        "total_monthly_rent": {
+          "type": "number",
+          "description": "Total monthly rent across all units, in dollars, from the totals row's Total column."
+        }
+      }
+    }
+  }
+}
