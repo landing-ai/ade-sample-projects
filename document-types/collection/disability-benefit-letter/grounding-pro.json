@@ -1,0 +1,87 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "current_benefits.period_start",
+      "label": "Benefit amounts effective from",
+      "value": "December 2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.11371,
+        "ymin": 0.45249,
+        "xmax": 0.82556,
+        "ymax": 0.47071
+      },
+      "range": {
+        "end": 511,
+        "start": 435
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-period_start.png"
+    },
+    {
+      "path": "current_benefits.gross_monthly_benefit",
+      "label": "Monthly benefit before deductions",
+      "value": 1137.3,
+      "page": 1,
+      "box": {
+        "xmin": 0.11418,
+        "ymin": 0.46935,
+        "xmax": 0.33626,
+        "ymax": 0.48576
+      },
+      "range": {
+        "end": 536,
+        "start": 512
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "current_benefits-gross_monthly_benefit.png"
+    },
+    {
+      "path": "current_benefits.medical_insurance_premium_deduction",
+      "label": "Medicare premium deduction",
+      "value": 81.9,
+      "page": 1,
+      "box": {
+        "xmin": 0.11582,
+        "ymin": 0.49715,
+        "xmax": 0.69755,
+        "ymax": 0.51947
+      },
+      "range": {
+        "end": 598,
+        "start": 539
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-medical_insurance_premium_deduction.png"
+    },
+    {
+      "path": "current_benefits.net_monthly_payment",
+      "label": "Net monthly payment",
+      "value": 1055.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.11512,
+        "ymin": 0.52881,
+        "xmax": 0.65211,
+        "ymax": 0.54565
+      },
+      "range": {
+        "end": 658,
+        "start": 601
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-net_monthly_payment.png"
+    }
+  ]
+}
