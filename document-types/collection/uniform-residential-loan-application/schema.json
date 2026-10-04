@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "title": "Uniform Residential Loan Application (Fannie Mae Form 1003 / Freddie Mac Form 65)",
+  "properties": {
+    "lender_loan_information": {
+      "type": "object",
+      "description": "The 'To be completed by the Lender' box at the top of page 1.",
+      "properties": {
+        "lender_loan_number": {"type": "string", "description": "Lender Loan No., as printed before the slash."},
+        "universal_loan_identifier": {"type": "string", "description": "Universal Loan Identifier (ULI), as printed after the slash, joined into one string without line breaks."},
+        "agency_case_number": {"type": ["string", "null"], "description": "Agency Case No., or null if blank."}
+      }
+    },
+    "borrower": {
+      "type": "object",
+      "description": "Section 1a. Personal Information.",
+      "properties": {
+        "name": {"type": "string", "description": "Borrower name (First, Middle, Last, Suffix)."},
+        "ssn": {"type": "string", "description": "Social Security Number or ITIN, as printed."},
+        "date_of_birth": {"type": "string", "description": "Date of birth, as YYYY-MM-DD."},
+        "citizenship": {"type": "string", "enum": ["U.S. Citizen", "Permanent Resident Alien", "Non-Permanent Resident Alien"], "description": "The selected citizenship option."},
+        "type_of_credit": {"type": "string", "enum": ["individual", "joint"], "description": "Whether the borrower is applying for individual or joint credit."},
+        "marital_status": {"type": "string", "enum": ["Married", "Separated", "Unmarried"], "description": "The selected marital status."},
+        "number_of_dependents": {"type": ["integer", "null"], "description": "Number of dependents not listed by another borrower."},
+        "dependent_ages": {"type": ["string", "null"], "description": "Ages of dependents, as printed."},
+        "home_phone": {"type": ["string", "null"], "description": "Home phone number."},
+        "cell_phone": {"type": ["string", "null"], "description": "Cell phone number."},
+        "email": {"type": ["string", "null"], "description": "Email address."},
+        "current_address": {"type": "string", "description": "Current address: street, unit, city, state, ZIP, joined into one line."},
+        "years_at_current_address": {"type": ["integer", "null"], "description": "How long at current address: years."},
+        "months_at_current_address": {"type": ["integer", "null"], "description": "How long at current address: months."},
+        "housing": {"type": ["string", "null"], "enum": ["No primary housing expense", "Own", "Rent", null], "description": "The selected Housing option for the current address."}
+      }
+    },
+    "current_employment": {
+      "type": "object",
+      "description": "Section 1b. Current Employment/Self-Employment and Income.",
+      "properties": {
+        "employer_name": {"type": "string", "description": "Employer or Business Name."},
+        "employer_phone": {"type": ["string", "null"], "description": "Employer phone number."},
+        "employer_address": {"type": "string", "description": "Employer street, city, state and ZIP, joined into one line."},
+        "position_or_title": {"type": "string", "description": "Position or Title."},
+        "start_date": {"type": "string", "description": "Start date, as YYYY-MM-DD."},
+        "years_in_line_of_work": {"type": ["integer", "null"], "description": "How long in this line of work: years."},
+        "is_self_employed": {"type": "boolean", "description": "True if 'Check if you are the Business Owner or Self-Employed' is checked."},
+        "gross_monthly_income": {
+          "type": "object",
+          "description": "The Gross Monthly Income column of section 1b, in dollars per month. Null for blank lines.",
+          "properties": {
+            "base": {"type": ["number", "null"], "description": "Base income per month."},
+            "overtime": {"type": ["number", "null"], "description": "Overtime per month."},
+            "bonus": {"type": ["number", "null"], "description": "Bonus per month."},
+            "commission": {"type": ["number", "null"], "description": "Commission per month."},
+            "military_entitlements": {"type": ["number", "null"], "description": "Military entitlements per month."},
+            "other": {"type": ["number", "null"], "description": "Other income per month."},
+            "total": {"type": ["number", "null"], "description": "TOTAL gross monthly income."}
+          }
+        }
+      }
+    },
+    "liabilities": {
+      "type": "array",
+      "description": "Section 2c. Liabilities - Credit Cards, Other Debts, and Leases, one entry per row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "account_type": {"type": "string", "description": "Account type, e.g. Revolving or Installment."},
+          "company_name": {"type": "string", "description": "Creditor company name."},
+          "account_number": {"type": "string", "description": "Account number as printed, including masking characters, joined without line breaks."},
+          "unpaid_balance": {"type": "number", "description": "Unpaid balance, in dollars."},
+          "to_be_paid_off": {"type": "boolean", "description": "True if 'To be paid off at or before closing' is checked."},
+          "monthly_payment": {"type": "number", "description": "Monthly payment, in dollars, as a positive number even if printed in parentheses."}
+        }
+      }
+    },
+    "real_estate_owned": {
+      "type": "array",
+      "description": "Section 3a. Property You Own, one entry per property.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "address": {"type": "string", "description": "Property address, joined into one line."},
+          "property_value": {"type": "number", "description": "Property value, in dollars."},
+          "status": {"type": "string", "description": "Status: Sold, Pending Sale, or Retained."},
+          "intended_occupancy": {"type": "string", "description": "Intended occupancy: Investment, Primary Residence, Second Home or Other."},
+          "mortgage_loans": {
+            "type": "array",
+            "description": "Mortgage Loans on this Property.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "creditor_name": {"type": "string", "description": "Creditor name."},
+                "account_number": {"type": "string", "description": "Account number."},
+                "monthly_mortgage_payment": {"type": "number", "description": "Monthly mortgage payment, in dollars, as a positive number."},
+                "unpaid_balance": {"type": "number", "description": "Unpaid balance, in dollars."},
+                "to_be_paid_off": {"type": "boolean", "description": "True if 'To be paid off at or before closing' is checked."},
+                "loan_type": {"type": "string", "description": "Type: FHA, VA, Conventional, USDA-RD or Other."}
+              }
+            }
+          }
+        }
+      }
+    },
+    "loan_and_property": {
+      "type": "object",
+      "description": "Section 4a. Loan and Property Information.",
+      "properties": {
+        "loan_amount": {"type": "number", "description": "Loan Amount, in dollars."},
+        "loan_purpose": {"type": "string", "enum": ["Purchase", "Refinance", "Other"], "description": "The selected Loan Purpose."},
+        "property_address": {"type": "string", "description": "Property address: street, unit, city, state, ZIP, joined into one line."},
+        "county": {"type": ["string", "null"], "description": "County of the property."},
+        "number_of_units": {"type": "integer", "description": "Number of Units."},
+        "property_value": {"type": "number", "description": "Property Value, in dollars."},
+        "occupancy": {"type": "string", "enum": ["Primary Residence", "Second Home", "Investment Property", "FHA Secondary Residence"], "description": "The selected Occupancy option."},
+        "mixed_use_property": {"type": "boolean", "description": "Answer to question 1, Mixed-Use Property: true for YES."},
+        "manufactured_home": {"type": "boolean", "description": "Answer to question 2, Manufactured Home: true for YES."}
+      }
+    },
+    "declarations": {
+      "type": "object",
+      "description": "Section 5. Declarations: the selected answer to each question, true for YES and false for NO.",
+      "properties": {
+        "a_occupy_as_primary_residence": {"type": "boolean", "description": "A. Will you occupy the property as your primary residence?"},
+        "a_ownership_interest_last_three_years": {"type": ["boolean", "null"], "description": "A. If YES, have you had an ownership interest in another property in the last three years?"},
+        "c_undisclosed_borrowed_money": {"type": "boolean", "description": "C. Are you borrowing any money for this transaction that you have not disclosed?"},
+        "g_outstanding_judgments": {"type": "boolean", "description": "G. Are there any outstanding judgments against you?"},
+        "h_delinquent_on_federal_debt": {"type": "boolean", "description": "H. Are you currently delinquent or in default on a Federal debt?"},
+        "l_foreclosure_last_7_years": {"type": "boolean", "description": "L. Have you had property foreclosed upon in the last 7 years?"},
+        "m_bankruptcy_last_7_years": {"type": "boolean", "description": "M. Have you declared bankruptcy within the past 7 years?"}
+      }
+    },
+    "military_service": {"type": "boolean", "description": "Section 7: true if the borrower answered YES to having served in the U.S. Armed Forces."},
+    "demographic_information": {
+      "type": "object",
+      "description": "Section 8. Demographic Information of Borrower.",
+      "properties": {
+        "ethnicity": {"type": "array", "items": {"type": "string"}, "description": "Every checked Ethnicity option, by its printed label."},
+        "sex": {"type": "array", "items": {"type": "string"}, "description": "Every checked Sex option, by its printed label."},
+        "race": {"type": "array", "items": {"type": "string"}, "description": "Every checked Race option, by its printed label."},
+        "provided_through": {"type": ["string", "null"], "description": "The selected option for 'The Demographic Information was provided through'."}
+      }
+    },
+    "loan_originator": {
+      "type": "object",
+      "description": "Section 9. Loan Originator Information.",
+      "properties": {
+        "organization_name": {"type": "string", "description": "Loan Originator Organization Name."},
+        "organization_address": {"type": "string", "description": "Loan originator organization address."},
+        "organization_nmlsr_id": {"type": "string", "description": "Loan Originator Organization NMLSR ID#."},
+        "originator_name": {"type": "string", "description": "Loan Originator Name."},
+        "originator_nmlsr_id": {"type": "string", "description": "Loan Originator NMLSR ID#."},
+        "originator_email": {"type": ["string", "null"], "description": "Loan originator email."},
+        "signature_date": {"type": ["string", "null"], "description": "Loan originator signature date, as YYYY-MM-DD."}
+      }
+    },
+    "borrower_signature_date": {"type": ["string", "null"], "description": "Date the borrower signed Section 6, as YYYY-MM-DD."},
+    "mortgage_loan_information": {
+      "type": "object",
+      "description": "Lender Loan Information sections L1 and L3.",
+      "properties": {
+        "refinance_type": {"type": ["string", "null"], "description": "L1 Refinance Type: No Cash Out, Limited Cash Out or Cash Out."},
+        "mortgage_type": {"type": "string", "description": "L3 Mortgage Type Applied For: Conventional, USDA-RD, FHA, VA or Other."},
+        "note_rate_percent": {"type": "number", "description": "Note Rate, in percent."},
+        "loan_term_months": {"type": "integer", "description": "Loan Term, in months."},
+        "lien_type": {"type": "string", "description": "Mortgage Lien Type: First Lien or Subordinate Lien."},
+        "amortization_type": {"type": "string", "description": "Amortization Type: Fixed Rate, Adjustable Rate or Other."},
+        "initial_adjustment_period_months": {"type": ["integer", "null"], "description": "If Adjustable Rate: Initial Period Prior to First Adjustment, in months."},
+        "subsequent_adjustment_period_months": {"type": ["integer", "null"], "description": "If Adjustable Rate: Subsequent Adjustment Period, in months."},
+        "proposed_monthly_payment": {
+          "type": "object",
+          "description": "Proposed Monthly Payment for Property, in dollars. Null for blank lines.",
+          "properties": {
+            "first_mortgage_principal_and_interest": {"type": ["number", "null"], "description": "First Mortgage (P & I)."},
+            "homeowners_insurance": {"type": ["number", "null"], "description": "Homeowner's Insurance."},
+            "property_taxes": {"type": ["number", "null"], "description": "Property Taxes."},
+            "mortgage_insurance": {"type": ["number", "null"], "description": "Mortgage Insurance."},
+            "total": {"type": ["number", "null"], "description": "TOTAL proposed monthly payment."}
+          }
+        }
+      }
+    },
+    "qualifying_the_borrower": {
+      "type": "object",
+      "description": "L4. Qualifying the Borrower - Minimum Required Funds or Cash Back, in dollars. Null for blank lines.",
+      "properties": {
+        "mortgage_loans_paid_off": {"type": ["number", "null"], "description": "D. Balance of mortgage loans on the property to be paid off."},
+        "credit_cards_and_other_debts_paid_off": {"type": ["number", "null"], "description": "E. Credit Cards and Other Debts Paid Off."},
+        "borrower_closing_costs": {"type": ["number", "null"], "description": "F. Borrower Closing Costs."},
+        "discount_points": {"type": ["number", "null"], "description": "G. Discount Points."},
+        "total_due_from_borrower": {"type": ["number", "null"], "description": "H. TOTAL DUE FROM BORROWER(s)."},
+        "total_mortgage_loans": {"type": ["number", "null"], "description": "K. TOTAL MORTGAGE LOANS."},
+        "total_credits": {"type": ["number", "null"], "description": "N. TOTAL CREDITS."},
+        "cash_from_to_borrower": {"type": ["number", "null"], "description": "Cash From/To the Borrower; negative means cash to the borrower."}
+      }
+    }
+  }
+}
