@@ -1,0 +1,35 @@
+{
+  "slug": "trust-income-document",
+  "title": "Trust Income Document",
+  "source": {
+    "file": "trust-income-k1-2025-irs-ats-1041-scenario-3.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-efile/form-1041-ty2025-ats-scenario-3.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "TY2025 Form 1041 MeF Assurance Testing System (ATS) Scenario 3",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "IRS Modernized e-File Assurance Testing System test scenario 3 for tax year 2025 Form 1041, linked from the IRS TY2025 Form 1041 MeF ATS page; served as application/pdf and downloaded by script. US government work, public domain, filled entirely with fictitious IRS test data (the trust EIN is in the 00- test range and the trust and beneficiary names are test names). The source PDF is 19 pages (the full Form 1041 return with its schedules); this folder keeps page 10 only, the first beneficiary's Schedule K-1 (Form 1041), split out with PyMuPDF. The beneficiary identifying number is an ATS test value but falls outside the standard specimen SSN ranges, so as a precaution it was replaced with a stand-in from the reserved 987-65-4320 to 4329 range using document-types/scripts/redact.py, which removes the underlying text rather than covering it. Document metadata was cleared. Verified: the original number is not extractable from the committed PDF, in hyphenated or digits-only form, and appears nowhere in this folder.",
+      "redactions": {
+        "note": "The original value is deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "beneficiary's identifying number (item F), an IRS test SSN outside the standard specimen ranges",
+            "with": "987-65-4322",
+            "occurrences": 1
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "estate_or_trust.name", "label": "Trust name (item B)", "occurrence": 0 },
+    { "path": "estate_or_trust.ein", "label": "Trust EIN (item A)", "occurrence": 0 },
+    { "path": "income.interest_income", "label": "Interest income (box 1)", "occurrence": 0 },
+    { "path": "income.ordinary_dividends", "label": "Ordinary dividends (box 2a)", "occurrence": 0 }
+  ],
+  "notes": "The request suggested, as suggestions only, the trust EIN, the trust name, box 1 interest, box 2a ordinary dividends and the Final K-1 checkbox. The first four shipped: the overlay reads as one story, which trust paid the beneficiary and what income it passed through. The Final K-1 checkbox was dropped because a boolean cannot ground as a literal: its range covers the checked box and label, which inspect_fields reports as OFF, and the crop would show a check mark beside the value True. No person is featured; the beneficiary's name and identifying number are on the page but not highlighted. Known extraction faults, left visible: blank amount boxes extract as 0 rather than null, with ranges pointing at the box labels; box 13 credit code O was parsed as a circle glyph and extracted with the code A (borrowed from box 14), though its amount of 125 is right; and the parse reads box 4c's label as 'Uncaptured section 1250 gain'. Item C (fiduciary) and the tax-period dates are blank on the form and extract as null or empty."
+}
