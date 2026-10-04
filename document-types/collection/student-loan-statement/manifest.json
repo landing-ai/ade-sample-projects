@@ -1,0 +1,79 @@
+{
+  "slug": "student-loan-statement",
+  "title": "Student Loan Statement",
+  "source": {
+    "file": "student-loan-statement.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/693402713/ViewFile-12",
+      "publisher": "Inland Revenue (Te Tari Taake), New Zealand",
+      "title": "New Zealand Inland Revenue Student Loan Statement, as at 23 April 2023",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "A real borrower's statement issued by New Zealand Inland Revenue, found on Scribd (a user-upload site, not the publisher) and downloaded manually by the operator on 2026-10-03 because Scribd blocks scripted downloads. Treated as a personal record. Before anything was parsed, the borrower's name, postal address, IRD number and statement reference were replaced with fake stand-ins, and the vector mailing barcode above the address was deleted. Inland Revenue's name, logo, toll-free numbers, rates, dates and all loan amounts are kept as printed. PDF metadata was cleared.",
+      "redactions": {
+        "replaced": [
+          {
+            "what": "borrower name",
+            "with": "MISS JANE Q SAMPLE (obviously fake)",
+            "count": 1
+          },
+          {
+            "what": "postal address (2 lines)",
+            "with": "100 MAIN ROAD / ANYTOWN AUCKLAND 1000 (obviously fake)",
+            "count": 2
+          },
+          {
+            "what": "IRD number",
+            "with": "random NNN-NNN-NNN stand-in that deliberately fails the IRD check-digit algorithm (primary and secondary weights)",
+            "count": 1
+          },
+          {
+            "what": "statement reference number",
+            "with": "random stand-in of the same shape (letter L plus 10 digits)",
+            "count": 1
+          }
+        ],
+        "removed": [
+          {
+            "what": "mailing barcode above the address (44 vector paths)",
+            "with": "nothing",
+            "count": 1
+          }
+        ],
+        "pages_dropped": [],
+        "verified": "No original string, and no original digit run, is extractable from the text layer, raw PDF objects or metadata; no vector paths remain in the barcode area."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "increases[0].amount",
+      "label": "Compulsory course fees",
+      "occurrence": 0
+    },
+    {
+      "path": "increases[2].amount",
+      "label": "Living costs",
+      "occurrence": 0
+    },
+    {
+      "path": "decreases[1].amount",
+      "label": "Interest",
+      "occurrence": 0
+    },
+    {
+      "path": "decreases[2].amount",
+      "label": "Salary and wage deductions",
+      "occurrence": 0
+    },
+    {
+      "path": "current_loan_balance",
+      "label": "Current loan balance",
+      "occurrence": 1
+    }
+  ],
+  "notes": "The request suggested rows of the 'Increases to your loan' and 'Decreases to your loan' tables and the current loan balance, and named no page or exact fields. All five featured fields are on page 1 and read as one story: what was added to the loan (compulsory course fees, living costs), what came off it (interest, salary and wage deductions), and the balance that results. current_loan_balance is pinned to occurrence 1, the teal 'Your current loan balance' bar beneath the tables; occurrence 0 is the same $26,452.96 in the teal callout at the top, which the parse describes as a graphic. All fields are impersonal amounts; the borrower name, IRD number and reference are fake stand-ins and are not featured. This is a New Zealand government (Inland Revenue) statement, not a US servicer's; amounts are New Zealand dollars. The decreases are printed negative, and the schema keeps the sign. The origin URL is a Scribd listing: the website shows it as plain text, not as a link. Dates (issue date, balance as-at date, the previous statement date, the transaction date) extract correctly but ground OFF, because the source prints them as '23 April 2023' and the schema normalises to ISO, so none is featured."
+}

@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "title": "Student loan statement",
+  "properties": {
+    "issuer_name": {
+      "type": "string",
+      "description": "Government agency or lender issuing the statement, e.g. Inland Revenue."
+    },
+    "borrower_name": {
+      "type": "string",
+      "description": "Name of the borrower in the mailing address block."
+    },
+    "borrower_tax_id": {
+      "type": "string",
+      "description": "Borrower's tax or customer identifier printed in the header (IRD number on a New Zealand statement), as printed."
+    },
+    "reference_number": {
+      "type": "string",
+      "description": "Statement reference number printed in the header."
+    },
+    "issue_date": {
+      "type": "string",
+      "description": "Date the statement was issued, as YYYY-MM-DD."
+    },
+    "balance_as_at_date": {
+      "type": "string",
+      "description": "Date the current loan balance is stated as at, as YYYY-MM-DD."
+    },
+    "current_loan_balance": {
+      "type": "number",
+      "description": "Current student loan balance, in dollars."
+    },
+    "increases": {
+      "type": "array",
+      "description": "Rows of the 'Increases to your loan' table, excluding the total row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Row label, e.g. Compulsory course fees."
+          },
+          "amount": {
+            "type": "number",
+            "description": "Amount added to the loan, in dollars, as a positive number."
+          }
+        }
+      }
+    },
+    "total_increases": {
+      "type": "number",
+      "description": "Bold total printed directly below the rows of the 'Increases to your loan' table, in dollars (a positive number)."
+    },
+    "decreases": {
+      "type": "array",
+      "description": "Rows of the 'Decreases to your loan' table, excluding the total row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Row label, e.g. Salary and wage deductions."
+          },
+          "amount": {
+            "type": "number",
+            "description": "Amount as printed, in dollars; decreases are printed negative, so keep the sign."
+          }
+        }
+      }
+    },
+    "total_decreases": {
+      "type": "number",
+      "description": "Bold total printed directly below the rows of the 'Decreases to your loan' table, in dollars. It is printed negative; keep the sign. Not the increases total."
+    },
+    "previous_statement_date": {
+      "type": "string",
+      "description": "Date the previous statement was issued, from the recent loan details section, as YYYY-MM-DD."
+    },
+    "previous_statement_balance": {
+      "type": "number",
+      "description": "Loan balance on the previous statement, in dollars."
+    },
+    "recent_transactions": {
+      "type": "array",
+      "description": "Rows of the recent loan details tables (new or changed amounts since the last statement).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Transaction date, as YYYY-MM-DD."
+          },
+          "details": {
+            "type": "string",
+            "description": "Transaction description."
+          },
+          "amount": {
+            "type": "number",
+            "description": "Transaction amount, in dollars."
+          }
+        }
+      }
+    },
+    "interest_rate_percent": {
+      "type": "number",
+      "description": "Current annual interest rate for loans that are not interest free, in percent."
+    },
+    "late_payment_interest_rate_percent": {
+      "type": "number",
+      "description": "Current annual late payment interest rate, in percent (the standard rate, not the reduced instalment rate)."
+    }
+  },
+  "required": [
+    "issuer_name",
+    "issue_date",
+    "current_loan_balance",
+    "increases",
+    "decreases"
+  ]
+}
