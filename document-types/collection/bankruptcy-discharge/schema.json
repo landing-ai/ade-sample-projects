@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "description": "A US Bankruptcy Court order discharging the debtor (and, where included, discharging the trustee and closing the case), with its explanation page",
+  "properties": {
+    "court": {
+      "type": ["string", "null"],
+      "description": "The court and district as printed in the heading, e.g. 'United States Bankruptcy Court - District of South Carolina'"
+    },
+    "form_number": {
+      "type": ["string", "null"],
+      "description": "The court form identifier printed at the top of the order, e.g. 'Form 166BNC'"
+    },
+    "case_number": {
+      "type": ["string", "null"],
+      "description": "The bankruptcy case number as printed beside 'Case Number'"
+    },
+    "chapter": {
+      "type": ["integer", "null"],
+      "description": "The bankruptcy chapter the case was under, e.g. 7"
+    },
+    "docket_number": {
+      "type": ["integer", "null"],
+      "description": "The docket (document) number of this order, e.g. from 'Document 9' or 'Doc 9'"
+    },
+    "debtor": {
+      "type": "object",
+      "description": "The debtor named in the 'In re' block",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "The debtor's primary name, the first name line of the 'In re' block"
+        },
+        "other_names": {
+          "type": "array",
+          "description": "Other names used by the debtor (aka, fka, dba), each without its prefix",
+          "items": {
+            "type": ["string", "null"],
+            "description": "One other name, as printed"
+          }
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "The debtor's address as one line"
+        },
+        "ssn_last_four": {
+          "type": ["string", "null"],
+          "description": "The last four digits of the Social Security or Individual Taxpayer number"
+        }
+      }
+    },
+    "order_titles": {
+      "type": "array",
+      "description": "Each order title in the order heading, e.g. 'DISCHARGE OF DEBTOR', 'ORDER CLOSING CASE'",
+      "items": {
+        "type": ["string", "null"],
+        "description": "One order title, as printed"
+      }
+    },
+    "entered_date": {
+      "type": ["string", "null"],
+      "description": "The date in the 'Entered By The Court' box, as YYYY-MM-DD"
+    },
+    "filed_date": {
+      "type": ["string", "null"],
+      "description": "The date in the 'Filed By The Court' box, as YYYY-MM-DD"
+    },
+    "clerk_of_court": {
+      "type": ["string", "null"],
+      "description": "The clerk of court's name printed in the 'Filed By The Court' box"
+    },
+    "discharge_statute": {
+      "type": ["string", "null"],
+      "description": "The statute under which the discharge is granted, as cited, e.g. 'section 727 of title 11, United States Code'"
+    },
+    "trustee_discharged": {
+      "type": ["boolean", "null"],
+      "description": "True if the order discharges the trustee"
+    },
+    "case_closed": {
+      "type": ["boolean", "null"],
+      "description": "True if the order closes the case"
+    },
+    "signed_place": {
+      "type": ["string", "null"],
+      "description": "The place printed above the signature, e.g. 'Columbia, South Carolina'"
+    },
+    "signed_date": {
+      "type": ["string", "null"],
+      "description": "The date printed above the signature, as YYYY-MM-DD"
+    },
+    "signer_title": {
+      "type": ["string", "null"],
+      "description": "The title printed under the signature, e.g. 'United States Bankruptcy Judge'"
+    },
+    "is_signed": {
+      "type": ["boolean", "null"],
+      "description": "True if the signature line carries a signature"
+    },
+    "ecf_entered_timestamp": {
+      "type": ["string", "null"],
+      "description": "The 'Entered' date and time in the electronic filing header line at the top of the page, as printed"
+    },
+    "debts_not_discharged": {
+      "type": "array",
+      "description": "From the explanation page: each listed common type of debt that is not discharged",
+      "items": {
+        "type": ["string", "null"],
+        "description": "One type of debt, as printed, without its list letter"
+      }
+    }
+  }
+}
