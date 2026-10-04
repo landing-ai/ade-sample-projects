@@ -1,0 +1,35 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Source found on Scribd by the operator on 2026-10-03 and downloaded by hand.
+# The website must show this URL as plain text, not as a link.
+
+name: Cryptocurrency Account Statement
+url: https://www.scribd.com/document/744055556/Wallet-statement-1-1-2021-08-25-2021-09-04-1
+
+# Downloaded by hand by the operator on 2026-10-03.
+file: ~/Downloads/744055556-Wallet-statement-1-1-2021-08-25-2021-09-04-1.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Blockchair Bitcoin wallet statement, 2 pages, text layer; redact.py. Personal data:
+  the wallet address and every transaction hash, which are traceable on-chain to the
+  owner; replace each with random hex/bech32 of identical length and charset. Residual
+  risk: amounts and timestamps could still be matched on-chain; report this to the
+  operator rather than altering the figures. Suggested fields: the BTC balance summary
+  (total received, total sent) and one transaction row (time, direction, BTC amount, USD
+  amount). Scribd is a user-upload site, not a publisher: treat this as a personal
+  record. Clearance must be redacted. Redact before parsing, with the rules file kept in
+  the scratchpad. Replace people's names and addresses, government and tax IDs, and
+  account, loan, case, claim, order and reference numbers (use plausible.py). Also
+  replace dates of birth, VINs, wallet addresses and property addresses. Redraw or
+  remove signatures, and remove barcodes that encode mailing data. Keep government
+  bodies, courts, banks, lenders and service providers. Name the source file <slug>.pdf,
+  never the Scribd filename. Do not record the uploader. Feature impersonal fields only
+  (amounts, dates, codes, checkboxes, organizations). Before parsing, pause and show the
+  operator the redacted first page.

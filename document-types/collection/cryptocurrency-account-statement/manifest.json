@@ -1,0 +1,51 @@
+{
+  "slug": "cryptocurrency-account-statement",
+  "title": "Cryptocurrency Account Statement",
+  "source": {
+    "file": "cryptocurrency-account-statement.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/744055556/Wallet-statement-1-1-2021-08-25-2021-09-04-1",
+      "publisher": "Blockchair",
+      "title": "Bitcoin Wallet Statement, 2021-08-25 to 2021-09-04",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "A real Blockchair Bitcoin wallet statement uploaded to Scribd, which is a user-upload site and not the publisher, so it is treated as a personal record. The operator downloaded it by hand on 2026-10-03 because Scribd blocks scripted downloads. The statement names no person or postal address, but the wallet address and transaction hashes are traceable on-chain to the owner. Each was replaced with a random value of identical length and character set using document-types/scripts/redact.py, which removes the underlying text rather than covering it. Before that, the link annotations that pointed at the address and hashes were rewritten to the stand-ins (the redaction then removed them), and the QR code, which encoded a Blockchair URL containing the address, was re-encoded with the stand-in address. Document metadata was cleared. Verified: no original address or hash, or any 12-character fragment of one, is extractable from the PDF's text, objects, streams, link URIs or QR code. Amounts and timestamps are kept as printed by the operator's decision; together they could still be matched to the real transactions on the public blockchain.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the identifiers the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "wallet address (bech32, bc1q...)",
+            "with": "random bech32 string of the same length and character set, with a deliberately invalid checksum",
+            "occurrences": 1
+          },
+          {
+            "what": "transaction hashes (16 hashes, each printed as two wrapped lines)",
+            "with": "random lowercase hex of identical length, each half replaced separately",
+            "occurrences": 32
+          },
+          {
+            "what": "hyperlink annotations whose URIs contained the address or a hash",
+            "with": "rewritten to the stand-ins, then removed by the redaction; only the generic Blockchair statement link remains",
+            "occurrences": 33
+          },
+          {
+            "what": "QR code encoding a Blockchair URL with the wallet address",
+            "with": "a QR code of the same URL with the stand-in address",
+            "occurrences": 1
+          }
+        ],
+        "metadata_cleared": ["title", "producer", "format", "creationDate", "modDate"]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "transactions[2].time", "label": "Transaction time", "occurrence": 0 },
+    { "path": "transactions[2].direction", "label": "Direction", "occurrence": 0 },
+    { "path": "transactions[2].amount_crypto", "label": "Amount (BTC)", "occurrence": 0 },
+    { "path": "transactions[2].amount_usd", "label": "Amount (USD)", "occurrence": 0 }
+  ],
+  "notes": "Features one complete transaction row on page 1 (row 3, a send): its time, direction, BTC amount and USD value, so the overlay reads as a single transaction. The request suggested the balance summary's total received and total sent as well; both extracted correctly (0.18467513 BTC) but ground OFF, because the parse read the page's asterisk and dash rule lines as a table grid and split each figure across two cells ('0' and '18467513'), so neither range contains the whole value and they are not featured. No transaction hash or wallet address is featured: both are stand-ins, and the hash is the least useful value to show. The source URL is a Scribd listing and the website shows it as plain text, not a link. Residual risk, accepted by the operator: the amounts and to-the-second timestamps are as printed and could be matched to the real transactions on the public Bitcoin blockchain."
+}
