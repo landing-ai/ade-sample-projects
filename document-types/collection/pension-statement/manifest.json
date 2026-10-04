@@ -1,0 +1,25 @@
+{
+  "slug": "pension-statement",
+  "title": "Pension Statement",
+  "source": {
+    "file": "nys-ers-pension-pay-stub-2022-specimen.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://web.osc.state.ny.us/retire/retirees/paystub-tutorial/pay-stub-2022-for-web.svg",
+      "publisher": "Office of the New York State Comptroller (New York State and Local Retirement System)",
+      "title": "Your Pension Pay Stub (specimen retiree payment advice)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Specimen pension pay stub published by the Office of the New York State Comptroller on its public 'Your Pension Pay Stub' retiree tutorial page, which embeds this SVG. Every personal value is a placeholder: the retiree is John Smith at 123 Main Street, Any Town NY 12345-0000, with employee ID R12345678 and a deposit account masked as XXXXXXX1234. The publisher's address is the Comptroller's office. No redaction was needed. The source is an SVG with all text outlined as vector paths; it was rendered to a one-page landscape PDF with headless Chrome print-to-PDF (page sized to the SVG's aspect ratio, 11 x 8.2225 in), and the PDF's document metadata was cleared. The PDF has no text layer."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "earnings[0].current", "label": "Monthly service annuity", "occurrence": 0},
+    {"path": "taxes[0].current", "label": "Federal withholding", "occurrence": 0},
+    {"path": "summary.total_deductions_current", "label": "Total deductions", "occurrence": 0},
+    {"path": "summary.net_pay_current", "label": "Net pay", "occurrence": 0}
+  ],
+  "notes": "The request named no feature page or fields, only suggestions in its notes: monthly service annuity, federal withholding, total deductions and net pay. All four ground ok on page 1 and are featured as suggested. They tell the month's payment as one story that reconciles: 2,148.58 annuity less 257.82 federal withholding less 802.50 in deductions (723.88 equitable distribution plus 78.62 medical insurance) is 1,088.26 net pay. Deductions and net pay are taken from the current row of the summary band. The document is a retiree payment advice rather than an award or annual benefit statement. The publisher's return address (payer.address) grounds OFF, split across its two lines, and is not featured."
+}

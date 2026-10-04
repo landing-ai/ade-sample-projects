@@ -1,0 +1,333 @@
+{
+  "type": "object",
+  "description": "A retiree pension payment advice (pension pay stub)",
+  "properties": {
+    "payer": {
+      "type": "object",
+      "description": "The retirement system paying the pension, from the top left and top right",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The payer name printed at the top left, e.g. 'ERS In Pay'"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The payer's mailing address, from the top left"
+        },
+        "retirement_system": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The retirement system code, as printed after 'Retirement System:'"
+        }
+      }
+    },
+    "retiree": {
+      "type": "object",
+      "description": "The pension recipient, from the address block",
+      "properties": {
+        "employee_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The ID printed after 'Employee ID:'"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The recipient's name, from the address block"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The recipient's mailing address, from the address block"
+        }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "description": "The payment period and advice identifiers from the header boxes",
+      "properties": {
+        "pay_group": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The pay group, as printed after 'Pay Group:'"
+        },
+        "pay_begin_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The first day of the period paid, as printed after 'Pay Begin Date:'"
+        },
+        "pay_end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The last day of the period paid, as printed after 'Pay End Date:'"
+        },
+        "advice_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The advice or check number, as printed after 'Advice #/Check #:', keeping leading zeros"
+        },
+        "advice_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The advice or check date, as printed after 'Advice Date/Check Date:'"
+        }
+      }
+    },
+    "tax_data": {
+      "type": "object",
+      "description": "The federal tax data box",
+      "properties": {
+        "tax_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The filing status, as printed after 'Tax Status:'"
+        },
+        "allowances": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The allowances value, as printed after 'Allowances:'"
+        }
+      }
+    },
+    "earnings": {
+      "type": "array",
+      "description": "Each line of the EARNINGS table, excluding the Total row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The earnings description, as printed"
+          },
+          "current": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The current-period amount"
+          },
+          "ytd": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The year-to-date amount"
+          }
+        }
+      }
+    },
+    "taxes": {
+      "type": "array",
+      "description": "Each line of the TAXES table, excluding the Total row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The tax description, as printed"
+          },
+          "current": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The current-period amount"
+          },
+          "ytd": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The year-to-date amount"
+          }
+        }
+      }
+    },
+    "before_tax_deductions": {
+      "type": "array",
+      "description": "Each line of the BEFORE-TAX DEDUCTIONS table, excluding the Total row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The deduction description, as printed"
+          },
+          "current": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The current-period amount"
+          },
+          "ytd": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The year-to-date amount"
+          }
+        }
+      }
+    },
+    "after_tax_deductions": {
+      "type": "array",
+      "description": "Each line of the AFTER-TAX DEDUCTIONS table, excluding the Total row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The deduction description, as printed"
+          },
+          "current": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The current-period amount"
+          },
+          "ytd": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The year-to-date amount"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "description": "The summary band of TOTAL GROSS, FED TAXABLE GROSS, TOTAL TAXES, TOTAL DEDUCTIONS and NET PAY, with a Current row and a YTD row",
+      "properties": {
+        "total_gross_current": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "TOTAL GROSS, Current row"
+        },
+        "total_gross_ytd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "TOTAL GROSS, YTD row"
+        },
+        "fed_taxable_gross_current": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "FED TAXABLE GROSS, Current row"
+        },
+        "total_taxes_current": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "TOTAL TAXES, Current row"
+        },
+        "total_deductions_current": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "TOTAL DEDUCTIONS, Current row"
+        },
+        "total_deductions_ytd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "TOTAL DEDUCTIONS, YTD row"
+        },
+        "net_pay_current": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "NET PAY, Current row"
+        },
+        "net_pay_ytd": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "NET PAY, YTD row"
+        }
+      }
+    },
+    "net_pay_distribution": {
+      "type": "array",
+      "description": "Each deposit in the NET PAY DISTRIBUTION table, excluding the Total row",
+      "items": {
+        "type": "object",
+        "properties": {
+          "account_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The account type, e.g. Checking"
+          },
+          "account_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The masked account number, as printed"
+          },
+          "deposit_amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount deposited"
+          }
+        }
+      }
+    }
+  }
+}
