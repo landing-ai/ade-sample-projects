@@ -1,0 +1,626 @@
+{
+  "extraction": {
+    "applicant": {
+      "business_phone": "(605) 555-0131",
+      "home_address": "100 Main St. Anytown, SD 57000",
+      "home_phone": "(605) 555-0169",
+      "name": "Jane Q Sample"
+    },
+    "as_of_date": "2023-01-01",
+    "assets": {
+      "accounts_and_notes_receivable": 0,
+      "automobiles": 3000,
+      "cash_on_hand_and_in_banks": 5000,
+      "ira_or_other_retirement_account": 0,
+      "life_insurance_cash_surrender_value": 0,
+      "other_assets": 0,
+      "other_personal_property": 0,
+      "real_estate": 0,
+      "savings_accounts": 15000,
+      "stocks_and_bonds": 0,
+      "total_assets": 23000
+    },
+    "business": {
+      "address": "200 MAIN ST, Anytown, SD 57000",
+      "business_type": "Sole Proprietor",
+      "name": "Sample Bookstore"
+    },
+    "certification": {
+      "date": "2023-01-01",
+      "print_name": "Jane Q Sample",
+      "signed": false
+    },
+    "contingent_liabilities": {
+      "as_endorser_or_co_maker": 0,
+      "legal_claims_and_judgments": 0,
+      "other_special_debt": 0,
+      "provision_for_federal_income_tax": 0
+    },
+    "form_edition": "05-21",
+    "income": {
+      "net_investment_income": 0,
+      "other_income": 0,
+      "real_estate_income": 0,
+      "salary": 15000
+    },
+    "liabilities": {
+      "accounts_payable": 0,
+      "installment_account_auto": 0,
+      "installment_account_auto_monthly_payment": 0,
+      "installment_account_other": 0,
+      "installment_account_other_monthly_payment": 0,
+      "loans_against_life_insurance": 0,
+      "mortgages_on_real_estate": 0,
+      "net_worth": 23000,
+      "notes_payable_to_banks_and_others": 0,
+      "other_liabilities": 0,
+      "total": 23000,
+      "total_liabilities": 0,
+      "unpaid_taxes": 0
+    },
+    "omb_expiration_date": "2024-05-31",
+    "programs_selected": {
+      "business_development_8a": false,
+      "disaster_business_loan": false,
+      "loan_7a_504_surety": true,
+      "wosb": false
+    },
+    "real_estate_owned": [
+      {
+        "mortgage_balance": 0,
+        "present_market_value": 0,
+        "property": "Property A",
+        "type_of_real_estate": "N/A"
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "applicant": {
+      "business_phone": {
+        "ranges": [
+          {
+            "end": 5409,
+            "start": 5365
+          }
+        ],
+        "value": "(605) 555-0131"
+      },
+      "home_address": {
+        "ranges": [
+          {
+            "end": 5502,
+            "start": 5462
+          },
+          {
+            "end": 5582,
+            "start": 5533
+          }
+        ],
+        "value": "100 Main St. Anytown, SD 57000"
+      },
+      "home_phone": {
+        "ranges": [
+          {
+            "end": 5502,
+            "start": 5462
+          }
+        ],
+        "value": "(605) 555-0169"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 5356,
+            "start": 5338
+          }
+        ],
+        "value": "Jane Q Sample"
+      }
+    },
+    "as_of_date": {
+      "ranges": [
+        {
+          "end": 6147,
+          "start": 5979
+        }
+      ],
+      "value": "2023-01-01"
+    },
+    "assets": {
+      "accounts_and_notes_receivable": {
+        "ranges": [
+          {
+            "end": 6821,
+            "start": 6818
+          }
+        ],
+        "value": 0
+      },
+      "automobiles": {
+        "ranges": [
+          {
+            "end": 7584,
+            "start": 7577
+          }
+        ],
+        "value": 3000
+      },
+      "cash_on_hand_and_in_banks": {
+        "ranges": [
+          {
+            "end": 6397,
+            "start": 6390
+          }
+        ],
+        "value": 5000
+      },
+      "ira_or_other_retirement_account": {
+        "ranges": [
+          {
+            "end": 6614,
+            "start": 6611
+          }
+        ],
+        "value": 0
+      },
+      "life_insurance_cash_surrender_value": {
+        "ranges": [
+          {
+            "end": 7033,
+            "start": 7030
+          }
+        ],
+        "value": 0
+      },
+      "other_assets": {
+        "ranges": [
+          {
+            "end": 7979,
+            "start": 7976
+          }
+        ],
+        "value": 0
+      },
+      "other_personal_property": {
+        "ranges": [
+          {
+            "end": 7871,
+            "start": 7868
+          }
+        ],
+        "value": 0
+      },
+      "real_estate": {
+        "ranges": [
+          {
+            "end": 7407,
+            "start": 7404
+          }
+        ],
+        "value": 0
+      },
+      "savings_accounts": {
+        "ranges": [
+          {
+            "end": 6492,
+            "start": 6484
+          }
+        ],
+        "value": 15000
+      },
+      "stocks_and_bonds": {
+        "ranges": [
+          {
+            "end": 7222,
+            "start": 7219
+          }
+        ],
+        "value": 0
+      },
+      "total_assets": {
+        "ranges": [
+          {
+            "end": 8075,
+            "start": 8067
+          }
+        ],
+        "value": 23000
+      }
+    },
+    "business": {
+      "address": {
+        "ranges": [
+          {
+            "end": 5777,
+            "start": 5693
+          }
+        ],
+        "value": "200 MAIN ST, Anytown, SD 57000"
+      },
+      "business_type": {
+        "ranges": [
+          {
+            "end": 5948,
+            "start": 5808
+          }
+        ],
+        "value": "Sole Proprietor"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 5653,
+            "start": 5601
+          }
+        ],
+        "value": "Sample Bookstore"
+      }
+    },
+    "certification": {
+      "date": {
+        "ranges": [
+          {
+            "end": 13033,
+            "start": 13016
+          }
+        ],
+        "value": "2023-01-01"
+      },
+      "print_name": {
+        "ranges": [
+          {
+            "end": 12959,
+            "start": 12945
+          }
+        ],
+        "value": "Jane Q Sample"
+      },
+      "signed": {
+        "ranges": [
+          {
+            "end": 12944,
+            "start": 12930
+          },
+          {
+            "end": 12998,
+            "start": 12984
+          }
+        ],
+        "value": false
+      }
+    },
+    "contingent_liabilities": {
+      "as_endorser_or_co_maker": {
+        "ranges": [
+          {
+            "end": 8350,
+            "start": 8344
+          }
+        ],
+        "value": 0
+      },
+      "legal_claims_and_judgments": {
+        "ranges": [
+          {
+            "end": 8463,
+            "start": 8457
+          }
+        ],
+        "value": 0
+      },
+      "other_special_debt": {
+        "ranges": [
+          {
+            "end": 8688,
+            "start": 8682
+          }
+        ],
+        "value": 0
+      },
+      "provision_for_federal_income_tax": {
+        "ranges": [
+          {
+            "end": 8577,
+            "start": 8571
+          }
+        ],
+        "value": 0
+      }
+    },
+    "form_edition": {
+      "ranges": [
+        {
+          "end": 5289,
+          "start": 5242
+        },
+        {
+          "end": 8961,
+          "start": 8707
+        },
+        {
+          "end": 11660,
+          "start": 11579
+        },
+        {
+          "end": 13147,
+          "start": 12999
+        },
+        {
+          "end": 17684,
+          "start": 17373
+        },
+        {
+          "end": 22209,
+          "start": 22100
+        }
+      ],
+      "value": "05-21"
+    },
+    "income": {
+      "net_investment_income": {
+        "ranges": [
+          {
+            "end": 8408,
+            "start": 8402
+          }
+        ],
+        "value": 0
+      },
+      "other_income": {
+        "ranges": [
+          {
+            "end": 8643,
+            "start": 8637
+          }
+        ],
+        "value": 0
+      },
+      "real_estate_income": {
+        "ranges": [
+          {
+            "end": 8518,
+            "start": 8512
+          }
+        ],
+        "value": 0
+      },
+      "salary": {
+        "ranges": [
+          {
+            "end": 8300,
+            "start": 8289
+          }
+        ],
+        "value": 15000
+      }
+    },
+    "liabilities": {
+      "accounts_payable": {
+        "ranges": [
+          {
+            "end": 6437,
+            "start": 6434
+          }
+        ],
+        "value": 0
+      },
+      "installment_account_auto": {
+        "ranges": [
+          {
+            "end": 6756,
+            "start": 6753
+          }
+        ],
+        "value": 0
+      },
+      "installment_account_auto_monthly_payment": {
+        "ranges": [
+          {
+            "end": 6846,
+            "start": 6830
+          }
+        ],
+        "value": 0
+      },
+      "installment_account_other": {
+        "ranges": [
+          {
+            "end": 6957,
+            "start": 6954
+          }
+        ],
+        "value": 0
+      },
+      "installment_account_other_monthly_payment": {
+        "ranges": [
+          {
+            "end": 7058,
+            "start": 7042
+          }
+        ],
+        "value": 0
+      },
+      "loans_against_life_insurance": {
+        "ranges": [
+          {
+            "end": 7172,
+            "start": 7169
+          }
+        ],
+        "value": 0
+      },
+      "mortgages_on_real_estate": {
+        "ranges": [
+          {
+            "end": 7270,
+            "start": 7267
+          }
+        ],
+        "value": 0
+      },
+      "net_worth": {
+        "ranges": [
+          {
+            "end": 7909,
+            "start": 7901
+          }
+        ],
+        "value": 23000
+      },
+      "notes_payable_to_banks_and_others": {
+        "ranges": [
+          {
+            "end": 6549,
+            "start": 6546
+          }
+        ],
+        "value": 0
+      },
+      "other_liabilities": {
+        "ranges": [
+          {
+            "end": 7625,
+            "start": 7622
+          }
+        ],
+        "value": 0
+      },
+      "total": {
+        "ranges": [
+          {
+            "end": 8010,
+            "start": 8002
+          }
+        ],
+        "value": 23000
+      },
+      "total_liabilities": {
+        "ranges": [
+          {
+            "end": 7814,
+            "start": 7811
+          }
+        ],
+        "value": 0
+      },
+      "unpaid_taxes": {
+        "ranges": [
+          {
+            "end": 7443,
+            "start": 7440
+          }
+        ],
+        "value": 0
+      }
+    },
+    "omb_expiration_date": {
+      "ranges": [
+        {
+          "end": 55,
+          "start": 28
+        }
+      ],
+      "value": "2024-05-31"
+    },
+    "programs_selected": {
+      "business_development_8a": {
+        "ranges": [
+          {
+            "end": 3766,
+            "start": 3729
+          }
+        ],
+        "value": false
+      },
+      "disaster_business_loan": {
+        "ranges": [
+          {
+            "end": 1946,
+            "start": 1875
+          }
+        ],
+        "value": false
+      },
+      "loan_7a_504_surety": {
+        "ranges": [
+          {
+            "end": 1254,
+            "start": 1214
+          }
+        ],
+        "value": true
+      },
+      "wosb": {
+        "ranges": [
+          {
+            "end": 2453,
+            "start": 2388
+          }
+        ],
+        "value": false
+      }
+    },
+    "real_estate_owned": [
+      {
+        "mortgage_balance": {
+          "ranges": [
+            {
+              "end": 11151,
+              "start": 11151
+            }
+          ],
+          "value": 0
+        },
+        "present_market_value": {
+          "ranges": [
+            {
+              "end": 10937,
+              "start": 10937
+            }
+          ],
+          "value": 0
+        },
+        "property": {
+          "ranges": [
+            {
+              "end": 10540,
+              "start": 10530
+            }
+          ],
+          "value": "Property A"
+        },
+        "type_of_real_estate": {
+          "ranges": [
+            {
+              "end": 10699,
+              "start": 10696
+            }
+          ],
+          "value": "N/A"
+        }
+      }
+    ]
+  },
+  "markdown": "OMB APPROVAL NO.: 3245-0188\nEXPIRATION DATE: 05/31/2024\n\n\nSMALL BUSINESS ADMINISTRATION 1953 [SEAL OF THE SMALL BUSINESS ADMINISTRATION]\n\n\n**PERSONAL FINANCIAL STATEMENT**\n\n\nU.S. SMALL BUSINESS ADMINISTRATION\n\n\nThe purpose of this form is to collect information about the Business Applicant and its owners' financial condition. SBA uses the\ninformation required by this Form 413 as one of a number of data sources in analyzing the repayment ability and creditworthiness of an applicant for\nan SBA loan or, with respect to a surety bond, to assist in recovery in the event that the contractor defaults on the contract. SBA also uses the\ninformation to assess whether an individual meets the economic disadvantage threshold for the Women-Owned Small Business (WOSB) Program\nand the 8(a) Business Development (BD) Program. Submission of this information is required as part of your application for assistance. Failure to\nprovide the information would impact the agency's decision on your application.\n\n\nTo complete this form\n 1) Check all that apply.\n 2) Complete the form in its entirety (attached a separate sheet, if necessary)\n 3) Review the applicable certifications and sign (spousal signature, if required)\n\n\n\n [x] 7(a) loan / 504 loan / Surety Bonds\nComplete this form for: (1) each proprietor; (2) general partner; (3) managing member of a limited liability company (LLC); (4) each owner of 20% or more of the equity\nof the Applicant; and (5) any person providing a guaranty on the loan (including the assets and liabilities of the owner’s spouse and any minor children).\nReturn completed form to:\nFor 7(a) loans: the Lender processing the application for SBA guaranty\nFor 504 loans: the Certified Development Company (CDC) processing the application for SBA guaranty\nFor Surety Bonds: the Surety Company or Agent processing the application for surety bond guarantee\n\n\n[ ] Disaster Business Loan Application (Excluding Sole Proprietorships)\nComplete this form for: (1) each applicant; (2) each general partner; (3) each managing member of a limited liability company (LLC); (4) each owner of 20% or more of\nthe equity of the Applicant business; and (5) any person providing an unlimited guaranty on the loan.\nReturn completed form to: Disaster Processing and Disbursement Center at 14925 Kingsport Road, Fort Worth, TX 76155-2243 or FAX to 1-202-481-1505 or\ndisasterloans@sba.gov\n\n\n[ ] Women Owned Small Business (WOSB) Federal Contracting Program\nThis form must be completed by each individual claiming economic disadvantage in connection with the SBA’s Women-Owned Small Business (WOSB) Federal\nContracting Program. A separate form must be completed by the individual’s spouse, unless the individual and the spouse are legally separated. Use attachments if\nnecessary. Each attachment must be identified as a part of this statement and signed. In addition, each individual claiming economic disadvantage must update the\nform as changes arise, but at least annually, to ensure the information is current, accurate and complete.\nSBA’s regulations state that to be considered economically disadvantaged for purposes of the WOSB Program, a woman must have an adjusted gross income\naveraged over the three prior fiscal years of $350,000 or less; less than $6 million in the fair market value of all her assets (to include her primary residence and value\nof the business concern); and less than $750,000 in personal net worth (excluding equity interest in her personal residence and ownership interest in the business,\nand funds invested in a retirement account that are unavailable until retirement age). 13 C.F.R. §127.203. The information contained in this form must be submitted\nand certified through beta.certify.sba.gov\n\n\n[ ] 8(a) Business Development Program\n8(a) applicants must show that 51% of the firm is owned by one or more individuals determined by the SBA to be socially and economically disadvantaged. The\ninformation contained in this form must be submitted by each socially and economically disadvantaged individual using their one time 8(a) eligibility to qualify this firm\nfor 8(a) certification. If married, the spouse must complete a separate SBA Form 413, except when the individual and the spouse are legally separated. If separated,\nprovide copy of separation document.\nSBA's regulations state that to be considered economically disadvantaged for purposes of the 8(a) Business Development Program, an individual must have an\nadjusted gross income averaged over the three prior fiscal years of $350,000 or less; less than $6 million in the fair market value of all assets (to include primary\nresidence and value of the business concern); and less than $750,000 in personal net worth (excluding equity interest in the personal residence and ownership\ninterest in the business, and funds invested in a retirement account that are unavailable until retirement age). 13 C.F.R. §124.104.\n**Note:** Please complete this form with Personal Information not Business Information and divide all jointly owned assets and liabilities, as appropriate with spouse or\nothers. The information contained in this form must be submitted and certified through certify.sba.gov. For additional information go to: http://www.sba.gov/8abd\n\n\nSBA Form 413 (05-21) Previous Editions Obsolete\n\n\nPage 1\n\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td>Name Jane Q Sample</td><td>Business Phone (xxx-xxx-xxxx) (605) 555-0131</td></tr>\n<tr><td>Home Address 100 Main St.</td><td>Home Phone (xxx-xxx-xxxx) (605) 555-0169</td></tr>\n<tr><td colspan=\"2\">**City, State, &amp; Zip Code** Anytown, SD 57000</td></tr>\n<tr><td>Business Name of Applicant/Borrower Sample Bookstore</td><td></td></tr>\n<tr><td colspan=\"2\">**Business Address** (if different than home address) 200 MAIN ST, Anytown, SD 57000</td></tr>\n<tr><td colspan=\"2\">Business Type: <br>[ ] Corporation <br>[ ] S-Corp. <br>[ ] LLC <br>[ ] Partnership <br>[x] Sole Proprietor (does not apply to ODA applicant)</td></tr>\n<tr><td colspan=\"2\">**This information is current as of [month/day/year]**01/01/2023<br>(within 90 days of submission for 7(a)/504/SBG/ODA/WOSB or within 30 days of submission for 8(a) BD)</td></tr>\n<tr><td colspan=\"2\">WOSB applicant only, Married<br>[ ] Yes<br>[ ] No</td></tr>\n</table>\n\n<table>\n<tr><td>ASSETS</td><td>(Omit Cents)</td><td>LIABILITIES</td><td>(Omit Cents)</td></tr>\n<tr><td>Cash on Hand &amp; in banks...</td><td>$ 5,000</td><td>Accounts Payable...</td><td>$ 0</td></tr>\n<tr><td>Savings Accounts...</td><td>$ 15,000</td><td>Notes Payable to Banks and Others...</td><td>$ 0</td></tr>\n<tr><td>IRA or Other Retirement Account...</td><td>$ 0</td><td>(Describe in Section 2)</td><td></td></tr>\n<tr><td>(Describe in Section 5)</td><td></td><td>Installment Account (Auto)...</td><td>$ 0</td></tr>\n<tr><td>Accounts &amp; Notes Receivable...</td><td>$ 0</td><td>Mo. Payments $ 0</td><td></td></tr>\n<tr><td>(Describe in Section 5)</td><td></td><td>Installment Account (Other)...</td><td>$ 0</td></tr>\n<tr><td>Life Insurance – Cash Surrender Value Only...</td><td>$ 0</td><td>Mo. Payments $ 0</td><td></td></tr>\n<tr><td>(Describe in Section 8)</td><td></td><td>Loan(s) Against Life Insurance...</td><td>$ 0</td></tr>\n<tr><td>Stocks and Bonds...</td><td>$ 0</td><td>Mortgages on Real Estate...</td><td>$ 0</td></tr>\n<tr><td>(Describe in Section 3)</td><td></td><td>(Describe in Section 4)</td><td></td></tr>\n<tr><td>Real Estate...</td><td>$ 0</td><td>Unpaid Taxes...</td><td>$ 0</td></tr>\n<tr><td>(Describe in Section 4)</td><td></td><td>(Describe in Section 6)</td><td></td></tr>\n<tr><td>Automobiles...</td><td>$ 3,000</td><td>Other Liabilities...</td><td>$ 0</td></tr>\n<tr><td>(Describe in Section 5, and include</td><td></td><td>(Describe in Section 7)</td><td></td></tr>\n<tr><td>Year/Make/Model)</td><td></td><td>Total Liabilities...</td><td>$ 0</td></tr>\n<tr><td>Other Personal Property...</td><td>$ 0</td><td>Net Worth...</td><td>$ 23,000</td></tr>\n<tr><td>(Describe in Section 5) Other Assets...</td><td>$ 0</td><td>Total</td><td>$ 23,000</td></tr>\n<tr><td>(Describe in Section 5) Total</td><td>$ 23,000</td><td colspan=\"2\">Must equal total in assets column.</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">Section 1.   Source of Income.</td><td colspan=\"2\">Contingent Liabilities</td></tr>\n<tr><td>Salary...</td><td>$ 15,000.00</td><td>As Endorser or Co-Maker...</td><td>$ 0.00</td></tr>\n<tr><td>Net Investment Income...</td><td>$ 0.00</td><td>Legal Claims &amp; Judgments...</td><td>$ 0.00</td></tr>\n<tr><td>Real Estate Income...</td><td>$ 0.00</td><td>Provision for Federal Income Tax...</td><td>$ 0.00</td></tr>\n<tr><td>Other Income (Describe below)...</td><td>$ 0.00</td><td>Other Special Debt...</td><td>$ 0.00</td></tr>\n</table>\n\n**Description of Other Income in Section 1** (Alimony or child support payments should not be disclosed in “Other Income” unless it is desired to have such\npayments counted toward total income)\n\n\nSBA Form 413 (05-21) Previous Editions Obsolete\n\n\nPage 2\n\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td colspan=\"6\">**Section 2. Notes Payable to Banks and Others.** (Use attachments if necessary. Each attachment must be identified as part of this statement and signed.)</td></tr>\n<tr><td>Names and Addresses of Noteholder(s)</td><td>Original Balance</td><td>Current Balance</td><td>Payment Amount</td><td>Frequency (monthly, etc.)</td><td>How Secured or Endorsed<br>Type of Collateral</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"6\">**Section 3. Stocks and Bonds.** (Use attachments if necessary. Each attachment must be identified as part of this statement and signed.)</td></tr>\n<tr><td>Number of Shares</td><td>Name of Securities</td><td>Cost</td><td>Market Value Quotation/Exchange</td><td>Date of Quotation/Exchange</td><td>Total Value</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n</table>\n\n**Section 4. Real Estate Owned.** (List each parcel separately. Use attachment if necessary. Each attachment must be identified as a part of this statement\nand signed.)\n\n<table>\n<tr><td></td><td>Property A</td><td>Property B</td><td>Property C</td></tr>\n<tr><td>Type of Real Estate (e.g. Primary Residence, Other Residence, Rental Property, Land, etc.)</td><td>N/A</td><td></td><td></td></tr>\n<tr><td>Address</td><td></td><td></td><td></td></tr>\n<tr><td>Date Purchased</td><td></td><td></td><td></td></tr>\n<tr><td>Original Cost</td><td></td><td></td><td></td></tr>\n<tr><td>Present Market Value</td><td></td><td></td><td></td></tr>\n<tr><td>Name &amp; Address of Mortgage Holder</td><td></td><td></td><td></td></tr>\n<tr><td>Mortgage Account Number</td><td></td><td></td><td></td></tr>\n<tr><td>Mortgage Balance</td><td></td><td></td><td></td></tr>\n<tr><td>Amount of Payment per Month/Year</td><td></td><td></td><td></td></tr>\n<tr><td>Status of Mortgage</td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"4\">**Section 5. Other Personal Property and Other Assets.** (Describe, and, if any is pledged as security, state name and address of lien holder, amount of lien, terms of payment and, if delinquent, describe delinquency.)</td></tr>\n</table>\n\nSBA Form 413 (05-21) Previous Editions Obsolete\n\n\nPage 3\n\n\n<!-- PAGE BREAK -->\n\n**Section 6. Unpaid Taxes.** (Describe in detail as to type, to whom payable, when due, amount, and to what property, if any, a tax\nlien attaches.)\n\n\n**Section 7. Other Liabilities.** (Describe in detail.)\n\n\n**Section 8. Life Insurance Held.** (Give face amount and cash surrender value of policies – name of insurance company and\nBeneficiaries.)\n\n\nI authorize the SBA/Lender/Surety Company to make inquiries as necessary to verify the accuracy of the statements made and to\ndetermine my creditworthiness.\n\n\n**CERTIFICATION**: (to be completed by each person submitting the information requested on this form and the spouse of any 20% or\nmore owner when spousal assets are included)\n\n\nBy signing this form, I certify under penalty of criminal prosecution that all information on this form and any additional supporting\ninformation submitted with this form is true and complete to the best of my knowledge. I understand that SBA or its participating\nLenders or Certified Development Companies or Surety Companies will rely on this information when making decisions regarding an\napplication for a loan, surety bond, or participation in the WOSB or 8(a) BD program. I further certify that I have read the attached\nstatements required by law and executive order.-\n[SIGN]\n\n\nSignature ___ \nJane Q Sample \nPrint Name ___ \n[SIGN] \nSignature ___ \nPrint Name ___ \n\nDate: 01/01/2023 \nSocial Security No.: 987-65-4324 \nDate: \nSocial Security No.: \n\nSBA Form 413 (05-21) Previous Editions Obsolete\n\n\nPage 4\n\n\n<!-- PAGE BREAK -->\n\n**NOTICE TO 7(a) LOAN, 504 LOAN AND SURETY BOND APPLICANTS: CRIMINAL PENALTIES AND ADMINISTRATIVE**\n**REMEDIES FOR FALSE STATEMENTS:**\nKnowingly making a false statement on this form is a violation of Federal law and could result in criminal prosecution, significant\ncivil penalties, and a denial of your loan or surety bond application. A false statement is punishable under 18 U.S.C. §§ 1001\nand 3571 by imprisonment of not more than five years and/or a fine of up to $250,000; under 15 U.S.C. § 645 by imprisonment\nof not more than two years and/or a fine of not more than $5,000; and, if submitted to a Federally-insured institution, a false\nstatement is punishable under 18 U.S.C. § 1014 by imprisonment of not more than thirty years and/or a fine of not more than\n$1,000,000. Additionally, false statements can lead to treble damages and civil penalties under the False Claims Act, 31\nU.S.C. § 3729, and other administrative remedies including suspension and debarment.\n\n\n**NOTICE TO DISASTER BUSINESS LOAN APPLICANTS: CRIMINAL PENALTIES AND ADMINISTRATIVE REMEDIES FOR**\n**FALSE STATEMENTS:**\nWhoever wrongfully misapplies the proceeds of an SBA disaster loan shall be civilly liable to the Administrator in an amount equal to\none-and-one half times the original principal amount of the loan under 15 U.S.C. § 636(b). In addition, any false statement or\nmisrepresentation to SBA may result in criminal, civil or administrative sanctions including, but not limited to: 1) fines and\nimprisonment, or both, under 15 U.S.C. § 645, 18 U.S.C. § 1001, 18 U.S.C. § 1014, 18 U.S.C. § 1040, 18 U.S.C. § 3571, and any\nother applicable laws; 2) treble damages and civil penalties under the False Claims Act, 31 U.S.C. § 3729; 3) double damages and\ncivil penalties under the Program Fraud Civil Remedies Act, 31 U.S.C. § 3802; and 4) suspension and/or debarment from all Federal\nprocurement and non-procurement transactions. Statutory fines may increase if amended by the Federal Civil Penalties Inflation\nAdjustment Act Improvements Act of 2015.\n\n\nNOTICE TO APPLICANTS OR PARTICIPANTS IN THE WOSB FEDERAL CONTRACTING PROGRAM: CRIMINAL PENALTIES\nAND ADMINISTRATIVE REMEDIES FOR FALSE STATEMENTS:\nAny person who misrepresents a business concern's status as a WOSB or EDWOSB, or makes any other false statement in order to\ninfluence the WOSB Program eligibility determination or other review process in any way (e.g., protest), shall be: (1) subject to fines\nand imprisonment of up to 5 years, or both, as stated in Title 18 U.S.C. § 1001; (2) subject to fines of up to $500,000 or imprisonment\nof up to 10 years, or both, as stated in Title 15 U.S.C. § 645; (3) subject to civil and administrative remedies, including suspension and\ndebarment; and (4) ineligible for participation in programs conducted under the authority of the Small Business Act.\n\n\n**NOTICE TO APPLICANTS OR PARTICIPANTS IN THE 8(a) BUSINESS DEVELOPMENT PROGRAM: CRIMINAL PENALTIES**\n**AND ADMINISTRATIVE REMEDIES FOR FALSE STATEMENTS:**\nAny person who misrepresents a business concern’s status as an 8(a) BD Program participant or SDB concern, or makes any other\nfalse statement in order to influence the 8(a) certification or other review process in any way(e.g., annual review, eligibility review),\nshall be: (1) subject to fines and imprisonment of up to 5 years, or both, as stated in Title 18 U.S.C. § 1001; (2) subject to fines of up\nto $500,000 or imprisonment of up to 10 years, or both, as stated in Title 15 U.S.C. § 645; (3) subject to treble damages and civil\npenalties under the False Claims Act, 31 U.S.C. § 3729; (4) subject to administrative remedies, including suspension and debarment;\nand (5) ineligible for participation in programs conducted under the authority of the Small Business Act.\n\n\n**PLEASE NOTE:** According to the Paperwork Reduction Act, you are not required to respond to this request for information unless it displays a valid OMB\nControl Number. The estimated average burden hours for the completion of this form is 1.5 hour per response. If you have questions or\ncomments concerning this estimate or any other aspect of this information collection, please contact: Director, Records Management\nDivision, Small Business Administration, 409 Third Street SW, Washington, D.C. 20416, and SBA Desk Officer, Office of Management and\nBudget, New Executive Office Building, Room 10202, Washington, D.C. 20503. PLEASE DO NOT SEND COMPLETED FORMS TO OMB.\n\n\nSBA Form 413 (05-21) Previous Editions Obsolete\n\n\nPage 5\n\n\n<!-- PAGE BREAK -->\n\n**PLEASE READ, DETACH, AND RETAIN FOR YOUR RECORDS**\n\n\n**Privacy Act (5 U.S.C. 552a) and Debt Collection Improvement Act (31 U.S.C. 7701)**\n*Authorities and Purpose for Collecting Information:* SBA is collecting the information on this form, including social\nsecurity numbers and other personal information, to make a character and credit or other eligibility decision in connection\nwith you or your company’s application for SBA assistance. SBA may also use social security numbers for the purpose\nof collecting and reporting on any delinquent fees or other amounts owed SBA, where applicable.\n\n\nFor purposes of SBA's financial assistance programs, 31 U.S.C. 7701 requires loan applicants and guarantors, or any\nindemnitor of a surety bond to provide their social security numbers, or other taxpayer identification numbers. Failure to\nprovide this information would affect your ability to obtain an SBA loan or bond. For other individuals signing this form,\nthe submission of the social security number is voluntary and failure to provide your social security number may not\naffect any right, benefit or privilege to which you are entitled. However, your social security number or other taxpayer\nidentification number helps SBA to distinguish you from other individuals with the same or similar name or other\npersonal identifier. This use is permitted under Executive Order 9397. Personal information collected is protected to the\nextent permitted by law, including the Freedom Information Act, 5 U.S.C. 552, and the Privacy Act 5 U.S.C. 552. Such\ninformation is maintained pursuant to SBA's Privacy Act System of Records at\nhttps://www.sba.gov/sites/default/files/2020-01/sba-sorns.pdf\n\n\n**Right to Financial Privacy Act of 1978 (12 U.S.C. 3401)** -- This is notice to you as required by the Right to Financial\nPrivacy Act of 1978, of SBA's access rights to financial records held by financial institutions that are or have been doing\nbusiness with you or your business, including any financial institutions participating in a loan or loan guaranty. The law\nprovides that SBA shall have a right of access to your financial records in connection with its consideration or\nadministration of assistance to you in the form of a Government guaranteed loan or guaranteed bond. SBA is required to\nprovide a certificate of its compliance with the Act to a financial institution in connection with its first request for access\nto your financial records, after which no further certification is required for subsequent accesses. The law also provides\nthat SBA's access rights continue for the term of any approved loan guaranty agreement or any approved bond agreement.\nNo further notice to you of SBA's access rights is required during the term of any such agreement. The law also authorizes\nSBA to transfer to another Government authority any financial records included in an application for a loan or bond\nguarantee, or concerning an approved loan or loan guarantee or bond guarantee, as necessary to process, service or\nforeclose on a loan guaranty or collect on a defaulted loan guaranty, or to process or service the bond guarantee. No other\ntransfer of your financial records to another Government authority will be permitted by SBA except as required or\npermitted by law.\n\n\n**Freedom of Information Act (5 U.S.C. 552)**\nThis law provides, with some exceptions, that SBA must supply information contained in agency files and records to a\nperson requesting it. Information about approved loans that will be automatically released includes, among other things,\nstatistics on our loan programs (individual borrowers are not identified in the statistics), and other information such as the\nnames of the borrowers (and their officers, directors, stockholders or partners), the collateral pledged to secure the loan,\nthe amount of the loan, its purpose in general terms, and the maturity. With respect to SBA's bond guarantee program,\nSBA will release, among other things, statistics on the Surety Bond Guarantee (SBG) programs and other information\nsuch as the names of small businesses (and their officers, directors, stockholders or partners) and the amount of the bond\nguarantees. Proprietary data on a borrower would not routinely be made available to third parties. All requests under this\nAct are to be addressed to the nearest SBA office and be identified as a Freedom of Information request.\n\n\nSBA Form 413 (05-21) Previous Editions Obsolete\n\n\nPage 6\n\n\n<!-- doc_id=parse-01m429ydem7g8vagxf5q4ab7ef -->",
+  "metadata": {
+    "job_id": "extract-01m42a0e3mdfprw5gwc3ys3hga",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 27252,
+    "doc_id": "parse-01m429ydem7g8vagxf5q4ab7ef",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 6.1,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 22209,
+    "output_extraction_chars": 1597,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

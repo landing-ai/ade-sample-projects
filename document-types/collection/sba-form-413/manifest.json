@@ -1,0 +1,39 @@
+{
+  "slug": "sba-form-413",
+  "title": "SBA Form 413",
+  "source": {
+    "file": "sba-form-413.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/567494949/completed-sba-form-413",
+      "publisher": "U.S. Small Business Administration (form); completed by an unidentified filer",
+      "title": "Personal Financial Statement, SBA Form 413 (05-21), completed",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "The SBA's own fillable Form 413 (05-21 edition), filled in by an unidentified person and uploaded to Scribd, a user-upload site rather than a publisher. Downloaded manually by the operator on 2026-10-03 because Scribd blocks scripted downloads. Treated as a personal record. Several values look illustrative rather than real, but the business name and address could be real, so every identifying field was replaced before parsing. The values were stored only in AcroForm field widgets, not in page text. Each field's stored value (/V) and its appearance stream were replaced, then redact.py cleared the /Info and XMP metadata and checked the result. Verified: no original value is extractable from the page text, the widgets, any decompressed PDF object or the raw file bytes, and none appears anywhere in this folder. The form is unsigned: both signature fields are empty.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used for the replacement stays outside the repo.",
+        "method": "AcroForm widget values and appearance streams replaced (the values were not in page text), then document metadata cleared with redact.py.",
+        "replaced": [
+          {"what": "applicant's name", "with": "Jane Q Sample", "occurrences": 2},
+          {"what": "business name", "with": "Sample Bookstore", "occurrences": 1},
+          {"what": "home street address", "with": "100 Main St.", "occurrences": 1},
+          {"what": "home city, state and ZIP code", "with": "Anytown, SD 57000", "occurrences": 1},
+          {"what": "business address", "with": "200 MAIN ST, Anytown, SD 57000", "occurrences": 1},
+          {"what": "business and home phone numbers", "with": "reserved 555-01xx numbers", "occurrences": 2},
+          {"what": "social security number", "with": "987-65-4324 (reserved advertising range)", "occurrences": 1},
+          {"what": "document metadata (/Info and XMP)", "with": "removed", "occurrences": 1}
+        ]
+      }
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    { "path": "business.business_type", "label": "Business type", "occurrence": 0 },
+    { "path": "assets.total_assets", "label": "Total assets", "occurrence": 0 },
+    { "path": "liabilities.total_liabilities", "label": "Total liabilities", "occurrence": 0 },
+    { "path": "liabilities.net_worth", "label": "Net worth", "occurrence": 0 }
+  ],
+  "notes": "Features page 2, the balance sheet: total assets, total liabilities and net worth, which together show the statement balancing, plus the checked business-type box. The request suggested the program checkbox (7(a)), total assets, total liabilities and net worth. The 7(a) checkbox is on page 1 while the totals are on page 2, so it cannot share the overlay; its grounding also reads OFF (the box covers the whole checkbox line). The sole-proprietor box replaced it, as the operator approved. The as-of date was the other candidate, but it grounds OFF: its box covers the label line. The origin URL is a Scribd listing. The website shows it as plain text, not as a link."
+}
