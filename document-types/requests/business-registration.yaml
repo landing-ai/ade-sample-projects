@@ -1,0 +1,22 @@
+# Request prepared from the ADE Documents shared drive (Marketing & Communications
+# Team / 00. Reusable Assets / ADE Documents) on 2026-09-27. See _template.yaml for
+# what every field means.
+#
+# Run it with:   /new-document-type-assets document-types/requests/business-registration.yaml
+
+name: Business Registration
+# TODO: source URL not recorded in the drive or the Marketing Document Summary sheet. Required before running: the skill stops without it.
+url: https://sosbiz.idaho.gov/api/report/GetImageByNum/097182066095252009134168051025113046056061167000
+
+# Local copy in the shared drive.
+file: "/Users/andreakropp/Library/CloudStorage/GoogleDrive-andrea.kropp@landing.ai/Shared drives/Marketing & Communications Team /00. Reusable Assets/ADE Documents/Documents for Marketing/doc36-business-registrations/doc36-certificate_organization_scan_stamp.pdf"
+
+# Schema kept beside the document in the drive.
+schema: "/Users/andreakropp/Library/CloudStorage/GoogleDrive-andrea.kropp@landing.ai/Shared drives/Marketing & Communications Team /00. Reusable Assets/ADE Documents/Documents for Marketing/doc36-business-registrations/business_registration_schema.json"
+
+# feature_page and fields: not decided yet. The skill picks them if left out.
+# feature_page: 1
+# fields:
+#   - path: ...
+#     label: ...
+

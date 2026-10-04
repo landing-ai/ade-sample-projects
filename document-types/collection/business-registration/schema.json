@@ -1,0 +1,467 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "document_type": {
+      "description": "Specifies whether the document pertains to a foreign or domestic business registration.",
+      "x-alternativeNames": [
+        "Registration Type",
+        "Filing Type",
+        "Document Category"
+      ],
+      "enum": [
+        "foreign_registration",
+        "domestic_registration"
+      ]
+    },
+    "business_name": {
+      "description": "The official legal name of the business or entity.",
+      "x-alternativeNames": [
+        "Business Name",
+        "Company Name",
+        "Entity Name"
+      ],
+      "type": "string"
+    },
+    "business_type": {
+      "description": "The legal classification or type of the business entity, such as LLC or corporation.",
+      "x-alternativeNames": [
+        "Business Type",
+        "Entity Type",
+        "Corporate Type"
+      ],
+      "type": "string"
+    },
+    "country_of_jurisdiction": {
+      "description": "The country where the entity was originally formed or incorporated.",
+      "x-alternativeNames": [
+        "Country of Jurisdiction",
+        "Country of Formation",
+        "Home Country"
+      ],
+      "type": "string"
+    },
+    "home_jurisdiction": {
+      "description": "The state or country where the entity was originally formed or incorporated.",
+      "x-alternativeNames": [
+        "Home Jurisdiction",
+        "State of Formation",
+        "Country of Formation"
+      ],
+      "type": "string"
+    },
+    "date_of_incorporation": {
+      "description": "The date when the entity was legally incorporated in its home jurisdiction.",
+      "format": "YYYY-MM-DD",
+      "x-alternativeNames": [
+        "Date of Incorporation",
+        "Incorporation Date",
+        "Formation Date"
+      ],
+      "type": "string"
+    },
+    "filing_date": {
+      "description": "The date on which the document or application was submitted to the relevant authority.",
+      "format": "YYYY-MM-DD",
+      "x-alternativeNames": [
+        "Filing Date",
+        "Date Filed",
+        "Date of Filing"
+      ],
+      "type": "string"
+    },
+    "filing_number": {
+      "description": "A unique number assigned to the filing by the Secretary of State or similar office.",
+      "x-alternativeNames": [
+        "Filing Number",
+        "File Number",
+        "Document File Number"
+      ],
+      "type": "string"
+    },
+    "filing_state_details": {
+      "description": "Details pertaining to the state where the business is being registered or filed.",
+      "x-alternativeNames": [
+        "Filing State Information",
+        "Registration State Details",
+        "State of Registration"
+      ],
+      "type": "object",
+      "properties": {
+        "state_name": {
+          "description": "The name of the state where the business registration is being filed.",
+          "x-alternativeNames": [
+            "Filing State Name",
+            "State of Filing",
+            "Registration State"
+          ],
+          "type": "string"
+        },
+        "secretary_of_state_signature_present": {
+          "description": "Indicates whether the signature of the Secretary of State or an authorized state official is present on the document.",
+          "x-alternativeNames": [
+            "SOS Signature Present",
+            "State Official Signature",
+            "Official Signature"
+          ],
+          "type": "boolean"
+        },
+        "secretary_of_state_signature_date": {
+          "description": "The date on which the Secretary of State or an authorized state official signed the document.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "SOS Signature Date",
+            "State Official Signature Date",
+            "Date Signed by State"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "state_name",
+        "secretary_of_state_signature_present",
+        "secretary_of_state_signature_date"
+      ]
+    },
+    "managers": {
+      "description": "A collection of individuals who manage the limited liability company.",
+      "x-alternativeNames": [
+        "Managers",
+        "Company Managers",
+        "Management Team"
+      ],
+      "type": "array",
+      "items": {
+        "description": "Item in managers",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The full name of an individual serving as a manager of the company.",
+            "x-alternativeNames": [
+              "Manager Name",
+              "Name of Manager",
+              "LLC Manager Name"
+            ],
+            "type": "string"
+          },
+          "title": {
+            "description": "The official title or role of the individual manager within the company.",
+            "x-alternativeNames": [
+              "Manager Title",
+              "Position of Manager",
+              "Managerial Role"
+            ],
+            "type": "string"
+          },
+          "address": {
+            "description": "The mailing or street address for the individual manager.",
+            "x-alternativeNames": [
+              "Manager Address",
+              "Address of Manager",
+              "Manager's Mailing Address"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "title",
+          "address"
+        ]
+      }
+    },
+    "principal_office_address": {
+      "description": "The physical location of the entity's primary business operations.",
+      "x-alternativeNames": [
+        "Principal Office Address",
+        "Main Office Address",
+        "Business Headquarters"
+      ],
+      "type": "object",
+      "properties": {
+        "address_line": {
+          "description": "A single line containing the full street or mailing address of the principal office.",
+          "x-alternativeNames": [
+            "Address Line",
+            "Street Address",
+            "Mailing Address"
+          ],
+          "type": "string"
+        },
+        "street_address": {
+          "description": "The street address of the company's principal office.",
+          "x-alternativeNames": [
+            "Principal Office Street Address",
+            "Business Street Address",
+            "Company Street Address"
+          ],
+          "type": "string"
+        },
+        "mailing_address": {
+          "description": "The mailing address for the company's principal office, which may differ from the street address.",
+          "x-alternativeNames": [
+            "Principal Office Mailing Address",
+            "Business Mailing Address",
+            "Company Mailing Address"
+          ],
+          "type": "string"
+        },
+        "city": {
+          "description": "The city where the company's principal office is located.",
+          "x-alternativeNames": [
+            "Principal Office City",
+            "Business City",
+            "Company City"
+          ],
+          "type": "string"
+        },
+        "state": {
+          "description": "The state where the company's principal office is located.",
+          "x-alternativeNames": [
+            "Principal Office State",
+            "Business State",
+            "Company State"
+          ],
+          "type": "string"
+        },
+        "zip_code": {
+          "description": "The postal code for the company's principal office.",
+          "x-alternativeNames": [
+            "Principal Office Zip Code",
+            "Business Zip Code",
+            "Company Zip Code"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "address_line",
+        "street_address",
+        "mailing_address",
+        "city",
+        "state",
+        "zip_code"
+      ]
+    },
+    "contact": {
+      "description": "Grouping of fields related to contact information for the entity or individual.",
+      "x-alternativeNames": [
+        "Contact Information",
+        "Communication Details",
+        "Contact Person"
+      ],
+      "type": "object",
+      "properties": {
+        "phone": {
+          "description": "The primary phone number for contacting the entity or individual.",
+          "format": "+1-XXX-XXX-XXXX",
+          "x-alternativeNames": [
+            "Phone Number",
+            "Contact Phone",
+            "Telephone Number"
+          ],
+          "type": "string"
+        },
+        "fax": {
+          "description": "The fax number for the entity or individual.",
+          "format": "+1-XXX-XXX-XXXX",
+          "x-alternativeNames": [
+            "Fax Number",
+            "Facsimile Number",
+            "Fax Line"
+          ],
+          "type": "string"
+        },
+        "email": {
+          "description": "The email address for electronic correspondence with the entity or individual.",
+          "format": "user@domain.com",
+          "x-alternativeNames": [
+            "Email Address",
+            "Contact Email",
+            "Electronic Mail"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "phone",
+        "fax",
+        "email"
+      ]
+    },
+    "signer": {
+      "description": "Information about the individual who signed the document.",
+      "x-alternativeNames": [
+        "Signer",
+        "Authorized Signatory",
+        "Document Signer"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The printed name of the individual who signed the document.",
+          "x-alternativeNames": [
+            "Signer Name",
+            "Name of Signer",
+            "Printed Name"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "description": "The official title or position of the individual who signed the document.",
+          "x-alternativeNames": [
+            "Signer Title",
+            "Job Title",
+            "Position"
+          ],
+          "type": "string"
+        },
+        "date": {
+          "description": "The date on which the document was signed by the authorized individual.",
+          "format": "YYYY-MM-DD",
+          "x-alternativeNames": [
+            "Signature Date",
+            "Date Signed",
+            "Date of Signature"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "title",
+        "date"
+      ]
+    },
+    "registered_agent": {
+      "description": "Details about the registered agent appointed to receive legal and official documents for the company.",
+      "x-alternativeNames": [
+        "Registered Agent Information",
+        "Agent for Service of Process",
+        "Statutory Agent"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The full legal name of the registered agent.",
+          "x-alternativeNames": [
+            "Registered Agent Name",
+            "Agent Name",
+            "Name of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "The complete physical address of the registered agent.",
+          "x-alternativeNames": [
+            "Registered Agent Address",
+            "Agent Address",
+            "Address of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "street_address": {
+          "description": "The street address of the registered agent for service of process.",
+          "x-alternativeNames": [
+            "Registered Agent Street Address",
+            "Agent Street Address",
+            "Street Address of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "mailing_address": {
+          "description": "The mailing address of the registered agent, which may differ from the street address.",
+          "x-alternativeNames": [
+            "Registered Agent Mailing Address",
+            "Agent Mailing Address",
+            "Mailing Address of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "city": {
+          "description": "The city where the registered agent is located.",
+          "x-alternativeNames": [
+            "Registered Agent City",
+            "Agent City",
+            "City of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "state": {
+          "description": "The state where the registered agent is located.",
+          "x-alternativeNames": [
+            "Registered Agent State",
+            "Agent State",
+            "State of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "zip_code": {
+          "description": "The postal zip code for the registered agent's address.",
+          "x-alternativeNames": [
+            "Registered Agent Zip Code",
+            "Agent Zip Code",
+            "Zip Code of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "type": {
+          "description": "Specifies the type of registered agent, such as individual or commercial registered agent.",
+          "x-alternativeNames": [
+            "Registered Agent Type",
+            "Agent Type",
+            "Type of Registered Agent"
+          ],
+          "type": "string"
+        },
+        "service_of_process_email": {
+          "description": "The email address designated for receiving service of process for the registered agent.",
+          "format": "email",
+          "x-alternativeNames": [
+            "Service of Process Email",
+            "Agent Email",
+            "Registered Agent Email"
+          ],
+          "type": "string"
+        },
+        "consent_to_serve": {
+          "description": "A statement or indication that the registered agent has consented to serve.",
+          "x-alternativeNames": [
+            "Consent to Serve",
+            "Agent Consent",
+            "Registered Agent Consent"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address",
+        "street_address",
+        "mailing_address",
+        "city",
+        "state",
+        "zip_code",
+        "type",
+        "service_of_process_email",
+        "consent_to_serve"
+      ]
+    }
+  },
+  "required": [
+    "document_type",
+    "business_name",
+    "business_type",
+    "country_of_jurisdiction",
+    "home_jurisdiction",
+    "date_of_incorporation",
+    "filing_date",
+    "filing_number",
+    "filing_state_details",
+    "managers",
+    "principal_office_address",
+    "contact",
+    "signer",
+    "registered_agent"
+  ]
+}
