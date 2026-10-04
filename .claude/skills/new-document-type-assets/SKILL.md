@@ -234,6 +234,20 @@ If it contains personal data:
 4. A page that is mostly personal data and adds nothing — a mailing panel, a cover sheet
    — is better dropped with `--drop-pages` than replaced. Rotated text cannot be replaced
    cleanly anyway.
+5. Things a text rule cannot reach each have their own `redact.py` option. Coordinates are
+   `PAGE:X0,Y0,X1,Y1` in PDF points; find them with PyMuPDF (`get_image_info`,
+   `get_text("dict")`, `get_drawings`) and print only boxes and font names, never text.
+
+   | On the page | Option |
+   |---|---|
+   | A signature or photo image, including an inline image in the content stream (court e-filing orders) | `--remove-images` |
+   | A stand-in signature where one was removed | `--draw-signature PAGE:…=TEXT` with `--handwriting-font document-types/scripts/fonts/IndieFlower-Regular.ttf` |
+   | A mailing barcode — text in a barcode font, or vector bars — and rotated reference text | `--remove-marks` (keep the box tight: text touching it goes too) |
+   | Values in a fillable form's fields | nothing: the rules are applied to field values and their display automatically, and verification reads them |
+
+   A document with **no text layer whose glyphs are vector outlines** needs
+   `redact_outlined.py`; on a page with a security pattern behind the values, add
+   `--no-fill` so the pattern is not cut. A **raster scan** needs `redact_scan.py`.
 
 Then sweep. **The PDF's page text is only one of four leak paths:**
 

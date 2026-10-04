@@ -13,6 +13,15 @@ glyph paths underneath it, and removes those paths with a PyMuPDF redaction anno
 than painting over them, which would leave them in the file. The replacement is drawn in
 Helvetica at the size and baseline of the glyphs it replaces.
 
+Some producers set a whole value as one compound path rather than a path per glyph. A
+path wider than a glyph is still taken when it lies wholly inside the OCR hit, so a
+background tile that merely overlaps the value is never touched. On a page with a
+security pattern behind the values, pass `--no-fill`: instead of a redaction annotation,
+which paints a white box and clips any background path it touches, every path lying
+wholly inside the value's box is cut out of the content stream, and nothing else changes.
+That also takes anything stacked under the value inside the same box, such as an older
+value covered by a white bar.
+
 `--rules` is the same JSON as `redact.py`, and the same warning applies: it pairs every
 original with its replacement, so it is the personal data in plain text. Keep it OUTSIDE
 the repo.
@@ -33,6 +42,7 @@ import csv
 import io
 import json
 import os
+import re
 import statistics
 import subprocess
 import sys
@@ -146,11 +156,86 @@ def _density(page: pymupdf.Page, rect: pymupdf.Rect) -> float:
     return sum(1 for b in pix.samples if b < 128) / max(1, len(pix.samples))
 
 
-def snap(glyphs: list[pymupdf.Rect], rect: pymupdf.Rect) -> list[pymupdf.Rect]:
-    """Glyph paths whose centre lies inside the OCR rect."""
+def snap(drawings: list[pymupdf.Rect], rect: pymupdf.Rect) -> list[pymupdf.Rect]:
+    """Paths under the OCR rect: glyph-sized ones whose centre lies inside it, and any
+    wider one -- a whole value set as a single compound path -- lying wholly inside it.
+    A wide path that only overlaps, such as a background tile, is left alone."""
     probe = pymupdf.Rect(rect.x0 - 0.4, rect.y0 - 1, rect.x1 + 0.4, rect.y1 + 1)
-    return [g for g in glyphs if probe.contains(pymupdf.Point((g.x0 + g.x1) / 2,
-                                                              (g.y0 + g.y1) / 2))]
+    loose = pymupdf.Rect(rect.x0 - 2, rect.y0 - 2, rect.x1 + 2, rect.y1 + 2)
+    return [g for g in drawings
+            if (g.width < 40 and probe.contains(pymupdf.Point((g.x0 + g.x1) / 2,
+                                                              (g.y0 + g.y1) / 2)))
+            or (g.width >= 40 and loose.contains(g))]
+
+
+_TOKEN = re.compile(rb"%[^\r\n]*|\((?:\\.|[^\\)])*\)|<<|>>|<[0-9A-Fa-f\s]*>|\[|\]|"
+                    rb"/[^\s/\[\]()<>{}%]*|[^\s/\[\]()<>{}%]+")
+_CONSTRUCT = {b"m", b"l", b"c", b"v", b"y", b"re", b"h"}
+_PAINT = {b"S", b"s", b"f", b"F", b"f*", b"B", b"B*", b"b", b"b*"}
+
+
+def strip_paths(page: pymupdf.Page, boxes: list[pymupdf.Rect]) -> int:
+    """Cut every painted path lying wholly inside one of `boxes` out of the page's
+    content stream. Returns how many were cut. Clipping paths are never touched."""
+    page.clean_contents(sanitize=False)
+    xref = page.get_contents()[0]
+    stream = page.parent.xref_stream(xref)
+    if re.search(rb"(^|\s)BI(\s|$)", stream):
+        sys.exit("--no-fill cannot parse a page with inline images")
+    to_page = page.transformation_matrix
+    # Bezier control points can sit just outside the ink they draw.
+    boxes = [pymupdf.Rect(b.x0 - 1, b.y0 - 1, b.x1 + 1, b.y1 + 1) for b in boxes]
+    ctm, stack, operands = pymupdf.Matrix(1, 0, 0, 1, 0, 0), [], []
+    points, start, cuts, op_start = [], None, [], 0
+    for tok in _TOKEN.finditer(stream):
+        t = tok.group()
+        if t[:1] in b"%":
+            continue
+        if t[:1] in b"([<]/" or re.fullmatch(rb"[-+.\d]+", t) or t in (b"<<", b">>"):
+            if not operands:
+                op_start = tok.start()
+            operands.append(t)
+            continue
+        nums = []
+        for o in operands:
+            try:
+                nums.append(float(o))
+            except ValueError:
+                pass
+        if t == b"q":
+            stack.append(ctm)
+        elif t == b"Q":
+            ctm = stack.pop() if stack else ctm
+        elif t == b"cm" and len(nums) == 6:
+            ctm = pymupdf.Matrix(*nums) * ctm
+        elif t in _CONSTRUCT:
+            if start is None:
+                start = op_start if operands else tok.start()
+            m = ctm * to_page
+            if t == b"re" and len(nums) == 4:
+                x, y, w, h = nums
+                points += [pymupdf.Point(x, y) * m, pymupdf.Point(x + w, y + h) * m]
+            else:
+                points += [pymupdf.Point(nums[i], nums[i + 1]) * m
+                           for i in range(0, len(nums) - 1, 2)]
+        elif t in _PAINT or t == b"n":
+            if t != b"n" and start is not None and points:
+                bbox = pymupdf.Rect(points[0], points[0])
+                for pt in points[1:]:
+                    bbox |= pt
+                if any(b.contains(bbox) for b in boxes):
+                    cuts.append((start, tok.end()))
+            points, start = [], None
+        elif t in (b"W", b"W*"):
+            pass
+        operands = []
+    out, last = bytearray(), 0
+    for a, b in cuts:
+        out += stream[last:a]
+        last = b
+    out += stream[last:]
+    page.parent.update_stream(xref, bytes(out))
+    return len(cuts)
 
 
 def main() -> None:
@@ -164,13 +249,19 @@ def main() -> None:
     parser.add_argument("--verify-also", nargs="*", default=[],
                         help="Extra strings that must not survive, such as a surname "
                              "that only ever appears inside a longer rule.")
+    parser.add_argument("--no-fill", action="store_true",
+                        help="Remove the matched paths without painting a white box, "
+                             "so a security pattern behind the value stays intact.")
     args = parser.parse_args()
 
-    # A rule's value is the replacement, or {"with": ..., "font": ...} to force a
-    # PyMuPDF base-14 font -- "hebi" for a bold italic link, which density cannot see.
+    # A rule's value is the replacement, or {"with": ..., "font": ..., "color": ...}
+    # to force a PyMuPDF base-14 font -- "hebi" for a bold italic link, which density
+    # cannot see -- or an RGB ink, 0-1, for a value not printed in black.
     raw_rules = json.loads(args.rules.read_text(encoding="utf-8"))
     rules = {k: v["with"] if isinstance(v, dict) else v for k, v in raw_rules.items()}
     forced = {k: v["font"] for k, v in raw_rules.items() if isinstance(v, dict) and "font" in v}
+    inks = {k: tuple(v["color"]) for k, v in raw_rules.items()
+            if isinstance(v, dict) and "color" in v}
     too_long = {k: v for k, v in rules.items() if len(v) > len(k)}
     if too_long:
         sys.exit(f"Replacements longer than their originals: {sorted(too_long)}")
@@ -188,13 +279,13 @@ def main() -> None:
 
     for page in doc:
         lines = ocr_lines(page)
-        glyphs = [d["rect"] for d in page.get_drawings() if d["rect"].width < 40]
+        drawings = [d["rect"] for d in page.get_drawings()]
         taken: list[pymupdf.Rect] = []
         pending = []
         for original in ordered:
             for occurrence in find(lines, original, rules[original]):
                 for rect, text, covered in occurrence:
-                    hit = [g for g in snap(glyphs, rect) if not any(g in t for t in taken)]
+                    hit = [g for g in snap(drawings, rect) if not any(g in t for t in taken)]
                     if not hit:
                         print(f"  page {page.number + 1}: a rule matched by OCR but no "
                               f"glyphs lie under it -- skipped")
@@ -224,16 +315,21 @@ def main() -> None:
                               f"squeeze={squeeze:.3f} {text!r}")
                     box = pymupdf.Rect(ink.x0 - SNAP_PAD_PT, ink.y0 - SNAP_PAD_PT,
                                        ink.x1 + SNAP_PAD_PT, ink.y1 + SNAP_PAD_PT)
-                    page.add_redact_annot(box, fill=FILL)
+                    if not args.no_fill:
+                        page.add_redact_annot(box, fill=FILL)
                     taken.append(box)
                     pending.append((pymupdf.Point(ink.x0, baseline), text, font,
-                                    round(size, 1), squeeze))
+                                    round(size, 1), squeeze, inks.get(original, TEXT_COLOR)))
                     counts[original] += 1
-        page.apply_redactions(images=pymupdf.PDF_REDACT_IMAGE_NONE,
-                              graphics=pymupdf.PDF_REDACT_LINE_ART_REMOVE_IF_COVERED,
-                              text=pymupdf.PDF_REDACT_TEXT_REMOVE)
-        for point, text, font, size, squeeze in pending:
-            page.insert_text(point, text, fontname=font, fontsize=size, color=TEXT_COLOR,
+        if args.no_fill:
+            if taken:
+                print(f"  page {page.number + 1}: cut {strip_paths(page, taken)} path(s)")
+        else:
+            page.apply_redactions(images=pymupdf.PDF_REDACT_IMAGE_NONE,
+                                  graphics=pymupdf.PDF_REDACT_LINE_ART_REMOVE_IF_COVERED,
+                                  text=pymupdf.PDF_REDACT_TEXT_REMOVE)
+        for point, text, font, size, squeeze, ink_color in pending:
+            page.insert_text(point, text, fontname=font, fontsize=size, color=ink_color,
                              morph=(point, pymupdf.Matrix(squeeze, 1)))
 
     pdfmeta.clear(doc)

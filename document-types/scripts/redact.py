@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -80,6 +81,19 @@ def main() -> None:
              "Only wholly contained images go, so a watermark behind the area survives.",
     )
     parser.add_argument(
+        "--remove-marks", nargs="*", default=[], metavar="PAGE:X0,Y0,X1,Y1",
+        help="Delete text and vector paths inside this rectangle, drawing nothing in their "
+             "place. Use for a mailing barcode, which may be set in a barcode font or drawn "
+             "as bars, and for rotated reference text. Paths only partly inside survive, so "
+             "a background behind the area is kept; text touching the area does not, so "
+             "keep the rectangle tight.",
+    )
+    parser.add_argument(
+        "--draw-signature", nargs="*", default=[], metavar="PAGE:X0,Y0,X1,Y1=TEXT",
+        help="Write TEXT in --handwriting-font inside this rectangle, as a stand-in for a "
+             "signature removed with --remove-images. Sized to fit the rectangle.",
+    )
+    parser.add_argument(
         "--handwriting-font", type=Path, metavar="FONT.ttf",
         help="Font file for replacing text set in a handwriting font, such as a typed "
              "e-signature, so it still reads as a signature. Use an openly licensed font "
@@ -89,6 +103,9 @@ def main() -> None:
     if args.handwriting_font and not args.handwriting_font.is_file():
         sys.exit(f"--handwriting-font: no such file {args.handwriting_font}")
     handwriting = str(args.handwriting_font) if args.handwriting_font else None
+    signatures = [_parse_signature(spec) for spec in args.draw_signature]
+    if signatures and not handwriting:
+        sys.exit("--draw-signature needs --handwriting-font")
 
     rules: dict[str, str] = json.loads(args.rules.read_text(encoding="utf-8"))
 
@@ -114,14 +131,34 @@ def main() -> None:
     # signature sat over a corner of a full-page watermark: blanking the area would have
     # left a white patch on the watermark, and deleting every overlapping image would have
     # taken the watermark with it. So delete only images wholly inside the area.
-    regions = [_parse_region(spec) for spec in args.remove_images]
+    regions = [_parse_region(spec, "--remove-images") for spec in args.remove_images]
     for page_no, region in regions:
         page = doc[page_no - 1]
         removed = [xref for xref, *_ in page.get_images(full=True)
                    if any(region.contains(r) for r in page.get_image_rects(xref))]
         for xref in removed:
             page.delete_image(xref)
-        print(f"Removed {len(removed)} image(s) inside {tuple(region)} on page {page_no}.")
+        # A court order's judge's signature was an inline image (BI ... ID ... EI in the
+        # content stream). get_images does not list those, so the loop above removed
+        # nothing and said so without complaint. They are cut out of the stream instead.
+        inline = _remove_inline_images(page, region)
+        print(f"Removed {len(removed)} image(s) and {inline} inline image(s) inside "
+              f"{tuple(region)} on page {page_no}.")
+
+    # Mailing barcodes have arrived as text in a barcode font with a rotated reference line
+    # beside them, and as forty-odd vector bars on a white backing box. Neither is an image
+    # and neither matches a text rule, so both need a region of their own. No fill, so the
+    # page behind them shows through; line art goes only when it lies wholly inside.
+    marks = [_parse_region(spec, "--remove-marks") for spec in args.remove_marks]
+    for page_no, region in marks:
+        page = doc[page_no - 1]
+        before = len(_marks_inside(page, region))
+        page.add_redact_annot(region)
+        page.apply_redactions(images=pymupdf.PDF_REDACT_IMAGE_NONE,
+                              graphics=pymupdf.PDF_REDACT_LINE_ART_REMOVE_IF_COVERED,
+                              text=pymupdf.PDF_REDACT_TEXT_REMOVE)
+        print(f"Removed {before} mark(s) (text spans and paths) inside {tuple(region)} "
+              f"on page {page_no}.")
 
     total = 0
     per_rule: dict[str, int] = {}
@@ -138,8 +175,14 @@ def main() -> None:
                        for c in s["chars"] if c["c"] == "_"]
         redacted: list[pymupdf.Rect] = []
         pending: list[tuple[pymupdf.Point, str, str, float, str | None, tuple]] = []
+        # search_for also finds the text a form field displays. Those values are replaced
+        # in the field itself below; redacting them here as well drew a second copy of
+        # every value on an SBA 413, overprinting the field's own.
+        fields = [w.rect for w in page.widgets() if w.field_type in _TEXT_FIELDS]
         for original, replacement in rules.items():
             for rect in _merge_line_rects(page.search_for(original)):
+                if any(f.contains(rect.tl + (rect.br - rect.tl) * 0.5) for f in fields):
+                    continue
                 # Match the text being replaced: its size, weight and baseline. Sizing
                 # from the rect instead drew an 8.8pt bold name at 4.3pt regular, since
                 # the inset rect is shorter than the line and the redaction annotation
@@ -201,6 +244,18 @@ def main() -> None:
             page.insert_text(point, text, fontname=font, fontfile=fontfile,
                              fontsize=size, color=color)
 
+    # A filled-in fillable form keeps its values in the form fields, not in the page text,
+    # so the rules above find nothing and the check below used to pass regardless: an SBA
+    # Form 413 carried the applicant's name, SSN, phones and addresses only there.
+    field_counts = _replace_field_values(doc, rules)
+    for original, count in field_counts.items():
+        per_rule[original] = per_rule.get(original, 0) + count
+        total += count
+
+    for page_no, region, text in signatures:
+        _draw_signature(doc[page_no - 1], region, text, handwriting)
+        print(f"Drew a stand-in signature inside {tuple(region)} on page {page_no}.")
+
     # Document metadata is a separate leak path from page text, and a quiet one. This
     # statement carried the account number in /Info "author" as 04822863413 -- the same
     # digits as the account number on the page, minus the separators, so every grep for
@@ -228,15 +283,13 @@ def main() -> None:
     text = "\n".join(p.get_text() for p in verify)
     text += "\n" + "\n".join(str(v) for v in (verify.metadata or {}).values() if v)
     text += "\n" + (verify.get_xml_metadata() or "")
+    text += "\n" + "\n".join(_field_text(verify, w) for p in verify for w in p.widgets())
     if pdfmeta.remaining(verify):
         sys.exit(f"FAILED: metadata survives in {args.output}: {pdfmeta.remaining(verify)}")
     verify.close()
 
     # Compare on digits alone as well as literally: an identifier is often stored
     # without its separators, which a literal check sails straight past.
-    def _digits(value: str) -> str:
-        return "".join(c for c in value if c.isdigit())
-
     text_digits = _digits(text)
     survivors = [
         r for r in rules
@@ -251,16 +304,29 @@ def main() -> None:
 
     if regions:
         # delete_image leaves a 1x1 blank image in the deleted one's place, so an image
-        # counts as surviving only if it still has real pixels.
+        # counts as surviving only if it still has real pixels. Inline images have no
+        # xref and show up only in get_image_info.
         verify = pymupdf.open(args.output)
         left = [(n, xref) for n, region in regions
                 for xref, _, w, h, *_ in verify[n - 1].get_images(full=True)
                 if w * h > 1
                 and any(region.contains(r) for r in verify[n - 1].get_image_rects(xref))]
+        left += [(n, "inline") for n, region in regions
+                 for info in verify[n - 1].get_image_info(xrefs=True)
+                 if info["xref"] == 0 and region.contains(pymupdf.Rect(info["bbox"]))]
         verify.close()
         if left:
             sys.exit(f"FAILED — images still inside a removed region: {left}")
         print("Verified: no image remains inside a removed region.")
+
+    if marks:
+        verify = pymupdf.open(args.output)
+        left = [(n, len(_marks_inside(verify[n - 1], region))) for n, region in marks
+                if _marks_inside(verify[n - 1], region)]
+        verify.close()
+        if left:
+            sys.exit(f"FAILED — text or paths still inside a --remove-marks region: {left}")
+        print("Verified: no text or path remains inside a --remove-marks region.")
 
     # Clearing the PDF is only half the job. The rules file is a verbatim copy of the
     # personal data, and it is easy to "document the provenance" by pasting the same
@@ -335,14 +401,198 @@ def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:
     return best
 
 
-def _parse_region(spec: str) -> tuple[int, pymupdf.Rect]:
+def _parse_region(spec: str, flag: str) -> tuple[int, pymupdf.Rect]:
     """'4:50,332,131,373' -> (4, Rect(50, 332, 131, 373))."""
     try:
         page, coords = spec.split(":")
         x0, y0, x1, y1 = (float(v) for v in coords.split(","))
     except ValueError:
-        sys.exit(f"--remove-images expects PAGE:X0,Y0,X1,Y1, got {spec!r}")
+        sys.exit(f"{flag} expects PAGE:X0,Y0,X1,Y1, got {spec!r}")
     return int(page), pymupdf.Rect(x0, y0, x1, y1)
+
+
+def _parse_signature(spec: str) -> tuple[int, pymupdf.Rect, str]:
+    """'1:430,700,560,730=J Q Sample' -> (1, Rect(430, 700, 560, 730), 'J Q Sample')."""
+    region, sep, text = spec.partition("=")
+    if not sep or not text.strip():
+        sys.exit(f"--draw-signature expects PAGE:X0,Y0,X1,Y1=TEXT, got {spec!r}")
+    page, rect = _parse_region(region, "--draw-signature")
+    return page, rect, text.strip()
+
+
+def _digits(value: str) -> str:
+    return "".join(c for c in value if c.isdigit())
+
+
+# "BI/W 120 ..." with no space is legal: a slash delimits a token as well as whitespace.
+_BI = re.compile(rb"(?:^|(?<=\s))BI(?=[\s/])")
+_ID = re.compile(rb"(?<=\s)ID\s")
+_EI_AFTER = re.compile(rb"\s*EI(?=\s|$)")
+_EI_SEARCH = re.compile(rb"\sEI(?=\s|$)")
+_COMPONENTS = {b"/G": 1, b"/DeviceGray": 1, b"/RGB": 3, b"/DeviceRGB": 3,
+               b"/CMYK": 4, b"/DeviceCMYK": 4, b"/I": 1, b"/Indexed": 1}
+
+
+def _inline_spans(stream: bytes) -> list[tuple[int, int]]:
+    """(start, end) of every BI ... ID <data> EI block in a content stream.
+
+    An unfiltered image's data length follows from its width, height, bits per component
+    and colour space, which is the only reliable way past data that happens to contain
+    the bytes "EI". A filtered one is ended at the first EI token after its data.
+    """
+    spans, pos = [], 0
+    while (bi := _BI.search(stream, pos)) is not None:
+        id_ = _ID.search(stream, bi.end())
+        if id_ is None:
+            break
+        params, start = stream[bi.end():id_.start()], id_.end()
+        end = None
+        if not re.search(rb"/(?:F|Filter)\b", params):
+            def number(pattern: bytes, default: int | None = None) -> int | None:
+                m = re.search(pattern + rb"\s+(\d+)", params)
+                return int(m.group(1)) if m else default
+            mask = re.search(rb"/(?:IM|ImageMask)\s+true", params)
+            width, height = number(rb"/(?:W|Width)"), number(rb"/(?:H|Height)")
+            bpc = number(rb"/(?:BPC|BitsPerComponent)", 1 if mask else 8)
+            space = re.search(rb"/(?:CS|ColorSpace)\s*(/\w+|\[)", params)
+            comps = 1 if mask or not space else _COMPONENTS.get(space.group(1), 1)
+            if width and height:
+                after = _EI_AFTER.match(stream, start + ((width * bpc * comps + 7) // 8) * height)
+                end = after.end() if after else None
+        if end is None:
+            ei = _EI_SEARCH.search(stream, start)
+            if ei is None:
+                break
+            end = ei.end()
+        spans.append((bi.start(), end))
+        pos = end
+    return spans
+
+
+def _remove_inline_images(page: pymupdf.Page, region: pymupdf.Rect) -> int:
+    """Cut every inline image lying wholly inside region out of the page's content
+    streams. Returns how many were cut.
+
+    Inline images are matched to their on-page boxes by order of appearance: the n-th
+    BI block in the content streams is the n-th xref-less entry of get_image_info. When
+    the two counts differ (an inline image inside a form XObject, say), stop rather than
+    guess.
+    """
+    boxes = [pymupdf.Rect(i["bbox"]) for i in page.get_image_info(xrefs=True) if i["xref"] == 0]
+    if not boxes:
+        return 0
+    doc = page.parent
+    blocks = [(xref, start, end) for xref in page.get_contents()
+              for start, end in _inline_spans(doc.xref_stream(xref))]
+    if len(blocks) != len(boxes):
+        sys.exit(f"page {page.number + 1}: {len(blocks)} inline image(s) in the content "
+                 f"stream but {len(boxes)} on the page; cannot match them safely")
+    cuts: dict[int, list[tuple[int, int]]] = {}
+    for (xref, start, end), box in zip(blocks, boxes):
+        if region.contains(box):
+            cuts.setdefault(xref, []).append((start, end))
+    for xref, spans in cuts.items():
+        stream, out, last = doc.xref_stream(xref), bytearray(), 0
+        for start, end in spans:
+            out += stream[last:start]
+            last = end
+        out += stream[last:]
+        doc.update_stream(xref, bytes(out))
+    return sum(len(spans) for spans in cuts.values())
+
+
+def _marks_inside(page: pymupdf.Page, region: pymupdf.Rect) -> list:
+    """Text spans centred inside region, and vector paths lying wholly inside it."""
+    spans = [s for b in page.get_text("dict")["blocks"] for l in b.get("lines", [])
+             for s in l["spans"]
+             if s["text"].strip() and region.contains(
+                 pymupdf.Point((s["bbox"][0] + s["bbox"][2]) / 2,
+                               (s["bbox"][1] + s["bbox"][3]) / 2))]
+    paths = [d for d in page.get_drawings() if region.contains(d["rect"])]
+    return spans + paths
+
+
+# Values the form's own JavaScript formats for display: AFSpecial_Format(n) shows a ZIP,
+# ZIP+4, phone number or SSN with separators while storing the bare digits.
+_SPECIAL_FORMAT = re.compile(r"AFSpecial_Format\(\s*(\d)\s*\)")
+_TEXT_FIELDS = (pymupdf.PDF_WIDGET_TYPE_TEXT, pymupdf.PDF_WIDGET_TYPE_COMBOBOX,
+                pymupdf.PDF_WIDGET_TYPE_LISTBOX)
+
+
+def _replace_field_values(doc: pymupdf.Document, rules: dict[str, str]) -> dict[str, int]:
+    """Apply the rules to every text form field's value, and redraw its appearance.
+
+    A rule matches a field when the original appears in its value, or when the value is
+    the same digits stored without separators: a form that formats an SSN for display
+    keeps 9 bare digits. Returns the number of fields each rule changed.
+    """
+    counts: dict[str, int] = {}
+    for page in doc:
+        for widget in page.widgets():
+            value = widget.field_value
+            if widget.field_type not in _TEXT_FIELDS or not isinstance(value, str) or not value:
+                continue
+            new, hit = value, []
+            for original, replacement in rules.items():
+                if original in new:
+                    new = new.replace(original, replacement)
+                    hit.append(original)
+                elif len(_digits(original)) >= 6 and _digits(new) == _digits(original):
+                    new = _digits(replacement) if new.isdigit() else replacement
+                    hit.append(original)
+            if new == value:
+                continue
+            fmt = _SPECIAL_FORMAT.search(widget.script_format or "")
+            # update() draws the appearance from field_value, so set the displayed form
+            # first, then store the bare value in /V as the form's own script would.
+            widget.field_value = _special_format(new, int(fmt.group(1))) if fmt else new
+            widget.update()
+            if fmt:
+                doc.xref_set_key(widget.xref, "V", pymupdf.get_pdf_str(new))
+            for original in hit:
+                counts[original] = counts.get(original, 0) + 1
+    return counts
+
+
+def _special_format(value: str, kind: int) -> str:
+    """Acrobat's AFSpecial_Format: 0 ZIP, 1 ZIP+4, 2 phone, 3 SSN. Anything that does not
+    have the right number of digits is shown as stored."""
+    d = _digits(value)
+    if kind == 0 and len(d) == 5:
+        return d
+    if kind == 1 and len(d) == 9:
+        return f"{d[:5]}-{d[5:]}"
+    if kind == 2 and len(d) == 10:
+        return f"({d[:3]}) {d[3:6]}-{d[6:]}"
+    if kind == 2 and len(d) == 7:
+        return f"{d[:3]}-{d[3:]}"
+    if kind == 3 and len(d) == 9:
+        return f"{d[:3]}-{d[3:5]}-{d[5:]}"
+    return value
+
+
+def _field_text(doc: pymupdf.Document, widget: pymupdf.Widget) -> str:
+    """A form field's stored value and the text drawn in its appearance stream."""
+    parts = [str(widget.field_value or "")]
+    kind, ref = doc.xref_get_key(widget.xref, "AP/N")
+    if kind == "xref":
+        parts.append(doc.xref_stream(int(ref.split()[0])).decode("latin-1"))
+    return "\n".join(parts)
+
+
+SIGNATURE_INK = (0.05, 0.05, 0.15)
+
+
+def _draw_signature(page: pymupdf.Page, region: pymupdf.Rect, text: str, fontfile: str) -> None:
+    """Write text in the handwriting font, as large as fits region, sitting on its lower
+    edge the way a signature sits on its line."""
+    size = region.height * 0.8
+    width = pymupdf.Font(fontfile=fontfile).text_length(text, size)
+    if width > region.width:
+        size *= region.width / width * 0.97
+    page.insert_text(pymupdf.Point(region.x0, region.y1 - region.height * 0.2), text,
+                     fontname="handwriting", fontfile=fontfile, fontsize=size,
+                     color=SIGNATURE_INK)
 
 
 def _inside_repo(path: Path) -> bool:
