@@ -30,7 +30,7 @@ If the name or the URL is missing, stop and ask. Do not invent a document.
 
 ### Reading a request file
 
-`document-types/requests/_template.yaml` documents every key. Only `name` and `url` are
+`.claude/skills/new-document-type-assets/request-template.yaml` documents every key. Only `name` and `url` are
 required; an absent key means you decide that thing, exactly as you did before request
 files existed.
 
@@ -44,9 +44,14 @@ files existed.
 | `notes` | Context the document does not carry. Read it before Step 6. |
 
 **A request states intent, and Step 6 decides whether the run can honour it.** Never
-silently substitute a field the user asked for. Copy the request file into the repo at
-`document-types/requests/<slug>.yaml` if it is not already there, so the folder ships
-with the ask that produced it.
+silently substitute a field the user asked for.
+
+**Request files are local working papers and never reach GitHub.** The whole
+`document-types/requests/` folder is gitignored: put an inline request's file there if
+you write one, but do not commit it. What was asked for and what shipped belong in the
+manifest's `notes`, which is published. Once the folder merges, `ship.py cleanup` moves
+the request to `document-types/requests/published/`; everything still at the top level
+is to do, in progress or rejected.
 
 ---
 
@@ -492,7 +497,7 @@ Before committing, run the mechanical gates:
 ```
 
 It checks:
-- the folder is complete and the request file is present
+- the folder is complete
 - clearance is `public` or `redacted`, never a placeholder
 - a redacted document records its redactions, and its source PDF carries no metadata
 - 1–5 featured fields, all on `feature_page`, with no comma in any label

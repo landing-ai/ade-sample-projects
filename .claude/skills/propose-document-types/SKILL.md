@@ -192,7 +192,7 @@ Read each answer for more than a choice. The operator may:
 ## Step 5 — Write the request files
 
 For each chosen candidate, write `document-types/requests/<slug>.yaml` from
-`document-types/requests/_template.yaml`. Keep the template's header comment, and fill:
+`.claude/skills/new-document-type-assets/request-template.yaml`. Keep the template's header comment, and fill:
 
 - `name`, `url`: the chosen candidate's URL, unchanged.
 - `file`: only if `download: "manual"`. Leave it commented, with a note that the operator
@@ -210,8 +210,9 @@ Do **not** set `feature_page` or `fields` unless the operator chose them. They a
 requests the build skill must honour or stop on. Suggestions belong in `notes`, where
 the build decides.
 
-Never put a personal-data value in a request file. Request files are committed to a
-public repo.
+Never put a personal-data value in a request file. Request files are gitignored and stay
+on this machine, but they are shared working papers, and their notes are copied into
+manifests that are published.
 
 ## Step 6 — Report
 
@@ -220,5 +221,5 @@ reason. Then give the next step: `/build-document-types <slug> <slug> …` build
 whole batch in parallel worktrees and ships it on approval. `/new-document-type-assets
 document-types/requests/<slug>.yaml` builds one by hand.
 
-Do not commit the request files unless asked. The build skill commits each one with its
-folder.
+Request files are never committed: `document-types/requests/` is gitignored. When a
+folder merges, `ship.py cleanup` moves its request to `document-types/requests/published/`.

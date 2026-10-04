@@ -12,14 +12,17 @@ once without trampling one checkout:
 
   start    creates <repo>-worktrees/<slug> on a new branch document-type-<slug> from
            origin/<base>, links the main checkout's .venv and .env into it (both are
-           gitignored, links included), and copies the request file across, since an
-           uncommitted request exists only in the main checkout.
+           gitignored, links included), and copies the request file across, since
+           request files are gitignored and exist only in the main checkout.
   check    the gates a folder must pass before it leaves this machine. See check().
   ship     check, then commit whatever is not yet committed. Pushing and opening the PR
            are separate flags, because both publish: nothing leaves without --push/--pr.
-  cleanup  removes the worktree once the PR has merged, and the main checkout's untracked
-           copy of the request file if it matches the merged one, which would otherwise
-           block the next `git pull`.
+  cleanup  removes the worktree once the PR has merged, and moves the request file to
+           document-types/requests/published/ once the folder is on origin/<base>.
+
+Request files are local working papers, not part of the published collection: the whole
+document-types/requests/ folder is gitignored. Anything at its top level is still to do,
+in progress or rejected; requests/published/ holds the ones whose folder has merged.
 
 Run any subcommand from anywhere in the repo or its worktrees. `check` and `ship` act on
 the slug's worktree if there is one, otherwise on the current checkout.
@@ -164,7 +167,6 @@ def check(args) -> tuple[Path, dict, list[str]]:
     directory, the manifest and the failures (empty when it passes)."""
     root, slug = workdir(args.slug), args.slug
     folder = root / "document-types" / "collection" / slug
-    request = root / "document-types" / "requests" / f"{slug}.yaml"
     fail: list[str] = []
     if not folder.is_dir():
         return root, {}, [f"no folder at {folder}"]
@@ -172,8 +174,6 @@ def check(args) -> tuple[Path, dict, list[str]]:
     for name in REQUIRED:
         if not (folder / name).is_file():
             fail.append(f"missing {name}")
-    if not request.is_file():
-        fail.append(f"missing request file {request.relative_to(root)}")
     try:
         manifest = json.loads((folder / "manifest.json").read_text())
     except (OSError, ValueError) as e:
@@ -238,7 +238,7 @@ def check(args) -> tuple[Path, dict, list[str]]:
         fail.append("clearance is redacted: pass --rules (the redaction rules file, "
                     "outside the repo) so the folder can be swept for the originals")
     if terms:
-        paths = [p for p in folder.rglob("*") if p.is_file()] + [request] + \
+        paths = [p for p in folder.rglob("*") if p.is_file()] + \
                 [root / p for p in args.include if (root / p).is_file()]
         fail += [f"leak: {h}" for h in sweep(paths, terms)]
 
@@ -270,7 +270,6 @@ def pr_body(root: Path, slug: str, manifest: dict, base: str, footer: str) -> st
     cost = readme_section(readme, "Cost").split("\n\n")[0]
     return f"""## Summary
 - Adds `document-types/collection/{slug}/`: {manifest['title']}, {source.get('pages')} {source.get('orientation')} page(s), parsed with DPT-3 Pro and extracted at standard tier with a {leaf_count(schema)}-leaf schema.
-- Adds the request file `document-types/requests/{slug}.yaml`.
 {stacked}
 ## Provenance
 [{origin.get('title') or origin['url']}]({origin['url']}), published by {origin['publisher']}, retrieved {origin['retrieved']}. Clearance `{origin['clearance']}`.
@@ -303,8 +302,7 @@ def ship(args) -> None:
         sys.exit(f"On branch {current!r}, expected {branch(slug)!r}. Run `ship.py start` "
                  "or check out the right branch.")
 
-    paths = [f"document-types/collection/{slug}", f"document-types/requests/{slug}.yaml",
-             *args.include]
+    paths = [f"document-types/collection/{slug}", *args.include]
     git("add", "--", *paths, cwd=root)
     staged = git("diff", "--cached", "--name-only", cwd=root).splitlines()
     stray = [p for p in staged if not any(p == q or p.startswith(q.rstrip("/") + "/")
@@ -354,33 +352,31 @@ def cleanup(args) -> None:
         out = subprocess.run(["git", "branch", "-d", branch(args.slug)], cwd=main,
                              capture_output=True, text=True)
         print(out.stdout.strip() or out.stderr.strip())
-    drop_merged_request(main, args.slug, args.base)
+    publish_request(main, args.slug, args.base)
 
 
-def drop_merged_request(main: Path, slug: str, base: str) -> None:
-    """Remove the main checkout's untracked copy of the request file once the identical
-    file has merged into origin/<base>.
+def publish_request(main: Path, slug: str, base: str) -> None:
+    """Move the request file to document-types/requests/published/ once the folder it
+    produced is on origin/<base>.
 
-    /propose-document-types writes request files into the main checkout, untracked, and
-    each build commits its own copy. After the merge, the untracked copy blocks the next
-    `git pull`: "untracked working tree files would be overwritten by merge". Only a
-    byte-identical, untracked copy is removed; anything else is reported and left alone."""
-    rel = f"document-types/requests/{slug}.yaml"
-    local = main / rel
+    Request files never reach GitHub (the folder is gitignored), so this subfolder is the
+    one place that says which requests are done: everything left at the top level is still
+    to do, in progress, or rejected."""
+    requests = main / "document-types" / "requests"
+    local, done = requests / f"{slug}.yaml", requests / "published" / f"{slug}.yaml"
     if not local.is_file():
         return
-    if git("ls-files", "--", rel, cwd=main):
-        return  # tracked here already: git manages it, nothing to do
     git("fetch", "--quiet", "origin", base, cwd=main)
-    merged = subprocess.run(["git", "show", f"origin/{base}:{rel}"], cwd=main,
-                            capture_output=True)
-    if merged.returncode:
-        print(f"kept {rel}: not on origin/{base} yet")
-    elif merged.stdout == local.read_bytes():
-        local.unlink()
-        print(f"removed {rel}: identical to origin/{base}")
-    else:
-        print(f"kept {rel}: differs from origin/{base}; resolve it before pulling")
+    if not git("ls-tree", "--name-only", f"origin/{base}",
+               f"document-types/collection/{slug}", cwd=main):
+        print(f"kept requests/{slug}.yaml: its folder is not on origin/{base} yet")
+        return
+    if done.exists():
+        print(f"kept requests/{slug}.yaml: requests/published/{slug}.yaml already exists")
+        return
+    done.parent.mkdir(exist_ok=True)
+    local.rename(done)
+    print(f"moved requests/{slug}.yaml to requests/published/")
 
 
 def main() -> None:
@@ -418,8 +414,8 @@ def main() -> None:
     p.add_argument("--delete-branch", action="store_true")
     p.add_argument("--force", action="store_true")
     p.add_argument("--base", default="main",
-                   help="branch the PR merged into; its copy of the request file is "
-                        "compared with the main checkout's untracked one")
+                   help="branch the PR merged into: the request moves to "
+                        "requests/published/ once the folder is there")
     p.set_defaults(func=cleanup)
 
     args = parser.parse_args()
