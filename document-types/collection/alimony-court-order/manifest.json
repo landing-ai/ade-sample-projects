@@ -1,0 +1,55 @@
+{
+  "slug": "alimony-court-order",
+  "title": "Court Order for Alimony",
+  "source": {
+    "file": "alimony-court-order-fl-180-fl-343.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.slo.courts.ca.gov/system/files/disso-3-uncontested-judgment-sample.pdf",
+      "publisher": "Superior Court of California, County of San Luis Obispo (Self-Help Center)",
+      "title": "Uncontested Judgment sample packet: Judgment (FL-180) and Spousal, Partner, or Family Support Order Attachment (FL-343)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A sample packet the San Luis Obispo Superior Court's Self-Help Center publishes as 'Sample Forms' to show self-represented litigants how to complete an uncontested dissolution judgment; downloaded by script. Every party is a specimen (Pat Sample, Sam Sample and their children Chad and Cindy Sample) with a placeholder address, so no redaction was needed. Pages 7-8 (the FL-180 judgment) and 18-19 (the FL-343 support order it incorporates) of the 33-page packet are used. Those pages are 1-bit raster scans stored sideways with /Rotate 270; each was rendered upright at 300 dpi with PyMuPDF and placed on a fresh unrotated portrait page, so the committed PDF carries no page rotation. The image is otherwise unchanged and the document metadata is empty.",
+      "split_from": {
+        "pages": [
+          7,
+          8,
+          18,
+          19
+        ],
+        "of": 33
+      }
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    {
+      "path": "case_number",
+      "label": "Case number",
+      "occurrence": 2
+    },
+    {
+      "path": "support_order.payor",
+      "label": "Paid by",
+      "occurrence": 0
+    },
+    {
+      "path": "support_order.support_type",
+      "label": "Support type",
+      "occurrence": 0
+    },
+    {
+      "path": "support_order.monthly_amount",
+      "label": "Monthly amount",
+      "occurrence": 0
+    },
+    {
+      "path": "support_order.marriage_length_years",
+      "label": "Length of marriage (years)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no fields formally but suggested five in its notes: case number, the spousal support checkbox, the monthly amount, the day it is payable and the length of the marriage. Four ship as suggested. The payable day ('1st') was dropped: inspect_fields marks it ok, but the crop boxes the 'Other (specify):' line below it. The parse returns ', payable through (specify end date):' as its own line although it prints at the end of the amount line, and from there each line-level box on this part of the page is assigned one line late. It was replaced by the payor ('respondent', label 'Paid by'), from item 6a above, whose crop is correct. The overlay reads as the order itself: which case, who pays, what kind of support, how much, and the marriage length the court found. case_number is pinned to occurrence 2, the FL-343 caption; occurrences 0 and 1 are on the two FL-180 pages. No person is featured. The start date (2011-08-01) is correct but reads OFF, since it is normalized from '8/1/2011' and shares the amount's line. Booleans read OFF, as they do. The packet leaves the end date blank, and extraction returns an empty string rather than null for it."
+}
