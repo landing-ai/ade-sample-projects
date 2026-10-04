@@ -1,0 +1,38 @@
+{
+  "slug": "bankruptcy-discharge",
+  "title": "Bankruptcy Discharge",
+  "source": {
+    "file": "bankruptcy-discharge.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/489929789/Discharging-Debtor-7-Trustee-Closing-Case-Auto-Part-1",
+      "publisher": "United States Bankruptcy Court, District of South Carolina (court record, posted to Scribd by a third party)",
+      "title": "Order: Discharge of Debtor, Order Discharging Trustee, Order Closing Case (Form 166BNC), Chapter 7",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "A Chapter 7 discharge order issued through the court's electronic filing system, found on Scribd, a user-upload site, and downloaded manually by the operator because Scribd blocks scripted downloads. Scribd is not the publisher, so the order is treated as a private person's record. The debtor's name, the two other names used (aka and fka), the home street address, the city and ZIP line, the last four digits of the SSN and the case number were replaced with document-types/scripts/redact.py, which removes the underlying text. The case number has one plausible stand-in (year prefix and judge-initials suffix kept), used in the body and in the ECF header line on both pages. The judge's handwritten signature was an inline image, which redact.py cannot reach: it was cut out of the page's content stream and a stand-in signature drawn in Indie Flower, an openly licensed handwriting font. No judge's name is printed. The court, its address, the clerk of court's printed name (official capacity), the dates, the docket number and the ECF timestamp are kept. PDF metadata was cleared. Verified, on literals and bare digits: no original value is extractable from the committed PDF or appears anywhere in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "debtor's name", "with": "Jane Q Sample", "occurrences": 1 },
+          { "what": "other names used by the debtor (aka and fka)", "with": "Jane Sample, John Q Sample", "occurrences": 2 },
+          { "what": "debtor's street address", "with": "100 Main St", "occurrences": 1 },
+          { "what": "debtor's city and ZIP code (state kept)", "with": "Anytown, SC 29000", "occurrences": 1 },
+          { "what": "last four digits of the SSN", "with": "xxx-xx-4321", "occurrences": 1 },
+          { "what": "case number (body and ECF header lines)", "with": "09-30789-dd", "occurrences": 3 },
+          { "what": "judge's handwritten signature (inline image)", "with": "a stand-in signature in Indie Flower", "occurrences": 1 }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "court", "label": "Court", "occurrence": 0 },
+    { "path": "chapter", "label": "Chapter", "occurrence": 1 },
+    { "path": "order_titles[0]", "label": "Order", "occurrence": 0 },
+    { "path": "discharge_statute", "label": "Statute cited", "occurrence": 0 },
+    { "path": "ecf_entered_timestamp", "label": "Entered (ECF timestamp)", "occurrence": 0 }
+  ],
+  "notes": "The request suggested the chapter, the court, the discharge or entry date and the statute cited, as suggestions rather than a fields list. The court, the chapter (pinned to the 'Chapter: 7' line, occurrence 1, not the ECF header's 'Desc Ch 7'), the statute and the first order title ('DISCHARGE OF DEBTOR') ship. The entry, filed and signed dates come back as ISO dates (2009-11-30) from '11/30/09' and 'November 30, 2009', so they read OFF and cannot be featured; the ECF header's printed entry timestamp, which grounds ok, stands in for the date. No person is featured. The source URL is a Scribd page: the website shows it as plain text, not as a link. Body minus signs in the case number and masked SSN became ASCII hyphens, because the replacement font cannot draw U+2212."
+}
