@@ -1,0 +1,42 @@
+{
+  "slug": "disability-benefit-letter",
+  "title": "Disability Benefit Letter",
+  "source": {
+    "file": "disability-benefit-letter.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/1034680635/Benefit-Verification-Letter",
+      "publisher": "Social Security Administration",
+      "title": "Benefit Verification Letter",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "A real Social Security Administration Benefit Verification Letter for a disability beneficiary, found on Scribd, a user-upload site, and downloaded manually by the operator on 2026-10-03 because Scribd blocks scripted downloads. Scribd is not the publisher, so the letter was treated as a personal record. Before anything was parsed, the recipient's name and mailing address, the BNC reference number, the Medicare number and the date of birth were replaced with stand-ins, and the Intelligent Mail barcode, the vertical barcode on the left edge and the rotated reference line on the right edge were removed outright. The replacements were made with document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the PDF metadata was cleared. Verified: no original value is extractable from the committed PDF, and no barcode, rotated text, extra image or inline image remains.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "recipient's name", "with": "JANE SAMPLE", "occurrences": 1 },
+          { "what": "recipient's street line", "with": "100 MAIN ST", "occurrences": 1 },
+          { "what": "recipient's unit number line", "with": "101", "occurrences": 1 },
+          { "what": "recipient's city, state and ZIP line", "with": "ANYTOWN PR  00999", "occurrences": 1 },
+          { "what": "BNC reference number", "with": "a randomly drawn stand-in of the same shape (98AW400G04124)", "occurrences": 2 },
+          { "what": "Medicare number (MBI)", "with": "a randomly drawn MBI-shaped stand-in (1UX3VM6MM52)", "occurrences": 1 },
+          { "what": "date of birth", "with": "November 14, 1981", "occurrences": 1 }
+        ],
+        "removed": [
+          { "what": "Intelligent Mail barcode above the address block (text in a USPS IMb barcode font)", "occurrences": 1 },
+          { "what": "vertical barcode down the left edge encoding the mail-piece ID (text in a rotated barcode font)", "occurrences": 1 },
+          { "what": "rotated reference line down the right edge (mail-piece ID and print-job code)", "occurrences": 1 }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "current_benefits.period_start", "label": "Benefit amounts effective from", "occurrence": 0 },
+    { "path": "current_benefits.gross_monthly_benefit", "label": "Monthly benefit before deductions", "occurrence": 1 },
+    { "path": "current_benefits.medical_insurance_premium_deduction", "label": "Medicare premium deduction", "occurrence": 0 },
+    { "path": "current_benefits.net_monthly_payment", "label": "Net monthly payment", "occurrence": 0 }
+  ],
+  "notes": "Features the 'Information About Current Social Security Benefits' section on page 1 end to end: the month the amounts take effect, the gross monthly benefit, the Medicare premium deducted and the net payment, so the overlay reads as one calculation. The request suggested the monthly benefit amounts, the Medicare premium deduction and the benefit dates in that section; all of them shipped. The operator asked for impersonal fields (amounts, deductions, Medicare dates) and not the disability onset date, which was kept as printed but is not featured. The Medicare entitlement dates extract and ground correctly but are on page 2, so they cannot share this overlay. gross_monthly_benefit grounds twice: occurrence 0 is the sentence's first line, which does not contain the amount, so occurrence 1, the line carrying $1,137.30, is pinned. No person is featured. The source URL is a Scribd user upload, not a publisher page: the website should show it as plain text, not as a link. Known extraction fault, left visible: current_benefits.period_end comes back as the string 'null' rather than a JSON null."
+}

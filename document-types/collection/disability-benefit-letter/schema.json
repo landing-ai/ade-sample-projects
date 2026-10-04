@@ -1,0 +1,210 @@
+{
+  "type": "object",
+  "properties": {
+    "agency": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The issuing agency named in the letterhead, e.g. 'Social Security Administration'"
+    },
+    "letter_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The letter's title under the agency name, e.g. 'Benefit Verification Letter'"
+    },
+    "letter_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date after 'Date:' at the top right, as printed"
+    },
+    "bnc_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The reference printed after 'BNC#:' at the top right, exactly as printed"
+    },
+    "recipient": {
+      "type": "object",
+      "description": "The person the letter is addressed to, from the mailing block",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The recipient's name as printed in the address block"
+        },
+        "mailing_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The recipient's full mailing address as one line, joining the address lines with commas"
+        }
+      }
+    },
+    "current_benefits": {
+      "type": "object",
+      "description": "The 'Information About Current Social Security Benefits' section",
+      "properties": {
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The first month this section's amounts apply from, as printed, e.g. 'December 2025' or 'July 2025'"
+        },
+        "period_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The last month this section's amounts apply to, as printed, e.g. 'November 2025'; null when the section gives only a start month"
+        },
+        "gross_monthly_benefit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The full monthly Social Security benefit before any deductions, in dollars, as a number without $ or commas"
+        },
+        "medical_insurance_premium_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The amount deducted each month for medical insurance (Medicare) premiums, in dollars, as a number without $ or commas"
+        },
+        "net_monthly_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The regular monthly Social Security payment after deductions, rounded down to the whole dollar, in dollars, as a number without $ or commas"
+        }
+      }
+    },
+    "past_benefits": {
+      "type": "object",
+      "description": "The 'Information About Past Social Security Benefits' section",
+      "properties": {
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The first month this section's amounts apply from, as printed, e.g. 'December 2025' or 'July 2025'"
+        },
+        "period_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The last month this section's amounts apply to, as printed, e.g. 'November 2025'; null when the section gives only a start month"
+        },
+        "gross_monthly_benefit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The full monthly Social Security benefit before any deductions, in dollars, as a number without $ or commas"
+        },
+        "medical_insurance_premium_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The amount deducted each month for medical insurance (Medicare) premiums, in dollars, as a number without $ or commas"
+        },
+        "net_monthly_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The regular monthly Social Security payment after deductions, rounded down to the whole dollar, in dollars, as a number without $ or commas"
+        }
+      }
+    },
+    "payment_day": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "When benefits are paid each month, e.g. 'the fourth Wednesday of each month'"
+    },
+    "disability_onset_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date SSA found the person became disabled under its rules, as printed; null if the letter does not say"
+    },
+    "benefit_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The type of benefit the person is entitled to, from 'Type of Social Security Benefit Information', e.g. 'monthly disability benefits'"
+    },
+    "medicare": {
+      "type": "object",
+      "description": "The 'Medicare Information' section",
+      "properties": {
+        "hospital_insurance_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The month Medicare hospital insurance (Part A) entitlement begins, as printed, e.g. 'August 2025'"
+        },
+        "medical_insurance_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The month Medicare medical insurance (Part B) entitlement begins, as printed"
+        },
+        "medicare_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The Medicare number (MBI) exactly as printed"
+        }
+      }
+    },
+    "date_of_birth": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date of birth shown on SSA's records, as printed"
+    },
+    "local_office": {
+      "type": "object",
+      "description": "The local Social Security office named under 'If You Have Questions'",
+      "properties": {
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The local office phone number, as printed"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The local office's name and address as one line, joining lines with commas"
+        }
+      }
+    }
+  }
+}
