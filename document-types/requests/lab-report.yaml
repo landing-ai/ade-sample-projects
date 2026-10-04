@@ -1,0 +1,22 @@
+# Request prepared from the ADE Documents shared drive (Marketing & Communications
+# Team / 00. Reusable Assets / ADE Documents) on 2026-09-27. See _template.yaml for
+# what every field means.
+#
+# Run it with:   /new-document-type-assets document-types/requests/lab-report.yaml
+
+name: Lab Report
+url: https://www.labsmartlis.com/pdf/pathology/cbc-report-format.pdf
+
+# The shared drive's copy (doc1-lab-reports/demo_labs_cbc_1.pdf) was not used: it is a
+# different document, an unattributed patient report, not the sample at this URL.
+# Rejected by the operator on 2026-10-03; the build downloads the URL instead.
+
+# Schema kept beside the document in the drive.
+schema: "/Users/andreakropp/Library/CloudStorage/GoogleDrive-andrea.kropp@landing.ai/Shared drives/Marketing & Communications Team /00. Reusable Assets/ADE Documents/Documents for Marketing/doc1-lab-reports/lab-report-schema.json"
+
+# feature_page and fields: not decided yet. The skill picks them if left out.
+# feature_page: 1
+# fields:
+#   - path: ...
+#     label: ...
+
