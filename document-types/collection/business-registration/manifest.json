@@ -1,0 +1,25 @@
+{
+  "slug": "business-registration",
+  "title": "Business Registration",
+  "source": {
+    "file": "business-registration.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://sosbiz.idaho.gov/api/report/GetImageByNum/097182066095252009134168051025113046056061167000",
+      "publisher": "Idaho Secretary of State",
+      "title": "Certificate of Organization, Limited Liability Company (filed 2018)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A filed Certificate of Organization served by the Idaho Secretary of State's public business-entity search (sosbiz.idaho.gov), downloaded by script on 2026-10-03; the image is byte-identical to the copy the marketing team kept in the ADE Documents shared drive (doc36). Used exactly as published, unredacted, by explicit decision of the operator on 2026-10-03. The scan carries the names, residential street address and handwritten signatures of the LLC's two organizers/governors, as filed in the public register; none of them is featured."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "business_name", "label": "Business name", "occurrence": 0 },
+    { "path": "business_type", "label": "Entity type", "occurrence": 0 },
+    { "path": "filing_state_details.state_name", "label": "Filing state (stamp)", "occurrence": 0 },
+    { "path": "filing_number", "label": "Filing number", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields. Four impersonal fields are featured: the LLC's name (box 1), the entity type from the form title, the state read from the Secretary of State's FILED EFFECTIVE stamp, and the handwritten filing number in the 'Secretary of State use only' box. All read ok. Every date on the page (the stamp's '2018 APR-9 PM 2:51', the register line '04/09/2018 05:00') extracted correctly but was normalised to ISO, so it grounds OFF and cannot be featured. The individuals on the form (organizers, governors, registered agent) and their address were deliberately not featured, although they ground ok. The schema is the team's existing business_registration_schema.json, used unchanged; it requires contact.email, which a Certificate of Organization does not carry, so extraction returned null with a nonconformant_output warning."
+}
