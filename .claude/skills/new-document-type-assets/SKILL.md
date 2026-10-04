@@ -161,6 +161,27 @@ from Scribd, was titled as redacted, and was not.
 Open the first page and look at it. Confirm it is a real, populated document of the type
 requested and not a blank template.
 
+**Sources that are not PDFs.** An SEC EDGAR exhibit is HTML, and some publishers post SVG.
+Render them to PDF with headless Chrome, as a local renderer only:
+
+```
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
+    --user-data-dir=<scratch>/chrome-profile --no-pdf-header-footer \
+    --print-to-pdf=<out>.pdf file:///<cleaned>.html
+```
+
+- **Use a throwaway profile** in the scratchpad, so Chrome never touches the operator's
+  own browser session.
+- **Clean EDGAR HTML first.** Strip the `<DOCUMENT>`/`<TYPE>`/`<SEQUENCE>`/`<FILENAME>`/
+  `<DESCRIPTION>`/`<TEXT>` wrapper lines. Also remove EDGAR's injected `<script
+  src="/...">` tag: with it in place, Chrome hangs on a `file://` load.
+- **Wrap an SVG** in a small HTML page whose `@page` size matches the SVG, with no
+  margins. PyMuPDF renders CSS-styled SVGs as solid black.
+- **Chrome does not exit by itself** after writing the PDF. Once the file appears, stop
+  only the Chrome processes that use your scratch profile. Never stop anything else.
+- **Look at the result** before parsing: render page 1 with PyMuPDF. Then clear its
+  metadata, and keep the original URL as the source of record.
+
 ---
 
 ## Step 3 — Check for personal data, and redact before anything else
@@ -405,8 +426,17 @@ with what, plus counts. Never the original values.
 Writes per-field crops, the annotated page overlay, clean page previews, and
 `grounding-pro.json`.
 
-Read every warning. A "value is NOT in the boxed text" warning means the crop will show
-something that does not match the value printed beside it on the page.
+Read every warning:
+
+- **"value is NOT in the boxed text"** means the range points at text that does not
+  contain the value. The crop will show something that does not match the value printed
+  beside it.
+- **"OCR could not read these values inside their boxes"** means the range is right but
+  the box may not be. Line boxes are sometimes one line adrift, so a box can land on a
+  caption ("BUYER'S NAME(S)"), on a label alone ("Business Name:") or on the next line
+  ("Other (specify):"), while `inspect_fields.py` still reads `ok`. Open every crop it
+  names, and do not feature one whose box misses its value. OCR also misreads, so a
+  warning is a prompt to look, not a verdict.
 
 **Then open the images and look at them.** Not a file listing — the actual images.
 

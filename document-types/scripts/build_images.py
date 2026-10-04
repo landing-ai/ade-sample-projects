@@ -28,7 +28,12 @@ so boxing the block would have pointed at seven lines instead of the value.
 from __future__ import annotations
 
 import argparse
+import difflib
+import io
 import json
+import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Iterable
@@ -122,12 +127,24 @@ def value_appears_in(value: Any, source: str) -> bool:
     if value is None:
         return True
     text = source.lower()
+    text_digits = "".join(c for c in text if c.isdigit())
+    # Numbers: compare by value, not by repr. Extraction returns 1215.0 for "$1,215" and
+    # 1600.0 for "$1,600"; their digit strings ("12150", "16000") are not in the text,
+    # so every whole-dollar float read as a mismatch and a rent roll's per-unit values
+    # could not be featured. Try each way the number could be printed.
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        forms = {repr(value), f"{value:.2f}"}
+        if float(value).is_integer():
+            forms.add(str(int(value)))
+        for form in forms:
+            d = form.lstrip("-").replace(".", "")
+            if (len(d) >= 3 and d in text_digits) or (len(d) < 3 and form in text):
+                return True
     literal = str(value).lower().strip()
     if literal and literal in text:
         return True
-    # Numbers: compare digits only, so thousands separators and currency do not matter.
+    # Digits only, so thousands separators and currency do not matter.
     digits = "".join(c for c in literal if c.isdigit())
-    text_digits = "".join(c for c in text if c.isdigit())
     if digits and len(digits) >= 3:
         if digits in text_digits:
             return True
@@ -136,6 +153,47 @@ def value_appears_in(value: Any, source: str) -> bool:
         # every date field. Fall back to comparing the multiset for date-shaped values.
         if len(digits) == 8 and sorted(digits) == sorted(text_digits.strip()):
             return True
+    return False
+
+
+def ocr(img: Image.Image) -> str | None:
+    """Text Tesseract reads in an image, or None when Tesseract is not installed."""
+    if not shutil.which("tesseract"):
+        return None
+    buf = io.BytesIO()
+    img.save(buf, "PNG")
+    out = subprocess.run(["tesseract", "stdin", "stdout", "--psm", "6"],
+                         input=buf.getvalue(), capture_output=True)
+    return out.stdout.decode(errors="ignore")
+
+
+def visible_in_box(page_img: Image.Image, box: dict, value: Any) -> bool | None:
+    """Can the value actually be read inside its box? None when it cannot be judged.
+
+    The text check (value_appears_in) compares the value with the markdown the range
+    points at, and passes when the *range* is right. It cannot see where the *box*
+    landed. Line boxes from the parse are sometimes one line adrift, so a box can sit
+    on a caption ("BUYER'S NAME(S)"), a label alone ("Business Name:") or the next
+    line ("Other (specify):") while the text check reads ok. This reads the pixels."""
+    if value is None or isinstance(value, bool) or value == "":
+        return None
+    w, h = page_img.size
+    pad = 3
+    region = page_img.crop((max(0, int(box["xmin"] * w) - pad), max(0, int(box["ymin"] * h) - pad),
+                            min(w, int(box["xmax"] * w) + pad), min(h, int(box["ymax"] * h) + pad)))
+    region = region.resize((region.width * 2, region.height * 2), Image.LANCZOS)
+    text = ocr(region)
+    if text is None:
+        return None
+    if value_appears_in(value, text):
+        return True
+    # OCR misreads a letter or two in names and labels; accept a close match.
+    want = re.sub(r"[^a-z0-9]", "", str(value).lower())
+    have = re.sub(r"[^a-z0-9]", "", text.lower())
+    if len(want) >= 4 and have:
+        best = max((difflib.SequenceMatcher(None, want, have[i:i + len(want)]).ratio()
+                    for i in range(max(1, len(have) - len(want) + 1))), default=0)
+        return best >= 0.8
     return False
 
 
@@ -366,10 +424,13 @@ def main() -> None:
             print(f"\n  All featured fields are on page {feature_page}, as declared.")
 
     print("\nWriting images ...")
+    unseen: list[str] = []
     for page_number, items in sorted(located.items()):
         page_img = render_page(document, page_number)
 
         for item in items:
+            if visible_in_box(page_img, item["box"], item["value"]) is False:
+                unseen.append(f"{item['path']} ({item['value']!r}, page {page_number})")
             # Highlight on the full page first, then crop, so the stroke is in page
             # coordinates and every crop carries the same visual weight regardless of
             # how large the region happens to be.
@@ -424,6 +485,14 @@ def main() -> None:
     )
     print(f"  {grounding_path.name}: {len(grounding['fields'])} field(s)")
 
+    if unseen:
+        print("\n  WARNING: OCR could not read these values inside their boxes. The text check")
+        print("  passed, so the range is right, but the box may sit on the wrong line, a")
+        print("  caption or a label. Open each crop before featuring it:")
+        for line in unseen:
+            print(f"      {line}")
+    elif shutil.which("tesseract") is None:
+        print("\n  (tesseract not installed: boxes were not checked by OCR)")
     print(f"\nWrote {images_dir}")
     print("Open the images and check them. A wrong crop is not visible from a listing.")
 
