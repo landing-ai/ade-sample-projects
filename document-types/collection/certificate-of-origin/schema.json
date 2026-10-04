@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "title": "Preferential Certificate of Origin",
+  "description": "A certificate of origin issued under a free trade agreement, as a customs broker or trade-finance bank reads it: who exported what to whom, under which agreement, and who certified it.",
+  "properties": {
+    "certificate_number": {
+      "type": "string",
+      "description": "The certificate number printed in the top-right box, exactly as printed."
+    },
+    "form_title": {
+      "type": "string",
+      "description": "The form's title naming the free trade agreement, e.g. 'Form for China-Costa Rica Free Trade Agreement'."
+    },
+    "issued_in": {
+      "type": "string",
+      "description": "The country the certificate was issued in, as printed after 'Issued in'."
+    },
+    "exporter": {
+      "type": "object",
+      "description": "Box 1: the exporter.",
+      "properties": {
+        "name": { "type": "string", "description": "Exporter's company name, first line of box 1." },
+        "address": { "type": "string", "description": "Exporter's address as printed, joined into one line." },
+        "on_behalf_of": { "type": ["string", "null"], "description": "A company the exporter acts for, if box 1 names one after 'O/B' or 'on behalf of'; null otherwise." }
+      }
+    },
+    "producer": {
+      "type": "object",
+      "description": "Box 2: the producer, if known.",
+      "properties": {
+        "name": { "type": ["string", "null"], "description": "Producer's company name." },
+        "address": { "type": ["string", "null"], "description": "Producer's address as printed, joined into one line." }
+      }
+    },
+    "importer": {
+      "type": "object",
+      "description": "Box 3: the importer.",
+      "properties": {
+        "name": { "type": "string", "description": "Importer's name as printed, including any DBA." },
+        "address": { "type": "string", "description": "Importer's address as printed, joined into one line." },
+        "phone": { "type": ["string", "null"], "description": "Importer's telephone number as printed." },
+        "fax": { "type": ["string", "null"], "description": "Importer's fax number as printed." }
+      }
+    },
+    "transport": {
+      "type": "object",
+      "description": "Box 4: means of transport and route.",
+      "properties": {
+        "departure_date": { "type": ["string", "null"], "description": "Departure date exactly as printed (do not reformat)." },
+        "vessel": { "type": ["string", "null"], "description": "Vessel, flight, train or vehicle number as printed." },
+        "port_of_loading": { "type": ["string", "null"], "description": "Port of loading as printed." },
+        "port_of_discharge": { "type": ["string", "null"], "description": "Port of discharge as printed." },
+        "route": { "type": ["string", "null"], "description": "Any free-text route line in box 4, e.g. 'FROM X TO Y BY SEA'." }
+      }
+    },
+    "remarks": {
+      "type": ["string", "null"],
+      "description": "Box 5 remarks as printed; null if the box is empty or only asterisks."
+    },
+    "items": {
+      "type": "array",
+      "description": "Boxes 6-11: one entry per numbered goods line.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_number": { "type": "integer", "description": "Box 6 item number." },
+          "marks_and_numbers": { "type": ["string", "null"], "description": "Box 7 shipping marks for this item, as printed." },
+          "description": { "type": "string", "description": "Box 8 description of goods for this item." },
+          "hs_code": { "type": "string", "description": "Box 9 HS code exactly as printed, including any dot." },
+          "origin_criterion": { "type": "string", "description": "Box 10 origin criterion code, without quotation marks, e.g. WO." },
+          "quantity": { "type": "string", "description": "Box 11 gross weight or other quantity, exactly as printed with its unit." }
+        }
+      }
+    },
+    "total_packages_statement": {
+      "type": ["string", "null"],
+      "description": "The 'SAY ... ONLY' line stating the total number and kind of packages, as printed."
+    },
+    "invoice": {
+      "type": "object",
+      "description": "Box 12: invoice reference.",
+      "properties": {
+        "number": { "type": ["string", "null"], "description": "Invoice number as printed." },
+        "date": { "type": ["string", "null"], "description": "Invoice date exactly as printed (do not reformat)." },
+        "incoterm_and_currency": { "type": ["string", "null"], "description": "The trade term and currency prefix printed before the value, e.g. 'FOB:USD'." },
+        "value": { "type": ["number", "null"], "description": "Invoiced value as a number." }
+      }
+    },
+    "exporter_declaration": {
+      "type": "object",
+      "description": "Box 13: declaration by the exporter.",
+      "properties": {
+        "producing_country": { "type": ["string", "null"], "description": "Country the goods are declared to be produced in." },
+        "importing_country": { "type": ["string", "null"], "description": "Importing country named in the declaration." },
+        "place_and_date": { "type": ["string", "null"], "description": "Place and date line of the declaration, exactly as printed." },
+        "company_stamp_present": { "type": "boolean", "description": "True if the exporter's company stamp/chop appears in box 13." },
+        "signed": { "type": "boolean", "description": "True if box 13 carries a handwritten signature." }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "description": "Box 14: certification by the authorized body.",
+      "properties": {
+        "place_and_date": { "type": ["string", "null"], "description": "Place and date of certification, exactly as printed." },
+        "authority_stamp_present": { "type": "boolean", "description": "True if the certifying authority's official stamp appears in box 14." },
+        "signed": { "type": "boolean", "description": "True if box 14 carries a handwritten signature." },
+        "telephone": { "type": ["string", "null"], "description": "Certifying body's telephone number as printed." },
+        "fax": { "type": ["string", "null"], "description": "Certifying body's fax number as printed." },
+        "address": { "type": ["string", "null"], "description": "Certifying body's address as printed, joined into one line." }
+      }
+    },
+    "barcode_number": {
+      "type": ["string", "null"],
+      "description": "The digits printed under the barcode at the foot of the certificate."
+    },
+    "form_serial": {
+      "type": ["string", "null"],
+      "description": "The preprinted form serial at the bottom-left (e.g. beginning 'AQSIQ')."
+    }
+  }
+}

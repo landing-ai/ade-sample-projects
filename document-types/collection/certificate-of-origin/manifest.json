@@ -1,0 +1,46 @@
+{
+  "slug": "certificate-of-origin",
+  "title": "Certificate of Origin",
+  "source": {
+    "file": "certificate-of-origin.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://cargofromchina.com/wp-content/uploads/Form-L-China-Costa-Rica.jpg",
+      "publisher": "Cargo From China (freight forwarder), as its 'Form L sample'",
+      "title": "Form L for China-Costa Rica FTA (Form L sample)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A 1272x1752 JPEG that Cargo From China publishes on its 'China Certificate of Origin' page (cargofromchina.com/certificate-of-origin/) as the 'Form L sample' for the China-Costa Rica FTA; downloaded by script on 2026-10-03 and wrapped, unaltered, in a one-page PDF at its native 150 dpi. The image carries a jdol.com.cn watermark, so the forwarder republished it from an earlier Chinese source; the forwarder's page is the provenance of record. It is an issued 2011 certificate, not a specimen: every party named (exporter, producer, importer, shipping marks) is a company, and the two handwritten signatures (the exporter's signatory and the certifying official) carry no printed names. Kept as published by decision of the operator on 2026-10-03."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "transport.vessel",
+      "label": "Vessel and voyage",
+      "occurrence": 0
+    },
+    {
+      "path": "transport.port_of_loading",
+      "label": "Port of loading",
+      "occurrence": 0
+    },
+    {
+      "path": "items[0].description",
+      "label": "Goods (item 1)",
+      "occurrence": 0
+    },
+    {
+      "path": "items[0].hs_code",
+      "label": "HS code (item 1)",
+      "occurrence": 0
+    },
+    {
+      "path": "items[0].origin_criterion",
+      "label": "Origin criterion (item 1)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields. The five featured fields tell the preference story a customs broker checks: the shipment (vessel and port of loading), what it carried (item 1, footwear), its tariff classification (HS 6403.99) and the origin criterion that qualifies it for the FTA rate (WO, wholly obtained). All read ok and each box sits tightly on its value. Tried and rejected after viewing the overlay: the certificate number (ok, but its box covers the whole top-right header cell, title and 'Issued in' line included) and the invoice value (ok, but its box covers the empty lower part of box 12 and only grazes the value). Not featured: the parties, whose boxes cover the whole cell including the printed caption; every date, and the invoice date in particular, which came back truncated to 'NOV. 03, 201' where the scan clips the right edge of box 12; item 1's quantity, which came back empty although item 2's identical 216PRS was read; and the stamp and signature booleans, which ground to the parse's [STAMPED] and [SIGNED] labels rather than the marks themselves."
+}
