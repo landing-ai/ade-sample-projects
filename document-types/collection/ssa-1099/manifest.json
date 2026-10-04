@@ -1,0 +1,41 @@
+{
+  "slug": "ssa-1099",
+  "title": "SSA-1099",
+  "source": {
+    "file": "ssa-1099-irs-form-6744-specimen.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.irs.gov/pub/irs-pdf/f6744.pdf",
+      "publisher": "Internal Revenue Service",
+      "title": "Form 6744 (Rev. 10-2026), VITA/TCE Volunteer Assistor's Test/Retest, page 88: Form SSA-1099 specimen",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Specimen SSA-1099 printed in IRS Form 6744, the VITA/TCE volunteer certification test booklet, served as application/pdf from the IRS's own forms path. US government work, public domain. Downloaded by script. The source PDF is 210 pages; this folder keeps PDF page 93 (printed page 88) only, and only the top part of it: the bottom half of that page is an unrelated Form 1099-C. The crop was done with PyMuPDF: the 1099-C region's text and vector art were removed with a redaction annotation, then the page's MediaBox and CropBox were both set to the top 470 points of the 612 x 792 page. Every value is IRS test data: a fictitious beneficiary at 1234 Charity Avenue, Your City, Your State, with the SSN already masked to 417-00-XXXX in the source. No redaction of personal data was needed. The PDF metadata was reset to the IRS as author and a title naming the source page."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "tax_year",
+      "label": "Benefit year",
+      "occurrence": 0
+    },
+    {
+      "path": "box_3_benefits_paid",
+      "label": "Benefits paid (box 3)",
+      "occurrence": 0
+    },
+    {
+      "path": "box_5_net_benefits",
+      "label": "Net benefits (box 5)",
+      "occurrence": 0
+    },
+    {
+      "path": "box_6_federal_tax_withheld",
+      "label": "Federal tax withheld (box 6)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the benefit year and the three money boxes a preparer copies onto a return: box 3 benefits paid, box 5 net benefits and box 6 federal tax withheld, all on page 1 and each grounded to its own ruled box. Box 3 and box 5 both print $25,182 and each grounds to its own cell. The request's notes suggested box 3, box 5, box 6, the direct-deposit amount ($20,229) and the Medicare Part B premium ($2,435) as suggestions only. Box 3, 5 and 6 shipped. The two breakdown amounts extract correctly and read ok, but Extract grounds every value in the 'Description of amount in Box 3' panel to the whole panel, which the parse returns as one tall table cell, so both crops would be the same full-panel box with no line singled out; the benefit year replaces them. No person is featured. Known extraction faults, left visible: box 4 is blank on the form but extracts as 0 rather than null despite the schema asking for null; form_variant comes back SSA-1099-SM, the form revision code from the footer, rather than the SSA-1099 heading."
+}

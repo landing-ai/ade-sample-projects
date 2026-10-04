@@ -1,0 +1,176 @@
+{
+  "extraction": {
+    "beneficiary": {
+      "address": "1234 CHARITY AVENUE YOUR CITY, YOUR STATE, ZIP",
+      "name": "CAROL WILLIAMS",
+      "ssn": "417-00-XXXX"
+    },
+    "box_3_benefits_paid": 25182,
+    "box_3_description": {
+      "benefits_for_year": 25182,
+      "medicare_part_b_premiums": 2435,
+      "medicare_part_d_premiums": null,
+      "paid_by_check_or_direct_deposit": 20229,
+      "total_additions": null
+    },
+    "box_4_benefits_repaid": 0,
+    "box_4_description": null,
+    "box_5_net_benefits": 25182,
+    "box_6_federal_tax_withheld": 2518,
+    "box_8_claim_number": null,
+    "form_variant": "SSA-1099-SM",
+    "tax_year": "2026"
+  },
+  "extraction_metadata": {
+    "beneficiary": {
+      "address": {
+        "ranges": [
+          {
+            "end": 954,
+            "start": 887
+          }
+        ],
+        "value": "1234 CHARITY AVENUE YOUR CITY, YOUR STATE, ZIP"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 238,
+            "start": 209
+          }
+        ],
+        "value": "CAROL WILLIAMS"
+      },
+      "ssn": {
+        "ranges": [
+          {
+            "end": 317,
+            "start": 259
+          }
+        ],
+        "value": "417-00-XXXX"
+      }
+    },
+    "box_3_benefits_paid": {
+      "ranges": [
+        {
+          "end": 375,
+          "start": 336
+        }
+      ],
+      "value": 25182
+    },
+    "box_3_description": {
+      "benefits_for_year": {
+        "ranges": [
+          {
+            "end": 753,
+            "start": 550
+          }
+        ],
+        "value": 25182
+      },
+      "medicare_part_b_premiums": {
+        "ranges": [
+          {
+            "end": 753,
+            "start": 550
+          }
+        ],
+        "value": 2435
+      },
+      "medicare_part_d_premiums": {
+        "ranges": null,
+        "value": null
+      },
+      "paid_by_check_or_direct_deposit": {
+        "ranges": [
+          {
+            "end": 753,
+            "start": 550
+          }
+        ],
+        "value": 20229
+      },
+      "total_additions": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "box_4_benefits_repaid": {
+      "ranges": [
+        {
+          "end": 433,
+          "start": 396
+        }
+      ],
+      "value": 0
+    },
+    "box_4_description": {
+      "ranges": null,
+      "value": null
+    },
+    "box_5_net_benefits": {
+      "ranges": [
+        {
+          "end": 501,
+          "start": 442
+        }
+      ],
+      "value": 25182
+    },
+    "box_6_federal_tax_withheld": {
+      "ranges": [
+        {
+          "end": 868,
+          "start": 811
+        }
+      ],
+      "value": 2518
+    },
+    "box_8_claim_number": {
+      "ranges": null,
+      "value": null
+    },
+    "form_variant": {
+      "ranges": [
+        {
+          "end": 1088,
+          "start": 1059
+        }
+      ],
+      "value": "SSA-1099-SM"
+    },
+    "tax_year": {
+      "ranges": [
+        {
+          "end": 60,
+          "start": 56
+        }
+      ],
+      "value": "2026"
+    }
+  },
+  "markdown": "**FORM SSA-1099 – SOCIAL SECURITY BENEFIT STATEMENT**\n\n\n2026\n- PART OF YOUR SOCIAL SECURITY BENEFITS SHOWN IN BOX 5 MAY BE TAXABLE INCOME.\n- SEE THE REVERSE FOR MORE INFORMATION.\n\n\n<table>\n<tr><td colspan=\"2\">Box 1. Name<br>CAROL WILLIAMS</td><td colspan=\"2\">Box 2. Beneficiary's Social Security Number<br>417-00-XXXX</td></tr>\n<tr><td>Box 3. Benefits Paid in 2026<br>$25,182</td><td colspan=\"2\">Box 4. Benefits Repaid to SSA in 2026</td><td>Box 5. Net Benefits for 2026 (Box 3 minus Box 4)<br>$25,182</td></tr>\n</table>\n\n<table>\n<tr><td rowspan=\"4\">DESCRIPTION OF AMOUNT IN BOX 3<br>Paid by check or direct deposit: $20,229<br><br>Medicare Part B premiums deducted from<br>your benefits: $2,435<br><br>Total additions:<br><br>Benefits for 2026: $25,182</td><td>DESCRIPTION OF AMOUNT IN BOX 4</td></tr>\n<tr><td>Box 6. Voluntary Federal Income Tax Withholding<br>$2,518</td></tr>\n<tr><td>Box 7. Address<br>1234 CHARITY AVENUE<br>YOUR CITY, YOUR STATE, ZIP</td></tr>\n<tr><td>Box 8. Claim Number (Use this number if you need to contact SSA.)</td></tr>\n</table>\n\nForm **SSA-1099-SM** (6/2020)\n\n\nDO NOT RETURN THIS FORM TO SSA OR IRS\n\n\n<!-- doc_id=parse-01m423wk5jajbvfnphgrwppey2 -->",
+  "metadata": {
+    "job_id": "extract-01m423wwbw0fw9ej0vnzxcr6xc",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 10949,
+    "doc_id": "parse-01m423wk5jajbvfnphgrwppey2",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1179,
+    "output_extraction_chars": 508,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

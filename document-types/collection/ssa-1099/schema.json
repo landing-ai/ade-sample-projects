@@ -1,0 +1,129 @@
+{
+  "type": "object",
+  "properties": {
+    "form_variant": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The form name printed at the top, e.g. 'SSA-1099' or 'SSA-1042S'"
+    },
+    "tax_year": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The benefit year printed in large type at the top left, e.g. '2026'"
+    },
+    "beneficiary": {
+      "type": "object",
+      "description": "The person the benefits were paid to, from boxes 1, 2 and 7",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box 1, the beneficiary's name, exactly as printed"
+        },
+        "ssn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box 2, the beneficiary's Social Security number exactly as printed, including any masking such as XXXX"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Box 7, the beneficiary's mailing address as one line"
+        }
+      }
+    },
+    "box_3_benefits_paid": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Box 3, total benefits paid in the year, in dollars, as a number without $ or commas"
+    },
+    "box_4_benefits_repaid": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Box 4, benefits repaid to SSA in the year, in dollars. Null if the box is blank"
+    },
+    "box_5_net_benefits": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Box 5, net benefits for the year (box 3 minus box 4), in dollars"
+    },
+    "box_6_federal_tax_withheld": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Box 6, voluntary federal income tax withholding, in dollars. Null if blank"
+    },
+    "box_8_claim_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Box 8, the claim number. Null if the box is blank"
+    },
+    "box_3_description": {
+      "type": "object",
+      "description": "The 'Description of amount in Box 3' panel, breaking down how box 3 was paid",
+      "properties": {
+        "paid_by_check_or_direct_deposit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Amount paid by check or direct deposit, in dollars"
+        },
+        "medicare_part_b_premiums": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Medicare Part B premiums deducted from benefits, in dollars. Null if not listed"
+        },
+        "medicare_part_d_premiums": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Medicare prescription drug (Part D) premiums deducted, in dollars. Null if not listed"
+        },
+        "total_additions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The 'Total additions' amount, in dollars. Null if no amount is printed beside the label"
+        },
+        "benefits_for_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The 'Benefits for <year>' total at the bottom of the panel, in dollars"
+        }
+      }
+    },
+    "box_4_description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Any text or amounts in the 'Description of amount in Box 4' panel. Null if the panel is empty"
+    }
+  }
+}
