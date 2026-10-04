@@ -1,0 +1,255 @@
+{
+  "type": "object",
+  "title": "Flood certification (FEMA Standard Flood Hazard Determination Form)",
+  "properties": {
+    "form_number": {
+      "type": "string",
+      "description": "FEMA form number printed in the footer, e.g. FF-206-FY-21-116."
+    },
+    "omb_expiration_date": {
+      "type": "string",
+      "description": "OMB control number expiration date printed in the header, as YYYY-MM-DD."
+    },
+    "lender": {
+      "type": "object",
+      "description": "Section I, box 1: the lender or servicer the determination was made for.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Lender or servicer name."
+        },
+        "address": {
+          "type": "string",
+          "description": "Lender or servicer address, as one line."
+        },
+        "customer_number": {
+          "type": "string",
+          "description": "Customer number the preparer assigns to the lender."
+        },
+        "delivery_method": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Delivery method, if printed."
+        }
+      }
+    },
+    "collateral": {
+      "type": "object",
+      "description": "Section I, box 2: the building or property securing the loan.",
+      "properties": {
+        "borrower_name": {
+          "type": "string",
+          "description": "Borrower name as printed."
+        },
+        "property_address": {
+          "type": "string",
+          "description": "Determination (property) address, as one line."
+        },
+        "county": {
+          "type": "string",
+          "description": "County of the property."
+        },
+        "apn_tax_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "APN or tax ID, or null if blank."
+        }
+      }
+    },
+    "loan_identifier": {
+      "type": "string",
+      "description": "Section I, box 4: loan identifier."
+    },
+    "flood_insurance_amount_required": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Section I, box 5: amount of flood insurance required in USD, or null if blank."
+    },
+    "nfip_community": {
+      "type": "object",
+      "description": "Section II.A: the NFIP community jurisdiction.",
+      "properties": {
+        "community_name": {
+          "type": "string",
+          "description": "NFIP community name."
+        },
+        "county": {
+          "type": "string",
+          "description": "County or counties."
+        },
+        "state": {
+          "type": "string",
+          "description": "State abbreviation."
+        },
+        "community_number": {
+          "type": "string",
+          "description": "Six-digit NFIP community number."
+        }
+      }
+    },
+    "nfip_map": {
+      "type": "object",
+      "description": "Section II.B: NFIP data affecting the building.",
+      "properties": {
+        "map_panel_number": {
+          "type": "string",
+          "description": "NFIP map number or community-panel number."
+        },
+        "map_panel_effective_date": {
+          "type": "string",
+          "description": "NFIP map panel effective or revised date, exactly as printed."
+        },
+        "letter_of_map_change": {
+          "type": "boolean",
+          "description": "True if the YES box for a Letter of Map Change (LOMC) is selected, false if NO is selected."
+        },
+        "lomc_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "LOMC date as YYYY-MM-DD, or null if blank."
+        },
+        "lomc_case_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "LOMC case number, or null if blank."
+        },
+        "flood_zone": {
+          "type": "string",
+          "description": "Flood zone designation, e.g. X, AE, VE."
+        },
+        "no_nfip_map": {
+          "type": "boolean",
+          "description": "True if the No NFIP Map box is checked."
+        }
+      }
+    },
+    "insurance_availability": {
+      "type": "object",
+      "description": "Section II.C: federal flood insurance availability checkboxes.",
+      "properties": {
+        "federal_insurance_available": {
+          "type": "boolean",
+          "description": "Box 1 checked: community participates in the NFIP."
+        },
+        "program": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Regular",
+            "Emergency",
+            null
+          ],
+          "description": "Which NFIP program box is checked, Regular or Emergency."
+        },
+        "federal_insurance_not_available": {
+          "type": "boolean",
+          "description": "Box 2 checked: community does not participate in the NFIP."
+        },
+        "in_cbra_or_opa": {
+          "type": "boolean",
+          "description": "Box 3 checked: building is in a Coastal Barrier Resources Area or Otherwise Protected Area."
+        }
+      }
+    },
+    "in_special_flood_hazard_area": {
+      "type": "string",
+      "enum": [
+        "YES",
+        "NO"
+      ],
+      "description": "Section II.D determination: the checked answer, YES or NO, to whether the building is in a Special Flood Hazard Area."
+    },
+    "life_of_loan_determination": {
+      "type": "boolean",
+      "description": "True if the comments state this is a life of loan determination."
+    },
+    "hmda": {
+      "type": "object",
+      "description": "HMDA information block in the comments section.",
+      "properties": {
+        "state_code": {
+          "type": "string",
+          "description": "HMDA state FIPS code."
+        },
+        "county_code": {
+          "type": "string",
+          "description": "HMDA county FIPS code."
+        },
+        "msa_md": {
+          "type": "string",
+          "description": "MSA/MD code."
+        },
+        "census_tract": {
+          "type": "string",
+          "description": "Census tract (CT)."
+        }
+      }
+    },
+    "preparer": {
+      "type": "object",
+      "description": "Section II.F: preparer's information.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Preparer company name."
+        },
+        "address": {
+          "type": "string",
+          "description": "Preparer address, as one line."
+        },
+        "phone": {
+          "type": "string",
+          "description": "Preparer phone number."
+        },
+        "fax": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Preparer fax number."
+        }
+      }
+    },
+    "determination_date": {
+      "type": "string",
+      "description": "Date of determination, exactly as printed in Section F."
+    },
+    "order_number": {
+      "type": "string",
+      "description": "Preparer's order number."
+    },
+    "determination_fee": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Fee charged for the determination in USD, if shown."
+    },
+    "borrower_notice_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Property IN SFHA",
+        "Property in Participating Community",
+        "Property in Non-Participating Community",
+        "Property NOT IN SFHA",
+        null
+      ],
+      "description": "Which notice is checked on the Notice of Special Flood Hazards page."
+    }
+  }
+}
