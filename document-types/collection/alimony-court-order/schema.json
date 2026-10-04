@@ -1,0 +1,244 @@
+{
+  "type": "object",
+  "description": "A California family-law judgment (FL-180) with its Spousal, Partner, or Family Support Order Attachment (FL-343) ordering spousal support (alimony)",
+  "properties": {
+    "court": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The superior court and county, e.g. 'Superior Court of California, County of ...'"
+    },
+    "case_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The case number printed in the caption"
+    },
+    "petitioner": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The petitioner's name"
+    },
+    "respondent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The respondent's name"
+    },
+    "judgment": {
+      "type": "object",
+      "description": "The judgment (form FL-180)",
+      "properties": {
+        "judgment_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What the judgment is for, as checked: dissolution, legal separation or nullity"
+        },
+        "is_stipulated": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the judgment is a stipulated judgment"
+        },
+        "marital_status_ends": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date marital or domestic partnership status ends, as YYYY-MM-DD"
+        },
+        "jurisdiction_acquired": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 3: the date the court acquired jurisdiction of the respondent, as YYYY-MM-DD"
+        },
+        "former_name_restored": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 4f: the former name restored to a party, if any"
+        },
+        "children": {
+          "type": "array",
+          "description": "Item 4i: the children of the marriage",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The child's name"
+              },
+              "birthdate": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The child's birthdate, as YYYY-MM-DD"
+              }
+            }
+          }
+        },
+        "spousal_support_by_fl343": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item 4l(3): true if spousal support is ordered as set forth in the attached FL-343"
+        },
+        "pages_attached": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 5: the number of pages attached"
+        }
+      }
+    },
+    "support_order": {
+      "type": "object",
+      "description": "The Spousal, Partner, or Family Support Order Attachment (form FL-343)",
+      "properties": {
+        "attached_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The form this attachment is attached to, as checked, e.g. 'Judgment (form FL-180)'"
+        },
+        "petitioner_gross_monthly_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1a: the petitioner's total gross monthly income"
+        },
+        "petitioner_net_monthly_disposable_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1a: the petitioner's net monthly disposable income"
+        },
+        "respondent_gross_monthly_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1b: the respondent's total gross monthly income"
+        },
+        "respondent_net_monthly_disposable_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1b: the respondent's net monthly disposable income"
+        },
+        "computer_calculation_attached": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item 2: true if a computer calculation of the parties' financial circumstances is attached"
+        },
+        "marriage_length_years": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 3b: the length of the marriage, in years"
+        },
+        "marriage_length_months": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 3b: the additional months of the marriage, if any"
+        },
+        "payor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 6a: who must pay support, 'petitioner' or 'respondent'"
+        },
+        "payee": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 6a: who receives support, 'petitioner' or 'respondent'"
+        },
+        "support_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 6a: the kind of support, as checked: spousal, family or partner support"
+        },
+        "is_temporary": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item 6a: true if the support is temporary"
+        },
+        "monthly_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 6a: the support amount per month"
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 6a: the date support begins, as YYYY-MM-DD"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 6a: the date support is payable through, as YYYY-MM-DD, or null if none is given"
+        },
+        "payable_day": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 6a: the day of the month support is payable, as printed, e.g. '1st'"
+        },
+        "earnings_assignment_issued": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item 6c: true if an earnings assignment for the support will issue"
+        },
+        "earnings_assignment_stayed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item 6d: true if service of the earnings assignment is stayed"
+        }
+      }
+    }
+  }
+}

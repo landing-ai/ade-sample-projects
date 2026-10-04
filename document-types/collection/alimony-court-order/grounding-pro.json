@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 3,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "case_number",
+      "label": "Case number",
+      "value": "FL110572",
+      "page": 3,
+      "box": {
+        "xmin": 0.63527,
+        "ymin": 0.08555,
+        "xmax": 0.91801,
+        "ymax": 0.10682
+      },
+      "range": {
+        "end": 7682,
+        "start": 7674
+      },
+      "occurrence": 2,
+      "matched": true,
+      "image": "case_number.png"
+    },
+    {
+      "path": "support_order.payor",
+      "label": "Paid by",
+      "value": "respondent",
+      "page": 3,
+      "box": {
+        "xmin": 0.03268,
+        "ymin": 0.60281,
+        "xmax": 0.72326,
+        "ymax": 0.62497
+      },
+      "range": {
+        "end": 9595,
+        "start": 9563
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-payor.png"
+    },
+    {
+      "path": "support_order.support_type",
+      "label": "Support type",
+      "value": "spousal support",
+      "page": 3,
+      "box": {
+        "xmin": 0.07872,
+        "ymin": 0.61751,
+        "xmax": 0.67074,
+        "ymax": 0.64013
+      },
+      "range": {
+        "end": 9670,
+        "start": 9649
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-support_type.png"
+    },
+    {
+      "path": "support_order.monthly_amount",
+      "label": "Monthly amount",
+      "value": 407,
+      "page": 3,
+      "box": {
+        "xmin": 0.07723,
+        "ymin": 0.63212,
+        "xmax": 0.87437,
+        "ymax": 0.65916
+      },
+      "range": {
+        "end": 9756,
+        "start": 9713
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-monthly_amount.png"
+    },
+    {
+      "path": "support_order.marriage_length_years",
+      "label": "Length of marriage (years)",
+      "value": 15,
+      "page": 3,
+      "box": {
+        "xmin": 0.06355,
+        "ymin": 0.36901,
+        "xmax": 0.63513,
+        "ymax": 0.39209
+      },
+      "range": {
+        "end": 8895,
+        "start": 8814
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-marriage_length_years.png"
+    }
+  ]
+}

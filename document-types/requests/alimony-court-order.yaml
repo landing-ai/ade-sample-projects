@@ -1,0 +1,28 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Court Order for Alimony
+url: https://www.slo.courts.ca.gov/system/files/disso-3-uncontested-judgment-sample.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: Superior Court of California, County of San Luis Obispo (Self-Help Center).
+  Provenance checked: SLO Superior Court self-help page links disso-3-uncontested-
+  judgment-sample.pdf as 'Sample Forms'. Source: 33 pages; use page(s) 18-19 (FL-343);
+  7-8 FL-180 judgment. Layer: raster (rotated 270). Redaction tool expected: none.
+  Personal data: none: specimen (Pat and Sam Sample). Not a competitor sample. Clearance
+  expected: public. Use pages 18-19 (FL-343 Spousal Support Order Attachment); pages 7-8
+  (the FL-180 judgment that incorporates it) are optional context. The form pages are
+  raster scans set to /Rotate 270 and slightly skewed: confirm the rendering honours the
+  rotation. Research notes: Real Judicial Council support order filled by a court with
+  fictitious parties: $407/month spousal support, 15-year marriage, checkboxes. Rotated
+  raster scans; no end date filled. Suggested fields, as suggestions only: Case number
+  FL110572; Spousal support checkbox; Monthly amount $407; Payable on the 1st; Length of
+  marriage 15 years.
