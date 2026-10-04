@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "title": "Cryptocurrency account statement",
+  "properties": {
+    "provider_name": {"type": "string", "description": "Name of the service that generated the statement, e.g. the block explorer or exchange."},
+    "provider_email": {"type": "string", "description": "Contact email address of the provider, as printed in the header."},
+    "asset": {"type": "string", "description": "Cryptocurrency the statement covers, as printed, e.g. BITCOIN."},
+    "wallet_address": {"type": "string", "description": "Wallet address the statement is for, exactly as printed."},
+    "statement_period_start": {"type": "string", "description": "First day of the statement period, as YYYY-MM-DD."},
+    "statement_period_end": {"type": "string", "description": "Last day of the statement period, as YYYY-MM-DD."},
+    "balance_summary": {
+      "type": "object",
+      "description": "The balance summary section, exactly as printed. Do not compute or correct the figures.",
+      "properties": {
+        "starting_balance_crypto": {"type": "number", "description": "Starting balance in the cryptocurrency's units."},
+        "starting_balance_usd": {"type": "number", "description": "Starting balance in US dollars."},
+        "ending_balance_crypto": {"type": "number", "description": "Ending balance in the cryptocurrency's units."},
+        "ending_balance_usd": {"type": "number", "description": "Ending balance in US dollars."},
+        "total_received_crypto": {"type": "number", "description": "Total received during the period, in the cryptocurrency's units."},
+        "total_sent_crypto": {"type": "number", "description": "Total sent during the period, in the cryptocurrency's units."}
+      }
+    },
+    "transactions": {
+      "type": "array",
+      "description": "Every row of the transaction history table across all pages, in order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "row_number": {"type": "integer", "description": "Row number in the # column."},
+          "date": {"type": "string", "description": "Transaction date, as YYYY-MM-DD."},
+          "time": {"type": "string", "description": "Transaction time, as HH:MM:SS."},
+          "direction": {"type": "string", "enum": ["Received", "Sent"], "description": "Whether the wallet received or sent the amount."},
+          "amount_crypto": {"type": "number", "description": "Amount in the cryptocurrency's units, from the AMOUNT (BTC) column."},
+          "amount_usd": {"type": "number", "description": "US dollar value at the time of the transaction, from the AMOUNT (USD) column."},
+          "transaction_hash": {"type": "string", "description": "Full transaction hash, joined into one string with no spaces if it wraps over two lines."}
+        }
+      }
+    },
+    "generated_at": {"type": "string", "description": "Date and time the statement was generated, as printed in the disclaimer."}
+  }
+}
