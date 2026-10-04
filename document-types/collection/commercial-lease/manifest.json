@@ -1,0 +1,26 @@
+{
+  "slug": "commercial-lease",
+  "title": "Commercial Lease",
+  "source": {
+    "file": "commercial-lease-serve-robotics.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1832483/000121390023063662/ea180762ex10-6_patriciaacq.htm",
+      "publisher": "Serve Robotics Inc. (as Patricia Acquisition Corp.), filed with the SEC",
+      "title": "Lease Agreement (730 Broadway, Redwood City, California) between Bauen Fund 2018-730, LLC and Serve Robotics Inc., dated February 25, 2021 (Exhibit 10.6 to Form 8-K, 2023)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A commercial office lease filed publicly on SEC EDGAR as Exhibit 10.6 (material contract) to a 2023 Form 8-K, accession 0001213900-23-063662; the filing index lists ea180762ex10-6_patriciaacq.htm. Downloaded by script. EDGAR publishes the exhibit as HTML, not PDF: the SGML wrapper lines at the top and bottom of the file (<DOCUMENT>, <TYPE>, <SEQUENCE>, <FILENAME>, <DESCRIPTION>, <TEXT>) and a tracking script tag EDGAR injects were stripped, and the remaining HTML was printed to a US Letter PDF with headless Chrome (print-to-PDF, no header or footer). The full exhibit renders to 27 pages; only page 1, the Basic Lease Information summary, is kept. PDF metadata (Chrome creator and producer, the temp file name as title, and creation dates) was cleared. Landlord and tenant are companies; the people named (a notice contact for each party and the landlord's broker) appear in a professional capacity. No private individual's personal data is present, so nothing was replaced. Signatures in the full exhibit are conformed '/s/' only and are not on the kept page."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "tenant.name", "label": "Tenant", "occurrence": 0 },
+    { "path": "premises.rentable_square_feet", "label": "Rentable square feet", "occurrence": 0 },
+    { "path": "term_months", "label": "Term (months)", "occurrence": 0 },
+    { "path": "base_rent_schedule[1].monthly_base_rent", "label": "Monthly base rent (months 2-12)", "occurrence": 0 },
+    { "path": "security_deposit", "label": "Security deposit", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested five as suggestions only: tenant, rentable square feet, term, monthly base rent for months 2-12, and security deposit. All five ground ok on page 1 and ship as suggested, so the overlay reads as the deal summary: who leases how much space, for how long, at what rent, against what deposit. The tenant is a company; no person is featured. The source exhibit is 27 rendered pages; the request asked for page 1 only, the Basic Lease Information, so the sample is that one page. Lease date, permitted use, landlord notice address and rent-waiver months ground OFF (ISO date, multi-line address, a count inferred from prose) and were not candidates."
+}
