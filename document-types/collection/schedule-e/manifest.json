@@ -1,0 +1,26 @@
+{
+  "slug": "schedule-e",
+  "title": "Schedule E",
+  "source": {
+    "file": "ScheduleE.Form.2020.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://content.enactmi.com/documents/training/course/ScheduleE.Form.2020.pdf",
+      "publisher": "Enact Mortgage Insurance",
+      "title": "Schedule E Rental Income Supplement (TY2020 Schedule E handout, Calculating Rental Income training course)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Training handout published by Enact Mortgage Insurance (formerly Genworth Mortgage Insurance, which the PDF metadata names as author) on its public course-materials host, alongside its 'Calculating Rental Income' deck, whose page 35 is titled 'Schedule E Handout'. Downloaded manually by the operator on 2026-10-03 because the host answers scripted downloads with a bot check; the URL above remains the source of record. The file is committed byte-for-byte as downloaded, metadata included. It is a specimen prepared for lender training: the filer is the fictitious 'Larry Landlord', the SSN is printed as XXX-XX-XXXX, and the rental property is '8 Renters Way', a teaching address. No redaction needed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "properties[0].rents_received", "label": "Rents received (line 3)", "occurrence": 0 },
+    { "path": "properties[0].expenses.mortgage_interest", "label": "Mortgage interest (line 12)", "occurrence": 0 },
+    { "path": "properties[0].expenses.taxes", "label": "Taxes (line 16)", "occurrence": 0 },
+    { "path": "properties[0].expenses.depreciation_or_depletion", "label": "Depreciation (line 18)", "occurrence": 0 },
+    { "path": "properties[0].income_or_loss", "label": "Net rental income (line 21)", "occurrence": 0 }
+  ],
+  "notes": "The request had no feature_page or fields keys; its notes suggested rents received 73,900, mortgage interest 19,332, taxes 10,344, depreciation 3,661 and net rental income 31,185. All five ground ok on page 1 to their own column-A amount cells and shipped as suggested. Together they are the lines a mortgage underwriter reads to calculate rental income: rents in, the large expenses, depreciation added back, and the bottom line. 73,900, 19,332, 3,661 and 31,185 each also appear on the summary lines 23a, 23c, 23d and 24/26; the featured paths are the per-property column, each grounded to its own line rather than the summary copy. The trailing-period amounts ('73,900.') matched cleanly in inspect_fields.py, with no workaround needed. No person is featured. Known extraction faults, left visible: blank amount lines extract as 0 rather than null despite the schema asking for null; line B (filed required 1099s) extracts as false although neither box is checked; lines A and B ground to the Part I header rather than their checkbox rows. None of these is featured."
+}
