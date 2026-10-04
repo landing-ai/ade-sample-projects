@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "receipt_number",
+      "label": "Receipt number",
+      "value": "327-123456",
+      "page": 1,
+      "box": {
+        "xmin": 0.58788,
+        "ymin": 0.15777,
+        "xmax": 0.96908,
+        "ymax": 0.21109
+      },
+      "range": {
+        "end": 260,
+        "start": 237
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "receipt_number.png"
+    },
+    {
+      "path": "issuing_authority.name",
+      "label": "Issuing county",
+      "value": "BROWARD COUNTY",
+      "page": 1,
+      "box": {
+        "xmin": 0.1832,
+        "ymin": 0.04782,
+        "xmax": 0.78813,
+        "ymax": 0.08014
+      },
+      "range": {
+        "end": 41,
+        "start": 0
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuing_authority-name.png"
+    },
+    {
+      "path": "business.date_opened",
+      "label": "Business opened",
+      "value": "2020-03-27",
+      "page": 1,
+      "box": {
+        "xmin": 0.56429,
+        "ymin": 0.22956,
+        "xmax": 0.80907,
+        "ymax": 0.25088
+      },
+      "range": {
+        "end": 438,
+        "start": 410
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "business-date_opened.png"
+    },
+    {
+      "path": "capacity.employees",
+      "label": "Employees",
+      "value": 2,
+      "page": 1,
+      "box": {
+        "xmin": 0.36783,
+        "ymin": 0.34409,
+        "xmax": 0.53489,
+        "ymax": 0.39474
+      },
+      "range": {
+        "end": 539,
+        "start": 525
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capacity-employees.png"
+    },
+    {
+      "path": "fees.total_paid",
+      "label": "Total paid",
+      "value": 16.5,
+      "page": 1,
+      "box": {
+        "xmin": 0.80567,
+        "ymin": 0.48268,
+        "xmax": 0.90777,
+        "ymax": 0.51286
+      },
+      "range": {
+        "end": 957,
+        "start": 952
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fees-total_paid.png"
+    }
+  ]
+}

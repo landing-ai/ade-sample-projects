@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "title": "Business License",
+  "description": "A local business license or business tax receipt: the issuing authority, the licence period, the business and its owner, the business classification, and the fees paid.",
+  "properties": {
+    "issuing_authority": {
+      "type": "object",
+      "description": "The government office that issued the license or receipt.",
+      "properties": {
+        "name": {"type": "string", "description": "Name of the issuing jurisdiction or office as printed in the title, e.g. Broward County."},
+        "address": {"type": "string", "description": "Street address of the issuing office."},
+        "phone": {"type": "string", "description": "Phone number of the issuing office."}
+      }
+    },
+    "document_title": {"type": "string", "description": "Title of the document as printed, e.g. LOCAL BUSINESS TAX RECEIPT or BUSINESS LICENSE."},
+    "receipt_number": {"type": "string", "description": "The license or receipt number printed beside 'Receipt #' or 'License #' in the header block, exactly as printed. Not the payment validation number."},
+    "valid_from": {"type": "string", "description": "First day of the period the license is valid for, as YYYY-MM-DD."},
+    "valid_through": {"type": "string", "description": "Last day of the period the license is valid for, as YYYY-MM-DD."},
+    "business": {
+      "type": "object",
+      "description": "The licensed business.",
+      "properties": {
+        "name": {"type": "string", "description": "Business name or DBA as printed."},
+        "owner_name": {"type": "string", "description": "Name of the owner as printed."},
+        "location_address": {"type": "string", "description": "Business location address as printed."},
+        "phone": {"type": "string", "description": "Business phone number."},
+        "business_type": {"type": "string", "description": "Business type or classification exactly as printed, including any parenthetical subcategory."},
+        "date_opened": {"type": "string", "description": "Date the business opened, as YYYY-MM-DD."},
+        "state_license_or_registration": {"type": ["string", "null"], "description": "State, county or certification registration number, or null if blank."},
+        "exemption_code": {"type": ["string", "null"], "description": "Exemption code, or null if blank."},
+        "mailing_address": {"type": "string", "description": "Mailing address block as printed, including the addressee line."}
+      }
+    },
+    "capacity": {
+      "type": "object",
+      "description": "The counts the tax is assessed on. Null where a count is blank.",
+      "properties": {
+        "rooms": {"type": ["integer", "null"], "description": "Number of rooms, or null if blank."},
+        "seats": {"type": ["integer", "null"], "description": "Number of seats, or null if blank."},
+        "employees": {"type": ["integer", "null"], "description": "Number of employees, or null if blank."},
+        "machines": {"type": ["integer", "null"], "description": "Number of machines, or null if blank."},
+        "professionals": {"type": ["integer", "null"], "description": "Number of professionals, or null if blank."}
+      }
+    },
+    "fees": {
+      "type": "object",
+      "description": "The fee table, in dollars.",
+      "properties": {
+        "tax_amount": {"type": "number", "description": "Tax Amount column."},
+        "transfer_fee": {"type": "number", "description": "Transfer Fee column."},
+        "nsf_fee": {"type": "number", "description": "NSF Fee column."},
+        "penalty": {"type": "number", "description": "Penalty column."},
+        "prior_years": {"type": "number", "description": "Prior Years column."},
+        "collection_cost": {"type": "number", "description": "Collection Cost column."},
+        "total_paid": {"type": "number", "description": "Total Paid column."}
+      }
+    },
+    "payment": {
+      "type": "object",
+      "description": "The payment validation stamp, usually at the foot of the receipt.",
+      "properties": {
+        "validation_number": {"type": "string", "description": "Receipt or validation number printed in the payment stamp, exactly as printed."},
+        "paid_date": {"type": "string", "description": "Date paid, as YYYY-MM-DD."},
+        "amount_paid": {"type": "number", "description": "Amount shown in the payment stamp, in dollars."}
+      }
+    },
+    "is_regulatory_license": {"type": "boolean", "description": "False if the document states that it is non-regulatory or does not indicate the business is legal or compliant; true otherwise."}
+  }
+}
