@@ -1,0 +1,63 @@
+{
+  "slug": "bill-of-lading",
+  "title": "Bill of Lading",
+  "source": {
+    "file": "bill-of-lading.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.398603/gov.uscourts.nysd.398603.46.7.pdf",
+      "publisher": "U.S. District Court for the Southern District of New York case record (Fubon Ins. Co. Ltd. v. OHL International), served by the CourtListener RECAP archive; the bill of lading itself was issued by COSCO Container Lines Co., Ltd.",
+      "title": "COSCO Container Lines port to port or combined transport bill of lading COSU6030603280 (deposition Exhibit 8, ECF 46-7)",
+      "retrieved": "2026-10-03",
+      "clearance": "redacted",
+      "clearance_note": "Pages 2-3 of a 21-page public court filing (ECF 46-7, a Rule 56.1 statement exhibit), downloaded by script from the RECAP archive. Page 1 is an exhibit slip sheet; pages 4 onward are COSCO's printed B/L terms and an unrelated service contract, all dropped. Every party on the bill of lading is a company. The only change is the deposition exhibit sticker in the Freight & Charges box, which carried a witness's handwritten surname, the exhibit number, a date and a court reporter's initials: it was painted out with the page's own background by document-types/scripts/redact_scan.py --erase, and nothing was drawn in its place. The bill of lading itself is unaltered. The pages were rebuilt from 300 dpi renders of the scan, so the original raster is not carried into the output, and the PDF's metadata (copier and iText producer strings, dates) was cleared with document-types/scripts/pdfmeta.py. Verified by OCR of the output and a sweep of every file in this folder: the surname does not survive.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "deposition exhibit sticker in the Freight & Charges box (witness surname, exhibit number, date, court reporter's initials)",
+            "with": "blank paper (erased, no stand-in)",
+            "occurrences": 1
+          }
+        ]
+      },
+      "split_from": {
+        "pages": [
+          2,
+          3
+        ],
+        "of": 21
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "bill_of_lading_number",
+      "label": "B/L number",
+      "occurrence": 0
+    },
+    {
+      "path": "vessel",
+      "label": "Vessel",
+      "occurrence": 0
+    },
+    {
+      "path": "port_of_loading.city",
+      "label": "Port of loading",
+      "occurrence": 0
+    },
+    {
+      "path": "port_of_discharge.city",
+      "label": "Port of discharge",
+      "occurrence": 0
+    },
+    {
+      "path": "containers[0].container_number",
+      "label": "Container number",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no fields; its notes suggested B/L number, vessel and voyage, port of loading, port of discharge, container number and gross weight. Five of those ship, all on page 1, telling one story: which box went on which ship from where to where under which B/L. Voyage (008S) is correct and grounds ok, but shares the vessel cell, so it would repeat the vessel crop. Gross weight (7304.590KGS) is correct and grounds ok; it was left out to keep five fields. vessel and bill_of_lading_number are pinned to occurrence 0, the B/L face; occurrence 1 is the rider header on page 2. The container cell pairs the container with its partly overstruck seal number. The seal's last digits overrun the column rule, and the parse split it there ('W9300' in the marks column, '05' in the packages column; marks_and_numbers comes back starting 'W9300'), so the container crop shows the full container number followed by a seal number cut at the rule. The team schema was used unchanged and does not fully fit this B/L: shipper.address is required but the shipper box carries a name only (null); port_of_loading.country and port_of_discharge.country are required but the model put the country into city ('BEIHAI, CHINA') and returned null for both, with a nonconformant_output warning on the discharge country; freight_charges is empty because the charge rows are blank (the page-2 rider's 'OCEAN FREIGHT PREPAID' was not captured); declared_value and freight_payable_at are empty, as on the page. booking_number came back SHE11328, which is the Export References / Service Contract number; the Booking No. box is blank. Both dates are correct (2011-05-23) but read OFF, since the page prints '23 MAY 2011'."
+}
