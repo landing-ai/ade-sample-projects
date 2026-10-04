@@ -1,0 +1,193 @@
+{
+  "type": "object",
+  "properties": {
+    "document_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The agreement's title as printed at the top, e.g. 'LEASE AGREEMENT'"
+    },
+    "lease_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Lease Date from the Basic Lease Information, as YYYY-MM-DD"
+    },
+    "landlord": {
+      "type": "object",
+      "description": "The landlord named in the Basic Lease Information",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The landlord's legal name"
+        },
+        "notice_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The landlord's notice address as printed, lines joined with ', '"
+        },
+        "attention": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The person named after 'Attention:' in the landlord's notice block"
+        }
+      }
+    },
+    "tenant": {
+      "type": "object",
+      "description": "The tenant named in the Basic Lease Information",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The tenant's legal name"
+        },
+        "notice_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The tenant's notice address as printed, lines joined with ', '"
+        },
+        "attention": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The person named after 'Attention:' in the tenant's notice block"
+        }
+      }
+    },
+    "premises": {
+      "type": "object",
+      "description": "The leased premises",
+      "properties": {
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The premises description as written, e.g. whether it is the entire building or a suite"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The street address of the premises, including city, state and ZIP"
+        },
+        "rentable_square_feet": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The rentable square footage as a number, from the figure in parentheses"
+        }
+      }
+    },
+    "term_months": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The length of the lease term in full calendar months"
+    },
+    "term_start_reference": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "What the term runs from, e.g. 'Commencement Date'"
+    },
+    "base_rent_schedule": {
+      "type": "array",
+      "description": "The Base Rent table, one entry per row in order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The months of the term the row covers exactly as printed, e.g. 'Month 02 \u2013 Month 12'"
+          },
+          "start_month": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The first month of the term the row covers"
+          },
+          "end_month": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The last month of the term the row covers"
+          },
+          "monthly_base_rent": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The monthly base rent for the period in dollars, ignoring footnote asterisks"
+          },
+          "rate_per_square_foot": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The monthly rate per rentable square foot in dollars"
+          }
+        }
+      }
+    },
+    "rent_waiver_months": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The number of full months for which monthly base rent is waived (the Rent Waiver Period), or 0 if none"
+    },
+    "permitted_use": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The permitted use of the premises from the Use line"
+    },
+    "security_deposit": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The security deposit amount in dollars"
+    },
+    "tenant_broker": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The broker for the tenant"
+    },
+    "landlord_broker": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The broker for the landlord, as printed"
+    }
+  }
+}

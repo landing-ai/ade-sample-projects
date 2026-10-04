@@ -1,0 +1,27 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Commercial Lease
+url: https://www.sec.gov/Archives/edgar/data/1832483/000121390023063662/ea180762ex10-6_patriciaacq.htm
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: SEC EDGAR (Serve Robotics 8-K, 2023). Provenance checked: EDGAR filing
+  index 0001213900-23-063662 lists ea180762ex10-6_patriciaacq.htm. Source: 27 pages; use
+  page(s) 1. Layer: text (HTML; render to PDF). Redaction tool expected: none. Personal
+  data: none consumer; officers and brokers in professional capacity. Not a competitor
+  sample. Clearance expected: public. EDGAR publishes this exhibit as HTML: render it to
+  PDF with headless Chrome print-to-PDF after stripping the EDGAR header line at the
+  top. Page 1 is the Basic Lease Information summary with the base-rent table.
+  Signatures are conformed '/s/' only. Research notes: Best one-page Basic Lease
+  Information: 4,200 RSF, 48 months, escalating rent table, deposit. HTML exhibit must
+  be rendered to PDF. Suggested fields, as suggestions only: Tenant Serve Robotics Inc.;
+  Rentable square feet 4,200; Term 48 months; Monthly base rent (months 2-12)
+  $16,800.00; Security deposit $73,431.24.
