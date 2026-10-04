@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "transport.vessel",
+      "label": "Vessel and voyage",
+      "value": "XIANG XING V. BN02W",
+      "page": 1,
+      "box": {
+        "xmin": 0.0933,
+        "ymin": 0.29305,
+        "xmax": 0.51669,
+        "ymax": 0.32066
+      },
+      "range": {
+        "end": 1093,
+        "start": 1038
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transport-vessel.png"
+    },
+    {
+      "path": "transport.port_of_loading",
+      "label": "Port of loading",
+      "value": "XIAMEN, CHINA",
+      "page": 1,
+      "box": {
+        "xmin": 0.09312,
+        "ymin": 0.32023,
+        "xmax": 0.51654,
+        "ymax": 0.35194
+      },
+      "range": {
+        "end": 1152,
+        "start": 1121
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transport-port_of_loading.png"
+    },
+    {
+      "path": "items[0].description",
+      "label": "Goods (item 1)",
+      "value": "FOOTWEAR",
+      "page": 1,
+      "box": {
+        "xmin": 0.28553,
+        "ymin": 0.43987,
+        "xmax": 0.58422,
+        "ymax": 0.4651
+      },
+      "range": {
+        "end": 1808,
+        "start": 1800
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-0-description.png"
+    },
+    {
+      "path": "items[0].hs_code",
+      "label": "HS code (item 1)",
+      "value": "6403.99",
+      "page": 1,
+      "box": {
+        "xmin": 0.58407,
+        "ymin": 0.44041,
+        "xmax": 0.65785,
+        "ymax": 0.46523
+      },
+      "range": {
+        "end": 1824,
+        "start": 1817
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-0-hs_code.png"
+    },
+    {
+      "path": "items[0].origin_criterion",
+      "label": "Origin criterion (item 1)",
+      "value": "WO",
+      "page": 1,
+      "box": {
+        "xmin": 0.65772,
+        "ymin": 0.44054,
+        "xmax": 0.71689,
+        "ymax": 0.46533
+      },
+      "range": {
+        "end": 1837,
+        "start": 1833
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-0-origin_criterion.png"
+    }
+  ]
+}
