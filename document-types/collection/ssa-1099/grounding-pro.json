@@ -1,0 +1,86 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "tax_year",
+      "label": "Benefit year",
+      "value": "2026",
+      "page": 1,
+      "box": {
+        "xmin": 0.08444,
+        "ymin": 0.14198,
+        "xmax": 0.18056,
+        "ymax": 0.18481
+      },
+      "range": {
+        "end": 60,
+        "start": 56
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "tax_year.png"
+    },
+    {
+      "path": "box_3_benefits_paid",
+      "label": "Benefits paid (box 3)",
+      "value": 25182,
+      "page": 1,
+      "box": {
+        "xmin": 0.08718,
+        "ymin": 0.23606,
+        "xmax": 0.25933,
+        "ymax": 0.29123
+      },
+      "range": {
+        "end": 375,
+        "start": 336
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "box_3_benefits_paid.png"
+    },
+    {
+      "path": "box_5_net_benefits",
+      "label": "Net benefits (box 5)",
+      "value": 25182,
+      "page": 1,
+      "box": {
+        "xmin": 0.48748,
+        "ymin": 0.23683,
+        "xmax": 0.76549,
+        "ymax": 0.29094
+      },
+      "range": {
+        "end": 501,
+        "start": 442
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "box_5_net_benefits.png"
+    },
+    {
+      "path": "box_6_federal_tax_withheld",
+      "label": "Federal tax withheld (box 6)",
+      "value": 2518,
+      "page": 1,
+      "box": {
+        "xmin": 0.42626,
+        "ymin": 0.50877,
+        "xmax": 0.76554,
+        "ymax": 0.58666
+      },
+      "range": {
+        "end": 868,
+        "start": 811
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "box_6_federal_tax_withheld.png"
+    }
+  ]
+}
