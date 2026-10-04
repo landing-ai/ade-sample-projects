@@ -1,0 +1,326 @@
+{
+  "type": "object",
+  "description": "IRS Schedule K-1 (Form 1041), Beneficiary's Share of Income, Deductions, Credits, etc., the income statement an estate or trust issues to each beneficiary. One page.",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The tax year printed in the form header, e.g. 2025"
+    },
+    "tax_period_beginning": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tax year beginning date as printed, MM/DD/YYYY; null if blank"
+    },
+    "tax_period_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tax year ending date as printed, MM/DD/YYYY; null if blank"
+    },
+    "final_k1": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the Final K-1 box at the top is checked"
+    },
+    "amended_k1": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the Amended K-1 box at the top is checked"
+    },
+    "estate_or_trust": {
+      "type": "object",
+      "description": "Part I, Information About the Estate or Trust",
+      "properties": {
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item A, the estate's or trust's employer identification number, as NN-NNNNNNN"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item B, the estate's or trust's name (first line only)"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item B, the street address, city, state and ZIP printed after the name"
+        },
+        "fiduciary_name_and_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item C, the fiduciary's name and address; null if blank"
+        },
+        "form_1041t_filed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item D, true if the Form 1041-T box is checked"
+        },
+        "form_1041t_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item D, the date Form 1041-T was filed; null if blank"
+        },
+        "final_form_1041": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item E, true if the box marking this as the final Form 1041 for the estate or trust is checked"
+        }
+      }
+    },
+    "beneficiary": {
+      "type": "object",
+      "description": "Part II, Information About the Beneficiary",
+      "properties": {
+        "identifying_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item F, the beneficiary's identifying number (SSN or TIN)"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item G, the beneficiary's name (first line only)"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item G, the street address, city, state and ZIP printed after the name"
+        },
+        "domestic": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item H, true if the Domestic beneficiary box is checked"
+        },
+        "foreign": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Item H, true if the Foreign beneficiary box is checked"
+        }
+      }
+    },
+    "income": {
+      "type": "object",
+      "description": "Part III, boxes 1 to 10: the beneficiary's share of current year income and deductions. Amounts as numbers without commas; null when the box is blank.",
+      "properties": {
+        "interest_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 1, interest income"
+        },
+        "ordinary_dividends": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 2a, ordinary dividends"
+        },
+        "qualified_dividends": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 2b, qualified dividends"
+        },
+        "net_short_term_capital_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 3, net short-term capital gain"
+        },
+        "net_long_term_capital_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4a, net long-term capital gain"
+        },
+        "rate_28_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4b, 28% rate gain"
+        },
+        "unrecaptured_section_1250_gain": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 4c, unrecaptured section 1250 gain"
+        },
+        "other_portfolio_and_nonbusiness_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 5, other portfolio and nonbusiness income"
+        },
+        "ordinary_business_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 6, ordinary business income"
+        },
+        "net_rental_real_estate_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 7, net rental real estate income"
+        },
+        "other_rental_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 8, other rental income"
+        },
+        "directly_apportioned_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 9, directly apportioned deductions"
+        },
+        "estate_tax_deduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Box 10, estate tax deduction"
+        }
+      }
+    },
+    "final_year_deductions": {
+      "type": "array",
+      "description": "Box 11, final year deductions: one entry per code letter and amount printed in the box. Empty if the box is blank.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The code letter printed in box 11, e.g. A"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount printed beside the code in box 11, as a number without commas"
+          }
+        }
+      }
+    },
+    "amt_adjustments": {
+      "type": "array",
+      "description": "Box 12, alternative minimum tax adjustment: one entry per code letter and amount printed in the box. Empty if the box is blank.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The code letter printed in box 12, e.g. A"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount printed beside the code in box 12, as a number without commas"
+          }
+        }
+      }
+    },
+    "credits": {
+      "type": "array",
+      "description": "Box 13, credits and credit recapture: one entry per code letter and amount printed in the box. Empty if the box is blank.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The code letter printed in box 13, e.g. A"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount printed beside the code in box 13, as a number without commas"
+          }
+        }
+      }
+    },
+    "other_information": {
+      "type": "array",
+      "description": "Box 14, other information: one entry per code letter and amount printed in the box. Empty if the box is blank.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The code letter printed in box 14, e.g. A"
+          },
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The amount printed beside the code in box 14, as a number without commas"
+          }
+        }
+      }
+    }
+  }
+}

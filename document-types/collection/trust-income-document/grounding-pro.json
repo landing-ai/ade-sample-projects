@@ -1,0 +1,86 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "estate_or_trust.name",
+      "label": "Trust name (item B)",
+      "value": "Cyan Magenta Trust",
+      "page": 1,
+      "box": {
+        "xmin": 0.05836,
+        "ymin": 0.24273,
+        "xmax": 0.51738,
+        "ymax": 0.31699
+      },
+      "range": {
+        "end": 583,
+        "start": 565
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "estate_or_trust-name.png"
+    },
+    {
+      "path": "estate_or_trust.ein",
+      "label": "Trust EIN (item A)",
+      "value": "00-4012343",
+      "page": 1,
+      "box": {
+        "xmin": 0.05769,
+        "ymin": 0.19736,
+        "xmax": 0.51738,
+        "ymax": 0.24198
+      },
+      "range": {
+        "end": 537,
+        "start": 526
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "estate_or_trust-ein.png"
+    },
+    {
+      "path": "income.interest_income",
+      "label": "Interest income (box 1)",
+      "value": 8500,
+      "page": 1,
+      "box": {
+        "xmin": 0.55308,
+        "ymin": 0.09074,
+        "xmax": 0.72939,
+        "ymax": 0.12127
+      },
+      "range": {
+        "end": 1291,
+        "start": 1270
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-interest_income.png"
+    },
+    {
+      "path": "income.ordinary_dividends",
+      "label": "Ordinary dividends (box 2a)",
+      "value": 189300,
+      "page": 1,
+      "box": {
+        "xmin": 0.55307,
+        "ymin": 0.1212,
+        "xmax": 0.72938,
+        "ymax": 0.15163
+      },
+      "range": {
+        "end": 1388,
+        "start": 1362
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-ordinary_dividends.png"
+    }
+  ]
+}

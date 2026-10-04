@@ -1,0 +1,26 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Trust Income Document
+url: https://www.irs.gov/pub/irs-efile/form-1041-ty2025-ats-scenario-3.pdf
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: IRS (MeF ATS). Provenance checked: IRS TY2025 1041 ATS page links
+  form-1041-ty2025-ats-scenario-3.pdf. Source: 19 pages; use page(s) 10. Layer: text.
+  Redaction tool expected: none. Personal data: none: specimen (fictitious
+  beneficiaries; SSNs outside standard specimen ranges). Not a competitor sample.
+  Clearance expected: public. Use page 10 only (the first beneficiary's Schedule K-1,
+  Form 1041). The beneficiary SSNs are ATS test values outside the standard specimen
+  ranges; mask them with redact.py as a precaution. Research notes: Clean text layer.
+  Interest 8,500, dividends 189,300. Shows one year, not distribution frequency.
+  Suggested fields, as suggestions only: Trust EIN 00-4012343; Trust name Cyan Magenta
+  Trust; Interest (box 1) 8,500; Ordinary dividends (box 2a) 189,300; Final K-1
+  checkbox.

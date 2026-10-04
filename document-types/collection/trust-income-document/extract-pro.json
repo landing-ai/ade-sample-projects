@@ -1,0 +1,398 @@
+{
+  "extraction": {
+    "amended_k1": false,
+    "amt_adjustments": [],
+    "beneficiary": {
+      "address": "1st Test Street Lanham, MD 20706",
+      "domestic": true,
+      "foreign": false,
+      "identifying_number": "987-65-4322",
+      "name": "Ruby Red Grape"
+    },
+    "credits": [
+      {
+        "amount": 125,
+        "code": "A"
+      }
+    ],
+    "estate_or_trust": {
+      "address": "1st Test Street Lanham, MD 20706",
+      "ein": "00-4012343",
+      "fiduciary_name_and_address": null,
+      "final_form_1041": false,
+      "form_1041t_date": null,
+      "form_1041t_filed": false,
+      "name": "Cyan Magenta Trust"
+    },
+    "final_k1": true,
+    "final_year_deductions": [],
+    "income": {
+      "directly_apportioned_deductions": 0,
+      "estate_tax_deduction": 0,
+      "interest_income": 8500,
+      "net_long_term_capital_gain": 0,
+      "net_rental_real_estate_income": 0,
+      "net_short_term_capital_gain": 0,
+      "ordinary_business_income": 0,
+      "ordinary_dividends": 189300,
+      "other_portfolio_and_nonbusiness_income": 0,
+      "other_rental_income": 0,
+      "qualified_dividends": 0,
+      "rate_28_gain": 0,
+      "unrecaptured_section_1250_gain": 0
+    },
+    "other_information": [
+      {
+        "amount": 125,
+        "code": "A"
+      }
+    ],
+    "tax_period_beginning": "",
+    "tax_period_ending": "",
+    "tax_year": "2025"
+  },
+  "extraction_metadata": {
+    "amended_k1": {
+      "ranges": [
+        {
+          "end": 1113,
+          "start": 1079
+        }
+      ],
+      "value": false
+    },
+    "amt_adjustments": [],
+    "beneficiary": {
+      "address": {
+        "ranges": [
+          {
+            "end": 992,
+            "start": 977
+          },
+          {
+            "end": 1009,
+            "start": 993
+          }
+        ],
+        "value": "1st Test Street Lanham, MD 20706"
+      },
+      "domestic": {
+        "ranges": [
+          {
+            "end": 1036,
+            "start": 1012
+          }
+        ],
+        "value": true
+      },
+      "foreign": {
+        "ranges": [
+          {
+            "end": 1060,
+            "start": 1037
+          }
+        ],
+        "value": false
+      },
+      "identifying_number": {
+        "ranges": [
+          {
+            "end": 904,
+            "start": 893
+          }
+        ],
+        "value": "987-65-4322"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 976,
+            "start": 962
+          }
+        ],
+        "value": "Ruby Red Grape"
+      }
+    },
+    "credits": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 2263,
+              "start": 2212
+            }
+          ],
+          "value": 125
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 2401,
+              "start": 2400
+            }
+          ],
+          "value": "A"
+        }
+      }
+    ],
+    "estate_or_trust": {
+      "address": {
+        "ranges": [
+          {
+            "end": 599,
+            "start": 584
+          },
+          {
+            "end": 617,
+            "start": 600
+          }
+        ],
+        "value": "1st Test Street Lanham, MD 20706"
+      },
+      "ein": {
+        "ranges": [
+          {
+            "end": 537,
+            "start": 526
+          }
+        ],
+        "value": "00-4012343"
+      },
+      "fiduciary_name_and_address": {
+        "ranges": null,
+        "value": null
+      },
+      "final_form_1041": {
+        "ranges": [
+          {
+            "end": 814,
+            "start": 747
+          }
+        ],
+        "value": false
+      },
+      "form_1041t_date": {
+        "ranges": null,
+        "value": null
+      },
+      "form_1041t_filed": {
+        "ranges": [
+          {
+            "end": 742,
+            "start": 674
+          }
+        ],
+        "value": false
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 583,
+            "start": 565
+          }
+        ],
+        "value": "Cyan Magenta Trust"
+      }
+    },
+    "final_k1": {
+      "ranges": [
+        {
+          "end": 1078,
+          "start": 1063
+        }
+      ],
+      "value": true
+    },
+    "final_year_deductions": [],
+    "income": {
+      "directly_apportioned_deductions": {
+        "ranges": [
+          {
+            "end": 2323,
+            "start": 2292
+          }
+        ],
+        "value": 0
+      },
+      "estate_tax_deduction": {
+        "ranges": [
+          {
+            "end": 2451,
+            "start": 2431
+          }
+        ],
+        "value": 0
+      },
+      "interest_income": {
+        "ranges": [
+          {
+            "end": 1291,
+            "start": 1270
+          }
+        ],
+        "value": 8500
+      },
+      "net_long_term_capital_gain": {
+        "ranges": [
+          {
+            "end": 1603,
+            "start": 1577
+          }
+        ],
+        "value": 0
+      },
+      "net_rental_real_estate_income": {
+        "ranges": [
+          {
+            "end": 2107,
+            "start": 2078
+          }
+        ],
+        "value": 0
+      },
+      "net_short_term_capital_gain": {
+        "ranges": [
+          {
+            "end": 1529,
+            "start": 1502
+          }
+        ],
+        "value": 0
+      },
+      "ordinary_business_income": {
+        "ranges": [
+          {
+            "end": 2049,
+            "start": 2025
+          }
+        ],
+        "value": 0
+      },
+      "ordinary_dividends": {
+        "ranges": [
+          {
+            "end": 1388,
+            "start": 1362
+          }
+        ],
+        "value": 189300
+      },
+      "other_portfolio_and_nonbusiness_income": {
+        "ranges": [
+          {
+            "end": 1888,
+            "start": 1847
+          }
+        ],
+        "value": 0
+      },
+      "other_rental_income": {
+        "ranges": [
+          {
+            "end": 2155,
+            "start": 2136
+          }
+        ],
+        "value": 0
+      },
+      "qualified_dividends": {
+        "ranges": [
+          {
+            "end": 1455,
+            "start": 1436
+          }
+        ],
+        "value": 0
+      },
+      "rate_28_gain": {
+        "ranges": [
+          {
+            "end": 1664,
+            "start": 1651
+          }
+        ],
+        "value": 0
+      },
+      "unrecaptured_section_1250_gain": {
+        "ranges": [
+          {
+            "end": 1776,
+            "start": 1748
+          }
+        ],
+        "value": 0
+      }
+    },
+    "other_information": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 2263,
+              "start": 2212
+            }
+          ],
+          "value": 125
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 2401,
+              "start": 2400
+            }
+          ],
+          "value": "A"
+        }
+      }
+    ],
+    "tax_period_beginning": {
+      "ranges": [
+        {
+          "end": 331,
+          "start": 300
+        }
+      ],
+      "value": ""
+    },
+    "tax_period_ending": {
+      "ranges": [
+        {
+          "end": 331,
+          "start": 300
+        }
+      ],
+      "value": ""
+    },
+    "tax_year": {
+      "ranges": [
+        {
+          "end": 261,
+          "start": 257
+        }
+      ],
+      "value": "2025"
+    }
+  },
+  "markdown": "Fillable Field: Font=10pt Helvetica LT Std; Color=Black; Checkmark=Cross\nThis is a SCRIPS Form. Position of fields should not be moved unless specifically req\n\n\n661117\n\n\n**Schedule K-1**\n**(Form 1041)**\nDepartment of the Treasury\nInternal Revenue Service\n\n\n2025\nFor calendar year 2025, or tax year\n\n\nbeginning / / 2025  ending / / \n\nBeneficiary’s Share of Income, Deductions,\nCredits, etc.\nSee back of form and instructions.\n\n\nPart I Information About the Estate or Trust \nA Estate’s or trust’s employer identification number\n00-4012343 \nB Estate’s or trust’s name\nCyan Magenta Trust\n1st Test Street\nLanham, MD 20706 \nC Fiduciary’s name, address, city, state, and ZIP code \nD [ ] Check if Form 1041-T was filed and enter the date it was filed\n___\nE [ ] Check if this is the final Form 1041 for the estate or trust \n\nPart II Information About the Beneficiary\nF Beneficiary's identifying number\n987-65-4322\nG Beneficiary's name, address, city, state, and ZIP code\nRuby Red Grape\n1st Test Street\nLanham, MD 20706\nH\n[x] Domestic beneficiary\n[ ] Foreign beneficiary\n\n\n [x] Final K-1 \n [ ] Amended K-1 OMB No. 1545-0092\n\n<table>\n<tr><td colspan=\"4\">**Part III**   Beneficiary’s Share of Current Year Income,<br>Deductions, Credits, and Other Items</td></tr>\n<tr><td>1</td><td>Interest income 8,500</td><td>11</td><td>Final year deductions</td></tr>\n<tr><td>2a</td><td>Ordinary dividends 189,300</td><td></td><td></td></tr>\n<tr><td>2b</td><td>Qualified dividends</td><td></td><td></td></tr>\n<tr><td>3</td><td>Net short-term capital gain</td><td></td><td></td></tr>\n<tr><td>4a</td><td>Net long-term capital gain</td><td></td><td></td></tr>\n<tr><td>4b</td><td>28% rate gain</td><td>12</td><td>Alternative minimum tax adjustment</td></tr>\n<tr><td>4c</td><td>Uncaptured section 1250 gain</td><td></td><td></td></tr>\n<tr><td rowspan=\"2\">5</td><td rowspan=\"2\">Other portfolio and<br>nonbusiness income</td><td></td><td></td></tr>\n<tr><td rowspan=\"3\">13</td><td rowspan=\"3\"><br><br>Credits and credit recapture</td></tr>\n<tr><td>6</td><td>Ordinary business income</td></tr>\n<tr><td>7</td><td>Net rental real estate income</td></tr>\n<tr><td>8</td><td>Other rental income</td><td rowspan=\"3\">○<br><br><br>14</td><td rowspan=\"6\">125<br><br><br>Other information<br>125<br><br><br></td></tr>\n<tr><td>9</td><td>Directly apportioned deductions</td></tr>\n<tr><td></td><td></td></tr>\n<tr><td></td><td></td><td rowspan=\"3\">A</td></tr>\n<tr><td>10</td><td>Estate tax deduction</td></tr>\n<tr><td rowspan=\"4\" colspan=\"2\"></td></tr>\n<tr><td></td><td></td></tr>\n<tr><td></td><td></td></tr>\n<tr><td></td><td></td></tr>\n<tr><td colspan=\"4\">* See attached statement for additional information.<br>Note: A statement must be attached showing the beneficiary's share of income and directly apportioned deductions from each business, rental real estate, and other rental activity.</td></tr>\n<tr><td colspan=\"4\">For IRS Use Only</td></tr>\n</table>\n\nFor Paperwork Reduction Act Notice, see the Instructions for Form 1041. www.irs.gov/Form1041 Cat. No. 11380D **Schedule K-1 (Form 1041) 2025** Created 5/2/25\n\n\n<!-- doc_id=parse-01m425kx62aw2btnqbewepj78v -->",
+  "metadata": {
+    "job_id": "extract-01m425m6ak3scm75mpzze7bya0",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 16971,
+    "doc_id": "parse-01m425kx62aw2btnqbewepj78v",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.7,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 3120,
+    "output_extraction_chars": 999,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}
