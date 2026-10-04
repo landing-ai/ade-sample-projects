@@ -1,0 +1,26 @@
+{
+  "slug": "lab-report-stool",
+  "title": "Stool Test Report",
+  "source": {
+    "file": "mosaic-stool-chemistries-sample.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://mosaicdx.com/wp-content/uploads/2026/07/MDX_Report_StoolChemistries_ENG.pdf",
+      "publisher": "Mosaic Diagnostics (formerly Great Plains Laboratory); analyzed by Doctor's Data, Inc.",
+      "title": "Stool Chemistries (sample test report)",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "Mosaic Diagnostics' own sample Stool Chemistries report, linked from its Sample Test Reports resource page (mosaicdx.com/resource/stool-chemistry-test-sample-report/); downloaded by script on 2026-10-03 and used unaltered. Specimen data only: 'Sample Patient', 'Sample Doctor, MD', IDs of 999999 and '123 Main St.' The PDF carries no copyright or reuse notice and Mosaic's site states no reuse restriction. The report is analyzed by, and its footer names, Doctor's Data, Inc., whose own website terms restrict that site's content to non-commercial use; the operator accepted the Mosaic-hosted copy on 2026-10-03 with that caveat recorded. The footer names the lab director in a professional capacity. This replaces the request's original Nordic Laboratories GI-MAP sample, rejected because its footer forbids commercial reproduction."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "report_title", "label": "Report", "occurrence": 0 },
+    { "path": "order.order_number", "label": "Order number", "occurrence": 0 },
+    { "path": "specimen_dates.collected", "label": "Collected", "occurrence": 0 },
+    { "path": "specimen_dates.received", "label": "Received", "occurrence": 0 },
+    { "path": "specimen_dates.reported", "label": "Reported", "occurrence": 0 }
+  ],
+  "notes": "The request suggested results-table fields (elastase, calprotectin, secretory IgA, occult blood, total SCFAs). None could be featured. Every value in the results table extracts correctly, but every range lands one table cell after its value: the analyte grounds to its result cell, the result to its unit cell, the reference interval to the next row's analyte. The parse itself is correct cell by cell; the shift is in the extraction's ranges, it affects only this table (which the parse wraps in a <figure type=\"CHART\"> because of the range-bar graphics), and a second extract-only run reproduced it exactly. The featured fields come from the header instead: the report, its order, and the specimen's collected, received and reported dates, all printed MM/DD/YYYY and kept as printed by the schema, so they ground ok. The patient block is specimen data and is not featured."
+}

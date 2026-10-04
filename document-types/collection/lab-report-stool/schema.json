@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "title": "Stool Test Report",
+  "description": "A stool chemistry or stool analysis lab report, as a clinician or a lab-data pipeline reads it: who and what was tested, when, and each analyte's result against its reference interval.",
+  "properties": {
+    "report_title": {
+      "type": "string",
+      "description": "The report's title from the page banner, e.g. 'Stool Chemistries'."
+    },
+    "laboratory": {
+      "type": "object",
+      "description": "The laboratory that performed the analysis, from the page footer.",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the lab that analyzed the specimen ('Analyzed by ...')." },
+        "address": { "type": ["string", "null"], "description": "The analyzing lab's address as printed." },
+        "lab_director": { "type": ["string", "null"], "description": "Lab director named in the footer." },
+        "clia_id": { "type": ["string", "null"], "description": "The CLIA ID printed in the footer." }
+      }
+    },
+    "order": {
+      "type": "object",
+      "description": "The order block at the top left of the report.",
+      "properties": {
+        "order_number": { "type": "string", "description": "Order number exactly as printed." },
+        "client_number": { "type": ["string", "null"], "description": "Client number as printed." },
+        "ordering_provider": { "type": ["string", "null"], "description": "The ordering doctor's name as printed." }
+      }
+    },
+    "patient": {
+      "type": "object",
+      "description": "The patient block at the top centre of the report.",
+      "properties": {
+        "name": { "type": "string", "description": "Patient name as printed." },
+        "id": { "type": ["string", "null"], "description": "Patient ID as printed." },
+        "age": { "type": ["integer", "null"], "description": "Patient age in years." },
+        "date_of_birth": { "type": ["string", "null"], "description": "Date of birth exactly as printed (do not reformat)." },
+        "sex": { "type": ["string", "null"], "description": "Patient sex as printed." }
+      }
+    },
+    "specimen_dates": {
+      "type": "object",
+      "description": "The sample collection block at the top right. Copy every date exactly as printed (do not reformat).",
+      "properties": {
+        "collected": { "type": ["string", "null"], "description": "Date collected, as printed." },
+        "received": { "type": ["string", "null"], "description": "Date received, as printed." },
+        "reported": { "type": ["string", "null"], "description": "Date reported, as printed." }
+      }
+    },
+    "results": {
+      "type": "array",
+      "description": "Every analyte row in the results table, in order, across all sections.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section": { "type": "string", "description": "The section heading the row sits under, e.g. 'Digestion / Absorption', 'Inflammation', 'Short Chain Fatty Acids'." },
+          "analyte": { "type": "string", "description": "Analyte name as printed, without footnote markers (*, †, ‡)." },
+          "result": { "type": "string", "description": "Result exactly as printed, including any comparator such as '>' or '<' (e.g. '>500', '<10', 'Negative')." },
+          "unit": { "type": ["string", "null"], "description": "Unit as printed; null if the row has none." },
+          "reference_interval": { "type": "string", "description": "Reference interval exactly as printed (e.g. '> 200', '30 – 275', 'Negative')." },
+          "outside_reference": { "type": "boolean", "description": "True if the result falls outside its reference interval, judged by comparing the result with the interval." }
+        }
+      }
+    },
+    "commentary_topics": {
+      "type": "array",
+      "description": "The analyte headings the lab's written commentary discusses (the bold sub-headings under 'Stool Chemistries' on the Commentary page).",
+      "items": { "type": "string" }
+    }
+  }
+}
