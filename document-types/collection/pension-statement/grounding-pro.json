@@ -1,0 +1,86 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "earnings[0].current",
+      "label": "Monthly service annuity",
+      "value": 2148.58,
+      "page": 1,
+      "box": {
+        "xmin": 0.19324,
+        "ymin": 0.37344,
+        "xmax": 0.38231,
+        "ymax": 0.48169
+      },
+      "range": {
+        "end": 808,
+        "start": 800
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "earnings-0-current.png"
+    },
+    {
+      "path": "taxes[0].current",
+      "label": "Federal withholding",
+      "value": 257.82,
+      "page": 1,
+      "box": {
+        "xmin": 0.69224,
+        "ymin": 0.37342,
+        "xmax": 0.82902,
+        "ymax": 0.48161
+      },
+      "range": {
+        "end": 877,
+        "start": 871
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "taxes-0-current.png"
+    },
+    {
+      "path": "summary.total_deductions_current",
+      "label": "Total deductions",
+      "value": 802.5,
+      "page": 1,
+      "box": {
+        "xmin": 0.69487,
+        "ymin": 0.71663,
+        "xmax": 0.82938,
+        "ymax": 0.74401
+      },
+      "range": {
+        "end": 1807,
+        "start": 1801
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "summary-total_deductions_current.png"
+    },
+    {
+      "path": "summary.net_pay_current",
+      "label": "Net pay",
+      "value": 1088.26,
+      "page": 1,
+      "box": {
+        "xmin": 0.82934,
+        "ymin": 0.71663,
+        "xmax": 0.96184,
+        "ymax": 0.74399
+      },
+      "range": {
+        "end": 1824,
+        "start": 1816
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "summary-net_pay_current.png"
+    }
+  ]
+}

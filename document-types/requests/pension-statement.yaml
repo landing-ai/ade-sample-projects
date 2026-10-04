@@ -1,0 +1,25 @@
+# Copy this to document-types/requests/<slug>.yaml and fill in what you know.
+#
+# Only `name` and `url` are required. Everything else is optional, and leaving
+# a field out means the skill decides it, exactly as it did before request
+# files existed.
+#
+# Run it with:   /new-document-type-assets document-types/requests/<slug>.yaml
+#
+# Proposed by /propose-document-types on 2026-10-03; the operator accepted the recommended candidate.
+
+name: Pension Statement
+url: https://web.osc.state.ny.us/retire/retirees/paystub-tutorial/pay-stub-2022-for-web.svg
+
+# Anything the skill should know that the document does not say.
+notes: >-
+  Publisher: Office of the New York State Comptroller. Provenance checked: osc.ny.gov
+  'Your Pension Pay Stub' page embeds pay-stub-2022-for-web.svg. Source: 1 pages. Layer:
+  vector (SVG; needs Chrome print-to-PDF). Redaction tool expected: none. Personal data:
+  none: specimen. Not a competitor sample. Clearance expected: public. The source is an
+  SVG, not a PDF: render it to PDF with headless Chrome print-to-PDF (PyMuPDF renders it
+  all black). The result has no text layer. It is a retiree pension payment advice (pay
+  stub) rather than an award letter. Research notes: Retiree payment advice: gross
+  monthly annuity $2,148.58, deductions, net pay. Two-column tables. An advice rather
+  than an award letter. Suggested fields, as suggestions only: Monthly service annuity
+  2,148.58; Federal withholding 257.82; Total deductions 802.50; Net pay 1,088.26.
