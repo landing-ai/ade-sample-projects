@@ -60,6 +60,10 @@ data, not to resolve them by guessing.
 > - **User-upload sites (Scribd, DocPlayer, PDFCoffee, Course Hero, SlideShare) are not
 >   publishers.** The uploader rarely made the document. Use such a source only if
 >   you can name the real publisher, and expect it to need redaction.
+> - **Search only with the WebSearch tool, and fetch with curl or WebFetch.** Do not drive a browser
+>   (the Chrome extension) to run searches, and do not route around a search or rate limit. If
+>   WebSearch is unavailable, work from the leads you have and report it in `searched` and
+>   `open_questions`.
 > - **A Google Drive or Dropbox link is not a publisher either.** Find the page that links
 >   to it (a vendor's documentation, a government site) and give that page as the
 >   provenance evidence. If nothing links to it, report it as `unclear`.
