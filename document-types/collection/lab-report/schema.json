@@ -1,0 +1,280 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "description": "A unique identifier for the specific test order placed by the referring physician or patient.",
+      "x-alternativeNames": [
+        "Order ID",
+        "Test Order ID",
+        "Request ID"
+      ],
+      "type": "string"
+    },
+    "report_status": {
+      "description": "The current status of the laboratory report, indicating if it is final, preliminary, or pending.",
+      "x-alternativeNames": [
+        "Report Status",
+        "Status of Report",
+        "Current Report Status"
+      ],
+      "type": "string"
+    },
+    "patient_details": {
+      "description": "Contains detailed information about the patient.",
+      "x-alternativeNames": [
+        "Patient Information",
+        "Client Details",
+        "Patient Data"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The full name of the patient for whom the report is generated.",
+          "x-alternativeNames": [
+            "Patient Name",
+            "Name",
+            "Customer Name"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "description": "A unique identifier assigned to the patient within the medical system.",
+          "x-alternativeNames": [
+            "Patient ID",
+            "Patient MRN",
+            "Barcode ID"
+          ],
+          "type": "string"
+        },
+        "age": {
+          "description": "The age of the patient at the time of the report or sample collection.",
+          "x-alternativeNames": [
+            "Age",
+            "Patient Age",
+            "Years Old"
+          ],
+          "type": "string"
+        },
+        "gender": {
+          "description": "The biological sex of the patient.",
+          "x-alternativeNames": [
+            "Gender",
+            "Sex",
+            "Patient Gender"
+          ],
+          "type": "string"
+        },
+        "date_of_birth": {
+          "description": "The patient's date of birth",
+          "format": "YYY-MM-DD",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id",
+        "age",
+        "gender",
+        "date_of_birth"
+      ]
+    },
+    "lab_details": {
+      "description": "Contains detailed information about the laboratory that performed the tests.",
+      "x-alternativeNames": [
+        "Laboratory Information",
+        "Testing Facility Details",
+        "Lab Data"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The official name of the laboratory or diagnostic center that performed the tests.",
+          "x-alternativeNames": [
+            "Lab Name",
+            "Laboratory Name",
+            "Testing Facility"
+          ],
+          "type": "string"
+        },
+        "address_line1": {
+          "description": "The first line of the laboratory's street address, typically including the building number and street name.",
+          "x-alternativeNames": [
+            "Lab Address Line 1",
+            "First Address Line",
+            "Street Address"
+          ],
+          "type": "string"
+        },
+        "address_line2": {
+          "description": "The second line of the laboratory's street address, often used for suite, floor, or building details.",
+          "x-alternativeNames": [
+            "Lab Address Line 2",
+            "Second Address Line",
+            "Suite Number"
+          ],
+          "type": "string"
+        },
+        "city": {
+          "description": "The city where the laboratory is located.",
+          "x-alternativeNames": [
+            "Lab City",
+            "City",
+            "Laboratory City"
+          ],
+          "type": "string"
+        },
+        "phone": {
+          "description": "The primary telephone number for the laboratory.",
+          "format": "phone",
+          "x-alternativeNames": [
+            "Lab Phone",
+            "Laboratory Phone",
+            "Contact Number"
+          ],
+          "type": "string"
+        },
+        "fax": {
+          "description": "The fax number for the laboratory or facility.",
+          "x-alternativeNames": [
+            "Fax",
+            "Fax Number",
+            "Facsimile"
+          ],
+          "type": "string"
+        },
+        "website": {
+          "description": "The official website address for the laboratory or facility.",
+          "x-alternativeNames": [
+            "Website",
+            "Web Address",
+            "Online Portal"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address_line1",
+        "address_line2",
+        "city",
+        "phone",
+        "fax",
+        "website"
+      ]
+    },
+    "test_results": {
+      "description": "An array containing the results of various medical tests performed.",
+      "x-alternativeNames": [
+        "Test Results",
+        "Test Report",
+        "Lab Results"
+      ],
+      "type": "array",
+      "items": {
+        "description": "Item in test_results",
+        "type": "object",
+        "properties": {
+          "test_name": {
+            "description": "The name or description of the specific medical test conducted.",
+            "x-alternativeNames": [
+              "Test Name",
+              "Test Description",
+              "Test Performed"
+            ],
+            "type": "string"
+          },
+          "category": {
+            "description": "The category or panel to which the test belongs, e.g., Lipid Panel, CBC, Liver Function.",
+            "x-alternativeNames": [
+              "Test Category",
+              "Panel",
+              "Section"
+            ],
+            "type": "string"
+          },
+          "datetime": {
+            "description": "The specific date and time when the test was performed.",
+            "format": "YYYY-MM-DD HH:MM",
+            "x-alternativeNames": [
+              "Reported Date Time",
+              "Report Date and Time",
+              "Date Reported",
+              "Test Date"
+            ],
+            "type": "string"
+          },
+          "result": {
+            "description": "The outcome or measured value of a specific medical test.",
+            "x-alternativeNames": [
+              "Result",
+              "Test Result",
+              "Value"
+            ],
+            "type": "string"
+          },
+          "unit": {
+            "description": "The unit of measurement for the test result, such as mg/dL or U/L.",
+            "x-alternativeNames": [
+              "Unit",
+              "Measurement Unit",
+              "Units"
+            ],
+            "type": "string"
+          },
+          "method": {
+            "description": "The specific technique or procedure used to perform the laboratory test.",
+            "x-alternativeNames": [
+              "Method",
+              "Test Method",
+              "Analysis Method"
+            ],
+            "type": "string"
+          },
+          "reference_values": {
+            "description": "The reference values for the test often reported as a range.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "reference_units": {
+                  "description": "The unit of measurement for the reference range, such as mg/dL or U/L.",
+                  "type": "string"
+                },
+                "reference_low": {
+                  "description": "The lower value in the range.",
+                  "type": "number"
+                },
+                "referecne_high": {
+                  "description": "The higher value in the range.",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "reference_units",
+                "reference_low",
+                "referecne_high"
+              ]
+            }
+          }
+        },
+        "required": [
+          "test_name",
+          "category",
+          "datetime",
+          "result",
+          "unit",
+          "method",
+          "reference_values"
+        ]
+      }
+    }
+  },
+  "required": [
+    "order_id",
+    "report_status",
+    "patient_details",
+    "lab_details",
+    "test_results"
+  ]
+}
