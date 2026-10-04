@@ -1,0 +1,314 @@
+{
+  "type": "object",
+  "description": "IRS Schedule E (Form 1040), Supplemental Income and Loss, page 1: Part I, income or loss from rental real estate and royalties",
+  "properties": {
+    "tax_year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The tax year printed in the form header, e.g. 2020"
+    },
+    "taxpayer": {
+      "type": "object",
+      "description": "The filer named at the top of the schedule",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name(s) shown on return, as printed"
+        },
+        "ssn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Your social security number, as printed, including any masking characters"
+        }
+      }
+    },
+    "made_payments_requiring_1099": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Line A: true if Yes is checked, false if No is checked, null if neither"
+    },
+    "filed_required_1099s": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Line B: true if Yes is checked, false if No is checked, null if neither"
+    },
+    "properties": {
+      "type": "array",
+      "description": "Part I properties, one per filled column A to C",
+      "items": {
+        "type": "object",
+        "description": "One rental real estate or royalty property: one lettered column (A, B or C) of Part I. Include only columns with any entry.",
+        "properties": {
+          "column": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The property column letter on the form: A, B or C"
+          },
+          "physical_address": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Line 1a: physical address of the property (street, city, state, ZIP), as printed"
+          },
+          "property_type_code": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Line 1b: the type-of-property code entered, 1 to 8 (1 single family residence, 2 multi-family residence, 3 vacation/short-term rental, 4 commercial, 5 land, 6 royalties, 7 self-rental, 8 other)"
+          },
+          "fair_rental_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Line 2: fair rental days"
+          },
+          "personal_use_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Line 2: personal use days"
+          },
+          "qualified_joint_venture": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Line 2: true if the QJV box is checked, false if it is unchecked"
+          },
+          "rents_received": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Line 3: rents received. Plain number without commas or the trailing period the form prints; null if the line is blank"
+          },
+          "royalties_received": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Line 4: royalties received. Plain number without commas or the trailing period the form prints; null if the line is blank"
+          },
+          "expenses": {
+            "type": "object",
+            "description": "Expense lines 5 through 19 for this property",
+            "properties": {
+              "advertising": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 5: advertising. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "auto_and_travel": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 6: auto and travel. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "cleaning_and_maintenance": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 7: cleaning and maintenance. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "commissions": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 8: commissions. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "insurance": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 9: insurance. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "legal_and_professional_fees": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 10: legal and other professional fees. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "management_fees": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 11: management fees. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "mortgage_interest": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 12: mortgage interest paid to banks, etc.. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "other_interest": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 13: other interest. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "repairs": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 14: repairs. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "supplies": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 15: supplies. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "taxes": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 16: taxes. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "utilities": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 17: utilities. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "depreciation_or_depletion": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 18: depreciation expense or depletion. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              },
+              "other_description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Line 19: the description written after 'Other (list)', as printed"
+              },
+              "other_amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Line 19: the amount of other expenses. Plain number without commas or the trailing period the form prints; null if the line is blank"
+              }
+            }
+          },
+          "total_expenses": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Line 20: total expenses for this property. Plain number without commas or the trailing period the form prints; null if the line is blank"
+          },
+          "income_or_loss": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Line 21: rents and/or royalties minus total expenses for this property; negative for a loss. Plain number without commas or the trailing period the form prints; null if the line is blank"
+          },
+          "deductible_rental_loss": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Line 22: deductible rental real estate loss after limitation, as a positive number. Plain number without commas or the trailing period the form prints; null if the line is blank"
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "Part I summary lines 23 through 26",
+      "properties": {
+        "line_23a_total_rents": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23a: total of all amounts on line 3 for all rental properties. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_23b_total_royalties": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23b: total of all amounts on line 4 for all royalty properties. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_23c_total_mortgage_interest": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23c: total of all amounts on line 12 for all properties. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_23d_total_depreciation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23d: total of all amounts on line 18 for all properties. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_23e_total_expenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 23e: total of all amounts on line 20 for all properties. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_24_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 24: income, the sum of positive amounts on line 21. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_25_losses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 25: total losses, as a positive number. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        },
+        "line_26_total_rental_and_royalty_income_or_loss": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 26: total rental real estate and royalty income or (loss); negative for a loss. Plain number without commas or the trailing period the form prints; null if the line is blank"
+        }
+      }
+    }
+  }
+}
