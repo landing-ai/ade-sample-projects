@@ -1,0 +1,46 @@
+{
+  "slug": "business-license",
+  "title": "Business License",
+  "source": {
+    "file": "broward-county-local-business-tax-receipt-sample.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://fsmsdc.org/wp-content/uploads/2023/02/8-Broward-county-Generic.pdf",
+      "publisher": "Broward County (receipt format); published as a sample by the Florida State Minority Supplier Development Council",
+      "title": "Broward County Local Business Tax Receipt (sample), valid October 1, 2019 through September 30, 2020",
+      "retrieved": "2026-10-03",
+      "clearance": "public",
+      "clearance_note": "A specimen Broward County Local Business Tax Receipt, Florida's form of a local business license, published by the Florida State Minority Supplier Development Council in the sample documents library on its certification pages, which carries a disclaimer for its sample documents. A red banner across the page reads 'This is a sample of a local business tax receipt'. It is filled with placeholder data (Generic Business LLC, owner Juan B Generic, 123 Fourth St) rather than a real business. The page is a single raster image with no text layer apart from the banner. No redaction was needed; the PDF metadata carries only the Acrobat creator and producer and dates."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "receipt_number",
+      "label": "Receipt number",
+      "occurrence": 0
+    },
+    {
+      "path": "issuing_authority.name",
+      "label": "Issuing county",
+      "occurrence": 0
+    },
+    {
+      "path": "business.date_opened",
+      "label": "Business opened",
+      "occurrence": 0
+    },
+    {
+      "path": "capacity.employees",
+      "label": "Employees",
+      "occurrence": 0
+    },
+    {
+      "path": "fees.total_paid",
+      "label": "Total paid",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no page or fields; its notes suggested receipt number, business type, tax amount or total paid, and employees, as suggestions only. Featured: issuing county, receipt number, date opened, employees and total paid, so the overlay reads as one record: who issued it, which receipt, since when the business has operated, the count it is assessed on, and what was paid. Business type was not featured: the parse puts the Receipt # line and both Business Type lines in one block, so its box would be the same region as the receipt number's. Business name was tried in its place and rejected after viewing the crop: its box covers only the 'Business Name:' label, not the typed value beside it. The receipt number crop also takes in the business type lines below it, because they share that block; it contains the value. Total paid stands for the amount, since Tax Amount and Total Paid are both 16.50. The owner name and business phone are placeholder specimen values and are not featured. valid_from, valid_through and paid_date read OFF only because they are normalized to ISO from 'OCTOBER 1, 2019' style text. The two blank optional fields typed string-or-null came back as the literal string 'null' rather than JSON null; the blank capacity counts typed integer-or-null came back as real nulls."
+}
