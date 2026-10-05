@@ -1,0 +1,204 @@
+{
+  "type": "object",
+  "title": "Florida Uniform Mitigation Verification Inspection Form (OIR-B1-1802)",
+  "properties": {
+    "form_revision": {
+      "type": "string",
+      "description": "Form number and revision printed in the footer, e.g. OIR-B1-1802 (Rev. 04/26)."
+    },
+    "inspection_date": {
+      "type": "string",
+      "description": "Inspection Date at the top of page 1, as YYYY-MM-DD."
+    },
+    "owner": {
+      "type": "object",
+      "description": "Owner Information block on page 1.",
+      "properties": {
+        "owner_name": {
+          "type": "string",
+          "description": "Owner Name as written."
+        },
+        "street_address": {
+          "type": "string",
+          "description": "Address line (street only)."
+        },
+        "city": {
+          "type": "string",
+          "description": "City."
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code as written, including any +4 suffix."
+        },
+        "county": {
+          "type": "string",
+          "description": "County."
+        },
+        "insurance_company": {
+          "type": ["string", "null"],
+          "description": "Insurance Company, or null if blank."
+        },
+        "policy_number": {
+          "type": ["string", "null"],
+          "description": "Policy #, or null if blank."
+        }
+      }
+    },
+    "year_of_home": {
+      "type": "integer",
+      "description": "Year of Home, from the Owner Information block."
+    },
+    "number_of_stories": {
+      "type": "integer",
+      "description": "# of Stories, from the Owner Information block."
+    },
+    "building_code": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"],
+      "description": "Question 1, Building Code: the letter of the checked answer (marked with an X). A = FBC 2001 & 2004, B = FBC 2007 and later, C = SFBC-94 (HVHZ only), D = unknown or does not meet A, B or C."
+    },
+    "wind_region": {
+      "type": "string",
+      "enum": ["HVHZ", "Region 1", "Region 2", "Region 3"],
+      "description": "Question 2, Region: the checked design-windspeed region."
+    },
+    "roof_slope": {
+      "type": "string",
+      "enum": [">= 6:12", "< 6:12"],
+      "description": "Question 3, Roof Slope: the checked answer."
+    },
+    "roof_coverings": {
+      "type": "array",
+      "description": "Question 4.1: one entry for each roof covering type that is checked. Omit unchecked types.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "covering_type": {
+            "type": "string",
+            "description": "Checked roof covering type, e.g. Asphalt/Fiberglass Shingle, Concrete/Clay Tile, Metal."
+          },
+          "permit_application_date": {
+            "type": ["string", "null"],
+            "description": "Permit Application Date for this covering, as YYYY-MM-DD, or null if blank."
+          },
+          "product_approval_number": {
+            "type": ["string", "null"],
+            "description": "FBC or MDC Product Approval #, or null if blank."
+          },
+          "year_installed": {
+            "type": ["integer", "null"],
+            "description": "Year of Original Installation or Replacement, or null if blank."
+          },
+          "no_information_provided": {
+            "type": "boolean",
+            "description": "True if the 'No Information Provided for Compliance' box is checked for this covering."
+          }
+        }
+      }
+    },
+    "product_approval_listing": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"],
+      "description": "Question 4.2, Product Approval Listing: the letter of the checked answer."
+    },
+    "roof_deck_attachment": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "E", "F", "G", "H"],
+      "description": "Question 5, Roof Deck Attachment: the letter of the checked answer (the weakest form of roof deck attachment)."
+    },
+    "roof_to_wall_attachment": {
+      "type": "object",
+      "description": "Question 6, Roof to Wall Attachment.",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "enum": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+          "description": "Letter of the checked answer: A Toenails, B Clips, C Single Wraps, D Double Wraps, E Structural, F Other, G Unknown, H No attic access, I Not installed as intended."
+        },
+        "minimal_condition": {
+          "type": ["integer", "null"],
+          "description": "Which numbered minimal condition (1, 2 or 3) is checked, or null if none."
+        }
+      }
+    },
+    "roof_geometry": {
+      "type": "object",
+      "description": "Question 7, Roof Geometry.",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "enum": ["A", "B", "C"],
+          "description": "Letter of the checked answer: A Hip Roof, B Flat Roof, C Other Roof."
+        },
+        "non_hip_feature_length_ft": {
+          "type": ["number", "null"],
+          "description": "Total length of non-hip features in feet, or null if blank."
+        },
+        "total_roof_perimeter_ft": {
+          "type": ["number", "null"],
+          "description": "Total roof system perimeter in feet, or null if blank."
+        }
+      }
+    },
+    "secondary_water_resistance": {
+      "type": "object",
+      "description": "Question 8, Sealed Roof Deck / Secondary Water Resistance (SWR).",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "enum": ["A", "B", "C"],
+          "description": "Letter of the checked answer: A Sealed Roof Deck, B No Sealed Roof Deck, C Unknown."
+        },
+        "swr_method": {
+          "type": ["string", "null"],
+          "description": "For answer A, the checked SWR method (e.g. fully adhered polymer-modified bitumen underlayment), or null."
+        }
+      }
+    },
+    "opening_protection": {
+      "type": "object",
+      "description": "Question 9, Opening Protection.",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "enum": ["A", "B", "C", "N", "X", "Z"],
+          "description": "Letter of the checked main answer: the weakest form of wind-borne debris protection."
+        },
+        "sub_answer": {
+          "type": ["string", "null"],
+          "description": "Checked sub-answer for non-glazed openings, e.g. A.1, B.2, N.3, or null if none."
+        },
+        "chart": {
+          "type": "object",
+          "description": "Opening Protection Level Chart: for each opening type (column), the row level (N/A, A, B, C, D, N, X or Z) marked with an X.",
+          "properties": {
+            "glazed_windows_or_entry_doors": {"type": ["string", "null"], "description": "Level marked for glazed windows or entry doors."},
+            "glazed_garage_doors": {"type": ["string", "null"], "description": "Level marked for glazed garage doors."},
+            "skylights": {"type": ["string", "null"], "description": "Level marked for skylights."},
+            "glass_block": {"type": ["string", "null"], "description": "Level marked for glass block."},
+            "non_glazed_entry_doors": {"type": ["string", "null"], "description": "Level marked for non-glazed entry doors."},
+            "non_glazed_garage_doors": {"type": ["string", "null"], "description": "Level marked for non-glazed garage doors."}
+          }
+        }
+      }
+    },
+    "inspector": {
+      "type": "object",
+      "description": "Qualified inspector certification block.",
+      "properties": {
+        "name": {"type": "string", "description": "Qualified Inspector Name."},
+        "license_type": {"type": "string", "description": "License Type as written."},
+        "license_number": {"type": "string", "description": "License or Certificate #."},
+        "company": {"type": "string", "description": "Inspection Company."},
+        "phone": {"type": "string", "description": "Inspection company phone."},
+        "qualification": {"type": "string", "description": "The checked 'I hold an active license as a' option, e.g. Home inspector licensed under Section 468.8314, Florida Statutes."},
+        "signed": {"type": "boolean", "description": "True if the Qualified Inspector Signature line is signed."},
+        "signature_date": {"type": ["string", "null"], "description": "Date beside the inspector signature, as YYYY-MM-DD."}
+      }
+    },
+    "homeowner_signed": {
+      "type": "boolean",
+      "description": "True if the homeowner certification Signature line is signed."
+    }
+  }
+}
