@@ -1,0 +1,403 @@
+{
+  "type": "object",
+  "description": "A management liability insurance policy (directors and officers, errors and omissions, or a fund liability form): its declarations page, coverage terms and endorsements",
+  "properties": {
+    "policy_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The policy number printed on the declarations, e.g. 'POLICY NO. 123456789'"
+    },
+    "policy_form_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The title of the declarations or policy form, e.g. 'Investment Advisers and Funds Declarations'"
+    },
+    "insurer": {
+      "type": "object",
+      "description": "The insurance company issuing the policy",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Legal name of the issuing insurance company"
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City and state of the insurer as printed under its name"
+        }
+      }
+    },
+    "named_insured": {
+      "type": "object",
+      "description": "ITEM 1: the named insured",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the named insured organization"
+        },
+        "dba": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Doing-business-as name, if one is filled in; null if blank"
+        },
+        "principal_address": {
+          "type": "object",
+          "description": "The named insured's principal address",
+          "properties": {
+            "street": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Street address or P.O. box line"
+            },
+            "city": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "City"
+            },
+            "state": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Two-letter state code"
+            },
+            "postal_code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "ZIP or postal code"
+            }
+          }
+        }
+      }
+    },
+    "policy_period": {
+      "type": "object",
+      "description": "ITEM 2: the policy period",
+      "properties": {
+        "inception_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Policy inception date, formatted YYYY-MM-DD"
+        },
+        "expiration_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Policy expiration date, formatted YYYY-MM-DD"
+        },
+        "effective_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The time of day the period starts and ends, e.g. '12:01 A.M. local time'"
+        }
+      }
+    },
+    "claim_notice": {
+      "type": "object",
+      "description": "ITEM 3: where notices of claim or loss must be sent",
+      "properties": {
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Claims notice email address"
+        },
+        "fax": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Claims notice fax number"
+        },
+        "mailing_address": {
+          "type": "object",
+          "description": "Claims notice mailing address",
+          "properties": {
+            "street": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Street address or P.O. box line"
+            },
+            "city": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "City"
+            },
+            "state": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Two-letter state code"
+            },
+            "postal_code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "ZIP or postal code"
+            }
+          }
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Phone number for questions about claim reporting or handling"
+        }
+      }
+    },
+    "coverages_included": {
+      "type": "array",
+      "description": "ITEM 4: the liability coverages purchased under this policy",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Name of one included coverage, e.g. 'Mutual Fund Liability'"
+      }
+    },
+    "coverage_details": {
+      "type": "object",
+      "description": "ITEM 5: limits, retention and dates for the coverage",
+      "properties": {
+        "coverage_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The coverage these details apply to"
+        },
+        "limit_of_liability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The limit of liability for all claims, as a number in dollars"
+        },
+        "derivative_investigation_expense_limit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The derivative investigation expense limit as printed, or 'Not Applicable'"
+        },
+        "supplemental_independent_director_coverage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Whether supplemental independent director personal indemnification coverage applies, as printed (e.g. 'Not Applicable')"
+        },
+        "retention": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The retention (deductible) per claim, as a number in dollars"
+        },
+        "retention_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What the retention applies to, e.g. 'for each Claim'"
+        },
+        "prior_or_pending_proceeding_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The prior or pending proceeding date, formatted YYYY-MM-DD"
+        }
+      }
+    },
+    "policy_premium": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "ITEM 6: the premium for the policy period for all coverages, as a number in dollars"
+    },
+    "extended_reporting_period": {
+      "type": "object",
+      "description": "ITEM 7: the extended reporting period option",
+      "properties": {
+        "additional_premium_percentage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The additional premium for the extended reporting period, as a percentage number (125 for 125%)"
+        },
+        "additional_months": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Length of the extended reporting period in months"
+        },
+        "election_deadline_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Days after termination within which written notice of electing the extended reporting period must be received, from the general terms and conditions"
+        }
+      }
+    },
+    "shared_limit_of_liability": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "ITEM 8: the shared limit of liability as printed, or 'Not Applicable'"
+    },
+    "forms_attached": {
+      "type": "array",
+      "description": "ITEM 9: the form numbers attached at issuance, each as printed",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "One form number, e.g. 'IV-16001-0116'"
+      }
+    },
+    "producer": {
+      "type": "object",
+      "description": "The producer (insurance broker) on the declarations",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Producer firm name"
+        },
+        "address": {
+          "type": "object",
+          "description": "Producer address",
+          "properties": {
+            "street": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Street address or P.O. box line"
+            },
+            "city": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "City"
+            },
+            "state": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Two-letter state code"
+            },
+            "postal_code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "ZIP or postal code"
+            }
+          }
+        }
+      }
+    },
+    "claims_made_basis": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the policy states its liability coverages are written on a claims-made basis"
+    },
+    "defense_expenses_within_limits": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if defense expenses reduce the limit of liability (defense inside limits)"
+    },
+    "duty_to_defend": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if the insurer has a duty to defend claims; false if the policy says it has no duty to defend"
+    },
+    "specified_entities": {
+      "type": "array",
+      "description": "Funds or entities added to the definition of Mutual Fund by a specified entity endorsement",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Name of one specified entity"
+      }
+    },
+    "endorsements": {
+      "type": "array",
+      "description": "Endorsements attached to the policy, one per endorsement",
+      "items": {
+        "type": "object",
+        "description": "One endorsement",
+        "properties": {
+          "form_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The endorsement's form number and edition as printed, e.g. 'IV-19062 Ed. 06-16'"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The endorsement's title"
+          }
+        }
+      }
+    }
+  }
+}

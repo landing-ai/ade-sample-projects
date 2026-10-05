@@ -1,0 +1,884 @@
+{
+  "extraction": {
+    "claim_notice": {
+      "email": "BSIclaims@travelers.com",
+      "fax": "1-888-460-6622",
+      "mailing_address": {
+        "city": "Hartford",
+        "postal_code": "06104-2989",
+        "state": "CT",
+        "street": "P.O. Box 2989"
+      },
+      "phone": "1-800-842-8496"
+    },
+    "claims_made_basis": true,
+    "coverage_details": {
+      "coverage_name": "Mutual Fund Liability",
+      "derivative_investigation_expense_limit": "Not Applicable",
+      "limit_of_liability": 1000000,
+      "prior_or_pending_proceeding_date": "1998-03-16",
+      "retention": 75000,
+      "retention_basis": "for each Claim",
+      "supplemental_independent_director_coverage": "Not Applicable"
+    },
+    "coverages_included": [
+      "Mutual Fund Liability"
+    ],
+    "defense_expenses_within_limits": true,
+    "duty_to_defend": false,
+    "endorsements": [
+      {
+        "form_number": "AFE-19029 Rev. 07-19",
+        "title": "Cap On Losses From Certified Acts Of Terrorism Endorsement"
+      },
+      {
+        "form_number": "AFE-19030 Rev. 09-20",
+        "title": "Federal Terrorism Risk Insurance Act Disclosure Endorsement"
+      },
+      {
+        "form_number": "IV-19047 Ed. 01-16",
+        "title": "MUTUAL FUND INCLUDES SPECIFIED ENTITY ENDORSEMENT"
+      },
+      {
+        "form_number": "IV-19060 Ed. 01-16",
+        "title": "GLOBAL COVERAGE COMPLIANCE ENDORSEMENT"
+      },
+      {
+        "form_number": "IV-19062 Ed. 06-16",
+        "title": "DEFENSE EXPENSES INCLUDE INVESTIGATING AND MONITORING CLAIMS ENDORSEMENT"
+      },
+      {
+        "form_number": "IV-19081 Ed. 04-17",
+        "title": "MOCK REGULATORY EXAMINATION ENDORSEMENT"
+      }
+    ],
+    "extended_reporting_period": {
+      "additional_months": 12,
+      "additional_premium_percentage": 125,
+      "election_deadline_days": 60
+    },
+    "forms_attached": [
+      "AFE-19029-0719",
+      "AFE-19030-0920",
+      "IV-16001-0116",
+      "IV-19047-0116",
+      "IV-19060-0116",
+      "IVMF-16001-0716",
+      "IV-19062-0616",
+      "IV-19081-0417"
+    ],
+    "insurer": {
+      "location": "Hartford, Connecticut",
+      "name": "Travelers Casualty and Surety Company of America"
+    },
+    "named_insured": {
+      "dba": "",
+      "name": "MONTEAGLE FUNDS",
+      "principal_address": {
+        "city": "NASHVILLE",
+        "postal_code": "37211",
+        "state": "TN",
+        "street": "2506 WINFORD AVENUE"
+      }
+    },
+    "policy_form_title": "Investment Advisers and Funds Declarations",
+    "policy_number": "106678970",
+    "policy_period": {
+      "effective_time": "12:01 A.M. local time",
+      "expiration_date": "2023-03-16",
+      "inception_date": "2022-03-16"
+    },
+    "policy_premium": 14366,
+    "producer": {
+      "address": {
+        "city": "ABILENE",
+        "postal_code": "79602",
+        "state": "TX",
+        "street": "3005 SOUTH TREADAWAY"
+      },
+      "name": "CBS INSURANCE LLP"
+    },
+    "shared_limit_of_liability": "Not Applicable",
+    "specified_entities": [
+      "Monteagle Fixed Income Fund",
+      "Monteagle Informed Investor Growth Fund",
+      "Monteagle Quality Growth Fund",
+      "Monteagle Select Value Fund",
+      "Monteagle Value Fund",
+      "Monteagle The Texas Fund",
+      "Monteagle Opportunity Equity Fund"
+    ]
+  },
+  "extraction_metadata": {
+    "claim_notice": {
+      "email": {
+        "ranges": [
+          {
+            "end": 1083,
+            "start": 1053
+          }
+        ],
+        "value": "BSIclaims@travelers.com"
+      },
+      "fax": {
+        "ranges": [
+          {
+            "end": 1103,
+            "start": 1084
+          }
+        ],
+        "value": "1-888-460-6622"
+      },
+      "mailing_address": {
+        "city": {
+          "ranges": [
+            {
+              "end": 1190,
+              "start": 1167
+            }
+          ],
+          "value": "Hartford"
+        },
+        "postal_code": {
+          "ranges": [
+            {
+              "end": 1190,
+              "start": 1167
+            }
+          ],
+          "value": "06104-2989"
+        },
+        "state": {
+          "ranges": [
+            {
+              "end": 1190,
+              "start": 1167
+            }
+          ],
+          "value": "CT"
+        },
+        "street": {
+          "ranges": [
+            {
+              "end": 1166,
+              "start": 1153
+            }
+          ],
+          "value": "P.O. Box 2989"
+        }
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 1493,
+            "start": 1412
+          }
+        ],
+        "value": "1-800-842-8496"
+      }
+    },
+    "claims_made_basis": {
+      "ranges": [
+        {
+          "end": 300,
+          "start": 227
+        },
+        {
+          "end": 8147,
+          "start": 8147
+        },
+        {
+          "end": 61197,
+          "start": 61130
+        }
+      ],
+      "value": true
+    },
+    "coverage_details": {
+      "coverage_name": {
+        "ranges": [
+          {
+            "end": 1876,
+            "start": 1595
+          },
+          {
+            "end": 1593,
+            "start": 1571
+          }
+        ],
+        "value": "Mutual Fund Liability"
+      },
+      "derivative_investigation_expense_limit": {
+        "ranges": [
+          {
+            "end": 1876,
+            "start": 1595
+          }
+        ],
+        "value": "Not Applicable"
+      },
+      "limit_of_liability": {
+        "ranges": [
+          {
+            "end": 1692,
+            "start": 1665
+          }
+        ],
+        "value": 1000000
+      },
+      "prior_or_pending_proceeding_date": {
+        "ranges": [
+          {
+            "end": 2132,
+            "start": 1877
+          }
+        ],
+        "value": "1998-03-16"
+      },
+      "retention": {
+        "ranges": [
+          {
+            "end": 2073,
+            "start": 2045
+          }
+        ],
+        "value": 75000
+      },
+      "retention_basis": {
+        "ranges": [
+          {
+            "end": 2132,
+            "start": 1877
+          }
+        ],
+        "value": "for each Claim"
+      },
+      "supplemental_independent_director_coverage": {
+        "ranges": [
+          {
+            "end": 2132,
+            "start": 1877
+          }
+        ],
+        "value": "Not Applicable"
+      }
+    },
+    "coverages_included": [
+      {
+        "ranges": [
+          {
+            "end": 1593,
+            "start": 1571
+          }
+        ],
+        "value": "Mutual Fund Liability"
+      }
+    ],
+    "defense_expenses_within_limits": {
+      "ranges": [
+        {
+          "end": 437,
+          "start": 370
+        },
+        {
+          "end": 506,
+          "start": 438
+        },
+        {
+          "end": 576,
+          "start": 507
+        },
+        {
+          "end": 21539,
+          "start": 21427
+        },
+        {
+          "end": 21654,
+          "start": 21540
+        },
+        {
+          "end": 22031,
+          "start": 21922
+        },
+        {
+          "end": 22656,
+          "start": 22557
+        },
+        {
+          "end": 22766,
+          "start": 22657
+        },
+        {
+          "end": 23426,
+          "start": 23308
+        },
+        {
+          "end": 23692,
+          "start": 23578
+        },
+        {
+          "end": 23757,
+          "start": 23693
+        },
+        {
+          "end": 61197,
+          "start": 61130
+        },
+        {
+          "end": 61264,
+          "start": 61198
+        }
+      ],
+      "value": true
+    },
+    "duty_to_defend": {
+      "ranges": [
+        {
+          "end": 617,
+          "start": 577
+        },
+        {
+          "end": 28054,
+          "start": 27939
+        },
+        {
+          "end": 28093,
+          "start": 28055
+        }
+      ],
+      "value": false
+    },
+    "endorsements": [
+      {
+        "form_number": {
+          "ranges": [
+            {
+              "end": 5211,
+              "start": 5191
+            }
+          ],
+          "value": "AFE-19029 Rev. 07-19"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 3378,
+              "start": 3342
+            },
+            {
+              "end": 3400,
+              "start": 3379
+            }
+          ],
+          "value": "Cap On Losses From Certified Acts Of Terrorism Endorsement"
+        }
+      },
+      {
+        "form_number": {
+          "ranges": [
+            {
+              "end": 7962,
+              "start": 7942
+            }
+          ],
+          "value": "AFE-19030 Rev. 09-20"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 5513,
+              "start": 5477
+            },
+            {
+              "end": 5536,
+              "start": 5514
+            }
+          ],
+          "value": "Federal Terrorism Risk Insurance Act Disclosure Endorsement"
+        }
+      },
+      {
+        "form_number": {
+          "ranges": [
+            {
+              "end": 57501,
+              "start": 57483
+            }
+          ],
+          "value": "IV-19047 Ed. 01-16"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 56708,
+              "start": 56655
+            }
+          ],
+          "value": "MUTUAL FUND INCLUDES SPECIFIED ENTITY ENDORSEMENT"
+        }
+      },
+      {
+        "form_number": {
+          "ranges": [
+            {
+              "end": 60982,
+              "start": 60964
+            }
+          ],
+          "value": "IV-19060 Ed. 01-16"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 57707,
+              "start": 57665
+            }
+          ],
+          "value": "GLOBAL COVERAGE COMPLIANCE ENDORSEMENT"
+        }
+      },
+      {
+        "form_number": {
+          "ranges": [
+            {
+              "end": 87292,
+              "start": 87274
+            }
+          ],
+          "value": "IV-19062 Ed. 06-16"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 86625,
+              "start": 86553
+            }
+          ],
+          "value": "DEFENSE EXPENSES INCLUDE INVESTIGATING AND MONITORING CLAIMS ENDORSEMENT"
+        }
+      },
+      {
+        "form_number": {
+          "ranges": [
+            {
+              "end": 88663,
+              "start": 88645
+            }
+          ],
+          "value": "IV-19081 Ed. 04-17"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 87495,
+              "start": 87456
+            }
+          ],
+          "value": "MOCK REGULATORY EXAMINATION ENDORSEMENT"
+        }
+      }
+    ],
+    "extended_reporting_period": {
+      "additional_months": {
+        "ranges": [
+          {
+            "end": 2372,
+            "start": 2350
+          }
+        ],
+        "value": 12
+      },
+      "additional_premium_percentage": {
+        "ranges": [
+          {
+            "end": 2349,
+            "start": 2312
+          }
+        ],
+        "value": 125
+      },
+      "election_deadline_days": {
+        "ranges": [
+          {
+            "end": 21240,
+            "start": 21154
+          }
+        ],
+        "value": 60
+      }
+    },
+    "forms_attached": [
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "AFE-19029-0719"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "AFE-19030-0920"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "IV-16001-0116"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "IV-19047-0116"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "IV-19060-0116"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "IVMF-16001-0716"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2665,
+            "start": 2557
+          }
+        ],
+        "value": "IV-19062-0616"
+      },
+      {
+        "ranges": [
+          {
+            "end": 2679,
+            "start": 2666
+          }
+        ],
+        "value": "IV-19081-0417"
+      }
+    ],
+    "insurer": {
+      "location": {
+        "ranges": [
+          {
+            "end": 169,
+            "start": 148
+          }
+        ],
+        "value": "Hartford, Connecticut"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 147,
+            "start": 99
+          }
+        ],
+        "value": "Travelers Casualty and Surety Company of America"
+      }
+    },
+    "named_insured": {
+      "dba": {
+        "ranges": [
+          {
+            "end": 690,
+            "start": 684
+          }
+        ],
+        "value": ""
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 683,
+            "start": 668
+          }
+        ],
+        "value": "MONTEAGLE FUNDS"
+      },
+      "principal_address": {
+        "city": {
+          "ranges": [
+            {
+              "end": 753,
+              "start": 733
+            }
+          ],
+          "value": "NASHVILLE"
+        },
+        "postal_code": {
+          "ranges": [
+            {
+              "end": 753,
+              "start": 733
+            }
+          ],
+          "value": "37211"
+        },
+        "state": {
+          "ranges": [
+            {
+              "end": 753,
+              "start": 733
+            }
+          ],
+          "value": "TN"
+        },
+        "street": {
+          "ranges": [
+            {
+              "end": 732,
+              "start": 712
+            }
+          ],
+          "value": "2506 WINFORD AVENUE"
+        }
+      }
+    },
+    "policy_form_title": {
+      "ranges": [
+        {
+          "end": 59,
+          "start": 28
+        },
+        {
+          "end": 74,
+          "start": 60
+        }
+      ],
+      "value": "Investment Advisers and Funds Declarations"
+    },
+    "policy_number": {
+      "ranges": [
+        {
+          "end": 97,
+          "start": 77
+        },
+        {
+          "end": 57501,
+          "start": 57127
+        },
+        {
+          "end": 61043,
+          "start": 60609
+        },
+        {
+          "end": 87369,
+          "start": 87182
+        },
+        {
+          "end": 88740,
+          "start": 88553
+        }
+      ],
+      "value": "106678970"
+    },
+    "policy_period": {
+      "effective_time": {
+        "ranges": [
+          {
+            "end": 918,
+            "start": 839
+          }
+        ],
+        "value": "12:01 A.M. local time"
+      },
+      "expiration_date": {
+        "ranges": [
+          {
+            "end": 838,
+            "start": 776
+          }
+        ],
+        "value": "2023-03-16"
+      },
+      "inception_date": {
+        "ranges": [
+          {
+            "end": 838,
+            "start": 776
+          }
+        ],
+        "value": "2022-03-16"
+      }
+    },
+    "policy_premium": {
+      "ranges": [
+        {
+          "end": 2251,
+          "start": 2181
+        }
+      ],
+      "value": 14366
+    },
+    "producer": {
+      "address": {
+        "city": {
+          "ranges": [
+            {
+              "end": 2882,
+              "start": 2865
+            }
+          ],
+          "value": "ABILENE"
+        },
+        "postal_code": {
+          "ranges": [
+            {
+              "end": 2882,
+              "start": 2865
+            }
+          ],
+          "value": "79602"
+        },
+        "state": {
+          "ranges": [
+            {
+              "end": 2882,
+              "start": 2865
+            }
+          ],
+          "value": "TX"
+        },
+        "street": {
+          "ranges": [
+            {
+              "end": 2864,
+              "start": 2844
+            }
+          ],
+          "value": "3005 SOUTH TREADAWAY"
+        }
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 2843,
+            "start": 2826
+          }
+        ],
+        "value": "CBS INSURANCE LLP"
+      }
+    },
+    "shared_limit_of_liability": {
+      "ranges": [
+        {
+          "end": 2495,
+          "start": 2428
+        }
+      ],
+      "value": "Not Applicable"
+    },
+    "specified_entities": [
+      {
+        "ranges": [
+          {
+            "end": 56947,
+            "start": 56920
+          }
+        ],
+        "value": "Monteagle Fixed Income Fund"
+      },
+      {
+        "ranges": [
+          {
+            "end": 56987,
+            "start": 56948
+          }
+        ],
+        "value": "Monteagle Informed Investor Growth Fund"
+      },
+      {
+        "ranges": [
+          {
+            "end": 57017,
+            "start": 56988
+          }
+        ],
+        "value": "Monteagle Quality Growth Fund"
+      },
+      {
+        "ranges": [
+          {
+            "end": 57045,
+            "start": 57018
+          }
+        ],
+        "value": "Monteagle Select Value Fund"
+      },
+      {
+        "ranges": [
+          {
+            "end": 57066,
+            "start": 57046
+          }
+        ],
+        "value": "Monteagle Value Fund"
+      },
+      {
+        "ranges": [
+          {
+            "end": 57091,
+            "start": 57067
+          }
+        ],
+        "value": "Monteagle The Texas Fund"
+      },
+      {
+        "ranges": [
+          {
+            "end": 57125,
+            "start": 57092
+          }
+        ],
+        "value": "Monteagle Opportunity Equity Fund"
+      }
+    ]
+  },
+  "markdown": "TRAVELERS ☂\n\n\nSelectOne+®\n\n\n*Investment Advisers and Funds*\n*Declarations*\n\n\nPOLICY NO. 106678970\n\nTravelers Casualty and Surety Company of America\nHartford, Connecticut\n(A Stock Insurance Company, herein called the Company)\n\n\nTHE LIABILITY COVERAGES ARE WRITTEN ON A CLAIMS-MADE BASIS AND ONLY COVER\nCLAIMS MADE AGAINST INSUREDS DURING THE POLICY PERIOD, OR APPLICABLE\nEXTENDED REPORTING PERIOD. THE LIMITS OF LIABILITY AVAILABLE TO PAY\nSETTLEMENTS OR JUDGMENTS ARE REDUCED AND MAY BE EXHAUSTED BY DEFENSE\nEXPENSES, AND DEFENSE EXPENSES ARE APPLIED AGAINST THE RETENTION. THE\nCOMPANY HAS NO DUTY TO DEFEND ANY CLAIM.\n\n\nITEM 1\nNAMED INSURED / INSURANCE REPRESENTATIVE\nMONTEAGLE FUNDS\nD/B/A:\n\nPrincipal Address: \n2506 WINFORD AVENUE \nNASHVILLE, TN 37211 \n\nITEM 2\nPOLICY PERIOD\nInception Date: March 16, 2022 Expiration Date: March 16, 2023\n12:01 A.M. local time for both dates at the Principal Address stated in ITEM 1.\n\nITEM 3\nCOMPANY INFORMATION\nAll notices of Claim or Loss must be sent to the Company by Mail, Email, or Facsimile as set forth below:\nEmail: BSIclaims@travelers.com\nFax: 1-888-460-6622\nMail: Travelers Bond & Specialty Insurance Claim\nP.O. Box 2989\nHartford, CT 06104-2989\n\nIV-15001 Rev. 02-22\n© 2022 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 3\n\n\n<!-- PAGE BREAK -->\n\nOvernight Mail: Travelers Bond & Specialty Insurance Claim\nOne Tower Square, S202A\nHartford, CT 06183\nFor questions related to claim reporting or handling, please call 1-800-842-8496.\n\n\n**ITEM 4**\n**COVERAGES INCLUDED IN THIS POLICY**\n\n\nLiability Coverage(s): \nMutual Fund Liability \n\nITEM 5\nCOVERAGE DETAILS\n\n\nMUTUAL FUND LIABILITY \nLimit of Liability: \n$1,000,000  for all Claims \nDerivative Investigation Expense Limit of Liability: \nNot Applicable  for all Security Holder Derivative Demands \nSupplemental Independent Director Personal Indemnification Coverage: \nNot Applicable \nSupplemental Independent Director Personal Indemnification Limit of Liability: \nNot Applicable  for all Claims under Insuring Agreement C \n\nRetention: \n$75,000  for each **Claim** \n\nPrior or Pending Proceeding Date: March 16, 1998 \n\nITEM 6\nPREMIUM FOR THE POLICY PERIOD FOR ALL COVERAGES\n$14,366.00 Policy Premium for all purchased Coverages listed in ITEM 4\n\nITEM 7\nEXTENDED REPORTING PERIOD FOR LIABILITY COVERAGES\n\n\nAdditional Premium Percentage: 125 % \nAdditional Months: 12 \n\nITEM 8\nSHARED LIMIT OF LIABILITY / LIMIT OF INSURANCE\nNot Applicable for all Claims under the following Shared Coverages:\n\n**ITEM 9**\n**FORMS ATTACHED AT ISSUANCE FOR ALL COVERAGES**\nAFE-19029-0719; AFE-19030-0920; IV-16001-0116; IV-19047-0116; IV-19060-0116; IVMF-16001-0716; IV-19062-0616;\nIV-19081-0417\n\n\nIV-15001 Rev. 02-22\n© 2022 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 2 of 3\n\n\n<!-- PAGE BREAK -->\n\n**PRODUCER INFORMATION:**\nCBS INSURANCE LLP\n3005 SOUTH TREADAWAY\nABILENE, TX 79602\nIN WITNESS WHEREOF, the Company has caused this policy to be signed by its authorized officers.\n\n\n[SIGNED]\nJeff P. KK\nPresident\n\n\n[SIGNED]\nWendy C. Sky\nCorporate Secretary\n\n\nIV-15001 Rev. 02-22\n© 2022 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 3 of 3\n\n\n<!-- PAGE BREAK -->\n\nThis endorsement modifies any Coverage Part or\nCoverage Form included in this Policy that is subject to\nthe federal Terrorism Risk Insurance Act of 2002 as\namended.\n\n\nCap On Losses From Certified Acts Of\nTerrorism Endorsement\n\n\nThe following is added to this Policy. This provision can limit coverage for any loss arising out of a *Certified Act Of Terrorism* if\nsuch loss is otherwise covered by this Policy. This provision does not apply if and to the extent that coverage for the loss is\nexcluded or limited by an exclusion or other coverage limitation for losses arising out of *Certified Acts Of Terrorism* in another\nendorsement to this policy.\n\n\nIf aggregate insured losses attributable to *Certified Acts Of Terrorism* exceed $100 billion in a calendar year and the Insurer has\nmet its insurer deductible under *TRIA*, the Insurer will not be liable for the payment of any portion of the amount of such losses\nthat exceeds $100 billion, and in such case, insured losses up to that amount are subject to pro rata allocation in accordance\nwith procedures established by the Secretary of the Treasury.\n\n\n*Certified Act Of Terrorism* means an act that is certified by the Secretary of the Treasury, in accordance with the provisions of\n*TRIA*, to be an act of terrorism pursuant to *TRIA*. The criteria contained in *TRIA* for a *Certified Act Of Terrorism* include the\nfollowing:\n 1. The act resulted in insured losses in excess of $5 million in the aggregate, attributable to all types of insurance subject\nto TRIA; and\n 2. The act is a violent act or an act that is dangerous to human life, property or infrastructure and is committed by an\nindividual or individuals as part of an effort to coerce the civilian population of the United States or to influence the\npolicy or affect the conduct of the United States Government by coercion.\n\n\n*TRIA* means the federal Terrorism Risk Insurance Act of 2002 as amended.\n\n\nIssuing Company: Travelers Casualty and Surety Company of America \nPolicy Number: 106678970 \n\nAFE-19029 Rev. 07-19\n© 2019 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 1\n\n\n<!-- PAGE BREAK -->\n\nThis endorsement modifies any Coverage Part or\nCoverage Form included in this Policy that is subject to\nthe federal Terrorism Risk Insurance Act of 2002 as\namended.\n\n\nFederal Terrorism Risk Insurance Act\nDisclosure Endorsement\n\n\nThe federal Terrorism Risk Insurance Act of 2002 as amended (“TRIA”), establishes a program under which the Federal\nGovernment may partially reimburse “Insured Losses” (as defined in TRIA) caused by “Acts Of Terrorism” (as defined in TRIA).\nAct Of Terrorism is defined in Section 102(1) of TRIA to mean any act that is certified by the Secretary of the Treasury - in\nconsultation with the Secretary of Homeland Security and the Attorney General of the United States - to be an act of\nterrorism; to be a violent act or an act that is dangerous to human life, property, or infrastructure; to have resulted in damage\nwithin the United States, or outside the United States in the case of certain air carriers or vessels or the premises of a United\nStates Mission; and to have been committed by an individual or individuals as part of an effort to coerce the civilian population\nof the United States or to influence the policy or affect the conduct of the United States Government by coercion.\n\n\nThe Federal Government's share of compensation for such Insured Losses is 80% of the amount of such Insured Losses in\nexcess of each Insurer's “Insurer Deductible” (as defined in TRIA), subject to the “Program Trigger” (as defined in TRIA).\n\n\nIn no event, however, will the Federal Government be required to pay any portion of the amount of such Insured Losses\noccurring in a calendar year that in the aggregate exceeds $100 billion, nor will any Insurer be required to pay any portion of\nsuch amount provided that such Insurer has met its Insurer Deductible. Therefore, if such Insured Losses occurring in a\ncalendar year exceed $100 billion in the aggregate, the amount of any payments by the Federal Government and any coverage\nprovided by this policy for losses caused by Acts Of Terrorism may be reduced.\n\n\nFor each coverage provided by this policy that applies to such Insured Losses, the charge for such Insured Losses is no more\nthan one percent of your premium, and does not include any charge for the portion of such Insured Losses covered by the\nFederal Government under TRIA. Please note that no separate additional premium charge has been made for coverage for\nInsured Losses covered by TRIA. The premium charge that is allocable to such coverage is inseparable from and imbedded in\nyour overall premium.\n\n\nIssuing Company: Travelers Casualty and Surety Company of America\nPolicy Number: 106678970\n\nAFE-19030 Rev. 09-20\n© 2020 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 1\n\n\n<!-- PAGE BREAK -->\n\nTRAVELERS ☂\n\n\n***Investment Advisers and Funds***\n***General Terms and Conditions***\n\n\n***THIS IS A CLAIMS MADE COVERAGE WITH DEFENSE EXPENSES INCLUDED***\n***IN THE LIMIT OF LIABILITY. PLEASE READ THE POLICY CAREFULLY.***\n\n\n***CONSIDERATION CLAUSE***\nIN CONSIDERATION of the payment of the premium, in reliance on the statements in the **Application**, subject to the\nDeclarations, and pursuant to all the terms, conditions, exclusions, and limitations of this **Liability Policy**, the Company\nand the **Insureds** agree as follows:\n\n\n# I. GENERAL\n\nThese General Terms and Conditions apply to all **Liability Coverages**. Unless otherwise stated to the contrary, the terms\nand conditions contained in each **Liability Coverage** apply only to that particular **Liability Coverage**. If any provision in\nthese General Terms and Conditions is inconsistent or in conflict with the terms and conditions of a particular **Liability**\n**Coverage**, such **Liability Coverage's** terms, conditions, and limitations will control for purposes of that **Liability**\n**Coverage.**\n\n\n**II. DEFINITIONS**\nWhere appearing in this **Liability Policy**, in either the singular or plural, words and phrases appearing in bold type have\nthe following meanings:\n**A. Advisory Board Member** means a natural person, not otherwise an **Insured Person**, who is entitled to\nindemnification by the **Insured Organization** and is a member of the **Insured Organization’s** advisory board,\nadvisory committee, limited partner committee, investment committee, or functional or foreign equivalent board or\ncommittee, formed pursuant to **Insured Organization’s Operating Documents.**\n**B. Affiliated Non-Insured Fund** means an investment company, trust, or pooled investment vehicle that is directly\nor indirectly sponsored or controlled by one or more **Insureds**, but is not itself an **Insured** under this **Liability**\n**Policy.**\n**C. Application** means: (i) all signed applications for this **Liability Policy**, or for any policy that this **Liability Policy**\ndirectly or indirectly renews or replaces, including material submitted with or requested in such applications; and\n(ii) all public documents, including certifications related to the accuracy of such public documents, filed with the\nSecurities and Exchange Commission (SEC), or similar domestic or foreign regulatory body, by an **Insured**\n**Organization** during the 12 months preceding the **Policy Period.**\n**D. Claim** has the meaning set forth in the applicable **Liability Coverage.**\n**E. Defense Expenses** mean the necessary costs, charges, expenses, and fees, including attorney’s, expert’s,\nmediator’s, and arbitrator’s fees, incurred in defending a **Claim**, and the premium for appeal, attachment, or\nsimilar bond.\n**Defense Expenses** do not include regular or overtime wages, salaries, or fees of an **Insured.**\n**F. Executive Officer** has the meaning set forth in the applicable **Liability Coverage.**\n**G. Financial Insolvency** means: (i) the court appointment of an examiner, receiver, conservator, liquidator, trustee,\nrehabilitator, or functional equivalent position, to take control of, supervise, manage, or liquidate the **Insured**\n**Organization** or **Outside Entity**; or (ii) the **Insured Organization** or **Outside Entity** becoming a debtor in\npossession under the U.S. Bankruptcy Code, Chapter 11, or its foreign equivalent.\n**H. Fund** means **Hedge Fund**, **Private Equity Fund**, or **Mutual Fund.**\n**I. General Partner** means an entity designated as a general partner, administrative general partner, managing\nmember, or functional or foreign equivalent of the **Insured Organization** by the **Insured Organization’s**\n**Operating Documents.**\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 11\n\n\n<!-- PAGE BREAK -->\n\n**J. Hedge Fund** means:\n1. a pooled investment vehicle, other than a **Private Equity Fund**, that is exempt from registration under the\n2. Investment Company Act of 1940, and: (i) is named as such in by endorsement to this **Liability Policy**; (ii)\n3. qualifies for coverage under this **Liability Policy** pursuant to III. CONDITIONS, Q. CREATION,\n4. SPONSORSHIP, AND ACQUISITION OF FUNDS: or (iii) exists to invest proportionately on the same terms\n5. (*pari passu*) with a **Hedge Fund** described in (i) or (ii); or\n6. an investment holding company that is owned and controlled by a pooled investment vehicle described in 1\n7. that is created for the sole purpose of making investments on its behalf.\n**K. Insured** has the meaning set forth in the applicable **Liability Coverage**.\n**L. Insured Organization** has the meaning set forth in the applicable **Liability Coverage**.\n**M. Insured Person** has the meaning set forth in the applicable **Liability Coverage**.\n**N. Investment Adviser** means an entity as defined in the Investment Advisers Act of 1940 § 202(a)(11) that is: (i)\nnamed in ITEM 1 of the Declarations; or (ii) named as such by endorsement to this **Liability Policy**.\n**O. Liability Coverage** means, individually or collectively, the Liability Coverage(s) purchased, as indicated in ITEM 4\nof the Declarations.\n**P. Liability Policy** means collectively the Declarations, **Application**, General Terms and Conditions, each\npurchased **Liability Coverage**, and attached endorsements, which constitute the entire agreement between the\nCompany and the **Insured**.\n**Q. Loss** has the meaning set forth in the applicable **Liability Coverage**.\n**R. Mutual Fund** means an investment company or trust registered under the Investment Company Act of 1940,\nincluding series or portfolios of such investment company or trust, that: (i) is named as such by endorsement to\nthis **Liability Policy**; or (ii) qualifies for coverage under the **Liability Policy** pursuant to III. CONDITIONS, Q.\nCREATION, SPONSORSHIP, AND ACQUISITION OF FUNDS.\n**S. Named Insured** means the entity named in ITEM 1 of the Declarations.\n**T. Operating Documents** mean bylaws, charters, operating agreements, partnership agreements, board\nresolutions, or amendments to such documents, including functional and foreign equivalents.\n**U. Outside Entity** has the meaning set forth in the applicable **Liability Coverage**.\n**V. Outside Position** has the meaning set forth in the applicable **Liability Coverage**.\n**W. Policy Period** means the period from the Inception Date to the Expiration Date set forth in ITEM 2 of the\nDeclarations, subject to prior termination in accordance with III. CONDITIONS, T. TERMINATION OF POLICY.\n**X. Pollutant** means: (i) a solid, liquid, gaseous, or thermal irritant or contaminant; (ii) an electric, magnetic, or\nelectromagnetic field; (iii) an odor or noise; or (iv) the actual or alleged presence, or actual, alleged, or threatened\ndispersal, of asbestos, asbestos fibers, or products containing asbestos; and includes materials to be recycled,\nreconditioned, or reclaimed.\n**Y. Portfolio Company** means an entity in which a **Fund**, whether directly or through an investment vehicle, acquires\nor maintains a debt, equity, or convertible security interest as part of such **Fund's** portfolio.\n**Z. Private Equity Fund** means a partnership or entity that manages one or more **Private Equity Funds** and is: (i)\nnamed in ITEM 1 of the Declarations; or (ii) named as such by endorsement to this **Liability Policy**.\n**AA. Private Equity Fund** means an investment vehicle that is exempt from registration under the Investment\nCompany Act of 1940, and: (i) is named as such by endorsement to this **Liability Policy**; (ii) qualifies for\ncoverage under this **Liability Policy** pursuant to III. CONDITIONS, Q. CREATION, SPONSORSHIP, AND\nACQUISITION OF FUNDS; or (iii) exists to invest proportionately on the same terms (*pari passu*) with a **Private**\n**Equity Fund** described in (i) or (ii).\n**BB. Related Wrongful Acts** mean all **Wrongful Acts** that have as a common nexus a fact, circumstance, situation,\nevent, transaction, cause, or a series of related facts, circumstances, situations, events, transactions, or causes;\nall **Related Wrongful Acts** are a single **Wrongful Act** for the purposes of this **Liability Policy**, which will be\ndeemed to have occurred at the time the first of such **Wrongful Acts** occurred.\n**CC. Shared Coverages** mean the coverages set forth in ITEM 8 of the Declarations.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 2 of 11\n\n\n<!-- PAGE BREAK -->\n\n**DD.** ***Shared Limit*** means the Company's maximum liability for all **Claims** for all **Shared Coverages** set forth in ITEM\n8 of the Declarations.\n**EE.** ***Spouse*** means a natural person who is a legal spouse, party to a civil union, or otherwise qualifies as a domestic\npartner under the provisions of an applicable domestic or foreign law or regulation, or under the provisions of a\nformal program established by the **Insured Organization.**\n**FF.** ***Subsidiary*** means an entity in which the **Named Insured** directly or indirectly owns more than 50% of the\noutstanding voting securities representing the present right to vote for the election or appointment of directors,\ntrustees, members of the board of managers, or functional or foreign equivalents, or, in the case of a non-profit\nentity, over which the **Named Insured** exercises management control: (i) as of the Inception Date set forth in\nITEM 2 of the Declarations; or (ii) subject to III. CONDITIONS, P. CREATION, ACQUISITION, OR CESSATION\nOF SUBSIDIARIES.\n***Subsidiary*** does not mean a **Fund, General Partner, Portfolio Company, Affiliated Non-Insured Fund**, or\nentity in which an **Affiliated Non-Insured Fund** holds a debt, equity, or convertible security interest.\n**GG.** ***Whistleblower Activity*** means activity protected by the Sarbanes-Oxley Act of 2002 § 806, Dodd-Frank Wall\nStreet Reform and Consumer Protection Act of 2010 § 922, or similar domestic or foreign law.\n**HH.** ***Wrongful Act*** has the meaning set forth in the applicable **Liability Coverage.**\n\n\nIII. CONDITIONS\nA. ESTATES, LEGAL REPRESENTATIVES, AND SPOUSAL LIABILITY COVERAGE\n1. Subject to the applicable Insuring Agreement, this **Liability Policy** will afford coverage for a **Claim** for the\n3 **Wrongful Acts** of an **Insured Person** made against:\n a. an estate, heir, legal representative, or assignee of the **Insured Person** in the event of death, incapacity,\n5 insolvency, or bankruptcy of such **Insured Person**; or\n b. such **Insured Person's Spouse** solely because of his or her legal status as a **Spouse**, or because of\n7 such **Spouse's** ownership interest in property that the claimant seeks for recovery for such **Claim**.\n2. **Loss** that such estate, heir, legal representative, assignee, or **Spouse** is legally obligated to pay for such\n9 **Claim** will be treated as **Loss** that the **Insured Person** is legally obligated to pay for a **Claim** made against\n10 him or her.\n3. The coverage afforded by this section will not apply to the extent a **Claim** alleges wrongful actions or\n12 omissions by an **Insured Person's** estate, heir, legal representative, assignee, or **Spouse**.\nB. EXTENDED REPORTING PERIOD\n1. The **Named Insured** may give the Company written notice to purchase an Extended Reporting Period up to\n15 60 days after the effective date of termination or cancelation of a **Liability Coverage** for any reason other\n16 than nonpayment of premium.\n2. The Extended Reporting Period, as set forth in ITEM 7 of the Declarations, will be no less than 12 months,\n18 and will begin on the effective date of such termination or cancelation.\n3. The Extended Reporting Period provides the **Insured** with the ability to report **Claims** or circumstances made\n20 during the Extended Reporting Period for **Wrongful Acts** occurring prior to such termination or cancelation\n21 that would have been covered by such **Liability Coverage**.\n4. The Extended Reporting Period will not provide new, additional, or renewed limits of liability. The Company's\n23 maximum liability for all **Claims** made during the Extended Reporting Period is the remaining portion of the\n24 applicable Limits of Liability set forth in ITEM 5 of the Declarations as of the effective date of the termination\n25 or cancelation.\n5. The premium due for the Extended Reporting Period will equal the percentage set forth in ITEM 7 of the\n27 Declarations of the annualized premium of the applicable **Liability Coverage**, including the fully annualized\n28 amount of any additional premium charged by the Company during the **Policy Period** prior to such\n29 termination or cancelation.\n6. The entire premium for the Extended Reporting Period will be deemed fully earned at the commencement of\n31 such Extended Reporting Period.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 3 of 11\n\n\n<!-- PAGE BREAK -->\n\n7. The right to elect the Extended Reporting Period terminates unless written notice of such election is received\nby the Company within 60 days of the effective date of the termination or cancelation.\n\n\n**C. LIMITS OF LIABILITY**\n1. Liability Coverage Limits of Liability\n a. The Limits of Liability set forth in ITEM 5 of the Declarations for each applicable **Liability Coverage** are\nthe maximum amounts the Company will pay under this **Liability Policy** for all **Loss**, including **Defense**\n**Expenses** under each applicable **Liability Coverage**, regardless of the number of **Claims** or **Insureds**,\nand regardless of when payment is made by the Company, or when an **Insured's** legal obligation with\nregard to a **Claim** arises or is established.\n b. In the event that a **Claim** triggers more than one **Liability Coverage**, the Company's maximum liability for\nall **Loss**, including **Defense Expenses**, for such **Claim** will not exceed the largest of the remaining\napplicable Limits of Liability for the applicable **Liability Coverages**.\n c. If **Loss** arising from a single **Claim** is covered under more than one **Liability Coverage**, the applicable\nLimits of Liability for such **Liability Coverages** will apply separately to each part of such **Loss**, provided\nthat the Company's maximum liability for such **Loss** will not exceed the amount of the largest applicable\nLimit of Liability, which will be the maximum amount applicable to all **Loss** arising from such **Claim**.\n d. Payment of **Defense Expenses** will reduce and may exhaust all applicable Limits of Liability.\n e. In no event will the Company be obligated to make a payment for **Loss**, including **Defense Expenses**,\nwith regard to a **Claim** after the applicable Limit(s) of Liability has been exhausted by payment or tender\nof payment of **Loss**.\n f. If a **Liability Coverage's** Limit of Liability is exhausted by the payment of covered amounts, the premium\nfor such **Liability Coverage** is considered fully earned and all obligations of the Company under such\n**Liability Coverage** are completely fulfilled and exhausted.\n\n\n2. Shared Limit\n a. If ITEM 8 of the Declarations indicates a **Shared Limit** has been elected, then the Company's maximum\nliability for all **Loss**, including **Defense Expenses**, for all **Claims** under all **Shared Coverages** will not\nexceed the **Shared Limit**.\n b. The **Shared Limit** will be reduced, and may be exhausted, by payment of **Loss** under any **Shared**\n**Coverage**.\n c. **Defense Expenses** are part of, and not in addition to, the **Shared Limit**, and the payment of **Defense**\n**Expenses** will reduce, and may exhaust, the **Shared Limit**.\n d. If **Loss** is covered under more than one **Shared Coverage**, the applicable Limit of Liability for each of the\n**Shared Coverages** will apply separately to each part of such **Loss**, subject to the **Shared Limit**.\n e. The Company's obligations for all **Loss**, including **Defense Expenses**, under each **Shared Coverage** will\ncease once the applicable amount of the Limit of Liability for such **Shared Coverage**, or the amount of\nthe **Shared Limit**, has been exhausted by payment of **Loss**.\n f. The Limit of Liability for any applicable Extended Reporting Period for a **Shared Coverage** is part of, and\nnot in addition to, the **Shared Limit**. The purchase of an Extended Reporting Period will not increase or\nreinstate the **Shared Limit**.\n\n\n**D. RETENTION**\n 1. The Company's liability with respect to **Loss** for each **Claim** applies only to the portion of **Loss** that is excess\nof the applicable Retention set forth in ITEM 5 of the Declarations. Such Retention will be borne by the\n**Insured Organization** at its own risk, and in satisfaction of **Loss**.\n 2. If **Loss** arising from a single **Claim** is subject to multiple Retentions, then each Retention will be applied\nseparately to the part of such **Loss** to which it corresponds, and the largest applicable Retention set forth in\nITEM 5 of the Declarations will be the maximum Retention applicable to all **Loss** arising from such **Claim**.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 4 of 11\n\n\n<!-- PAGE BREAK -->\n\n3. If **Loss** arising from a single **Claim** is subject to a Retention under this **Liability Policy** and a retention or\ndeductible under any other insurance issued by the Company or its affiliated companies, then any payment by\nan **Insured** of such retention or deductible will reduce the applicable Retention by the amount that would\notherwise be covered under this **Liability Policy**.\n4. No Retention will apply to an **Insured Person** if indemnification by the **Insured Organization** is not permitted\nby law or if the **Insured Organization** is unable to make such indemnification solely by reason of **Financial**\n**Insolvency**.\n5. If a single Retention applies to multiple **Insureds**, the Retention will be prorated among such **Insureds**.\n\n\n**E. NOTICE**\n 1. As a condition precedent to exercising rights under this **Liability Policy**, the **Insured** must provide the\nCompany written notice of a **Claim** made against an **Insured** as soon as practicable after an **Executive**\n**Officer** first becomes aware of such **Claim**, but in no event later than 90 days from the expiration of the\n**Policy Period**, or Extended Reporting Period if applicable.\n 2. If an **Insured** becomes aware of any circumstance that could reasonably be expected to give rise to a **Claim**\nfor a **Wrongful Act** occurring before or during the **Policy Period**, and provides written notice of such\ncircumstance to the Company during the **Policy Period** or any Extended Reporting Period, and such written\nnotice of circumstances includes a description of the circumstances, including the anticipated allegations of\n**Wrongful Acts**, potential damages, names of potential claimants and **Insureds** involved, and a description of\nhow the **Insured** became aware of such circumstances, then a **Claim** subsequently arising from such\ncircumstance will be deemed made during the **Policy Period**.\n 3. All notices of **Claims** and circumstances must be sent or delivered to the Company, at the address set forth in\nITEM 3 of the Declarations, and will be deemed received and effective upon the earliest of actual receipt by\nthe addressee, or one day following the date such notice is sent.\n\n\n**F. RELATED CLAIMS**\nAll **Claims** arising out of the same **Wrongful Act** or **Related Wrongful Act** are considered one **Claim** that is\ndeemed first made on the date that the earliest of such **Claims** is first made, or deemed to be made against an\n**Insured** pursuant to III. CONDITIONS, E. NOTICE, 2, regardless of whether such date is before or during the\n**Policy Period.**\n\n\n**G. DEFENSE AND SETTLEMENT**\n1. The Company has no duty under this **Liability Policy** to defend any **Claim**. The **Insured** has the duty to\ndefend all **Claims** made against it.\n2. The **Insured** agrees not to settle or offer to settle a **Claim**, or otherwise incur **Defense Expenses**, assume\ncontractual obligations, stipulate to judgments, or admit liability with respect to a **Claim**, without the\nCompany's written consent; provided that if the **Insured** reasonably believes it is able to fully and finally\nsettle, or otherwise dispose of, a **Claim**, including **Defense Expenses**, for an amount not exceeding 50% of\nthe applicable Retention set forth in ITEM 5 of the Declarations, and the **Insured** has provided the Company\nwith notice of such **Claim** pursuant to III. CONDITIONS, E. NOTICE, then the Company's consent is not\nrequired.\n3. The Company is not liable for settlements, **Defense Expenses**, assumed obligations, stipulated judgments,\nor admissions to which it has not consented when such consent is required.\n4. With respect to a **Claim** submitted for coverage under this **Liability Policy**, the Company has the right to, and\nwill be given the opportunity to, effectively associate and consult with the **Insured** in advance regarding: (i)\nthe selection of appropriate defense counsel; (ii) settlement negotiations; and (iii) substantive defense\nstrategies, including decisions concerning the filing and content of substantive motions.\n5. The **Insured** agrees to provide the Company with all information, assistance, and cooperation that the\nCompany reasonably requests, but the failure of an **Insured Person** to provide the Company with such\ninformation, assistance, or cooperation will not impair the rights of another **Insured Person** under this\n**Liability Policy**.\n6. The **Insured** will do nothing to prejudice the Company's position or its potential or actual rights of subrogation\nor recovery, and the Company may make any investigations it deems necessary.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 5 of 11\n\n\n<!-- PAGE BREAK -->\n\n7. Subject to any applicable Retention, the Company will advance **Defense Expenses**, on behalf of the\n**Insured**, that are covered under this **Liability Policy** and were incurred in connection with a **Claim** for a\n**Wrongful Act** occurring before or during the **Policy Period** that is made against the **Insured** during the\n**Policy Period**, or any applicable Extended Reporting Period. Such **Defense Expenses** will be advanced\nwithin 90 days of the date when the Company's Claims department receives: (i) the invoices documenting that\nsuch **Defense Expenses** have been incurred; and (ii) any additional information or documentation reasonably\nrequested by the **Company** related to such **Defense Expenses**. To the extent it is finally established that any\nadvanced **Defense Expenses** are not covered under this **Liability Policy**, the **Insureds** agrees to repay the\nCompany such **Defense Expenses** severally.\n8. With the written consent of the **Insured**, the Company may settle a **Claim** for a monetary amount that it\ndeems reasonable.\n9. Neither the Company, nor the **Insured** will unreasonably withhold any consent referenced in this section.\n\n\n**H. PRESUMPTIVE INDEMNIFICATION**\nRegardless of whether **Loss** for a **Claim** against an **Insured Person** is actually indemnified, the applicable\nRetention set forth in ITEM 5 of the Declarations will apply to **Loss** that the **Insured Organization** or **Outside**\n**Entity** is legally permitted to indemnify, unless such **Insured Organization** or **Outside Entity** fails to provide\nindemnification solely because of its **Financial Insolvency**.\n\n\n# I. ADVANCEMENT OF LOSS WITHIN RETENTION\n\n\n 1. If the **Insured Organization** is legally permitted, but refuses or fails to advance **Defense Expenses** or\nindemnify an **Insured Person** for **Loss** within the applicable Retention, then the Company will advance such\namounts on behalf of the **Insured Person** until either the **Insured Organization** agrees to pay such amounts,\nor the Retention has been satisfied. Such advancement of **Loss** is subject to the following:\n a. advancement of **Loss** will reduce and may exhaust the Limits of Liability set forth in Item 5 of the\nDeclarations;\n b. advancement of **Loss** does not waive or modify the provisions set forth in III. CONDITIONS, H.\n**PRESUMPTIVE INDEMNIFICATION**; and\n c. the Company will be subrogated to the **Insured Person's** rights of recovery against the **Insured**\n**Organization** for any amounts it owes to the **Insured Person** that the Company has advanced pursuant\nto this Condition.\n 2. The **Insured Organization's** or **Outside Entity's** failure to indemnify an **Insured Person** occurs when the\n**Insured Organization** or **Outside Entity** has neither paid **Loss** on behalf of the **Insured Person**, nor\nacknowledged its obligation to do so, within 60 days of the **Insured Person's** written demand to the **Insured**\n**Organization** for such indemnification payment.\n 3. Advancement of **Loss** by the Company pursuant to this Condition does not relieve the **Insured Organization**\nor **Outside Entity** of its obligation to provide indemnification to such **Insured Person**, or the **Insured**\n**Organization's** obligation to satisfy the applicable Retention on behalf of such **Insured Person**.\n\n\n**J. ALLOCATION**\n1. If an **Insured** covered for a **Claim** under this **Liability Policy** either: (i) incurs **Loss** jointly with others,\nincluding an **Insured** who is not covered for such **Claim** under this **Liability Policy**, or (ii) incurs both **Loss**\ncovered by this **Liability Policy** and loss not covered by this **Liability Policy** because the **Claim** includes\nboth covered and uncovered matters, then the **Insured** and the Company will use their best efforts to allocate\nsuch amount between **Loss** and uncovered loss based upon the relative legal and financial exposures of the\nparties to covered and uncovered matters.\n2. For that part of **Loss** consisting of **Defense Expenses**, if the parties agree on an allocation of **Defense**\n**Expenses**, then the Company, on a current basis and prior to disposition of the **Claim**, will advance **Defense**\n**Expenses** allocated to **Loss**. If there is no agreement on the allocation of **Defense Expenses**, the Company,\non a current basis and prior to disposition of the **Claim**, will advance **Defense Expenses** that the Company\nbelieves are covered under this **Liability Policy** until a different allocation is negotiated, arbitrated, or\njudicially determined.\n3. A negotiated, arbitrated, or judicially determined allocation of **Defense Expenses** in connection with a **Claim**\nwill apply retroactively to all **Defense Expenses** in connection with such **Claim**.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 6 of 11\n\n\n<!-- PAGE BREAK -->\n\n4. An allocation or advancement of **Defense Expenses** in connection with a **Claim** will not apply to, or create a\npresumption with respect to the allocation of other **Loss** for such **Claim**, or any other **Claim**.\n\n\n**K. OTHER INSURANCE**\n 1. If **Loss** arising from a **Claim** made against an **Insured** under one or more **Liability Coverages** is covered\nunder any other valid and collectible insurance of the same type, prior or current, then this **Liability Policy**\ncovers such **Loss** only to the extent that the amount of such **Loss** is in excess of the amount of such other\ninsurance, whether such other insurance is stated to be primary, contributory, excess, contingent, or\notherwise, unless such other insurance is written as specific excess insurance over the Limits of Liability set\nforth in ITEM 5 of the Declarations.\n 2. This **Liability Policy** is not subject to the terms, conditions, exclusions, or limitations of any other insurance.\n 3. This **Liability Policy** covers **Loss** on account of a **Claim** made against an **Insured Person** in an **Outside**\n**Position** only to the extent that the amount of such **Loss** exceeds all valid and collectible indemnity and\ninsurance, available from, or provided by, the **Outside Entity**.\n\n\nL. ORDER OF PAYMENTS\n 1. If **Loss** for a **Claim** exceeds, or may exceed, the remaining applicable Limit(s) of Liability set forth in ITEM 5\nof the Declarations, the Company will first pay non-indemnified **Loss** on behalf of an **Insured Person**, then,\nwith respect to any remaining amount of the applicable Limit(s) of Liability, at the request of a majority of the\nmembers of the board of directors, board of managers, or functional equivalent board of the **Insured**\n**Organization** who are not named defendants in such **Claim**, the Company will either pay or withhold\npayment of any other **Loss**.\n 2. Except as provided in this section, the Company will pay **Loss** as it becomes due without regard to the\npotential for other future payment obligations under this section.\n\n\n**M. SUBROGATION**\n1. In the event of payment under this **Liability Policy**, the Company is subrogated to all of the **Insured's** rights\nof recovery against any person or entity to the extent of such payment.\n2. The Company will not exercise its rights of subrogation against an **Insured Person**, unless there is a final\nnonappealable adjudication adverse to such **Insured Person** in any underlying action establishing that such\n**Insured Person**: (i) engaged in a dishonest, criminal, or fraudulent act or omission; (ii) willfully violated a\nstatute or regulation; or (iii) improperly gained a profit, remuneration, or financial advantage to which he or\nshe was not legally entitled.\n3. The **Insured** agrees to execute and deliver instruments and papers, and do whatever else is necessary, to\nsecure the Company's subrogation rights, and agrees to do nothing to prejudice such rights.\n\n\nN. RECOVERIES\n 1. All recoveries from third parties for payments made under this **Liability Policy** will be applied, after the\ndeduction of costs and expenses incurred in obtaining such recovery, in the following order of priority:\n a. first, to the **Insured**, to reimburse the **Insured** for **Loss** paid that would have been covered by this\n**Liability Policy**, but for the fact that such **Loss** is in excess of the applicable Limits of Liability set forth in\nITEM 5 of the Declarations;\n b. second, to the Company, to reimburse the Company for amounts paid under this **Liability Policy**;\nprovided the Company will reinstate the applicable Limits of Liability set forth in ITEM 5 of the\nDeclarations to the extent of such recovery, less any recovery costs incurred by the Company; and\n c. third, to the **Insured**, in satisfaction of any applicable Retention.\n 2. Pursuant to N.1.b, if the recovery reimburses **Loss** paid under two or more **Liability Coverages**, the\nCompany will reinstate the Limit of Liability for each of those **Liability Coverages** in proportion to how the\n**Loss** was allocated among those **Liability Coverages** in the underlying **Claim**.\n 3. Recoveries do not include any recovery from insurance, suretyship, reinsurance, security, or indemnity taken\nfor the Company's benefit.\n 4. The Company assumes no duty to seek a recovery of any amounts paid under this **Liability Policy**.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 7 of 11\n\n\n<!-- PAGE BREAK -->\n\n**O. CHANGE OF CONTROL**\n1. If during the **Policy Period**:\na. the **Named Insured** merges into or consolidates with another entity, such that the **Named Insured** is not\nthe surviving entity; or\nb. another entity, person, or affiliated group of entities or persons acting in concert obtains the right to: (i)\nelect, appoint, or designate more than 50% of the board of directors, board of trustees, board of\nmanagers, or functional equivalent of the **Named Insured**; or (ii) exercise a majority control of the board\nof directors, board of trustees, board of managers, or a functional equivalent of the **Named Insured**,\nthen coverage will continue until termination of this **Liability Policy**, but only with respect to **Claims** for\n**Wrongful Acts** committed before such event.\n2. As soon as practicable, the **Named Insured** must provide the Company with written notice of such event and\nany related information the Company may reasonably request.\n3. Upon receipt of such notice and information and at the **Named Insured’s** request, the Company will provide\nthe **Named Insured** with a quotation for a six-year (or shorter period as may be negotiated) extension of\ncoverage from such merger, consolidation, or acquisition. Any such coverage extension will be conditioned\nupon the **Named Insured** completing the following within 60 days after receipt of such quotation: (i) providing\nwritten notice to the Company of the election of such coverage extension; (ii) paying additional premium\nrequired by the Company, which is deemed fully earned upon inception of such coverage extension; and (iii) \naccepting any additional terms, conditions, exclusions, or limitations required by the Company. If the **Named**\n**Insured** elects such coverage extension, then it is not entitled to elect coverage under III. CONDITIONS, B.\n**EXTENDED REPORTING PERIOD.**\n**P. CREATION, ACQUISITION, OR CESSATION OF SUBSIDIARIES**\n1. If during the **Policy Period**, an **Insured Organization** that is an **Investment Adviser** or **Private Equity Firm**:\n(i) creates or acquires a **Subsidiary**; or acquires an entity, other than a **Portfolio Company**, **Affiliated Non-**\n**Insured Fund**, or **Fund**, by such entity's merger into or consolidation with an **Insured Organization**, and the\n**Insured Organization** is the surviving entity; and (ii) the total assets, gross annual fees, and assets under\nmanagement of such **Subsidiary** or entity are each less than 25% of the total assets, gross annual fees, and\nassets under management of the **Insured Organization**, respectively, as reflected in financial statements as\nof the inception of the **Policy Period**, then such **Subsidiary** or entity and its **Insured Persons** will be covered\nautomatically for **Claims** under the applicable **Liability Coverage**, but only with respect to **Wrongful Acts**\noccurring after such creation or acquisition; coverage for a **Subsidiary** is limited to the **Subsidiary’s**\n**Wrongful Acts** at the time it was a **Subsidiary**.\n2. If during the **Policy Period**, an **Insured Organization** that is an **Investment Adviser** or **Private Equity Firm**\ncreates or acquires entity that is not a **Portfolio Company**, **Affiliated Non-Insured Fund**, or **Fund**, and such\nentity does not meet the requirements of P.1, then such entity and its **Insured Persons** will be covered\nautomatically for **Claims** under the applicable **Liability Coverage** for the lesser of the remainder of the\n**Policy Period** or 90 days, but only with respect to **Wrongful Acts** occurring after such creation or acquisition.\nIf additional coverage is sought, the **Named Insured** must provide written notice of the creation or acquisition\nof the entity to the Company within 60 days of such creation or acquisition, and promptly provide any\nadditional information the Company may request. Upon receipt of such notice and information, the Company,\nin its discretion, may provide the **Named Insured** a quotation for additional coverage for such created or\nacquired entity under the applicable **Liability Coverage**. If the **Named Insured** fails to pay any additional\npremium, or fails to agree to any additional coverage terms, conditions, exclusions, or limitation set forth in\nthe quotation, no further coverage will be provided.\n3. If an entity ceases to be a **Subsidiary**, then coverage with respect to such entity and its **Insured Persons** will\ncontinue until the termination of this **Liability Policy**, but only with respect to **Claims** for **Wrongful Acts** that\noccurred during the time that such entity was a **Subsidiary**.\n\n\n**Q. CREATION, SPONSORSHIP, OR ACQUISITION OF FUNDS**\n 1. If during the **Policy Period**, an **Investment Adviser** creates or sponsors a new **Mutual Fund** or **Hedge**\n **Fund**, then such new **Mutual Fund** or **Hedge Fund** and its respective **Insured Persons** will be automatically\n covered under the applicable **Liability Coverage**, but only with respect to **Wrongful Acts** occurring after\n such creation or sponsorship.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 8 of 11\n\n\n<!-- PAGE BREAK -->\n\n2. If during the **Policy Period**, an **Investment Adviser** acquires control of a **Mutual Fund** or **Hedge Fund**, and\nthe assets of such **Mutual Fund** or **Hedge Fund** are less than 25% of the total assets for all **Mutual Funds**,\n**Hedge Funds**, and **Affiliated Non-Insured Funds** managed by the **Investment Adviser**, as reflected in its\nfinancial statements as of the inception of the **Policy Period**, then such **Mutual Fund** or **Hedge Fund** and its\n**Insured Persons** will be automatically covered for **Claims** under the applicable **Liability Coverage**, but only\nwith respect to **Wrongful Acts** occurring after acquiring such control.\n3. If during the **Policy Period**, an **Investment Adviser** acquires control of a **Mutual Fund** or **Hedge Fund**, that\ndoes not meet the requirements of Q.2, then such **Mutual Fund** or **Hedge Fund** and its **Insured Persons** will\nbe automatically covered for **Claims** under the applicable **Liability Coverage** for the lesser of the remainder\nof the **Policy Period** or 60 days, but only with respect to **Wrongful Acts** occurring after the acquisition of\nsuch **Mutual Fund** or **Hedge Fund**. If additional coverage is sought, the **Named Insured** must provide written\nnotice of the acquisition to the Company within 60 days of such acquisition, and provide any additional\ninformation the Company may request. Upon receipt of such notice and information, the Company may, within\nits discretion, provide the **Named Insured** a quotation for additional coverage for such **Mutual Fund** or\n**Hedge Fund** under the applicable **Liability Coverage**. If the **Named Insured** fails to pay any additional\npremium, or fails to agree to any additional coverage terms, conditions, exclusions, or limitation set forth in\nthe quotation, no additional coverage will be provided.\n4. If during the **Policy Period**, a **Private Equity Firm** creates or sponsors a new **Private Equity Fund** that has:\n(i) an initial targeted committed capital equal to 50% or less of the total committed capital of all **Private Equity**\n**Funds** and **Affiliated Non-Insured Funds** managed by the **Private Equity Firm**, as reflected in financial\nstatements as of the inception of the **Policy Period**; and (ii) an investment strategy that does not differ\nsubstantially from that of all other **Private Equity Funds**, then such new **Private Equity Fund** and its\n**Insured Persons** will be automatically covered for **Claims** under the applicable **Liability Coverage**, but only\nwith respect to **Wrongful Acts** occurring after such creation or sponsorship.\n5. If during the **Policy Period**, a **Private Equity Firm** creates or sponsors a new **Private Equity Fund** that does\nnot meet the requirements of Q.4, then such **Private Equity Fund** and its **Insured Persons** will be\nautomatically covered for **Claims** under the applicable **Liability Coverage** for the lesser of the remainder of\nthe **Policy Period** or 60 days, but only with respect to **Wrongful Acts** occurring after the creation or\nsponsorship of such **Private Equity Fund**. If additional coverage is sought, the **Named Insured** must provide\nwritten notice of the creation or sponsorship to the Company within 60 days of such creation or sponsorship,\nand promptly provide any additional information the Company may request. Upon receipt of such notice and\ninformation, the Company may, within its discretion, provide the **Named Insured** a quotation for additional\ncoverage for such **Private Equity Fund** under the applicable **Liability Coverage**. If the **Named Insured** fails\nto pay any additional premium, or fails to agree to any additional coverage terms, conditions, exclusions, or\nlimitation set forth in the quotation, no additional coverage will be provided.\n\n\n**R. CESSATION OF FUNDS**\n1. If a **Fund** ceases to be managed by an **Insured Organization**, then coverage will continue for such **Fund**,\nbut only for **Claims** for **Wrongful Acts** that occurred during the time that the **Fund** was managed by an\n**Insured Organization**.\n2. If a **Mutual Fund** ceases to be a registered investment company under the Investment Company Act of 1940,\nthen coverage will continue for such entity, but only for **Claims** for **Wrongful Acts** that occurred wholly during\nthe time that the entity was a **Mutual Fund**.\n3. If a **Hedge Fund** or **Private Equity Fund** ceases to qualify as a private fund under the Investment Company\nAct of 1940 §§ 3(c)(1) or 3(c)(7), then coverage will continue for such entity, but only for **Claims** for **Wrongful**\n**Acts** that occurred wholly during the time that the entity was a **Hedge Fund** or **Private Equity Fund**.\n\n\nS. REPRESENTATIONS\n1. In consideration of issuing this **Liability Policy**, the Company has relied upon the statements and\nrepresentations in the **Application.**\n2. The **Insured** represents and agrees that all statements and representations in the **Application** are true and\naccurate, and are the basis of the **Liability Policy**, which is issued in reliance upon the truth of all such\nstatements and representations. The **Application** is deemed attached to, and incorporated into, this **Liability**\n**Policy.**\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 9 of 11\n\n\n<!-- PAGE BREAK -->\n\n3. With respect to all statements and representations contained in the **Application**, knowledge possessed by an\n**Insured** will not be imputed to another **Insured Person**.\n4. The Company will not, under any circumstance, rescind this **Liability Policy** with respect to an **Insured**.\n5. The **Insured** agrees that if statements or representations in the **Application** are untrue or inaccurate, and\nmaterially affect either the acceptance of the risk or the hazard assumed by the Company, no coverage will\nbe afforded under this **Policy** for a **Claim** arising out of such statements or representations with respect to the\nfollowing:\n a. an **Insured Person** who had knowledge of the information not truthfully or accurately disclosed in the\n**Application**;\n b. the **Insured Organization** to the extent it indemnifies an **Insured Person** referenced in S.5.a; and\n c. the **Insured Organization**, if an **Executive Officer** had knowledge of the information that was not\ntruthfully or accurately disclosed in the **Application**,\nwhether or not the **Insured** knew of such untruthful or inaccurate disclosure in the **Application**.\n\n\nT. TERMINATION OF POLICY\n1. The Company may not terminate this **Liability Policy** prior to expiration of the **Policy Period**, except for\nnonpayment of premium when due. If such nonpayment occurs, written notice of the nonpayment will be\nprovided to the **Named Insured**. Unless payment in full is received within 20 days of the **Named Insured's**\nreceipt of such notice, the Company will terminate the **Liability Policy**.\n2. The **Named Insured** may terminate this **Liability Policy** prior to the expiration of the **Policy Period** by\nproviding the Company with written notice specifying the effective date of such termination, and such date will\nreplace the Expiration Date set forth on ITEM 2 of the Declarations; provided, this **Liability Policy** may not be\nterminated after the effective date of a merger, consolidation, or acquisition of the **Named Insured** as\ndescribed in III. CONDITIONS, O. CHANGE OF CONTROL.\n3. In the event that this **Liability Policy** is terminated prior to the expiration of the **Policy Period**, the Company\nwill refund any unearned premium computed on a pro rata basis. Payment or tender of unearned premium by\nthe Company is not a condition precedent to the effectiveness of such termination, but such payment will be\nmade as soon as practicable.\n4. The Company will not be required to renew this **Liability Policy** upon its expiration. If the Company elects not\nto renew, it will provide the **Named Insured** written notice to that effect at least 60 days before the Expiration\nDate set forth on ITEM 2 of the Declarations.\n\n\n**U. AUTHORIZATION**\nBy accepting the terms herein, the **Named Insured** agrees to act on behalf of all **Insureds** with respect to the\npayment of premiums, receipt of return premiums that may become due hereunder, and receipt of notices of\ncancelation, nonrenewal, or change of coverage, and the **Insureds** each agree that they have individually and\ncollectively delegated such authority exclusively to the **Named Insured**; provided, that nothing herein will relieve\nthe **Insureds** from providing any notice to the Company that is required under this **Liability Policy**.\n\n\nV. CHANGES\n 1. Only the **Named Insured** is authorized to make changes in the terms of this **Liability Policy** and solely with\nthe Company's prior written consent; this **Liability Policy's** terms can only be changed, amended, or waived\nby endorsement issued by the Company and made a part of this **Liability Policy**.\n 2. Notice to a representative of the **Insured**, or knowledge possessed by an agent or other person, will not\nwaive or change any part of this **Liability Policy**, or estop the Company from asserting its rights under the\nterms, conditions, and limitations of this **Liability Policy**.\n 3. This **Liability Policy** may not be assigned or transferred, and any attempted assignment or transfer is void\nand without effect unless the Company has provided its prior written consent to such assignment or transfer.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 10 of 11\n\n\n<!-- PAGE BREAK -->\n\n**W. LIBERALIZATION**\nIf during the **Policy Period**, the Company is required, by law or by the insurance supervisory authorities of the\nstate in which this **Liability Policy** is issued, to make changes in the form of this **Liability Policy**, by which the\ninsurance afforded by this **Liability Policy** could be extended or broadened without increased premium charge by\nendorsement or substitution of form, then such extended or broadened insurance will inure to the benefit of the\n**Insured** as of the date the revision or change is approved for general use by the applicable department of\ninsurance.\n\n\n**X. TERRITORY AND VALUATION**\n 1. Where legally permissible, coverage under this **Liability Policy** extends to **Wrongful Acts** occurring, or\n**Claims** made, anywhere in the world.\n 2. All premiums, limits of liability, retentions, **Loss**, or other amounts under this **Liability Policy** are expressed\nand payable in U.S. Dollars.\n 3. If a final judgment is rendered, a settlement is denominated, or another element of **Loss** under this **Liability**\n**Policy** is stated in a currency other than U.S. Dollars, payment under this **Liability Policy** will be made in\nU.S. Dollars at the rate of exchange published in *The Wall Street Journal* on the date the final amount of such\npayment is determined.\n\n\n**Y. ACTION AGAINST THE COMPANY**\n 1. No action will lie against the Company unless there has been full compliance with all of the terms of this\n**Liability Policy.**\n 2. No person or organization has a right under this **Liability Policy** to join the Company as a party to an action\nagainst an **Insured** to determine such **Insured's** liability, nor may the Company be impleaded by an **Insured**\nor its legal representative.\n 3. Bankruptcy or insolvency of an **Insured** or its estate does not relieve the Company of its obligations\nhereunder.\n\n\n**Z. HEADINGS**\nThe titles of the various paragraphs of this **Liability Policy** and its endorsements are inserted solely for\nconvenience or reference, and are not to be deemed in any way to limit or affect the provision to which they\nrelate.\n\n\nIV-16001 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 11 of 11\n\n\n<!-- PAGE BREAK -->\n\nTHIS ENDORSEMENT CHANGES THE POLICY. PLEASE READ IT CAREFULLY.\n\n\n**MUTUAL FUND INCLUDES SPECIFIED ENTITY ENDORSEMENT**\nThis endorsement changes the following:\n\n\nMutual Fund Liability\n\n\nIt is agreed that:\nThe following is added to section II. DEFINITIONS:\n\n\n**Mutual Fund** also means an entity specified below.\n\n\nSpecified Entity\nMonteagle Fixed Income Fund\nMonteagle Informed Investor Growth Fund\nMonteagle Quality Growth Fund\nMonteagle Select Value Fund\nMonteagle Value Fund\nMonteagle The Texas Fund\nMonteagle Opportunity Equity Fund\n\n\nNothing herein contained shall be held to vary, alter, waive, or extend any of the terms, conditions, exclusions, or\nlimitations of the above-mentioned policy, except as expressly stated herein. This endorsement is part of such policy and\nincorporated therein.\n\n\nIssuing Company: Travelers Casualty and Surety Company of America\nPolicy Number: 106678970\n\nIV-19047 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 1\n\n\n<!-- PAGE BREAK -->\n\nTHIS ENDORSEMENT CHANGES THE POLICY. PLEASE READ IT CAREFULLY.\n\n\n**GLOBAL COVERAGE COMPLIANCE ENDORSEMENT**\nThis endorsement changes the following:\n\n\nGeneral Terms and Conditions\n\n\n**It is agreed that:**\n1. The following is added to section II. DEFINITIONS:\n*Financial Interest* means the **Named Insured's** insurable interest in an **Insured Organization** that is domiciled in a\ncountry or jurisdiction in which the Company is not licensed to provide this insurance, as a result of the **Named**\n**Insured's**: (i) ownership of the majority of the outstanding securities or voting rights of such **Insured Organization**\nrepresenting the present right to elect, appoint, or exercise a majority control over such **Insured Organization's**\nboard of directors, board of trustees, board of managers, natural person general partner, or functional foreign\nequivalent; (ii) indemnification of, or representation that it has an obligation to indemnify, such **Insured Organization**\nfor **Loss** incurred by such **Insured Organization**; or (iii) election or obligation to obtain insurance for such **Insured**\n**Organization**.\n2. The following is added to section III. CONDITIONS:\n**SANCTIONS AND COMPLIANCE**\nThis **Liability Policy** will provide coverage, or otherwise will provide any benefit, only to the extent that providing such\ncoverage or benefit does not expose the Company or any of its affiliated or parent companies to any trade or\neconomic sanction under any law or regulation of the United States of America or any other applicable trade or\neconomic sanction, prohibition, or restriction.\n3. The following replaces section III. CONDITIONS, X. TERRITORY AND VALUATION, 1:\n a. This **Liability Policy** applies anywhere in the world; provided, this **Liability Policy** does not apply to **Loss**\nincurred by an **Insured** residing or domiciled in a country or jurisdiction in which the Company is not licensed\nto provide this insurance, to the extent that providing this insurance would violate the laws or regulations of\nsuch country or jurisdiction.\n b. In the event an **Insured Organization** incurs **Loss** referenced in X.1.a., to which this **Liability Policy** would have\napplied, the Company will reimburse the **Named Insured** for its **Loss**, on account of its **Financial Interest** in\nsuch **Insured Organization**. As a condition precedent such reimbursement, or any rights under this **Liability**\n**Policy**, the **Named Insured** will cause the **Insured Organization** or its **Insured Persons** to comply with the\nconditions of this **Liability Policy**.\n c. In the event that the **Insured Person** residing in a country or jurisdiction in which the Company is not licensed\nincurs **Loss** referenced in X.1.a. that is not indemnified by an **Insured Organization**, such **Loss** will be paid in a\ncountry or jurisdiction mutually acceptable to such **Insured Person** and the Company, to the extent that doing so\nwould not violate any applicable laws or regulations.\n\n\nNothing herein contained shall be held to vary, alter, waive, or extend any of the terms, conditions, exclusions, or\nlimitations of the above-mentioned policy, except as expressly stated herein. This endorsement is part of such policy and\nincorporated therein.\n\n\nIssuing Company: Travelers Casualty and Surety Company of America\nPolicy Number: 106678970\n\nIV-19060 Ed. 01-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 1\n\n\n<!-- PAGE BREAK -->\n\nTRAVELERS ☂\n\n\n*Mutual Fund Liability Coverage*\n\n\n***THIS IS A CLAIMS MADE COVERAGE WITH DEFENSE EXPENSES INCLUDED***\n***IN THE LIMIT OF LIABILITY. PLEASE READ THE POLICY CAREFULLY.***\n\n\n**I. INSURING AGREEMENTS**\n**A. MUTUAL FUND LIABILITY COVERAGE**\nThe Company will pay on behalf of an Insured, Loss that the Insured is legally obligated to pay on account of a\nClaim first made against the Insured during the Policy Period, or any applicable Extended Reporting Period, for\na Wrongful Act occurring before or during the Policy Period.\n**B. SECURITY HOLDER DERIVATIVE DEMAND INVESTIGATION EXPENSE COVERAGE**\nThe Company will pay on behalf of the Insured Organization, Derivative Investigation Expenses on account of\na Security Holder Derivative Demand first made during the Policy Period, or any applicable Extended\nReporting Period, for a Wrongful Act occurring before or during the Policy Period.\n**C. SUPPLEMENTAL INDEPENDENT DIRECTOR PERSONAL INDEMNIFICATION COVERAGE**\nIf ITEM 5 of the Declarations indicates that Supplemental Independent Director Personal Indemnification\nCoverage is applicable, the Company will pay on behalf of a Mutual Fund Independent Director, Loss not\nindemnified by the Insured Organization, that such Mutual Fund Independent Director is legally obligated to\npay on account of a Claim first made against such Mutual Fund Independent Director during the Policy\nPeriod, or any applicable Extended Reporting Period, for a Wrongful Act occurring before or during the Policy\nPeriod, and is excess of any other insurance or indemnification available to such Mutual Fund Independent\nDirector.\n\n\n# II. DEFINITIONS\n\nWhere appearing in this **Liability Coverage**, in either the singular or plural, words or phrases appearing in bold type have\nthe following meanings:\nA. **Claim** means:\n 1. a written demand, other than a **Security Holder Derivative Demand**, against an **Insured** for monetary\ndamages or nonmonetary relief, including injunctive relief, commenced by the **Insured’s** receipt of such\ndemand;\n 2. a civil proceeding, including binding arbitration or other formal alternative dispute resolution, against an\n**Insured**, commenced by the service of a complaint, arbitration petition, or similar legal document;\n 3. a criminal proceeding against an **Insured**, commenced by the return of an indictment or similar legal\ndocument;\n 4. an administrative or regulatory proceeding against an **Insured**, commenced by such **Insured’s** receipt of a\nnotice of filed charges, complaint, or similar legal document;\n 5. a formal investigation of an **Insured**, commenced by the receipt of: (i) a notice of filed charges, formal\ninvestigative order, civil investigative demand, or similar legal document; (ii) a written notice identifying such\n**Insured** as a target of an enforcement unit; or (iii) a Wells Notice from the SEC indicating that it may\ncommence an enforcement action against **Insured**;\n 6. a subpoena served on an **Insured** pursuant to a formal investigative order issued by any government\nenforcement body, commenced by such service;\n 7. a request for **Extradition** of an **Insured Person**, including the execution of an arrest warrant where such\nexecution is an element of **Extradition**, commenced by the **Insured’s** receipt of such request;\n 8. a **Security Holder Derivative Demand** solely with respect to Insuring Agreement B, commenced by the\n**Insured’s** receipt of such demand;\n\n\nIVMF-16001 Rev. 07-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 6\n\n\n<!-- PAGE BREAK -->\n\n9. a **Non-Party Witness Request**; or\n10. a written request to toll or waive a statute of limitations relating to any of the above, commenced by the\n**Insured’s** receipt of such written request,\n\n\nfor a **Wrongful Act**. A **Claim** will be deemed to have been made when it is commenced as set forth above.\n**Claim** does not include routine examinations, routine inspections, or similar routine reviews or inquiries, industry\nsweeps, deficiency letters, or general requests for information.\n\n\nB. **Defense Expenses** also mean **Non-Party Witness Expenses, Extradition Expenses**, and the necessary costs,\ncharges, expenses, and fees incurred by an **Insured Person** in defending against a demand to repay, return, or\nrefund amounts pursuant to the Dodd-Frank Wall Street Reform and Consumer Protection Act (Dodd-Frank) §954\nor the Sarbanes Oxley Act of 2002 (SOX) § 304(a).\n**Defense Expenses** also do not include **Derivative Investigation Expenses.**\nC. **Derivative Investigation Expenses** mean the reasonable and necessary costs, charges, expenses, and fees,\nincluding attorney's and expert's fees, incurred in connection with the investigation or evaluation of a **Security**\n**Holder Derivative Demand** incurred by the **Insured Organization**, its board of directors, board of trustees,\nboard of managers, functional equivalent board, or any committee of such board.\n**Derivative Investigation Expenses** do not include regular or overtime wages, salaries, or fees of a **Director or**\n**Officer** or **Employee.**\nD. **Director or Officer** means a natural person who is, was, or becomes a duly elected or appointed **Mutual Fund**\n**Independent Director** or other director, officer, trustee, in-house general counsel, principal, general partner,\nmember of the board of managers or management committee, or the functional or foreign equivalent position, of\nthe **Insured Organization.**\nE. **Employee** means a natural person who is, was, or becomes an employee of the **Insured Organization**, including\na full-time, part-time, or temporary employee.\nF. **Executive Officer** means a natural person while serving as the chief executive officer, chief financial officer, chief\ninvestment officer, chief compliance officer, or in-house general counsel, or the functional or foreign equivalent\nposition of the **Insured Organization.**\nG. **Extradition** means a formal process by which an **Insured Person** located in a country is surrendered to another\ncountry to answer a criminal accusation.\nH. **Extradition Expenses** mean the reasonable and necessary costs, charges, expenses, and fees, including\nattorney's and expert's fees, incurred by an **Insured Person** in lawfully opposing, challenging, resisting, or\ndefending against a request for, or an effort to obtain, his or her **Extradition.**\n**Extradition Expenses** do not include regular or overtime wages, salaries, or fees of an **Insured.**\nI. **Insured** means **Insured Persons** and **Insured Organizations.**\nJ. **Insured Organization** means a **Mutual Fund.**\nK. **Insured Person** means an **Advisory Board Member, Director or Officer**, or **Employee.**\nL. **Loss** means: (i) **Defense Expenses**; and (ii) damages, judgments, settlements, and prejudgment and\npostjudgment interest; (iii) **Derivative Investigation Expenses**, that an **Insured** is legally obligated to pay as a\nresult of a **Claim**; and (iv) the reasonable premium or origination fee incurred to secure a loan or bond to comply\nwith the Dodd-Frank § 954(b)(2) or SOX § 304; provided that with respect to the multiple portion of a multiplied\ndamage award, or punitive or exemplary damages, **Loss** only includes such damages to the extent they are\ninsurable under the law of a jurisdiction that is most favorable to the insurable of such damages and has a\nsubstantial relationship to the **Insured, Claim**, Company, or this **Liability Coverage.**\n\n\n**Loss**, other than **Defense Expenses**, does not include any amount that constitutes:\n 1. taxes, fines, or penalties, except for civil penalties assessed against an **Insured Person** pursuant to the\nForeign Corrupt Practices Act of 1977 § (2)(g)(2)(B) or the United Kingdom Bribery Act of 2010 (Eng.) §\n11(1)(a);\n 2. disgorgement or other loss that is uninsurable under the law pursuant to which this **Liability Coverage** is\nconstrued; provided, the Company will not assert that any amount of a judgment or settlement in a **Claim** for\na violation of the Securities Act of 1933 §§ 11, 12, or 15 constitutes disgorgement, or other uninsurable loss;\n 3. fees, expenses, or charges, including management, referral, contingency, or brokerage fees, commissions, or\n\n\nIVMF-16001 Rev. 07-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 2 of 6\n\n\n<!-- PAGE BREAK -->\n\nsales loads; or\n4. costs and expenses incurred, or to be incurred, to comply with an order, judgment, or award of injunctive or\nother equitable relief, or the portion of a settlement encompassing injunctive or other equitable relief.\n\n\n**Loss** does not include any amount that an **Insured** is absolved from paying or is allocated to uncovered loss\npursuant to the General Terms and Conditions, section III. CONDITIONS, J. ALLOCATION.\n\n\n**M. *Mutual Fund Independent Director*** means a natural person who is, was, or becomes director or trustee of a\n**Mutual Fund** who is not an “interested person,” as defined in the Investment Company Act of 1940 § 2(a)(19), of\nsuch **Mutual Fund**.\n\n\nN. *Non-Party Witness Request* means:\n 1. a civil proceeding, including binding arbitration or other formal alternative dispute resolution, against an\ninvestment adviser or service provider of a **Mutual Fund**, commenced by the service of a complaint,\narbitration petition, or similar pleading;\n 2. a criminal proceeding against an investment adviser or service provider of a **Mutual Fund**, commenced by\nthe return of an indictment or similar legal document;\n 3. an administrative or regulatory proceeding against an investment adviser or service provider of a **Mutual\n**Fund**, commenced by such investment adviser’s or service provider’s receipt of a notice of filed charges,\ncomplaint, or similar legal document; or\n 4. a formal investigation against an investment adviser or service provider of a **Mutual Fund** commenced by the\nreceipt of: (i) a notice of filed charges, investigative order, civil investigative demand, or similar legal\ndocument; (ii) a written notice identifying such investment adviser or service provider of a **Mutual Fund** as a\ntarget of an enforcement action; or (iii) a Wells Notice from the SEC indicating that it may commence an\nenforcement action against such investment adviser or service provider of a **Mutual Fund**,\n\n\nthat names or identifies a **Mutual Fund Independent Director** as a non-party witness.\nO. **Non-Party Witness Expenses** mean the reasonable and necessary legal fees and expenses incurred by a\n**Mutual Fund Independent Director** in his or her capacity as a non-party witness in connection with any **Non-**\n**Party Witness Request.**\nP. **Security Holder Derivative Demand** means a written demand brought and maintained by a security holder of\nthe **Insured Organization** on behalf of the **Insured Organization**, made upon the **Insured Organization's** board\nof directors, board of managers, or functional equivalent board, to bring a civil proceeding against an **Insured**\n**Person** for a **Wrongful Act** committed by such **Insured Person**, but only if such demand is brought and\nmaintained without the active solicitation, assistance, or participation of an **Insured**.\nQ. **Wrongful Act** means:\n 1. an error, misstatement, misleading statement, act, omission, neglect, or breach of duty, committed or\nattempted by an **Insured** in its capacity as such; or\n 2. a matter claimed against an **Insured Person** solely by reason of his or her status as such.\n\n\n# III. EXCLUSIONS\n\nA. EXCLUSIONS APPLICABLE TO ALL LOSS\n1. BODILY INJURY, PERSONAL INJURY, AND PROPERTY DAMAGE\n a. The Company will not be liable for **Loss** on account of a **Claim** for: (i) bodily injury, mental anguish,\nemotional distress, sickness, disease, or death of any person; (ii) false arrest, detention, imprisonment, or\nmalicious prosecution; (iii) wrongful entry, wrongful eviction, invasion of the right of private occupancy; or\n(iv) discrimination, defamation, libel, slander, disparagement, or a violation of the right to privacy or\npublicity; provided, this will not apply to **Claims** based upon or arising out of the **Insured's** provision of\nfinancial, economic, or investment advice to a customer or client, or management of a **Mutual Fund.**\n b. The Company will not be liable for **Loss** on account of a **Claim** for damage to, or destruction of, tangible\nor intangible property or data, including the loss of the use of such property or data.\n\n\nIVMF-16001 Rev. 07-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 3 of 6\n\n\n<!-- PAGE BREAK -->\n\n**2. BROKER/DEALER**\nThe Company will not be liable for **Loss** on account of a **Claim** based upon or arising out of any activity by an\n**Insured** as a broker or dealer in securities as defined in the Securities Exchange Act of 1934 §§ 3(a)(4) and\n3(a)(5).\n**3. CONTRACTUAL LIABILITY**\n a. The Company will not be liable for **Loss** on account of a **Claim** for any liability of an **Insured** under an oral\nor written contract or agreement, regardless of whether such liability is direct or assumed.\n b. Exclusion A.3 will not apply to:\n i. the extent that the **Insured Organization** would have been liable in the absence of the contract or\nagreement; or\n ii. a **Claim** that is brought or maintained by, or on behalf of, a customer or client of the **Insured**\n**Organization** alleging a breach of contract or agreement that governs or specifies the **Insured's**\nprovision of professional services.\n**4. DISHONEST, CRIMINAL, AND FRAUDULENT ACTS**\n a. The Company will not be liable for **Loss** on account of a **Claim** based upon or arising out of any\ndeliberately dishonest, criminal, or fraudulent act or omission, or a willful violation of law, if a final\nnonappealable adjudication adverse to the **Insured** in any underlying action establishes that such\n**Insured** committed such act, omission, or willful violation.\n b. For purposes of applying Exclusion A.4: (i) no fact pertaining to, or knowledge possessed by, an **Insured**\n**Person** will be imputed to another **Insured Person**; and (ii) only facts pertaining to, or knowledge\npossessed by, an **Executive Officer** will be imputed to the **Insured Organization**.\n**5. EMPLOYMENT LAWS**\n The Company will not be liable for **Loss** on account of a **Claim** for a violation of: (i) the responsibilities, duties,\nor obligations under any law concerning Social Security, unemployment insurance, workers' compensation, or\ndisability insurance or any similar domestic or foreign law; or (ii) the Worker Adjustment and Retraining\nNotification Act (WARN), Occupational Safety and Health Act (OSHA), Consolidated Omnibus Budget\nReconciliation Act of 1985 (COBRA), National Labor Relations Act (NLRA), Fair Labor Standards Act (FLSA),\nor any similar domestic or foreign law.\n**6. ERISA**\nThe Company will not be liable for **Loss** on account of a **Claim** for: (i) a violation of the Employee Retirement\nIncome Security Act of 1974 (ERISA), or similar domestic or foreign law, in connection with an employee\nbenefit plan sponsored by the **Insured Organization** for the benefit of **Employees**; or (ii) an **Insured's** failure\nor refusal to establish, contribute to, pay for, insure, maintain, provide benefits pursuant to, enroll, or maintain\nthe enrollment of **Employees** or their dependents in any employee benefit plan, fund, or program, including\ncontracts or agreements that are not subject to the provisions of ERISA.\n**7. IMPROPER PROFIT**\n a. The Company will not be liable for **Loss** on account of a **Claim** based upon or arising out of an **Insured's**\nacquisition of any profit, remuneration, or financial advantage to which such **Insured** was not legally\nentitled if a final nonappealable adjudication adverse to the **Insured** in any underlying action establishes\nthat such **Insured** was not legally entitled to such profit, remuneration, or financial advantage.\n b. Exclusion A.7 will not apply to **Loss** on account of a **Claim** for violations of the Securities Act of 1933 §§\n11, 12, or 15.\n c. For purposes of applying Exclusion A.7: (i) no fact pertaining to, or knowledge possessed by, an **Insured**\n**Person** will be imputed to another **Insured Person**; and (ii) only facts pertaining to, or knowledge\npossessed by, an **Executive Officer** will be imputed to the **Insured Organization**.\n**8. INSURED VERSUS INSURED**\n a. The Company will not be liable for **Loss** on account of a **Claim** against an **Insured** that is brought or\nmaintained by, or on behalf of, an **Insured** under this **Liability Policy**, or a **Subsidiary**, in any capacity;\nprovided this will not apply to a **Claim** brought and maintained:\n\n\nIVMF-16001 Rev. 07-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 4 of 6\n\n\n<!-- PAGE BREAK -->\n\ni. on behalf of the **Insured Organization** in the form of a security holder derivative action or **Security**\n**Holder Derivative Demand** by one or more persons who are not **Director or Officers** and bring or\nmaintain such **Claim** without the active solicitation, assistance, or participation of a natural person\nwho is serving, or in the past two years has served, as a **Director or Officer**;\nii. by an **Insured Person** for contribution or indemnity, if the **Claim** is part of, or results directly from, a\n**Claim** that is not otherwise excluded under this **Liability Coverage**;\niii. by a natural person, who was an **Insured Person** and has not served in such capacity for at least two\nyears preceding the date the **Claim** is made, that brings and maintains the **Claim** without the active\nsolicitation, assistance, or participation of the **Insured Organization**, or a natural person who is\nserving, or in the past two years has served, as an **Insured Person**;\niv. by a court appointed examiner, receiver, conservator, liquidator, trustee, rehabilitator, member of the\ncreditors' committee of the **Insured Organization**, or similar official serving in the same legal\ncapacity;\nv. outside of the United States, U.S. territories and possessions, Canada, United Kingdom, or Australia;\nvi. by an **Advisory Board Member**, who brings or maintains such **Claim** without the active solicitation,\nassistance, or participation of a natural person who is serving, or in the past two years has served, as\na **Director or Officer**;\nvii. against a **Mutual Fund Independent Director**, provided that such **Claim** is brought and maintained\nwithout the active solicitation, assistance, or participation of such **Mutual Fund Independent**\n**Director**; or\nviii. against a **Mutual Fund Independent Director** and an **Insured Organization** so long as such **Mutual**\n**Fund Independent Director** remains a co-defendant in such **Claim**, provided that such **Claim** is\nbrought and maintained without the active solicitation, assistance, or participation of such **Mutual**\n**Fund Independent Director** or **Insured Organization**.\nb. For purposes of Exclusion A.8: an **Insured Person's Whistleblowing Activity** alone will not constitute\nactive solicitation, assistance, or participation.\n\n\n**9. INVESTMENT BANKING**\n a. The Company will not be liable for **Loss** on account of a **Claim** based upon or arising out of an\n**Insured’s**: (i) investment banking activities, including service as an underwriter, consultant, adviser, or\nspecialist; (ii) advice, recommendations, or services regarding merger, tender offer, proxy contest,\nacquisition, restructuring, reorganization, recapitalization, divestiture, or similar transaction; or (iii) fairness\nopinion regarding the valuation of assets or business entities not held by an **Insured** as trustee.\n b. Exclusion A.9 will not apply to the extent that the activities described in a(i),(ii), or (iii) concern the\nissuance of shares by a **Mutual Fund**, the restructuring of a **Mutual Fund**, or the voting of shares held by\na **Mutual Fund.**\n\n\n**10. POLLUTION**\na. The Company will not be liable for **Loss** on account of a **Claim**: (i) for the actual, alleged, or threatened\ndischarge, dispersal, seepage, migration, release, or escape of a **Pollutant**; (ii) for any request, demand,\norder, or statutory or regulatory requirement that any **Insured** or others test for, monitor, clean up,\nremove, contain, treat, detoxify, neutralize, or in any way respond to or assess the effects of a **Pollutant**;\nor (iii) brought by or on behalf of any governmental authority because of testing for, monitoring, cleaning\nup, removing, containing, treating, detoxifying, neutralizing, or in any way responding to or assessing the\neffects of a **Pollutant**.\nb. Exclusion A.10 will not apply to **Claim** against an **Insured Person** for **Loss** that is not indemnified by the\n**Insured Organization**, nor will it apply to a **Claim** seeking damages for the diminution in value of an\ninterest in a **Mutual Fund**.\n\n\n**11. PRIOR NOTICE**\nThe Company will not be liable for **Loss** on account of a **Claim** based upon or arising out of any fact,\ncircumstance, situation, event, **Wrongful Act**, or **Related Wrongful Act** that has been the subject of any\nwritten notice given by, or on behalf of, an **Insured** under any other directors and officers, management,\nprofessional, or similar liability insurance policy.\n\n\nIVMF-16001 Rev. 07-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 5 of 6\n\n\n<!-- PAGE BREAK -->\n\n**12. PRIOR OR PENDING PROCEEDING**\nThe Company will not be liable for **Loss** on account of a **Claim** based upon or arising out of any fact,\ncircumstance, situation, event, **Wrongful Act**, or **Related Wrongful Act**, underlying or alleged in a prior or\npending civil, criminal, administrative, or regulatory proceeding, including a mediation, arbitration, or other\nalternative dispute resolution against an **Insured**, as of, or prior to, the applicable Prior or Pending\nProceeding Date set forth in ITEM 5 of the Declarations for this **Liability Coverage.**\n\n\n**B. EXCLUSIONS APPLICABLE TO LOSS, OTHER THAN DEFENSE EXPENSES**\n**1. INABILITY TO PAY**\nThe Company will not be liable for **Loss**, other than **Defense Expenses**, on account of a **Claim** for the\ninability of a bank or banking firm, custodian, or broker or dealer in securities or commodities, to make any\npayment, or the inability of any such entity or person to settle or effect a transaction of any kind.\n\n\n**IV. CONDITIONS**\n**A. SECURITY HOLDER DERIVATIVE DEMAND INVESTIGATION EXPENSE COVERAGE**\nThe Company's maximum liability under Insuring Agreement B for all **Derivative Investigation Expenses** for all\nSecurity Holder Derivative Demands first made during the **Policy Period** is the Derivative Investigation\nExpense Limit of Liability as set forth in ITEM 5 of the Declarations, which is part of, and not in addition to, the\nMutual Fund Liability Coverage Limit of Liability.\n**B. SUPPLEMENTAL INDEPENDENT DIRECTOR PERSONAL INDEMNIFICATION COVERAGE**\n1. The Company's maximum liability under Insuring Agreement C for all **Loss** for all **Claims** first made during\nthe **Policy Period** is the Supplemental Personal Indemnification Limit of Liability as set forth in ITEM 5 of the\nDeclarations, which is in addition to, and excess of, the Mutual Fund Liability Coverage Limit of Liability.\n2. The Mutual Fund Limit of Liability must be completely exhausted by payment of **Loss** before the Company\nwill have an obligation to pay **Loss** under Insuring Agreement C.\n3. Coverage under Insuring Agreement C is specifically excess of any other insurance or indemnification\navailable to the **Mutual Fund Independent Director**, including any other insurance that is specifically excess\nof this **Liability Coverage**. All such other insurance and indemnification must be exhausted by payment of\nloss, damages, defense expenses, claim expenses, or other amounts covered under such other insurance or\nindemnification before the Company will have any obligation to pay for **Loss** under Insuring Agreement C.\n4. This **Liability Coverage** is not subject to the terms or conditions of any other insurance.\n**C. ADVISORY BOARD MEMBER COVERAGE**\n1. Coverage under this **Liability Policy** is afforded to an **Advisory Board Member**, only to the extent that the\nInsured Organization agrees to indemnify such **Advisory Board Member** pursuant to a written\nindemnification agreement.\n2. Any coverage provided to an **Advisory Board Member** is excess of all other valid and collectible indemnity\nand insurance otherwise available to such **Advisory Board Member**.\n**D. RETENTION - MUTUAL FUND LIABILITY**\nThe following supplements the General Terms and Conditions, section III. CONDITIONS, D. RETENTION:\nNo Retention applies to **Loss** solely covered under Insuring Agreements B or C, or to unindemnified **Loss** under\nInsuring Agreement A, except as otherwise provided in the General Terms and Conditions, section III.\nCONDITIONS, H. PRESUMPTIVE INDEMNIFICATION; unindemnified **Loss** includes **Loss** that a **Mutual Fund**\n**Independent Director** becomes legally obligated to pay on account of a **Claim** that the **Insured Organization** is\nunable to indemnify due to liquidation, or other **Financial Insolvency**.\n\n\nIVMF-16001 Rev. 07-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 6 of 6\n\n\n<!-- PAGE BREAK -->\n\nTHIS ENDORSEMENT CHANGES THE POLICY. PLEASE READ IT CAREFULLY.\n\n\nDEFENSE EXPENSES INCLUDE INVESTIGATING AND MONITORING CLAIMS ENDORSEMENT\nThis endorsement changes the following:\nMutual Fund Liability\n\n\n**It is agreed that:**\nThe following is added to II. DEFINITIONS:\n**Defense Expenses** also mean the necessary costs, charges, expenses, and fees, including attorney’s fees, incurred in\ninvestigating or monitoring a **Claim.**\n\n\nNothing herein contained shall be held to vary, alter, waive, or extend any of the terms, conditions, exclusions, or\nlimitations of the above-mentioned policy, except as expressly stated herein. This endorsement is part of such policy and\nincorporated therein.\n\n\nIssuing Company: Travelers Casualty and Surety Company of America\nPolicy Number: 106678970\n\nIV-19062 Ed. 06-16\n© 2016 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 1\n\n\n<!-- PAGE BREAK -->\n\nTHIS ENDORSEMENT CHANGES THE POLICY. PLEASE READ IT CAREFULLY.\n\n\nMOCK REGULATORY EXAMINATION ENDORSEMENT\n\n\nThis endorsement changes the following:\n\n\nMutual Fund Liability\n\n\nIt is agreed that:\n1. The following is added to I. INSURING AGREEMENTS:\nMOCK REGULATORY EXAMINATION\nThe Company will reimburse the **Insured Organization’s** premium in an amount constituting half of the costs paid for\na **Mock Regulatory Examination** up to the lesser of 10% of the **Liability Policy** premium or $25,000, subject to the\nCompany’s receipt and validation of the compliance consulting firm’s invoice during the **Policy Period**.\n2. The following is added to II. DEFINITIONS:\n**Mock Regulatory Examination** means a simulated regulatory compliance examination of an **Insured Organization**\nperformed during the **Policy Period** by a compliance consulting firm that is on the Company’s pre-approved panel.\n\n\nNothing herein contained shall be held to vary, alter, waive, or extend any of the terms, conditions, exclusions, or\nlimitations of the above-mentioned policy, except as expressly stated herein. This endorsement is part of such policy and\nincorporated therein.\n\n\nIssuing Company: Travelers Casualty and Surety Company of America\nPolicy Number: 106678970\n\nIV-19081 Ed. 04-17\n© 2017 The Travelers Indemnity Company. All rights reserved.\n\n\nPage 1 of 1\n\n\n<!-- doc_id=parse-01m44t8kzqqce1nxjwsa2pt7wc -->",
+  "metadata": {
+    "job_id": "extract-01m44t9ad24qwz68eec2a8ej7j",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 30489,
+    "doc_id": "parse-01m44t8kzqqce1nxjwsa2pt7wc",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 20.3,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 88789,
+    "output_extraction_chars": 2463,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}
