@@ -1,0 +1,271 @@
+{
+  "type": "object",
+  "title": "Property Inspection Report",
+  "description": "A residential home inspection report, as used by buyers, agents, lenders and insurers to assess the condition of a property: the inspection details, the property, the roof, and the deficiencies the inspector found.",
+  "properties": {
+    "inspection": {
+      "type": "object",
+      "description": "Who inspected which property, when, and for whom.",
+      "properties": {
+        "inspection_company": {
+          "type": "string",
+          "description": "Name of the inspection company that issued the report."
+        },
+        "inspector_name": {
+          "type": "string",
+          "description": "Name of the inspector."
+        },
+        "property_address": {
+          "type": "string",
+          "description": "Full address of the inspected property, as printed on the cover page."
+        },
+        "prepared_for": {
+          "type": "string",
+          "description": "The client the inspection was prepared for."
+        },
+        "real_estate_agent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The real estate agent and agency named on the report, or null if none."
+        },
+        "inspection_date": {
+          "type": "string",
+          "description": "Date of inspection, as printed (MM/DD/YYYY)."
+        },
+        "start_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time the inspection started, as printed."
+        },
+        "attended_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Who attended the inspection."
+        },
+        "standards_of_practice": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The professional standards the inspection follows, e.g. InterNACHI Standards of Practice."
+        }
+      },
+      "required": [
+        "property_address",
+        "inspection_date"
+      ]
+    },
+    "property": {
+      "type": "object",
+      "description": "The Site Details section describing the residence and the conditions on the day.",
+      "properties": {
+        "residence_style": {
+          "type": "string",
+          "description": "Type of residence, e.g. single family home with an attached two car garage."
+        },
+        "stories": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Number of storeys."
+        },
+        "occupancy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Occupancy and furnishing at the time of inspection, e.g. vacant and unfurnished."
+        },
+        "year_built": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Year the house was built."
+        },
+        "square_feet": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Approximate square footage."
+        },
+        "weather": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Weather at the time of inspection."
+        },
+        "ground_condition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Ground condition at the time of inspection."
+        },
+        "rain_in_last_three_days": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether it had rained in the last three days."
+        },
+        "temperature_f": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Approximate temperature in degrees Fahrenheit."
+        }
+      }
+    },
+    "roof": {
+      "type": "object",
+      "description": "The roof covering as described under Method and Material in the Roof and Attic section.",
+      "properties": {
+        "covering_material": {
+          "type": "string",
+          "description": "Roofing material, e.g. fiberglass based asphalt shingles."
+        },
+        "life_cycle_stage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Where the roof covering is in its life cycle, as stated, e.g. second third of their life cycle."
+        },
+        "attic_access": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "How and where the attic was accessed."
+        },
+        "insulation_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Type of attic insulation installed."
+        },
+        "insulation_depth": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Approximate depth of attic insulation, as printed."
+        },
+        "ventilation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "How the attic is ventilated."
+        }
+      },
+      "required": [
+        "covering_material"
+      ]
+    },
+    "roof_findings": {
+      "type": "array",
+      "description": "The numbered observations under the '2. Roof Coverings' and '3. Roof Drainage System' headings in the body of the report (items 2.x and 3.x), in order, each listed once. Not the Report Summary table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_number": {
+            "type": "string",
+            "description": "The observation's number as printed, without the trailing period, e.g. 2.4."
+          },
+          "component": {
+            "type": "string",
+            "description": "The heading the observation sits under, without its number: Roof Coverings or Roof Drainage System."
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The category label that prefixes the observation, e.g. IMPROVE, MAINTENANCE, SAFETY CONCERN or FYI, or null if it has none."
+          },
+          "observation": {
+            "type": "string",
+            "description": "The observation and recommendation text, without the category label or location."
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The LOCATION given for the observation, or null if none."
+          }
+        },
+        "required": [
+          "item_number",
+          "component",
+          "observation"
+        ]
+      }
+    },
+    "report_summary": {
+      "type": "array",
+      "description": "Every numbered deficiency in the Report Summary table at the end of the report, in order: one entry per deficiency number, not per table row, since one cell can hold several (e.g. 7.4 and 7.5 under Cooling System Observations).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "string",
+            "description": "The system heading the row falls under, e.g. Roof and Attic, Exterior, Electrical."
+          },
+          "report_page": {
+            "type": "integer",
+            "description": "The report page number the deficiency appears on, from 'Page N Item: M'."
+          },
+          "component": {
+            "type": "string",
+            "description": "The component named in the second column, e.g. Roof Coverings."
+          },
+          "item_number": {
+            "type": "string",
+            "description": "The deficiency's number as printed at the start of its description, without the trailing period, e.g. 2.4."
+          },
+          "safety_concern": {
+            "type": "boolean",
+            "description": "True if the description is labelled SAFETY CONCERN."
+          },
+          "deficiency": {
+            "type": "string",
+            "description": "The deficiency and recommended action, without the item number or location."
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The LOCATION given in the description, or null if none."
+          }
+        },
+        "required": [
+          "system",
+          "report_page",
+          "component",
+          "item_number",
+          "deficiency"
+        ]
+      }
+    }
+  },
+  "required": [
+    "inspection",
+    "roof",
+    "report_summary"
+  ]
+}
