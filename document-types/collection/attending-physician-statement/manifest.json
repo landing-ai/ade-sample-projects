@@ -1,0 +1,26 @@
+{
+  "slug": "attending-physician-statement",
+  "title": "Attending Physician Statement",
+  "source": {
+    "file": "de2501-physician-certificate-sample.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de2501.pdf",
+      "publisher": "State of California Employment Development Department (EDD)",
+      "title": "DE 2501 Application for Disability Insurance Benefits - Sample claim form (Part B, Physician or Practitioner's Certificate)",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "Specimen claim form the EDD publishes for general use: its Forms and Publications page links it as 'DE 2501 - Sample claim form', and the same filled pages appear in EDD's own paper-claim tutorial. Every page carries a red 'SAMPLE, this page for reference only' banner. The patient ('Sample Claimant'), the physician, the address in 'Anywhere, CA' and the all-zero SSN are specimen values, so nothing was redacted. Downloaded by script. Pages 11-13 of the 13-page original (Part B) were kept with PyMuPDF and the PDF metadata cleared; pages 1-10 are instructions, the authorization and the claimant's Part A."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "practitioner.license_type", "label": "License type", "occurrence": 0 },
+    { "path": "practitioner.license_issuing_state", "label": "License issuing state", "occurrence": 1 },
+    { "path": "treatment_period.under_care_from", "label": "Under care from", "occurrence": 0 },
+    { "path": "treatment_period.treatment_interval", "label": "Treatment interval", "occurrence": 0 },
+    { "path": "disability.date_disability_began", "label": "Date disability began", "occurrence": 0 }
+  ],
+  "notes": "This is a state disability-insurance physician certificate (California SDI, DE 2501 Part B), not an insurance carrier's Attending Physician Statement; it carries the same core content an underwriter or claims examiner reads from an APS. The page overlay features the certifying practitioner's credential (license type and issuing state) and the care timeline (under care from, treatment interval checkbox, date disability began), all on page 1 (printed page 11). The request suggested these plus the 'still treating' checkbox in B12; that checkbox extracted correctly (true) but grounds OFF, as booleans do here, so it was not featured. The request's alternative of page 2 (diagnosis, treatment, ICD-10 box) was not used: the diagnosis and treatment text ground to individual comb-box characters (OFF), leaving only the ICD-10 box. The primary ICD-10 code is misprinted by the publisher (a digit 5 where the letter S belongs) and is deliberately not featured. Known extraction error: B29 (work-related) parsed as Yes although No is marked, so history.work_related is wrong."
+}
