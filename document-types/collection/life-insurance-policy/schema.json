@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "title": "Life Insurance Policy",
+  "description": "An issued life insurance policy contract, as an underwriter, a lender taking a collateral assignment, or a policy-review service reads it: who is insured and who owns it, what coverage it provides and on what terms, what it costs over time, and the contract provisions that govern lapse, conversion and claims.",
+  "properties": {
+    "insurer": {
+      "type": "object",
+      "description": "The insurance company issuing the policy.",
+      "properties": {
+        "name": { "type": "string", "description": "The insurer's legal name, as printed on the cover page." },
+        "address": { "type": "string", "description": "The insurer's address as printed on the cover page, joined into one line." }
+      }
+    },
+    "policy_number": { "type": "string", "description": "The policy number, exactly as printed on the cover page." },
+    "policy_form_number": { "type": ["string", "null"], "description": "The policy form code printed in the page footers or headers, e.g. 'P08TRM'." },
+    "product_type": { "type": "string", "description": "The kind of insurance as titled on the cover page, e.g. 'Term Life Insurance'." },
+    "policy_date": { "type": "string", "description": "The Policy Date, from which policy years and anniversaries are measured, in ISO format YYYY-MM-DD." },
+    "insured": {
+      "type": "object",
+      "description": "The person whose life is insured, as shown in the policy data.",
+      "properties": {
+        "name": { "type": "string", "description": "The Insured's name as printed." },
+        "sex": { "type": ["string", "null"], "description": "The Insured's sex as printed, e.g. 'MALE'." },
+        "issue_age": { "type": ["integer", "null"], "description": "The Insured's age at issue, printed beside the sex." },
+        "risk_class": { "type": "string", "description": "The underwriting risk class, e.g. 'STANDARD NONSMOKER'." }
+      }
+    },
+    "owner_name": { "type": "string", "description": "The policy Owner's name as printed on the cover page." },
+    "face_amount": { "type": "number", "description": "The Face Amount of basic coverage in dollars, as a number without currency symbols or commas." },
+    "initial_modal_premium": {
+      "type": "object",
+      "description": "The initial premium at the requested payment interval, as printed on the cover page and policy specifications.",
+      "properties": {
+        "amount": { "type": "number", "description": "The initial premium amount in dollars, as a number." },
+        "payment_interval": { "type": "string", "description": "The requested premium payment interval, e.g. 'MONTHLY', 'ANNUAL'." }
+      }
+    },
+    "coverage_to_age": { "type": ["integer", "null"], "description": "The attained age at which coverage ends, e.g. 95 for 'Coverage to Age 95'." },
+    "expiration_date": { "type": ["string", "null"], "description": "The policy Expiration Date from the policy specifications, in ISO format YYYY-MM-DD." },
+    "conversion_period_end_date": { "type": ["string", "null"], "description": "The last date on which the policy can be converted to permanent insurance, in ISO format YYYY-MM-DD; null if the policy is not convertible." },
+    "is_convertible": { "type": "boolean", "description": "True if the cover page or provisions say the policy is convertible." },
+    "is_participating": { "type": "boolean", "description": "True if the policy shares in the insurer's surplus (participating); false if it is described as non-participating." },
+    "free_look_days": { "type": ["integer", "null"], "description": "The number of days the Owner has to return the policy for a full refund under the Free Look Right." },
+    "riders": {
+      "type": "array",
+      "description": "Each rider or additional coverage listed in the summary of coverages, besides the basic coverage.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "form_number": { "type": ["string", "null"], "description": "The rider's form code, e.g. 'R08TPW'." },
+          "name": { "type": "string", "description": "The rider's name, e.g. 'Premium Waiver'." },
+          "coverage_cease_date": { "type": ["string", "null"], "description": "The date the rider's coverage ceases, in ISO format YYYY-MM-DD." }
+        }
+      }
+    },
+    "modal_premium_factors": {
+      "type": "object",
+      "description": "The factors applied to the annual premium to calculate premiums for other payment modes, from the policy specifications.",
+      "properties": {
+        "semi_annual": { "type": ["number", "null"], "description": "The factor for semi-annual premiums, e.g. 0.510." },
+        "quarterly": { "type": ["number", "null"], "description": "The factor for quarterly premiums." },
+        "monthly": { "type": ["number", "null"], "description": "The factor for monthly (pre-authorized check) premiums." }
+      }
+    },
+    "annual_policy_fee": { "type": ["number", "null"], "description": "The annual policy fee in dollars that the premium tables state is included in the premiums shown." },
+    "basic_coverage_premium_schedule": {
+      "type": "array",
+      "description": "The table of guaranteed annual premiums for basic coverage, one entry per policy year, across every continuation page of the table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "policy_year": { "type": "integer", "description": "The policy year." },
+          "annual_premium": { "type": "number", "description": "The annual premium for that year in dollars, as a number." }
+        }
+      }
+    },
+    "premium_waiver_premium_schedule": {
+      "type": "array",
+      "description": "The table of annual premiums for the premium waiver rider, one entry per policy year.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "policy_year": { "type": "integer", "description": "The policy year." },
+          "annual_premium": { "type": "number", "description": "The rider's annual premium for that year in dollars, as a number." }
+        }
+      }
+    },
+    "provisions": {
+      "type": "object",
+      "description": "Key terms from the contract provisions.",
+      "properties": {
+        "grace_period_days": { "type": ["integer", "null"], "description": "The length of the premium Grace Period in days." },
+        "reinstatement_period_years": { "type": ["integer", "null"], "description": "The number of years after the end of the Grace Period within which a lapsed policy may be reinstated." },
+        "reinstatement_interest_rate_percent": { "type": ["number", "null"], "description": "The annual interest rate in percent charged on past-due premiums at reinstatement." },
+        "incontestability_period_years": { "type": ["integer", "null"], "description": "The number of years in force after which the policy cannot be contested." },
+        "suicide_exclusion_period_years": { "type": ["integer", "null"], "description": "The number of years from the Policy Date within which death by suicide limits the proceeds to premiums paid." },
+        "claim_payment_period": { "type": ["string", "null"], "description": "How soon the insurer will pay death benefit proceeds after receiving the required proof, as stated, e.g. 'within two months'." },
+        "late_claim_interest_rate_percent": { "type": ["number", "null"], "description": "The additional annual interest rate in percent paid when payment of proceeds is delayed beyond the stated number of days." },
+        "minimum_income_benefit_interest_rate_percent": { "type": ["number", "null"], "description": "The guaranteed minimum annual interest rate in percent on the Fixed Income benefit plan." }
+      }
+    }
+  },
+  "required": ["insurer", "policy_number", "product_type", "policy_date", "insured", "owner_name", "face_amount", "initial_modal_premium"]
+}
