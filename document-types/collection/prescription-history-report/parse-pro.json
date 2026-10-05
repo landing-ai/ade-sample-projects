@@ -1,0 +1,2799 @@
+{
+  "markdown": "66.04  MME Assessment  * 30-day average \n8 Dr  5 Rx  Multiple Provider Episodes  * Last 6 months \n4  Overlapping Prescriptions  * Last 45 Days \n5  Risk Score  Max Score=7 \n\n<table>\n<tr><td>Patient Last Name</td><td>First Name</td><td>Middle Name</td><td>Date of Birth</td><td>Gender</td><td>Address</td></tr>\n<tr><td>Doe</td><td>John</td><td>Robert</td><td>1/1/1976</td><td>M</td><td>123 Main Street, Anytown, CA 90212</td></tr>\n</table>\n\n<table>\n<tr><td>Prescriber</td><td>Dispenser</td><td>Date Issued</td><td>Date Filled</td><td>Date Sold</td><td>Rx Number</td><td>Drug</td><td>Strength</td><td>Qty</td><td>Days</td><td>Refills</td></tr>\n<tr><td>Welby, Marcus MD<br>3355 Doctor Street, Anytown, CA 90212<br>AW12121212</td><td>Test Pharmacy<br>8833 Patch Drive, Anytown, CA 90212<br>BT12121212</td><td>2/3/2022</td><td>2/3/2022</td><td>2/4/2022</td><td>12225</td><td>Alprazolam</td><td>1 MG</td><td>90</td><td>30</td><td>1</td></tr>\n<tr><td>Howser, Doogie DO<br>8233 Pilladay Avenue, Place, CA 90213<br>BH98989898</td><td>Hometown Pharmacy<br>1122 Main Street, Place, CA 90213<br>AH23232323</td><td>2/5/2022</td><td>2/5/2022</td><td>2/6/2022</td><td>37921</td><td>Hydrocodone</td><td>7.5 MG</td><td>180</td><td>30</td><td>1</td></tr>\n<tr><td>House, Gregory MD<br>5558 Hospital Road, My Town, CA 90211<br>AH77776622</td><td>Made-up Drug Store<br>4466 Nurse Way, My Town, CA 90211<br>BM34343434</td><td>2/7/2022</td><td>2/7/2022</td><td>2/8/2022</td><td>897754</td><td>Morphine Sulfate</td><td>30 MG</td><td>14</td><td>14</td><td>0</td></tr>\n<tr><td>Potter, Sherman MD<br>9911 Splint Circle, Village, CA 90210<br>AP 44488891</td><td>City Pharmacy<br>7312 Wounded Road, Village, CA 90210<br>AC 45454545</td><td>2/9/2022</td><td>2/9/2022</td><td>2/10/2022</td><td>534502</td><td>Methylphenidate</td><td>10 MG</td><td>90</td><td>30</td><td>0</td></tr>\n<tr><td>Welby, Marcus MD<br>3355 Doctor Street, Anytown, CA 90212<br>AW12121212</td><td>Test Pharmacy<br>8833 Patch Drive, Anytown, CA 90212<br>BT12121212</td><td>3/3/2022</td><td>3/3/2022</td><td>3/4/2022</td><td>13100</td><td>Alprazolam</td><td>1 MG</td><td>90</td><td>30</td><td>1</td></tr>\n<tr><td>Howser, Doogie DO<br>8233 Pilladay Avenue, Place, CA 90213<br>BH98989898</td><td>Hometown Pharmacy<br>1122 Main Street, Place, CA 90213<br>AH23232323</td><td>3/5/2022</td><td>3/5/2022</td><td>3/6/2022</td><td>39572</td><td>Hydrocodone</td><td>7.5 MG</td><td>180</td><td>30</td><td>1</td></tr>\n<tr><td>Potter, Sherman MD<br>9911 Splint Circle, Village, CA 90210<br>AP 44488891</td><td>City Pharmacy<br>7312 Wounded Road, Village, CA 90210<br>AC 45454545</td><td>3/9/2022</td><td>3/9/2022</td><td>3/10/2022</td><td>550987</td><td>Methylphenidate</td><td>10 MG</td><td>90</td><td>30</td><td>0</td></tr>\n</table>\n\n<!-- doc_id=parse-01m44t9cxftj7gndwqrvdzzf7a -->",
+  "structure": {
+    "type": "document",
+    "markdown": null,
+    "children": [
+      {
+        "type": "page",
+        "page": null,
+        "span": null,
+        "width": null,
+        "height": null,
+        "dpi": null,
+        "grounding": {
+          "page": 1,
+          "range": {
+            "start": 0,
+            "end": 2761
+          },
+          "box": {
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "xmax": 1.0,
+            "ymax": 1.0
+          }
+        },
+        "markdown": null,
+        "status": "ok",
+        "reason": null,
+        "children": [
+          {
+            "type": "text",
+            "id": "text-0",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 0,
+                "end": 171
+              },
+              "box": {
+                "xmin": 0.15479,
+                "ymin": 0.0081,
+                "xmax": 0.85157,
+                "ymax": 0.15585
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 0,
+                  "end": 6
+                },
+                "box": {
+                  "xmin": 0.15926,
+                  "ymin": 0.01772,
+                  "xmax": 0.20091,
+                  "ymax": 0.14787
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 6,
+                  "end": 22
+                },
+                "box": {
+                  "xmin": 0.20375,
+                  "ymin": 0.03508,
+                  "xmax": 0.28381,
+                  "ymax": 0.09762
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 22,
+                  "end": 40
+                },
+                "box": {
+                  "xmin": 0.20414,
+                  "ymin": 0.09937,
+                  "xmax": 0.31322,
+                  "ymax": 0.14553
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 40,
+                  "end": 46
+                },
+                "box": {
+                  "xmin": 0.33633,
+                  "ymin": 0.01621,
+                  "xmax": 0.378,
+                  "ymax": 0.149
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 46,
+                  "end": 52
+                },
+                "box": {
+                  "xmin": 0.38161,
+                  "ymin": 0.03727,
+                  "xmax": 0.48546,
+                  "ymax": 0.06882
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 52,
+                  "end": 80
+                },
+                "box": {
+                  "xmin": 0.38178,
+                  "ymin": 0.06943,
+                  "xmax": 0.44031,
+                  "ymax": 0.09887
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 80,
+                  "end": 97
+                },
+                "box": {
+                  "xmin": 0.37925,
+                  "ymin": 0.09932,
+                  "xmax": 0.48989,
+                  "ymax": 0.14685
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 97,
+                  "end": 100
+                },
+                "box": {
+                  "xmin": 0.51395,
+                  "ymin": 0.01567,
+                  "xmax": 0.55539,
+                  "ymax": 0.1494
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 100,
+                  "end": 127
+                },
+                "box": {
+                  "xmin": 0.55782,
+                  "ymin": 0.02137,
+                  "xmax": 0.66794,
+                  "ymax": 0.09822
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 127,
+                  "end": 143
+                },
+                "box": {
+                  "xmin": 0.55628,
+                  "ymin": 0.09922,
+                  "xmax": 0.669,
+                  "ymax": 0.14526
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 143,
+                  "end": 146
+                },
+                "box": {
+                  "xmin": 0.69194,
+                  "ymin": 0.01559,
+                  "xmax": 0.73265,
+                  "ymax": 0.14958
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 146,
+                  "end": 158
+                },
+                "box": {
+                  "xmin": 0.73658,
+                  "ymin": 0.05349,
+                  "xmax": 0.80916,
+                  "ymax": 0.08103
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 158,
+                  "end": 171
+                },
+                "box": {
+                  "xmin": 0.7363,
+                  "ymin": 0.08273,
+                  "xmax": 0.82308,
+                  "ymax": 0.11237
+                }
+              }
+            ],
+            "markdown": null,
+            "children": null,
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          },
+          {
+            "type": "table",
+            "id": "table-0",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 173,
+                "end": 437
+              },
+              "box": {
+                "xmin": 0.00472,
+                "ymin": 0.18827,
+                "xmax": 0.91823,
+                "ymax": 0.28859
+              }
+            },
+            "atomic_grounding": null,
+            "markdown": null,
+            "children": [
+              {
+                "type": "table_cell",
+                "id": "table_cell-0",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 189,
+                    "end": 206
+                  },
+                  "box": {
+                    "xmin": 0.00959,
+                    "ymin": 0.19659,
+                    "xmax": 0.21156,
+                    "ymax": 0.22577
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-1",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 215,
+                    "end": 225
+                  },
+                  "box": {
+                    "xmin": 0.21153,
+                    "ymin": 0.19657,
+                    "xmax": 0.41217,
+                    "ymax": 0.22577
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-2",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 234,
+                    "end": 245
+                  },
+                  "box": {
+                    "xmin": 0.41216,
+                    "ymin": 0.19655,
+                    "xmax": 0.55147,
+                    "ymax": 0.22576
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-3",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 254,
+                    "end": 267
+                  },
+                  "box": {
+                    "xmin": 0.55143,
+                    "ymin": 0.19654,
+                    "xmax": 0.66417,
+                    "ymax": 0.22575
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-4",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 276,
+                    "end": 282
+                  },
+                  "box": {
+                    "xmin": 0.66417,
+                    "ymin": 0.19654,
+                    "xmax": 0.70622,
+                    "ymax": 0.22575
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-5",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 291,
+                    "end": 298
+                  },
+                  "box": {
+                    "xmin": 0.70621,
+                    "ymin": 0.19652,
+                    "xmax": 0.91224,
+                    "ymax": 0.22574
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-6",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 317,
+                    "end": 320
+                  },
+                  "box": {
+                    "xmin": 0.00963,
+                    "ymin": 0.22577,
+                    "xmax": 0.21153,
+                    "ymax": 0.27995
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-7",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 329,
+                    "end": 333
+                  },
+                  "box": {
+                    "xmin": 0.21149,
+                    "ymin": 0.22576,
+                    "xmax": 0.41219,
+                    "ymax": 0.27995
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-8",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 342,
+                    "end": 348
+                  },
+                  "box": {
+                    "xmin": 0.41217,
+                    "ymin": 0.22575,
+                    "xmax": 0.55155,
+                    "ymax": 0.27996
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-9",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 357,
+                    "end": 365
+                  },
+                  "box": {
+                    "xmin": 0.55147,
+                    "ymin": 0.22575,
+                    "xmax": 0.66417,
+                    "ymax": 0.27997
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-10",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 374,
+                    "end": 375
+                  },
+                  "box": {
+                    "xmin": 0.66417,
+                    "ymin": 0.22574,
+                    "xmax": 0.70623,
+                    "ymax": 0.27997
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-11",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 384,
+                    "end": 418
+                  },
+                  "box": {
+                    "xmin": 0.70622,
+                    "ymin": 0.22573,
+                    "xmax": 0.91222,
+                    "ymax": 0.27998
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              }
+            ],
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          },
+          {
+            "type": "table",
+            "id": "table-1",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 439,
+                "end": 2759
+              },
+              "box": {
+                "xmin": 0.00496,
+                "ymin": 0.30022,
+                "xmax": 0.99473,
+                "ymax": 0.9815
+              }
+            },
+            "atomic_grounding": null,
+            "markdown": null,
+            "children": [
+              {
+                "type": "table_cell",
+                "id": "table_cell-12",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 455,
+                    "end": 465
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.30966,
+                    "xmax": 0.21144,
+                    "ymax": 0.35898
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-13",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 474,
+                    "end": 483
+                  },
+                  "box": {
+                    "xmin": 0.21142,
+                    "ymin": 0.30969,
+                    "xmax": 0.41226,
+                    "ymax": 0.359
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-14",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 492,
+                    "end": 503
+                  },
+                  "box": {
+                    "xmin": 0.41226,
+                    "ymin": 0.30972,
+                    "xmax": 0.47902,
+                    "ymax": 0.359
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-15",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 512,
+                    "end": 523
+                  },
+                  "box": {
+                    "xmin": 0.47901,
+                    "ymin": 0.30973,
+                    "xmax": 0.55159,
+                    "ymax": 0.35901
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-16",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 532,
+                    "end": 541
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.30974,
+                    "xmax": 0.62014,
+                    "ymax": 0.35901
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-17",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 550,
+                    "end": 559
+                  },
+                  "box": {
+                    "xmin": 0.62013,
+                    "ymin": 0.30975,
+                    "xmax": 0.70612,
+                    "ymax": 0.35902
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-18",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 568,
+                    "end": 572
+                  },
+                  "box": {
+                    "xmin": 0.70612,
+                    "ymin": 0.30976,
+                    "xmax": 0.81375,
+                    "ymax": 0.35903
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-19",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 581,
+                    "end": 589
+                  },
+                  "box": {
+                    "xmin": 0.81374,
+                    "ymin": 0.30978,
+                    "xmax": 0.87964,
+                    "ymax": 0.35903
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-20",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 598,
+                    "end": 601
+                  },
+                  "box": {
+                    "xmin": 0.87963,
+                    "ymin": 0.30978,
+                    "xmax": 0.91204,
+                    "ymax": 0.35904
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-21",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 610,
+                    "end": 614
+                  },
+                  "box": {
+                    "xmin": 0.91203,
+                    "ymin": 0.30979,
+                    "xmax": 0.94465,
+                    "ymax": 0.35904
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-22",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 623,
+                    "end": 630
+                  },
+                  "box": {
+                    "xmin": 0.94465,
+                    "ymin": 0.30979,
+                    "xmax": 0.98946,
+                    "ymax": 0.35904
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-23",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 649,
+                    "end": 720
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.35897,
+                    "xmax": 0.21142,
+                    "ymax": 0.44569
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-24",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 729,
+                    "end": 795
+                  },
+                  "box": {
+                    "xmin": 0.21138,
+                    "ymin": 0.35898,
+                    "xmax": 0.41227,
+                    "ymax": 0.44569
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-25",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 804,
+                    "end": 812
+                  },
+                  "box": {
+                    "xmin": 0.41226,
+                    "ymin": 0.359,
+                    "xmax": 0.47901,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-26",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 821,
+                    "end": 829
+                  },
+                  "box": {
+                    "xmin": 0.479,
+                    "ymin": 0.359,
+                    "xmax": 0.55159,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-27",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 838,
+                    "end": 846
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.35901,
+                    "xmax": 0.62013,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-28",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 855,
+                    "end": 860
+                  },
+                  "box": {
+                    "xmin": 0.62012,
+                    "ymin": 0.35901,
+                    "xmax": 0.70612,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-29",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 869,
+                    "end": 879
+                  },
+                  "box": {
+                    "xmin": 0.70612,
+                    "ymin": 0.35902,
+                    "xmax": 0.81374,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-30",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 888,
+                    "end": 892
+                  },
+                  "box": {
+                    "xmin": 0.81373,
+                    "ymin": 0.35903,
+                    "xmax": 0.87963,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-31",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 901,
+                    "end": 903
+                  },
+                  "box": {
+                    "xmin": 0.8796,
+                    "ymin": 0.35903,
+                    "xmax": 0.91203,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-32",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 912,
+                    "end": 914
+                  },
+                  "box": {
+                    "xmin": 0.91201,
+                    "ymin": 0.35904,
+                    "xmax": 0.94465,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-33",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 923,
+                    "end": 924
+                  },
+                  "box": {
+                    "xmin": 0.94464,
+                    "ymin": 0.35904,
+                    "xmax": 0.9895,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-34",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 943,
+                    "end": 1015
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.44569,
+                    "xmax": 0.21138,
+                    "ymax": 0.53349
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-35",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1024,
+                    "end": 1092
+                  },
+                  "box": {
+                    "xmin": 0.21134,
+                    "ymin": 0.44568,
+                    "xmax": 0.41228,
+                    "ymax": 0.53348
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-36",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1101,
+                    "end": 1109
+                  },
+                  "box": {
+                    "xmin": 0.41227,
+                    "ymin": 0.44568,
+                    "xmax": 0.479,
+                    "ymax": 0.53347
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-37",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1118,
+                    "end": 1126
+                  },
+                  "box": {
+                    "xmin": 0.47899,
+                    "ymin": 0.44568,
+                    "xmax": 0.55159,
+                    "ymax": 0.53347
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-38",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1135,
+                    "end": 1143
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.44568,
+                    "xmax": 0.62012,
+                    "ymax": 0.53346
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-39",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1152,
+                    "end": 1157
+                  },
+                  "box": {
+                    "xmin": 0.62011,
+                    "ymin": 0.44568,
+                    "xmax": 0.70613,
+                    "ymax": 0.53346
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-40",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1166,
+                    "end": 1177
+                  },
+                  "box": {
+                    "xmin": 0.70612,
+                    "ymin": 0.44568,
+                    "xmax": 0.81373,
+                    "ymax": 0.53346
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-41",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1186,
+                    "end": 1192
+                  },
+                  "box": {
+                    "xmin": 0.81372,
+                    "ymin": 0.44568,
+                    "xmax": 0.8796,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-42",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1201,
+                    "end": 1204
+                  },
+                  "box": {
+                    "xmin": 0.87958,
+                    "ymin": 0.44568,
+                    "xmax": 0.91201,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-43",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1213,
+                    "end": 1215
+                  },
+                  "box": {
+                    "xmin": 0.91198,
+                    "ymin": 0.44568,
+                    "xmax": 0.94464,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-44",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1224,
+                    "end": 1225
+                  },
+                  "box": {
+                    "xmin": 0.94463,
+                    "ymin": 0.44567,
+                    "xmax": 0.98954,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-45",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1244,
+                    "end": 1316
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.53348,
+                    "xmax": 0.21134,
+                    "ymax": 0.62107
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-46",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1325,
+                    "end": 1394
+                  },
+                  "box": {
+                    "xmin": 0.21131,
+                    "ymin": 0.53347,
+                    "xmax": 0.41229,
+                    "ymax": 0.62106
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-47",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1403,
+                    "end": 1411
+                  },
+                  "box": {
+                    "xmin": 0.41228,
+                    "ymin": 0.53347,
+                    "xmax": 0.47899,
+                    "ymax": 0.62105
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-48",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1420,
+                    "end": 1428
+                  },
+                  "box": {
+                    "xmin": 0.47898,
+                    "ymin": 0.53346,
+                    "xmax": 0.55159,
+                    "ymax": 0.62105
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-49",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1437,
+                    "end": 1445
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.53346,
+                    "xmax": 0.62011,
+                    "ymax": 0.62105
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-50",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1454,
+                    "end": 1460
+                  },
+                  "box": {
+                    "xmin": 0.6201,
+                    "ymin": 0.53346,
+                    "xmax": 0.70613,
+                    "ymax": 0.62104
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-51",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1469,
+                    "end": 1485
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.53345,
+                    "xmax": 0.81372,
+                    "ymax": 0.62104
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-52",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1494,
+                    "end": 1499
+                  },
+                  "box": {
+                    "xmin": 0.8137,
+                    "ymin": 0.53345,
+                    "xmax": 0.87958,
+                    "ymax": 0.62104
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-53",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1508,
+                    "end": 1510
+                  },
+                  "box": {
+                    "xmin": 0.87956,
+                    "ymin": 0.53345,
+                    "xmax": 0.91198,
+                    "ymax": 0.62103
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-54",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1519,
+                    "end": 1521
+                  },
+                  "box": {
+                    "xmin": 0.91196,
+                    "ymin": 0.53345,
+                    "xmax": 0.94463,
+                    "ymax": 0.62103
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-55",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1530,
+                    "end": 1531
+                  },
+                  "box": {
+                    "xmin": 0.94463,
+                    "ymin": 0.53344,
+                    "xmax": 0.98958,
+                    "ymax": 0.62103
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-56",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1550,
+                    "end": 1624
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.62106,
+                    "xmax": 0.21131,
+                    "ymax": 0.70806
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-57",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1633,
+                    "end": 1701
+                  },
+                  "box": {
+                    "xmin": 0.21127,
+                    "ymin": 0.62105,
+                    "xmax": 0.4123,
+                    "ymax": 0.70804
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-58",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1710,
+                    "end": 1718
+                  },
+                  "box": {
+                    "xmin": 0.41229,
+                    "ymin": 0.62105,
+                    "xmax": 0.47898,
+                    "ymax": 0.70802
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-59",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1727,
+                    "end": 1735
+                  },
+                  "box": {
+                    "xmin": 0.47897,
+                    "ymin": 0.62105,
+                    "xmax": 0.55159,
+                    "ymax": 0.70802
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-60",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1744,
+                    "end": 1753
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.62104,
+                    "xmax": 0.6201,
+                    "ymax": 0.70801
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-61",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1762,
+                    "end": 1768
+                  },
+                  "box": {
+                    "xmin": 0.62009,
+                    "ymin": 0.62104,
+                    "xmax": 0.70613,
+                    "ymax": 0.708
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-62",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1777,
+                    "end": 1792
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.62104,
+                    "xmax": 0.8137,
+                    "ymax": 0.70799
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-63",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1801,
+                    "end": 1806
+                  },
+                  "box": {
+                    "xmin": 0.81369,
+                    "ymin": 0.62103,
+                    "xmax": 0.87956,
+                    "ymax": 0.70799
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-64",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1815,
+                    "end": 1817
+                  },
+                  "box": {
+                    "xmin": 0.87953,
+                    "ymin": 0.62103,
+                    "xmax": 0.91196,
+                    "ymax": 0.70798
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-65",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1826,
+                    "end": 1828
+                  },
+                  "box": {
+                    "xmin": 0.91194,
+                    "ymin": 0.62103,
+                    "xmax": 0.94463,
+                    "ymax": 0.70798
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-66",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1837,
+                    "end": 1838
+                  },
+                  "box": {
+                    "xmin": 0.94462,
+                    "ymin": 0.62103,
+                    "xmax": 0.98962,
+                    "ymax": 0.70797
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-67",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1857,
+                    "end": 1928
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.70804,
+                    "xmax": 0.21127,
+                    "ymax": 0.79535
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-68",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1937,
+                    "end": 2003
+                  },
+                  "box": {
+                    "xmin": 0.21123,
+                    "ymin": 0.70802,
+                    "xmax": 0.41231,
+                    "ymax": 0.79532
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-69",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2012,
+                    "end": 2020
+                  },
+                  "box": {
+                    "xmin": 0.4123,
+                    "ymin": 0.70802,
+                    "xmax": 0.47897,
+                    "ymax": 0.79529
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-70",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2029,
+                    "end": 2037
+                  },
+                  "box": {
+                    "xmin": 0.47896,
+                    "ymin": 0.70801,
+                    "xmax": 0.55158,
+                    "ymax": 0.79528
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-71",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2046,
+                    "end": 2054
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.708,
+                    "xmax": 0.62009,
+                    "ymax": 0.79527
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-72",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2063,
+                    "end": 2068
+                  },
+                  "box": {
+                    "xmin": 0.62008,
+                    "ymin": 0.70799,
+                    "xmax": 0.70613,
+                    "ymax": 0.79526
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-73",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2077,
+                    "end": 2087
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.70799,
+                    "xmax": 0.81369,
+                    "ymax": 0.79524
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-74",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2096,
+                    "end": 2100
+                  },
+                  "box": {
+                    "xmin": 0.81368,
+                    "ymin": 0.70798,
+                    "xmax": 0.87953,
+                    "ymax": 0.79523
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-75",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2109,
+                    "end": 2111
+                  },
+                  "box": {
+                    "xmin": 0.87951,
+                    "ymin": 0.70798,
+                    "xmax": 0.91194,
+                    "ymax": 0.79522
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-76",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2120,
+                    "end": 2122
+                  },
+                  "box": {
+                    "xmin": 0.91191,
+                    "ymin": 0.70797,
+                    "xmax": 0.94462,
+                    "ymax": 0.79521
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-77",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2131,
+                    "end": 2132
+                  },
+                  "box": {
+                    "xmin": 0.94461,
+                    "ymin": 0.70797,
+                    "xmax": 0.98966,
+                    "ymax": 0.79521
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-78",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2151,
+                    "end": 2223
+                  },
+                  "box": {
+                    "xmin": 0.00972,
+                    "ymin": 0.79532,
+                    "xmax": 0.21123,
+                    "ymax": 0.88325
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-79",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2232,
+                    "end": 2300
+                  },
+                  "box": {
+                    "xmin": 0.2112,
+                    "ymin": 0.79529,
+                    "xmax": 0.41232,
+                    "ymax": 0.88323
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-80",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2309,
+                    "end": 2317
+                  },
+                  "box": {
+                    "xmin": 0.41231,
+                    "ymin": 0.79528,
+                    "xmax": 0.47896,
+                    "ymax": 0.8832
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-81",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2326,
+                    "end": 2334
+                  },
+                  "box": {
+                    "xmin": 0.47895,
+                    "ymin": 0.79527,
+                    "xmax": 0.55158,
+                    "ymax": 0.88319
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-82",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2343,
+                    "end": 2351
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.79526,
+                    "xmax": 0.62008,
+                    "ymax": 0.88318
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-83",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2360,
+                    "end": 2365
+                  },
+                  "box": {
+                    "xmin": 0.62006,
+                    "ymin": 0.79524,
+                    "xmax": 0.70613,
+                    "ymax": 0.88317
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-84",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2374,
+                    "end": 2385
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.79523,
+                    "xmax": 0.81368,
+                    "ymax": 0.88316
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-85",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2394,
+                    "end": 2400
+                  },
+                  "box": {
+                    "xmin": 0.81367,
+                    "ymin": 0.79522,
+                    "xmax": 0.87951,
+                    "ymax": 0.88315
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-86",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2409,
+                    "end": 2412
+                  },
+                  "box": {
+                    "xmin": 0.87949,
+                    "ymin": 0.79521,
+                    "xmax": 0.91191,
+                    "ymax": 0.88314
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-87",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2421,
+                    "end": 2423
+                  },
+                  "box": {
+                    "xmin": 0.91189,
+                    "ymin": 0.79521,
+                    "xmax": 0.94461,
+                    "ymax": 0.88314
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-88",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2432,
+                    "end": 2433
+                  },
+                  "box": {
+                    "xmin": 0.94461,
+                    "ymin": 0.7952,
+                    "xmax": 0.9897,
+                    "ymax": 0.88313
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-89",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2452,
+                    "end": 2526
+                  },
+                  "box": {
+                    "xmin": 0.00972,
+                    "ymin": 0.88323,
+                    "xmax": 0.2112,
+                    "ymax": 0.97087
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-90",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2535,
+                    "end": 2603
+                  },
+                  "box": {
+                    "xmin": 0.21116,
+                    "ymin": 0.8832,
+                    "xmax": 0.41233,
+                    "ymax": 0.97085
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-91",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2612,
+                    "end": 2620
+                  },
+                  "box": {
+                    "xmin": 0.41232,
+                    "ymin": 0.88319,
+                    "xmax": 0.47895,
+                    "ymax": 0.97082
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-92",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2629,
+                    "end": 2637
+                  },
+                  "box": {
+                    "xmin": 0.47893,
+                    "ymin": 0.88318,
+                    "xmax": 0.55158,
+                    "ymax": 0.97081
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-93",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2646,
+                    "end": 2655
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.88317,
+                    "xmax": 0.62006,
+                    "ymax": 0.9708
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-94",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2664,
+                    "end": 2670
+                  },
+                  "box": {
+                    "xmin": 0.62005,
+                    "ymin": 0.88316,
+                    "xmax": 0.70613,
+                    "ymax": 0.97079
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-95",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2679,
+                    "end": 2694
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.88315,
+                    "xmax": 0.81367,
+                    "ymax": 0.97078
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-96",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2703,
+                    "end": 2708
+                  },
+                  "box": {
+                    "xmin": 0.81365,
+                    "ymin": 0.88314,
+                    "xmax": 0.87949,
+                    "ymax": 0.97077
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-97",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2717,
+                    "end": 2719
+                  },
+                  "box": {
+                    "xmin": 0.87946,
+                    "ymin": 0.88314,
+                    "xmax": 0.91189,
+                    "ymax": 0.97076
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-98",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2728,
+                    "end": 2730
+                  },
+                  "box": {
+                    "xmin": 0.91187,
+                    "ymin": 0.88313,
+                    "xmax": 0.94461,
+                    "ymax": 0.97076
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-99",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2739,
+                    "end": 2740
+                  },
+                  "box": {
+                    "xmin": 0.9446,
+                    "ymin": 0.88313,
+                    "xmax": 0.98974,
+                    "ymax": 0.97075
+                  }
+                },
+                "atomic_grounding": [],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              }
+            ],
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          }
+        ]
+      }
+    ]
+  },
+  "grounding": null,
+  "metadata": {
+    "req_id": null,
+    "job_id": "parse-01m44t9cxftj7gndwqrvdzzf7a",
+    "model_version": "dpt-3-pro-20260710",
+    "page_count": 1,
+    "markdown_chars": null,
+    "output_markdown_chars": 2809,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "failed_pages": [],
+    "duration_ms": 5913,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.3
+    }
+  }
+}

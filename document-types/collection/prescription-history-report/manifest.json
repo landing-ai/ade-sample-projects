@@ -1,0 +1,26 @@
+{
+  "slug": "prescription-history-report",
+  "title": "Prescription History Report",
+  "source": {
+    "file": "pdmp-sample-patient-report.png",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.pdmpassist.org/pdf/resources/PDMPs_Overview_2023.pdf",
+      "publisher": "PDMP Training and Technical Assistance Center (PDMP TTAC), Institute for Intergovernmental Research, funded by the Bureau of Justice Assistance (Grant No. 2019-PM-BX-K003)",
+      "title": "Prescription Drug Monitoring Programs (PDMPs): Overview (2023), sample patient report on page 9",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "The sample comes from page 9 of PDMP TTAC's overview of prescription drug monitoring programs, downloaded by script on 2026-10-04 from the publisher's domain (pdmpassist.org, which redirects to its Azure blob store). Page 8 introduces it as 'a generic sample report with fictitious data'. Every value is fictitious: patient 'John Robert Doe' at '123 Main Street, Anytown', prescribers named after fictional TV doctors, pharmacies such as 'Test Pharmacy' and 'Made-up Drug Store', and DEA-style numbers made of repeated digit patterns. The towns are fictional but the ZIP codes (90210-90213) are real Beverly Hills-area ZIPs. No redaction was needed. Caveat: the PDF states no reuse terms and the pdmpassist.org footer reads 'All Rights Reserved'; it is a federally funded publication but not itself a federal government work. The operator chose this candidate with clearance marked unclear. Only the sample report is used: page 9 was rendered with PyMuPDF at 300 dpi, clipped to the PDF-point rectangle (22, 67)-(589.25, 381.64), which encloses the page's two embedded images (the indicator boxes and the report table) with a 5-point margin and excludes the surrounding prose and page number. The result is a 2365 x 1312 PNG; nothing else on the page was altered."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "risk_indicators.mme_average", "label": "MME (30-day average)", "occurrence": 0 },
+    { "path": "risk_indicators.multiple_provider_prescribers", "label": "Prescribers in 6 months", "occurrence": 0 },
+    { "path": "risk_indicators.overlapping_prescriptions", "label": "Overlapping prescriptions", "occurrence": 0 },
+    { "path": "risk_indicators.risk_score", "label": "Risk score", "occurrence": 0 },
+    { "path": "prescriptions[1].drug", "label": "Dispensed drug", "occurrence": 0 }
+  ],
+  "notes": "Features the four summary risk indicators a reviewer reads first (MME average, multiple provider episodes, overlapping prescriptions and overall risk score) plus the drug on one dispensation row, Hydrocodone 7.5 MG, the opioid that drives the MME figure. The request named no fields; its suggestions were the four indicators and a dispensation row, and those are what shipped. This is a state PDMP (controlled-substance monitoring) patient report, not an insurer's prescription history report such as those from Milliman IntelliScript or ExamOne ScriptCheck; the layout and fields are close, but the purpose and recipients differ. The source PDF is not committed; source/ holds the PNG crop of page 9 described in clearance_note."
+}

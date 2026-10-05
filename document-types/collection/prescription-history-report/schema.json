@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "title": "Prescription History Report",
+  "description": "A prescription history (patient profile) report as a clinician, pharmacist or underwriter reads it: the summary risk indicators, the patient, and each dispensed prescription with its prescriber and pharmacy.",
+  "properties": {
+    "risk_indicators": {
+      "type": "object",
+      "description": "The summary indicator boxes at the top of the report.",
+      "properties": {
+        "mme_average": { "type": ["number", "null"], "description": "Morphine milligram equivalent (MME) assessment value, e.g. 66.04." },
+        "mme_period": { "type": ["string", "null"], "description": "The period the MME figure covers, as printed, e.g. '30-day average'." },
+        "multiple_provider_prescribers": { "type": ["integer", "null"], "description": "Number of prescribers ('Dr') in the multiple provider episodes box." },
+        "multiple_provider_pharmacies": { "type": ["integer", "null"], "description": "Number of pharmacies ('Rx') in the multiple provider episodes box." },
+        "multiple_provider_period": { "type": ["string", "null"], "description": "Look-back period of the multiple provider episodes box, as printed, e.g. 'Last 6 months'." },
+        "overlapping_prescriptions": { "type": ["integer", "null"], "description": "Count of overlapping prescriptions." },
+        "overlapping_period": { "type": ["string", "null"], "description": "Look-back period of the overlapping prescriptions box, as printed." },
+        "risk_score": { "type": ["integer", "null"], "description": "Overall risk score." },
+        "risk_score_max": { "type": ["integer", "null"], "description": "Maximum possible risk score, from 'Max Score=N'." }
+      }
+    },
+    "patient": {
+      "type": "object",
+      "description": "The patient identification row.",
+      "properties": {
+        "last_name": { "type": "string", "description": "Patient last name." },
+        "first_name": { "type": "string", "description": "Patient first name." },
+        "middle_name": { "type": ["string", "null"], "description": "Patient middle name." },
+        "date_of_birth": { "type": ["string", "null"], "description": "Date of birth exactly as printed (do not reformat)." },
+        "gender": { "type": ["string", "null"], "description": "Gender as printed, e.g. 'M'." },
+        "address": { "type": ["string", "null"], "description": "Patient address as printed on one line." }
+      }
+    },
+    "prescriptions": {
+      "type": "array",
+      "description": "Every dispensed prescription row, in the order printed.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prescriber_name": { "type": "string", "description": "Prescriber name and credential, e.g. 'Welby, Marcus MD'." },
+          "prescriber_address": { "type": ["string", "null"], "description": "Prescriber address as printed." },
+          "prescriber_dea_number": { "type": ["string", "null"], "description": "Prescriber's DEA registration number, the third line of the Prescriber cell." },
+          "dispenser_name": { "type": "string", "description": "Dispensing pharmacy name." },
+          "dispenser_address": { "type": ["string", "null"], "description": "Dispensing pharmacy address as printed." },
+          "dispenser_dea_number": { "type": ["string", "null"], "description": "Pharmacy's DEA registration number, the third line of the Dispenser cell." },
+          "date_issued": { "type": ["string", "null"], "description": "Date the prescription was written, exactly as printed." },
+          "date_filled": { "type": ["string", "null"], "description": "Date the prescription was filled, exactly as printed." },
+          "date_sold": { "type": ["string", "null"], "description": "Date the prescription was sold to the patient, exactly as printed." },
+          "rx_number": { "type": ["string", "null"], "description": "Prescription (Rx) number." },
+          "drug": { "type": "string", "description": "Drug name." },
+          "strength": { "type": ["string", "null"], "description": "Strength as printed, e.g. '7.5 MG'." },
+          "quantity": { "type": ["number", "null"], "description": "Quantity dispensed (Qty)." },
+          "days_supply": { "type": ["integer", "null"], "description": "Days supply (Days)." },
+          "refills": { "type": ["integer", "null"], "description": "Refills authorized." }
+        }
+      }
+    }
+  }
+}
