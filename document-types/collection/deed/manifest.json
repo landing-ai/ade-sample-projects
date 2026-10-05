@@ -1,0 +1,26 @@
+{
+  "slug": "deed",
+  "title": "Deed",
+  "source": {
+    "file": "deed.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://cityclerk.lacity.org/onlinedocs/2010/10-2450_misc_9-23-11.pdf",
+      "publisher": "City of Los Angeles, Office of the City Clerk (Council File 10-2450), for the Department of General Services, Asset Management Division",
+      "title": "Grant Deed, City of Los Angeles to White Picket Fence, Inc., 15241 De Pauw Street, Pacific Palisades (APN 4412-028-906), executed September 23, 2011",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "The executed original of a grant deed by which the City of Los Angeles sold surplus property at auction, filed in Council File 10-2450 on the City Clerk's Council File Management System, the official public record of the council file. Pages 1-5 of the 13-page filing are kept: the deed, its Exhibit A legal description, the signature cover, the execution page and the notary acknowledgment; pages 6-10 (a second deed) and 11-13 (transmittal letters) were dropped. The parties are a city and a corporation. The people named appear only in an official or professional capacity: the mayor, city clerk, city attorney's deputy, general manager, the licensed surveyor who signed Exhibit A, and the notary. The grantee's mail-to block carries an 'Attn:' contact at the corporation's business address; it was deliberately left in place as a corporate-capacity name. No redaction was needed. Document metadata was cleared. The file was downloaded by script."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "grantor.name", "label": "Grantor", "occurrence": 0},
+    {"path": "grantee.name", "label": "Grantee", "occurrence": 0},
+    {"path": "consideration_amount", "label": "Consideration", "occurrence": 0},
+    {"path": "documentary_transfer_tax[0].amount", "label": "County transfer tax", "occurrence": 0},
+    {"path": "apn", "label": "APN", "occurrence": 0}
+  ],
+  "notes": "The request named no feature page or fields, only suggestions in its notes: grantor, grantee, consideration, documentary transfer tax (county and city) and APN. All of them ground ok on page 1. Five featured fields is the limit, so the city transfer tax line ($4,950.00) is extracted but not featured; the county line stands for the transfer tax declaration. Together they read as the conveyance a title or lending reviewer checks first: who conveys to whom, for how much, the tax declared on it, and which parcel. grantee.name is pinned to its first occurrence, the granting clause, not the mail-to block. The request's optional removal of the grantee's 'Attn:' contact line with redact_scan.py was skipped by the orchestrator's decision: it is a name in a corporate capacity at a business address, so clearance stays public; it also appears in extract-pro.json inside mail_to.address. The deed is the executed original, not the recorded copy, so recording_info is null. Multi-sentence fields (conditions, reservations, the mail-to address) are paraphrased or span several lines and read OFF."
+}

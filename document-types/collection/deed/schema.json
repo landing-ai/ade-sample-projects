@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "title": "Deed",
+  "properties": {
+    "deed_type": {"type": "string", "description": "Type of deed as titled, e.g. Grant Deed, Quitclaim Deed, Warranty Deed."},
+    "grantor": {
+      "type": "object",
+      "description": "The party conveying the property.",
+      "properties": {
+        "name": {"type": "string", "description": "Grantor's name as written in the granting clause, without the entity description."},
+        "entity_description": {"type": ["string", "null"], "description": "How the grantor is described, e.g. a municipal corporation, a married couple as joint tenants."}
+      }
+    },
+    "grantee": {
+      "type": "object",
+      "description": "The party receiving the property.",
+      "properties": {
+        "name": {"type": "string", "description": "Grantee's name as written in the granting clause, without the entity description."},
+        "entity_description": {"type": ["string", "null"], "description": "How the grantee is described, e.g. a California Corporation."}
+      }
+    },
+    "consideration_amount": {"type": ["number", "null"], "description": "Purchase price or consideration stated in the granting clause, as a number."},
+    "documentary_transfer_tax": {
+      "type": "array",
+      "description": "Each documentary transfer tax line declared on the deed.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "jurisdiction": {"type": "string", "description": "Taxing jurisdiction, e.g. L.A. County or L.A. City."},
+          "amount": {"type": "number", "description": "Tax amount for that jurisdiction."}
+        }
+      }
+    },
+    "transfer_tax_basis": {"type": ["string", "null"], "description": "Basis on which the transfer tax was computed, e.g. full value of the property, or full value less liens."},
+    "apn": {"type": ["string", "null"], "description": "Assessor's Parcel Number (APN)."},
+    "property_address": {"type": ["string", "null"], "description": "Street address the property is commonly known as, including city, state and ZIP."},
+    "county": {"type": ["string", "null"], "description": "County in which the property lies."},
+    "legal_description": {
+      "type": "object",
+      "description": "The legal description of the property, usually in an exhibit.",
+      "properties": {
+        "lot": {"type": ["string", "null"], "description": "Lot number."},
+        "block": {"type": ["string", "null"], "description": "Block number."},
+        "tract": {"type": ["string", "null"], "description": "Tract number."},
+        "map_reference": {"type": ["string", "null"], "description": "Recorded map reference, e.g. book and pages of Maps."},
+        "full_text": {"type": "string", "description": "The full legal description paragraph(s), verbatim."}
+      }
+    },
+    "reservations": {"type": "array", "description": "Rights the grantor excepts and reserves, e.g. mineral rights, each as one sentence.", "items": {"type": "string"}},
+    "conditions": {"type": "array", "description": "Each SUBJECT TO condition or notice the conveyance is made subject to, summarized in one sentence each.", "items": {"type": "string"}},
+    "recording_requested_by": {"type": ["string", "null"], "description": "Party requesting recording, if named."},
+    "mail_to": {
+      "type": "object",
+      "description": "The 'When recorded mail to' block.",
+      "properties": {
+        "name": {"type": ["string", "null"], "description": "Organization or person to mail the recorded deed to."},
+        "address": {"type": ["string", "null"], "description": "Mailing address, as one line."}
+      }
+    },
+    "recording_info": {
+      "type": "object",
+      "description": "Recorder's stamp, if the deed has been recorded.",
+      "properties": {
+        "document_number": {"type": ["string", "null"], "description": "Recorder's document or instrument number, or null if not recorded."},
+        "recording_date": {"type": ["string", "null"], "description": "Recording date as YYYY-MM-DD, or null if not recorded."}
+      }
+    },
+    "authorizing_ordinance": {"type": ["string", "null"], "description": "Ordinance or resolution number under which the deed is made, if any."},
+    "council_file_number": {"type": ["string", "null"], "description": "Council file or agenda reference number, if any."},
+    "execution_date": {"type": ["string", "null"], "description": "Date the deed was executed by the grantor, as YYYY-MM-DD."},
+    "signatories": {
+      "type": "array",
+      "description": "People who signed or attested the deed on the grantor's behalf.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Printed name."},
+          "title": {"type": ["string", "null"], "description": "Title or capacity, e.g. Mayor, City Clerk."}
+        }
+      }
+    },
+    "notary_acknowledgment": {
+      "type": "object",
+      "description": "The notary's certificate of acknowledgment.",
+      "properties": {
+        "state": {"type": ["string", "null"], "description": "State of the venue."},
+        "county": {"type": ["string", "null"], "description": "County of the venue."},
+        "acknowledgment_date": {"type": ["string", "null"], "description": "Date of the acknowledgment as YYYY-MM-DD."},
+        "notary_name": {"type": ["string", "null"], "description": "Notary public's name."},
+        "commission_number": {"type": ["string", "null"], "description": "Notary commission number from the seal."},
+        "commission_expires": {"type": ["string", "null"], "description": "Commission expiration date as YYYY-MM-DD."}
+      }
+    }
+  }
+}
