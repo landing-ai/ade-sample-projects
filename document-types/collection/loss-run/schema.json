@@ -1,0 +1,134 @@
+{
+  "type": "object",
+  "description": "An insurance loss run (claims/loss report): the claims history an insurer or risk pool reports for one insured member, summarised by coverage period with grand totals. Used by underwriters and brokers to price renewals.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Report-level details from the page header and footer.",
+      "properties": {
+        "report_title": {
+          "type": "string",
+          "description": "Title of the report as printed, e.g. 'Claim/Loss Report'."
+        },
+        "carrier_name": {
+          "type": "string",
+          "description": "Insurer or risk pool that produced the report, from the logo or footer."
+        },
+        "insured_member": {
+          "type": "string",
+          "description": "The insured or pool member the report covers, from 'Member Selected'."
+        },
+        "line_of_coverage": {
+          "type": "string",
+          "description": "Line of coverage the claims fall under, e.g. 'Workers' Compensation'."
+        },
+        "coverage_year_range": {
+          "type": "string",
+          "description": "The coverage period year range the report was run for, as printed, e.g. 'Between 2015 and 2019'."
+        },
+        "report_run_date": {
+          "type": "string",
+          "description": "Date the report was run, from the footer, as YYYY-MM-DD."
+        }
+      }
+    },
+    "policies": {
+      "type": "array",
+      "description": "One entry per coverage (policy) period, from the section header line that opens each period's claim listing ('Coverage Number: ... Coverage Period: ...').",
+      "items": {
+        "type": "object",
+        "description": "One coverage period header.",
+        "properties": {
+          "coverage_number": {
+            "type": "string",
+            "description": "Coverage (policy) number shown in the period's section header, e.g. 'WC-00548-201501'."
+          },
+          "period_start": {
+            "type": "string",
+            "description": "Start of the coverage period, as YYYY-MM-DD."
+          },
+          "period_end": {
+            "type": "string",
+            "description": "End of the coverage period, as YYYY-MM-DD."
+          }
+        }
+      }
+    },
+    "coverage_periods": {
+      "type": "array",
+      "description": "The per-period summary rows on the last page, directly above the line-of-coverage total and the Grand Total. There is one row per coverage period; take them from that summary block only, not from the 'Totals:' rows that also close each period's section on earlier pages.",
+      "items": {
+        "type": "object",
+        "description": "One row of the period summary.",
+        "properties": {
+          "period": {
+            "type": "string",
+            "description": "The period label exactly as printed after 'Totals:', e.g. 'Jan 1, 2016- Jan 1, 2017'."
+          },
+          "claim_count": {
+            "type": "integer",
+            "description": "Count of claims in the period."
+          },
+          "total_paid": {
+            "type": "number",
+            "description": "Total paid on the period's claims, in dollars. A printed $0 is 0, not null."
+          },
+          "total_outstanding_reserve": {
+            "type": "number",
+            "description": "Total outstanding reserve on the period's claims, in dollars. A printed $0 is 0, not null."
+          },
+          "subtotal": {
+            "type": "number",
+            "description": "Subtotal (paid plus outstanding reserve), in dollars. A printed $0 is 0, not null."
+          },
+          "deductible": {
+            "type": "number",
+            "description": "Deductible amount, in dollars. A printed $0 is 0, not null."
+          },
+          "loss_recoveries": {
+            "type": "number",
+            "description": "Loss recoveries (subrogation and similar), in dollars. Negative when printed in parentheses. A printed $0 is 0, not null."
+          },
+          "total_incurred": {
+            "type": "number",
+            "description": "Total incurred for the period after deductible and recoveries, from the Total column, in dollars. A printed $0 is 0, not null."
+          }
+        }
+      }
+    },
+    "grand_total": {
+      "type": "object",
+      "description": "The report's Grand Total row across all coverage periods.",
+      "properties": {
+        "claim_count": {
+          "type": "integer",
+          "description": "Total count of claims across all periods."
+        },
+        "total_paid": {
+          "type": "number",
+          "description": "Grand total paid, in dollars. A printed $0 is 0, not null."
+        },
+        "total_outstanding_reserve": {
+          "type": "number",
+          "description": "Grand total outstanding reserve, in dollars. A printed $0 is 0, not null."
+        },
+        "subtotal": {
+          "type": "number",
+          "description": "Grand total subtotal (paid plus outstanding reserve), in dollars. A printed $0 is 0, not null."
+        },
+        "deductible": {
+          "type": "number",
+          "description": "Grand total deductible, in dollars. A printed $0 is 0, not null."
+        },
+        "loss_recoveries": {
+          "type": "number",
+          "description": "Grand total loss recoveries, in dollars. Negative when printed in parentheses. A printed $0 is 0, not null."
+        },
+        "total_incurred": {
+          "type": "number",
+          "description": "Grand total incurred, from the Total column, in dollars. A printed $0 is 0, not null."
+        }
+      }
+    }
+  }
+}
