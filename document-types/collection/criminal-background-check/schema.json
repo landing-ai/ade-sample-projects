@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "title": "Criminal Background Check",
+  "description": "An employment background screening report from a consumer reporting agency, as an adjudication or HR compliance pipeline reads it: who was screened, the overall result, which searches were run, and the detail of each criminal record found.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Report-level details from the header band and the requested-by block.",
+      "properties": {
+        "screening_provider": { "type": ["string", "null"], "description": "The consumer reporting agency that produced the report, from its logo or requestor name, e.g. 'Accurate Background'." },
+        "overall_result": { "type": "string", "description": "The overall adjudication result shown in the header, exactly as printed, e.g. 'Does Not Meet Requirements'." },
+        "ordered_date": { "type": ["string", "null"], "description": "The date the report was ordered ('ordered on'), exactly as printed (MM/DD/YYYY)." },
+        "updated_date": { "type": ["string", "null"], "description": "The date the report was last updated ('updated on'), exactly as printed (MM/DD/YYYY)." },
+        "requestor": { "type": ["string", "null"], "description": "The requesting client account, from REQUESTOR." },
+        "package": { "type": ["string", "null"], "description": "The screening package ordered, from PACKAGE." },
+        "position_location": { "type": ["string", "null"], "description": "The location of the position the candidate applied for, from POSITION LOCATION." },
+        "client_note": { "type": ["string", "null"], "description": "The client's instruction note, from CLIENT NOTE." }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "description": "The CANDIDATE INFORMATION PROVIDED block.",
+      "properties": {
+        "name": { "type": "string", "description": "The candidate's name exactly as printed in the NAME field (Last, First)." },
+        "date_of_birth": { "type": ["string", "null"], "description": "DOB exactly as printed (MM/DD/YYYY)." },
+        "ssn": { "type": ["string", "null"], "description": "SSN exactly as printed, including any masking." },
+        "address": { "type": ["string", "null"], "description": "The full address as printed, lines joined with commas." }
+      }
+    },
+    "searches": {
+      "type": "array",
+      "description": "Every row of the SEARCHES summary table, in order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "search": { "type": "string", "description": "The search name with any qualifier as printed, e.g. 'COUNTY CRIMINAL - PLACER COUNTY, CA'." },
+          "status": { "type": "string", "description": "The status or result printed beside it, e.g. 'COMPLETED' or 'RECORD FOUND'." }
+        }
+      }
+    },
+    "criminal_searches": {
+      "type": "array",
+      "description": "Each criminal search detail section (e.g. COUNTY CRIMINAL), with its case files.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "search_id": { "type": ["string", "null"], "description": "SEARCH ID as printed." },
+          "search_type": { "type": ["string", "null"], "description": "SEARCH TYPE, e.g. 'FELONY/MISDEMEANOR'." },
+          "status": { "type": "string", "description": "STATUS/RESULT as printed, e.g. 'RECORD FOUND'." },
+          "jurisdiction": { "type": "string", "description": "STATE/COUNTY exactly as printed, e.g. 'CA / PLACER'." },
+          "completion_date": { "type": ["string", "null"], "description": "COMPLETION DATE exactly as printed." },
+          "cases": {
+            "type": "array",
+            "description": "Each CASE FILE in the section.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "case_number": { "type": "string", "description": "CASE NUMBER as printed." },
+                "filing_date": { "type": ["string", "null"], "description": "FILING DATE exactly as printed (MM/DD/YYYY)." },
+                "identified_by": { "type": "array", "description": "The identifiers checked under IDENTIFIED BY, e.g. 'NAME', 'SSN'.", "items": { "type": "string" } },
+                "charges": {
+                  "type": "array",
+                  "description": "Each numbered charge in the case.",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "charge_number": { "type": "string", "description": "The charge NUMBER as printed, e.g. '#1'." },
+                      "description": { "type": "string", "description": "The charge DESCRIPTION as printed." },
+                      "level": { "type": ["string", "null"], "description": "LEVEL, e.g. 'FELONY' or 'MISDEMEANOR'." },
+                      "disposition": { "type": ["string", "null"], "description": "DISPOSITION, e.g. 'GUILTY'." },
+                      "disposition_date": { "type": ["string", "null"], "description": "Charge Disposition Date exactly as printed (MM/DD/YYYY)." },
+                      "sentence": {
+                        "type": "object",
+                        "description": "The CHARGE SENTENCING block. Use null for any item not printed.",
+                        "properties": {
+                          "jail": { "type": ["string", "null"], "description": "JAIL term as printed, e.g. '2 HOURS'." },
+                          "prison": { "type": ["string", "null"], "description": "PRISON term as printed, e.g. '12 YEARS'." },
+                          "fines": { "type": ["string", "null"], "description": "FINES amount exactly as printed, with $ and commas." },
+                          "fees": { "type": ["string", "null"], "description": "FEES amount exactly as printed, with $ and commas." },
+                          "costs": { "type": ["string", "null"], "description": "COSTS amount exactly as printed, with $ and commas." },
+                          "restitution": { "type": ["string", "null"], "description": "RESTITUTION amount exactly as printed, with $ and commas." },
+                          "classes": { "type": ["string", "null"], "description": "CLASSES ordered or completed, as printed." }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
