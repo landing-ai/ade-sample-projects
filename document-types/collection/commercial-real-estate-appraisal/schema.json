@@ -1,0 +1,379 @@
+{
+  "type": "object",
+  "title": "Commercial Real Estate Appraisal",
+  "description": "A narrative appraisal of a commercial property, as read by lenders, investors, auditors and asset managers: who prepared it and for whom, what the property is, and the value conclusion with the approaches behind it.",
+  "properties": {
+    "assignment": {
+      "type": "object",
+      "description": "Who prepared the appraisal, for whom, and why, from the cover and transmittal letter.",
+      "properties": {
+        "appraisal_firm": {
+          "type": "string",
+          "description": "Name of the appraisal firm that prepared the report."
+        },
+        "file_number": {
+          "type": "string",
+          "description": "The appraisal firm's file or job number for the assignment."
+        },
+        "client_company": {
+          "type": "string",
+          "description": "Company the appraisal was prepared for (the client)."
+        },
+        "report_date": {
+          "type": "string",
+          "description": "Date of the report, exactly as printed, e.g. March 3, 2011."
+        },
+        "report_format": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Report format or reporting option, e.g. Summary, Self-Contained, Restricted."
+        },
+        "intended_use": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Stated intended use of the appraisal."
+        },
+        "appraisal_standards": {
+          "type": "array",
+          "description": "Standards or guidelines the appraisal states it conforms to, e.g. USPAP, FIRREA.",
+          "items": {
+            "type": "string",
+            "description": "Name or acronym of one standard."
+          }
+        }
+      },
+      "required": [
+        "appraisal_firm",
+        "client_company"
+      ]
+    },
+    "property": {
+      "type": "object",
+      "description": "Identification and physical description of the subject property, from the Summary of Salient Facts and Identification of Subject.",
+      "properties": {
+        "property_name": {
+          "type": "string",
+          "description": "Name of the subject property."
+        },
+        "street_address": {
+          "type": "string",
+          "description": "Street address of the subject property."
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the subject property."
+        },
+        "state": {
+          "type": "string",
+          "description": "State of the subject property."
+        },
+        "zip_code": {
+          "type": "string",
+          "description": "ZIP code of the subject property."
+        },
+        "property_type": {
+          "type": "string",
+          "description": "Property type exactly as printed in the Summary of Salient Facts, e.g. Office - Office."
+        },
+        "owner_of_record": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Owner of record."
+        },
+        "tax_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Tax ID or assessor's parcel number, exactly as printed."
+        },
+        "legal_description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Legal description of the property."
+        },
+        "land_area_acres": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Land area in acres."
+        },
+        "land_area_sf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Land area in square feet."
+        },
+        "gross_building_area_sf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Gross building area in square feet."
+        },
+        "rentable_area_sf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Rentable area in square feet."
+        },
+        "percent_leased": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Percent leased, as a number from 0 to 100."
+        },
+        "year_built": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Year the improvements were built, from the Year Built row of the Summary of Salient Facts."
+        },
+        "zoning": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Zoning designation."
+        },
+        "highest_and_best_use_as_vacant": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Highest and best use as if vacant."
+        },
+        "highest_and_best_use_as_improved": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Highest and best use as improved."
+        },
+        "exposure_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Estimated exposure time, as printed."
+        },
+        "marketing_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Estimated marketing period, as printed."
+        }
+      },
+      "required": [
+        "property_name",
+        "street_address",
+        "property_type"
+      ]
+    },
+    "tenancy": {
+      "type": "object",
+      "description": "Tenancy and rent figures from the Summary of Salient Facts.",
+      "properties": {
+        "number_of_tenants": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Number of tenants."
+        },
+        "major_tenant": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the major tenant."
+        },
+        "major_tenant_lease_expiration": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Major tenant's lease expiration, exactly as printed."
+        },
+        "average_contract_rent_psf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Average contract rent per square foot in dollars."
+        },
+        "average_market_rent_psf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Average market rent per square foot in dollars."
+        }
+      }
+    },
+    "value_conclusions": {
+      "type": "array",
+      "description": "Each row of the Value Conclusions table: appraisal premise, interest appraised, date of value and value conclusion.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "appraisal_premise": {
+            "type": "string",
+            "description": "Appraisal premise, e.g. Fair Value As Is, Market Value As Is, Prospective Value Upon Stabilization."
+          },
+          "interest_appraised": {
+            "type": "string",
+            "description": "Property interest appraised, e.g. Fee Simple, Leased Fee."
+          },
+          "date_of_value": {
+            "type": "string",
+            "description": "Effective date of value, exactly as printed, e.g. March 2, 2011."
+          },
+          "value_conclusion": {
+            "type": "number",
+            "description": "Concluded value in dollars."
+          }
+        },
+        "required": [
+          "appraisal_premise",
+          "interest_appraised",
+          "date_of_value",
+          "value_conclusion"
+        ]
+      }
+    },
+    "valuation_approaches": {
+      "type": "object",
+      "description": "Value indications by approach, from the Summary of Value Indications in the reconciliation and the Salient Facts.",
+      "properties": {
+        "cost_approach_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Cost approach value indication in dollars. Null when the approach is marked Not Used; never 0 for an approach that was not used."
+        },
+        "sales_comparison_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Sales comparison approach value indication in dollars."
+        },
+        "income_capitalization_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Income capitalization approach value indication in dollars."
+        },
+        "reconciled_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Reconciled final value in dollars."
+        },
+        "approach_given_greatest_weight": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The approach the appraiser gave greatest weight in reconciliation."
+        },
+        "net_operating_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net operating income at stabilization in dollars."
+        },
+        "capitalization_rate_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Overall capitalization rate applied, as a percent."
+        },
+        "discount_rate_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Discount rate applied in the discounted cash flow, as a percent."
+        },
+        "value_per_sf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Final value conclusion per square foot in dollars."
+        }
+      }
+    },
+    "extraordinary_assumptions": {
+      "type": "array",
+      "description": "Distinct extraordinary assumptions and hypothetical conditions the value conclusions are subject to. The same list is repeated in several places in the report; include each distinct assumption once only.",
+      "items": {
+        "type": "string",
+        "description": "One assumption or condition."
+      }
+    },
+    "appraisers": {
+      "type": "array",
+      "description": "Appraisers who signed the report.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Appraiser's name with designations as printed."
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Job title."
+          },
+          "certification": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Certification, e.g. Certified General Real Estate Appraiser."
+          },
+          "license_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "State certificate or licence number only, without the 'TX Certificate #' prefix, e.g. 1234567-G."
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  "required": [
+    "assignment",
+    "property",
+    "value_conclusions"
+  ]
+}
