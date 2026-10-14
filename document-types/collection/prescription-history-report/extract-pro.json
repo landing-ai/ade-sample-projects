@@ -1,0 +1,1268 @@
+{
+  "extraction": {
+    "patient": {
+      "address": "123 Main Street, Anytown, CA 90212",
+      "date_of_birth": "1/1/1976",
+      "first_name": "John",
+      "gender": "M",
+      "last_name": "Doe",
+      "middle_name": "Robert"
+    },
+    "prescriptions": [
+      {
+        "date_filled": "2/3/2022",
+        "date_issued": "2/3/2022",
+        "date_sold": "2/4/2022",
+        "days_supply": 30,
+        "dispenser_address": "8833 Patch Drive, Anytown, CA 90212",
+        "dispenser_dea_number": "BT12121212",
+        "dispenser_name": "Test Pharmacy",
+        "drug": "Alprazolam",
+        "prescriber_address": "3355 Doctor Street, Anytown, CA 90212",
+        "prescriber_dea_number": "AW12121212",
+        "prescriber_name": "Welby, Marcus MD",
+        "quantity": 90.0,
+        "refills": 1,
+        "rx_number": "12225",
+        "strength": "1 MG"
+      },
+      {
+        "date_filled": "2/5/2022",
+        "date_issued": "2/5/2022",
+        "date_sold": "2/6/2022",
+        "days_supply": 30,
+        "dispenser_address": "1122 Main Street, Place, CA 90213",
+        "dispenser_dea_number": "AH23232323",
+        "dispenser_name": "Hometown Pharmacy",
+        "drug": "Hydrocodone",
+        "prescriber_address": "8233 Pilladay Avenue, Place, CA 90213",
+        "prescriber_dea_number": "BH98989898",
+        "prescriber_name": "Howser, Doogie DO",
+        "quantity": 180.0,
+        "refills": 1,
+        "rx_number": "37921",
+        "strength": "7.5 MG"
+      },
+      {
+        "date_filled": "2/7/2022",
+        "date_issued": "2/7/2022",
+        "date_sold": "2/8/2022",
+        "days_supply": 14,
+        "dispenser_address": "4466 Nurse Way, My Town, CA 90211",
+        "dispenser_dea_number": "BM34343434",
+        "dispenser_name": "Made-up Drug Store",
+        "drug": "Morphine Sulfate",
+        "prescriber_address": "5558 Hospital Road, My Town, CA 90211",
+        "prescriber_dea_number": "AH77776622",
+        "prescriber_name": "House, Gregory MD",
+        "quantity": 14.0,
+        "refills": 0,
+        "rx_number": "897754",
+        "strength": "30 MG"
+      },
+      {
+        "date_filled": "2/9/2022",
+        "date_issued": "2/9/2022",
+        "date_sold": "2/10/2022",
+        "days_supply": 30,
+        "dispenser_address": "7312 Wounded Road, Village, CA 90210",
+        "dispenser_dea_number": "AC 45454545",
+        "dispenser_name": "City Pharmacy",
+        "drug": "Methylphenidate",
+        "prescriber_address": "9911 Splint Circle, Village, CA 90210",
+        "prescriber_dea_number": "AP 44488891",
+        "prescriber_name": "Potter, Sherman MD",
+        "quantity": 90.0,
+        "refills": 0,
+        "rx_number": "534502",
+        "strength": "10 MG"
+      },
+      {
+        "date_filled": "3/3/2022",
+        "date_issued": "3/3/2022",
+        "date_sold": "3/4/2022",
+        "days_supply": 30,
+        "dispenser_address": "8833 Patch Drive, Anytown, CA 90212",
+        "dispenser_dea_number": "BT12121212",
+        "dispenser_name": "Test Pharmacy",
+        "drug": "Alprazolam",
+        "prescriber_address": "3355 Doctor Street, Anytown, CA 90212",
+        "prescriber_dea_number": "AW12121212",
+        "prescriber_name": "Welby, Marcus MD",
+        "quantity": 90.0,
+        "refills": 1,
+        "rx_number": "13100",
+        "strength": "1 MG"
+      },
+      {
+        "date_filled": "3/5/2022",
+        "date_issued": "3/5/2022",
+        "date_sold": "3/6/2022",
+        "days_supply": 30,
+        "dispenser_address": "1122 Main Street, Place, CA 90213",
+        "dispenser_dea_number": "AH23232323",
+        "dispenser_name": "Hometown Pharmacy",
+        "drug": "Hydrocodone",
+        "prescriber_address": "8233 Pilladay Avenue, Place, CA 90213",
+        "prescriber_dea_number": "BH98989898",
+        "prescriber_name": "Howser, Doogie DO",
+        "quantity": 180.0,
+        "refills": 1,
+        "rx_number": "39572",
+        "strength": "7.5 MG"
+      },
+      {
+        "date_filled": "3/9/2022",
+        "date_issued": "3/9/2022",
+        "date_sold": "3/10/2022",
+        "days_supply": 30,
+        "dispenser_address": "7312 Wounded Road, Village, CA 90210",
+        "dispenser_dea_number": "AC 45454545",
+        "dispenser_name": "City Pharmacy",
+        "drug": "Methylphenidate",
+        "prescriber_address": "9911 Splint Circle, Village, CA 90210",
+        "prescriber_dea_number": "AP 44488891",
+        "prescriber_name": "Potter, Sherman MD",
+        "quantity": 90.0,
+        "refills": 0,
+        "rx_number": "550987",
+        "strength": "10 MG"
+      }
+    ],
+    "risk_indicators": {
+      "mme_average": 66.04,
+      "mme_period": "30-day average",
+      "multiple_provider_period": "Last 6 months",
+      "multiple_provider_pharmacies": 5,
+      "multiple_provider_prescribers": 8,
+      "overlapping_period": "Last 45 Days",
+      "overlapping_prescriptions": 4,
+      "risk_score": 5,
+      "risk_score_max": 7
+    }
+  },
+  "extraction_metadata": {
+    "patient": {
+      "address": {
+        "ranges": [
+          {
+            "end": 418,
+            "start": 384
+          }
+        ],
+        "value": "123 Main Street, Anytown, CA 90212"
+      },
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 365,
+            "start": 357
+          }
+        ],
+        "value": "1/1/1976"
+      },
+      "first_name": {
+        "ranges": [
+          {
+            "end": 333,
+            "start": 329
+          }
+        ],
+        "value": "John"
+      },
+      "gender": {
+        "ranges": [
+          {
+            "end": 375,
+            "start": 374
+          }
+        ],
+        "value": "M"
+      },
+      "last_name": {
+        "ranges": [
+          {
+            "end": 320,
+            "start": 317
+          }
+        ],
+        "value": "Doe"
+      },
+      "middle_name": {
+        "ranges": [
+          {
+            "end": 348,
+            "start": 342
+          }
+        ],
+        "value": "Robert"
+      }
+    },
+    "prescriptions": [
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 829,
+              "start": 821
+            }
+          ],
+          "value": "2/3/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 812,
+              "start": 804
+            }
+          ],
+          "value": "2/3/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 846,
+              "start": 838
+            }
+          ],
+          "value": "2/4/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 914,
+              "start": 912
+            }
+          ],
+          "value": 30
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 795,
+              "start": 729
+            }
+          ],
+          "value": "8833 Patch Drive, Anytown, CA 90212"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 795,
+              "start": 729
+            }
+          ],
+          "value": "BT12121212"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 795,
+              "start": 729
+            }
+          ],
+          "value": "Test Pharmacy"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 879,
+              "start": 869
+            }
+          ],
+          "value": "Alprazolam"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 720,
+              "start": 649
+            }
+          ],
+          "value": "3355 Doctor Street, Anytown, CA 90212"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 720,
+              "start": 649
+            }
+          ],
+          "value": "AW12121212"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 720,
+              "start": 649
+            }
+          ],
+          "value": "Welby, Marcus MD"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 903,
+              "start": 901
+            }
+          ],
+          "value": 90.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 924,
+              "start": 923
+            }
+          ],
+          "value": 1
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 860,
+              "start": 855
+            }
+          ],
+          "value": "12225"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 892,
+              "start": 888
+            }
+          ],
+          "value": "1 MG"
+        }
+      },
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 1126,
+              "start": 1118
+            }
+          ],
+          "value": "2/5/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 1109,
+              "start": 1101
+            }
+          ],
+          "value": "2/5/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 1143,
+              "start": 1135
+            }
+          ],
+          "value": "2/6/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 1215,
+              "start": 1213
+            }
+          ],
+          "value": 30
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 1092,
+              "start": 1024
+            }
+          ],
+          "value": "1122 Main Street, Place, CA 90213"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 1092,
+              "start": 1024
+            }
+          ],
+          "value": "AH23232323"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 1092,
+              "start": 1024
+            }
+          ],
+          "value": "Hometown Pharmacy"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 1177,
+              "start": 1166
+            }
+          ],
+          "value": "Hydrocodone"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 1015,
+              "start": 943
+            }
+          ],
+          "value": "8233 Pilladay Avenue, Place, CA 90213"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 1015,
+              "start": 943
+            }
+          ],
+          "value": "BH98989898"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 1015,
+              "start": 943
+            }
+          ],
+          "value": "Howser, Doogie DO"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1204,
+              "start": 1201
+            }
+          ],
+          "value": 180.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 1225,
+              "start": 1224
+            }
+          ],
+          "value": 1
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 1157,
+              "start": 1152
+            }
+          ],
+          "value": "37921"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 1192,
+              "start": 1186
+            }
+          ],
+          "value": "7.5 MG"
+        }
+      },
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 1428,
+              "start": 1420
+            }
+          ],
+          "value": "2/7/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 1411,
+              "start": 1403
+            }
+          ],
+          "value": "2/7/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 1445,
+              "start": 1437
+            }
+          ],
+          "value": "2/8/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 1521,
+              "start": 1519
+            }
+          ],
+          "value": 14
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 1394,
+              "start": 1325
+            }
+          ],
+          "value": "4466 Nurse Way, My Town, CA 90211"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 1394,
+              "start": 1325
+            }
+          ],
+          "value": "BM34343434"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 1394,
+              "start": 1325
+            }
+          ],
+          "value": "Made-up Drug Store"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 1485,
+              "start": 1469
+            }
+          ],
+          "value": "Morphine Sulfate"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 1316,
+              "start": 1244
+            }
+          ],
+          "value": "5558 Hospital Road, My Town, CA 90211"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 1316,
+              "start": 1244
+            }
+          ],
+          "value": "AH77776622"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 1316,
+              "start": 1244
+            }
+          ],
+          "value": "House, Gregory MD"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1510,
+              "start": 1508
+            }
+          ],
+          "value": 14.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 1531,
+              "start": 1530
+            }
+          ],
+          "value": 0
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 1460,
+              "start": 1454
+            }
+          ],
+          "value": "897754"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 1499,
+              "start": 1494
+            }
+          ],
+          "value": "30 MG"
+        }
+      },
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 1735,
+              "start": 1727
+            }
+          ],
+          "value": "2/9/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 1718,
+              "start": 1710
+            }
+          ],
+          "value": "2/9/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 1753,
+              "start": 1744
+            }
+          ],
+          "value": "2/10/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 1828,
+              "start": 1826
+            }
+          ],
+          "value": 30
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 1701,
+              "start": 1633
+            }
+          ],
+          "value": "7312 Wounded Road, Village, CA 90210"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 1701,
+              "start": 1633
+            }
+          ],
+          "value": "AC 45454545"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 1701,
+              "start": 1633
+            }
+          ],
+          "value": "City Pharmacy"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 1792,
+              "start": 1777
+            }
+          ],
+          "value": "Methylphenidate"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 1624,
+              "start": 1550
+            }
+          ],
+          "value": "9911 Splint Circle, Village, CA 90210"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 1624,
+              "start": 1550
+            }
+          ],
+          "value": "AP 44488891"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 1624,
+              "start": 1550
+            }
+          ],
+          "value": "Potter, Sherman MD"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 1817,
+              "start": 1815
+            }
+          ],
+          "value": 90.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 1838,
+              "start": 1837
+            }
+          ],
+          "value": 0
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 1768,
+              "start": 1762
+            }
+          ],
+          "value": "534502"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 1806,
+              "start": 1801
+            }
+          ],
+          "value": "10 MG"
+        }
+      },
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 2037,
+              "start": 2029
+            }
+          ],
+          "value": "3/3/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 2020,
+              "start": 2012
+            }
+          ],
+          "value": "3/3/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 2054,
+              "start": 2046
+            }
+          ],
+          "value": "3/4/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 2122,
+              "start": 2120
+            }
+          ],
+          "value": 30
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 2003,
+              "start": 1937
+            }
+          ],
+          "value": "8833 Patch Drive, Anytown, CA 90212"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 2003,
+              "start": 1937
+            }
+          ],
+          "value": "BT12121212"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 2003,
+              "start": 1937
+            }
+          ],
+          "value": "Test Pharmacy"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 2087,
+              "start": 2077
+            }
+          ],
+          "value": "Alprazolam"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 1928,
+              "start": 1857
+            }
+          ],
+          "value": "3355 Doctor Street, Anytown, CA 90212"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 1928,
+              "start": 1857
+            }
+          ],
+          "value": "AW12121212"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 1928,
+              "start": 1857
+            }
+          ],
+          "value": "Welby, Marcus MD"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 2111,
+              "start": 2109
+            }
+          ],
+          "value": 90.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 2132,
+              "start": 2131
+            }
+          ],
+          "value": 1
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 2068,
+              "start": 2063
+            }
+          ],
+          "value": "13100"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 2100,
+              "start": 2096
+            }
+          ],
+          "value": "1 MG"
+        }
+      },
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 2334,
+              "start": 2326
+            }
+          ],
+          "value": "3/5/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 2317,
+              "start": 2309
+            }
+          ],
+          "value": "3/5/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 2351,
+              "start": 2343
+            }
+          ],
+          "value": "3/6/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 2423,
+              "start": 2421
+            }
+          ],
+          "value": 30
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 2300,
+              "start": 2232
+            }
+          ],
+          "value": "1122 Main Street, Place, CA 90213"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 2300,
+              "start": 2232
+            }
+          ],
+          "value": "AH23232323"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 2300,
+              "start": 2232
+            }
+          ],
+          "value": "Hometown Pharmacy"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 2385,
+              "start": 2374
+            }
+          ],
+          "value": "Hydrocodone"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 2223,
+              "start": 2151
+            }
+          ],
+          "value": "8233 Pilladay Avenue, Place, CA 90213"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 2223,
+              "start": 2151
+            }
+          ],
+          "value": "BH98989898"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 2223,
+              "start": 2151
+            }
+          ],
+          "value": "Howser, Doogie DO"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 2412,
+              "start": 2409
+            }
+          ],
+          "value": 180.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 2433,
+              "start": 2432
+            }
+          ],
+          "value": 1
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 2365,
+              "start": 2360
+            }
+          ],
+          "value": "39572"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 2400,
+              "start": 2394
+            }
+          ],
+          "value": "7.5 MG"
+        }
+      },
+      {
+        "date_filled": {
+          "ranges": [
+            {
+              "end": 2637,
+              "start": 2629
+            }
+          ],
+          "value": "3/9/2022"
+        },
+        "date_issued": {
+          "ranges": [
+            {
+              "end": 2620,
+              "start": 2612
+            }
+          ],
+          "value": "3/9/2022"
+        },
+        "date_sold": {
+          "ranges": [
+            {
+              "end": 2655,
+              "start": 2646
+            }
+          ],
+          "value": "3/10/2022"
+        },
+        "days_supply": {
+          "ranges": [
+            {
+              "end": 2730,
+              "start": 2728
+            }
+          ],
+          "value": 30
+        },
+        "dispenser_address": {
+          "ranges": [
+            {
+              "end": 2603,
+              "start": 2535
+            }
+          ],
+          "value": "7312 Wounded Road, Village, CA 90210"
+        },
+        "dispenser_dea_number": {
+          "ranges": [
+            {
+              "end": 2603,
+              "start": 2535
+            }
+          ],
+          "value": "AC 45454545"
+        },
+        "dispenser_name": {
+          "ranges": [
+            {
+              "end": 2603,
+              "start": 2535
+            }
+          ],
+          "value": "City Pharmacy"
+        },
+        "drug": {
+          "ranges": [
+            {
+              "end": 2694,
+              "start": 2679
+            }
+          ],
+          "value": "Methylphenidate"
+        },
+        "prescriber_address": {
+          "ranges": [
+            {
+              "end": 2526,
+              "start": 2452
+            }
+          ],
+          "value": "9911 Splint Circle, Village, CA 90210"
+        },
+        "prescriber_dea_number": {
+          "ranges": [
+            {
+              "end": 2526,
+              "start": 2452
+            }
+          ],
+          "value": "AP 44488891"
+        },
+        "prescriber_name": {
+          "ranges": [
+            {
+              "end": 2526,
+              "start": 2452
+            }
+          ],
+          "value": "Potter, Sherman MD"
+        },
+        "quantity": {
+          "ranges": [
+            {
+              "end": 2719,
+              "start": 2717
+            }
+          ],
+          "value": 90.0
+        },
+        "refills": {
+          "ranges": [
+            {
+              "end": 2740,
+              "start": 2739
+            }
+          ],
+          "value": 0
+        },
+        "rx_number": {
+          "ranges": [
+            {
+              "end": 2670,
+              "start": 2664
+            }
+          ],
+          "value": "550987"
+        },
+        "strength": {
+          "ranges": [
+            {
+              "end": 2708,
+              "start": 2703
+            }
+          ],
+          "value": "10 MG"
+        }
+      }
+    ],
+    "risk_indicators": {
+      "mme_average": {
+        "ranges": [
+          {
+            "end": 40,
+            "start": 0
+          }
+        ],
+        "value": 66.04
+      },
+      "mme_period": {
+        "ranges": [
+          {
+            "end": 40,
+            "start": 0
+          }
+        ],
+        "value": "30-day average"
+      },
+      "multiple_provider_period": {
+        "ranges": [
+          {
+            "end": 97,
+            "start": 41
+          }
+        ],
+        "value": "Last 6 months"
+      },
+      "multiple_provider_pharmacies": {
+        "ranges": [
+          {
+            "end": 97,
+            "start": 41
+          }
+        ],
+        "value": 5
+      },
+      "multiple_provider_prescribers": {
+        "ranges": [
+          {
+            "end": 97,
+            "start": 41
+          }
+        ],
+        "value": 8
+      },
+      "overlapping_period": {
+        "ranges": [
+          {
+            "end": 143,
+            "start": 98
+          }
+        ],
+        "value": "Last 45 Days"
+      },
+      "overlapping_prescriptions": {
+        "ranges": [
+          {
+            "end": 143,
+            "start": 98
+          }
+        ],
+        "value": 4
+      },
+      "risk_score": {
+        "ranges": [
+          {
+            "end": 171,
+            "start": 144
+          }
+        ],
+        "value": 5
+      },
+      "risk_score_max": {
+        "ranges": [
+          {
+            "end": 171,
+            "start": 144
+          }
+        ],
+        "value": 7
+      }
+    }
+  },
+  "markdown": "66.04  MME Assessment  * 30-day average \n8 Dr  5 Rx  Multiple Provider Episodes  * Last 6 months \n4  Overlapping Prescriptions  * Last 45 Days \n5  Risk Score  Max Score=7 \n\n<table>\n<tr><td>Patient Last Name</td><td>First Name</td><td>Middle Name</td><td>Date of Birth</td><td>Gender</td><td>Address</td></tr>\n<tr><td>Doe</td><td>John</td><td>Robert</td><td>1/1/1976</td><td>M</td><td>123 Main Street, Anytown, CA 90212</td></tr>\n</table>\n\n<table>\n<tr><td>Prescriber</td><td>Dispenser</td><td>Date Issued</td><td>Date Filled</td><td>Date Sold</td><td>Rx Number</td><td>Drug</td><td>Strength</td><td>Qty</td><td>Days</td><td>Refills</td></tr>\n<tr><td>Welby, Marcus MD<br>3355 Doctor Street, Anytown, CA 90212<br>AW12121212</td><td>Test Pharmacy<br>8833 Patch Drive, Anytown, CA 90212<br>BT12121212</td><td>2/3/2022</td><td>2/3/2022</td><td>2/4/2022</td><td>12225</td><td>Alprazolam</td><td>1 MG</td><td>90</td><td>30</td><td>1</td></tr>\n<tr><td>Howser, Doogie DO<br>8233 Pilladay Avenue, Place, CA 90213<br>BH98989898</td><td>Hometown Pharmacy<br>1122 Main Street, Place, CA 90213<br>AH23232323</td><td>2/5/2022</td><td>2/5/2022</td><td>2/6/2022</td><td>37921</td><td>Hydrocodone</td><td>7.5 MG</td><td>180</td><td>30</td><td>1</td></tr>\n<tr><td>House, Gregory MD<br>5558 Hospital Road, My Town, CA 90211<br>AH77776622</td><td>Made-up Drug Store<br>4466 Nurse Way, My Town, CA 90211<br>BM34343434</td><td>2/7/2022</td><td>2/7/2022</td><td>2/8/2022</td><td>897754</td><td>Morphine Sulfate</td><td>30 MG</td><td>14</td><td>14</td><td>0</td></tr>\n<tr><td>Potter, Sherman MD<br>9911 Splint Circle, Village, CA 90210<br>AP 44488891</td><td>City Pharmacy<br>7312 Wounded Road, Village, CA 90210<br>AC 45454545</td><td>2/9/2022</td><td>2/9/2022</td><td>2/10/2022</td><td>534502</td><td>Methylphenidate</td><td>10 MG</td><td>90</td><td>30</td><td>0</td></tr>\n<tr><td>Welby, Marcus MD<br>3355 Doctor Street, Anytown, CA 90212<br>AW12121212</td><td>Test Pharmacy<br>8833 Patch Drive, Anytown, CA 90212<br>BT12121212</td><td>3/3/2022</td><td>3/3/2022</td><td>3/4/2022</td><td>13100</td><td>Alprazolam</td><td>1 MG</td><td>90</td><td>30</td><td>1</td></tr>\n<tr><td>Howser, Doogie DO<br>8233 Pilladay Avenue, Place, CA 90213<br>BH98989898</td><td>Hometown Pharmacy<br>1122 Main Street, Place, CA 90213<br>AH23232323</td><td>3/5/2022</td><td>3/5/2022</td><td>3/6/2022</td><td>39572</td><td>Hydrocodone</td><td>7.5 MG</td><td>180</td><td>30</td><td>1</td></tr>\n<tr><td>Potter, Sherman MD<br>9911 Splint Circle, Village, CA 90210<br>AP 44488891</td><td>City Pharmacy<br>7312 Wounded Road, Village, CA 90210<br>AC 45454545</td><td>3/9/2022</td><td>3/9/2022</td><td>3/10/2022</td><td>550987</td><td>Methylphenidate</td><td>10 MG</td><td>90</td><td>30</td><td>0</td></tr>\n</table>\n\n<!-- doc_id=parse-01m44t9cxftj7gndwqrvdzzf7a -->",
+  "metadata": {
+    "job_id": "extract-01m44t9nycdrevf39kss1ebdvv",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 23590,
+    "doc_id": "parse-01m44t9cxftj7gndwqrvdzzf7a",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 4.2,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 2809,
+    "output_extraction_chars": 3591,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

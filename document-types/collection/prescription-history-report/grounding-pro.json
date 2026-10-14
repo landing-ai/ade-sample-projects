@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "risk_indicators.mme_average",
+      "label": "MME (30-day average)",
+      "value": 66.04,
+      "page": 1,
+      "box": {
+        "xmin": 0.15926,
+        "ymin": 0.01772,
+        "xmax": 0.31322,
+        "ymax": 0.14787
+      },
+      "range": {
+        "end": 40,
+        "start": 0
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_indicators-mme_average.png"
+    },
+    {
+      "path": "risk_indicators.multiple_provider_prescribers",
+      "label": "Prescribers in 6 months",
+      "value": 8,
+      "page": 1,
+      "box": {
+        "xmin": 0.33633,
+        "ymin": 0.01621,
+        "xmax": 0.48989,
+        "ymax": 0.149
+      },
+      "range": {
+        "end": 97,
+        "start": 41
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_indicators-multiple_provider_prescribers.png"
+    },
+    {
+      "path": "risk_indicators.overlapping_prescriptions",
+      "label": "Overlapping prescriptions",
+      "value": 4,
+      "page": 1,
+      "box": {
+        "xmin": 0.51395,
+        "ymin": 0.01567,
+        "xmax": 0.669,
+        "ymax": 0.1494
+      },
+      "range": {
+        "end": 143,
+        "start": 98
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_indicators-overlapping_prescriptions.png"
+    },
+    {
+      "path": "risk_indicators.risk_score",
+      "label": "Risk score",
+      "value": 5,
+      "page": 1,
+      "box": {
+        "xmin": 0.69194,
+        "ymin": 0.01559,
+        "xmax": 0.82308,
+        "ymax": 0.14958
+      },
+      "range": {
+        "end": 171,
+        "start": 144
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_indicators-risk_score.png"
+    },
+    {
+      "path": "prescriptions[1].drug",
+      "label": "Dispensed drug",
+      "value": "Hydrocodone",
+      "page": 1,
+      "box": {
+        "xmin": 0.70612,
+        "ymin": 0.44568,
+        "xmax": 0.81373,
+        "ymax": 0.53346
+      },
+      "range": {
+        "end": 1177,
+        "start": 1166
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "prescriptions-1-drug.png"
+    }
+  ]
+}
