@@ -74,14 +74,14 @@ including all 90 rows of the three premium tables, every one of which grounds `o
 own row. The extraction also reads the bracketed "[20]" days of the free-look period and
 the "[MONTHLY]" interval as plain values.
 
-**Every `OFF` is a normalization, not a misreading.** 36 of 262 grounded occurrences are
-`OFF`, and each one is a value the schema asked to be transformed: the ISO policy,
-conversion, expiration and rider cease dates; the convertible and participating
-booleans, which ground to every sentence about conversion (23 occurrences) or
-participation; and provision periods printed as words ("two years", "five years").
+**Most `OFF`s are normalizations, not misreadings.** Of 262 grounded occurrences, 36 are
+`OFF`: 34 are normalized values—the four ISO dates, the convertible and participating
+booleans (27 occurrences), and three provision periods printed as words ("two years",
+"five years").
 
-**The insurer's name grounds three times on page 1,** once to the address line (`ok`),
-once to the logo's "PACIFIC LIFE" wordmark and once to the opening paragraph (`OFF`).
+**The other two `OFF`s are partial insurer-name matches on page 1:** the extracted legal
+name grounds once to the abbreviated "PACIFIC LIFE" wordmark and once to the opening
+paragraph's partial "Life Insurance Company". Its address-line occurrence grounds `ok`.
 
 **Signatures and stamps are labelled.** The parse marks the cover's officer signatures
 `[SIGNED]` and each page's SAMPLE stamp `[STAMPED]`, and transcribes the stamp's word.
