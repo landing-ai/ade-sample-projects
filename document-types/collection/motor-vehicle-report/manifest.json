@@ -1,0 +1,82 @@
+{
+  "slug": "motor-vehicle-report",
+  "title": "Motor Vehicle Report",
+  "source": {
+    "file": "ds2421.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://dmv.ny.gov/forms/ds2421.pdf",
+      "publisher": "New York State Department of Motor Vehicles",
+      "title": "DS-242.1 (2/26), Description of Standard Abstract of Driving Record",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "A sample driver license abstract published by the NYS DMV on its official forms page to show what an abstract contains, printed on every page under a diagonal 'SAMPLE - TEST LETTER' watermark. The specimen motorist is fictional. The host blocks scripted downloads, so the operator downloaded the file by hand on 2026-10-13. Pages 1-6 (the six-page sample abstract) were kept; pages 7-13 (license class and code tables) were dropped. The abstract pages are raster images; the realistic specimen name and four mailing addresses on real streets with real ZIP+4 codes were replaced with document-types/scripts/redact_scan.py, which rebuilt every kept page from a 300 dpi render of the edited image, so the original rasters are not carried into the output. All other values (dates, ticket, order and case numbers, the specimen client ID numbers and birth date) were left as published. PDF metadata cleared. Verified by OCR inside redact_scan.py, by a second OCR sweep for every original token, by eye on 150-300 dpi renders, and by a sweep of every file in this folder.",
+      "dropped_pages": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "specimen motorist's first, middle and last name in the identification header of every page and in the Active Credentials name row on page 1",
+            "with": "JANE / Q / SAMPLE, one per cell",
+            "occurrences": 21
+          },
+          {
+            "what": "specimen motorist's full name in the Merges table on page 3",
+            "with": "JANE Q SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "four mailing addresses on real streets with real ZIP+4 codes (current address on page 1, address history on page 6)",
+            "with": "100 MAIN ST, 200 OAK ST, 300 ELM ST and 400 ASH ST, each ANYTOWN NY 00000-0000; county and country cells kept",
+            "occurrences": 5
+          }
+        ],
+        "cleanup": "Five slivers of original first letters left beside the stand-ins (three on page 1, two on page 6) were painted out with the page background."
+      }
+    }
+  },
+  "feature_page": 5,
+  "fields": [
+    {
+      "path": "convictions[0].violation_date",
+      "label": "Violation date",
+      "occurrence": 0
+    },
+    {
+      "path": "convictions[0].conviction_date",
+      "label": "Conviction date",
+      "occurrence": 0
+    },
+    {
+      "path": "convictions[0].violation",
+      "label": "Violation",
+      "occurrence": 0
+    },
+    {
+      "path": "convictions[0].location",
+      "label": "Court location",
+      "occurrence": 0
+    },
+    {
+      "path": "convictions[0].points",
+      "label": "Points assessed",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Page 5 (Convictions / Bail Forfeitures) is what an underwriter reads a motor vehicle report for, and the overlay features one complete conviction: when the violation happened, when it was convicted, what it was, which court and how many points. The request listed these five fields plus the CMV flag as suggestions; the CMV flag was left out because the schema types it as a boolean and its range points at the printed 'No', which inspect_fields.py reports as OFF (the same is true of Hazmat and Organ Donor). The driver's name and identifiers were deliberately not featured. Dates are normalized to YYYY-MM-DD on extraction. preview_pages shows the identification and status page, suspensions, convictions, and crashes with the address history, skipping the half-empty scofflaw page.",
+  "preview_pages": [
+    1,
+    3,
+    5,
+    6
+  ]
+}
