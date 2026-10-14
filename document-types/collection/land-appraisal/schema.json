@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "properties": {
+    "subject_property": {
+      "type": "object",
+      "description": "Property identification for the appraised ranch or farm, from the report summary page.",
+      "properties": {
+        "state": { "type": "string", "description": "State of the subject property, as printed (e.g. MT)." },
+        "county": { "type": "string", "description": "County of the subject property." },
+        "zip_code": { "type": "string", "description": "ZIP code of the subject property." },
+        "total_deeded_acres": { "type": "number", "description": "Total deeded acres of the subject property." },
+        "effective_unit_size": { "type": "number", "description": "Effective unit size used in the valuation, in acres." },
+        "highest_and_best_use_as_vacant": { "type": "string", "description": "Highest and best use 'As If' Vacant." },
+        "highest_and_best_use_as_improved": { "type": "string", "description": "Highest and best use 'As Improved'." },
+        "primary_land_type": { "type": "string", "description": "Primary land type, e.g. Grazing." },
+        "primary_commodity": { "type": "string", "description": "Primary commodity, e.g. Livestock." },
+        "purpose_of_report": { "type": "string", "description": "Purpose of the report." },
+        "rights_appraised": { "type": "string", "description": "Property rights appraised, e.g. Fee Simple." },
+        "report_type": { "type": "string", "description": "Report type, e.g. Appraisal Report (Standards Rule 2-2)." }
+      }
+    },
+    "date_of_inspection": { "type": "string", "description": "Date of inspection as YYYY-MM-DD." },
+    "effective_date_of_appraisal": { "type": "string", "description": "Effective date of the appraisal as YYYY-MM-DD." },
+    "value_indications": {
+      "type": "object",
+      "description": "The value indicated by each of the three approaches, in USD.",
+      "properties": {
+        "cost_approach": { "type": "number", "description": "Value indicated by the Cost Approach, in USD." },
+        "income_approach": { "type": "number", "description": "Value indicated by the Income Approach, in USD." },
+        "sales_comparison_approach": { "type": "number", "description": "Value indicated by the Sales Comparison Approach, in USD." }
+      }
+    },
+    "opinion_of_value": { "type": "number", "description": "Final opinion of market value, in USD." },
+    "estimated_marketing_time_months": { "type": "number", "description": "Estimated marketing time, in months." },
+    "allocation": {
+      "type": "object",
+      "description": "Allocation of the overall value between land and improvements.",
+      "properties": {
+        "land_value": { "type": "number", "description": "Value allocated to land, in USD." },
+        "land_value_per_acre": { "type": "number", "description": "Land value per acre, in USD." },
+        "land_percent": { "type": "number", "description": "Land share of the overall value, in percent." },
+        "structural_improvement_contribution": { "type": "number", "description": "Structural improvement contribution, in USD." },
+        "structural_improvement_percent": { "type": "number", "description": "Structural improvement share of the overall value, in percent." },
+        "overall_value_per_acre": { "type": "number", "description": "Overall value per acre, in USD." }
+      }
+    },
+    "income_summary": {
+      "type": "object",
+      "description": "Income Approach data.",
+      "properties": {
+        "gross_income_estimate": { "type": "number", "description": "Total gross income estimate (cash rent), in USD per year." },
+        "total_expenses": { "type": "number", "description": "Total expenses, in USD per year." },
+        "net_property_income": { "type": "number", "description": "Net property income, in USD per year." },
+        "overall_cap_rate_percent": { "type": "number", "description": "Overall capitalization rate used, in percent." },
+        "expense_ratio_percent": { "type": "number", "description": "Expense ratio, in percent." }
+      }
+    },
+    "comparable_sales": {
+      "type": "array",
+      "description": "Every comparable sale in the Sales Comparison Approach grids, in the order they appear (Sale #1 to Sale #10).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sale_number": { "type": "integer", "description": "Sale number in the grid, e.g. 1 for Sale #1." },
+          "database_id": { "type": "string", "description": "Sale database identifier printed beside the sale number, e.g. D155." },
+          "sale_date": { "type": "string", "description": "Sale date as printed (MM/YY)." },
+          "acres": { "type": "number", "description": "Effective unit size of the sale, in acres." },
+          "sale_price": { "type": "number", "description": "Sale price, in USD." },
+          "cev_price_per_acre": { "type": "number", "description": "Cash equivalent price per acre, in USD." },
+          "time_adjusted_price_per_acre": { "type": "number", "description": "Time-adjusted price per acre, in USD." },
+          "net_adjustments": { "type": "number", "description": "Net adjustments per acre, in USD." },
+          "adjusted_price_per_acre": { "type": "number", "description": "Final adjusted price per acre, in USD." }
+        }
+      }
+    },
+    "sales_comparison_summary": {
+      "type": "object",
+      "description": "Sales Comparison Approach summary box.",
+      "properties": {
+        "value_range_low_per_acre": { "type": "number", "description": "Low end of the property basis value range, in USD per acre." },
+        "value_range_high_per_acre": { "type": "number", "description": "High end of the property basis value range, in USD per acre." },
+        "concluded_price_per_acre": { "type": "number", "description": "Concluded unit basis price per acre, in USD." },
+        "indicated_value": { "type": "number", "description": "Sales Comparison Indication, in USD." }
+      }
+    }
+  }
+}
