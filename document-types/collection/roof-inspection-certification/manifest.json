@@ -1,0 +1,39 @@
+{
+  "slug": "roof-inspection-certification",
+  "title": "Roof Inspection or Certification",
+  "source": {
+    "file": "roof-inspection-form.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.spectacularapp.com/images/FLRoof1.jpg",
+      "publisher": "Spectacular Inspection System (AaceSystems), inspection-software vendor",
+      "title": "Sample Report from the Citizens Roof Inspection library, Roof Inspection Form product page (https://www.spectacularapp.com/Roof-Inspection-Form.aspx)",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "A sample report the software vendor publishes on its own product page to show the output of its Florida roof inspection form library. The page links three JPEG page images under 'Sample Report' (FLRoof1.jpg, FLRoof2.jpg, FLRoof3.jpg, pages 1, 2 and 4 of a 4-page report; page 3 is not published). They were downloaded by script and assembled in that order into one PDF with PyMuPDF, one 300 dpi JPEG per US Letter page, inserted without re-encoding. The applicant, address, policy number, inspector signature, inspection firm, licence number, work phone and a second firm in the footer could not be confirmed fictitious, so all were replaced with document-types/scripts/redact_scan.py, which rebuilt all three pages from 300 dpi renders of the edited images. PDF metadata cleared. Verified by the script's OCR sweep (literals and digits), by eye on renders, and by a sweep of every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {"what": "applicant/insured name", "with": "Jane Q Sample", "occurrences": 1},
+          {"what": "inspected property street address and city (state kept)", "with": "100 Main St Anytown, Florida", "occurrences": 1},
+          {"what": "application/policy number (form header and page footer)", "with": "a random stand-in of the same length from plausible.py", "occurrences": 2},
+          {"what": "inspection company name (certification block and page footer; ', LLC' kept)", "with": "Anytown Roof Services", "occurrences": 2},
+          {"what": "second firm name in the page footer", "with": "Doe & Partners", "occurrences": 1},
+          {"what": "inspector licence number", "with": "a random 5-digit stand-in from plausible.py (# prefix kept)", "occurrences": 1},
+          {"what": "work phone line number (area code kept)", "with": "555-0131 (fiction-reserved 555-01xx)", "occurrences": 1},
+          {"what": "inspector's handwritten signature", "with": "the handwriting stand-in 'J Sample' (IndieFlower)", "occurrences": 1}
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "predominant_roof.covering_material", "label": "Roof covering material", "occurrence": 0},
+    {"path": "predominant_roof.roof_age_years", "label": "Roof age in years", "occurrence": 0},
+    {"path": "predominant_roof.last_permit_date", "label": "Date of last roofing permit", "occurrence": 0},
+    {"path": "predominant_roof.overall_condition", "label": "Overall condition", "occurrence": 0},
+    {"path": "predominant_roof.visible_damage[0]", "label": "Visible damage checked", "occurrence": 0}
+  ],
+  "notes": "Page 1, the Predominant Roof column, is what an underwriter reads: what the roof is, how old, when it was last permitted, and the inspector's condition and damage checkboxes. The request suggested six fields on this page; all six ground ok, and five were kept to fit the limit. Remaining useful life (4 years, also ok) was the one dropped, so that both of the sample's own inconsistencies stay on the overlay: a 30-year-old roof against a 2011 permit, and Satisfactory checked beside Visible hail damage. Extraction reports what is written and does not reconcile them. The Yes/No leak answers extract correctly but ground OFF (the range covers the whole Yes/No line), and the 'If updated' answer (neither box checked) is SYNTH; none were featured. No individual is featured."
+}

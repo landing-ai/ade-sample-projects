@@ -1,0 +1,148 @@
+{
+  "description": "Roof inspection form completed by a licensed inspector for a property insurance underwriter: the property and policy, the predominant and secondary roof's covering, age, remaining life, permit and update history, overall condition, visible damage and leaks, and the inspector's certification.",
+  "type": "object",
+  "properties": {
+    "applicant_name": {
+      "type": "string",
+      "description": "Applicant/Insured Name written at the top of the form."
+    },
+    "policy_number": {
+      "type": "string",
+      "description": "Application/Policy # written at the top of the form."
+    },
+    "address_inspected": {
+      "type": "string",
+      "description": "Address Inspected: the full property address as written."
+    },
+    "inspection_date": {
+      "type": "string",
+      "description": "Date of Inspection, as written on the form (e.g. 7/6/18)."
+    },
+    "predominant_roof": {
+      "type": "object",
+      "description": "The Predominant Roof column of the Roof section.",
+      "properties": {
+        "covering_material": {
+          "type": "string",
+          "description": "Covering material, e.g. Asphalt shingles."
+        },
+        "roof_age_years": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Roof age (years), as a number."
+        },
+        "remaining_useful_life_years": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Remaining useful life (years), as a number."
+        },
+        "last_permit_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date of last roofing permit, exactly as written (may be a year only)."
+        },
+        "last_update_date": {
+          "type": "string",
+          "description": "Date of last update as written; an empty string if the blank is not filled in."
+        },
+        "update_type": {
+          "type": "string",
+          "enum": [
+            "Full replacement",
+            "Partial replacement",
+            "Not updated"
+          ],
+          "description": "Which 'If updated (check one)' box is marked with an X. 'Not updated' when neither box is marked: an empty box does not count."
+        },
+        "overall_condition": {
+          "type": "string",
+          "enum": [
+            "Satisfactory",
+            "Unsatisfactory",
+            "Not marked"
+          ],
+          "description": "Which Overall condition box is marked with an X; 'Not marked' if neither."
+        },
+        "visible_damage": {
+          "type": "array",
+          "description": "Every checked box under 'Any visible signs of damage / deterioration?', using the printed label (e.g. Visible hail damage). Empty if none checked.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "visible_leaks": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Any visible signs of leaks? true if Yes is checked, false if No is checked, null if neither."
+        },
+        "attic_underside_decking_leaks": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Attic/underside of decking: true if Yes is checked, false if No, null if neither."
+        },
+        "interior_ceilings_leaks": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Interior ceilings: true if Yes is checked, false if No, null if neither."
+        }
+      }
+    },
+    "secondary_roof_present": {
+      "type": "boolean",
+      "description": "True if anything is filled in or checked in the Secondary Roof column; false if it is blank."
+    },
+    "additional_comments": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Text written under Additional Comments/Observations."
+    },
+    "inspector": {
+      "type": "object",
+      "description": "The certification block completed by the inspector.",
+      "properties": {
+        "signed": {
+          "type": "boolean",
+          "description": "True if the Inspector Signature line carries a signature."
+        },
+        "license_number": {
+          "type": "string",
+          "description": "License Number as written, including any # prefix."
+        },
+        "license_type": {
+          "type": "string",
+          "description": "License Type as written, e.g. CCC."
+        },
+        "certification_date": {
+          "type": "string",
+          "description": "Date written beside the signature."
+        },
+        "company_name": {
+          "type": "string",
+          "description": "Company Name of the inspection firm."
+        },
+        "work_phone": {
+          "type": "string",
+          "description": "Work Phone as written."
+        }
+      }
+    },
+    "photo_count": {
+      "type": "integer",
+      "description": "Number of roof photographs on the photo page(s)."
+    }
+  }
+}
