@@ -1,0 +1,193 @@
+{
+  "type": "object",
+  "title": "Attending Physician Statement",
+  "description": "A physician's or practitioner's certificate of a patient's disability for a disability insurance claim (here California EDD form DE 2501, Part B): the patient, the certifying practitioner and their license, the treatment period, when the disability began and when the patient is expected to return to work, the diagnosis with its ICD codes, findings and treatment, and the certification. Comb-box fields print one character per box; read the characters as one value, ignoring the spacing between boxes.",
+  "properties": {
+    "form_number": {
+      "type": "string",
+      "description": "The form number and revision printed in the page footer, e.g. 'DE 2501 Rev. 82 (10-24)'."
+    },
+    "patient": {
+      "type": "object",
+      "description": "The patient the certificate is about (items B1-B5).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Patient's name from B5, as 'First Last'."
+        },
+        "date_of_birth": {
+          "type": "string",
+          "description": "Patient's date of birth from B4, as YYYY-MM-DD. The form prints it as eight digits MMDDYYYY with no separators."
+        },
+        "file_number": {
+          "type": "string",
+          "description": "Patient's file number from B2, exactly as printed including hyphens."
+        },
+        "electronic_receipt_number": {
+          "type": ["string", "null"],
+          "description": "Electronic receipt number from B3, or null if the boxes are empty (a pre-printed 'R' alone is not a number)."
+        }
+      }
+    },
+    "practitioner": {
+      "type": "object",
+      "description": "The certifying physician or practitioner (items B6-B11).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Practitioner's name as shown on license, from B10, as 'First Last'."
+        },
+        "license_number": {
+          "type": "string",
+          "description": "License number from B6, exactly as printed including hyphens."
+        },
+        "license_issuing_state": {
+          "type": "string",
+          "description": "State (two-letter code) or country that issued the license, from B7."
+        },
+        "license_type": {
+          "type": "string",
+          "description": "License type from B8, e.g. MD, DO, DC, DPM."
+        },
+        "specialty": {
+          "type": ["string", "null"],
+          "description": "Specialty from B9, or null if blank."
+        },
+        "address": {
+          "type": "string",
+          "description": "Practitioner's mailing address from B11: street, city, state and ZIP code on one line."
+        },
+        "phone": {
+          "type": "string",
+          "description": "Area code and phone number beside the signature in B33."
+        }
+      }
+    },
+    "treatment_period": {
+      "type": "object",
+      "description": "B12: how long the patient has been under this practitioner's care.",
+      "properties": {
+        "under_care_from": {
+          "type": "string",
+          "description": "The 'From' date in B12, as YYYY-MM-DD."
+        },
+        "under_care_to": {
+          "type": ["string", "null"],
+          "description": "The 'To' date in B12, as YYYY-MM-DD, or null if blank."
+        },
+        "still_treating": {
+          "type": "boolean",
+          "description": "True if the box 'Check here to indicate you are still treating the patient' is marked."
+        },
+        "treatment_interval": {
+          "type": "string",
+          "enum": ["Daily", "Weekly", "Monthly", "As Needed", "Other"],
+          "description": "The 'At Intervals Of' option marked with an X in B12."
+        }
+      }
+    },
+    "disability": {
+      "type": "object",
+      "description": "B13-B14: whether and when the patient became unable to work, and the expected return.",
+      "properties": {
+        "incapable_of_regular_work": {
+          "type": "boolean",
+          "description": "True if B13 'Yes - enter date disability began' is marked."
+        },
+        "date_disability_began": {
+          "type": ["string", "null"],
+          "description": "Date disability began from B13, as YYYY-MM-DD."
+        },
+        "caused_by_accident_or_trauma": {
+          "type": ["boolean", "null"],
+          "description": "Answer to 'Was the disability caused by an accident or trauma?' in B13, or null if neither box is marked."
+        },
+        "estimated_return_to_work_date": {
+          "type": ["string", "null"],
+          "description": "Date released or anticipated release to regular work from B14, as YYYY-MM-DD, or null if blank."
+        },
+        "permanent": {
+          "type": "boolean",
+          "description": "True if the B14 box indicating the disability is permanent is marked."
+        },
+        "pregnancy_related": {
+          "type": "boolean",
+          "description": "True if any pregnancy information in B15, B17 or B18 is filled in."
+        }
+      }
+    },
+    "diagnosis": {
+      "type": "object",
+      "description": "B19-B22: the diagnosis, its codes, findings and treatment. Ignore the printed 'Example of how to complete ICD codes'.",
+      "properties": {
+        "icd_code_set": {
+          "type": "string",
+          "enum": ["ICD-9", "ICD-10"],
+          "description": "Which code-set box is marked with an X in B19 (not the example)."
+        },
+        "primary_icd_code": {
+          "type": "string",
+          "description": "The Primary diagnosis code in B19, transcribed character for character as printed, with the decimal point."
+        },
+        "secondary_icd_codes": {
+          "type": "array",
+          "description": "Secondary diagnosis codes in B19; empty if none are filled in.",
+          "items": { "type": "string" }
+        },
+        "diagnosis": {
+          "type": "string",
+          "description": "Diagnosis text from B20."
+        },
+        "findings": {
+          "type": "string",
+          "description": "Findings from B21: nature, severity and extent of the incapacitating condition."
+        },
+        "treatment": {
+          "type": "string",
+          "description": "Type of treatment or medication rendered, from B22."
+        },
+        "hospitalized": {
+          "type": "boolean",
+          "description": "True if B23 hospital entry dates are filled in or the still-hospitalized box is marked."
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "description": "B26-B30 yes/no questions.",
+      "properties": {
+        "seen_previously_by_another_provider": {
+          "type": "string",
+          "enum": ["Yes", "No", "Unknown"],
+          "description": "B26 answer marked with an X."
+        },
+        "surgery_or_procedure": {
+          "type": ["string", "null"],
+          "description": "Date and type of surgery or procedure from B27, or null if blank."
+        },
+        "work_related": {
+          "type": "boolean",
+          "description": "B29: true if 'Yes' is marked for whether the condition was caused or aggravated by the patient's regular work."
+        },
+        "alcohol_or_drug_facility_referral": {
+          "type": "boolean",
+          "description": "B30: true if 'Yes' is marked."
+        }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "description": "B33 signature block.",
+      "properties": {
+        "signed": {
+          "type": "boolean",
+          "description": "True if a handwritten-style signature appears in the signature box."
+        },
+        "date_signed": {
+          "type": "string",
+          "description": "Date Signed in B33, as YYYY-MM-DD."
+        }
+      }
+    }
+  }
+}

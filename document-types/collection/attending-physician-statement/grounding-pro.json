@@ -1,0 +1,107 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "practitioner.license_type",
+      "label": "License type",
+      "value": "MD",
+      "page": 1,
+      "box": {
+        "xmin": 0.05991,
+        "ymin": 0.29503,
+        "xmax": 0.49405,
+        "ymax": 0.33387
+      },
+      "range": {
+        "end": 1676,
+        "start": 1629
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "practitioner-license_type.png"
+    },
+    {
+      "path": "practitioner.license_issuing_state",
+      "label": "License issuing state",
+      "value": "CA",
+      "page": 1,
+      "box": {
+        "xmin": 0.40586,
+        "ymin": 0.25775,
+        "xmax": 0.94655,
+        "ymax": 0.28065
+      },
+      "range": {
+        "end": 1627,
+        "start": 1555
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "practitioner-license_issuing_state.png"
+    },
+    {
+      "path": "treatment_period.under_care_from",
+      "label": "Under care from",
+      "value": "2025-01-25",
+      "page": 1,
+      "box": {
+        "xmin": 0.06436,
+        "ymin": 0.63357,
+        "xmax": 0.5018,
+        "ymax": 0.65744
+      },
+      "range": {
+        "end": 2244,
+        "start": 2208
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "treatment_period-under_care_from.png"
+    },
+    {
+      "path": "treatment_period.treatment_interval",
+      "label": "Treatment interval",
+      "value": "Monthly",
+      "page": 1,
+      "box": {
+        "xmin": 0.06623,
+        "ymin": 0.66384,
+        "xmax": 0.93401,
+        "ymax": 0.6851
+      },
+      "range": {
+        "end": 2361,
+        "start": 2349
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "treatment_period-treatment_interval.png"
+    },
+    {
+      "path": "disability.date_disability_began",
+      "label": "Date disability began",
+      "value": "2025-01-25",
+      "page": 1,
+      "box": {
+        "xmin": 0.06273,
+        "ymin": 0.724,
+        "xmax": 0.57855,
+        "ymax": 0.74539
+      },
+      "range": {
+        "end": 2625,
+        "start": 2579
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "disability-date_disability_began.png"
+    }
+  ]
+}
