@@ -1,0 +1,83 @@
+{
+  "description": "Individual life insurance application: who is insured, who owns the policy, who is paid, what coverage is applied for and how it is funded.",
+  "type": "object",
+  "properties": {
+    "insurer": {
+      "type": "object",
+      "description": "The company issuing the policy and the form the application was made on.",
+      "properties": {
+        "company_name": {"type": "string", "description": "Legal name of the insurance company the application is made to, as printed in the form header."},
+        "form_number": {"type": "string", "description": "Form identifier printed in the page footer, e.g. NB5000NY."},
+        "form_version": {"type": "string", "description": "Form version or edition date printed in the footer, e.g. 06/2012."}
+      }
+    },
+    "proposed_insured": {
+      "type": "object",
+      "description": "Proposed Life Insured One: the person whose life is to be insured.",
+      "properties": {
+        "full_name": {"type": "string", "description": "First, middle and last name of the proposed insured, joined with spaces."},
+        "sex": {"type": "string", "enum": ["M", "F"], "description": "Sex as checked on the form."},
+        "date_of_birth": {"type": "string", "description": "Date of birth as written on the form (month, day, year)."},
+        "place_of_birth": {"type": "string", "description": "State or region and country of birth."},
+        "citizenship": {"type": "string", "enum": ["US", "Non US"], "description": "Citizenship box checked."},
+        "residence_address": {"type": "string", "description": "Primary residence: street, city, state and zip code."},
+        "years_at_address": {"type": "number", "description": "Total years at the primary residence address."},
+        "occupation": {"type": "string", "description": "Occupation as written."},
+        "employer": {"type": "string", "description": "Name of the employer."},
+        "earned_annual_income": {"type": "number", "description": "Gross annual earned income in dollars."},
+        "unearned_annual_income": {"type": "number", "description": "Gross annual unearned income in dollars."},
+        "net_worth": {"type": "string", "description": "Net worth as written, e.g. '$2.6 M'."}
+      }
+    },
+    "purpose_of_insurance": {"type": "string", "description": "Purpose of insurance box checked: Estate Conservation, Business Insurance, Wealth Transfer, Income Replacement or Other."},
+    "owner": {"type": "string", "description": "Who is the owner (question 3): the box checked, e.g. Proposed Life Insured One, Proposed Life Insured Two, Trust, Business Partner, Employer."},
+    "beneficiaries": {
+      "type": "array",
+      "description": "Beneficiaries listed in the Beneficiary Information section.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Beneficiary's full name."},
+          "designation": {"type": "string", "enum": ["Primary", "Secondary"], "description": "Primary or Secondary, as checked."},
+          "relationship": {"type": "string", "description": "Relationship to the proposed life insured."},
+          "percentage": {"type": "number", "description": "Share of the death benefit, in percent."}
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "description": "Coverage Details section.",
+      "properties": {
+        "product_name": {"type": "string", "description": "Product name written in question 8."},
+        "product_type": {"type": "string", "description": "Flexible or fixed premium product checked, e.g. Universal Life, Variable Universal Life, Term 10."},
+        "lives_covered": {"type": "string", "enum": ["Single Life", "Survivorship"], "description": "Single Life or Survivorship, as checked."},
+        "base_face_amount": {"type": "number", "description": "Base face amount applied for, in dollars."},
+        "death_benefit_option": {"type": "string", "description": "Death benefit option checked, e.g. 'Option 1 (Face Amount/TFA)'."},
+        "life_insurance_qualification_test": {"type": "string", "enum": ["Guideline Premium", "Cash Value Accumulation"], "description": "Life insurance qualification test checked."},
+        "riders": {"type": "array", "items": {"type": "string"}, "description": "Riders and benefits checked. Empty if none are checked."}
+      }
+    },
+    "premium": {
+      "type": "object",
+      "description": "Premiums and Funding Information.",
+      "properties": {
+        "frequency": {"type": "string", "enum": ["Annual", "Semi-Annual", "Quarterly", "Monthly"], "description": "Premium frequency checked."},
+        "notices_sent_to": {"type": "string", "description": "Who premium notices and correspondence go to (question 14a)."},
+        "premium_source": {"type": "string", "description": "Premium source checked in question 15, e.g. Earned Income."}
+      }
+    },
+    "is_replacement": {"type": "boolean", "description": "Answer to question 19: will this insurance replace or change any existing policy. True for Yes."},
+    "total_coverage_pending_life_one": {"type": "number", "description": "Question 21b: total formal coverage pending (including this application) for Life One, in dollars."},
+    "tobacco_use": {"type": "boolean", "description": "Question 25 for Life One: ever used tobacco or nicotine products. True for Yes."},
+    "last_medical_consultation": {
+      "type": "object",
+      "description": "Question 33, Life One's last visit to any doctor or physician.",
+      "properties": {
+        "date": {"type": "string", "description": "Date of last visit as written."},
+        "reason_and_outcome": {"type": "string", "description": "Reason for and outcome of the visit."},
+        "physician_name": {"type": "string", "description": "Physician's name."}
+      }
+    },
+    "temporary_insurance_applied_for": {"type": "boolean", "description": "False when the Temporary Life Insurance Agreement section is marked Not Applicable."}
+  }
+}

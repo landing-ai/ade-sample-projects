@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 2,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    2,
+    4,
+    5
+  ],
+  "fields": [
+    {
+      "path": "owner",
+      "label": "Policy owner",
+      "value": "Proposed Life Insured One",
+      "page": 2,
+      "box": {
+        "xmin": 0.01429,
+        "ymin": 0.02467,
+        "xmax": 0.63223,
+        "ymax": 0.0511
+      },
+      "range": {
+        "end": 4348,
+        "start": 4244
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "owner.png"
+    },
+    {
+      "path": "beneficiaries[0].relationship",
+      "label": "Primary beneficiary relationship",
+      "value": "SON",
+      "page": 2,
+      "box": {
+        "xmin": 0.62371,
+        "ymin": 0.26145,
+        "xmax": 0.9,
+        "ymax": 0.29776
+      },
+      "range": {
+        "end": 5265,
+        "start": 5221
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "beneficiaries-0-relationship.png"
+    },
+    {
+      "path": "coverage.product_name",
+      "label": "Product name",
+      "value": "JH UNIVERSAL LIFE",
+      "page": 2,
+      "box": {
+        "xmin": 0.01703,
+        "ymin": 0.36065,
+        "xmax": 0.39006,
+        "ymax": 0.37983
+      },
+      "range": {
+        "end": 5579,
+        "start": 5545
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage-product_name.png"
+    },
+    {
+      "path": "coverage.base_face_amount",
+      "label": "Base face amount",
+      "value": 250000,
+      "page": 2,
+      "box": {
+        "xmin": 0.04137,
+        "ymin": 0.45906,
+        "xmax": 0.63007,
+        "ymax": 0.47719
+      },
+      "range": {
+        "end": 5844,
+        "start": 5814
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage-base_face_amount.png"
+    },
+    {
+      "path": "coverage.death_benefit_option",
+      "label": "Death benefit option",
+      "value": "Option 1 (Face Amount/TFA)",
+      "page": 2,
+      "box": {
+        "xmin": 0.04767,
+        "ymin": 0.51691,
+        "xmax": 0.84482,
+        "ymax": 0.53506
+      },
+      "range": {
+        "end": 6096,
+        "start": 5991
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage-death_benefit_option.png"
+    }
+  ]
+}
