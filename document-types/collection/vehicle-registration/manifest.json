@@ -1,0 +1,37 @@
+{
+  "slug": "vehicle-registration",
+  "title": "Vehicle Registration",
+  "source": {
+    "file": "flhsmv-vehicle-registration-test-print.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://bloomington.in.gov/sites/default/files/2022-07/Sample%20Vehicle%20Registrations_0.pdf",
+      "publisher": "Florida Department of Highway Safety and Motor Vehicles (FLHSMV) test print, as republished by the City of Bloomington, Indiana (Parking Services)",
+      "title": "Sample Vehicle Registrations (handout for neighborhood parking permit applicants), Florida card on page 3",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "The source is a 4-page City of Bloomington parking handout that compiles state registration samples; it is linked as 'Sample of vehicle registrations' from bloomington.in.gov/transportation/parking/neighborhood-parking. Downloaded by script. Only the Florida card is used: an FLHSMV system test print marked TEST DOCUMENT, with the owner 'SAMPLE SAMPLE, SAMMY D SAMPLE JR' at the agency's own Neil Kirkman Building address and the VIN 1POLKTESTPRINT123. The other cards in the handout appear to be real people's registrations and were never written to this repo. Crop: the Florida card is one embedded JPEG on handout page 3 (914 x 479 px, placed at 72,72-540,317.28 pt); those image bytes were placed unchanged on a new 468 x 245.28 pt page, so handout pages 1, 2 and 4, the second card image on page 3 and page 3's caption text were all dropped. The card's DL/FEID value, which has a real Florida licence-number format, was then replaced with a plausible stand-in using document-types/scripts/redact_scan.py (--place, since OCR could not match it); that rebuilt the page from a 300 dpi render of the edited image, so the original JPEG is not carried into the committed PDF. PDF metadata cleared. The original FLHSMV source page was not found, so provenance is secondary. Verified by redact_scan.py's OCR pass, by eye on 200 and 600 dpi renders, and by a sweep of every file in this folder.",
+      "cropped_from": {
+        "pages_in_source": 4,
+        "kept": "page 3, embedded image 1 of 2 (the Florida card), bbox 72,72,540,317.28 pt",
+        "dropped": "pages 1, 2 and 4; page 3's second card image; page 3's caption text"
+      },
+      "redactions": {
+        "note": "The original value is deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {"what": "DL/FEID (driver licence / federal employer ID) value, letter plus 12 digits", "with": "S101074959542 (letter and every digit drawn at random by plausible.py)", "occurrences": 1}
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "registration.plate_number", "label": "Plate number", "occurrence": 0},
+    {"path": "registration.title_number", "label": "Title number", "occurrence": 0},
+    {"path": "vehicle.year", "label": "Model year", "occurrence": 0},
+    {"path": "fees.registration_tax", "label": "Registration tax", "occurrence": 0},
+    {"path": "fees.grand_total", "label": "Grand total", "occurrence": 0}
+  ],
+  "notes": "The request named no feature page or fields; it suggested plate, expiration, year/make, title number and the grand total with its reconciliation. The overlay tells one story: which plate and title, on what vehicle, and what was paid (registration tax 68.15 plus a 3.00 county fee gives the 71.15 grand total). The expiration date was left out because it grounds OFF: it is read off the merged 'DECAL ... Expires Midnight Thu 1/1/2015' cell and normalised to 01/01/2015. The county fee shares its box with the registration tax, so only one of the two is featured. The registrant name was avoided in favour of impersonal fields. Request asked for the Florida card only, cropped from page 3; that was done, and in addition the operator chose to replace the DL/FEID value."
+}
