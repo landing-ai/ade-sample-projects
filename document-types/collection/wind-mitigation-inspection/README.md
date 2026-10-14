@@ -1,4 +1,4 @@
-# Wind mitigation / 4-point inspection
+# Wind mitigation inspection
 
 Source assets for `landing.ai/document-type/wind-mitigation-inspection`.
 
