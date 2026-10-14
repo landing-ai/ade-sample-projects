@@ -17,7 +17,8 @@ once without trampling one checkout:
   check    the gates a folder must pass before it leaves this machine. See check().
   ship     check, then commit whatever is not yet committed. Pushing and opening the PR
            are separate flags, because both publish: nothing leaves without --push/--pr.
-  cleanup  removes the worktree once the PR has merged, and moves the request file to
+  cleanup  removes the worktree once the PR has merged, deletes the branch once
+           origin/<base> contains it (no pull needed), and moves the request file to
            document-types/requests/published/ once the folder is on origin/<base>.
 
 Request files are local working papers, not part of the published collection: the whole
@@ -348,11 +349,27 @@ def cleanup(args) -> None:
             sys.exit(f"{wt} has uncommitted changes. Commit them, or pass --force.")
         git("worktree", "remove", *(["--force"] if args.force else []), str(wt), cwd=main)
         print(f"removed {wt}")
+    git("fetch", "--quiet", "origin", args.base, cwd=main)
     if args.delete_branch:
-        out = subprocess.run(["git", "branch", "-d", branch(args.slug)], cwd=main,
-                             capture_output=True, text=True)
-        print(out.stdout.strip() or out.stderr.strip())
+        delete_branch(main, branch(args.slug), args.base)
     publish_request(main, args.slug, args.base)
+
+
+def delete_branch(main: Path, name: str, base: str) -> None:
+    """Delete the local branch once origin/<base> contains it.
+
+    Not `git branch -d`: once the PR's remote branch is gone, that checks against the
+    main checkout's HEAD, which is behind until someone pulls, so it refuses every merged
+    branch. Checking origin/<base> needs no pull and leaves the main checkout alone."""
+    if not git("branch", "--list", name, cwd=main):
+        return
+    merged = subprocess.run(["git", "merge-base", "--is-ancestor", name, f"origin/{base}"],
+                            cwd=main).returncode == 0
+    if not merged:
+        print(f"kept branch {name}: it is not on origin/{base} yet")
+        return
+    git("branch", "-D", "--quiet", name, cwd=main)
+    print(f"deleted branch {name}")
 
 
 def publish_request(main: Path, slug: str, base: str) -> None:
@@ -366,7 +383,6 @@ def publish_request(main: Path, slug: str, base: str) -> None:
     local, done = requests / f"{slug}.yaml", requests / "published" / f"{slug}.yaml"
     if not local.is_file():
         return
-    git("fetch", "--quiet", "origin", base, cwd=main)
     if not git("ls-tree", "--name-only", f"origin/{base}",
                f"document-types/collection/{slug}", cwd=main):
         print(f"kept requests/{slug}.yaml: its folder is not on origin/{base} yet")
