@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 4,
+  "page_count": 30,
+  "preview_pages": [
+    4,
+    10,
+    20,
+    29
+  ],
+  "fields": [
+    {
+      "path": "roof.covering_material",
+      "label": "Roof covering material",
+      "value": "fiberglass based asphalt shingles",
+      "page": 4,
+      "box": {
+        "xmin": 0.05654,
+        "ymin": 0.21492,
+        "xmax": 0.9436,
+        "ymax": 0.4065
+      },
+      "range": {
+        "end": 8950,
+        "start": 8804
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof-covering_material.png"
+    },
+    {
+      "path": "roof_findings[1].category",
+      "label": "Recommendation category (item 2.2)",
+      "value": "IMPROVE",
+      "page": 4,
+      "box": {
+        "xmin": 0.06604,
+        "ymin": 0.4512,
+        "xmax": 0.91208,
+        "ymax": 0.46406
+      },
+      "range": {
+        "end": 9700,
+        "start": 9574
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-1-category.png"
+    },
+    {
+      "path": "roof_findings[2].category",
+      "label": "Recommendation category (item 2.3)",
+      "value": "MAINTENANCE",
+      "page": 4,
+      "box": {
+        "xmin": 0.06609,
+        "ymin": 0.4764,
+        "xmax": 0.91695,
+        "ymax": 0.48958
+      },
+      "range": {
+        "end": 9944,
+        "start": 9822
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-2-category.png"
+    },
+    {
+      "path": "roof_findings[3].item_number",
+      "label": "Damaged shingles item",
+      "value": "2.4",
+      "page": 4,
+      "box": {
+        "xmin": 0.06632,
+        "ymin": 0.50169,
+        "xmax": 0.9135,
+        "ymax": 0.51443
+      },
+      "range": {
+        "end": 10187,
+        "start": 10061
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-3-item_number.png"
+    },
+    {
+      "path": "roof_findings[3].location",
+      "label": "Damaged shingles location",
+      "value": "front upper left side",
+      "page": 4,
+      "box": {
+        "xmin": 0.06678,
+        "ymin": 0.5142,
+        "xmax": 0.56811,
+        "ymax": 0.52716
+      },
+      "range": {
+        "end": 10261,
+        "start": 10188
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-3-location.png"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "property-inspection-report",
+  "title": "Property Inspection Report",
+  "source": {
+    "file": "VideoSampleReport1.pdf",
+    "pages": 30,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://homeinspectorpro.com/wp-content/uploads/2025/04/VideoSampleReport1.pdf",
+      "publisher": "Home Inspector Pro, Inc.",
+      "title": "Property Inspection Report, 1234 Sample Report Rd (Safe House Property Inspections sample report)",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "A sample report published by Home Inspector Pro, a vendor of home inspection report software, and linked directly from its Sample Reports page (https://homeinspectorpro.com/inspection-sample-reports/) to show what the software produces. It was written with that software by Safe House Property Inspections LLC, and was downloaded directly by script. The client and agent are specimen entries ('Mr. and Mrs. Sample', 'Top Agent - Virginia Beach Realty') and the property address is the specimen '1234 Sample Report Rd'. The only real person named is the inspector, in his professional capacity as the report's author and the company's owner. There are no phone numbers, email addresses or licence numbers. The photographs show a real house, roofs, attic and systems with no people, no legible house number and no plates; the cover photograph is the only wide view of the house and is not featured. No redaction was needed. The file is a 30-page report with embedded video annotations, encrypted with an owner password only (no password is needed to open it) and committed unchanged."
+    }
+  },
+  "feature_page": 4,
+  "fields": [
+    {
+      "path": "roof.covering_material",
+      "label": "Roof covering material",
+      "occurrence": 0
+    },
+    {
+      "path": "roof_findings[1].category",
+      "label": "Recommendation category (item 2.2)",
+      "occurrence": 0
+    },
+    {
+      "path": "roof_findings[2].category",
+      "label": "Recommendation category (item 2.3)",
+      "occurrence": 0
+    },
+    {
+      "path": "roof_findings[3].item_number",
+      "label": "Damaged shingles item",
+      "occurrence": 0
+    },
+    {
+      "path": "roof_findings[3].location",
+      "label": "Damaged shingles location",
+      "occurrence": 0
+    }
+  ],
+  "preview_pages": [
+    4,
+    10,
+    20,
+    29
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested a system page or the deficiency summary on pages 29-30, with the roof covering material, deficiency 2.4 and its location, a recommendation category and drainage item 3.1 as suggestions. Page 4 (printed 'Page 3 of 29', the Roof and Attic section) is featured, and tells one story: what the roof is, how the inspector classed two of its recommendations (IMPROVE for exposed nail heads at 2.2, MAINTENANCE for moss at 2.3), and which item records the damaged shingles and where they are. Drainage item 3.1 is not featured: its observation runs over three lines and grounds as one range per line, so inspect_fields.py marks it OFF, as it does every multi-line observation on the page; its item number alone grounds correctly but says little. The summary table on page 29 grounds cleanly too, but every value there is a full table cell of several lines, which makes a crowded overlay, and the same deficiency 2.4 appears on page 4 in context. The roof covering material grounds to a sentence ADE placed as the caption of a photograph figure, so its box is the whole figure: the sentence and the three roof photographs below it. The value is in the box and the photos show the roof it describes. The roof life cycle stage was featured at first and dropped, because it comes from the same sentence and drew the identical box. The schema was revised three times with extraction only: the first version asked for every observation in the Roof and Attic section, and extraction repeated the Report Summary rows as observations, dropped item 5.1 and lost the heading for items 9.x, so the array was narrowed to roof coverings and drainage (items 2.x and 3.x). A version asking for one summary entry per table row returned 23 of the 29 numbered deficiencies, because one cell can hold several; asking for one entry per deficiency number returned all 29. Where a nullable field has nothing to report, extraction returns an empty string or null inconsistently in the summary locations. Previews are pages 4, 10, 20 and 29 rather than the default sampling, which included the cover: the cover's only content beyond the specimen names is a wide photograph of a real house, which the request asked not to feature, and the page 29 summary table is the more useful preview."
+}
