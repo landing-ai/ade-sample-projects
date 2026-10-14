@@ -1,0 +1,107 @@
+{
+  "model": "pro",
+  "feature_page": 3,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "criminal_searches[0].jurisdiction",
+      "label": "Jurisdiction searched",
+      "value": "CA / PLACER",
+      "page": 3,
+      "box": {
+        "xmin": 0.03714,
+        "ymin": 0.14854,
+        "xmax": 0.4323,
+        "ymax": 0.16639
+      },
+      "range": {
+        "end": 3851,
+        "start": 3825
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "criminal_searches-0-jurisdiction.png"
+    },
+    {
+      "path": "criminal_searches[0].cases[0].case_number",
+      "label": "Case number",
+      "value": "GH56327",
+      "page": 3,
+      "box": {
+        "xmin": 0.33628,
+        "ymin": 0.31827,
+        "xmax": 0.50831,
+        "ymax": 0.34423
+      },
+      "range": {
+        "end": 4006,
+        "start": 3999
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "criminal_searches-0-cases-0-case_number.png"
+    },
+    {
+      "path": "criminal_searches[0].cases[0].charges[0].description",
+      "label": "Charge",
+      "value": "ASSAULT WITH A DEADLY WEAPON",
+      "page": 3,
+      "box": {
+        "xmin": 0.41255,
+        "ymin": 0.45219,
+        "xmax": 0.7405,
+        "ymax": 0.47745
+      },
+      "range": {
+        "end": 4362,
+        "start": 4334
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "criminal_searches-0-cases-0-charges-0-description.png"
+    },
+    {
+      "path": "criminal_searches[0].cases[0].charges[0].disposition",
+      "label": "Disposition",
+      "value": "GUILTY",
+      "page": 3,
+      "box": {
+        "xmin": 0.82499,
+        "ymin": 0.45219,
+        "xmax": 0.95427,
+        "ymax": 0.47737
+      },
+      "range": {
+        "end": 4392,
+        "start": 4386
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "criminal_searches-0-cases-0-charges-0-disposition.png"
+    },
+    {
+      "path": "criminal_searches[0].cases[0].charges[0].sentence.restitution",
+      "label": "Restitution ordered",
+      "value": "$100,000.00",
+      "page": 3,
+      "box": {
+        "xmin": 0.77525,
+        "ymin": 0.61845,
+        "xmax": 0.95081,
+        "ymax": 0.64714
+      },
+      "range": {
+        "end": 4778,
+        "start": 4767
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "criminal_searches-0-cases-0-charges-0-sentence-restitution.png"
+    }
+  ]
+}

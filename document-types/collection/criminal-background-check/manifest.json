@@ -1,0 +1,39 @@
+{
+  "slug": "criminal-background-check",
+  "title": "Criminal Background Check",
+  "source": {
+    "file": "accurate-sample-background-check-report-redacted.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://content.cdntwrk.com/files/aT0xNTIyMDYzJnY9MSZpc3N1ZU5hbWU9c2FtcGxlLWJhY2tncm91bmRjaGVja3JlcG9ydC11cyZjbWQ9ZCZzaWc9ZGQzOWQxZWVlOTdhMTNjOGE3NTc4MjBiNGZkNWM1NDg%253D",
+      "publisher": "Accurate Background",
+      "title": "Sample Background Check Report (US)",
+      "retrieved": "2026-10-04",
+      "clearance": "redacted",
+      "clearance_note": "Accurate Background's own sample background check report, linked by the 'Download PDF' button on its resource hub page (accurate.com/resources/abm/sample-backgroundcheckreport-us); downloaded by script on 2026-10-04. The subject is fictitious, but shares a real actor's name, and the address used a real Chicago street and ZIP code, so the subject's name and address were replaced with obvious stand-ins using document-types/scripts/redact.py, which removes the underlying text rather than covering it. The requestor reference, possibly a staff surname, was also replaced. Only pages 1-3 are kept (candidate information, searches summary, Placer County criminal record); pages 4-16 were dropped, including an MVR section with a different real-looking driver's name, date of birth and licence number, plus drug-test and credit sections. The SSN is the well-known specimen 123-45-6789 and is kept, as are the already-masked email and phone and the fictitious date of birth. Document metadata was cleared. Verified: no replaced string is extractable from the committed PDF or appears anywhere in this folder. The publisher's site footer says All Rights Reserved and states no reuse terms.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "subject's full name (header band, candidate name, case 'identified by' name)", "with": "Doe, Jane / DOE, JANE", "occurrences": 3 },
+          { "what": "subject's surname and first name in the names-searched table", "with": "Doe / Jane", "occurrences": 1 },
+          { "what": "subject's street address", "with": "100 Main St", "occurrences": 1 },
+          { "what": "subject's city", "with": "Anytown", "occurrences": 1 },
+          { "what": "subject's ZIP code", "with": "a randomly drawn 5-digit stand-in", "occurrences": 1 },
+          { "what": "requestor reference", "with": "SAMPLE", "occurrences": 1 }
+        ],
+        "dropped_page_reason": "pages 4-16 hold sections beyond the criminal search (employment, education, references, MVR with a real-looking driver's identity, drug test, credit, global watch) and add personal data without demonstrating the criminal record"
+      },
+      "dropped_pages": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    { "path": "criminal_searches[0].jurisdiction", "label": "Jurisdiction searched", "occurrence": 0 },
+    { "path": "criminal_searches[0].cases[0].case_number", "label": "Case number", "occurrence": 0 },
+    { "path": "criminal_searches[0].cases[0].charges[0].description", "label": "Charge", "occurrence": 0 },
+    { "path": "criminal_searches[0].cases[0].charges[0].disposition", "label": "Disposition", "occurrence": 0 },
+    { "path": "criminal_searches[0].cases[0].charges[0].sentence.restitution", "label": "Restitution ordered", "occurrence": 0 }
+  ],
+  "notes": "Features one criminal record end to end on page 3: where the search was run, the case it found, the first charge, its disposition, and the restitution ordered. No named individual is featured. The request had no fields key, only suggestions in its notes, and every suggested field grounds ok on page 3: jurisdiction, status, case number, filing date, charge #1 description, level and disposition, charge #1 fines, fees, costs and restitution, and the charge #2 prison term. Five were picked to tell one story. Status, filing date, level and the other amounts were left out only because of the five-field limit. Absent sentence items (prison on charge #1; fines, fees, costs and restitution on charge #2) correctly extract as null."
+}
