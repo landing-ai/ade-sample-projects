@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "description": "A motor vehicle report (driver license abstract / driving record) issued by a state motor vehicle agency, as used in auto insurance underwriting and employment screening.",
+  "properties": {
+    "issuing_agency": {
+      "type": "string",
+      "description": "The state agency that issued the abstract, e.g. 'New York State Department of Motor Vehicles'."
+    },
+    "abstract_type": {
+      "type": "string",
+      "description": "The kind of abstract printed at the top, e.g. 'Standard Abstract'."
+    },
+    "print_date": {
+      "type": "string",
+      "description": "Date the abstract was printed (PRINT DATE), as YYYY-MM-DD."
+    },
+    "letter_id": {
+      "type": "string",
+      "description": "The LETTER ID printed in the header, exactly as printed."
+    },
+    "driver": {
+      "type": "object",
+      "description": "Identification information for the motorist.",
+      "properties": {
+        "full_name": {
+          "type": "string",
+          "description": "Driver's full name: first, middle and last name joined with spaces."
+        },
+        "client_id": {
+          "type": "string",
+          "description": "The driver's client ID number (CID), exactly as printed including spaces."
+        },
+        "date_of_birth": {
+          "type": "string",
+          "description": "Birth date, as YYYY-MM-DD."
+        },
+        "sex": {
+          "type": "string",
+          "description": "Sex as printed."
+        },
+        "organ_donor": {
+          "type": "boolean",
+          "description": "True when Organ Donor reads Yes."
+        }
+      }
+    },
+    "license_status": {
+      "type": "object",
+      "description": "Privilege status table near the top of the first page.",
+      "properties": {
+        "non_commercial_status": {
+          "type": "string",
+          "description": "Non-Commercial Status, e.g. 'Valid'."
+        },
+        "commercial_status": {
+          "type": "string",
+          "description": "Commercial Status, e.g. 'Valid'."
+        }
+      }
+    },
+    "active_credential": {
+      "type": "object",
+      "description": "The current license shown under Active Credentials.",
+      "properties": {
+        "license_class": {
+          "type": "string",
+          "description": "Class of the active license, e.g. 'Class AM'."
+        },
+        "issue_date": {
+          "type": "string",
+          "description": "Issued date, as YYYY-MM-DD."
+        },
+        "expiration_date": {
+          "type": "string",
+          "description": "Expires date, as YYYY-MM-DD."
+        },
+        "credential_type": {
+          "type": "string",
+          "description": "Credential Type, e.g. 'Enhanced'."
+        },
+        "endorsements": {
+          "type": "array",
+          "description": "Each endorsement listed, e.g. 'T - Double/Triple Trailers'.",
+          "items": {"type": "string"}
+        },
+        "restrictions": {
+          "type": "array",
+          "description": "Each restriction listed, e.g. 'B - Corrective Lenses'.",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "suspensions": {
+      "type": "array",
+      "description": "Every suspension or revocation order, from both the Non-Scofflaws and the Scofflaws sections.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "'Non-Scofflaw' or 'Scofflaw', from the section heading the order is listed under."
+          },
+          "effect": {"type": "string", "description": "Effect, e.g. 'Suspended'."},
+          "reason": {
+            "type": "string",
+            "description": "The Reason (non-scofflaws) or Violation (scofflaws) text."
+          },
+          "effective_date": {"type": "string", "description": "Effective date, as YYYY-MM-DD."},
+          "closed_date": {"type": "string", "description": "Closed date, as YYYY-MM-DD."},
+          "order_number": {"type": "string", "description": "Order Number, exactly as printed."}
+        }
+      }
+    },
+    "convictions": {
+      "type": "array",
+      "description": "Every entry under Convictions / Bail Forfeitures (motor vehicle convictions only; not vessel or snowmobile convictions).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "violation_date": {"type": "string", "description": "Violation Date, as YYYY-MM-DD."},
+          "conviction_date": {"type": "string", "description": "Conviction Date, as YYYY-MM-DD."},
+          "ticket_number": {"type": "string", "description": "Ticket Number, exactly as printed."},
+          "violation": {"type": "string", "description": "Violation description, e.g. 'Failure to stop at stop sign'."},
+          "location": {"type": "string", "description": "Location (court or jurisdiction), e.g. 'Queens South TVB'."},
+          "points": {"type": "integer", "description": "Points assessed for this conviction."},
+          "cmv": {"type": "boolean", "description": "True when CMV (commercial motor vehicle) reads Yes."},
+          "hazmat": {"type": "boolean", "description": "True when Hazmat reads Yes."}
+        }
+      }
+    },
+    "other_convictions": {
+      "type": "array",
+      "description": "Vessel Convictions and Snowmobile Convictions.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {"type": "string", "description": "'Vessel' or 'Snowmobile', from the section heading."},
+          "violation_date": {"type": "string", "description": "Violation Date, as YYYY-MM-DD."},
+          "conviction_date": {"type": "string", "description": "Conviction Date, as YYYY-MM-DD."},
+          "conviction": {"type": "string", "description": "Conviction description."},
+          "location": {"type": "string", "description": "Location as printed."}
+        }
+      }
+    },
+    "crashes": {
+      "type": "array",
+      "description": "Every entry in the Crashes section.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "crash_date": {"type": "string", "description": "Crash Date, as YYYY-MM-DD."},
+          "county": {"type": "string", "description": "County where the crash occurred."},
+          "reported_by": {"type": "string", "description": "Reported By, as printed."},
+          "severity": {"type": "string", "description": "Severity, as printed."},
+          "case_number": {"type": "string", "description": "Case Number, exactly as printed."}
+        }
+      }
+    }
+  }
+}
