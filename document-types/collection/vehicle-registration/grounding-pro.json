@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "registration.plate_number",
+      "label": "Plate number",
+      "value": "429MAI",
+      "page": 1,
+      "box": {
+        "xmin": 0.07987,
+        "ymin": 0.16255,
+        "xmax": 0.19086,
+        "ymax": 0.21669
+      },
+      "range": {
+        "end": 123,
+        "start": 117
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "registration-plate_number.png"
+    },
+    {
+      "path": "registration.title_number",
+      "label": "Title number",
+      "value": "100020689",
+      "page": 1,
+      "box": {
+        "xmin": 0.43737,
+        "ymin": 0.21667,
+        "xmax": 0.55501,
+        "ymax": 0.33546
+      },
+      "range": {
+        "end": 412,
+        "start": 396
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "registration-title_number.png"
+    },
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "value": 2005,
+      "page": 1,
+      "box": {
+        "xmin": 0.07986,
+        "ymin": 0.21668,
+        "xmax": 0.19075,
+        "ymax": 0.33523
+      },
+      "range": {
+        "end": 309,
+        "start": 278
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-year.png"
+    },
+    {
+      "path": "fees.registration_tax",
+      "label": "Registration tax",
+      "value": 68.15,
+      "page": 1,
+      "box": {
+        "xmin": 0.70308,
+        "ymin": 0.21666,
+        "xmax": 0.79539,
+        "ymax": 0.33562
+      },
+      "range": {
+        "end": 483,
+        "start": 466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fees-registration_tax.png"
+    },
+    {
+      "path": "fees.grand_total",
+      "label": "Grand total",
+      "value": 71.15,
+      "page": 1,
+      "box": {
+        "xmin": 0.70314,
+        "ymin": 0.43164,
+        "xmax": 0.79549,
+        "ymax": 0.47143
+      },
+      "range": {
+        "end": 1063,
+        "start": 1058
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fees-grand_total.png"
+    }
+  ]
+}

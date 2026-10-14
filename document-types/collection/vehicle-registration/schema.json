@@ -1,0 +1,56 @@
+{
+  "description": "State motor vehicle registration certificate: which vehicle, who it is registered to, the plate and its validity, and the fees paid.",
+  "type": "object",
+  "properties": {
+    "issuing_state": {"type": "string", "description": "State that issued the registration, as named in the document title, e.g. Florida."},
+    "registrant": {
+      "type": "object",
+      "description": "The owner or registrant the vehicle is registered to, from the name and address block.",
+      "properties": {
+        "name": {"type": "string", "description": "Registrant name(s) exactly as printed in the address block."},
+        "address": {"type": "string", "description": "Full mailing address printed under the registrant name, lines joined with commas."}
+      }
+    },
+    "vehicle": {
+      "type": "object",
+      "description": "The registered vehicle.",
+      "properties": {
+        "year": {"type": "integer", "description": "Model year, the part of YR/MK before the slash."},
+        "make": {"type": "string", "description": "Make code, the part of YR/MK after the slash, e.g. CHEV."},
+        "body_type": {"type": "string", "description": "Body style code printed beside BODY, e.g. 4D."},
+        "color": {"type": "string", "description": "Colour code printed beside COLOR."},
+        "vin": {"type": "string", "description": "Vehicle identification number printed beside VIN."},
+        "net_weight": {"type": "number", "description": "Net weight printed beside NET WT, as a number."}
+      }
+    },
+    "registration": {
+      "type": "object",
+      "description": "The plate and the registration period.",
+      "properties": {
+        "plate_number": {"type": "string", "description": "License plate number printed beside PLATE."},
+        "plate_type": {"type": "string", "description": "Plate type code printed beside Plate Type, e.g. RGR."},
+        "decal_number": {"type": "string", "description": "Validation decal number printed beside DECAL, with leading zeros kept."},
+        "expiration_date": {"type": "string", "description": "Date the registration expires, from the Expires line, as MM/DD/YYYY."},
+        "date_issued": {"type": "string", "description": "Date this registration was issued, from Date Issued, as MM/DD/YYYY."},
+        "plate_issued_date": {"type": "string", "description": "Date the plate was issued, from Plate Issued, as MM/DD/YYYY."},
+        "title_number": {"type": "string", "description": "Certificate of title number printed beside TITLE."},
+        "class_code": {"type": "string", "description": "Registration class code printed beside Class Code."},
+        "tax_months": {"type": "integer", "description": "Number of months of tax paid, printed beside Tax Months."}
+      }
+    },
+    "fees": {
+      "type": "object",
+      "description": "Fees itemized on the registration. Leave a fee null when its line is printed with no amount.",
+      "properties": {
+        "registration_tax": {"type": "number", "description": "Amount printed beside Reg. Tax."},
+        "initial_registration_fee": {"type": "number", "description": "Amount printed beside Init. Reg., or null if blank."},
+        "county_fee": {"type": "number", "description": "Amount printed beside County Fee."},
+        "mail_fee": {"type": "number", "description": "Amount printed beside Mail Fee, or null if blank."},
+        "sales_tax": {"type": "number", "description": "Amount printed beside Sales Tax, or null if blank."},
+        "voluntary_fees": {"type": "number", "description": "Amount printed beside Voluntary Fees, or null if blank."},
+        "grand_total": {"type": "number", "description": "Total amount paid, printed beside Grand Total."}
+      }
+    },
+    "is_test_document": {"type": "boolean", "description": "True if the document is marked as a test or sample print, e.g. TEST DOCUMENT in the header."}
+  }
+}
