@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "measurements.heart_rate_bpm",
+      "label": "Heart rate (bpm)",
+      "value": 80,
+      "page": 1,
+      "box": {
+        "xmin": 0.43569,
+        "ymin": 0.09444,
+        "xmax": 0.54427,
+        "ymax": 0.10848
+      },
+      "range": {
+        "end": 274,
+        "start": 255
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "measurements-heart_rate_bpm.png"
+    },
+    {
+      "path": "measurements.pr_interval_ms",
+      "label": "PR interval (ms)",
+      "value": 186,
+      "page": 1,
+      "box": {
+        "xmin": 0.43575,
+        "ymin": 0.12272,
+        "xmax": 0.54369,
+        "ymax": 0.13612
+      },
+      "range": {
+        "end": 315,
+        "start": 295
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "measurements-pr_interval_ms.png"
+    },
+    {
+      "path": "measurements.qrs_duration_ms",
+      "label": "QRS duration (ms)",
+      "value": 100,
+      "page": 1,
+      "box": {
+        "xmin": 0.43597,
+        "ymin": 0.13683,
+        "xmax": 0.5437,
+        "ymax": 0.15043
+      },
+      "range": {
+        "end": 337,
+        "start": 316
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "measurements-qrs_duration_ms.png"
+    },
+    {
+      "path": "measurements.qtc_interval_ms",
+      "label": "QTc interval (ms)",
+      "value": 416,
+      "page": 1,
+      "box": {
+        "xmin": 0.4363,
+        "ymin": 0.16572,
+        "xmax": 0.54334,
+        "ymax": 0.17874
+      },
+      "range": {
+        "end": 380,
+        "start": 359
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "measurements-qtc_interval_ms.png"
+    },
+    {
+      "path": "interpretation.statements[1].text",
+      "label": "Interpretation statement",
+      "value": "Anteroseptal infarction, probably old",
+      "page": 1,
+      "box": {
+        "xmin": 0.57313,
+        "ymin": 0.10648,
+        "xmax": 0.74586,
+        "ymax": 0.12011
+      },
+      "range": {
+        "end": 507,
+        "start": 465
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "interpretation-statements-1-text.png"
+    }
+  ]
+}

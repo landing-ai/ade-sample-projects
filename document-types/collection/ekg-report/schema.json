@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "title": "EKG Report",
+  "description": "A resting 12-lead electrocardiogram (EKG/ECG) report, as a clinician, underwriter or cardiology data pipeline reads it: whose recording it is, when and on what device it was taken, the machine's interval measurements, its interpretation statements, and the recording settings. The waveform traces themselves are not extracted.",
+  "properties": {
+    "report_title": {
+      "type": "string",
+      "description": "The report's title from the top of the page, e.g. '3x4 Simultaneous ECG Report'."
+    },
+    "patient": {
+      "type": "object",
+      "description": "The Patient Details block at the top left.",
+      "properties": {
+        "name": { "type": ["string", "null"], "description": "Patient name as printed." },
+        "id": { "type": ["string", "null"], "description": "Patient ID as printed." },
+        "gender": { "type": ["string", "null"], "description": "Gender as printed." },
+        "date_of_birth": { "type": ["string", "null"], "description": "Date of birth exactly as printed (do not reformat)." },
+        "age_years": { "type": ["integer", "null"], "description": "Age in years, from the parenthesised age beside the date of birth." },
+        "height": { "type": ["string", "null"], "description": "Height exactly as printed, with units." },
+        "weight": { "type": ["string", "null"], "description": "Weight exactly as printed, with units." }
+      }
+    },
+    "recording": {
+      "type": "object",
+      "description": "The Recording Details block.",
+      "properties": {
+        "recorded_at": { "type": ["string", "null"], "description": "Date and time the ECG was recorded, exactly as printed (do not reformat)." },
+        "device": { "type": ["string", "null"], "description": "Recording device identifier exactly as printed." },
+        "location": { "type": ["string", "null"], "description": "Recording location as printed; null if blank." }
+      }
+    },
+    "measurements": {
+      "type": "object",
+      "description": "The Measurements block: the machine-measured rate, intervals and axes.",
+      "properties": {
+        "heart_rate_bpm": { "type": ["integer", "null"], "description": "Heart rate in beats per minute." },
+        "p_duration_ms": { "type": ["integer", "null"], "description": "P wave duration in milliseconds." },
+        "pr_interval_ms": { "type": ["integer", "null"], "description": "PR interval in milliseconds." },
+        "qrs_duration_ms": { "type": ["integer", "null"], "description": "QRS duration in milliseconds." },
+        "qt_interval_ms": { "type": ["integer", "null"], "description": "QT interval in milliseconds." },
+        "qtc_interval_ms": { "type": ["integer", "null"], "description": "Heart-rate-corrected QT interval (QTc) in milliseconds." },
+        "p_qrs_t_axes": { "type": ["string", "null"], "description": "The P, QRS and T axes exactly as printed, e.g. '10°, 20°, 30°'." }
+      }
+    },
+    "interpretation": {
+      "type": "object",
+      "description": "The Interpretation block.",
+      "properties": {
+        "status": { "type": ["string", "null"], "description": "The status in the Interpretation heading's parentheses, e.g. 'Unconfirmed' or 'Confirmed'." },
+        "statements": {
+          "type": "array",
+          "description": "Every interpretation statement, in order. A statement that wraps onto a second line is one statement.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": { "type": ["string", "null"], "description": "The numeric statement code printed before the text, as printed, keeping leading zeros (e.g. '004')." },
+              "text": { "type": "string", "description": "The statement text without its code, joined across any line wrap." }
+            }
+          }
+        },
+        "comments": { "type": ["string", "null"], "description": "Text under the Comments heading; null if blank." }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "description": "Recording and display settings printed along the bottom of the tracing.",
+      "properties": {
+        "paper_speed": { "type": ["string", "null"], "description": "Paper speed exactly as printed, e.g. '25.0 mm/s'." },
+        "gain": { "type": ["string", "null"], "description": "Amplitude scale exactly as printed, e.g. '10.0 mm/mV'." },
+        "filters": { "type": ["string", "null"], "description": "Filter band exactly as printed, without the 'Filters:' label, e.g. '0.05 - 150 Hz'." }
+      }
+    },
+    "leads": {
+      "type": "array",
+      "description": "The lead labels shown on the tracing grid, in reading order (left to right, top to bottom), including any rhythm strip lead.",
+      "items": { "type": "string" }
+    }
+  }
+}

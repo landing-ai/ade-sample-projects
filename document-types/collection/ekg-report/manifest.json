@@ -1,0 +1,34 @@
+{
+  "slug": "ekg-report",
+  "title": "EKG Report",
+  "source": {
+    "file": "vectracor-universal-ecg-sample-report.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.vectracor.com/wp-content/uploads/2020/03/ECG-Sample-Report-1.pdf",
+      "publisher": "VectraCor (formerly QRS Diagnostic)",
+      "title": "Universal ECG Sample Report",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "VectraCor's own sample report for its PC-based Universal ECG, linked as 'Universal ECG Sample Report' from vectracor.com/universal-ecg/ (a byte-identical copy is also at .../ECG-Sample-Report.pdf); downloaded by script on 2026-10-13. The footer reads 'Copyright QRS Diagnostic' and the PDF carries no reuse licence, so clearance rests on its being a manufacturer-published product sample; the operator accepted it on that basis on 2026-10-13. The demo patient name could not be proven fictitious, so it was replaced with an obvious stand-in using document-types/scripts/redact.py, which removes the underlying text rather than covering it. Only page 1 of 9 is kept: pages 2-9 are the same recording in other layouts. Page 1's content was drawn sideways under a /Rotate of 180; its rotation was baked into the content stream so the page is upright landscape with /Rotate 0 before redaction. Document metadata was cleared. Verified: the original name is not extractable from the committed PDF and appears nowhere in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "patient's name", "with": "John Sample", "occurrences": 1 }
+        ],
+        "dropped_page_reason": "pages 2-9 repeat the same recording in other lead layouts and add nothing; dropping them also removed the other eight printings of the patient's name"
+      },
+      "dropped_pages": [2, 3, 4, 5, 6, 7, 8, 9]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "measurements.heart_rate_bpm", "label": "Heart rate (bpm)", "occurrence": 0 },
+    { "path": "measurements.pr_interval_ms", "label": "PR interval (ms)", "occurrence": 0 },
+    { "path": "measurements.qrs_duration_ms", "label": "QRS duration (ms)", "occurrence": 0 },
+    { "path": "measurements.qtc_interval_ms", "label": "QTc interval (ms)", "occurrence": 0 },
+    { "path": "interpretation.statements[1].text", "label": "Interpretation statement", "occurrence": 0 }
+  ],
+  "notes": "Features the machine read of the recording from the header: heart rate, the PR, QRS and QTc intervals, and the interpretation statement that matters clinically (code 193, an old anteroseptal infarction). The request suggested heart rate, PR and QRS, QT/QTc, the interpretation statements and the filter/scale settings. All ground ok except as follows. QT was left out in favour of QTc to stay within five fields; it grounds ok too. Filter and scale settings could not be featured: the values extract correctly, but the parse folds the scale and filter text along the bottom of the tracing into the <figure type=\"CHART\"> description it writes for the waveform grid, so their ranges point at that model-written description and the box would be the whole tracing. The waveform itself is not extracted; the schema takes only header text plus the lead labels. No named individual is featured."
+}
