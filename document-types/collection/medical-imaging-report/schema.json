@@ -1,0 +1,203 @@
+{
+  "type": "object",
+  "title": "Medical Imaging Report",
+  "description": "A radiology report (MRI, CT, X-ray, ultrasound) as a claims reviewer, underwriter or care coordinator reads it: the patient and order header, what was imaged and how, the findings by anatomic area, the impression, any recommended follow-up, and when the result was communicated.",
+  "properties": {
+    "imaging_provider": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Name of the imaging provider or contractor in the letterhead, as printed. Null if only a placeholder or blank."
+    },
+    "report_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Report status as printed, e.g. 'Final Report', 'Preliminary', 'Addendum', without surrounding asterisks."
+    },
+    "patient": {
+      "type": "object",
+      "description": "The patient and order header block. Copy values exactly as printed; use null for any label whose value is blank.",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Patient name, or null if blank."
+        },
+        "sex": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Patient sex, or null if blank."
+        },
+        "date_of_birth": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date of birth as printed, or null if blank."
+        },
+        "medical_record_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Medical record number (Med. Rec. No), or null if blank."
+        },
+        "accession_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Accession number, or null if blank."
+        },
+        "ordering_physician": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Ordering doctor, or null if blank."
+        }
+      }
+    },
+    "exam_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date of exam as printed; null if the label has no value."
+    },
+    "examination": {
+      "type": "string",
+      "description": "The examination as printed after 'EXAMINATION:', e.g. 'MRI ANKLE WITHOUT CONTRAST – RIGHT'. If the examination is stated more than once, use the last statement, which is the one the findings follow."
+    },
+    "modality": {
+      "type": "string",
+      "enum": [
+        "MRI",
+        "CT",
+        "X-ray",
+        "Ultrasound",
+        "PET",
+        "Nuclear medicine",
+        "Mammography",
+        "Other"
+      ],
+      "description": "The imaging modality."
+    },
+    "body_part": {
+      "type": "string",
+      "description": "The body part imaged, e.g. 'Ankle'."
+    },
+    "laterality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Left",
+        "Right",
+        "Bilateral",
+        null
+      ],
+      "description": "Side imaged, or null if not applicable."
+    },
+    "contrast_used": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "True if contrast was administered, false if the report says without contrast or none used."
+    },
+    "clinical_indication": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The clinical indication (reason for exam) as printed. If stated more than once, use the last statement."
+    },
+    "comparison": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Prior studies compared against, as printed (e.g. 'None available')."
+    },
+    "technique": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The technique paragraph as printed. If stated more than once, use the last statement."
+    },
+    "findings": {
+      "type": "array",
+      "description": "Every findings section, in order, one entry per anatomic heading (e.g. LIGAMENTS, TENDONS, MUSCLES, JOINT/BONES, and each sub-heading under OTHER such as Plantar Fascia).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "area": {
+            "type": "string",
+            "description": "The anatomic heading as printed, e.g. 'LIGAMENTS', 'JOINT/BONES', 'Plantar Fascia'."
+          },
+          "finding": {
+            "type": "string",
+            "description": "The finding text under that heading, verbatim."
+          },
+          "key_finding": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The section's first abnormality only, as a short phrase copied verbatim from the report: drop a leading 'There is', and stop at the first comma or full stop, e.g. 'edema in the flexor hallucis longus muscle and the distal leg'. Return JSON null, not the string 'null', if the section reports nothing abnormal."
+          },
+          "abnormal": {
+            "type": "boolean",
+            "description": "True if the section reports any abnormality (edema, fracture, tear, lesion); false if it reports only normal or intact structures."
+          }
+        }
+      }
+    },
+    "impression": {
+      "type": "string",
+      "description": "The IMPRESSION paragraph, verbatim. Stop at the end of that paragraph: do not include the following sentence about who the findings were discussed with."
+    },
+    "primary_diagnosis": {
+      "type": "string",
+      "description": "The principal diagnosis from the impression, as its first sentence states it."
+    },
+    "recommended_follow_up": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Any follow-up imaging or correlation the radiologist recommends, quoted from the report; null if none."
+    },
+    "follow_up_studies": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Just the imaging studies recommended for follow-up, copied verbatim, e.g. 'CT of the rest of the tibia/fibula or radiographs'; null if none."
+    },
+    "findings_communicated": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date and time the findings were discussed with the care team, exactly as printed (e.g. '12/15/2020 2:20 PM'); null if not stated."
+    },
+    "radiologist": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The reading or signing radiologist's name. Return JSON null, not the string 'null', if the report shows only a placeholder such as 'DOCTOR NAME' or '{insert ...}'."
+    }
+  }
+}

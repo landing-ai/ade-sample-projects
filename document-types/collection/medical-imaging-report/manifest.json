@@ -1,0 +1,24 @@
+{
+  "slug": "medical-imaging-report",
+  "title": "Medical Imaging Report",
+  "source": {
+    "file": "sample-mri-report.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://doccs.ny.gov/system/files/documents/2021/04/attachment-4-sample-mri-report.pdf",
+      "publisher": "New York State Department of Corrections and Community Supervision (DOCCS)",
+      "title": "Attachment #4 – Sample MRI report",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "A sample MRI report that New York State DOCCS publishes on its official domain (doccs.ny.gov) as Attachment #4 to a procurement, to show bidders the report format it expects; downloaded directly by script. The parent bid or RFP page that links it was not found. The clinical narrative (a right-ankle MRI) carries no identifiers: every patient header field is blank, the provider letterhead reads 'CONTRACTOR NAME', and the doctor, facility and signer are '{insert ...}' placeholders. No page text was redacted or changed. The only edit was clearing the PDF's document-information metadata, whose author field held a first name, presumably the staff member who prepared it."
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    { "path": "primary_diagnosis", "label": "Impression", "occurrence": 0 },
+    { "path": "findings[3].key_finding", "label": "Joint and bone finding", "occurrence": 0 },
+    { "path": "findings_communicated", "label": "Findings discussed", "occurrence": 0 }
+  ],
+  "notes": "Features the clinical conclusion on page 2: the radiologist's impression, the bone finding behind it, and when the result was communicated. The request's notes suggested four fields as suggestions. Three shipped: the impression (non-displaced fracture of the distal tibial metadiaphysis), the joint/bones finding (moderate marrow edema in the distal tibia) and the findings-discussed date and time (12/15/2020 2:20 PM). The fourth, the recommended follow-up (CT of the tibia/fibula or radiographs), extracts correctly but could not be featured: it wraps across a line break, and its ranges are per line, so no single box contains the value (OFF). The schema gained two short verbatim fields, findings[].key_finding and follow_up_studies, because the full narrative paragraphs ground one line at a time and none can be featured whole. The patient header is blank in the source, so every patient field extracts null with no grounding."
+}
