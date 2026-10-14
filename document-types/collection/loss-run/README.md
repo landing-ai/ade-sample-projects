@@ -7,8 +7,8 @@ Source assets for `landing.ai/document-type/loss-run`.
 `source/cameron-county-wc-loss-runs-2015-2019.pdf`: a workers' compensation Claim/Loss
 Report produced by the Texas Association of Counties Risk Management Pool for its member
 Cameron County, Texas, covering five coverage years (2015 to 2019). **31 pages,
-landscape.** Pages 1 to 30 list 1,309 individual claims; page 31 closes the last period
-and summarises all five periods with a grand total.
+landscape.** The 1,309 individual claims span pages 1 to 31; page 31 also closes the
+last period and summarises all five periods with a grand total.
 
 | | |
 |---|---|
