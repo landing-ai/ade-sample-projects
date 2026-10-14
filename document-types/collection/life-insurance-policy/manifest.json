@@ -1,0 +1,26 @@
+{
+  "slug": "life-insurance-policy",
+  "title": "Life Insurance Policy",
+  "source": {
+    "file": "pacific-life-term-art-sample-policy.pdf",
+    "pages": 14,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.pacificlife.com/content/dam/paclife/lid/public/sample-policies/Sample%20Policy_Term%20ART.pdf",
+      "publisher": "Pacific Life Insurance Company",
+      "title": "Sample Policy: Term Life Insurance (PAC ART, form P08TRM)",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "A specimen policy Pacific Life publishes on its own domain, in a public sample-policies asset folder alongside other sample policies; downloaded directly by script on 2026-10-04. It is the carrier's own sample, stamped SAMPLE on every data page: the insured and owner are a 19th-century historical figure used as a placeholder, and the policy number is a dummy. The two officer signatures on page 1 are the carrier's corporate signatures as printed on its policy forms. All 14 pages are kept as published; only the PDF's document metadata was cleared, since it carried an author username."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "product_type", "label": "Product", "occurrence": 0 },
+    { "path": "policy_number", "label": "Policy number", "occurrence": 0 },
+    { "path": "face_amount", "label": "Face amount", "occurrence": 0 },
+    { "path": "initial_modal_premium.amount", "label": "Initial monthly premium", "occurrence": 0 },
+    { "path": "insured.risk_class", "label": "Risk class", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested face amount, initial monthly premium, policy date, risk class and policy number. Four of the five ship as suggested, all from the page 1 cover block. The policy date does not: the schema asks for ISO format, so 2008-05-01 grounds OFF against 'MAY 1, 2008'. It is replaced by the product type (TERM LIFE INSURANCE), which completes the story an underwriter or lender reads first: what kind of policy, which policy, how much cover, what it costs and at what rating. The insured's and owner's names read ok but are not featured; an impersonal field carries the same point. Every other OFF on the document is a normalized value (the ISO conversion, expiration and rider cease dates; the convertible and participating booleans; provision periods written as words, 'two years' and 'five years'). All 90 rows of the three premium tables on pages 5-7 ground ok."
+}
