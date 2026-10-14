@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "title": "OSHA Log Summary (Form 300A)",
+  "description": "OSHA Form 300A, the annual Summary of Work-Related Injuries and Illnesses an establishment posts from its Form 300 log: the year covered, the establishment, the case counts by outcome, the day totals, the counts by injury and illness type, employment figures, and the certification.",
+  "properties": {
+    "form_number": {"type": "string", "description": "The OSHA form number as printed, e.g. 300A."},
+    "form_revision": {"type": ["string", "null"], "description": "Revision date printed beside the form number, e.g. 01/2004, or null if absent."},
+    "year": {"type": "integer", "description": "Calendar year the summary covers, printed beside 'Year' at the top of the form."},
+    "establishment": {
+      "type": "object",
+      "description": "The Establishment information box.",
+      "properties": {
+        "name": {"type": "string", "description": "Value written on the 'Your establishment name' line."},
+        "street": {"type": "string", "description": "Street address of the establishment."},
+        "city": {"type": "string", "description": "City of the establishment."},
+        "state": {"type": "string", "description": "State of the establishment, as printed."},
+        "zip": {"type": "string", "description": "ZIP code of the establishment."},
+        "industry_description": {"type": ["string", "null"], "description": "Industry description written by the employer. Null if the line is blank. Do not return the printed example text '(e.g., Manufacture of motor truck trailers)'."},
+        "sic_code": {"type": ["string", "null"], "description": "Standard Industrial Classification code if filled in. Null if blank. Do not return the printed example 'SIC 3715'."},
+        "naics_code": {"type": ["string", "null"], "description": "North American Industrial Classification (NAICS) code if filled in. Null if blank. Do not return the printed example '336212'."}
+      }
+    },
+    "number_of_cases": {
+      "type": "object",
+      "description": "The Number of Cases row, columns G through J.",
+      "properties": {
+        "deaths": {"type": "integer", "description": "Total number of deaths, column (G)."},
+        "days_away_from_work": {"type": "integer", "description": "Total number of cases with days away from work, column (H)."},
+        "job_transfer_or_restriction": {"type": "integer", "description": "Total number of cases with job transfer or restriction, column (I)."},
+        "other_recordable": {"type": "integer", "description": "Total number of other recordable cases, column (J)."}
+      }
+    },
+    "number_of_days": {
+      "type": "object",
+      "description": "The Number of Days row, columns K and L.",
+      "properties": {
+        "days_away_from_work": {"type": "integer", "description": "Total number of days away from work, column (K)."},
+        "days_of_job_transfer_or_restriction": {"type": "integer", "description": "Total number of days of job transfer or restriction, column (L)."}
+      }
+    },
+    "injury_and_illness_types": {
+      "type": "object",
+      "description": "The Injury and Illness Types section, column (M).",
+      "properties": {
+        "injuries": {"type": "integer", "description": "(1) Injury."},
+        "skin_disorders": {"type": "integer", "description": "(2) Skin Disorder."},
+        "respiratory_conditions": {"type": "integer", "description": "(3) Respiratory Condition."},
+        "poisonings": {"type": "integer", "description": "(4) Poisoning."},
+        "hearing_loss": {"type": "integer", "description": "(5) Hearing Loss."},
+        "all_other_illnesses": {"type": "integer", "description": "(6) All Other Illnesses."}
+      }
+    },
+    "employment": {
+      "type": "object",
+      "description": "The Employment information box.",
+      "properties": {
+        "annual_average_employees": {"type": "integer", "description": "Annual average number of employees, as a plain integer without separators."},
+        "total_hours_worked": {"type": "integer", "description": "Total hours worked by all employees last year, as a plain integer without separators."}
+      }
+    },
+    "certification": {
+      "type": "object",
+      "description": "The Sign here certification block.",
+      "properties": {
+        "is_signed": {"type": "boolean", "description": "True if a signature appears on the Company executive line."},
+        "title": {"type": ["string", "null"], "description": "Title of the certifying executive, from the Title line."},
+        "phone": {"type": ["string", "null"], "description": "Phone number on the Phone line."},
+        "date": {"type": ["string", "null"], "description": "Date of certification from the Date line, as YYYY-MM-DD."}
+      }
+    }
+  },
+  "required": ["year", "establishment", "number_of_cases", "number_of_days", "injury_and_illness_types", "employment"]
+}
