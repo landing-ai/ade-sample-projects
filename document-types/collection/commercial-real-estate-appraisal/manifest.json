@@ -1,0 +1,38 @@
+{
+  "slug": "commercial-real-estate-appraisal",
+  "title": "Commercial Real Estate Appraisal",
+  "source": {
+    "file": "commercial-real-estate-appraisal-irr-gsa-office-dallas.pdf",
+    "pages": 8,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.sec.gov/Archives/edgar/data/728478/000109690611002287/ex16e.pdf",
+      "publisher": "Integra Realty Resources - DFW, LLP (appraiser); filed on SEC EDGAR by Kent International Holdings, Inc.",
+      "title": "Appraisal of Real Property: GSA Office, 4211 Cedar Springs Drive, Dallas, Texas (Fair Value FAS 157 Compliant Appraisal, effective March 2, 2011), Exhibit 16(e) to Schedule SC 13E3/A",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "Public SEC filing: Exhibit EX-16.E to Kent International Holdings' Schedule 13E-3 Amendment No. 2 (going-private transaction), filed 2011-09-29, accession 0001096906-11-002287; the EDGAR filing index lists the exhibit as the Integra Realty Resources appraisal of the Dallas, Texas GSA office property. Downloaded by script. The source is 166 pages; this folder keeps 8 of them (source pages 1, 3, 4, 6, 7, 8, 83 and 84: cover, transmittal letter with its value conclusion and signature block, the two-page Summary of Salient Facts and Conclusions, Identification of Subject, and Reconciliation and Conclusion of Value), split out with PyMuPDF. Market analysis, comparables, the income approach detail, certification, limiting conditions, qualifications and addenda were left out to keep the parse cost proportionate. As a precaution the three appraisers' signature images were removed, and the addressee's street line, which is not the company's EDGAR business address and may be a residence, was replaced; both with document-types/scripts/redact.py, which removes rather than covers. Appraisers' names, titles and Texas certificate numbers, and the client CFO's name and title, are professional details in a public filing and were kept. Document metadata cleared. The firm's copyright footer carries a reliance limitation, not a reproduction ban.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "addressee's street line (cover and transmittal letter)", "with": "100 Main Street", "occurrences": 2 }
+        ],
+        "removed_images": [
+          { "what": "appraisers' signature images on the transmittal letter", "page": 3, "count": 3, "replaced_with": "nothing (left blank, no stand-in signature drawn)" }
+        ],
+        "metadata": "cleared"
+      },
+      "kept_source_pages": [1, 3, 4, 6, 7, 8, 83, 84],
+      "source_pages_total": 166
+    }
+  },
+  "feature_page": 4,
+  "fields": [
+    { "path": "property.tax_id", "label": "Tax ID", "occurrence": 0 },
+    { "path": "property.gross_building_area_sf", "label": "Gross building area", "occurrence": 0 },
+    { "path": "property.percent_leased", "label": "Percent leased", "occurrence": 0 },
+    { "path": "property.year_built", "label": "Year built", "occurrence": 0 },
+    { "path": "value_conclusions[1].value_conclusion", "label": "Fair value as is", "occurrence": 0 }
+  ],
+  "notes": "Features the Summary of Salient Facts and Conclusions on page 4 (report page 1, source PDF page 6): the parcel's tax ID, its gross building area, occupancy and age, and the value the appraisers concluded from them. Every field is on the one page so the overlay reads top to bottom as the summary block an underwriter or auditor would read first. The request named no fields key, only suggestions in its notes: property type, gross building area, percent leased, year built, the value conclusion row (premise, interest, date of value, value) and the tax ID. All of them ground ok on page 4 in the committed run, but a page carries at most five fields, so property type (printed as the uninformative 'Office - Office'), and the premise, interest and date columns of the value conclusion row were left out; the label 'Fair value as is' carries the premise. The date of value is extracted as printed (March 2, 2011) rather than reformatted, because a reformatted date grounds OFF. value_conclusions[1] is featured because the extraction returned the one Value Conclusions table three times (it is printed in the transmittal letter, the Salient Facts and the reconciliation) and only the middle copy carries ranges; the other two are synthesized. No person is featured."
+}
