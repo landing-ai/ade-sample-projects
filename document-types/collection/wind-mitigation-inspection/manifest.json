@@ -1,0 +1,53 @@
+{
+  "slug": "wind-mitigation-inspection",
+  "title": "Wind Mitigation / 4-Point Inspection",
+  "source": {
+    "file": "surehome-oir-b1-1802-wind-mitigation-sample.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.surehomes.org/samples/sample-wind-mitigation.pdf",
+      "publisher": "SureHome of Brevard",
+      "title": "Sample Wind Mitigation report: Florida Uniform Mitigation Verification Inspection Form OIR-B1-1802 (Rev. 04/26)",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "A sample report published by SureHome of Brevard, a licensed Florida home inspection company in Melbourne, FL, and downloaded directly from its website, whose home page links it as 'Sample PDF - Wind Mitigation: The signed OIR-B1-1802' and states 'Sample reports use fictional client and property details.' The owner (Mr. Samples) and property (325 Sample St.) are fictional. The inspector's name, licence number, company phone, initials and signature appear in a professional capacity on the company's own marketing sample. The 11-page source was trimmed to pages 2-7, the six-page state form: page 1 was a branded cover with a photo of a house and pages 8-11 were inspection photos. Document metadata was cleared. No redaction was needed.",
+      "dropped_pages": [
+        1,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "inspection_date",
+      "label": "Inspection date",
+      "occurrence": 0
+    },
+    {
+      "path": "year_of_home",
+      "label": "Year of home",
+      "occurrence": 0
+    },
+    {
+      "path": "building_code",
+      "label": "Building code answer",
+      "occurrence": 0
+    },
+    {
+      "path": "wind_region",
+      "label": "Wind region",
+      "occurrence": 1
+    },
+    {
+      "path": "roof_coverings[0].permit_application_date",
+      "label": "Roof permit application date",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested the inspection date, year of home and stories, the Building Code answer, wind region and roof slope, and the roof covering with its permit date. Five of those are featured, all on page 1 (form page 1 of 6): the inspection date, the year of home, the Building Code answer (D), the wind region (Region 1) and the asphalt shingle roof's permit application date. Together they are the facts an insurer reads first to price a wind discount. Number of stories and roof slope also ground ok on page 1 and were left out to stay within five fields. The fictional owner name and address are on the same page and not featured. wind_region is pinned to occurrence 1: occurrence 0 grounds to the question heading (OFF). Its box covers the whole line of four region options, with the X beside Region 1 visible inside it; roof slope would box its whole line the same way. Checkboxes: the X glyphs are drawn beside empty box glyphs, and DPT-3 Pro resolved nearly all of them correctly into [x] and [ ], including the opening protection answers A and A.1, roof deck C, single wraps with minimal condition 2, and hip roof. Two misreads: in the 4.1 roof covering table, Built Up, Membrane and Other were rendered [x] although only Asphalt/Fiberglass Shingle is marked, so extraction returns four roof coverings; and under 8.A the 'fully adhered polymer-modified bitumen' sub-option was rendered [ ] although it is marked, so swr_method comes back null. Neither is featured. Nullable fields with nothing written come back as empty strings or 0 rather than null (insurance company, policy number, product approval number, year installed). The opening protection chart values are correct but each grounds to a bare 'X' cell, so inspect_fields.py marks them OFF."
+}
