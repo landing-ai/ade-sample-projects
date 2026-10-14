@@ -1,0 +1,85 @@
+{
+  "slug": "elevation-certificate",
+  "title": "Elevation Certificate (Flood)",
+  "source": {
+    "file": "elevation-certificate-sarasota-fire-station.pdf",
+    "pages": 7,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://ftp.scgov.net/GIS/ElevCerts/220021_EC_Fire%20Station%20FINAL_dsigned3-11-24_22%20115132%2000%20BC.pdf",
+      "publisher": "Sarasota County, Florida (floodplain records); certificate prepared by GeoSurv, LLC on FEMA Form FF-206-FY-22-152",
+      "title": "FEMA Elevation Certificate, county fire station, 1930 N. Tamiami Trail, Nokomis, FL, certified March 11, 2024",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "Hosted on Sarasota County's own server in its public directory of elevation certificates (https://ftp.scgov.net/GIS/ElevCerts/), which the county posts as an NFIP Community Rating System community. The building owner is Sarasota County and the building is a public fire station, so the certificate names no private owner. The surveyor's printed name, licence number and firm contact details are professional information on a public record and were kept. The surveyor's embossed seal image and digital signature block were removed, and the 12 pages of FEMA's blank instructions and building diagrams were dropped. The county's flood-maps page that links to the directory returned 403 to scripts, so that link was not confirmed by script. The file itself is on the county's domain. It was downloaded by script, not by hand.",
+      "redactions": {
+        "note": "No text value was replaced. Removed items are recorded by kind only. The rules file used by redact.py is empty and stays outside the repo.",
+        "replaced": [],
+        "removed": [
+          {
+            "what": "surveyor's seal image in the Section D seal box",
+            "occurrences": 1
+          },
+          {
+            "what": "digital signature form field and its visible appearance (signature name, plus the signer and timestamp line)",
+            "occurrences": 1
+          },
+          {
+            "what": "document metadata keys",
+            "occurrences": 8
+          }
+        ],
+        "dropped_page_reason": "Page 1 and pages 9-19 are FEMA's blank instructions and building diagrams, with nothing filled in. Printed page numbers in the footers still read 'Page N of 19'."
+      },
+      "dropped_pages": [
+        1,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [
+    1,
+    2,
+    6,
+    7
+  ],
+  "fields": [
+    {
+      "path": "firm.nfip_community_id",
+      "label": "NFIP community ID",
+      "occurrence": 0
+    },
+    {
+      "path": "firm.map_panel_number",
+      "label": "FIRM map panel",
+      "occurrence": 0
+    },
+    {
+      "path": "firm.bfe_source",
+      "label": "BFE source",
+      "occurrence": 0
+    },
+    {
+      "path": "firm.flood_zone",
+      "label": "Flood zone",
+      "occurrence": 0
+    },
+    {
+      "path": "firm.base_flood_elevation",
+      "label": "Base flood elevation",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields, but its notes suggested community ID, map panel and suffix, flood zone, base flood elevation and FIRM index date. Four of the six shipped, all from Section B on page 1, with BFE source (B10) as the fifth. Together they read as one flood-rating lookup: which community, which map panel, which zone, the flood elevation the building is measured against, and where that elevation came from. Previews show pages 1, 2, 6 and 7 (property and map data, elevations and certification, and the two photo pages) instead of the default sample, which picked the blank Sections G-I. FIRM index date was left out because inspect_fields reads it OFF: the model returned it as 2016-11-04 while the page prints 11/04/2016, so the crop would not match the value shown. Panel suffix grounds ok but to the same B2-B5 line box as the map panel, so it would have given a duplicate crop; B10 has its own line. The Section C elevations that a rater compares with the BFE are on page 2, so they cannot share this overlay. Blank elevation lines (C2.b, C2.c and C2.d) come back as 0.0 rather than null, even though the schema allows null and says a blank line is not zero. Two schema rewordings changed only the placeholder: the first run returned -99999.0. Blank square-footage lines A8.a and A9.a print 0.00 on the form, so those zeros are correct. Yes/No checkbox booleans (B12, B13, Section D's lat/long question) ground to their question text and read OFF. The schema leaves out the certifier's name and licence number on purpose."
+}
