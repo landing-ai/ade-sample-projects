@@ -1,0 +1,26 @@
+{
+  "slug": "loss-run",
+  "title": "Loss Run",
+  "source": {
+    "file": "cameron-county-wc-loss-runs-2015-2019.pdf",
+    "pages": 31,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.cameroncountytx.gov/wp-content/uploads/2022/10/Cameron-County-WC-Loss-Runs-2015-2019.pdf",
+      "publisher": "Texas Association of Counties Risk Management Pool (posted by Cameron County, Texas)",
+      "title": "Claim/Loss Report: Cameron County Workers' Compensation, coverage years 2015-2019",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "A workers' compensation loss run produced by the Texas Association of Counties Risk Management Pool for its member Cameron County, and published by the county on its own official website (cameroncountytx.gov) alongside its Workers' Compensation RFP 1470 so that brokers could price the account. Downloaded by script. The Claimant Full Name column is blank at source on every page, so the report carries claim numbers, loss dates, cause-of-loss categories and dollar amounts but no claimant identities; no page text needed redacting. The PDF's document metadata named the pool staff member who ran the report and was cleared before the file entered the repo."
+    }
+  },
+  "feature_page": 31,
+  "fields": [
+    { "path": "coverage_periods[1].period", "label": "Coverage period", "occurrence": 0 },
+    { "path": "coverage_periods[1].claim_count", "label": "Count of claims", "occurrence": 0 },
+    { "path": "coverage_periods[1].total_paid", "label": "Total paid", "occurrence": 0 },
+    { "path": "coverage_periods[1].total_outstanding_reserve", "label": "Outstanding reserve", "occurrence": 0 },
+    { "path": "coverage_periods[1].total_incurred", "label": "Total incurred", "occurrence": 0 }
+  ],
+  "notes": "Features one coverage year end to end from the summary block on the last page: Jan 1 2016 to Jan 1 2017, 276 claims, $605,268 paid, $27,648 still reserved and $619,349 incurred after recoveries. It has the largest open reserve of the five periods, so the overlay shows the paid/reserve/incurred split a loss run exists to report. The request file set no feature_page or fields; its notes suggested page 31 or page 1 and, as suggestions only, the member name, this period's count/paid/reserve, and the grand-total claim count and incurred. The member name grounds to the page header and was left out in favour of the single-row story. The grand-total fields could not be featured: extraction returned the right values (1,309 claims and $2,047,261 incurred) but grounded the claim count to a page 19 header and returned the dollar totals with no ranges at all. Grand-total deductible came back null although the row prints $0. The schema summarises by period and does not extract the 1,309 individual claim rows."
+}
