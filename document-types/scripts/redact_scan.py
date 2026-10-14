@@ -259,6 +259,15 @@ def main() -> None:
                         help="Paint over a region of a source page, in PDF points on the "
                              "upright page, and optionally redraw TEXT there in "
                              "--handwriting-font. For signatures and initials.")
+    parser.add_argument("--place", nargs="*", default=[], metavar="PAGE:X0,Y0,X1,Y1=TEXT",
+                        help="Replace a hit OCR cannot read (low-resolution, underlined or "
+                             "coloured type) at a region given in PDF points on the upright "
+                             "page. TEXT is a rule's replacement, or a part of one that "
+                             "stands at the same offset in its original (a phone's line "
+                             "number, printed apart from its area code), so the command "
+                             "line never carries an original. Cover the glyphs only: the "
+                             "paint reaches a little beyond the region, so stop it short "
+                             "of an underline.")
     parser.add_argument("--handwriting-font", type=Path, metavar="FONT.ttf",
                         help="Openly licensed handwriting font for --erase stand-ins "
                              "(document-types/scripts/fonts/IndieFlower-Regular.ttf).")
@@ -280,6 +289,13 @@ def main() -> None:
     if unknown:
         sys.exit(f"--bold names rules that are not in --rules: {sorted(unknown)}")
     counts = {k: 0 for k in rules}
+    placed: dict[str, tuple[str, str]] = {}   # TEXT -> (rule's original, the part it covers)
+    for text in {spec.partition("=")[2] for spec in args.place}:
+        owners = [k for k, v in rules.items() if text in v]
+        if len(owners) != 1:
+            sys.exit(f"--place text {text!r} must be part of exactly one rule's replacement")
+        at = rules[owners[0]].index(text)
+        placed[text] = (owners[0], owners[0][at:at + len(text)])
     out = pymupdf.open()
 
     for number in pages:
@@ -310,6 +326,17 @@ def main() -> None:
                           font)
                     taken.append(pymupdf.Rect(rect))
                     counts[original] += 1
+        for spec in args.place:
+            page_no, _, rest = spec.partition(":")
+            if int(page_no) != number:
+                continue
+            coords, _, text = rest.partition("=")
+            original, covered = placed[text]
+            rect = pymupdf.Rect(*(float(v) * DPI / 72 for v in coords.split(",")))
+            font = args.bold_font if (number, original) in bold else args.font
+            cap_h, baseline = ink_metrics(image, rect) or (rect.height * 0.8, rect.y1)
+            paint(image, rect, text, covered, cap_h, baseline, font)
+            counts[original] += 1
         for spec in args.erase:
             page_no, _, region = spec.partition(":")
             if int(page_no) == number:

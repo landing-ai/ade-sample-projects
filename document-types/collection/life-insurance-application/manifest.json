@@ -1,0 +1,33 @@
+{
+  "slug": "life-insurance-application",
+  "title": "Life Insurance Application",
+  "source": {
+    "file": "jhny17_app.pdf",
+    "pages": 7,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1043846/000119312517327052/d481410dex99e.htm",
+      "publisher": "John Hancock Life Insurance Company of New York, filed on SEC EDGAR (CIK 1043846, accession 0001193125-17-327052)",
+      "title": "Specimen policy application, Application for Life Insurance form NB5000NY (06/2012), Exhibit 99.(E)",
+      "retrieved": "2026-10-13",
+      "clearance": "redacted",
+      "clearance_note": "A specimen application filled by the carrier with sample data (John M. Doe, Anytown, ABC Company) and filed publicly with the SEC as an exhibit to a registration statement. EDGAR publishes the exhibit as an HTML page embedding seven page scans (g481410new93.jpg to g481410new99.jpg in the same filing folder); they were downloaded by script and assembled in order into one PDF, one JPEG per page at its native 96 dpi size. Two specimen phone numbers on a real area code and one specimen email on a real mail domain were replaced on page 1 with document-types/scripts/redact_scan.py, which rebuilt that page from a 300 dpi render of the edited image; pages 2-7 are the original scans, unchanged. All other filled values are obvious specimen data and were left as filed. PDF metadata cleared with document-types/scripts/pdfmeta.py. Verified by eye on 300 dpi renders and by a sweep of every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {"what": "specimen telephone line numbers (personal and business), printed beside the area code", "with": "555-0111 and 555-0144 (fiction-reserved 555-01xx; area code kept)", "occurrences": 2},
+          {"what": "specimen email address on a real mail domain", "with": "johndoe@example.com", "occurrences": 1}
+        ]
+      }
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    {"path": "owner", "label": "Policy owner", "occurrence": 0},
+    {"path": "beneficiaries[0].relationship", "label": "Primary beneficiary relationship", "occurrence": 0},
+    {"path": "coverage.product_name", "label": "Product name", "occurrence": 0},
+    {"path": "coverage.base_face_amount", "label": "Base face amount", "occurrence": 0},
+    {"path": "coverage.death_benefit_option", "label": "Death benefit option", "occurrence": 0}
+  ],
+  "notes": "Page 2 tells the policy's story in one overlay: who owns it (a checked box), who is paid (the son, as primary beneficiary), what product and how much ($250,000 of JH Universal Life) and how the death benefit is paid (Option 1, a checked box). Page 2 and these fields follow the request's suggestions; the beneficiary's name was avoided in favour of the relationship (it also grounds OFF, split across three underlined blanks), and the Guideline Premium test, which grounds cleanly, was left out to keep to five. Pages 4-6 (medical and lifestyle questions) were deliberately not featured."
+}
