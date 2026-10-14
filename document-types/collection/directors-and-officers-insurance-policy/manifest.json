@@ -1,0 +1,29 @@
+{
+  "slug": "directors-and-officers-insurance-policy",
+  "title": "D&O Insurance Policy",
+  "source": {
+    "file": "directors-and-officers-insurance-policy-travelers.pdf",
+    "pages": 26,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045701/000116204422000446/monteagle4017g.pdf",
+      "publisher": "Monteagle Funds, filed with the SEC (policy issued by Travelers Casualty and Surety Company of America)",
+      "title": "Travelers SelectOne+ Investment Advisers and Funds policy, Mutual Fund Liability coverage (attached to Form 40-17G, accession 0001162044-22-000446)",
+      "retrieved": "2026-10-04",
+      "clearance": "public",
+      "clearance_note": "A complete issued management liability policy, filed publicly on SEC EDGAR by Monteagle Funds (a registered investment company, CIK 1045701) with its Form 40-17G, accession 0001162044-22-000446. Downloaded by script. The kept pages name only organizations: the named insured fund trust and its series, the insurer, and the broker, plus the insurer's corporate claims email, fax and phone. The two signature images on the declarations are the insurer's pre-printed facsimile officer signatures, which carry no printed name, and were left in place. Pages 1-3 of the filing (the fund's cover letter, a secretary's certificate and board resolutions, which name individuals and a direct phone line) were dropped, so the sample is the 26-page Travelers policy alone. PDF metadata (the filer's Word document title, author initials, Nuance producer and dates) was cleared. Policy pages are otherwise unchanged.",
+      "dropped_pages": [1, 2, 3],
+      "dropped_page_reason": "pages 1-3 were the fund's cover letter, certificate and board resolutions, not part of the policy, and named individuals and a direct phone line"
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    { "path": "coverage_details.limit_of_liability", "label": "Limit of liability", "occurrence": 0 },
+    { "path": "coverage_details.retention", "label": "Retention per claim", "occurrence": 0 },
+    { "path": "policy_premium", "label": "Policy premium", "occurrence": 0 },
+    { "path": "extended_reporting_period.additional_premium_percentage", "label": "Extended reporting premium (%)", "occurrence": 0 },
+    { "path": "extended_reporting_period.additional_months", "label": "Extended reporting months", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested five as suggestions only: limit of liability, retention, prior or pending proceeding date, policy premium, and the extended reporting period (125% additional premium, 12 months). Four ship, the extended reporting period as two fields (premium percentage and months), all on page 2, the declarations' ITEMs 5-7. The prior or pending proceeding date was extracted correctly (1998-03-16) but grounds OFF: its range points at the 'Not Applicable / Supplemental Independent Director' lines above it rather than its own line, so it was not featured. The overlay reads as the economics of the policy: how much cover, what the insured pays first on each claim, what the year costs, and what extending the reporting window would cost. No person is featured. This is a mutual-fund management liability policy (Travelers Mutual Fund Liability coverage for a fund trust and its series, covering directors, trustees and officers) rather than a classic corporate D&O policy. Page numbers here are the filing's minus three. preview_pages shows the declarations' first two pages, the opening of the general terms and conditions, and the specified-entity endorsement listing the covered funds.",
+  "preview_pages": [1, 2, 6, 17]
+}
