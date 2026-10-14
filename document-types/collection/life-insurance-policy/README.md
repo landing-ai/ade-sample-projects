@@ -90,7 +90,7 @@ paragraph's partial "Life Insurance Company". Its address-line occurrence ground
 
 **39 leaf fields**: insurer name and address; policy number and form number; product
 type and policy date; the insured (name, sex, issue age, risk class) and the owner; face
-amount; initial premium and payment interval; coverage-to age, expiration and conversion
+amount; initial premium and payment interval; coverage-to-age, expiration and conversion
 end dates; convertible and participating flags; free-look days; riders (form, name, cease
 date); modal premium factors; the annual policy fee; the basic coverage and premium
 waiver premium schedules (policy year, annual premium); and eight provision terms (grace
