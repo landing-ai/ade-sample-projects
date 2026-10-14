@@ -1,0 +1,255 @@
+{
+  "type": "object",
+  "title": "Elevation Certificate (FEMA Form FF-206-FY-22-152)",
+  "properties": {
+    "form_number": {
+      "type": "string",
+      "description": "FEMA form number printed in the page footer, e.g. FF-206-FY-22-152."
+    },
+    "property": {
+      "type": "object",
+      "description": "Section A: the building being certified.",
+      "properties": {
+        "building_owner_name": {
+          "type": "string",
+          "description": "A1. Building owner's name."
+        },
+        "street_address": {
+          "type": "string",
+          "description": "A2. Building street address, without city, state or ZIP."
+        },
+        "city": {
+          "type": "string",
+          "description": "A2. City."
+        },
+        "state": {
+          "type": "string",
+          "description": "A2. State abbreviation."
+        },
+        "zip_code": {
+          "type": "string",
+          "description": "A2. ZIP code."
+        },
+        "property_description": {
+          "type": "string",
+          "description": "A3. Property description (lot and block, legal description) and/or tax parcel number, as printed."
+        },
+        "building_use": {
+          "type": "string",
+          "description": "A4. Building use, e.g. Residential or Non-Residential."
+        },
+        "latitude": {
+          "type": "number",
+          "description": "A5. Latitude in decimal degrees."
+        },
+        "longitude": {
+          "type": "number",
+          "description": "A5. Longitude in decimal degrees (negative west of Greenwich)."
+        },
+        "horizontal_datum": {
+          "type": "string",
+          "description": "A5. The checked horizontal datum: NAD 1927, NAD 1983 or WGS 84."
+        },
+        "building_diagram_number": {
+          "type": "string",
+          "description": "A7. Building diagram number, e.g. 1B."
+        },
+        "crawlspace_square_footage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "A8.a. Square footage of crawlspace or enclosure(s)."
+        },
+        "attached_garage_square_footage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "A9.a. Square footage of attached garage."
+        }
+      }
+    },
+    "firm": {
+      "type": "object",
+      "description": "Section B: Flood Insurance Rate Map (FIRM) information.",
+      "properties": {
+        "nfip_community_name": {
+          "type": "string",
+          "description": "B1.a. NFIP community name."
+        },
+        "nfip_community_id": {
+          "type": "string",
+          "description": "B1.b. NFIP community identification number."
+        },
+        "county_name": {
+          "type": "string",
+          "description": "B2. County name."
+        },
+        "map_panel_number": {
+          "type": "string",
+          "description": "B4. FIRM map/panel number."
+        },
+        "panel_suffix": {
+          "type": "string",
+          "description": "B5. Panel suffix letter."
+        },
+        "firm_index_date": {
+          "type": "string",
+          "description": "B6. FIRM index date, as YYYY-MM-DD."
+        },
+        "firm_panel_effective_date": {
+          "type": "string",
+          "description": "B7. FIRM panel effective/revised date, as YYYY-MM-DD."
+        },
+        "flood_zone": {
+          "type": "string",
+          "description": "B8. Flood zone(s), e.g. AE."
+        },
+        "base_flood_elevation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "B9. Base flood elevation (BFE), or base flood depth in Zone AO."
+        },
+        "bfe_source": {
+          "type": "string",
+          "description": "B10. The checked source of the BFE: FIS, FIRM, Community Determined or Other."
+        },
+        "bfe_vertical_datum": {
+          "type": "string",
+          "description": "B11. The checked elevation datum for the BFE, e.g. NAVD 1988."
+        },
+        "in_cbrs_or_opa": {
+          "type": "boolean",
+          "description": "B12. Whether the building is in a Coastal Barrier Resources System area or Otherwise Protected Area."
+        },
+        "seaward_of_limwa": {
+          "type": "boolean",
+          "description": "B13. Whether the building is seaward of the Limit of Moderate Wave Action."
+        }
+      }
+    },
+    "elevations": {
+      "type": "object",
+      "description": "Section C: building elevation information from the survey.",
+      "properties": {
+        "construction_status": {
+          "type": "string",
+          "description": "C1. The checked basis for the elevations: Construction Drawings, Building Under Construction or Finished Construction."
+        },
+        "benchmark_utilized": {
+          "type": "string",
+          "description": "C2. Benchmark utilized."
+        },
+        "vertical_datum": {
+          "type": "string",
+          "description": "C2. Vertical datum used for the elevations, e.g. NAVD 1988."
+        },
+        "unit": {
+          "type": "string",
+          "description": "The checked measurement unit for the elevations: feet or meters."
+        },
+        "top_of_bottom_floor": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.a. Top of bottom floor (including basement, crawlspace or enclosure floor). If no number is written on this line, return null: a blank line is not zero."
+        },
+        "top_of_next_higher_floor": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.b. Top of the next higher floor. If no number is written on this line, return null: a blank line is not zero."
+        },
+        "bottom_of_lowest_horizontal_structural_member": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.c. Bottom of the lowest horizontal structural member. If no number is written on this line, return null: a blank line is not zero."
+        },
+        "attached_garage_top_of_slab": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.d. Attached garage (top of slab). If no number is written on this line, return null: a blank line is not zero."
+        },
+        "lowest_machinery_and_equipment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.e. Lowest elevation of machinery and equipment servicing the building. If no number is written on this line, return null: a blank line is not zero."
+        },
+        "lowest_adjacent_grade": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.f. Lowest adjacent grade (LAG) next to the building. If no number is written on this line, return null: a blank line is not zero."
+        },
+        "highest_adjacent_grade": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "C2.g. Highest adjacent grade (HAG) next to the building. If no number is written on this line, return null: a blank line is not zero."
+        }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "description": "Section D: the surveyor, engineer or architect certification.",
+      "properties": {
+        "certifier_title": {
+          "type": "string",
+          "description": "Certifier's title."
+        },
+        "company_name": {
+          "type": "string",
+          "description": "Certifier's company name."
+        },
+        "certification_date": {
+          "type": "string",
+          "description": "Date beside the signature line, as YYYY-MM-DD."
+        },
+        "lat_long_by_licensed_surveyor": {
+          "type": "boolean",
+          "description": "Whether the Section A latitude and longitude were provided by a licensed land surveyor."
+        },
+        "comments": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Section D comments, as printed."
+        }
+      }
+    },
+    "photographs": {
+      "type": "array",
+      "description": "Building photographs on the photo pages: one entry per photograph actually inserted, in page order. Do not include an empty photo slot (a label with no photograph and no caption).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "photo_number": {
+            "type": "string",
+            "description": "Photo label, e.g. Photo One."
+          },
+          "caption": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Caption printed beside the photo, or null if the caption line is blank."
+          }
+        }
+      }
+    }
+  }
+}
