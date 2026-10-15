@@ -1,0 +1,91 @@
+{
+  "slug": "special-inspection-report",
+  "title": "Special Inspection Report",
+  "source": {
+    "file": "special-inspection-report.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://gis.orovalleyaz.gov/storyimages/Planning/Valley%20Vista/3.pdf",
+      "publisher": "ProTeX - the PT Xperts, L.L.C. (special inspections, geotechnical and materials laboratory), for Pulte Tucson Land; posted by the Town of Oro Valley, Arizona",
+      "title": "Building Pad-Post-Tension Foundation certification with Field Density Summary Report and Soils Summary sheets, 5X and 5W Mass Grading, Rancho Vistoso Valley Vista (Phase 1A)",
+      "retrieved": "2026-10-14",
+      "clearance": "redacted",
+      "clearance_note": "A geotechnical firm's building-pad certification package that the Town of Oro Valley, Arizona publishes on its own GIS server (Planning/Valley Vista folder), beside sibling geotechnical reports, as part of the public record on the Valley Vista subdivision. Downloaded by script. The 58-page original holds three phase packets; this sample keeps six pages of the Phase 1A packet: the cover letter (page 1 of the original), the first Field Density Summary Report table (page 2) and the four Soils Summary sheets that table's Proctor lab numbers refer to (pages 16, 17, 19 and 13, kept in original order 13, 16, 17, 19). The professional engineer, field technician and laboratory reviewer are named public professionals, but their names, the engineer's registration number and both signatures were replaced anyway, since the values would be republished on a marketing page. The cover letter kept its text layer: its name was replaced with redact.py, and the seal image was edited in place (signature ink removed, the seal's centre lines redrawn with stand-ins, the rings restored where the signature crossed them) before a handwriting stand-in signature was drawn. The five raster pages were rebuilt from 300 dpi renders by redact_scan.py. PDF metadata cleared. Verified by redact.py's text check, redact_scan.py's OCR check, a separate OCR sweep of all six output pages (literals and digits), by eye on renders, and by ship.py check --rules over every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules files used by redact.py and redact_scan.py stay outside the repo.",
+        "replaced": [
+          {
+            "what": "professional engineer's name typed under the signature (cover letter)",
+            "with": "Jane Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "engineer's name inside the P.E. seal",
+            "with": "JANE SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "engineer's certificate (registration) number inside the P.E. seal",
+            "with": "a random 5-digit stand-in from plausible.py",
+            "occurrences": 1
+          },
+          {
+            "what": "engineer's handwritten signature over the seal",
+            "with": "the handwriting stand-in 'J Sample' (IndieFlower)",
+            "occurrences": 1
+          },
+          {
+            "what": "field technician's name (Sampled By and Submitted By on each Soils Summary sheet)",
+            "with": "John Doe",
+            "occurrences": 8
+          },
+          {
+            "what": "laboratory reviewer's printed name (Reviewed By on each Soils Summary sheet)",
+            "with": "Richard Roe",
+            "occurrences": 4
+          },
+          {
+            "what": "laboratory reviewer's handwritten signature",
+            "with": "the handwriting stand-in 'R Roe' (IndieFlower)",
+            "occurrences": 4
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    {
+      "path": "field_density_report.tests[0].lot",
+      "label": "Lot tested",
+      "occurrence": 0
+    },
+    {
+      "path": "field_density_report.tests[0].field_dry_density_pcf",
+      "label": "Field dry density (lb/ft3)",
+      "occurrence": 0
+    },
+    {
+      "path": "field_density_report.tests[0].max_dry_density_pcf",
+      "label": "Max dry density (lb/ft3)",
+      "occurrence": 0
+    },
+    {
+      "path": "field_density_report.tests[0].percent_compaction",
+      "label": "Percent compaction",
+      "occurrence": 0
+    },
+    {
+      "path": "field_density_report.tests[0].result",
+      "label": "Test result",
+      "occurrence": 0
+    }
+  ],
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested page 2 and the job ID, project name, test type, the first row's date, lot and field dry density, max dry density, % compaction against spec and the pass/fail result. Page 2 was kept and the five featured fields are one complete compaction test, the first row of the table: the lot, the field dry density, the Proctor maximum dry density it is compared against, the resulting percent compaction and the result, so the overlay reads as a single calculation (101.9 / 104.1 = 97.9%, printed as 98 against a 98 min. spec, Pass). The date, job ID, project name and test type all ground ok on the same page and were dropped only to keep to five. No individual is featured. The table's Proctor Lab # column points at the Soils Summary sheets on pages 3-6, and the values reconcile: lab 191957's corrected maximum dry density (121.2) is the max used on the Romsdalen Road rows that cite it, and the featured Lot 39 row uses lab 191996's corrected values, while the Lot 43 row cites the same lab but matches its uncorrected values (102.2 and 8.6). Extraction reports what is printed and does not flag that. All 18 table rows extract with correct values, but the last six (rows 13-18) come back with no ranges at all (SYNTH) although the parse has every row, so only the first twelve rows can be illustrated. is_sealed grounds OFF to the letter's [STAMPED] attestation label, and is_signed grounds OFF to a [SIGNED] label on page 5, a Soils Summary sheet, rather than the letter. The engineer's registration number and seal date ground to the seal as a whole. This sample is six pages of a 58-page public packet (see clearance_note); the subdivision is the subject of a public subsidence dispute, which this folder does not address."
+}

@@ -1,0 +1,348 @@
+{
+  "description": "Special inspection report for earthwork on a residential subdivision: the geotechnical firm's building-pad certification letter, the Field Density Summary Report of nuclear-gauge compaction tests, and the Soils Summary (Proctor moisture-density) sheets the tests are compared against.",
+  "type": "object",
+  "properties": {
+    "certification_letter": {
+      "type": "object",
+      "description": "The cover letter on page 1 that certifies the building pads.",
+      "properties": {
+        "letter_date": {
+          "type": "string",
+          "description": "Date of the letter, as written (e.g. June 13, 2019)."
+        },
+        "client_name": {
+          "type": "string",
+          "description": "Addressee/client company named at the top of the letter."
+        },
+        "subject": {
+          "type": "string",
+          "description": "The Re: line subject, e.g. Building Pad-Post-Tension Foundation."
+        },
+        "project_description": {
+          "type": "string",
+          "description": "The project/job line under Re:, e.g. the mass grading job and subdivision name."
+        },
+        "lots_covered": {
+          "type": "string",
+          "description": "The Lot #: line, including the phase in parentheses."
+        },
+        "job_id": {
+          "type": "string",
+          "description": "ProTeX Job ID# printed on the letter."
+        },
+        "reference_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Bracketed reference number printed at the right of the Re: line."
+        },
+        "bearing_value_psf": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Allowable bearing value assigned to the pads, in pounds per square foot, as a number."
+        },
+        "foundation_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Foundation system the bearing value is assigned for."
+        },
+        "certification_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "How long the building pads are certified for, as stated."
+        },
+        "engineer_name": {
+          "type": "string",
+          "description": "Name of the registered professional engineer who signed the letter, as typed under the signature."
+        },
+        "engineer_registration_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Certificate number printed inside the engineer's seal."
+        },
+        "registration_expires": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Expiry date printed beneath the seal."
+        },
+        "seal_date_signed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date signed written across the seal."
+        },
+        "is_sealed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if a professional engineer's seal or stamp appears on the letter."
+        },
+        "is_signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the letter carries a signature."
+        }
+      }
+    },
+    "field_density_report": {
+      "type": "object",
+      "description": "The Field Density Summary Report table page.",
+      "properties": {
+        "client": {
+          "type": "string",
+          "description": "Client: header value."
+        },
+        "job_name": {
+          "type": "string",
+          "description": "Job Name: header value."
+        },
+        "job_id": {
+          "type": "string",
+          "description": "Job ID #: header value."
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Project Name: header value."
+        },
+        "cross_streets": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Cross Streets: header value."
+        },
+        "test_type": {
+          "type": "string",
+          "description": "Test Type: line above the table, e.g. Pad (5-10 feet) (Phase 1A)."
+        },
+        "tests": {
+          "type": "array",
+          "description": "Every row of the compaction test table, in order.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "description": "Date column (MM/DD/YYYY)."
+              },
+              "street": {
+                "type": "string",
+                "description": "Street column."
+              },
+              "lot": {
+                "type": "string",
+                "description": "Lot / Sta. column, as printed (e.g. Lot 39)."
+              },
+              "depth_of_test": {
+                "type": "string",
+                "description": "Depth of Test column, as printed (e.g. 7' BFG)."
+              },
+              "direct_transmission_used": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Direct Trans. Used column, as printed (e.g. 10\")."
+              },
+              "field_dry_density_pcf": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Field Dry Density (lb/ft3)."
+              },
+              "field_moisture_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Field Moisture (%)."
+              },
+              "max_dry_density_pcf": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Max Dry Density (corr) (lb/ft3)."
+              },
+              "optimum_moisture_pct": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Opt. Moisture (corr) (%)."
+              },
+              "percent_compaction": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "% Comp. column."
+              },
+              "density_spec": {
+                "type": "string",
+                "description": "Density Spec. (%) column, as printed (e.g. 98 min.)."
+              },
+              "moisture_spec": {
+                "type": "string",
+                "description": "Moisture Spec. (%) column, as printed (e.g. -2 to +2)."
+              },
+              "proctor_lab_number": {
+                "type": "string",
+                "description": "Proctor Lab # column: the lab number of the Proctor the test was compared against."
+              },
+              "result": {
+                "type": "string",
+                "description": "Pass column: Pass or Fail."
+              }
+            }
+          }
+        }
+      }
+    },
+    "proctor_results": {
+      "type": "array",
+      "description": "One entry per Soils Summary sheet, in page order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lab_number": {
+            "type": "string",
+            "description": "ProTeX Lab No, without the laboratory location (e.g. 191957)."
+          },
+          "lab_location": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Laboratory location printed after the lab number."
+          },
+          "job_number": {
+            "type": "string",
+            "description": "ProTeX Job No."
+          },
+          "material": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Material: header value."
+          },
+          "sample_location": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Sample Location: header value."
+          },
+          "date_sampled": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date Sampled."
+          },
+          "date_received": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date Received."
+          },
+          "test_method": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Proctor test standard named above the Moisture Density panel (e.g. ASTM D698-A)."
+          },
+          "max_dry_density_pcf": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Max. Dry Density in the Moisture Density (Proctor) panel."
+          },
+          "optimum_moisture_pct": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Opt. Moisture %."
+          },
+          "corrected_max_dry_density_pcf": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Corr. Max. Dry Density."
+          },
+          "corrected_optimum_moisture_pct": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Corr. Opt. Moisture %."
+          },
+          "percent_rock": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "% Rock."
+          },
+          "liquid_limit": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Liquid Limit in the Plasticity Index panel, as printed (NA if not tested)."
+          },
+          "plasticity_index": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Plasticity Index, as printed."
+          },
+          "expansion_index": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "EI = value in the Expansion Index panel, as printed."
+          },
+          "percent_swell": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "% Swell value, as printed."
+          },
+          "remarks": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Remarks: soil description at the bottom of the sheet."
+          }
+        }
+      }
+    }
+  }
+}
