@@ -1,0 +1,174 @@
+{
+  "type": "object",
+  "description": "An AIA-style application for payment on a construction contract: the G702 summary page (application and certificate for payment) and its G703 continuation sheet, which breaks the contract into a schedule of values with work completed, retainage and balance to finish per line.",
+  "properties": {
+    "application": {
+      "type": "object",
+      "description": "Identifying details of the pay application, as given in the G702 and G703 headers.",
+      "properties": {
+        "owner_name": {
+          "type": "string",
+          "description": "The owner the application is addressed to (the 'TO (OWNER)' block), e.g. a city or developer."
+        },
+        "contractor_name": {
+          "type": "string",
+          "description": "The contractor or construction manager submitting the application (the 'FROM' block)."
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Project name as printed, joining all of its lines with spaces."
+        },
+        "application_number": {
+          "type": "string",
+          "description": "The application number, e.g. '10'."
+        },
+        "period_to": {
+          "type": "string",
+          "description": "The end of the billing period ('PERIOD TO' or 'PERIOD ENDING'), as printed."
+        }
+      }
+    },
+    "payment_summary": {
+      "type": "object",
+      "description": "The numbered lines of the G702 application for payment. Amounts in dollars as numbers.",
+      "properties": {
+        "original_contract_sum": {
+          "type": "number",
+          "description": "Line 1: the original contract sum or committed cost."
+        },
+        "net_change_by_change_orders": {
+          "type": "number",
+          "description": "Line 2: net change by change orders."
+        },
+        "contract_sum_to_date": {
+          "type": "number",
+          "description": "Line 3: contract sum to date (line 1 + line 2)."
+        },
+        "total_completed_and_stored_to_date": {
+          "type": "number",
+          "description": "Line 4: total completed and stored to date."
+        },
+        "retainage_percent": {
+          "type": "number",
+          "description": "Line 5a: the retainage percentage applied to completed work, e.g. 5 for 5%."
+        },
+        "total_retainage": {
+          "type": "number",
+          "description": "Line 5: total retainage."
+        },
+        "total_earned_less_retainage": {
+          "type": "number",
+          "description": "Line 6: total earned less retainage."
+        },
+        "less_previous_certificates": {
+          "type": "number",
+          "description": "Line 7: less previous certificates for payment."
+        },
+        "current_payment_due": {
+          "type": "number",
+          "description": "Line 8: current payment due."
+        },
+        "balance_to_finish_including_retainage": {
+          "type": "number",
+          "description": "Line 9: balance to finish, plus retainage."
+        }
+      }
+    },
+    "schedule_of_values": {
+      "type": "array",
+      "description": "Every line of the G703 continuation sheet's schedule of values, in the order printed. Excludes the totals row. Amounts in parentheses are negative.",
+      "items": {
+        "type": "object",
+        "description": "One line item of the schedule of values.",
+        "properties": {
+          "item_number": {
+            "type": "string",
+            "description": "Item number exactly as printed in the ITEM NO. column, e.g. '#2300' or 'Fee'."
+          },
+          "description_of_work": {
+            "type": "string",
+            "description": "Description of work as printed."
+          },
+          "scheduled_value": {
+            "type": "number",
+            "description": "Original scheduled value."
+          },
+          "change_orders": {
+            "type": "number",
+            "description": "Change orders to this line; negative when printed in parentheses."
+          },
+          "revised_scheduled_value": {
+            "type": "number",
+            "description": "Revised scheduled value (scheduled value plus change orders)."
+          },
+          "work_completed_from_previous_application": {
+            "type": "number",
+            "description": "Work completed as of the previous application."
+          },
+          "work_completed_this_period": {
+            "type": "number",
+            "description": "Work completed this period."
+          },
+          "total_completed_and_stored_to_date": {
+            "type": "number",
+            "description": "Total completed and stored to date."
+          },
+          "percent_complete": {
+            "type": "number",
+            "description": "Percent complete as printed, e.g. 63 for 63%."
+          },
+          "balance_to_finish": {
+            "type": "number",
+            "description": "Balance to finish."
+          },
+          "retainage": {
+            "type": "number",
+            "description": "Retainage held on this line."
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "The totals row at the foot of the G703 continuation sheet.",
+      "properties": {
+        "scheduled_value": {
+          "type": "number",
+          "description": "Total scheduled value."
+        },
+        "change_orders": {
+          "type": "number",
+          "description": "Total change orders."
+        },
+        "revised_scheduled_value": {
+          "type": "number",
+          "description": "Total revised scheduled value."
+        },
+        "work_completed_from_previous_application": {
+          "type": "number",
+          "description": "Total work completed from previous applications."
+        },
+        "work_completed_this_period": {
+          "type": "number",
+          "description": "Total work completed this period."
+        },
+        "total_completed_and_stored_to_date": {
+          "type": "number",
+          "description": "Total completed and stored to date."
+        },
+        "percent_complete": {
+          "type": "number",
+          "description": "Overall percent complete, e.g. 51 for 51%."
+        },
+        "balance_to_finish": {
+          "type": "number",
+          "description": "Total balance to finish."
+        },
+        "retainage": {
+          "type": "number",
+          "description": "Total retainage."
+        }
+      }
+    }
+  }
+}

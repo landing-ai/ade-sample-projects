@@ -1,0 +1,166 @@
+{
+  "slug": "aia-g703-continuation-sheet",
+  "title": "AIA G703 Continuation Sheet",
+  "source": {
+    "file": "aia-g703-lake-elmo-pay-application-10-redacted.pdf",
+    "pages": 2,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://miweblink.metro-inet.us/LakeElmoPublic/0/edoc/444946/03%20-%20City%20Center%20Pay%20Request.pdf",
+      "publisher": "City of Lake Elmo, MN (pay application prepared by Hoffmann + Uhlhorn Construction, Inc.)",
+      "title": "City Center - Public Works Addition Pay Request #10 (November 15, 2022 council consent item)",
+      "retrieved": "2026-10-14",
+      "clearance": "redacted",
+      "clearance_note": "A public council packet item posted by the City of Lake Elmo, MN on its Laserfiche WebLink public records portal, downloaded directly by script. The pay application inside it was prepared by the city's construction manager, Hoffmann + Uhlhorn Construction, Inc. The 90-page packet was trimmed to pages 2-3: the overall G702 application and certificate for payment and the overall G703 continuation sheet. The G703 carries no personal data. The G702 carried three signature images (construction manager, architect, notary) and a notary stamp image bearing the notary's name and commission expiry; all four were removed with document-types/scripts/redact.py, which deletes the images rather than covering them, and the typed commission-expiry date beside the notary block was replaced. Handwriting-font stand-in signatures were drawn where the three signatures were. Every page carried a /Rotate 90 flag, which was folded into the page content before redaction. Document metadata (which named the city staff member who assembled the packet) was cleared. Verified: no removed image or original string remains in the committed PDF. Licensing: AIA's terms forbid posting completed AIA documents for marketing without a licence. This sheet is the contractor's own spreadsheet edition of the G703 layout ('H+U CONSTRUCTION EDITION OF AIA DOCUMENT G703') and carries no AIA copyright notice; the operator chose it knowing that, on 2026-10-14.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "construction manager's signature (image)",
+            "with": "handwriting-font stand-in 'J. Sample'",
+            "occurrences": 1
+          },
+          {
+            "what": "architect's signature (image)",
+            "with": "handwriting-font stand-in 'A. Example'",
+            "occurrences": 1
+          },
+          {
+            "what": "notary's signature (image)",
+            "with": "handwriting-font stand-in 'N. Public'",
+            "occurrences": 1
+          },
+          {
+            "what": "notary stamp with the notary's name and commission expiry (image)",
+            "with": "nothing",
+            "occurrences": 1
+          },
+          {
+            "what": "notary's commission expiry date (typed)",
+            "with": "30-Jun-25",
+            "occurrences": 1
+          }
+        ]
+      },
+      "dropped_pages": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ]
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    {
+      "path": "application.period_to",
+      "label": "Period ending",
+      "occurrence": 1
+    },
+    {
+      "path": "schedule_of_values[26].scheduled_value",
+      "label": "HVAC and Controls scheduled value",
+      "occurrence": 0
+    },
+    {
+      "path": "schedule_of_values[26].change_orders",
+      "label": "HVAC and Controls change orders",
+      "occurrence": 0
+    },
+    {
+      "path": "schedule_of_values[26].revised_scheduled_value",
+      "label": "HVAC and Controls revised value",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.total_completed_and_stored_to_date",
+      "label": "Total completed and stored to date",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields. Its notes suggested, as suggestions only: application number and period ending; line #2300 HVAC and Controls scheduled value, change orders and revised value; work completed this period total; total completed and stored to date with %; and total retainage. Featured on page 2 (the G703 continuation sheet, source page 3): the period ending date from the sheet header, the #2300 HVAC and Controls scheduled value, change orders and revised scheduled value, and the total completed and stored to date. Together they show one schedule-of-values line being revised by a change order, inside the sheet's billing period and against the contract total. Not featured: the application number grounds only on page 1 (the G702); on page 2 it shares a header box with the period ending date, whose crop shows both. The work-completed-this-period total, overall % complete and total retainage all ground ok on page 2 and were left out to keep to five fields. application.period_to is pinned to occurrence 1, its G703 header; occurrence 0 is on the G702. The request notes said 33 schedule-of-values rows; the sheet has 32, and extraction returned all 32. Every column of the 32 rows sums to the extracted totals row (retainage to within 3 cents, a rounding difference in the source), and the G702 line 4 and line 5 figures match the G703 totals. Negatives printed in parentheses, such as the contingency's (389,374.00) change order, came back negative. Description-of-work values containing '&' are marked OFF by inspect_fields.py only because the parse markdown escapes it as '&amp;'; the boxes are on the right cells. The three-line project name on the G702 came back with its middle line ('& PUBLIC WORKS FACILITIES REMODEL') missing. Licensing: AIA's terms forbid posting completed AIA documents for marketing without a licence. This sheet is the contractor's own spreadsheet edition of the G703 layout with no AIA copyright notice; the operator chose it knowing that, on 2026-10-14. Its header misnames the G702 as 'G723', and its column letters (A-H, with a change orders column and a revised scheduled value) differ from AIA's standard G703 lettering."
+}
