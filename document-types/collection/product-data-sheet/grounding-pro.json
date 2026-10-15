@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 9,
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "product.part_number",
+      "label": "Part number",
+      "value": "HAB900C33LM4",
+      "page": 1,
+      "box": {
+        "xmin": 0.08822,
+        "ymin": 0.14717,
+        "xmax": 0.36018,
+        "ymax": 0.17563
+      },
+      "range": {
+        "end": 82,
+        "start": 70
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "product-part_number.png"
+    },
+    {
+      "path": "headline_ratings.rated_drain_source_voltage",
+      "label": "Rated drain-source voltage",
+      "value": "3300 V",
+      "page": 1,
+      "box": {
+        "xmin": 0.71878,
+        "ymin": 0.15913,
+        "xmax": 0.89714,
+        "ymax": 0.17778
+      },
+      "range": {
+        "end": 159,
+        "start": 136
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "headline_ratings-rated_drain_source_voltage.png"
+    },
+    {
+      "path": "headline_ratings.rated_on_resistance",
+      "label": "Rated on-state resistance",
+      "value": "2 mΩ",
+      "page": 1,
+      "box": {
+        "xmin": 0.72091,
+        "ymin": 0.18102,
+        "xmax": 0.88444,
+        "ymax": 0.20055
+      },
+      "range": {
+        "end": 185,
+        "start": 160
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "headline_ratings-rated_on_resistance.png"
+    },
+    {
+      "path": "maximum_ratings.continuous_drain_current_25c_a",
+      "label": "Continuous drain current at 25 °C",
+      "value": 1200.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.54085,
+        "ymin": 0.68816,
+        "xmax": 0.59384,
+        "ymax": 0.71096
+      },
+      "range": {
+        "end": 1739,
+        "start": 1735
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "maximum_ratings-continuous_drain_current_25c_a.png"
+    },
+    {
+      "path": "maximum_ratings.power_dissipation_w",
+      "label": "Power dissipation",
+      "value": 7282.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.48792,
+        "ymin": 0.79048,
+        "xmax": 0.54083,
+        "ymax": 0.82458
+      },
+      "range": {
+        "end": 2477,
+        "start": 2473
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "maximum_ratings-power_dissipation_w.png"
+    }
+  ]
+}
