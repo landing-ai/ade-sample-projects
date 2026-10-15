@@ -1,0 +1,167 @@
+{
+  "type": "object",
+  "properties": {
+    "manual": {
+      "type": "object",
+      "description": "Identification of the service manual, from its cover page",
+      "properties": {
+        "title": {
+          "type": ["string", "null"],
+          "description": "The manual's title as printed at the top of the cover, e.g. 'Service Instructions'"
+        },
+        "product_line": {
+          "type": ["string", "null"],
+          "description": "The model families and efficiency rating covered, e.g. 'APG/GPG 14 SEER'"
+        },
+        "product_description": {
+          "type": ["string", "null"],
+          "description": "What the equipment is, as printed under the product line, e.g. 'Gas Electric Package Units'"
+        },
+        "refrigerant": {
+          "type": ["string", "null"],
+          "description": "The refrigerant the equipment uses, e.g. 'R-410A'"
+        },
+        "publication_number": {
+          "type": ["string", "null"],
+          "description": "The manual's document or revision number printed on the cover, e.g. 'RS6300012r4'"
+        },
+        "publication_date": {
+          "type": ["string", "null"],
+          "description": "The month and year of this revision as printed on the cover"
+        },
+        "manufacturer": {
+          "type": ["string", "null"],
+          "description": "The manufacturer named in the copyright line"
+        },
+        "standards_compliance": {
+          "type": ["string", "null"],
+          "description": "The design standard(s) the unit is stated to comply with, e.g. 'ANSI Z21.47-CSA-2.3 Central Furnaces'"
+        }
+      }
+    },
+    "cooling_analysis_chart": {
+      "type": "object",
+      "description": "The Cooling Analysis Chart: a troubleshooting matrix of possible causes (rows) against symptoms (columns), where a dot means the cause can produce that symptom",
+      "properties": {
+        "chart_title": {
+          "type": ["string", "null"],
+          "description": "The chart's title as printed, e.g. 'COOLING ANALYSIS CHART'"
+        },
+        "rows": {
+          "type": "array",
+          "description": "One entry per possible-cause row, in the order printed, top to bottom",
+          "items": {
+            "type": "object",
+            "properties": {
+              "possible_cause": {
+                "type": ["string", "null"],
+                "description": "The possible cause in the leftmost column, e.g. 'Shortage of Refrigerant'"
+              },
+              "symptoms": {
+                "type": "array",
+                "description": "The symptom column headers under which this row carries a dot, read from the rotated column labels, e.g. 'Low suction pressure'. Empty when the row has no dots.",
+                "items": { "type": "string" }
+              },
+              "test_method_remedy": {
+                "type": ["string", "null"],
+                "description": "The text in the Test Method / Remedy column for this row"
+              },
+              "service_procedure_ref": {
+                "type": ["string", "null"],
+                "description": "The reference in the See Service Procedure Ref. column, e.g. 'S-103'; null when the cell is blank"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gas_heating_analysis_chart": {
+      "type": "object",
+      "description": "The Gas Heating Analysis Chart, structured like the cooling chart",
+      "properties": {
+        "chart_title": {
+          "type": ["string", "null"],
+          "description": "The chart's title as printed"
+        },
+        "rows": {
+          "type": "array",
+          "description": "One entry per possible-cause row, in the order printed",
+          "items": {
+            "type": "object",
+            "properties": {
+              "possible_cause": {
+                "type": ["string", "null"],
+                "description": "The possible cause in the leftmost column"
+              },
+              "symptoms": {
+                "type": "array",
+                "description": "The symptom column headers under which this row carries a dot. Empty when the row has no dots.",
+                "items": { "type": "string" }
+              },
+              "test_method_remedy": {
+                "type": ["string", "null"],
+                "description": "The text in the Test Method / Remedy column"
+              },
+              "service_procedure_ref": {
+                "type": ["string", "null"],
+                "description": "The reference in the See Service Procedure Ref. column; null when blank"
+              }
+            }
+          }
+        }
+      }
+    },
+    "service_procedures": {
+      "type": "array",
+      "description": "The servicing table of contents: one entry per numbered service procedure",
+      "items": {
+        "type": "object",
+        "properties": {
+          "procedure_code": {
+            "type": ["string", "null"],
+            "description": "The procedure code, e.g. 'S-17A'"
+          },
+          "title": {
+            "type": ["string", "null"],
+            "description": "The procedure title, e.g. 'Checking Voltage'"
+          },
+          "page": {
+            "type": ["integer", "null"],
+            "description": "The manual page number the procedure starts on"
+          }
+        }
+      }
+    },
+    "checking_voltage_procedure": {
+      "type": "object",
+      "description": "Service procedure S-1 Checking Voltage",
+      "properties": {
+        "unit_supply_voltage_limits": {
+          "type": "array",
+          "description": "Rows of the Unit Supply Voltage table",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nominal_voltage": {
+                "type": ["string", "null"],
+                "description": "Nominal supply voltage as printed, e.g. '208/230'"
+              },
+              "min_volts": {
+                "type": ["number", "null"],
+                "description": "Minimum acceptable voltage"
+              },
+              "max_volts": {
+                "type": ["number", "null"],
+                "description": "Maximum acceptable voltage"
+              }
+            }
+          }
+        },
+        "max_voltage_imbalance_percent": {
+          "type": ["number", "null"],
+          "description": "The percentage of three-phase voltage imbalance above which the unit must not be operated"
+        }
+      }
+    }
+  }
+}
