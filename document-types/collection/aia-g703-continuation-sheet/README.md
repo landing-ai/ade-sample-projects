@@ -84,8 +84,9 @@ retainage within 3 cents, a rounding difference in the source itself. The G702's
 completed and total retainage match the G703 totals. Parenthesised change orders came
 back negative.
 
-**Cell-level grounding on a dense ruled table is exact.** Every numeric cell on page 2
-grounds to its own cell.
+**Amount and percentage grounding is exact.** These fields on page 2 ground to their
+own cells. However, `schedule_of_values[12]` through `[17]` have incorrect `item_number`
+ranges: each points to its scheduled-value cell rather than its item-number cell.
 
 **Two text quirks.** Descriptions containing `&` are marked OFF by `inspect_fields.py`
 only because the parse markdown escapes `&` as `&amp;`; the boxes are right. The
