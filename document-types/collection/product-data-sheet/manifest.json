@@ -1,0 +1,46 @@
+{
+  "slug": "product-data-sheet",
+  "title": "Product Data Sheet",
+  "source": {
+    "file": "Wolfspeed_HAB900C33LM4_data_sheet.pdf",
+    "pages": 9,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://assets.wolfspeed.com/uploads/2026/05/Wolfspeed_HAB900C33LM4_data_sheet.pdf",
+      "publisher": "Wolfspeed, Inc.",
+      "title": "HAB900C33LM4 3300 V 900 A Silicon Carbide Half-Bridge Module Preliminary Datasheet Rev. 1 (May 2026)",
+      "retrieved": "2026-10-14",
+      "clearance": "public",
+      "clearance_note": "Manufacturer's catalog data sheet, downloaded directly from Wolfspeed's own asset domain, where it is distributed to design engineers and the general public. Marked Preliminary and subject to change without notice; the footer carries the usual (c) 2026 Wolfspeed, Inc. All rights reserved notice, so this is publicly distributed material rather than copyright-free material. No personal data: the only contact details are the company's headquarters address and main switchboard number. Not job- or customer-specific. No redaction needed; the source PDF is unmodified."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "product.part_number",
+      "label": "Part number",
+      "occurrence": 0
+    },
+    {
+      "path": "headline_ratings.rated_drain_source_voltage",
+      "label": "Rated drain-source voltage",
+      "occurrence": 0
+    },
+    {
+      "path": "headline_ratings.rated_on_resistance",
+      "label": "Rated on-state resistance",
+      "occurrence": 0
+    },
+    {
+      "path": "maximum_ratings.continuous_drain_current_25c_a",
+      "label": "Continuous drain current at 25 °C",
+      "occurrence": 0
+    },
+    {
+      "path": "maximum_ratings.power_dissipation_w",
+      "label": "Power dissipation",
+      "occurrence": 0
+    }
+  ],
+  "notes": "A 9-page manufacturer data sheet for a 3300 V silicon carbide power module: characteristic tables with Min/Typ/Max columns and Unit, Note and Parameter cells merged across rows (page 1-3), 15 typical performance curves two per row (pages 4-5), timing-definition diagrams (page 6), and a schematic and package drawing (page 7). The request file named no feature_page or fields; its notes suggested page 1 or 2 and listed part number, rated VDS / RDS(on), continuous drain current at 25 C, RDS(on) typ and max, gate threshold min/typ/max and power dissipation as suggestions only. Page 1 is featured because it tells one story: which part this is, its two headline ratings from the summary box, and two absolute-maximum values from the merged-cell Maximum Parameters table. Every suggested field grounds ok, but RDS(on) typ/max and gate threshold min/typ/max are on page 2 and so cannot share the page 1 overlay. The characteristics_table array (one entry per row of the page 2 MOSFET table) extracts correctly, including the unit inherited from merged Unit cells, but came back with no ranges at all, so none of it can be illustrated; the committed extraction also carries a nonconformant_output warning because that table's last row genuinely has an empty Conditions cell and the schema's conditions field is not nullable."
+}

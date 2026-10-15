@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "title": "Product Data Sheet",
+  "description": "A manufacturer's data sheet for an electronic component: identification, headline ratings, characteristic tables with min/typ/max values, physical data and supporting documents.",
+  "properties": {
+    "product": {
+      "type": "object",
+      "description": "What the data sheet covers and which revision it is.",
+      "properties": {
+        "part_number": {
+          "type": "string",
+          "description": "The manufacturer's part number in the title, e.g. HAB900C33LM4."
+        },
+        "description": {
+          "type": "string",
+          "description": "The one-line product description under the part number, as printed."
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Company that publishes the data sheet, e.g. Wolfspeed, Inc."
+        },
+        "manufacturer_address": {
+          "type": "string",
+          "description": "Manufacturer's street address as printed in the footer or contact block."
+        },
+        "manufacturer_phone": {
+          "type": "string",
+          "description": "Manufacturer's main telephone number as printed."
+        },
+        "document_status": {
+          "type": "string",
+          "description": "Maturity of the data sheet as printed, e.g. Preliminary Datasheet, Advance Information, or Production."
+        },
+        "revision": {
+          "type": "string",
+          "description": "Revision label of the data sheet as printed, e.g. Preliminary Rev. 1."
+        },
+        "revision_date": {
+          "type": "string",
+          "description": "Month and year of the revision exactly as printed, e.g. May 2026."
+        }
+      },
+      "required": ["part_number", "description", "manufacturer"]
+    },
+    "headline_ratings": {
+      "type": "object",
+      "description": "The summary box beside the part number on page 1.",
+      "properties": {
+        "rated_drain_source_voltage": {
+          "type": "string",
+          "description": "Headline V_DS rating with its unit, as printed in the summary box, e.g. 3300 V."
+        },
+        "rated_on_resistance": {
+          "type": "string",
+          "description": "Headline R_DS(on) with its unit, as printed in the summary box, e.g. 2 mΩ."
+        }
+      }
+    },
+    "maximum_ratings": {
+      "type": "object",
+      "description": "Key values from the Maximum Parameters (absolute maximum ratings) table.",
+      "properties": {
+        "drain_source_voltage_v": {
+          "type": "number",
+          "description": "Maximum drain-source voltage V_DS, in volts."
+        },
+        "gate_source_voltage_recommended": {
+          "type": "string",
+          "description": "Recommended operating gate-source voltage V_GS(op) as printed, e.g. -5/+18."
+        },
+        "continuous_drain_current_25c_a": {
+          "type": "number",
+          "description": "DC continuous drain current I_D at case temperature T_C = 25 °C, in amps."
+        },
+        "continuous_drain_current_90c_a": {
+          "type": "number",
+          "description": "DC continuous drain current I_D at case temperature T_C = 90 °C, in amps."
+        },
+        "pulsed_drain_current_a": {
+          "type": "number",
+          "description": "Pulsed drain-source current I_DM, in amps."
+        },
+        "power_dissipation_w": {
+          "type": "number",
+          "description": "Power dissipation P_D at T_C = 25 °C, in watts."
+        },
+        "max_junction_temperature_c": {
+          "type": "number",
+          "description": "Maximum virtual junction operating temperature T_VJ(op), in °C."
+        }
+      }
+    },
+    "mosfet_characteristics": {
+      "type": "object",
+      "description": "Key values from the MOSFET Characteristics table, at T_VJ = 25 °C unless stated.",
+      "properties": {
+        "gate_threshold_voltage_min_v": {
+          "type": "number",
+          "description": "Gate threshold voltage V_GS(th) minimum at 25 °C, in volts."
+        },
+        "gate_threshold_voltage_typ_v": {
+          "type": "number",
+          "description": "Gate threshold voltage V_GS(th) typical at 25 °C, in volts."
+        },
+        "gate_threshold_voltage_max_v": {
+          "type": "number",
+          "description": "Gate threshold voltage V_GS(th) maximum at 25 °C, in volts."
+        },
+        "on_resistance_typ_mohm": {
+          "type": "number",
+          "description": "Drain-source on-state resistance R_DS(on) typical at 25 °C, in milliohms."
+        },
+        "on_resistance_max_mohm": {
+          "type": "number",
+          "description": "Drain-source on-state resistance R_DS(on) maximum at 25 °C, in milliohms."
+        },
+        "on_resistance_typ_175c_mohm": {
+          "type": "number",
+          "description": "Drain-source on-state resistance R_DS(on) typical at T_VJ = 175 °C, in milliohms."
+        },
+        "on_resistance_test_conditions": {
+          "type": "string",
+          "description": "Test conditions for the 25 °C R_DS(on) row, as printed."
+        },
+        "input_capacitance_nf": {
+          "type": "number",
+          "description": "Input capacitance C_iss typical, in nanofarads."
+        },
+        "body_diode_forward_voltage_v": {
+          "type": "number",
+          "description": "Body diode forward voltage V_SD typical at 25 °C, from the Diode Characteristics table, in volts."
+        }
+      }
+    },
+    "characteristics_table": {
+      "type": "array",
+      "description": "Every row of the MOSFET Characteristics table, one entry per condition row. Where the Parameter, Symbol, Unit or Note cell is merged across several rows, repeat its value on each row it covers.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "parameter": { "type": "string", "description": "Parameter name, e.g. Gate Threshold Voltage." },
+          "symbol": { "type": "string", "description": "Parameter symbol, e.g. VGS(th)." },
+          "min": { "type": ["string", "null"], "description": "Minimum value as printed, or null if the cell is empty." },
+          "typ": { "type": ["string", "null"], "description": "Typical value as printed, or null if the cell is empty." },
+          "max": { "type": ["string", "null"], "description": "Maximum value as printed, or null if the cell is empty." },
+          "unit": { "type": "string", "description": "Unit, taken from the merged Unit cell if it spans several rows." },
+          "conditions": { "type": "string", "description": "Test conditions as printed." }
+        },
+        "required": ["parameter", "symbol", "unit"]
+      }
+    },
+    "physical_characteristics": {
+      "type": "object",
+      "description": "Values from the Module Physical Characteristics table.",
+      "properties": {
+        "stray_inductance_nh": { "type": "number", "description": "Stray inductance L_Stray, in nanohenries." },
+        "weight_g": { "type": "number", "description": "Module weight, in grams." },
+        "isolation_voltage_kv": { "type": "number", "description": "Case isolation voltage V_isol, in kilovolts." },
+        "comparative_tracking_index": { "type": "number", "description": "Comparative tracking index (CTI)." },
+        "creepage_terminal_to_baseplate_mm": { "type": "number", "description": "Creepage distance terminal to baseplate, in millimetres." }
+      }
+    },
+    "ntc_sensor": {
+      "type": "object",
+      "description": "Values from the Temperature Sensor (NTC) Characteristics table.",
+      "properties": {
+        "resistance_25c_ohm": { "type": "number", "description": "NTC resistance R25 at 25 °C, in ohms." },
+        "beta_25_80_k": { "type": "number", "description": "Beta value B25/80, in kelvin." }
+      }
+    },
+    "performance_figures": {
+      "type": "array",
+      "description": "Every numbered figure (typical performance curves and timing definitions), in figure-number order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "figure_number": { "type": "integer", "description": "The figure number." },
+          "title": { "type": "string", "description": "The figure caption, without the 'Figure N.' prefix." }
+        },
+        "required": ["figure_number", "title"]
+      }
+    },
+    "application_notes": {
+      "type": "array",
+      "description": "Application notes listed under Supporting Links & Tools.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "document_number": { "type": "string", "description": "Document number, e.g. PRD-08407." },
+          "title": { "type": "string", "description": "Application note title." }
+        },
+        "required": ["document_number", "title"]
+      }
+    }
+  },
+  "required": ["product", "maximum_ratings", "mosfet_characteristics"]
+}
