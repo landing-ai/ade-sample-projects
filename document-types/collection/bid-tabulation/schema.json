@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "title": "Bid Tabulation",
+  "description": "A public construction bid tabulation prepared by the engineer of record after a bid opening: the owner and project, the date bids were received, each bidder with its submittal checklist and totals, the Engineer's Estimate, every bid schedule (base bid and alternates) priced line by line for the estimate and each bidder, and the engineer's certification.",
+  "properties": {
+    "owner": {"type": "string", "description": "The public owner the bids were received for, from the title block, e.g. a sewer district or municipality."},
+    "project_name": {"type": "string", "description": "Project name from the title block."},
+    "contract_division": {"type": ["string", "null"], "description": "Contract or division the tabulation covers, as printed in the title block, or null if absent."},
+    "bid_opening_date": {"type": "string", "description": "Date bids were received or opened, from 'Tabulation of Bids Received', in YYYY-MM-DD form."},
+    "prepared_by": {"type": ["string", "null"], "description": "Name printed after 'Prepared By', or null if absent."},
+    "engineers_estimate": {
+      "type": "object",
+      "description": "The Engineer's Estimate column's totals.",
+      "properties": {
+        "total_base_bid": {"type": "number", "description": "Engineer's Estimate on the TOTAL BASE BID row."},
+        "total_base_plus_alternates": {"type": ["number", "null"], "description": "Engineer's Estimate on the row totalling the base bid plus all mandatory alternates, or null if absent."}
+      },
+      "required": ["total_base_bid", "total_base_plus_alternates"]
+    },
+    "bidders": {
+      "type": "array",
+      "description": "Each contractor that submitted a bid, in the left-to-right order of the bidder columns. Exclude the Engineer's Estimate.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Bidder's company name from the column header."},
+          "address": {"type": ["string", "null"], "description": "Bidder's street address, city, state and ZIP from the column header, on one line."},
+          "non_collusion_affidavit": {"type": ["string", "null"], "description": "Entry in this bidder's column on the 'Form No. 96 w/Non-Collusion Affidavit' checklist row, as printed (e.g. Yes), or null if blank."},
+          "bid_bond": {"type": ["string", "null"], "description": "Entry in this bidder's column on the 'Bid Bond' checklist row, as printed (e.g. Yes), or null if blank."},
+          "addenda_acknowledged": {"type": ["string", "null"], "description": "Entry on the 'Acknowledgment of Addenda Received' checklist row, as printed, or null if blank."},
+          "qualifications_statement": {"type": ["string", "null"], "description": "Entry on the 'Qualifications Statement' checklist row, as printed, or null if blank."},
+          "financial_statement": {"type": ["string", "null"], "description": "Entry on the 'Financial Statement' checklist row, as printed, or null if blank."},
+          "e_verify": {"type": ["string", "null"], "description": "Entry on the 'E-Verify' checklist row, as printed, or null if blank."},
+          "total_base_bid": {"type": "number", "description": "This bidder's amount on the TOTAL BASE BID row."},
+          "total_base_plus_alternates": {"type": ["number", "null"], "description": "This bidder's amount on the TOTAL BASE BID PLUS ALL MANDATORY ALTERNATE BIDS row, or null if absent."},
+          "engineer_comments": {"type": ["string", "null"], "description": "Any note the engineer wrote about this bidder below the tables (irregularities, missing documents), or null if none."}
+        },
+        "required": ["name", "address", "bid_bond", "total_base_bid"]
+      }
+    },
+    "bid_schedules": {
+      "type": "array",
+      "description": "Each priced schedule in document order: the base bid first, then each mandatory or optional alternate.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schedule_name": {"type": "string", "description": "Schedule name, e.g. 'Base Bid' or 'Mandatory Alternate No. 1 (MA-1) - LINES E & E-1'."},
+          "line_items": {
+            "type": "array",
+            "description": "Every numbered line item in the schedule.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "item_number": {"type": "string", "description": "Item # as printed, e.g. 8a."},
+                "description": {"type": "string", "description": "Item description as printed."},
+                "quantity": {"type": "number", "description": "Est. Qty. Negative for a deduct line."},
+                "unit": {"type": "string", "description": "Unit of measure, e.g. LS, LF, EA."},
+                "engineers_estimate_unit_price": {"type": ["number", "null"], "description": "Unit Price in the Engineer's Estimate column."},
+                "engineers_estimate_total": {"type": ["number", "null"], "description": "Total in the Engineer's Estimate column. Negative for a deduct line."},
+                "bids": {
+                  "type": "array",
+                  "description": "Each bidder's price for this item, in the same order as the bidder columns.",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "bidder_name": {"type": "string", "description": "Name of the bidder whose column this is."},
+                      "unit_price": {"type": ["number", "null"], "description": "Bidder's Unit Price for this item."},
+                      "total": {"type": ["number", "null"], "description": "Bidder's Total for this item. Negative for a deduct line."}
+                    },
+                    "required": ["bidder_name", "unit_price", "total"]
+                  }
+                }
+              },
+              "required": ["item_number", "description", "quantity", "unit", "engineers_estimate_unit_price", "engineers_estimate_total", "bids"]
+            }
+          },
+          "engineers_estimate_total": {"type": ["number", "null"], "description": "The schedule's total in the Engineer's Estimate column (TOTAL BASE BID for the base bid, the 'Total Mandatory Alternate' row for an alternate)."}
+        },
+        "required": ["schedule_name", "line_items", "engineers_estimate_total"]
+      }
+    },
+    "certification": {
+      "type": "object",
+      "description": "The engineer's certification block on the last page.",
+      "properties": {
+        "certified_by": {"type": ["string", "null"], "description": "Printed name of the certifying engineer."},
+        "license": {"type": ["string", "null"], "description": "Registration line printed beneath the name, e.g. the state P.E. registration."},
+        "date": {"type": ["string", "null"], "description": "Certification date, in YYYY-MM-DD form."}
+      }
+    }
+  },
+  "required": ["owner", "project_name", "bid_opening_date", "engineers_estimate", "bidders", "bid_schedules"]
+}
