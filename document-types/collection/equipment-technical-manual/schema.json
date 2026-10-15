@@ -1,0 +1,400 @@
+{
+  "type": "object",
+  "title": "Equipment Technical Manual",
+  "description": "Service reference pages from an equipment manufacturer's technical (repair) manual: fastener torque tables, hydraulic fitting service procedures with torque charts, and fuel specifications.",
+  "properties": {
+    "manual_sections": {
+      "type": "array",
+      "description": "Each group heading printed at the top of a page group (group number and title).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string",
+            "description": "Group label as printed, e.g. Group 15."
+          },
+          "title": {
+            "type": "string",
+            "description": "Group title as printed, e.g. Repair Information."
+          }
+        }
+      }
+    },
+    "metric_fastener_torque": {
+      "type": "object",
+      "description": "The METRIC FASTENER TORQUE VALUES table.",
+      "properties": {
+        "printed_page": {
+          "type": "string",
+          "description": "Printed page number at the foot of the page, e.g. 10-15-1."
+        },
+        "reference_standard": {
+          "type": "string",
+          "description": "Reference standard cited under the table, e.g. JDS-G200."
+        },
+        "rows": {
+          "type": "array",
+          "description": "One row per bolt size, in printed order.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "size": {
+                "type": "string",
+                "description": "Metric bolt size, e.g. M12."
+              },
+              "class_4_8": {
+                "type": "object",
+                "description": "Torque values for property class 4.8.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "property class 4.8, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "property class 4.8, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "property class 4.8, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "property class 4.8, dry: torque in lb-ft."
+                  }
+                }
+              },
+              "class_8_8_or_9_8": {
+                "type": "object",
+                "description": "Torque values for property class 8.8 or 9.8.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "property class 8.8 or 9.8, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "property class 8.8 or 9.8, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "property class 8.8 or 9.8, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "property class 8.8 or 9.8, dry: torque in lb-ft."
+                  }
+                }
+              },
+              "class_10_9": {
+                "type": "object",
+                "description": "Torque values for property class 10.9.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "property class 10.9, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "property class 10.9, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "property class 10.9, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "property class 10.9, dry: torque in lb-ft."
+                  }
+                }
+              },
+              "class_12_9": {
+                "type": "object",
+                "description": "Torque values for property class 12.9.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "property class 12.9, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "property class 12.9, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "property class 12.9, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "property class 12.9, dry: torque in lb-ft."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "inch_fastener_torque": {
+      "type": "object",
+      "description": "The INCH FASTENER TORQUE VALUES table.",
+      "properties": {
+        "printed_page": {
+          "type": "string",
+          "description": "Printed page number at the foot of the page."
+        },
+        "rows": {
+          "type": "array",
+          "description": "One row per bolt size, in printed order.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "size": {
+                "type": "string",
+                "description": "Inch bolt size, e.g. 1/2 or 1-1/8."
+              },
+              "grade_1": {
+                "type": "object",
+                "description": "Torque values for SAE grade 1.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "SAE grade 1, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 1, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "SAE grade 1, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 1, dry: torque in lb-ft."
+                  }
+                }
+              },
+              "grade_2": {
+                "type": "object",
+                "description": "Torque values for SAE grade 2.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "SAE grade 2, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 2, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "SAE grade 2, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 2, dry: torque in lb-ft."
+                  }
+                }
+              },
+              "grade_5": {
+                "type": "object",
+                "description": "Torque values for SAE grade 5, 5.1 or 5.2.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "SAE grade 5, 5.1 or 5.2, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 5, 5.1 or 5.2, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "SAE grade 5, 5.1 or 5.2, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 5, 5.1 or 5.2, dry: torque in lb-ft."
+                  }
+                }
+              },
+              "grade_8": {
+                "type": "object",
+                "description": "Torque values for SAE grade 8 or 8.2.",
+                "properties": {
+                  "lubricated_nm": {
+                    "type": "number",
+                    "description": "SAE grade 8 or 8.2, lubricated: torque in N·m."
+                  },
+                  "lubricated_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 8 or 8.2, lubricated: torque in lb-ft."
+                  },
+                  "dry_nm": {
+                    "type": "number",
+                    "description": "SAE grade 8 or 8.2, dry: torque in N·m."
+                  },
+                  "dry_lb_ft": {
+                    "type": "number",
+                    "description": "SAE grade 8 or 8.2, dry: torque in lb-ft."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "o_ring_face_seal_fittings": {
+      "type": "object",
+      "description": "The O-RING FACE SEAL FITTING INCH TORQUE chart and its service steps.",
+      "properties": {
+        "service_steps": {
+          "type": "array",
+          "description": "The numbered service steps, in order, as printed.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "torque_tolerance": {
+          "type": "string",
+          "description": "Torque tolerance note as printed, e.g. + 15 -20%."
+        },
+        "rows": {
+          "type": "array",
+          "description": "One row per fitting size.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tube_od_mm": {
+                "type": "number",
+                "description": "Nominal tube outside diameter in mm."
+              },
+              "tube_od_in": {
+                "type": "number",
+                "description": "Nominal tube outside diameter in inches."
+              },
+              "dash_size": {
+                "type": "string",
+                "description": "Dash size as printed, e.g. -8."
+              },
+              "thread_size": {
+                "type": "string",
+                "description": "Thread size in inches as printed, e.g. 13/16-16."
+              },
+              "swivel_nut_torque_nm": {
+                "type": "number",
+                "description": "Swivel nut torque in N·m."
+              },
+              "swivel_nut_torque_lb_ft": {
+                "type": "number",
+                "description": "Swivel nut torque in lb-ft."
+              },
+              "bulkhead_nut_torque_nm": {
+                "type": "number",
+                "description": "Bulkhead nut torque in N·m."
+              },
+              "bulkhead_nut_torque_lb_ft": {
+                "type": "number",
+                "description": "Bulkhead nut torque in lb-ft."
+              }
+            }
+          }
+        }
+      }
+    },
+    "o_ring_boss_fittings": {
+      "type": "object",
+      "description": "The O-RING BOSS FITTINGS procedure and its STRAIGHT FITTING OR SPECIAL NUT TORQUE chart.",
+      "properties": {
+        "service_steps": {
+          "type": "array",
+          "description": "The numbered service steps, in order, as printed.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "torque_tolerance": {
+          "type": "string",
+          "description": "Torque tolerance footnote as printed, e.g. ± 10 percent."
+        },
+        "rows": {
+          "type": "array",
+          "description": "One row per thread size.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "thread_size": {
+                "type": "string",
+                "description": "Thread size as printed, e.g. 3/4-16 UNF."
+              },
+              "torque_nm": {
+                "type": "number",
+                "description": "Torque in N·m."
+              },
+              "torque_lb_ft": {
+                "type": "number",
+                "description": "Torque in lb-ft (printed in parentheses)."
+              },
+              "number_of_flats": {
+                "type": "string",
+                "description": "Number of flats to turn after hand-tightening when a torque wrench cannot be used, as printed, e.g. 2 or 1-1/2."
+              }
+            }
+          }
+        }
+      }
+    },
+    "diesel_fuel": {
+      "type": "object",
+      "description": "The DIESEL FUEL - NORTH AMERICA, LUBRICITY and STORAGE specifications.",
+      "properties": {
+        "specification": {
+          "type": "string",
+          "description": "The fuel specification diesel is usually sold to in North America, e.g. ASTM D975."
+        },
+        "cold_weather_grade": {
+          "type": "string",
+          "description": "Grade recommended for cold air temperatures."
+        },
+        "warm_weather_grade": {
+          "type": "string",
+          "description": "Grade recommended for warm air temperatures."
+        },
+        "minimum_cetane_number": {
+          "type": "number",
+          "description": "Minimum cetane number."
+        },
+        "preferred_cetane_number": {
+          "type": "string",
+          "description": "Preferred cetane number, as printed, e.g. greater than 50."
+        },
+        "max_sulfur_content_percent": {
+          "type": "number",
+          "description": "Maximum sulfur content in percent for normal service intervals."
+        },
+        "high_sulfur_service_interval_reduction_percent": {
+          "type": "number",
+          "description": "Percent by which the engine oil and filter service interval is reduced when sulfur exceeds the limit."
+        },
+        "minimum_lubricity_load_grams": {
+          "type": "number",
+          "description": "Minimum scuffing load for fuel lubricity, in grams."
+        },
+        "lubricity_test": {
+          "type": "string",
+          "description": "Test used to measure lubricity, e.g. BOCLE."
+        },
+        "approved_storage_container": {
+          "type": "string",
+          "description": "Container material diesel fuel should be stored in."
+        },
+        "prohibited_storage_container": {
+          "type": "string",
+          "description": "Container material that must not be used for diesel fuel."
+        }
+      }
+    }
+  }
+}
