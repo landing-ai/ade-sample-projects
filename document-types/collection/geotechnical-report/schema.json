@@ -1,0 +1,185 @@
+{
+  "type": "object",
+  "title": "Geotechnical Report",
+  "description": "A geotechnical engineering investigation report, as used by structural engineers, contractors, plan reviewers and lenders: the project and site, the subsurface conditions logged at each test boring, and the laboratory consolidation test results.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Who prepared the report, for which project, and when.",
+      "properties": {
+        "report_title": {
+          "type": "string",
+          "description": "Title of the report as printed on the cover, e.g. 'Geotechnical Engineering Investigation'."
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Name of the proposed project the investigation was performed for."
+        },
+        "project_number": {
+          "type": "string",
+          "description": "The consultant's project or job number."
+        },
+        "site_address": {
+          "type": "string",
+          "description": "Street address and city of the investigated site."
+        },
+        "client": {
+          "type": "string",
+          "description": "The organization the report was prepared for."
+        },
+        "consultant": {
+          "type": "string",
+          "description": "The geotechnical engineering firm that prepared the report."
+        },
+        "report_date": {
+          "type": "string",
+          "description": "Date of the report as printed on the cover."
+        }
+      },
+      "required": ["report_title", "project_name", "project_number", "site_address", "client", "consultant", "report_date"]
+    },
+    "borings": {
+      "type": "array",
+      "description": "One entry per test boring log. A log that continues over several pages is a single boring.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "boring_id": {
+            "type": "string",
+            "description": "Boring designation from the log heading, e.g. 'B-1'."
+          },
+          "date_drilled": {
+            "type": "string",
+            "description": "Date the boring was drilled, as printed in the log header."
+          },
+          "drill_rig": {
+            "type": "string",
+            "description": "Drill rig model from the 'Drill Type' header field."
+          },
+          "auger_type": {
+            "type": ["string", "null"],
+            "description": "Auger or drilling method from the 'Auger Type' header field."
+          },
+          "hammer_type": {
+            "type": ["string", "null"],
+            "description": "Sampler hammer from the 'Hammer Type' header field, e.g. '140 Pound Auto Trip'."
+          },
+          "surface_elevation_ft": {
+            "type": ["number", "null"],
+            "description": "Ground surface elevation at the boring in feet, from the 'Elevation' header field."
+          },
+          "groundwater_first_encountered_ft": {
+            "type": ["number", "null"],
+            "description": "Depth in feet at which groundwater was first encountered during drilling, from the log header. Null if not encountered."
+          },
+          "groundwater_after_drilling_ft": {
+            "type": ["number", "null"],
+            "description": "Depth in feet at which groundwater was measured after drilling, from the log notes. Null if not reported."
+          },
+          "total_depth_ft": {
+            "type": ["number", "null"],
+            "description": "Depth in feet at which the boring was terminated, from the 'Bottom of Boring' note."
+          },
+          "termination_reason": {
+            "type": ["string", "null"],
+            "description": "Why the boring was terminated, if the log says."
+          },
+          "samples": {
+            "type": "array",
+            "description": "Each sampled interval on the log that has an N-value, in order of increasing depth.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uscs": {
+                  "type": ["string", "null"],
+                  "description": "USCS soil classification symbol of the stratum the sample is in, e.g. 'SM' or 'SP-SM'."
+                },
+                "soil_description": {
+                  "type": ["string", "null"],
+                  "description": "The soil description beside the sample, starting with the soil name in capitals where one is given."
+                },
+                "n_value_blows_per_ft": {
+                  "type": ["number", "null"],
+                  "description": "N-value in blows per foot from the 'N-Values' column."
+                },
+                "moisture_content_pct": {
+                  "type": ["number", "null"],
+                  "description": "Moisture content in percent from the 'Moisture Content %' column on the same row as the N-value."
+                },
+                "lab_remarks": {
+                  "type": ["string", "null"],
+                  "description": "Laboratory results in the 'Remarks' column beside this sample, verbatim (e.g. 'DD = 95.0 pcf'), or null if none."
+                }
+              },
+              "required": ["uscs", "n_value_blows_per_ft", "moisture_content_pct"]
+            }
+          }
+        },
+        "required": ["boring_id", "date_drilled", "drill_rig", "surface_elevation_ft", "groundwater_first_encountered_ft", "samples"]
+      }
+    },
+    "consolidation_tests": {
+      "type": "array",
+      "description": "One entry per consolidation test report page.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sample_no": {
+            "type": "string",
+            "description": "Sample number, which names the boring, e.g. 'B-1'."
+          },
+          "depth": {
+            "type": "string",
+            "description": "Sample elevation or depth range as printed, e.g. \"2-3.5'\"."
+          },
+          "material_description": {
+            "type": "string",
+            "description": "Material description of the tested sample."
+          },
+          "uscs": {
+            "type": ["string", "null"],
+            "description": "USCS classification of the tested sample."
+          },
+          "natural_saturation_pct": {
+            "type": ["number", "null"],
+            "description": "Natural degree of saturation in percent ('Natural Sat.')."
+          },
+          "natural_moisture_pct": {
+            "type": ["number", "null"],
+            "description": "Natural moisture content in percent ('Natural Moist.')."
+          },
+          "dry_density_pcf": {
+            "type": ["number", "null"],
+            "description": "Dry density in pounds per cubic foot."
+          },
+          "specific_gravity": {
+            "type": ["number", "null"],
+            "description": "Specific gravity of soil solids ('Sp. Gr.')."
+          },
+          "preconsolidation_pressure_ksf": {
+            "type": ["number", "null"],
+            "description": "Preconsolidation pressure Pc in ksf."
+          },
+          "compression_index": {
+            "type": ["number", "null"],
+            "description": "Compression index Cc."
+          },
+          "swell_index": {
+            "type": ["number", "null"],
+            "description": "Swell or recompression index Cs."
+          },
+          "collapse_pct": {
+            "type": ["number", "null"],
+            "description": "Collapse potential in percent ('Clpse. %')."
+          },
+          "initial_void_ratio": {
+            "type": ["number", "null"],
+            "description": "Initial void ratio e0."
+          }
+        },
+        "required": ["sample_no", "depth", "material_description"]
+      }
+    }
+  },
+  "required": ["report", "borings", "consolidation_tests"]
+}

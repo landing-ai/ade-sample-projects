@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 6,
+  "page_count": 14,
+  "preview_pages": [
+    1,
+    4,
+    6,
+    13
+  ],
+  "fields": [
+    {
+      "path": "borings[0].boring_id",
+      "label": "Boring",
+      "value": "B-1",
+      "page": 6,
+      "box": {
+        "xmin": 0.39095,
+        "ymin": 0.11129,
+        "xmax": 0.59363,
+        "ymax": 0.13431
+      },
+      "range": {
+        "end": 4285,
+        "start": 4265
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-boring_id.png"
+    },
+    {
+      "path": "borings[0].surface_elevation_ft",
+      "label": "Surface elevation (ft AMSL)",
+      "value": 183.0,
+      "page": 6,
+      "box": {
+        "xmin": 0.70649,
+        "ymin": 0.23192,
+        "xmax": 0.9385,
+        "ymax": 0.24754
+      },
+      "range": {
+        "end": 4567,
+        "start": 4542
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-surface_elevation_ft.png"
+    },
+    {
+      "path": "borings[0].groundwater_first_encountered_ft",
+      "label": "Groundwater first encountered (ft)",
+      "value": 18.2,
+      "page": 6,
+      "box": {
+        "xmin": 0.52328,
+        "ymin": 0.27494,
+        "xmax": 0.90423,
+        "ymax": 0.29162
+      },
+      "range": {
+        "end": 4635,
+        "start": 4590
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-groundwater_first_encountered_ft.png"
+    },
+    {
+      "path": "borings[0].samples[0].uscs",
+      "label": "First sample USCS class",
+      "value": "SM",
+      "page": 6,
+      "box": {
+        "xmin": 0.36137,
+        "ymin": 0.33673,
+        "xmax": 0.43604,
+        "ymax": 0.44042
+      },
+      "range": {
+        "end": 4998,
+        "start": 4996
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-samples-0-uscs.png"
+    },
+    {
+      "path": "borings[0].samples[0].n_value_blows_per_ft",
+      "label": "First sample N-value (blows/ft)",
+      "value": 27,
+      "page": 6,
+      "box": {
+        "xmin": 0.83943,
+        "ymin": 0.33669,
+        "xmax": 0.90682,
+        "ymax": 0.44022
+      },
+      "range": {
+        "end": 5196,
+        "start": 5194
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-samples-0-n_value_blows_per_ft.png"
+    }
+  ]
+}
