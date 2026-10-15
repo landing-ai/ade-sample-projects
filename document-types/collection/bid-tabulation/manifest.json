@@ -1,0 +1,26 @@
+{
+  "slug": "bid-tabulation",
+  "title": "Bid Tabulation",
+  "source": {
+    "file": "S18018-Div-B-Bid-Tab.pdf",
+    "pages": 4,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://commonwealthengineers.com/wp-content/uploads/2026/06/S18018-Div-B-Bid-Tab.pdf",
+      "publisher": "Commonwealth Engineers, Inc., for the Jackson Township Regional Sewer District (Indiana)",
+      "title": "Jackson Township Regional Sewer District Wastewater System Improvements, Division \"B\" - Collection System Improvements: Bid Tabulation (bids received June 12, 2026)",
+      "retrieved": "2026-10-14",
+      "clearance": "public",
+      "clearance_note": "A public bid tabulation posted on the website of Commonwealth Engineers, Inc., the consulting engineer of record, for the Jackson Township Regional Sewer District, a public utility district in Indiana. Tabulations of public bids are public records, published so bidders and the public can see the results of the opening. Downloaded directly. The bidders are companies. The only people named act in an official capacity: the engineer's staff member who prepared the tabulation (page 1) and the certifying professional engineer, with his Indiana P.E. registration number, signature and embossed seal (page 4); professional engineer registrations are themselves public record. An internal file-server path appears in each page footer and is kept as printed. No redaction was needed. The PDF's document metadata, which carried a staff username as the author, was cleared. The engineer's projects-for-bid page now lists this project as a rebid, so these bids were likely rejected; that does not affect the document as a sample."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "engineers_estimate.total_base_bid", "label": "Engineer's Estimate total base bid", "occurrence": 0 },
+    { "path": "bidders[0].name", "label": "Low bidder", "occurrence": 0 },
+    { "path": "bidders[0].total_base_bid", "label": "Low bidder total base bid", "occurrence": 0 },
+    { "path": "bidders[0].bid_bond", "label": "Low bidder bid bond received", "occurrence": 0 },
+    { "path": "bid_schedules[0].line_items[2].engineers_estimate_unit_price", "label": "Engineer's unit price for item 3 (railroad casing pipe)", "occurrence": 0 }
+  ],
+  "notes": "Page 1, the base bid, is the feature page: the title block, the four-column bidder header (Engineer's Estimate plus three contractors, each a Unit Price and Total pair under a merged header cell), the submittal checklist grid, 18 base-bid line items and the TOTAL BASE BID row. The overlay tells one story: what the engineer expected the base bid to cost, who came in lowest and at what price, that the low bidder's bid bond was received, and one line item's estimated unit price read from the correct column of an 11-column table. Yarberry Companies, Inc. is the low base bidder ($1,117,809.00 against an Engineer's Estimate of $1,186,195.00) and happens to be the first bidder column, hence bidders[0]. Item 3 (Railroad Crossing Steel Casing Pipe) was chosen for the unit price because its unit price ($623.00) differs from its total ($87,220.00), so the crop shows the right column was read; lump-sum items print the same figure in both. The request suggested six fields on page 1: bid opening date, Engineer's Estimate total base bid, low bidder name, low bidder total base bid, a line item's Engineer's Estimate unit price, and bid bond received. Five shipped. The bid opening date was dropped: the schema normalizes it to ISO form (2026-06-12), so its range boxes the printed 'June 12, 2026' line and the field check marks it OFF; a page also features at most five fields. The request described the alternates as MA-1 and MA-2; the document actually carries four mandatory alternates (MA-1 to MA-4) on pages 2 and 3, and all four were extracted. The Engineer's Estimate base bid plus the four alternate totals reconcile to the $2,666,583.00 grand total on page 4."
+}
