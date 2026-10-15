@@ -1,0 +1,26 @@
+{
+  "slug": "equipment-technical-manual",
+  "title": "Equipment Technical Manual",
+  "source": {
+    "file": "john-deere-tm1360-torque-and-fuel.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "http://www.golftechs.us/Manuals/JDtractors.pdf",
+      "publisher": "Deere & Company (John Deere Lawn & Grounds Care Division)",
+      "title": "Technical Manual TM1360: 655, 755, 855, 955, 756 and 856 Compact Utility Tractors (June 1996), pages 10-15-1 to 10-15-4 and 10-20-1",
+      "retrieved": "2026-10-14",
+      "clearance": "public",
+      "clearance_note": "A John Deere repair manual marked COPYRIGHT 1996 Deere & Company, which Deere still sells (for example through deeremanuals.com as TM1360). This copy is hosted on golftechs.us, an unrelated site whose home page is a placeholder and whose Manuals folder is not browsable; nothing found links to the file, so it is a mirror rather than a publisher distribution. The operator reviewed that provenance doubt and chose clearance public on 2026-10-14. Downloaded by script. The 570-page original was cut to five pages (original pages 21-25: the metric and inch fastener torque tables, the O-ring face seal and O-ring boss fitting service pages, and the diesel fuel specifications), and the PDF metadata was cleared. The pages carry no personal data, so nothing was redacted."
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    { "path": "inch_fastener_torque.rows[4].size", "label": "Bolt size (in)", "occurrence": 0 },
+    { "path": "inch_fastener_torque.rows[4].grade_5.lubricated_nm", "label": "SAE grade 5 lubricated torque (N·m)", "occurrence": 0 },
+    { "path": "inch_fastener_torque.rows[4].grade_5.lubricated_lb_ft", "label": "SAE grade 5 lubricated torque (lb-ft)", "occurrence": 0 },
+    { "path": "inch_fastener_torque.rows[4].grade_5.dry_nm", "label": "SAE grade 5 dry torque (N·m)", "occurrence": 0 },
+    { "path": "inch_fastener_torque.rows[4].grade_5.dry_lb_ft", "label": "SAE grade 5 dry torque (lb-ft)", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature_page or fields; its notes suggested the metric torque table (page 1) or the O-ring boss page (page 4), with the M12 class 10.9 lubricated torque in N·m and lb-ft, the M20 class 8.8 dry torque, the JDS-G200 reference standard and the 3/4-16 UNF fitting torque and flats, all as suggestions only. They were not shipped because grounding on this document was unstable between runs. The first extraction grounded every table cell on all five pages, including every suggested field; it was then re-run after a one-line description fix in the schema, and in five further runs (four extraction-only, one full parse and extract) whole table sections came back with correct values but no ranges at all (SYNTH): the metric table in every one of those runs, the O-ring boss table in every one, the O-ring face seal table in four and the inch table in four. The committed output is the full parse-and-extract run in which the inch table grounds cell for cell and the metric, O-ring face seal and O-ring boss rows are SYNTH, so page 2 is featured instead of page 1: the same kind of two-tier torque table, read in the same way. The five fields are one complete lookup, a 1/2-inch SAE grade 5 cap screw's four torque values across the lubricated/dry and N·m/lb-ft header tiers, so the overlay shows the pairing of a size row against a two-tier column header. The numbered service steps on pages 3 and 4 ground OFF because each step wraps across several lines and is matched line by line; the values themselves are right. Extraction reports the metric table's M14 class 12.9 dry torque as 260 N·m and 109 lb-ft, which is what the page prints; 260 N·m is about 192 lb-ft, so the printed 109 looks like a transposition in the source. Extraction does not flag it. The source is a Deere-copyrighted manual on an unlinked mirror site, used with clearance public by the operator's decision of 2026-10-14 (see clearance_note)."
+}
