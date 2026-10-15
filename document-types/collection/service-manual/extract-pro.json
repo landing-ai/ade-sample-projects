@@ -1,0 +1,6713 @@
+{
+  "extraction": {
+    "checking_voltage_procedure": {
+      "max_voltage_imbalance_percent": 3,
+      "unit_supply_voltage_limits": [
+        {
+          "max_volts": 506,
+          "min_volts": 437,
+          "nominal_voltage": "460"
+        },
+        {
+          "max_volts": 253,
+          "min_volts": 198,
+          "nominal_voltage": "208/230"
+        }
+      ]
+    },
+    "cooling_analysis_chart": {
+      "chart_title": "COOLING ANALYSIS CHART",
+      "rows": [
+        {
+          "possible_cause": "Power Failure",
+          "service_procedure_ref": "S-1",
+          "symptoms": [
+            "System will not start"
+          ],
+          "test_method_remedy": "Test Voltage"
+        },
+        {
+          "possible_cause": "Blown Fuse",
+          "service_procedure_ref": "S-4",
+          "symptoms": [
+            "System will not start",
+            "Comp. and Cond. Fan will not start",
+            "Evaporator fan will not start"
+          ],
+          "test_method_remedy": "Inspect Fuse Size & Type"
+        },
+        {
+          "possible_cause": "Loose Connection",
+          "service_procedure_ref": "S-2",
+          "symptoms": [
+            "System will not start",
+            "Evaporator fan will not start",
+            "Compressor runs - goes off on overload"
+          ],
+          "test_method_remedy": "Inspect Connection - Tighten"
+        },
+        {
+          "possible_cause": "Shorted or Broken Wires",
+          "service_procedure_ref": "S-3",
+          "symptoms": [
+            "System will not start",
+            "Compressor will not start - fan runs",
+            "Comp. and Cond. Fan will not start",
+            "Evaporator fan will not start",
+            "Condenser fan will not start",
+            "Compressor runs - goes off on overload"
+          ],
+          "test_method_remedy": "Test Circuits With Ohmmeter"
+        },
+        {
+          "possible_cause": "Open Overload",
+          "service_procedure_ref": "S-17A",
+          "symptoms": [
+            "Compressor will not start - fan runs",
+            "Evaporator fan will not start",
+            "Condenser fan will not start"
+          ],
+          "test_method_remedy": "Test Continuity of Overload"
+        },
+        {
+          "possible_cause": "Faulty Thermostat",
+          "service_procedure_ref": "S-3",
+          "symptoms": [
+            "System will not start",
+            "Evaporator fan will not start",
+            "Too cool and then too warm",
+            "Not cool enough on warm days"
+          ],
+          "test_method_remedy": "Test continuity of Thermostat & Wiring"
+        },
+        {
+          "possible_cause": "Faulty Transformer",
+          "service_procedure_ref": "S-4",
+          "symptoms": [
+            "System will not start",
+            "Comp. and Cond. Fan will not start"
+          ],
+          "test_method_remedy": "Check control circuit w ith voltmeter"
+        },
+        {
+          "possible_cause": "Shorted or Open Capacitor",
+          "service_procedure_ref": "S-15",
+          "symptoms": [
+            "Compressor will not start - fan runs",
+            "Condenser fan will not start",
+            "Compressor runs - goes off on overload"
+          ],
+          "test_method_remedy": "Test Capacitor"
+        },
+        {
+          "possible_cause": "Shorted or Grounded Compressor",
+          "service_procedure_ref": "S-17B",
+          "symptoms": [
+            "Compressor will not start - fan runs",
+            "Compressor runs - goes off on overload"
+          ],
+          "test_method_remedy": "Test Motor Windings"
+        },
+        {
+          "possible_cause": "Compressor Stuck",
+          "service_procedure_ref": "S-17D",
+          "symptoms": [
+            "System will not start",
+            "Compressor runs - goes off on overload"
+          ],
+          "test_method_remedy": "Use Test Cord"
+        },
+        {
+          "possible_cause": "Faulty Compressor Contactor",
+          "service_procedure_ref": "S-7, S-8",
+          "symptoms": [
+            "System will not start",
+            "Compressor will not start - fan runs",
+            "Condenser fan will not start",
+            "Compressor runs - goes off on overload"
+          ],
+          "test_method_remedy": "Test continuity of Coil & Contacts"
+        },
+        {
+          "possible_cause": "2nd Stage Compressor Not Energized",
+          "service_procedure_ref": "S-17C",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Low head pressure",
+            "High suction pressure"
+          ],
+          "test_method_remedy": "Test Unloader Solenoid (2 stage compressor only)"
+        },
+        {
+          "possible_cause": "Faulty Ignition Control",
+          "service_procedure_ref": "S-313",
+          "symptoms": [
+            "Evaporator fan will not start"
+          ],
+          "test_method_remedy": "Test Ignition Control"
+        },
+        {
+          "possible_cause": "Open Control Circuit",
+          "service_procedure_ref": "S-4",
+          "symptoms": [
+            "Evaporator fan will not start"
+          ],
+          "test_method_remedy": "Test Control Circuit with Voltmeter"
+        },
+        {
+          "possible_cause": "Low Voltage",
+          "service_procedure_ref": "S-1",
+          "symptoms": [
+            "Compressor will not start - fan runs",
+            "Compressor runs - goes off on overload",
+            "Compressor cycles on overload"
+          ],
+          "test_method_remedy": "Test Voltage"
+        },
+        {
+          "possible_cause": "Faulty Evap. Fan Motor",
+          "service_procedure_ref": "S-16",
+          "symptoms": [
+            "Evaporator fan will not start",
+            "Low suction pressure"
+          ],
+          "test_method_remedy": "Repair or Replace"
+        },
+        {
+          "possible_cause": "Shorted or Grounded Fan Motor",
+          "service_procedure_ref": "S-16",
+          "symptoms": [
+            "High head pressure"
+          ],
+          "test_method_remedy": "Test Motor Windings"
+        },
+        {
+          "possible_cause": "Improper Cooling Anticipator",
+          "service_procedure_ref": "S-3",
+          "symptoms": [
+            "Compressor cycles on overload",
+            "Too cool and then too warm"
+          ],
+          "test_method_remedy": "Check resistance of Anticipator"
+        },
+        {
+          "possible_cause": "Shortage of Refrigerant",
+          "service_procedure_ref": "S-103",
+          "symptoms": [
+            "Compressor cycles on overload",
+            "System runs continuously - little cooling",
+            "Low suction pressure",
+            "Low head pressure"
+          ],
+          "test_method_remedy": "Test For Leaks, Add Refrigerant"
+        },
+        {
+          "possible_cause": "Restricted Liquid Line",
+          "service_procedure_ref": "S-112",
+          "symptoms": [
+            "Compressor cycles on overload",
+            "System runs continuously - little cooling",
+            "Low suction pressure",
+            "Low head pressure"
+          ],
+          "test_method_remedy": "Replace Restricted Part"
+        },
+        {
+          "possible_cause": "Dirty Air Filter",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Certain areas too cool, others too warm",
+            "Low suction pressure"
+          ],
+          "test_method_remedy": "Inspect Filter-Clean or Replace"
+        },
+        {
+          "possible_cause": "Dirty Indoor Coil",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Certain areas too cool, others too warm",
+            "Low suction pressure"
+          ],
+          "test_method_remedy": "Inspect Coil - Clean"
+        },
+        {
+          "possible_cause": "Not enough air across Indoor Coil",
+          "service_procedure_ref": "S-200",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Certain areas too cool, others too warm",
+            "Low suction pressure"
+          ],
+          "test_method_remedy": "Speed Blow er, Check Duct Static Press"
+        },
+        {
+          "possible_cause": "Too much air across Indoor Coil",
+          "service_procedure_ref": "S-200",
+          "symptoms": [
+            "High suction pressure"
+          ],
+          "test_method_remedy": "Reduce Blow er Speed"
+        },
+        {
+          "possible_cause": "Overcharge of Refrigerant",
+          "service_procedure_ref": "S-113",
+          "symptoms": [
+            "Compressor runs - goes off on overload",
+            "Compressor cycles on overload",
+            "Compressor is noisy",
+            "High suction pressure",
+            "High head pressure"
+          ],
+          "test_method_remedy": "Recover Part of Charge"
+        },
+        {
+          "possible_cause": "Dirty Outdoor Coil",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor runs - goes off on overload",
+            "Compressor cycles on overload",
+            "Not cool enough on warm days",
+            "High head pressure"
+          ],
+          "test_method_remedy": "Inspect Coil - Clean"
+        },
+        {
+          "possible_cause": "Noncondensibles",
+          "service_procedure_ref": "S-114",
+          "symptoms": [
+            "Compressor cycles on overload",
+            "Not cool enough on warm days",
+            "High head pressure"
+          ],
+          "test_method_remedy": "Recover Charge, Evacuate, Recharge"
+        },
+        {
+          "possible_cause": "Recirculation of Condensing Air",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor cycles on overload",
+            "Not cool enough on warm days",
+            "High head pressure"
+          ],
+          "test_method_remedy": "Remove Obstruction to Air Flow"
+        },
+        {
+          "possible_cause": "Infiltration of Outdoor Air",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Certain areas too cool, others too warm"
+          ],
+          "test_method_remedy": "Check Windows, Doors, Vent Fans, Etc."
+        },
+        {
+          "possible_cause": "Improperly Located Thermostat",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor runs - goes off on overload",
+            "Too cool and then too warm"
+          ],
+          "test_method_remedy": "Relocate Thermostat"
+        },
+        {
+          "possible_cause": "Air Flow Unbalanced",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Too cool and then too warm",
+            "Certain areas too cool, others too warm"
+          ],
+          "test_method_remedy": "Readjust Air Volume Dampers"
+        },
+        {
+          "possible_cause": "System Undersized",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days"
+          ],
+          "test_method_remedy": "Refigure Cooling Load"
+        },
+        {
+          "possible_cause": "Broken Internal Parts",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor is noisy"
+          ],
+          "test_method_remedy": "Replace Compressor"
+        },
+        {
+          "possible_cause": "Inefficient Compressor",
+          "service_procedure_ref": "S-104",
+          "symptoms": [
+            "System runs continuously - little cooling",
+            "Low head pressure",
+            "High suction pressure"
+          ],
+          "test_method_remedy": "Test Compressor Efficiency"
+        },
+        {
+          "possible_cause": "High Pressure Control Open",
+          "service_procedure_ref": "S-12",
+          "symptoms": [
+            "Comp. and Cond. Fan will not start"
+          ],
+          "test_method_remedy": "Reset And Test Control"
+        },
+        {
+          "possible_cause": "Unbalanced Power, 3PH",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor will not start - fan runs",
+            "Compressor runs - goes off on overload",
+            "Compressor cycles on overload"
+          ],
+          "test_method_remedy": "Test Voltage"
+        },
+        {
+          "possible_cause": "Wrong Type Expansion Valve",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor runs - goes off on overload",
+            "Compressor cycles on overload",
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Low suction pressure",
+            "Low head pressure"
+          ],
+          "test_method_remedy": "Replace Valve"
+        },
+        {
+          "possible_cause": "Expansion Device Restricted",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor runs - goes off on overload",
+            "Compressor cycles on overload",
+            "System runs continuously - little cooling",
+            "Not cool enough on warm days",
+            "Low suction pressure",
+            "Low head pressure"
+          ],
+          "test_method_remedy": "Remove restriction or replace expansion device"
+        },
+        {
+          "possible_cause": "Expansion Valve Bulb Loose",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor is noisy"
+          ],
+          "test_method_remedy": "Tighten Bulb Bracket"
+        },
+        {
+          "possible_cause": "Inoperative Expansion Valve",
+          "service_procedure_ref": "S-110",
+          "symptoms": [
+            "Compressor runs - goes off on overload",
+            "System runs continuously - little cooling",
+            "Low suction pressure"
+          ],
+          "test_method_remedy": "Check Valve Operation"
+        },
+        {
+          "possible_cause": "Loose Hold-down n Bolts",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Compressor is noisy"
+          ],
+          "test_method_remedy": "Tighten Bolts"
+        }
+      ]
+    },
+    "gas_heating_analysis_chart": {
+      "chart_title": "GAS HEATING ANALYSIS CHART",
+      "rows": [
+        {
+          "possible_cause": "Pow er Failure",
+          "service_procedure_ref": "S-1",
+          "symptoms": [
+            "System Will Not Start"
+          ],
+          "test_method_remedy": "Test Voltage"
+        },
+        {
+          "possible_cause": "Blow n Fuse",
+          "service_procedure_ref": "S-4",
+          "symptoms": [
+            "System Will Not Start"
+          ],
+          "test_method_remedy": "Test Voltage"
+        },
+        {
+          "possible_cause": "Loose Connection",
+          "service_procedure_ref": "S-2",
+          "symptoms": [
+            "System Will Not Start"
+          ],
+          "test_method_remedy": "Check Wiring"
+        },
+        {
+          "possible_cause": "Shorted or Broken Wires",
+          "service_procedure_ref": "S-3",
+          "symptoms": [
+            "System Will Not Start"
+          ],
+          "test_method_remedy": "Check Wiring"
+        },
+        {
+          "possible_cause": "No Low Voltage",
+          "service_procedure_ref": "S-4",
+          "symptoms": [
+            "System Will Not Start"
+          ],
+          "test_method_remedy": "Check Transformer"
+        },
+        {
+          "possible_cause": "Faulty Thermostat",
+          "service_procedure_ref": "S-3",
+          "symptoms": [
+            "System Will Not Start",
+            "Short Cycles",
+            "Long Cycles",
+            "To Much Heat"
+          ],
+          "test_method_remedy": "Check Thermostat"
+        },
+        {
+          "possible_cause": "Faulty Transformer",
+          "service_procedure_ref": "S-4",
+          "symptoms": [
+            "System Will Not Start"
+          ],
+          "test_method_remedy": "Check Transformer"
+        },
+        {
+          "possible_cause": "Poor or High Resistance Ground",
+          "service_procedure_ref": "S-313",
+          "symptoms": [
+            "Burner Ignites-Locks Out"
+          ],
+          "test_method_remedy": "Measure Ground Resistance"
+        },
+        {
+          "possible_cause": "Improper Heat Anticipator Setting",
+          "service_procedure_ref": "S-3",
+          "symptoms": [
+            "Short Cycles",
+            "Long Cycles",
+            "To Much Heat",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Adjust Heat Anticipator Setting"
+        },
+        {
+          "possible_cause": "Improper Thermostat Location",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Short Cycles",
+            "Long Cycles",
+            "To Much Heat",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Relocate Thermostat"
+        },
+        {
+          "possible_cause": "Faulty Limit or Roll Out Switch",
+          "service_procedure_ref": "S-300,S-301,S-302",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Burner Shuts Off prior to T'Stat being Satasfie",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Test Control"
+        },
+        {
+          "possible_cause": "Faulty Flame Sensor",
+          "service_procedure_ref": "S-314",
+          "symptoms": [
+            "Burner Ignites-Locks Out"
+          ],
+          "test_method_remedy": "Test Flame Sensor"
+        },
+        {
+          "possible_cause": "Faulty Ignition Control",
+          "service_procedure_ref": "S-313",
+          "symptoms": [
+            "System Will Not Start",
+            "Burner Won't Ignite",
+            "Burner Ignites-Locks Out"
+          ],
+          "test_method_remedy": "Test Control"
+        },
+        {
+          "possible_cause": "Gas Valve or Gas Supply Shut Off",
+          "service_procedure_ref": "S-304",
+          "symptoms": [
+            "Burner Won't Ignite"
+          ],
+          "test_method_remedy": "Turn Valves to On Position"
+        },
+        {
+          "possible_cause": "Faulty Induced Draft Blower",
+          "service_procedure_ref": "S-303",
+          "symptoms": [
+            "System Will Not Start",
+            "Burner Won't Ignite",
+            "Soot and /or Fumes"
+          ],
+          "test_method_remedy": "Test Blower"
+        },
+        {
+          "possible_cause": "Dirty Flame Sensor, Low uA",
+          "service_procedure_ref": "S-314",
+          "symptoms": [
+            "Burner Ignites-Locks Out"
+          ],
+          "test_method_remedy": "Clean Flame Sensor"
+        },
+        {
+          "possible_cause": "Flame Sensor not in Flame, Low uA",
+          "service_procedure_ref": "S-314",
+          "symptoms": [
+            "Burner Ignites-Locks Out"
+          ],
+          "test_method_remedy": "Test/Adjust Position of Flame Sensor"
+        },
+        {
+          "possible_cause": "Faulty Gas Valve",
+          "service_procedure_ref": "S-304",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Soot and /or Fumes",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Replace Gas Valve"
+        },
+        {
+          "possible_cause": "No High Stage Heat (2 Stage Only)",
+          "service_procedure_ref": "S-3,S-313,S-304",
+          "symptoms": [
+            "Long Cycles",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Check Thermostat, Control, Gas Valve"
+        },
+        {
+          "possible_cause": "Open Auxillary Limit",
+          "service_procedure_ref": "S-301",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Burner Shuts Off prior to T'Stat being Satasfie"
+          ],
+          "test_method_remedy": "Reset Control"
+        },
+        {
+          "possible_cause": "Improper Air Flow or Distribution",
+          "service_procedure_ref": null,
+          "symptoms": [
+            "Burner Shuts Off prior to T'Stat being Satasfie",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Check Duct Static"
+        },
+        {
+          "possible_cause": "Locking out on Main Limit",
+          "service_procedure_ref": "S-300",
+          "symptoms": [
+            "Burner Ignites-Locks Out",
+            "Burner Shuts Off prior to T'Stat being Satasfie",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Check Controls, Gas Press., & Temp. Rise"
+        },
+        {
+          "possible_cause": "Delayed Ignition",
+          "service_procedure_ref": "S-308",
+          "symptoms": [
+            "Soot and /or Fumes"
+          ],
+          "test_method_remedy": "Test for Delayed Ignition"
+        },
+        {
+          "possible_cause": "Flashback",
+          "service_procedure_ref": "S-309",
+          "symptoms": [
+            "Soot and /or Fumes"
+          ],
+          "test_method_remedy": "Test for Flashback"
+        },
+        {
+          "possible_cause": "Orifice Size",
+          "service_procedure_ref": "S-306",
+          "symptoms": [
+            "Soot and /or Fumes",
+            "To Much Heat",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Check Orifices"
+        },
+        {
+          "possible_cause": "Gas Pressure",
+          "service_procedure_ref": "S-307",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Soot and /or Fumes",
+            "To Much Heat",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Check Gas Pressure"
+        },
+        {
+          "possible_cause": "Cracked Heat Exchanger",
+          "service_procedure_ref": "S-302",
+          "symptoms": [
+            "Soot and /or Fumes"
+          ],
+          "test_method_remedy": "Check Burner Flames"
+        },
+        {
+          "possible_cause": "Stuck Gas Valve",
+          "service_procedure_ref": "S-304",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Soot and /or Fumes",
+            "To Much Heat"
+          ],
+          "test_method_remedy": "Replace Gas Valve"
+        },
+        {
+          "possible_cause": "Furnace Undersized",
+          "service_procedure_ref": "",
+          "symptoms": [
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Replace w ith Proper Size Furnace"
+        },
+        {
+          "possible_cause": "Faulty Pressure Switch",
+          "service_procedure_ref": "S-310",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Burner Ignites-Locks Out",
+            "Burner Shuts Off prior to T'Stat being Satasfie"
+          ],
+          "test_method_remedy": "Test Pressure Switch"
+        },
+        {
+          "possible_cause": "Blocked or Restricted Flue",
+          "service_procedure_ref": "S-310",
+          "symptoms": [
+            "Soot and /or Fumes"
+          ],
+          "test_method_remedy": "Check Flue/Draw dow n Pressure"
+        },
+        {
+          "possible_cause": "Open Roll Out Switch",
+          "service_procedure_ref": "S-302",
+          "symptoms": [
+            "Burner Won't Ignite",
+            "Burner Ignites-Locks Out"
+          ],
+          "test_method_remedy": "Test Control"
+        },
+        {
+          "possible_cause": "Bouncing On Pressure Switch",
+          "service_procedure_ref": "S-310",
+          "symptoms": [
+            "Burner Ignites-Locks Out",
+            "Not Enough Heat"
+          ],
+          "test_method_remedy": "Test Negative Pressure"
+        }
+      ]
+    },
+    "manual": {
+      "manufacturer": "Goodman Manufacturing Company, L.P.",
+      "product_description": "Gas Electric Package Units",
+      "product_line": "APG/GPG 14 SEER",
+      "publication_date": "July 2017",
+      "publication_number": "RS6300012r4",
+      "refrigerant": "R-410A",
+      "standards_compliance": "ANSI Z21.47•CSA-2.3 Central Furnaces",
+      "title": "Service Instructions"
+    },
+    "service_procedures": [
+      {
+        "page": 35,
+        "procedure_code": "S-1",
+        "title": "Checking Voltage"
+      },
+      {
+        "page": 45,
+        "procedure_code": "S-105",
+        "title": "Thermostatic Expansion Valve"
+      },
+      {
+        "page": 36,
+        "procedure_code": "S-2",
+        "title": "Checking Wiring"
+      },
+      {
+        "page": 47,
+        "procedure_code": "S-106",
+        "title": "Overfeeding"
+      },
+      {
+        "page": 36,
+        "procedure_code": "S-3",
+        "title": "Checking Thermostat, Wiring & Anticipator"
+      },
+      {
+        "page": 47,
+        "procedure_code": "S-107",
+        "title": "Underfeeding"
+      },
+      {
+        "page": 36,
+        "procedure_code": "S-3A",
+        "title": "Thermostat & Wiring"
+      },
+      {
+        "page": 47,
+        "procedure_code": "S-108",
+        "title": "Superheat"
+      },
+      {
+        "page": 36,
+        "procedure_code": "S-3B",
+        "title": "Cooling Anticipator"
+      },
+      {
+        "page": 49,
+        "procedure_code": "S-109",
+        "title": "Checking Subcooling"
+      },
+      {
+        "page": 36,
+        "procedure_code": "S-3C",
+        "title": "Heating Anticipator"
+      },
+      {
+        "page": 49,
+        "procedure_code": "S-110",
+        "title": "Checking Expansion Valve Operation"
+      },
+      {
+        "page": 37,
+        "procedure_code": "S-4",
+        "title": "Checking Transformer & Control Circuit"
+      },
+      {
+        "page": 49,
+        "procedure_code": "S-111",
+        "title": "Fixed Orifice Restriction Devices"
+      },
+      {
+        "page": 37,
+        "procedure_code": "S-7",
+        "title": "Checking Contactor and/or Relays"
+      },
+      {
+        "page": 50,
+        "procedure_code": "S-112",
+        "title": "Checking Restricted Liquid Line"
+      },
+      {
+        "page": 37,
+        "procedure_code": "S-8",
+        "title": "Checking Contactor Contacts"
+      },
+      {
+        "page": 50,
+        "procedure_code": "S-113",
+        "title": "Refrigerant Overcharge"
+      },
+      {
+        "page": 38,
+        "procedure_code": "S-9",
+        "title": "Checking Fan Relay Contact"
+      },
+      {
+        "page": 50,
+        "procedure_code": "S-114",
+        "title": "Non-condensables"
+      },
+      {
+        "page": 38,
+        "procedure_code": "S-12",
+        "title": "Checking High Pressure Control"
+      },
+      {
+        "page": 50,
+        "procedure_code": "S-115",
+        "title": "Compressor Burnout"
+      },
+      {
+        "page": 38,
+        "procedure_code": "S-13",
+        "title": "Checking Low Pressure Control"
+      },
+      {
+        "page": 51,
+        "procedure_code": "S-200",
+        "title": "Checking Extedrnal Static Pressure"
+      },
+      {
+        "page": 38,
+        "procedure_code": "S-15",
+        "title": "Checking Capacitor"
+      },
+      {
+        "page": 51,
+        "procedure_code": "S-201",
+        "title": "Checking Temperature Rise"
+      },
+      {
+        "page": 39,
+        "procedure_code": "S-15A",
+        "title": "Resistance Check"
+      },
+      {
+        "page": 52,
+        "procedure_code": "S-300",
+        "title": "Testing Primary Limit"
+      },
+      {
+        "page": 39,
+        "procedure_code": "S-15B",
+        "title": "Capacitance Check"
+      },
+      {
+        "page": 52,
+        "procedure_code": "S-301",
+        "title": "Testing Auxiliary Limit"
+      },
+      {
+        "page": 40,
+        "procedure_code": "S-16C",
+        "title": "Checking ECM Motor Windings"
+      },
+      {
+        "page": 53,
+        "procedure_code": "S-302",
+        "title": "Checking Flame Rollout Switch"
+      },
+      {
+        "page": 40,
+        "procedure_code": "S-16D",
+        "title": "Checking EEM Motors"
+      },
+      {
+        "page": 54,
+        "procedure_code": "S-303",
+        "title": "Testing Inducer Motor"
+      },
+      {
+        "page": 41,
+        "procedure_code": "S-17",
+        "title": "Checking Compressor Windings"
+      },
+      {
+        "page": 54,
+        "procedure_code": "S-304",
+        "title": "Testing Gas Valve"
+      },
+      {
+        "page": 41,
+        "procedure_code": "S-17A",
+        "title": "Resistance Test"
+      },
+      {
+        "page": 55,
+        "procedure_code": "S-305",
+        "title": "Checking Main Burners"
+      },
+      {
+        "page": 42,
+        "procedure_code": "S-17B",
+        "title": "Ground Test"
+      },
+      {
+        "page": 55,
+        "procedure_code": "S-306",
+        "title": "Checking Orifices"
+      },
+      {
+        "page": 42,
+        "procedure_code": "S-17D",
+        "title": "Operation Test"
+      },
+      {
+        "page": 56,
+        "procedure_code": "S-307",
+        "title": "Checking Gas Pressure"
+      },
+      {
+        "page": 43,
+        "procedure_code": "S-18",
+        "title": "Testing Crankcase Heater (optional item)"
+      },
+      {
+        "page": 57,
+        "procedure_code": "S-308",
+        "title": "Checking For Delayed Ignition"
+      },
+      {
+        "page": 43,
+        "procedure_code": "S-100",
+        "title": "Refrigeration Repair Practice"
+      },
+      {
+        "page": 57,
+        "procedure_code": "S-309",
+        "title": "Checking for Flashback"
+      },
+      {
+        "page": 43,
+        "procedure_code": "S-101",
+        "title": "Leak Testing"
+      },
+      {
+        "page": 57,
+        "procedure_code": "S-310",
+        "title": "Checking Pressure Control"
+      },
+      {
+        "page": 43,
+        "procedure_code": "S-102",
+        "title": "Evacuation"
+      },
+      {
+        "page": 58,
+        "procedure_code": "S-311",
+        "title": "High Altitude Application"
+      },
+      {
+        "page": 44,
+        "procedure_code": "S-103",
+        "title": "Charging"
+      },
+      {
+        "page": 58,
+        "procedure_code": "S-313",
+        "title": "Testing Ignition Control Module"
+      },
+      {
+        "page": 45,
+        "procedure_code": "S-104",
+        "title": "Checking Compressor Efficiency"
+      },
+      {
+        "page": 60,
+        "procedure_code": "S-314",
+        "title": "Checking Flame Sensor"
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "checking_voltage_procedure": {
+      "max_voltage_imbalance_percent": {
+        "ranges": [
+          {
+            "end": 24258,
+            "start": 24198
+          }
+        ],
+        "value": 3
+      },
+      "unit_supply_voltage_limits": [
+        {
+          "max_volts": {
+            "ranges": [
+              {
+                "end": 24010,
+                "start": 24007
+              }
+            ],
+            "value": 506
+          },
+          "min_volts": {
+            "ranges": [
+              {
+                "end": 23998,
+                "start": 23995
+              }
+            ],
+            "value": 437
+          },
+          "nominal_voltage": {
+            "ranges": [
+              {
+                "end": 23986,
+                "start": 23983
+              }
+            ],
+            "value": "460"
+          }
+        },
+        {
+          "max_volts": {
+            "ranges": [
+              {
+                "end": 24060,
+                "start": 24057
+              }
+            ],
+            "value": 253
+          },
+          "min_volts": {
+            "ranges": [
+              {
+                "end": 24048,
+                "start": 24045
+              }
+            ],
+            "value": 198
+          },
+          "nominal_voltage": {
+            "ranges": [
+              {
+                "end": 24036,
+                "start": 24029
+              }
+            ],
+            "value": "208/230"
+          }
+        }
+      ]
+    },
+    "cooling_analysis_chart": {
+      "chart_title": {
+        "ranges": [
+          {
+            "end": 1384,
+            "start": 1362
+          }
+        ],
+        "value": "COOLING ANALYSIS CHART"
+      },
+      "rows": [
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 2365,
+                "start": 2351
+              }
+            ],
+            "value": "Power Failure"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 2543,
+                "start": 2540
+              }
+            ],
+            "value": "S-1"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 1774,
+                  "start": 1753
+                }
+              ],
+              "value": "System will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 2531,
+                "start": 2519
+              }
+            ],
+            "value": "Test Voltage"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 2573,
+                "start": 2562
+              }
+            ],
+            "value": "Blown Fuse"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 2769,
+                "start": 2766
+              }
+            ],
+            "value": "S-4"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 1774,
+                  "start": 1753
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 1862,
+                  "start": 1828
+                }
+              ],
+              "value": "Comp. and Cond. Fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 1900,
+                  "start": 1871
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 2757,
+                "start": 2729
+              }
+            ],
+            "value": "Inspect Fuse Size & Type"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 2804,
+                "start": 2788
+              }
+            ],
+            "value": "Loose Connection"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 3000,
+                "start": 2997
+              }
+            ],
+            "value": "S-2"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 2814,
+                  "start": 2813
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 2842,
+                  "start": 2841
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 2861,
+                  "start": 2860
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 2988,
+                "start": 2960
+              }
+            ],
+            "value": "Inspect Connection - Tighten"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 3042,
+                "start": 3019
+              }
+            ],
+            "value": "Shorted or Broken Wires"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 3240,
+                "start": 3237
+              }
+            ],
+            "value": "S-3"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 3052,
+                  "start": 3051
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3062,
+                  "start": 3061
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3072,
+                  "start": 3071
+                }
+              ],
+              "value": "Comp. and Cond. Fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3082,
+                  "start": 3081
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3092,
+                  "start": 3091
+                }
+              ],
+              "value": "Condenser fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3102,
+                  "start": 3101
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 3228,
+                "start": 3201
+              }
+            ],
+            "value": "Test Circuits With Ohmmeter"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 3272,
+                "start": 3259
+              }
+            ],
+            "value": "Open Overload"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 3469,
+                "start": 3464
+              }
+            ],
+            "value": "S-17A"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 3291,
+                  "start": 3290
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3310,
+                  "start": 3309
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3320,
+                  "start": 3319
+                }
+              ],
+              "value": "Condenser fan will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 3455,
+                "start": 3428
+              }
+            ],
+            "value": "Test Continuity of Overload"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 3505,
+                "start": 3488
+              }
+            ],
+            "value": "Faulty Thermostat"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 3716,
+                "start": 3713
+              }
+            ],
+            "value": "S-3"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 3515,
+                  "start": 3514
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3543,
+                  "start": 3542
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3589,
+                  "start": 3588
+                }
+              ],
+              "value": "Too cool and then too warm"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3599,
+                  "start": 3598
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 3704,
+                "start": 3662
+              }
+            ],
+            "value": "Test continuity of Thermostat & Wiring"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 3753,
+                "start": 3735
+              }
+            ],
+            "value": "Faulty Transformer"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 3957,
+                "start": 3954
+              }
+            ],
+            "value": "S-4"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 3763,
+                  "start": 3762
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 3782,
+                  "start": 3781
+                }
+              ],
+              "value": "Comp. and Cond. Fan will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 3945,
+                "start": 3908
+              }
+            ],
+            "value": "Check control circuit w ith voltmeter"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 4001,
+                "start": 3976
+              }
+            ],
+            "value": "Shorted or Open Capacitor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 4184,
+                "start": 4180
+              }
+            ],
+            "value": "S-15"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 4020,
+                  "start": 4019
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4048,
+                  "start": 4047
+                }
+              ],
+              "value": "Condenser fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4058,
+                  "start": 4057
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 4171,
+                "start": 4157
+              }
+            ],
+            "value": "Test Capacitor"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 4233,
+                "start": 4203
+              }
+            ],
+            "value": "Shorted or Grounded Compressor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 4421,
+                "start": 4416
+              }
+            ],
+            "value": "S-17B"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 4252,
+                  "start": 4251
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4289,
+                  "start": 4288
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 4407,
+                "start": 4388
+              }
+            ],
+            "value": "Test Motor Windings"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 4456,
+                "start": 4440
+              }
+            ],
+            "value": "Compressor Stuck"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 4638,
+                "start": 4633
+              }
+            ],
+            "value": "S-17D"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 4466,
+                  "start": 4465
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4512,
+                  "start": 4511
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 4624,
+                "start": 4611
+              }
+            ],
+            "value": "Use Test Cord"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 4684,
+                "start": 4657
+              }
+            ],
+            "value": "Faulty Compressor Contactor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 4896,
+                "start": 4888
+              }
+            ],
+            "value": "S-7, S-8"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 4694,
+                  "start": 4693
+                }
+              ],
+              "value": "System will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4704,
+                  "start": 4703
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4732,
+                  "start": 4731
+                }
+              ],
+              "value": "Condenser fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 4742,
+                  "start": 4741
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 4879,
+                "start": 4841
+              }
+            ],
+            "value": "Test continuity of Coil & Contacts"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 4949,
+                "start": 4915
+              }
+            ],
+            "value": "2nd Stage Compressor Not Energized"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 5168,
+                "start": 5163
+              }
+            ],
+            "value": "S-17C"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 5022,
+                  "start": 5021
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 5041,
+                  "start": 5040
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 5078,
+                  "start": 5077
+                }
+              ],
+              "value": "Low head pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 5088,
+                  "start": 5087
+                }
+              ],
+              "value": "High suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 5154,
+                "start": 5106
+              }
+            ],
+            "value": "Test Unloader Solenoid (2 stage compressor only)"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 5210,
+                "start": 5187
+              }
+            ],
+            "value": "Faulty Ignition Control"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 5399,
+                "start": 5394
+              }
+            ],
+            "value": "S-313"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 5247,
+                  "start": 5246
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 5385,
+                "start": 5364
+              }
+            ],
+            "value": "Test Ignition Control"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 5438,
+                "start": 5418
+              }
+            ],
+            "value": "Open Control Circuit"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 5639,
+                "start": 5636
+              }
+            ],
+            "value": "S-4"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 5475,
+                  "start": 5474
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 5627,
+                "start": 5592
+              }
+            ],
+            "value": "Test Control Circuit with Voltmeter"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 5669,
+                "start": 5658
+              }
+            ],
+            "value": "Low Voltage"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 5849,
+                "start": 5846
+              }
+            ],
+            "value": "S-1"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 5688,
+                  "start": 5687
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 5725,
+                  "start": 5724
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 5735,
+                  "start": 5734
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 5837,
+                "start": 5825
+              }
+            ],
+            "value": "Test Voltage"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 5890,
+                "start": 5868
+              }
+            ],
+            "value": "Faulty Evap. Fan Motor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 6075,
+                "start": 6071
+              }
+            ],
+            "value": "S-16"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 5927,
+                  "start": 5926
+                }
+              ],
+              "value": "Evaporator fan will not start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6009,
+                  "start": 6008
+                }
+              ],
+              "value": "Low suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 6062,
+                "start": 6045
+              }
+            ],
+            "value": "Repair or Replace"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 6123,
+                "start": 6094
+              }
+            ],
+            "value": "Shorted or Grounded Fan Motor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 6310,
+                "start": 6306
+              }
+            ],
+            "value": "S-16"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 6269,
+                  "start": 6268
+                }
+              ],
+              "value": "High head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 6297,
+                "start": 6278
+              }
+            ],
+            "value": "Test Motor Windings"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 6357,
+                "start": 6329
+              }
+            ],
+            "value": "Improper Cooling Anticipator"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 6555,
+                "start": 6552
+              }
+            ],
+            "value": "S-3"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 6421,
+                  "start": 6420
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6440,
+                  "start": 6439
+                }
+              ],
+              "value": "Too cool and then too warm"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 6543,
+                "start": 6512
+              }
+            ],
+            "value": "Check resistance of Anticipator"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 6597,
+                "start": 6574
+              }
+            ],
+            "value": "Shortage of Refrigerant"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 6799,
+                "start": 6794
+              }
+            ],
+            "value": "S-103"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 6661,
+                  "start": 6660
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6671,
+                  "start": 6670
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6717,
+                  "start": 6716
+                }
+              ],
+              "value": "Low suction pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6727,
+                  "start": 6726
+                }
+              ],
+              "value": "Low head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 6785,
+                "start": 6754
+              }
+            ],
+            "value": "Test For Leaks, Add Refrigerant"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 6840,
+                "start": 6818
+              }
+            ],
+            "value": "Restricted Liquid Line"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 7034,
+                "start": 7029
+              }
+            ],
+            "value": "S-112"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 6904,
+                  "start": 6903
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6914,
+                  "start": 6913
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6960,
+                  "start": 6959
+                }
+              ],
+              "value": "Low suction pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 6970,
+                  "start": 6969
+                }
+              ],
+              "value": "Low head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 7020,
+                "start": 6997
+              }
+            ],
+            "value": "Replace Restricted Part"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 7069,
+                "start": 7053
+              }
+            ],
+            "value": "Dirty Air Filter"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 7266,
+                "start": 7266
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 7142,
+                  "start": 7141
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7161,
+                  "start": 7160
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7171,
+                  "start": 7170
+                }
+              ],
+              "value": "Certain areas too cool, others too warm"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7190,
+                  "start": 7189
+                }
+              ],
+              "value": "Low suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 7257,
+                "start": 7226
+              }
+            ],
+            "value": "Inspect Filter-Clean or Replace"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 7302,
+                "start": 7285
+              }
+            ],
+            "value": "Dirty Indoor Coil"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 7488,
+                "start": 7488
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 7375,
+                  "start": 7374
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7394,
+                  "start": 7393
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7404,
+                  "start": 7403
+                }
+              ],
+              "value": "Certain areas too cool, others too warm"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7423,
+                  "start": 7422
+                }
+              ],
+              "value": "Low suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 7479,
+                "start": 7459
+              }
+            ],
+            "value": "Inspect Coil - Clean"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 7540,
+                "start": 7507
+              }
+            ],
+            "value": "Not enough air across Indoor Coil"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 7749,
+                "start": 7744
+              }
+            ],
+            "value": "S-200"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 7613,
+                  "start": 7612
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7632,
+                  "start": 7631
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7642,
+                  "start": 7641
+                }
+              ],
+              "value": "Certain areas too cool, others too warm"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 7661,
+                  "start": 7660
+                }
+              ],
+              "value": "Low suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 7735,
+                "start": 7697
+              }
+            ],
+            "value": "Speed Blow er, Check Duct Static Press"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 7799,
+                "start": 7768
+              }
+            ],
+            "value": "Too much air across Indoor Coil"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 7987,
+                "start": 7982
+              }
+            ],
+            "value": "S-200"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 7935,
+                  "start": 7934
+                }
+              ],
+              "value": "High suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 7973,
+                "start": 7953
+              }
+            ],
+            "value": "Reduce Blow er Speed"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 8031,
+                "start": 8006
+              }
+            ],
+            "value": "Overcharge of Refrigerant"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 8225,
+                "start": 8220
+              }
+            ],
+            "value": "S-113"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 8086,
+                  "start": 8085
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8096,
+                  "start": 8095
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8142,
+                  "start": 8141
+                }
+              ],
+              "value": "Compressor is noisy"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8170,
+                  "start": 8169
+                }
+              ],
+              "value": "High suction pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8180,
+                  "start": 8179
+                }
+              ],
+              "value": "High head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 8211,
+                "start": 8189
+              }
+            ],
+            "value": "Recover Part of Charge"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 8262,
+                "start": 8244
+              }
+            ],
+            "value": "Dirty Outdoor Coil"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 8448,
+                "start": 8448
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 8317,
+                  "start": 8316
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8327,
+                  "start": 8326
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8355,
+                  "start": 8354
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8410,
+                  "start": 8409
+                }
+              ],
+              "value": "High head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 8439,
+                "start": 8419
+              }
+            ],
+            "value": "Inspect Coil - Clean"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 8482,
+                "start": 8467
+              }
+            ],
+            "value": "Noncondensibles"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 8686,
+                "start": 8681
+              }
+            ],
+            "value": "S-114"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 8546,
+                  "start": 8545
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8574,
+                  "start": 8573
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8629,
+                  "start": 8628
+                }
+              ],
+              "value": "High head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 8672,
+                "start": 8638
+              }
+            ],
+            "value": "Recover Charge, Evacuate, Recharge"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 8736,
+                "start": 8705
+              }
+            ],
+            "value": "Recirculation of Condensing Air"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 8931,
+                "start": 8931
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 8800,
+                  "start": 8799
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8828,
+                  "start": 8827
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 8883,
+                  "start": 8882
+                }
+              ],
+              "value": "High head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 8922,
+                "start": 8892
+              }
+            ],
+            "value": "Remove Obstruction to Air Flow"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 8977,
+                "start": 8950
+              }
+            ],
+            "value": "Infiltration of Outdoor Air"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 9179,
+                "start": 9179
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 9050,
+                  "start": 9049
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 9069,
+                  "start": 9068
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 9079,
+                  "start": 9078
+                }
+              ],
+              "value": "Certain areas too cool, others too warm"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 9170,
+                "start": 9133
+              }
+            ],
+            "value": "Check Windows, Doors, Vent Fans, Etc."
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 9227,
+                "start": 9198
+              }
+            ],
+            "value": "Improperly Located Thermostat"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 9410,
+                "start": 9410
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 9282,
+                  "start": 9281
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 9310,
+                  "start": 9309
+                }
+              ],
+              "value": "Too cool and then too warm"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 9401,
+                "start": 9382
+              }
+            ],
+            "value": "Relocate Thermostat"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 9448,
+                "start": 9429
+              }
+            ],
+            "value": "Air Flow Unbalanced"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 9639,
+                "start": 9639
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 9530,
+                  "start": 9529
+                }
+              ],
+              "value": "Too cool and then too warm"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 9549,
+                  "start": 9548
+                }
+              ],
+              "value": "Certain areas too cool, others too warm"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 9630,
+                "start": 9603
+              }
+            ],
+            "value": "Readjust Air Volume Dampers"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 9675,
+                "start": 9658
+              }
+            ],
+            "value": "System Undersized"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 9860,
+                "start": 9860
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 9748,
+                  "start": 9747
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 9767,
+                  "start": 9766
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 9851,
+                "start": 9830
+              }
+            ],
+            "value": "Refigure Cooling Load"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 9900,
+                "start": 9879
+              }
+            ],
+            "value": "Broken Internal Parts"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 10081,
+                "start": 10081
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 10009,
+                  "start": 10008
+                }
+              ],
+              "value": "Compressor is noisy"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 10072,
+                "start": 10054
+              }
+            ],
+            "value": "Replace Compressor"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 10122,
+                "start": 10100
+              }
+            ],
+            "value": "Inefficient Compressor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 10318,
+                "start": 10313
+              }
+            ],
+            "value": "S-104"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 10195,
+                  "start": 10194
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10250,
+                  "start": 10249
+                }
+              ],
+              "value": "Low head pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10260,
+                  "start": 10259
+                }
+              ],
+              "value": "High suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 10304,
+                "start": 10278
+              }
+            ],
+            "value": "Test Compressor Efficiency"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 10363,
+                "start": 10337
+              }
+            ],
+            "value": "High Pressure Control Open"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 10552,
+                "start": 10548
+              }
+            ],
+            "value": "S-12"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 10391,
+                  "start": 10390
+                }
+              ],
+              "value": "Comp. and Cond. Fan will not start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 10539,
+                "start": 10517
+              }
+            ],
+            "value": "Reset And Test Control"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 10592,
+                "start": 10571
+              }
+            ],
+            "value": "Unbalanced Power, 3PH"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 10769,
+                "start": 10769
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 10611,
+                  "start": 10610
+                }
+              ],
+              "value": "Compressor will not start - fan runs"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10648,
+                  "start": 10647
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10658,
+                  "start": 10657
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 10760,
+                "start": 10748
+              }
+            ],
+            "value": "Test Voltage"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 10814,
+                "start": 10788
+              }
+            ],
+            "value": "Wrong Type Expansion Valve"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 10995,
+                "start": 10995
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 10869,
+                  "start": 10868
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10879,
+                  "start": 10878
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10889,
+                  "start": 10888
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10908,
+                  "start": 10907
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10936,
+                  "start": 10935
+                }
+              ],
+              "value": "Low suction pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 10946,
+                  "start": 10945
+                }
+              ],
+              "value": "Low head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 10986,
+                "start": 10973
+              }
+            ],
+            "value": "Replace Valve"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 11041,
+                "start": 11014
+              }
+            ],
+            "value": "Expansion Device Restricted"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 11255,
+                "start": 11255
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 11096,
+                  "start": 11095
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11106,
+                  "start": 11105
+                }
+              ],
+              "value": "Compressor cycles on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11116,
+                  "start": 11115
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11135,
+                  "start": 11134
+                }
+              ],
+              "value": "Not cool enough on warm days"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11163,
+                  "start": 11162
+                }
+              ],
+              "value": "Low suction pressure"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11173,
+                  "start": 11172
+                }
+              ],
+              "value": "Low head pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 11246,
+                "start": 11200
+              }
+            ],
+            "value": "Remove restriction or replace expansion device"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 11300,
+                "start": 11274
+              }
+            ],
+            "value": "Expansion Valve Bulb Loose"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 11483,
+                "start": 11483
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 11409,
+                  "start": 11408
+                }
+              ],
+              "value": "Compressor is noisy"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 11474,
+                "start": 11454
+              }
+            ],
+            "value": "Tighten Bulb Bracket"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 11529,
+                "start": 11502
+              }
+            ],
+            "value": "Inoperative Expansion Valve"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 11720,
+                "start": 11715
+              }
+            ],
+            "value": "S-110"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 11584,
+                  "start": 11583
+                }
+              ],
+              "value": "Compressor runs - goes off on overload"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11603,
+                  "start": 11602
+                }
+              ],
+              "value": "System runs continuously - little cooling"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 11649,
+                  "start": 11648
+                }
+              ],
+              "value": "Low suction pressure"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 11706,
+                "start": 11685
+              }
+            ],
+            "value": "Check Valve Operation"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 11762,
+                "start": 11739
+              }
+            ],
+            "value": "Loose Hold-down n Bolts"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 11938,
+                "start": 11938
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 11871,
+                  "start": 11870
+                }
+              ],
+              "value": "Compressor is noisy"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 11929,
+                "start": 11916
+              }
+            ],
+            "value": "Tighten Bolts"
+          }
+        }
+      ]
+    },
+    "gas_heating_analysis_chart": {
+      "chart_title": {
+        "ranges": [
+          {
+            "end": 12023,
+            "start": 11997
+          }
+        ],
+        "value": "GAS HEATING ANALYSIS CHART"
+      },
+      "rows": [
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 12608,
+                "start": 12594
+              }
+            ],
+            "value": "Pow er Failure"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 12723,
+                "start": 12720
+              }
+            ],
+            "value": "S-1"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 12711,
+                "start": 12699
+              }
+            ],
+            "value": "Test Voltage"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 12753,
+                "start": 12742
+              }
+            ],
+            "value": "Blow n Fuse"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 12868,
+                "start": 12865
+              }
+            ],
+            "value": "S-4"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 12856,
+                "start": 12844
+              }
+            ],
+            "value": "Test Voltage"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 12903,
+                "start": 12887
+              }
+            ],
+            "value": "Loose Connection"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 13018,
+                "start": 13015
+              }
+            ],
+            "value": "S-2"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 13006,
+                "start": 12994
+              }
+            ],
+            "value": "Check Wiring"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 13060,
+                "start": 13037
+              }
+            ],
+            "value": "Shorted or Broken Wires"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 13175,
+                "start": 13172
+              }
+            ],
+            "value": "S-3"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 13163,
+                "start": 13151
+              }
+            ],
+            "value": "Check Wiring"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 13208,
+                "start": 13194
+              }
+            ],
+            "value": "No Low Voltage"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 13328,
+                "start": 13325
+              }
+            ],
+            "value": "S-4"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 13316,
+                "start": 13299
+              }
+            ],
+            "value": "Check Transformer"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 13364,
+                "start": 13347
+              }
+            ],
+            "value": "Faulty Thermostat"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 13486,
+                "start": 13483
+              }
+            ],
+            "value": "S-3"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12483,
+                  "start": 12471
+                }
+              ],
+              "value": "Short Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12503,
+                  "start": 12492
+                }
+              ],
+              "value": "Long Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12551,
+                  "start": 12539
+                }
+              ],
+              "value": "To Much Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 13474,
+                "start": 13458
+              }
+            ],
+            "value": "Check Thermostat"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 13523,
+                "start": 13505
+              }
+            ],
+            "value": "Faulty Transformer"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 13643,
+                "start": 13640
+              }
+            ],
+            "value": "S-4"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 13631,
+                "start": 13614
+              }
+            ],
+            "value": "Check Transformer"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 13692,
+                "start": 13662
+              }
+            ],
+            "value": "Poor or High Resistance Ground"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 13822,
+                "start": 13817
+              }
+            ],
+            "value": "S-313"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12406,
+                  "start": 12382
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 13808,
+                "start": 13783
+              }
+            ],
+            "value": "Measure Ground Resistance"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 13874,
+                "start": 13841
+              }
+            ],
+            "value": "Improper Heat Anticipator Setting"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 14075,
+                "start": 14072
+              }
+            ],
+            "value": "S-3"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12483,
+                  "start": 12471
+                }
+              ],
+              "value": "Short Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12503,
+                  "start": 12492
+                }
+              ],
+              "value": "Long Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12551,
+                  "start": 12539
+                }
+              ],
+              "value": "To Much Heat"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12575,
+                  "start": 12560
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 14063,
+                "start": 14032
+              }
+            ],
+            "value": "Adjust Heat Anticipator Setting"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 14122,
+                "start": 14094
+              }
+            ],
+            "value": "Improper Thermostat Location"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 14308,
+                "start": 14308
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12483,
+                  "start": 12471
+                }
+              ],
+              "value": "Short Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12503,
+                  "start": 12492
+                }
+              ],
+              "value": "Long Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12551,
+                  "start": 12539
+                }
+              ],
+              "value": "To Much Heat"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12575,
+                  "start": 12560
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 14299,
+                "start": 14280
+              }
+            ],
+            "value": "Relocate Thermostat"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 14358,
+                "start": 14327
+              }
+            ],
+            "value": "Faulty Limit or Roll Out Switch"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 14512,
+                "start": 14495
+              }
+            ],
+            "value": "S-300,S-301,S-302"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12373,
+                  "start": 12354
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12462,
+                  "start": 12415
+                }
+              ],
+              "value": "Burner Shuts Off prior to T'Stat being Satasfie"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12575,
+                  "start": 12560
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 14486,
+                "start": 14474
+              }
+            ],
+            "value": "Test Control"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 14550,
+                "start": 14531
+              }
+            ],
+            "value": "Faulty Flame Sensor"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 14683,
+                "start": 14678
+              }
+            ],
+            "value": "S-314"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12406,
+                  "start": 12382
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 14669,
+                "start": 14652
+              }
+            ],
+            "value": "Test Flame Sensor"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 14725,
+                "start": 14702
+              }
+            ],
+            "value": "Faulty Ignition Control"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 14853,
+                "start": 14848
+              }
+            ],
+            "value": "S-313"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12345,
+                  "start": 12313
+                }
+              ],
+              "value": "System Will Not Start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12373,
+                  "start": 12354
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 12406,
+                  "start": 12382
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 14839,
+                "start": 14827
+              }
+            ],
+            "value": "Test Control"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 14904,
+                "start": 14872
+              }
+            ],
+            "value": "Gas Valve or Gas Supply Shut Off"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 15035,
+                "start": 15030
+              }
+            ],
+            "value": "S-304"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 12373,
+                  "start": 12354
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 15021,
+                "start": 14995
+              }
+            ],
+            "value": "Turn Valves to On Position"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 15081,
+                "start": 15054
+              }
+            ],
+            "value": "Faulty Induced Draft Blower"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 15212,
+                "start": 15207
+              }
+            ],
+            "value": "S-303"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 15091,
+                  "start": 15090
+                }
+              ],
+              "value": "System Will Not Start"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 15101,
+                  "start": 15100
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 15160,
+                  "start": 15146
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 15198,
+                "start": 15187
+              }
+            ],
+            "value": "Test Blower"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 15257,
+                "start": 15231
+              }
+            ],
+            "value": "Dirty Flame Sensor, Low uA"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 15380,
+                "start": 15375
+              }
+            ],
+            "value": "S-314"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 15285,
+                  "start": 15284
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 15366,
+                "start": 15348
+              }
+            ],
+            "value": "Clean Flame Sensor"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 15432,
+                "start": 15399
+              }
+            ],
+            "value": "Flame Sensor not in Flame, Low uA"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 15573,
+                "start": 15568
+              }
+            ],
+            "value": "S-314"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 15460,
+                  "start": 15459
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 15559,
+                "start": 15523
+              }
+            ],
+            "value": "Test/Adjust Position of Flame Sensor"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 15608,
+                "start": 15592
+              }
+            ],
+            "value": "Faulty Gas Valve"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 15758,
+                "start": 15753
+              }
+            ],
+            "value": "S-304"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 15627,
+                  "start": 15626
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 15686,
+                  "start": 15672
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 15718,
+                  "start": 15704
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 15744,
+                "start": 15727
+              }
+            ],
+            "value": "Replace Gas Valve"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 15810,
+                "start": 15777
+              }
+            ],
+            "value": "No High Stage Heat (2 Stage Only)"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 15962,
+                "start": 15947
+              }
+            ],
+            "value": "S-3,S-313,S-304"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 15865,
+                  "start": 15864
+                }
+              ],
+              "value": "Long Cycles"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 15893,
+                  "start": 15892
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 15938,
+                "start": 15902
+              }
+            ],
+            "value": "Check Thermostat, Control, Gas Valve"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16001,
+                "start": 15981
+              }
+            ],
+            "value": "Open Auxillary Limit"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 16120,
+                "start": 16115
+              }
+            ],
+            "value": "S-301"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 16020,
+                  "start": 16019
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 16039,
+                  "start": 16038
+                }
+              ],
+              "value": "Burner Shuts Off prior to T'Stat being Satasfie"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 16106,
+                "start": 16093
+              }
+            ],
+            "value": "Reset Control"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16172,
+                "start": 16139
+              }
+            ],
+            "value": "Improper Air Flow or Distribution"
+          },
+          "service_procedure_ref": {
+            "ranges": null,
+            "value": null
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 16209,
+                  "start": 16208
+                }
+              ],
+              "value": "Burner Shuts Off prior to T'Stat being Satasfie"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 16255,
+                  "start": 16254
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 16281,
+                "start": 16264
+              }
+            ],
+            "value": "Check Duct Static"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16334,
+                "start": 16309
+              }
+            ],
+            "value": "Locking out on Main Limit"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 16485,
+                "start": 16480
+              }
+            ],
+            "value": "S-300"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 16362,
+                  "start": 16361
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 16372,
+                  "start": 16371
+                }
+              ],
+              "value": "Burner Shuts Off prior to T'Stat being Satasfie"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 16418,
+                  "start": 16417
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 16471,
+                "start": 16427
+              }
+            ],
+            "value": "Check Controls, Gas Press., & Temp. Rise"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16520,
+                "start": 16504
+              }
+            ],
+            "value": "Delayed Ignition"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 16650,
+                "start": 16645
+              }
+            ],
+            "value": "S-308"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 16584,
+                  "start": 16583
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 16636,
+                "start": 16611
+              }
+            ],
+            "value": "Test for Delayed Ignition"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16678,
+                "start": 16669
+              }
+            ],
+            "value": "Flashback"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 16801,
+                "start": 16796
+              }
+            ],
+            "value": "S-309"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 16742,
+                  "start": 16741
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 16787,
+                "start": 16769
+              }
+            ],
+            "value": "Test for Flashback"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16832,
+                "start": 16820
+              }
+            ],
+            "value": "Orifice Size"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 16953,
+                "start": 16948
+              }
+            ],
+            "value": "S-306"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 16896,
+                  "start": 16895
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 16906,
+                  "start": 16905
+                }
+              ],
+              "value": "To Much Heat"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 16916,
+                  "start": 16915
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 16939,
+                "start": 16925
+              }
+            ],
+            "value": "Check Orifices"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 16984,
+                "start": 16972
+              }
+            ],
+            "value": "Gas Pressure"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 17110,
+                "start": 17105
+              }
+            ],
+            "value": "S-307"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 17003,
+                  "start": 17002
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17049,
+                  "start": 17048
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17059,
+                  "start": 17058
+                }
+              ],
+              "value": "To Much Heat"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17069,
+                  "start": 17068
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 17096,
+                "start": 17078
+              }
+            ],
+            "value": "Check Gas Pressure"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 17151,
+                "start": 17129
+              }
+            ],
+            "value": "Cracked Heat Exchanger"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 17275,
+                "start": 17270
+              }
+            ],
+            "value": "S-302"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 17215,
+                  "start": 17214
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 17261,
+                "start": 17242
+              }
+            ],
+            "value": "Check Burner Flames"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 17309,
+                "start": 17294
+              }
+            ],
+            "value": "Stuck Gas Valve"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 17433,
+                "start": 17428
+              }
+            ],
+            "value": "S-304"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 17328,
+                  "start": 17327
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17374,
+                  "start": 17373
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17384,
+                  "start": 17383
+                }
+              ],
+              "value": "To Much Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 17419,
+                "start": 17402
+              }
+            ],
+            "value": "Replace Gas Valve"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 17470,
+                "start": 17452
+              }
+            ],
+            "value": "Furnace Undersized"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 17616,
+                "start": 17616
+              }
+            ],
+            "value": ""
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 17565,
+                  "start": 17551
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 17607,
+                "start": 17574
+              }
+            ],
+            "value": "Replace w ith Proper Size Furnace"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 17657,
+                "start": 17635
+              }
+            ],
+            "value": "Faulty Pressure Switch"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 17784,
+                "start": 17779
+              }
+            ],
+            "value": "S-310"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 17676,
+                  "start": 17675
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17686,
+                  "start": 17685
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 17696,
+                  "start": 17695
+                }
+              ],
+              "value": "Burner Shuts Off prior to T'Stat being Satasfie"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 17770,
+                "start": 17750
+              }
+            ],
+            "value": "Test Pressure Switch"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 17829,
+                "start": 17803
+              }
+            ],
+            "value": "Blocked or Restricted Flue"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 17977,
+                "start": 17972
+              }
+            ],
+            "value": "S-310"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 17906,
+                  "start": 17892
+                }
+              ],
+              "value": "Soot and /or Fumes"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 17963,
+                "start": 17933
+              }
+            ],
+            "value": "Check Flue/Draw dow n Pressure"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 18016,
+                "start": 17996
+              }
+            ],
+            "value": "Open Roll Out Switch"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 18134,
+                "start": 18129
+              }
+            ],
+            "value": "S-302"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 18035,
+                  "start": 18034
+                }
+              ],
+              "value": "Burner Won't Ignite"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 18045,
+                  "start": 18044
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 18120,
+                "start": 18108
+              }
+            ],
+            "value": "Test Control"
+          }
+        },
+        {
+          "possible_cause": {
+            "ranges": [
+              {
+                "end": 18180,
+                "start": 18153
+              }
+            ],
+            "value": "Bouncing On Pressure Switch"
+          },
+          "service_procedure_ref": {
+            "ranges": [
+              {
+                "end": 18321,
+                "start": 18316
+              }
+            ],
+            "value": "S-310"
+          },
+          "symptoms": [
+            {
+              "ranges": [
+                {
+                  "end": 18208,
+                  "start": 18207
+                }
+              ],
+              "value": "Burner Ignites-Locks Out"
+            },
+            {
+              "ranges": [
+                {
+                  "end": 18276,
+                  "start": 18262
+                }
+              ],
+              "value": "Not Enough Heat"
+            }
+          ],
+          "test_method_remedy": {
+            "ranges": [
+              {
+                "end": 18307,
+                "start": 18285
+              }
+            ],
+            "value": "Test Negative Pressure"
+          }
+        }
+      ]
+    },
+    "manual": {
+      "manufacturer": {
+        "ranges": [
+          {
+            "end": 1303,
+            "start": 1246
+          }
+        ],
+        "value": "Goodman Manufacturing Company, L.P."
+      },
+      "product_description": {
+        "ranges": [
+          {
+            "end": 65,
+            "start": 39
+          }
+        ],
+        "value": "Gas Electric Package Units"
+      },
+      "product_line": {
+        "ranges": [
+          {
+            "end": 38,
+            "start": 23
+          }
+        ],
+        "value": "APG/GPG 14 SEER"
+      },
+      "publication_date": {
+        "ranges": [
+          {
+            "end": 1327,
+            "start": 1318
+          }
+        ],
+        "value": "July 2017"
+      },
+      "publication_number": {
+        "ranges": [
+          {
+            "end": 1317,
+            "start": 1306
+          }
+        ],
+        "value": "RS6300012r4"
+      },
+      "refrigerant": {
+        "ranges": [
+          {
+            "end": 89,
+            "start": 66
+          }
+        ],
+        "value": "R-410A"
+      },
+      "standards_compliance": {
+        "ranges": [
+          {
+            "end": 990,
+            "start": 954
+          }
+        ],
+        "value": "ANSI Z21.47•CSA-2.3 Central Furnaces"
+      },
+      "title": {
+        "ranges": [
+          {
+            "end": 20,
+            "start": 0
+          }
+        ],
+        "value": "Service Instructions"
+      }
+    },
+    "service_procedures": [
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18457,
+              "start": 18455
+            }
+          ],
+          "value": 35
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18418,
+              "start": 18415
+            }
+          ],
+          "value": "S-1"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18446,
+              "start": 18427
+            }
+          ],
+          "value": "Checking Voltage"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18522,
+              "start": 18520
+            }
+          ],
+          "value": 45
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18471,
+              "start": 18466
+            }
+          ],
+          "value": "S-105"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18511,
+              "start": 18480
+            }
+          ],
+          "value": "Thermostatic Expansion Valve"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18582,
+              "start": 18580
+            }
+          ],
+          "value": 36
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18544,
+              "start": 18541
+            }
+          ],
+          "value": "S-2"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18571,
+              "start": 18553
+            }
+          ],
+          "value": "Checking Wiring"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18630,
+              "start": 18628
+            }
+          ],
+          "value": 47
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18596,
+              "start": 18591
+            }
+          ],
+          "value": "S-106"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18619,
+              "start": 18605
+            }
+          ],
+          "value": "Overfeeding"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18720,
+              "start": 18718
+            }
+          ],
+          "value": 36
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18652,
+              "start": 18649
+            }
+          ],
+          "value": "S-3"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18709,
+              "start": 18661
+            }
+          ],
+          "value": "Checking Thermostat, Wiring & Anticipator"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18769,
+              "start": 18767
+            }
+          ],
+          "value": 47
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18734,
+              "start": 18729
+            }
+          ],
+          "value": "S-107"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18758,
+              "start": 18743
+            }
+          ],
+          "value": "Underfeeding"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18838,
+              "start": 18836
+            }
+          ],
+          "value": 36
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18792,
+              "start": 18788
+            }
+          ],
+          "value": "S-3A"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18827,
+              "start": 18801
+            }
+          ],
+          "value": "Thermostat & Wiring"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18884,
+              "start": 18882
+            }
+          ],
+          "value": 47
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18852,
+              "start": 18847
+            }
+          ],
+          "value": "S-108"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18873,
+              "start": 18861
+            }
+          ],
+          "value": "Superheat"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 18949,
+              "start": 18947
+            }
+          ],
+          "value": 36
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18907,
+              "start": 18903
+            }
+          ],
+          "value": "S-3B"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18938,
+              "start": 18916
+            }
+          ],
+          "value": "Cooling Anticipator"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19005,
+              "start": 19003
+            }
+          ],
+          "value": 49
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 18963,
+              "start": 18958
+            }
+          ],
+          "value": "S-109"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 18994,
+              "start": 18972
+            }
+          ],
+          "value": "Checking Subcooling"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19070,
+              "start": 19068
+            }
+          ],
+          "value": 36
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19028,
+              "start": 19024
+            }
+          ],
+          "value": "S-3C"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19059,
+              "start": 19037
+            }
+          ],
+          "value": "Heating Anticipator"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19141,
+              "start": 19139
+            }
+          ],
+          "value": 49
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19084,
+              "start": 19079
+            }
+          ],
+          "value": "S-110"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19130,
+              "start": 19093
+            }
+          ],
+          "value": "Checking Expansion Valve Operation"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19228,
+              "start": 19226
+            }
+          ],
+          "value": 37
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19163,
+              "start": 19160
+            }
+          ],
+          "value": "S-4"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19217,
+              "start": 19172
+            }
+          ],
+          "value": "Checking Transformer & Control Circuit"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19298,
+              "start": 19296
+            }
+          ],
+          "value": 49
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19242,
+              "start": 19237
+            }
+          ],
+          "value": "S-111"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19287,
+              "start": 19251
+            }
+          ],
+          "value": "Fixed Orifice Restriction Devices"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19375,
+              "start": 19373
+            }
+          ],
+          "value": 37
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19320,
+              "start": 19317
+            }
+          ],
+          "value": "S-7"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19364,
+              "start": 19329
+            }
+          ],
+          "value": "Checking Contactor and/or Relays"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19443,
+              "start": 19441
+            }
+          ],
+          "value": 50
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19389,
+              "start": 19384
+            }
+          ],
+          "value": "S-112"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19432,
+              "start": 19398
+            }
+          ],
+          "value": "Checking Restricted Liquid Line"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19515,
+              "start": 19513
+            }
+          ],
+          "value": 37
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19465,
+              "start": 19462
+            }
+          ],
+          "value": "S-8"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19504,
+              "start": 19474
+            }
+          ],
+          "value": "Checking Contactor Contacts"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19574,
+              "start": 19572
+            }
+          ],
+          "value": 50
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19529,
+              "start": 19524
+            }
+          ],
+          "value": "S-113"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19563,
+              "start": 19538
+            }
+          ],
+          "value": "Refrigerant Overcharge"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19645,
+              "start": 19643
+            }
+          ],
+          "value": 38
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19596,
+              "start": 19593
+            }
+          ],
+          "value": "S-9"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19634,
+              "start": 19605
+            }
+          ],
+          "value": "Checking Fan Relay Contact"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19698,
+              "start": 19696
+            }
+          ],
+          "value": 50
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19659,
+              "start": 19654
+            }
+          ],
+          "value": "S-114"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19687,
+              "start": 19668
+            }
+          ],
+          "value": "Non-condensables"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19775,
+              "start": 19773
+            }
+          ],
+          "value": 38
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19721,
+              "start": 19717
+            }
+          ],
+          "value": "S-12"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19764,
+              "start": 19730
+            }
+          ],
+          "value": "Checking High Pressure Control"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19831,
+              "start": 19829
+            }
+          ],
+          "value": 50
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19789,
+              "start": 19784
+            }
+          ],
+          "value": "S-115"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19820,
+              "start": 19798
+            }
+          ],
+          "value": "Compressor Burnout"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19907,
+              "start": 19905
+            }
+          ],
+          "value": 38
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19854,
+              "start": 19850
+            }
+          ],
+          "value": "S-13"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19896,
+              "start": 19863
+            }
+          ],
+          "value": "Checking Low Pressure Control"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 19979,
+              "start": 19977
+            }
+          ],
+          "value": 51
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 19921,
+              "start": 19916
+            }
+          ],
+          "value": "S-200"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19968,
+              "start": 19930
+            }
+          ],
+          "value": "Checking Extedrnal Static Pressure"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20044,
+              "start": 20042
+            }
+          ],
+          "value": 38
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20002,
+              "start": 19998
+            }
+          ],
+          "value": "S-15"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20033,
+              "start": 20011
+            }
+          ],
+          "value": "Checking Capacitor"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20107,
+              "start": 20105
+            }
+          ],
+          "value": 51
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20058,
+              "start": 20053
+            }
+          ],
+          "value": "S-201"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20096,
+              "start": 20067
+            }
+          ],
+          "value": "Checking Temperature Rise"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20171,
+              "start": 20169
+            }
+          ],
+          "value": 39
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20131,
+              "start": 20126
+            }
+          ],
+          "value": "S-15A"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20160,
+              "start": 20140
+            }
+          ],
+          "value": "Resistance Check"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20230,
+              "start": 20228
+            }
+          ],
+          "value": 52
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20185,
+              "start": 20180
+            }
+          ],
+          "value": "S-300"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20219,
+              "start": 20194
+            }
+          ],
+          "value": "Testing Primary Limit"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20295,
+              "start": 20293
+            }
+          ],
+          "value": 39
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20254,
+              "start": 20249
+            }
+          ],
+          "value": "S-15B"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20284,
+              "start": 20263
+            }
+          ],
+          "value": "Capacitance Check"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20356,
+              "start": 20354
+            }
+          ],
+          "value": 52
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20309,
+              "start": 20304
+            }
+          ],
+          "value": "S-301"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20345,
+              "start": 20318
+            }
+          ],
+          "value": "Testing Auxiliary Limit"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20430,
+              "start": 20428
+            }
+          ],
+          "value": 40
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20380,
+              "start": 20375
+            }
+          ],
+          "value": "S-16C"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20419,
+              "start": 20389
+            }
+          ],
+          "value": "Checking ECM Motor Windings"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20496,
+              "start": 20494
+            }
+          ],
+          "value": 53
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20444,
+              "start": 20439
+            }
+          ],
+          "value": "S-302"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20485,
+              "start": 20453
+            }
+          ],
+          "value": "Checking Flame Rollout Switch"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20562,
+              "start": 20560
+            }
+          ],
+          "value": 40
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20520,
+              "start": 20515
+            }
+          ],
+          "value": "S-16D"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20551,
+              "start": 20529
+            }
+          ],
+          "value": "Checking EEM Motors"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20620,
+              "start": 20618
+            }
+          ],
+          "value": 54
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20576,
+              "start": 20571
+            }
+          ],
+          "value": "S-303"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20609,
+              "start": 20585
+            }
+          ],
+          "value": "Testing Inducer Motor"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20694,
+              "start": 20692
+            }
+          ],
+          "value": 41
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20643,
+              "start": 20639
+            }
+          ],
+          "value": "S-17"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20683,
+              "start": 20652
+            }
+          ],
+          "value": "Checking Compressor Windings"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20748,
+              "start": 20746
+            }
+          ],
+          "value": 54
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20708,
+              "start": 20703
+            }
+          ],
+          "value": "S-304"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20737,
+              "start": 20717
+            }
+          ],
+          "value": "Testing Gas Valve"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20810,
+              "start": 20808
+            }
+          ],
+          "value": 41
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20772,
+              "start": 20767
+            }
+          ],
+          "value": "S-17A"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20799,
+              "start": 20781
+            }
+          ],
+          "value": "Resistance Test"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20868,
+              "start": 20866
+            }
+          ],
+          "value": 55
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20824,
+              "start": 20819
+            }
+          ],
+          "value": "S-305"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20857,
+              "start": 20833
+            }
+          ],
+          "value": "Checking Main Burners"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20926,
+              "start": 20924
+            }
+          ],
+          "value": 42
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20892,
+              "start": 20887
+            }
+          ],
+          "value": "S-17B"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20915,
+              "start": 20901
+            }
+          ],
+          "value": "Ground Test"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 20980,
+              "start": 20978
+            }
+          ],
+          "value": 55
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 20940,
+              "start": 20935
+            }
+          ],
+          "value": "S-306"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20969,
+              "start": 20949
+            }
+          ],
+          "value": "Checking Orifices"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21041,
+              "start": 21039
+            }
+          ],
+          "value": 42
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21004,
+              "start": 20999
+            }
+          ],
+          "value": "S-17D"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21030,
+              "start": 21013
+            }
+          ],
+          "value": "Operation Test"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21099,
+              "start": 21097
+            }
+          ],
+          "value": 56
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21055,
+              "start": 21050
+            }
+          ],
+          "value": "S-307"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21088,
+              "start": 21064
+            }
+          ],
+          "value": "Checking Gas Pressure"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21185,
+              "start": 21183
+            }
+          ],
+          "value": 43
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21122,
+              "start": 21118
+            }
+          ],
+          "value": "S-18"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21174,
+              "start": 21131
+            }
+          ],
+          "value": "Testing Crankcase Heater (optional item)"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21251,
+              "start": 21249
+            }
+          ],
+          "value": 57
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21199,
+              "start": 21194
+            }
+          ],
+          "value": "S-308"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21240,
+              "start": 21208
+            }
+          ],
+          "value": "Checking For Delayed Ignition"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21327,
+              "start": 21325
+            }
+          ],
+          "value": 43
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21275,
+              "start": 21270
+            }
+          ],
+          "value": "S-100"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21316,
+              "start": 21284
+            }
+          ],
+          "value": "Refrigeration Repair Practice"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21386,
+              "start": 21384
+            }
+          ],
+          "value": 57
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21341,
+              "start": 21336
+            }
+          ],
+          "value": "S-309"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21375,
+              "start": 21350
+            }
+          ],
+          "value": "Checking for Flashback"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21445,
+              "start": 21443
+            }
+          ],
+          "value": 43
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21410,
+              "start": 21405
+            }
+          ],
+          "value": "S-101"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21434,
+              "start": 21419
+            }
+          ],
+          "value": "Leak Testing"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21507,
+              "start": 21505
+            }
+          ],
+          "value": 57
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21459,
+              "start": 21454
+            }
+          ],
+          "value": "S-310"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21496,
+              "start": 21468
+            }
+          ],
+          "value": "Checking Pressure Control"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21564,
+              "start": 21562
+            }
+          ],
+          "value": 43
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21531,
+              "start": 21526
+            }
+          ],
+          "value": "S-102"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21553,
+              "start": 21540
+            }
+          ],
+          "value": "Evacuation"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21626,
+              "start": 21624
+            }
+          ],
+          "value": 58
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21578,
+              "start": 21573
+            }
+          ],
+          "value": "S-311"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21615,
+              "start": 21587
+            }
+          ],
+          "value": "High Altitude Application"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21681,
+              "start": 21679
+            }
+          ],
+          "value": 44
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21650,
+              "start": 21645
+            }
+          ],
+          "value": "S-103"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21670,
+              "start": 21659
+            }
+          ],
+          "value": "Charging"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21749,
+              "start": 21747
+            }
+          ],
+          "value": 58
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21695,
+              "start": 21690
+            }
+          ],
+          "value": "S-313"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21738,
+              "start": 21704
+            }
+          ],
+          "value": "Testing Ignition Control Module"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21826,
+              "start": 21824
+            }
+          ],
+          "value": 45
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21773,
+              "start": 21768
+            }
+          ],
+          "value": "S-104"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21815,
+              "start": 21782
+            }
+          ],
+          "value": "Checking Compressor Efficiency"
+        }
+      },
+      {
+        "page": {
+          "ranges": [
+            {
+              "end": 21884,
+              "start": 21882
+            }
+          ],
+          "value": 60
+        },
+        "procedure_code": {
+          "ranges": [
+            {
+              "end": 21840,
+              "start": 21835
+            }
+          ],
+          "value": "S-314"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21873,
+              "start": 21849
+            }
+          ],
+          "value": "Checking Flame Sensor"
+        }
+      }
+    ]
+  },
+  "markdown": "Service Instructions\n\n\nAPG/GPG 14 SEER\nGas Electric Package Units\nwith R-410A Refrigerant\n& Accessories\n\n\n<figure type=\"DIAGRAM\">\n\n<description>This is a technical line drawing of an HVAC rooftop unit. The unit is depicted in an isometric, three-quarter view from above. The main chassis is a rectangular box with a fan assembly mounted on the top surface, protected by a circular wire grill. The side panel facing the viewer (left) features two rectangular protrusions, likely vents or electrical access points, positioned side-by-side. The adjacent side panel (right) shows two large, empty square openings, likely for duct connections. In the top right corner, there is an ETL Intertek certification logo containing the text 'C', 'ETL', 'US', 'LISTED', and 'Intertek' below it.</description></figure>\n\nThis Forced Air Central Unit Design Complies With\nRequirements Embodied in The American National\nStandard / National Standard of Canada Shown Below.\nANSI Z21.47•CSA-2.3 Central Furnaces\n\n\nThis manual is to be used by qualified, professionally trained HVAC technicians\nonly. Goodman does not assume any responsibility for property damage or\npersonal injury due to improper service procedures or services performed by\nan unqualified person.\n\n\nCopyright © 2014-2017 Goodman Manufacturing Company, L.P.\n\n\nRS6300012r4\nJuly 2017\n\n<!-- PAGE BREAK -->\n\nSERVICING\n\n\nCOOLING ANALYSIS CHART\n\n<table>\n<tr><td>Complaint</td><td colspan=\"7\">No Cooling</td><td colspan=\"9\">Unsatisfactory<br>Cooling          System<br>                 Operating<br>                 Pressures</td><td rowspan=\"2\">Test Method<br>Remedy</td><td rowspan=\"2\">See Service Procedure Ref.</td></tr>\n<tr><td>POSSIBLE CAUSE<br>DOTS IN ANALYSIS<br>GUIDE INDICATE<br>\"POSSIBLE CAUSE\"</td><td>System will not start</td><td>Compressor will not start - fan runs</td><td>Comp. and Cond. Fan will not start</td><td>Evaporator fan will not start</td><td>Condenser fan will not start</td><td>Compressor runs - goes off on overload</td><td>Compressor cycles on overload</td><td>System runs continuously - little cooling</td><td>Too cool and then too warm</td><td>Not cool enough on warm days</td><td>Certain areas too cool, others too warm</td><td>Compressor is noisy</td><td>Low suction pressure</td><td>Low head pressure</td><td>High suction pressure</td><td>High head pressure</td></tr>\n<tr><td>Pow er Failure</td><td>•</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Voltage</td><td>S-1</td></tr>\n<tr><td>Blow n Fuse</td><td>•</td><td></td><td>•</td><td>•</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Inspect Fuse Size &amp; Type</td><td>S-4</td></tr>\n<tr><td>Loose Connection</td><td>•</td><td></td><td></td><td>•</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Inspect Connection - Tighten</td><td>S-2</td></tr>\n<tr><td>Shorted or Broken Wires</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Circuits With Ohmmeter</td><td>S-3</td></tr>\n<tr><td>Open Overload</td><td></td><td>●</td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Continuity of Overload</td><td>S-17A</td></tr>\n<tr><td>Faulty Thermostat</td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test continuity of Thermostat &amp; Wiring</td><td>S-3</td></tr>\n<tr><td>Faulty Transformer</td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Check control circuit w ith voltmeter</td><td>S-4</td></tr>\n<tr><td>Shorted or Open Capacitor</td><td></td><td>●</td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Capacitor</td><td>S-15</td></tr>\n<tr><td>Shorted or Grounded Compressor</td><td></td><td>●</td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Motor Windings</td><td>S-17B</td></tr>\n<tr><td>Compressor Stuck</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Use Test Cord</td><td>S-17D</td></tr>\n<tr><td>Faulty Compressor Contactor</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test continuity of Coil &amp; Contacts</td><td>S-7, S-8</td></tr>\n<tr><td>2nd Stage Compressor Not Energized</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td>Test Unloader Solenoid (2 stage compressor only)</td><td>S-17C</td></tr>\n<tr><td>Faulty Ignition Control</td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Ignition Control</td><td>S-313</td></tr>\n<tr><td>Open Control Circuit</td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Control Circuit with Voltmeter</td><td>S-4</td></tr>\n<tr><td>Low Voltage</td><td></td><td>●</td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Voltage</td><td>S-1</td></tr>\n<tr><td>Faulty Evap. Fan Motor</td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td>Repair or Replace</td><td>S-16</td></tr>\n<tr><td>Shorted or Grounded Fan Motor</td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>•</td><td>Test Motor Windings</td><td>S-16</td></tr>\n<tr><td>Improper Cooling Anticipator</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Check resistance of Anticipator</td><td>S-3</td></tr>\n<tr><td>Shortage of Refrigerant</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td>Test For Leaks, Add Refrigerant</td><td>S-103</td></tr>\n<tr><td>Restricted Liquid Line</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td>Replace Restricted Part</td><td>S-112</td></tr>\n<tr><td>Dirty Air Filter</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td>Inspect Filter-Clean or Replace</td><td></td></tr>\n<tr><td>Dirty Indoor Coil</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td>Inspect Coil - Clean</td><td></td></tr>\n<tr><td>Not enough air across Indoor Coil</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td>Speed Blow er, Check Duct Static Press</td><td>S-200</td></tr>\n<tr><td>Too much air across Indoor Coil</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>Reduce Blow er Speed</td><td>S-200</td></tr>\n<tr><td>Overcharge of Refrigerant</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>Recover Part of Charge</td><td>S-113</td></tr>\n<tr><td>Dirty Outdoor Coil</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>Inspect Coil - Clean</td><td></td></tr>\n<tr><td>Noncondensibles</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>Recover Charge, Evacuate, Recharge</td><td>S-114</td></tr>\n<tr><td>Recirculation of Condensing Air</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>Remove Obstruction to Air Flow</td><td></td></tr>\n<tr><td>Infiltration of Outdoor Air</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>Check Windows, Doors, Vent Fans, Etc.</td><td></td></tr>\n<tr><td>Improperly Located Thermostat</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Relocate Thermostat</td><td></td></tr>\n<tr><td>Air Flow Unbalanced</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>Readjust Air Volume Dampers</td><td></td></tr>\n<tr><td>System Undersized</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Refigure Cooling Load</td><td></td></tr>\n<tr><td>Broken Internal Parts</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>Replace Compressor</td><td></td></tr>\n<tr><td>Inefficient Compressor</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>•</td><td></td><td>Test Compressor Efficiency</td><td>S-104</td></tr>\n<tr><td>High Pressure Control Open</td><td></td><td></td><td>•</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Reset And Test Control</td><td>S-12</td></tr>\n<tr><td>Unbalanced Power, 3PH</td><td></td><td>•</td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Voltage</td><td></td></tr>\n<tr><td>Wrong Type Expansion Valve</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td></td><td>●</td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td>Replace Valve</td><td></td></tr>\n<tr><td>Expansion Device Restricted</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td></td><td>●</td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td>Remove restriction or replace expansion device</td><td></td></tr>\n<tr><td>Expansion Valve Bulb Loose</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>Tighten Bulb Bracket</td><td></td></tr>\n<tr><td>Inoperative Expansion Valve</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td>Check Valve Operation</td><td>S-110</td></tr>\n<tr><td>Loose Hold-down n Bolts</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>Tighten Bolts</td><td></td></tr>\n</table>\n\n32\n\n\n<!-- PAGE BREAK -->\n\nSERVICING\n\n\nGAS HEATING ANALYSIS CHART\n\n\n<table>\n<tr><td>Complaint</td><td colspan=\"3\">No Heat</td><td colspan=\"6\">Unsatisfactory Heat</td><td rowspan=\"2\">Test Method<br>Remedy</td><td rowspan=\"2\">See Service Procedure Reference</td></tr>\n<tr><td>POSSIBLE CAUSE<br>DOTS IN ANALYSIS<br>GUIDE INDICATE<br>\"POSSIBLE CAUSE\"</td><td>SYMPTOM<br>System Will Not Start</td><td>Burner Won't Ignite</td><td>Burner Ignites-Locks Out</td><td>Burner Shuts Off prior to T'Stat being Satasfie</td><td>Short Cycles</td><td>Long Cycles</td><td>Soot and /or Fumes</td><td>To Much Heat</td><td>Not Enough Heat</td></tr>\n<tr><td>Pow er Failure</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Voltage</td><td>S-1</td></tr>\n<tr><td>Blow n Fuse</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Voltage</td><td>S-4</td></tr>\n<tr><td>Loose Connection</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Check Wiring</td><td>S-2</td></tr>\n<tr><td>Shorted or Broken Wires</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Check Wiring</td><td>S-3</td></tr>\n<tr><td>No Low Voltage</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Check Transformer</td><td>S-4</td></tr>\n<tr><td>Faulty Thermostat</td><td>●</td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td>●</td><td></td><td>Check Thermostat</td><td>S-3</td></tr>\n<tr><td>Faulty Transformer</td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Check Transformer</td><td>S-4</td></tr>\n<tr><td>Poor or High Resistance Ground</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Measure Ground Resistance</td><td>S-313</td></tr>\n<tr><td>Improper Heat Anticipator Setting</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[black circle]</td><td>[black circle]</td><td></td><td>[black circle]</td><td>[black circle]</td><td>Adjust Heat Anticipator Setting</td><td>S-3</td></tr>\n<tr><td>Improper Thermostat Location</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[black circle]</td><td>[black circle]</td><td></td><td>[black circle]</td><td>[black circle]</td><td>Relocate Thermostat</td><td></td></tr>\n<tr><td>Faulty Limit or Roll Out Switch</td><td>[ ]</td><td>[●]</td><td>[ ]</td><td>[●]</td><td></td><td></td><td></td><td></td><td>[black circle]</td><td>Test Control</td><td>S-300,S-301,S-302</td></tr>\n<tr><td>Faulty Flame Sensor</td><td>[ ]</td><td>[ ]</td><td>[●]</td><td>[ ]</td><td></td><td></td><td></td><td></td><td></td><td>Test Flame Sensor</td><td>S-314</td></tr>\n<tr><td>Faulty Ignition Control</td><td>[●]</td><td>[●]</td><td>[●]</td><td>[ ]</td><td></td><td></td><td></td><td></td><td></td><td>Test Control</td><td>S-313</td></tr>\n<tr><td>Gas Valve or Gas Supply Shut Off</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Turn Valves to On Position</td><td>S-304</td></tr>\n<tr><td>Faulty Induced Draft Blower</td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>[black circle]</td><td></td><td></td><td>Test Blower</td><td>S-303</td></tr>\n<tr><td>Dirty Flame Sensor, Low uA</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Clean Flame Sensor</td><td>S-314</td></tr>\n<tr><td>Flame Sensor not in Flame, Low uA</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test/Adjust Position of Flame Sensor</td><td>S-314</td></tr>\n<tr><td>Faulty Gas Valve</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>[black circle]</td><td></td><td>[black circle]</td><td>Replace Gas Valve</td><td>S-304</td></tr>\n<tr><td>No High Stage Heat (2 Stage Only)</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td>Check Thermostat, Control, Gas Valve</td><td>S-3,S-313,S-304</td></tr>\n<tr><td>Open Auxillary Limit</td><td></td><td>●</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td>Reset Control</td><td>S-301</td></tr>\n<tr><td>Improper Air Flow or Distribution</td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>Check Duct Static</td><td></td></tr>\n<tr><td>Locking out on Main Limit</td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>Check Controls, Gas Press., &amp; Temp. Rise</td><td>S-300</td></tr>\n<tr><td>Delayed Ignition</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>Test for Delayed Ignition</td><td>S-308</td></tr>\n<tr><td>Flashback</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>Test for Flashback</td><td>S-309</td></tr>\n<tr><td>Orifice Size</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>Check Orifices</td><td>S-306</td></tr>\n<tr><td>Gas Pressure</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>Check Gas Pressure</td><td>S-307</td></tr>\n<tr><td>Cracked Heat Exchanger</td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td>Check Burner Flames</td><td>S-302</td></tr>\n<tr><td>Stuck Gas Valve</td><td></td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td>Replace Gas Valve</td><td>S-304</td></tr>\n<tr><td>Furnace Undersized</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>[black circle]</td><td>Replace w ith Proper Size Furnace</td><td></td></tr>\n<tr><td>Faulty Pressure Switch</td><td></td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td><td></td><td></td><td>Test Pressure Switch</td><td>S-310</td></tr>\n<tr><td>Blocked or Restricted Flue</td><td></td><td></td><td></td><td></td><td></td><td></td><td>[black circle]</td><td></td><td></td><td>Check Flue/Draw dow n Pressure</td><td>S-310</td></tr>\n<tr><td>Open Roll Out Switch</td><td></td><td>○</td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Test Control</td><td>S-302</td></tr>\n<tr><td>Bouncing On Pressure Switch</td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td>[black circle]</td><td>Test Negative Pressure</td><td>S-310</td></tr>\n</table>\n\n33\n\n\n<!-- PAGE BREAK -->\n\nSERVICING\n\n\nTable of Contents\n\n<table>\n<tr><td>S-1</td><td>Checking Voltage...</td><td>35</td><td>S-105</td><td>Thermostatic Expansion Valve...</td><td>45</td></tr>\n<tr><td>S-2</td><td>Checking Wiring...</td><td>36</td><td>S-106</td><td>Overfeeding...</td><td>47</td></tr>\n<tr><td>S-3</td><td>Checking Thermostat, Wiring &amp; Anticipator...</td><td>36</td><td>S-107</td><td>Underfeeding...</td><td>47</td></tr>\n<tr><td>S-3A</td><td>Thermostat &amp; Wiring...</td><td>36</td><td>S-108</td><td>Superheat...</td><td>47</td></tr>\n<tr><td>S-3B</td><td>Cooling Anticipator...</td><td>36</td><td>S-109</td><td>Checking Subcooling...</td><td>49</td></tr>\n<tr><td>S-3C</td><td>Heating Anticipator...</td><td>36</td><td>S-110</td><td>Checking Expansion Valve Operation...</td><td>49</td></tr>\n<tr><td>S-4</td><td>Checking Transformer &amp; Control Circuit...</td><td>37</td><td>S-111</td><td>Fixed Orifice Restriction Devices...</td><td>49</td></tr>\n<tr><td>S-7</td><td>Checking Contactor and/or Relays...</td><td>37</td><td>S-112</td><td>Checking Restricted Liquid Line...</td><td>50</td></tr>\n<tr><td>S-8</td><td>Checking Contactor Contacts...</td><td>37</td><td>S-113</td><td>Refrigerant Overcharge...</td><td>50</td></tr>\n<tr><td>S-9</td><td>Checking Fan Relay Contact...</td><td>38</td><td>S-114</td><td>Non-condensables...</td><td>50</td></tr>\n<tr><td>S-12</td><td>Checking High Pressure Control ...</td><td>38</td><td>S-115</td><td>Compressor Burnout ...</td><td>50</td></tr>\n<tr><td>S-13</td><td>Checking Low Pressure Control ...</td><td>38</td><td>S-200</td><td>Checking Extedrnal Static Pressure ...</td><td>51</td></tr>\n<tr><td>S-15</td><td>Checking Capacitor ...</td><td>38</td><td>S-201</td><td>Checking Temperature Rise ...</td><td>51</td></tr>\n<tr><td>S-15A</td><td>Resistance Check ...</td><td>39</td><td>S-300</td><td>Testing Primary Limit ...</td><td>52</td></tr>\n<tr><td>S-15B</td><td>Capacitance Check ...</td><td>39</td><td>S-301</td><td>Testing Auxiliary Limit ...</td><td>52</td></tr>\n<tr><td>S-16C</td><td>Checking ECM Motor Windings...</td><td>40</td><td>S-302</td><td>Checking Flame Rollout Switch...</td><td>53</td></tr>\n<tr><td>S-16D</td><td>Checking EEM Motors...</td><td>40</td><td>S-303</td><td>Testing Inducer Motor...</td><td>54</td></tr>\n<tr><td>S-17</td><td>Checking Compressor Windings...</td><td>41</td><td>S-304</td><td>Testing Gas Valve...</td><td>54</td></tr>\n<tr><td>S-17A</td><td>Resistance Test...</td><td>41</td><td>S-305</td><td>Checking Main Burners...</td><td>55</td></tr>\n<tr><td>S-17B</td><td>Ground Test...</td><td>42</td><td>S-306</td><td>Checking Orifices...</td><td>55</td></tr>\n<tr><td>S-17D</td><td>Operation Test...</td><td>42</td><td>S-307</td><td>Checking Gas Pressure...</td><td>56</td></tr>\n<tr><td>S-18</td><td>Testing Crankcase Heater (optional item)...</td><td>43</td><td>S-308</td><td>Checking For Delayed Ignition...</td><td>57</td></tr>\n<tr><td>S-100</td><td>Refrigeration Repair Practice...</td><td>43</td><td>S-309</td><td>Checking for Flashback...</td><td>57</td></tr>\n<tr><td>S-101</td><td>Leak Testing...</td><td>43</td><td>S-310</td><td>Checking Pressure Control...</td><td>57</td></tr>\n<tr><td>S-102</td><td>Evacuation...</td><td>43</td><td>S-311</td><td>High Altitude Application...</td><td>58</td></tr>\n<tr><td>S-103</td><td>Charging...</td><td>44</td><td>S-313</td><td>Testing Ignition Control Module...</td><td>58</td></tr>\n<tr><td>S-104</td><td>Checking Compressor Efficiency...</td><td>45</td><td>S-314</td><td>Checking Flame Sensor...</td><td>60</td></tr>\n</table>\n\n⚠ WARNING\nHIGH VOLTAGE!\nDisconnect ALL power before servicing or installing this unit. Multiple power sources\nmay be present. Failure to do so may cause property damage, personal injury or death.\n\n\ns th. [Icon of a hand touching an exposed wire, warning of electric shock]\n\n\n34\n\n\n<!-- PAGE BREAK -->\n\nSERVICING\nS-1 CHECKING VOLTAGE\n\n\n⚠️\nWARNING\nHIGH VOLTAGE!\nDisconnect ALL power before servicing\nor installing this unit. Multiple power\nsources may be present. Failure to do so\nmay cause property damage, personal injury\nor death.\n[ELECTRIC SHOCK HAZARD ICON]\n\n\n1. Remove doors, control panel cover, etc. from unit being\ntested.\nWith power ON:\n\n\n⚠️ WARNING\nLine Voltage now present.\n\n\n2. Using a voltmeter, measure the voltage across terminals\nL1 and L2 of the contactor for single phase units, and L3,\nfor 3 phase units.\n3. No reading - indicates open wiring, open fuse(s) no power\nor etc. from unit to fused disconnect service. Repair as\nneeded.\n4. With ample voltage at line voltage connectors, energize\nthe unit.\n5. Measure the voltage with the unit starting and operating,\nand determine the unit Locked Rotor Voltage.\nLocked Rotor Voltage is the actual voltage available at\nthe compressor during starting, locked rotor, or a stalled\ncondition. Measured voltage should be above minimum\nlisted in chart below.\nTo measure Locked Rotor Voltage attach a voltmeter to\nthe run \"R\" and common \"C\" terminals of the compressor,\nor to the T<sub>1</sub> and T<sub>2</sub> terminals of the contactor. Start the unit\nand allow the compressor to run for several seconds, then\nshut down the unit. Immediately attempt to restart the\nunit while measuring the Locked Rotor Voltage.\n6. Voltmeter should read within the voltage tabulation as\nshown. If the voltage falls below the minimum voltage,\ncheck the line wire size. Long runs of undersized wire can\ncause low voltage. If wire size is adequate, notify the local\npower company in regards to either low or high voltage.\n\n\n<table>\n<tr><td colspan=\"3\">Unit Supply Voltage</td></tr>\n<tr><td>Voltage</td><td>Min.</td><td>Max.</td></tr>\n<tr><td>460</td><td>437</td><td>506</td></tr>\n<tr><td>208/230</td><td>198</td><td>253</td></tr>\n</table>\n\nThree phase units require a balanced 3 phase power supply\nto operate. If the percentage of voltage imbalance exceeds\n3% the unit must not be operated until the voltage condition\nis corrected.\n\n\n% Voltage = Imbalance  Max. Voltage Deviation From Average Voltage  X 100  Average Voltage  To find the percentage of imbalance, measure the incoming power supply.  L1 - L2 = 240V  L1 - L3 = 232V  L2 - L3 = 238V  Total 710V  Avg. V = 710 / 3 = 236.7 \n\nTo find Max. deviation: 240 - 236.7 = +3.3 \n232 - 236.7 = -4.7 \n238 - 236.7 = +1.3 \nMax deviation was 4.7V \n% Voltage Imbalance = 4.7  / 236.7  = 1.99% \n\nIf the percentage of imbalance had exceeded 3%, it must be\ndetermined if the imbalance is in the incoming power supply\nor the equipment. To do this rotate the legs of the incoming\npower and retest voltage as shown below.\n\n\n<figure type=\"DIAGRAM\">The figure is an electrical wiring diagram illustrating a phase rotation correction. \n\n<description>The diagram consists of two terminal blocks connected by three wires labeled L1, L2, and L3. The top block represents the source, with voltage measurements: L1-L2 = 240V, L1-L3 = 227V, L2-L3 = 238V. The bottom block represents the load or destination, with voltage measurements: L1-L2 = 227V, L1-L3 = 238V, L2-L3 = 240V. The instruction 'Rotate all 3 incoming legs as shown' is provided to the right of the top block. The wires are connected such that the source L1 goes to the destination L2, the source L2 goes to the destination L1, and the source L3 goes to the destination L3, visually crossing over each other.</description> L1 - L2 = 240V L1 - L3 = 227V L2 - L3 = 238V Rotate all 3 incoming legs as shown. L1 - L2 = 227V L1 - L3 = 238V L2 - L3 = 240V</figure>\n\nBy the voltage readings we see that the imbalance rotated or\ntraveled with the switching of the incoming legs. Therefore the\nimbalance lies within the incoming power supply.\n\n\n35\n\n\n<!-- doc_id=parse-01m4z12hs1pjsm6q9nyyx041m5 -->",
+  "metadata": {
+    "job_id": "extract-01m4z130gnd97z4xcyerp9xv4j",
+    "version": null,
+    "model_version": "extract-20260819",
+    "duration_ms": 47647,
+    "doc_id": "parse-01m4z12hs1pjsm6q9nyyx041m5",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 25.0,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 26024,
+    "output_extraction_chars": 19738,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

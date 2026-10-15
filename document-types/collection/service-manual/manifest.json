@@ -1,0 +1,43 @@
+{
+  "slug": "service-manual",
+  "title": "Service Manual",
+  "source": {
+    "file": "goodman-gpg14-service-manual-excerpt.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://hvacdirect.com/media/hvac/pdf/GPG14-Service.pdf",
+      "publisher": "Goodman Manufacturing Company, L.P.; hosted by HVACDirect",
+      "title": "Service Instructions: APG/GPG 14 SEER Gas Electric Package Units with R-410A Refrigerant & Accessories (RS6300012r4, July 2017)",
+      "retrieved": "2026-10-14",
+      "clearance": "public",
+      "clearance_note": "Manufacturer's service manual, written by Goodman for HVAC technicians and distributed freely for use with its equipment. This copy is hosted by HVACDirect, an online HVAC retailer that posts manufacturers' manuals for the products it sells; Goodman's manuals for this unit are distributed the same way by other dealers and distributors (an earlier RS6300012 revision is on Alpine Home Air's document server). No page on goodmanmfg.com was found that links this exact revision, so the retailer is the source of record. Downloaded by script. Carries the notice Copyright 2014-2017 Goodman Manufacturing Company, L.P., so it is publicly distributed material rather than copyright-free material. The source is 67 pages; this folder keeps 5 of them (source pages 1, 32, 33, 34 and 35, in that order: the cover, the Cooling Analysis Chart, the Gas Heating Analysis Chart, the Servicing table of contents and S-1 Checking Voltage), split out with PyMuPDF at the operator's choice. No personal data on the kept pages: no names, phone numbers or email addresses at all. No text was redacted; document metadata was cleared.",
+      "kept_source_pages": [1, 32, 33, 34, 35],
+      "source_pages_total": 67
+    }
+  },
+  "feature_page": 2,
+  "fields": [
+    {
+      "path": "cooling_analysis_chart.chart_title",
+      "label": "Chart title",
+      "occurrence": 0
+    },
+    {
+      "path": "cooling_analysis_chart.rows[18].possible_cause",
+      "label": "Possible cause",
+      "occurrence": 0
+    },
+    {
+      "path": "cooling_analysis_chart.rows[18].test_method_remedy",
+      "label": "Test method / remedy",
+      "occurrence": 0
+    },
+    {
+      "path": "cooling_analysis_chart.rows[18].service_procedure_ref",
+      "label": "Service procedure reference",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request set feature_page 2 (original manual page 32, the Cooling Analysis Chart) and named no fields; its notes suggested, as suggestions only, one cause row's remedy, service procedure reference and dotted symptom columns, plus the chart title. Page 2 is honoured. The featured row is Shortage of Refrigerant (row 19 of the chart, index 18): the cause, what to do about it (Test For Leaks, Add Refrigerant) and where the procedure is (S-103), with the chart title, so the overlay reads as one troubleshooting lookup. Its four dotted symptoms (Compressor cycles on overload, System runs continuously - little cooling, Low suction pressure, Low head pressure) extract correctly but cannot be featured: every symptom value ranges onto the dot glyph in the cell rather than onto the rotated column label, so the match reads OFF; only the first two rows, whose symptom values were grounded to the header text instead, read ok. The dot matrix itself extracts very well: checked against the dot positions in the PDF's text layer, 40 of 41 rows have exactly the right set of symptom columns (117 of 118 dots), the one miss being the Condenser fan will not start dot on Shorted or Grounded Fan Motor. Blank Service Procedure Ref. cells came back as empty strings rather than null, despite the schema description asking for null."
+}
