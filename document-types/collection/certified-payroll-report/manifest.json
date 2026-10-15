@@ -1,0 +1,88 @@
+{
+  "slug": "certified-payroll-report",
+  "title": "Certified Payroll Report",
+  "source": {
+    "file": "boli-wh-38-certified-payroll-sample.pdf",
+    "pages": 2,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.oregonlegislature.gov/committees/slb/WorkgroupDocuments/Susan%20Wooley,%20BOLI%20(handout)%20-%2010-23-19%20meeting.pdf",
+      "publisher": "Oregon Bureau of Labor and Industries (BOLI), Prevailing Wage Rate unit",
+      "title": "Certified payroll handout to the Senate Labor and Business committee PWR work group, October 23, 2019 (filled sample of form WH-38, Payroll/Certified Statement)",
+      "retrieved": "2026-10-14",
+      "clearance": "redacted",
+      "clearance_note": "A filled specimen of Oregon's WH-38 Payroll/Certified Statement that BOLI handed to an Oregon Legislature work group and that is posted on oregonlegislature.gov; the same filled sample appears in BOLI's 2024 certified payroll training deck. The workers are specimen names with no ID numbers. The original is a 6-page handout; pages 1-4 (presentation slides) were dropped and pages 5-6 (the payroll grid and the certified statement) were kept. The certified statement page was printed upside down and was turned upright, and both pages had their page rotation folded into the content so the text runs left to right. The presenter's own name, used as the fictional contractor owner, signatory and business name, was replaced, as were two phone numbers, the contractor's street and mailing addresses and the four worker street addresses. Replacements were made with document-types/scripts/redact.py, which removes the underlying text, one page at a time because its matching ignores case. PDF metadata cleared. Verified by redact.py's re-extraction, by eye on renders of both pages, and by a sweep of every file in this folder.",
+      "dropped_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "presenter's name used as the contractor owner and signatory (certified statement)",
+            "with": "Jane Sample",
+            "occurrences": 2
+          },
+          {
+            "what": "contractor business name, which carried the presenter's surname (payroll header and certified statement)",
+            "with": "Sample Construction / SAMPLE CONSTRUCTION",
+            "occurrences": 3
+          },
+          {
+            "what": "contractor phone number in a BOLI telephone exchange",
+            "with": "(971) 555-0136",
+            "occurrences": 1
+          },
+          {
+            "what": "public agency phone number of unknown origin",
+            "with": "(503) 555-0127",
+            "occurrences": 1
+          },
+          {
+            "what": "contractor street address and PO box (street and box number only; city, state and ZIP kept)",
+            "with": "500 Pine St and PO Box 3569",
+            "occurrences": 2
+          },
+          {
+            "what": "four worker street addresses, one of them a state office building (street only; city, state and ZIP kept)",
+            "with": "100 Main St, 200 Oak St, 300 Elm St, 400 Ash St.",
+            "occurrences": 4
+          }
+        ],
+        "kept": "Worker names (specimen joke names), the CCB registration number 1234567, the public agency, the project name, number and location, all dates and all amounts were left as published."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "project.name",
+      "label": "Project name",
+      "occurrence": 0
+    },
+    {
+      "path": "payroll_number",
+      "label": "Payroll number",
+      "occurrence": 0
+    },
+    {
+      "path": "workers[2].total_straight_time_hours",
+      "label": "Straight-time hours",
+      "occurrence": 0
+    },
+    {
+      "path": "workers[2].gross_wages_all_work",
+      "label": "Gross wages (all work)",
+      "occurrence": 0
+    },
+    {
+      "path": "workers[2].net_wages_paid",
+      "label": "Net wages paid",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Page 1, the WH-38 payroll grid, is the document type: the overlay pairs two header values (project name and payroll number) with one complete worker line, the third worker (Laborer Gp 1, the only one with overtime): total straight-time hours, gross wages for all work from the lower half of the diagonally split column (7) cell, and net wages paid. The request suggested, as suggestions only, project name and number, pay period began and ended, contract amount, payroll number with the prime contractor checkbox, and one worker's total hours, gross and net. Shipped: project name, payroll number and one worker's hours, gross and net; the project number sits inside the project-name box. Left out: the pay period dates, which are normalized to YYYY-MM-DD and so read OFF in inspect_fields.py (the end date's range also points at the begin line); the prime contractor checkbox, a boolean whose range points at the printed '[x] PRIME CONTRACTOR' and reads OFF; and the contract amount, which grounds ok but would have made six fields. The worker was chosen over the first one because the first worker's printed net is $0.01 off its gross less deductions, a quirk of the specimen. The worker's name was deliberately not featured. Known quirks of the specimen, left as published: that one-cent net, day header dates that do not match their weekdays, and a two-week pay period against a one-week grid."
+}
