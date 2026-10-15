@@ -1,0 +1,52 @@
+{
+  "slug": "project-schedule",
+  "title": "Project Schedule",
+  "source": {
+    "file": "exhibit-b-3b-opitz-boulevard-ramp-baseline-schedule.pdf",
+    "pages": 18,
+    "orientation": "mixed",
+    "origin": {
+      "url": "https://p3.virginia.gov/media/p3/documents/p3-agreements/i-95i-395fredex/Exhibit_B-3B_-_Initial_Opitz_Boulevard_Ramp_Baseline_Schedule.pdf",
+      "publisher": "Virginia Office of Transportation Public-Private Partnerships (schedule prepared by Shirley Contracting Company, LLC)",
+      "title": "Exhibit B-3B - Initial Opitz Boulevard Ramp Baseline Schedule",
+      "retrieved": "2026-10-14",
+      "clearance": "public",
+      "clearance_note": "Exhibit B-3B of the executed I-95/I-395 (Fredex) public-private partnership agreement, posted by the Virginia Office of Transportation Public-Private Partnerships on its P3 agreements page (p3.virginia.gov/p3-agreements/) for public disclosure. Downloaded directly by script. It names organizations only (the contractor, Transurban, VDOT, DEQ): no individual's name, signature, phone number or address appears anywhere in it, so no redaction was needed. The PDF metadata holds only the InDesign creator, producer and dates. The whole 18-page exhibit is kept unaltered."
+    }
+  },
+  "feature_page": 10,
+  "fields": [
+    {
+      "path": "project_summary.budgeted_total_cost",
+      "label": "Project budgeted total cost",
+      "occurrence": 0
+    },
+    {
+      "path": "milestones[2].start",
+      "label": "Notice to Proceed (MS-1200) start",
+      "occurrence": 0
+    },
+    {
+      "path": "milestones[8].finish",
+      "label": "Open New Slip Ramp (MS-1500) finish",
+      "occurrence": 0
+    },
+    {
+      "path": "milestones[8].total_float_days",
+      "label": "Open New Slip Ramp total float (critical)",
+      "occurrence": 0
+    },
+    {
+      "path": "milestones[7].total_float_days",
+      "label": "Open Pedestrian Facility (MS-1450) total float",
+      "occurrence": 0
+    }
+  ],
+  "preview_pages": [
+    2,
+    10,
+    12,
+    17
+  ],
+  "notes": "Primavera P6 baseline schedule for the 95 Express Lanes Opitz Boulevard project, filed as an exhibit to a Virginia P3 agreement. Orientation is mixed: the narrative and payment schedule are portrait letter, the Gantt pages landscape tabloid and the cash curve a rotated landscape page. The whole exhibit is kept: narrative (pages 1-8, including Table 01 of contract milestones and Table 02, the WBS), the six-page P6 Gantt chart (pages 10-15), and the monthly payment schedule and cash curve (16-18), whose final cumulative total matches the Gantt's top-level budget. Feature page 10, the first Gantt page, as the request suggested. The request listed seven suggested values on page 10 (project budgeted total cost and duration; MS-1200 Notice to Proceed start; MS-1500 Open New Slip Ramp finish and total float; MS-1450 Open Pedestrian Facility finish and total float). All seven ground cleanly on page 10, but a page features at most five, so two were left out: the project duration (595) and the MS-1450 finish date. The five kept tell one story: the budget, the day work starts, and two milestones side by side, one on the critical path (0 days float) and one with more than a year of slack (367 days). Milestones are pinned by array index, which follows the printed order (MS-1200 is index 2, MS-1450 index 7, MS-1500 index 8). Dates are kept as printed (MM-DD-YY) rather than normalized, so they match the cells they ground to. The wbs_summaries description was refined once with --extract-only: the first extraction dropped the empty STAKEHOLDER band and promoted PROJECT CLOSEOUT (a level-3 band inside CONSTRUCTION) to level 2, because the band colours that carry the WBS level do not survive into the markdown; pointing the field at the narrative's WBS codes fixed it, and the seven bands now sum exactly to the project budget. Previews are pages 2, 10, 12 and 17 (milestone table, two Gantt pages, payment schedule) rather than the default sample, which picked the near-empty divider page 1."
+}
