@@ -1,0 +1,322 @@
+{
+  "type": "object",
+  "properties": {
+    "project_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The project name from the PROJECT box of the title block, e.g. 'TURNBULL SCHOOL MUSIC ROOM ADDITION'"
+    },
+    "general_contractor": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The contractor named in the BY box of the title block"
+    },
+    "fabricator": {
+      "type": "object",
+      "description": "The rebar fabricator who produced the shop drawings, from the title block",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Fabricator name as printed, e.g. 'AGF STEEL - OTTAWA'"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Fabricator street address, city, province and postal code, as one line"
+        },
+        "contract_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The fabricator's contract number from the CONTRACT NO. box, e.g. 'CP9667F'"
+        }
+      }
+    },
+    "sheets": {
+      "type": "array",
+      "description": "One entry per drawing sheet, in page order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sheet_number": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The sheet number in the bottom-right box of the title block, e.g. 'P1'"
+          },
+          "drawing_title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The DRAWING TITLE from the title block, e.g. 'FOOTING'"
+          },
+          "scale": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The SCALE box value, e.g. 'NTS'"
+          },
+          "latest_revision": {
+            "type": "object",
+            "description": "The highest-numbered row of the revision block (REV / REMARKS / DATE / BY)",
+            "properties": {
+              "revision_number": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "The REV number"
+              },
+              "remarks": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The REMARKS text"
+              },
+              "date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The DATE as YYYY-MM-DD"
+              }
+            }
+          },
+          "engineer_review": {
+            "type": "object",
+            "description": "The structural engineer's shop drawing review stamp (the black SHOP DRAWING REVIEW stamp naming the engineering firm)",
+            "properties": {
+              "firm": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The engineering firm named on the stamp"
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "REVIEWED AS NOTED",
+                  "REVIEWED",
+                  "RESUBMIT",
+                  null
+                ],
+                "description": "The status whose box is marked on the engineer's stamp"
+              },
+              "review_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The handwritten DATE on the engineer's stamp, as YYYY-MM-DD"
+              }
+            }
+          },
+          "architect_review": {
+            "type": "object",
+            "description": "The architect's red SHOP DRAWING REVIEW stamp",
+            "properties": {
+              "firm": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The architecture firm named under the stamp"
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "REVIEWED",
+                  "REVIEWED AS NOTED",
+                  "REVISE AND RESUBMIT",
+                  null
+                ],
+                "description": "The status whose box is ticked on the architect's stamp"
+              },
+              "review_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The Date on the architect's stamp, as YYYY-MM-DD"
+              }
+            }
+          },
+          "bar_list": {
+            "type": "array",
+            "description": "Every row of the bar list and bending schedule table on this sheet, in order",
+            "items": {
+              "type": "object",
+              "properties": {
+                "quantity": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "QTY: number of bars"
+                },
+                "bar_size": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "SIZE: the metric bar size, e.g. '15M'"
+                },
+                "bar_mark": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "BAR MARK, e.g. 'A1'; null for straight bars with no mark"
+                },
+                "bend_type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "BND TYP: the bend shape code, e.g. '1', '2', '6', 'T2'; null for straight bars"
+                },
+                "a": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension A in millimetres, from the A column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "b": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension B in millimetres, from the B column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "c": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension C in millimetres, from the C column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "d": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension D in millimetres, from the D column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "e": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension E in millimetres, from the E column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "g": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension G in millimetres, from the G column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "h": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension H in millimetres, from the H column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "j": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension J in millimetres, from the J column of the BENDING DIMENSIONS group; null when the cell is blank"
+                },
+                "k": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "Bending dimension K in millimetres, from the K column of the BENDING DIMENSIONS group; null when the cell is blank"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "concrete_strengths": {
+      "type": "array",
+      "description": "Rows of the CONCRETE STRENGTHS table on the first sheet",
+      "items": {
+        "type": "object",
+        "properties": {
+          "element": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The structural element, e.g. 'FOUNDATION WALL'"
+          },
+          "strength_mpa": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The specified strength in MPa"
+          }
+        }
+      }
+    },
+    "concrete_covers": {
+      "type": "array",
+      "description": "Rows of the CONCRETE COVERS table on the first sheet",
+      "items": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Where the cover applies, e.g. 'FOOTING BOTTOM'"
+          },
+          "cover_mm": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The cover in millimetres"
+          }
+        }
+      }
+    },
+    "steel_grade": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The reinforcing steel grade from the DETAILING NOTES, e.g. 'GRADE 400 W'"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "shop-drawing",
+  "title": "Shop Drawing",
+  "source": {
+    "file": "181113-HOBIN-Returned-P1-P2-REV2-Rebar.pdf",
+    "pages": 2,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://tal-co.com/wp-content/uploads/2018/11/181113-HOBIN-Returned-P1-P2-REV2-Rebar.pdf",
+      "publisher": "AGF Steel Ottawa (rebar fabricator), reviewed by Cunliffe & Associates (structural engineer) and Hobin Architecture; posted by TalCo Building Innovations Ltd. (general contractor)",
+      "title": "Turnbull School Music Room Addition: reinforcing steel shop drawings P1 Footing and P2 Foundation, Rev 2, returned reviewed",
+      "retrieved": "2026-10-14",
+      "clearance": "redacted",
+      "clearance_note": "A real, returned rebar shop drawing submittal that TalCo Building Innovations, the general contractor, deliberately posts in public on its open project page for the Turnbull School Music Room Addition (https://tal-co.com/project-management/turnbull-school-music-room-addition/drc-shop-drawings/), which links this file among 32 returned submittals. TalCo is a party to the project but not the producer: AGF Steel Ottawa drew the sheets, and Cunliffe & Associates and Hobin Architecture stamped them, so those firms hold any copyright. No licence terms are stated, and no copyright notice appears on the AGF sheets. Because the poster is not the producer, the file was treated like the collection's user-upload sources: individuals' names, initials and contact details were replaced, and the clearance is redacted. The operator cleared it on that basis on 2026-10-14. Downloaded by script; no manual download was needed.",
+      "redactions": {
+        "summary": "Page 1 of the original, the architect's transmittal cover letter, was dropped. On the two remaining sheets, people's names, initials and a direct contact were replaced with obviously fake stand-ins. Firm names, the fabricator's office address and main phone number, the project, dates and every engineering value are unchanged.",
+        "dropped_pages": [
+          1
+        ],
+        "replaced": [
+          {
+            "what": "Contractor reviewer's name in the flattened REVIEWED stamp (both sheets)",
+            "with": "Pat Sample",
+            "count": 2
+          },
+          {
+            "what": "Architect reviewer's name on the Hobin review stamp (both sheets)",
+            "with": "Jane Q Sample",
+            "count": 2
+          },
+          {
+            "what": "Engineer checker's initials on the Cunliffe review stamp (both sheets)",
+            "with": "JD",
+            "count": 2
+          },
+          {
+            "what": "Detailer's initials in the revision block and DETAILED BY box (vector glyphs)",
+            "with": "J.DOE",
+            "count": 8
+          },
+          {
+            "what": "Detailer's work email in the AGF title block (vector glyphs)",
+            "with": "detailer@example.com",
+            "count": 2
+          },
+          {
+            "what": "Direct phone extension in the AGF title block (vector glyphs)",
+            "with": "a random 4-digit extension",
+            "count": 2
+          }
+        ],
+        "method": "redact.py for the text-layer stamps (with page 1 dropped and document metadata cleared), then redact_outlined.py for the title-block text, which is stroked vector glyphs with no text layer. Both verified that no original survives, by text extraction and by OCR respectively. The tagged-PDF structure tree was removed as well. The dropped cover letter's tags still held a name and an email as /ActualText after the page itself was deleted. ship.py check caught this, and pdfmeta.py now clears the tree for every redaction script."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "project_name",
+      "label": "Project",
+      "occurrence": 0
+    },
+    {
+      "path": "fabricator.contract_number",
+      "label": "Fabricator contract number",
+      "occurrence": 0
+    },
+    {
+      "path": "sheets[0].engineer_review.status",
+      "label": "Engineer review status",
+      "occurrence": 0
+    },
+    {
+      "path": "sheets[0].bar_list[0].quantity",
+      "label": "Bar quantity (first bar list row)",
+      "occurrence": 0
+    },
+    {
+      "path": "sheets[0].bar_list[0].bar_mark",
+      "label": "Bar mark (first bar list row)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Two 36x24 in CAD sheets from a reinforcing steel shop drawing submittal: P1 Footing and P2 Foundation, Rev 2, as returned with review stamps. The original's page 1, the architect's Word-made transmittal cover, was dropped because it was mostly people's names and added nothing a shop drawing needs. Each sheet carries a foundation plan or wall elevations with bar callouts, a bar list and bending schedule, concrete strength, cover and lap tables, a revision block, the fabricator's title block, and three review stamps (the architect's, the structural engineer's, and the contractor's flattened REVIEWED stamp). The request named no feature page or fields. Its notes suggested, as suggestions only, sheet P1 (the original's page 2, now page 1) with the fabricator contract number and sheet, the drawing title and project, the engineer review status and date, one bar list row, and the latest revision. Shipped on page 1: the project, the fabricator contract number, the engineer review status, and the first bar list row's quantity and bar mark, which together say which job this is, whose drawing it is, whether it was approved, and what is to be fabricated. Not featured, with the reason: the P1 drawing title ('FOOTING') extracted correctly but came back with no ranges (SYNTH), although it sits in the title block table. The engineer review date and the latest revision date are normalized to YYYY-MM-DD, so their crops ('11/13/18', '6-NOV-18') would appear to disagree with the value (OFF). The sheet number and latest revision number ground ok but were dropped to keep to five fields. build_images.py warned that OCR could not read the two bar list values inside their boxes. Both crops were opened, and each boxes exactly the right cell (32 and A5 in the first row). The warning comes from the small CAD digits. No featured field names a person."
+}
