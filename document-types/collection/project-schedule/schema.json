@@ -1,0 +1,185 @@
+{
+  "type": "object",
+  "description": "A construction project baseline schedule exported from Primavera P6: a narrative, a Gantt chart of activities grouped by work breakdown structure (WBS) with budgeted cost, duration, dates and total float, and a monthly payment schedule.",
+  "properties": {
+    "header": {
+      "type": "object",
+      "description": "The title block printed across the top of each Gantt chart page.",
+      "properties": {
+        "schedule_title": {
+          "type": "string",
+          "description": "Schedule title from the top-left of the Gantt title block, e.g. 'EXHIBIT O - INITIAL BASELINE SCHEDULE'."
+        },
+        "project_name": {
+          "type": "string",
+          "description": "Project name from the centre of the Gantt title block, exactly as printed."
+        },
+        "contractor": {
+          "type": "string",
+          "description": "Contractor company name from the Gantt title block."
+        },
+        "data_date": {
+          "type": "string",
+          "description": "The date printed at the top right of the Gantt title block, as printed (MM-DD-YY)."
+        }
+      }
+    },
+    "project_summary": {
+      "type": "object",
+      "description": "The top summary row of the Gantt chart, which rolls up the whole project.",
+      "properties": {
+        "budgeted_total_cost": {
+          "type": "number",
+          "description": "Budgeted Total Cost of the whole project from the top summary row, in dollars."
+        },
+        "duration_days": {
+          "type": "integer",
+          "description": "Duration (Dur column) of the whole project from the top summary row, in days."
+        },
+        "start": {
+          "type": "string",
+          "description": "Start date of the top summary row, as printed (MM-DD-YY)."
+        },
+        "finish": {
+          "type": "string",
+          "description": "Finish date of the top summary row, as printed (MM-DD-YY)."
+        },
+        "total_float_days": {
+          "type": "integer",
+          "description": "Total Float of the top summary row, in days."
+        }
+      }
+    },
+    "milestones": {
+      "type": "array",
+      "description": "Every activity under PROJECT MILESTONES in the Gantt chart (IDs beginning MS-), in the order printed.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "activity_id": {
+            "type": "string",
+            "description": "Activity ID, e.g. 'MS-1200'."
+          },
+          "activity_name": {
+            "type": "string",
+            "description": "Activity Name as printed in the table."
+          },
+          "budgeted_total_cost": {
+            "type": "number",
+            "description": "Budgeted Total Cost in dollars."
+          },
+          "duration_days": {
+            "type": "integer",
+            "description": "Duration (Dur column) in days; 0 for a milestone."
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Start date as printed (MM-DD-YY), without any trailing asterisk. Null when the Start cell is blank."
+          },
+          "finish": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Finish date as printed (MM-DD-YY), without any trailing asterisk. Null when the Finish cell is blank."
+          },
+          "date_constrained": {
+            "type": "boolean",
+            "description": "True when a date in this row carries an asterisk (*), which marks a constrained date."
+          },
+          "total_float_days": {
+            "type": "integer",
+            "description": "Total Float in days. 0 means the activity is on the critical path."
+          }
+        }
+      }
+    },
+    "wbs_summaries": {
+      "type": "array",
+      "description": "The level-2 WBS band rows of the Gantt chart: the seven WBS elements listed in the narrative's Table 02 with a single-letter code (RRC.A to RRC.G: SCHEDULE MILESTONES, DESIGN PHASE, STAKEHOLDER / ADJACENT PROJECT COORDINATION, PERMITTING, MATERIAL PROCUREMENT, UTILITIES, CONSTRUCTION), one item each, in the order they appear in the Gantt chart, with the figures from their Gantt band rows. Do not include deeper groupings such as PROJECT MILESTONES, CONTRACTOR PLANS, STAGE 4 or PROJECT CLOSEOUT (code RRC.G.D, which sits inside CONSTRUCTION). Their budgeted total costs sum to the project's budgeted total cost.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "wbs_name": {
+            "type": "string",
+            "description": "Name of the WBS band as printed."
+          },
+          "budgeted_total_cost": {
+            "type": "number",
+            "description": "Budgeted Total Cost rolled up for this WBS band, in dollars."
+          },
+          "duration_days": {
+            "type": "integer",
+            "description": "Duration of the WBS band in days."
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Start date as printed (MM-DD-YY). Null if blank."
+          },
+          "finish": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Finish date as printed (MM-DD-YY). Null if blank."
+          },
+          "total_float_days": {
+            "type": "integer",
+            "description": "Total Float of the WBS band in days."
+          }
+        }
+      }
+    },
+    "contract_milestone_dates": {
+      "type": "array",
+      "description": "Table 01 (Contract and Schedule Milestones) in the narrative, in the order printed.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "milestone": {
+            "type": "string",
+            "description": "Milestone name as printed in Table 01."
+          },
+          "date": {
+            "type": "string",
+            "description": "Date as printed in Table 01, e.g. 'August 15, 2022'."
+          }
+        }
+      }
+    },
+    "monthly_payment_schedule": {
+      "type": "array",
+      "description": "Every row of the Monthly Payment Schedule table, in order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "period_ending": {
+            "type": "string",
+            "description": "Period Ending month as printed, e.g. 'September 2022'."
+          },
+          "projected_monthly_total": {
+            "type": "number",
+            "description": "Projected Monthly Total in dollars."
+          },
+          "projected_cumulative_total": {
+            "type": "number",
+            "description": "Projected Cumulative Total in dollars."
+          }
+        }
+      }
+    },
+    "payment_schedule_total": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The final cumulative total (or the printed grand total) of the Monthly Payment Schedule, in dollars."
+    }
+  }
+}
