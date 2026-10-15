@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "title": "Certified Payroll Report (Oregon BOLI WH-38)",
+  "description": "A prevailing-wage certified payroll: the payroll/certified statement a contractor files with the public agency for each pay period on a public works project, listing every worker's classification, daily hours, rates, fringe benefits, gross and net pay, followed by the signed statement of compliance.",
+  "properties": {
+    "form_number": {"type": "string", "description": "Form identifier as printed, e.g. WH-38."},
+    "payroll_number": {"type": "string", "description": "Value printed beside 'PAYROLL #'."},
+    "is_prime_contractor": {"type": "boolean", "description": "True if the 'PRIME CONTRACTOR' box is marked (an X), false if the 'SUBCONTRACTOR' box is marked instead."},
+    "is_final_payroll": {"type": "boolean", "description": "True if the 'FINAL PAYROLL' box is checked, false if it is empty."},
+    "contractor": {
+      "type": "object",
+      "description": "The contractor filing this payroll, from the header block.",
+      "properties": {
+        "business_name": {"type": "string", "description": "Value beside 'Business Name (DBA)'."},
+        "phone": {"type": ["string", "null"], "description": "Contractor phone number beside 'Phone' in the header, as printed."},
+        "ccb_registration_number": {"type": ["string", "null"], "description": "Construction Contractors Board registration number."},
+        "street_address": {"type": ["string", "null"], "description": "Full street address line including city, state and ZIP."},
+        "mailing_address": {"type": ["string", "null"], "description": "Full mailing address line including city, state and ZIP."}
+      }
+    },
+    "project": {
+      "type": "object",
+      "description": "The public works project the payroll covers.",
+      "properties": {
+        "name": {"type": "string", "description": "Value beside 'Project Name'."},
+        "number": {"type": ["string", "null"], "description": "Value beside 'Project Number'."},
+        "type_of_work": {"type": ["string", "null"], "description": "Value beside 'Type of Work'."},
+        "location": {"type": ["string", "null"], "description": "Value beside 'Project Location'."},
+        "county": {"type": ["string", "null"], "description": "Value beside 'Project County'."}
+      }
+    },
+    "pay_period_began": {"type": "string", "description": "Date beside 'Date Pay Period Began', as YYYY-MM-DD."},
+    "pay_period_ended": {"type": "string", "description": "Date beside 'Date Pay Period Ended', as YYYY-MM-DD."},
+    "prime_contractor_section": {
+      "type": "object",
+      "description": "The 'THIS SECTION FOR PRIME CONTRACTORS ONLY' block. Each field is null when its line is blank.",
+      "properties": {
+        "public_agency_name": {"type": ["string", "null"], "description": "Public Contracting Agency Name."},
+        "public_agency_phone": {"type": ["string", "null"], "description": "Phone number printed under the agency name in this section."},
+        "date_first_advertised": {"type": ["string", "null"], "description": "Date Contract Specifications First Advertised for Bid, as YYYY-MM-DD."},
+        "contract_amount": {"type": ["number", "null"], "description": "Contract Amount in dollars, as a number without $ or commas."}
+      }
+    },
+    "subcontractor_section": {
+      "type": "object",
+      "description": "The 'THIS SECTION FOR SUBCONTRACTORS ONLY' block. Each field is null when its line is blank.",
+      "properties": {
+        "subcontract_amount": {"type": ["number", "null"], "description": "Subcontract Amount in dollars. Null if the line is blank; do not return 0 for a blank line."},
+        "prime_contractor_business_name": {"type": ["string", "null"], "description": "Prime Contractor Business Name (DBA)."},
+        "prime_contractor_ccb_number": {"type": ["string", "null"], "description": "Prime Contractor's CCB Registration Number."}
+      }
+    },
+    "day_columns": {
+      "type": "array",
+      "description": "The day-and-date header of column (3), left to right, one entry per day column.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "weekday": {"type": "string", "description": "Weekday abbreviation as printed (M, T, W, Th, F, Sa, Su)."},
+          "date": {"type": "string", "description": "Month/day as printed beneath the weekday, e.g. 2/4."}
+        }
+      }
+    },
+    "workers": {
+      "type": "array",
+      "description": "One entry per filled worker block in the payroll grid, top to bottom. Skip empty blocks.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Worker's name, the first line of column (1)."},
+          "address": {"type": ["string", "null"], "description": "Worker's address from column (1), street and city lines joined with a comma."},
+          "classification": {"type": "string", "description": "Column (2) classification including group, e.g. 'Carpenter Gp 1'."},
+          "apprentice_level": {"type": ["string", "null"], "description": "Apprenticeship step printed under the classification, e.g. '60% Apprentice'. Null if none."},
+          "straight_time_hours_by_day": {"type": "array", "description": "Hours on the ST row for each day column, left to right; null where the cell is blank.", "items": {"type": ["number", "null"]}},
+          "overtime_hours_by_day": {"type": "array", "description": "Hours on the OT row for each day column, left to right; null where the cell is blank.", "items": {"type": ["number", "null"]}},
+          "total_straight_time_hours": {"type": "number", "description": "Column (4) TOTAL HOURS on the ST row."},
+          "total_overtime_hours": {"type": ["number", "null"], "description": "Column (4) TOTAL HOURS on the OT row; null if blank."},
+          "straight_time_rate": {"type": "number", "description": "Column (5) HOURLY BASE RATE on the ST row."},
+          "overtime_rate": {"type": ["number", "null"], "description": "Column (5) HOURLY BASE RATE on the OT row."},
+          "fringe_paid_as_wages": {"type": "number", "description": "Column (6) hourly fringe benefit amount paid as wages to the employee."},
+          "gross_this_project": {"type": "number", "description": "Column (7) GROSS AMOUNT EARNED: the upper-left half of the diagonally split cell, the gross earned on this project."},
+          "gross_wages_all_work": {"type": "number", "description": "Column (7) GROSS AMOUNT EARNED: the lower-right half of the diagonally split cell, the total gross for all work in the period."},
+          "itemized_deductions": {"type": "number", "description": "Column (8) ITEMIZED DEDUCTIONS total."},
+          "net_wages_paid": {"type": "number", "description": "Column (9) NET WAGES PAID."},
+          "work_schedule": {"type": ["string", "null"], "description": "Schedule line at the bottom of the block, e.g. 'Reg Hrly Schd: 8am- 4:30pm'."},
+          "fringe_benefits_paid_to_plans": {
+            "type": "array",
+            "description": "Columns (10) and (11) beside this worker's block: each hourly fringe benefit paid to a benefit party, plan, fund or program.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "hourly_amount": {"type": "number", "description": "Column (10) hourly fringe amount."},
+                "plan": {"type": "string", "description": "Column (11) name of the benefit party, plan, fund or program, e.g. 'Med - BC/BS'."}
+              }
+            }
+          }
+        }
+      }
+    },
+    "certified_statement": {
+      "type": "object",
+      "description": "The CERTIFIED STATEMENT on the reverse of the form.",
+      "properties": {
+        "date": {"type": ["string", "null"], "description": "Date at the top of the statement, as YYYY-MM-DD."},
+        "signatory_name": {"type": ["string", "null"], "description": "Name of signatory party."},
+        "signatory_title": {"type": ["string", "null"], "description": "Title of the signatory."},
+        "contractor_name": {"type": ["string", "null"], "description": "Contractor, subcontractor or surety named in item (1)."},
+        "building_or_work": {"type": ["string", "null"], "description": "Building or work named in item (1)."},
+        "permissible_deductions": {"type": ["string", "null"], "description": "Deductions described below item (1), as printed."},
+        "fringe_benefits_to_approved_plans_checked": {"type": "boolean", "description": "True if box 4(a), fringe benefits paid to approved plans, funds or programs, is checked."},
+        "fringe_benefits_in_cash_checked": {"type": "boolean", "description": "True if box 4(b), fringe benefits paid in cash, is checked."}
+      }
+    }
+  }
+}
