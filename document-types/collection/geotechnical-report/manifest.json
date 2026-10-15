@@ -1,0 +1,29 @@
+{
+  "slug": "geotechnical-report",
+  "title": "Geotechnical Report",
+  "source": {
+    "file": "geotechnical-report-moore-twining-garland-ranch.pdf",
+    "pages": 14,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.mprpd.org/files/bee0b37d7/Item0724-6E_ApprvRFBOutdoorClassroom_Attach1.ExhibitD.GeotechRpt.pdf",
+      "publisher": "Moore Twining Associates, Inc. (geotechnical consultant); posted by the Monterey Peninsula Regional Park District",
+      "title": "Geotechnical Engineering Investigation, Proposed Classroom Project, Garland Ranch Regional Park, Carmel Valley, California (Project H07802.01, November 21, 2023)",
+      "retrieved": "2026-10-14",
+      "clearance": "public",
+      "clearance_note": "Public agency record: posted by the Monterey Peninsula Regional Park District on its own website (mprpd.org) as Exhibit D to its July 2024 board item 6E, approving the Request for Bids for the Garland Ranch Outdoor Classroom; bid documents are published for general distribution to prospective bidders. Downloaded by script. The source is 61 pages; this folder keeps 14 of them (source pages 2, 34-44, 54 and 55: report cover, Appendix A drawings, Appendix B logs of borings with the key to symbols, and two consolidation test reports), split out with PyMuPDF. The agency's Exhibit D slip sheet, the transmittal letter (which carries the engineering geologist's signature and licence seal and the district staff addressee), the report body, the sieve analyses, direct shear and other lab sheets were left out to keep the parse cost proportionate and to keep personal details out. No text was redacted: the kept pages carry only the consultant's and the district's organizational details and the driller's and logger's initials, which are professional details in a public record. Document metadata, which named a district staff member as author, was cleared.",
+      "kept_source_pages": [2, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 54, 55],
+      "source_pages_total": 61
+    }
+  },
+  "feature_page": 6,
+  "preview_pages": [1, 4, 6, 13],
+  "fields": [
+    { "path": "borings[0].boring_id", "label": "Boring", "occurrence": 0 },
+    { "path": "borings[0].surface_elevation_ft", "label": "Surface elevation (ft AMSL)", "occurrence": 0 },
+    { "path": "borings[0].groundwater_first_encountered_ft", "label": "Groundwater first encountered (ft)", "occurrence": 0 },
+    { "path": "borings[0].samples[0].uscs", "label": "First sample USCS class", "occurrence": 0 },
+    { "path": "borings[0].samples[0].n_value_blows_per_ft", "label": "First sample N-value (blows/ft)", "occurrence": 0 }
+  ],
+  "notes": "Features the first page of the Test Boring B-1 log (page 6 here, page 38 in the source, as the request suggested): which boring it is, the ground elevation it starts at, the depth groundwater was first hit, and the soil class and blow count of the first sample, so the overlay reads as one boring from its header down to its first sample. The request suggested nine fields on this page (boring number, date drilled, surface elevation, groundwater first encountered, first sample USCS, N-value and moisture, drill rig and hammer); all nine ground ok on page 6, but a page features at most five, so date drilled, first sample moisture, drill rig and hammer were left out of the overlay. They are all in extract-pro.json. The request's concern that the narrow log columns would mis-pair values with N-value rows did not materialize on the featured page: every N-value, moisture and Remarks entry on B-1 page 1 landed on its own row. It did materialize once, on the second page of the B-2 log (page 10 here): that page prints three moisture values (27.6, 15.1, 19.9) against three N-values (19, 24, 46), with 15.1 a second moisture reading on the 17.5-foot sample rather than a row of its own. Extraction gave N-value 24 the moisture 15.1 instead of 19.9 and dropped 19.9. Soil descriptions that continue across a page break also come back merged or split (B-1 sample 6), and samples within a stratum leave uscs null where the class is printed only once at the top of the stratum."
+}
