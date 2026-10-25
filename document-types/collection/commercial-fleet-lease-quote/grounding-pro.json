@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 5,
+  "page_count": 32,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    29
+  ],
+  "fields": [
+    {
+      "path": "quotes[1].vehicle.model",
+      "label": "Vehicle model",
+      "value": "F-250",
+      "page": 5,
+      "box": {
+        "xmin": 0.10899,
+        "ymin": 0.12226,
+        "xmax": 0.36821,
+        "ymax": 0.13596
+      },
+      "range": {
+        "end": 13513,
+        "start": 13478
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quotes-1-vehicle-model.png"
+    },
+    {
+      "path": "quotes[1].term_months",
+      "label": "Lease term (months)",
+      "value": 60.0,
+      "page": 5,
+      "box": {
+        "xmin": 0.01921,
+        "ymin": 0.1529,
+        "xmax": 0.48863,
+        "ymax": 0.16709
+      },
+      "range": {
+        "end": 13635,
+        "start": 13570
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quotes-1-term_months.png"
+    },
+    {
+      "path": "quotes[1].total_capitalized_amount",
+      "label": "Total capitalized amount",
+      "value": 38000.0,
+      "page": 5,
+      "box": {
+        "xmin": 0.04541,
+        "ymin": 0.34447,
+        "xmax": 0.2095,
+        "ymax": 0.36002
+      },
+      "range": {
+        "end": 14742,
+        "start": 14731
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quotes-1-total_capitalized_amount.png"
+    },
+    {
+      "path": "quotes[1].total_monthly_rental_including_services",
+      "label": "Total monthly rental",
+      "value": 679.71,
+      "page": 5,
+      "box": {
+        "xmin": 0.04593,
+        "ymin": 0.60617,
+        "xmax": 0.2094,
+        "ymax": 0.629
+      },
+      "range": {
+        "end": 15642,
+        "start": 15634
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quotes-1-total_monthly_rental_including_services.png"
+    },
+    {
+      "path": "quotes[1].reduced_book_value_at_term",
+      "label": "Reduced book value at term",
+      "value": 8360.0,
+      "page": 5,
+      "box": {
+        "xmin": 0.04597,
+        "ymin": 0.62874,
+        "xmax": 0.20939,
+        "ymax": 0.6467
+      },
+      "range": {
+        "end": 15730,
+        "start": 15720
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quotes-1-reduced_book_value_at_term.png"
+    }
+  ]
+}
