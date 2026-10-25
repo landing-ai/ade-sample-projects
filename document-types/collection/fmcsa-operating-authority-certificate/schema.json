@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "issuing_agency": {
+      "type": ["string", "null"],
+      "description": "The federal agency that issued the authority documents, from the letterhead, e.g. 'Federal Motor Carrier Safety Administration'"
+    },
+    "issuing_office": {
+      "type": ["string", "null"],
+      "description": "The office named under the signature, e.g. 'Office of Registration'"
+    },
+    "authority_documents": {
+      "type": "array",
+      "description": "One entry per authority document (certificate, permit or license) in the batch, in page order. Each document is one page.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "service_date": {
+            "type": ["string", "null"],
+            "description": "The date printed under SERVICE DATE at the top right, as printed, e.g. 'February 16, 2023'"
+          },
+          "document_type": {
+            "type": ["string", "null"],
+            "enum": ["CERTIFICATE", "PERMIT", "LICENSE", null],
+            "description": "The kind of authority document, from the heading above the docket number"
+          },
+          "docket_number": {
+            "type": ["string", "null"],
+            "description": "The MC docket number exactly as printed under the heading, including the MC- prefix and the type suffix, e.g. 'MC-1179808-C'"
+          },
+          "usdot_number": {
+            "type": ["string", "null"],
+            "description": "The digits of the U.S. DOT number printed on the line 'U.S. DOT No.', without the label"
+          },
+          "carrier_name": {
+            "type": ["string", "null"],
+            "description": "The legal name of the authority holder, as printed under the U.S. DOT number"
+          },
+          "dba_name": {
+            "type": ["string", "null"],
+            "description": "The trade name after 'D/B/A', without the 'D/B/A' prefix; null when none is printed"
+          },
+          "city": {
+            "type": ["string", "null"],
+            "description": "The holder's city from the 'CITY, ST' line under the name"
+          },
+          "state": {
+            "type": ["string", "null"],
+            "description": "The holder's two-letter state code from the 'CITY, ST' line"
+          },
+          "carrier_type": {
+            "type": ["string", "null"],
+            "description": "The kind of operation the document authorizes, from the bold text in the first paragraph, e.g. 'common carrier', 'contract carrier' or 'broker'"
+          },
+          "commodity_scope": {
+            "type": ["string", "null"],
+            "description": "What may be transported or arranged, from the bold text after the carrier type, e.g. 'property (except household goods)'"
+          },
+          "service_condition": {
+            "type": ["string", "null"],
+            "description": "Any additional condition printed as its own sentence after the compliance paragraph, e.g. a requirement to serve under continuing agreements; null when none is printed"
+          },
+          "signing_official": {
+            "type": ["string", "null"],
+            "description": "The name and title printed under the signature, e.g. 'Jeffrey L. Secrist, Division Chief'"
+          },
+          "form_code": {
+            "type": ["string", "null"],
+            "description": "The short code printed at the bottom right of the page, e.g. 'CMO' or 'PMO'"
+          }
+        }
+      }
+    }
+  }
+}

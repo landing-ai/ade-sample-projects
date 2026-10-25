@@ -1,0 +1,75 @@
+{
+  "slug": "fmcsa-operating-authority-certificate",
+  "title": "FMCSA Operating Authority Certificate",
+  "source": {
+    "file": "fmcsa-authority-certificates-2023-02-16-excerpt.pdf",
+    "pages": 20,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://li-public.fmcsa.dot.gov/lihtml/rptspdf/LI_CPL20230216.PDF",
+      "publisher": "U.S. Department of Transportation, Federal Motor Carrier Safety Administration, Office of Registration",
+      "title": "FMCSA Licensing & Insurance daily report of issued operating authority documents, service date February 16, 2023 (LI_CPL20230216)",
+      "retrieved": "2026-10-25",
+      "clearance": "public",
+      "clearance_note": "Published by FMCSA itself in its Licensing & Insurance public report folder (li-public.fmcsa.dot.gov/lihtml/rptspdf/), which posts each day's batch of issued operating authority documents; the URL is the publisher. A U.S. federal government work. Downloaded by script. The source is 768 pages of alternating authority documents and mailing-envelope pages; this folder keeps 20 of them, the odd-numbered source pages 33 to 71, split out with PyMuPDF. The even-numbered pages in that range were dropped because they are envelope pages printing each carrier's business street address. Every kept page was checked by eye: each holder is a business (LLC, Inc. or a trade name such as D & S 2020 EXPRESS or GOLDEN STAR LOGISTICS d/b/a GSL), and none is a sole proprietor trading under a personal name. The only individual named is the FMCSA Division Chief who signs each document in an official capacity; his printed name and image signature are kept as published. No text was redacted; document metadata was cleared.",
+      "kept_source_pages": [
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61,
+        63,
+        65,
+        67,
+        69,
+        71
+      ],
+      "source_pages_total": 768
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "authority_documents[0].service_date",
+      "label": "Service date",
+      "occurrence": 0
+    },
+    {
+      "path": "authority_documents[0].docket_number",
+      "label": "MC docket number",
+      "occurrence": 0
+    },
+    {
+      "path": "authority_documents[0].usdot_number",
+      "label": "U.S. DOT number",
+      "occurrence": 0
+    },
+    {
+      "path": "authority_documents[0].carrier_name",
+      "label": "Carrier name",
+      "occurrence": 0
+    },
+    {
+      "path": "authority_documents[0].carrier_type",
+      "label": "Authority granted",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page and no fields; its notes suggested service date, docket (MC) number, U.S. DOT number, carrier name and city/state, and authority type, and asked to keep at least 20 certificate pages (the odd pages 33-71). All 20 were kept. Page 1 is featured because it is a common-carrier certificate, the document type in the title: its service date, MC docket number, U.S. DOT number, holder and the kind of carrier authority granted, so the overlay reads as one complete certificate. City and state ground correctly but share the holder's address line, so they were left off to keep the overlay uncluttered. The carrier name featured is a business, not an individual. Every one of the 20 documents extracted correctly, including the household-goods certificate on page 5 (form code CHO), the contract-carrier permit on page 8 with its continuing-agreement condition, the three holders with a D/B/A line (where the city moves down a line) and a Quebec holder whose state reads QC. The weak spot is absent optional fields: dba_name and service_condition came back as an empty string, the string 'null', the string 'none' or a real null on different pages, despite the schema asking for null, and those empty values ground OFF onto nearby text. preview_pages shows the featured certificate, the household-goods certificate, the permit and a certificate with a D/B/A line, rather than four near-identical property certificates.",
+  "preview_pages": [
+    1,
+    5,
+    8,
+    13
+  ]
+}
