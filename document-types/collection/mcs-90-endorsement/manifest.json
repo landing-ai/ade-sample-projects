@@ -1,0 +1,46 @@
+{
+  "slug": "mcs-90-endorsement",
+  "title": "MCS-90 Endorsement",
+  "source": {
+    "file": "mcs-90-endorsement.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.boisepaper.com/wp-content/uploads/2025/09/BCT-Owner-Oper-MCS-90.pdf",
+      "publisher": "Boise Paper (Packaging Corporation of America), for its motor carrier subsidiary BCT, Inc.; endorsement issued by Northland Insurance Company",
+      "title": "BCT, Inc. MCS-90 Endorsement (FMCSA Form MCS-90)",
+      "retrieved": "2026-10-25",
+      "clearance": "public",
+      "clearance_note": "Published by Boise Paper on its BCT, Inc. company page (https://www.boisepaper.com/our-company/bct-inc-2/), linked as \"MCS-90\" beside BCT's operating authority, W-9 and SmartWay certificate: a carrier packet posted for shippers and brokers. Downloaded by script from the publisher's own site. It carries business data only: the carrier, the insurer, the policy number and the insurer's FMCSA verification line. The countersignature by an unnamed insurer representative is kept as published, by the operator's decision. Used as published, with no redaction."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "motor_carrier.name",
+      "label": "Motor carrier",
+      "occurrence": 0
+    },
+    {
+      "path": "motor_carrier.state_or_province",
+      "label": "Motor carrier state",
+      "occurrence": 0
+    },
+    {
+      "path": "amending_policy_number",
+      "label": "Amending policy number",
+      "occurrence": 0
+    },
+    {
+      "path": "insurance_company",
+      "label": "Insurance company",
+      "occurrence": 0
+    },
+    {
+      "path": "coverage.primary_limit_per_accident",
+      "label": "Primary limit per accident",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the endorsement's own facts on page 1: who it is issued to (the motor carrier and its state), which policy it amends, which insurer stands behind it, and the checked primary limit of $750,000 per accident. Read together they answer the question a shipper or broker opens an MCS-90 for: is this carrier covered for public liability, by whom, and up to what amount. The request's notes suggested six impersonal fields, as suggestions only: motor carrier name and state, amending policy number, effective date, insurance company, and the primary-coverage checkbox with its $750,000 limit. Five shipped. All six extract correctly and ground ok on page 1, and the layout risk the request flagged did not materialize: the policy number and the effective date, printed as two label/value pairs on one line, each came back paired with the right label. But the parse returned that line as one line box, so both values would be highlighted by the same box. The effective date was dropped and the policy number kept, as the field an MCS-90 is filed against. The primary limit's box covers the whole checked line, including the [X], so the crop shows the checkbox choice and the amount together. No personal data: the countersignature by an unnamed insurer representative is kept as published, by the operator's decision, and is not featured. The empty USDOT Number and Date Received boxes come back as empty strings rather than null."
+}

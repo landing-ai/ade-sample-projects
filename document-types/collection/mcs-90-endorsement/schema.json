@@ -1,0 +1,138 @@
+{
+  "type": "object",
+  "title": "MCS-90 endorsement (Endorsement for Motor Carrier Policies of Insurance for Public Liability)",
+  "properties": {
+    "form_number": {
+      "type": "string",
+      "description": "Form number printed in the header, e.g. FORM MCS-90."
+    },
+    "form_revision": {
+      "type": ["string", "null"],
+      "description": "Form revision printed in the page 1 footer, e.g. Rev 5/26/2023."
+    },
+    "omb_number": {
+      "type": "string",
+      "description": "OMB control number printed in the header."
+    },
+    "omb_expiration_date": {
+      "type": "string",
+      "description": "OMB expiration date printed in the header, exactly as printed."
+    },
+    "usdot_number": {
+      "type": ["string", "null"],
+      "description": "USDOT Number box at the top right of page 1, or null if blank."
+    },
+    "date_received": {
+      "type": ["string", "null"],
+      "description": "Date Received box at the top right of page 1, or null if blank."
+    },
+    "motor_carrier": {
+      "type": "object",
+      "description": "The motor carrier the endorsement is issued to.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Motor carrier name written on the 'Issued to' line."
+        },
+        "state_or_province": {
+          "type": "string",
+          "description": "Motor carrier state or province written on the 'of' line below the carrier name."
+        }
+      }
+    },
+    "dated_at": {
+      "type": "object",
+      "description": "The 'Dated at ... on this ... day of ..., ...' line: where and when the endorsement was signed.",
+      "properties": {
+        "place": {
+          "type": "string",
+          "description": "City and state written after 'Dated at', exactly as printed."
+        },
+        "day": {
+          "type": "string",
+          "description": "Day written after 'on this', exactly as printed, e.g. 21st."
+        },
+        "month": {
+          "type": "string",
+          "description": "Month written after 'day of'."
+        },
+        "year": {
+          "type": "string",
+          "description": "Year written after the month."
+        }
+      }
+    },
+    "amending_policy_number": {
+      "type": "string",
+      "description": "The policy number written after 'Amending Policy Number:' (not the effective date on the same line)."
+    },
+    "effective_date": {
+      "type": "string",
+      "description": "The date written after 'Effective Date:' on the same line as the policy number, exactly as printed."
+    },
+    "insurance_company": {
+      "type": "string",
+      "description": "Name written after 'Name of Insurance Company:'."
+    },
+    "countersigned": {
+      "type": "boolean",
+      "description": "True if the 'Countersigned by' line carries a signature."
+    },
+    "coverage": {
+      "type": "object",
+      "description": "The primary-or-excess choice and its limits (check only one).",
+      "properties": {
+        "basis": {
+          "type": "string",
+          "enum": ["primary", "excess"],
+          "description": "Which box is checked: 'primary' if 'This insurance is primary' is checked, 'excess' if 'This insurance is excess' is checked."
+        },
+        "primary_limit_per_accident": {
+          "type": ["string", "null"],
+          "description": "Amount written on the primary line ('not be liable for amounts in excess of $ ... for each accident'), exactly as printed without the dollar sign, or null if blank."
+        },
+        "excess_limit_per_accident": {
+          "type": ["string", "null"],
+          "description": "Amount written on the excess line, exactly as printed, or null if blank."
+        },
+        "underlying_limit_per_accident": {
+          "type": ["string", "null"],
+          "description": "Underlying limit written on the excess line, exactly as printed, or null if blank."
+        }
+      }
+    },
+    "fmcsa_verification_phone": {
+      "type": "string",
+      "description": "Telephone number the FMCSA calls to verify the policy is in force, exactly as printed."
+    },
+    "cancellation_notice_days_to_party": {
+      "type": "integer",
+      "description": "Days of written notice to the other party required to cancel the endorsement."
+    },
+    "cancellation_notice_days_to_fmcsa": {
+      "type": "integer",
+      "description": "Days of notice to the FMCSA required to cancel the endorsement."
+    },
+    "schedule_of_limits": {
+      "type": "array",
+      "description": "Page 3, Schedule of Limits - Public Liability: one row per type of carriage.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type_of_carriage": {
+            "type": "string",
+            "description": "Type of carriage, including its row number, e.g. (1) For-hire ..."
+          },
+          "commodity_transported": {
+            "type": "string",
+            "description": "Commodity transported for this row."
+          },
+          "minimum_insurance": {
+            "type": "string",
+            "description": "Minimum insurance amount for this row as of January 1, 1985, exactly as printed, e.g. $750,000."
+          }
+        }
+      }
+    }
+  }
+}
