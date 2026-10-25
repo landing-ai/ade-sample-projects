@@ -1,0 +1,32 @@
+{
+  "slug": "auto-loss-run",
+  "title": "Auto Loss Run",
+  "source": {
+    "file": "cameron-county-apd-loss-runs-2011-2016.pdf",
+    "pages": 4,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://cameroncountytx.gov/wp-content/uploads/Purchasing/Exhibit-X-F-TAC-GL-AL-APD-Loss-Runs-2011-2016.pdf",
+      "publisher": "Texas Association of Counties Risk Management Pool (posted by Cameron County, Texas)",
+      "title": "Claim/Loss Report: Cameron County Automobile Physical Damage, coverage years 2011-2016 (RFP Exhibit X-F, pages 5-8)",
+      "retrieved": "2026-10-25",
+      "clearance": "public",
+      "clearance_note": "A loss run produced by the Texas Association of Counties Risk Management Pool for its member Cameron County, and published by the county on its own official website (cameroncountytx.gov, under its Purchasing uploads) as Exhibit X-F to an insurance RFP, so that bidders could price the account. Downloaded by script. The solicitation page linking the exhibit was not found, so provenance rests on the official county domain. The 13-page original covers three lines; only the four Automobile Physical Damage pages (5-8) are kept. On those pages every claimant is the county itself, so no page text needed redacting. The Automobile Liability and General Liability pages, which name private claimants, were dropped before the file entered the repo and before any parse, and the PDF's document metadata was cleared.",
+      "redactions": {
+        "pages_dropped": 9,
+        "pages_dropped_note": "Original pages 1-4 (Automobile Liability) and 9-13 (General Liability) removed whole; they carry private claimant names. Kept pages 5-8 are unaltered.",
+        "text_replaced": 0,
+        "metadata_cleared": true
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "policies[1].policy_id", "label": "Policy ID", "occurrence": 0 },
+    { "path": "policies[1].claims[1].claim_number", "label": "Claim number", "occurrence": 0 },
+    { "path": "policies[1].claims[1].cause_of_loss", "label": "Cause of loss", "occurrence": 0 },
+    { "path": "policies[1].claims[1].total_incurred", "label": "Claim total incurred", "occurrence": 0 },
+    { "path": "policies[1].totals.total_incurred", "label": "Policy-year total incurred", "occurrence": 0 }
+  ],
+  "notes": "Features one claim inside its policy year on page 1 (original page 5): policy RMP-00370-201107, claim APD201102084-1 (STRUCK AN ANIMAL, $13,043 incurred), and that year's $17,240 total incurred, so the overlay reads from the policy header down through a claim row to the year's Totals row. The request file set no feature_page or fields. Its notes asked for pages 5-8 only (honoured: they are pages 1-4 here), suggested original page 5 (honoured), and suggested as fields the line of coverage and policy ID, the effective date range, one claim row (claim number, loss date, total incurred, pool paid, cause STRUCK AN ANIMAL), the policy-year claim count and total incurred, and the report date. All of these ground ok on page 1; five were chosen to stay within the overlay limit, and the line of coverage, effective date range, loss date, pool paid, claim count and report date were left out to keep one story. policies[] is extracted in an order that puts the 2015-16 year first, so the 2011-12 year shown on page 1 is policies[1]. The schema extracts all 112 claim rows; every year's claim rows sum to its printed Totals row within the source's own $1 rounding."
+}

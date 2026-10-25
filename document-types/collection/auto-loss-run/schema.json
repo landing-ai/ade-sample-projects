@@ -1,0 +1,134 @@
+{
+  "type": "object",
+  "description": "An auto loss run (claim/loss report) for a commercial auto line: the claims history an insurer or risk pool reports for one insured member, grouped by policy year with a totals row for each year. Used by underwriters and brokers to price an auto renewal.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Report-level details from the page header.",
+      "properties": {
+        "report_title": {
+          "type": "string",
+          "description": "Title of the report as printed, e.g. 'Claim/Loss Report'."
+        },
+        "report_date": {
+          "type": "string",
+          "description": "Date the report was run, printed beside the title, exactly as printed (MM/DD/YYYY)."
+        },
+        "carrier_name": {
+          "type": "string",
+          "description": "Insurer or risk pool that produced the report, from the logo."
+        },
+        "insured_member": {
+          "type": "string",
+          "description": "The insured or pool member the report covers, printed under the title."
+        },
+        "coverage_year_range": {
+          "type": "string",
+          "description": "The coverage period year range the report was run for, as printed after 'Coverage Period Year Range:', e.g. '2011-2016'."
+        }
+      }
+    },
+    "policies": {
+      "type": "array",
+      "description": "One entry per policy year. Each starts at a section header line ('<line of coverage>  Policy ID: ...  Effective Date: ...'), lists that year's claims, and ends with a 'Totals:' row.",
+      "items": {
+        "type": "object",
+        "description": "One policy year and its claims.",
+        "properties": {
+          "line_of_coverage": {
+            "type": "string",
+            "description": "Line of coverage named at the start of the section header, e.g. 'Automobile Physical Damage'."
+          },
+          "policy_id": {
+            "type": "string",
+            "description": "Policy ID from the section header, e.g. 'RMP-00370-201107'."
+          },
+          "effective_date_range": {
+            "type": "string",
+            "description": "Effective date range from the section header, exactly as printed, e.g. '07/01/2011-07/01/2012'."
+          },
+          "claims": {
+            "type": "array",
+            "description": "Every claim row listed under this policy year, in printed order. Each row has ten columns in this fixed order: Claim Number, Claimant Full Name, Loss Date, Status, Total Incurred, Pool Paid, Recoveries, Total Outstanding Reserve, Deductible, Cause of Loss. Map the five dollar cells to the five dollar fields strictly by that position, for every policy year alike.",
+            "items": {
+              "type": "object",
+              "description": "One claim row.",
+              "properties": {
+                "claim_number": {
+                  "type": "string",
+                  "description": "Claim number copied character for character as printed, e.g. 'APD201102084-1'. Some numbers are shorter than others (e.g. 'APD20158639-1'); do not pad or normalise them."
+                },
+                "claimant": {
+                  "type": "string",
+                  "description": "Claimant Full Name column as printed."
+                },
+                "loss_date": {
+                  "type": "string",
+                  "description": "Loss date exactly as printed, e.g. 'Jul 31, 2011'."
+                },
+                "status": {
+                  "type": "string",
+                  "description": "Claim status as printed: Closed, Open or Reopened."
+                },
+                "total_incurred": {
+                  "type": "number",
+                  "description": "Total Incurred column, in dollars. A printed $0 is 0, not null."
+                },
+                "pool_paid": {
+                  "type": "number",
+                  "description": "Pool Paid column, in dollars. A printed $0 is 0, not null."
+                },
+                "recoveries": {
+                  "type": "number",
+                  "description": "Recoveries column, in dollars. A printed $0 is 0, not null."
+                },
+                "outstanding_reserve": {
+                  "type": "number",
+                  "description": "Total Outstanding Reserve column, in dollars. A printed $0 is 0, not null."
+                },
+                "deductible": {
+                  "type": "number",
+                  "description": "Deductible column, in dollars. A printed $0 is 0, not null."
+                },
+                "cause_of_loss": {
+                  "type": "string",
+                  "description": "Cause of Loss column as printed, e.g. 'STRUCK AN ANIMAL'."
+                }
+              }
+            }
+          },
+          "totals": {
+            "type": "object",
+            "description": "The 'Totals:' row that closes this policy year's claim listing, directly below its last claim.",
+            "properties": {
+              "claim_count": {
+                "type": "integer",
+                "description": "The number printed after 'Count of Claims'."
+              },
+              "total_incurred": {
+                "type": "number",
+                "description": "Total incurred for the year, in dollars. A printed $0 is 0, not null."
+              },
+              "pool_paid": {
+                "type": "number",
+                "description": "Total pool paid for the year, in dollars. A printed $0 is 0, not null."
+              },
+              "recoveries": {
+                "type": "number",
+                "description": "Total recoveries for the year, in dollars. A printed $0 is 0, not null."
+              },
+              "outstanding_reserve": {
+                "type": "number",
+                "description": "Total outstanding reserve for the year, in dollars. A printed $0 is 0, not null."
+              },
+              "deductible": {
+                "type": "number",
+                "description": "Total deductible for the year, in dollars. A printed $0 is 0, not null."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
