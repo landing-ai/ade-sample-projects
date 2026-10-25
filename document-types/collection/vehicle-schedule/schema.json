@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "description": "A commercial auto vehicle schedule: the list of vehicles an entity submits to insurers when buying auto liability and physical damage cover, giving each unit's year, make, model, body type, VIN, insured (agreed) value and garaging location. Here it is attached to a county's property and casualty insurance RFP addendum, with the fleet grouped by fire or rescue company.",
+  "properties": {
+    "submission": {
+      "type": "object",
+      "description": "Who the schedule is for and which solicitation it belongs to, from the addendum cover page.",
+      "properties": {
+        "entity_name": {
+          "type": "string",
+          "description": "The public entity or named insured issuing the schedule, e.g. 'County of Louisa'."
+        },
+        "issuing_department": {
+          "type": "string",
+          "description": "Department that issued the document, from the letterhead."
+        },
+        "rfp_number": {
+          "type": "string",
+          "description": "Request for proposal number as printed, e.g. 'ES-21-04'."
+        },
+        "addendum_number": {
+          "type": "string",
+          "description": "Addendum number as printed."
+        },
+        "addendum_date": {
+          "type": "string",
+          "description": "Date of the addendum, as YYYY-MM-DD."
+        },
+        "rfp_title": {
+          "type": "string",
+          "description": "Title of the solicitation, from the 'Title:' line."
+        },
+        "schedule_as_of": {
+          "type": "string",
+          "description": "The month and year the vehicle list is current as of, as stated in the cover text, e.g. 'April 2021'."
+        },
+        "current_auto_liability_premium": {
+          "type": "number",
+          "description": "Current annual premium for Auto Liability, from the premium-by-coverage table."
+        },
+        "current_auto_physical_damage_premium": {
+          "type": "number",
+          "description": "Current annual premium for Auto Physical Damage, from the premium-by-coverage table."
+        }
+      }
+    },
+    "locations": {
+      "type": "array",
+      "description": "One entry per section of the vehicle schedule. Each section starts with a centred header row naming a fire department, rescue squad or the county, and lists that location's vehicles beneath it. Keep sections in document order, and keep a section that continues across a page break as one entry.",
+      "items": {
+        "type": "object",
+        "description": "One department or location section of the schedule.",
+        "properties": {
+          "section_name": {
+            "type": "string",
+            "description": "The section header exactly as printed, e.g. 'Louisa Vol. Fire Dept.'."
+          },
+          "vehicles": {
+            "type": "array",
+            "description": "Every row listed under this section header, in order, including trailers, boats and motors.",
+            "items": {
+              "type": "object",
+              "description": "One scheduled vehicle or unit.",
+              "properties": {
+                "vehicle_number": {
+                  "type": ["string", "null"],
+                  "description": "The 'Veh #' cell as printed, keeping any asterisk, e.g. '28*'. Null when the cell is blank."
+                },
+                "year": {
+                  "type": ["integer", "null"],
+                  "description": "Model year from the 'Year' column. Null when blank."
+                },
+                "make": {
+                  "type": ["string", "null"],
+                  "description": "Manufacturer from the 'Make' column, e.g. 'Pierce'. Null when blank."
+                },
+                "model": {
+                  "type": ["string", "null"],
+                  "description": "Model from the 'Model' column. Null when the cell is blank; do not copy the body type here."
+                },
+                "body_type": {
+                  "type": ["string", "null"],
+                  "description": "Apparatus or body type from the 'Body Type' column, e.g. 'Pumper', 'Tanker', 'Ambulance'."
+                },
+                "vin": {
+                  "type": ["string", "null"],
+                  "description": "Vehicle identification or serial number from the 'VIN' column, exactly as printed."
+                },
+                "agreed_value": {
+                  "type": ["number", "null"],
+                  "description": "Agreed (insured) value in US dollars from the 'Agreed Value' column. Null when the cell holds text instead of an amount, such as 'Portable Equip' or 'Inland Marine'."
+                },
+                "agreed_value_note": {
+                  "type": ["string", "null"],
+                  "description": "The 'Agreed Value' cell's text when it is not an amount, e.g. 'Portable Equip' or 'Inland Marine'. Null when the cell is an amount."
+                },
+                "unique_id": {
+                  "type": ["string", "null"],
+                  "description": "Station or unit identifier from the 'Unique Id' column, e.g. 'FS1', 'RS3', 'County'."
+                },
+                "location_number": {
+                  "type": ["string", "null"],
+                  "description": "Location code from the 'Loc' column, e.g. '1' or 'Cty'."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

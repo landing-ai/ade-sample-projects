@@ -1,0 +1,26 @@
+{
+  "slug": "vehicle-schedule",
+  "title": "Vehicle Schedule",
+  "source": {
+    "file": "louisa-county-fire-ems-vehicle-schedule-2021.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://louisacounty.gov/DocumentCenter/View/6988/RFP-ES-21-04-Property-and-Casualty-Addendum-1?bidId=",
+      "publisher": "County of Louisa, Virginia, Finance Department",
+      "title": "RFP ES-21-04 Property and Casualty Insurance Services for Louisa County Fire and EMS, Addendum 1",
+      "retrieved": "2026-10-25",
+      "clearance": "public",
+      "clearance_note": "Published by Louisa County on its own website (louisacounty.gov DocumentCenter) as Addendum 1 to RFP ES-21-04, so that insurers bidding on the county's fire and EMS property and casualty programme could price it. Downloaded by script. It lists government fire and EMS fleet vehicles and public station details; it names no private individual. No page content was changed. The PDF's document metadata carried the Word user name of the county employee who prepared it, and was cleared before the file entered the repo."
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    { "path": "locations[0].section_name", "label": "Department section", "occurrence": 0 },
+    { "path": "locations[0].vehicles[0].body_type", "label": "Body type", "occurrence": 0 },
+    { "path": "locations[0].vehicles[0].vin", "label": "VIN", "occurrence": 0 },
+    { "path": "locations[0].vehicles[0].agreed_value", "label": "Agreed value", "occurrence": 0 },
+    { "path": "locations[0].vehicles[0].unique_id", "label": "Station ID", "occurrence": 0 }
+  ],
+  "notes": "Features the first scheduled unit, Veh # 1 under the Louisa Vol. Fire Dept. header on page 3: the department section it is listed under, its body type, VIN, agreed value and station ID, so the overlay reads as one fleet line from section header to insured value. The request suggested page 3 and these fields, plus Veh # 1's year, make and Loc column. All eight suggestions grounded ok on page 3; year, make and location were left out only because a page features at most five fields, and the station ID carries the same location information as the Loc column. The schedule is entity-prepared for an insurance RFP, not an ACORD 129 form; the operator accepted that when choosing this sample."
+}
