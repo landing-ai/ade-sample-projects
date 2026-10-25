@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "policy_period.effective_date",
+      "label": "Policy period from",
+      "value": "10/01/2019",
+      "page": 1,
+      "box": {
+        "xmin": 0.07913,
+        "ymin": 0.26046,
+        "xmax": 0.49855,
+        "ymax": 0.27667
+      },
+      "range": {
+        "end": 545,
+        "start": 492
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policy_period-effective_date.png"
+    },
+    {
+      "path": "policy_period.expiration_date",
+      "label": "Policy period to",
+      "value": "10/01/2020",
+      "page": 1,
+      "box": {
+        "xmin": 0.4842,
+        "ymin": 0.26218,
+        "xmax": 0.62784,
+        "ymax": 0.275
+      },
+      "range": {
+        "end": 610,
+        "start": 597
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policy_period-expiration_date.png"
+    },
+    {
+      "path": "coverages[0].limit",
+      "label": "Liability limit",
+      "value": "1,000,000 CSL",
+      "page": 1,
+      "box": {
+        "xmin": 0.45503,
+        "ymin": 0.40189,
+        "xmax": 0.83523,
+        "ymax": 0.41789
+      },
+      "range": {
+        "end": 1457,
+        "start": 1442
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-0-limit.png"
+    },
+    {
+      "path": "coverages[0].premium",
+      "label": "Liability premium",
+      "value": "5,293",
+      "page": 1,
+      "box": {
+        "xmin": 0.83521,
+        "ymin": 0.40187,
+        "xmax": 0.92014,
+        "ymax": 0.41774
+      },
+      "range": {
+        "end": 1473,
+        "start": 1466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-0-premium.png"
+    },
+    {
+      "path": "estimated_total_premium",
+      "label": "Estimated total premium",
+      "value": 7173.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.83485,
+        "ymin": 0.63996,
+        "xmax": 0.92005,
+        "ymax": 0.6609
+      },
+      "range": {
+        "end": 3101,
+        "start": 3094
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "estimated_total_premium.png"
+    }
+  ]
+}

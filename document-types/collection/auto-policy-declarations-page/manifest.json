@@ -1,0 +1,27 @@
+{
+  "slug": "auto-policy-declarations-page",
+  "title": "Auto Policy Declarations Page",
+  "source": {
+    "file": "national-indemnity-business-auto-declarations.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.puc.pa.gov/pcdocs/1644171.pdf",
+      "publisher": "Pennsylvania Public Utility Commission (public filings repository); declarations issued by National Indemnity Company",
+      "title": "National Indemnity Company Business Auto Coverage Declarations, policy period 10/01/2019 to 10/01/2020",
+      "retrieved": "2026-10-25",
+      "clearance": "public",
+      "clearance_note": "A motor carrier insurance filing posted in the Pennsylvania Public Utility Commission's public document repository (puc.pa.gov/pcdocs), downloaded by script. The kept page is National Indemnity Company's Business Auto Coverage Declarations for an LLC limousine and party-bus operator. It names only organizations: the insured LLC at its business address, the insurer, the producing agency and the countersigning agency. The two signatures at the foot are the insurer's pre-printed facsimile officer signatures (Secretary and President), which carry no printed name and appear on every policy of this form; they were left in place, as on other insurer forms in this collection. The authorized-signature line is blank. Pages 1, 3 and 4 of the filing (the filer's cover letter, a Form E certificate of insurance and a date-stamped mailing envelope) were dropped without review for individual names, so the sample is the one declarations page. PDF metadata (format and dates) was cleared. The page is a slightly skewed scan with an OCR text layer and is otherwise unchanged.",
+      "dropped_pages": [1, 3, 4]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "policy_period.effective_date", "label": "Policy period from", "occurrence": 0 },
+    { "path": "policy_period.expiration_date", "label": "Policy period to", "occurrence": 0 },
+    { "path": "coverages[0].limit", "label": "Liability limit", "occurrence": 0 },
+    { "path": "coverages[0].premium", "label": "Liability premium", "occurrence": 0 },
+    { "path": "estimated_total_premium", "label": "Estimated total premium", "occurrence": 0 }
+  ],
+  "notes": "Features what the policy buys and for how long: the 10/01/2019 to 10/01/2020 policy period, the liability row of the coverage schedule ($1,000,000 combined single limit for $5,293) and the $7,173 estimated total premium. The request named no fields or feature page; its notes suggested, as suggestions only, the policy number, the policy period, the form of business, the liability row (symbol 7, $1,000,000 CSL, $5,293) and the estimated total premium. All of those ground correctly; the overlay takes five of them, leaving out the policy number and the form of business, so it reads as one coverage-and-cost story. The liability row's coverage name was not featured: it grounds to the table's COVERAGES header rather than to the LIABILITY cell. The page has no field labelled policy number: the large bold number beside the CROSS REFERENCE NUMBER caption is the policy's identifier, the parse reads it as the cross reference number, and the first extraction returned the policy number empty until the schema description said where to look. This is a commercial (business auto) declarations page, not a personal auto one: no plain, specimen-filled personal auto dec page was found, and annotated consumer-guide specimens were rejected by the operator. Item Three (schedule of covered autos) reads AS ATTACHED and the schedule is not in the filing, so there are no vehicle rows; physical damage limits refer to an endorsement (See M 3912b)."
+}
