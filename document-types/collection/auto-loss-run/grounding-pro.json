@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "policies[1].policy_id",
+      "label": "Policy ID",
+      "value": "RMP-00370-201107",
+      "page": 1,
+      "box": {
+        "xmin": 0.21536,
+        "ymin": 0.2955,
+        "xmax": 0.35817,
+        "ymax": 0.31367
+      },
+      "range": {
+        "end": 1011,
+        "start": 984
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-policy_id.png"
+    },
+    {
+      "path": "policies[1].claims[1].claim_number",
+      "label": "Claim number",
+      "value": "APD201102084-1",
+      "page": 1,
+      "box": {
+        "xmin": 0.02248,
+        "ymin": 0.33035,
+        "xmax": 0.18898,
+        "ymax": 0.34667
+      },
+      "range": {
+        "end": 1266,
+        "start": 1252
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-1-claim_number.png"
+    },
+    {
+      "path": "policies[1].claims[1].cause_of_loss",
+      "label": "Cause of loss",
+      "value": "STRUCK AN ANIMAL",
+      "page": 1,
+      "box": {
+        "xmin": 0.74533,
+        "ymin": 0.33053,
+        "xmax": 0.96859,
+        "ymax": 0.34685
+      },
+      "range": {
+        "end": 1421,
+        "start": 1405
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-1-cause_of_loss.png"
+    },
+    {
+      "path": "policies[1].claims[1].total_incurred",
+      "label": "Claim total incurred",
+      "value": 13043,
+      "page": 1,
+      "box": {
+        "xmin": 0.42521,
+        "ymin": 0.33045,
+        "xmax": 0.48495,
+        "ymax": 0.34674
+      },
+      "range": {
+        "end": 1341,
+        "start": 1334
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-1-total_incurred.png"
+    },
+    {
+      "path": "policies[1].totals.total_incurred",
+      "label": "Policy-year total incurred",
+      "value": 17240,
+      "page": 1,
+      "box": {
+        "xmin": 0.37613,
+        "ymin": 0.76985,
+        "xmax": 0.48543,
+        "ymax": 0.78819
+      },
+      "range": {
+        "end": 5882,
+        "start": 5875
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-totals-total_incurred.png"
+    }
+  ]
+}
