@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 3,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "locations[0].section_name",
+      "label": "Department section",
+      "value": "Louisa Vol. Fire Dept.",
+      "page": 3,
+      "box": {
+        "xmin": 0.08308,
+        "ymin": 0.09506,
+        "xmax": 0.83516,
+        "ymax": 0.10679
+      },
+      "range": {
+        "end": 2103,
+        "start": 2081
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-section_name.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].body_type",
+      "label": "Body type",
+      "value": "Pumper",
+      "page": 3,
+      "box": {
+        "xmin": 0.34147,
+        "ymin": 0.10678,
+        "xmax": 0.48551,
+        "ymax": 0.11787
+      },
+      "range": {
+        "end": 2175,
+        "start": 2169
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-body_type.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].vin",
+      "label": "VIN",
+      "value": "4PICV01E5BA011783",
+      "page": 3,
+      "box": {
+        "xmin": 0.48551,
+        "ymin": 0.10677,
+        "xmax": 0.63411,
+        "ymax": 0.11783
+      },
+      "range": {
+        "end": 2201,
+        "start": 2184
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-vin.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].agreed_value",
+      "label": "Agreed value",
+      "value": 580000,
+      "page": 3,
+      "box": {
+        "xmin": 0.63411,
+        "ymin": 0.10677,
+        "xmax": 0.73475,
+        "ymax": 0.11779
+      },
+      "range": {
+        "end": 2217,
+        "start": 2210
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-agreed_value.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].unique_id",
+      "label": "Station ID",
+      "value": "FS1",
+      "page": 3,
+      "box": {
+        "xmin": 0.73474,
+        "ymin": 0.10676,
+        "xmax": 0.80443,
+        "ymax": 0.11776
+      },
+      "range": {
+        "end": 2229,
+        "start": 2226
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-unique_id.png"
+    }
+  ]
+}
