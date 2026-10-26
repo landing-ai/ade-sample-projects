@@ -1,0 +1,163 @@
+{
+  "type": "object",
+  "description": "A set of open-end (equity) fleet lease rate quotes, one per vehicle, from a fleet leasing company to a single lessee.",
+  "properties": {
+    "lessor": {
+      "type": "string",
+      "description": "The lessor / leasing company named in the quote notes (the trust that will own the vehicles)."
+    },
+    "fleet_manager": {
+      "type": "string",
+      "description": "The fleet management company whose quote this is (logo and maintenance notes)."
+    },
+    "lessee": {
+      "type": "string",
+      "description": "The lessee organization the quotes are prepared for (Prepared For, first line, and the LESSEE line). The organization, not the individual contact."
+    },
+    "quotes": {
+      "type": "array",
+      "description": "One entry per lease rate quote, in document order. Each quote starts on a page headed 'Open-End (Equity) Lease Rate Quote' with 'Page 1 of N'.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quote_number": {
+            "type": "string",
+            "description": "Quote No. printed at the top right of every page of this quote."
+          },
+          "quote_date": {
+            "type": "string",
+            "description": "Date the quote was prepared (the Date field at the top right of the rate page), as printed."
+          },
+          "vehicle": {
+            "type": "object",
+            "description": "The vehicle being quoted, from the header block of the rate page.",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "Model year."
+              },
+              "make": {
+                "type": "string",
+                "description": "Manufacturer, e.g. Ford."
+              },
+              "model": {
+                "type": "string",
+                "description": "Model name, e.g. F-250."
+              },
+              "series": {
+                "type": "string",
+                "description": "Series / trim description, e.g. cab, drive and wheelbase."
+              },
+              "exterior_color": {
+                "type": "string",
+                "description": "Exterior color from the Order Information box."
+              }
+            }
+          },
+          "vehicle_order_type": {
+            "type": "string",
+            "description": "Vehicle Order Type, e.g. Ordered."
+          },
+          "term_months": {
+            "type": "number",
+            "description": "Lease term in months (the Term field in the header)."
+          },
+          "state": {
+            "type": "string",
+            "description": "State of the lease, from the header."
+          },
+          "capitalized_price_of_vehicle": {
+            "type": "number",
+            "description": "Capitalized Price of Vehicle, in dollars: the first amount in the left-hand dollar column."
+          },
+          "initial_license_fee": {
+            "type": "number",
+            "description": "Initial License Fee, in dollars."
+          },
+          "courtesy_delivery_fee": {
+            "type": "number",
+            "description": "Other: Courtesy Delivery Fee, in dollars, if shown."
+          },
+          "total_capitalized_amount": {
+            "type": "number",
+            "description": "Total Capitalized Amount (Delivered Price), in dollars."
+          },
+          "depreciation_reserve": {
+            "type": "number",
+            "description": "Monthly Depreciation Reserve, in dollars (not the percentage)."
+          },
+          "depreciation_reserve_rate_percent": {
+            "type": "number",
+            "description": "The percentage after 'Depreciation Reserve @', e.g. 1.3 for 1.3000%."
+          },
+          "monthly_lease_charge": {
+            "type": "number",
+            "description": "Monthly Lease Charge (based on interest rate, subject to a floor), in dollars."
+          },
+          "total_monthly_rental_excluding_services": {
+            "type": "number",
+            "description": "Total Monthly Rental Excluding Additional Services, in dollars."
+          },
+          "full_maintenance_program": {
+            "type": "number",
+            "description": "Monthly Full Maintenance Program fee, in dollars, under Additional Fleet Management."
+          },
+          "contract_miles": {
+            "type": "number",
+            "description": "Contract Miles for the Full Maintenance Program."
+          },
+          "overmileage_charge_per_mile": {
+            "type": "number",
+            "description": "OverMileage Charge per mile, in dollars."
+          },
+          "additional_services_subtotal": {
+            "type": "number",
+            "description": "Additional Services SubTotal, in dollars."
+          },
+          "total_monthly_rental_including_services": {
+            "type": "number",
+            "description": "Total Monthly Rental Including Additional Services, in dollars: the all-in monthly payment."
+          },
+          "reduced_book_value_at_term": {
+            "type": "number",
+            "description": "Reduced Book Value at the end of the term ('Reduced Book Value at N Months'), in dollars."
+          },
+          "service_charge_at_termination": {
+            "type": "number",
+            "description": "Service Charge Due at Lease Termination, in dollars."
+          },
+          "estimated_annual_mileage": {
+            "type": "number",
+            "description": "Estimated annual mileage the quote is based on."
+          },
+          "pricing_summary": {
+            "type": "object",
+            "description": "Pricing Summary table on the Vehicle Information page: totals in the INVOICE and MSRP columns.",
+            "properties": {
+              "base_vehicle_invoice": {
+                "type": "number",
+                "description": "Base Vehicle, INVOICE column."
+              },
+              "base_vehicle_msrp": {
+                "type": "number",
+                "description": "Base Vehicle, MSRP column."
+              },
+              "total_price_invoice": {
+                "type": "number",
+                "description": "Total Price, INVOICE column."
+              },
+              "total_price_msrp": {
+                "type": "number",
+                "description": "Total Price, MSRP column."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "lessee",
+    "quotes"
+  ]
+}

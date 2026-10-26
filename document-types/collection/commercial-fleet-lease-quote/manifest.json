@@ -1,0 +1,72 @@
+{
+  "slug": "commercial-fleet-lease-quote",
+  "title": "Commercial Fleet Lease Quote",
+  "source": {
+    "file": "enterprise-fleet-lease-rate-quotes-redacted.pdf",
+    "pages": 32,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://public.destinyhosted.com/hidaldocs/2019/CC/20190604_3330/70466_Quotes.pdf",
+      "publisher": "Enterprise Fleet Management / Enterprise FM Trust (lessor); posted by the Hidalgo County, Texas Commissioners Court",
+      "title": "Open-End (Equity) Lease Rate Quotes for Hidalgo County, attachment to agenda item 70466, Commissioners Court meeting of 2019-06-04",
+      "retrieved": "2026-10-25",
+      "clearance": "redacted",
+      "clearance_note": "A set of seven Enterprise Fleet Management Open-End (Equity) Lease Rate Quotes prepared for Hidalgo County, Texas, published by the county as an attachment to agenda item 70466 of its Commissioners Court meeting of 4 June 2019, on the county's public agenda-publishing host. Downloaded by script. All 32 pages kept. The quotes carry no signatures (the lessee signature line is blank), phone numbers or addresses. The county employee named under Prepared For, the Enterprise account representatives' initials (AE/AM) and the county's Enterprise customer number were replaced with document-types/scripts/redact.py, which removes the underlying text rather than covering it. PDF metadata cleared (it carried an Enterprise user ID). Quote numbers, prices and vehicle details are kept. Verified by redact.py's text check, by eye on renders, and by ship.py check --rules over every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "county employee's name under Prepared For (one per quote)",
+            "with": "Sample, Jane",
+            "occurrences": 7
+          },
+          {
+            "what": "Enterprise account representatives' initials (AE/AM)",
+            "with": "0AB/CD0",
+            "occurrences": 7
+          },
+          {
+            "what": "lessee's Enterprise customer number (Customer#)",
+            "with": "a random 6-digit stand-in from plausible.py",
+            "occurrences": 7
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 5,
+  "fields": [
+    {
+      "path": "quotes[1].vehicle.model",
+      "label": "Vehicle model",
+      "occurrence": 0
+    },
+    {
+      "path": "quotes[1].term_months",
+      "label": "Lease term (months)",
+      "occurrence": 0
+    },
+    {
+      "path": "quotes[1].total_capitalized_amount",
+      "label": "Total capitalized amount",
+      "occurrence": 0
+    },
+    {
+      "path": "quotes[1].total_monthly_rental_including_services",
+      "label": "Total monthly rental",
+      "occurrence": 0
+    },
+    {
+      "path": "quotes[1].reduced_book_value_at_term",
+      "label": "Reduced book value at term",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request suggested feature page 1 and, as suggestions only, these fields: lessee; vehicle and term; total capitalized amount; total monthly rental including additional services; reduced book value at term. Shipped on page 5 instead: the second quote, a 2019 Ford F-250 identical in every amount to the first and differing only in colour and quote number. On page 1, Total Monthly Rental Including Additional Services and Reduced Book Value at 60 Months grounded OFF, to their labels in the right-hand cell rather than the dollar values on the left (the two-column layout risk the request flagged); on page 5 both ground on the dollar values. Lessee was dropped: on page 5 its range resolves to a line of the Notes paragraph rather than to Prepared For or LESSEE (it is ok on page 1, but page 1 would lose two of the suggested amounts). Vehicle and term are featured as two fields: the Year/Make/Model line and the Vehicle Order Type/Term/State line (which also shows the redacted customer-number stand-in). The overlay reads as one quote: which truck, for how long, what it costs to put on the road, what the county pays per month all-in, and what it is worth at term. The request notes expected 8 quotes; the document holds 7 (Ford F-250 x2, F-150 x3, Chevrolet Colorado, Chevrolet Express 2500).",
+  "preview_pages": [
+    1,
+    2,
+    3,
+    29
+  ]
+}
