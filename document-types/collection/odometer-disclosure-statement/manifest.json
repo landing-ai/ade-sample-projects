@@ -1,0 +1,72 @@
+{
+  "slug": "odometer-disclosure-statement",
+  "title": "Odometer Disclosure Statement",
+  "source": {
+    "file": "florida-hsmv-82993-odometer-disclosure-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://instafill.ai/forms/state-of-florida-department-of-highway-safety-and/examples/state-of-florida-department-of-highway-safety-and-florida-hsmv-82993-private-sale-example.pdf",
+      "publisher": "Instafill.ai (an AI form-filling vendor), filling the Florida Department of Highway Safety and Motor Vehicles form HSMV 82993",
+      "title": "Florida HSMV 82993 Separate Odometer Disclosure Statement and Acknowledgment (Rev. 11/11), private sale example",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "The official Florida HSMV 82993 form (Rev. 11/11), filled with specimen data by Instafill.ai, an AI form-filling and form-automation vendor, and published by it as a worked example on its examples page for the form (https://instafill.ai/forms/state-of-florida-department-of-highway-safety-and/examples), which links this PDF directly (confirmed by script on 2026-10-25 and again on 2026-10-26). Downloaded by script. The data is specimen data for a private sale, but the seller and buyer names were realistic-looking and sat beside realistic street addresses, so both names and both street addresses were replaced with obviously fake values using document-types/scripts/redact.py; the values live in fillable form fields, and the rules were applied to the field values and their appearance. City, state and ZIP are kept. The VIN fails the check-digit test (position 9), so it cannot belong to a real vehicle; it was checked locally, not sent to any decoding service, and kept as printed. The signature boxes are empty in the original. PDF metadata cleared. Verified by redact.py's text check, by eye on a render, and by ship.py check --rules over every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "seller's printed name (specimen, but realistic)",
+            "with": "Jane Q Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "seller's street address",
+            "with": "100 Main St",
+            "occurrences": 1
+          },
+          {
+            "what": "buyer's printed name (specimen, but realistic)",
+            "with": "John Q Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "buyer's street address",
+            "with": "200 Oak St",
+            "occurrences": 1
+          }
+        ],
+        "kept": "VIN (fails its check digit), vehicle year, make and body, odometer reading, date read, checkbox states, and the seller's and buyer's city, state and ZIP."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "vehicle.year",
+      "label": "Vehicle year",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.make",
+      "label": "Vehicle make",
+      "occurrence": 0
+    },
+    {
+      "path": "odometer.reading_miles",
+      "label": "Odometer reading (miles)",
+      "occurrence": 0
+    },
+    {
+      "path": "odometer.date_read",
+      "label": "Date read",
+      "occurrence": 0
+    },
+    {
+      "path": "mileage_certification",
+      "label": "Mileage certification",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request suggested feature page 1 and, as suggestions only: the odometer reading; the 'reflects actual mileage' checkbox; the date read; the odometer type (5-digit checkbox); and vehicle year and make. Page 1 is the only page. Shipped: vehicle year, vehicle make, odometer reading, date read and the mileage certification, so the overlay reads as one disclosure: which car, what its odometer showed, when, and what the seller certified about it. The checkbox was first modelled as three booleans; a boolean grounds to the right line ('[x] 1. REFLECTS ACTUAL MILEAGE.') but inspect_fields marks it OFF because the value 'true' is not in the boxed text, so the schema was changed to one enum holding the checked statement's printed wording, which grounds ok on the same line. The odometer type (5 digits) was dropped to stay within five fields: it is ok, but it grounds to the same line box as the odometer reading, so it would have added a duplicate highlight. The year is printed '2,018' (a fill artifact from the form filler); the schema asks for an integer and extraction returned 2018. The odometer digits sit in spaced boxes with a printed comma (7 5 1, 2 3 in the parse); extraction joined them correctly into 75123. The date-read crop triggers build_images' OCR warning only because the value is ISO formatted (2026-03-15) while the form prints 03 / 15 / 2026; the box is on the right line. Seller and buyer are specimen names, replaced with obviously fake ones; they are not featured. Instafill.ai is a form-automation vendor, adjacent to document AI, so the page should attribute the filled sample to it and the form itself to the Florida DHSMV."
+}

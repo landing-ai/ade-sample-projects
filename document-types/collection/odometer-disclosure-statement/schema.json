@@ -1,0 +1,150 @@
+{
+  "description": "Separate odometer disclosure statement made by the seller and acknowledged by the buyer when a motor vehicle changes hands: which vehicle, the odometer reading and the date it was read, the seller's certification of whether the reading is the actual mileage, and who the seller and buyer are.",
+  "type": "object",
+  "properties": {
+    "issuing_state": {
+      "type": "string",
+      "description": "State whose agency publishes the form, from the header, e.g. Florida."
+    },
+    "form_number": {
+      "type": "string",
+      "description": "Form number and revision printed in the footer, e.g. HSMV 82993 (REV. 11/11)."
+    },
+    "vehicle": {
+      "type": "object",
+      "description": "The vehicle being sold, from the Vehicle Description table.",
+      "properties": {
+        "vin": {
+          "type": "string",
+          "description": "Vehicle Identification Number exactly as printed, without spaces."
+        },
+        "year": {
+          "type": "integer",
+          "description": "Model year as a four-digit integer. Ignore any thousands separator the form filler inserted, so '2,018' is 2018."
+        },
+        "make": {
+          "type": "string",
+          "description": "Vehicle make, e.g. Honda."
+        },
+        "color": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Vehicle colour, or null if the Color cell is blank."
+        },
+        "body": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Body style, e.g. Sedan, or null if blank."
+        },
+        "title_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Certificate of title number, or null if the Title Number cell is blank."
+        }
+      }
+    },
+    "odometer": {
+      "type": "object",
+      "description": "The odometer statement: the reading, the kind of odometer and when it was read.",
+      "properties": {
+        "reading_miles": {
+          "type": "integer",
+          "description": "Odometer reading in whole miles (no tenths), read from the digit boxes after NOW READS and joined into one number. Ignore the printed comma between the boxes, e.g. boxes 7 5 , 1 2 3 are 75123."
+        },
+        "odometer_digits": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "5 or 6, whichever DIGIT ODOMETER box is checked; null if neither is checked."
+        },
+        "date_read": {
+          "type": "string",
+          "description": "DATE READ, as an ISO date YYYY-MM-DD built from the month, day and year blanks."
+        }
+      }
+    },
+    "mileage_certification": {
+      "type": "string",
+      "enum": [
+        "REFLECTS ACTUAL MILEAGE",
+        "IS IN EXCESS OF ITS MECHANICAL LIMITS",
+        "IS NOT THE ACTUAL MILEAGE"
+      ],
+      "description": "The ODOMETER READING statement whose box is checked, as printed without its number: REFLECTS ACTUAL MILEAGE (box 1), IS IN EXCESS OF ITS MECHANICAL LIMITS (box 2) or IS NOT THE ACTUAL MILEAGE (box 3, odometer discrepancy)."
+    },
+    "seller": {
+      "type": "object",
+      "description": "The seller, from the first signature block.",
+      "properties": {
+        "printed_name": {
+          "type": "string",
+          "description": "Seller's Printed Name."
+        },
+        "street_address": {
+          "type": "string",
+          "description": "Seller's Street Address."
+        },
+        "city": {
+          "type": "string",
+          "description": "City in the seller block."
+        },
+        "state": {
+          "type": "string",
+          "description": "State in the seller block, as printed."
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip in the seller block, as a string."
+        },
+        "signed": {
+          "type": "boolean",
+          "description": "True only if the Seller's Signature box contains a signature; false if it is empty."
+        }
+      }
+    },
+    "buyer": {
+      "type": "object",
+      "description": "The buyer, from the second signature block.",
+      "properties": {
+        "printed_name": {
+          "type": "string",
+          "description": "Buyer's Printed Name."
+        },
+        "street_address": {
+          "type": "string",
+          "description": "Buyer's Street Address."
+        },
+        "city": {
+          "type": "string",
+          "description": "City in the buyer block."
+        },
+        "state": {
+          "type": "string",
+          "description": "State in the buyer block, as printed."
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip in the buyer block, as a string."
+        },
+        "signed": {
+          "type": "boolean",
+          "description": "True only if the Buyer's Signature box contains a signature; false if it is empty."
+        }
+      }
+    }
+  },
+  "required": [
+    "vehicle",
+    "odometer",
+    "mileage_certification",
+    "seller",
+    "buyer"
+  ]
+}
