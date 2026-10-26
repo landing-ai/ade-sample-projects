@@ -1,0 +1,201 @@
+{
+  "type": "object",
+  "description": "An auto insurance policy declarations page: who is insured, by whom, for what period, and the schedule of coverages with their covered-auto symbols, limits and premiums",
+  "properties": {
+    "insurer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Name of the insurance company issuing the policy, as printed in the page heading"
+    },
+    "form_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title of the declarations form, e.g. 'Business Auto Coverage Declarations'"
+    },
+    "policy_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The policy number. When no field on the page is labelled policy number, it is the prominent standalone identifier printed in the top-left block alongside the cross reference number caption; never the renewal number"
+    },
+    "renewal_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The number printed above the 'RENEWAL NUMBER' caption, i.e. the policy this one renews"
+    },
+    "named_insured": {
+      "type": "object",
+      "description": "ITEM ONE: the named insured and its mailing address",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the named insured"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Full mailing address of the named insured, street, city, state and ZIP on one line"
+        },
+        "form_of_business": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Form of the named insured's business, e.g. Individual, Partnership, Corporation, LLC"
+        },
+        "business_description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The named insured's business as described on the page, e.g. 'Trucking'"
+        }
+      }
+    },
+    "producer": {
+      "type": "object",
+      "description": "The producing agent or broker",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the producer"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Producer's address on one line"
+        }
+      }
+    },
+    "policy_period": {
+      "type": "object",
+      "description": "The policy period",
+      "properties": {
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date coverage begins, as MM/DD/YYYY"
+        },
+        "expiration_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date coverage ends, as MM/DD/YYYY"
+        }
+      }
+    },
+    "coverages": {
+      "type": "array",
+      "description": "ITEM TWO: every row of the schedule of coverages and covered autos, in the order printed, including rows with no entry",
+      "items": {
+        "type": "object",
+        "properties": {
+          "coverage": {
+            "type": "string",
+            "description": "Coverage name as printed in the COVERAGES column, e.g. 'LIABILITY', 'UNINSURED MOTORISTS', 'COLLISION COVERAGE'"
+          },
+          "covered_auto_symbols": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Covered auto symbol(s) entered for this coverage, e.g. '1' or '7'; null if blank"
+          },
+          "limit": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The limit of insurance as printed, e.g. '1,000,000 CSL' or 'See M 3912b (08/2001)'; null if blank. Omit the $ sign that is preprinted on the form"
+          },
+          "premium": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Premium shown for this coverage as printed, e.g. '5,293' or 'INCL'; null if blank"
+          }
+        },
+        "required": [
+          "coverage"
+        ]
+      }
+    },
+    "estimated_total_premium": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The estimated total premium for the policy, in dollars"
+    },
+    "premium_for_endorsements": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Premium for endorsements, in dollars; null if blank"
+    },
+    "forms_and_endorsements": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Forms and endorsements contained in the policy at inception, as printed"
+    },
+    "minimum_earned_premium": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The fully earned policywriting minimum premium if cancelled by the insured, in dollars"
+    },
+    "schedule_of_covered_autos": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "ITEM THREE: the schedule of covered autos, or the reference printed in its place such as 'AS ATTACHED'"
+    },
+    "countersigning_agency": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Agency named at the countersignature line, with its location"
+    },
+    "form_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The declarations form number printed at the bottom left, e.g. 'M-5605 (02/2011)'"
+    },
+    "issue_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date printed at the bottom right of the page, as MM/DD/YYYY"
+    }
+  }
+}
