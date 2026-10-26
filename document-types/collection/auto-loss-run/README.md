@@ -80,17 +80,6 @@ Clean on the featured page: every claim cell, policy header and Totals cell on p
 resolves to its own cell at its first occurrence. Report-level fields ground to the page
 header, and the carrier name to the logo's figure description.
 
-**The parse misread 10 of the 112 claim numbers.** The claim-number format changes
-mid-report: 2011 to 2014 numbers carry a six-digit sequence (`APD201407056-1`), and most
-2015-16 numbers a four-digit one (`APD20158639-1`). The parse dropped a digit from seven
-2014-15 numbers on page 3 and padded three 2015-16 numbers on page 3 with an extra `0`,
-in both directions normalising toward the wrong format. Extraction copied the parse
-faithfully, so those ten values are wrong in `extract-pro.json`. None is on the featured
-page. Every dollar amount, date and cause of loss is right.
-
-`policies[]` comes back with the 2015-16 year first and the rest in order, so the page 1
-year is `policies[1]`.
-
 ## Credits
 
 At standard tier: **40.9** for the parse and first extraction, and 32.8 for one
