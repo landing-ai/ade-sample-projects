@@ -1,0 +1,26 @@
+{
+  "slug": "vehicle-window-sticker",
+  "title": "Vehicle Window Sticker",
+  "source": {
+    "file": "kia-niro-ex-touring-2023-window-sticker.jpg",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/2023_Denver_Auto_Show_Kia_Niro_EX_Touring_window_sticker.jpg",
+      "publisher": "Corqe (photographer, Wikimedia Commons), CC0 1.0; label content printed by Kia America, Inc.",
+      "title": "2023 Denver Auto Show Kia Niro EX Touring window sticker",
+      "retrieved": "2026-10-25",
+      "clearance": "public",
+      "clearance_note": "Photograph of the Monroney label on a 2023 Kia Niro EX Touring display car at the 2023 Denver Auto Show, taken and uploaded to Wikimedia Commons by the photographer, Corqe, as own work on 2023-04-16 and dedicated to the public domain under CC0 1.0 (https://commons.wikimedia.org/wiki/File:2023_Denver_Auto_Show_Kia_Niro_EX_Touring_window_sticker.jpg). The sticker shows Sold To Kia America, Inc. and Ship To the Colorado Convention Center, so this is a manufacturer-owned show car, not a customer vehicle; it carries corporate data only and that car's VIN. No personal data, so no redaction. The original 4032x3024 iPhone photo shows the label in a black display frame with the engine bay above it; the committed file is a perspective crop of the label alone (2980x1830), which also squares it up, re-encoded without the EXIF metadata, which held GPS coordinates and the camera model."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "pricing.base_msrp", "label": "Base MSRP", "occurrence": 0 },
+    { "path": "pricing.inland_freight_and_handling", "label": "Inland freight and handling", "occurrence": 0 },
+    { "path": "pricing.total_msrp", "label": "Total MSRP", "occurrence": 0 },
+    { "path": "fuel_economy.combined_mpg", "label": "Combined MPG", "occurrence": 0 },
+    { "path": "fuel_economy.annual_fuel_cost", "label": "Annual fuel cost", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested base MSRP, inland freight and handling, total MSRP, EPA combined MPG and annual fuel cost, final assembly point and parts content. Features the first five: the price column read top to bottom (base price, destination charge, total) and the EPA label's two headline numbers, i.e. what the car costs to buy and to run. Final assembly point grounds correctly only on its second occurrence and was left out to keep the overlay to five fields. On the first extraction the Fuel Economy & Greenhouse Gas rating (8) and Smog rating (7) came back swapped, because the parse prints both headings before both numbers; the two schema descriptions were sharpened to name each slider, and a re-extraction got them right. The option rows marked Included have no price and come back with price null, synthesized, and the included flags ground to the price cell rather than to a word saying so; none are featured."
+}

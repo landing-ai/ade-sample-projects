@@ -1,0 +1,245 @@
+{
+  "type": "object",
+  "description": "A new-vehicle window sticker (Monroney label): the vehicle's identity, its manufacturer's suggested retail price build-up, the EPA fuel economy label, the NHTSA safety ratings and the parts content statement.",
+  "properties": {
+    "vehicle": {
+      "type": "object",
+      "description": "The vehicle the sticker describes, from the header block.",
+      "properties": {
+        "model_year": {
+          "type": "string",
+          "description": "Model year, e.g. 2023."
+        },
+        "make": {
+          "type": "string",
+          "description": "Manufacturer brand, from the logo or company name, e.g. Kia."
+        },
+        "model_and_trim": {
+          "type": "string",
+          "description": "Model name and trim as printed in the title line, without the model year."
+        },
+        "model_option_code": {
+          "type": "string",
+          "description": "Model / option code as printed, retaining its formatting."
+        },
+        "exterior_color": {
+          "type": "string",
+          "description": "Exterior paint color name."
+        },
+        "interior_color": {
+          "type": "string",
+          "description": "Interior color name."
+        },
+        "vin": {
+          "type": "string",
+          "description": "17-character Vehicle Identification Number, exactly as printed."
+        },
+        "port_of_entry": {
+          "type": "string",
+          "description": "Port of entry for an imported vehicle."
+        }
+      }
+    },
+    "sold_to": {
+      "type": "object",
+      "description": "The Sold To block: the party the vehicle was invoiced to.",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Dealer or account code printed after 'Sold To:'."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the party."
+        },
+        "address": {
+          "type": "string",
+          "description": "Full address, lines joined with commas."
+        }
+      }
+    },
+    "ship_to": {
+      "type": "object",
+      "description": "The Ship To block: where the vehicle was delivered.",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Code printed after 'Ship To:'."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the destination."
+        },
+        "address": {
+          "type": "string",
+          "description": "Full address, lines joined with commas."
+        }
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "description": "The price column: base MSRP, options, destination charge and total.",
+      "properties": {
+        "base_msrp": {
+          "type": "number",
+          "description": "Manufacturer's suggested retail price of the base vehicle, in US dollars, before options and freight."
+        },
+        "options": {
+          "type": "array",
+          "description": "Each priced or included option or package listed in the price column, including items marked Included.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "Option name as printed."
+              },
+              "price": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Option price in US dollars; null when the price column reads Included."
+              },
+              "included": {
+                "type": "boolean",
+                "description": "True when the price column reads Included rather than an amount."
+              }
+            }
+          }
+        },
+        "msrp_including_options": {
+          "type": "number",
+          "description": "MSRP including options, in US dollars, before inland freight."
+        },
+        "inland_freight_and_handling": {
+          "type": "number",
+          "description": "Inland freight and handling (destination) charge, in US dollars."
+        },
+        "total_msrp": {
+          "type": "number",
+          "description": "Total manufacturer's suggested retail price, in US dollars."
+        }
+      }
+    },
+    "fuel_economy": {
+      "type": "object",
+      "description": "The EPA/DOT Fuel Economy and Environment label.",
+      "properties": {
+        "fuel_type": {
+          "type": "string",
+          "description": "Vehicle fuel type from the label header, e.g. Gasoline Vehicle."
+        },
+        "combined_mpg": {
+          "type": "number",
+          "description": "Combined city/highway fuel economy in MPG."
+        },
+        "city_mpg": {
+          "type": "number",
+          "description": "City fuel economy in MPG."
+        },
+        "highway_mpg": {
+          "type": "number",
+          "description": "Highway fuel economy in MPG."
+        },
+        "gallons_per_100_miles": {
+          "type": "number",
+          "description": "Fuel consumption in gallons per 100 miles."
+        },
+        "annual_fuel_cost": {
+          "type": "number",
+          "description": "Estimated annual fuel cost in US dollars."
+        },
+        "five_year_fuel_savings": {
+          "type": "number",
+          "description": "Fuel cost saved over 5 years compared to the average new vehicle, in US dollars. Negative if the label says 'You spend'."
+        },
+        "fuel_economy_ghg_rating": {
+          "type": "integer",
+          "description": "Fuel Economy & Greenhouse Gas rating, 1 to 10: the number marked on the wider, left-hand slider under that heading. It is a different number from the Smog rating beside it."
+        },
+        "smog_rating": {
+          "type": "integer",
+          "description": "Smog rating, 1 to 10: the number marked on the smaller, right-hand slider under the Smog Rating heading. It is a different number from the Fuel Economy & Greenhouse Gas rating."
+        },
+        "co2_grams_per_mile": {
+          "type": "number",
+          "description": "Tailpipe CO2 emissions in grams per mile."
+        }
+      }
+    },
+    "safety_ratings": {
+      "type": "object",
+      "description": "Government 5-Star Safety Ratings (NHTSA). Record each rating as printed, e.g. '5 stars' or 'Not Rated'.",
+      "properties": {
+        "overall": {
+          "type": "string",
+          "description": "Overall vehicle score."
+        },
+        "frontal_driver": {
+          "type": "string",
+          "description": "Frontal crash rating, driver."
+        },
+        "frontal_passenger": {
+          "type": "string",
+          "description": "Frontal crash rating, passenger."
+        },
+        "side_front_seat": {
+          "type": "string",
+          "description": "Side crash rating, front seat."
+        },
+        "side_rear_seat": {
+          "type": "string",
+          "description": "Side crash rating, rear seat."
+        },
+        "rollover": {
+          "type": "string",
+          "description": "Rollover rating."
+        }
+      }
+    },
+    "parts_content": {
+      "type": "object",
+      "description": "The Parts Content Information panel required by the American Automobile Labeling Act.",
+      "properties": {
+        "us_canadian_parts_content_percent": {
+          "type": "number",
+          "description": "U.S./Canadian parts content for the car line, as a percentage."
+        },
+        "major_foreign_parts_sources": {
+          "type": "array",
+          "description": "Major sources of foreign parts with their percentages.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "Country name."
+              },
+              "percent": {
+                "type": "number",
+                "description": "Share of parts content, as a percentage."
+              }
+            }
+          }
+        },
+        "final_assembly_point": {
+          "type": "string",
+          "description": "Final assembly point for this vehicle, city and country."
+        },
+        "engine_country_of_origin": {
+          "type": "string",
+          "description": "Country of origin of the engine."
+        },
+        "transmission_country_of_origin": {
+          "type": "string",
+          "description": "Country of origin of the transmission."
+        }
+      }
+    },
+    "total_additional_weight_lbs": {
+      "type": "number",
+      "description": "Total additional weight of installed options, as printed beside the barcode."
+    }
+  }
+}

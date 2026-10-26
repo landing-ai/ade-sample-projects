@@ -1,0 +1,931 @@
+{
+  "extraction": {
+    "fuel_economy": {
+      "annual_fuel_cost": 900,
+      "city_mpg": 53,
+      "co2_grams_per_mile": 181,
+      "combined_mpg": 49,
+      "five_year_fuel_savings": 3500,
+      "fuel_economy_ghg_rating": 8,
+      "fuel_type": "Gasoline Vehicle",
+      "gallons_per_100_miles": 2.0,
+      "highway_mpg": 45,
+      "smog_rating": 7
+    },
+    "parts_content": {
+      "engine_country_of_origin": "KOREA",
+      "final_assembly_point": "HWASUNG, KOREA",
+      "major_foreign_parts_sources": [
+        {
+          "country": "KOREA",
+          "percent": 90
+        }
+      ],
+      "transmission_country_of_origin": "KOREA",
+      "us_canadian_parts_content_percent": 1
+    },
+    "pricing": {
+      "base_msrp": 31490,
+      "inland_freight_and_handling": 1325,
+      "msrp_including_options": 31970,
+      "options": [
+        {
+          "description": "Added to/in place of standard EX features",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- Power Sunroof",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- 18\" Alloy Wheels",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- LED Fog Lights",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- Power Folding Outside Mirrors",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- Gloss Black Exterior Accents",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- LED Interior Lighting",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "- Aluminum Pedals",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "Light Gray Interior Color Package",
+          "included": true,
+          "price": null
+        },
+        {
+          "description": "Two-Level Luggage Board",
+          "included": false,
+          "price": 60.0
+        },
+        {
+          "description": "Rear Bumper Applique",
+          "included": false,
+          "price": 75.0
+        },
+        {
+          "description": "Carpeted Floor Mats",
+          "included": false,
+          "price": 175.0
+        },
+        {
+          "description": "Cargo Net",
+          "included": false,
+          "price": 55.0
+        },
+        {
+          "description": "Cargo Tray for 2-Level",
+          "included": false,
+          "price": 115.0
+        }
+      ],
+      "total_msrp": 33295
+    },
+    "safety_ratings": {
+      "frontal_driver": "Not Rated",
+      "frontal_passenger": "Not Rated",
+      "overall": "Not Rated",
+      "rollover": "Not Rated",
+      "side_front_seat": "Not Rated",
+      "side_rear_seat": "Not Rated"
+    },
+    "ship_to": {
+      "address": "700 14TH STREET, DENVER CO 80202",
+      "code": "828",
+      "name": "COLORADO CONVENTION CENTER"
+    },
+    "sold_to": {
+      "address": "111 PETERS CANYON ROAD, IRVINE CA 92606",
+      "code": "KMA01",
+      "name": "KIA AMERICA, INC."
+    },
+    "total_additional_weight_lbs": 13.1,
+    "vehicle": {
+      "exterior_color": "CITYSCAPE GREEN",
+      "interior_color": "MEDIUM GRAY",
+      "make": "KIA",
+      "model_and_trim": "NIRO EX TOURING",
+      "model_option_code": "G4252 / 017",
+      "model_year": "2023",
+      "port_of_entry": "TACOMA",
+      "vin": "KNDCR3LE6P5079652"
+    }
+  },
+  "extraction_metadata": {
+    "fuel_economy": {
+      "annual_fuel_cost": {
+        "ranges": [
+          {
+            "end": 4413,
+            "start": 4409
+          }
+        ],
+        "value": 900
+      },
+      "city_mpg": {
+        "ranges": [
+          {
+            "end": 4267,
+            "start": 4265
+          }
+        ],
+        "value": 53
+      },
+      "co2_grams_per_mile": {
+        "ranges": [
+          {
+            "end": 4625,
+            "start": 4509
+          }
+        ],
+        "value": 181
+      },
+      "combined_mpg": {
+        "ranges": [
+          {
+            "end": 4162,
+            "start": 4144
+          }
+        ],
+        "value": 49
+      },
+      "five_year_fuel_savings": {
+        "ranges": [
+          {
+            "end": 4325,
+            "start": 4319
+          }
+        ],
+        "value": 3500
+      },
+      "fuel_economy_ghg_rating": {
+        "ranges": [
+          {
+            "end": 4496,
+            "start": 4495
+          }
+        ],
+        "value": 8
+      },
+      "fuel_type": {
+        "ranges": [
+          {
+            "end": 4130,
+            "start": 4098
+          }
+        ],
+        "value": "Gasoline Vehicle"
+      },
+      "gallons_per_100_miles": {
+        "ranges": [
+          {
+            "end": 4309,
+            "start": 4284
+          }
+        ],
+        "value": 2.0
+      },
+      "highway_mpg": {
+        "ranges": [
+          {
+            "end": 4275,
+            "start": 4273
+          },
+          {
+            "end": 4283,
+            "start": 4276
+          }
+        ],
+        "value": 45
+      },
+      "smog_rating": {
+        "ranges": [
+          {
+            "end": 4498,
+            "start": 4497
+          }
+        ],
+        "value": 7
+      }
+    },
+    "parts_content": {
+      "engine_country_of_origin": {
+        "ranges": [
+          {
+            "end": 6525,
+            "start": 6512
+          }
+        ],
+        "value": "KOREA"
+      },
+      "final_assembly_point": {
+        "ranges": [
+          {
+            "end": 6478,
+            "start": 6457
+          },
+          {
+            "end": 6493,
+            "start": 6479
+          }
+        ],
+        "value": "HWASUNG, KOREA"
+      },
+      "major_foreign_parts_sources": [
+        {
+          "country": {
+            "ranges": [
+              {
+                "end": 6346,
+                "start": 6336
+              }
+            ],
+            "value": "KOREA"
+          },
+          "percent": {
+            "ranges": [
+              {
+                "end": 6346,
+                "start": 6336
+              }
+            ],
+            "value": 90
+          }
+        }
+      ],
+      "transmission_country_of_origin": {
+        "ranges": [
+          {
+            "end": 6545,
+            "start": 6526
+          }
+        ],
+        "value": "KOREA"
+      },
+      "us_canadian_parts_content_percent": {
+        "ranges": [
+          {
+            "end": 6456,
+            "start": 6267
+          }
+        ],
+        "value": 1
+      }
+    },
+    "pricing": {
+      "base_msrp": {
+        "ranges": [
+          {
+            "end": 1932,
+            "start": 1921
+          }
+        ],
+        "value": 31490
+      },
+      "inland_freight_and_handling": {
+        "ranges": [
+          {
+            "end": 3060,
+            "start": 3051
+          }
+        ],
+        "value": 1325
+      },
+      "msrp_including_options": {
+        "ranges": [
+          {
+            "end": 2996,
+            "start": 2986
+          }
+        ],
+        "value": 31970
+      },
+      "options": [
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2047,
+                "start": 2006
+              }
+            ],
+            "value": "Added to/in place of standard EX features"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2064,
+                "start": 2056
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2098,
+                "start": 2083
+              }
+            ],
+            "value": "- Power Sunroof"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2115,
+                "start": 2107
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2152,
+                "start": 2134
+              }
+            ],
+            "value": "- 18\" Alloy Wheels"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2169,
+                "start": 2161
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2204,
+                "start": 2188
+              }
+            ],
+            "value": "- LED Fog Lights"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2221,
+                "start": 2213
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2271,
+                "start": 2240
+              }
+            ],
+            "value": "- Power Folding Outside Mirrors"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2288,
+                "start": 2280
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2337,
+                "start": 2307
+              }
+            ],
+            "value": "- Gloss Black Exterior Accents"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2354,
+                "start": 2346
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2396,
+                "start": 2373
+              }
+            ],
+            "value": "- LED Interior Lighting"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2413,
+                "start": 2405
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2449,
+                "start": 2432
+              }
+            ],
+            "value": "- Aluminum Pedals"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2466,
+                "start": 2458
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2654,
+                "start": 2621
+              }
+            ],
+            "value": "Light Gray Interior Color Package"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2671,
+                "start": 2663
+              }
+            ],
+            "value": true
+          },
+          "price": {
+            "ranges": null,
+            "value": null
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2713,
+                "start": 2690
+              }
+            ],
+            "value": "Two-Level Luggage Board"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2728,
+                "start": 2722
+              }
+            ],
+            "value": false
+          },
+          "price": {
+            "ranges": [
+              {
+                "end": 2728,
+                "start": 2722
+              }
+            ],
+            "value": 60.0
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2767,
+                "start": 2747
+              }
+            ],
+            "value": "Rear Bumper Applique"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2782,
+                "start": 2776
+              }
+            ],
+            "value": false
+          },
+          "price": {
+            "ranges": [
+              {
+                "end": 2782,
+                "start": 2776
+              }
+            ],
+            "value": 75.0
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2820,
+                "start": 2801
+              }
+            ],
+            "value": "Carpeted Floor Mats"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2836,
+                "start": 2829
+              }
+            ],
+            "value": false
+          },
+          "price": {
+            "ranges": [
+              {
+                "end": 2836,
+                "start": 2829
+              }
+            ],
+            "value": 175.0
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2864,
+                "start": 2855
+              }
+            ],
+            "value": "Cargo Net"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2879,
+                "start": 2873
+              }
+            ],
+            "value": false
+          },
+          "price": {
+            "ranges": [
+              {
+                "end": 2879,
+                "start": 2873
+              }
+            ],
+            "value": 55.0
+          }
+        },
+        {
+          "description": {
+            "ranges": [
+              {
+                "end": 2920,
+                "start": 2898
+              }
+            ],
+            "value": "Cargo Tray for 2-Level"
+          },
+          "included": {
+            "ranges": [
+              {
+                "end": 2936,
+                "start": 2929
+              }
+            ],
+            "value": false
+          },
+          "price": {
+            "ranges": [
+              {
+                "end": 2936,
+                "start": 2929
+              }
+            ],
+            "value": 115.0
+          }
+        }
+      ],
+      "total_msrp": {
+        "ranges": [
+          {
+            "end": 3141,
+            "start": 3131
+          }
+        ],
+        "value": 33295
+      }
+    },
+    "safety_ratings": {
+      "frontal_driver": {
+        "ranges": [
+          {
+            "end": 5438,
+            "start": 5414
+          }
+        ],
+        "value": "Not Rated"
+      },
+      "frontal_passenger": {
+        "ranges": [
+          {
+            "end": 5464,
+            "start": 5439
+          }
+        ],
+        "value": "Not Rated"
+      },
+      "overall": {
+        "ranges": [
+          {
+            "end": 5273,
+            "start": 5252
+          },
+          {
+            "end": 5283,
+            "start": 5274
+          }
+        ],
+        "value": "Not Rated"
+      },
+      "rollover": {
+        "ranges": [
+          {
+            "end": 5713,
+            "start": 5695
+          }
+        ],
+        "value": "Not Rated"
+      },
+      "side_front_seat": {
+        "ranges": [
+          {
+            "end": 5609,
+            "start": 5584
+          }
+        ],
+        "value": "Not Rated"
+      },
+      "side_rear_seat": {
+        "ranges": [
+          {
+            "end": 5635,
+            "start": 5610
+          }
+        ],
+        "value": "Not Rated"
+      }
+    },
+    "ship_to": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1752,
+            "start": 1662
+          },
+          {
+            "end": 1854,
+            "start": 1783
+          }
+        ],
+        "value": "700 14TH STREET, DENVER CO 80202"
+      },
+      "code": {
+        "ranges": [
+          {
+            "end": 1631,
+            "start": 1602
+          }
+        ],
+        "value": "828"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1752,
+            "start": 1662
+          }
+        ],
+        "value": "COLORADO CONVENTION CENTER"
+      }
+    },
+    "sold_to": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1752,
+            "start": 1662
+          },
+          {
+            "end": 1854,
+            "start": 1783
+          }
+        ],
+        "value": "111 PETERS CANYON ROAD, IRVINE CA 92606"
+      },
+      "code": {
+        "ranges": [
+          {
+            "end": 1631,
+            "start": 1602
+          }
+        ],
+        "value": "KMA01"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1752,
+            "start": 1662
+          }
+        ],
+        "value": "KIA AMERICA, INC."
+      }
+    },
+    "total_additional_weight_lbs": {
+      "ranges": [
+        {
+          "end": 3652,
+          "start": 3623
+        }
+      ],
+      "value": 13.1
+    },
+    "vehicle": {
+      "exterior_color": {
+        "ranges": [
+          {
+            "end": 80,
+            "start": 49
+          }
+        ],
+        "value": "CITYSCAPE GREEN"
+      },
+      "interior_color": {
+        "ranges": [
+          {
+            "end": 108,
+            "start": 81
+          }
+        ],
+        "value": "MEDIUM GRAY"
+      },
+      "make": {
+        "ranges": [
+          {
+            "end": 4059,
+            "start": 3695
+          }
+        ],
+        "value": "KIA"
+      },
+      "model_and_trim": {
+        "ranges": [
+          {
+            "end": 20,
+            "start": 0
+          }
+        ],
+        "value": "NIRO EX TOURING"
+      },
+      "model_option_code": {
+        "ranges": [
+          {
+            "end": 48,
+            "start": 21
+          }
+        ],
+        "value": "G4252 / 017"
+      },
+      "model_year": {
+        "ranges": [
+          {
+            "end": 20,
+            "start": 0
+          }
+        ],
+        "value": "2023"
+      },
+      "port_of_entry": {
+        "ranges": [
+          {
+            "end": 167,
+            "start": 146
+          }
+        ],
+        "value": "TACOMA"
+      },
+      "vin": {
+        "ranges": [
+          {
+            "end": 145,
+            "start": 109
+          }
+        ],
+        "value": "KNDCR3LE6P5079652"
+      }
+    }
+  },
+  "markdown": "2023 NIRO EX TOURING\nMODEL/OPT.CODE: G4252 / 017\nEXTERIOR COLOR: CITYSCAPE GREEN\nINTERIOR COLOR: MEDIUM GRAY\nVEHICLE ID NUMBER: KNDCR3LE6P5079652\nPORT OF ENTRY: TACOMA\n\n# STANDARD FEATURES\n\nSTANDARD EX FEATURES\nMECHANICAL\n1.6L 4-Cyl Engine w/ Hybrid Electric Motor\n6-Speed Dual Clutch Automatic Transmission\nDrive Mode Select\nElectronic Parking Brake w/ Auto Hold\nKIA DRIVE WISE DRIVER-ASSIST TECHNOLOGY\nForward Collision-Avoidance Assist - Cyclist/Jct Turning\nBlind-\nWarning\nRear C...ollision-Avoidance Assist\nLane Fu\nSafe Exit Warning\nSmart Cruise Control w/Stop & Go\nParking Distance Warning - Reverse\nHighway Driving Assist\nSAFETY\nDual Front Advanced Airbags & Driver's Knee Airbag\nDual Front Seat-Mounted Side & Full-Length Curtain Airbags\nElectronic Stability Control\nINTERIOR, COMFORT & CONVENIENCE\n10.25\" Touchscreen w/Navi, Android Auto & Apple CarPlay\nKia Connect w/ Free 12-Mo. Trial.* Where Available**\nSIRIUSXM® w/Free 3-Mo. Subscription*\nRear View Camera with Dynamic Guidelines\nSmart Key w/ Push Button & Remote Start\nWireless Phone Charger\nUSB / Media Port and 12 Volt Outlet\nPower Driver's Seat\nHeated Front Seats\nCloth & SynTex Seating Material\nDual-Zone Automatic Climate Control w/ Rear Vents\nEXTERIOR\n16\" Alloy Wheels\nRoof Rails\nRear Privacy Glass\nLED Rear Combination Lights & Daytime Running Lights\nRain-Sensing Wipers\nTire Mobility Kit (Spare Tire Not Included)\nWARRANTY\n10 Year/100,000 Mile Limited Powertrain Warranty\n10 Year/100,000 Mile Limited Battery Warranty\n5 Year/60,000 Mile Limited Basic Warranty\n5 Year/60,000 Mile Roadside Assistance\n\n\n\n<table>\n<tr><td colspan=\"2\">Sold To: KMA01   Ship To: 828</td></tr>\n<tr><td colspan=\"2\">KIA AMERICA, INC.   COLORADO CONVENTION CENTER<br>111 PETERS CANYON ROAD   700 14TH STREET</td></tr>\n<tr><td colspan=\"2\">IRVINE CA 92606                                         DENVER CO 80202</td></tr>\n<tr><td>MANUFACTURER'S SUGGESTED RETAIL PRICE ►</td><td>$ 31,490.00</td></tr>\n<tr><td>COMPARE EX TOURING FEATURES</td><td></td></tr>\n<tr><td>Added to/in place of standard EX features</td><td>Included</td></tr>\n<tr><td>- Power Sunroof</td><td>Included</td></tr>\n<tr><td>- 18\" Alloy Wheels</td><td>Included</td></tr>\n<tr><td>- LED Fog Lights</td><td>Included</td></tr>\n<tr><td>- Power Folding Outside Mirrors</td><td>Included</td></tr>\n<tr><td>- Gloss Black Exterior Accents</td><td>Included</td></tr>\n<tr><td>- LED Interior Lighting</td><td>Included</td></tr>\n<tr><td>- Aluminum Pedals</td><td>Included</td></tr>\n<tr><td>ADDITIONAL INSTALLED EQUIPMENT:</td><td></td></tr>\n<tr><td>(In addition to or in place of standard features)</td><td></td></tr>\n<tr><td>Light Gray Interior Color Package</td><td>Included</td></tr>\n<tr><td>Two-Level Luggage Board</td><td>$60.00</td></tr>\n<tr><td>Rear Bumper Applique</td><td>$75.00</td></tr>\n<tr><td>Carpeted Floor Mats</td><td>$175.00</td></tr>\n<tr><td>Cargo Net</td><td>$55.00</td></tr>\n<tr><td>Cargo Tray for 2-Level</td><td>$115.00</td></tr>\n<tr><td>MSRP INCLUDING OPTIONS</td><td>$31,970.00</td></tr>\n<tr><td>INLAND FREIGHT AND HANDLING</td><td>$1,325.00</td></tr>\n<tr><td>TOTAL MANUFACTURER'S SUGGESTED RETAIL PRICE</td><td>$33,295.00</td></tr>\n</table>\n\n*Additional terms and conditions apply.\n**Kia Connect may be currently unavailable for Model Year 2022 and newer vehicles sold or purchased in\nMassachusetts; please see owners.kia.com for updates on availability.\nNOTE: When you purchase this vehicle, Kia America, Inc. collects personal information you provide to the\ndealership. For information on our collection and use of personal information and your rights, please see our\nPrivacy Policy on www.kia.com.\n\n\nTOTAL ADDITIONAL WEIGHT: 13.1\n[BARCODE]\n\n\n<figure type=\"ILLUSTRATION\">\n\n<description>The image displays the modern Kia logo, featuring stylized, angular black lettering. The 'K' is connected to the 'I', which in turn connects to the 'A', creating a continuous, rhythmic, and sharp typographic design. The letters appear as a solid, dark, matte-textured graphic against a plain, off-white or light gray background.</description></figure>\n\nEPA DOT Fuel Economy and Environment\n[Gas pump icon] Gasoline Vehicle\nFuel Economy\n[Gas pump icon] 49\ncombined city/hwy\nMPG\nSMALL STATION WAGONS range from\n16 to 120 MPG. The best vehicle rates\n132 MPGe.\n53\ncity\n45\nhighway\n2.0 gallons per 100 miles\nYou save\n$3,500\nin fuel costs\nover 5 years\ncompared to the\naverage new vehicle.\n\n\nAnnual fuel COST\n$900\nFuel Economy & Greenhouse Gas Rating (tailpipe only)\nSmog Rating (tailpipe only)\n8\n7\n1 10\nBest\nThis vehicle emits 181 grams CO<sub>2</sub> per mile. The best emits 0 grams per mile (tailpipe only). Producing and\ndistributing fuel also create emissions; learn more at fueleconomy.gov.\n1\n10\n\n\nActual results will vary for many reasons, including driving conditions and how you drive and maintain\nyour vehicle. The average new vehicle gets 28 MPG and costs $8,000 to fuel over 5 years. Cost\nestimates are based on 15,000 miles per year at $ 2.95 per gallon. MPGe is miles per gasoline gallon\nequivalent. Vehicle emissions are a significant cause of climate change and smog.\nfueleconomy.gov\nCalculate personalized estimates and compare vehicles\n[Three government agency logos]\nSmartphone QR Code™\n[QR Code]\n\n\nGOVERNMENT 5-STAR SAFETY RATINGS\nOverall Vehicle Score\nNot Rated\nBased on the combined rating of frontal, side and rollover.\nShould ONLY be compared to other vehicles of similar size and weight.\nFrontal Driver Not Rated\nCrash Passenger Not Rated\nBased on the risk of injury in a frontal impact.\nShould ONLY be compared to other vehicles of similar size and weight.\nSide Front seat Not Rated\nCrash Rear seat Not Rated\nStar ratings based on the risk of injury in a side impact.\nRollover Not Rated\nStar ratings based on the risk of rollover in a single-vehicle crash.\n\n\nStar ratings range from 1 to 5 stars (⭐⭐⭐⭐⭐) with 5 being the highest.\nSource: National Highway Traffic Safety Administration (NHTSA).\nwww.safercar.gov or 1-888-327-4236\n\n\nManufacturer's suggested retail price includes Manufacturer's recommended pre-delivery service. License\nand title fees, state and local taxes and other dealer installed options and accessories are not included in\nthe manufacturer's suggested retail price.\n\n\nPARTS CONTENT INFORMATION\nFOR VEHICLES IN THIS CAR\nLINE U.S./CANADIAN\nPARTS CONTENT: 1%\nMAJOR SOURCES OF\nFOREIGN PARTS:\nKOREA: 90%\nNOTE: PARTS CONTENT DOES\nNOT INCLUDE FINAL ASSEMBLY,\nDISTRIBUTION, OR OTHER\nNON-PARTS COSTS.\nFOR THIS VEHICLE\nFINAL ASSEMBLY POINT:\nHWASUNG, KOREA\nCOUNTRY OF ORIGIN\nENGINE: KOREA\nTRANSMISSION: KOREA\n\n<!-- doc_id=parse-01m5tmzz4tmje7c642yacdxe3m -->",
+  "metadata": {
+    "job_id": "extract-01m5tn1pey7kdaqh4c10839jah",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 20132,
+    "doc_id": "parse-01m5tmzz4tmje7c642yacdxe3m",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.6,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 6595,
+    "output_extraction_chars": 2271,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}
