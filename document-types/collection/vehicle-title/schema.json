@@ -1,0 +1,194 @@
+{
+  "type": "object",
+  "title": "Vehicle Title",
+  "description": "A state certificate of title for a motor vehicle, including the vehicle description, owner and lienholder, lien release, and the ownership transfer and dealer reassignment sections on the face and back.",
+  "properties": {
+    "issuing_state": {
+      "type": "string",
+      "description": "State or commonwealth that issued the title, as named in the header."
+    },
+    "issuing_agency": {
+      "type": "string",
+      "description": "Agency that issued the title, as printed in the header (e.g. Department of Motor Vehicles)."
+    },
+    "form_number": {
+      "type": "string",
+      "description": "Form identifier printed on the title, e.g. VSA3L."
+    },
+    "title_number": {
+      "type": "string",
+      "description": "The certificate's title number, from the TITLE NO. box. Not the security control number marked 'This is not a title number'."
+    },
+    "control_number": {
+      "type": "string",
+      "description": "Security or control number printed beside the text 'This is not a title number'."
+    },
+    "title_type": {
+      "type": "string",
+      "description": "Title type or status printed on the face, e.g. ORIGINAL or DUPLICATE."
+    },
+    "date_issued": {
+      "type": "string",
+      "description": "Date the title was issued, exactly as printed."
+    },
+    "date_established": {
+      "type": "string",
+      "description": "Date printed after ESTABLISHED, exactly as printed."
+    },
+    "vehicle": {
+      "type": "object",
+      "description": "Vehicle described by the title.",
+      "properties": {
+        "vin": {
+          "type": "string",
+          "description": "Vehicle identification number, 17 characters."
+        },
+        "year": {
+          "type": "string",
+          "description": "Model year."
+        },
+        "make": {
+          "type": "string",
+          "description": "Vehicle make."
+        },
+        "body_type": {
+          "type": "string",
+          "description": "Vehicle body type, e.g. PICKUP or SEDAN."
+        },
+        "empty_weight": {
+          "type": "string",
+          "description": "Empty weight as printed."
+        },
+        "gross_weight": {
+          "type": "string",
+          "description": "Gross weight as printed."
+        },
+        "gvwr": {
+          "type": "string",
+          "description": "Gross vehicle weight rating as printed."
+        },
+        "axles": {
+          "type": "string",
+          "description": "Number of axles."
+        },
+        "fuel_type": {
+          "type": "string",
+          "description": "Fuel type, e.g. GAS or DIESEL."
+        }
+      }
+    },
+    "odometer_at_titling": {
+      "type": "string",
+      "description": "Odometer reading printed on the face of the title when it was issued, as printed."
+    },
+    "odometer_brand": {
+      "type": "string",
+      "description": "Odometer brand, e.g. ACTUAL, NOT ACTUAL or EXCEEDS MECHANICAL LIMITS."
+    },
+    "sales_tax_paid": {
+      "type": "number",
+      "description": "Sales tax paid, in dollars."
+    },
+    "other_pertinent_data": {
+      "type": "string",
+      "description": "Value in the OTHER PERTINENT DATA box."
+    },
+    "owners": {
+      "type": "array",
+      "description": "Owners named on the face of the title.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Owner name."
+          },
+          "address": {
+            "type": "string",
+            "description": "Owner address on one line."
+          }
+        }
+      }
+    },
+    "lienholder": {
+      "type": "object",
+      "description": "First lienholder printed on the face of the title, if any.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Lienholder name."
+        },
+        "address": {
+          "type": "string",
+          "description": "Lienholder address on one line."
+        }
+      }
+    },
+    "lien_release": {
+      "type": "object",
+      "description": "Lien release section on the face of the title.",
+      "properties": {
+        "released": {
+          "type": "boolean",
+          "description": "True when the lien release is signed."
+        },
+        "released_by_title": {
+          "type": "string",
+          "description": "Printed name and title of the person who signed the release."
+        },
+        "release_date": {
+          "type": "string",
+          "description": "Date of the release, as written."
+        }
+      }
+    },
+    "stamps": {
+      "type": "array",
+      "description": "Text of any rubber stamps applied across the title, e.g. FOR EXPORT ONLY with a dealer name and number.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transfers": {
+      "type": "array",
+      "description": "Each completed ownership transfer, in order: the assignment of title by the owner on the face, then each completed dealer reassignment on the back. Skip blank sections.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "description": "Section letter on the form, e.g. A, B, C."
+          },
+          "seller_name": {
+            "type": "string",
+            "description": "Printed name of the seller or selling dealer."
+          },
+          "buyer_name": {
+            "type": "string",
+            "description": "Printed name of the buyer."
+          },
+          "buyer_address": {
+            "type": "string",
+            "description": "Buyer's address on one line, including city, state and ZIP."
+          },
+          "date_of_sale": {
+            "type": "string",
+            "description": "Date of sale, as written."
+          },
+          "odometer_reading": {
+            "type": "string",
+            "description": "Odometer reading written in the transfer, as written."
+          },
+          "odometer_certification": {
+            "type": "string",
+            "description": "Which odometer box is checked: ACTUAL, NOT ACTUAL, IN EXCESS OF MECHANICAL LIMITS, EXEMPT, or none."
+          },
+          "dealer_number": {
+            "type": "string",
+            "description": "Dealer licence number given in the transfer, if any."
+          }
+        }
+      }
+    }
+  }
+}
