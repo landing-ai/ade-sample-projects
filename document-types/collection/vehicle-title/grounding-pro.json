@@ -1,0 +1,106 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "vehicle.vin",
+      "label": "VIN",
+      "value": "1FTEW1E86HFB56934",
+      "page": 1,
+      "box": {
+        "xmin": 0.04623,
+        "ymin": 0.24195,
+        "xmax": 0.29835,
+        "ymax": 0.25913
+      },
+      "range": {
+        "end": 434,
+        "start": 417
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-vin.png"
+    },
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "value": "2017",
+      "page": 1,
+      "box": {
+        "xmin": 0.3935,
+        "ymin": 0.24187,
+        "xmax": 0.46394,
+        "ymax": 0.25893
+      },
+      "range": {
+        "end": 456,
+        "start": 452
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-year.png"
+    },
+    {
+      "path": "vehicle.make",
+      "label": "Make",
+      "value": "FORD",
+      "page": 1,
+      "box": {
+        "xmin": 0.4637,
+        "ymin": 0.24183,
+        "xmax": 0.55669,
+        "ymax": 0.25889
+      },
+      "range": {
+        "end": 469,
+        "start": 465
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-make.png"
+    },
+    {
+      "path": "title_number",
+      "label": "Title number",
+      "value": "9440212714",
+      "page": 1,
+      "box": {
+        "xmin": 0.79524,
+        "ymin": 0.24166,
+        "xmax": 0.95244,
+        "ymax": 0.2587
+      },
+      "range": {
+        "end": 503,
+        "start": 493
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "title_number.png"
+    },
+    {
+      "path": "date_issued",
+      "label": "Date issued",
+      "value": "07/08/17",
+      "page": 1,
+      "box": {
+        "xmin": 0.79575,
+        "ymin": 0.27019,
+        "xmax": 0.95242,
+        "ymax": 0.29
+      },
+      "range": {
+        "end": 780,
+        "start": 772
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "date_issued.png"
+    }
+  ]
+}

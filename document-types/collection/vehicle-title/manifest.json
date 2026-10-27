@@ -1,0 +1,87 @@
+{
+  "slug": "vehicle-title",
+  "title": "Vehicle Title",
+  "source": {
+    "file": "vehicle-title.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/939332148/TITLE",
+      "publisher": "Virginia Department of Motor Vehicles (form VSA3L); uploaded to Scribd by a third party",
+      "title": "TITLE",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A completed Commonwealth of Virginia certificate of title (form VSA3L, rev. 6/15) for a 2017 Ford pickup, front and back, scanned on a Kodak Alaris scanner and uploaded to Scribd by an unknown account. Scribd is a user-upload site, not the publisher, so this was treated as a real record. Scribd blocks scripted downloads, so the operator downloaded the file by hand. This request was rejected on 2026-10-03 because the file then appeared to be a digitally fabricated vector 'Print To PDF' with an edited control number and misspelled form text. The operator lifted that rejection and re-downloaded the file on 2026-10-26. The file received on 2026-10-26 does not match that description: it is a two-page raster scan with an invisible OCR text layer, scanner metadata (Kodak Alaris 'Smart Touch 2.0'), handwriting, ink and rubber stamps, and no misspelled form text was found. Its authenticity cannot be confirmed from the file alone, and it is not presented here as verified. The parties named on it are mostly businesses (two dealerships and a bank lienholder), which were kept; the individuals' names, handwritten buyer details, signatures, all vehicle and title identifiers, and the three barcodes were replaced or removed with document-types/scripts/redact_scan.py, which rebuilt both pages from 300 dpi renders of the edited images, so neither the original rasters nor the OCR layer are carried into the output. PDF metadata cleared. Verified by OCR inside redact_scan.py, by eye on 110-300 dpi renders, and by a sweep of every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "vehicle identification number, in the VIN box (and its last eight characters on the barcode label)",
+            "with": "1FTEW1E86HFB56934: the original's make, model, engine, year and plant characters kept, a random serial drawn, and the check digit recomputed so the stand-in is a valid VIN",
+            "occurrences": 2
+          },
+          {
+            "what": "title number",
+            "with": "9440212714 (random digits from plausible.py)",
+            "occurrences": 1
+          },
+          {
+            "what": "security control number beside 'This is not a title number'",
+            "with": "G18063942 (plausible.py)",
+            "occurrences": 1
+          },
+          {
+            "what": "Other Pertinent Data value",
+            "with": "755630 (plausible.py)",
+            "occurrences": 1
+          },
+          {
+            "what": "dealer stock number, handwritten at the top of page 1 and printed on the barcode label",
+            "with": "726772 (plausible.py)",
+            "occurrences": 2
+          },
+          {
+            "what": "printed name of the bank's attorney in fact under the lien release",
+            "with": "Jane Doe",
+            "occurrences": 1
+          },
+          {
+            "what": "printed name of the selling dealership's agent in section A",
+            "with": "JANE Q SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "handwritten printed name of the buying dealer's signer in section A and of the individual buyer in section B",
+            "with": "John Sample / John Q Sample, in a handwriting font",
+            "occurrences": 2
+          },
+          {
+            "what": "handwritten street address and postal code of the section B buyer; the city and country were kept",
+            "with": "100 Main St and 51607, in a handwriting font",
+            "occurrences": 2
+          },
+          {
+            "what": "five signatures (lien release, seller and buyer in section A, buyer and dealer in section B)",
+            "with": "initials or 'J Doe' in a handwriting font",
+            "occurrences": 5
+          },
+          {
+            "what": "PDF417 barcode on the face, the linear barcode on the label and the vertical barcode at the page edge, which encode title and vehicle data",
+            "with": "blank paper (erased, no stand-in)",
+            "occurrences": 3
+          }
+        ],
+        "kept": "Company names, addresses and the dealer licence number on the FOR EXPORT ONLY stamp; dates, weights, odometer readings and sales tax."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "vehicle.vin", "label": "VIN", "occurrence": 0 },
+    { "path": "vehicle.year", "label": "Model year", "occurrence": 0 },
+    { "path": "vehicle.make", "label": "Make", "occurrence": 0 },
+    { "path": "title_number", "label": "Title number", "occurrence": 0 },
+    { "path": "date_issued", "label": "Date issued", "occurrence": 0 }
+  ],
+  "notes": "The request named only the document type and source, so the fields were chosen here. They are the vehicle-identity row and title number on the face: what a lender, insurer or buyer checks first, all in typed print in one ruled band, and all ground to their own cells. The stamped title number is distinct from the red control number printed beside 'This is not a title number', and extraction kept them apart. Handwritten transfer fields were not featured because several came back wrong (see the README). Provenance caveat: the request was rejected on 2026-10-03 as a possibly fabricated vector print-to-PDF; the file downloaded on 2026-10-26 is a raster scan that does not match that description, and its authenticity is not established."
+}
