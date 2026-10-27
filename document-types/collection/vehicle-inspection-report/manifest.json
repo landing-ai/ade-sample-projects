@@ -1,0 +1,55 @@
+{
+  "slug": "vehicle-inspection-report",
+  "title": "Vehicle Inspection Report",
+  "source": {
+    "file": "dekra-used-car-report-redacted.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/882663399",
+      "publisher": "DEKRA Automotive (PTY) Ltd. (South Africa), inspecting for the dealer We Buy Cars",
+      "title": "DEKRA Used Car Report (Condition Report) for a 2013 BMW X6",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A real DEKRA South Africa used car condition report, generated for the dealer We Buy Cars, uploaded to Scribd by an unrelated account. Scribd is not the publisher, so it was treated as a real record. Scribd blocks scripted downloads, so the file was downloaded manually by the operator on 2026-10-26. The Scribd listing's trailing slug is a bare number of unknown meaning (possibly a stock or account reference), so the URL is recorded without it. The report identifies a real vehicle and a named DEKRA technician; the VIN, registration number, report number and technician's name were replaced using document-types/scripts/redact.py, which removes the underlying text. The two exterior photos on page 1 showed the licence plate and were removed; the interior, instrument cluster and odometer photos were kept. Pages 4 to 8, which were photo pages (engine bay, spare wheel, brake-test and diagnostic printouts, a front three-quarter shot with the plate), were dropped: they carried identifying images and no extractable data. The page footers still read 1/8 to 3/8. DEKRA's corporate address and phone number and the dealer's name are business details and are kept. PDF metadata cleared. Verified by redact.py's text check, by eye on a render, and by ship.py check --rules over every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "vehicle identification number (VIN)",
+            "with": "a random 17-character stand-in keeping the manufacturer prefix (from plausible.py)",
+            "occurrences": 4
+          },
+          {
+            "what": "registration number",
+            "with": "a random stand-in of the same shape (from plausible.py)",
+            "occurrences": 1
+          },
+          {
+            "what": "report number",
+            "with": "a random 10-digit stand-in (from plausible.py)",
+            "occurrences": 3
+          },
+          {
+            "what": "technician's name",
+            "with": "JANE Q SAMPLE",
+            "occurrences": 1
+          }
+        ],
+        "removed_images": "two exterior photos on page 1 that showed the licence plate",
+        "dropped_page_reason": "pages 4 to 8 were photo pages with no extractable data, some showing the licence plate and printouts carrying identifiers",
+        "kept": "vehicle make, model, year, odometer reading, colour and specification; every condition rating; brake test and tyre measurements; the dealer's business name; DEKRA's corporate address and phone number."
+      },
+      "dropped_pages": [4, 5, 6, 7, 8]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "vehicle.manufacturer", "label": "Manufacturer", "occurrence": 0 },
+    { "path": "vehicle.model", "label": "Model", "occurrence": 0 },
+    { "path": "vehicle.model_year", "label": "Model year", "occurrence": 0 },
+    { "path": "vehicle.odometer_km", "label": "Odometer (km)", "occurrence": 0 },
+    { "path": "component_ratings[12].condition", "label": "Vehicle body condition", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields. Page 1 is featured because it carries both halves of an inspection report: which vehicle was inspected and how far it has gone (manufacturer, model, model year, odometer reading from the Vehicle Data block) and what the inspector found (the Vehicle Body row of the Exterior condition table, rated As Expected). The VIN, registration number and technician are redacted stand-ins and are not featured. The odometer reading is pinned to occurrence 0, the printed '143,723 KM' in the Vehicle Data block; occurrence 1 is grounded to the odometer photo on the same page, which the parser described as a figure. Each condition rating's occurrence 1 grounds OFF to its table heading, so occurrence 0 is used. The spare tyre's production date is printed as '////' and came back as the string 'null' rather than a JSON null. The front-left tyre's Load/Speed Index is printed as 3323 (the same as its production date), apparently a data-entry error in the original; extraction reproduced it faithfully."
+}
