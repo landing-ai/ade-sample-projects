@@ -1,0 +1,77 @@
+{
+  "slug": "driving-course-certificate",
+  "title": "Driving Course Certificate",
+  "source": {
+    "file": "texas-driving-safety-course-certificate-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/998399674",
+      "publisher": "Texas Department of Licensing and Regulation (TDLR) uniform certificate form, issued by a TDLR-approved driving safety course provider; uploaded to Scribd by a third party",
+      "title": "State of Texas Driving Safety Course Uniform Certificate of Completion (court and insurance copies)",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A real student's TDLR driving safety course certificate, uploaded to Scribd by a user account that is not the issuer. Scribd blocks scripted downloads, so the file was downloaded manually by the operator on 2026-10-26. It is a personal record, not a publisher's sample: it carried the student's full name, Texas driver licence number, date of birth and street address, and a certificate number that can be looked up on TDLR's verification service. Each was replaced using document-types/scripts/redact.py; the values live in fillable form fields, so the rules were applied to the field values and their appearance. PDF metadata, which carried the form designer's name, was cleared, and the file's owner-password encryption was dropped. The Scribd listing URL ended in a slug equal to the student's driver licence number, so the URL recorded here is the bare Scribd document ID with that slug removed. Verified by redact.py's text check, by eye on a render, and by ship.py check --rules over every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "student's name (Last, First), in the student panel and the mailing address block of both copies",
+            "with": "Sample, Jane",
+            "occurrences": 4
+          },
+          {
+            "what": "student's street address",
+            "with": "100 Main St.",
+            "occurrences": 2
+          },
+          {
+            "what": "certificate number",
+            "with": "CP275-63203533 (randomly drawn by plausible.py)",
+            "occurrences": 2
+          },
+          {
+            "what": "student's Texas driver licence number",
+            "with": "89449885 (randomly drawn by plausible.py)",
+            "occurrences": 2
+          },
+          {
+            "what": "student's date of birth",
+            "with": "08/23/1984",
+            "occurrences": 2
+          }
+        ],
+        "kept": "City, state and ZIP of the mailing address; the court (a municipal court, not a person); the course provider's trade name, school-classroom code and instructor licence number; completion and issue dates; and the reason (traffic ticket). The signature lines are blank in the original."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "certificate_number",
+      "label": "Certificate number",
+      "occurrence": 0
+    },
+    {
+      "path": "court",
+      "label": "Court",
+      "occurrence": 1
+    },
+    {
+      "path": "reason",
+      "label": "Reason for course",
+      "occurrence": 1
+    },
+    {
+      "path": "completion_date",
+      "label": "Completion date",
+      "occurrence": 1
+    },
+    {
+      "path": "issue_date",
+      "label": "Issue date",
+      "occurrence": 1
+    }
+  ],
+  "notes": "The request named only the document type (as Driving Safety Certificate) and the source; feature page and fields were chosen here. Page 1 is the only page. It prints the certificate twice, a court copy above an insurance copy, and every featured field is pinned to an occurrence in the top court copy so the overlay reads as one filing: which certificate, for which court, why the course was taken, and when it was completed and issued. All five ground ok. Student name, licence number and date of birth (all replaced stand-ins) also ground ok but are not featured, because the impersonal fields make the same point; the instructor licence number grounds ok but identifies a real instructor, so it is not featured either. school_classroom was not used because its first range points into the bottom (insurance) copy and its second at a whole-panel block. student_signed came back true although both signature lines are blank: DPT-3 attached an [E-SIGNED] attestation label to the insurance copy's signature area, apparently triggered by the orange SIGN tab, and extraction followed it. The schema was left as written so the miss stays visible. The listing title was a bare number; the page title here is Driving Course Certificate to match the slug."
+}

@@ -1,0 +1,117 @@
+{
+  "description": "Uniform certificate of completion for a state-approved driving safety (defensive driving) course, as filed with a court to dismiss a traffic ticket or sent to an insurer for a discount: which course and regulator, the certificate number, the student, the court, the course provider and the dates.",
+  "type": "object",
+  "properties": {
+    "certificate_title": {
+      "type": "string",
+      "description": "Title printed at the top of the certificate, e.g. State of Texas Driving Safety Course Uniform Certificate of Completion."
+    },
+    "regulating_agency": {
+      "type": "string",
+      "description": "Government agency that approves and regulates the course, as named in the certification statement."
+    },
+    "course_hours": {
+      "type": "number",
+      "description": "Number of hours of instruction the certificate says the student completed, as a number (six (6) hours is 6)."
+    },
+    "copies": {
+      "type": "array",
+      "description": "Each copy of the certificate printed on the page, in page order, by its copy label (e.g. COURT COPY, INSURANCE COPY).",
+      "items": {
+        "type": "string",
+        "description": "Copy label exactly as printed, e.g. COURT COPY."
+      }
+    },
+    "certificate_number": {
+      "type": "string",
+      "description": "Certificate number printed after CERTIFICATE#, exactly as printed including prefix and hyphen."
+    },
+    "student": {
+      "type": "object",
+      "description": "The student who completed the course.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Student name as printed under Student Name, in the printed Last, First order."
+        },
+        "drivers_license_state": {
+          "type": "string",
+          "description": "Two-letter state code of the student's driver licence, printed before the licence number."
+        },
+        "drivers_license_number": {
+          "type": "string",
+          "description": "Student driver licence number, digits only, without the state code or dash."
+        },
+        "date_of_birth": {
+          "type": "string",
+          "description": "Student date of birth in ISO format YYYY-MM-DD."
+        },
+        "mailing_address": {
+          "type": "object",
+          "description": "Mailing address from the Student Name and Mailing Address block.",
+          "properties": {
+            "street": {
+              "type": "string",
+              "description": "Street address line."
+            },
+            "city": {
+              "type": "string",
+              "description": "City."
+            },
+            "state": {
+              "type": "string",
+              "description": "Two-letter state code."
+            },
+            "zip": {
+              "type": "string",
+              "description": "ZIP code."
+            }
+          }
+        }
+      }
+    },
+    "court": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Court the certificate is filed with, from the Court Information block, exactly as printed. Null if no court is given."
+    },
+    "course_provider": {
+      "type": "string",
+      "description": "Course provider name as printed under Course Provider. Join letters that are printed spaced out or wrapped across lines into words."
+    },
+    "school_classroom": {
+      "type": "string",
+      "description": "School-Classroom identifier, exactly as printed including any suffix after a hyphen."
+    },
+    "completion_date": {
+      "type": "string",
+      "description": "Course completion date in ISO format YYYY-MM-DD."
+    },
+    "issue_date": {
+      "type": "string",
+      "description": "Certificate issue date in ISO format YYYY-MM-DD."
+    },
+    "instructor_license_number": {
+      "type": "string",
+      "description": "Instructor's licence number printed under Instructor TDLR# (or the state regulator's equivalent)."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason the course was taken, as printed under Reason, e.g. Traffic Ticket or Insurance Discount."
+    },
+    "student_signed": {
+      "type": "boolean",
+      "description": "True if the Student's Signature line carries a signature, false if it is blank."
+    }
+  },
+  "required": [
+    "certificate_number",
+    "student",
+    "course_provider",
+    "completion_date",
+    "issue_date",
+    "reason"
+  ]
+}
