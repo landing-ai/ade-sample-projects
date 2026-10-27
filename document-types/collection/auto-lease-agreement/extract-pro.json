@@ -1,0 +1,684 @@
+{
+  "extraction": {
+    "amount_due_itemization": {
+      "capitalized_cost_reduction_cash": 101.29,
+      "first_monthly_payment": 435.04,
+      "license_and_registration_fees": 172.49,
+      "other_items": [
+        {
+          "amount": 205.5,
+          "description": "ElecReg-199.00/Tire Fee-6.50"
+        },
+        {
+          "amount": 60.0,
+          "description": "Lease Surcharge Fee"
+        },
+        {
+          "amount": 18.59,
+          "description": "Other Taxes"
+        }
+      ],
+      "sales_tax_on_cash": 7.09,
+      "total": 1000.0
+    },
+    "disclosures": {
+      "amount_due_at_signing": 1000.0,
+      "disposition_fee": 350.0,
+      "first_monthly_payment": 435.04,
+      "first_payment_due_date": "2024-12-03",
+      "following_payment_amount": 435.04,
+      "number_of_following_payments": 35,
+      "other_charges_total": 350.0,
+      "payment_due_day": "3rd",
+      "total_of_payments": 16576.4,
+      "total_of_scheduled_payments": 15661.44
+    },
+    "end_of_lease": {
+      "excess_mileage_rate": 0.15,
+      "mileage_allowance_per_year": 10000,
+      "purchase_option_fee": 0.0,
+      "purchase_option_price": 18070.0
+    },
+    "form_number": "HFS-UCL-FL-e-14 1/21",
+    "insurance": {
+      "bodily_injury_per_accident": 20000.0,
+      "bodily_injury_per_person": 10000.0,
+      "maximum_deductible": 1000.0,
+      "policy_number": "210048921",
+      "property_damage_per_accident": 50000.0,
+      "provider": "PROGRESSIVE INS"
+    },
+    "lease_date": "2024-12-03",
+    "lease_term_months": 36,
+    "parties": {
+      "assignee": "Honda Lease Trust",
+      "co_lessee_name": "JANE Q SAMPLE",
+      "lessee_address": "100 MAIN ST, HIALEAH, FL 33015",
+      "lessee_name": "JOHN Q SAMPLE",
+      "lessor_address": "5925 N.W. 167TH STREET, MIAMI, FL 33015-4310",
+      "lessor_name": "AUTONATION HONDA MIAMI LAKES"
+    },
+    "payment_calculation": {
+      "adjusted_capitalized_cost": 28437.71,
+      "agreed_value_of_vehicle": 26949.0,
+      "base_scheduled_payment": 406.58,
+      "capitalized_cost_reduction": 101.29,
+      "depreciation_and_amortized_amounts": 10367.71,
+      "gross_capitalized_cost": 28539.0,
+      "number_of_payments": 36,
+      "rent_charge": 4269.17,
+      "residual_value": 18070.0,
+      "sales_use_tax": 28.46,
+      "total_of_base_scheduled_payments": 14636.88,
+      "total_scheduled_payment": 435.04
+    },
+    "vehicle": {
+      "body_style": "Sport CVT Sdn",
+      "condition": "NEW",
+      "make": "Honda",
+      "model": "Civic Sedan",
+      "odometer": 8,
+      "vin": "2HGFE2F59SH687480",
+      "year": 2025
+    }
+  },
+  "extraction_metadata": {
+    "amount_due_itemization": {
+      "capitalized_cost_reduction_cash": {
+        "ranges": [
+          {
+            "end": 3886,
+            "start": 3878
+          }
+        ],
+        "value": 101.29
+      },
+      "first_monthly_payment": {
+        "ranges": [
+          {
+            "end": 4335,
+            "start": 4327
+          }
+        ],
+        "value": 435.04
+      },
+      "license_and_registration_fees": {
+        "ranges": [
+          {
+            "end": 4774,
+            "start": 4766
+          }
+        ],
+        "value": 172.49
+      },
+      "other_items": [
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 4988,
+                "start": 4980
+              }
+            ],
+            "value": 205.5
+          },
+          "description": {
+            "ranges": [
+              {
+                "end": 4971,
+                "start": 4939
+              }
+            ],
+            "value": "ElecReg-199.00/Tire Fee-6.50"
+          }
+        },
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 5064,
+                "start": 5057
+              }
+            ],
+            "value": 60.0
+          },
+          "description": {
+            "ranges": [
+              {
+                "end": 5048,
+                "start": 5025
+              }
+            ],
+            "value": "Lease Surcharge Fee"
+          }
+        },
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 5132,
+                "start": 5125
+              }
+            ],
+            "value": 18.59
+          },
+          "description": {
+            "ranges": [
+              {
+                "end": 5116,
+                "start": 5101
+              }
+            ],
+            "value": "Other Taxes"
+          }
+        }
+      ],
+      "sales_tax_on_cash": {
+        "ranges": [
+          {
+            "end": 3974,
+            "start": 3968
+          }
+        ],
+        "value": 7.09
+      },
+      "total": {
+        "ranges": [
+          {
+            "end": 5197,
+            "start": 5187
+          }
+        ],
+        "value": 1000.0
+      }
+    },
+    "disclosures": {
+      "amount_due_at_signing": {
+        "ranges": [
+          {
+            "end": 3407,
+            "start": 3397
+          }
+        ],
+        "value": 1000.0
+      },
+      "disposition_fee": {
+        "ranges": [
+          {
+            "end": 3068,
+            "start": 2941
+          }
+        ],
+        "value": 350.0
+      },
+      "first_monthly_payment": {
+        "ranges": [
+          {
+            "end": 2756,
+            "start": 2708
+          }
+        ],
+        "value": 435.04
+      },
+      "first_payment_due_date": {
+        "ranges": [
+          {
+            "end": 2920,
+            "start": 2883
+          },
+          {
+            "end": 109,
+            "start": 87
+          }
+        ],
+        "value": "2024-12-03"
+      },
+      "following_payment_amount": {
+        "ranges": [
+          {
+            "end": 3132,
+            "start": 3096
+          }
+        ],
+        "value": 435.04
+      },
+      "number_of_following_payments": {
+        "ranges": [
+          {
+            "end": 2920,
+            "start": 2883
+          }
+        ],
+        "value": 35
+      },
+      "other_charges_total": {
+        "ranges": [
+          {
+            "end": 3497,
+            "start": 3480
+          }
+        ],
+        "value": 350.0
+      },
+      "payment_due_day": {
+        "ranges": [
+          {
+            "end": 3132,
+            "start": 3096
+          },
+          {
+            "end": 109,
+            "start": 87
+          }
+        ],
+        "value": "3rd"
+      },
+      "total_of_payments": {
+        "ranges": [
+          {
+            "end": 3350,
+            "start": 3339
+          }
+        ],
+        "value": 16576.4
+      },
+      "total_of_scheduled_payments": {
+        "ranges": [
+          {
+            "end": 3471,
+            "start": 3416
+          }
+        ],
+        "value": 15661.44
+      }
+    },
+    "end_of_lease": {
+      "excess_mileage_rate": {
+        "ranges": [
+          {
+            "end": 7405,
+            "start": 7354
+          }
+        ],
+        "value": 0.15
+      },
+      "mileage_allowance_per_year": {
+        "ranges": [
+          {
+            "end": 7353,
+            "start": 7205
+          }
+        ],
+        "value": 10000
+      },
+      "purchase_option_fee": {
+        "ranges": [
+          {
+            "end": 7701,
+            "start": 7560
+          }
+        ],
+        "value": 0.0
+      },
+      "purchase_option_price": {
+        "ranges": [
+          {
+            "end": 7559,
+            "start": 7406
+          }
+        ],
+        "value": 18070.0
+      }
+    },
+    "form_number": {
+      "ranges": [
+        {
+          "end": 24,
+          "start": 0
+        }
+      ],
+      "value": "HFS-UCL-FL-e-14 1/21"
+    },
+    "insurance": {
+      "bodily_injury_per_accident": {
+        "ranges": [
+          {
+            "end": 15130,
+            "start": 14953
+          }
+        ],
+        "value": 20000.0
+      },
+      "bodily_injury_per_person": {
+        "ranges": [
+          {
+            "end": 15130,
+            "start": 14953
+          }
+        ],
+        "value": 10000.0
+      },
+      "maximum_deductible": {
+        "ranges": [
+          {
+            "end": 15508,
+            "start": 15323
+          }
+        ],
+        "value": 1000.0
+      },
+      "policy_number": {
+        "ranges": [
+          {
+            "end": 15780,
+            "start": 15673
+          }
+        ],
+        "value": "210048921"
+      },
+      "property_damage_per_accident": {
+        "ranges": [
+          {
+            "end": 15130,
+            "start": 14953
+          },
+          {
+            "end": 15322,
+            "start": 15131
+          }
+        ],
+        "value": 50000.0
+      },
+      "provider": {
+        "ranges": [
+          {
+            "end": 15780,
+            "start": 15673
+          }
+        ],
+        "value": "PROGRESSIVE INS"
+      }
+    },
+    "lease_date": {
+      "ranges": [
+        {
+          "end": 109,
+          "start": 87
+        }
+      ],
+      "value": "2024-12-03"
+    },
+    "lease_term_months": {
+      "ranges": [
+        {
+          "end": 17059,
+          "start": 16105
+        }
+      ],
+      "value": 36
+    },
+    "parties": {
+      "assignee": {
+        "ranges": [
+          {
+            "end": 63525,
+            "start": 63448
+          },
+          {
+            "end": 1026,
+            "start": 944
+          },
+          {
+            "end": 1044,
+            "start": 1027
+          }
+        ],
+        "value": "Honda Lease Trust"
+      },
+      "co_lessee_name": {
+        "ranges": [
+          {
+            "end": 491,
+            "start": 417
+          }
+        ],
+        "value": "JANE Q SAMPLE"
+      },
+      "lessee_address": {
+        "ranges": [
+          {
+            "end": 408,
+            "start": 333
+          }
+        ],
+        "value": "100 MAIN ST, HIALEAH, FL 33015"
+      },
+      "lessee_name": {
+        "ranges": [
+          {
+            "end": 408,
+            "start": 333
+          }
+        ],
+        "value": "JOHN Q SAMPLE"
+      },
+      "lessor_address": {
+        "ranges": [
+          {
+            "end": 324,
+            "start": 246
+          }
+        ],
+        "value": "5925 N.W. 167TH STREET, MIAMI, FL 33015-4310"
+      },
+      "lessor_name": {
+        "ranges": [
+          {
+            "end": 324,
+            "start": 246
+          }
+        ],
+        "value": "AUTONATION HONDA MIAMI LAKES"
+      }
+    },
+    "payment_calculation": {
+      "adjusted_capitalized_cost": {
+        "ranges": [
+          {
+            "end": 5887,
+            "start": 5874
+          }
+        ],
+        "value": 28437.71
+      },
+      "agreed_value_of_vehicle": {
+        "ranges": [
+          {
+            "end": 5546,
+            "start": 5335
+          }
+        ],
+        "value": 26949.0
+      },
+      "base_scheduled_payment": {
+        "ranges": [
+          {
+            "end": 6703,
+            "start": 6693
+          }
+        ],
+        "value": 406.58
+      },
+      "capitalized_cost_reduction": {
+        "ranges": [
+          {
+            "end": 5757,
+            "start": 5747
+          }
+        ],
+        "value": 101.29
+      },
+      "depreciation_and_amortized_amounts": {
+        "ranges": [
+          {
+            "end": 6276,
+            "start": 6263
+          }
+        ],
+        "value": 10367.71
+      },
+      "gross_capitalized_cost": {
+        "ranges": [
+          {
+            "end": 5566,
+            "start": 5555
+          }
+        ],
+        "value": 28539.0
+      },
+      "number_of_payments": {
+        "ranges": [
+          {
+            "end": 6639,
+            "start": 6635
+          }
+        ],
+        "value": 36
+      },
+      "rent_charge": {
+        "ranges": [
+          {
+            "end": 6409,
+            "start": 6397
+          }
+        ],
+        "value": 4269.17
+      },
+      "residual_value": {
+        "ranges": [
+          {
+            "end": 6044,
+            "start": 6031
+          }
+        ],
+        "value": 18070.0
+      },
+      "sales_use_tax": {
+        "ranges": [
+          {
+            "end": 6761,
+            "start": 6752
+          }
+        ],
+        "value": 28.46
+      },
+      "total_of_base_scheduled_payments": {
+        "ranges": [
+          {
+            "end": 6551,
+            "start": 6538
+          }
+        ],
+        "value": 14636.88
+      },
+      "total_scheduled_payment": {
+        "ranges": [
+          {
+            "end": 6908,
+            "start": 6898
+          }
+        ],
+        "value": 435.04
+      }
+    },
+    "vehicle": {
+      "body_style": {
+        "ranges": [
+          {
+            "end": 2166,
+            "start": 2153
+          }
+        ],
+        "value": "Sport CVT Sdn"
+      },
+      "condition": {
+        "ranges": [
+          {
+            "end": 2097,
+            "start": 2094
+          }
+        ],
+        "value": "NEW"
+      },
+      "make": {
+        "ranges": [
+          {
+            "end": 2124,
+            "start": 2119
+          }
+        ],
+        "value": "Honda"
+      },
+      "model": {
+        "ranges": [
+          {
+            "end": 2144,
+            "start": 2133
+          }
+        ],
+        "value": "Civic Sedan"
+      },
+      "odometer": {
+        "ranges": [
+          {
+            "end": 2202,
+            "start": 2201
+          }
+        ],
+        "value": 8
+      },
+      "vin": {
+        "ranges": [
+          {
+            "end": 2192,
+            "start": 2175
+          }
+        ],
+        "value": "2HGFE2F59SH687480"
+      },
+      "year": {
+        "ranges": [
+          {
+            "end": 2110,
+            "start": 2106
+          }
+        ],
+        "value": 2025
+      }
+    }
+  },
+  "markdown": "LAW HFS-UCL-FL-e-14 1/21\nCLOSED END MOTOR VEHICLE LEASE\n(WITH ARBITRATION PROVISION)\n\n\nLease Date: 12/03/2024\n\n\n<table>\n<tr><td>Lessor Name and Business Address</td><td>Lessee Name and Address</td><td>Co-Lessee Name and Address</td></tr>\n<tr><td>AUTONATION HONDA MIAMI LAKES<br>5925 N.W. 167TH STREET<br>MIAMI, FL 33015-4310</td><td>JOHN Q SAMPLE<br>100 MAIN ST<br>HIALEAH, FL 33015<br><br>County: MIAMI-DADE</td><td>JANE Q SAMPLE<br>200 OAK ST<br>HIALEAH, FL 33010<br><br>County: MIAMI-DADE</td></tr>\n</table>\n\n<table>\n<tr><td>Lessee Billing Address (if different than above)</td><td>Vehicle Garaging Address (if different than above)</td><td></td></tr>\n<tr><td>N/A</td><td>N/A</td><td></td></tr>\n<tr><td></td><td>County: N/A<br>Principal Driver: N/A (if business use)</td><td></td></tr>\n</table>\n\nIn this Lease, “you” and “your” mean the lessee and co-lessee. “We,” “us” and “our” mean the Lessor named above, and any assignee of this Lease.\n [x] If this box is checked, Lessor will assign this Lease and sell the Vehicle to\nHonda Lease Trust\n“Assignee”) and Honda Financial Services (“HFS”) helped arrange this Lease.\nEach of you who signs the Lease is jointly and severally liable to us for all Lease obligations. You are leasing the Vehicle described below (the “Vehicle”) from us. You agree to pay all amounts\ndue under the Lease and fulfill all your obligations under the Lease. In this Lease, “e” means an estimate. The Consumer Leasing Act Disclosures shown below are also terms of this Lease.\nYou are leasing the Vehicle and have no ownership rights in the Vehicle unless you exercise your purchase option.\n**Monthly Payment Lease:** If your payment schedule shows monthly scheduled payments in Item 3A, your Lease is a monthly payment lease.\n**Single Payment Lease:** If your payment schedule shows a single scheduled payment in Item 3B, your Lease is a single payment lease.\n\n\n<table>\n<tr><td colspan=\"8\">1. The Vehicle</td></tr>\n<tr><td>New/Used</td><td>Year</td><td>Make</td><td>Model</td><td>Body Style</td><td>Vehicle ID #</td><td>Odometer</td><td>Primary Use</td></tr>\n<tr><td>NEW</td><td>2025</td><td>Honda</td><td>Civic Sedan</td><td>Sport CVT Sdn</td><td>2HGFE2F59SH687480</td><td>8</td><td>Personal, unless otherwise indicated below<br>[ ] business<br>[ ] agricultural</td></tr>\n<tr><td colspan=\"8\">Vehicle Prior Use (as checked):   [ ] Demonstrator   [ ] Factory Official   [ ] Rental   [ ] Taxi or Livery</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">CONSUMER LEASING ACT DISCLOSURES</td></tr>\n<tr><td>2. Amount Due at</td><td>3. Scheduled Payments</td><td>4. Other Charges (not part of your scheduled payment)</td><td>5. Total of Payments</td></tr>\n<tr><td>Lease Signing or</td><td>A. Your first monthly payment of $ 435.04 is due</td><td></td><td rowspan=\"3\">(The amount you will<br>have paid by the end<br>of the Lease)</td></tr>\n<tr><td>Delivery</td><td>on 12/03/2024, followed by 35 monthly</td><td rowspan=\"3\">A. Turn-In fee (if you do not<br>purchase the Vehicle and we do<br>not waive the fee under Item 25(t)) $ 350.00<br>B. N/A $ N/A</td></tr>\n<tr><td></td><td>payments of $ 435.04, due on the 3rd</td></tr>\n<tr><td>(Itemized in Item 6)</td><td>of each month.</td><td></td></tr>\n<tr><td></td><td rowspan=\"2\">B. Your single payment of $ N/A___ is due on<br>N/A___</td><td>C. N/A $ N/A</td><td rowspan=\"2\">$ 16,576.40</td></tr>\n<tr><td></td><td></td></tr>\n<tr><td>$ 1,000.00</td><td>C. The Total of your Scheduled Payments is $ 15,661.44.</td><td>D. Total $ 350.00</td><td>(2 + 3C + 4D - 6A3 - 6A4 - 6A5)</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">6. Itemization of Amount Due at Lease Signing or Delivery</td></tr>\n<tr><td>A. Amount Due at Lease Signing or Delivery:</td><td></td><td colspan=\"2\">B. How the Amount Due at Lease Signing or Delivery will be paid:</td></tr>\n<tr><td>1. Capitalized cost reduction (amount paid in cash)</td><td>$ 101.29</td><td></td><td></td></tr>\n<tr><td>Sales/use tax on amount paid in cash</td><td>$ 7.09</td><td>1. Net trade-in allowance</td><td>$ 0.00</td></tr>\n<tr><td>2. Capitalized cost reduction (credit for net trade-in allowance)</td><td>$ N/A</td><td></td><td></td></tr>\n<tr><td>Sales/use tax on credit for net trade-in allowance</td><td>$ N/A</td><td>2. Rebates and noncash credits</td><td>$ N/A</td></tr>\n<tr><td>3. First monthly payment</td><td>$ 435.04</td><td></td><td></td></tr>\n<tr><td>4. Single scheduled payment</td><td>$ N/A</td><td>3. Amount to be paid in cash</td><td>$ 1,000.00</td></tr>\n<tr><td>5. Refundable security deposit</td><td>$ N/A</td><td></td><td></td></tr>\n<tr><td>6. Lease acquisition fee</td><td>$ N/A</td><td>4. Other N/A</td><td>$ N/A</td></tr>\n<tr><td>7. Title fees</td><td>$ N/A</td><td></td><td></td></tr>\n<tr><td>8. License and registration fees</td><td>$ 172.49</td><td>5. Total</td><td>$ 1,000.00</td></tr>\n<tr><td>9. Sales/use tax (excludes any tax shown in 1. or 2. above)</td><td>$ N/A</td><td></td><td></td></tr>\n<tr><td>10. ElecReg-199.00/Tire Fee-6.50</td><td>$ 205.50</td><td></td><td></td></tr>\n<tr><td>11. Lease Surcharge Fee</td><td>$ 60.00</td><td></td><td></td></tr>\n<tr><td>12. Other Taxes</td><td>$ 18.59</td><td></td><td></td></tr>\n<tr><td>13. Total</td><td>$ 1,000.00</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>7. Your scheduled payment is determined as shown below:</td><td></td></tr>\n<tr><td>A. Gross capitalized cost. The agreed upon value of the Vehicle ($ 26,949.00 ) and any items you pay over the lease term (such as service contracts, insurance, and any outstanding prior credit or lease balance).</td><td>$ 28,539.00</td></tr>\n<tr><td>B. Capitalized cost reduction. The amount of any net trade-in allowance, rebate, noncash credit, or cash you pay that reduces the gross capitalized cost.</td><td>- $ 101.29</td></tr>\n<tr><td>C. Adjusted capitalized cost. The amount used in calculating your base scheduled payment.</td><td>= $ 28,437.71</td></tr>\n<tr><td>D. Residual value. The value of the Vehicle at the end of the Lease used in calculating your base scheduled payment.</td><td>- $ 18,070.00</td></tr>\n<tr><td colspan=\"2\">E. Depreciation and any amortized amounts. The amount charged for the Vehicle's decline in value through</td></tr>\n<tr><td>normal use and for other items paid over the lease term.</td><td>= $ 10,367.71</td></tr>\n<tr><td>F. Rent charge. The amount charged in addition to the depreciation and any amortized amounts.</td><td>+ $ 4,269.17</td></tr>\n<tr><td>G. Total of base scheduled payments. The depreciation and any amortized amounts plus the rent charge.</td><td>= $ 14,636.88</td></tr>\n<tr><td>H. Lease payments. The number of payments in your Lease.</td><td>÷ 36</td></tr>\n<tr><td>I. Base scheduled payment.</td><td>= $ 406.58</td></tr>\n<tr><td>J. Sales/use tax (e).</td><td>+ $ 28.46</td></tr>\n<tr><td>K. N/A</td><td>+ $ N/A</td></tr>\n<tr><td>L. N/A</td><td>+ $ N/A</td></tr>\n<tr><td>M. Total Scheduled Payment.</td><td>= $ 435.04</td></tr>\n</table>\n\nEarly Termination. You may have to pay a substantial charge if you end this Lease early. The charge may be up to several thousand dollars.\nThe actual charge will depend on when the Lease is terminated. The earlier you end the Lease, the greater this charge is likely to be.\n\n\n**8. Excessive Wear and Use.** You may be charged for excessive wear based on our standards for normal use and for mileage in excess of ___10,000___\nmiles per year at the rate of $___0.15___ per mile.\n**9. Purchase Option at End of Lease Term.** You have an option to purchase the Vehicle at the end of the lease term for $___18,070.00___ plus a purchase\noption fee of $___0.00___. The purchase option price does not include official fees such as those for taxes, tags, licenses and registration.\n**10. Other Important Terms.** See your Lease documents for additional information on early termination, purchase options, maintenance responsibilities,\nwarranties, late and default charges, insurance, and any security interest, if applicable.\n\n\nNOTICE: ALL PAGES OF THIS LEASE CONTAIN IMPORTANT TERMS AND CONDITIONS, INCLUDING AN ARBITRATION PROVISION. THE TERMS AND\nCONDITIONS ON ALL PAGES ARE PART OF THIS LEASE\n\n\nTHE VALID AND COLLECTIBLE LIABILITY INSURANCE AND PERSONAL INJURY PROTECTION INSURANCE OF ANY AUTHORIZED RENTAL OR LEASING DRIVER IS\nPRIMARY FOR THE LIMITS OF LIABILITY AND PERSONAL INJURY PROTECTION COVERAGE REQUIRED BY SECTIONS 324.021(7) AND 627.736, FLORIDA STATUTES.\n\n\n*HFS-UCL-FL-e-14 1/21 v1* Page 1 of 5\n\n\nThis is not the Authoritative Copy.\n\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td colspan=\"3\">11. The Trade-In Vehicle</td></tr>\n<tr><td>Year N/A___</td><td>A. Gross Amount of Trade-In Allowance</td><td>$ N/A___</td></tr>\n<tr><td>Make N/A___</td><td>B. Less Trade-In Payoff</td><td>− $ N/A___</td></tr>\n<tr><td>Model N/A___</td><td>C. Net Trade-In Allowance (If less than 0 then enter 0)</td><td>= $ 0.00___</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">12. Itemization of Gross Capitalized Cost</td></tr>\n<tr><td>A. Agreed upon value of the Vehicle:</td><td>$ 26,949.00</td><td>L. N/A</td><td>$ N/A</td></tr>\n<tr><td>Other amounts included in the gross capitalized cost:</td><td></td><td>M. N/A</td><td>$ N/A</td></tr>\n<tr><td>B. Taxes</td><td>$ N/A</td><td>Optional Insurance, Products, and Services:</td><td></td></tr>\n<tr><td>C. Title, license, and registration fees</td><td>$ N/A</td><td>N. N/A</td><td>$ N/A</td></tr>\n<tr><td>D. Lease acquisition fee</td><td>$ 595.00</td><td>O. N/A</td><td>$ N/A</td></tr>\n<tr><td>E. Administration fee</td><td>$ N/A</td><td>P. N/A</td><td>$ N/A</td></tr>\n<tr><td>F. Prior credit or lease balance</td><td>$ N/A</td><td>Q. N/A</td><td>$ N/A</td></tr>\n<tr><td>G. Predelivery service charge<sup>**</sup></td><td>$ N/A</td><td>R. N/A</td><td>$ N/A</td></tr>\n<tr><td>H. Electronic registration fee<sup>**</sup></td><td>$ N/A</td><td>S. N/A</td><td>$ N/A</td></tr>\n<tr><td>I Delivery Handling Charges</td><td>$ 995.00</td><td>T N/A</td><td>$ N/A</td></tr>\n<tr><td>J N/A</td><td>$ N/A</td><td>U N/A</td><td>$ N/A</td></tr>\n<tr><td>K N/A</td><td>$ N/A</td><td rowspan=\"2\">V. Total Gross Capitalized Cost:</td><td>$ 28.539.00</td></tr>\n<tr><td colspan=\"2\">**This charge represents costs and profit to the dealer for items such as inspecting, cleaning, and adjusting vehicles, and preparing documents related to the sale.</td><td></td></tr>\n</table>\n\nIF YOU DO NOT MEET YOUR OBLIGATIONS UNDE\n13. Official Fees and Taxes. The total amount you will pay for official and license fees,\nregistration, title and taxes over the term of your Lease, whether included in your scheduled\npayments or assessed otherwise: $ 3,423.21 (e). The actual total of fees and taxes\nmay be different than this estimate based on changes in the tax or fee rates and the value of\nthe Vehicle when the fee or tax is determined.\n14. Late Payments. For any payment not received within 10 days of the date it\nis due, you will pay a late charge of $25 or 5% of the part of the payment that is late,\nwhichever is less.\n\n\nYou will not have to pay a late charge if the only amount that is late is a late charge you\nowed for an earlier late payment.\n15. Returned Payment and Unpaid Fines and Fees. You will also pay a returned payment\ncharge of $ 25.00 for any check, instrument or electronic funds debit that is\nreturned unpaid for any reason, if the law allows it. If you don't pay a fine, penalty, toll, or\nparking ticket and we elect to pay it, you will reimburse us for the amount paid plus a\n$ 25.00 Administrative Fee per incident, if the law allows it.\n\n\nDER THIS LEASE, WE MAY RETAKE THE VEHICLE.\n16. Warranties. The Vehicle is subject to the manufacturer's standard warranty, unless\n [ ] this box is checked:\n [ ] If this box is checked, the Vehicle is subject to the following express warranties:\nN/A\nN/A\nN/A\nWarranty papers that are separate from this Lease state any coverage limits.\nThe law gives you a warranty that the Vehicle conforms to the description in this\nLease. THERE ARE NO OTHER EXPRESS WARRANTIES ON THE VEHICLE.\nExcept as prohibited by law, the following sentence applies. WE DISCLAIM ANY\nWARRANTIES IMPLIED BY LAW, INCLUDING THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR ANY PARTICULAR PURPOSE.\nIf we make a written warranty covering the Vehicle or, within 90 days of the Lease\nDate we enter into a service contract covering the Vehicle, this disclaimer will not\naffect any implied warranties during the term of the warranty or service contract.\n\n\n**17. OPTIONAL INSURANCE, PRODUCTS, AND SERVICES**\nYou are not required to buy any of the following optional insurance, products, or services to enter into the Lease. The term of any optional insurance, product, or service will be the lease term, unless a different\nterm is shown below. If you decide you want to purchase insurance or an optional product or service, review the terms of the contract, policy, or certificate that describes the insurance, product, or service before\nyou initial below. A completed copy of the contract, policy, or certificate will be given to you as soon as practicable. **By initialing below, you indicate that you want to buy the optional insurance, products, or**\n**services indicated. If the cost shown below is not shown as part of the Itemization of Amount Due at Lease Signing or Delivery (Item 6), it has been added to the Gross Capitalized Cost (Item 12).**\n\n\n<table>\n<tr><td>Optional Insurance, Product or Service</td><td>Term/Coverage</td><td>Price</td><td>Name of Provider</td><td>Approval</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials ___ N/A N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials ___ N/A N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials ___ N/A N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials ___ N/A N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials N/A ___ N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials N/A ___ N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials N/A ___ N/A</td></tr>\n<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Lessee Initials N/A ___ N/A</td></tr>\n</table>\n\n18. EXTRA MILEAGE\nYou are purchasing N/A extra miles per year at a rate of $ N/A per mile. The extra miles are included in the amount shown in Item 8 \"Excessive Wear and Use.\"\n[ ] If this box is checked, you will receive a credit for unused purchased extra miles if this Lease ends on or after the start of the last monthly period (see Item 20A).\nThis credit will equal N/A cents per purchased unused mile times each mile under N/A, up to the N/A total extra miles you purchased.\nYou will not receive this credit for unused purchased miles if this Lease ends before the start of the last monthly period, the Vehicle is destroyed, you purchase the Vehicle, or you are in default.\n\n**19. TYPES AND AMOUNTS OF REQUIRED INSURANCE COVERAGE**\nYou must maintain the following types and minimum amounts of insurance: $ 10,000.00 ___ per person for bodily injury; $ 20,000.00 ___ per accident for bodily injury; $ 50,000.00\nper accident for property damage. If the minimum amounts of insurance required by the state in which the Vehicle is garaged are higher than amounts stated in this Lease, you agree to maintain\ninsurance that meets the minimum state requirements. You agree to maintain collision, fire, theft, and comprehensive coverage with a maximum deductible of $ 1,000.00 ___. See Item 25(a)\nfor additional insurance provisions. You confirm that insurance policies that meet the requirements described in this Lease are in force on the date of this Lease.\nInsurance Provider PROGRESSIVE INS ________________________________________________ Policy Number 210048921\nAgent's Name PROGRESSIVE INS ________________________________________________ Agent Phone Number (800) 274-4499\nAgent's Address 6300 WILSON MILLS DR, MAYFIELD VILLAGE, OH 44143 ________________________________________________________________________________________________________________________________________________\n\n\n<table>\n<tr><td>20. LAST MONTHLY PERIOD AND LEASE TERM</td><td>21. HOW THIS LEASE CAN BE CHANGED</td></tr>\n<tr><td>A. The start of the last monthly period for a monthly payment lease is the due date for the last monthly payment. For a single payment lease, the start of the last monthly period is the date that is one month before the scheduled lease end.</td><td>This Lease contains the entire agreement between you and us relating to this Lease. Any change to the Lease must be in writing and both you and we must sign it. No oral changes are binding. Lessee Signs X J Sample</td></tr>\n<tr><td>B. The scheduled lease term is 36 months.</td><td>Co-Lessee Signs X Jane Sample</td></tr>\n<tr><td colspan=\"2\">22. EXCESS WEAR WAIVER</td></tr>\n<tr><td colspan=\"2\">We will waive excess wear charges (Item 25(c)) in an amount up to $___500.00___ if, at the time this Lease ends, you are not in default under the terms of this Lease (Item 23).</td></tr>\n</table>\n\nHFS-UCL-FL-e-14 1/21 v1 Page 2 of 5\n\n\nThis is not the Authoritative Copy.\n\n\n<!-- PAGE BREAK -->\n\n23. DEFAULT, REPOSSESSION AND OTHER REMEDIES\nYou will be in default if:\n - You do not pay any payment on the scheduled due date; or\n - You do any of the following: - You do not pay any other amount due under this Lease when\nwe ask that you pay it; - You provide any false or misleading information in any Lease\napplication; - You fail to maintain required insurance; - You lose possession of the Vehicle by\nconfiscation, forfeiture or other involuntary transfer whether or not the Vehicle is the subject of\njudicial or administrative proceedings; - You assign the Lease or transfer the Vehicle without our\nprior written permission, or attempt to do either; - You start a bankruptcy, receivership, or\ninsolvency proceeding or one is started against you or your property; - You do anything that\nendangers the Vehicle or your ability to pay your Lease obligations; - You fail to return the\nVehicle when required to do so under this Lease; - You fail to meet any other obligation under\nthis Lease; - You do anything the law says a default.\nIf you are in default, after providing any notice and waiting any time the law requires, we may do any\nof the following: - End this Lease early and require you to pay the amount due at early termination;\n- Take any action we believe is required to protect our interest in the Vehicle (for example buying\ninsurance) and our action will not cure your default; - Add any amounts we spend taking these actions\nto your Lease obligation and charge rent on the amount added, or at our option, ask you to pay these\namounts right away; - If the Vehicle is equipped with electronic tracking technology, use it to find the\nVehicle; - Cancel any optional insurance, products, and services included with this Lease and apply\nany refund to your Lease obligations (you hereby instruct any provider of such insurance, products,\nand services to pay us any refund or credit due on early cancellation); - Take (repossess) the Vehicle\nwherever we find it and enter any property where the Vehicle may be to do so; - Sue you for damages\nor to get the Vehicle back; - Pursue any other remedy the law gives us.\nWe will exercise our rights without breach of the peace, at reasonable times and places, in a\nreasonable way, as the law allows. We may use the license plates on the Vehicle to move it to a\nstorage place. After repossessing the Vehicle, we will hold it free of any rights you may have under\nthis Lease, subject to any right the law gives you to cure the default or recover the Vehicle. We may\ntake and store any personal items that are in the Vehicle. If you do not ask for these items back, we\nmay dispose of them as the law allows. You will pay our reasonable expenses of taking these actions\nas the law allows. These expenses may include expenses of taking and storing the Vehicle,\nattorney's fees, collection costs, and court costs.\nTo the extent allowed by law, you waive: (i) notice that we intend to end this Lease and require you\nto return the Vehicle, (ii) notice that we have ended this Lease and that you are required to return the\nVehicle, (iii) notice that we intend to require you to pay the Early Termination Liability, (iv) notice that\nwe are requiring you to pay the Early Termination Liability, (v) notice of our intention to take\npossession of the Vehicle, (vi) notice that we have taken possession of the Vehicle, and (vii) any other\nnotices pertaining to our exercise of our rights or of our intention to exercise our rights.\n\n\n**24. EARLY TERMINATION LIABILITY**\n**When the Lease Can End Early.** You may terminate (end) the Lease early by returning the Vehicle\nto us and paying us your early termination liability (see below) when we ask for it.\nWe may end the Lease early if you are in default; the Vehicle is destroyed or damaged beyond repair,\nstolen or lost (a \"Total Loss\"); or you die and there is no surviving lessee. If we end the Lease, you\nmust return the Vehicle to the place we designate and pay us the early termination liability (see\nbelow) when we ask for it.\n\n\n**Early Termination Liability.** Unless the Vehicle is a Total Loss, forfeited, or confiscated subject to\nItem 25(b), we will figure your early termination liability as follows:\n\n\n**Monthly Payment Lease.** You will owe the amount, if any, by which the Adjusted Lease\nBalance (see definition below) exceeds the Vehicle's Fair Market Wholesale Value (see\ndefinition below) at termination. If this amount is more than the total of the following amounts,\nyou will instead pay the total of the following amounts: - The total of your base scheduled\npayments not yet due; - An excess wear charge (see Item 25(c)); and - An excess mileage\ncharge for any miles in excess of the permitted mileage during the scheduled lease term at\nthe rate per mile shown in Item 8.\n\n\n**Single Payment Lease.** The Base Scheduled Payment (Item 7I) paid at lease sighing prepays\nthe depreciation and any amortized amounts (Item 7E) and the rent charge (Item 7F). If the\nVehicle's Fair Market Wholesale Value at termination (see definition below) exceeds the\nAdjusted Lease Balance (see definition below), we will give you a credit for the excess up to the\namount of the Unused Base Scheduled Payment (see definition below). If the Adjusted Lease\nBalance exceeds the Vehicle's Fair Market Wholesale Value at termination, you will owe the\n - An excess wear charge (see Item 25(c)); and\n - An excess mileage charge for any miles in excess of the permitted mileage during the\nscheduled lease term at the rate per mile shown in Item 8.\n\n\nIn addition to the amounts described above, you will also owe us the Item 4A Turn-In Fee unless this\nfee is waived under Item 25(t) plus the Additional Amounts Due and we will apply the Additional\nCredits to the amount you owe (see Item 25(s)).\n\n\n**Definition of Adjusted Lease Balance.**\n**Monthly Payment Lease.** The Adjusted Lease Balance equals the difference between: (1) The\nItem 7C Adjusted Capitalized Cost; and (2) all depreciation and amortized amounts in the base\nscheduled payments that have become due. Each Item 7I Base Scheduled Payment consists\nof - a rent charge portion; and - a portion allocable to depreciation and any amortized amounts.\nAlthough the amount of your Item 7I Base Scheduled Payment does not change, different\nportions of each Base Scheduled Payment are allocated to - rent charge; and - depreciation and\nany amortized amounts. The portion of a Base Scheduled Payment that is allocated to\ndepreciation and any amortized amounts is equal to the Base Scheduled Payment minus the\nrent charge for that month. We use the Constant Yield Method to figure the rent charge portion\nof each Base Scheduled Payment. Under the \"Constant Yield Method,\" the rent charge for each\nscheduled period is earned in advance by multiplying the constant rate implicit in this Lease\ntimes the Balance Subject to Rent Charge as it declines during the lease term. At any given time\nduring the lease term, the \"Balance Subject to Rent Charge\" is the difference between the Item\n7C Adjusted Capitalized Cost and the sum of: (i) all depreciation and amortized amounts\naccrued during the previous monthly periods, and (ii) any Base Scheduled Payment paid at\nLease signing or delivery. The scheduled rent charge calculations are based on the assumption\nthat we will receive your scheduled payments on their exact due dates and that the Lease goes\nto its full term.\n\n\n**Single Payment Lease.** The Adjusted Lease Balance at the beginning of the Lease equals: (i)\nThe Item 7C Adjusted Capitalized Cost; minus (ii) the Item 7I Base Scheduled Payment. At the\nbeginning of each month, the Adjusted Lease Balance increases by the rent charge for that\nmonth. We use the Constant Yield Method to figure the rent charge for each month. Under the\n\"Constant Yield Method\" the rent charge for each monthly period is earned in advance by\nmultiplying the constant rate implicit in this Lease times the Balance Subject to Rent Charge as\nit increases during the lease term. At any given time during the lease term, the \"Balance\nSubject to Rent Charge\" equals: (i) the Item 7C Adjusted Capitalized Cost; minus (ii) the Item\n7I Base Scheduled Payment; plus (iii) all rent charges accrued during previous monthly periods.\nThe rent charge calculations are based on the assumption that the Lease goes to its full term.\n\n\n**Definition of Fair Market Wholesale Value.** Unless you exercise your independent appraisal right\n(see below) or you and we agree on another amount, the Fair Market Wholesale Value of the Vehicle\nis, at our option: - the price we receive for the Vehicle at disposition; - the highest offer we receive for\ndisposition of the Vehicle; - or the wholesale fair market value of the Vehicle.\n\n\n**Definition of Unused Base Scheduled Payment (Single Payment Lease).** The Unused Base\nScheduled Payment equals: (i) the Item 7I Base Scheduled Payment; divided by (ii) the number of\nmonths in the lease term (Item 20B); times (iii) the number of full months remaining after the date\nof the early termination until the scheduled lease end.\n\n\n**Your Independent Appraisal Right.** To the extent your early termination liability takes into account\nthe value of the Vehicle at termination, you may get a professional appraisal of the Vehicle's fair\nmarket wholesale value. If you do so within a reasonable time, we will use the appraised value as the\nFair Market Wholesale Value. The appraiser must be an independent third party. You and we must\nagree on the appraiser. You must pay for any appraisal. The appraisal will be binding.\n\n\n**25. OTHER TERMS AND CONDITIONS**\n (a) **Insurance.** For the duration of the lease term, and until you return the Vehicle, you agree to\nmaintain the amounts and types of primary insurance as indicated in Item 19 on page 2 of this\nLease in your name. You may buy the insurance from any insurance company authorized to do\nbusiness and that is reasonably acceptable to us. You must indicate us or anyone we require\nas an additional insured and loss payee on your policy. Your policy must state that we will be\ngiven at least 30 days' notice of any material coverage change, reduction, or cancellation. If\nyour insurer does not pay a claim for any reason, it will mean that you have not maintained the\nrequired insurance. You will pay for any loss we incur because you do not maintain required\ninsurance or because the insurer does not pay a claim. If you fail to obtain and maintain the\nrequired insurance, we may, if we choose, buy it for you. We may add the amount we pay for\nthis insurance to your unpaid Lease obligations and charge rent on the amount added, or at our\noption, ask you to pay it right away. If we decide to buy this insurance, we may either buy\ninsurance that covers your interest and our interest, or buy insurance that covers only our\ninterest, unless the law requires us to buy insurance that also protects your interest. If the\nVehicle is damaged, stolen, or destroyed, and money becomes available from insurance, a\njudgment, a settlement, or the like, we will be entitled to the money. If the Lease ends in\nconnection with our receipt of the money or has already ended at the time we receive it, we will\ntreat any of the money we do not use to repair the Vehicle as part of the price we received for\nthe Vehicle at disposition, unless otherwise provided for in Item 25(b).\nNOTICE: PHYSICAL DAMAGE OR LIABILITY INSURANCE COVERAGE FOR BODILY\nINJURY AND PROPERTY DAMAGE TO OTHERS IS NOT INCLUDED IN THIS LEASE.\n (b) **Total Loss, Forfeiture or Confiscation of Vehicle.** If, during the lease term, the Vehicle is a\nTotal Loss (as described in the second paragraph of Item 24, Early Termination Liability) or the\nVehicle is forfeited or confiscated under governmental authority, we will end the Lease early as\ndescribed in Item 24 Early Termination Liability, and you will owe the amounts described in the\nfollowing paragraphs of this Item 25(b) instead of the amounts described in Item 24. You will\nnotify us in writing after any event that might cause the Vehicle to be a Total Loss or to be\nforfeited or confiscated under governmental authority. You will promptly file a police report if the\nVehicle is stolen or lost. You will give us any documents we request that are reasonably related\nto a Total Loss.\n\n\nMonthly Payment Lease.\n01\nIf the Vehicle is a Total Loss that is not the result of your fraudulent, criminal, or other\nintentional wrongful act and we receive a settlement under an insurance policy that\ncomplies with the requirements of this Lease (see Items 19 and 25(a)), you will have gap\nprotection, which means:\nWe will deduct the Additional Credits (see Item 25(s)) from the Adjusted Lease\nBalance (see Item 24) to compute a net lease balance (the \"Net Lease Balance\")\n\n\nIf the Net Lease Balance is greater than the insurance settlement we receive, you\nwill owe the excess up to the sum of the following: (i) the amount of your insurance\ndeductible; and (ii) the total amount of any deductions from the value of the Vehicle\nused to compute the insurance settlement we receive due to past due premiums or\nthe condition of the Vehicle before the Total Loss occurred.\nIf the insurance settlement we receive is greater than the Net Lease Balance, you\nwill receive a credit for any excess up to the amount of the Additional Credits\ndeducted above.\n\n\nIf: (i) the Vehicle is a Total Loss and we do not receive a settlement under an insurance\npolicy that complies with the requirements of this Lease, (ii) the Total Loss is the result of\nyour fraudulent, criminal, or other intentional wrongful act, or (iii) the Vehicle was forfeited\nor confiscated under governmental authority, then you do not have gap protection, which\nmeans:\n\n\nYou will owe us: (i) the Adjusted Lease Balance; minus (ii) any part of your\ninsurance deductible that you pay us; minus (iii) any settlement we receive from\nyour insurance company; minus (iv) any amount we receive for selling the Vehicle\nas salvage; plus (v) if the Vehicle is returned to us, the Item 4A Turn-In Fee unless\nthis fee is waived under Item 25(t). If the amount we figure in the preceding\nsentence is less than zero, we will not give you a credit for that amount. We will\napply the Additional Credits to the amount you owe (see Item 25(s)).\n\n\n**Single Payment Lease.**\nIf the Vehicle is a Total Loss that is not the result of your fraudulent, criminal, or other\nintentional wrongful act and we receive a settlement under an insurance policy that\ncomplies with the requirements of this Lease (see Items 19 and 25(a)), you have gap\nprotection, which means:\n\n\nYou will receive a credit for the Unused Base Scheduled Payment (see Item 24).\nWe will deduct the Additional Credits (see Item 25(s)) from the sum of the Adjusted\nLease Balance (see Item 24) and the Unused Base Scheduled Payment to compute\na net lease balance (the \"Net Lease Balance\").\n\n\nIf the insurance settlement we receive is greater than the Net Lease Balance, you\nwill also receive a credit for the excess up to the amount of the Additional Credits\ndeducted above.\n\n\nIf the Net Lease Balance is greater than the insurance settlement we receive, you\nwill owe the excess up to the sum of the following: (i) the amount of your insurance\ndeductible; and (ii) the total amount of any deductions from the value of the Vehicle\nused to compute the insurance settlement we receive due to past due premiums or\nthe condition of the Vehicle before the Total Loss occurred.\n\n\nIf: (i) the Vehicle is a Total Loss and we do not receive a settlement under an insurance\npolicy that complies with the requirements of this Lease, (ii) the Total Loss is the result of\nyour fraudulent, criminal, or other intentional wrongful act, or (iii) the Vehicle was forfeited\nor confiscated under governmental authority, then you do not have gap protection, which\nmeans:\n\n\nYou will owe us: (i) the Adjusted Lease Balance; minus (ii) any part of your\ninsurance deductible that you pay us; minus (iii) any settlement we receive from\nyour insurance company; minus (iv) any amount we receive for selling the Vehicle\nas salvage; plus (v) if the Vehicle is returned to us, the Item 4A Turn-In Fee unless\nthis fee is waived under Item 25(t). If the amount we figure in the preceding\nsentence is less than zero, we will give you a credit for that amount, up to the\namount of the Unused Base Scheduled Payment. We will apply the Additional\nCredits to the amount you owe (see Item 25(s)).\n\n\nIn addition to the amounts in this Item 25(b), you will also owe us the Additional Amounts Due\n(see Item 25(s)). You will receive a credit for the Additional Credits only as described in this Item\n25(b).\n\n\nHFS-UCL-FL-e-14 1/21 v1\n\n\nPage 3 of 5\n\n\nThis is not the Authoritative Copy.\n\n\n<!-- PAGE BREAK -->\n\n**(c)** **Standards for Wear and Use.** You agree to pay an excess mileage charge as indicated in Item 8\nand an excess wear charge, at the early end of this Lease to the extent provided for in Item 24 or\nat the scheduled lease end, minus the amount, if any, of the excess wear charge waived under Item\n22. Excess wear is wear beyond the minor wear reasonably expected to result from ordinary use of\nthe Vehicle, assuming you maintain the Vehicle as this Lease requires (Item 25(g)) and use the\nVehicle as this Lease permits (Item 25(i)). The excess wear charge will be our actual or estimated\ncost of repairing any excess wear. (We do not have to make the repairs.) Repairs, including tires,\nmust be made with original equipment manufacturer's parts or those of equal quality and\nperformance. These include but are not limited to those necessary to repair or replace: • painting or\nlettering the Vehicle or modifying its VIN; • accessories, equipment, or parts that have been added,\nremoved, damaged or modified (including missing keys or remote entry devices) without our prior\nwritten permission; • road damage, chips, scratches, cracks, plugs, tinting, staining, corrosion or\ndamage to the glass, paint, body, bumpers, suspension, engine, powertrain, frame, wheels, floor\ncoverings, seats or any other part of the interior; • mechanical or electrical malfunction, upholstery,\ninterior or trunkliner damage, stains or tears, dented trim or molding, or damage from water, sand,\nor freezing; • inoperable lights; • tires that have sidewall plugs, gouges, cuts or exposed cords or are\nnot part of a matching set of five tires or of unequal quality to the originals (or four with a spare of\nquality and type as the original); • one or more tires with less than 1/8 inch of tread remaining at the\nshallowest point; • any condition that renders the Vehicle unsafe, incapable of passing any required\ninspection or makes the Vehicle run noisy, rough or unsafely; and • any other wear beyond normal\nwear. The failure to adequately maintain or repair the Vehicle may be considered excess wear. You\nwill not owe a charge for excess mileage or excess wear if you purchase the Vehicle.\n**(d)** **Security Deposit.** If you paid a security deposit this paragraph applies. Unless required by law, we\ndo not keep the security deposit separate in a bank or earmarked on our books. We may apply some\nor all of the security deposit to any amounts you owe under this Lease, or, if you exercise your\npurchase option, to the price of the Vehicle. Any unused security deposit will be returned to you at\nthe end of the Lease. We have no fiduciary duty to you with respect to the security deposit unless\nsuch duty is imposed by law. No interest, increase, or profit on the security deposit will accrue or be\npaid to you.\n**(e)** **Option to Purchase Vehicle.** You have the option to buy the Vehicle at any time from a party\ndesignated by us. If you do, you agree to re-register and re-title the Vehicle in your name no later\nthan 30 days from the time you purchase it. If you fail to do so, we reserve the right to cancel the\nregistration. Before the scheduled lease end, the price will be the Adjusted Lease Balance (see Item\n24) plus the Item 9 purchase option price minus the Item 7D Residual Value. At the scheduled lease\nend, the price will be the Item 9 purchase option price. At either time, you must also pay the\nAdditional Amounts due and we will apply the Additional Credits to the amount you owe (see Item\n25(s)). Under this Lease, you will only be considered to have purchased the Vehicle if we assign the\nVehicle's title directly to you.\n**(f)** **Return of the Vehicle.** If you do not exercise your purchase option, you will return the Vehicle to us\nat a place we designate when this Lease ends. You agree to make the Vehicle available for\ninspection at our request. When you return the Vehicle, you must give us a completed, signed\nodometer disclosure statement. If you keep the Vehicle after the scheduled lease end, unless you\nreturn it within any grace period we offer, you will pay us at the beginning of each month for any part\nof a month you keep the Vehicle, an amount equal to:\n • For a monthly lease, the Item 7M Total Scheduled Payment.\n • For a single payment lease, the Item 7M Total Scheduled Payment divided by the number of\nmonths in the lease term (Item 20B).\nYour payment does not permit you to keep the Vehicle unless you get our permission in advance.\n**(g)** **Maintenance.** You will maintain the Vehicle in good working order and repair. You will pay all\noperating costs, such as gasoline, oil, and replacement tires. You will, at your expense, service the\nVehicle according to the owner's manual maintenance schedule. If the Vehicle is recalled, you will\nhave the recall repairs or service performed. You will use original equipment manufacturer's parts or\nthose of equal value, quality, and performance in the maintenance and service of the Vehicle. We\nmay but are not required to provide you with a replacement vehicle for any reason. You will maintain\nand keep in the Vehicle a record of all maintenance performed on the Vehicle. This maintenance\nrecord will be available to us at any time, and will be provided to us at the end of the Lease.\n**(h)** **Registration, Parking Tickets, Tolls and Taxes.** You must keep the Vehicle currently registered.\nYou must pay all parking tickets, tolls and traffic fines relating to the Vehicle. If you do not pay such\ntickets, tolls and fines, we may do so for you, and you will pay us upon demand. We may add the\namount to what you owe us if you do not pay us when we make demand. You must pay when due\nor reimburse us if we pay for you, all government charges, fees and taxes whether assessed\non you, us, or the Vehicle. You will not have to pay our income taxes. If you do not pay the charges,\nfees and taxes, and interest or penalties are assessed (unless the interest or penalties are a result\nof our negligence), you must pay the interest or penalties when due and whether we pay them,\nand whether we pay them by the government or whether we pay them and bill you for them or\nyou must pay personal property taxes, ad valorem, sales, use or similar taxes assessed on\nthe Vehicle, whether such fees or taxes are billed during or after the lease term, and whether\nyou are billed for them by the government or whether we pay them and bill you for them or\ninclude the amount of such taxes as part of your scheduled payment. We may change your\nscheduled payment if taxes change. If you don't pay a fine, penalty, toll or parking ticket and we elect\nto pay it, you will reimburse us for the amount paid plus the Item 15 Administrative Fee.\n**(i)** **Use of the Vehicle.** You will keep the Vehicle free from any liens or claims. You have the risk of loss,\nand are responsible for the Vehicle's damage or destruction. You will not: • Use the Vehicle illegally,\nimproperly such as for towing that exceeds the manufacturer's towing recommendations, or for hire,\nsuch as for providing taxi services or for business purpose ridesharing; • Without our prior written\nconsent, alter or install equipment that makes the Vehicle unsafe or unlawful to operate; • Use the\nVehicle in a manner that your insurance policy prohibits or in a way that produces unusually high\ndepreciation; • Allow unlicensed drivers to drive the Vehicle; • Use the Vehicle for more than 30 days\noutside the state where you originally registered the Vehicle without prior written notice to us and our\nprior written consent; • Take the Vehicle out of the United States without our prior written consent; •\nUse the Vehicle in high performance driving events, auto racing of any kind, high performance\nschools, or any similar activities; • Use the Vehicle for off-road travel or activities unless the Vehicle\nis a sport utility vehicle; or • Change the Vehicle without our prior written consent. You will not let\nanyone else do any of these things.\n**(j)** **Indemnification.** We are not responsible for any injuries, damages, expenses or claims,\nincluding claims for attorney fees or under the strict liability doctrine, caused by the\nmaintenance, condition, or operation or use of the Vehicle. You agree to indemnify and hold\nus (and our assignees, successors, agents, and insurers) harmless for all such injuries,\ndamages, expenses and claims.\n**(k)** **Assignment of Returned Premiums and Other Amounts.** You assign to us any unearned\nreturned premiums or charges or other amounts relating to insurance or any optional product or\nservice sold in connection with this Lease and returned or paid to us. We will use these amounts to\nreduce amounts you owe under the Lease. You will earn no interest, increase, or profit with respect\n\n\n(l) **Your Odometer Obligations.** You will maintain the odometer of the Vehicle so that it always reflects\nthe Vehicle's actual mileage. If the odometer is at any time inoperable, you will provide us with\nreasonable evidence of the Vehicle's actual mileage. If you are unable to do so, you will pay us our\nreasonable estimate of any reduction of the Vehicle's fair market value caused by the inability to\ndetermine the Vehicle's actual mileage. You will provide us with an odometer certification at any time\nwe request one. We may request more than one certification during the term of this Lease.\nImportant Note: Federal law requires you to tell the Vehicle's mileage in connection with\na transfer of Vehicle ownership. You may be fined and/or imprisoned if you do not complete\nthe disclosure or if you make a false statement.\n(m) Assignment and Transfer of the Vehicle. You may not assign the Lease or transfer the Vehicle\nwithout our prior written permission. We may assign all of our rights under this Lease. Any\nperson to whom this Lease is assigned may reassign it. Any sale and assignment by us will not be\nconsidered to change materially your duties, burden, or risk under this Lease.\n(n) Ownership. We are the sole owners of the Vehicle including original accessories and any installed\nafter the Lease begins. This is a true lease for tax and other purposes and we receive all benefits of\nownership. We have not given you any information or advice regarding possible tax consequences\nunder this Lease.\n(o) Inspection. Upon reasonable notice to you, at any reasonable plane and time we choose we may\ninspect this Vehicle and you agree to cooperate with such inspection.\n(p) Waiver. We may delay or refrain from enforcing any of our rights under this Lease without losing\nthem.\n(q) Giving Notice. Notices may be given personally or sent by first class mail. Notices mailed to us\nmust be sent to the address shown in this Lease or as we otherwise direct from time to time. Notices\nshall be deemed given to us when they are personally given or actually received at our address.\nNotices shall be deemed given to you when they are personally given or when placed in the mail,\naddressed to you at your address then shown on our records, even though you might not actually\nreceive our mailed notice. You agree that 10 days' notice is a reasonable notice period, unless state\nlaw requires a longer period, in which case you agree that the state-required period is reasonable.\n(r) Servicing and Collection Contacts. You agree that we as well as any third party calling on our\nbehalf and any assignee may try to contact you in writing, by e-mail, or using prerecorded/artificial\nvoice messages, text messages, and automatic telephone dialing systems, as the law allows. You\nalso agree that we as well as any third party calling on our behalf and any assignee may try to\ncontact you in these and other ways at any address or telephone number you provide us, even if the\ntelephone number is a cell phone number or the contact results in a charge to you. You agree to\nprovide us with current contact information.\n(s) Additional Amounts Due and Additional Credits. Regardless of how this Lease ends, you will\nowe us the following amounts: Any official fees and taxes related to the termination. Any other\namounts due under this Lease including any unpaid late charges or other amounts due because you\nfailed to meet your obligations under this Lease (\"Additional Amounts Due\"). If this Lease ends early,\nwe may cancel any optional insurance, maintenance, service, or other contracts included in this\nLease or claim benefits under them to reduce what you owe or repair the Vehicle (\"Additional\nCredits\").\n(t) Turn-In Fee Waiver. The Item 4A Turn-In Fee will be waived if, at the time this Lease ends, you enter\ninto a motor vehicle lease or installment sale contract that the dealer assigns to Honda Financial\nServices.\n(u) Liability Upon Termination at Scheduled Lease End or On or After the Start of Last Monthly\nPeriod. Upon return of the Vehicle, you will pay us the total of the following amounts: • the Item 4A\nTurn-In Fee unless this fee is waived under Item 25(t); • an excess mileage charge for any miles in\nexcess of the permitted mileage during the scheduled lease term at the rate per mile shown in Item\n8; • any excess wear charge (Item 25(c)); • any amounts due under Item 25(f) because you failed to\nreturn the Vehicle on time; • the Additional Amounts Due (see Item 25(s)). We will apply the\nAdditional Credits to the amount you owe (see Item 25(s)).\n(v) Settlement of Insurance Claims. If there is any damage or loss to the Vehicle, you agree that we\nor our agent may settle any insurance claim or sign your name on any title or registration or on any\ncheck or draft we receive for that Vehicle damage or loss.\n(w) Jury Trial Waiver. In the event of litigation, concerning any claim or dispute,\nwhether in contract, tort, or otherwise, you and we each agree to waive any right\nyou and we may have to a jury trial, as the law allows.\n(x) Telematics System Consent. The Vehicle is equipped with a Telematics System that collects and\ntransmits to Lessor and its affiliates detailed information about the Vehicle's location, condition\noperation (including speed, throttle and brake input, crash events and servicing), information that\nmay be tied to the vehicle identification number (VIN) and can be combined to create a track of a\nvehicle, as well as the operator's utilization of vehicle features. One of the important functions of this\nprogram is to provide Lessor with important real-world information about Lessee use, including, but\nnot limited to: use habits, demographic profiles, and vehicle performance. You authorize us (and/or\nour affiliates) to collect, retain, and use such information.\n(y) Like-Kind-Exchange (LKE) Notice. Notice is hereby given that HVT, Inc and Honda Lease Trust\nhave assigned all of their rights (but not their obligations) to purchase and/or sell this Vehicle to\nHonda Finance Exchange, Inc., pursuant to the Sub-Servicing and Master Exchange Agreement.\n(z) General. Federal law and the law of the state of Lessor's address on page 1 of this Lease apply to\nthis Lease. If any part of this Lease is invalid, unenforceable or illegal in any jurisdiction, the part that\nis invalid, unenforceable or illegal will not be effective as to that jurisdiction. The rest of the Lease\nwill be enforceable except as provided in the Arbitration Provision, on page 5 of this Lease. Its\nLease is our entire agreement. We have made no promises to you not contained in this Lease. If\nany part of this Lease is found by a court or other dispute resolution body to be void or\nunenforceable, this Lease is to be read as if that part were never contained in this Lease.\n(aa) Electronic Contracting and Signature Acknowledgment. You agree that (i) any electronic signature\nelectronic contract executed by you using your electronic signature, (ii) your electronic signature\nsignifies your intent to enter into this Lease and that this Lease be legally valid and enforceable in\naccordance with its terms to the same extent as if you had executed this Lease using your written\nsignature, and (iii) the authoritative copy of this Lease (\"Authoritative Copy\") shall be that electronic\ncopy that resides in a document management system designated by us for the storage of\nauthoritative copies of electronic records, which shall be deemed held by us in the ordinary course\nof business. Notwithstanding the foregoing, if the Authoritative Copy is converted by printing a paper\ncopy which is marked by us as the original (the \"Paper Contract\"), then you acknowledge and agree\nthat (1) your signing of this Lease with your electronic signature also constitutes issuance and\ndelivery of such Paper Contract, (2) your electronic signature associated with this Lease, when\naffixed to the Paper Contract, constitutes your legally valid and binding signature on the Paper\nContract and (3) subsequent to such conversion, your obligations will be evidenced by the Paper\nContract alone.\n\n\n\n\n\nHFS-UCL-FL-e-14 1/21 v1 Page 4 of 5\n\n\nThis is not the Authoritative Copy.\n\n\n<!-- PAGE BREAK -->\n\n**Lessor's Right to Cancel**\n a. Lessor agrees to deliver the vehicle to you on the date this Lease is signed by Lessor and you. You understand that it may take some time for Lessor to verify\nyour credit, locate financing for you on the exact terms shown on page 1 of this Lease, and assign this Lease to a financial institution. You agree that Lessor has\nthe number of days stated below to assign this Lease. You agree that if Lessor is unable to assign this Lease within this time period to any one of the financial\ninstitutions with whom Lessor regularly does business under an assignment acceptable to Lessor, Lessor may cancel this Lease. Lessor's right to cancel this\nLease ends upon assignment of this Lease.\n b. If Lessor elects to cancel per Paragraph a. above, Lessor will give you written notice (or in any other manner in which actual notice is given to you). In that event,\nyou may have the option of negotiating and signing a new Lease with different financing terms (for example, a larger down payment, a higher annual percentage\nrate, a required cosigner, etc.) or you may pay with alternate funds arranged by you.\n c. Upon receipt of the notice of cancellation, you must return the vehicle to Lessor within 48 hours in the same condition as when sold other than reasonable wear\nfor the time you had it. Except as described below, Lessor must give you back all consideration Lessor has received from you in connection with this Lease.\n d. If you do not return the vehicle within 48 hours after receipt of the notice of cancellation, you agree that Lessor may use any lawful means to take it back (including\nrepossession if done peacefully) and you will be liable for all expenses incurred by Lessor in taking the vehicle from you, including reasonable attorney's fees. If\nyou fail to return the vehicle within 48 hours after receipt of the notice of cancellation, you agree to pay Lessor the charge shown in the Lessor's Right to Cancel\nprovision below for each day you do not return the vehicle after receipt of the notice of cancellation.\n e. While the vehicle is in your possession, all terms of this Lease, including those relating to use of the vehicle and insurance for the vehicle, are in full force and\nyou assume all risk of loss or damage to the vehicle. You must pay all reasonable costs for repair of any damage done to the vehicle while the vehicle is in your\npossession. Lessor may deduct from any consideration due to you under paragraph c. above Lessor's reasonable costs to repair the vehicle and any daily charges\nyou incur if you fail to return the vehicle within 48 hours after receipt of the notice of cancellation. If Lessor cancels this Lease, the terms of this Lessor's Right\nto Cancel provision (including those below) remain in effect even after you no longer have possession of the vehicle.\n\n\n**26. ARBITRATION PROVISION**\n**ARBITRATION PROVISION**\n**PLEASE REVIEW - IMPORTANT - AFFECTS YOUR LEGAL RIGHTS**\n1. EITHER YOU OR WE MAY CHOOSE TO HAVE ANY DISPUTE BETWEEN US DECIDED BY ARBITRATION AND NOT IN COURT OR BY JURY TRIAL.\n2. IF A DISPUTE IS ARBITRATED, YOU WILL GIVE UP YOUR RIGHT TO PARTICIPATE AS A CLASS REPRESENTATIVE OR CLASS MEMBER ON ANY CLASS CLAIM YOU MAY HAVE\nAGAINST US INCLUDING ANY RIGHT TO CLASS ARBITRATION OR ANY CONSOLIDATION OF INDIVIDUAL ARBITRATIONS.\n3. DISCOVERY AND RIGHTS TO APPEAL IN ARBITRATION ARE GENERALLY MORE LIMITED THAN IN A LAWSUIT, AND OTHER RIGHTS THAT YOU AND WE WOULD HAVE IN COURT MAY\nNOT BE AVAILABLE IN ARBITRATION.\nAny claim or dispute, whether in contract, tort, statute or otherwise (including the interpretation and scope of this Arbitration Provision, and the arbitrability of the claim or dispute), between you and\nus or our parents, subsidiaries, affiliates, employees, officers, agents, representatives, predecessors, successors or assigns, (individually and collectively \"us\" or \"our\") which arises out of or relates\nto your credit application, origination or servicing of this Lease, the manufacture, delivery, condition, or performance of this Vehicle, any representations, omissions, or warranties, or any resulting\ntransaction or relationship (including any such relationship with third parties who do not sign this Lease) shall, at your or our election, be resolved by neutral, binding arbitration and not by a court\naction. If federal law provides that a claim or dispute is not subject to binding arbitration, this Arbitration Provision shall not apply to such claim or dispute. Any claim or dispute is to be arbitrated by\na single arbitrator on an individual basis and not as a class action. You expressly waive any right you may have to arbitrate a class action. You may choose the American Arbitration Association\n(www.adr.org), JAMS (www.jamsadr.com), National Arbitration and Mediation (www.namadr.com), or any other organization to conduct the arbitration subject to our approval. You may get a copy of\nthe rules of an arbitration organization by contacting the organization or visiting its website.\nArbitrators shall be attorneys or retired judges familiar with vehicle leasing, auto or consumer finance, and shall be selected pursuant to the applicable rules. The arbitrator shall apply governing\nsubstantive law and the applicable statute of limitations. The arbitration hearing shall be conducted in the federal district in which you reside unless the Lessor named on page 1 of this Lease is a\nparty to the claim or dispute, in which case the hearing will be held in the federal district where this Lease was executed. You and we will pay the filing, administration, service, or case management\nfee and the arbitrator or hearing fee in accordance with the rules and procedures of the chosen arbitration organization. If the rules of the chosen arbitration organization do not specify how fees must\nbe allocated, we will pay the filing, administration, service or case management fee and the arbitrator or hearing fee up to a maximum of $5,000, unless the law requires us to pay more. The amount\nwe may pay be reimbursed in whole or in part by decision of the arbitrator if that any of your claims is frivolous under applicable law. Each party shall be responsible for its own\nattorney, expert and other fees, unless awarded by the arbitrator under applicable law. If the chosen arbitration organization's rules conflict with this Arbitration Provision, then the provisions of this\nArbitration Provision shall control.\nAny arbitration under this Arbitration Provision shall be governed by the Federal Arbitration Act (9 U.S.C. § 1 et seq.) and not by any state law concerning arbitration. Any award by the arbitrator shall\nbe in writing and will be final and binding on all parties, subject to any limited right to appeal under the Federal Arbitration Act. You and we retain the right to seek remedies in small claims court for\ndisputes or claims within that court's jurisdiction, unless such action is transferred, removed or appealed to a different court.\nNeither you nor we waive the right to arbitrate by using self-help remedies, such as repossession, or by filing an action to recover the Vehicle, to recover amounts you owe under this Lease, or for\nindividual injunctive relief. Any court having jurisdiction may enter judgment on the arbitrator's award. This Arbitration Provision shall survive any termination, payoff or transfer of this Lease. If any\npart of this Arbitration Provision, other than waivers of class action rights, is deemed or found to be unenforceable for any reason, the remainder shall remain enforceable. If a waiver of class action\nrights is deemed or found to be unenforceable for any reason in a case in which class action allegations have been made, the remainder of this Arbitration Provision shall be unenforceable.\nOpt Out: If you would like to opt out of arbitration, you may send us a written notice of opt out. The notice of opt out must provide your name, a description of the leased vehicle, including vehicle\nidentification number (VIN), and a statement that you want to opt out of the arbitration provision. The written notice must be postmarked within 30 days of the date of this Lease and sent to Honda Financial\nServices, P.O. Box 165007, Irving, TX 75016. You agree that we may make changes to this Arbitration Provision if we notify you of the changes and give you another opportunity to opt out.\n\n\n**27. LESSOR'S ASSIGNMENT**\nPursuant to the terms of that certain agreement between Lessor and the Assignee for the assignment of leases by Lessor to Assignee from time to time, Lessor hereby assigns all right,\ntitle and interest in the Lease and the Vehicle and rights the Lessor may have under any guaranty executed in connection with the Lease, with full powers to Assignee to collect and\ndischarge all obligations, any guaranty and this assignment.\n\n\n[SIGNED]\nAgreement to Arbitrate: By signing below, you agree that, pursuant to the Arbitration Provision, Item 26 above, you or we may elect to resolve any dispute by neutral,\nbinding arbitration and not by a court action. See the Arbitration Provision for additional information concerning the agreement to arbitrate.\nLessee Signs X J Sample                                       Co-Lessee Signs X Jane Sample\nLESSOR'S RIGHT TO CANCEL - If Lessor is unable to assign this Lease within N/A days, the provisions of the Lessor's Right to Cancel section above\nwill apply. If you fail to return the vehicle within 48 hours after receipt of the notice of cancellation, you agree to pay Lessor a charge of $ N/A per day\nfrom the date of cancellation until the vehicle is returned or repossessed.\n\n\nTHIS IS A LEASE AGREEMENT. THIS IS NOT A PURCHASE AGREEMENT.\nPLEASE REVIEW THESE MATTERS CAREFULLY AND SEEK INDEPENDENT PROFESSIONAL ADVICE IF YOU HAVE ANY QUESTIONS\nCONCERNING THIS TRANSACTION. YOU ARE ENTITLED TO AN EXACT COPY OF THE AGREEMENT YOU SIGN.\nNOTICE TO THE LESSEE: DO NOT SIGN THIS LEASE BEFORE YOU READ IT OR IN BLANK. YOU ARE ENTITLED TO A COPY OF THIS LEASE WHEN YOU SIGN IT. KEEP IT TO\nPROTECT YOUR LEGAL RIGHTS.\nYOU AGREE TO THE TERMS OF THIS LEASE. YOU ACKNOWLEDGE YOU HAVE EXAMINED THE VEHICLE. THAT THE VEHICLE IS EQUIPPED AS YOU WANT. AND THAT IT IS IN\nGOOD CONDITION. YOU ACCEPT THE VEHICLE FOR ALL PURPOSES OF THE LEASE. YOU UNDERSTAND THAT YOU HAVE NO OWNERSHIP RIGHTS IN THE VEHICLE UNLESS\nYOU EXERCISE YOUR OPTION TO PURCHASE THE VEHICLE. YOU CONFIRM THAT BEFORE YOU SIGNED THIS LEASE. WE GAVE IT TO YOU. AND YOU WERE FREE TO TAKE IT\nAND REVIEW IT. YOU ACKNOWLEDGE THAT YOU READ ALL PAGES OF THIS LEASE. INCLUDING THE ARBITRATION PROVISION ABOVE (ITEM 26). BEFORE SIGNING BELOW.\nYOU CONFIRM THAT YOU RECEIVED A COMPLETELY FILLED-IN COPY WHEN YOU SIGNED THIS LEASE.\n\n\n<table>\n<tr><td colspan=\"3\">LESSEE SIGNATURES</td></tr>\n<tr><td>Lessee Signature J Sample Date 12/03/2024</td><td>Co-Lessee Signature Jane Sample</td><td>Date 12/03/2024</td></tr>\n<tr><td>Type/Print Lessee Name JOHN Q SAMPLE</td><td colspan=\"2\">Type/Print Co-Lessee Name JANE Q SAMPLE</td></tr>\n<tr><td>Commercial Lessee N/A</td><td colspan=\"2\">Date N/A By N/A</td></tr>\n<tr><td>Type/Print Name N/A</td><td colspan=\"2\">Type/Print Title N/A___</td></tr>\n</table>\n\nGUARANTY: To induce us to lease the Vehicle to Lessee, each person who signs as a Guarantor individually guarantees the payment of this Lease. If Lessee fails to pay any money owing on this Lease, each Guarantor must pay it when asked. Each Guarantor will be liable for the total amount owing even if other persons also sign as Guarantor, and even if Lessee has a complete defense to Guarantor's demand for reimbursement. Each Guarantor agrees to be liable even if we do one or more of the following: (1) give the Lessee more time to pay one or more payments; (2) give a full or partial release to any other Guarantor; (3) accept less from the Lessee than the total amount owing; or (4) otherwise reach a settlement relating to this Lease or extend the Lease. Each Guarantor acknowledges receipt of a completed copy of this Lease and Guaranty at the time of signing. To the extent permitted by applicable law, Guarantor waives notice of acceptance of this Guaranty, notice of the Lessee's non-payment, non-performance, and default; and notices of the amount owing at any time, and of any demands upon the Lessee. Guarantor Signature X: N/A  Date: N/A  Type/Print Guarantor Name: N/A  Guarantor Address: N/A \n\n<table>\n<tr><td colspan=\"2\">LESSOR'S ACCEPTANCE</td></tr>\n<tr><td colspan=\"2\">The Lessor's authorized signature indicates the Lessor has accepted the terms, conditions and obligations of this Lease.</td></tr>\n<tr><td>Lessor Name: AUTONATION HONDA MIAMI LAKES<br>Assignee Name: Honda Lease Trust</td><td>By: P Example<br>Type/Print Name: Pat Example<br>Type/Print Title: Cfs manager</td></tr>\n</table>\n\nILAW\nFORM NO. HFS-UCL-FL-e-14 (REV. 1/21)\n©2001 The Reynolds and Reynolds Company\n\n\nTHERE ARE NO WARRANTIES, EXPRESS OR IMPLIED, AS TO CONTENT OF\nFITNESS FOR PURPOSE OF THIS FORM. CONSULT YOUR OWN LEGAL COUNSEL\n\n\nHFS-UCL-FL-e-14 1/21 v1 Page 5 of 5\n\n\nThis is not the Authoritative Copy.\n\n\n<!-- doc_id=parse-01m5xsthbpgmcmh62sfx9ympa0 -->",
+  "metadata": {
+    "job_id": "extract-01m5xsv7nff8vybhxm2zt0fcte",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 20757,
+    "doc_id": "parse-01m5xsthbpgmcmh62sfx9ympa0",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 14.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 63970,
+    "output_extraction_chars": 1938,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

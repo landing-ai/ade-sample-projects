@@ -134,8 +134,12 @@ def main() -> None:
     regions = [_parse_region(spec, "--remove-images") for spec in args.remove_images]
     for page_no, region in regions:
         page = doc[page_no - 1]
-        removed = [xref for xref, *_ in page.get_images(full=True)
-                   if any(region.contains(r) for r in page.get_image_rects(xref))]
+        # Skip images an earlier region already blanked (delete_image leaves a 1x1 stand-in):
+        # one signature image placed several times on a page matches every region that
+        # holds one of its placements, and blanking it twice raises.
+        removed = [xref for xref, _, w, h, *_ in page.get_images(full=True)
+                   if w * h > 1
+                   and any(region.contains(r) for r in page.get_image_rects(xref))]
         for xref in removed:
             page.delete_image(xref)
         # A court order's judge's signature was an inline image (BI ... ID ... EI in the
@@ -479,7 +483,11 @@ def _remove_inline_images(page: pymupdf.Page, region: pymupdf.Rect) -> int:
     guess.
     """
     boxes = [pymupdf.Rect(i["bbox"]) for i in page.get_image_info(xrefs=True) if i["xref"] == 0]
-    if not boxes:
+    # Nothing xref-less inside the region means nothing to cut, whatever the counts. A
+    # lease drew its field shading as xref-less images inside form XObjects, which made
+    # the counts below disagree and aborted a run whose signatures were ordinary xref
+    # images already removed above.
+    if not any(region.contains(box) for box in boxes):
         return 0
     doc = page.parent
     blocks = [(xref, start, end) for xref in page.get_contents()
