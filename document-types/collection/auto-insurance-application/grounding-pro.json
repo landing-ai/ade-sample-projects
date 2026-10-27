@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 3,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "vehicles[0].vin",
+      "label": "VIN",
+      "value": "3FA6P0HD2FR401300",
+      "page": 3,
+      "box": {
+        "xmin": 0.1741,
+        "ymin": 0.15197,
+        "xmax": 0.34674,
+        "ymax": 0.16558
+      },
+      "range": {
+        "end": 5320,
+        "start": 5298
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-vin.png"
+    },
+    {
+      "path": "coverages[1].coverage",
+      "label": "Coverage",
+      "value": "Personal Injury Protection",
+      "page": 3,
+      "box": {
+        "xmin": 0.17336,
+        "ymin": 0.28164,
+        "xmax": 0.4715,
+        "ymax": 0.29645
+      },
+      "range": {
+        "end": 5797,
+        "start": 5762
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-1-coverage.png"
+    },
+    {
+      "path": "coverages[1].deductible",
+      "label": "Deductible",
+      "value": 8000.0,
+      "page": 3,
+      "box": {
+        "xmin": 0.73532,
+        "ymin": 0.28166,
+        "xmax": 0.83615,
+        "ymax": 0.29644
+      },
+      "range": {
+        "end": 5839,
+        "start": 5833
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-1-deductible.png"
+    },
+    {
+      "path": "coverages[1].premium",
+      "label": "Coverage premium",
+      "value": 129.0,
+      "page": 3,
+      "box": {
+        "xmin": 0.83607,
+        "ymin": 0.28166,
+        "xmax": 0.92468,
+        "ymax": 0.29644
+      },
+      "range": {
+        "end": 5851,
+        "start": 5848
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-1-premium.png"
+    },
+    {
+      "path": "total_12_month_premium",
+      "label": "Total 12-month premium",
+      "value": 3559.0,
+      "page": 3,
+      "box": {
+        "xmin": 0.83429,
+        "ymin": 0.41233,
+        "xmax": 0.92437,
+        "ymax": 0.43062
+      },
+      "range": {
+        "end": 6624,
+        "start": 6615
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "total_12_month_premium.png"
+    }
+  ]
+}

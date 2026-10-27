@@ -1,0 +1,143 @@
+{
+  "slug": "auto-insurance-application",
+  "title": "Auto Insurance Application",
+  "source": {
+    "file": "progressive-ma-auto-application-redacted.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/1038741316/AUTO-DOCS",
+      "publisher": "Progressive Casualty Insurance Co",
+      "title": "Application for Massachusetts Motor Vehicle Insurance, Form 7982 MA (12/24)",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A real, completed Progressive personal auto application, issued through an independent agency, that an unknown user uploaded to Scribd as part of a 10-page 'AUTO DOCS' packet. Scribd is not the publisher, so it was treated as a personal record. The file was downloaded manually from Scribd, since Scribd blocks scripted downloads. It carried the applicant's name, home address and date of birth, the policy number, the vehicle's VIN and plate, an accident date, and the agent's name, agency, address, code and phone. Each was replaced with document-types/scripts/redact.py, which removes the underlying text rather than covering it. Pages 7-10 (EFT authorization naming a bank account holder, payment schedule, payment receipt with card details, ID card) are separate forms, not part of the 6-page application, and were dropped. Hidden white-text tracking lines carrying the policy number and agent code on every page, and the DataGlyph 2D codes on pages 5-6, were removed outright. PDF metadata cleared. Verified: no original value is extractable from the committed PDF, and a sweep of every file in this folder found none.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "applicant's full name",
+            "with": "JOHN Q SAMPLE",
+            "occurrences": 9
+          },
+          {
+            "what": "applicant's street address",
+            "with": "100 Main St",
+            "occurrences": 1
+          },
+          {
+            "what": "applicant's city, state and ZIP",
+            "with": "Mytown, MA 01890",
+            "occurrences": 1
+          },
+          {
+            "what": "garaging ZIP code",
+            "with": "01890",
+            "occurrences": 2
+          },
+          {
+            "what": "applicant's date of birth",
+            "with": "Jun 14, 1990",
+            "occurrences": 1
+          },
+          {
+            "what": "policy number",
+            "with": "325288425 (random, same shape)",
+            "occurrences": 8
+          },
+          {
+            "what": "vehicle identification number",
+            "with": "3FA6P0HD2FR401300 (make and model positions kept, check digit and serial random)",
+            "occurrences": 2
+          },
+          {
+            "what": "registration plate number",
+            "with": "2FSM98 (random, same shape)",
+            "occurrences": 1
+          },
+          {
+            "what": "date of the at-fault accident",
+            "with": "Mar 6, 2025",
+            "occurrences": 1
+          },
+          {
+            "what": "agent's name",
+            "with": "PAT EXAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "agency name",
+            "with": "ACME AGENCY",
+            "occurrences": 1
+          },
+          {
+            "what": "agency street address",
+            "with": "200 MAIN ST #100",
+            "occurrences": 1
+          },
+          {
+            "what": "agency city, state and ZIP",
+            "with": "ANYTOWN, MA 01880",
+            "occurrences": 1
+          },
+          {
+            "what": "agent code",
+            "with": "75S1F (random, same shape)",
+            "occurrences": 1
+          },
+          {
+            "what": "agency phone number",
+            "with": "1-781-555-0112 (fiction-reserved 555-01xx)",
+            "occurrences": 1
+          }
+        ],
+        "removed": [
+          "white 1pt tracking text at the top of every page (policy number, agent code, form routing ids)",
+          "DataGlyph 2D codes in the left margin of pages 5 and 6"
+        ],
+        "dropped_page_reason": "pages 7-10 are separate forms appended to the application in the uploaded packet (EFT authorization, automatic payment schedule, payment receipt, ID card); they carry bank and card details and are not part of the 6-page application"
+      },
+      "dropped_pages": [
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    {
+      "path": "vehicles[0].vin",
+      "label": "VIN",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[1].coverage",
+      "label": "Coverage",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[1].deductible",
+      "label": "Deductible",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[1].premium",
+      "label": "Coverage premium",
+      "occurrence": 0
+    },
+    {
+      "path": "total_12_month_premium",
+      "label": "Total 12-month premium",
+      "occurrence": 0
+    }
+  ],
+  "notes": "No feature page or fields were requested. Page 3, the outline of coverage, features the insured auto (its VIN, from the outline rather than the repeat in Vehicle information), one complete coverage line (Personal Injury Protection, the only line with a deductible, and its premium) and the total 12-month premium the lines add up to, so the overlay reads as what is insured, for what, and at what cost. Impersonal fields were preferred over the applicant's name. The policy number on pages 1-6 matches nothing real: it is a random stand-in. preview_pages skips page 4, which is mostly blank, in favour of page 5, the application agreement.",
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ]
+}

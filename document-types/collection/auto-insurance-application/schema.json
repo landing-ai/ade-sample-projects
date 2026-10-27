@@ -1,0 +1,502 @@
+{
+  "type": "object",
+  "description": "A personal auto insurance application: the insurer, agent and named insured, the policy period and premium, the listed drivers and vehicles, the coverages applied for with their limits, deductibles and premiums, driving history, and the fees the applicant agrees to",
+  "properties": {
+    "insurer": {
+      "type": "object",
+      "description": "The insurance company the application is made to",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the insurance company, e.g. 'Progressive Casualty Insurance Co'"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Insurer's mailing address on one line"
+        }
+      }
+    },
+    "form_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title of the application form as printed in the heading"
+    },
+    "form_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Form number and edition printed at the foot of the application, e.g. 'Form 7982 MA (12/24)'"
+    },
+    "state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "State whose motor vehicle insurance the application is for"
+    },
+    "policy_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The policy number the application is for"
+    },
+    "application_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date printed in the application heading, as printed"
+    },
+    "agent": {
+      "type": "object",
+      "description": "The producing agent",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the individual agent"
+        },
+        "agency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the agency"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Agency address on one line"
+        },
+        "agent_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The agent or producer code printed in the agent block"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Agent's phone number"
+        }
+      }
+    },
+    "named_insured": {
+      "type": "object",
+      "description": "The named insured",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Full name of the named insured"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Mailing address of the named insured on one line"
+        }
+      }
+    },
+    "policy_period": {
+      "type": "object",
+      "description": "The term of the policy",
+      "properties": {
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "First day of the policy period, as printed"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Last day of the policy period, as printed"
+        },
+        "effective_date_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Effective date and time of coverage, as printed"
+        }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "description": "Policy and premium information from the first page",
+      "properties": {
+        "total_policy_premium": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total policy premium for the term"
+        },
+        "initial_payment_required": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Initial payment required"
+        },
+        "unpaid_balance": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Unpaid balance"
+        },
+        "minimum_due": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Minimum due"
+        },
+        "initial_payment_received": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Initial payment received"
+        },
+        "payment_plan": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Payment plan, e.g. '12 payments'"
+        }
+      }
+    },
+    "drivers": {
+      "type": "array",
+      "description": "Every listed driver and household member",
+      "items": {
+        "type": "object",
+        "description": "One listed driver",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Driver's full name"
+          },
+          "date_of_birth": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date of birth, as printed"
+          },
+          "gender": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Gender"
+          },
+          "marital_status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Marital status"
+          },
+          "relationship": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Relationship to the named insured, e.g. 'Insured', 'Spouse'"
+          },
+          "driver_status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Driver status, e.g. 'Rated', 'List Only', 'Excluded'"
+          },
+          "license_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "License type"
+          }
+        }
+      }
+    },
+    "total_household_residents": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Total number of residents in the household"
+    },
+    "vehicles": {
+      "type": "array",
+      "description": "Every auto listed on the application",
+      "items": {
+        "type": "object",
+        "description": "One listed auto",
+        "properties": {
+          "auto_number": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "The auto's number on the application, e.g. 1 for 'Auto 1'"
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Model year"
+          },
+          "make": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Make, e.g. 'FORD'"
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Model and body description, e.g. 'FUSION 4 DOOR SEDAN'"
+          },
+          "vin": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Vehicle identification number"
+          },
+          "garaging_zip": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Principal garaging address (ZIP code)"
+          },
+          "primary_use": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Primary use of the vehicle as printed in the outline of coverage"
+          },
+          "annual_miles": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Annual miles band, e.g. '0 - 3,999'"
+          },
+          "length_of_ownership": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Length of vehicle ownership when the policy started or the vehicle was added"
+          },
+          "registration_plate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Registration plate number"
+          },
+          "leased": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether the auto is leased"
+          }
+        }
+      }
+    },
+    "coverages": {
+      "type": "array",
+      "description": "Each coverage line in the outline of coverage, compulsory and optional",
+      "items": {
+        "type": "object",
+        "description": "One coverage line",
+        "properties": {
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "'Compulsory' or 'Optional', from the section the line sits in"
+          },
+          "coverage": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Coverage name without the part number, e.g. 'Bodily Injury to Others'"
+          },
+          "part": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Massachusetts policy part, e.g. 'Part 1'"
+          },
+          "limits": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Limits as printed, e.g. '$25,000 each person/$50,000 each accident'"
+          },
+          "deductible": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Deductible amount, or null when none is shown"
+          },
+          "premium": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Premium for this coverage"
+          }
+        }
+      }
+    },
+    "total_12_month_premium": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total 12 month policy premium from the outline of coverage"
+    },
+    "premium_discounts": {
+      "type": "array",
+      "description": "Premium discounts applied, as printed, e.g. 'Electronic Funds Transfer (EFT)'",
+      "items": {
+        "type": "string"
+      }
+    },
+    "driving_history": {
+      "type": "array",
+      "description": "Each incident listed under driving history",
+      "items": {
+        "type": "object",
+        "description": "One incident",
+        "properties": {
+          "driver": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Driver the incident is recorded against"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Description, e.g. 'at fault accident'"
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Date of the incident, as printed"
+          },
+          "sources": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Source or consumer reporting agency, as printed"
+          }
+        }
+      }
+    },
+    "prior_insurance": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the applicant had prior insurance, from underwriting information"
+    },
+    "fees": {
+      "type": "object",
+      "description": "Fees the applicant agrees to in the application agreement",
+      "properties": {
+        "cancellation_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Fee charged if the policy is cancelled during the initial policy period"
+        },
+        "returned_payment_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Returned payment fee"
+        },
+        "late_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Late fee"
+        },
+        "sr22_filing_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "SR22 filing fee"
+        },
+        "installment_fee_note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What the applicant agrees to about installment fees, briefly"
+        }
+      }
+    }
+  }
+}
