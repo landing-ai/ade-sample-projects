@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    4,
+    5,
+    6
+  ],
+  "fields": [
+    {
+      "path": "policy_number",
+      "label": "Policy number",
+      "value": "95-342-160-75",
+      "page": 1,
+      "box": {
+        "xmin": 0.62902,
+        "ymin": 0.12319,
+        "xmax": 0.94083,
+        "ymax": 0.13655
+      },
+      "range": {
+        "end": 309,
+        "start": 281
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policy_number.png"
+    },
+    {
+      "path": "vehicles[0].description",
+      "label": "Scheduled vehicle",
+      "value": "2001 DODG RAM 3500 ST/SLT/SPT",
+      "page": 1,
+      "box": {
+        "xmin": 0.05719,
+        "ymin": 0.26699,
+        "xmax": 0.60756,
+        "ymax": 0.30321
+      },
+      "range": {
+        "end": 845,
+        "start": 787
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-description.png"
+    },
+    {
+      "path": "vehicles[0].coverages[0].limit",
+      "label": "Combined liability limit",
+      "value": "$1Million ea occ",
+      "page": 1,
+      "box": {
+        "xmin": 0.30245,
+        "ymin": 0.31979,
+        "xmax": 0.60727,
+        "ymax": 0.3336
+      },
+      "range": {
+        "end": 1036,
+        "start": 1020
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-coverages-0-limit.png"
+    },
+    {
+      "path": "vehicles[0].coverages[0].premium",
+      "label": "Combined liability premium",
+      "value": 718.69,
+      "page": 1,
+      "box": {
+        "xmin": 0.71843,
+        "ymin": 0.31977,
+        "xmax": 0.8346,
+        "ymax": 0.33356
+      },
+      "range": {
+        "end": 1061,
+        "start": 1054
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-coverages-0-premium.png"
+    },
+    {
+      "path": "vehicles[0].total_premium",
+      "label": "Vehicle total premium",
+      "value": 860.51,
+      "page": 1,
+      "box": {
+        "xmin": 0.71833,
+        "ymin": 0.40214,
+        "xmax": 0.83489,
+        "ymax": 0.41962
+      },
+      "range": {
+        "end": 1680,
+        "start": 1673
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-total_premium.png"
+    }
+  ]
+}

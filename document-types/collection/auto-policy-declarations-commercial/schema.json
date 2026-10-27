@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "description": "A commercial automobile policy declarations: who is insured, by whom and through which agency, for what term, the schedule of insured vehicles with each vehicle's coverages, limits and premiums, and the policy premium totals",
+  "properties": {
+    "insurer": {
+      "type": ["string", "null"],
+      "description": "Name of the insurance company issuing the policy, as printed in the page heading"
+    },
+    "policy_number": {
+      "type": ["string", "null"],
+      "description": "The number printed beside the POLICY NUMBER caption"
+    },
+    "issue_date": {
+      "type": ["string", "null"],
+      "description": "Date beside the 'Issued' caption at the top right, as MM-DD-YYYY"
+    },
+    "agency": {
+      "type": "object",
+      "description": "The agency servicing the policy",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "Agency name beside the AGENCY caption"
+        },
+        "code": {
+          "type": ["string", "null"],
+          "description": "Agency code printed under the agency name"
+        },
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Agency phone number"
+        }
+      }
+    },
+    "named_insured": {
+      "type": "object",
+      "description": "The insured business and its mailing address",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "Name beside the INSURED caption"
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "Mailing address beside the ADDRESS caption, street, city, state and ZIP on one line"
+        }
+      }
+    },
+    "policy_term": {
+      "type": "object",
+      "description": "The policy term",
+      "properties": {
+        "effective_date": {
+          "type": ["string", "null"],
+          "description": "Date the term begins, as MM-DD-YYYY"
+        },
+        "expiration_date": {
+          "type": ["string", "null"],
+          "description": "Date the term ends, as MM-DD-YYYY"
+        }
+      }
+    },
+    "vehicles": {
+      "type": "array",
+      "description": "Every numbered item insured (vehicle or trailer) in the DESCRIPTION OF ITEM INSURED schedule, across all pages, in the order printed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_number": {
+            "type": ["integer", "null"],
+            "description": "The item number printed before the vehicle description"
+          },
+          "description": {
+            "type": ["string", "null"],
+            "description": "Year, make and model as printed, e.g. '2001 DODG RAM 3500 ST/SLT/SPT'"
+          },
+          "vin": {
+            "type": ["string", "null"],
+            "description": "Vehicle identification number printed after 'VIN:'"
+          },
+          "territory": {
+            "type": ["string", "null"],
+            "description": "Territory description printed under the territory code, e.g. a county"
+          },
+          "coverages": {
+            "type": "array",
+            "description": "Each coverage row listed for this vehicle",
+            "items": {
+              "type": "object",
+              "properties": {
+                "coverage": {
+                  "type": "string",
+                  "description": "Coverage name as printed, e.g. 'Combined Liability', 'Collision'"
+                },
+                "limit": {
+                  "type": ["string", "null"],
+                  "description": "Limit as printed, e.g. '$1Million ea occ' or 'Actual Cash Value - $1,000 deductible'; null if blank"
+                },
+                "premium": {
+                  "type": ["number", "null"],
+                  "description": "Premium for this coverage on this vehicle, in dollars"
+                }
+              },
+              "required": ["coverage"]
+            }
+          },
+          "total_premium": {
+            "type": ["number", "null"],
+            "description": "The TOTAL premium for this vehicle, in dollars"
+          },
+          "lienholder": {
+            "type": ["string", "null"],
+            "description": "The lienholder named under Interested Parties, with its address; null when Interested Parties reads None"
+          },
+          "gross_vehicle_weight": {
+            "type": ["number", "null"],
+            "description": "Gross vehicle weight from the ITEM DETAILS, in pounds; null for items that state none"
+          }
+        }
+      }
+    },
+    "coverage_totals": {
+      "type": "array",
+      "description": "The 'Totals by coverage' table: the policy-wide premium for each coverage",
+      "items": {
+        "type": "object",
+        "properties": {
+          "coverage": {
+            "type": "string",
+            "description": "Coverage name as printed"
+          },
+          "premium": {
+            "type": ["number", "null"],
+            "description": "Total premium for this coverage across all items, in dollars"
+          }
+        },
+        "required": ["coverage"]
+      }
+    },
+    "total_policy_premium": {
+      "type": ["number", "null"],
+      "description": "TOTAL POLICY PREMIUM for the term, in dollars"
+    },
+    "paid_in_full_discount": {
+      "type": ["number", "null"],
+      "description": "PAID IN FULL DISCOUNT, in dollars, as a negative number"
+    },
+    "total_premium_if_paid_in_full": {
+      "type": ["number", "null"],
+      "description": "TOTAL POLICY PREMIUM IF PAID IN FULL, in dollars"
+    }
+  }
+}

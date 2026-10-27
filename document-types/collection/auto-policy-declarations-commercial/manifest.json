@@ -1,0 +1,157 @@
+{
+  "slug": "auto-policy-declarations-commercial",
+  "title": "Auto Policy Declarations (Commercial)",
+  "source": {
+    "file": "owners-insurance-commercial-auto-declarations-redacted.pdf",
+    "pages": 6,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/doc/297561971/commercial-auto-policy-12-29-2015-5-3",
+      "publisher": "Owners Insurance Company (Auto-Owners Insurance Group)",
+      "title": "Automobile Policy Declarations, commercial auto renewal, term 12-29-2015 to 12-29-2016",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A real Owners Insurance Company commercial automobile policy renewal for a small excavation contractor, posted on Scribd by an unknown account and downloaded manually by the operator on 2026-10-26 because Scribd blocks scripted downloads. A user-upload site is not the publisher, so the document was treated as a private record and redacted before parsing. The original 58-page file was cut to the six declarations pages: the agency cover letter (which carried the policy number and an online-account enrollment code), the Scheduled Drivers List (eight individual drivers with full names and dates of birth), and 50 pages of policy form, endorsements and the insurer's signature page were dropped. On the six kept pages, the insured business, its mailing address, the agency, the agency code and phone, the policy number, the company-use account number, all ten VINs and a person's name given in care of a lienholder were replaced using document-types/scripts/redact.py, which removes the underlying text rather than covering it. Numeric identifiers are randomly drawn plausible stand-ins of the same shape; names and the address are obviously fake. The insurer, the two lienholder institutions and the territory county were kept. PDF metadata was cleared. Verified: no original string is extractable from the committed PDF, and none appears anywhere in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish what the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "insured business name",
+            "with": "SAMPLE EXCAVATION INC",
+            "occurrences": 6
+          },
+          {
+            "what": "insured mailing address (PO box, city, ZIP+4)",
+            "with": "PO BOX 10 / ANYTOWN / 84790-1394",
+            "occurrences": 3
+          },
+          {
+            "what": "agency name",
+            "with": "EXAMPLE AGENCY",
+            "occurrences": 6
+          },
+          {
+            "what": "agency code",
+            "with": "32-2356-69",
+            "occurrences": 6
+          },
+          {
+            "what": "agency phone number",
+            "with": "(435) 555-0176",
+            "occurrences": 1
+          },
+          {
+            "what": "policy number",
+            "with": "95-342-160-75",
+            "occurrences": 6
+          },
+          {
+            "what": "company-use account number",
+            "with": "46-31-UT-3494",
+            "occurrences": 6
+          },
+          {
+            "what": "vehicle identification numbers (10 vehicles)",
+            "with": "random plausible VINs of the same shape",
+            "occurrences": 10
+          },
+          {
+            "what": "individual named in care of a lienholder",
+            "with": "PAT EXAMPLE",
+            "occurrences": 2
+          }
+        ],
+        "dropped_page_reason": "page 1 was the agency cover letter carrying an online-account enrollment code; page 8 was the Scheduled Drivers List of individual drivers with dates of birth; pages 9-58 are the policy form, endorsements and signature page, which are not part of the declarations"
+      },
+      "dropped_pages": [
+        1,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "policy_number",
+      "label": "Policy number",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicles[0].description",
+      "label": "Scheduled vehicle",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicles[0].coverages[0].limit",
+      "label": "Combined liability limit",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicles[0].coverages[0].premium",
+      "label": "Combined liability premium",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicles[0].total_premium",
+      "label": "Vehicle total premium",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields. Features one scheduled vehicle on page 1 and what it costs: the policy number, the vehicle (item 1, a 2001 Dodge Ram 3500, with its VIN in the same grounded block), its combined liability limit ($1Million ea occ) and premium ($718.69), and the vehicle's total premium ($860.51), so the overlay reads as one row of the fleet schedule. This is the multi-vehicle commercial counterpart to auto-policy-declarations-page, a one-page coverage-symbol schedule: here every one of ten vehicles and trailers carries its own coverage block, limits and premiums across five pages, and page 6 rolls them up into totals by coverage and a paid-in-full discount. Every vehicle, coverage row and coverage total grounds ok, and the document reconciles: the eight coverage totals sum to the $11,558.40 total policy premium, which is the ten vehicle totals ($11,508.15) plus the $50.25 designated-insured endorsement. Page 6 (the premium totals) was the alternative feature page; all of its fields ground ok too. Vehicle description and VIN share one block, so their crops are the same two lines. When Interested Parties reads None, extraction returned an empty string (once the string 'null') rather than JSON null for lienholder, and those rows point at the 'Interested Parties: None' line. Insurer extracts as the abbreviated running header 'OWNERS INS. CO.' from page 6. preview_pages shows the first vehicle page, a page with a lienholder, the last vehicle page with the policy-level endorsement, and the totals.",
+  "preview_pages": [
+    1,
+    4,
+    5,
+    6
+  ]
+}
