@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    2,
+    4,
+    5
+  ],
+  "fields": [
+    {
+      "path": "truth_in_lending.annual_percentage_rate",
+      "label": "Annual percentage rate",
+      "value": 23.99,
+      "page": 1,
+      "box": {
+        "xmin": 0.02922,
+        "ymin": 0.4416,
+        "xmax": 0.15319,
+        "ymax": 0.46036
+      },
+      "range": {
+        "end": 2061,
+        "start": 2053
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "truth_in_lending-annual_percentage_rate.png"
+    },
+    {
+      "path": "truth_in_lending.finance_charge",
+      "label": "Finance charge",
+      "value": 12706.64,
+      "page": 1,
+      "box": {
+        "xmin": 0.15318,
+        "ymin": 0.44158,
+        "xmax": 0.27689,
+        "ymax": 0.46037
+      },
+      "range": {
+        "end": 2086,
+        "start": 2070
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "truth_in_lending-finance_charge.png"
+    },
+    {
+      "path": "truth_in_lending.total_of_payments",
+      "label": "Total of payments",
+      "value": 30199.2,
+      "page": 1,
+      "box": {
+        "xmin": 0.40039,
+        "ymin": 0.44154,
+        "xmax": 0.52416,
+        "ymax": 0.46038
+      },
+      "range": {
+        "end": 2135,
+        "start": 2119
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "truth_in_lending-total_of_payments.png"
+    },
+    {
+      "path": "truth_in_lending.total_sale_price",
+      "label": "Total sale price",
+      "value": 32699.2,
+      "page": 1,
+      "box": {
+        "xmin": 0.52414,
+        "ymin": 0.44153,
+        "xmax": 0.64781,
+        "ymax": 0.46038
+      },
+      "range": {
+        "end": 2160,
+        "start": 2144
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "truth_in_lending-total_sale_price.png"
+    },
+    {
+      "path": "payment_schedule[0].amount_of_payment",
+      "label": "Monthly payment",
+      "value": 503.32,
+      "page": 1,
+      "box": {
+        "xmin": 0.23575,
+        "ymin": 0.59334,
+        "xmax": 0.44167,
+        "ymax": 0.62372
+      },
+      "range": {
+        "end": 2569,
+        "start": 2562
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payment_schedule-0-amount_of_payment.png"
+    }
+  ]
+}

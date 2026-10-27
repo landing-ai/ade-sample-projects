@@ -1,0 +1,107 @@
+{
+  "slug": "retail-installment-sale-contract",
+  "title": "Retail Installment Sale Contract",
+  "source": {
+    "file": "retail-installment-sale-contract-redacted.pdf",
+    "pages": 7,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/969411605/553-ca-arb-eps-7-16-fnicentral-com-editable",
+      "publisher": "The Reynolds and Reynolds Company (LAW form 553-CA-ARB-eps 7/16); filled in by an unknown party and uploaded to Scribd",
+      "title": "553-CA-ARB-eps 7/16 Retail Installment Sale Contract - Simple Finance Charge (With Arbitration Provision)",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A filled-in copy of Reynolds and Reynolds' California retail installment sale contract form, obtained from Scribd and downloaded manually because Scribd blocks scripted downloads. The uploader is not the form's publisher and the provenance of the filled-in values is unknown, so it is treated as a personal record. It carried a buyer's full name and home address, a VIN, a named real dealership with its street address and logo, and dealer, contract and R.O.S. numbers. Every one was replaced using document-types/scripts/redact.py, which removes the underlying text rather than covering it, and the dealership logo image was removed. Document metadata was cleared. Verified: no original identifier is extractable from the committed PDF or appears anywhere in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "buyer's full name",
+            "with": "JANE Q SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "buyer's street address",
+            "with": "100 MAIN ST",
+            "occurrences": 1
+          },
+          {
+            "what": "buyer's city, state and ZIP",
+            "with": "ANYTOWN, NV 89100",
+            "occurrences": 1
+          },
+          {
+            "what": "vehicle identification number",
+            "with": "3GKALPEV2LL724841 (random digits, same shape)",
+            "occurrences": 1
+          },
+          {
+            "what": "dealership name in the letterhead",
+            "with": "SAMPLE BUICK GMC",
+            "occurrences": 1
+          },
+          {
+            "what": "dealership street address",
+            "with": "100 MAIN AVE",
+            "occurrences": 1
+          },
+          {
+            "what": "dealership city, state and ZIP",
+            "with": "ANYTOWN, TX",
+            "occurrences": 1
+          },
+          {
+            "what": "dealer number",
+            "with": "84129 (random digits, same shape)",
+            "occurrences": 1
+          },
+          {
+            "what": "contract number",
+            "with": "34065 (random digits, same shape)",
+            "occurrences": 1
+          },
+          {
+            "what": "R.O.S. number",
+            "with": "15274526 (random digits, same shape)",
+            "occurrences": 1
+          }
+        ],
+        "removed_images": [
+          {
+            "what": "dealership logo in the page 1 header",
+            "page": 1
+          }
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "truth_in_lending.annual_percentage_rate",
+      "label": "Annual percentage rate",
+      "occurrence": 0
+    },
+    {
+      "path": "truth_in_lending.finance_charge",
+      "label": "Finance charge",
+      "occurrence": 0
+    },
+    {
+      "path": "truth_in_lending.total_of_payments",
+      "label": "Total of payments",
+      "occurrence": 0
+    },
+    {
+      "path": "truth_in_lending.total_sale_price",
+      "label": "Total sale price",
+      "occurrence": 0
+    },
+    {
+      "path": "payment_schedule[0].amount_of_payment",
+      "label": "Monthly payment",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no feature page or fields. Features the Federal Truth-in-Lending disclosure box on page 1 and the monthly payment beneath it: the rate, what the credit costs, the total repaid, the total sale price and the payment that produces them, so the overlay reads as one financing decision. All five are impersonal amounts; the buyer's name was not featured. Amount Financed was deliberately left out: the document is internally inconsistent there. The printed Amount Financed (27,492.56, on page 1 and on itemization line 7) is exactly 10,000.00 more than both Total of Payments less Finance Charge and itemization line 5 less line 6 (17,492.56). Extraction reads the printed value correctly, but featuring it would put a figure on the page that visibly contradicts its neighbours. The five featured values agree with each other: 60 payments of 503.32 make the Total of Payments, and that plus the 2,500.00 down payment makes the Total Sale Price."
+}

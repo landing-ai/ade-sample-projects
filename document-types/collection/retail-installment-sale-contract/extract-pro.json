@@ -1,0 +1,582 @@
+{
+  "extraction": {
+    "buyer": {
+      "address": "100 MAIN ST ANYTOWN, NV 89100",
+      "name": "JANE Q SAMPLE"
+    },
+    "co_buyer_name": "",
+    "contract_number": "34065",
+    "dealer_number": "84129",
+    "form_number": "LAW 553-CA-ARB-eps 7/16",
+    "governing_law_state": "California",
+    "itemization": {
+      "amount_financed": 27492.56,
+      "cash_down_payment": 2500.0,
+      "cash_price_accessories": 0.0,
+      "cash_price_vehicle": 16995.0,
+      "debt_cancellation_agreement": 495.0,
+      "document_processing_charge": 70.0,
+      "insurance_premiums": 0.0,
+      "net_trade_in": 0.0,
+      "registration_fees": 15.0,
+      "sales_tax": 1810.56,
+      "state_emissions_fee": 8.0,
+      "subtotal": 19992.56,
+      "theft_deterrent_device": 599.0,
+      "total_cash_price": 19969.56,
+      "total_downpayment": 2500.0,
+      "total_official_fees": 15.0
+    },
+    "late_charge_days": 10,
+    "late_charge_percent": 5.0,
+    "payment_schedule": [
+      {
+        "amount_of_payment": 503.32,
+        "number_of_payments": 59,
+        "when_due": "Monthly beginning 5/16/2020"
+      },
+      {
+        "amount_of_payment": 503.32,
+        "number_of_payments": 1,
+        "when_due": "4/16/2025"
+      }
+    ],
+    "ros_number": "15274526",
+    "seller_creditor": {
+      "address": "100 MAIN AVE ANYTOWN, TX",
+      "name": "SAMPLE BUICK GMC"
+    },
+    "stock_number": "",
+    "truth_in_lending": {
+      "amount_financed": 27492.56,
+      "annual_percentage_rate": 23.99,
+      "down_payment": 2500.0,
+      "finance_charge": 12706.64,
+      "total_of_payments": 30199.2,
+      "total_sale_price": 32699.2
+    },
+    "vehicle": {
+      "business_use": false,
+      "condition": "Used",
+      "make": "GMC",
+      "model": "TERRAIN",
+      "odometer": 17765,
+      "vin": "3GKALPEV2LL724841",
+      "year": 2020
+    }
+  },
+  "extraction_metadata": {
+    "buyer": {
+      "address": {
+        "ranges": [
+          {
+            "end": 525,
+            "start": 514
+          },
+          {
+            "end": 579,
+            "start": 562
+          },
+          {
+            "end": 29,
+            "start": 17
+          },
+          {
+            "end": 41,
+            "start": 30
+          }
+        ],
+        "value": "100 MAIN ST ANYTOWN, NV 89100"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 462,
+            "start": 449
+          },
+          {
+            "end": 16,
+            "start": 0
+          }
+        ],
+        "value": "JANE Q SAMPLE"
+      }
+    },
+    "co_buyer_name": {
+      "ranges": [
+        {
+          "end": 471,
+          "start": 471
+        }
+      ],
+      "value": ""
+    },
+    "contract_number": {
+      "ranges": [
+        {
+          "end": 203,
+          "start": 180
+        }
+      ],
+      "value": "34065"
+    },
+    "dealer_number": {
+      "ranges": [
+        {
+          "end": 179,
+          "start": 158
+        }
+      ],
+      "value": "84129"
+    },
+    "form_number": {
+      "ranges": [
+        {
+          "end": 67,
+          "start": 44
+        }
+      ],
+      "value": "LAW 553-CA-ARB-eps 7/16"
+    },
+    "governing_law_state": {
+      "ranges": [
+        {
+          "end": 27877,
+          "start": 27808
+        }
+      ],
+      "value": "California"
+    },
+    "itemization": {
+      "amount_financed": {
+        "ranges": [
+          {
+            "end": 9832,
+            "start": 9818
+          }
+        ],
+        "value": 27492.56
+      },
+      "cash_down_payment": {
+        "ranges": [
+          {
+            "end": 9549,
+            "start": 9536
+          }
+        ],
+        "value": 2500.0
+      },
+      "cash_price_accessories": {
+        "ranges": [
+          {
+            "end": 5651,
+            "start": 5647
+          }
+        ],
+        "value": 0.0
+      },
+      "cash_price_vehicle": {
+        "ranges": [
+          {
+            "end": 5594,
+            "start": 5559
+          }
+        ],
+        "value": 16995.0
+      },
+      "debt_cancellation_agreement": {
+        "ranges": [
+          {
+            "end": 7634,
+            "start": 7622
+          }
+        ],
+        "value": 495.0
+      },
+      "document_processing_charge": {
+        "ranges": [
+          {
+            "end": 5881,
+            "start": 5870
+          }
+        ],
+        "value": 70.0
+      },
+      "insurance_premiums": {
+        "ranges": [
+          {
+            "end": 8556,
+            "start": 8546
+          }
+        ],
+        "value": 0.0
+      },
+      "net_trade_in": {
+        "ranges": [
+          {
+            "end": 9202,
+            "start": 9192
+          }
+        ],
+        "value": 0.0
+      },
+      "registration_fees": {
+        "ranges": [
+          {
+            "end": 8226,
+            "start": 8215
+          }
+        ],
+        "value": 15.0
+      },
+      "sales_tax": {
+        "ranges": [
+          {
+            "end": 6717,
+            "start": 6704
+          }
+        ],
+        "value": 1810.56
+      },
+      "state_emissions_fee": {
+        "ranges": [
+          {
+            "end": 8671,
+            "start": 8661
+          }
+        ],
+        "value": 8.0
+      },
+      "subtotal": {
+        "ranges": [
+          {
+            "end": 8738,
+            "start": 8724
+          }
+        ],
+        "value": 19992.56
+      },
+      "theft_deterrent_device": {
+        "ranges": [
+          {
+            "end": 6095,
+            "start": 6082
+          }
+        ],
+        "value": 599.0
+      },
+      "total_cash_price": {
+        "ranges": [
+          {
+            "end": 8026,
+            "start": 8012
+          }
+        ],
+        "value": 19969.56
+      },
+      "total_downpayment": {
+        "ranges": [
+          {
+            "end": 9621,
+            "start": 9608
+          }
+        ],
+        "value": 2500.0
+      },
+      "total_official_fees": {
+        "ranges": [
+          {
+            "end": 8409,
+            "start": 8398
+          }
+        ],
+        "value": 15.0
+      }
+    },
+    "late_charge_days": {
+      "ranges": [
+        {
+          "end": 3290,
+          "start": 2749
+        }
+      ],
+      "value": 10
+    },
+    "late_charge_percent": {
+      "ranges": [
+        {
+          "end": 3290,
+          "start": 2749
+        }
+      ],
+      "value": 5.0
+    },
+    "payment_schedule": [
+      {
+        "amount_of_payment": {
+          "ranges": [
+            {
+              "end": 2569,
+              "start": 2562
+            }
+          ],
+          "value": 503.32
+        },
+        "number_of_payments": {
+          "ranges": [
+            {
+              "end": 2553,
+              "start": 2551
+            }
+          ],
+          "value": 59
+        },
+        "when_due": {
+          "ranges": [
+            {
+              "end": 2605,
+              "start": 2578
+            }
+          ],
+          "value": "Monthly beginning 5/16/2020"
+        }
+      },
+      {
+        "amount_of_payment": {
+          "ranges": [
+            {
+              "end": 2700,
+              "start": 2693
+            }
+          ],
+          "value": 503.32
+        },
+        "number_of_payments": {
+          "ranges": [
+            {
+              "end": 2684,
+              "start": 2667
+            }
+          ],
+          "value": 1
+        },
+        "when_due": {
+          "ranges": [
+            {
+              "end": 2718,
+              "start": 2709
+            }
+          ],
+          "value": "4/16/2025"
+        }
+      }
+    ],
+    "ros_number": {
+      "ranges": [
+        {
+          "end": 228,
+          "start": 204
+        }
+      ],
+      "value": "15274526"
+    },
+    "seller_creditor": {
+      "address": {
+        "ranges": [
+          {
+            "end": 29,
+            "start": 17
+          },
+          {
+            "end": 41,
+            "start": 30
+          }
+        ],
+        "value": "100 MAIN AVE ANYTOWN, TX"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 16,
+            "start": 0
+          }
+        ],
+        "value": "SAMPLE BUICK GMC"
+      }
+    },
+    "stock_number": {
+      "ranges": [
+        {
+          "end": 243,
+          "start": 229
+        }
+      ],
+      "value": ""
+    },
+    "truth_in_lending": {
+      "amount_financed": {
+        "ranges": [
+          {
+            "end": 2110,
+            "start": 2095
+          },
+          {
+            "end": 9832,
+            "start": 9818
+          }
+        ],
+        "value": 27492.56
+      },
+      "annual_percentage_rate": {
+        "ranges": [
+          {
+            "end": 2061,
+            "start": 2053
+          }
+        ],
+        "value": 23.99
+      },
+      "down_payment": {
+        "ranges": [
+          {
+            "end": 2034,
+            "start": 1924
+          },
+          {
+            "end": 9549,
+            "start": 9536
+          }
+        ],
+        "value": 2500.0
+      },
+      "finance_charge": {
+        "ranges": [
+          {
+            "end": 2086,
+            "start": 2070
+          }
+        ],
+        "value": 12706.64
+      },
+      "total_of_payments": {
+        "ranges": [
+          {
+            "end": 2135,
+            "start": 2119
+          }
+        ],
+        "value": 30199.2
+      },
+      "total_sale_price": {
+        "ranges": [
+          {
+            "end": 2160,
+            "start": 2144
+          }
+        ],
+        "value": 32699.2
+      }
+    },
+    "vehicle": {
+      "business_use": {
+        "ranges": [
+          {
+            "end": 1479,
+            "start": 1389
+          }
+        ],
+        "value": false
+      },
+      "condition": {
+        "ranges": [
+          {
+            "end": 1304,
+            "start": 1300
+          }
+        ],
+        "value": "Used"
+      },
+      "make": {
+        "ranges": [
+          {
+            "end": 1340,
+            "start": 1326
+          },
+          {
+            "end": 16,
+            "start": 0
+          }
+        ],
+        "value": "GMC"
+      },
+      "model": {
+        "ranges": [
+          {
+            "end": 1340,
+            "start": 1326
+          },
+          {
+            "end": 16,
+            "start": 0
+          }
+        ],
+        "value": "TERRAIN"
+      },
+      "odometer": {
+        "ranges": [
+          {
+            "end": 1354,
+            "start": 1349
+          }
+        ],
+        "value": 17765
+      },
+      "vin": {
+        "ranges": [
+          {
+            "end": 1380,
+            "start": 1363
+          },
+          {
+            "end": 16,
+            "start": 0
+          }
+        ],
+        "value": "3GKALPEV2LL724841"
+      },
+      "year": {
+        "ranges": [
+          {
+            "end": 1317,
+            "start": 1313
+          }
+        ],
+        "value": 2020
+      }
+    }
+  },
+  "markdown": "SAMPLE BUICK GMC\n100 MAIN AVE\nANYTOWN, TX\n\n\nLAW 553-CA-ARB-eps 7/16\n\n\nRETAIL INSTALLMENT SALE CONTRACT – SIMPLE FINANCE CHARGE (WITH ARBITRATION PROVISION)\n\n\nDealer Number: 84129 \nContract Number: 34065 \nR.O.S. Number: 15274526 \nStock Number: \n\n<table>\n<tr><td>Buyer Name and Address<br>(Including County and Zip Code)</td><td>Co-Buyer Name and Address<br>(Including County and Zip Code)</td><td>Seller-Creditor (Name and Address)</td></tr>\n<tr><td>JANE Q SAMPLE</td><td></td><td>DEALERSHIP NAME</td></tr>\n<tr><td>100 MAIN ST</td><td></td><td></td></tr>\n<tr><td>ANYTOWN, NV 89100</td><td></td><td></td></tr>\n</table>\n\nYou, the Buyer (and Co-Buyer, if any), may buy the vehicle below for cash or on credit. By signing this contract, you choose to buy the vehicle on credit under the agreements\non all pages of this contract. You agree to pay the Seller - Creditor (sometimes “we” or “us” in this contract) the Amount Financed and Finance Charge in U.S. funds according\nto the payment schedule below. We will figure your finance charge on a daily basis. The Truth-In-Lending Disclosures below are part of this contract.\n\n\n<table>\n<tr><td>New<br>Used</td><td>Year</td><td>Make<br>and Model</td><td>Odometer</td><td>Vehicle Identification Number</td><td>Primary Use For Which Purchased</td></tr>\n<tr><td>Used</td><td>2020</td><td>GMC<br>TERRAIN</td><td>17765</td><td>3GKALPEV2LL724841</td><td>Personal, family or household unless otherwise indicated below.\n[ ] business or commercial</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"5\">FEDERAL TRUTH-IN-LENDING DISCLOSURES</td></tr>\n<tr><td>ANNUAL PERCENTAGE RATE<br>The cost of your credit as a yearly rate.</td><td>FINANCE CHARGE<br>The dollar amount the credit will cost you.</td><td>Amount<br>Financed<br>The amount of credit provided to you or on your behalf.</td><td>Total of<br>Payments<br>The amount you will have paid after you have made all payments as scheduled.</td><td>Total Sale<br>Price<br>The total cost of your purchase on credit, including your down payment of $ 2,500.00 is</td></tr>\n<tr><td>23.990 %</td><td>$ $12,706.64 (e)</td><td>$ 27,492.56 (e)</td><td>$ $30,199.20 (e)</td><td>$ $32,699.20 (e)</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">(e) means an estimate<br>YOUR PAYMENT SCHEDULE WILL BE:</td></tr>\n<tr><td>Number of Payments:</td><td>Amount of Payments:</td><td>When Payments Are Due:</td></tr>\n<tr><td>One Payment of</td><td>N/A</td><td>N/A</td></tr>\n<tr><td>One Payment of</td><td>N/A</td><td>N/A</td></tr>\n<tr><td>One Payment of</td><td>N/A</td><td>N/A</td></tr>\n<tr><td>59</td><td>$503.32</td><td>Monthly beginning 5/16/2020</td></tr>\n<tr><td></td><td>N/A</td><td>N/A</td></tr>\n<tr><td>One final payment</td><td>$503.32</td><td>4/16/2025</td></tr>\n<tr><td colspan=\"3\">Late Charge. If payment is not received in full within 10 days after it is due, you will pay a late charge of 5% of the part of the payment that is late.<br>Prepayment. If you pay early, you may be charged a minimum finance charge.<br>Security Interest. You are giving a security interest in the vehicle being purchased.<br>Additional Information: See this contract for more information including information about nonpayment, default, any required repayment in full before the scheduled date, minimum finance charges, and security interest.</td></tr>\n</table>\n\nSTATEMENT OF INSURANCE \nNOTICE. No person is required as a condition of financing the purchase of a motor vehicle to purchase or negotiate any insurance through a particular insurance company, agent or broker. You are not required to buy any other insurance to obtain credit. Your decision to buy or not buy other insurance will not be a factor in the credit approval process. \nVehicle Insurance \nTerm Premium \n$ ___ Ded. Comp., Fire & Theft ___ Mos. $ ___ \n$ ___ Ded. Collision ___ Mos. $ ___ \nBodily Injury $ ___ Limits ___ Mos. $ ___ \nProperty Damage $ ___ Limits ___ Mos. $ ___ \nMedical ___ ___ Mos. $ ___ \n___ ___ Mos. $ ___ \nTotal Vehicle Insurance Premiums $ ___ \nUNLESS A CHARGE IS INCLUDED IN THIS AGREEMENT FOR PUBLIC LIABILITY OR PROPERTY DAMAGE INSURANCE, PAYMENT FOR SUCH COVERAGE IS NOT PROVIDED BY THIS AGREEMENT. \nYou may buy the physical damage insurance this contract requires from anyone you choose who is acceptable to us. You are not required to buy any other insurance to obtain credit. \nBuyer X ____________________ \nCo-Buyer X ____________________ \nSeller X ____________________ \n\n[SIGNED]\n**Agreement to Arbitrate:** By signing below, you agree that, pursuant\nto the Arbitration Provision on page 7 of this contract, you or we may\nelect to resolve any dispute by neutral, binding arbitration and not by\na court action. See the Arbitration Provision for additional information\nconcerning the agreement to arbitrate.\nBuyer Signs X ________________________________________________\nCo-Buyer Signs X _____________________________________________\n\n\n**AUTO BROKER FEE DISCLOSURE**\nIf this contract reflects the retail sale of a new motor vehicle, the sale is not subject to a fee received by an autobroker from us unless the following box is checked:\n [ ] Name of autobroker receiving fee, if applicable: ___\n\n\nBuyer Signs X ____________________ Co-Buyer Signs X ____________________\n\n\nLAW 553-CA-ARB-eps 7/16 v1 Page 1 of 7\n\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td colspan=\"2\">ITEMIZATION OF THE AMOUNT FINANCED (Seller may keep part of the amounts paid to others.)</td></tr>\n<tr><td>1. Total Cash Price</td><td></td></tr>\n<tr><td>A. Cash Price of Motor Vehicle and Accessories</td><td>$ 16995.00 (A)</td></tr>\n<tr><td colspan=\"2\">1. Cash Price Vehicle $ ___16995.00</td></tr>\n<tr><td>2. Cash Price Accessories</td><td>0.00</td></tr>\n<tr><td>3. Other (Nontaxable)</td><td></td></tr>\n<tr><td>Describe N/A $</td><td>0.00</td></tr>\n<tr><td>Describe N/A $</td><td></td></tr>\n<tr><td>B. Document Processing Charge (not a governmental fee)</td><td>$ 70.00 (B)</td></tr>\n<tr><td>C. Emissions Testing Charge (not a governmental fee)</td><td>$ 0.00 (C)</td></tr>\n<tr><td>D. (Optional) Theft Deterrent Device(s)</td><td></td></tr>\n<tr><td>1. (paid to) ___</td><td>$ 599.00 (D1)</td></tr>\n<tr><td>2. (paid to) N/A</td><td>$ 0.00 (D2)</td></tr>\n<tr><td>3. (paid to) N/A</td><td>$ (D3)</td></tr>\n<tr><td>E. (Optional) Surface Protection Product(s)</td><td></td></tr>\n<tr><td>1. (paid to) ________________________________________________________________ N/A</td><td>$ 0.00 (E1)</td></tr>\n<tr><td>2. (paid to) ________________________________________________________________ N/A</td><td>$ 0.00 (E2)</td></tr>\n<tr><td>F. EV Charging Station (paid to) ____________________________________________ N/A</td><td>$ 0.00 (F)</td></tr>\n<tr><td>G. Sales Tax (on taxable items in A through F)</td><td>$ 1810.56 (G)</td></tr>\n<tr><td>H. Electronic Vehicle Registration or Transfer Charge (not a governmental fee) (paid to) ________________________________________________________________ N/A</td><td>$ 0.00 (H)</td></tr>\n<tr><td>I. (Optional) Service Contract(s)</td><td></td></tr>\n<tr><td>1. (paid to) ____________________ N/A</td><td>$ 0.00 (I1)</td></tr>\n<tr><td>2. (paid to) ____________________ N/A</td><td>$ ________________ (I2)</td></tr>\n<tr><td>3. (paid to) ____________________ N/A</td><td>$ ________________ (I3)</td></tr>\n<tr><td>4. (paid to) ____________________ N/A</td><td>$ ________________ (I4)</td></tr>\n<tr><td>5. (paid to) N/A</td><td>$ (I5)</td></tr>\n<tr><td>J. Prior Credit or Lease Balance (e) paid by Seller to Vehicle 1 N/A Vehicle 2 N/A</td><td>$ 0.00 (J)</td></tr>\n<tr><td>(see downpayment and trade-in calculation)</td><td></td></tr>\n<tr><td>K. (Optional) Debt Cancellation Agreement</td><td>$ 495.00 (K)</td></tr>\n<tr><td>L. (Optional) Used Vehicle Contract Cancellation Option Agreement</td><td>$ 0.00 (L)</td></tr>\n<tr><td>M. Other (paid to)</td><td>$ 0.00 (M)</td></tr>\n<tr><td>For</td><td></td></tr>\n<tr><td>N. Other (paid to)                                        N/A</td><td>$ 0.00 (N)</td></tr>\n<tr><td>For</td><td></td></tr>\n<tr><td>Total Cash Price (A through N)</td><td>$ 19969.56 (1)</td></tr>\n<tr><td>2. Amounts Paid to Public Officials</td><td></td></tr>\n<tr><td>A. Vehicle License Fees</td><td>$ 0.00 (A)</td></tr>\n<tr><td>B. Registration/Transfer/Titling Fees</td><td>$ 15.00 (B)</td></tr>\n<tr><td>C. California Tire Fees N/A</td><td>$ 0.00 (C)</td></tr>\n<tr><td>D. Other</td><td>$ 0.00 (D)</td></tr>\n<tr><td>Total Official Fees (A through D)</td><td>$ 15.00 (2)</td></tr>\n<tr><td>3. Amount Paid to Insurance Companies</td><td></td></tr>\n<tr><td>(Total premiums from Statement of Insurance)</td><td>$ 0.00 (3)</td></tr>\n<tr><td>4. [ ] State Emissions Certification Fee or [ ] State Emissions Exemption Fee</td><td>$ 8.00 (4)</td></tr>\n<tr><td>5. Subtotal (1 through 4)</td><td>$ 19992.56 (5)</td></tr>\n<tr><td>6. Total Downpayment</td><td></td></tr>\n<tr><td>A. Total Agreed Value of Property Being Traded-In (see Trade-In Vehicle(s)):</td><td>$ 0.00 (A)</td></tr>\n<tr><td>Vehicle 1 $ 0.00 Vehicle 2 $ 0.00</td><td></td></tr>\n<tr><td>B. Total Less Prior Credit or Lease Balance (e)</td><td>$ 0.00 (B)</td></tr>\n<tr><td>Vehicle 1 $ 0.00 Vehicle 2 $ 0.00</td><td></td></tr>\n<tr><td>C. Total Net Trade-In (A-B) (indicate if negative number)</td><td>$ 0.00 (C)</td></tr>\n<tr><td>Vehicle 1 $ 0.00 Vehicle 2 $ 0.00</td><td></td></tr>\n<tr><td>D. Deferred Downpayment Payable to Seller</td><td>$ 0.00 (D)</td></tr>\n<tr><td>E. Manufacturer's Rebate</td><td>$ 0.00 (E)</td></tr>\n<tr><td>F. Other N/A</td><td>$ (F)</td></tr>\n<tr><td>G. Cash, Cash Equivalent, Check, Credit Card, or Debit Card</td><td>$ 2500.00 (G)</td></tr>\n<tr><td>Total Downpayment (C through G)</td><td>$ 2500.00 (6)</td></tr>\n<tr><td colspan=\"2\">(If negative, enter zero on line 6 and enter the amount less than zero as a positive number on line 1J above)</td></tr>\n<tr><td>7. Amount Financed (5 less 6)</td><td>$ 27492.56 (7)</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">**OPTIONAL SERVICE CONTRACT(S)** You want to<br>purchase the service contract(s) written with the following<br>company(ies) for the term(s) shown below for the<br>charge(s) shown in item 1I.</td></tr>\n<tr><td>I1 Company ___</td><td>___</td></tr>\n<tr><td>Term ___ Mos. or ___</td><td>Miles</td></tr>\n<tr><td>I2 Company ___<br>Term ___ Mos. or ___</td><td>Miles</td></tr>\n<tr><td>I3 Company ___</td><td></td></tr>\n<tr><td>Term ___ Mos. or ___</td><td>Miles</td></tr>\n<tr><td>I4 Company ___________________________________________________________________</td><td>___</td></tr>\n<tr><td>Term ___ Mos. or ___</td><td>Miles</td></tr>\n<tr><td>I5 Company ___________________________________________________________________</td><td>___</td></tr>\n<tr><td>Term ___ Mos. or ___</td><td>Miles</td></tr>\n<tr><td>Buyer X___</td><td>___</td></tr>\n</table>\n\n**OPTIONAL DEBT CANCELLATION AGREEMENT.** A debt\ncancellation agreement is not required to obtain credit and will\nnot be provided unless you sign below and agree to pay the\nextra charge. If you choose to buy debt cancellation, the charge\nis shown in item 1K of the Itemization of Amount Financed. See\nyour debt cancellation agreement for details on the terms and\nconditions it provides. It is a part of this contract.\nTerm ___ Mos. ___\nDebt Cancellation Agreement\nI want to buy a debt cancellation agreement.\nBuyer Signs X ___\n\n\nTrade-In Vehicle(s)\n1. Vehicle 1\nYear ___ Make ___\nModel ___ Odometer ___\nVIN ___\na. Agreed Value of Property $ 0.00\nb. Buyer/Co-Buyer Retained Trade Equity $ ___\nc. Agreed Value of Property\nBeing Traded-In (a-b) $ ___\nd. Prior Credit or Lease Balance $ 0.00\ne. Net Trade-In (c-d) (must be ≥ 0\nfor buyer/co-buyer to retain equity) $ ___\n2. Vehicle 2\nYear ___ Make ___\nModel ___ Odometer ___\nVIN ___\na. Agreed Value of Property $ 0.00\nb. Buyer/Co-Buyer Retained Trade Equity $ ___\nc. Agreed Value of Property\nBeing Traded-In (a-b) $ ___\nd. Prior Credit or Lease Balance $ 0.00\ne. Net Trade-In (c-d) (must be ≥ 0\nfor buyer/co-buyer to retain equity) $ ___\nTotal Agreed Value of Property\nBeing Traded-In (1c+2c) $ ___*\nTotal Prior Credit or Lease\nBalance (1d+2d) $ 0.00*\nTotal Net Trade-In (1e+2e) $ ___*\n(*See item 6A-6C in the Itemization of Amount Financed)\n\n\nOPTION: \n [ ] You pay no finance charge if the\nAmount Financed, item 7, is paid in full on or\nbefore ___, Year ___.\nSELLER'S INITIALS ___\n\n\nBuyer Signs X\n\n\nCo-Buyer Signs X ____________________\n\n\nLAW 553-CA-ARB-eps 7/16 v1\n\n\nPage 2 of 7\n\n\n<!-- PAGE BREAK -->\n\n**Trade-In Payoff Agreement:** Seller relied on information from you and/or the lienholder or lessor of your trade-in vehicle(s) to arrive at the payoff amount shown as the Prior Credit or Lease\nBalance in Trade-In Vehicle(s). You understand that the amount quoted is an estimate.\nSeller agrees to pay the payoff amount shown as the Prior Credit or Lease Balance in Trade-In Vehicle(s) to the lienholder or lessor of the trade-in vehicle(s), or its designee. If the actual\npayoff amount is more than the amount shown as the Prior Credit or Lease Balance in Trade-In Vehicle(s), you must pay the Seller the excess on demand. If the actual payoff amount is\nless than the amount shown as the Prior Credit or Lease Balance in Trade-In Vehicle(s), Seller will refund to you any overage Seller receives from your prior lienholder or lessor. Except as\nstated in the “NOTICE” on page 5 of this contract, any assignee of this contract will not be obligated to pay the Prior Credit or Lease Balance shown in Trade-In Vehicle(s) or any refund.\n**Buyer Signature X** ___ **Co-Buyer Signature X** ___\n\n\n**HOW THIS CONTRACT CAN BE CHANGED.** This contract contains the entire agreement between you and us relating to this contract. Any change to the contract must be in\nwriting and both you and we must sign it. No oral changes are binding.\nBuyer Signs X ___ Co-Buyer Signs X ___\n\n\n**SELLER'S RIGHT TO CANCEL** If Buyer and Co-Buyer sign here, the provisions of the Seller's Right to Cancel section on page 5 of this contract giving the Seller the right to cancel if Seller is\nunable to assign this contract to a financial institution will apply.\nBuyer X ___ Co-Buyer X ___\n\n\nTHE MINIMUM PUBLIC LIABILITY INSURANCE LIMITS PROVIDED IN LAW MUST BE MET BY EVERY PERSON WHO PURCHASES A VEHICLE. IF YOU ARE UNSURE WHETHER OR\nNOT YOUR CURRENT INSURANCE POLICY WILL COVER YOUR NEWLY ACQUIRED VEHICLE IN THE EVENT OF AN ACCIDENT, YOU SHOULD CONTACT YOUR INSURANCE AGENT.\nWARNING:\nYOUR PRESENT POLICY MAY NOT COVER COLLISION DAMAGE OR MAY NOT PROVIDE FOR FULL REPLACEMENT COSTS FOR THE VEHICLE BEING PURCHASED. IF YOU DO\nNOT HAVE FULL COVERAGE, SUPPLEMENTAL COVERAGE FOR COLLISION DAMAGE MAY BE AVAILABLE TO YOU THROUGH YOUR INSURANCE AGENT OR THROUGH THE SELLING\nDEALER. HOWEVER, UNLESS OTHERWISE SPECIFIED, THE COVERAGE YOU OBTAIN THROUGH THE DEALER PROTECTS ONLY THE DEALER, USUALLY UP TO THE AMOUNT OF\nTHE UNPAID BALANCE REMAINING AFTER THE VEHICLE HAS BEEN REPOSSESSED AND SOLD.\nFOR ADVICE ON FULL COVERAGE THAT WILL PROTECT YOU IN THE EVENT OF LOSS OR DAMAGE TO YOUR VEHICLE, YOU SHOULD CONTACT YOUR INSURANCE AGENT.\nTHE BUYER SHALL SIGN TO ACKNOWLEDGE THAT HE/SHE UNDERSTANDS THESE PUBLIC LIABILITY TERMS AND CONDITIONS.\nS/S X ___ X ___\n\n\n**CREDIT DISABILITY INSURANCE NOTICE**\n**CLAIM PROCEDURE**\nIf you become disabled, you must tell us right away. (You are advised to send this information to the same address to which you are normally\nrequired to send your payments, unless a different address or telephone number is given to you in writing by us as the location where we would\nlike to be notified.) We will tell you where to get claim forms. You must send in the completed form to the insurance company as soon as possible\nand tell us as soon as you do.\nIf your disability insurance covers all of your missed payment(s), WE CANNOT TRY TO COLLECT WHAT YOU OWE OR FORECLOSE UPON\nOR REPOSSESS ANY COLLATERAL UNTIL THREE CALENDAR MONTHS AFTER your first missed payment is due or until the insurance\ncompany pays or rejects your claim, whichever comes first. We can, however, try to collect, foreclose, or repossess if you have any money due\nand owing us or are otherwise in default when your disability claim is made or if a senior mortgage or lien holder is foreclosing.\nIf the insurance company pays the claim within the three calendar months, we must accept the money as though you paid on time. If the\ninsurance company rejects the claim within the three calendar months or accepts the claim within the three calendar months on a partial disability\nand pays less than for a total disability, you will have 35 days from the date that the rejection or the acceptance of the partial disability claim is\nsent to pay past due payments, or the difference between the past due payments and what the insurance company pays for the partial disability,\nplus late charges. You can contact us, and we will tell you how much you owe. After that time, we can take action to collect or foreclose or\nrepossess any collateral you may have given.\nIf the insurance company accepts your claim but requires that you send in additional forms to remain eligible for continued payments, you should\nsend in these completed additional forms no later than required. If you do not send in these forms on time, the insurance company may stop\npaying, and we will then be able to take action to collect or foreclose or repossess any collateral you may have given.\n\n\nBuyer Signs X ____________________\nCo-Buyer Signs X ____________________\n\n\n*LAW 553-CA-ARB-eps 7/16 v1* Page 3 of 7\n\n\n<!-- PAGE BREAK -->\n\n# OTHER IMPORTANT AGREEMENTS\n\n1. FINANCE CHARGE AND PAYMENTS\n a. How we will figure Finance Charge. We will figure the\nFinance Charge on a daily basis at the Annual Percentage\nRate on the unpaid part of the Amount Financed. Seller -\nCreditor may receive part of the Finance Charge.\n b. How we will apply payments. We may apply each\npayment to the earned and unpaid part of the Finance\nCharge, to the unpaid part of the Amount Financed and to\nother amounts you owe under this contract in any order we\nchoose.\n c. How late payments or early payments change what you\nmust pay. We based the Finance Charge, Total of\nPayments, and Total Sale Price shown on page 1 of this\ncontract on the assumption that you will make every\npayment on the day it is due. Your Finance Charge, Total of\nPayments, and Total Sale Price will be more if you pay late\nand less if you pay early. Changes may take the form of a\nlarger or smaller final payment or, at our option, more or\nfewer payments of the same amount as your scheduled\npayment with a smaller final payment. We will send you a\nnotice telling you about these changes before the final\nscheduled payment is due.\n d. You may prepay. You may prepay all or part of the unpaid\npart of the Amount Financed at any time. If you do so, you\nmust pay the earned and unpaid part of the Finance\nCharge and all other amounts due up to the date of your\npayment. As of the date of your payment, if the minimum\nfinance charge is greater than the earned Finance Charge,\nyou may be charged the difference; the minimum finance\ncharge is as follows: (1) $25 if the original Amount\nFinanced does not exceed $1,000, (2) $50 if the original\nAmount Financed is more than $1,000 but not more than\n$2,000, or (3) $75 if the original Amount Financed is more\nthan $2,000.\n\n\n**2.** **YOUR OTHER PROMISES TO US**\n **a.** If the vehicle is damaged, destroyed, or missing. You\nagree to pay us all you owe under this contract even if the\nvehicle is damaged, destroyed, or missing.\n**GAP LIABILITY NOTICE**\nIn the event of theft or damage to your vehicle that\nresults in a total loss, there may be a gap between the\namount you owe under this contract and the proceeds\nof your insurance settlement and deductible. THIS\nCONTRACT PROVIDES THAT YOU ARE LIABLE FOR\nTHE GAP AMOUNT. An optional debt cancellation\nagreement for coverage of the gap amount may be\noffered for an additional charge.\n **b.** Using the vehicle. You agree not to remove the vehicle\nfrom the U.S. or Canada, or to sell, rent, lease, or transfer\nany interest in the vehicle or this contract without our\nwritten permission. You agree not to expose the vehicle to\nmisuse, seizure, confiscation, or involuntary transfer. If we\npay any repair bills, storage bills, taxes, fines, or charges on\nthe vehicle, you agree to repay the amount when we ask for\nit.\n **c.** Security Interest.\nYou give us a security interest in:\n - The vehicle and all parts or goods put on it;\n - All money or goods received (proceeds) for the\nvehicle;\n - All insurance, maintenance, service, or other contracts\nwe finance for you; and\n - All proceeds from insurance, maintenance, service, or\nother contracts we finance for you. This includes any\nrefunds of premiums or charges from the contracts.\nThis secures payment of all you owe on this contract. It\nalso secures your other agreements in this contract as the\nlaw allows. You will make sure the title shows our security\ninterest (lien) in the vehicle. You will not allow any other\nsecurity interest to be placed on the title without our written\npermission.\n\n\nd. Insurance you must have on the vehicle.\nYou agree to have physical damage insurance covering\nloss of or damage to the vehicle for the term of this\ncontract. The insurance must cover our interest in the\nvehicle. If you do not have this insurance, we may, if we\nchoose, buy physical damage insurance. If we decide to\nbuy physical damage insurance, we may either buy\ninsurance that covers your interest and our interest in the\nvehicle, or buy insurance that covers only our interest. If we\nbuy either type of insurance, we will tell you which type and\nthe charge you must pay. The charge will be the premium\nfor the insurance and a finance charge computed at the\nAnnual Percentage Rate shown on page 1 of this contract\nor, at our option, the highest rate the law permits. If the\nvehicle is lost or damaged, you agree that we may use any\ninsurance settlement to reduce what you owe or repair the\nvehicle.\ne. What happens to returned insurance, maintenance,\nservice, or other contract charges. If we get a refund of\ninsurance, maintenance, service, or other contract\ncharges, you agree that we may subtract the refund from\nwhat you owe.\n\n\n**3. IF YOU PAY LATE OR BREAK YOUR OTHER PROMISES**\n a. **You may owe late charges.** You will pay a late charge on\neach late payment as shown on page 1 of this contract.\nAcceptance of a late payment or late charge does not\nexcuse your late payment or mean that you may keep\nmaking late payments. If you pay late, we may also take the\nsteps described below.\n b. **You may have to pay all you owe at once.** If you break\nyour promises (default), we may demand that you pay all\nyou owe on this contract at once, subject to any right the\nlaw gives you to reinstate this contract.\nDefault means:\n - You do not pay any payment on time;\n - You give false, incomplete, or misleading information\non a credit application;\n - You start a proceeding in bankruptcy or one is started\nagainst you or your property;\n - The vehicle is lost, damaged or destroyed; or\n - You break any agreements in this contract.\nThe amount you will owe will be the unpaid part of the\nAmount Financed plus the earned and unpaid part of the\nFinance Charge, any late charges, and any amounts due\nbecause you defaulted.\n c. **You may have to pay collection costs.** You will pay\nour reasonable costs to collect what you owe, including\nattorney fees, court costs, collection agency fees, and fees\npaid for other reasonable collection efforts. You agree to pay a\ncharge not to exceed $15 if any check you give to us is\ndishonored.\n d. **We may take the vehicle from you.** If you default, we may\ntake (repossess) the vehicle from you if we do so\npeacefully and the law allows it. If your vehicle has an\nelectronic tracking device, you agree that we may use the\ndevice to find the vehicle. If we take the vehicle, any\naccessories, equipment, and replacement parts will stay\nwith the vehicle. If any personal items are in the vehicle, we\nmay store them for you at your expense. If you do not ask\nfor these items back, we may dispose of them as the law\nallows.\n e. **How you can get the vehicle back if we take it.** If we\nrepossess the vehicle, you may pay to get it back (redeem).\nYou may redeem the vehicle by paying all you owe, or you\nmay have the right to reinstate this contract and redeem the\nvehicle by paying past due payments and any late charges,\nproviding proof of insurance, and/or taking other action to\ncure the default. We will provide you all notices required by\nlaw to tell you when and how much to pay and/or what\naction you must take to redeem the vehicle.\n\n\nBuyer Signs X\n\n\nCo-Buyer Signs X\n\n\nLAW 553-CA-ARB-eps 7/16 v1\n\n\nPage 4 of 7\n\n\n<!-- PAGE BREAK -->\n\n**f. We will sell the vehicle if you do not get it back.** If you\ndo not redeem, we will sell the vehicle. We will send you a\nwritten notice of sale before selling the vehicle.\nWe will apply the money from the sale, less allowed\nexpenses, to the amount you owe. Allowed expenses are\nexpenses we pay as a direct result of taking the vehicle,\nholding it, preparing it for sale, and selling it. Attorney fees\nand court costs the law permits are also allowed expenses.\nIf any money is left (surplus), we will pay it to you unless the\nlaw requires us to pay it to someone else. If money from the\nsale is not enough to pay the amount you owe, you must\npay the rest to us. If you do not pay this amount when we\nask, we may charge you interest at the Annual Percentage\nRate shown on page 1 of this contract, not to exceed the\nhighest rate permitted by law, until you pay.\n**g. What we may do about optional insurance, main-**\n**tenance, service, or other contracts.** This contract may\ncontain charges for optional insurance, maintenance,\nservice, or other contracts. If we demand that you pay all\nyou owe at once or we repossess the vehicle, you agree\nthat we may claim benefits under these contracts and\ncancel them to obtain refunds of unearned charges to\nreduce what you owe or repair the vehicle. If the vehicle is\na total loss because it is confiscated, damaged, or stolen,\nwe may claim benefits under these contracts and cancel\nthem to obtain refunds of unearned charges to reduce what\nyou owe.\n\n\n**4. WARRANTIES SELLER DISCLAIMS**\nIf you do not get a written warranty, and the Seller does not\nenter into a service contract within 90 days from the date of\nthis contract, the Seller makes no warranties, express or\nimplied, on the vehicle, and there will be no implied\nwarranties of merchantability or of fitness for a particular\npurpose.\nThis provision does not affect any warranties covering the\nvehicle that the vehicle manufacturer may provide. If the Seller\nhas sold you a certified used vehicle, the warranty of\nmerchantability is not disclaimed.\n\n\n5. Used Car Buyers Guide. The information you see on the\nwindow form for this vehicle is part of this contract.\nInformation on the window form overrides any contrary\nprovisions in the contract of sale.\nSpanish Translation: Guía para compradores de vehículos\nusados. La información que ve en el formulario de la\nventanilla para este vehículo forma parte del presente\ncontrato. La información del formulario de la ventanilla deja\nsin efecto toda disposición en contrario contenida en el\ncontrato de venta.\n\n\n**6. SERVICING AND COLLECTION CONTACTS**\nYou agree that we may try to contact you in writing, by e-mail, or\nusing prerecorded/artificial voice messages, text messages, and\nautomatic telephone dialing systems, as the law allows. You also\nagree that we may try to contact you in these and other ways at\nany address or telephone number you provide us, even if the\ntelephone number is a cell phone number or the contact results in\na charge to you. **You agree that you will within a reasonable**\n**time notify us of any change in your name, address, or**\n**employment.**\n\n\n**7. APPLICABLE LAW**\nFederal law and California law apply to this contract. If any part of\nthis contract is not valid, all other parts stay valid. We may delay\nor refrain from enforcing any of our rights under this contract\nwithout losing them. For example, we may extend the time for\nmaking some payments without extending the time for making\nothers.\n\n\n**8. WARRANTIES OF BUYER**\nYou promise you have given true and correct information in your\napplication for credit, and you have no knowledge that will make\nthat information untrue in the future. We have relied on the truth\nand accuracy of that information in entering into this contract.\nUpon request, you will provide us with documents and other\ninformation necessary to verify any item contained in your credit\napplication.\n\n\nYou waive the provisions of Calif. Vehicle Code Section 1808.21 and\nauthorize the California Department of Motor Vehicles to furnish your\nresidence address to us.\n\n\n# Seller's Right to Cancel\n\na. Seller agrees to deliver the vehicle to you on the date this contract\nis signed by Seller and you. You understand that it may take some\ntime for Seller to verify your credit and assign the contract. You\nagree that if Seller is unable to assign the contract to any one of the\nfinancial institutions with whom Seller regularly does business\nunder an assignment acceptable to Seller, Seller may cancel the\ncontract.\nb. Seller shall give you written notice (or in any other manner in which\nactual notice is given to you) within 10 days of the date this contract\nis signed if Seller elects to cancel. Upon receipt of such notice, you\nmust immediately return the vehicle to the same condition\nas when sold, reasonable wear and tear excepted. Seller must give\nback to you all consideration received by Seller, including any trade-\nin vehicle.\nc. If you do not immediately return the vehicle, you shall be liable for\nall expenses incurred by Seller in taking the vehicle from you,\nincluding reasonable attorney's fees.\nd. While the vehicle is in your possession, all terms of the contract,\nincluding those relating to use of the vehicle and insurance for the\nvehicle, shall be in full force and you shall assume all risk of loss or\ndamage to the vehicle. You must pay all reasonable costs for repair\nof any damage to the vehicle until the vehicle is returned to Seller.\n\n\nNOTICE: ANY HOLDER OF THIS CONSUMER CREDIT CONTRACT IS SUBJECT TO ALL CLAIMS AND DEFENSES WHICH\nTHE DEBTOR COULD ASSERT AGAINST THE SELLER OF GOODS OR SERVICES OBTAINED PURSUANT HERETO OR\nWITH THE PROCEEDS HEREOF. RECOVERY HEREUNDER BY THE DEBTOR SHALL NOT EXCEED AMOUNTS PAID BY THE\nDEBTOR HEREUNDER.\n\n\nThe preceding NOTICE applies only to goods or services obtained primarily for personal, family or household use. In all other\ncases, Buyer will not assert against any subsequent holder or assignee of this contract any claims or defenses the Buyer (debtor)\nmay have against the Seller, or against the manufacturer of the vehicle or equipment obtained under this contract.\n\n\nBuyer Signs X\n\n\nCo-Buyer Signs X ________________\n\n\nLAW 553-CA-ARB-eps 7/16 v1\n\n\nPage 5 of 7\n\n\n<!-- PAGE BREAK -->\n\n\n\n\nNotice to buyer: (1) Do not sign this agreement before you read it or if it contains any blank spaces to be filled in. (2) You are entitled to a completely filled in\ncopy of this agreement. (3) You can prepay the full amount due under this agreement at any time. (4) If you default in the performance of your obligations\nunder this agreement, the vehicle may be repossessed and you may be subject to suit and liability for the unpaid indebtedness evidenced by this agreement.\n\n\nIf you have a complaint concerning this sale, you should try to resolve it with the seller.\nComplaints concerning unfair or deceptive practices or methods by the seller may be referred to the city attorney, the district attorney, or an investigator for the Department of Motor Vehicles, or any combination thereof.\nAfter this contract is signed, the seller may not change the financing or payment terms unless you agree in writing to the change. You do not have to agree to any change, and it is an unfair or deceptive practice for\nthe seller to make a unilateral change.\nBuyer Signature X ___ Co-Buyer Signature X ___\n\n\nThe Annual Percentage Rate may be negotiable with the Seller. The Seller may assign this contract\nand retain its right to receive a part of the Finance Charge.\n\n\n**THERE IS NO COOLING-OFF PERIOD UNLESS YOU OBTAIN A CONTRACT CANCELLATION OPTION**\nCalifornia law does not provide for a “cooling-off” or other cancellation period for vehicle sales. Therefore, you cannot later cancel this contract\nsimply because you change your mind, decide the vehicle costs too much, or wish you had acquired a different vehicle. After you sign below,\nyou may only cancel this contract with the agreement of the seller or for legal cause, such as fraud. However, California law does require a seller\nto offer a two-day contract cancellation option on used vehicles with a purchase price of less than forty thousand dollars ($40,000), subject to\ncertain statutory conditions. This contract cancellation option requirement does not apply to the sale of a recreational vehicle, a motorcycle, or\nan off-highway motor vehicle subject to identification under California law. See the vehicle contract cancellation option agreement for details.\n\n\nYOU AGREE TO THE TERMS OF THIS CONTRACT. YOU\nCONFIRM THAT BEFORE YOU SIGNED THIS CONTRACT, WE\nGAVE IT TO YOU, AND YOU WERE FREE TO TAKE IT AND\nREVIEW IT. YOU ACKNOWLEDGE THAT YOU HAVE READ ALL\nPAGES OF THIS CONTRACT, INCLUDING THE ARBITRATION\nPROVISION ON PAGE 7 OF THIS CONTRACT, BEFORE SIGNING\nBELOW. YOU CONFIRM THAT YOU RECEIVED A COMPLETELY\nFILLED-IN COPY WHEN YOU SIGNED IT.\n\n\nBuyer Signature X ____________________ Date ____________________ Co-Buyer Signature X ____________________ Date ____________________\nCo-Buyers and Other Owners — A co-buyer is a person who is responsible for paying the entire debt. An other owner is a person whose name is on the title to the vehicle but does not\nhave to pay the debt. The other owner agrees to the security interest in the vehicle given to us in this contract.\nOther Owner Signature X ________________________________________________________________ Address ________________________________________________________________\n\n\n**GUARANTY:** To induce us to sell the vehicle to Buyer, each person who signs as a Guarantor individually guarantees the payment of this contract. If Buyer fails to pay any money owing on this contract, each Guarantor must\npay it when asked. Each Guarantor will be liable for the total amount owing even if other persons also sign as Guarantor, and even if Buyer has a complete defense to Guarantor's demand for reimbursement. Each Guarantor\nagrees to be liable even if we do one or more of the following: (1) give the Buyer more time to pay one or more payments; (2) give a full or partial release to any other Guarantor; (3) release any security; (4) accept less from the\nBuyer than the total amount owing; or (5) otherwise reach a settlement relating to this contract or extend the contract. Each Guarantor acknowledges receipt of a completed copy of this contract and guaranty at the time of signing.\nGuarantor waives notice of acceptance of this Guaranty, notice of the Buyer's non-payment, non-performance, and default; and notices of the amount owing at any time, and of any demands upon the Buyer.\nGuarantor X __________________________________ Date __________________\nAddress ____________________________________________________________________\nGuarantor X __________________________________ Date __________________\nAddress ____________________________________________________________________\nSeller Signs _________________________________ Date __________________ By X _____________________________________________________ Title __________________\n\n\nBuyer Signs X\n\n\nCo-Buyer Signs X ________________\n\n\n*LAW 553-CA-ARB-eps 7/16 v1* Page 6 of 7\n\n\n<!-- PAGE BREAK -->\n\n**ARBITRATION PROVISION**\n**PLEASE REVIEW - IMPORTANT - AFFECTS YOUR LEGAL RIGHTS**\n1. EITHER YOU OR WE MAY CHOOSE TO HAVE ANY DISPUTE BETWEEN US DECIDED BY ARBITRATION AND NOT IN COURT\nOR BY JURY TRIAL.\n2. IF A DISPUTE IS ARBITRATED, YOU WILL GIVE UP YOUR RIGHT TO PARTICIPATE AS A CLASS REPRESENTATIVE OR CLASS\nMEMBER ON ANY CLASS CLAIM YOU MAY HAVE AGAINST US INCLUDING ANY RIGHT TO CLASS ARBITRATION OR ANY\nCONSOLIDATION OF INDIVIDUAL ARBITRATIONS.\n3. DISCOVERY AND RIGHTS TO APPEAL IN ARBITRATION ARE GENERALLY MORE LIMITED THAN IN A LAWSUIT, AND OTHER\nRIGHTS THAT YOU AND WE WOULD HAVE IN COURT MAY NOT BE AVAILABLE IN ARBITRATION.\n\n\nAny claim or dispute, whether in contract, tort, statute or otherwise (including the interpretation and scope of this Arbitration Provision,\nand the arbitrability of the claim or dispute), between you and us or our employees, agents, successors or assigns, which arises out of\nor relates to your credit application, purchase or condition of this vehicle, this contract or any resulting transaction or relationship\n(including any such relationship with third parties who do not sign this contract) shall, at your or our election, be resolved by neutral,\nbinding arbitration and not by a court action. If federal law provides that a claim or dispute is not subject to binding arbitration, this\nArbitration Provision shall not apply to such claim or dispute. Any claim or dispute is to be arbitrated by a single arbitrator on an individual\nbasis and not as a class action. You expressly waive any right you may have to arbitrate a class action. You may choose the American\nArbitration Association, 1633 Broadway, 10th Floor, New York, New York 10019 (www.adr.org), or any other organization to conduct the\narbitration subject to our approval. You may get a copy of the rules of an arbitration organization by contacting the organization or visiting\nits website.\n\n\nArbitrators shall be attorneys or retired judges and shall be selected pursuant to the applicable rules. The arbitrator shall apply governing\nsubstantive law and the applicable statute of limitations. The arbitration hearing shall be conducted in the federal district in which you\nreside unless the Seller-Creditor is a party to the claim or dispute, in which case the hearing will be held in the federal district where this\ncontract was executed. We will pay your filing, administration, service or case management fee and your arbitrator or hearing fee all up\n\n\nto a maximum of $5000, unless the law or the rules of the chosen arbitration organization require us to pay more. The amount we pay\nmay be reimbursed in whole or in part by decision of the arbitrator if the arbitrator finds that any of your claims is frivolous under\napplicable law. Each party shall be responsible for its own attorney, expert and other fees, unless awarded by the arbitrator under\napplicable law. If the chosen arbitration organization's rules conflict with this Arbitration Provision, then the provisions of this Arbitration\nProvision shall control. Any arbitration under this Arbitration Provision shall be governed by the Federal Arbitration Act (9 U.S.C. § 1 et.\n\n\nseq.) and not by any state law concerning arbitration. Any award by the arbitrator shall be in writing and will be final and binding on all\nparties, subject to any limited right to appeal under the Federal Arbitration Act.\n\n\nYou and we retain the right to seek remedies in small claims court for disputes or claims within that court's jurisdiction, unless such action\nis transferred, removed or appealed to a different court. Neither you nor we waive the right to arbitrate by using self-help remedies, such\n\n\nas repossession, or by filing an action to recover the vehicle, to recover a deficiency balance, or for individual injunctive relief. Any court\nhaving jurisdiction may enter judgment on the arbitrator's award. This Arbitration Provision shall survive any termination, payoff or transfer\nof this contract. If any part of this Arbitration Provision, other than waivers of class action rights, is deemed or found to be unenforceable\n\n\nfor any reason, the remainder shall remain enforceable. If a waiver of class action rights is deemed or found to be unenforceable for any\nreason in a case in which class action allegations have been made, the remainder of this Arbitration Provision shall be unenforceable.\n\n\nSeller assigns its interest in this contract to (Assignee) under the terms of Seller's agreement(s) with Assignee.\n [ ] Assigned with recourse\n [ ] Assigned without recourse\n [ ] Assigned with limited recourse\nSeller DEALERSHIP NAME By Title\n\n\nBuyer Signs X ____________________ Co-Buyer Signs X\n\n\n[LAW]\nFORM NO. 553-CA-ARB-eps (REV. 7/16)\n©2016 The Reynolds and Reynolds Company\nTHERE ARE NO WARRANTIES, EXPRESS OR IMPLIED, AS TO CONTENT OR\nFITNESS FOR PURPOSE OF THIS FORM. CONSULT YOUR OWN LEGAL COUNSEL\n\n\nLAW 553-CA-ARB-eps 7/16 v1 Page 7 of 7\n\n\n<!-- doc_id=parse-01m5xwp0t96xfwyg88c809qbmc -->",
+  "metadata": {
+    "job_id": "extract-01m5xwpfahaceb9sgs17yr0fvg",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 14487,
+    "doc_id": "parse-01m5xwp0t96xfwyg88c809qbmc",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 9.6,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 40765,
+    "output_extraction_chars": 1349,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

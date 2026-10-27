@@ -1,0 +1,366 @@
+{
+  "type": "object",
+  "description": "A motor vehicle retail installment sale contract (simple finance charge), as used by dealers for indirect auto financing",
+  "properties": {
+    "form_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The contract form number printed in the header, e.g. a dealer-forms catalogue number"
+    },
+    "dealer_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Dealer Number in the header"
+    },
+    "contract_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Contract Number in the header"
+    },
+    "ros_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The R.O.S. Number in the header"
+    },
+    "stock_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Stock Number in the header; null if blank"
+    },
+    "seller_creditor": {
+      "type": "object",
+      "description": "The selling dealer",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The dealer's name, from the letterhead at top left (or the Seller-Creditor box if the letterhead is absent)"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The dealer's address from the letterhead, as one line"
+        }
+      }
+    },
+    "buyer": {
+      "type": "object",
+      "description": "The Buyer box",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The buyer's full name"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The buyer's address, as one line"
+        }
+      }
+    },
+    "co_buyer_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The co-buyer's name; null if the Co-Buyer box is blank"
+    },
+    "vehicle": {
+      "type": "object",
+      "description": "The vehicle row on page 1",
+      "properties": {
+        "condition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "New",
+            "Used",
+            null
+          ],
+          "description": "New or Used, as written in the New/Used column"
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Model year"
+        },
+        "make": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Vehicle make"
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Vehicle model"
+        },
+        "odometer": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Odometer reading in miles"
+        },
+        "vin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The 17-character Vehicle Identification Number"
+        },
+        "business_use": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the 'business or commercial' primary-use box is checked; false if unchecked (personal, family or household use)"
+        }
+      }
+    },
+    "truth_in_lending": {
+      "type": "object",
+      "description": "The Federal Truth-in-Lending Disclosures box on page 1",
+      "properties": {
+        "annual_percentage_rate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "ANNUAL PERCENTAGE RATE, as a percent number (5.25 for 5.25%)"
+        },
+        "finance_charge": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "FINANCE CHARGE, in USD"
+        },
+        "amount_financed": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Amount Financed, in USD"
+        },
+        "total_of_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total of Payments, in USD"
+        },
+        "total_sale_price": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total Sale Price, in USD"
+        },
+        "down_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The down payment printed inside the Total Sale Price column, in USD"
+        }
+      }
+    },
+    "payment_schedule": {
+      "type": "array",
+      "description": "The rows of YOUR PAYMENT SCHEDULE WILL BE that are filled in. Skip rows marked N/A or left blank.",
+      "items": {
+        "type": "object",
+        "description": "One payment schedule row",
+        "properties": {
+          "number_of_payments": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Number of payments in this row; 1 for a 'One Payment of' or 'One final payment' row"
+          },
+          "amount_of_payment": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Amount of each payment, in USD"
+          },
+          "when_due": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "When the payments are due, as printed (e.g. 'Monthly beginning 5/16/2020')"
+          }
+        }
+      }
+    },
+    "late_charge_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Days after the due date before a late charge applies"
+    },
+    "late_charge_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Late charge as a percent of the late payment"
+    },
+    "itemization": {
+      "type": "object",
+      "description": "ITEMIZATION OF THE AMOUNT FINANCED on page 2",
+      "properties": {
+        "cash_price_vehicle": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1A1: Cash Price Vehicle, in USD"
+        },
+        "cash_price_accessories": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1A2: Cash Price Accessories, in USD"
+        },
+        "document_processing_charge": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1B: Document Processing Charge, in USD"
+        },
+        "theft_deterrent_device": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1D1: first Theft Deterrent Device charge, in USD"
+        },
+        "sales_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1G: Sales Tax, in USD"
+        },
+        "debt_cancellation_agreement": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 1K: Optional Debt Cancellation Agreement, in USD"
+        },
+        "total_cash_price": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (1): Total Cash Price (A through N), in USD"
+        },
+        "registration_fees": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 2B: Registration/Transfer/Titling Fees, in USD"
+        },
+        "total_official_fees": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (2): Total Official Fees, in USD"
+        },
+        "insurance_premiums": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (3): Amount Paid to Insurance Companies, in USD"
+        },
+        "state_emissions_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (4): State Emissions Certification or Exemption Fee, in USD"
+        },
+        "subtotal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (5): Subtotal (1 through 4), in USD"
+        },
+        "net_trade_in": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 6C: Total Net Trade-In, in USD"
+        },
+        "cash_down_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 6G: Cash, Cash Equivalent, Check, Credit Card, or Debit Card, in USD"
+        },
+        "total_downpayment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (6): Total Downpayment, in USD"
+        },
+        "amount_financed": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line (7): Amount Financed (5 less 6), in USD"
+        }
+      }
+    },
+    "governing_law_state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The state whose law applies, from the APPLICABLE LAW clause"
+    }
+  }
+}
