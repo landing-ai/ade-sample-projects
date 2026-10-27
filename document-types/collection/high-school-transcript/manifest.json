@@ -1,0 +1,38 @@
+{
+  "slug": "high-school-transcript",
+  "title": "High School Transcript",
+  "source": {
+    "file": "nyc-doe-high-school-transcript-redacted.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/838946806/High-School-Transcript",
+      "publisher": "New York City Department of Education",
+      "title": "Student Transcript (unofficial student copy), Tottenville High School, printed June 26, 2023, page 1 of 2",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A real student's NYC Department of Education transcript (an 'unofficial student copy'), photographed or scanned on an iPhone and uploaded to Scribd by a third party. Scribd is a user-upload site, so the uploader is not the publisher and the document is treated as a personal record. The file was downloaded manually, because Scribd blocks scripted requests. Only page 1 of 2 was uploaded. The source is a raster scan with no text layer, so the student's name, student ID, street address, city, ZIP code and date of birth, and the guidance counselor's name, were replaced in the pixels with document-types/scripts/redact_scan.py, which rebuilds the page from the edited image alone, so the original raster is not carried into the committed PDF. Before redaction the scan's single JPEG was placed unchanged on a 612 x 796.3 pt page (the source page was 1833 x 2385 pt, one point per pixel), so the 300 dpi rebuild stays near the scan's own resolution instead of quadrupling the file. PDF metadata cleared. The school name, course list, marks and term averages are left as printed: with the name, ID, address and date of birth gone, nothing on the page names the student. Verified by redact_scan.py's OCR pass, by eye on renders, and by a sweep of every file in this folder on literals and digits.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact_scan.py stays outside the repo.",
+        "replaced": [
+          {"what": "student's name", "with": "SAMPLE, JANE", "occurrences": 1},
+          {"what": "student ID number", "with": "417948620 (every digit drawn at random by plausible.py)", "occurrences": 1},
+          {"what": "house number and street name", "with": "100 MAIN (STREET kept as printed)", "occurrences": 1},
+          {"what": "city", "with": "ANYTOWN", "occurrences": 1},
+          {"what": "ZIP code", "with": "12345", "occurrences": 1},
+          {"what": "date of birth", "with": "03/14/2005 (year kept)", "occurrences": 1},
+          {"what": "guidance counselor's name", "with": "EXAMPLE PAT", "occurrences": 1}
+        ]
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {"path": "terms[4].year", "label": "Term year", "occurrence": 0},
+    {"path": "terms[4].courses[6].course_title", "label": "Course carried to the next column", "occurrence": 0},
+    {"path": "terms[4].courses[6].actual_mark", "label": "Mark", "occurrence": 0},
+    {"path": "terms[4].term_credits_averaged", "label": "Term credits averaged", "occurrence": 0},
+    {"path": "terms[4].term_average", "label": "Term average", "occurrence": 0}
+  ],
+  "notes": "The request named no feature page or fields. Features the one term that breaks across the two columns: the '2020 / Term: 2' heading and six courses sit at the bottom of the left column, and the seventh course (CHEMISTRY TERM 2), the term's credit totals and its 75.43% average sit at the top of the right column, above the next term's heading. Extraction put all seven courses and the totals in the same term, which is the reading order a person would use, so the overlay shows one term assembled from both columns. No named individual is featured. term_credits_attempted and term_credits_earned for that term ground OFF (empty range), so term_credits_averaged is featured instead. The weighted ('**') and not-averaged ('*') flags are booleans and cannot be illustrated; they are also the least reliable leaves, wrong on two of the six 2022 Term 1 courses."
+}
