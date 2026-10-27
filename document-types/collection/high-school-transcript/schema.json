@@ -1,0 +1,155 @@
+{
+  "type": "object",
+  "properties": {
+    "issuer": {
+      "type": "object",
+      "description": "Who issued the transcript, from the page header",
+      "properties": {
+        "issuing_authority": {
+          "type": ["string", "null"],
+          "description": "The school district or education department named at the top of the page, e.g. 'New York City Department Of Education'"
+        },
+        "school_name": {
+          "type": ["string", "null"],
+          "description": "The high school the transcript is for, printed under the title"
+        },
+        "transcript_type": {
+          "type": ["string", "null"],
+          "description": "Whether the transcript says it is official or an unofficial student copy, as stated on the page; null if not stated"
+        },
+        "printed_at": {
+          "type": ["string", "null"],
+          "description": "The date and time the transcript was printed, from the page footer, as printed"
+        }
+      }
+    },
+    "student": {
+      "type": "object",
+      "description": "The student record block at the top left of the transcript",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "The student's name, the part of 'Name / ID' before the slash, as printed (LAST, FIRST)"
+        },
+        "student_id": {
+          "type": ["string", "null"],
+          "description": "The student ID number, the part of 'Name / ID' after the slash"
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "The student's full mailing address from 'Address:', on one line"
+        },
+        "date_of_birth": {
+          "type": ["string", "null"],
+          "description": "The date of birth from 'DOB:', as printed"
+        },
+        "official_class": {
+          "type": ["string", "null"],
+          "description": "The official class (homeroom) code from 'Ofcl:'"
+        },
+        "grade_level": {
+          "type": ["integer", "null"],
+          "description": "The current grade level from 'Grade Level:', as a number"
+        },
+        "status": {
+          "type": ["string", "null"],
+          "description": "The enrollment status code from 'Status:'"
+        },
+        "admit_date": {
+          "type": ["string", "null"],
+          "description": "The date the student was admitted to the school, from 'Admit Date:', as printed"
+        },
+        "discharge_date": {
+          "type": ["string", "null"],
+          "description": "The discharge date from 'Discharge Date:'; null if blank"
+        },
+        "graduation_date": {
+          "type": ["string", "null"],
+          "description": "The graduation date from 'Graduation Date:'; null if blank"
+        },
+        "counselor": {
+          "type": ["string", "null"],
+          "description": "The guidance counselor's name from 'Counselor:', as printed"
+        }
+      }
+    },
+    "terms": {
+      "type": "array",
+      "description": "Every term section on the transcript, one entry per 'YYYY / Term: N' heading, in the order printed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": ["integer", "null"],
+            "description": "The year in the term heading, e.g. 2022 from '2022 / Term: 2'"
+          },
+          "term": {
+            "type": ["integer", "null"],
+            "description": "The term number in the term heading, e.g. 2 from '2022 / Term: 2'"
+          },
+          "courses": {
+            "type": "array",
+            "description": "Each course row listed under this term heading",
+            "items": {
+              "type": "object",
+              "properties": {
+                "school_code": {
+                  "type": ["string", "null"],
+                  "description": "The school code in the first column, e.g. '31R455'"
+                },
+                "course_code": {
+                  "type": ["string", "null"],
+                  "description": "The course code in the second column, e.g. 'EES88', without any trailing asterisks"
+                },
+                "course_title": {
+                  "type": ["string", "null"],
+                  "description": "The course title as printed, including any truncation"
+                },
+                "weighted": {
+                  "type": ["boolean", "null"],
+                  "description": "True if the course code is followed by '**', which the footer defines as a weighted course"
+                },
+                "actual_mark": {
+                  "type": ["string", "null"],
+                  "description": "The mark in the 'Actual Mark' column, as printed, keeping any letter or trailing asterisk, e.g. '95', '99*' or 'P*'"
+                },
+                "numeric_equivalent": {
+                  "type": ["number", "null"],
+                  "description": "The value in the 'Numeric Eq' column; null if blank"
+                },
+                "not_averaged": {
+                  "type": ["boolean", "null"],
+                  "description": "True if the actual mark carries a single '*', which the footer defines as not averaged"
+                },
+                "credits_attempted": {
+                  "type": ["number", "null"],
+                  "description": "The first number of the course's credits pair 'attempted / earned', e.g. 1.00 from '1.00 / 1.00'"
+                },
+                "credits_earned": {
+                  "type": ["number", "null"],
+                  "description": "The second number of the course's credits pair 'attempted / earned'"
+                }
+              }
+            }
+          },
+          "term_credits_attempted": {
+            "type": ["number", "null"],
+            "description": "The term total credits attempted, the first number after 'Term: Credits Attempted / Credits Earned:'"
+          },
+          "term_credits_earned": {
+            "type": ["number", "null"],
+            "description": "The term total credits earned, the second number after 'Term: Credits Attempted / Credits Earned:'"
+          },
+          "term_credits_averaged": {
+            "type": ["number", "null"],
+            "description": "The value after 'Term Credits Averaged:'"
+          },
+          "term_average": {
+            "type": ["number", "null"],
+            "description": "The term average percentage from 'Term Avg:', as a number without the percent sign, e.g. 80.92"
+          }
+        }
+      }
+    }
+  }
+}
