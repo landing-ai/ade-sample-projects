@@ -1,0 +1,443 @@
+{
+  "type": "object",
+  "description": "A closed-end motor vehicle lease with its federal Consumer Leasing Act disclosures",
+  "properties": {
+    "form_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The form number printed in the header, e.g. 'HFS-UCL-FL-e-14 1/21'"
+    },
+    "lease_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Lease Date at the top of page 1, as YYYY-MM-DD"
+    },
+    "parties": {
+      "type": "object",
+      "description": "The parties named in the header boxes on page 1",
+      "properties": {
+        "lessor_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The lessor (dealer) name from 'Lessor Name and Business Address'"
+        },
+        "lessor_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The lessor's business address, street, city, state and ZIP on one line"
+        },
+        "lessee_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The lessee's name from 'Lessee Name and Address'"
+        },
+        "lessee_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The lessee's address, street, city, state and ZIP on one line"
+        },
+        "co_lessee_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The co-lessee's name, or null if there is none"
+        },
+        "assignee": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The assignee the lease is assigned to (e.g. a lease trust), if the assignment box is checked"
+        }
+      }
+    },
+    "vehicle": {
+      "type": "object",
+      "description": "The leased vehicle, from Item 1 'The Vehicle'",
+      "properties": {
+        "condition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "New or Used, as printed in the New/Used column"
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The model year"
+        },
+        "make": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The make"
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The model"
+        },
+        "body_style": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The body style"
+        },
+        "vin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The 17-character Vehicle ID #"
+        },
+        "odometer": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "The odometer reading at delivery, in miles"
+        }
+      }
+    },
+    "disclosures": {
+      "type": "object",
+      "description": "The Consumer Leasing Act disclosure boxes, Items 2 to 5",
+      "properties": {
+        "amount_due_at_signing": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 2, Amount Due at Lease Signing or Delivery, in dollars"
+        },
+        "first_monthly_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 3A, the first monthly payment amount, in dollars"
+        },
+        "first_payment_due_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 3A, the date the first monthly payment is due, as YYYY-MM-DD"
+        },
+        "number_of_following_payments": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Item 3A, the number of monthly payments that follow the first"
+        },
+        "following_payment_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 3A, the amount of each following monthly payment, in dollars"
+        },
+        "payment_due_day": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Item 3A, the day of each month the payments are due, as written (e.g. '3rd')"
+        },
+        "total_of_scheduled_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 3C, the total of scheduled payments, in dollars"
+        },
+        "other_charges_total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 4D, total of other charges not part of the scheduled payment, in dollars"
+        },
+        "disposition_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 4A, the turn-in (disposition) fee if the vehicle is not purchased, in dollars"
+        },
+        "total_of_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 5, Total of Payments, in dollars"
+        }
+      }
+    },
+    "payment_calculation": {
+      "type": "object",
+      "description": "Item 7, how the scheduled payment is determined",
+      "properties": {
+        "agreed_value_of_vehicle": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7A, the agreed upon value of the Vehicle printed in parentheses, in dollars"
+        },
+        "gross_capitalized_cost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7A, gross capitalized cost, in dollars"
+        },
+        "capitalized_cost_reduction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7B, capitalized cost reduction, in dollars"
+        },
+        "adjusted_capitalized_cost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7C, adjusted capitalized cost, in dollars"
+        },
+        "residual_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7D, residual value of the Vehicle at the end of the lease, in dollars"
+        },
+        "depreciation_and_amortized_amounts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7E, depreciation and any amortized amounts, in dollars"
+        },
+        "rent_charge": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7F, rent charge, in dollars"
+        },
+        "total_of_base_scheduled_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7G, total of base scheduled payments, in dollars"
+        },
+        "number_of_payments": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Item 7H, the number of lease payments"
+        },
+        "base_scheduled_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7I, base scheduled payment, in dollars"
+        },
+        "sales_use_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7J, sales/use tax per payment, in dollars"
+        },
+        "total_scheduled_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 7M, Total Scheduled Payment (the monthly payment including tax), in dollars"
+        }
+      }
+    },
+    "amount_due_itemization": {
+      "type": "object",
+      "description": "Item 6A, itemization of the amount due at lease signing or delivery",
+      "properties": {
+        "capitalized_cost_reduction_cash": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "6A1, capitalized cost reduction paid in cash, in dollars"
+        },
+        "sales_tax_on_cash": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "6A1, sales/use tax on the amount paid in cash, in dollars"
+        },
+        "first_monthly_payment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "6A3, first monthly payment, in dollars"
+        },
+        "license_and_registration_fees": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "6A8, license and registration fees, in dollars"
+        },
+        "other_items": {
+          "type": "array",
+          "description": "Lines 6A10 to 6A12, the write-in items with an amount (skip lines marked N/A)",
+          "items": {
+            "type": "object",
+            "description": "One write-in line",
+            "properties": {
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The description written on the line"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The amount, in dollars"
+              }
+            }
+          }
+        },
+        "total": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "6A13, Total, in dollars"
+        }
+      }
+    },
+    "end_of_lease": {
+      "type": "object",
+      "description": "Excess wear, mileage and purchase option terms, Items 8 and 9",
+      "properties": {
+        "mileage_allowance_per_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Item 8, miles per year allowed before excess mileage charges"
+        },
+        "excess_mileage_rate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 8, charge per mile over the allowance, in dollars"
+        },
+        "purchase_option_price": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 9, the price to purchase the Vehicle at the end of the lease term, in dollars"
+        },
+        "purchase_option_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Item 9, the purchase option fee, in dollars"
+        }
+      }
+    },
+    "lease_term_months": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Item 20B, the scheduled lease term in months"
+    },
+    "insurance": {
+      "type": "object",
+      "description": "Item 19, types and amounts of required insurance coverage, and the lessee's insurer",
+      "properties": {
+        "bodily_injury_per_person": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Minimum bodily injury liability per person, in dollars"
+        },
+        "bodily_injury_per_accident": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Minimum bodily injury liability per accident, in dollars"
+        },
+        "property_damage_per_accident": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Minimum property damage liability per accident, in dollars"
+        },
+        "maximum_deductible": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Maximum deductible for collision, fire, theft and comprehensive coverage, in dollars"
+        },
+        "provider": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The insurance provider named"
+        },
+        "policy_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The insurance policy number"
+        }
+      }
+    }
+  }
+}

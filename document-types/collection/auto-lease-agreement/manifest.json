@@ -1,0 +1,92 @@
+{
+  "slug": "auto-lease-agreement",
+  "title": "Auto Lease Agreement",
+  "source": {
+    "file": "auto-lease-agreement-honda-florida-redacted.pdf",
+    "pages": 5,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/943516552/Contract",
+      "publisher": "AutoNation Honda Miami Lakes (lessor), on the Reynolds and Reynolds LAW form HFS-UCL-FL-e-14 for Honda Financial Services; uploaded to Scribd by a third party",
+      "title": "Closed End Motor Vehicle Lease (With Arbitration Provision), form HFS-UCL-FL-e-14 1/21, customer copy",
+      "retrieved": "2026-10-26",
+      "clearance": "redacted",
+      "clearance_note": "A real, executed consumer lease of a new 2025 Honda Civic from a Florida dealer, posted on Scribd under the title 'Contract' by an account that is not the lessor or the form publisher. Scribd blocks scripted downloads, so the file was downloaded manually by the operator on 2026-10-26. It was not redacted at source: it carried the lessee's and co-lessee's full names and home street addresses, the vehicle's real VIN, the lessee's insurance policy number, the dealer employee who signed for the lessor, and captured e-signatures for all three signers. Every one was replaced using document-types/scripts/redact.py, which removes the underlying text rather than covering it; the seven signature images were deleted and replaced with handwriting-font stand-ins. The dealer, the assignee (Honda Lease Trust), the insurer (a business) and its published customer-service number, the lessees' city, state, ZIP and county, the lease date and every financial term are kept. PDF metadata cleared. Verified by redact.py's text and image checks, by eye on renders of pages 1, 2 and 5, and by ship.py check --rules over every file in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "lessee's full name",
+            "with": "JOHN Q SAMPLE",
+            "occurrences": 2
+          },
+          {
+            "what": "co-lessee's full name",
+            "with": "JANE Q SAMPLE",
+            "occurrences": 2
+          },
+          {
+            "what": "lessee's street address",
+            "with": "100 MAIN ST",
+            "occurrences": 1
+          },
+          {
+            "what": "co-lessee's street address",
+            "with": "200 OAK ST",
+            "occurrences": 1
+          },
+          {
+            "what": "vehicle identification number",
+            "with": "2HGFE2F59SH687480 (Honda prefix kept, serial drawn at random, check digit deliberately invalid so it matches no real vehicle)",
+            "occurrences": 1
+          },
+          {
+            "what": "lessee's insurance policy number",
+            "with": "210048921 (random digits from plausible.py)",
+            "occurrences": 1
+          },
+          {
+            "what": "dealer employee who signed for the lessor",
+            "with": "Pat Example",
+            "occurrences": 1
+          },
+          {
+            "what": "captured e-signature images (lessee, co-lessee and lessor)",
+            "with": "handwriting-font stand-ins: J Sample, Jane Sample, P Example",
+            "occurrences": 7
+          }
+        ],
+        "kept": "Dealer name and address, assignee, Honda Financial Services, insurer name, address and customer-service number, the lessees' city, state, ZIP and county, the signer's job title, lease date, vehicle year, make, model, body style and odometer, and every financial term."
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "payment_calculation.gross_capitalized_cost",
+      "label": "Gross capitalized cost",
+      "occurrence": 0
+    },
+    {
+      "path": "payment_calculation.capitalized_cost_reduction",
+      "label": "Capitalized cost reduction",
+      "occurrence": 0
+    },
+    {
+      "path": "payment_calculation.adjusted_capitalized_cost",
+      "label": "Adjusted capitalized cost",
+      "occurrence": 0
+    },
+    {
+      "path": "payment_calculation.residual_value",
+      "label": "Residual value",
+      "occurrence": 0
+    },
+    {
+      "path": "payment_calculation.total_scheduled_payment",
+      "label": "Total monthly payment",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named only the document and the source; no feature page or fields were requested. Features the Item 7 payment calculation on page 1, the federally required walk from vehicle price to monthly payment: gross capitalized cost, minus the capitalized cost reduction, gives the adjusted capitalized cost; the residual value is what the car is assumed to be worth at lease end; the total scheduled payment is the resulting monthly payment with tax. All five ground ok to their own right-hand column cells on page 1, so one overlay reads as a single calculation. No named individual is featured. The schema has 55 leaf fields and every one was populated; every field has at least one ok citation on its page. The OFF citations (one of the two for the first payment date, a second source for the due day, one property-damage citation, one assignee citation) are not featured."
+}
