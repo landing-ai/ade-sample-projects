@@ -1,0 +1,107 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "vehicle.manufacturer",
+      "label": "Manufacturer",
+      "value": "BMW",
+      "page": 1,
+      "box": {
+        "xmin": 0.24113,
+        "ymin": 0.35533,
+        "xmax": 0.49648,
+        "ymax": 0.36832
+      },
+      "range": {
+        "end": 939,
+        "start": 936
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-manufacturer.png"
+    },
+    {
+      "path": "vehicle.model",
+      "label": "Model",
+      "value": "X6",
+      "page": 1,
+      "box": {
+        "xmin": 0.24103,
+        "ymin": 0.36832,
+        "xmax": 0.49646,
+        "ymax": 0.38252
+      },
+      "range": {
+        "end": 992,
+        "start": 990
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-model.png"
+    },
+    {
+      "path": "vehicle.model_year",
+      "label": "Model year",
+      "value": 2013,
+      "page": 1,
+      "box": {
+        "xmin": 0.24083,
+        "ymin": 0.39606,
+        "xmax": 0.49642,
+        "ymax": 0.40971
+      },
+      "range": {
+        "end": 1150,
+        "start": 1146
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-model_year.png"
+    },
+    {
+      "path": "vehicle.odometer_km",
+      "label": "Odometer (km)",
+      "value": 143723,
+      "page": 1,
+      "box": {
+        "xmin": 0.24074,
+        "ymin": 0.40963,
+        "xmax": 0.4964,
+        "ymax": 0.42332
+      },
+      "range": {
+        "end": 1237,
+        "start": 1227
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-odometer_km.png"
+    },
+    {
+      "path": "component_ratings[12].condition",
+      "label": "Vehicle body condition",
+      "value": "As Expected",
+      "page": 1,
+      "box": {
+        "xmin": 0.38006,
+        "ymin": 0.66882,
+        "xmax": 0.51142,
+        "ymax": 0.68803
+      },
+      "range": {
+        "end": 3247,
+        "start": 3236
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_ratings-12-condition.png"
+    }
+  ]
+}

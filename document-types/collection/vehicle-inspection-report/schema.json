@@ -1,0 +1,188 @@
+{
+  "description": "Used-vehicle inspection (condition) report produced by an inspection body for a dealer or buyer: who inspected the vehicle and for whom, the vehicle's identity and odometer reading, the condition rating of each component group, brake test and tyre measurements, diagnostics and the inspector's conclusions.",
+  "type": "object",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Report-level identifiers from the page header and Assignment section.",
+      "properties": {
+        "inspection_company": {
+          "type": "string",
+          "description": "Organization that carried out the inspection and issued the report, as printed in the footer, e.g. DEKRA Automotive (PTY) Ltd."
+        },
+        "report_title": {
+          "type": "string",
+          "description": "Title printed at the top of the report, e.g. USED CAR REPORT."
+        },
+        "report_number": {
+          "type": "string",
+          "description": "Report number printed after 'Report No:' in the page header, digits only."
+        },
+        "client": {
+          "type": "string",
+          "description": "Client the inspection was carried out for, from the Client row of the Assignment section."
+        },
+        "technician": {
+          "type": ["string", "null"],
+          "description": "Name of the technician who performed the inspection, from the Technician section."
+        }
+      }
+    },
+    "vehicle": {
+      "type": "object",
+      "description": "The inspected vehicle, from the Vehicle Data section.",
+      "properties": {
+        "vehicle_type": {
+          "type": "string",
+          "description": "Vehicle Type, e.g. PASSENGER VEHICLE."
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Manufacturer (make), e.g. BMW."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model as printed."
+        },
+        "vin": {
+          "type": "string",
+          "description": "Vehicle Identification Number exactly as printed in the Vehicle Data section, without spaces."
+        },
+        "model_year": {
+          "type": "integer",
+          "description": "Year Model as a four-digit integer."
+        },
+        "odometer_km": {
+          "type": "integer",
+          "description": "Km Reading as a whole number of kilometres, ignoring thousands separators and the KM unit, e.g. '143,723 KM' is 143723."
+        },
+        "body_type": {
+          "type": "string",
+          "description": "Cab / Body Type as printed."
+        },
+        "registration_number": {
+          "type": ["string", "null"],
+          "description": "Registration Number (licence plate) as printed, or null if blank."
+        },
+        "paint_finish": {
+          "type": ["string", "null"],
+          "description": "Paint Finish as printed."
+        },
+        "fuel": {
+          "type": "string",
+          "description": "Fuel type, e.g. PETROL or DIESEL."
+        },
+        "transmission": {
+          "type": "string",
+          "description": "Transmission, e.g. AUTOMATIC or MANUAL."
+        },
+        "doors": {
+          "type": ["integer", "null"],
+          "description": "Number of doors."
+        },
+        "color": {
+          "type": "string",
+          "description": "Vehicle colour as printed."
+        }
+      }
+    },
+    "component_ratings": {
+      "type": "array",
+      "description": "One entry per row of every General Condition table (Interior, Exterior, Engine Gearbox Drivetrain, Axles Undercarriage), in document order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "description": "Heading of the table the row belongs to, e.g. Interior, Exterior, Engine, Gearbox, Drivetrain, Axles, Undercarriage."
+          },
+          "component": {
+            "type": "string",
+            "description": "Component name from the Components column, exactly as printed."
+          },
+          "condition": {
+            "type": "string",
+            "description": "Rating from the Condition column exactly as printed, e.g. Very Good, Good, As Expected."
+          },
+          "inspection_result": {
+            "type": "string",
+            "description": "Text of the Inspection Result column for this row."
+          }
+        }
+      }
+    },
+    "brake_test": {
+      "type": "array",
+      "description": "Rows of the Brake Test Results table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "axle": {
+            "type": "string",
+            "description": "Row label: Front, Rear or Emergency / Parking."
+          },
+          "left_braking_force_kn": {
+            "type": ["number", "null"],
+            "description": "Left braking force in kN."
+          },
+          "right_braking_force_kn": {
+            "type": ["number", "null"],
+            "description": "Right braking force in kN."
+          }
+        }
+      }
+    },
+    "tyres": {
+      "type": "array",
+      "description": "Rows of the Tyre Specification & Measurement table, one per wheel position including the spare.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "string",
+            "description": "Wheel position: Front Left, Front Right, Rear Left, Rear Right or Spare."
+          },
+          "size": {
+            "type": "string",
+            "description": "Tyre size as printed, e.g. 275/40R20."
+          },
+          "load_speed_index": {
+            "type": ["string", "null"],
+            "description": "Load/Speed Index as printed."
+          },
+          "manufacturer": {
+            "type": "string",
+            "description": "Tyre manufacturer."
+          },
+          "model": {
+            "type": ["string", "null"],
+            "description": "Tyre model."
+          },
+          "production_date": {
+            "type": ["string", "null"],
+            "description": "Production date code as printed (week and year, e.g. 3323), or null if not readable."
+          },
+          "tread_depth_mm": {
+            "type": ["number", "null"],
+            "description": "Tread depth in millimetres as a number, e.g. '4 mm' is 4."
+          }
+        }
+      }
+    },
+    "diagnostic_summary": {
+      "type": ["string", "null"],
+      "description": "First sentence of the Diagnostic section: whether active error messages or fault codes were found."
+    },
+    "inspection_conditions": {
+      "type": "array",
+      "description": "Each line of the Inspection Conditions section.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "general_comments": {
+      "type": ["string", "null"],
+      "description": "Text of the General Comments line in the Comments section."
+    }
+  }
+}
