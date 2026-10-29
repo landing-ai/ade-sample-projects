@@ -1,0 +1,52 @@
+{
+  "slug": "audited-financial-statement",
+  "title": "Audited Financial Statements",
+  "source": {
+    "file": "family-first-2024-audited-financial-statements.pdf",
+    "pages": 27,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.flauditor.gov/pages/nonprofit_forprofit%20rpts/2024%20family%20first.pdf",
+      "publisher": "Family First, Inc. (audited by Schafer, Tschopp, Whitcomb, Mitchell & Sheridan, LLP); posted by the Florida Auditor General",
+      "title": "Family First, Inc. Financial Statements, December 31, 2024 (With Independent Auditor's Report Thereon)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Downloaded directly by script from the Florida Auditor General's website, which posts the audit reports that nonprofits receiving state financial assistance must file (provenance page: https://flauditor.gov/pages/nonprofit_forprofit%20pages/family%20first.htm). The text layer names no individual. The auditor's signatures on pages 6, 23 and 26 are the firm's name written by hand, not an individual's signature. The audit firm's letterhead image on pages 4, 22 and 24 lists six partners by name with the firm's office address and phone; the operator chose to keep the letterhead as published. No redaction was made, and the PDF is the publisher's file unaltered (it carries an owner-password permissions restriction and opens without a password; its metadata names only the audit firm)."
+    }
+  },
+  "feature_page": 7,
+  "fields": [
+    {
+      "path": "statement_of_financial_position.cash_and_cash_equivalents",
+      "label": "Cash and cash equivalents",
+      "occurrence": 0
+    },
+    {
+      "path": "statement_of_financial_position.total_current_assets",
+      "label": "Total current assets",
+      "occurrence": 0
+    },
+    {
+      "path": "statement_of_financial_position.total_assets",
+      "label": "Total assets",
+      "occurrence": 0
+    },
+    {
+      "path": "statement_of_financial_position.total_liabilities",
+      "label": "Total liabilities",
+      "occurrence": 0
+    },
+    {
+      "path": "statement_of_financial_position.total_liabilities_and_net_assets",
+      "label": "Total liabilities and net assets",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the statement of financial position on page 7, as the request suggested: cash, total current assets, total assets, total liabilities, and total liabilities and net assets. The last two boxes show the statement balancing, the same $15,689,274 on two different lines. The request also suggested the statement date. It was not featured because the extracted period end date grounds to the cover page (page 1), not to the date printed on page 7. Net assets without donor restrictions grounds to its row label rather than its amount on this page (OFF), so it was not featured either. The request asked for all 27 pages, including the Single Audit schedules and compliance reports on pages 19-27, and all 27 were parsed.",
+  "preview_pages": [
+    4,
+    7,
+    9,
+    20
+  ]
+}
