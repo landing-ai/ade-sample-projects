@@ -1,0 +1,41 @@
+{
+  "slug": "form-941",
+  "title": "Form 941",
+  "source": {
+    "file": "form-941-2023-ocrolus-sample.pdf",
+    "pages": 3,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://drive.google.com/file/d/1gD_JCWFhLjuJKIoE_EDzTqv4IbcGZ1_M/view?usp=sharing",
+      "publisher": "Ocrolus",
+      "title": "Sample Form 941 for 2023 (Rev. March 2023), Employer's Quarterly Federal Tax Return",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Vendor sample published by Ocrolus, a document-AI vendor, and linked from its public developer documentation page for Form 941 (https://docs.ocrolus.com/docs/941-employers-quarterly-federal-tax-return); Google Drive is only the host. Downloaded by script from the Drive direct-download URL and checked to be a 3-page PDF. Every value is specimen data: SAMPLE NAME, SAMPLE TRADE LLC, 123 ANY STREET, FAKE CITY, EIN 12-3456789, designee JOHN SAMPLE, preparer SAMPLE SMITH of SAMPLE FIRM LLC, placeholder phone numbers and PTIN, and script-font 'Sample Name' / 'Sample Smith' signatures. No real person or business appears, so no redaction was needed. The PDF metadata was reset to a title naming the sample and Ocrolus as author, and the XMP packet removed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "employer.ein",
+      "label": "Employer identification number",
+      "occurrence": 1
+    },
+    {
+      "path": "quarter",
+      "label": "Quarter",
+      "occurrence": 0
+    },
+    {
+      "path": "part_1.wages_tips_other_compensation",
+      "label": "Wages tips and other compensation (line 2)",
+      "occurrence": 1
+    },
+    {
+      "path": "part_1.total_taxes_after_adjustments",
+      "label": "Total taxes after adjustments (line 10)",
+      "occurrence": 1
+    }
+  ],
+  "notes": "The request named no fields or feature page; its notes suggested page 1 with the EIN, the quarter checkbox, line 2 wages, line 5e total social security and Medicare taxes and line 10 total taxes after adjustments. Four shipped as suggested; line 5e did not. Its occurrence 0 grounds to the line's label (OFF), and occurrence 1, although its range is the right markdown text ('410 . 00'), draws its box on the sidebar footnote beside lines 5a-5c ('wages paid in this quarter of 2023') rather than on the 5e amount cell. The cause is page-level: lines 1 to 11c parse as one text block whose line-level boxes are out of step with their text from line 3 downward, so most amounts on the page (lines 1, 3, 5a-5d column 2, 6, 8, 9 and 11a) box a neighbouring row or the label column. Line 6 was tried as a replacement and boxed the 5e label row. Lines 2 and 10 box their own rows and their crops show the amounts, which was checked by eye; the EIN and quarter box their own fields. Four fields rather than a substitute nobody picked. They run the return from who is filing and for which quarter through wages to the total payroll tax owed. Occurrence 0 of each amount field grounds to the line's label, so occurrence 1, the amount, is pinned; the EIN's occurrence 0 is the page 3 header, so occurrence 1 pins the page 1 digit boxes. No person is featured; the employer is a specimen. Also in the same block, the parse renumbers the two-column line labels (5a(i) reads as 5b, 5a(ii) as 5c, 5b as 5d, 5c as 5e, 5d as 5f) although every value extracts correctly. Known extraction fault left visible: employer.zip_code comes back null although the parse reads ZIP code 12345."
+}

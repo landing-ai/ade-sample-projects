@@ -1,0 +1,578 @@
+{
+  "type": "object",
+  "description": "IRS Form 941, Employer's Quarterly Federal Tax Return: header, Part 1 tax computation, Part 2 deposit schedule, and the signature and preparer blocks. Amounts are numbers without currency symbols or thousands separators; a blank amount line is null.",
+  "properties": {
+    "form_year": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The calendar year in the form title, e.g. 941 for 2023"
+    },
+    "form_revision": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The form revision as printed, e.g. Rev. March 2023"
+    },
+    "quarter": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The quarter checked in 'Report for this Quarter': 1, 2, 3 or 4"
+    },
+    "employer": {
+      "type": "object",
+      "description": "The employer filing the return",
+      "properties": {
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Employer identification number (EIN), as NN-NNNNNNN"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name (not your trade name)"
+        },
+        "trade_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Trade name, if any"
+        },
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Number and street, including suite or room number"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State"
+        },
+        "zip_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ZIP code"
+        }
+      }
+    },
+    "part_1": {
+      "type": "object",
+      "description": "Part 1: Answer these questions for this quarter",
+      "properties": {
+        "number_of_employees": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 1: number of employees who received wages, tips or other compensation for the pay period including the 12th of the quarter's month"
+        },
+        "wages_tips_other_compensation": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2: wages, tips, and other compensation"
+        },
+        "federal_income_tax_withheld": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 3: federal income tax withheld from wages, tips, and other compensation"
+        },
+        "no_wages_subject_to_ss_or_medicare": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Line 4: true if the box is checked saying no wages are subject to social security or Medicare tax"
+        },
+        "taxable_social_security_wages": {
+          "type": "object",
+          "description": "Line 5a",
+          "properties": {
+            "wages": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5a Column 1: taxable social security wages"
+            },
+            "tax": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5a Column 2: tax at 12.4%"
+            }
+          }
+        },
+        "qualified_sick_leave_wages": {
+          "type": "object",
+          "description": "Line 5a(i)",
+          "properties": {
+            "wages": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5a(i) Column 1: qualified sick leave wages"
+            },
+            "tax": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5a(i) Column 2: tax at 6.2%"
+            }
+          }
+        },
+        "qualified_family_leave_wages": {
+          "type": "object",
+          "description": "Line 5a(ii)",
+          "properties": {
+            "wages": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5a(ii) Column 1: qualified family leave wages"
+            },
+            "tax": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5a(ii) Column 2: tax at 6.2%"
+            }
+          }
+        },
+        "taxable_social_security_tips": {
+          "type": "object",
+          "description": "Line 5b",
+          "properties": {
+            "wages": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5b Column 1: taxable social security tips"
+            },
+            "tax": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5b Column 2: tax at 12.4%"
+            }
+          }
+        },
+        "taxable_medicare_wages_and_tips": {
+          "type": "object",
+          "description": "Line 5c",
+          "properties": {
+            "wages": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5c Column 1: taxable Medicare wages and tips"
+            },
+            "tax": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5c Column 2: tax at 2.9%"
+            }
+          }
+        },
+        "additional_medicare_wages_and_tips": {
+          "type": "object",
+          "description": "Line 5d",
+          "properties": {
+            "wages": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5d Column 1: taxable wages and tips subject to Additional Medicare Tax withholding"
+            },
+            "tax": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Line 5d Column 2: tax at 0.9%"
+            }
+          }
+        },
+        "total_social_security_and_medicare_taxes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5e: total social security and Medicare taxes"
+        },
+        "section_3121q_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 5f: Section 3121(q) Notice and Demand, tax due on unreported tips"
+        },
+        "total_taxes_before_adjustments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 6: total taxes before adjustments"
+        },
+        "adjustment_fractions_of_cents": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7: current quarter's adjustment for fractions of cents"
+        },
+        "adjustment_sick_pay": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 8: current quarter's adjustment for sick pay"
+        },
+        "adjustment_tips_and_group_term_life": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 9: current quarter's adjustments for tips and group-term life insurance"
+        },
+        "total_taxes_after_adjustments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 10: total taxes after adjustments"
+        },
+        "qualified_small_business_research_credit": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11a: qualified small business payroll tax credit for increasing research activities"
+        },
+        "nonrefundable_leave_credit_before_april_2021": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11b: nonrefundable portion of credit for qualified sick and family leave wages for leave taken before April 1, 2021"
+        },
+        "nonrefundable_leave_credit_april_to_october_2021": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11d: nonrefundable portion of credit for qualified sick and family leave wages for leave taken after March 31, 2021, and before October 1, 2021"
+        },
+        "total_nonrefundable_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 11g: total nonrefundable credits"
+        },
+        "total_taxes_after_adjustments_and_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 12: total taxes after adjustments and nonrefundable credits"
+        },
+        "total_deposits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13a: total deposits for this quarter, including overpayment applied from a prior quarter"
+        },
+        "refundable_leave_credit_before_april_2021": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13c: refundable portion of credit for qualified sick and family leave wages for leave taken before April 1, 2021"
+        },
+        "refundable_leave_credit_april_to_october_2021": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13e: refundable portion of credit for qualified sick and family leave wages for leave taken after March 31, 2021, and before October 1, 2021"
+        },
+        "total_deposits_and_refundable_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 13g: total deposits and refundable credits"
+        },
+        "balance_due": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 14: balance due"
+        },
+        "overpayment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 15: overpayment amount"
+        },
+        "overpayment_disposition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "apply_to_next_return",
+            "send_a_refund",
+            null
+          ],
+          "description": "Line 15 check box: apply to next return or send a refund; null if neither is checked"
+        }
+      }
+    },
+    "part_2": {
+      "type": "object",
+      "description": "Part 2: deposit schedule and tax liability for this quarter",
+      "properties": {
+        "depositor_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "under_2500",
+            "monthly",
+            "semiweekly",
+            null
+          ],
+          "description": "Line 16 box checked: under_2500 (line 12 less than $2,500), monthly (monthly schedule depositor for the entire quarter) or semiweekly (semiweekly schedule depositor for any part of the quarter)"
+        },
+        "month_1_liability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16 tax liability, Month 1"
+        },
+        "month_2_liability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16 tax liability, Month 2"
+        },
+        "month_3_liability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16 tax liability, Month 3"
+        },
+        "total_liability_for_quarter": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 16 total liability for quarter"
+        }
+      }
+    },
+    "part_3": {
+      "type": "object",
+      "description": "Part 3: about the business",
+      "properties": {
+        "business_closed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Line 17: true if the box is checked saying the business has closed or stopped paying wages"
+        },
+        "final_wages_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 17: final date wages were paid, as YYYY-MM-DD"
+        },
+        "seasonal_employer": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Line 18: true if the seasonal employer box is checked"
+        }
+      }
+    },
+    "third_party_designee": {
+      "type": "object",
+      "description": "Part 4: third-party designee",
+      "properties": {
+        "allowed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if Yes is checked, false if No is checked"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Designee's name"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Designee's phone number, as printed"
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "description": "Part 5: signature block",
+      "properties": {
+        "signed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the signature area carries a signature"
+        },
+        "printed_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Print your name here"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Print your title here"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Signature date, as YYYY-MM-DD"
+        },
+        "daytime_phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Best daytime phone, as printed"
+        }
+      }
+    },
+    "paid_preparer": {
+      "type": "object",
+      "description": "Paid Preparer Use Only",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Preparer's name"
+        },
+        "ptin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Preparer's PTIN"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Preparer's signature date, as YYYY-MM-DD"
+        },
+        "self_employed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the self-employed box is checked"
+        },
+        "firm_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's name (or yours if self-employed)"
+        },
+        "firm_ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's EIN"
+        },
+        "firm_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Firm's full address: street, city, state and ZIP code"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Preparer's phone number, as printed"
+        }
+      }
+    }
+  }
+}
