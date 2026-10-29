@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "description": "Quality of Earnings (QoE) report prepared for a buyer in an acquisition: the normalized EBITDA bridge, working capital and the diligence findings behind them.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Who prepared the report and what it covers.",
+      "properties": {
+        "preparer_firm": {
+          "type": "string",
+          "description": "Name of the accounting firm that prepared the report, as it signs the cover letter."
+        },
+        "report_date": {
+          "type": "string",
+          "description": "Date of the report as printed on the cover."
+        },
+        "target_business_description": {
+          "type": "string",
+          "description": "One-sentence description of the target company's business, from the company overview finding."
+        },
+        "periods_analyzed": {
+          "type": "array",
+          "description": "Column headings of the periods analyzed in the EBITDA bridge, in order (for example 2022, 2023, 2024, TTM).",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "ebitda_bridge": {
+      "type": "object",
+      "description": "The QoE summary table reconciling reported EBITDA to adjusted EBITDA. Amounts are taken exactly as printed in the table, without rescaling for any units note in the table header. Negative amounts are shown in parentheses in the document and should be returned as negative numbers.",
+      "properties": {
+        "periods": {
+          "type": "array",
+          "description": "One entry per period column of the bridge table.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period": { "type": "string", "description": "Column heading of the period, for example 2023 or TTM." },
+              "total_income": { "type": "number", "description": "Total Income row." },
+              "reported_ebitda": { "type": "number", "description": "Reported EBITDA row, before any adjustments." },
+              "total_management_adjustments": { "type": "number", "description": "Total Management Adjustments row. Use 0 where the cell shows a dash." },
+              "management_adjusted_ebitda": { "type": "number", "description": "Management Adjusted EBITDA row." },
+              "total_due_diligence_adjustments": { "type": "number", "description": "Total Due Diligence Adjustments row." },
+              "adjusted_ebitda": { "type": "number", "description": "Adjusted EBITDA row, after management and due diligence adjustments." },
+              "management_ebitda_margin_percent": { "type": "number", "description": "Management EBITDA Margin row, as a percentage (18.4% is 18.4)." },
+              "adjusted_ebitda_margin_percent": { "type": "number", "description": "Adjusted EBITDA Margin row, as a percentage (20.1% is 20.1)." }
+            }
+          }
+        },
+        "adjustments": {
+          "type": "array",
+          "description": "Every individual adjustment line in the bridge table, management adjustments first, then due diligence adjustments.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "description": "Adjustment line label, for example Capitalized Labor." },
+              "category": {
+                "type": "string",
+                "enum": ["management", "due_diligence"],
+                "description": "Whether the line sits under Management Adjustments or Due Diligence Adjustments."
+              },
+              "ttm_amount": { "type": "number", "description": "Amount in the TTM column. Use 0 where the cell shows a dash." },
+              "rationale": { "type": "string", "description": "The commentary beside the table explaining this adjustment, summarized in one sentence." }
+            }
+          }
+        }
+      }
+    },
+    "key_findings": {
+      "type": "object",
+      "description": "Headline figures from the Key Findings section.",
+      "properties": {
+        "gross_margin_trend": { "type": "string", "description": "How gross margin changed over the period analyzed, as stated." },
+        "average_net_working_capital": { "type": "number", "description": "The six-month average net working capital stated in the findings, in dollars. Negative if shown in parentheses." },
+        "inventory_balance": { "type": "number", "description": "Inventory balance stated in the findings, in dollars." },
+        "days_sales_outstanding": { "type": "number", "description": "DSO in days." },
+        "days_inventory_outstanding": { "type": "number", "description": "DIO in days." },
+        "days_payables_outstanding": { "type": "number", "description": "DPO in days." },
+        "cash_conversion_cycle_days": { "type": "number", "description": "Cash conversion cycle in days." },
+        "customer_count": { "type": "string", "description": "Number of customers as stated, for example 'over 8K'." },
+        "unpaid_pto": { "type": "number", "description": "Unpaid PTO amount not on the books, in dollars." }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "quality-of-earnings-report",
+  "title": "Quality of Earnings Report",
+  "source": {
+    "file": "qoe-prep-sample-report.pdf",
+    "pages": 25,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://img1.wsimg.com/blobby/go/2975c323-0167-4a10-81f0-60981f4243c3/Sample%20report%20-%20Qoe%20Prep%2012.4.pdf",
+      "publisher": "QOE Prep (Caleb PA Basile, LLC)",
+      "title": "Sample QOE Report - Quality of Earnings report (Feb 2025)",
+      "retrieved": "2026-10-28",
+      "clearance": "redacted",
+      "clearance_note": "Sample report published by QOE Prep, a CPA firm, for general distribution and linked from its public sample page (qoeprep.com/sample). The cover states that all figures are fictional, and the target company, owners and staff are anonymized in the document itself. The only real person named in the report body is the publisher's own principal, in his professional capacity as signatory and contact (cover letter and closing page); he is kept, as executives are in the investor presentation. The one change: the original page 2 was a marketing page of screenshot Google reviews carrying the names, and in one case the photo, of private individuals who reviewed the firm. It is not part of the report and was dropped with document-types/scripts/redact.py, which also cleared the PDF metadata. Downloaded by script; no manual download.",
+      "redactions": {
+        "note": "No text was replaced. The reviewers' names were in images, not in the text layer, so the page holding them was removed outright. Their names are deliberately not recorded here.",
+        "replaced": [],
+        "dropped_page_reason": "original page 2 ('Happy Customers') was screenshots of eight Google reviews naming private reviewers, with one profile photo; it is publisher marketing, not report content"
+      },
+      "dropped_pages": [
+        2
+      ]
+    }
+  },
+  "feature_page": 8,
+  "fields": [
+    {
+      "path": "ebitda_bridge.periods[3].reported_ebitda",
+      "label": "Reported EBITDA (TTM)",
+      "occurrence": 0
+    },
+    {
+      "path": "ebitda_bridge.periods[3].total_management_adjustments",
+      "label": "Total management adjustments (TTM)",
+      "occurrence": 0
+    },
+    {
+      "path": "ebitda_bridge.adjustments[9].ttm_amount",
+      "label": "Legal settlement add-back (TTM)",
+      "occurrence": 0
+    },
+    {
+      "path": "ebitda_bridge.periods[3].adjusted_ebitda",
+      "label": "Adjusted EBITDA (TTM)",
+      "occurrence": 0
+    },
+    {
+      "path": "ebitda_bridge.periods[3].adjusted_ebitda_margin_percent",
+      "label": "Adjusted EBITDA margin (TTM)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the TTM column of the EBITDA bridge on the QoE slide, so the overlay reads as one walk from reported EBITDA, through management and due diligence adjustments, to adjusted EBITDA and its margin. This is the slide the request suggested as page 9: it is page 8 here because the testimonials page before it was dropped, so the feature page is the same slide, not a substitute. All five suggested fields were honoured; the request left the diligence adjustment open, and the Remove Legal Settlement line was chosen because its amount grounds to the TTM cell and its commentary is the most concrete on the next slide. The same table is printed again on page 9; every featured value grounds to the page 8 copy. Amounts are as printed: the table header says $000s but the figures are whole dollars, which the Key Findings prose confirms ($8.7M revenue against 8,657,602)."
+}
