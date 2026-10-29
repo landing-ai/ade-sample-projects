@@ -1,0 +1,26 @@
+{
+  "slug": "equity-incentive-plan",
+  "title": "Equity Incentive Plan",
+  "source": {
+    "file": "alcoa-stock-and-incentive-compensation-plan-2026.pdf",
+    "pages": 18,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.alcoa.com/equity-plan/pdfs/alcoa-corporation-stock-and-incentive-compensation-plan-as-amended-and-restated-06-May-2026.pdf",
+      "publisher": "Alcoa Corporation",
+      "title": "Alcoa Corporation Stock and Incentive Compensation Plan (as Amended and Restated) May 6, 2026",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "The company's own plan document, published for stockholders and participants on Alcoa's equity-plan page (https://www.alcoa.com/equity-plan/). Downloaded directly by script. It contains no personal data and no signatures; the PDF metadata carries only Word's placeholder author."
+    }
+  },
+  "feature_page": 5,
+  "fields": [
+    { "path": "share_reserve.total_shares_reserved", "label": "Shares reserved", "occurrence": 0 },
+    { "path": "share_reserve.incentive_stock_option_limit", "label": "Incentive stock option limit", "occurrence": 1 },
+    { "path": "share_reserve.full_value_award_ratios[2].shares_counted", "label": "Full-value award counting ratio", "occurrence": 0 },
+    { "path": "share_reserve.full_value_award_ratios[2].period_start", "label": "Ratio effective from", "occurrence": 1 },
+    { "path": "director_annual_award_limit", "label": "Director annual award cap", "occurrence": 0 }
+  ],
+  "notes": "Features the share pool and award limits on page 5 (Section 4(a), with the director cap from the end of Section 3 just above it): how many shares the plan reserves, the separate cap on incentive stock options, how many shares each full-value award consumes under the current ratio and from when, and the annual cap on director awards. These are the numbers a proxy adviser or compensation analyst reads a plan for, and they sit in one paragraph of running legal prose rather than a table. The request suggested page 5 with the reserve, ISO limit, full-value counting ratio and director cap; all four resolve as ok on page 5 and shipped, with the ratio's effective date added as a fifth. The incentive stock option limit is pinned to occurrence 1, the line reading 'shall not exceed 38,000,000'; occurrence 0 boxes the previous line, which does not contain the number. The ratio's effective date is pinned to occurrence 1, the line reading 'May 6, 2026 and thereafter'."
+}

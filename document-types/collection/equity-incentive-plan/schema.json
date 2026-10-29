@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "description": "A public company's equity incentive (stock and incentive compensation) plan document, as filed or published for stockholders",
+  "properties": {
+    "plan_name": {
+      "type": ["string", "null"],
+      "description": "The full title of the plan as printed at the top of the document"
+    },
+    "former_plan_name": {
+      "type": ["string", "null"],
+      "description": "The plan's previous title, if the document says it was formerly titled something else"
+    },
+    "company_name": {
+      "type": ["string", "null"],
+      "description": "The legal name of the sponsoring company, from the definition of 'Company'"
+    },
+    "state_of_incorporation": {
+      "type": ["string", "null"],
+      "description": "The state in which the company is incorporated, from the definition of 'Company'"
+    },
+    "restatement_date": {
+      "type": ["string", "null"],
+      "description": "The amendment and restatement date printed under the plan title, as written"
+    },
+    "eligible_participants": {
+      "type": "array",
+      "description": "The classes of person eligible to receive awards, from the Eligibility section (e.g. Directors, Employees)",
+      "items": { "type": "string" }
+    },
+    "award_types": {
+      "type": "array",
+      "description": "The types of award the plan permits, from the definition of 'Award'",
+      "items": { "type": "string" }
+    },
+    "share_reserve": {
+      "type": "object",
+      "description": "The share pool and share-counting rules from the section on shares subject to the plan",
+      "properties": {
+        "total_shares_reserved": {
+          "type": ["number", "null"],
+          "description": "The maximum number of shares that may be issued under the plan"
+        },
+        "incentive_stock_option_limit": {
+          "type": ["number", "null"],
+          "description": "The maximum number of shares that may be issued on exercise of Incentive Stock Options"
+        },
+        "full_value_award_ratios": {
+          "type": "array",
+          "description": "How many shares each share issued under an award other than an Option or Stock Appreciation Right counts as against the reserve, for each period stated",
+          "items": {
+            "type": "object",
+            "properties": {
+              "shares_counted": {
+                "type": ["number", "null"],
+                "description": "The number of shares counted against the reserve for each full-value share issued, e.g. 1.69"
+              },
+              "period_start": {
+                "type": ["string", "null"],
+                "description": "The date the ratio applies from, as written"
+              },
+              "period_end": {
+                "type": ["string", "null"],
+                "description": "The date the ratio applies until, as written. Leave empty (JSON null, not the text 'null') when the ratio applies from its start date thereafter with no end date"
+              }
+            }
+          }
+        },
+        "option_sar_shares_counted": {
+          "type": ["number", "null"],
+          "description": "How many shares each share issued under an Option or Stock Appreciation Right counts as against the reserve"
+        }
+      }
+    },
+    "director_annual_award_limit": {
+      "type": ["number", "null"],
+      "description": "The maximum aggregate grant-date fair value, in US dollars, of awards to a Director in any one fiscal year"
+    },
+    "minimum_vesting_period_years": {
+      "type": ["number", "null"],
+      "description": "The minimum vesting or performance period for awards, in years"
+    },
+    "minimum_vesting_carve_out_percent": {
+      "type": ["number", "null"],
+      "description": "The percentage of the share reserve that may be granted free of the minimum vesting requirement"
+    },
+    "option_max_term_years": {
+      "type": ["number", "null"],
+      "description": "The maximum term of an Option, in years from the grant date"
+    },
+    "ten_percent_holder_iso_max_term_years": {
+      "type": ["number", "null"],
+      "description": "The maximum term of an Incentive Stock Option granted to a 10% Stockholder, in years"
+    },
+    "ten_percent_holder_iso_min_price_percent_of_fmv": {
+      "type": ["number", "null"],
+      "description": "The minimum exercise price of an Incentive Stock Option granted to a 10% Stockholder, as a percentage of Fair Market Value"
+    },
+    "sar_max_term_years": {
+      "type": ["number", "null"],
+      "description": "The maximum term of a Stock Appreciation Right, in years from the grant date"
+    },
+    "share_par_value": {
+      "type": ["number", "null"],
+      "description": "The par value per share of the common stock, in US dollars"
+    },
+    "fair_market_value_exchange": {
+      "type": ["string", "null"],
+      "description": "The stock exchange whose closing price defines Fair Market Value"
+    },
+    "change_in_control_ownership_threshold_percent": {
+      "type": ["number", "null"],
+      "description": "The percentage of total voting power whose acquisition by a person or group triggers a Change in Control"
+    },
+    "clawback_policy_name": {
+      "type": ["string", "null"],
+      "description": "The name of the company clawback policy that awards are subject to"
+    },
+    "governing_law": {
+      "type": ["string", "null"],
+      "description": "The state whose laws govern the plan"
+    },
+    "last_grant_date": {
+      "type": ["string", "null"],
+      "description": "The date on or after which no award may be granted, from the Term of Plan section, as written"
+    },
+    "approving_meeting_date": {
+      "type": ["string", "null"],
+      "description": "The date of the stockholders' annual meeting at which the restated plan becomes effective on approval, as written"
+    }
+  }
+}
