@@ -1,0 +1,27 @@
+{
+  "slug": "litigation-complaint",
+  "title": "Litigation Complaint",
+  "source": {
+    "file": "us-v-hpe-juniper-complaint.pdf",
+    "pages": 21,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.justice.gov/atr/media/1406591/dl?inline",
+      "publisher": "U.S. Department of Justice, Antitrust Division",
+      "title": "Complaint, United States of America v. Hewlett Packard Enterprise Co. and Juniper Networks, Inc., No. 3:25-cv-00951 (N.D. Cal., filed January 30, 2025)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Federal civil complaint published by the DOJ Antitrust Division on its case page (https://www.justice.gov/atr/case/us-v-hewlett-packard-enterprise-co-and-juniper-networks-inc, linked as 'Complaint (January 30, 2025)'); a U.S. government work. Downloaded by script. Used exactly as published, all 21 pages and unredacted, by decision of the document owner (2026-10-28): the only individuals named are the government attorneys of record, in their official capacity, with their bar numbers, a work email, office telephone and fax on page 1 and the signature block and /s/ e-signature on page 21. The body was screened: company executives are referred to by title only, never by name. The PDF metadata is left as published (author 'U.S. DOJ Antitrust Division')."
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [1, 2, 11, 20],
+  "fields": [
+    { "path": "court_district", "label": "Court", "occurrence": 0 },
+    { "path": "case_number", "label": "Case number", "occurrence": 0 },
+    { "path": "plaintiff", "label": "Plaintiff", "occurrence": 0 },
+    { "path": "defendants[0]", "label": "First defendant", "occurrence": 0 },
+    { "path": "defendants[1]", "label": "Second defendant", "occurrence": 0 }
+  ],
+  "notes": "Features the caption on page 1: which court, the case number, and who is suing whom. The request suggested court, case number from the filing stamp (the caption's case-number box is blank), filed date, plaintiff and defendants. With two defendants that is six fields against a cap of five, so the filed date was left out: it shares the filing-stamp line with the case number, and the caption carries the rest of the story. It extracts and grounds correctly ('01/30/25', ok on page 1). The court is featured through court_district ('NORTHERN DISTRICT OF CALIFORNIA'), the caption's second line, because the first line ('IN THE UNITED STATES DISTRICT COURT') identifies no particular court. The schema asks for the court lines and the filed date as printed: a first run that normalized them ('United States District Court, Northern District of California', '2025-01-30') grounded OFF, because the boxed text no longer contained the value. No individual's name is featured."
+}
