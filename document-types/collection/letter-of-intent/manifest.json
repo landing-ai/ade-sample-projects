@@ -1,0 +1,26 @@
+{
+  "slug": "letter-of-intent",
+  "title": "Letter of Intent",
+  "source": {
+    "file": "central-states-water-delaplain-loi.pdf",
+    "pages": 49,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://psc.ky.gov/pscecf/2022-00432/kerry.ingle@dinslaw.com/07272023081341/Exhibit_PSC_4-1(b)_-_Purchase_Agreements.pdf",
+      "publisher": "Kentucky Public Service Commission (filed by Bluegrass Water Utility Operating Company)",
+      "title": "Case No. 2022-00432, Bluegrass Water's Response to PSC 4-1, Exhibit PSC 4-1(b): Purchase Agreements",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Public regulatory filing on the Kentucky PSC's official e-filing store, downloaded directly by script. Used exactly as filed, unredacted, by the operator's decision of 2026-10-28, which departs from the collection's rule that personal data is replaced before parsing: the pages carry signers' typed names and wet-ink and DocuSign signatures, a named executive's email and business phone, cell and fax numbers on the letterhead, and notice-party names, emails and phone numbers in the purchase agreements, all as they appear in the public record. The only change from the filed file is that the PDF's document-information and XMP metadata were cleared before parsing; the author field had carried the name of the individual who prepared the filing."
+    }
+  },
+  "feature_page": 1,
+  "preview_pages": [1, 5, 8, 29],
+  "fields": [
+    { "path": "letter_of_intent.buyer_name", "label": "Buyer", "occurrence": 0 },
+    { "path": "letter_of_intent.target_name", "label": "Target", "occurrence": 0 },
+    { "path": "letter_of_intent.target_business_description", "label": "Target business", "occurrence": 0 },
+    { "path": "letter_of_intent.purchase_price", "label": "Purchase price", "occurrence": 0 }
+  ],
+  "notes": "Features the deal on page 1 of the letter of intent: who is buying, what is being bought, what kind of business it is, and the $849,000 price. All four are organization names or amounts; no individual's name is featured. The request suggested the LOI date, buyer, target and purchase price on page 1, with the 90-day due diligence and exclusivity terms on page 3, as suggestions only. Buyer, target and price shipped. letter_date is not featured: it was normalized to 2019-07-16 and grounds to the printed 'July 16, 2019', which the overlay checker cannot match and marks OFF. Due diligence (90 days) grounds correctly but on page 3, so it cannot share the page 1 overlay; exclusivity_terms is a paraphrase whose range spans the whole clause and reads as OFF. target_name is pinned to occurrence 0, the Re: line. The request described pages 6-7 as blank exhibit placeholders; they are in fact two image-only pages (no OCR text layer) of a second, River Bluffs letter of intent, its exclusivity page and signature page, which ADE parsed and which put River Bluffs signatories into acceptance_signatories. Published unredacted as filed by the operator's decision; see clearance_note."
+}
