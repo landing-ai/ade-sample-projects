@@ -1,0 +1,525 @@
+{
+  "type": "object",
+  "description": "Disclosure schedules delivered with an asset purchase agreement: the cover page, the preamble, and the numbered schedules of assigned contracts, intellectual property, excluded assets and seller disclosures",
+  "properties": {
+    "agreement_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title of the agreement the schedules are attached to, from the cover page"
+    },
+    "document_version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Version legend at the top of the cover page, e.g. 'Execution Version'"
+    },
+    "schedules_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date of the disclosure schedules from the cover page ('Dated as of'), as YYYY-MM-DD"
+    },
+    "agreement_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date of the agreement itself, from the preamble ('dated as of'), as YYYY-MM-DD"
+    },
+    "sellers": {
+      "type": "array",
+      "description": "Each seller named in the preamble",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Seller legal name"
+          },
+          "entity_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Entity form and state as stated, e.g. 'Delaware corporation'"
+          }
+        }
+      }
+    },
+    "purchaser": {
+      "type": "object",
+      "description": "The purchaser named in the preamble",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Purchaser legal name"
+        },
+        "entity_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Entity form and state as stated"
+        }
+      }
+    },
+    "assigned_agreements": {
+      "type": "object",
+      "description": "Schedule 1.1(b), Assigned Agreements",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "agreements": {
+          "type": "array",
+          "description": "Each contract or lease row",
+          "items": {
+            "type": "object",
+            "properties": {
+              "counterparty": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Primary counterparty organization name (first line of the counterparty cell)"
+              },
+              "notice_addresses": {
+                "type": "array",
+                "description": "Each notice address block for the counterparty, lines joined with ', '",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "contract_description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Title/description of the contract or lease"
+              }
+            }
+          }
+        }
+      }
+    },
+    "intellectual_property": {
+      "type": "object",
+      "description": "Schedule 1.1(e), Intellectual Property",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "pending_patent_applications": {
+          "type": "array",
+          "description": "Rows of the pending patent applications table",
+          "items": {
+            "type": "object",
+            "properties": {
+              "case_reference": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Case Ref. as printed, joined if wrapped"
+              },
+              "country": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Country or patent office"
+              },
+              "file_reference": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "File reference"
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Patent application title"
+              },
+              "application_number": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Application number as printed"
+              },
+              "application_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Application date as YYYY-MM-DD"
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Case status, e.g. Pending, Allowed, Published"
+              }
+            }
+          }
+        },
+        "trademarks": {
+          "type": "array",
+          "description": "Rows of the trademarks table",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mark": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Trademark as printed"
+              },
+              "country": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Country"
+              },
+              "registration_number": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Registration No."
+              },
+              "trademark_class": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Class as printed, e.g. 'Class 5'"
+              }
+            }
+          }
+        },
+        "domain_names": {
+          "type": "array",
+          "description": "Each domain name listed",
+          "items": {
+            "type": "string"
+          }
+        },
+        "software": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Software entry as printed, e.g. 'None.'"
+        }
+      }
+    },
+    "excluded_insurance_policies": {
+      "type": "object",
+      "description": "Schedule 1.2(c), Excluded Insurance Policies",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "policies": {
+          "type": "array",
+          "description": "Each row of the insurance policy table",
+          "items": {
+            "type": "object",
+            "properties": {
+              "coverage_type": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Type of coverage as printed, including any limit, e.g. 'Primary D&O $5M'"
+              },
+              "insurer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Insurer as printed, including any parent group"
+              },
+              "policy_number": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Policy number exactly as printed"
+              },
+              "policy_term": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Policy term exactly as printed, e.g. '9/22/2025 \u2013 9/22/2026'"
+              }
+            }
+          }
+        }
+      }
+    },
+    "excluded_causes_of_action": {
+      "type": "object",
+      "description": "Schedule 1.2(f), Excluded Causes of Action",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "items": {
+          "type": "array",
+          "description": "Each numbered item, as text",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "additional_excluded_assets": {
+      "type": "object",
+      "description": "Schedule 1.2(m), Additional Excluded Assets",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "items": {
+          "type": "array",
+          "description": "Each numbered item, as text",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "seller_jurisdictions": {
+      "type": "object",
+      "description": "Schedule 4.1(a), Seller Jurisdictions",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "sellers": {
+          "type": "array",
+          "description": "Each row",
+          "items": {
+            "type": "object",
+            "properties": {
+              "seller": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Seller name"
+              },
+              "jurisdiction": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Jurisdiction of formation/organization"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ip_disclosures": {
+      "type": "object",
+      "description": "Schedule 4.1(f), Intellectual Property Disclosures",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "items": {
+          "type": "array",
+          "description": "Each numbered item, as text",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "litigation_disclosures": {
+      "type": "object",
+      "description": "Schedule 4.1(g), Litigation Disclosures",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "items": {
+          "type": "array",
+          "description": "Each numbered item, as text ('None.' if so stated)",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "no_violation": {
+      "type": "object",
+      "description": "Schedule 4.1(h), No Violation",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "items": {
+          "type": "array",
+          "description": "Each numbered item, as text",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transfer_fee": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Transfer fee amount in dollars stated in the No Violation schedule, if any"
+        }
+      }
+    },
+    "seller_assigned_agreements_disclosures": {
+      "type": "object",
+      "description": "Schedule 4.1(i), Assigned Agreements disclosures",
+      "properties": {
+        "schedule_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule reference as printed, e.g. 'Schedule 1.2(c)'"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Schedule title printed under the schedule number"
+        },
+        "items": {
+          "type": "array",
+          "description": "Each numbered item, as text ('None.' if so stated)",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
