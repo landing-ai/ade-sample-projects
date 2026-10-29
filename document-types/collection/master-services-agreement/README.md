@@ -63,9 +63,10 @@ vendor signer's title and signature date).
 **39 leaf fields** (counted from the schema; 75 once the signature blocks, the two
 periods and their six line items are expanded).
 
-Every value came back correct. The blacked-out account and order numbers come back
-empty, as they should. `county.name` returns "Williamson" rather than "Williamson
-County, Texas"; see the grounding notes for why the description was not reworded.
+Every value matches the page except one: `county.name` returns "Williamson" rather
+than "Williamson County, Texas", the name the opening paragraph defines; see the
+grounding notes for why the description was not reworded. The blacked-out account and
+order numbers come back as empty strings, although the schema asks for null.
 
 ## Featured fields: one subscription line, from page 6
 
