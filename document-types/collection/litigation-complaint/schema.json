@@ -1,0 +1,195 @@
+{
+  "type": "object",
+  "description": "A civil complaint filed in a United States district court",
+  "properties": {
+    "court": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The court named in the caption, as printed on its first line, e.g. 'IN THE UNITED STATES DISTRICT COURT'"
+    },
+    "court_district": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The district named on the caption's second line, as printed, e.g. 'NORTHERN DISTRICT OF CALIFORNIA'"
+    },
+    "case_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The case number, as printed in the court's filing stamp at the top of the page if the caption's case number box is blank, e.g. '3:25-cv-00951'"
+    },
+    "document_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The docket document number from the filing stamp, e.g. '1'"
+    },
+    "filed_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The filing date from the court's filing stamp at the top of the page, exactly as printed, e.g. '01/30/25'"
+    },
+    "document_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The title of the pleading as printed in the caption, e.g. 'Complaint'"
+    },
+    "plaintiff": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The plaintiff named in the caption, as printed"
+    },
+    "defendants": {
+      "type": "array",
+      "description": "Each defendant named in the caption, as printed",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A defendant"
+      }
+    },
+    "plaintiff_counsel_office": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The government office or law firm representing the plaintiff, as printed in the counsel block, e.g. 'United States Department of Justice, Antitrust Division'"
+    },
+    "nature_of_action": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "One sentence summarizing what the plaintiff seeks to prevent or recover, from the opening paragraph"
+    },
+    "challenged_transaction": {
+      "type": "object",
+      "description": "The transaction the complaint challenges, if any",
+      "properties": {
+        "acquirer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The acquiring company"
+        },
+        "target": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The company being acquired"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The stated value of the transaction, as printed, e.g. '$14 billion'"
+        }
+      }
+    },
+    "relevant_product_market": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The relevant product market the complaint alleges, as named in the market definition section"
+    },
+    "relevant_geographic_market": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The relevant geographic market the complaint alleges"
+    },
+    "claims": {
+      "type": "array",
+      "description": "Each distinct statutory provision the complaint alleges the defendants violated or would violate, listed once even if cited repeatedly",
+      "items": {
+        "type": "object",
+        "properties": {
+          "statute": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The provision, as named, e.g. 'Section 7 of the Clayton Act'"
+          },
+          "citation": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Its code citation, e.g. '15 U.S.C. § 18'"
+          }
+        }
+      }
+    },
+    "jurisdiction_basis": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The statute under which the action is brought and the court has subject matter jurisdiction, with citation"
+    },
+    "venue_basis": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The statutes cited for venue, with citations"
+    },
+    "relief_requested": {
+      "type": "array",
+      "description": "Each lettered item in the request for relief, in order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "letter": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The item's letter, e.g. '(a)'"
+          },
+          "relief": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The relief requested, as printed"
+          }
+        }
+      }
+    },
+    "numbered_paragraphs": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The number of the last numbered paragraph in the complaint"
+    },
+    "date_signed": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date on the signature page, exactly as printed"
+    }
+  }
+}
