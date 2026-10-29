@@ -1,0 +1,117 @@
+{
+  "type": "object",
+  "description": "A state-issued certificate of good standing (certificate of fact of good standing, certificate of existence) for a business entity.",
+  "properties": {
+    "issuing_state": {
+      "type": "string",
+      "description": "The state whose Secretary of State (or equivalent office) issued the certificate, e.g. 'Colorado'."
+    },
+    "issuing_office": {
+      "type": "string",
+      "description": "The issuing office as named in the certificate heading, e.g. 'Office of the Secretary of State of the State of Colorado'."
+    },
+    "certificate_title": {
+      "type": "string",
+      "description": "The title of the certificate exactly as printed, e.g. 'Certificate of Fact of Good Standing'."
+    },
+    "entity": {
+      "type": "object",
+      "description": "The business entity the certificate is about.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The entity's legal name exactly as printed on the certificate."
+        },
+        "entity_type": {
+          "type": "string",
+          "description": "The entity's legal form as printed, e.g. 'Nonprofit Corporation', 'Limited Liability Company'."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "The state or country under whose law the entity was formed or registered."
+        },
+        "formation_date": {
+          "type": "string",
+          "description": "The date the entity was formed or registered, exactly as printed on the certificate (e.g. MM/DD/YYYY). Do not reformat."
+        },
+        "entity_id_number": {
+          "type": "string",
+          "description": "The entity identification (ID) number the state assigned to the entity, exactly as printed."
+        }
+      },
+      "required": ["name", "entity_type", "jurisdiction", "formation_date", "entity_id_number"]
+    },
+    "in_good_standing": {
+      "type": "boolean",
+      "description": "True if the certificate states that the entity is in good standing (or exists / is active) with the issuing office."
+    },
+    "records_current_through": {
+      "type": "object",
+      "description": "The cut-off dates of the filings the certificate reflects. These are NOT the issue date.",
+      "properties": {
+        "paper_filings_through": {
+          "type": "string",
+          "description": "The date through which documents delivered on paper have been posted, exactly as printed. Do not reformat."
+        },
+        "electronic_filings_through": {
+          "type": "string",
+          "description": "The date (and time, if printed) through which documents delivered electronically are reflected, exactly as printed. Do not reformat."
+        }
+      }
+    },
+    "issuance": {
+      "type": "object",
+      "description": "When, where and under what number the certificate itself was issued.",
+      "properties": {
+        "issue_date": {
+          "type": "string",
+          "description": "The date the certificate was issued (the date in the 'issued this official certificate ... on' sentence), exactly as printed. Do not reformat. Not the paper or electronic filings-through dates."
+        },
+        "issue_time": {
+          "type": "string",
+          "description": "The time of issue printed beside the issue date, exactly as printed (e.g. 15:57:30)."
+        },
+        "issue_place": {
+          "type": "string",
+          "description": "The city and state where the certificate was issued, e.g. 'Denver, Colorado'."
+        },
+        "confirmation_number": {
+          "type": "string",
+          "description": "The certificate's confirmation or validation number, used to verify it on the state's website. Not the entity ID number."
+        },
+        "issued_electronically": {
+          "type": "boolean",
+          "description": "True if the certificate states it was issued electronically or from the state's website."
+        }
+      },
+      "required": ["issue_date", "confirmation_number"]
+    },
+    "certifying_official": {
+      "type": "object",
+      "description": "The official who certifies the facts in the certificate.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The certifying official's name as printed in the certificate text."
+        },
+        "title": {
+          "type": "string",
+          "description": "The official's title, e.g. 'Secretary of State of the State of Colorado'."
+        },
+        "signature_present": {
+          "type": "boolean",
+          "description": "True if a signature (including a facsimile signature) appears above the official's title."
+        },
+        "state_seal_present": {
+          "type": "boolean",
+          "description": "True if the state's great seal is affixed or reproduced on the certificate."
+        }
+      }
+    },
+    "validation_url": {
+      "type": "string",
+      "description": "The web address given for validating the certificate, if printed."
+    }
+  },
+  "required": ["issuing_state", "certificate_title", "entity", "in_good_standing", "issuance"]
+}
