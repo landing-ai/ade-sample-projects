@@ -1,0 +1,27 @@
+{
+  "slug": "employee-census",
+  "title": "Employee Census",
+  "source": {
+    "file": "advanstaff-employee-census-report.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://advanstaff.com/wp-content/uploads/2025/05/reporting_sales-final.pdf",
+      "publisher": "AdvanStaff HR",
+      "title": "Reporting Options (sales PDF), page 4: Employee Census Report with Status Class \"Active\" for *ASI DEMO - GENERAL COMPANY",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "AdvanStaff HR's own 'Reporting Options' sales PDF, linked from its public help page https://advanstaff.com/help/introduction-to-reporting/ and downloaded by script. The kept page is a census report run against the vendor's demo company '*ASI DEMO - GENERAL COMPANY'. All 34 employees are fictional demo records with alliterative names (AARONS, ABAGAIL; BAKER, BETH; COOK, CHLOE); 32 carry a DEMO suffix. The two without it, 'Dirth, Dolin' and 'Jackman, Jackie', follow the same alliterative pattern, appear in the same demo company's New Hire and HR Change reports elsewhere in the PDF alongside other suffixed demo hires, and were treated as fictional. Pages 1-3 and 5-6 (a cover page, a dashboard and three other demo reports) were dropped. The PDF's document metadata, which named the author of the sales PDF, was cleared. The page is otherwise unchanged; no redaction was needed.",
+      "dropped_pages": [1, 2, 3, 5, 6]
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "company_name", "label": "Company", "occurrence": 0 },
+    { "path": "employees[0].employee_id", "label": "Employee ID", "occurrence": 0 },
+    { "path": "employees[0].birth_date", "label": "Birth date", "occurrence": 0 },
+    { "path": "employees[0].original_hire_date", "label": "Original hire date", "occurrence": 0 },
+    { "path": "employees[0].annual_pay", "label": "Annual pay", "occurrence": 0 }
+  ],
+  "notes": "Features the report's company and one complete census row, the first employee: ID, birth date, original hire date and annual pay, the values a benefits quote is rated on. The first row was chosen because its original hire date (02/26/2024) differs from its last hire date (09/17/2024), so the field shows a rehire rather than repeating the other date. The employee ID stands in for the employee name, which grounds equally well, so the page features no personal name even a fictional one. The request suggested company name, report title, and one row's ID, birth date, hire dates and annual pay as suggestions only; the report title and last hire date were left out to stay within five fields. Every one of the 34 extracted rows was checked against the PDF text layer and matched. The footer reads 'Page 1 of 2', but the second page of the census is not in the publisher's PDF. The request expected three rows without the DEMO suffix; the page has two."
+}

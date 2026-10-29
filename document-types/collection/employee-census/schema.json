@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "title": "Employee Census Report",
+  "description": "An HR or payroll system's employee census: one row per employee in a company, with identifiers, demographics used for benefits rating (birth date, age, gender, state), hire and termination dates, and annual pay. Used by benefits brokers, insurers and PEOs to quote and underwrite group coverage.",
+  "properties": {
+    "company_name": {"type": "string", "description": "Name of the company the census covers, as printed in the report header."},
+    "report_title": {"type": "string", "description": "Title of the report as printed, e.g. Employee Census Report."},
+    "report_filter": {"type": ["string", "null"], "description": "The selection criteria printed under the title, e.g. with Status Class \"Active\". Null if none is printed."},
+    "run_date": {"type": ["string", "null"], "description": "Date the report was generated, from the footer, as YYYY-MM-DD. Null if absent."},
+    "page_label": {"type": ["string", "null"], "description": "Page numbering printed in the footer, e.g. Page 1 of 2."},
+    "employees": {
+      "type": "array",
+      "description": "Every employee row in the census table, in printed order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "employee_name": {"type": "string", "description": "Employee name as printed, usually LAST, FIRST."},
+          "employee_id": {"type": "string", "description": "Employee ID as printed, e.g. E92815."},
+          "status": {"type": "string", "description": "Employment status, e.g. ACTIVE."},
+          "birth_date": {"type": "string", "description": "Birth date as YYYY-MM-DD."},
+          "age": {"type": "integer", "description": "Age in years as printed."},
+          "marital_status": {"type": ["string", "null"], "description": "Marital status code as printed (S, M). Null if the cell is blank."},
+          "state": {"type": "string", "description": "Two-letter state code in the State column."},
+          "gender": {"type": "string", "description": "Gender as printed."},
+          "last_hire_date": {"type": "string", "description": "Last (most recent) hire date as YYYY-MM-DD."},
+          "original_hire_date": {"type": "string", "description": "Original hire date as YYYY-MM-DD."},
+          "termination_date": {"type": ["string", "null"], "description": "Termination date as YYYY-MM-DD. Null if the cell is blank."},
+          "annual_pay": {"type": "number", "description": "Annual pay in USD as a number, without separators."}
+        },
+        "required": ["employee_name", "employee_id", "birth_date", "annual_pay"]
+      }
+    },
+    "employee_count": {"type": "integer", "description": "Number of employee rows listed on the report."}
+  },
+  "required": ["company_name", "report_title", "employees"]
+}
