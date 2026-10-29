@@ -1,0 +1,26 @@
+{
+  "slug": "master-services-agreement",
+  "title": "Master Services Agreement",
+  "source": {
+    "file": "msa-williamson-county-powerdms.pdf",
+    "pages": 7,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://public.destinyhosted.com/wilcodocs/2025/COM/20250211_1884/36121%5FMSA%5FPower%5FDMS%5F%2D%5F02%2E05%2E2025%5FGC%5FStamp%5F%2D%5FRedacted%2Epdf",
+      "publisher": "Williamson County, Texas (Commissioners Court)",
+      "title": "Master Services Agreement with Power DMS by NEOGOV, with Exhibit A order form (attachment to the Commissioners Court agenda of February 11, 2025)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "A county contract published by Williamson County, Texas as an attachment to its Commissioners Court agenda of February 11, 2025, linked from the public agenda at https://public.destinyhosted.com/94526/agenda/agenda.cfm?seq=1872. Downloaded by script. Published as the county filed it, by the document owner's explicit decision: nothing was replaced. The county had already blacked out the order form's account and order numbers, and no text sits under those boxes. The parties are a county and a software company. The vendor's signer appears in a professional capacity on pages 5 and 7, with two DocuSign signatures and a legal-review initials stamp; the county's signature blocks are blank. Contact details on the order form are a county department's accounts-payable mailbox and office phone. The PDF carried no metadata."
+    }
+  },
+  "feature_page": 6,
+  "fields": [
+    { "path": "order_form.payment_term", "label": "Payment term", "occurrence": 0 },
+    { "path": "order_form.subscription_periods[0].line_items[2].item", "label": "Subscription", "occurrence": 0 },
+    { "path": "order_form.subscription_periods[0].line_items[2].quantity", "label": "Users", "occurrence": 0 },
+    { "path": "order_form.subscription_periods[0].line_items[2].end_date", "label": "Prorated period end", "occurrence": 0 },
+    { "path": "order_form.subscription_periods[0].period_total_usd", "label": "Prorated total", "occurrence": 0 }
+  ],
+  "notes": "The request named no feature page or fields; its notes suggested page 6, the Exhibit A order form, with the customer, the Net 60 payment term, a subscription line item with dates and quantity, and the prorated total, as suggestions only. Page 6 ships. The customer grounds OFF (the name wraps across two lines in its cell) and every line item's start date grounds OFF (10/1/2024 is printed without zero padding and is extracted as an ISO date), so neither is featured. The overlay reads as one purchase: Net 60 terms, the PowerPolicy Professional Subscription for 89 users, prorated through 11/30/2024, inside the $1,260.69 prorated table. No person is featured. The signer's name and signatures are left as published at the document owner's decision. Table grounding was sensitive to the schema: rewording the description of one unrelated field (county.name, on page 1) made two further extractions ground every cell of the prorated table to its heading, 'Prorated to Shift Dates'; restoring the original wording restored cell-level grounding, and that run is the one committed. The cost is that county.name comes back as 'Williamson' rather than 'Williamson County, Texas'."
+}
