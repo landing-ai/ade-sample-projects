@@ -1,0 +1,178 @@
+{
+  "type": "object",
+  "title": "Stock Purchase Agreement",
+  "description": "Key terms of a stock purchase agreement under which a buyer acquires shares of a company from a seller, as they would be captured by a deal team, lender or regulator reviewing the transaction.",
+  "properties": {
+    "agreement_date": {
+      "type": "string",
+      "description": "Date the stock purchase agreement is made and entered into (or dated as of), in YYYY-MM-DD format."
+    },
+    "seller": {
+      "type": "object",
+      "description": "The party selling the stock.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Legal name of the seller, as defined in the agreement's preamble."
+        },
+        "entity_type": {
+          "type": "string",
+          "description": "Form of entity of the seller, e.g. private limited liability company, corporation."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "Jurisdiction under whose laws the seller is formed, e.g. the Netherlands."
+        }
+      }
+    },
+    "buyer": {
+      "type": "object",
+      "description": "The party buying the stock.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Legal name of the buyer, as defined in the agreement's preamble."
+        },
+        "entity_type": {
+          "type": "string",
+          "description": "Form of entity of the buyer, e.g. limited liability company."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "Jurisdiction under whose laws the buyer is formed, e.g. Delaware."
+        }
+      }
+    },
+    "company": {
+      "type": "object",
+      "description": "The company whose stock is being sold (the target).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Legal name of the company whose stock is sold."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "State or country of incorporation of the company."
+        },
+        "operating_subsidiary": {
+          "type": "string",
+          "description": "Name of the principal operating subsidiary the company owns, if the recitals name one."
+        },
+        "business_description": {
+          "type": "string",
+          "description": "Short description of the business the company or its subsidiary carries on, as stated in the recitals."
+        }
+      }
+    },
+    "stock": {
+      "type": "object",
+      "description": "The shares being sold.",
+      "properties": {
+        "number_of_shares": {
+          "type": "integer",
+          "description": "Number of shares being sold."
+        },
+        "share_class": {
+          "type": "string",
+          "description": "Class of stock, e.g. common stock."
+        },
+        "par_value": {
+          "type": "number",
+          "description": "Par value per share, in the stated currency."
+        },
+        "percent_of_outstanding": {
+          "type": "number",
+          "description": "Percentage of the company's outstanding ownership interest the shares represent."
+        }
+      }
+    },
+    "purchase_price": {
+      "type": "number",
+      "description": "Total purchase price payable for the stock at closing, as a number without currency symbols or separators."
+    },
+    "purchase_price_currency": {
+      "type": "string",
+      "description": "Currency of the purchase price, e.g. USD."
+    },
+    "payment_method": {
+      "type": "string",
+      "description": "How the purchase price is paid, e.g. wire transfer of immediately available funds."
+    },
+    "earnest_money": {
+      "type": "number",
+      "description": "Amount of earnest money or deposit the buyer must deliver after signing."
+    },
+    "closing": {
+      "type": "object",
+      "description": "Where and when the closing takes place.",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "Place where the closing is held: the firm or office name and its address."
+        },
+        "time": {
+          "type": "string",
+          "description": "Time of day the closing is held, as printed."
+        },
+        "timing_condition": {
+          "type": "string",
+          "description": "When the closing occurs relative to satisfaction of the closing conditions, e.g. no later than the fifth business day after the conditions are satisfied or waived."
+        }
+      }
+    },
+    "seller_parent_guarantor": {
+      "type": "string",
+      "description": "Name of the seller's parent company that guarantees the seller's obligations, if any."
+    },
+    "buyer_parent_guarantor": {
+      "type": "string",
+      "description": "Name of the buyer's parent company that guarantees the buyer's obligations, if any."
+    },
+    "termination_fee": {
+      "type": "number",
+      "description": "Amount of the termination fee payable on termination in the circumstances the agreement specifies, if stated."
+    },
+    "outside_date_terms": {
+      "type": "string",
+      "description": "The deadline after which either party may terminate if the closing has not occurred (the outside date), as the agreement states it. This may be a calendar date or a period measured from an event, e.g. twelve months after a regulatory filing; quote the period as written."
+    },
+    "governing_law": {
+      "type": "string",
+      "description": "State or country whose law governs the agreement."
+    },
+    "signatories": {
+      "type": "array",
+      "description": "Signature blocks on the agreement's execution page, one per signing party.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "party": {
+            "type": "string",
+            "description": "The entity on whose behalf the block is signed."
+          },
+          "signer_name": {
+            "type": "string",
+            "description": "Name printed under the signature line."
+          },
+          "signer_title": {
+            "type": "string",
+            "description": "Title printed under the signer's name."
+          },
+          "is_signed": {
+            "type": "boolean",
+            "description": "True if the signature line bears a signature."
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "agreement_date",
+    "seller",
+    "buyer",
+    "company",
+    "stock",
+    "purchase_price"
+  ]
+}
