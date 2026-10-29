@@ -1,0 +1,240 @@
+{
+  "type": "object",
+  "properties": {
+    "agreement_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date the agreement is made and entered into, as stated in the opening paragraph"
+    },
+    "employer": {
+      "type": "object",
+      "description": "The employing organization",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's legal name, as printed in the opening paragraph"
+        },
+        "principal_office_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The employer's principal office address, as printed"
+        }
+      }
+    },
+    "executive": {
+      "type": "object",
+      "description": "The executive being employed",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The executive's full name"
+        },
+        "position_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The position the executive is employed in, such as Superintendent of Schools or Chief Executive Officer"
+        }
+      }
+    },
+    "term": {
+      "type": "object",
+      "description": "The term of employment from the Term section",
+      "properties": {
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the employment term commences, as printed"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The date the employment term ends, as printed"
+        },
+        "work_year": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The executive's work year, such as '12 months, from July 1 to June 30'"
+        }
+      }
+    },
+    "compensation": {
+      "type": "object",
+      "description": "Base pay and scheduled increases from the Compensation section",
+      "properties": {
+        "base_salary": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The executive's annual base salary for the first year of the agreement, in dollars"
+        },
+        "base_salary_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The year or period the base salary applies to, such as the 2025-2026 school year"
+        },
+        "pay_frequency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "How salary is paid, such as twenty-six bi-weekly installments"
+        },
+        "annual_increase_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The percentage by which base salary increases each year of the agreement"
+        },
+        "longevity_payments": {
+          "type": "array",
+          "description": "Longevity or retention payments, one per milestone",
+          "items": {
+            "type": "object",
+            "description": "One longevity payment",
+            "properties": {
+              "milestone": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The service milestone or effective date that triggers the payment, as printed"
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The payment amount, in dollars"
+              }
+            }
+          }
+        }
+      }
+    },
+    "benefits": {
+      "type": "object",
+      "description": "Insurance and retirement benefits from the Benefits section",
+      "properties": {
+        "life_insurance_face_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The face amount of the life insurance policy the employer pays for, in dollars"
+        },
+        "health_insurance_employer_share_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The percentage of the executive's health plan cost the employer pays"
+        },
+        "dental_insurance_employer_share_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The percentage of the dental premium the employer pays"
+        },
+        "retiree_health_individual_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The percentage of an individual plan premium the employer pays in retirement"
+        },
+        "health_insurance_buyout_family": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The annual payment for declining a family health plan, in dollars"
+        },
+        "max_retirement_contribution": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "The maximum employer non-elective contribution to the 403(b) or retirement plan on qualified retirement, as first stated, in dollars"
+        }
+      }
+    },
+    "leave": {
+      "type": "object",
+      "description": "Paid leave entitlements from the Leaves of Absence section",
+      "properties": {
+        "sick_leave_days_per_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Days of sick or family leave per year"
+        },
+        "bereavement_days_per_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Days of bereavement leave per year"
+        },
+        "personal_leave_days_per_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Days of personal leave per year"
+        },
+        "vacation_days_per_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Days of vacation per year"
+        }
+      }
+    },
+    "renewal_notice_deadline": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date by which the board or employer must say whether it will extend the agreement"
+    },
+    "resignation_notice_days": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Days of written notice the executive must give to resign"
+    },
+    "governing_law": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The jurisdiction whose law governs the agreement"
+    }
+  }
+}

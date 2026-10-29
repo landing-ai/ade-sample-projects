@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 2,
+  "page_count": 13,
+  "preview_pages": [
+    1,
+    2,
+    5,
+    8
+  ],
+  "fields": [
+    {
+      "path": "term.start_date",
+      "label": "Term start",
+      "value": "July 1, 2025",
+      "page": 2,
+      "box": {
+        "xmin": 0.1855,
+        "ymin": 0.21033,
+        "xmax": 0.89516,
+        "ymax": 0.22788
+      },
+      "range": {
+        "end": 2742,
+        "start": 2659
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "term-start_date.png"
+    },
+    {
+      "path": "term.end_date",
+      "label": "Term end",
+      "value": "June 30, 2030",
+      "page": 2,
+      "box": {
+        "xmin": 0.1855,
+        "ymin": 0.21033,
+        "xmax": 0.89516,
+        "ymax": 0.22788
+      },
+      "range": {
+        "end": 2742,
+        "start": 2659
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "term-end_date.png"
+    },
+    {
+      "path": "compensation.base_salary",
+      "label": "Base salary",
+      "value": 235553.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.24265,
+        "ymin": 0.36209,
+        "xmax": 0.89532,
+        "ymax": 0.38013
+      },
+      "range": {
+        "end": 3181,
+        "start": 3104
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "compensation-base_salary.png"
+    },
+    {
+      "path": "compensation.annual_increase_percent",
+      "label": "Annual increase",
+      "value": 4.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.24256,
+        "ymin": 0.38017,
+        "xmax": 0.89501,
+        "ymax": 0.39755
+      },
+      "range": {
+        "end": 3258,
+        "start": 3182
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "compensation-annual_increase_percent.png"
+    },
+    {
+      "path": "compensation.longevity_payments[2].amount",
+      "label": "Longevity payment",
+      "value": 7500,
+      "page": 2,
+      "box": {
+        "xmin": 0.24107,
+        "ymin": 0.62136,
+        "xmax": 0.89505,
+        "ymax": 0.63904
+      },
+      "range": {
+        "end": 4244,
+        "start": 4163
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "compensation-longevity_payments-2-amount.png"
+    }
+  ]
+}
