@@ -1,0 +1,28 @@
+{
+  "slug": "financial-model",
+  "title": "Financial Model",
+  "source": {
+    "file": "aloha-development-model-jll.pdf",
+    "pages": 16,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://alohastadium.hawaii.gov/wp-content/uploads/2026/03/alohastadiumconceptualredevelopmentreport.pdf",
+      "publisher": "Jones Lang LaSalle (model author), in a report by Foley & Lardner LLP for the State of Hawaii Department of Accounting and General Services and Stadium Authority; published by the State on alohastadium.hawaii.gov",
+      "title": "Aloha Development Model (Exhibit C to the Aloha Stadium Conceptual Redevelopment Report, February 23, 2017)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Public government record: the State of Hawaii publishes the full Aloha Stadium Conceptual Redevelopment Report on its own alohastadium.hawaii.gov domain. Downloaded by script. The report's cover is marked 'Privileged and Confidential / Attorney-Client Communication' and every model page carries a 'Confidential' footer; these markings predate the State's own publication of the report and are left in place as printed. The source is 181 pages; this folder keeps 16 of them (source pages 160-175, Exhibit C, numbered 'Page 1 of 16' to 'Page 16 of 16'), split out with PyMuPDF. The Exhibit D cash flow projections (source pages 177-181, a different author's renovate-versus-rebuild comparison) were left out by operator decision, as was the Exhibit D slip sheet, which names an individual preparer. The kept pages carry no personal data, so no text was redacted. Document metadata, which named an individual author, was cleared.",
+      "kept_source_pages": [160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175],
+      "source_pages_total": 181
+    }
+  },
+  "feature_page": 6,
+  "fields": [
+    { "path": "cash_flow_scenarios[0].total_costs", "label": "Total costs", "occurrence": 0 },
+    { "path": "cash_flow_scenarios[0].permanent_loan_beginning_balance", "label": "Permanent loan beginning balance", "occurrence": 0 },
+    { "path": "cash_flow_scenarios[0].first_year_dscr", "label": "First-year DSCR", "occurrence": 0 },
+    { "path": "cash_flow_scenarios[0].residual_value", "label": "Residual value", "occurrence": 0 },
+    { "path": "cash_flow_scenarios[0].aloha_irr", "label": "Owner IRR", "occurrence": 0 }
+  ],
+  "notes": "Features the office own-operate cash flow sheet (folder page 6, printed 'Page 6 of 16', source page 165), which follows one development from cost through debt to exit: total costs, the permanent loan's opening balance, the first-year debt service coverage ratio, the residual (exit) value and the owner's IRR. The request suggested page 165 and these five values (total costs, IRR, permanent loan beginning balance, a DSCR value, residual value); all five ground 'ok' on that page and shipped as asked. The request also flagged Exhibit D (source pages 177-181) as a possible addition; the operator chose Exhibit C only."
+}

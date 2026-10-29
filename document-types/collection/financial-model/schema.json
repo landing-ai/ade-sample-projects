@@ -1,0 +1,209 @@
+{
+  "type": "object",
+  "title": "Real Estate Development Financial Model",
+  "description": "A multi-sheet real estate development pro forma: a returns summary across scenarios, development and financing assumptions per product type, and annual cash flow projections per product type and scenario.",
+  "properties": {
+    "model_name": {
+      "type": "string",
+      "description": "Name of the financial model as printed in the title of the returns summary sheet."
+    },
+    "returns_summary": {
+      "type": "array",
+      "description": "One entry per scenario column in the Returns Summary sheet.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scenario": {
+            "type": "string",
+            "description": "Scenario label, e.g. 'Scenario 1'."
+          },
+          "description": {
+            "type": "string",
+            "description": "Scenario description, e.g. the development and exit strategy."
+          },
+          "total_square_footage": {
+            "type": "number",
+            "description": "Total square footage of the development program."
+          },
+          "total_development_costs_with_land": {
+            "type": "number",
+            "description": "Total development costs including land, in dollars."
+          },
+          "land_acquisition_cost": {
+            "type": "number",
+            "description": "Land acquisition cost component of the equity required, in dollars."
+          },
+          "horizontal_infrastructure_cost": {
+            "type": "number",
+            "description": "Horizontal infrastructure cost component of the equity required, in dollars."
+          },
+          "equity_for_vertical_buildout": {
+            "type": "number",
+            "description": "Equity for vertical buildout, in dollars."
+          },
+          "total_equity_required": {
+            "type": "number",
+            "description": "Total equity required, in dollars."
+          },
+          "total_distributions": {
+            "type": "number",
+            "description": "Total distributions to the owner over the scenario, in dollars."
+          },
+          "net_cash_flow": {
+            "type": "number",
+            "description": "Net cash flow after subtracting equity invested, in dollars."
+          },
+          "npv": {
+            "type": "number",
+            "description": "Net present value, in dollars."
+          },
+          "npv_discount_rate": {
+            "type": "string",
+            "description": "Discount rate used for the NPV as printed, e.g. '8%'."
+          },
+          "irr": {
+            "type": "string",
+            "description": "Internal rate of return as printed, e.g. '16.9%'."
+          },
+          "equity_multiple": {
+            "type": "string",
+            "description": "Equity multiple as printed, e.g. '1.5x'."
+          },
+          "profitability_index": {
+            "type": "string",
+            "description": "Profitability index as printed, e.g. '1.2x'."
+          }
+        }
+      }
+    },
+    "product_assumptions": {
+      "type": "array",
+      "description": "One entry per product-type Assumptions sheet (office, retail, residential, hotel).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_type": {
+            "type": "string",
+            "description": "Product type of the sheet: Office, Retail, Residential or Hotel."
+          },
+          "land_area_acres": {
+            "type": "number",
+            "description": "Land area in acres."
+          },
+          "gross_square_feet": {
+            "type": "number",
+            "description": "Gross square feet (GSF) of the program."
+          },
+          "construction_loan_debt_percent": {
+            "type": "string",
+            "description": "Construction loan share of the capital stack (Debt) for the own/operate structure, as printed."
+          },
+          "construction_loan_interest_rate": {
+            "type": "string",
+            "description": "Construction loan interest rate as printed."
+          },
+          "permanent_loan_interest_rate": {
+            "type": "string",
+            "description": "Permanent loan interest rate as printed."
+          },
+          "permanent_loan_ltv": {
+            "type": "string",
+            "description": "Permanent loan loan-to-value ratio as printed."
+          },
+          "permanent_loan_amortization_years": {
+            "type": "number",
+            "description": "Permanent loan amortization period in years."
+          },
+          "net_rent_per_sf": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Net rent per square foot for the primary use, in dollars. Null for hotel."
+          },
+          "vacancy_rate": {
+            "type": "string",
+            "description": "Vacancy rate for the primary use, as printed."
+          },
+          "residual_cap_rate": {
+            "type": "string",
+            "description": "Residual (exit) cap rate as printed."
+          },
+          "total_development_costs_excluding_land": {
+            "type": "number",
+            "description": "Total development costs excluding land, in dollars."
+          },
+          "total_development_costs_including_land": {
+            "type": "number",
+            "description": "Total development costs including land, in dollars."
+          }
+        }
+      }
+    },
+    "cash_flow_scenarios": {
+      "type": "array",
+      "description": "One entry per product-type cash flow sheet. A product type can have more than one sheet (different hold periods or a sale scenario).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_type": {
+            "type": "string",
+            "description": "Product type of the sheet: Office, Retail, Residential or Hotel."
+          },
+          "scenario_name": {
+            "type": "string",
+            "description": "Scenario heading exactly as printed under the sheet title, including ownership and leverage."
+          },
+          "page_label": {
+            "type": "string",
+            "description": "Page label printed in the footer of this cash flow sheet itself (bottom right), e.g. 'Page 6 of 16'. Not the label of the preceding Assumptions sheet."
+          },
+          "total_costs": {
+            "type": "number",
+            "description": "Total Costs, Total column, in dollars."
+          },
+          "total_equity_requirement": {
+            "type": "number",
+            "description": "Total Equity Requirement, in dollars."
+          },
+          "permanent_loan_beginning_balance": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Permanent loan beginning balance in the first year the loan is outstanding, in dollars. Printed in parentheses as a negative; return the negative number. Null if the sheet has no permanent loan balance (e.g. a sale scenario)."
+          },
+          "first_year_dscr": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Debt service coverage ratio (DSCR) in the first year it is shown. Null if the sheet shows no DSCR row."
+          },
+          "residual_value": {
+            "type": "number",
+            "description": "Residual value of the primary use (e.g. 'Residual Value - Office'), Total column, in dollars."
+          },
+          "net_cash_flow_before_debt_service": {
+            "type": "number",
+            "description": "Net Cash Flow Before Debt Service, Total column, in dollars."
+          },
+          "aloha_irr": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Owner (Aloha) IRR as printed. Null if not shown."
+          },
+          "total_aloha_distributions": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Total Aloha Distributions, in dollars. Null if not shown."
+          }
+        }
+      }
+    }
+  }
+}
