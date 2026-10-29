@@ -1,0 +1,1258 @@
+{
+  "extraction": {
+    "ebitda_bridge": {
+      "adjustments": [
+        {
+          "category": "management",
+          "name": "2023 Payroll adjustment",
+          "rationale": "We recalculated the adjustment to maintain the same percentage of revenue between 2024 and 2023 (41%), before considering capitalized labor.",
+          "ttm_amount": 0
+        },
+        {
+          "category": "management",
+          "name": "Capitalized Labor",
+          "rationale": "Capitalized labor represents operating expenses that would otherwise be capitalized.",
+          "ttm_amount": 722732
+        },
+        {
+          "category": "management",
+          "name": "One time expense",
+          "rationale": "The new owner will no longer be responsible for these payments, as confirmed by buyer.",
+          "ttm_amount": 0
+        },
+        {
+          "category": "management",
+          "name": "Workers Comp",
+          "rationale": "Workers comp expense should have been recorded on the operating companies that was originally expensed to the inactive holding company.",
+          "ttm_amount": -7749
+        },
+        {
+          "category": "management",
+          "name": "Previous Owner",
+          "rationale": "The previous owner does not have an active role in the management or operations of the businesses.",
+          "ttm_amount": 105102
+        },
+        {
+          "category": "due_diligence",
+          "name": "Management Fee",
+          "rationale": "We have removed the fees paid to PE Company, as these will no longer be incurred moving forward.",
+          "ttm_amount": 0
+        },
+        {
+          "category": "due_diligence",
+          "name": "Expense not on PL",
+          "rationale": "We have included expenses incurred by Company 2, which were previously kept on the separate profit and loss statement.",
+          "ttm_amount": -86277
+        },
+        {
+          "category": "due_diligence",
+          "name": "Unused Vacation Payoff",
+          "rationale": "We have added back the unused vacation payoff for former GM as this is a non-recurring expense.",
+          "ttm_amount": 55000
+        },
+        {
+          "category": "due_diligence",
+          "name": "Non Operating income",
+          "rationale": "We have removed non-operating income from the business.",
+          "ttm_amount": -39318
+        },
+        {
+          "category": "due_diligence",
+          "name": "Remove Legal Settlement",
+          "rationale": "We removed the settlement paid to the previous owner following lease disputes.",
+          "ttm_amount": 285000
+        }
+      ],
+      "periods": [
+        {
+          "adjusted_ebitda": 2667375,
+          "adjusted_ebitda_margin_percent": 30.8,
+          "management_adjusted_ebitda": 591637,
+          "management_ebitda_margin_percent": 6.8,
+          "period": "2022",
+          "reported_ebitda": 591637,
+          "total_due_diligence_adjustments": 2075738,
+          "total_income": 8657602,
+          "total_management_adjustments": 0
+        },
+        {
+          "adjusted_ebitda": 1891025,
+          "adjusted_ebitda_margin_percent": 22.8,
+          "management_adjusted_ebitda": 1529064,
+          "management_ebitda_margin_percent": 18.4,
+          "period": "2023",
+          "reported_ebitda": 257942,
+          "total_due_diligence_adjustments": 361961,
+          "total_income": 8295119,
+          "total_management_adjustments": 1271122
+        },
+        {
+          "adjusted_ebitda": 1645116,
+          "adjusted_ebitda_margin_percent": 20.1,
+          "management_adjusted_ebitda": 1494054,
+          "management_ebitda_margin_percent": 18.2,
+          "period": "2024",
+          "reported_ebitda": 669809,
+          "total_due_diligence_adjustments": 151062,
+          "total_income": 8198505,
+          "total_management_adjustments": 824244
+        },
+        {
+          "adjusted_ebitda": 1654372,
+          "adjusted_ebitda_margin_percent": 20.1,
+          "management_adjusted_ebitda": 1439967,
+          "management_ebitda_margin_percent": 17.5,
+          "period": "TTM",
+          "reported_ebitda": 619882,
+          "total_due_diligence_adjustments": 214404,
+          "total_income": 8214951,
+          "total_management_adjustments": 820085
+        }
+      ]
+    },
+    "key_findings": {
+      "average_net_working_capital": -297000,
+      "cash_conversion_cycle_days": -15.4,
+      "customer_count": "over 8K",
+      "days_inventory_outstanding": 0.5,
+      "days_payables_outstanding": 15.9,
+      "days_sales_outstanding": 0,
+      "gross_margin_trend": "decreased from 78% to 75% from 2022 to TTM Jan25",
+      "inventory_balance": 764000,
+      "unpaid_pto": 56000
+    },
+    "report": {
+      "periods_analyzed": [
+        "2022",
+        "2023",
+        "2024",
+        "TTM"
+      ],
+      "preparer_firm": "Caleb PA Basile, LLC t/a QOE Prep",
+      "report_date": "Feb, 2025",
+      "target_business_description": "The Company was acquired in 2020 with the purpose of specializing in Fixed Broadband wireless internet service in various locations."
+    }
+  },
+  "extraction_metadata": {
+    "ebitda_bridge": {
+      "adjustments": [
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 9307,
+                "start": 9285
+              },
+              {
+                "end": 11173,
+                "start": 11147
+              }
+            ],
+            "value": "management"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 9370,
+                "start": 9347
+              },
+              {
+                "end": 11204,
+                "start": 11174
+              }
+            ],
+            "value": "2023 Payroll adjustment"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 11267,
+                "start": 11205
+              },
+              {
+                "end": 11326,
+                "start": 11268
+              },
+              {
+                "end": 11389,
+                "start": 11327
+              },
+              {
+                "end": 11429,
+                "start": 11390
+              }
+            ],
+            "value": "We recalculated the adjustment to maintain the same percentage of revenue between 2024 and 2023 (41%), before considering capitalized labor."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 9422,
+                "start": 9419
+              },
+              {
+                "end": 11204,
+                "start": 11174
+              }
+            ],
+            "value": 0
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 9307,
+                "start": 9285
+              },
+              {
+                "end": 11173,
+                "start": 11147
+              }
+            ],
+            "value": "management"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 9458,
+                "start": 9441
+              },
+              {
+                "end": 11499,
+                "start": 11432
+              }
+            ],
+            "value": "Capitalized Labor"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 11499,
+                "start": 11432
+              },
+              {
+                "end": 11553,
+                "start": 11500
+              },
+              {
+                "end": 11566,
+                "start": 11554
+              }
+            ],
+            "value": "Capitalized labor represents operating expenses that would otherwise be capitalized."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 9518,
+                "start": 9511
+              },
+              {
+                "end": 11499,
+                "start": 11432
+              }
+            ],
+            "value": 722732
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 9307,
+                "start": 9285
+              },
+              {
+                "end": 11173,
+                "start": 11147
+              }
+            ],
+            "value": "management"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 9553,
+                "start": 9537
+              },
+              {
+                "end": 11635,
+                "start": 11569
+              }
+            ],
+            "value": "One time expense"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 11635,
+                "start": 11569
+              },
+              {
+                "end": 11678,
+                "start": 11636
+              }
+            ],
+            "value": "The new owner will no longer be responsible for these payments, as confirmed by buyer."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 9604,
+                "start": 9601
+              },
+              {
+                "end": 11635,
+                "start": 11569
+              }
+            ],
+            "value": 0
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 9307,
+                "start": 9285
+              },
+              {
+                "end": 11173,
+                "start": 11147
+              }
+            ],
+            "value": "management"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 9635,
+                "start": 9623
+              },
+              {
+                "end": 11745,
+                "start": 11681
+              }
+            ],
+            "value": "Workers Comp"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 11745,
+                "start": 11681
+              },
+              {
+                "end": 11800,
+                "start": 11746
+              },
+              {
+                "end": 11853,
+                "start": 11801
+              }
+            ],
+            "value": "Workers comp expense should have been recorded on the operating companies that was originally expensed to the inactive holding company."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 9692,
+                "start": 9685
+              },
+              {
+                "end": 11745,
+                "start": 11681
+              }
+            ],
+            "value": -7749
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 9307,
+                "start": 9285
+              },
+              {
+                "end": 11173,
+                "start": 11147
+              }
+            ],
+            "value": "management"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 9725,
+                "start": 9711
+              },
+              {
+                "end": 11918,
+                "start": 11856
+              }
+            ],
+            "value": "Previous Owner"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 11918,
+                "start": 11856
+              },
+              {
+                "end": 11962,
+                "start": 11919
+              }
+            ],
+            "value": "The previous owner does not have an active role in the management or operations of the businesses."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 9784,
+                "start": 9777
+              },
+              {
+                "end": 11918,
+                "start": 11856
+              }
+            ],
+            "value": 105102
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 10147,
+                "start": 10122
+              },
+              {
+                "end": 14316,
+                "start": 14287
+              }
+            ],
+            "value": "due_diligence"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 10216,
+                "start": 10202
+              },
+              {
+                "end": 14386,
+                "start": 14317
+              }
+            ],
+            "value": "Management Fee"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 14386,
+                "start": 14317
+              },
+              {
+                "end": 14435,
+                "start": 14387
+              }
+            ],
+            "value": "We have removed the fees paid to PE Company, as these will no longer be incurred moving forward."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 10268,
+                "start": 10268
+              },
+              {
+                "end": 14386,
+                "start": 14317
+              }
+            ],
+            "value": 0
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 10147,
+                "start": 10122
+              },
+              {
+                "end": 14316,
+                "start": 14287
+              }
+            ],
+            "value": "due_diligence"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 10304,
+                "start": 10287
+              },
+              {
+                "end": 14506,
+                "start": 14438
+              }
+            ],
+            "value": "Expense not on PL"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 14506,
+                "start": 14438
+              },
+              {
+                "end": 14579,
+                "start": 14507
+              }
+            ],
+            "value": "We have included expenses incurred by Company 2, which were previously kept on the separate profit and loss statement."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 10374,
+                "start": 10366
+              },
+              {
+                "end": 14506,
+                "start": 14438
+              }
+            ],
+            "value": -86277
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 10147,
+                "start": 10122
+              },
+              {
+                "end": 14316,
+                "start": 14287
+              }
+            ],
+            "value": "due_diligence"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 10415,
+                "start": 10393
+              },
+              {
+                "end": 14649,
+                "start": 14582
+              }
+            ],
+            "value": "Unused Vacation Payoff"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 14649,
+                "start": 14582
+              },
+              {
+                "end": 14706,
+                "start": 14650
+              }
+            ],
+            "value": "We have added back the unused vacation payoff for former GM as this is a non-recurring expense."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 10457,
+                "start": 10451
+              },
+              {
+                "end": 14649,
+                "start": 14582
+              }
+            ],
+            "value": 55000
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 10147,
+                "start": 10122
+              },
+              {
+                "end": 14316,
+                "start": 14287
+              }
+            ],
+            "value": "due_diligence"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 10496,
+                "start": 10476
+              },
+              {
+                "end": 14777,
+                "start": 14709
+              }
+            ],
+            "value": "Non Operating income"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 14777,
+                "start": 14709
+              },
+              {
+                "end": 14791,
+                "start": 14778
+              }
+            ],
+            "value": "We have removed non-operating income from the business."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 10553,
+                "start": 10545
+              },
+              {
+                "end": 14777,
+                "start": 14709
+              }
+            ],
+            "value": -39318
+          }
+        },
+        {
+          "category": {
+            "ranges": [
+              {
+                "end": 10147,
+                "start": 10122
+              },
+              {
+                "end": 14316,
+                "start": 14287
+              }
+            ],
+            "value": "due_diligence"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 10595,
+                "start": 10572
+              },
+              {
+                "end": 14857,
+                "start": 14794
+              }
+            ],
+            "value": "Remove Legal Settlement"
+          },
+          "rationale": {
+            "ranges": [
+              {
+                "end": 14857,
+                "start": 14794
+              },
+              {
+                "end": 14929,
+                "start": 14858
+              },
+              {
+                "end": 14995,
+                "start": 14930
+              },
+              {
+                "end": 15059,
+                "start": 14996
+              },
+              {
+                "end": 15129,
+                "start": 15060
+              }
+            ],
+            "value": "We removed the settlement paid to the previous owner following lease disputes."
+          },
+          "ttm_amount": {
+            "ranges": [
+              {
+                "end": 10651,
+                "start": 10644
+              },
+              {
+                "end": 15129,
+                "start": 15060
+              }
+            ],
+            "value": 285000
+          }
+        }
+      ],
+      "periods": [
+        {
+          "adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10819,
+                "start": 10810
+              }
+            ],
+            "value": 2667375
+          },
+          "adjusted_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11084,
+                "start": 11079
+              }
+            ],
+            "value": 30.8
+          },
+          "management_adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10009,
+                "start": 10002
+              }
+            ],
+            "value": 591637
+          },
+          "management_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 10987,
+                "start": 10983
+              }
+            ],
+            "value": 6.8
+          },
+          "period": {
+            "ranges": [
+              {
+                "end": 8905,
+                "start": 8901
+              }
+            ],
+            "value": "2022"
+          },
+          "reported_ebitda": {
+            "ranges": [
+              {
+                "end": 9206,
+                "start": 9199
+              }
+            ],
+            "value": 591637
+          },
+          "total_due_diligence_adjustments": {
+            "ranges": [
+              {
+                "end": 10719,
+                "start": 10710
+              }
+            ],
+            "value": 2075738
+          },
+          "total_income": {
+            "ranges": [
+              {
+                "end": 9047,
+                "start": 9038
+              }
+            ],
+            "value": 8657602
+          },
+          "total_management_adjustments": {
+            "ranges": [
+              {
+                "end": 9843,
+                "start": 9840
+              }
+            ],
+            "value": 0
+          }
+        },
+        {
+          "adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10837,
+                "start": 10828
+              }
+            ],
+            "value": 1891025
+          },
+          "adjusted_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11098,
+                "start": 11093
+              }
+            ],
+            "value": 22.8
+          },
+          "management_adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10027,
+                "start": 10018
+              }
+            ],
+            "value": 1529064
+          },
+          "management_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11001,
+                "start": 10996
+              }
+            ],
+            "value": 18.4
+          },
+          "period": {
+            "ranges": [
+              {
+                "end": 8918,
+                "start": 8914
+              }
+            ],
+            "value": "2023"
+          },
+          "reported_ebitda": {
+            "ranges": [
+              {
+                "end": 9222,
+                "start": 9215
+              }
+            ],
+            "value": 257942
+          },
+          "total_due_diligence_adjustments": {
+            "ranges": [
+              {
+                "end": 10735,
+                "start": 10728
+              }
+            ],
+            "value": 361961
+          },
+          "total_income": {
+            "ranges": [
+              {
+                "end": 9065,
+                "start": 9056
+              }
+            ],
+            "value": 8295119
+          },
+          "total_management_adjustments": {
+            "ranges": [
+              {
+                "end": 9861,
+                "start": 9852
+              }
+            ],
+            "value": 1271122
+          }
+        },
+        {
+          "adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10855,
+                "start": 10846
+              }
+            ],
+            "value": 1645116
+          },
+          "adjusted_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11112,
+                "start": 11107
+              }
+            ],
+            "value": 20.1
+          },
+          "management_adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10045,
+                "start": 10036
+              }
+            ],
+            "value": 1494054
+          },
+          "management_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11015,
+                "start": 11010
+              }
+            ],
+            "value": 18.2
+          },
+          "period": {
+            "ranges": [
+              {
+                "end": 8931,
+                "start": 8927
+              }
+            ],
+            "value": "2024"
+          },
+          "reported_ebitda": {
+            "ranges": [
+              {
+                "end": 9238,
+                "start": 9231
+              }
+            ],
+            "value": 669809
+          },
+          "total_due_diligence_adjustments": {
+            "ranges": [
+              {
+                "end": 10751,
+                "start": 10744
+              }
+            ],
+            "value": 151062
+          },
+          "total_income": {
+            "ranges": [
+              {
+                "end": 9083,
+                "start": 9074
+              }
+            ],
+            "value": 8198505
+          },
+          "total_management_adjustments": {
+            "ranges": [
+              {
+                "end": 9877,
+                "start": 9870
+              }
+            ],
+            "value": 824244
+          }
+        },
+        {
+          "adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10873,
+                "start": 10864
+              }
+            ],
+            "value": 1654372
+          },
+          "adjusted_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11126,
+                "start": 11121
+              }
+            ],
+            "value": 20.1
+          },
+          "management_adjusted_ebitda": {
+            "ranges": [
+              {
+                "end": 10063,
+                "start": 10054
+              }
+            ],
+            "value": 1439967
+          },
+          "management_ebitda_margin_percent": {
+            "ranges": [
+              {
+                "end": 11029,
+                "start": 11024
+              }
+            ],
+            "value": 17.5
+          },
+          "period": {
+            "ranges": [
+              {
+                "end": 8943,
+                "start": 8940
+              }
+            ],
+            "value": "TTM"
+          },
+          "reported_ebitda": {
+            "ranges": [
+              {
+                "end": 9254,
+                "start": 9247
+              }
+            ],
+            "value": 619882
+          },
+          "total_due_diligence_adjustments": {
+            "ranges": [
+              {
+                "end": 10767,
+                "start": 10760
+              }
+            ],
+            "value": 214404
+          },
+          "total_income": {
+            "ranges": [
+              {
+                "end": 9101,
+                "start": 9092
+              }
+            ],
+            "value": 8214951
+          },
+          "total_management_adjustments": {
+            "ranges": [
+              {
+                "end": 9893,
+                "start": 9886
+              }
+            ],
+            "value": 820085
+          }
+        }
+      ]
+    },
+    "key_findings": {
+      "average_net_working_capital": {
+        "ranges": [
+          {
+            "end": 34338,
+            "start": 34329
+          },
+          {
+            "end": 5528,
+            "start": 5372
+          },
+          {
+            "end": 34784,
+            "start": 34375
+          }
+        ],
+        "value": -297000
+      },
+      "cash_conversion_cycle_days": {
+        "ranges": [
+          {
+            "end": 38015,
+            "start": 38009
+          },
+          {
+            "end": 6646,
+            "start": 6528
+          },
+          {
+            "end": 38164,
+            "start": 38034
+          }
+        ],
+        "value": -15.4
+      },
+      "customer_count": {
+        "ranges": [
+          {
+            "end": 6850,
+            "start": 6690
+          }
+        ],
+        "value": "over 8K"
+      },
+      "days_inventory_outstanding": {
+        "ranges": [
+          {
+            "end": 36666,
+            "start": 36663
+          },
+          {
+            "end": 6646,
+            "start": 6528
+          },
+          {
+            "end": 38164,
+            "start": 38034
+          }
+        ],
+        "value": 0.5
+      },
+      "days_payables_outstanding": {
+        "ranges": [
+          {
+            "end": 37640,
+            "start": 37636
+          },
+          {
+            "end": 6646,
+            "start": 6528
+          },
+          {
+            "end": 38164,
+            "start": 38034
+          }
+        ],
+        "value": 15.9
+      },
+      "days_sales_outstanding": {
+        "ranges": [
+          {
+            "end": 6646,
+            "start": 6528
+          },
+          {
+            "end": 38164,
+            "start": 38034
+          }
+        ],
+        "value": 0
+      },
+      "gross_margin_trend": {
+        "ranges": [
+          {
+            "end": 3770,
+            "start": 3617
+          },
+          {
+            "end": 3938,
+            "start": 3771
+          }
+        ],
+        "value": "decreased from 78% to 75% from 2022 to TTM Jan25"
+      },
+      "inventory_balance": {
+        "ranges": [
+          {
+            "end": 5910,
+            "start": 5810
+          }
+        ],
+        "value": 764000
+      },
+      "unpaid_pto": {
+        "ranges": [
+          {
+            "end": 8287,
+            "start": 8186
+          }
+        ],
+        "value": 56000
+      }
+    },
+    "report": {
+      "periods_analyzed": [
+        {
+          "ranges": [
+            {
+              "end": 8905,
+              "start": 8901
+            }
+          ],
+          "value": "2022"
+        },
+        {
+          "ranges": [
+            {
+              "end": 8918,
+              "start": 8914
+            }
+          ],
+          "value": "2023"
+        },
+        {
+          "ranges": [
+            {
+              "end": 8931,
+              "start": 8927
+            }
+          ],
+          "value": "2024"
+        },
+        {
+          "ranges": [
+            {
+              "end": 8943,
+              "start": 8940
+            }
+          ],
+          "value": "TTM"
+        }
+      ],
+      "preparer_firm": {
+        "ranges": [
+          {
+            "end": 583,
+            "start": 405
+          }
+        ],
+        "value": "Caleb PA Basile, LLC t/a QOE Prep"
+      },
+      "report_date": {
+        "ranges": [
+          {
+            "end": 130,
+            "start": 121
+          }
+        ],
+        "value": "Feb, 2025"
+      },
+      "target_business_description": {
+        "ranges": [
+          {
+            "end": 3429,
+            "start": 3266
+          }
+        ],
+        "value": "The Company was acquired in 2020 with the purpose of specializing in Fixed Broadband wireless internet service in various locations."
+      }
+    }
+  },
+  "markdown": "⬠ QOE PREP\n\n\nAll figures in this report are fictional and not representative of any actual\ncompany.\n# Sample QOE Report\n\nFeb, 2025\nQuality of Earnings report\n\n\nPage 1\n\n\n<!-- PAGE BREAK -->\n\nTable of Contents\n\n\nCover Letter\n1. Key findings\n2. Quality of Earnings\n3. P&L Overview\n4. Revenue Trends\n5. COGS Analysis\n6. BS Analysis\n7. Reconciliations\n\n\nPage 3\n\n\n<!-- PAGE BREAK -->\n\nCover Letter\n\n\nDear XXXX,\nCaleb PA Basile, LLC t/a QOE Prep (“we,” “our,” or “us”) is pleased to deliver to you the attached Quality of Earnings Report (the “Report”) solely for the information and use of\nXXXX (the “Client”) in connection with its evaluation of the transaction between the Client and XXXX (the “Parties”).\n\n\nThe Report is based on information provided to us by the Parties, as well as their respective advisors, experts, agents, or representatives, and was prepared in accordance with the\nscope and limitations agreed upon in our engagement letter with the Client dated XXXX(the “Engagement Letter”).\n\n\nThis report is not an audit, a review of financial statements, or a recommendation on how to proceed. Instead, we have relied solely on the information we have received from the\nParties, along with their respective professionals. This report is therefore not intended to, and will not, uncover accounting errors, business irregularities, illegal acts, or any other\nsimilar conduct of the target company, including fraud or misappropriations.\n\n\nNothing in the Report, this letter, or the Engagement Letter should be construed as investment, legal, accounting, business, or tax advice. In reviewing the Report, the Client should\nconduct their own independent investigation and due diligence, and seek advice from their professional advisors, experts, agents, and/or representatives.\n\n\nThe Report is for informational purposes only. By this letter, we state clearly that the Report, and any of its contents, conclusions, or representations, are not to be relied upon for any\npurpose. We disclaim any liability, duty, or obligation, and any review or use of the Report by shall be at such party’s sole risk and without recourse to us. The Client and its\nmanagement alone may use this report for its information (including the schedules and related materials).\n\n\nUltimately, the Client will determine whether, and if so, how to proceed with a transaction. Nothing in this Report is meant to constitute a recommendation of whether, or under what\nterms, to pursue a transaction with the target company.\n\n\nBy providing this Report, QOE Prep has now completed its obligations under our engagement with you. It has been a pleasure to assist, and we wish to thank you for the opportunity\nto collaborate with you on this assignment.\n\n\nVery truly yours,\n\n\nCALEB BASILE, CPA\ncaleb@qoeprep.com\n\nPage 4\n\n\n<!-- PAGE BREAK -->\n\n1. Key Findings\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The figure consists of two thick, parallel rectangular bars arranged in an angular 'V' shape, pointing towards the bottom-left corner of the frame. The left/top bar is dark gray, and the right/bottom bar is green. The bars have a 3D effect with beveled edges, suggesting depth. The background is plain white.</description></figure>\n\nPage 5\n\n\n<!-- PAGE BREAK -->\n\nKey Findings\n\n\n**1 Company Overview**\nThe Company was acquired in 2020 with the purpose of specializing in Fixed Broadband wireless internet service in various locations. The Company is a collection of\nfour internet service providers. The Company is owned by xxxxxxx.\n**2 EBITDA Addbacks**\nPlease see QE Summary tab for more on the EBITDA Add backs.\n**3 Gross Profit and Margin analysis**\nThe Company had a net revenue of $8.7M in 2022 which decreased to $8.2M in TTM Jan25. The gross margin of the company decreased from 78% to 75% from 2022\nto TTM Jan25. Per the seller, some of the main factors that contributed to this decrease were increased operating costs and improvements to network infrastructure. The\nCompany added multiple fiber circuits, dual-homed its networks, and launched a few new sites in 2024. These changes take time to take effect in order to offset COGS.\n**4 Revenue Streams and Revenue Recognition**\n\"The Company has three streams of revenue, which include customer premise, network access, and miscellaneous revenue. All companies are on accrual basis.\nRevenue is recognized based on Sonar 'fractional debits' data, meaning revenue from invoices is spread over the period services are rendered. Any credits are reversed\nfrom revenue in the period when such credits were raised. Payments collected for future service periods are reflected as a current liability in Customer deposits. Expenses\nare recognized as incurred. All companies maintain accruals for regular expenses in case vendor bills don't arrive by period-end. Customer premises equipment is\ncapitalized to fixed assets regardless of costs. Customers with over $100 delinquent who have been uncooperative are sent to collections. Billing Agents make significant\neffort to connect with delinquent customers to adopt payment plans. Figures below $100 are written off. In 2024, the Company switched to reporting revenue and tower\ncosts on a gross basis. This resulted in higher revenue and costs reflected in 2024 compared to what was seen in the past with other accounting practices. According to the\nseller, this only had an effect of $13K.\"\n**5 Average NWC**\nThe NWC for the company has fluctuated over time. The six month average for NWC is ($297K). NWC has decreased over time, largely due to increases in current\nliabilities. We have determined to not consider cash and cash equivalents, as well as debt-like items, as this is a cash-free and debt-free transaction. We removed accrued\ninterest and settlement payments from current liabilities and removed intercompany activity.\n**6 Inventory**\nThe Company capitalizes inventory. As of 03/07/2025, it has $764K of inventory among the four sites.\n**7 AP**\nVendor 1 was paid by checks via BILL, but those checks were never cleared by the vendor and were subsequently canceled by BILL. These bills likely will need to be\npaid at some point. Vendor 2 performed work related to the state fiber grant, which was never fulfilled. This work is subject to being written off.\n\n\nPage 6\n\n\n<!-- PAGE BREAK -->\n\nKey Findings (cont.)\n\n\n**Adjusted EBITDA**\nThe company's adjusted EBITDA decreased from 2022 to TTM Jan25 it went from $2.7M to $1.7M. This change was largely driven by a decrease in sales and an increase in\nCOGS as a percentage of sales.\n**Cash Conversion Cycle**\nThe company has a DSO of 0 days, DIO of .5 days, and DPO of 15.9 days, yielding a cash conversion cycle of -15.4 days.\n**Customer and Vendor Concentration risk**\nThe company has over 8K customers; therefore, there isn't any customer concentration risk. The company does not have any Vendors over 10% of expenses. While the\ncompany does not have any vendors over 10% of expenses, their leases have been increasing for property rents and towers.\n**Seasonality**\nThe company does not experience any seasonality.\n**Book to Tax**\nWe performed a book to tax reconciliation and found variance of 2% and -6% in the years 2022 and 2023 respectively. 2024 Tax reports were not finished when we asked for\nthem.\n**Proof of Cash**\nWe Performed a Proof of Cash for the years 2022, 2023, and 2024. Some variance were noted on a month to month basis, but net cash activity was reconciled to 0%.\n**Previous Owner**\nPer seller, 'The previous owner of Company had entered into an employment agreement at the transaction date, which amounted to $6,000 per month in salary, which had not\nbeen paid for the first seven months of 2021, along with $2,000 per month of health insurance costs, which the company had missed payments for the 9 months. previous owner did\nnot have any actual working relationship/advisory/employment hours with the company at all at the time of the settlement.\n**Marketing**\nMarketing increase from 160K to 400K with no increase in revenue. Per seller: \"We ramped marketing efforts with multiple iterations of marketing contractors, sale people, and\nCRMs. It's very difficult to be successful while in constant transition in these areas.\"\n**Unpaid PTO**\nThe company has $56K of unpaid PTO. This amount is not included in NWC, since it is not on the books.\n\n\nPage 7\n\n\n<!-- PAGE BREAK -->\n\n2. Quality of Earnings\n\n\n<figure type=\"ILLUSTRATION\">\n\n<description>This illustration features a minimalist, geometric design element consisting of two parallel, angled bars. The primary bar is dark gray, and the secondary bar, which sits to the right of the gray one, is a solid green color. The bars are bent at an obtuse angle, with a longer segment extending upwards and a shorter segment extending downwards and to the right, creating a sharp corner. The background is plain white.</description></figure>\n\nPage 8\n\n\n<!-- PAGE BREAK -->\n\nQoE\n\n\n<table>\n<tr><td>In $000's</td><td>2022</td><td>2023</td><td>2024</td><td>TTM</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Total Income</td><td>8,657,602</td><td>8,295,119</td><td>8,198,505</td><td>8,214,951</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Reported EBITDA</td><td>591,637</td><td>257,942</td><td>669,809</td><td>619,882</td></tr>\n<tr><td colspan=\"2\">Management Adjustments</td><td colspan=\"3\"></td></tr>\n<tr><td>2023 Payroll adjustment</td><td>---</td><td>682,262</td><td>---</td><td>---</td></tr>\n<tr><td>Capitalized Labor</td><td>---</td><td>454,175</td><td>721,317</td><td>722,732</td></tr>\n<tr><td>One time expense</td><td>---</td><td>60,000</td><td>---</td><td>---</td></tr>\n<tr><td>Workers Comp</td><td>---</td><td>---</td><td>(10,332)</td><td>(7,749)</td></tr>\n<tr><td>Previous Owner</td><td>---</td><td>74,685</td><td>113,260</td><td>105,102</td></tr>\n<tr><td>Total Management Adjustments</td><td>---</td><td>1,271,122</td><td>824,244</td><td>820,085</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Management Adjusted EBITDA</td><td>591,637</td><td>1,529,064</td><td>1,494,054</td><td>1,439,967</td></tr>\n<tr><td colspan=\"5\">CIM Check</td></tr>\n<tr><td>Due Diligence Adjustments</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Management Fee</td><td>2,421,859</td><td>493,584</td><td></td><td></td></tr>\n<tr><td>Expense not on PL</td><td>(346,121)</td><td>(134,141)</td><td>(94,818)</td><td>(86,277)</td></tr>\n<tr><td>Unused Vacation Payoff</td><td></td><td></td><td></td><td>55,000</td></tr>\n<tr><td>Non Operating income</td><td></td><td>2,518</td><td>(39,120)</td><td>(39,318)</td></tr>\n<tr><td>Remove Legal Settlement</td><td>---</td><td>---</td><td>285,000</td><td>285,000</td></tr>\n<tr><td>Total Due Diligence Adjustments</td><td>2,075,738</td><td>361,961</td><td>151,062</td><td>214,404</td></tr>\n<tr><td>Adjusted EBITDA</td><td>2,667,375</td><td>1,891,025</td><td>1,645,116</td><td>1,654,372</td></tr>\n<tr><td></td><td colspan=\"2\"></td><td></td><td></td></tr>\n<tr><td>Management EBITDA Margin</td><td>6.8%</td><td>18.4%</td><td>18.2%</td><td>17.5%</td></tr>\n<tr><td>Adjusted EBITDA Margin</td><td>30.8%</td><td>22.8%</td><td>20.1%</td><td>20.1%</td></tr>\n</table>\n\n**Management Adjustments**\n**2023 Payroll Adjustments -**\nWe recalculated the adjustment to maintain the same percentage\nof revenue between 2024 and 2023 (41%), before considering\ncapitalized labor. This resulted in an adjustment to EBITDA of\n$682K, compared to the initial $1,365K.\n\n\n**Capitalized Labor** - According to the sellers, capitalized labor\nrepresents operating expenses that would otherwise be\ncapitalized.\n\n\n**One time expense** - The new owner will no longer be responsible\nfor these payments, as confirmed by buyer.\n\n\n**Workers Comp -** Per seller, \"Workers comp expense that should\nhave been recorded on the operating companies that was\noriginally expensed to the inactive holding company\"\n\n\n**Previous Owner** - XXXXX does not have an active role in the\nmanagement or operations of the businesses.\n\n\nPage 9\n\n\n<!-- PAGE BREAK -->\n\nQoE\n\n\n<table>\n<tr><td>In $000's</td><td>2022</td><td>2023</td><td>2024</td><td>TTM</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Total Income</td><td>8,657,602</td><td>8,295,119</td><td>8,198,505</td><td>8,214,951</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Reported EBITDA</td><td>591,637</td><td>257,942</td><td>669,809</td><td>619,882</td></tr>\n<tr><td>Management Adjustments</td><td></td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>2023 Payroll adjustment</td><td> -</td><td>682,262</td><td> -</td><td> -</td></tr>\n<tr><td>Capitalized Labor</td><td> -</td><td>454,175</td><td>721,317</td><td>722,732</td></tr>\n<tr><td>One time expense</td><td> -</td><td>60,000</td><td> -</td><td> -</td></tr>\n<tr><td>Workers Comp</td><td> -</td><td> -</td><td>(10,332)</td><td>(7,749)</td></tr>\n<tr><td>Previous Owner</td><td></td><td>74,685</td><td>113,260</td><td>105,102</td></tr>\n<tr><td>Total Management Adjustments</td><td></td><td>1,271,122</td><td>824,244</td><td>820,085</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Management Adjusted EBITDA</td><td>591,637</td><td>1,529,064</td><td>1,494,054</td><td>1,439,967</td></tr>\n<tr><td>CIM Check</td><td></td><td colspan=\"3\"></td></tr>\n<tr><td>Due Diligence Adjustments</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Management Fee</td><td>2,421,859</td><td>493,584</td><td></td><td></td></tr>\n<tr><td>Expense not on PL</td><td>(346,121)</td><td>(134,141)</td><td>(94,818)</td><td>(86,277)</td></tr>\n<tr><td>Unused Vacation Payoff</td><td></td><td></td><td></td><td>55,000</td></tr>\n<tr><td>Non Operating income</td><td></td><td>2,518</td><td>(39,120)</td><td>(39,318)</td></tr>\n<tr><td>Remove Legal Settlement</td><td>---</td><td>---</td><td>285,000</td><td>285,000</td></tr>\n<tr><td>Total Due Diligence Adjustments</td><td>2,075,738</td><td>361,961</td><td>151,062</td><td>214,404</td></tr>\n<tr><td>Adjusted EBITDA</td><td>2,667,375</td><td>1,891,025</td><td>1,645,116</td><td>1,654,372</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Management EBITDA Margin</td><td>6.8%</td><td>18.4%</td><td>18.2%</td><td>17.5%</td></tr>\n<tr><td>Adjusted EBITDA Margin</td><td>30.8%</td><td>22.8%</td><td>20.1%</td><td>20.1%</td></tr>\n</table>\n\n**Due Diligence Adjustments**\n**Management Fee -** We have removed the fees paid to PE Company , as\nthese will no longer be incurred moving forward.\n\n\n**Expense not on PL-** We have included expenses incurred by Company\n2, which were previously kept on the Separate profit and loss statement.\n\n\n**Unused Vacation Payoff** - We have added back the unused vacation\npayoff for former GM as this is a non-recurring expense.\n\n\n**Non Operating income -** We have removed non-operating income from\nthe business.\n\n\n**Remove Legal Settlement** - We removed the settlement paid to\nPrevious owner. According to the seller, \"The entities had a few leases\nwith former owner and certain disputes arose out of those leases.\nPrevious owner sued the companies and the matter was eventually\nsettled for $285k - $85,500 up front and the remainder over 4 years.\"\n\n\n**Ongoing repairs that are capitalized** - According to discussions\nbetween Buyer and the GMs, approximately $700K in repairs and\nupgrades will be capitalized. It is worth noting that these upgrades will\nnot allow the company to charge clients more, but they are necessary to\nretain clients and prevent attrition.\n\n\nPage 10\n\n\n<!-- PAGE BREAK -->\n\n3. P&L Overview\n\n\n<figure type=\"ILLUSTRATION\">\n\n<description>The image features an abstract geometric illustration composed of two L-shaped or chevron-like bands arranged in parallel. The band on the left is dark grey, and the band on the right is green. Both bands have a distinct 3D-like appearance with a darker shadow or side profile, giving them depth. They originate from the top of the frame, angle sharply towards the bottom left, and then extend diagonally towards the bottom right corner of the frame. The background is plain white.</description></figure>\n\nPage 11\n\n\n<!-- PAGE BREAK -->\n\nAnnual Adjusted P&L\n\n\n<table>\n<tr><td>USD</td><td>2022</td><td>2023</td><td>2024</td><td>TTM Jan 2025</td><td></td><td>2022</td><td>2023</td><td>2024</td><td>TTM<br>Jan<br>2025</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Revenue</td><td>8,657,602</td><td>8,295,119</td><td>8,198,505</td><td>8,214,951</td><td></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td></tr>\n<tr><td>COGS</td><td>(1,892,568)</td><td>(1,688,918)</td><td>(2,036,003)</td><td>(2,034,929)</td><td></td><td>-22%</td><td>-20%</td><td>-25%</td><td>-25%</td></tr>\n<tr><td>Gross profit</td><td>6,765,035</td><td>6,606,201</td><td>6,162,502</td><td>6,180,022</td><td></td><td>78%</td><td>80%</td><td>75%</td><td>75%</td></tr>\n<tr><td>Salaries, Wages &amp; Benefits</td><td>(3,502,501)</td><td>(2,886,014)</td><td>(2,540,524)</td><td>(2,550,945)</td><td></td><td>-40%</td><td>-35%</td><td>-31%</td><td>-31%</td></tr>\n<tr><td>Advertising &amp; Marketing</td><td>(90,607)</td><td>(85,973)</td><td>(338,692)</td><td>(348,501)</td><td></td><td>-1%</td><td>-1%</td><td>-4%</td><td>-4%</td></tr>\n<tr><td>Management Fee</td><td>(430,823)</td><td>(510,730)</td><td>(310,656)</td><td>(306,541)</td><td></td><td>-5%</td><td>-6%</td><td>-4%</td><td>-4%</td></tr>\n<tr><td>Other Expenses</td><td>(61,106)</td><td>(56,676)</td><td>(52,083)</td><td>(51,347)</td><td></td><td>-1%</td><td>-1%</td><td>-1%</td><td>-1%</td></tr>\n<tr><td>Travel, Meals &amp; Entertainment</td><td>(260,543)</td><td>(240,233)</td><td>(250,673)</td><td>(257,553)</td><td></td><td>-3%</td><td>-3%</td><td>-3%</td><td>-3%</td></tr>\n<tr><td>Rent &amp; Lease</td><td>(166,905)</td><td>(247,326)</td><td>(222,250)</td><td>(221,387)</td><td></td><td>-2%</td><td>-3%</td><td>-3%</td><td>-3%</td></tr>\n<tr><td>Other SG&amp;A</td><td>(109,847)</td><td>(160,235)</td><td>(222,790)</td><td>(210,786)</td><td></td><td>-1%</td><td>-2%</td><td>-3%</td><td>-3%</td></tr>\n<tr><td>Professional &amp; Service Fees</td><td>(149,714)</td><td>(185,416)</td><td>(165,782)</td><td>(161,072)</td><td></td><td>-2%</td><td>-2%</td><td>-2%</td><td>-2%</td></tr>\n<tr><td>Computer &amp; IT</td><td>(97,824)</td><td>(86,692)</td><td>(117,641)</td><td>(120,176)</td><td></td><td>-1%</td><td>-1%</td><td>-1%</td><td>-1%</td></tr>\n<tr><td>Consultants</td><td>(6,136)</td><td>(59,279)</td><td>(109,620)</td><td>(113,397)</td><td></td><td>0%</td><td>-1%</td><td>-1%</td><td>-1%</td></tr>\n<tr><td>Licenses, Permits &amp; Insurance</td><td>(54,101)</td><td>(101,749)</td><td>(103,858)</td><td>(104,190)</td><td></td><td>-1%</td><td>-1%</td><td>-1%</td><td>-1%</td></tr>\n<tr><td>Supplies, Utilities &amp; Repairs</td><td>(114,332)</td><td>(91,732)</td><td>(79,811)</td><td>(76,517)</td><td></td><td>-1%</td><td>-1%</td><td>-1%</td><td>-1%</td></tr>\n<tr><td>Bad Debt</td><td>–</td><td>(140)</td><td>(2,399)</td><td>(2,920)</td><td></td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Dues &amp; Subscriptions</td><td>(1,507)</td><td>(2,980)</td><td>(609)</td><td>(317)</td><td></td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Capitalized Labor</td><td>949,487</td><td>–</td><td>–</td><td>–</td><td></td><td>11%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Contributions</td><td>(1,200)</td><td>- </td><td>- </td><td>- </td><td></td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Other Income</td><td>- </td><td>(0)</td><td>0</td><td>0</td><td></td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>EBITDA</td><td>2,667,375</td><td>1,891,025</td><td>1,645,116</td><td>1,654,372</td><td></td><td>31%</td><td>23%</td><td>20%</td><td>20%</td></tr>\n<tr><td>D&amp;A</td><td>(1,186,708)</td><td>(1,637,172)</td><td>(1,797,650)</td><td>(1,733,707)</td><td></td><td>-14%</td><td>-20%</td><td>-22%</td><td>-21%</td></tr>\n<tr><td>EBIT</td><td>1,480,667</td><td>253,853</td><td>(152,534)</td><td>(79,336)</td><td></td><td>17%</td><td>3%</td><td>-2%</td><td>-1%</td></tr>\n<tr><td>Interest</td><td>(913,446)</td><td>(1,290,771)</td><td>(1,481,912)</td><td>(1,490,683)</td><td></td><td>-11%</td><td>-16%</td><td>-18%</td><td>-18%</td></tr>\n<tr><td>Profit before tax</td><td>567,221</td><td>(1,036,918)</td><td>(1,634,445)</td><td>(1,570,019)</td><td></td><td>7%</td><td>-13%</td><td>-20%</td><td>-19%</td></tr>\n<tr><td>Income taxes</td><td>−</td><td>−</td><td>−</td><td>−</td><td></td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n</table>\n\nThe financials show a company struggling with\nprofitability despite relatively stable revenues. Revenue\nhas hovered around $8.2M–$8.6M, but gross margins\nhave decreased from 80% to 75%, indicating rising\nCOGS or pricing pressure.\n\n\nEBITDA has declined sharply from 31% in 2022 to 20%\nTTM Jan 2025, reflecting both operational inefficiencies\nand cost creep in certain areas. Notably, payroll\nexpenses were significantly reduced early on but have\nsince stabilized.\n\n\nSpending on advertising and consultants has increased\nsubstantially, but these investments have yet to translate\ninto improved financial outcomes.\n\n\nOverall, the business is caught between stagnant top-line\ngrowth and rising costs, especially debt servicing, making\na turnaround dependent on either revenue growth or\ncapital restructuring.\n\n\nPage 12\n\n\n<!-- PAGE BREAK -->\n\nRecast EBITDA Bridge\n\n\n<figure type=\"CHART\">\n\n<description>The image is a waterfall chart titled 'Recast Bridge'. It visualizes the changes in EBITDA over time, specifically from FY22 EBITDA to TTM25 EBITDA, broken down by changes in Revenue, COGS, OPEX, and 'Other'. Green bars represent increases, red bars represent decreases, and dark grey bars represent total values. The chart includes a legend indicating: Green = Increase, Red = Decrease, Dark Grey = Total.</description> <table><thead><tr><th>Category</th><th>Value</th><th>Type</th></tr></thead><tbody><tr><td>FY22 EBITDA</td><td>2,667,375</td><td>Total</td></tr><tr><td>Revenue</td><td>(362,483)</td><td>Decrease</td></tr><tr><td>COGS</td><td>203,650</td><td>Increase</td></tr><tr><td>OPEX</td><td>(618,576)</td><td>Decrease</td></tr><tr><td>Other...</td><td>1,060</td><td>Increase</td></tr><tr><td>FY23 EBITDA</td><td>1,891,025</td><td>Total</td></tr><tr><td>Revenue</td><td>(96,614)</td><td>Decrease</td></tr><tr><td>COGS</td><td>(347,085)</td><td>Decrease</td></tr><tr><td>OPEX</td><td>200,049</td><td>Increase</td></tr><tr><td>Other...</td><td>(2,259)</td><td>Decrease</td></tr><tr><td>FY24 EBITDA</td><td>1,645,116</td><td>Total</td></tr><tr><td>Revenue</td><td>16,447</td><td>Increase</td></tr><tr><td>COGS</td><td>1,074</td><td>Increase</td></tr><tr><td>OPEX</td><td>(7,744)</td><td>Decrease</td></tr><tr><td>Other...</td><td>(521)</td><td>Decrease</td></tr><tr><td>TTM25 EBITDA</td><td>1,654,372</td><td>Total</td></tr></tbody></table></figure>\n\nBiggest EBITDA drop was from FY22\nto FY23, mainly due to a $619K OPEX\nincrease and $362K revenue decline.\nFY23 to FY24 stabilized with EBITDA\nfalling slightly as cost controls began to\noffset revenue and COGS increases.\nTTM Jan 2025 EBITDA flat, showing\nno major gains or losses, but also no\nmargin improvement.\n\n\nPage 13\n\n\n<!-- PAGE BREAK -->\n\n4. Revenue Trends\n\n\n<figure type=\"DIAGRAM\">\n\n<description>A minimalist graphic design element consisting of two parallel, angled bars forming a bent corner shape. The left bar is a solid dark grey color, and the right bar is a solid bright green color. The bars have a slight 3D effect with depth on their inner edges, creating a sense of volume. The background is plain white.</description></figure>\n\nPage 14\n\n\n<!-- PAGE BREAK -->\n\nRevenue Trends\n\n\nSeasonality\n760,000 [VISUAL_TEXT]\n700,000\n680,000\n660,000\n640,000\n620,000\n600,000 January February March April May June July August September October November December 2022 2023 2024 2025\n\n\n<figure type=\"CHART\">\n\n<description>The figure is a line chart titled \"GM %\" showing the Gross Margin percentage trends across the months of a year (January through December). There are four data series plotted, corresponding to the years 2022, 2023, 2024, and 2025. The x-axis lists the months, and the y-axis represents the percentage from 0% to 100%. The data shows relatively stable performance across most of the year, with 2025 showing a notable upward spike in December. The legend at the bottom indicates the colors for each year: 2022 (dark green), 2023 (medium green), 2024 (light green), and 2025 (teal/blue-green).</description><table><thead><tr><th>Month</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr></thead><tbody><tr><td>January</td><td>80%</td><td>83%</td><td>75%</td><td>81%</td></tr><tr><td>February</td><td>82%</td><td>81%</td><td>76%</td><td>82%</td></tr><tr><td>March</td><td>76%</td><td>82%</td><td>77%</td><td>81%</td></tr><tr><td>April</td><td>78%</td><td>83%</td><td>76%</td><td>82%</td></tr><tr><td>May</td><td>80%</td><td>80%</td><td>73%</td><td>80%</td></tr><tr><td>June</td><td>80%</td><td>80%</td><td>76%</td><td>80%</td></tr><tr><td>July</td><td>82%</td><td>83%</td><td>77%</td><td>81%</td></tr><tr><td>August</td><td>81%</td><td>81%</td><td>73%</td><td>81%</td></tr><tr><td>September</td><td>83%</td><td>84%</td><td>77%</td><td>83%</td></tr><tr><td>October</td><td>83%</td><td>83%</td><td>76%</td><td>83%</td></tr><tr><td>November</td><td>79%</td><td>83%</td><td>75%</td><td>83%</td></tr><tr><td>December</td><td>77%</td><td>91%</td><td>75%</td><td>77%</td></tr></tbody></table></figure>\n\n<table>\n<tr><td>Q1</td><td>Q2</td><td>Q3</td><td>Q4</td></tr>\n<tr><td>25%</td><td>26%</td><td>25%</td><td>24%</td></tr>\n<tr><td>26%</td><td>25%</td><td>25%</td><td>25%</td></tr>\n<tr><td>25%</td><td>24%</td><td>26%</td><td>25%</td></tr>\n</table>\n\n- The Company does not experience much\nseasonality.\n- Quarterly income is relatively flat.\n\n\nPage 15\n\n\n<!-- PAGE BREAK -->\n\n5. Cogs Analysis\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The figure is a minimalist abstract diagram consisting of two parallel, angular bands placed against a plain white background. The band on the left is dark gray, and the band on the right is a vibrant, solid green. The bands are positioned together, creating a sharp, L-shaped corner pointing toward the lower-left. The bands follow a continuous path, extending from the top edge of the frame, bending at a distinct angle near the bottom, and then continuing toward the bottom edge. The overall design suggests a stylized border, corner element, or abstract geometric path.</description></figure>\n\nPage 16\n\n\n<!-- PAGE BREAK -->\n\nVendor Analysis\n\n\n<table>\n<tr><td>2022</td><td>2023</td><td>2024</td><td>TTM Jan 2025</td><td></td><td>2022</td><td>2023</td><td>2024</td><td>TTM<br>Jan</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td>[Dropdown menu icon]</td><td>[Dropdown menu icon]</td><td>[Dropdown menu icon]</td><td>202[Dropdown menu icon]</td></tr>\n<tr><td colspan=\"9\">Top ten</td></tr>\n<tr><td>5,797,917</td><td>8,512,565</td><td>8,287,589</td><td>8,231,319</td><td></td><td>56%</td><td>78%</td><td>76%</td><td>76%</td></tr>\n<tr><td>10,288,717</td><td>10,965,632</td><td>10,847,376</td><td>10,858,779</td><td></td><td>100%</td><td>100%</td><td>100%</td><td>100%</td></tr>\n<tr><td>1,723,621</td><td>2,734,296</td><td>2,757,483</td><td>2,776,455</td><td></td><td>17%</td><td>25%</td><td>25%</td><td>26%</td></tr>\n<tr><td>1,603,843</td><td>2,130,850</td><td>1,899,855</td><td>1,868,639</td><td></td><td>16%</td><td>19%</td><td>18%</td><td>17%</td></tr>\n<tr><td>274,109</td><td>1,060,988</td><td>1,194,772</td><td>1,215,905</td><td></td><td>3%</td><td>10%</td><td>11%</td><td>11%</td></tr>\n<tr><td>1,530,258</td><td>1,734,718</td><td>1,171,725</td><td>1,138,270</td><td></td><td>15%</td><td>16%</td><td>11%</td><td>10%</td></tr>\n<tr><td>11,883</td><td></td><td>285,000</td><td>285,000</td><td></td><td>0%</td><td>0%</td><td>3%</td><td>3%</td></tr>\n<tr><td>106,025</td><td>289,232</td><td>237,734</td><td>235,359</td><td></td><td>1%</td><td>3%</td><td>2%</td><td>2%</td></tr>\n<tr><td>219,182</td><td>165,468</td><td>216,725</td><td>207,519</td><td></td><td>2%</td><td>2%</td><td>2%</td><td>2%</td></tr>\n<tr><td>136,807</td><td>189,042</td><td>195,509</td><td>195,358</td><td></td><td>1%</td><td>2%</td><td>2%</td><td>2%</td></tr>\n<tr><td>–</td><td>5,657</td><td>195,505</td><td>181,423</td><td></td><td>0%</td><td>0%</td><td>2%</td><td>2%</td></tr>\n<tr><td>192,188</td><td>202,315</td><td>133,282</td><td>127,391</td><td></td><td>2%</td><td>2%</td><td>1%</td><td>1%</td></tr>\n</table>\n\nThe company's top ten vendors account\nfor 76% of total expenses, primarily\ndriven by leases, supplies, and\nmaterials.\n\n\nPage 17\n\n\n<!-- PAGE BREAK -->\n\n6. BS Analysis\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The figure consists of two parallel, angled rectangular bars that form a bent shape. The bar on the left is colored dark gray, and the bar on the right is colored green. The bars are oriented diagonally, bending at an obtuse angle pointing towards the left, with the bottom segments extending horizontally towards the bottom right. The design is simple, abstract, and minimalist with clean lines and flat colors.</description></figure>\n\nPage 18\n\n\n<!-- PAGE BREAK -->\n\nReported BS\n\n\n<table>\n<tr><td>USD</td><td>Dec-22</td><td>Dec-23</td><td>Dec-24</td><td>Jan-25</td></tr>\n<tr><td colspan=\"5\">Current Assets:</td></tr>\n<tr><td>Cash</td><td>1,462,274</td><td>383,036</td><td>250,202</td><td>175,115</td></tr>\n<tr><td>Accounts Receivable, net</td><td>390,440</td><td>756,224</td><td>1,625,162</td><td>1,651,597</td></tr>\n<tr><td>Inventories</td><td>—</td><td>91</td><td>10,307</td><td>10,307</td></tr>\n<tr><td>Prepaid Expenses</td><td>26,115</td><td>40,965</td><td>52,430</td><td>61,701</td></tr>\n<tr><td>Other current assets</td><td>9,367,815</td><td>9,575,736</td><td>8,394,784</td><td>8,394,784</td></tr>\n<tr><td>Total Current Assets</td><td>11,246,644</td><td>10,756,054</td><td>10,332,885</td><td>10,293,503</td></tr>\n<tr><td>Non-current assets:</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Property plant and equipment, net</td><td>3,281,587</td><td>2,797,048</td><td>2,336,239</td><td>2,275,837</td></tr>\n<tr><td>Other non-current assets</td><td>4,877,281</td><td>4,876,948</td><td>4,876,614</td><td>4,876,586</td></tr>\n<tr><td>Total non-current assets</td><td>8,158,867</td><td>7,673,996</td><td>7,212,853</td><td>7,152,424</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Total Assets</td><td>19,405,511</td><td>18,430,049</td><td>17,545,738</td><td>17,445,927</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"5\">Current liabilities:</td></tr>\n<tr><td></td><td>---</td><td>---</td><td>---</td><td>---</td></tr>\n<tr><td>Credit Cards Payable</td><td>32,723</td><td>62,408</td><td>50,295</td><td>52,455</td></tr>\n<tr><td>Accounts Payable</td><td>370,936</td><td>1,925,201</td><td>2,722,423</td><td>2,776,217</td></tr>\n<tr><td>Payroll Liabilities</td><td>82,195</td><td>133,529</td><td>181,166</td><td>231,246</td></tr>\n<tr><td>Other current liabilities</td><td>4,238,304</td><td>4,053,777</td><td>3,697,636</td><td>3,667,067</td></tr>\n<tr><td>Total current liabilities</td><td>4,724,158</td><td>6,174,915</td><td>6,651,520</td><td>6,726,985</td></tr>\n<tr><td>Term debt</td><td> -</td><td> -</td><td> -</td><td> -</td></tr>\n<tr><td>Other Non-Current Liabilities</td><td>639,943</td><td>473,365</td><td>300,000</td><td>274,945</td></tr>\n<tr><td>Long-Term Debt</td><td>14,787,512</td><td>15,197,462</td><td>16,619,662</td><td>16,712,033</td></tr>\n<tr><td>Total non-current liabilities</td><td>15,427,455</td><td>15,670,827</td><td>16,919,662</td><td>16,986,978</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Total liabilities</td><td>20,151,613</td><td>21,845,742</td><td>23,571,183</td><td>23,713,963</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"5\">Shareholders' equity:</td></tr>\n<tr><td>Paid-in Capital</td><td>(129,080)</td><td>(129,080)</td><td>(129,080)</td><td>(129,080)</td></tr>\n<tr><td>Capital Stock</td><td>758,539</td><td>758,539</td><td>758,539</td><td>758,539</td></tr>\n<tr><td>Retained earnings</td><td>132,957</td><td>(1,375,150)</td><td>(4,045,151)</td><td>(6,654,903)</td></tr>\n<tr><td>Net income</td><td>(1,508,517)</td><td>(2,670,001)</td><td>(2,609,752)</td><td>(242,592)</td></tr>\n<tr><td>Total shareholder's equity</td><td>(746,102)</td><td>(3,415,692)</td><td>(6,025,444)</td><td>(6,268,036)</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">Total liabilities and shareholders' equity   19,405,511</td><td>18,430,049</td><td>17,545,738</td><td>17,445,927</td></tr>\n</table>\n\nCash & Equivalents declined sharply from $1.37M\nin Dec-22 to just $239K in Jan-25\nAccounts Receivable grew significantly from\n$706K to $1.58M, this is due to intercompany\nAccounts Receivable.\nInventory levels remained relatively steady,\nranging from $327K to $404K, showing consistent\nmaterial flow.\nAccounts Payable increased from $1.06M to\n$1.79M, this is due to intercompany Accounts\nPayable.\nAccrued Expenses nearly doubled, rising from\n$465K to $937K.\nShareholders' Equity became increasingly\nnegative, from $(1.36M) to $(4.08M).\n\n\nPage 19\n\n\n<!-- PAGE BREAK -->\n\nNet Working Capital\n\n\n<table>\n<tr><td></td><td>FY24</td><td>TTM24</td><td>T6M AVG</td><td>T3M AVG</td></tr>\n<tr><td>Cash</td><td> - </td><td> - </td><td> - </td><td> - </td></tr>\n<tr><td>Accounts Receivable, net</td><td>137,926</td><td>158,156</td><td>217,375</td><td>304,610</td></tr>\n<tr><td>Inventories</td><td>1,794</td><td>2,645</td><td>5,199</td><td>10,307</td></tr>\n<tr><td>Prepaid Expenses</td><td>39,750</td><td>41,552</td><td>46,553</td><td>54,679</td></tr>\n<tr><td>Other Current Assets</td><td>18,329</td><td>18,329</td><td>18,329</td><td>18,329</td></tr>\n<tr><td>Credit Cards Payable</td><td>(73,350)</td><td>(72,075)</td><td>(60,411)</td><td>(50,155)</td></tr>\n<tr><td>Accounts Payable</td><td>(84,120)</td><td>(89,882)</td><td>(103,265)</td><td>(139,806)</td></tr>\n<tr><td>Payroll Liabilities</td><td>(176,593)</td><td>(177,984)</td><td>(196,122)</td><td>(193,866)</td></tr>\n<tr><td>Other Current Liabilities</td><td>(166,560)</td><td>(174,255)</td><td>(224,658)</td><td>(325,239)</td></tr>\n<tr><td>Adjusted NWC</td><td>(302,824)</td><td>(293,514)</td><td>(297,000)</td><td>(321,142)</td></tr>\n</table>\n\nThe NWC for the company has fluctuated over time. The six\nmonth average for NWC is ($297K). NWC has decreased over\ntime, largely due to increases in current liabilities. We have\ndetermined to not consider cash and cash equivalents, as well\nas debt-like items, as this is a cash-free and debt-free\ntransaction. We removed accrued interest expenses and\nsettlement payments from current liabilities and removed\nintercompany activity.\n\n\nPage 20\n\n\n<!-- PAGE BREAK -->\n\nCash Conversion Cycle\n\n\n<table>\n<tr><td colspan=\"13\">Cash Conversion Cycle</td><td></td></tr>\n<tr><td>In days</td><td>Feb-24</td><td>Mar-24</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Avg</td></tr>\n<tr><td>AR - Adjusted</td><td> - </td><td> - </td><td> - </td><td> - </td><td> -</td><td> -</td><td> -</td><td> -</td><td> -</td><td>---</td><td>---</td><td>---</td><td>---</td></tr>\n<tr><td>Net Revenue - Adjusted</td><td>690,614</td><td>658,755</td><td>660,138</td><td>659,398</td><td>682,777</td><td>693,074</td><td>690,179</td><td>714,615</td><td>693,078</td><td>702,067</td><td>679,722</td><td>690,535</td><td>684,579</td></tr>\n<tr><td>Days</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td></tr>\n<tr><td>DSO TTM25</td><td>—</td><td>—</td><td>—</td><td>—</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Inventory</td><td>91</td><td>91</td><td>91</td><td>91</td><td>91</td><td>91</td><td>91</td><td>91</td><td>91</td><td>10,307</td><td>10,307</td><td>10,307</td><td>2,645</td></tr>\n<tr><td>COGS</td><td>170,068</td><td>153,561</td><td>166,577</td><td>183,521</td><td>168,513</td><td>163,325</td><td>188,823</td><td>150,716</td><td>168,429</td><td>180,044</td><td>169,626</td><td>171,727</td><td>169,577</td></tr>\n<tr><td>Days</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td></tr>\n<tr><td>DIO TTM25</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>1.7</td><td>1.8</td><td>1.8</td><td>0.5</td></tr>\n<tr><td>DPO</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>AP - Adjusted</td><td>72,891</td><td>83,176</td><td>51,009</td><td>101,359</td><td>87,155</td><td>63,399</td><td>63,114</td><td>52,097</td><td>84,961</td><td>115,458</td><td>156,183</td><td>147,777</td><td>89,882</td></tr>\n<tr><td>COGS - Adjusted</td><td>170,068</td><td>153,561</td><td>166,577</td><td>183,521</td><td>168,513</td><td>163,325</td><td>188,823</td><td>150,716</td><td>168,429</td><td>180,044</td><td>169,626</td><td>171,727</td><td>169,577</td></tr>\n<tr><td>Days</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td></tr>\n<tr><td>DPO TTM25</td><td>12.9</td><td>16.2</td><td>9.2</td><td>16.6</td><td>15.5</td><td>11.6</td><td>10.0</td><td>10.4</td><td>15.1</td><td>19.2</td><td>27.6</td><td>25.8</td><td>15.9</td></tr>\n<tr><td>Cash conversion cycle</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>TTM25</td><td>(12.8)</td><td>(16.2)</td><td>(9.2)</td><td>(16.6)</td><td>(15.5)</td><td>(11.6)</td><td>(10.0)</td><td>(10.4)</td><td>(15.1)</td><td>(17.5)</td><td>(25.8)</td><td>(24.0)</td><td>(15.4)</td></tr>\n</table>\n\nThe company has a DSO of 0\ndays, DIO of .5 days, and\nDPO of 15.9 days, yielding a\ncash conversion cycle of -15.4\ndays.\n\n\nPage 21\n\n\n<!-- PAGE BREAK -->\n\n7. Reconciliations\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The figure is a minimalist graphic element consisting of two intersecting bars forming an obtuse angle, resembling a corner or a bent edge. The design features a two-layered, 3D-like effect. The inner layer is a vibrant green, while the outer layer is a dark grey, creating a sense of depth and dimensionality. The bars are oriented diagonally, starting from the top and angling downwards to the right, suggesting a clean, modern aesthetic often used in document design or branding.</description></figure>\n\nPage 22\n\n\n<!-- PAGE BREAK -->\n\nProof of Cash\n\n\n<table>\n<tr><td>USD</td><td>Mar-22</td><td>Apr-22</td><td>May-22</td><td>Jun-22</td><td>Jul-22</td><td>Aug-22</td><td>Sep-22</td><td>Oct-22</td><td>Nov-22</td><td>Dec-22</td><td>Jan-23</td><td>Feb-23</td><td>Total</td></tr>\n<tr><td colspan=\"14\">Bank Revenue</td></tr>\n<tr><td>Live Oak - Bank Deposits</td><td>75,137</td><td>138</td><td>175</td><td>25,240</td><td>75,371</td><td>518</td><td>523</td><td>154</td><td>100,289</td><td>25,470</td><td>50,629</td><td>75,665</td><td>1,343,128</td></tr>\n<tr><td>PNC Bank - Bank Deposits</td><td>525,259</td><td>550,651</td><td>637,241</td><td>469,559</td><td>788,829</td><td>649,309</td><td>730,228</td><td>736,629</td><td>658,910</td><td>675,916</td><td>670,095</td><td>573,622</td><td>7,666,248</td></tr>\n<tr><td>Total Deposits:</td><td>600,396</td><td>550,789</td><td>637,416</td><td>494,799</td><td>864,200</td><td>649,827</td><td>730,751</td><td>736,784</td><td>759,199</td><td>701,386</td><td>720,723</td><td>649,287</td><td>8,095,557</td></tr>\n<tr><td>Change in accounts receivable</td><td>77,823</td><td>52,775</td><td>(137,430)</td><td>197,830</td><td>(33,973)</td><td>(57,687)</td><td>102,792</td><td>2,598</td><td>(93,654)</td><td>132,960</td><td>(98,579)</td><td>(35,970)</td><td>109,485</td></tr>\n<tr><td>Change in customer deposits</td><td>(60,138)</td><td>135,000</td><td>-</td><td>1,856</td><td>- </td><td>1,094</td><td>(2,950)</td><td>- </td><td>- </td><td>(41,500)</td><td> - </td><td>(0)</td><td>33,362</td></tr>\n<tr><td>Less: Cash Received for ERTC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>(127,002)</td><td>- </td><td>- </td><td>- </td><td>1,009</td><td> - </td><td> - </td><td> - </td><td>(125,993)</td></tr>\n<tr><td>Less: Transfers from PNC to Live Oak</td><td>(75,000)</td><td>(25,000)</td><td>-</td><td>-</td><td>(75,000)</td><td>- </td><td>- </td><td>- </td><td>(100,000)</td><td>(25,000)</td><td>(50,000)</td><td>(75,000)</td><td>(425,000)</td></tr>\n<tr><td>Less: other tranfers</td><td>(9,500)</td><td>(3,000)</td><td></td><td>(38,000)</td><td>(16,000)</td><td></td><td>(9,000)</td><td>(6,500)</td><td>(45,000)</td><td>(99,000)</td><td>(25,000)</td><td>(2,000)</td><td>(253,000)</td></tr>\n<tr><td>Less: Transfers from Live Oak to PNC</td><td>(20,000)</td><td> - </td><td> - </td><td> - </td><td>(25,000)</td><td>-</td><td>(200,000)</td><td>(100,000)</td><td>-</td><td> - </td><td></td><td></td><td>(345,000)</td></tr>\n<tr><td>Change in outstanding deposits</td><td>56,633</td><td>(27,056)</td><td>(29,577)</td><td>64,379</td><td>(54,571)</td><td>24,358</td><td>(6,552)</td><td>(24,070)</td><td>(3,204)</td><td>(48)</td><td>18,372</td><td>(18,664)</td><td> - </td></tr>\n<tr><td>Total Net Sales Related Deposits</td><td>570,214</td><td>683,508</td><td>470,409</td><td>720,864</td><td>532,654</td><td>617,591</td><td>615,041</td><td>608,812</td><td>518,350</td><td>668,798</td><td>565,517</td><td>517,653</td><td>7,089,411</td></tr>\n<tr><td>Book Revenue</td><td>570,151</td><td>683,155</td><td>470,711</td><td>720,247</td><td>532,574</td><td>615,325</td><td>614,861</td><td>608,795</td><td>518,257</td><td>668,401</td><td>564,559</td><td>517,344</td><td>7,084,382</td></tr>\n<tr><td>Variance</td><td>63</td><td>353</td><td>(302)</td><td>617</td><td>80</td><td>2,266</td><td>180</td><td>16</td><td>93</td><td>396</td><td>957</td><td>309</td><td>5,029</td></tr>\n<tr><td>Variance as a % of net sales</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Bank Expenses</td><td colspan=\"13\"></td></tr>\n<tr><td>Live Oak - Bank Disbursements</td><td>20,000</td><td></td><td></td><td></td><td>25,000</td><td>-</td><td>200,000</td><td>100,000</td><td>-</td><td></td><td></td><td></td><td>345,000</td></tr>\n<tr><td>PNC Bank - Bank Disbursements</td><td>512,986</td><td>538,050</td><td>600,048</td><td>584,473</td><td>572,753</td><td>841,242</td><td>551,364</td><td>753,785</td><td>786,451</td><td>693,541</td><td>474,950</td><td>614,966</td><td>7,524,608</td></tr>\n<tr><td>Total Bank Disbursements</td><td>532,986</td><td>538,050</td><td>600,048</td><td>584,473</td><td>597,753</td><td>841,242</td><td>751,364</td><td>853,785</td><td>786,451</td><td>693,541</td><td>474,950</td><td>614,966</td><td>7,869,608</td></tr>\n<tr><td>Less: Purchases of Fixed Assets</td><td>(10,895)</td><td> - </td><td>(39,888)</td><td>18,075</td><td>(71,164)</td><td>(13,500)</td><td>(29,154)</td><td>(1,722)</td><td> - </td><td>30,721</td><td>(57,622)</td><td>(7,976)</td><td>(183,126)</td></tr>\n<tr><td>Less: Transfers</td><td>(104,500)</td><td>(28,000)</td><td> - </td><td>(38,000)</td><td>(116,000)</td><td> - </td><td>(209,000)</td><td>(106,500)</td><td>(145,000)</td><td>(124,000)</td><td>(75,000)</td><td>(77,000)</td><td>(1,023,000)</td></tr>\n<tr><td>Less: Owner Draws</td><td> - </td><td> - </td><td> - </td><td>(30,426)</td><td> - </td><td>(35,170)</td><td>(200,000)</td><td>(100,000)</td><td> - </td><td>(94,083)</td><td> - </td><td> - </td><td>(459,679)</td></tr>\n<tr><td>Change in outstanding checks</td><td>105,609</td><td>(49,889)</td><td>(86,692)</td><td>(5,055)</td><td>(1,802)</td><td>(13,491)</td><td>220,675</td><td>(124,759)</td><td>(91,752)</td><td>25,366</td><td>33,299</td><td>15,976</td><td>27,486</td></tr>\n<tr><td>Change in accounts payable</td><td>77,477</td><td>(14,613)</td><td>(31,433)</td><td>226,174</td><td>41,945</td><td>(265,564)</td><td>124,881</td><td>(46,640)</td><td>(87,490)</td><td>(2,069)</td><td>46,879</td><td>(22,711)</td><td>46,837</td></tr>\n<tr><td>Change in prepaid expenses and deposits</td><td> - </td><td>(504)</td><td>504</td><td> - </td><td>(23,825)</td><td></td><td></td><td>(11,903)</td><td>(210)</td><td>28,615</td><td>–</td><td>–</td><td>(7,323)</td></tr>\n<tr><td>Change in inventory assets</td><td>(72,532)</td><td>56,537</td><td>(14,097)</td><td>(146,144)</td><td>42,096</td><td>27,590</td><td>(77,689)</td><td>54,071</td><td>(9,542)</td><td>45,295</td><td>53,321</td><td>(23,688)</td><td>(64,783)</td></tr>\n<tr><td>Change in payroll liabilities</td><td>(5,136)</td><td>(10,594)</td><td>11,737</td><td>(944)</td><td>346</td><td>657</td><td>(32,869)</td><td>27,062</td><td>141</td><td>(27,203)</td><td>41,876</td><td>(13,564)</td><td>(8,492)</td></tr>\n<tr><td>Add: Depreciation</td><td> - </td><td> - </td><td> - </td><td> - </td><td></td><td></td><td></td><td></td><td></td><td>127,972</td><td>–</td><td>–</td><td>127,972</td></tr>\n<tr><td>Total Expense Related Bank Disbursements</td><td>523,009</td><td>490,987</td><td>440,179</td><td>608,154</td><td>469,348</td><td>541,763</td><td>548,208</td><td>543,394</td><td>452,597</td><td>704,155</td><td>517,703</td><td>486,002</td><td>6,325,500</td></tr>\n<tr><td>Cost of Goods Sold</td><td>372,736</td><td>393,464</td><td>304,411</td><td>473,305</td><td>334,267</td><td>408,931</td><td>403,669</td><td>391,368</td><td>364,217</td><td>447,580</td><td>374,001</td><td>345,359</td><td>4,613,307</td></tr>\n<tr><td>Operating Expenses</td><td>150,925</td><td>104,868</td><td>137,286</td><td>134,142</td><td>121,207</td><td>132,469</td><td>147,074</td><td>151,087</td><td>88,108</td><td>130,223</td><td>145,119</td><td>135,550</td><td>1,578,058</td></tr>\n<tr><td>Non-Operating Income and Expenses</td><td>(137)</td><td>(138)</td><td>(175)</td><td>(16,240)</td><td>(371)</td><td>(518)</td><td>-</td><td>(678)</td><td>(1,009)</td><td>126,213</td><td>(629)</td><td>-</td><td>106,319</td></tr>\n<tr><td>Reported Expenses</td><td>523,523</td><td>498,193</td><td>441,522</td><td>591,207</td><td>455,103</td><td>540,882</td><td>550,744</td><td>541,777</td><td>451,316</td><td>704,016</td><td>518,491</td><td>480,909</td><td>6,297,684</td></tr>\n<tr><td>Variance</td><td>(514)</td><td>(7,207)</td><td>(1,343)</td><td>16,947</td><td>14,246</td><td>881</td><td>(2,536)</td><td>1,617</td><td>1,281</td><td>138</td><td>(788)</td><td>5,093</td><td>27,816</td></tr>\n<tr><td>Variance %</td><td>0%</td><td>-1%</td><td>0%</td><td>3%</td><td>3%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>1%</td><td>0%</td></tr>\n<tr><td></td><td colspan=\"2\"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td colspan=\"4\"></td></tr>\n<tr><td>Net reconciled deposits and disbursements</td><td>47,205</td><td>192,522</td><td>30,230</td><td>112,710</td><td>63,306</td><td>75,828</td><td>66,833</td><td>65,417</td><td>65,754</td><td>(35,357)</td><td>47,814</td><td>31,651</td><td>763,911</td></tr>\n<tr><td>Reported Net Income</td><td>46,628</td><td>184,962</td><td>29,189</td><td>129,039</td><td>77,471</td><td>74,443</td><td>64,117</td><td>67,018</td><td>66,941</td><td>(35,615)</td><td>46,069</td><td>36,435</td><td>786,697</td></tr>\n<tr><td>Net variance</td><td>577</td><td>7,560</td><td>1,041</td><td>(16,329)</td><td>(14,166)</td><td>1,384</td><td>2,716</td><td>(1,601)</td><td>(1,187)</td><td>258</td><td>1,745</td><td>(4,784)</td><td>(22,787)</td></tr>\n<tr><td>Net variance as a % of net sales</td><td>0%</td><td>1%</td><td>0%</td><td>-2%</td><td>-3%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>-1%</td><td>0%</td></tr>\n</table>\n\n*Proof of Cash Sample\nfrom other report.\n\n\nWe performed a proof of\ncash for TTM23. Some\nvariances were noted on\na month-to-month basis,\nbut net cash activity was\nreconciled to 0% to\nTTM23.\n\n\nPage 23\n\n\n<!-- PAGE BREAK -->\n\nTax Tie Out Summary\n\n\n<table>\n<tr><td></td><td>2022</td><td>2023</td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td>Net Income Per Books</td><td>(389,326)</td><td>(417,189)</td></tr>\n<tr><td>Net earnings loss from self employment</td><td>(856,590)</td><td></td></tr>\n<tr><td>Capitalized Wage expense</td><td>295,671</td><td></td></tr>\n<tr><td>Depreciation</td><td></td><td>134,483</td></tr>\n<tr><td>Unsettled management fees</td><td></td><td>279,097</td></tr>\n<tr><td>Amortization</td><td></td><td>(96,089)</td></tr>\n<tr><td>Taxable Income Per Books:</td><td>(950,245)</td><td>(99,698)</td></tr>\n<tr><td>Reported on 1065</td><td>(951,767)</td><td>(99,695)</td></tr>\n<tr><td>Variance</td><td>1,522</td><td>(3)</td></tr>\n<tr><td>Variance as % of Net Income</td><td>0%</td><td>0%</td></tr>\n</table>\n\nWe performed a book to tax reconciliation and found\nvariance of 0% in the years 2022 and 2023 respectively.\n2024 Tax reports were not finished when we asked for them.\n\n\nPage 24\n\n\n<!-- PAGE BREAK -->\n\nPayroll Tie Out\n\n\n<table>\n<tr><td>Employee</td><td>Salary</td></tr>\n<tr><td>Partner 1</td><td>300,000</td></tr>\n<tr><td>Partner 2</td><td>250,000</td></tr>\n<tr><td>Manager 1</td><td>175,000</td></tr>\n<tr><td>Manager 2</td><td>175,000</td></tr>\n<tr><td>Manager 3</td><td>175,000</td></tr>\n<tr><td>Manager 4</td><td>175,000</td></tr>\n<tr><td>Manager 5</td><td>175,000</td></tr>\n<tr><td>Senior accountant 1</td><td>120,000</td></tr>\n<tr><td>Senior accountant 2</td><td>120,000</td></tr>\n<tr><td>Senior accountant 3</td><td>120,000</td></tr>\n<tr><td>Senior accountant 4</td><td>120,000</td></tr>\n<tr><td>Senior accountant 5</td><td>120,000</td></tr>\n<tr><td>Senior accountant 6</td><td>120,000</td></tr>\n<tr><td>Staff Accountant 1</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 2</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 3</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 4</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 5</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 6</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 7</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 8</td><td>85,000</td></tr>\n<tr><td>Staff Accountant 9</td><td>80,000</td></tr>\n<tr><td>Staff Accountant 10</td><td>80,000</td></tr>\n<tr><td>Staff Accountant 11</td><td>80,000</td></tr>\n<tr><td>Staff Accountant 12</td><td>80,000</td></tr>\n<tr><td>Staff Accountant 13</td><td>80,000</td></tr>\n<tr><td>Staff Accountant 14</td><td>60,000</td></tr>\n<tr><td>Staff Accountant 15</td><td>60,000</td></tr>\n<tr><td>Grand Total</td><td>3,345,000</td></tr>\n<tr><td>Total Wages Per PL</td><td>3,345,000</td></tr>\n<tr><td>Variance</td><td> -</td></tr>\n<tr><td>Variance as % of Wages</td><td>0%</td></tr>\n</table>\n\n* Payroll Tie out Sample\nfrom other report.\n\n\nNote: To calculate variances, the salaries and wages\nreported on the Company's books are reconciled to payroll\nreports.\n\n\nPage 25\n\n\n<!-- PAGE BREAK -->\n\n[HEXAGON_LOGO]\nQOE\nPREP\n\n\nThank you for choosing to work with QOE Prep. If you have any questions\nabout this report please don't hesitate to contact Caleb@qoeprep.com\n\n\n<figure type=\"DIAGRAM\">\n\n<description>A diagram consisting of two thick, L-shaped angular bars placed adjacent to each other. The left bar is dark gray, and the right bar is green. Both bars follow an identical angular geometry, featuring a vertical segment that bends at an obtuse angle to form a shorter, angled bottom segment. The bars are oriented with the vertical sections parallel to each other and the bottom sections also parallel, creating a consistent gap between the gray and green shapes.</description></figure>\n\nPage 26\n\n\n<!-- doc_id=parse-01m62ymvrvzgbxdf36jbkt45st -->",
+  "metadata": {
+    "job_id": "extract-01m62ynam441ayd4tq2cyq2884",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 23984,
+    "doc_id": "parse-01m62ymvrvzgbxdf36jbkt45st",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 14.1,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 51786,
+    "output_extraction_chars": 3686,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}
