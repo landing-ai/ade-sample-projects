@@ -1,0 +1,106 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "schedules[0].most_recent_fiscal_year",
+      "label": "Fiscal year",
+      "value": 2025,
+      "page": 1,
+      "box": {
+        "xmin": 0.27575,
+        "ymin": 0.32601,
+        "xmax": 0.33774,
+        "ymax": 0.36211
+      },
+      "range": {
+        "end": 199,
+        "start": 195
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedules-0-most_recent_fiscal_year.png"
+    },
+    {
+      "path": "schedules[0].customers[0].customer_name",
+      "label": "Largest commercial customer",
+      "value": "Georgetown University",
+      "page": 1,
+      "box": {
+        "xmin": 0.08853,
+        "ymin": 0.36206,
+        "xmax": 0.27582,
+        "ymax": 0.40462
+      },
+      "range": {
+        "end": 356,
+        "start": 335
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedules-0-customers-0-customer_name.png"
+    },
+    {
+      "path": "schedules[0].customers[0].most_recent_year_amount",
+      "label": "Largest customer revenue ($000)",
+      "value": 7184.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.27578,
+        "ymin": 0.36209,
+        "xmax": 0.33778,
+        "ymax": 0.40464
+      },
+      "range": {
+        "end": 372,
+        "start": 365
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedules-0-customers-0-most_recent_year_amount.png"
+    },
+    {
+      "path": "schedules[0].yearly_totals[0].total_amount",
+      "label": "Top-ten total ($000)",
+      "value": 37071.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.27614,
+        "ymin": 0.73447,
+        "xmax": 0.33808,
+        "ymax": 0.75547
+      },
+      "range": {
+        "end": 3095,
+        "start": 3087
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedules-0-yearly_totals-0-total_amount.png"
+    },
+    {
+      "path": "schedules[0].yearly_totals[0].percent_of_total_operating_revenues",
+      "label": "Share of operating revenues",
+      "value": 3.69,
+      "page": 1,
+      "box": {
+        "xmin": 0.27616,
+        "ymin": 0.75545,
+        "xmax": 0.3381,
+        "ymax": 0.77616
+      },
+      "range": {
+        "end": 3310,
+        "start": 3305
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedules-0-yearly_totals-0-percent_of_total_operating_revenues.png"
+    }
+  ]
+}

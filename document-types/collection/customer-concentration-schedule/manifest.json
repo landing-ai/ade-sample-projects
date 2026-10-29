@@ -1,0 +1,30 @@
+{
+  "slug": "customer-concentration-schedule",
+  "title": "Customer Concentration Schedule",
+  "source": {
+    "file": "dc-water-fy2025-largest-customers.pdf",
+    "pages": 2,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.dcwater.com/sites/default/files/finance/ACFR/2025/FY25%20ACFR%20Statistical%20Section.pdf",
+      "publisher": "District of Columbia Water and Sewer Authority (DC Water)",
+      "title": "FY2025 Annual Comprehensive Financial Report, Statistical Section (Exhibits 6 and 7, pages 11-12)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Pages 11 and 12 of the 34-page statistical section of DC Water's FY2025 Annual Comprehensive Financial Report, which the authority publishes on its own website for bondholders and the public; downloaded by script. Only Exhibit 6 (Ten Largest Commercial Customers) and Exhibit 7 (Ten Largest Government Customers) are used. No personal data: every customer is a university, hospital, company or government agency. The source PDF's document metadata was cleared when the pages were split out.",
+      "split_from": {
+        "pages": [11, 12],
+        "of": 34
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "schedules[0].most_recent_fiscal_year", "label": "Fiscal year", "occurrence": 0 },
+    { "path": "schedules[0].customers[0].customer_name", "label": "Largest commercial customer", "occurrence": 0 },
+    { "path": "schedules[0].customers[0].most_recent_year_amount", "label": "Largest customer revenue ($000)", "occurrence": 0 },
+    { "path": "schedules[0].yearly_totals[0].total_amount", "label": "Top-ten total ($000)", "occurrence": 0 },
+    { "path": "schedules[0].yearly_totals[0].percent_of_total_operating_revenues", "label": "Share of operating revenues", "occurrence": 0 }
+  ],
+  "notes": "Features the FY2025 column of Exhibit 6 on page 1, so the overlay reads as one concentration answer: in fiscal 2025 the largest commercial customer, Georgetown University, paid $7,184 thousand, and the ten largest together paid $37,071 thousand, 3.69% of total operating revenues. A public utility's ACFR stands in for a diligence schedule because no private company's per-customer concentration schedule is published. The request's notes suggested four fields: the FY2025 top commercial customer and amount, the FY2025 top-ten total, the FY2025 percentage, and the schedule title. All but the title shipped, with the fiscal year header added. The title was dropped because inspect_fields marks schedule_title OFF: the extracted value joins the title lines, while its range covers the whole 'EXHIBIT 6 / TEN LARGEST COMMERCIAL CUSTOMERS' block with an HTML line break between them. Each field is pinned to occurrence 0: extraction also returns a second, zero-length range for most fields, which resolves to no page. The '-' cells in the ten-year grid come back as null rather than 0, after the schema made those amounts nullable; the first extraction with plain number types returned 0 for every '-'."
+}

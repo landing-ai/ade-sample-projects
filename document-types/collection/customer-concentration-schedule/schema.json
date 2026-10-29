@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "description": "A customer concentration schedule: one or more tables listing an organization's largest customers with the revenue from each over several fiscal years, a total for the listed customers and that total as a share of revenue. Each table (exhibit) is extracted as one schedule.",
+  "properties": {
+    "reporting_entity": {
+      "type": "string",
+      "description": "Name of the organization whose customers are listed, as printed in the page header, e.g. 'District of Columbia Water and Sewer Authority'."
+    },
+    "schedules": {
+      "type": "array",
+      "description": "One entry per concentration table in the document, in the order they appear. A table that continues across pages is one schedule.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "exhibit_number": {
+            "type": "string",
+            "description": "Exhibit, schedule or table number as printed, e.g. '6'. Null if the table is unnumbered."
+          },
+          "schedule_title": {
+            "type": "string",
+            "description": "Title of the table as printed, joining its title lines, e.g. 'Ten Largest Commercial Customers, Last Ten Fiscal Years'."
+          },
+          "customer_category": {
+            "type": "string",
+            "description": "The class of customer the table covers, taken from the title, e.g. 'Commercial' or 'Government'. Null if the title names no category."
+          },
+          "amount_units": {
+            "type": "string",
+            "description": "The unit the amounts are stated in, as printed under the title, e.g. '$000' for thousands of dollars."
+          },
+          "most_recent_fiscal_year": {
+            "type": "integer",
+            "description": "The latest fiscal year column in the table, e.g. 2025."
+          },
+          "customers": {
+            "type": "array",
+            "description": "Every customer row in the table, in printed order, excluding the total and percentage rows.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "customer_name": {
+                  "type": "string",
+                  "description": "Customer name exactly as printed in the first column."
+                },
+                "most_recent_year_amount": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "description": "Amount in the most recent fiscal year column, as printed in the table's units (do not scale thousands). Null, never 0, if the cell shows '-' (the customer was not among the largest that year)."
+                },
+                "prior_year_amount": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "description": "Amount in the fiscal year column immediately before the most recent one, in the table's units. Null, never 0, if the cell shows '-'."
+                }
+              }
+            }
+          },
+          "yearly_totals": {
+            "type": "array",
+            "description": "One entry per fiscal year column, from the Total row and the percentage-of-revenue row beneath it.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fiscal_year": {
+                  "type": "integer",
+                  "description": "The fiscal year of the column, e.g. 2025."
+                },
+                "total_amount": {
+                  "type": "number",
+                  "description": "The Total row's amount for this year, in the table's units (do not scale thousands)."
+                },
+                "percent_of_total_operating_revenues": {
+                  "type": "number",
+                  "description": "The '% of Total Operating Revenues' (or similar share-of-revenue) value for this year, as a percentage number, e.g. 3.69 for '3.69%'."
+                }
+              }
+            }
+          },
+          "data_source": {
+            "type": "string",
+            "description": "The source note printed beneath the table, without the 'Source:' prefix, e.g. 'DC Water Department of Customer Service'."
+          }
+        }
+      }
+    }
+  }
+}
