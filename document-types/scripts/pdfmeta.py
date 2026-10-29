@@ -29,6 +29,15 @@ def clear(doc: pymupdf.Document) -> None:
         doc.xref_set_key(catalog, key, "null")
     for page in doc:
         doc.xref_set_key(page.xref, "StructParents", "null")
+    for xref in range(1, doc.xref_length()):
+        if doc.xref_get_key(xref, "Metadata")[0] != "null":
+            doc.xref_set_key(xref, "Metadata", "null")
+        if _is_jpeg(doc, xref):
+            raw = doc.xref_stream_raw(xref)
+            stripped = _strip_jpeg(raw)
+            if stripped != raw:
+                doc.update_stream(xref, stripped, compress=False)
+                doc.xref_set_key(xref, "Filter", "/DCTDecode")
 
 
 def remaining(doc: pymupdf.Document) -> list[str]:
@@ -38,4 +47,40 @@ def remaining(doc: pymupdf.Document) -> list[str]:
         left.append("xmp")
     if doc.xref_get_key(doc.pdf_catalog(), "StructTreeRoot")[0] != "null":
         left.append("structure tree")
+    if any(_is_jpeg(doc, x) and _strip_jpeg(doc.xref_stream_raw(x)) != doc.xref_stream_raw(x)
+           for x in range(1, doc.xref_length())):
+        left.append("image EXIF/XMP")
+    if any(doc.xref_get_key(x, "Metadata")[0] != "null" and x != doc.pdf_catalog()
+           for x in range(1, doc.xref_length())):
+        left.append("object metadata")
     return left
+
+
+# APP1 holds EXIF and XMP, APP13 Photoshop's IPTC record (byline, caption), COM a free
+# comment. APP0 (JFIF), APP2 (ICC profile) and APP14 (Adobe colour transform) stay: they
+# change how the image renders.
+_DROP = {0xE1, 0xED, 0xFE}
+
+
+def _is_jpeg(doc: pymupdf.Document, xref: int) -> bool:
+    kind, value = doc.xref_get_key(xref, "Filter")
+    return kind != "null" and value.strip("[]/ ") == "DCTDecode"
+
+
+def _strip_jpeg(data: bytes) -> bytes:
+    """The JPEG without its metadata segments, or unchanged if it cannot be parsed."""
+    if data[:2] != b"\xff\xd8":
+        return data
+    out, i = bytearray(data[:2]), 2
+    while i + 4 <= len(data):
+        if data[i] != 0xFF:
+            return data
+        marker = data[i + 1]
+        if marker == 0xDA:  # start of scan: the image data follows, untouched
+            out += data[i:]
+            return bytes(out)
+        length = int.from_bytes(data[i + 2:i + 4], "big")
+        if marker not in _DROP:
+            out += data[i:i + 2 + length]
+        i += 2 + length
+    return data

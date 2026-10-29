@@ -1,0 +1,37 @@
+{
+  "slug": "confidential-information-memorandum",
+  "title": "Confidential Information Memorandum",
+  "source": {
+    "file": "ptl-group-cim-redacted.pdf",
+    "pages": 19,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.bdo.ca/getmedia/c60b2304-857e-45ef-8825-cdc24ec12bbb/1st-App-H-PTL-Group-CIM.pdf",
+      "publisher": "BDO Canada Limited, as court-appointed receiver of the PTL Group",
+      "title": "Confidential Information Memorandum: PTL Holdings Limited, PTL Services (Equipment) Limited, CSL Services (Industrial) Limited, & 9263357 Canada Inc. (May 2018)",
+      "retrieved": "2026-10-28",
+      "clearance": "redacted",
+      "clearance_note": "Published on bdo.ca by BDO Canada Limited, the court-appointed receiver, as Appendix H to the Receiver's First Report to the Supreme Court of Newfoundland and Labrador in the PTL Group receivership: a public court filing, downloaded by script from the URL above. The 'Confidential Information Memorandum' legend on every page and the NDA notice are the original marketing-stage wording; the document was later filed publicly. BDO's engagement page blocks scripted access, so the link from that page to this file was not confirmed. The two receiver staff named as contacts, their two work email addresses and the five business phone and fax numbers in the covering letter, the contacts box and the Sale Process Summary were replaced with document-types/scripts/redact.py, which removes the underlying text; their mailto links went with the text. The firm names, the two BDO office street addresses and the bid delivery address are corporate and kept. PDF metadata was cleared, including the author field, and the EXIF/XMP metadata embedded in the JPEG photographs was stripped without re-encoding them: one photo named a staff member as its creator. Verified on literals and bare digits: no original value is extractable from the committed PDF, its objects or its streams, or appears anywhere in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
+        "replaced": [
+          { "what": "receiver staff contacts' names", "with": "Jane Q Sample, John Q Sample", "occurrences": 5 },
+          { "what": "receiver staff work email addresses", "with": "ja@example.com, jo@example.com", "occurrences": 7 },
+          { "what": "staff direct lines and office phone and fax numbers (area codes kept)", "with": "fiction-reserved 555-01xx numbers, one stand-in per number", "occurrences": 9 }
+        ],
+        "image_metadata": "EXIF/XMP segments stripped from the embedded JPEGs; pixels unchanged",
+        "metadata": "cleared"
+      }
+    }
+  },
+  "feature_page": 3,
+  "preview_pages": [1, 3, 7, 11],
+  "fields": [
+    { "path": "target_companies[0]", "label": "Company for sale", "occurrence": 1 },
+    { "path": "seller.capacity", "label": "Seller capacity", "occurrence": 0 },
+    { "path": "insolvency_proceeding.court", "label": "Court", "occurrence": 0 },
+    { "path": "insolvency_proceeding.appointment_date", "label": "Receivership order date", "occurrence": 0 },
+    { "path": "sale_process.binding_offer_deadline", "label": "Binding offer deadline", "occurrence": 0 }
+  ],
+  "notes": "Features the receiver's covering letter on page 3, which states the whole deal in one place: which company is for sale, that the seller is a court-appointed receiver, the court and date of the receivership order, and the deadline for binding offers. The request's notes suggested page 7 (the executive summary) with receiver, receivership order date, court, offer deadline and employee count, as suggestions only. Across three extraction runs the grounding of the court and the order date moved between page 3, page 7 and page 15 from run to run, and the offer deadline always grounded on page 3; the committed run grounds only the receiver's name, the founding age and the employee count on page 7, too few for that page's story. Page 3 carries four of the five suggested facts, all marked ok; the employee count is only on page 7 and is not featured. The page also shows the stand-in contact names, which are not featured."
+}

@@ -1,0 +1,286 @@
+{
+  "type": "object",
+  "title": "Confidential Information Memorandum",
+  "description": "Key facts a prospective bidder or deal analyst takes from a confidential information memorandum (CIM) prepared for the sale of a business or its assets.",
+  "properties": {
+    "memorandum_date": {
+      "type": "string",
+      "description": "Date of the memorandum as printed on the cover or covering letter, e.g. 'May 2018'."
+    },
+    "target_companies": {
+      "type": "array",
+      "description": "Legal names of every company whose business or assets are being offered for sale, one entry per company.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "group_name": {
+      "type": "string",
+      "description": "Short name the memorandum uses for the companies collectively, e.g. 'PTL Group'."
+    },
+    "seller": {
+      "type": "object",
+      "description": "Who is selling and in what capacity, as stated in the Executive Summary's Sale Process paragraph.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the firm running the sale (the receiver, trustee or sell-side adviser), as named in the Executive Summary."
+        },
+        "capacity": {
+          "type": "string",
+          "description": "Capacity in which the seller acts, e.g. 'Court-appointed Receiver'."
+        }
+      }
+    },
+    "insolvency_proceeding": {
+      "type": "object",
+      "description": "The court proceeding under which the sale is run, if any. Take these from the Executive Summary's Sale Process paragraph where it states them.",
+      "properties": {
+        "court": {
+          "type": "string",
+          "description": "Name of the court that issued the appointment order, exactly as printed in the Executive Summary, e.g. 'Supreme Court of Newfoundland and Labrador'."
+        },
+        "order_name": {
+          "type": "string",
+          "description": "Defined name of the order appointing the seller, e.g. 'Receivership Order'."
+        },
+        "appointment_date": {
+          "type": "string",
+          "description": "Date the seller was appointed under the order, as printed, e.g. 'May 11, 2018'."
+        }
+      }
+    },
+    "sale_process": {
+      "type": "object",
+      "description": "Terms of the sale process bidders must follow.",
+      "properties": {
+        "binding_offer_deadline": {
+          "type": "string",
+          "description": "Deadline for binding offers as printed in the Executive Summary's Sale Process paragraph, with time and time zone, e.g. '2:00 p.m. (NDT) on June 14, 2018'."
+        },
+        "offer_form": {
+          "type": "string",
+          "description": "Form offers must take, e.g. 'template asset purchase agreement (APA) with a blackline'."
+        },
+        "offer_delivery_address": {
+          "type": "string",
+          "description": "Street address to which binding offers and deposits must be delivered."
+        },
+        "deposit_percentage": {
+          "type": "number",
+          "description": "Minimum deposit as a percentage of the purchase price, e.g. 15 for 15%."
+        },
+        "closing_timing": {
+          "type": "string",
+          "description": "When the transaction must close, as stated, e.g. 'within 7 business days of the Approval and Vesting Order'."
+        },
+        "sale_basis": {
+          "type": "string",
+          "description": "Basis on which assets are sold, e.g. 'as is, where is'."
+        },
+        "court_approval_required": {
+          "type": "boolean",
+          "description": "True if acceptance of an offer is subject to court approval."
+        }
+      }
+    },
+    "business_overview": {
+      "type": "object",
+      "description": "The business being sold, from the Executive Summary and Investment Opportunity sections.",
+      "properties": {
+        "years_in_operation": {
+          "type": "string",
+          "description": "How long the business has operated, as stated, e.g. 'over 40 years'."
+        },
+        "headquarters_location": {
+          "type": "string",
+          "description": "Where the business is located, e.g. 'Southern Harbour, NL'."
+        },
+        "sectors_served": {
+          "type": "array",
+          "description": "Industry sectors the business primarily serves.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "services": {
+          "type": "array",
+          "description": "Services the business provides, one entry per service line.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "employee_count": {
+          "type": "string",
+          "description": "Number of employees exactly as printed in the Executive Summary, including any approximation sign, e.g. '~70'."
+        },
+        "workforce_unionized": {
+          "type": "boolean",
+          "description": "True if the memorandum says the workforce is unionized."
+        },
+        "quarry_permits": {
+          "type": "integer",
+          "description": "Number of quarries the business holds permits or rights for."
+        }
+      }
+    },
+    "investment_highlights": {
+      "type": "array",
+      "description": "Headline investment highlights as listed in the Executive Summary, one entry per highlight.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "properties": {
+      "type": "array",
+      "description": "Real property sites described in the memorandum.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Site label or letter, e.g. 'A'."
+          },
+          "address": {
+            "type": "string",
+            "description": "Street address or identifier of the site, e.g. '20 Marine Drive' or 'Quarry 7188104'."
+          },
+          "acreage": {
+            "type": "number",
+            "description": "Area of the site in acres, if stated."
+          },
+          "features": {
+            "type": "array",
+            "description": "Features listed for the site.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "historical_performance": {
+      "type": "object",
+      "description": "Historical results summarized in the narrative.",
+      "properties": {
+        "period": {
+          "type": "string",
+          "description": "Historical period covered, e.g. 'Fiscal 2013 to 2017'."
+        },
+        "average_revenue": {
+          "type": "string",
+          "description": "Average annual revenue over the period as printed, e.g. '$15.3M'."
+        },
+        "average_gross_margin": {
+          "type": "string",
+          "description": "Average gross margin over the period as printed, e.g. '27%'."
+        },
+        "revenue_secured_by_contracts": {
+          "type": "string",
+          "description": "Dollar amount of the coming fiscal year's revenue budget that the companies began the year with already secured by firm contracts, as printed in the narrative, e.g. '$8.9 million'."
+        }
+      }
+    },
+    "income_statement": {
+      "type": "object",
+      "description": "The income statement table in the Financial Overview.",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "Currency of the table, e.g. 'CAD'."
+        },
+        "units": {
+          "type": "string",
+          "description": "Units of the table, e.g. 'thousands'."
+        },
+        "periods": {
+          "type": "array",
+          "description": "One entry per column of the income statement table, in order.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period": {
+                "type": "string",
+                "description": "Column heading, e.g. 'Trailing 5 Year Average' or '2018F'."
+              },
+              "is_forecast": {
+                "type": "boolean",
+                "description": "True if the column is a forecast."
+              },
+              "revenue": {
+                "type": "number",
+                "description": "Revenue, in the table's units."
+              },
+              "cogs": {
+                "type": "number",
+                "description": "Cost of goods sold, in the table's units."
+              },
+              "gross_margin": {
+                "type": "number",
+                "description": "Gross margin, in the table's units."
+              },
+              "gross_margin_percent": {
+                "type": "number",
+                "description": "Gross margin percentage, e.g. 27.3."
+              },
+              "operating_costs": {
+                "type": "number",
+                "description": "Operating costs, in the table's units."
+              },
+              "normalized_ebitda": {
+                "type": "number",
+                "description": "Normalized EBITDA, in the table's units."
+              },
+              "ebitda_margin_percent": {
+                "type": "number",
+                "description": "EBITDA margin percentage, e.g. 13.4."
+              }
+            }
+          }
+        }
+      }
+    },
+    "sale_timeline": {
+      "type": "array",
+      "description": "Milestones from the sale process timeline table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "milestone": {
+            "type": "string",
+            "description": "Milestone name."
+          },
+          "deadline": {
+            "type": "string",
+            "description": "Deadline as printed."
+          }
+        }
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Individuals bidders should contact at the seller.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Contact's name."
+          },
+          "phone": {
+            "type": "string",
+            "description": "Contact's direct phone number."
+          },
+          "email": {
+            "type": "string",
+            "description": "Contact's email address."
+          },
+          "office": {
+            "type": "string",
+            "description": "Firm and city of the office listed with the contact."
+          }
+        }
+      }
+    }
+  }
+}

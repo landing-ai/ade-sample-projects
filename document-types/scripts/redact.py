@@ -183,53 +183,64 @@ def main() -> None:
         # in the field itself below; redacting them here as well drew a second copy of
         # every value on an SBA 413, overprinting the field's own.
         fields = [w.rect for w in page.widgets() if w.field_type in _TEXT_FIELDS]
-        for original, replacement in rules.items():
-            for rect in _merge_line_rects(page.search_for(original)):
-                if any(f.contains(rect.tl + (rect.br - rect.tl) * 0.5) for f in fields):
-                    continue
-                # Match the text being replaced: its size, weight and baseline. Sizing
-                # from the rect instead drew an 8.8pt bold name at 4.3pt regular, since
-                # the inset rect is shorter than the line and the redaction annotation
-                # shrinks its text until it fits -- an edit visible at a glance.
-                span = _span_at(spans, rect)
-                size = span["size"] if span else min(11.0, rect.height * 0.86)
-                font, fontfile = _replacement_font(span, handwriting)
-                baseline = span["origin"][1] if span else rect.y1 - rect.height * 0.2
-                # Then size by WIDTH as well. A narrow rect in a mailing-address block
-                # wrapped "JANE DOE" into "JA" / "NE", fragmenting the text layer so the
-                # field no longer extracted. Shrink until it fits the original's width.
-                if replacement:
-                    if fontfile:
-                        width = pymupdf.Font(fontfile=fontfile).text_length(replacement, size)
+        for original, whole in rules.items():
+            for group in _wrapped_matches(page, _merge_line_rects(page.search_for(original)),
+                                          original):
+                # A match that wraps onto the next line comes back as one rect per
+                # line, and each used to get the whole replacement: a CIM's name split
+                # across a line break came out as the stand-in name twice, once at the
+                # end of one line and again at the start of the next. Split the
+                # replacement across the lines instead.
+                parts = _split_replacement(whole, [r.width for r in group])
+                counted = False
+                for rect, replacement in zip(group, parts):
+                    if any(f.contains(rect.tl + (rect.br - rect.tl) * 0.5) for f in fields):
+                        continue
+                    # Match the text being replaced: its size, weight and baseline. Sizing
+                    # from the rect instead drew an 8.8pt bold name at 4.3pt regular, since
+                    # the inset rect is shorter than the line and the redaction annotation
+                    # shrinks its text until it fits -- an edit visible at a glance.
+                    span = _span_at(spans, rect)
+                    size = span["size"] if span else min(11.0, rect.height * 0.86)
+                    font, fontfile = _replacement_font(span, handwriting)
+                    baseline = span["origin"][1] if span else rect.y1 - rect.height * 0.2
+                    # Then size by WIDTH as well. A narrow rect in a mailing-address block
+                    # wrapped "JANE DOE" into "JA" / "NE", fragmenting the text layer so the
+                    # field no longer extracted. Shrink until it fits the original's width.
+                    if replacement:
+                        if fontfile:
+                            width = pymupdf.Font(fontfile=fontfile).text_length(replacement, size)
+                        else:
+                            width = pymupdf.get_text_length(replacement, font, size)
+                        if width > rect.width:
+                            size *= rect.width / width * 0.97  # a hair under, for rounding
+                        size = max(size, 3.0)
+                        # In the original's colour: a lease's e-signatures are navy ink, and
+                        # a black stand-in signature beside two navy ones reads as an edit.
+                        color = _rgb(span["color"]) if span else TEXT_COLOR
+                        pending.append((pymupdf.Point(rect.x0, baseline), replacement,
+                                        font, round(size, 1), fontfile, color))
+                    # apply_redactions removes every character whose bbox touches the rect,
+                    # and a character's bbox is the font's full ascender-to-descender height,
+                    # so on an employment certificate the characters of the line below
+                    # overlapped the name's rect and "2017 and is currently designa" was
+                    # erased. Removal is by overlap, so when the span is known a band through
+                    # the middle of the letters takes every character of the match while
+                    # staying clear of neighbouring lines. The band replaces the fixed insets
+                    # rather than following them: on a lease's 2pt "Prepared by" line the
+                    # insets alone emptied the rect, and the agent's name survived.
+                    if span:
+                        rect.y0 = baseline - span["size"] * 0.6
+                        rect.y1 = baseline - span["size"] * 0.1
                     else:
-                        width = pymupdf.get_text_length(replacement, font, size)
-                    if width > rect.width:
-                        size *= rect.width / width * 0.97  # a hair under, for rounding
-                    size = max(size, 3.0)
-                    # In the original's colour: a lease's e-signatures are navy ink, and
-                    # a black stand-in signature beside two navy ones reads as an edit.
-                    color = _rgb(span["color"]) if span else TEXT_COLOR
-                    pending.append((pymupdf.Point(rect.x0, baseline), replacement,
-                                    font, round(size, 1), fontfile, color))
-                # apply_redactions removes every character whose bbox touches the rect,
-                # and a character's bbox is the font's full ascender-to-descender height,
-                # so on an employment certificate the characters of the line below
-                # overlapped the name's rect and "2017 and is currently designa" was
-                # erased. Removal is by overlap, so when the span is known a band through
-                # the middle of the letters takes every character of the match while
-                # staying clear of neighbouring lines. The band replaces the fixed insets
-                # rather than following them: on a lease's 2pt "Prepared by" line the
-                # insets alone emptied the rect, and the agent's name survived.
-                if span:
-                    rect.y0 = baseline - span["size"] * 0.6
-                    rect.y1 = baseline - span["size"] * 0.1
-                else:
-                    rect.y0 += TOP_INSET_PT
-                    rect.y1 -= BOTTOM_INSET_PT
-                page.add_redact_annot(rect, fill=FILL)
-                redacted.append(pymupdf.Rect(rect))
-                per_rule[original] = per_rule.get(original, 0) + 1
-                total += 1
+                        rect.y0 += TOP_INSET_PT
+                        rect.y1 -= BOTTOM_INSET_PT
+                    page.add_redact_annot(rect, fill=FILL)
+                    redacted.append(pymupdf.Rect(rect))
+                    if not counted:  # one occurrence, however many lines it spans
+                        per_rule[original] = per_rule.get(original, 0) + 1
+                        total += 1
+                        counted = True
         page.apply_redactions()
         # Only the ones actually removed: some touch a rect and survive, and drawing
         # those again left a stray raised underscore beside the tenant's name.
@@ -290,7 +301,20 @@ def main() -> None:
     text += "\n" + "\n".join(_field_text(verify, w) for p in verify for w in p.widgets())
     if pdfmeta.remaining(verify):
         sys.exit(f"FAILED: metadata survives in {args.output}: {pdfmeta.remaining(verify)}")
+    # Then every object and decoded stream, which page text never reaches: a link's
+    # mailto URI, an image's embedded metadata, an orphaned annotation.
+    blob = b"\n".join(
+        part for x in range(1, verify.xref_length())
+        for part in (verify.xref_object(x).encode("latin-1", "replace"),
+                     (verify.xref_stream(x) or b"") if verify.xref_is_stream(x) else b"")
+    ).lower()
+    in_objects = [r for r in rules if r.lower().encode("utf-8") in blob]
     verify.close()
+    if in_objects:
+        print("\nFAILED — these strings survive in the file's objects or streams:")
+        for s in in_objects:
+            print(f"  {s!r}")
+        sys.exit(1)
 
     # Compare on digits alone as well as literally: an identifier is often stored
     # without its separators, which a literal check sails straight past.
@@ -392,6 +416,67 @@ def _merge_line_rects(rects: list[pymupdf.Rect]) -> list[pymupdf.Rect]:
         else:
             merged.append(pymupdf.Rect(rect))
     return merged
+
+
+def _wrapped_matches(page: pymupdf.Page, rects: list[pymupdf.Rect],
+                     original: str) -> list[list[pymupdf.Rect]]:
+    """Group the line rects of each match, so a match that wraps is one group.
+
+    search_for returns a match that crosses a line break as one rect per line, with
+    nothing to say which rects belong together. A rect whose own text is the whole
+    original is a match by itself; otherwise consecutive rects are joined until their
+    text adds up to the original. Anything left unexplained falls back to one rect per
+    match, which is how every rect was treated before.
+    """
+    def norm(text: str) -> str:
+        return "".join(text.split()).casefold()
+
+    target = norm(original)
+    groups: list[list[pymupdf.Rect]] = []
+    pending: list[pymupdf.Rect] = []
+    joined = ""
+    for rect in rects:
+        piece = norm(page.get_textbox(rect))
+        if not pending and (not piece or piece == target or not target.startswith(piece)):
+            groups.append([rect])
+            continue
+        pending.append(rect)
+        joined += piece
+        if joined == target:
+            groups.append(pending)
+            pending, joined = [], ""
+        elif not target.startswith(joined):
+            groups.extend([r] for r in pending)
+            pending, joined = [], ""
+    groups.extend([r] for r in pending)
+    return groups
+
+
+def _split_replacement(replacement: str, widths: list[float]) -> list[str]:
+    """Divide a replacement between the lines a wrapped match occupies.
+
+    Splits at word boundaries, in proportion to how much of the original sat on each
+    line, so "Jane Q Sample" over a name broken after its first word reads "Jane Q" /
+    "Sample". A line left without a word gets an empty string: its text is removed and
+    nothing is drawn.
+    """
+    if len(widths) == 1:
+        return [replacement]
+    words = replacement.split()
+    total = sum(widths) or 1.0
+    parts: list[str] = []
+    start = 0
+    for i, width in enumerate(widths[:-1]):
+        target = sum(widths[: i + 1]) / total * len(replacement)
+        best, best_gap = start, None
+        for end in range(start, len(words) + 1):
+            gap = abs(len(" ".join(words[:end])) - target)
+            if best_gap is None or gap < best_gap:
+                best, best_gap = end, gap
+        parts.append(" ".join(words[start:best]))
+        start = best
+    parts.append(" ".join(words[start:]))
+    return parts
 
 
 def _span_at(spans: list[dict], rect: pymupdf.Rect) -> dict | None:
