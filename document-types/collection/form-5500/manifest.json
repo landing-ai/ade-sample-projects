@@ -1,0 +1,65 @@
+{
+  "slug": "form-5500",
+  "title": "Form 5500",
+  "source": {
+    "file": "form-5500-st-olaf-403b-2023-redacted.pdf",
+    "pages": 24,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://wp.stolaf.edu/finance/files/2024/10/2023-403b-5500-Website.pdf",
+      "publisher": "St. Olaf College",
+      "title": "St. Olaf College 403(b) Retirement Plan, Form 5500 for plan year 2023",
+      "retrieved": "2026-10-28",
+      "clearance": "redacted",
+      "clearance_note": "Form 5500 annual return/report as filed for the St. Olaf College 403(b) Retirement Plan, posted by the college (the plan sponsor) on its own finance site. Form 5500 filings are open to public inspection under ERISA. Downloaded by script; no linking page was found. The filing carries one individual's name: the person who signed it, printed twice on page 1 as plan administrator and as plan sponsor. That name was replaced with an obviously fake one. Every filled-in value in this PDF is drawn as vector glyph outlines rather than text (the file was produced by Microsoft Print To PDF), with each line of values set as one compound path, so the name's glyph subpaths were cut out of the page content stream with document-types/scripts/redact_outlined.py --split-compound and the replacement was drawn in Helvetica; the electronic-signature notice and dates beside it were left in place. The college's name, EIN, address and telephone, and the organizations named in Schedules A, C, D and H (an insurance carrier, a consultant and an audit firm), are institutional and were kept. Schedules A and C name no individual. The PDF's hidden metadata, which named a person as author, was cleared. Verified by OCR and by text and stream search: the original name survives nowhere in the committed PDF or in this folder.",
+      "redactions": {
+        "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact_outlined.py stays outside the repo.",
+        "replaced": [
+          {
+            "what": "name of the individual who signed the filing (plan administrator and plan sponsor rows, page 1)",
+            "with": "JANE Q. SAMPLE",
+            "occurrences": 2
+          }
+        ],
+        "cleared": [
+          "PDF document metadata (author named an individual; title carried the EFAST filing file name)"
+        ]
+      }
+    }
+  },
+  "feature_page": 2,
+  "preview_pages": [
+    1,
+    2,
+    10,
+    18
+  ],
+  "fields": [
+    {
+      "path": "participants.total_beginning_of_year",
+      "label": "Participants at start of year (line 5)",
+      "occurrence": 0
+    },
+    {
+      "path": "participants.active_end_of_year",
+      "label": "Active participants at year end (6a(2))",
+      "occurrence": 0
+    },
+    {
+      "path": "participants.total_end_of_year",
+      "label": "Total participants (6f)",
+      "occurrence": 0
+    },
+    {
+      "path": "participants.with_account_balances_end_of_year",
+      "label": "Participants with account balances (6g(2))",
+      "occurrence": 0
+    },
+    {
+      "path": "schedules_attached[1]",
+      "label": "Schedule H attached (10b)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no fields or feature page; its notes suggested page 2 with participants at the beginning of the year, active participants at year end, total participants, participants with account balances and the attached-schedule checkboxes. That is what shipped: the four counts and one checkbox (Schedule H, which carries the plan's financials) all read ok on page 2. Together they show the plan's headcount moving through the year and which schedules the filing carries. No person is featured; the only individual named in the filing is the signer on page 1, whose name was replaced. The PDF also carries a hidden white text layer of EFAST placeholder strings (ABCDEFGHI, 123456789) under every field; the visible values are vector outlines. The parse ignored the placeholders entirely: none appears in parse-pro.md."
+}

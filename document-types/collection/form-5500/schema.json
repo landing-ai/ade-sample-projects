@@ -1,0 +1,636 @@
+{
+  "type": "object",
+  "description": "Form 5500 Annual Return/Report of Employee Benefit Plan, with its attached Schedules A, C, D, H and R",
+  "properties": {
+    "plan_year_beginning": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Plan year beginning date from the Part I header, as YYYY-MM-DD"
+    },
+    "plan_year_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Plan year ending date from the Part I header, as YYYY-MM-DD"
+    },
+    "filer_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "multiemployer plan",
+        "multiple-employer plan",
+        "single-employer plan",
+        "DFE",
+        null
+      ],
+      "description": "Line A: the box checked for what this return/report is for"
+    },
+    "filed_under_form_5558_extension": {
+      "type": "boolean",
+      "description": "Line D: the Form 5558 extension box is checked"
+    },
+    "plan": {
+      "type": "object",
+      "description": "Part II plan identification, lines 1a-1c",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1a Name of plan"
+        },
+        "plan_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1b Three-digit plan number (PN), as printed"
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1c Effective date of plan, as YYYY-MM-DD"
+        }
+      }
+    },
+    "plan_sponsor": {
+      "type": "object",
+      "description": "Line 2 plan sponsor (employer)",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2a Plan sponsor's name"
+        },
+        "street_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2a mailing address, street line"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2a city or town"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2a state, as a two-letter code"
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2a ZIP code, as printed"
+        },
+        "ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2b Employer Identification Number, as printed"
+        },
+        "telephone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2c Plan sponsor's telephone number, as printed"
+        },
+        "business_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 2d Business code, as printed"
+        }
+      }
+    },
+    "administrator_same_as_sponsor": {
+      "type": "boolean",
+      "description": "Line 3a 'Same as Plan Sponsor' box is checked"
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Page 1 SIGN HERE rows that are filled in",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "plan administrator",
+              "employer/plan sponsor",
+              "DFE",
+              null
+            ],
+            "description": "Which signature row this is"
+          },
+          "signature_note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What is in the signature box, such as an electronic-signature notice"
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Signature date, as YYYY-MM-DD"
+          },
+          "signer_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Name of individual signing"
+          }
+        }
+      }
+    },
+    "participants": {
+      "type": "object",
+      "description": "Lines 5-6 participant counts",
+      "properties": {
+        "total_beginning_of_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 5 Total number of participants at the beginning of the plan year"
+        },
+        "active_beginning_of_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6a(1) Total number of active participants at the beginning of the plan year"
+        },
+        "active_end_of_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6a(2) Total number of active participants at the end of the plan year"
+        },
+        "retired_receiving_benefits": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6b Retired or separated participants receiving benefits"
+        },
+        "separated_entitled_to_future_benefits": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6c Other retired or separated participants entitled to future benefits"
+        },
+        "subtotal": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6d Subtotal"
+        },
+        "deceased_with_beneficiaries": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6e Deceased participants whose beneficiaries are receiving or entitled to benefits"
+        },
+        "total_end_of_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6f Total"
+        },
+        "with_account_balances_beginning_of_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6g(1) Participants with account balances at the beginning of the plan year"
+        },
+        "with_account_balances_end_of_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6g(2) Participants with account balances at the end of the plan year"
+        },
+        "terminated_less_than_fully_vested": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 6h Participants who terminated employment with accrued benefits less than 100% vested"
+        }
+      }
+    },
+    "pension_feature_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Line 8a pension feature codes, one per entry, e.g. 2L"
+    },
+    "funding_arrangement": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Line 9a plan funding arrangement boxes checked, by label: Insurance, Code section 412(e)(3) insurance contracts, Trust, General assets of the sponsor"
+    },
+    "benefit_arrangement": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Line 9b plan benefit arrangement boxes checked, by label"
+    },
+    "schedules_attached": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Line 10 schedules checked as attached, by schedule letter: R, MB, SB, DCG, MEP, H, I, A, C, D, G"
+    },
+    "schedule_a": {
+      "type": "object",
+      "description": "Schedule A Insurance Information",
+      "properties": {
+        "insurance_carrier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1(a) Name of insurance carrier"
+        },
+        "carrier_ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1(b) EIN, as printed"
+        },
+        "naic_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1(c) NAIC code"
+        },
+        "contract_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 1(d) Contract or identification number"
+        },
+        "persons_covered": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Line 1(e) Approximate number of persons covered at end of contract year"
+        },
+        "total_commissions_paid": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2(a) Total amount of commissions paid, in dollars"
+        },
+        "total_fees_paid": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2(b) Total amount of fees paid, in dollars"
+        },
+        "general_account_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Part II line 4 Current value of plan's interest in the general account at year end, in dollars"
+        },
+        "separate_accounts_value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Part II line 5 Current value of plan's interest in separate accounts at year end, in dollars"
+        },
+        "unallocated_balance_previous_year_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7b Balance at the end of the previous year, in dollars"
+        },
+        "unallocated_total_additions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7c(6) Total additions, in dollars"
+        },
+        "unallocated_total_deductions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7e(5) Total deductions, in dollars"
+        },
+        "unallocated_balance_current_year_end": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 7f Balance at the end of the current year, in dollars"
+        }
+      }
+    },
+    "schedule_c_service_providers": {
+      "type": "array",
+      "description": "Schedule C Part I line 2 service providers receiving direct or indirect compensation",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "2(a) Service provider name"
+          },
+          "ein": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "2(a) EIN, as printed"
+          },
+          "service_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "2(b) Service code(s)"
+          },
+          "relationship": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "2(c) Relationship to employer, employee organization or party-in-interest"
+          },
+          "direct_compensation": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "2(d) Direct compensation paid by the plan, in dollars"
+          },
+          "total_indirect_compensation": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "2(g) Total indirect compensation, in dollars, if entered"
+          }
+        }
+      }
+    },
+    "schedule_d_dfe_interests": {
+      "type": "array",
+      "description": "Schedule D Part I interests in MTIAs, CCTs, PSAs and 103-12 IEs",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entity_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "(a) Name of MTIA, CCT, PSA, or 103-12 IE"
+          },
+          "sponsor_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "(b) Name of sponsor of the entity"
+          },
+          "ein_pn": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "(c) EIN-PN, as printed"
+          },
+          "entity_code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "(d) Entity code"
+          },
+          "value_end_of_year": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "(e) Dollar value of interest at end of year"
+          }
+        }
+      }
+    },
+    "schedule_h": {
+      "type": "object",
+      "description": "Schedule H Financial Information, in dollars",
+      "properties": {
+        "total_assets_beginning_of_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1f Total assets, column (a) Beginning of Year"
+        },
+        "total_assets_end_of_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1f Total assets, column (b) End of Year"
+        },
+        "net_assets_beginning_of_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1l Net assets, column (a) Beginning of Year"
+        },
+        "net_assets_end_of_year": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 1l Net assets, column (b) End of Year"
+        },
+        "employer_contributions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2a(1)(A) Contributions from employers"
+        },
+        "participant_contributions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2a(1)(B) Contributions from participants"
+        },
+        "other_contributions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2a(1)(C) Contributions from others, including rollovers"
+        },
+        "total_contributions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2a(3) Total contributions"
+        },
+        "total_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2d Total income"
+        },
+        "total_benefit_payments": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2e(4) Total benefit payments"
+        },
+        "total_administrative_expenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2i(12) Total administrative expenses"
+        },
+        "total_expenses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2j Total expenses"
+        },
+        "net_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 2k Net income (loss)"
+        },
+        "accountant_opinion": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Unmodified",
+            "Qualified",
+            "Disclaimer",
+            "Adverse",
+            null
+          ],
+          "description": "Line 3a type of accountant's opinion checked"
+        },
+        "accountant_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 3c(1) Name of the accountant or accounting firm"
+        },
+        "accountant_ein": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 3c(2) EIN of the accountant, as printed"
+        },
+        "fidelity_bond_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Line 4e Amount of fidelity bond coverage, if the plan was covered"
+        }
+      }
+    },
+    "schedule_r": {
+      "type": "object",
+      "description": "Schedule R Retirement Plan Information",
+      "properties": {
+        "benefit_payor_eins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Line 2 EIN(s) of payor(s) who paid benefits, as printed"
+        },
+        "opinion_letter_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 22 date of the IRS Opinion Letter, as YYYY-MM-DD"
+        },
+        "opinion_letter_serial_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Line 22 Opinion Letter serial number"
+        }
+      }
+    }
+  }
+}
