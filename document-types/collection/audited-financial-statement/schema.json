@@ -1,0 +1,135 @@
+{
+  "type": "object",
+  "description": "A set of audited financial statements for a nonprofit or company: the independent auditor's report, the basic financial statements and, where present, the Single Audit schedules and findings",
+  "properties": {
+    "entity_name": {
+      "type": ["string", "null"],
+      "description": "The organization whose financial statements were audited, as printed on the statements"
+    },
+    "period_end_date": {
+      "type": ["string", "null"],
+      "description": "The balance sheet date or fiscal year end the statements cover, exactly as printed, e.g. 'December 31, 2024'"
+    },
+    "auditor_report": {
+      "type": "object",
+      "description": "The independent auditor's report on the financial statements",
+      "properties": {
+        "addressee": {
+          "type": ["string", "null"],
+          "description": "Who the report is addressed to, e.g. 'The Board of Directors'"
+        },
+        "audit_firm": {
+          "type": ["string", "null"],
+          "description": "The name of the audit firm that signed the report"
+        },
+        "opinion_type": {
+          "type": ["string", "null"],
+          "enum": ["unmodified", "qualified", "adverse", "disclaimer", null],
+          "description": "The auditor's opinion on the financial statements. 'Present fairly, in all material respects' with no qualification is unmodified"
+        },
+        "accounting_framework": {
+          "type": ["string", "null"],
+          "description": "The financial reporting framework named in the opinion, as printed, e.g. 'accounting principles generally accepted in the United States of America'"
+        },
+        "report_date": {
+          "type": ["string", "null"],
+          "description": "The date of the auditor's report, exactly as printed under the signature"
+        },
+        "report_city": {
+          "type": ["string", "null"],
+          "description": "The city and state printed under the auditor's signature"
+        }
+      }
+    },
+    "statement_of_financial_position": {
+      "type": "object",
+      "description": "The statement of financial position (balance sheet). Amounts in dollars as printed, without symbols or separators",
+      "properties": {
+        "cash_and_cash_equivalents": { "type": ["number", "null"], "description": "Cash and cash equivalents" },
+        "accounts_receivable": { "type": ["number", "null"], "description": "Accounts receivable, net" },
+        "total_current_assets": { "type": ["number", "null"], "description": "Total current assets" },
+        "property_and_equipment_net": { "type": ["number", "null"], "description": "Property and equipment, net of accumulated depreciation" },
+        "total_assets": { "type": ["number", "null"], "description": "Total assets" },
+        "total_current_liabilities": { "type": ["number", "null"], "description": "Total current liabilities" },
+        "total_liabilities": { "type": ["number", "null"], "description": "Total liabilities" },
+        "net_assets_without_donor_restrictions": { "type": ["number", "null"], "description": "Net assets without donor restrictions" },
+        "net_assets_with_donor_restrictions": { "type": ["number", "null"], "description": "Net assets with donor restrictions, if reported" },
+        "total_liabilities_and_net_assets": { "type": ["number", "null"], "description": "Total liabilities and net assets" }
+      }
+    },
+    "statement_of_activities": {
+      "type": "object",
+      "description": "The statement of activities (income statement) for the year",
+      "properties": {
+        "revenue_lines": {
+          "type": "array",
+          "description": "Each public support and revenue line, in order, including deductions such as direct benefit costs",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string", "description": "The line label as printed" },
+              "amount": { "type": ["number", "null"], "description": "The amount; negative when printed in parentheses" }
+            }
+          }
+        },
+        "total_revenues": { "type": ["number", "null"], "description": "Total revenues, support and gains" },
+        "program_services_expenses": { "type": ["number", "null"], "description": "Total program services expenses" },
+        "management_and_general_expenses": { "type": ["number", "null"], "description": "Management and general expenses" },
+        "fundraising_expenses": { "type": ["number", "null"], "description": "Fundraising expenses" },
+        "total_expenses": { "type": ["number", "null"], "description": "Total expenses" },
+        "change_in_net_assets": { "type": ["number", "null"], "description": "Change in net assets for the year" },
+        "net_assets_beginning_of_year": { "type": ["number", "null"], "description": "Net assets at beginning of year" },
+        "net_assets_end_of_year": { "type": ["number", "null"], "description": "Net assets at end of year" }
+      }
+    },
+    "statement_of_cash_flows": {
+      "type": "object",
+      "description": "The statement of cash flows",
+      "properties": {
+        "net_cash_from_operating_activities": { "type": ["number", "null"], "description": "Net cash provided by (used in) operating activities" },
+        "net_cash_from_investing_activities": { "type": ["number", "null"], "description": "Net cash provided by (used in) investing activities; negative when printed in parentheses" },
+        "net_cash_from_financing_activities": { "type": ["number", "null"], "description": "Net cash provided by (used in) financing activities, if reported" },
+        "net_change_in_cash": { "type": ["number", "null"], "description": "Net increase (decrease) in cash" },
+        "cash_end_of_year": { "type": ["number", "null"], "description": "Cash and cash equivalents at end of year" }
+      }
+    },
+    "awards_schedule": {
+      "type": "object",
+      "description": "The Schedule of Expenditures of Federal Awards and State Financial Assistance, if present",
+      "properties": {
+        "awards": {
+          "type": "array",
+          "description": "Each award line with an expenditure amount, federal and state, in order",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": { "type": ["string", "null"], "enum": ["federal", "state", null], "description": "Whether the line is under federal or state financial assistance" },
+              "grantor": { "type": ["string", "null"], "description": "The agency or department heading the line sits under" },
+              "program_name": { "type": ["string", "null"], "description": "The program or project name" },
+              "assistance_listing_number": { "type": ["string", "null"], "description": "The CFDA / Assistance Listing or CSFA number, as printed" },
+              "contract_number": { "type": ["string", "null"], "description": "The contract or grant number, as printed" },
+              "expenditures": { "type": ["number", "null"], "description": "Expenditures for the line" }
+            }
+          }
+        },
+        "total_federal_expenditures": { "type": ["number", "null"], "description": "Total federal financial assistance" },
+        "total_florida_state_expenditures": { "type": ["number", "null"], "description": "Total state financial assistance for the auditee's home state, as printed, e.g. 'Total Florida State Financial Assistance'" }
+      }
+    },
+    "findings_summary": {
+      "type": "object",
+      "description": "The summary of audit results in the Schedule of Findings and Questioned Costs, if present",
+      "properties": {
+        "material_weaknesses_reported": { "type": ["boolean", "null"], "description": "Whether any significant deficiency or material weakness in internal control over financial reporting was reported" },
+        "major_programs_tested": {
+          "type": "array",
+          "description": "The programs or projects tested as major, each as printed",
+          "items": { "type": "string" }
+        },
+        "type_a_b_threshold": { "type": ["number", "null"], "description": "The dollar threshold for distinguishing Type A and Type B programs" },
+        "low_risk_auditee": { "type": ["boolean", "null"], "description": "Whether the auditee qualified as a low-risk auditee" },
+        "findings_reported": { "type": ["boolean", "null"], "description": "Whether any financial statement or major program findings were reported" }
+      }
+    }
+  }
+}
