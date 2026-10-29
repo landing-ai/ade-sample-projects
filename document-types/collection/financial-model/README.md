@@ -5,8 +5,9 @@ LaSalle (JLL). It was published as Exhibit C to the *Aloha Stadium Conceptual
 Redevelopment Report* (February 23, 2017), which Foley & Lardner LLP prepared for the
 State of Hawaii Department of Accounting and General Services and Stadium Authority. The
 model values a 1.21 million square foot mixed-use district around a new stadium. It
-covers office, retail, residential and hotel, and runs a 13-year development-and-hold
-timeline for each.
+covers office, retail, residential and hotel. Most cash flow sheets run 13 development
+years (3 of construction, then 10 of hold); the office long-term sheet on page 7 runs 18
+(3 of construction, then 15 of hold).
 
 This folder keeps **16 of the report's 181 pages**, the whole of Exhibit C as printed
 ("Page 1 of 16" to "Page 16 of 16"). The pages are landscape spreadsheet printouts at
@@ -48,7 +49,7 @@ nothing was redacted. The PDF's metadata named an individual author, and it was 
 
 Most financial documents in the collection are statements: one period, labelled rows,
 values in one or two columns. A pro forma is a grid. On the cash flow sheets, every row
-is a line item, and the columns are a Total followed by 13 years, each with a calendar
+is a line item, and the columns are a Total followed by 13 years (18 on page 7), each with a calendar
 year, a development year and a hold year in a three-row header. The construction-period
 cells are empty, negatives are red and in parentheses, and the type is small.
 Answering "what is the DSCR" means finding a highlighted row, then the first non-empty
