@@ -1,0 +1,27 @@
+{
+  "slug": "credit-agreement",
+  "title": "Credit Agreement",
+  "source": {
+    "file": "hcaa-revolving-credit-agreement-2020.pdf",
+    "pages": 76,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://tampaairport.com/sites/default/master/files/2020-67%20-%20HCAA%20Revolving%20Credit%20Agreement%20-%20April%2020,%202020.pdf",
+      "publisher": "Hillsborough County Aviation Authority (Tampa International Airport)",
+      "title": "Revolving Credit Agreement by and among Hillsborough County Aviation Authority, Truist Bank and STI Institutional & Government, Inc. and Truist Bank, as Agent, as of April 20, 2020 (Execution Copy; Authority document 2020-67)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Published by the Hillsborough County Aviation Authority, a Florida independent special district and the borrower under the agreement, on its own website tampaairport.com as document 2020-67, a public record; downloaded by script from the URL above. The executed agreement names Authority officers and staff and a bank officer, with their signatures on the scanned signature page (page 51) and work contact details in the notice addresses (page 13). The operator chose to keep these names, signatures and contact details exactly as the Authority published them, so no visible content was changed. Only the hidden PDF metadata was cleared, which included a document author username."
+    }
+  },
+  "feature_page": 6,
+  "preview_pages": [1, 6, 7, 12],
+  "fields": [
+    { "path": "agreement_date", "label": "Agreement date", "occurrence": 1 },
+    { "path": "borrower.name", "label": "Borrower", "occurrence": 0 },
+    { "path": "lenders[0].name", "label": "Lender (bank)", "occurrence": 0 },
+    { "path": "lenders[1].name", "label": "Lender (STI)", "occurrence": 0 },
+    { "path": "agent", "label": "Agent", "occurrence": 1 }
+  ],
+  "notes": "Features the opening paragraph on page 6 (printed page 1), which states who the deal is between in one sentence: the date, the borrower, the two lenders and the agent. The request's notes suggested agreement date, borrower, lenders and agent, maximum commitment amount and applicable margin, as suggestions only, and noted they are on different pages. The commitment amount ($100,000,000) grounds on page 12 and the margin (46 basis points) on page 7, both ok, so neither can share an overlay with the parties; page 6 carries the other four suggestions. The schema asks for the agreement date as printed: an ISO-normalised date grounded to the right words but could not be featured, because the boxed text did not contain the value. Only impersonal fields are featured, by the operator's direction; the schema has no fields for people."
+}
