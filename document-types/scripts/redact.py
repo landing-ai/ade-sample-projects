@@ -309,6 +309,16 @@ def main() -> None:
                      (verify.xref_stream(x) or b"") if verify.xref_is_stream(x) else b"")
     ).lower()
     in_objects = [r for r in rules if r.lower().encode("utf-8") in blob]
+    # And on digits there too, for an identifier stored without its separators (a tel:
+    # link, an XMP field). Only object dictionaries and metadata streams are searched:
+    # image pixels and page content are full of digits that would match by chance.
+    object_runs = _digit_runs("\n".join(
+        verify.xref_object(x) + "\n" + (
+            (verify.xref_stream(x) or b"").decode("latin-1")
+            if verify.xref_is_stream(x) and _is_metadata_stream(verify, x) else "")
+        for x in range(1, verify.xref_length())))
+    in_objects += [r for r in rules if r not in in_objects and len(_digits(r)) >= 6
+                   and any(_digits(r) in run for run in object_runs)]
     verify.close()
     if in_objects:
         print("\nFAILED — these strings survive in the file's objects or streams:")
@@ -437,6 +447,11 @@ def _wrapped_matches(page: pymupdf.Page, rects: list[pymupdf.Rect],
     joined = ""
     for rect in rects:
         piece = norm(page.get_textbox(rect))
+        if pending and not target.startswith(joined + piece):
+            # The pending prefix does not continue here: give it up, one rect per match,
+            # and judge this rect afresh, since it may begin the next match.
+            groups.extend([r] for r in pending)
+            pending, joined = [], ""
         if not pending and (not piece or piece == target or not target.startswith(piece)):
             groups.append([rect])
             continue
@@ -444,9 +459,6 @@ def _wrapped_matches(page: pymupdf.Page, rects: list[pymupdf.Rect],
         joined += piece
         if joined == target:
             groups.append(pending)
-            pending, joined = [], ""
-        elif not target.startswith(joined):
-            groups.extend([r] for r in pending)
             pending, joined = [], ""
     groups.extend([r] for r in pending)
     return groups
@@ -511,6 +523,17 @@ def _parse_signature(spec: str) -> tuple[int, pymupdf.Rect, str]:
 
 def _digits(value: str) -> str:
     return "".join(c for c in value if c.isdigit())
+
+
+def _digit_runs(value: str) -> list[str]:
+    """The digits of each number in value, read through the separators an identifier
+    is written with (555-0112, (905), 12.34) but not through spaces or letters."""
+    return [_digits(m) for m in re.findall(r"\d[\d().\-]*\d|\d", value)]
+
+
+def _is_metadata_stream(doc: pymupdf.Document, xref: int) -> bool:
+    return (doc.xref_get_key(xref, "Type")[1] == "/Metadata"
+            or doc.xref_get_key(xref, "Subtype")[1] == "/XML")
 
 
 # "BI/W 120 ..." with no space is legal: a slash delimits a token as well as whitespace.

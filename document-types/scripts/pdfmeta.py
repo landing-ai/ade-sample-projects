@@ -63,6 +63,7 @@ def remaining(doc: pymupdf.Document) -> list[str]:
 # comment. APP0 (JFIF), APP2 (ICC profile) and APP14 (Adobe colour transform) stay: they
 # change how the image renders.
 _DROP = {0xE1, 0xED, 0xFE}
+_REF = re.compile(r"(\d+)\s+\d+\s+R")
 
 
 def _jpeg_bytes(doc: pymupdf.Document, xref: int) -> bytes | None:
@@ -74,6 +75,9 @@ def _jpeg_bytes(doc: pymupdf.Document, xref: int) -> bytes | None:
     kind, value = doc.xref_get_key(xref, "Filter")
     if kind == "null":
         return None
+    # The filter, or any entry of a filter array, may be an indirect reference (12 0 R).
+    value = _REF.sub(lambda m: doc.xref_object(int(m.group(1))), value)
+    value = _REF.sub(lambda m: doc.xref_object(int(m.group(1))), value)
     filters = re.findall(r"/[^\s/\[\]]+", value)
     if filters == ["/DCTDecode"]:
         return doc.xref_stream_raw(xref)
