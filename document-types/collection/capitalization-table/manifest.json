@@ -1,0 +1,26 @@
+{
+  "slug": "capitalization-table",
+  "title": "Capitalization Table",
+  "source": {
+    "file": "cooley-sample-pro-forma-cap-table.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://www.cooleygo.com/wp-content/uploads/2014/06/Sample-Pre-and-Post-Cap-Table-w-Pricing-Worksheet.pdf",
+      "publisher": "Cooley LLP (Cooley GO)",
+      "title": "Sample Cap Table (Pro Forma): Acme, Inc. Capitalization Table (Pro-Forma)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "A sample published by the law firm Cooley LLP on its Cooley GO startup resource site for general use, linked from https://www.cooleygo.com/documents/sample-cap-table-pro-forma/. Downloaded by script. All holders are specimen placeholders (Investor #1-#5, Founder #1-#2, New Investor) of a fictional Acme, Inc., so no content was redacted. The PDF's metadata (firm name as author, Excel as creator, creation date) and its tagged-PDF structure tree were cleared; no personal data was in it. Cooley also publishes the same workbook as a legacy .xls with two more sheets; this PDF is Cooley's own print of the Post-$ Pro Forma sheet only."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "company_name", "label": "Company", "occurrence": 0 },
+    { "path": "holders[0].series_b_shares", "label": "New investor Series B shares", "occurrence": 0 },
+    { "path": "option_pool_increase_shares", "label": "Option pool increase", "occurrence": 0 },
+    { "path": "totals.total_series_a_shares", "label": "Total Series A shares", "occurrence": 0 },
+    { "path": "totals.fully_diluted_shares", "label": "Fully diluted shares", "occurrence": 0 }
+  ],
+  "notes": "The request named only the document and its URL. The operator chose Cooley's 1-page PDF print over the legacy .xls workbook it was printed from: ADE accepts no .xls (v1 or v2), and the PDF needs no change to the shared tooling. The featured fields tell the story of the Series B round the table models: the new investor's Series B shares, the option pool top-up that comes with the round, the Series A already outstanding, and the fully diluted share count after both. All five read ok in inspect_fields.py. No person is featured; every holder is a placeholder. Dash cells (zero holdings) extract correctly as 0 but cannot be featured, since a dash does not contain the value 0."
+}
