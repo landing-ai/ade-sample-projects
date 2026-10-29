@@ -1,0 +1,149 @@
+{
+  "type": "object",
+  "title": "Certificate of Insurance (ACORD 25 Certificate of Liability Insurance)",
+  "properties": {
+    "certificate_date": {
+      "type": "string",
+      "description": "Date the certificate was issued, from the DATE (MM/DD/YYYY) box at the top right, exactly as printed."
+    },
+    "certificate_number": {
+      "type": ["string", "null"],
+      "description": "Certificate number printed beside CERTIFICATE NUMBER above the coverages grid, or null if blank."
+    },
+    "form_edition": {
+      "type": ["string", "null"],
+      "description": "ACORD form number and edition printed in the footer, e.g. ACORD 25 (2016/03)."
+    },
+    "producer": {
+      "type": "object",
+      "description": "The broker or agency that issued the certificate (PRODUCER box).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Producer organization name, including any 'Div of' line, as printed."
+        },
+        "address": {
+          "type": "string",
+          "description": "Producer mailing address as one string: street or PO box, city, state and ZIP."
+        },
+        "contact_name": {
+          "type": ["string", "null"],
+          "description": "Name in the CONTACT NAME box, or null if blank."
+        },
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Number in the PHONE (A/C, No, Ext) box, or null if blank."
+        },
+        "fax": {
+          "type": ["string", "null"],
+          "description": "Number in the FAX (A/C, No) box, or null if blank."
+        },
+        "email": {
+          "type": ["string", "null"],
+          "description": "Address in the E-MAIL ADDRESS box, or null if blank."
+        }
+      }
+    },
+    "insured": {
+      "type": "object",
+      "description": "The named insured (INSURED box).",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Named insured organization or person."
+        },
+        "address": {
+          "type": "string",
+          "description": "Insured mailing address as one string: street, city, state and ZIP."
+        }
+      }
+    },
+    "insurers": {
+      "type": "array",
+      "description": "Insurers listed under INSURER(S) AFFORDING COVERAGE. Include only lettered rows that name an insurer; skip blank rows.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "letter": {
+            "type": "string",
+            "description": "Insurer letter, A to F."
+          },
+          "name": {
+            "type": "string",
+            "description": "Insurer company name."
+          },
+          "naic_number": {
+            "type": ["string", "null"],
+            "description": "NAIC number printed in the NAIC # column for this insurer, or null if blank."
+          }
+        }
+      }
+    },
+    "coverages": {
+      "type": "array",
+      "description": "One entry per coverage row in the COVERAGES grid that carries a policy number. Skip coverage rows (auto, umbrella, workers compensation) that are blank.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "coverage_type": {
+            "type": "string",
+            "description": "Type of insurance for the row, e.g. Commercial General Liability, Professional Liability."
+          },
+          "insurer_letter": {
+            "type": ["string", "null"],
+            "description": "Letter in the INSR LTR column for this row."
+          },
+          "policy_number": {
+            "type": "string",
+            "description": "Policy number for this row."
+          },
+          "effective_date": {
+            "type": "string",
+            "description": "POLICY EFF date for this row, exactly as printed."
+          },
+          "expiration_date": {
+            "type": "string",
+            "description": "POLICY EXP date for this row, exactly as printed."
+          },
+          "occurrence_basis": {
+            "type": ["string", "null"],
+            "description": "For general liability: 'occurrence' or 'claims-made' according to the checked box; null if neither or not applicable."
+          },
+          "aggregate_limit_applies_per": {
+            "type": ["string", "null"],
+            "description": "For general liability: which GEN'L AGGREGATE LIMIT APPLIES PER box is checked (policy, project or location); null if none or not applicable."
+          },
+          "limits": {
+            "type": "array",
+            "description": "Limits printed in the LIMITS column for this row. Include only limits that carry an amount or a word such as EXCLUDED.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Limit label, e.g. EACH OCCURRENCE, GENERAL AGGREGATE, Each Wrongful Act."
+                },
+                "amount": {
+                  "type": "string",
+                  "description": "Amount or wording printed for the limit, exactly as printed, e.g. 1,000,000 or EXCLUDED."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "description_of_operations": {
+      "type": ["string", "null"],
+      "description": "Full text of the DESCRIPTION OF OPERATIONS / LOCATIONS / VEHICLES box, or null if blank."
+    },
+    "certificate_holder": {
+      "type": ["string", "null"],
+      "description": "Name and address in the CERTIFICATE HOLDER box as one string, or null if the box is blank."
+    },
+    "authorized_representative_signed": {
+      "type": "boolean",
+      "description": "True if the AUTHORIZED REPRESENTATIVE box carries a signature."
+    }
+  }
+}

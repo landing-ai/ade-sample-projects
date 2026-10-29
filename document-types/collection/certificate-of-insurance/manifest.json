@@ -1,0 +1,46 @@
+{
+  "slug": "certificate-of-insurance",
+  "title": "Certificate of Insurance",
+  "source": {
+    "file": "Sample_COI_2026-27.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.abca.org/common/Uploaded%20files/Membership%20Documents/Sample_COI_2026-27.pdf",
+      "publisher": "American Baseball Coaches Association (ABCA); certificate issued by its broker, Sadler Insurance, Div of Specialty Program Group, LLC",
+      "title": "ABCA Proof of Coverage Sample Certificate 2026-27 (ACORD 25 Certificate of Liability Insurance)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Published by the American Baseball Coaches Association as the sample certificate for its member liability coverage, linked from https://www.abca.org/insurance, and watermarked SAMPLE. Downloaded by script from the publisher's own site. The producer box names a broker contact with phone, fax and email, and the authorized-representative box carries a handwritten signature. These are kept as the publisher filed them, by the operator's decision, and none of them is featured. Used as published, with no redaction."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "insurers[0].name",
+      "label": "Insurer A",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[0].policy_number",
+      "label": "General liability policy number",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[0].effective_date",
+      "label": "Policy effective date",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[0].expiration_date",
+      "label": "Policy expiration date",
+      "occurrence": 0
+    },
+    {
+      "path": "coverages[0].limits[0].amount",
+      "label": "Each occurrence limit",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the general liability policy on page 1 as one story: which insurer writes it, the policy number, the policy period and the each-occurrence limit. Read together, they answer what a certificate holder opens a COI to check: who covers the insured, under which policy, from when to when, and for how much. The request had no fields key. Its notes suggested insurer A name and NAIC number, CGL policy number, effective and expiration dates, and the each-occurrence and general aggregate limits, as suggestions only. All seven extract correctly and ground ok on page 1. Five shipped. The NAIC number and the general aggregate limit were left out to stay within five fields. The policy number and the two dates ground to the merged table cells that span the whole seven-line CGL row, so their boxes are tall but sit on the right row. The insurer box includes the 'INSURER A :' label. The contact name, phone, fax, email and signature are kept as the publisher filed them, by the operator's decision, and are not featured. The parse dropped the producer phone number: the PHONE cell came back as a label alone, and producer.phone extracted as an empty string. The pale SAMPLE watermark that crosses the umbrella row made the parse read the umbrella CLAIMS-MADE box as checked, although that row is otherwise blank."
+}
