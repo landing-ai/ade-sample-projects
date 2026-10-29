@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "insurers[0].name",
+      "label": "Insurer A",
+      "value": "Sirius American Insurance Company",
+      "page": 1,
+      "box": {
+        "xmin": 0.50152,
+        "ymin": 0.21227,
+        "xmax": 0.88297,
+        "ymax": 0.22755
+      },
+      "range": {
+        "end": 1426,
+        "start": 1381
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "insurers-0-name.png"
+    },
+    {
+      "path": "coverages[0].policy_number",
+      "label": "General liability policy number",
+      "value": "PLH03GL00001432",
+      "page": 1,
+      "box": {
+        "xmin": 0.34759,
+        "ymin": 0.39438,
+        "xmax": 0.54166,
+        "ymax": 0.50048
+      },
+      "range": {
+        "end": 2866,
+        "start": 2851
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-0-policy_number.png"
+    },
+    {
+      "path": "coverages[0].effective_date",
+      "label": "Policy effective date",
+      "value": "09/01/2026",
+      "page": 1,
+      "box": {
+        "xmin": 0.5416,
+        "ymin": 0.39438,
+        "xmax": 0.61829,
+        "ymax": 0.50049
+      },
+      "range": {
+        "end": 2897,
+        "start": 2887
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-0-effective_date.png"
+    },
+    {
+      "path": "coverages[0].expiration_date",
+      "label": "Policy expiration date",
+      "value": "09/01/2027",
+      "page": 1,
+      "box": {
+        "xmin": 0.61829,
+        "ymin": 0.39437,
+        "xmax": 0.69444,
+        "ymax": 0.5005
+      },
+      "range": {
+        "end": 2928,
+        "start": 2918
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-0-expiration_date.png"
+    },
+    {
+      "path": "coverages[0].limits[0].amount",
+      "label": "Each occurrence limit",
+      "value": "$ 1,000,000",
+      "page": 1,
+      "box": {
+        "xmin": 0.84162,
+        "ymin": 0.39435,
+        "xmax": 0.97094,
+        "ymax": 0.40954
+      },
+      "range": {
+        "end": 2972,
+        "start": 2961
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverages-0-limits-0-amount.png"
+    }
+  ]
+}
