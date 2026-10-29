@@ -59,6 +59,13 @@ Everything extracted correctly: all four period columns, all ten adjustment line
 the right management or due-diligence category, dashes read as 0, parenthesized amounts
 as negatives, and the key-findings figures. The extraction output has 92 leaf values.
 
+The printed bridge does not quite reconcile, and the extraction keeps the printed figures
+rather than recomputing them. The TTM due-diligence rows sum to 214,405 against a printed
+total of 214,404, and reported EBITDA plus both adjustment totals comes to 1,654,371
+against a printed adjusted EBITDA of 1,654,372. In 2024, reported EBITDA plus the printed
+management adjustments comes to 1,494,053 against a printed 1,494,054. These one-dollar
+differences are in the source, most likely spreadsheet rounding.
+
 ## Featured fields
 
 All on **page 8** (the "QoE" slide, printed "Page 9"), down the TTM column of the bridge:
