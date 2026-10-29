@@ -1,0 +1,384 @@
+{
+  "type": "object",
+  "description": "SEC Form 10-K annual report: cover page registrant facts, headline financial statements and key company facts",
+  "properties": {
+    "cover_page": {
+      "type": "object",
+      "description": "Facts from the Form 10-K cover page",
+      "properties": {
+        "form_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Report type checked on the cover: 'Annual report' or 'Transition report'"
+        },
+        "fiscal_year_ended": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The fiscal year end date the report covers, as YYYY-MM-DD"
+        },
+        "commission_file_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEC commission file number, as printed"
+        },
+        "registrant_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Exact name of the registrant as specified in its charter"
+        },
+        "state_of_incorporation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "State or other jurisdiction of incorporation or organization"
+        },
+        "irs_employer_identification_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "I.R.S. Employer Identification No., as printed"
+        },
+        "principal_executive_office_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Address of principal executive offices, including zip code"
+        },
+        "telephone_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Registrant's telephone number, including area code"
+        },
+        "trading_symbol": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Trading symbol of the common stock registered under Section 12(b)"
+        },
+        "exchange": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the exchange on which the common stock is registered"
+        },
+        "filer_category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Filer category checked: large accelerated filer, accelerated filer, non-accelerated filer, or smaller reporting company"
+        },
+        "well_known_seasoned_issuer": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the well-known seasoned issuer box is checked Yes"
+        },
+        "shell_company": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "True if the shell company box is checked Yes"
+        },
+        "aggregate_market_value_non_affiliates": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Aggregate market value of voting stock held by non-affiliates, as stated (e.g. '$4.0 trillion')"
+        },
+        "aggregate_market_value_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date as of which the aggregate market value is measured, as YYYY-MM-DD"
+        },
+        "shares_outstanding": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Number of shares of common stock outstanding, as stated on the cover"
+        },
+        "shares_outstanding_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date as of which shares outstanding are stated, as YYYY-MM-DD"
+        }
+      }
+    },
+    "income_statement": {
+      "type": "array",
+      "description": "Consolidated Statements of Income, one entry per fiscal year column, most recent first",
+      "items": {
+        "type": "object",
+        "description": "One fiscal year of the consolidated statement of income",
+        "properties": {
+          "fiscal_year_ended": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Fiscal year end date of this column, as YYYY-MM-DD"
+          },
+          "revenue": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Revenue. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "cost_of_revenue": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Cost of revenue. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "gross_profit": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Gross profit. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "research_and_development": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Research and development expense. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "total_operating_expenses": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Total operating expenses. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "operating_income": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Operating income. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "income_before_income_tax": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Income before income tax. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "income_tax_expense": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Income tax expense. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "net_income": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Net income. In millions of US dollars, as printed (negative if shown in parentheses)."
+          },
+          "diluted_eps": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Diluted net income per share, in US dollars"
+          },
+          "diluted_weighted_average_shares": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Diluted weighted average shares used in per share computation, in millions"
+          }
+        }
+      }
+    },
+    "balance_sheet": {
+      "type": "object",
+      "description": "Consolidated Balance Sheet, most recent fiscal year end column only",
+      "properties": {
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Balance sheet date, as YYYY-MM-DD"
+        },
+        "cash_and_cash_equivalents": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Cash and cash equivalents. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "marketable_securities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Marketable securities. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "accounts_receivable_net": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Accounts receivable, net. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "inventories": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Inventories. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "total_current_assets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total current assets. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "goodwill": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Goodwill. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "total_assets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total assets. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "total_current_liabilities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total current liabilities. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "long_term_debt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Long-term debt. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "total_liabilities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total liabilities. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "retained_earnings": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Retained earnings. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "total_shareholders_equity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total shareholders' equity. In millions of US dollars, as printed (negative if shown in parentheses)."
+        }
+      }
+    },
+    "cash_flow": {
+      "type": "object",
+      "description": "Consolidated Statement of Cash Flows, most recent fiscal year only",
+      "properties": {
+        "net_cash_from_operating_activities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net cash provided by operating activities. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "net_cash_used_in_investing_activities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net cash provided by (used in) investing activities. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "net_cash_used_in_financing_activities": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net cash provided by (used in) financing activities. In millions of US dollars, as printed (negative if shown in parentheses)."
+        },
+        "purchases_of_property_and_equipment": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Purchases related to property and equipment and intangible assets. In millions of US dollars, as printed (negative if shown in parentheses)."
+        }
+      }
+    },
+    "company_facts": {
+      "type": "object",
+      "description": "Key facts from the narrative sections",
+      "properties": {
+        "employee_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Total number of employees at fiscal year end, from the Human Capital section"
+        },
+        "independent_auditor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the independent registered public accounting firm that audited the financial statements"
+        },
+        "reportable_segments": {
+          "type": "array",
+          "description": "Names of the company's reportable segments",
+          "items": {
+            "type": "string",
+            "description": "Segment name"
+          }
+        }
+      }
+    }
+  }
+}

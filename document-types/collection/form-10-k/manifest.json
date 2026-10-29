@@ -1,0 +1,52 @@
+{
+  "slug": "form-10-k",
+  "title": "Form 10-K",
+  "source": {
+    "file": "nvidia-form-10-k.pdf",
+    "pages": 93,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/e361e58a-7483-44f5-bc62-a9080ae6ec72.pdf",
+      "publisher": "NVIDIA Corporation",
+      "title": "NVIDIA Corporation Form 10-K for the fiscal year ended January 25, 2026",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "NVIDIA's annual report on Form 10-K, a mandatory public SEC filing (filed 2026-02-25), in the PDF rendering NVIDIA serves from its investor relations site. Downloaded directly by script; the file is used unmodified, including its EDGAR Online metadata and owner-only permissions flag (no password needed to open). It names the company's executive officers and directors in their official capacities (executive officer table, conformed /s/ signatures, CEO and CFO certifications); these names were kept as published by operator decision. No private individual's personal data appears."
+    }
+  },
+  "feature_page": 51,
+  "fields": [
+    {
+      "path": "income_statement[0].revenue",
+      "label": "Revenue",
+      "occurrence": 0
+    },
+    {
+      "path": "income_statement[0].gross_profit",
+      "label": "Gross profit",
+      "occurrence": 0
+    },
+    {
+      "path": "income_statement[0].operating_income",
+      "label": "Operating income",
+      "occurrence": 0
+    },
+    {
+      "path": "income_statement[0].net_income",
+      "label": "Net income",
+      "occurrence": 0
+    },
+    {
+      "path": "income_statement[0].diluted_eps",
+      "label": "Diluted EPS",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the fiscal 2026 column of the Consolidated Statements of Income on page 51 (printed page 51), read top to bottom: revenue, gross profit, operating income, net income and diluted earnings per share, so the overlay walks one year's income statement from the top line to the bottom line. The page also carries the two prior years, which the schema extracts as further array entries; picking the current-year column shows the model choosing the right column of a three-year table. Fiscal-year dates on this page ground as OFF (the header reads 'Jan 25, 2026' against a normalized 2026-01-25), so none is featured. The request named no feature page or fields. By operator decision the officers' and directors' names in the filing were kept as published, and only impersonal fields are featured. preview_pages shows the cover page, the income statement, the balance sheet and the cash flow statement in place of the default sampling, which picked two pages of running prose.",
+  "preview_pages": [
+    1,
+    51,
+    53,
+    55
+  ]
+}
