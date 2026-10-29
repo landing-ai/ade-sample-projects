@@ -1,0 +1,108 @@
+{
+  "model": "pro",
+  "feature_page": 6,
+  "page_count": 39,
+  "preview_pages": [
+    1,
+    6,
+    14,
+    21
+  ],
+  "fields": [
+    {
+      "path": "report.client",
+      "label": "Client",
+      "value": "City of San Jose",
+      "page": 6,
+      "box": {
+        "xmin": 0.11374,
+        "ymin": 0.19021,
+        "xmax": 0.88838,
+        "ymax": 0.20665
+      },
+      "range": {
+        "end": 6698,
+        "start": 6581
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-client.png"
+    },
+    {
+      "path": "property.acreage",
+      "label": "Property size (acres)",
+      "value": 3.6,
+      "page": 6,
+      "box": {
+        "xmin": 0.11368,
+        "ymin": 0.20811,
+        "xmax": 0.88784,
+        "ymax": 0.22458
+      },
+      "range": {
+        "end": 6810,
+        "start": 6699
+      },
+      "occurrence": 3,
+      "matched": true,
+      "image": "property-acreage.png"
+    },
+    {
+      "path": "report.astm_standard",
+      "label": "ASTM standard",
+      "value": "E 1527-21",
+      "page": 6,
+      "box": {
+        "xmin": 0.11403,
+        "ymin": 0.29685,
+        "xmax": 0.88679,
+        "ymax": 0.31331
+      },
+      "range": {
+        "end": 7379,
+        "start": 7270
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-astm_standard.png"
+    },
+    {
+      "path": "component_dates.visual_inspection",
+      "label": "Site reconnaissance date",
+      "value": "May 12, 2025",
+      "page": 6,
+      "box": {
+        "xmin": 0.56625,
+        "ymin": 0.68747,
+        "xmax": 0.88282,
+        "ymax": 0.71549
+      },
+      "range": {
+        "end": 8961,
+        "start": 8949
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_dates-visual_inspection.png"
+    },
+    {
+      "path": "component_dates.ep_declaration",
+      "label": "EP declaration date",
+      "value": "November 8, 2025",
+      "page": 6,
+      "box": {
+        "xmin": 0.56624,
+        "ymin": 0.71549,
+        "xmax": 0.88288,
+        "ymax": 0.74416
+      },
+      "range": {
+        "end": 9046,
+        "start": 9030
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_dates-ep_declaration.png"
+    }
+  ]
+}

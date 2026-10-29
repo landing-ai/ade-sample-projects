@@ -1,0 +1,27 @@
+{
+  "slug": "phase-i-environmental-site-assessment",
+  "title": "Phase I Environmental Site Assessment",
+  "source": {
+    "file": "orange-lot-phase-i-esa.pdf",
+    "pages": 39,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.flysanjose.com/sites/default/files/users/user143716/Orange%20Lot%20ESA%20Report.pdf",
+      "publisher": "Kimley-Horn and Associates, Inc. (environmental consultant); posted by Norman Y. Mineta San José International Airport",
+      "title": "Phase I Environmental Site Assessment, San Jose Airport Orange Lot, Martin Avenue and De La Cruz Boulevard, Santa Clara, California (Kimley-Horn Project No. 097042828, June 30, 2025)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Public agency record: a consultant's report prepared for the City of San Jose's airport and posted by the airport on its own website (flysanjose.com). No linking page was found. Downloaded by script. The file is the report body only (39 pages; the appendices it lists were not posted), and all 39 pages are kept. Published unredacted, as the publisher filed it, by the operator's decision of 2026-10-28: the report names the Environmental Professional who conducted it (and carries her signature on the declaration page) and one airport staff member interviewed in her professional role. Both are professional details in a public agency record. The PDF's hidden /Info and XMP metadata, which named the Environmental Professional as author, was cleared by the operator's decision; the visible pages are unchanged from the file as filed. The assessor's parcel number is a public parcel identifier."
+    }
+  },
+  "feature_page": 6,
+  "preview_pages": [1, 6, 14, 21],
+  "fields": [
+    { "path": "report.client", "label": "Client", "occurrence": 0 },
+    { "path": "property.acreage", "label": "Property size (acres)", "occurrence": 3 },
+    { "path": "report.astm_standard", "label": "ASTM standard", "occurrence": 0 },
+    { "path": "component_dates.visual_inspection", "label": "Site reconnaissance date", "occurrence": 0 },
+    { "path": "component_dates.ep_declaration", "label": "EP declaration date", "occurrence": 0 }
+  ],
+  "notes": "Features the executive summary on page 6 (printed page 1), as the request suggested: who commissioned the assessment, how much land it covers, the ASTM standard it follows, and two of the Table 1.1 component dates that govern the report's 180-day viability window, so the overlay reads as the engagement and its clock. All five suggested fields grounded ok on page 6 and are featured with the suggested labels; the site reconnaissance date is the Table 1.1 'Visual Inspection' row, which is the same date as the reconnaissance table on page 13. No person is featured: the Environmental Professional's name also grounds ok on page 6 but was left off. Two quirks of the source are kept as printed: Table 1.1 gives the EP declaration date as November 8, 2025, which is the viability date on the cover and later than the June 30, 2025 issue date; and page 7 (Table 1.2) carries a copy-paste paragraph citing ASTM E1527-13 and an unrelated Mission Viejo address. Extraction reported E 1527-21 from the executive summary, not the stray E1527-13."
+}
