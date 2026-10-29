@@ -1,0 +1,125 @@
+{
+  "description": "Schema for a letter of intent to acquire a business or its assets, as used in M&A and utility acquisition files. Captures the deal points of the letter itself and summarizes any definitive purchase agreements bundled with it.",
+  "type": "object",
+  "properties": {
+    "letter_of_intent": {
+      "description": "The letter of intent itself: its date, parties and deal points.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "Document title as printed (e.g., Letter of Intent).",
+          "type": "string"
+        },
+        "letter_date": {
+          "description": "Date of the letter of intent as printed at the top, in YYYY-MM-DD format.",
+          "type": "string"
+        },
+        "subject": {
+          "description": "The Re: or subject line describing the proposed transaction.",
+          "type": "string"
+        },
+        "buyer_name": {
+          "description": "Legal name of the proposed buyer (the party issuing the letter).",
+          "type": "string"
+        },
+        "buyer_state_of_organization": {
+          "description": "State under whose laws the buyer is organized (e.g., Missouri).",
+          "type": "string"
+        },
+        "target_name": {
+          "description": "Name of the business or seller whose assets are to be acquired.",
+          "type": "string"
+        },
+        "target_business_description": {
+          "description": "What the target business is or does (e.g., regulated sewer utility).",
+          "type": "string"
+        },
+        "target_location": {
+          "description": "County and state where the target operates.",
+          "type": "string"
+        },
+        "transaction_structure": {
+          "description": "Whether the deal is an asset purchase or a stock/equity purchase.",
+          "type": "string",
+          "enum": ["asset purchase", "stock purchase", "merger", "other"]
+        },
+        "purchase_price": {
+          "description": "Proposed purchase price in US dollars, as a number.",
+          "type": "number"
+        },
+        "purchase_price_basis": {
+          "description": "How the purchase price was determined or may be adjusted (e.g., estimate of net book value, subject to adjustment).",
+          "type": "string"
+        },
+        "closing_date_terms": {
+          "description": "How the closing date is set (a fixed date, or e.g. a date mutually agreed by the parties).",
+          "type": "string"
+        },
+        "assets_included": {
+          "description": "Categories of assets the buyer is to acquire, one entry per listed category.",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "excluded_assets": {
+          "description": "Assets expressly excluded from the sale (e.g., cash and bank deposits, pre-closing receivables).",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "conditions_of_sale": {
+          "description": "Conditions that must be satisfied before closing, one entry per condition.",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "assumes_seller_debts": {
+          "description": "True if the buyer agrees to assume the seller's debts and obligations; false if it expressly does not.",
+          "type": "boolean"
+        },
+        "due_diligence_period_days": {
+          "description": "Number of days the buyer has to complete its investigation and evaluation before the letter expires.",
+          "type": "integer"
+        },
+        "exclusivity_terms": {
+          "description": "Summary of any no-shop or exclusivity commitment by the seller and how long it lasts.",
+          "type": "string"
+        },
+        "confidentiality_terms": {
+          "description": "Summary of the confidentiality obligation.",
+          "type": "string"
+        },
+        "binding_sections": {
+          "description": "Section numbers of the letter stated to be binding; the rest of the letter is non-binding.",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "acceptance_signatories": {
+          "description": "Organizations that signed or accepted the letter, with the signer's title.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "organization": { "description": "Organization signing.", "type": "string" },
+              "signer_title": { "description": "Title of the person signing for the organization.", "type": "string" }
+            }
+          }
+        }
+      },
+      "required": ["letter_date", "buyer_name", "target_name", "purchase_price"]
+    },
+    "related_agreements": {
+      "description": "Definitive purchase agreements or other agreements included in the same file, one entry per agreement.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agreement_title": { "description": "Title of the agreement as printed.", "type": "string" },
+          "buyer": { "description": "Buyer named in the agreement.", "type": "string" },
+          "seller": { "description": "Seller named in the agreement.", "type": "string" },
+          "agreement_date": { "description": "Date the agreement is made as of, in YYYY-MM-DD format if legible.", "type": "string" },
+          "purchase_price": { "description": "Purchase price stated in the agreement, in US dollars.", "type": "number" },
+          "governing_law_state": { "description": "State whose law governs the agreement.", "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["letter_of_intent"]
+}
