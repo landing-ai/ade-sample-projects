@@ -1,0 +1,218 @@
+{
+  "type": "object",
+  "description": "A revolving credit agreement between a borrower (issuer) and one or more lenders, with an administrative agent",
+  "properties": {
+    "agreement_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The agreement's title as printed on the cover, e.g. 'Revolving Credit Agreement'"
+    },
+    "agreement_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date the agreement is made 'as of', from the opening paragraph, exactly as printed (e.g. \"April 20, 2020\")"
+    },
+    "copy_label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Any version label on the cover, such as 'Execution Copy'; null if none"
+    },
+    "borrower": {
+      "type": "object",
+      "description": "The borrowing party (called the Issuer in some agreements)",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The borrower's legal name, from the opening paragraph"
+        },
+        "entity_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The kind of entity the opening paragraph says the borrower is, e.g. 'independent special district'"
+        },
+        "defined_term": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The defined term the agreement uses for the borrower, e.g. 'Issuer' or 'Borrower'"
+        },
+        "enabling_law": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The statute or act that governs or creates the borrower, as cited in the recitals"
+        }
+      }
+    },
+    "lenders": {
+      "type": "array",
+      "description": "Each lender party named in the opening paragraph",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The lender's legal name"
+          },
+          "defined_term": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The defined term the agreement uses for this lender, e.g. 'Bank' or 'STI'"
+          }
+        }
+      }
+    },
+    "agent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The name of the party acting as agent for the lenders, from the opening paragraph"
+    },
+    "notes": {
+      "type": "array",
+      "description": "The promissory notes that evidence borrowings under the agreement",
+      "items": {
+        "type": "object",
+        "properties": {
+          "series": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The note series designation, e.g. '2020A'"
+          },
+          "full_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The note's full name as defined in the agreement"
+          },
+          "tax_status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "'tax-exempt' or 'taxable', as the note's name states"
+          }
+        }
+      }
+    },
+    "maximum_commitment_amount": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The initial Maximum Commitment Amount (the facility size), in USD"
+    },
+    "applicable_margin_basis_points": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The Applicable Margin, in basis points (46 for 46 basis points)"
+    },
+    "benchmark_rate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The name of the floating benchmark rate interest is based on, e.g. 'LIBOR Rate'"
+    },
+    "unused_commitment_fee_basis_points": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The unused commitment fee rate, in basis points"
+    },
+    "unused_fee_utilization_threshold_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The average utilization, as a percent of the Maximum Commitment Amount, below which the unused commitment fee applies"
+    },
+    "default_rate_spread_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The increase over the otherwise applicable rate that applies after an Event of Default, in percent per annum"
+    },
+    "maximum_lawful_rate_percent": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The fixed percentage cap in the Maximum Lawful Rate definition"
+    },
+    "minimum_advance_amount": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The minimum principal amount of each Advance, in USD"
+    },
+    "commitment_termination": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "How the Commitment Termination Date is determined, in a short phrase as defined"
+    },
+    "prior_credit_agreement": {
+      "type": "object",
+      "description": "The earlier credit agreement this one refinances, if defined",
+      "properties": {
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The prior agreement's name and parties, as defined"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The prior agreement's date, exactly as printed"
+        }
+      }
+    },
+    "governing_law": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The law that governs the agreement, from the governing law section"
+    },
+    "venue": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The court where the parties agree venue lies"
+    }
+  }
+}
