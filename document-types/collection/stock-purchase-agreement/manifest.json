@@ -1,0 +1,27 @@
+{
+  "slug": "stock-purchase-agreement",
+  "title": "Stock Purchase Agreement",
+  "source": {
+    "file": "stock-purchase-agreement-hydro-star-nuon.pdf",
+    "pages": 78,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://psc.ky.gov/PSCSCF/2005%20cases/2005-00323/NHW_App_080205.pdf",
+      "publisher": "Kentucky Public Service Commission (joint application filed by Nuon Global Solutions USA B.V. and Hydro Star, LLC)",
+      "title": "Joint Application for approval of the transfer of stock, Case No. 2005-00323, with the Stock Purchase Agreement dated May 14, 2005 as Exhibit 3",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "A public regulatory filing, downloaded by script from the Kentucky Public Service Commission's official case-file server for Case No. 2005-00323. The joint application asks the Commission to approve the transfer of stock under the enclosed, executed Stock Purchase Agreement between Hydro Star, LLC and Nuon Global Solutions USA B.V. All 78 pages are published as filed, at the operator's request. By the operator's explicit decision on 2026-10-28, the personal data in the filing was not replaced. It stays as filed: the names of corporate officers, attorneys and contacts, their wet signatures, phone and fax numbers, notary seals and a personnel table. This departs from the collection's usual rule that personal data is replaced before parsing. Every person named appears in a professional or corporate capacity in a document the publisher distributes publicly. Only the PDF's hidden /Info and XMP metadata (Acrobat Paper Capture creator and creation dates) was cleared; the pages are exactly as filed."
+    }
+  },
+  "feature_page": 32,
+  "fields": [
+    { "path": "seller.name", "label": "Seller", "occurrence": 0 },
+    { "path": "buyer.name", "label": "Buyer", "occurrence": 0 },
+    { "path": "company.name", "label": "Company whose stock is sold", "occurrence": 0 },
+    { "path": "stock.number_of_shares", "label": "Shares sold", "occurrence": 0 },
+    { "path": "purchase_price", "label": "Purchase price", "occurrence": 1 }
+  ],
+  "preview_pages": [31, 32, 33, 63],
+  "notes": "The request suggested page 32 and five fields, as suggestions only: agreement date, seller, buyer, purchase price and closing location. Page 32, the SPA's first page, carries no personal data. Three of the five ship: seller, buyer and purchase price. The purchase price is pinned to occurrence 1, the Section 1.02 sentence on page 32; occurrence 0 is the application's summary on page 6. The agreement date grounds OFF: extraction returns 2005-05-14, but the page prints 'this 14th day of May, 2005', so the crop would not match the value shown beside it. The closing location grounds OFF too. It runs across two lines (the law firm's name, then its address), and neither line box contains the whole value. In their place are the company whose stock is sold and the number of shares, both ok on page 32 from the recitals. The overlay reads as the deal: who sells, who buys, what company, how many shares, and for how much. No person is featured. By the operator's explicit decision, the filing is published unredacted, with the officers', attorneys' and contacts' names, signatures and phone numbers left as filed; only the PDF's hidden metadata was cleared. preview_pages shows the SPA cover, its first two pages and the termination article instead of pages from the application letters, which carry most of the personal data."
+}
