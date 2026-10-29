@@ -22,6 +22,12 @@ wholly inside the value's box is cut out of the content stream, and nothing else
 That also takes anything stacked under the value inside the same box, such as an older
 value covered by a white bar.
 
+Other producers set a whole *line* of values as one compound path -- on a Form 5500 the
+e-signature notice, the date and the signer's name are a single path -- so no path lies
+inside the name's box and nothing is found. `--split-compound` (which implies
+`--no-fill`) matches and cuts at the level of subpaths, each `m` or `re` beginning one:
+the glyphs inside the box come out of the compound path, and its other glyphs stay.
+
 `--rules` is the same JSON as `redact.py`, and the same warning applies: it pairs every
 original with its replacement, so it is the personal data in plain text. Keep it OUTSIDE
 the repo.
@@ -174,19 +180,27 @@ _CONSTRUCT = {b"m", b"l", b"c", b"v", b"y", b"re", b"h"}
 _PAINT = {b"S", b"s", b"f", b"F", b"f*", b"B", b"B*", b"b", b"b*"}
 
 
-def strip_paths(page: pymupdf.Page, boxes: list[pymupdf.Rect]) -> int:
-    """Cut every painted path lying wholly inside one of `boxes` out of the page's
-    content stream. Returns how many were cut. Clipping paths are never touched."""
+def _painted_paths(page: pymupdf.Page) -> tuple[int, bytes, list[dict]]:
+    """Parse the page's content stream into its painted paths. Each is
+    {"span": (start, end) of its bytes, "subs": [(start, end, bbox in PDF points)]},
+    one sub per subpath (each `m` or `re` begins one). Clipping paths are skipped."""
     page.clean_contents(sanitize=False)
     xref = page.get_contents()[0]
     stream = page.parent.xref_stream(xref)
     if re.search(rb"(^|\s)BI(\s|$)", stream):
-        sys.exit("--no-fill cannot parse a page with inline images")
+        sys.exit("cannot parse paths on a page with inline images")
     to_page = page.transformation_matrix
-    # Bezier control points can sit just outside the ink they draw.
-    boxes = [pymupdf.Rect(b.x0 - 1, b.y0 - 1, b.x1 + 1, b.y1 + 1) for b in boxes]
     ctm, stack, operands = pymupdf.Matrix(1, 0, 0, 1, 0, 0), [], []
-    points, start, cuts, op_start = [], None, [], 0
+    subs, start, op_start, paths = [], None, 0, []
+
+    def close_sub(end):
+        if subs and subs[-1][1] is None:
+            s0, _, pts = subs[-1]
+            bbox = pymupdf.Rect(pts[0], pts[0]) if pts else None
+            for pt in pts[1:]:
+                bbox |= pt
+            subs[-1] = (s0, end, bbox)
+
     for tok in _TOKEN.finditer(stream):
         t = tok.group()
         if t[:1] in b"%":
@@ -202,6 +216,7 @@ def strip_paths(page: pymupdf.Page, boxes: list[pymupdf.Rect]) -> int:
                 nums.append(float(o))
             except ValueError:
                 pass
+        here = op_start if operands else tok.start()
         if t == b"q":
             stack.append(ctm)
         elif t == b"Q":
@@ -210,25 +225,54 @@ def strip_paths(page: pymupdf.Page, boxes: list[pymupdf.Rect]) -> int:
             ctm = pymupdf.Matrix(*nums) * ctm
         elif t in _CONSTRUCT:
             if start is None:
-                start = op_start if operands else tok.start()
+                start = here
+            if t in (b"m", b"re") or not subs or subs[-1][1] is not None:
+                close_sub(here)
+                subs.append((here, None, []))
             m = ctm * to_page
+            pts = subs[-1][2]
             if t == b"re" and len(nums) == 4:
                 x, y, w, h = nums
-                points += [pymupdf.Point(x, y) * m, pymupdf.Point(x + w, y + h) * m]
+                pts += [pymupdf.Point(x, y) * m, pymupdf.Point(x + w, y + h) * m]
             else:
-                points += [pymupdf.Point(nums[i], nums[i + 1]) * m
-                           for i in range(0, len(nums) - 1, 2)]
+                pts += [pymupdf.Point(nums[i], nums[i + 1]) * m
+                        for i in range(0, len(nums) - 1, 2)]
         elif t in _PAINT or t == b"n":
-            if t != b"n" and start is not None and points:
-                bbox = pymupdf.Rect(points[0], points[0])
-                for pt in points[1:]:
-                    bbox |= pt
-                if any(b.contains(bbox) for b in boxes):
-                    cuts.append((start, tok.end()))
-            points, start = [], None
-        elif t in (b"W", b"W*"):
-            pass
+            close_sub(here)
+            if t != b"n" and start is not None:
+                kept = [x for x in subs if x[2] is not None]
+                if kept:
+                    paths.append({"span": (start, tok.end()), "subs": kept})
+            subs, start = [], None
         operands = []
+    return xref, stream, paths
+
+
+def subpath_rects(page: pymupdf.Page) -> list[pymupdf.Rect]:
+    """Every subpath of every painted path, as a rect in PDF points. Some producers set
+    a whole line -- several values -- as one compound path; its subpaths are the glyphs."""
+    return [b for p in _painted_paths(page)[2] for _, _, b in p["subs"]]
+
+
+def strip_paths(page: pymupdf.Page, boxes: list[pymupdf.Rect], split: bool = False) -> int:
+    """Cut every painted path lying wholly inside one of `boxes` out of the page's
+    content stream. With `split`, cut individual subpaths instead, so the glyphs of one
+    value come out of a compound path that also draws its neighbours. Returns how many
+    paths or subpaths were cut. Clipping paths are never touched."""
+    xref, stream, paths = _painted_paths(page)
+    # Bezier control points can sit just outside the ink they draw.
+    boxes = [pymupdf.Rect(b.x0 - 1, b.y0 - 1, b.x1 + 1, b.y1 + 1) for b in boxes]
+    inside = lambda r: any(b.contains(r) for b in boxes)  # noqa: E731
+    cuts = []
+    for p in paths:
+        whole = p["subs"][0][2]
+        for _, _, r in p["subs"][1:]:
+            whole = whole | r
+        if inside(whole):
+            cuts.append(p["span"])
+        elif split:
+            cuts += [(a, b) for a, b, r in p["subs"] if inside(r)]
+    cuts.sort()
     out, last = bytearray(), 0
     for a, b in cuts:
         out += stream[last:a]
@@ -252,7 +296,13 @@ def main() -> None:
     parser.add_argument("--no-fill", action="store_true",
                         help="Remove the matched paths without painting a white box, "
                              "so a security pattern behind the value stays intact.")
+    parser.add_argument("--split-compound", action="store_true",
+                        help="Match and cut glyphs at subpath level, for producers that "
+                             "set a whole line of values as one compound path. Implies "
+                             "--no-fill.")
     args = parser.parse_args()
+    if args.split_compound:
+        args.no_fill = True
 
     # A rule's value is the replacement, or {"with": ..., "font": ..., "color": ...}
     # to force a PyMuPDF base-14 font -- "hebi" for a bold italic link, which density
@@ -279,7 +329,8 @@ def main() -> None:
 
     for page in doc:
         lines = ocr_lines(page)
-        drawings = [d["rect"] for d in page.get_drawings()]
+        drawings = (subpath_rects(page) if args.split_compound
+                    else [d["rect"] for d in page.get_drawings()])
         taken: list[pymupdf.Rect] = []
         pending = []
         for original in ordered:
@@ -323,7 +374,7 @@ def main() -> None:
                     counts[original] += 1
         if args.no_fill:
             if taken:
-                print(f"  page {page.number + 1}: cut {strip_paths(page, taken)} path(s)")
+                print(f"  page {page.number + 1}: cut {strip_paths(page, taken, args.split_compound)} path(s)")
         else:
             page.apply_redactions(images=pymupdf.PDF_REDACT_IMAGE_NONE,
                                   graphics=pymupdf.PDF_REDACT_LINE_ART_REMOVE_IF_COVERED,
