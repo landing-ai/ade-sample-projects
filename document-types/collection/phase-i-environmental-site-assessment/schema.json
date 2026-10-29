@@ -1,0 +1,234 @@
+{
+  "type": "object",
+  "title": "Phase I Environmental Site Assessment",
+  "description": "A Phase I Environmental Site Assessment (ESA) report under ASTM E1527, as used by lenders, buyers, property owners and their counsel in real estate due diligence: the property assessed, who assessed it and when, the dates that govern the report's viability, the regulatory database search, nearby release sites, and the environmental professional's findings.",
+  "properties": {
+    "report": {
+      "type": "object",
+      "description": "Who prepared the report, for whom, and when.",
+      "properties": {
+        "site_name": {
+          "type": "string",
+          "description": "Name of the assessed site as printed on the cover."
+        },
+        "site_address": {
+          "type": "string",
+          "description": "Location or street address of the assessed site, including city, state and ZIP code."
+        },
+        "prepared_for": {
+          "type": "string",
+          "description": "The organization named under 'Prepared for' on the cover."
+        },
+        "client": {
+          "type": "string",
+          "description": "The organization the executive summary says retained the consultant (the 'Client')."
+        },
+        "consultant": {
+          "type": "string",
+          "description": "The environmental consulting firm that prepared the report."
+        },
+        "consultant_project_number": {
+          "type": ["string", "null"],
+          "description": "The consultant's project number for this assessment."
+        },
+        "date_issued": {
+          "type": "string",
+          "description": "Date the report was issued, from the cover."
+        },
+        "viability_date": {
+          "type": ["string", "null"],
+          "description": "Date through which the report is presumed viable, from the cover."
+        },
+        "astm_standard": {
+          "type": "string",
+          "description": "The ASTM standard practice the assessment was performed under, as cited in the executive summary, e.g. 'E 1527-21'."
+        },
+        "environmental_professional": {
+          "type": ["string", "null"],
+          "description": "Name of the Environmental Professional under whose supervision the assessment was conducted."
+        }
+      },
+      "required": ["site_name", "site_address", "prepared_for", "client", "consultant", "date_issued", "astm_standard"]
+    },
+    "property": {
+      "type": "object",
+      "description": "The subject property and its physical setting.",
+      "properties": {
+        "apn": {
+          "type": ["string", "null"],
+          "description": "Assessor's parcel number (APN) of the subject property or its parent parcel."
+        },
+        "acreage": {
+          "type": ["number", "null"],
+          "description": "Size of the subject property in acres."
+        },
+        "parent_parcel_acreage": {
+          "type": ["number", "null"],
+          "description": "Size in acres of the larger parent parcel, when the subject property is a portion of one."
+        },
+        "current_use": {
+          "type": ["string", "null"],
+          "description": "Current use of the subject property."
+        },
+        "site_elevation": {
+          "type": ["string", "null"],
+          "description": "Site elevation as stated in the physical setting section, with units."
+        },
+        "fema_flood_panel": {
+          "type": ["string", "null"],
+          "description": "FEMA flood insurance rate map panel number for the subject property."
+        },
+        "earliest_record_year": {
+          "type": ["integer", "null"],
+          "description": "Earliest year back to which reviewed records documented the use of the property, as stated in the executive summary."
+        },
+        "first_developed_use_year": {
+          "type": ["integer", "null"],
+          "description": "Year of the property's first developed use, as stated in the executive summary."
+        }
+      }
+    },
+    "component_dates": {
+      "type": "object",
+      "description": "The dates of the ASTM E1527-21 Section 4.6 components, from the executive summary's component dates table. These govern the report's viability.",
+      "properties": {
+        "interviews": {
+          "type": ["string", "null"],
+          "description": "Date of the interviews component."
+        },
+        "government_records_review": {
+          "type": ["string", "null"],
+          "description": "Date of the review of government records."
+        },
+        "visual_inspection": {
+          "type": ["string", "null"],
+          "description": "Date of the visual inspection (site reconnaissance)."
+        },
+        "ep_declaration": {
+          "type": ["string", "null"],
+          "description": "Date given for the declaration by the Environmental Professional."
+        }
+      }
+    },
+    "site_reconnaissance": {
+      "type": "object",
+      "description": "The site visit, from the reconnaissance information table.",
+      "properties": {
+        "date": {
+          "type": ["string", "null"],
+          "description": "Date of the site reconnaissance."
+        },
+        "weather": {
+          "type": ["string", "null"],
+          "description": "Weather conditions during the reconnaissance."
+        },
+        "limitations": {
+          "type": ["string", "null"],
+          "description": "Any limitations on access during the reconnaissance."
+        }
+      }
+    },
+    "regulatory_database_search": {
+      "type": "array",
+      "description": "One entry per row of the regulatory records review table: each database searched, its search distance and the number of sites found.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agency_type": {
+            "type": "string",
+            "description": "Regulatory agency type as printed, e.g. 'Federal', 'State & Tribal' or 'Either'."
+          },
+          "database": {
+            "type": "string",
+            "description": "Name of the database searched."
+          },
+          "search_distance": {
+            "type": "string",
+            "description": "Approximate minimum search distance (AMSD), e.g. '1 mile' or 'Subject Property and adjoining properties'."
+          },
+          "sites_found": {
+            "type": "integer",
+            "description": "Number of sites found within the search distance."
+          }
+        },
+        "required": ["agency_type", "database", "search_distance", "sites_found"]
+      }
+    },
+    "nearby_sites": {
+      "type": "array",
+      "description": "One entry per facility discussed in the adjoining and nearby sites table.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "facility_name": {
+            "type": "string",
+            "description": "Facility name as printed."
+          },
+          "address": {
+            "type": ["string", "null"],
+            "description": "Street address of the facility."
+          },
+          "gradient": {
+            "type": ["string", "null"],
+            "description": "Position relative to groundwater flow, e.g. 'up-gradient'."
+          },
+          "distance_ft": {
+            "type": ["number", "null"],
+            "description": "Approximate distance from the subject property in feet."
+          },
+          "direction": {
+            "type": ["string", "null"],
+            "description": "Direction of the facility from the subject property."
+          },
+          "case_number": {
+            "type": ["string", "null"],
+            "description": "GeoTracker case or global ID number."
+          },
+          "case_status": {
+            "type": ["string", "null"],
+            "description": "Case status, e.g. 'closed LUST Cleanup Site' or 'open cleanup program site'."
+          },
+          "contaminant_of_concern": {
+            "type": ["string", "null"],
+            "description": "Contaminant of concern, e.g. gasoline, diesel or metals."
+          },
+          "is_rec": {
+            "type": "boolean",
+            "description": "True if the report considers this facility a recognized environmental condition (REC or CREC) for the subject property."
+          }
+        },
+        "required": ["facility_name", "is_rec"]
+      }
+    },
+    "findings": {
+      "type": "object",
+      "description": "The environmental professional's findings and opinions.",
+      "properties": {
+        "recs_identified": {
+          "type": "boolean",
+          "description": "True if any recognized environmental conditions (RECs) were identified in connection with the subject property."
+        },
+        "crecs": {
+          "type": "array",
+          "description": "Controlled recognized environmental conditions (CRECs) identified.",
+          "items": { "type": "string", "description": "Short name of the CREC, e.g. the source facility." }
+        },
+        "hrecs_identified": {
+          "type": "boolean",
+          "description": "True if any historical recognized environmental conditions (HRECs) were identified."
+        },
+        "business_environmental_risks": {
+          "type": "array",
+          "description": "Business environmental risks (BERs) identified.",
+          "items": { "type": "string", "description": "Short title of the BER." }
+        },
+        "vapor_encroachment_condition": {
+          "type": ["string", "null"],
+          "description": "Conclusion of the Tier 1 vapor encroachment screening, in brief."
+        }
+      },
+      "required": ["recs_identified", "hrecs_identified"]
+    }
+  },
+  "required": ["report", "component_dates", "findings"]
+}
