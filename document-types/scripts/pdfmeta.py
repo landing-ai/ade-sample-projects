@@ -14,6 +14,8 @@ left a name and an email address readable in the tree on the pages that survived
 
 from __future__ import annotations
 
+import re
+
 import pymupdf
 
 KEYS = ("title", "author", "subject", "keywords", "creator", "producer",
@@ -32,12 +34,13 @@ def clear(doc: pymupdf.Document) -> None:
     for xref in range(1, doc.xref_length()):
         if doc.xref_get_key(xref, "Metadata")[0] != "null":
             doc.xref_set_key(xref, "Metadata", "null")
-        if _is_jpeg(doc, xref):
-            raw = doc.xref_stream_raw(xref)
-            stripped = _strip_jpeg(raw)
-            if stripped != raw:
+        jpeg = _jpeg_bytes(doc, xref)
+        if jpeg is not None:
+            stripped = _strip_jpeg(jpeg)
+            if stripped != jpeg:
                 doc.update_stream(xref, stripped, compress=False)
                 doc.xref_set_key(xref, "Filter", "/DCTDecode")
+                doc.xref_set_key(xref, "DecodeParms", "null")
 
 
 def remaining(doc: pymupdf.Document) -> list[str]:
@@ -47,7 +50,7 @@ def remaining(doc: pymupdf.Document) -> list[str]:
         left.append("xmp")
     if doc.xref_get_key(doc.pdf_catalog(), "StructTreeRoot")[0] != "null":
         left.append("structure tree")
-    if any(_is_jpeg(doc, x) and _strip_jpeg(doc.xref_stream_raw(x)) != doc.xref_stream_raw(x)
+    if any((j := _jpeg_bytes(doc, x)) is not None and _strip_jpeg(j) != j
            for x in range(1, doc.xref_length())):
         left.append("image EXIF/XMP")
     if any(doc.xref_get_key(x, "Metadata")[0] != "null" and x != doc.pdf_catalog()
@@ -62,9 +65,22 @@ def remaining(doc: pymupdf.Document) -> list[str]:
 _DROP = {0xE1, 0xED, 0xFE}
 
 
-def _is_jpeg(doc: pymupdf.Document, xref: int) -> bool:
+def _jpeg_bytes(doc: pymupdf.Document, xref: int) -> bytes | None:
+    """The JPEG file a DCTDecode stream holds, or None if the stream is not one.
+
+    A filter array such as [/ASCII85Decode /DCTDecode] wraps the JPEG in other encodings;
+    the outer ones are undone so its metadata segments can be found.
+    """
     kind, value = doc.xref_get_key(xref, "Filter")
-    return kind != "null" and value.strip("[]/ ") == "DCTDecode"
+    if kind == "null":
+        return None
+    filters = re.findall(r"/[^\s/\[\]]+", value)
+    if filters == ["/DCTDecode"]:
+        return doc.xref_stream_raw(xref)
+    if "/DCTDecode" not in filters:
+        return None
+    image = doc.extract_image(xref)
+    return image["image"] if image and image.get("ext") in ("jpeg", "jpg") else None
 
 
 def _strip_jpeg(data: bytes) -> bytes:

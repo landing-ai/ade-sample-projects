@@ -100,9 +100,11 @@ is not featured.
   Appendix A. Each grounding was correct where it landed. A schema description pointing
   at the executive summary made it more likely but did not pin it.
 - **Image-only tables are read.** The five-year historical income statement on page 10
-  is an image with no text layer. DPT-3 read it into a table, and all 35 of its figures
-  ground. 2016A and 2017E really do have the same COGS (12,401); it is not a parse
-  repeat.
+  is an image with no text layer. DPT-3 read it into a table, and extraction returned
+  all 35 of its figures, but none of them grounds: every value in the five historical
+  columns comes back with no coordinates (`SYNTH`). The trailing-average and forecast
+  columns on page 11 ground cell by cell. 2016A and 2017E really do have the same COGS
+  (12,401); it is not a parse repeat.
 - **Charts are described.** The bar and pie charts on page 7 are images. The parse turns
   them into data tables. Extraction then put the pie chart's revenue categories into
   `business_overview.services`, grounded on the percentages (marked `OFF`), alongside
