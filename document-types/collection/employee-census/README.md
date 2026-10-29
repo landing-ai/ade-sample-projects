@@ -50,8 +50,9 @@ status, birth date, age, marital status, state, gender, last hire date, original
 date, term date and annual pay.
 
 All 34 rows were extracted, and every value in every row was checked against the PDF's
-text layer: all matched. Blank marital status and term date cells came back as empty
-strings rather than null.
+text layer: all matched. Blank cells came back two ways: of the 34 blank term dates, 26
+as an empty string and 8 as null; of the 22 blank marital status cells, 16 as an empty
+string and 6 as null. The extraction is published as returned.
 
 ## Featured fields: one census row
 
@@ -79,8 +80,9 @@ report title and the last hire date were left out to keep to five fields.
 
 - **The table grounds cell by cell.** Every populated cell in all 34 rows resolves to its
   own cell and checks `ok`.
-- **Blank cells ground to blank cells.** The empty marital status and term date values
-  point at their empty cells, which is correct but cannot be illustrated.
+- **Blank cells ground two ways.** The empty-string values (26 term dates, 16 marital
+  statuses) point at their empty cells, which is correct but cannot be illustrated. The
+  null values (8 term dates, 6 marital statuses) have no range at all.
 - **The employee count is synthesized from the rows.** The report prints no count; the
   extracted 34 is right, and its ranges point at the employee names it was counted from.
 - **The run date grounds to the footer timestamp** "23 May 2025 - 11:06", which contains
