@@ -1,0 +1,26 @@
+{
+  "slug": "trademark-registration-certificate",
+  "title": "Trademark Registration Certificate",
+  "source": {
+    "file": "uspto-reg-5886375-registration-certificate.pdf",
+    "pages": 2,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://tmng-al.uspto.gov/resting2/api/casedoc/cms/case/87981735/registration-certificate/5886375_87981735_101519_ORC.pdf",
+      "publisher": "United States Patent and Trademark Office",
+      "title": "Registration Certificate, U.S. Reg. No. 5,886,375 (AMERICAN NINJA WARRIOR and shield design), serial 87981735",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "The registration certificate as published by the USPTO in the public Trademark Status and Document Retrieval (TSDR) file for serial 87981735 (https://tsdr.uspto.gov/#caseNumber=87981735&caseType=SERIAL_NO&searchType=documentSearch). Trademark registrations and their file histories are public records. The owner is a corporation, Tokyo Broadcasting System Television, Inc. The only personal element is the facsimile signature of the USPTO Director, a public official, printed on every certificate of the period; it is kept. No redaction was made. Downloaded directly by script. The PDF metadata carries only the PD4ML creator and producer and a creation date. The mark shown is a third-party television brand logo, reproduced here as part of the public record."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "registration_number", "label": "Registration number", "occurrence": 0 },
+    { "path": "international_classes[0]", "label": "International class", "occurrence": 0 },
+    { "path": "register", "label": "Register", "occurrence": 0 },
+    { "path": "owner.name", "label": "Owner", "occurrence": 0 },
+    { "path": "serial_number", "label": "Serial number", "occurrence": 0 }
+  ],
+  "notes": "Request named no fields or page; its notes suggested registration number, registration date, international class, owner, serial number and filing date, as suggestions only, and asked for both pages to be kept (page 1 the certificate, page 2 the USPTO maintenance requirements). Featured on page 1: registration number, international class, register, owner and serial number, so the overlay reads as the certificate's identity: which registration, in which class, on which register, held by whom, from which application. Registration date and filing date were not featured: both are extracted correctly but normalized to ISO (2019-10-15 from 'Registered Oct. 15, 2019', 2017-07-18 from 'FILED 07-18-2017'), so the range check reads them OFF and the crop would not show the printed value. Register replaces the second date. The owner is a corporation, so featuring its name features no individual. The Director's facsimile signature is kept unredacted; the parse transcribes his printed name under a [SIGNED] tag, and it is not extracted or featured."
+}

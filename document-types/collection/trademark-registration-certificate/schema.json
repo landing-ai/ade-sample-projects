@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "title": "Trademark Registration Certificate",
+  "description": "A trademark registration certificate issued by a national trademark office: the registration and application identifiers and dates, the register, the owner, the mark, the goods and services by class, and the maintenance requirements printed with it.",
+  "properties": {
+    "issuing_office": {"type": "string", "description": "Name of the trademark office that issued the certificate, e.g. United States Patent and Trademark Office."},
+    "registration_number": {"type": "string", "description": "Registration number printed beside 'Reg. No.', exactly as printed including separators."},
+    "registration_date": {"type": "string", "description": "Date of registration printed beside 'Registered', as YYYY-MM-DD."},
+    "international_classes": {
+      "type": "array",
+      "description": "International (Nice) class numbers printed beside 'Int. Cl.'.",
+      "items": {"type": "integer", "description": "One international class number."}
+    },
+    "mark_type": {"type": "string", "description": "Type of mark as printed in the left column, e.g. Trademark, Service Mark, Collective Mark or Certification Mark."},
+    "register": {"type": "string", "description": "Register the mark is on as printed, e.g. Principal Register or Supplemental Register."},
+    "serial_number": {"type": "string", "description": "Application serial number printed after 'SER. NO.', exactly as printed including separators."},
+    "filing_date": {"type": "string", "description": "Application filing date printed after 'FILED', as YYYY-MM-DD."},
+    "owner": {
+      "type": "object",
+      "description": "The registrant that owns the mark.",
+      "properties": {
+        "name": {"type": "string", "description": "Owner name as printed, without the parenthetical entity description."},
+        "entity_type": {"type": "string", "description": "Legal entity type and jurisdiction as printed in parentheses after the owner name, e.g. JAPAN CORPORATION."},
+        "address": {"type": "string", "description": "Owner's address as printed, all lines joined with commas."},
+        "country": {"type": "string", "description": "Country of the owner's address."}
+      }
+    },
+    "goods_and_services": {
+      "type": "array",
+      "description": "One entry per class listed in the goods and services paragraphs.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "class_number": {"type": "integer", "description": "The class number from the 'CLASS nn:' prefix."},
+          "description": {"type": "string", "description": "The full list of goods or services for this class, exactly as printed after the class prefix."},
+          "first_use_date": {"type": ["string", "null"], "description": "Date of first use anywhere as printed after 'FIRST USE', exactly as printed (it may contain 00 for an unknown day), or null if absent."},
+          "first_use_in_commerce_date": {"type": ["string", "null"], "description": "Date of first use in commerce as printed after 'IN COMMERCE', exactly as printed (it may contain 00 for an unknown day), or null if absent."}
+        }
+      }
+    },
+    "mark": {
+      "type": "object",
+      "description": "The registered mark.",
+      "properties": {
+        "literal_element": {"type": ["string", "null"], "description": "The wording in the mark, as quoted in the mark description, or null if the mark has no words."},
+        "is_design_mark": {"type": "boolean", "description": "True if the mark is shown as a drawing or stylized design rather than in standard characters."},
+        "description": {"type": "string", "description": "The full mark description paragraph beginning 'The mark consists of', exactly as printed."},
+        "color_claimed": {"type": ["string", "null"], "description": "The color claim statement if printed, otherwise null."}
+      }
+    },
+    "disclaimer": {"type": ["string", "null"], "description": "The wording disclaimed apart from the mark as shown, from the 'No claim is made to the exclusive right to use' statement, without quotation marks. Null if there is no disclaimer."},
+    "signatory_title": {"type": "string", "description": "Title of the official whose signature appears on the certificate, as printed below the signature."},
+    "maintenance": {
+      "type": "object",
+      "description": "The maintenance requirements printed with the certificate.",
+      "properties": {
+        "first_filing_window": {"type": "string", "description": "When the first declaration of use must be filed, relative to the registration date, as stated."},
+        "second_filing_window": {"type": "string", "description": "When the second declaration of use and renewal application must be filed, relative to the registration date, as stated."},
+        "grace_period": {"type": "string", "description": "The grace period for late filings, as stated."}
+      }
+    }
+  }
+}
