@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "description": "Articles of Incorporation for a profit corporation, as filed with a state Secretary of State, with any filing stamp and certificate of incorporation.",
+  "properties": {
+    "filing": {
+      "type": "object",
+      "description": "The filing office's record of the filing.",
+      "properties": {
+        "filing_office": {"type": "string", "description": "The state office that received the filing, e.g. 'Wyoming Secretary of State'."},
+        "state_of_incorporation": {"type": "string", "description": "The state under whose law the corporation is formed."},
+        "entity_type": {"type": "string", "description": "The kind of entity being formed, as titled on the form, e.g. 'Profit Corporation'."},
+        "filing_id": {"type": "string", "description": "The identification or filing number the office assigned, e.g. the 'Original ID' in the office-use box, exactly as printed."},
+        "filed_timestamp": {"type": "string", "description": "The date and time stamped as filed in the office-use box, exactly as printed."}
+      }
+    },
+    "corporation_name": {"type": "string", "description": "The name of the corporation as stated in the articles."},
+    "registered_agent": {
+      "type": "object",
+      "description": "The registered agent named in the articles.",
+      "properties": {
+        "name": {"type": "string", "description": "The registered agent's name, a person or a firm."},
+        "address": {"type": "string", "description": "The registered agent's physical address, on one line."}
+      }
+    },
+    "mailing_address": {"type": "string", "description": "The corporation's mailing address, on one line."},
+    "principal_office_address": {"type": "string", "description": "The corporation's principal office address, on one line."},
+    "authorized_shares": {
+      "type": "array",
+      "description": "Each class of shares the corporation is authorized to issue.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "share_class": {"type": "string", "description": "The class of shares, e.g. 'Common' or 'Preferred'."},
+          "number_of_shares": {"type": "string", "description": "The number of shares authorized in this class, exactly as printed, including words such as 'Unlimited'."},
+          "par_value": {"type": "string", "description": "The par value per share of this class, exactly as printed, e.g. '$0.0001'."}
+        }
+      }
+    },
+    "incorporators": {
+      "type": "array",
+      "description": "Each incorporator named in the articles.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "The incorporator's name."},
+          "address": {"type": "string", "description": "The incorporator's address, on one line."}
+        }
+      }
+    },
+    "signatory": {
+      "type": "object",
+      "description": "The person who signed the articles on the filer's behalf.",
+      "properties": {
+        "name": {"type": "string", "description": "The printed name of the signer."},
+        "title": {"type": "string", "description": "The signer's title or capacity."},
+        "signature_date": {"type": "string", "description": "The date beside the signature, exactly as printed."},
+        "email": {"type": "string", "description": "The signer's contact email."},
+        "phone": {"type": "string", "description": "The signer's daytime phone number."}
+      }
+    },
+    "registered_agent_consent_given": {"type": "boolean", "description": "True if the filing states that the registered agent consented to the appointment."},
+    "certificate_of_incorporation": {
+      "type": "object",
+      "description": "The Secretary of State's certificate of incorporation, if attached.",
+      "properties": {
+        "issuing_official": {"type": "string", "description": "The name of the official who certifies the incorporation."},
+        "issue_date": {"type": "string", "description": "The date the certificate was executed, exactly as printed."},
+        "great_seal_affixed": {"type": "boolean", "description": "True if the certificate states that the state's seal is affixed."}
+      }
+    }
+  }
+}

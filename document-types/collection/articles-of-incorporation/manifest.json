@@ -1,0 +1,26 @@
+{
+  "slug": "articles-of-incorporation",
+  "title": "Articles of Incorporation",
+  "source": {
+    "file": "articles-of-incorporation-wyoming-top-tier-sports.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.sec.gov/Archives/edgar/data/2045455/000204545524000001/exhibit_d.pdf",
+      "publisher": "Wyoming Secretary of State (filed on SEC EDGAR by Top Tier Sports (USA) Inc.)",
+      "title": "Profit Corporation Articles of Incorporation, Top Tier Sports (USA) Inc. (Exhibit D to Form C)",
+      "retrieved": "2026-10-28",
+      "clearance": "public",
+      "clearance_note": "Articles of Incorporation generated and filed by the Wyoming Secretary of State on November 5, 2024, with the Secretary of State's certificate of incorporation, and filed by the company as Exhibit D to its Form C offering statement on SEC EDGAR, a public government repository. Native PDF with a text layer, downloaded by script from sec.gov on 2026-10-28. Used exactly as published, unredacted, by explicit decision of the operator on 2026-10-28: it names one incorporator, an attorney at the registered-agent law firm acting in a professional capacity, with a typed e-signature, a business email and a business phone, and the Secretary of State (a public official) with signature and seal. None of the individuals or contact details is featured. The PDF's metadata carries no personal data and was left as published."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "filing.filing_id", "label": "Original ID", "occurrence": 0 },
+    { "path": "corporation_name", "label": "Corporation name", "occurrence": 0 },
+    { "path": "registered_agent.name", "label": "Registered agent", "occurrence": 0 },
+    { "path": "authorized_shares[0].number_of_shares", "label": "Common shares authorized", "occurrence": 0 },
+    { "path": "authorized_shares[1].number_of_shares", "label": "Preferred shares authorized", "occurrence": 0 }
+  ],
+  "notes": "Features page 1, the articles themselves: the filing office's Original ID from the office-use box, the corporation name (Article I), the registered agent firm (Article II), and the authorized common ('Unlimited') and preferred (110,000) shares from Article V, where shares and par values sit side by side on two lines. The request suggested the filed stamp, corporation name, registered agent, both share counts and both par values; with a five-field limit the filed timestamp and the two par values were left out (all three ground ok; both par values read $0.0001, so featuring them would add two identical crops). The registered agent is featured by its firm name, an organization; the incorporator and signer, a named individual, and his email and phone are not featured although they ground ok. The three addresses (registered agent, mailing, principal office) extract correctly but ground OFF: each value joins two printed lines and each range covers one line. The schema was written for this run."
+}
