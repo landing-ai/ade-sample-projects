@@ -1,0 +1,323 @@
+{
+  "type": "object",
+  "properties": {
+    "agreement_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The agreement's title as printed at the top of the first page, e.g. 'MASTER SERVICES AGREEMENT WITH ...'"
+    },
+    "envelope_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The e-signature envelope ID printed in the page header"
+    },
+    "county": {
+      "type": "object",
+      "description": "The governmental customer party to the agreement",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The county's name as defined in the opening paragraph"
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The state the county is in"
+        }
+      }
+    },
+    "service_provider": {
+      "type": "object",
+      "description": "The vendor party to the agreement",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The service provider's name as defined in the opening paragraph"
+        }
+      }
+    },
+    "initial_term_months": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Length of the initial term in months, from the Effective Date and Term section"
+    },
+    "automatic_renewal_terms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Maximum number of automatic one-year renewal terms"
+    },
+    "not_to_exceed_amount_usd": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The not-to-exceed contract amount in USD, from the Consideration and Compensation section"
+    },
+    "late_payment_statute": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The statute governing payment and overdue invoices, e.g. 'Chapter 2251 of the Texas Government Code'"
+    },
+    "venue": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The venue for disputes named in the Venue and Applicable Law section"
+    },
+    "governing_law": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The state whose laws govern the agreement"
+    },
+    "audit_retention_years": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Number of years after final payment the County may audit the provider's records"
+    },
+    "audit_notice_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Days of advance notice the County gives before an audit"
+    },
+    "assignment_permitted": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the service provider may assign the agreement"
+    },
+    "signatures": {
+      "type": "array",
+      "description": "Signature blocks on the master agreement signature page, one per party",
+      "items": {
+        "type": "object",
+        "properties": {
+          "party": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The party heading over the signature block"
+          },
+          "signed": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether a signature appears in the block"
+          },
+          "printed_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The printed name in the block, if filled in"
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The signature date as YYYY-MM-DD, if filled in"
+          }
+        }
+      }
+    },
+    "order_form": {
+      "type": "object",
+      "description": "Exhibit A, the vendor's order form attached to the agreement",
+      "properties": {
+        "customer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Customer name in Contract Records"
+        },
+        "employee_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Employee Count in Contract Records"
+        },
+        "account_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Account Number in Contract Records; null if blacked out"
+        },
+        "order_number": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Order # in Order Details; null if blacked out"
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Valid Until date in Order Details, as YYYY-MM-DD"
+        },
+        "billing_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Billing Address as printed, lines joined with ', '"
+        },
+        "billing_contact_email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Billing Contact Email"
+        },
+        "billing_phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Billing Phone"
+        },
+        "payment_term": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Payment Term under Payment Terms, e.g. 'Net 30'"
+        },
+        "order_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The Notes text under Payment Terms"
+        },
+        "subscription_periods": {
+          "type": "array",
+          "description": "Each subscription pricing table, in order",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period_label": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The heading over the table, e.g. 'Prorated to Shift Dates'"
+              },
+              "line_items": {
+                "type": "array",
+                "description": "Rows of the pricing table",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "item": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Product or service name in the Item column"
+                    },
+                    "type": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Billing type in the Type column, e.g. 'Recurring'"
+                    },
+                    "start_date": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Start Date as YYYY-MM-DD"
+                    },
+                    "end_date": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "End Date as YYYY-MM-DD"
+                    },
+                    "quantity": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "description": "Qty column"
+                    },
+                    "total_usd": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "description": "Total (USD) for the line, as a number"
+                    }
+                  }
+                }
+              },
+              "period_total_usd": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "The table's TOTAL line, in USD"
+              }
+            }
+          }
+        },
+        "sales_tax_included": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether the price includes sales tax"
+        },
+        "vendor_signer_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Title of the vendor's authorized representative on the order form"
+        },
+        "vendor_signature_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Date the vendor signed the order form, as YYYY-MM-DD"
+        }
+      }
+    }
+  }
+}
