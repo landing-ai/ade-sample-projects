@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "title": "Capitalization Table",
+  "description": "A company's capitalization table: who holds which shares of each class, with ownership percentages and fully diluted totals.",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the company whose capitalization is shown, from the title block."
+    },
+    "table_basis": {
+      "type": "string",
+      "description": "Whether the table shows current capitalization or a pro forma (post-financing) view, as stated under the title, e.g. 'Pro-Forma' or 'Current'."
+    },
+    "share_classes": {
+      "type": "array",
+      "description": "The share classes that have their own share-count column, in column order (e.g. Common Stock, Series A, Series B).",
+      "items": { "type": "string", "description": "Share class name as printed in the column header, without footnote markers." }
+    },
+    "holders": {
+      "type": "array",
+      "description": "One entry per holder row (investors, founders, and option pool rows), in table order. Exclude section headings and the totals row.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "holder_name": { "type": "string", "description": "Holder or row name, e.g. 'Investor #1' or 'Granted Option Shares'." },
+          "holder_group": { "type": "string", "description": "Section heading the row sits under, e.g. 'Investors', 'Founders', or the equity incentive plan name." },
+          "common_shares": { "type": "number", "description": "Common Stock shares. 0 when the cell shows a dash." },
+          "series_a_shares": { "type": "number", "description": "Series A Preferred shares. 0 when the cell shows a dash." },
+          "series_b_shares": { "type": "number", "description": "Series B Preferred shares. 0 when the cell shows a dash." },
+          "total_shares": { "type": "number", "description": "Total shares held across all classes (fully diluted)." },
+          "total_percent": { "type": "number", "description": "Fully diluted ownership percentage, as a number of percent (8.3 for 8.3%)." }
+        },
+        "required": ["holder_name", "total_shares"]
+      }
+    },
+    "totals": {
+      "type": "object",
+      "description": "The totals row at the bottom of the table.",
+      "properties": {
+        "total_common_shares": { "type": "number", "description": "Total Common Stock shares, including option pool rows." },
+        "total_series_a_shares": { "type": "number", "description": "Total Series A Preferred shares." },
+        "total_series_b_shares": { "type": "number", "description": "Total Series B Preferred shares." },
+        "fully_diluted_shares": { "type": "number", "description": "Total shares across all classes: the fully diluted share count." }
+      }
+    },
+    "option_pool_increase_shares": {
+      "type": "number",
+      "description": "Shares added to the option pool in this financing (the 'Available Option Shares (Increase)' row), if shown."
+    },
+    "conversion_assumption": {
+      "type": "string",
+      "description": "The footnote stating the assumed conversion ratio of preferred into common stock, quoted briefly."
+    }
+  },
+  "required": ["company_name", "holders", "totals"]
+}

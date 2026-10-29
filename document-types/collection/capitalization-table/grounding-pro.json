@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "company_name",
+      "label": "Company",
+      "value": "Acme, Inc.",
+      "page": 1,
+      "box": {
+        "xmin": 0.06943,
+        "ymin": 0.11934,
+        "xmax": 0.10617,
+        "ymax": 0.13073
+      },
+      "range": {
+        "end": 10,
+        "start": 0
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "company_name.png"
+    },
+    {
+      "path": "holders[0].series_b_shares",
+      "label": "New investor Series B shares",
+      "value": 4775322.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.60471,
+        "ymin": 0.19167,
+        "xmax": 0.66635,
+        "ymax": 0.20489
+      },
+      "range": {
+        "end": 624,
+        "start": 613
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "holders-0-series_b_shares.png"
+    },
+    {
+      "path": "option_pool_increase_shares",
+      "label": "Option pool increase",
+      "value": 4252854.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.24393,
+        "ymin": 0.37122,
+        "xmax": 0.37364,
+        "ymax": 0.39459
+      },
+      "range": {
+        "end": 2550,
+        "start": 2539
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "option_pool_increase_shares.png"
+    },
+    {
+      "path": "totals.total_series_a_shares",
+      "label": "Total Series A shares",
+      "value": 36500000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.48174,
+        "ymin": 0.39459,
+        "xmax": 0.54248,
+        "ymax": 0.40937
+      },
+      "range": {
+        "end": 2761,
+        "start": 2749
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_series_a_shares.png"
+    },
+    {
+      "path": "totals.fully_diluted_shares",
+      "label": "Fully diluted shares",
+      "value": 57528176.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.79024,
+        "ymin": 0.39459,
+        "xmax": 0.85988,
+        "ymax": 0.4095
+      },
+      "range": {
+        "end": 2847,
+        "start": 2835
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-fully_diluted_shares.png"
+    }
+  ]
+}
