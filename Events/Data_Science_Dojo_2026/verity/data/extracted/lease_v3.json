@@ -1,0 +1,280 @@
+{
+  "model": "extract-20260903",
+  "extraction": {
+    "landlord": "Cedar Row Properties LLC",
+    "late_fee": 95.0,
+    "monthly_rent": 2650.0,
+    "premises_address": "1427 Alder Street, Unit 3B, Portland, Oregon 97205",
+    "security_deposit": 3975.0,
+    "tenants": "Daniel R. Okafor and Mei Lin Okafor",
+    "term_end": "August 31, 2027",
+    "term_start": "August 1, 2026"
+  },
+  "evidence": {
+    "job_id": "extract-01m5g67m4z7bnphrdc6feaxq6e",
+    "parse_job_id": "parse-01m49ae27cys2v76cpp0azmmt6",
+    "kind": "grounded",
+    "fields": [
+      {
+        "field": "landlord",
+        "value": "Cedar Row Properties LLC",
+        "spans": [
+          [
+            116,
+            203
+          ]
+        ],
+        "element_ids": [
+          "text-0"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85625,
+              "xmin": 0.14433,
+              "ymax": 0.19641,
+              "ymin": 0.08617
+            }
+          }
+        ]
+      },
+      {
+        "field": "late_fee",
+        "value": 95.0,
+        "spans": [
+          [
+            1667,
+            1673
+          ],
+          [
+            1484,
+            1503
+          ],
+          [
+            1504,
+            1577
+          ],
+          [
+            1578,
+            1578
+          ]
+        ],
+        "element_ids": [
+          "text-5",
+          "table-0",
+          "table_cell-4"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.67046,
+              "xmin": 0.14976,
+              "ymax": 0.63884,
+              "ymin": 0.59026
+            }
+          },
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.8383,
+              "xmin": 0.14431,
+              "ymax": 0.74207,
+              "ymin": 0.65081
+            }
+          },
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.60673,
+              "xmin": 0.37554,
+              "ymax": 0.68134,
+              "ymin": 0.66615
+            }
+          }
+        ]
+      },
+      {
+        "field": "monthly_rent",
+        "value": 2650.0,
+        "spans": [
+          [
+            917,
+            924
+          ],
+          [
+            925,
+            1014
+          ]
+        ],
+        "element_ids": [
+          "text-3"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85432,
+              "xmin": 0.14621,
+              "ymax": 0.49023,
+              "ymin": 0.40519
+            }
+          }
+        ]
+      },
+      {
+        "field": "premises_address",
+        "value": "1427 Alder Street, Unit 3B, Portland, Oregon 97205",
+        "spans": [
+          [
+            342,
+            437
+          ],
+          [
+            438,
+            523
+          ]
+        ],
+        "element_ids": [
+          "text-1"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85421,
+              "xmin": 0.14576,
+              "ymax": 0.29031,
+              "ymin": 0.20469
+            }
+          }
+        ]
+      },
+      {
+        "field": "security_deposit",
+        "value": 3975.0,
+        "spans": [
+          [
+            1187,
+            1206
+          ],
+          [
+            1207,
+            1296
+          ]
+        ],
+        "element_ids": [
+          "text-4"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85431,
+              "xmin": 0.14629,
+              "ymax": 0.58287,
+              "ymin": 0.49732
+            }
+          }
+        ]
+      },
+      {
+        "field": "tenants",
+        "value": "Daniel R. Okafor and Mei Lin Okafor",
+        "spans": [
+          [
+            204,
+            292
+          ]
+        ],
+        "element_ids": [
+          "text-0"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85625,
+              "xmin": 0.14433,
+              "ymax": 0.19641,
+              "ymin": 0.08617
+            }
+          }
+        ]
+      },
+      {
+        "field": "term_end",
+        "value": "August 31, 2027",
+        "spans": [
+          [
+            628,
+            717
+          ]
+        ],
+        "element_ids": [
+          "text-2"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85437,
+              "xmin": 0.14589,
+              "ymax": 0.3965,
+              "ymin": 0.29766
+            }
+          }
+        ]
+      },
+      {
+        "field": "term_start",
+        "value": "August 1, 2026",
+        "spans": [
+          [
+            628,
+            717
+          ]
+        ],
+        "element_ids": [
+          "text-2"
+        ],
+        "pages": [
+          1
+        ],
+        "boxes": [
+          {
+            "page": 1,
+            "box": {
+              "xmax": 0.85437,
+              "xmin": 0.14589,
+              "ymax": 0.3965,
+              "ymin": 0.29766
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

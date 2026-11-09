@@ -1,0 +1,97 @@
+{
+  "pairs": {
+    "v1->v1_reflow": [],
+    "v1->v2": [
+      {
+        "pair": "v1->v2",
+        "id": "rent",
+        "kind": "modified",
+        "old": "$2,450.00",
+        "new": "$2,650.00",
+        "note": "Monthly rent raised"
+      },
+      {
+        "pair": "v1->v2",
+        "id": "term_end",
+        "kind": "modified",
+        "old": "July",
+        "new": "August",
+        "note": "Term extended by a month"
+      },
+      {
+        "pair": "v1->v2",
+        "id": "notice",
+        "kind": "modified",
+        "old": "thirty (30)",
+        "new": "sixty (60)",
+        "note": "Non-renewal notice doubled"
+      },
+      {
+        "pair": "v1->v2",
+        "id": "parking",
+        "kind": "removed",
+        "old": "Landlord shall provide one (1) assigned parking space at no additional charge.",
+        "new": "",
+        "note": "Free parking space dropped"
+      },
+      {
+        "pair": "v1->v2",
+        "id": "pet",
+        "kind": "added",
+        "old": "",
+        "new": "except that Tenant may keep one (1) domestic cat with Landlord's prior written consent",
+        "note": "Pet exception added"
+      },
+      {
+        "pair": "v1->v2",
+        "id": "late_fee",
+        "kind": "modified",
+        "old": "$75.00",
+        "new": "$95.00",
+        "note": "Late fee raised (table cell)"
+      }
+    ],
+    "v2->v3": [
+      {
+        "pair": "v2->v3",
+        "id": "co_tenant",
+        "kind": "added",
+        "old": "",
+        "new": "and Mei Lin Okafor (together,",
+        "note": "Co-tenant added"
+      },
+      {
+        "pair": "v2->v3",
+        "id": "deposit",
+        "kind": "modified",
+        "old": "$2,450.00",
+        "new": "$3,975.00",
+        "note": "Security deposit raised"
+      },
+      {
+        "pair": "v2->v3",
+        "id": "satellite",
+        "kind": "removed",
+        "old": "not",
+        "new": "",
+        "note": "One word removed - flips the meaning"
+      },
+      {
+        "pair": "v2->v3",
+        "id": "venue",
+        "kind": "modified",
+        "old": "Multnomah",
+        "new": "Washington",
+        "note": "Dispute venue moved"
+      },
+      {
+        "pair": "v2->v3",
+        "id": "key_fee",
+        "kind": "added",
+        "old": "",
+        "new": "Key replacement $40.00 per key On request",
+        "note": "New table row"
+      }
+    ]
+  }
+}

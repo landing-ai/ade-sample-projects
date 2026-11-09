@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "landlord": {"type": "string", "description": "The landlord's legal name."},
+    "tenants": {"type": "string", "description": "The tenant name(s) as written in the opening paragraph."},
+    "premises_address": {"type": "string", "description": "The street address of the leased unit, with unit number, city, state and ZIP."},
+    "term_start": {"type": "string", "description": "The date the lease term begins, as written."},
+    "term_end": {"type": "string", "description": "The date the lease term ends, as written."},
+    "monthly_rent": {"type": "number", "description": "Monthly rent in dollars."},
+    "security_deposit": {"type": "number", "description": "Security deposit in dollars."},
+    "late_fee": {"type": "number", "description": "The late fee in dollars, from the fees table."}
+  },
+  "required": ["landlord", "tenants", "premises_address", "term_start", "term_end", "monthly_rent", "security_deposit", "late_fee"]
+}
