@@ -1,8 +1,6 @@
 # Show Me Where It Says That: Agents That Cite Every Word in a Document
 ### Data Science Dojo 2026 — LandingAI ADE hands-on
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/landing-ai/ade-sample-projects/blob/main/Events/Data_Science_Dojo_2026/Verity_Citations/hands_on.ipynb)
-
 LandingAI's **DPT-3 Verity** parsing model, part of Agentic Document Extraction (ADE), returns **every
 word** of a digitally created document with its page, its box on the page and a confidence score.
 This hands-on notebook shows what you can build from those two signals, location and confidence, and
@@ -80,23 +78,14 @@ wrong".**
 
 ## Setup
 
-### Option A — Google Colab (recommended, nothing to install)
+**1. Download just this project and go to it**
 
-1. Open **[hands_on.ipynb in Colab](https://colab.research.google.com/github/landing-ai/ade-sample-projects/blob/main/Events/Data_Science_Dojo_2026/Verity_Citations/hands_on.ipynb)**
-   (solutions: [hands_on_solutions.ipynb](https://colab.research.google.com/github/landing-ai/ade-sample-projects/blob/main/Events/Data_Science_Dojo_2026/Verity_Citations/hands_on_solutions.ipynb)).
-2. Run the **Running in Google Colab** cell. It downloads just this folder and installs `pypdfium2` and
-   `pdfplumber`, in about 15 seconds.
-3. Run the cells in order from the setup check.
-
-Colab opens a read-only copy; use **File › Save a copy in Drive** to keep your answers. If the runtime
-restarts, run the Colab cell again.
-
-### Option B — Locally
-
-**1. Clone the repo and go to this project**
+The full repo is about 500 MB; this fetches only this folder (about 6 MB).
 ```bash
-git clone https://github.com/landing-ai/ade-sample-projects.git
-cd ade-sample-projects/Events/Data_Science_Dojo_2026/Verity_Citations
+git clone --depth 1 --filter=blob:none --sparse https://github.com/landing-ai/ade-sample-projects.git
+cd ade-sample-projects
+git sparse-checkout set Events/Data_Science_Dojo_2026/Verity_Citations
+cd Events/Data_Science_Dojo_2026/Verity_Citations
 ```
 
 **2. Create a virtual environment and install dependencies**
