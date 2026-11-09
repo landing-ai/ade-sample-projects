@@ -106,7 +106,9 @@ Conference demo: classify and extract from mixed financial documents (pay stubs,
 Course lesson: deploy ADE as a Lambda function, store results in S3, build a Bedrock knowledge base from parsed markdown, and create a medical document chatbot with conversation memory.
 
 ### [Data Science Dojo 2026](Events/Data_Science_Dojo_2026/)
-End-to-end tutorial: extract structured data from PDFs, evaluate accuracy against a golden set, and iteratively refine the extraction schema until all fields reach ≥ 95% accuracy. Demonstrates the full Parse → Build Schema → Extract → Evaluate loop using the REST APIs directly (no Python SDK required for the Build Schema step).
+Two hands-on tutorials:
+- **[Extraction Tuning](Events/Data_Science_Dojo_2026/Extraction_Tuning/)**: extract structured data from PDFs, evaluate accuracy against a golden set, and iteratively refine the extraction schema until all fields reach ≥ 95% accuracy. Demonstrates the full Parse → Build Schema → Extract → Evaluate loop using the REST APIs directly (no Python SDK required for the Build Schema step).
+- **[Verity Citations](Events/Data_Science_Dojo_2026/Verity_Citations/)**: use DPT-3 Verity's word-level grounding and confidence to cite an exact phrase on the page, route low-confidence words to a person, verify extracted values, and find every edit between versions of a lease. Runs offline from saved parses, no API key needed.
 
 ### [Snowflake Intelligence Webinar 2026](Events/Snowflake_Intelligence_Webinar_2026/)
 Webinar demo: SQL setup script and schema for parsing FINRA award documents inside the Snowflake ADE native application.

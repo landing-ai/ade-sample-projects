@@ -81,7 +81,7 @@ wrong".**
 **1. Clone the repo and go to this project**
 ```bash
 git clone https://github.com/landing-ai/ade-sample-projects.git
-cd ade-sample-projects/Events/Data_Science_Dojo_2026/verity
+cd ade-sample-projects/Events/Data_Science_Dojo_2026/Verity_Citations
 ```
 
 **2. Create a virtual environment and install dependencies**
