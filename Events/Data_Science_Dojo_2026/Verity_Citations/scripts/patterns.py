@@ -81,10 +81,15 @@ def cite(name, phrase):
 
 
 def describe(hit):
-    b = hit[0].box
-    return (f"page {hit[0].page}, x {b['xmin']:.2f}-{max(w.box['xmax'] for w in hit):.2f}, "
-            f"y {b['ymin']:.2f}-{max(w.box['ymax'] for w in hit):.2f}, "
-            f"lowest confidence {min(w.confidence for w in hit):.2f}")
+    """Where a hit sits: one x/y range per text line, the same boxes show_cite() draws."""
+    lines = docdiff._line_boxes(hit)
+    pages = sorted({page for page, _ in lines})
+    ranges = " | ".join((f"page {page}, " if len(pages) > 1 else "")
+                        + f"x {b['xmin']:.2f}-{b['xmax']:.2f}, y {b['ymin']:.2f}-{b['ymax']:.2f}"
+                        for page, b in lines)
+    where = (f"page {pages[0]}, " if len(pages) == 1 else "") \
+        + (f"{len(lines)} lines: " if len(lines) > 1 else "") + ranges
+    return f"{where}, lowest confidence {min(w.confidence for w in hit):.2f}"
 
 
 def show_cite(name, hit):
