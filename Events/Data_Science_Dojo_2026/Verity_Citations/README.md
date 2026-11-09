@@ -20,8 +20,7 @@ ends with a complete use case: finding every edit between versions of a contract
 | C | Verify | Every extracted value tied to the words it came from | `patterns.verify()` |
 | D | **Use case:** version control | Every edit between lease revisions, drawn on the page, layout-only changes ignored | `docdiff.py` |
 
-Each part ends with a **Your turn** exercise. `hands_on_solutions.ipynb` is the same notebook with every
-exercise solved.
+Each part ends with a **Your turn** exercise.
 
 ---
 
@@ -149,7 +148,6 @@ scripts/
   diff_versions.py        CLI: diff a pair, write a report
   parse.py                parses with DPT-3 Verity via the ade CLI
 hands_on.ipynb            the session notebook, with Your turn exercises
-hands_on_solutions.ipynb  the same notebook, every exercise solved
 requirements.txt
 ```
 
