@@ -1,0 +1,346 @@
+{
+  "type": "object",
+  "properties": {
+    "bank_name": {
+      "type": "string",
+      "description": "Name of the presenting bank, in Chinese as printed (e.g. 中国银行), with the English name if also printed"
+    },
+    "presentation_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title of the presentation from the cover slide, in Chinese as printed"
+    },
+    "presentation_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date of the presentation from the cover slide, as YYYY-MM-DD"
+    },
+    "operating_results": {
+      "type": "object",
+      "description": "The six headline metrics on the 经营效益 (operating results) slide, each comparing 1H2026 with the prior period",
+      "properties": {
+        "operating_income": {
+          "type": "object",
+          "description": "营业收入 — operating income",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in millions of RMB (百万元人民币), as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in millions of RMB (百万元人民币)"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "pre_provision_profit": {
+          "type": "object",
+          "description": "拨备前利润 — profit before impairment losses",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in millions of RMB, as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in millions of RMB"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "profit_after_tax": {
+          "type": "object",
+          "description": "税后利润 — profit for the period after tax",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in millions of RMB, as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in millions of RMB"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "profit_attributable_to_shareholders": {
+          "type": "object",
+          "description": "本行股东应享税后利润 — profit attributable to equity holders of the bank",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in millions of RMB, as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in millions of RMB"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "net_interest_margin": {
+          "type": "object",
+          "description": "净息差 — net interest margin",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in percent, as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in percent"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "cost_to_income_ratio": {
+          "type": "object",
+          "description": "成本收入比 — cost-to-income ratio, calculated under PRC accounting standards",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in percent, as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in percent"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        }
+      }
+    },
+    "balance_sheet": {
+      "type": "object",
+      "description": "Total assets and liabilities from the 资产负债 slide, comparing 1H2026 with year-end 2025",
+      "properties": {
+        "total_assets": {
+          "type": "object",
+          "description": "资产 — total assets",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in billions of RMB (十亿元人民币), as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in billions of RMB (十亿元人民币)"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "total_liabilities": {
+          "type": "object",
+          "description": "负债 — total liabilities",
+          "properties": {
+            "current_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the current period (1H2026), in billions of RMB, as printed on the slide"
+            },
+            "prior_period_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value for the comparison period shown beside it (1H2025, or year-end 2025 where that is the comparison), in billions of RMB"
+            },
+            "change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The change printed above the bars, exactly as shown, e.g. '+8.41%' or '+1个基点' or '-1.68个百分点'"
+            }
+          }
+        },
+        "domestic_rmb_deposit_cost_change_bp": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Decrease in the domestic RMB deposit interest rate (境内人民币存款付息率) versus the prior year end, in basis points, as a positive number"
+        }
+      }
+    },
+    "asset_quality": {
+      "type": "object",
+      "description": "资产质量 — asset quality ratios",
+      "properties": {
+        "npl_ratio_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "不良贷款率 — non-performing loan ratio, percent"
+        },
+        "npl_ratio_change": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Change in the NPL ratio versus prior year end, as printed"
+        },
+        "allowance_to_npl_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "不良贷款拨备覆盖率 — allowance for loan impairment losses to NPLs, percent"
+        },
+        "allowance_to_npl_change": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Change in the allowance-to-NPL ratio versus prior year end, as printed"
+        }
+      }
+    },
+    "capital_adequacy": {
+      "type": "object",
+      "description": "资本水平 — capital ratios",
+      "properties": {
+        "cet1_ratio_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "核心一级资本充足率 — common equity tier 1 capital ratio, percent"
+        },
+        "tier1_ratio_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "一级资本充足率 — tier 1 capital ratio, percent"
+        },
+        "total_capital_ratio_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "资本充足率 — total capital ratio, percent"
+        }
+      }
+    },
+    "interim_dividend": {
+      "type": "object",
+      "description": "Proposed interim dividend from the 股东回报 (shareholder returns) slide",
+      "properties": {
+        "dividend_per_10_shares_rmb": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Proposed interim dividend per 10 ordinary shares, RMB, before tax (每10股…元(税前))"
+        },
+        "dividend_growth_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Year-on-year growth in the interim dividend, percent"
+        },
+        "payout_ratio_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Dividend payout ratio (分红比例), percent"
+        }
+      }
+    }
+  }
+}
