@@ -1,0 +1,52 @@
+{
+  "slug": "investor-presentation-japanese",
+  "title": "Investor Presentation (Japanese)",
+  "source": {
+    "file": "nintendo-fy27-q2-earnings-presentation.pdf",
+    "pages": 18,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/261105_3.pdf",
+      "publisher": "Nintendo Co., Ltd. (任天堂株式会社)",
+      "title": "2027年3月期第2四半期 決算説明資料 (Explanatory material for the second quarter of the fiscal year ending March 2027)",
+      "retrieved": "2026-11-15",
+      "clearance": "public",
+      "clearance_note": "Investor relations material published by a listed company (TSE: 7974) on its own IR site for general distribution. Downloaded directly from the URL, not by hand. It contains no personal data: no individual is named anywhere in the deck. The file is unchanged from the publisher's copy, including its owner-password permissions flag, which ADE accepted."
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    {
+      "path": "reporting_period",
+      "label": "Reporting period",
+      "occurrence": 0
+    },
+    {
+      "path": "consolidated_results.net_sales",
+      "label": "Net sales (売上高)",
+      "occurrence": 0
+    },
+    {
+      "path": "consolidated_results.operating_profit",
+      "label": "Operating profit (営業利益)",
+      "occurrence": 0
+    },
+    {
+      "path": "consolidated_results.ordinary_profit",
+      "label": "Ordinary profit (経常利益)",
+      "occurrence": 0
+    },
+    {
+      "path": "consolidated_results.net_profit",
+      "label": "Net profit (中間純利益)",
+      "occurrence": 0
+    }
+  ],
+  "preview_pages": [
+    1,
+    3,
+    6,
+    16
+  ],
+  "notes": "The request named neither a feature page nor fields. Page 3 is the consolidated results slide (連結業績（実績）), and the five featured fields read as one story: the period column header and the four headline profit lines in that column, all in 億円. The slide's ruled table parsed as a table block with one cell per value, so every field grounds to its own cell rather than to the whole slide. Each is pinned to occurrence 0, the table cell; the same figures recur in the commentary below the slide and on pages 4, 8 and 9."
+}
