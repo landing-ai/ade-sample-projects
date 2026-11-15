@@ -1,0 +1,46 @@
+{
+  "slug": "investor-presentation-chinese",
+  "title": "Investor Presentation (Chinese)",
+  "source": {
+    "file": "boc-2026-interim-results.pdf",
+    "pages": 21,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://pic.bankofchina.com/bocappd/report/202608/P020260828571239979382.pdf",
+      "publisher": "Bank of China Limited",
+      "title": "2026年中期业绩发布 (2026 Interim Results Presentation)",
+      "retrieved": "2026-11-15",
+      "clearance": "public",
+      "clearance_note": "Investor relations material published by a listed bank (SSE: 601988, HKEX: 3988) on its own domain for general distribution. Downloaded by script directly from the publisher. Contains no personal data: no individual is named anywhere in the deck."
+    }
+  },
+  "feature_page": 7,
+  "fields": [
+    {
+      "path": "asset_quality.npl_ratio_percent",
+      "label": "NPL ratio",
+      "occurrence": 0
+    },
+    {
+      "path": "asset_quality.allowance_to_npl_percent",
+      "label": "Allowance to NPLs",
+      "occurrence": 0
+    },
+    {
+      "path": "capital_adequacy.cet1_ratio_percent",
+      "label": "CET1 ratio",
+      "occurrence": 0
+    },
+    {
+      "path": "capital_adequacy.tier1_ratio_percent",
+      "label": "Tier 1 ratio",
+      "occurrence": 0
+    },
+    {
+      "path": "capital_adequacy.total_capital_ratio_percent",
+      "label": "Total capital ratio",
+      "occurrence": 0
+    }
+  ],
+  "notes": "No feature page or fields were requested; chosen here. Page 7 (资产质量整体稳定, asset quality and capital) features the bank's soundness picture as one story: the NPL ratio and its provision coverage on the left, and the three regulatory capital ratios (CET1, tier 1, total) on the right. Each value grounds to its own row, with the Chinese label and the figure inside the same box, so the overlay shows five distinct label-value pairs. Two other pages were tried first. Page 5 (operating results) has several chart values grounding to an axis label ('1H2026') or a word ('Growth') rather than the figure. Page 6 (assets and liabilities) extracts and text-matches every value, but each grounds only to its whole chart figure, so all five crops came out as the same half-slide. The source is an image-only PDF with no text layer, so every value here comes from OCR of Chinese slides."
+}
