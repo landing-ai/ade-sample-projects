@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "The presenting company's name as printed in Japanese on the cover, e.g. '任天堂株式会社'"
+    },
+    "presentation_title": {
+      "type": ["string", "null"],
+      "description": "The title on the cover slide, e.g. '2027年3月期第2四半期 決算説明資料'"
+    },
+    "presentation_date": {
+      "type": ["string", "null"],
+      "description": "The date on the cover slide, as YYYY-MM-DD"
+    },
+    "reporting_period": {
+      "type": ["string", "null"],
+      "description": "The period whose actual results are reported, as labelled in the results tables, e.g. 'FY27/Q1-Q2'"
+    },
+    "consolidated_results": {
+      "type": "object",
+      "description": "The current-period column of the 連結業績（実績） consolidated results table, amounts in 億円 (hundred millions of yen)",
+      "properties": {
+        "net_sales": {"type": ["number", "null"], "description": "売上高 for the current period, in 億円, as a number"},
+        "net_sales_change_percent": {"type": ["number", "null"], "description": "Year-on-year change in 売上高, in percent, as a signed number"},
+        "operating_profit": {"type": ["number", "null"], "description": "営業利益 for the current period, in 億円, as a number"},
+        "operating_margin_percent": {"type": ["number", "null"], "description": "営業利益率 for the current period, in percent, as a number"},
+        "ordinary_profit": {"type": ["number", "null"], "description": "経常利益 for the current period, in 億円, as a number"},
+        "net_profit": {"type": ["number", "null"], "description": "中間純利益 (profit attributable to owners of parent) for the current period, in 億円, as a number"},
+        "net_profit_prior_period": {"type": ["number", "null"], "description": "中間純利益 for the same period a year earlier, in 億円, as a number"}
+      }
+    },
+    "digital_sales": {
+      "type": "object",
+      "description": "From the デジタル売上高 (digital sales) slide",
+      "properties": {
+        "digital_sales": {"type": ["number", "null"], "description": "デジタル売上高 for the current period, in 億円, as a number"},
+        "digital_sales_ratio_percent": {"type": ["number", "null"], "description": "デジタル売上高比率 for the current period, in percent, as a number"}
+      }
+    },
+    "unit_sales": {
+      "type": "array",
+      "description": "Hardware and software sell-in units for the current period, one row per platform and category, from the 主な販売状況 slide",
+      "items": {
+        "type": "object",
+        "properties": {
+          "platform": {"type": "string", "description": "Platform, e.g. 'Nintendo Switch 2'"},
+          "category": {"type": "string", "description": "'hardware' or 'software'"},
+          "units_10k": {"type": ["number", "null"], "description": "Units sold in the current period, in 万 (ten thousands), as a number"},
+          "change_percent": {"type": ["number", "null"], "description": "Year-on-year change, in percent, as a signed number"}
+        }
+      }
+    },
+    "full_year_forecast": {
+      "type": "object",
+      "description": "The forecast column (FY27予想) of the 連結業績（予想） slide",
+      "properties": {
+        "net_sales": {"type": ["number", "null"], "description": "Forecast 売上高, in 億円, as a number"},
+        "operating_profit": {"type": ["number", "null"], "description": "Forecast 営業利益, in 億円, as a number"},
+        "ordinary_profit": {"type": ["number", "null"], "description": "Forecast 経常利益, in 億円, as a number"},
+        "net_profit": {"type": ["number", "null"], "description": "Forecast 当期純利益, in 億円, as a number"},
+        "annual_dividend_yen": {"type": ["number", "null"], "description": "Forecast 年間配当 per share, in yen, as a number"},
+        "usd_jpy_assumption": {"type": ["number", "null"], "description": "Assumed US dollar exchange rate (前提為替レート), yen per dollar, as a number"}
+      }
+    },
+    "million_seller_titles": {
+      "type": "array",
+      "description": "Every first-party title in the 当期ミリオンセラー自社タイトル table",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string", "description": "Title as printed, in Japanese"},
+          "platform": {"type": ["string", "null"], "description": "'Nintendo Switch 2' or 'Nintendo Switch'"},
+          "worldwide_units_current_period_10k": {"type": ["number", "null"], "description": "全世界合計 for FY27/Q1-Q2, in 万本, as a number"}
+        }
+      }
+    }
+  }
+}
