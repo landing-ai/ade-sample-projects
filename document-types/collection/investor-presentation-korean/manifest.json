@@ -1,0 +1,46 @@
+{
+  "slug": "investor-presentation-korean",
+  "title": "Investor Presentation (Korean)",
+  "source": {
+    "file": "naver-3q26-earnings-kor.pdf",
+    "pages": 10,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://navercorp.com/api/article/download/5424bdee-8b0f-4f03-b38f-a308a9381eb9",
+      "publisher": "NAVER Corporation",
+      "title": "2026년도 3분기 실적발표 (3Q 2026 Earnings Presentation)",
+      "retrieved": "2026-11-15",
+      "clearance": "public",
+      "clearance_note": "Investor relations material published by a listed company (KRX: 035420) on its own domain for general distribution. Downloaded by script directly from the publisher's download endpoint, which served application/pdf with the filename 3Q26_Naver_Earnings_KOR_vF.pdf; renamed here. Contains no personal data: no individual is named anywhere in the deck."
+    }
+  },
+  "feature_page": 3,
+  "fields": [
+    {
+      "path": "results_summary.revenue.q3_2026",
+      "label": "Revenue (3Q26)",
+      "occurrence": 0
+    },
+    {
+      "path": "results_summary.revenue.yoy_change",
+      "label": "Revenue growth YoY",
+      "occurrence": 0
+    },
+    {
+      "path": "results_summary.operating_profit.q3_2026",
+      "label": "Operating profit (3Q26)",
+      "occurrence": 0
+    },
+    {
+      "path": "results_summary.operating_profit.yoy_change",
+      "label": "Operating profit change YoY",
+      "occurrence": 0
+    },
+    {
+      "path": "results_summary.net_income.q3_2026",
+      "label": "Net income (3Q26)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "No feature page or fields were requested; chosen here. Page 3 (실적요약, results summary) features the quarter's headline story: revenue up 10.7% YoY to 3,472.4 billion KRW while operating profit fell 20.9% to 451.3 billion, with net income of 402.5 billion. That is the same story the slide's two bullets tell. Every value grounds to its own table cell in the 3Q26 and Y/Y columns. Occurrence 0 is pinned for the YoY changes because the same figures are repeated on page 7 (costs) and, for revenue, the footnote's ex-acquisition sentence also grounds (OFF, it says 9.0%, not 10.7%)."
+}

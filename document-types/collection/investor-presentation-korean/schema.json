@@ -1,0 +1,391 @@
+{
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the presenting company as printed in its logo or text, e.g. 'NAVER'"
+    },
+    "presentation_title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title on the cover slide, in Korean as printed (e.g. 2026년도 3분기 실적발표)"
+    },
+    "presentation_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Date on the cover slide, as YYYY-MM-DD"
+    },
+    "reporting_period": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The quarter the results cover, as written in the column headers, e.g. '3Q26'"
+    },
+    "accounting_basis": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The accounting standard the figures are prepared under, from the 유의 사항 (disclaimer) slide, e.g. 'K-IFRS'"
+    },
+    "currency_unit": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The unit stated on the results summary table (단위), in Korean as printed, e.g. '십억 원'"
+    },
+    "results_summary": {
+      "type": "object",
+      "description": "The 실적요약 (results summary) slide",
+      "properties": {
+        "revenue": {
+          "type": "object",
+          "description": "매출액 (revenue) — row of the 실적요약 (results summary) table on the summary slide",
+          "properties": {
+            "q3_2026": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q26 column, in billions of KRW (십억 원), as a number"
+            },
+            "q3_2025": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q25 column (the same quarter a year earlier), in billions of KRW (십억 원), as a number"
+            },
+            "yoy_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Y/Y column for this row, exactly as printed, e.g. '10.7%'"
+            },
+            "qoq_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Q/Q column for this row, exactly as printed, e.g. '2.5%'"
+            }
+          }
+        },
+        "operating_expenses": {
+          "type": "object",
+          "description": "영업비용 (operating expenses) — row of the 실적요약 (results summary) table on the summary slide",
+          "properties": {
+            "q3_2026": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q26 column, in billions of KRW (십억 원), as a number"
+            },
+            "q3_2025": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q25 column (the same quarter a year earlier), in billions of KRW (십억 원), as a number"
+            },
+            "yoy_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Y/Y column for this row, exactly as printed, e.g. '10.7%'"
+            },
+            "qoq_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Q/Q column for this row, exactly as printed, e.g. '2.5%'"
+            }
+          }
+        },
+        "operating_profit": {
+          "type": "object",
+          "description": "영업이익 (operating profit) — row of the 실적요약 (results summary) table on the summary slide",
+          "properties": {
+            "q3_2026": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q26 column, in billions of KRW (십억 원), as a number"
+            },
+            "q3_2025": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q25 column (the same quarter a year earlier), in billions of KRW (십억 원), as a number"
+            },
+            "yoy_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Y/Y column for this row, exactly as printed, e.g. '10.7%'"
+            },
+            "qoq_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Q/Q column for this row, exactly as printed, e.g. '2.5%'"
+            }
+          }
+        },
+        "net_income": {
+          "type": "object",
+          "description": "당기순이익 (net income) — row of the 실적요약 (results summary) table on the summary slide",
+          "properties": {
+            "q3_2026": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q26 column, in billions of KRW (십억 원), as a number"
+            },
+            "q3_2025": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Value in the 3Q25 column (the same quarter a year earlier), in billions of KRW (십억 원), as a number"
+            },
+            "yoy_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Y/Y column for this row, exactly as printed, e.g. '10.7%'"
+            },
+            "qoq_change": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The Q/Q column for this row, exactly as printed, e.g. '2.5%'"
+            }
+          }
+        },
+        "operating_margin_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "영업이익률 (operating margin) for 3Q26, as a number, e.g. 13.0"
+        },
+        "revenue_growth_excluding_acquisition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The footnote's revenue growth excluding the 왈라팝 (Wallapop) acquisition, as printed in Korean, including both YoY and QoQ figures"
+        }
+      }
+    },
+    "segment_revenue_3q26": {
+      "type": "array",
+      "description": "3Q26 revenue for each business segment and sub-segment row in the results summary table (네이버 플랫폼, 광고, 서비스, 파이낸셜 플랫폼, 글로벌 도전, C2C, 콘텐츠, 엔터프라이즈)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "segment": {
+            "type": "string",
+            "description": "Segment name in Korean, as printed"
+          },
+          "revenue": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "3Q26 revenue in billions of KRW (십억 원)"
+          },
+          "yoy_change": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Y/Y change as printed, e.g. '7.3%'"
+          }
+        }
+      }
+    },
+    "financial_platform": {
+      "type": "object",
+      "description": "The 파이낸셜 플랫폼 (financial platform) slide",
+      "properties": {
+        "total_payment_volume_trillion_krw": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "3Q26 결제액 (TPV, total payment volume) in trillions of KRW (조 원), as a number"
+        },
+        "tpv_yoy_growth": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "YoY growth of total payment volume, as printed in the bullets, e.g. '15.6%'"
+        },
+        "external_tpv_yoy_growth": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "YoY growth of 외부 결제액 (external payment volume), as printed in the bullets"
+        }
+      }
+    },
+    "operating_costs": {
+      "type": "object",
+      "description": "The 비용/손익 (costs and profit) slide, 3Q26 column, in billions of KRW (십억 원)",
+      "properties": {
+        "development_and_operations": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "개발/운영 (development and operations) in 3Q26"
+        },
+        "personnel": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "인건비 (personnel costs) in 3Q26"
+        },
+        "partner": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "파트너 (partner costs) in 3Q26"
+        },
+        "infrastructure": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "인프라 (infrastructure costs) in 3Q26"
+        },
+        "marketing": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "마케팅 (marketing costs) in 3Q26"
+        },
+        "marketing_yoy_change": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Y/Y change of marketing costs as printed, e.g. '32.3%'"
+        }
+      }
+    },
+    "cash_and_borrowings": {
+      "type": "object",
+      "description": "The 현금 및 차입금 현황 (cash and borrowings) tables, 3Q26 column, in billions of KRW (십억 원)",
+      "properties": {
+        "cash_separate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "별도 (separate / parent-only) cash, cash equivalents and short-term financial instruments in 3Q26"
+        },
+        "cash_consolidated": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "연결 (consolidated) cash, cash equivalents and short-term financial instruments in 3Q26"
+        },
+        "net_cash": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "순현금 (net cash) in 3Q26"
+        },
+        "total_borrowings": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "차입금 (total borrowings, consolidated) in 3Q26"
+        },
+        "short_term_borrowings": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "단기 (short-term borrowings) in 3Q26"
+        },
+        "long_term_borrowings": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "장기 (long-term borrowings) in 3Q26"
+        }
+      }
+    },
+    "non_operating": {
+      "type": "object",
+      "description": "The Appendix 당기순이익 주요 증감내역 (net income bridge) slide, 3Q26 column, in billions of KRW (십억 원)",
+      "properties": {
+        "non_operating_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "영업외손익 (non-operating income) in 3Q26; negative if a loss"
+        },
+        "equity_method_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "관계기업투자손익 (income from associates) in 3Q26"
+        },
+        "financial_income": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "금융손익 (financial income) in 3Q26; negative if a loss"
+        },
+        "profit_before_tax": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "법인세차감전순이익 (profit before income tax) in 3Q26"
+        },
+        "income_tax_expense": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "법인세비용 (income tax expense) in 3Q26"
+        }
+      }
+    }
+  }
+}
