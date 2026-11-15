@@ -1,0 +1,215 @@
+{
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "The presenting company's name exactly as printed in Arabic, e.g. 'شركة بروة العقارية'"
+    },
+    "presentation_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Month and year of the presentation as shown on the cover, as YYYY-MM"
+    },
+    "headquarters": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Headquarters city and country, as printed in Arabic"
+    },
+    "reporting_period_end": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "End date of the reporting period the financial highlights cover, as YYYY-MM-DD"
+    },
+    "currency": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Reporting currency as an ISO 4217 code, e.g. 'QAR' for Qatari riyal (ريال قطري)"
+    },
+    "q1_highlights": {
+      "type": "object",
+      "description": "Figures from the key highlights slide for the three months ended on the reporting date (الملامح الرئيسية لفترة الثلاثة أشهر). Arabic-Indic digits (٠١٢٣٤٥٦٧٨٩) must be converted to Western digits; the Arabic decimal separator is '.' or '٫' and the thousands separator ',' or '٬'.",
+      "properties": {
+        "operating_revenue_qar_millions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Operating revenue (الإيرادات التشغيلية) for the quarter, in millions of QAR"
+        },
+        "operating_profit_qar_millions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Operating profit (الأرباح التشغيلية) for the quarter, in millions of QAR"
+        },
+        "rental_share_of_operating_revenue_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Percentage of operating revenue that comes from rental income (من الإيرادات التشغيلية تعود إلى إيرادات الايجارات)"
+        },
+        "operating_margin_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Operating profit margin (هامش الربح التشغيلي), as a percentage"
+        },
+        "net_rental_share_of_operating_profit_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Percentage of operating profit that comes from net rental income"
+        },
+        "net_debt_qar_billions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net debt (صافي الدين), in billions of QAR"
+        },
+        "liquidity_qar_billions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Liquidity (السيولة), in billions of QAR"
+        },
+        "total_assets_qar_billions": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total assets (مجموع الأصول), in billions of QAR"
+        },
+        "cash_dividend_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Cash dividend distributed for the prior fiscal year, as a percentage (توزيعات نقدية), e.g. 18 for '18%'"
+        },
+        "dividend_yield_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Dividend yield on the share price stated alongside the cash dividend, as a percentage"
+        }
+      }
+    },
+    "capital_structure": {
+      "type": "object",
+      "description": "Balance sheet and debt figures from the financial liquidity slide (سيولة مالية لضمان توزيع رأس المال بحكمة), in millions of QAR unless stated",
+      "properties": {
+        "debt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Debt (الدين), millions of QAR"
+        },
+        "bank_balances": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Bank balances (الأرصدة البنكية), millions of QAR"
+        },
+        "net_debt": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net debt (صافي الدين), millions of QAR"
+        },
+        "total_equity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total equity (اجمالي حقوق الملكية), millions of QAR"
+        },
+        "total_assets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Total assets (اجمالي الموجودات), millions of QAR"
+        },
+        "net_debt_to_equity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net debt to equity ratio, as a decimal"
+        },
+        "net_debt_to_assets": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Net debt to assets ratio, as a decimal"
+        },
+        "debt_maturity": {
+          "type": "array",
+          "description": "Debt maturity profile bars (ملف استحقاق الدين), one per year label",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "Year label as printed; the last bar is '2030 and after' (2030 وما بعد)"
+              },
+              "amount_qar_millions": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Debt maturing, millions of QAR"
+              }
+            }
+          }
+        }
+      }
+    },
+    "portfolio": {
+      "type": "object",
+      "description": "Operating portfolio scale from the company overview slides",
+      "properties": {
+        "residential_and_worker_units": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Residential units and labour accommodation rooms in operation"
+        },
+        "built_up_area_million_sqm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Built-up area of operating buildings, millions of square metres"
+        },
+        "hotel_rooms": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Number of hotel rooms"
+        }
+      }
+    }
+  }
+}
