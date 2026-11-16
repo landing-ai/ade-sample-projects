@@ -1,121 +1,121 @@
-# Medical imaging report
+# Medical Imaging Report
 
-Source assets for `landing.ai/document-type/medical-imaging-report`.
+A real radiology report as it actually arrives at a provider's office: by fax. It is a shoulder
+MRI read for an orthopedic practice and faxed to a physical therapy clinic in March 2019.
 
-## Sample document
+| Page | Content |
+|---|---|
+| 1 | The practice's fax cover sheet: letterhead, a staff roster down the left margin, To/From/Date/Subject blocks, and a confidentiality notice |
+| 2 | The report: patient block, study details, history, comparison, technique, findings, impression, and signature lines |
 
-`source/sample-mri-report.pdf`: a **sample MRI report**, published as Attachment #4 to a
-New York State Department of Corrections and Community Supervision (DOCCS) procurement to
-show bidders the report format the agency expects. **3 pages, portrait**, a native PDF
-exported from Word with a text layer.
+The PDF is 2 pages, portrait, and is a raster scan with no text layer. Every page carries the fax
+machine's transmission header.
 
-Each page repeats the same letterhead ("CONTRACTOR NAME") and a two-column patient header
-of twelve labels: patient name, sex, DOB, accession number, medical record number,
-ordering and attending doctor, and so on. Every one is blank. Page 1 carries the exam,
-clinical indication, comparison and technique, followed by the first findings sections
-(ligaments, tendons, muscles). Page 2 continues with joints and bones and the "other"
-structures, then gives the impression, the line recording when the findings were
-discussed, and the signature block. Page 3 is a sign-off page with placeholders only.
+This replaces the collection's earlier medical-imaging-report folder, a 3-page sample report
+published by New York State DOCCS, at the operator's direction.
+
+## Provenance
 
 | | |
 |---|---|
-| Publisher | New York State Department of Corrections and Community Supervision (DOCCS) |
-| Source | [doccs.ny.gov/…/attachment-4-sample-mri-report.pdf](https://doccs.ny.gov/system/files/documents/2021/04/attachment-4-sample-mri-report.pdf) |
-| Retrieved | 2026-10-04, downloaded directly by script |
-| Clearance | Public |
+| Sender | Rebound Orthopedics & Neurosurgery (Northwest Surgical Specialists, P.C.), Vancouver, WA |
+| Source | Contributed by the patient. Not published online, so there is no source URL |
+| Received for this collection | 2026-11-15 |
+| Clearance | `redacted` |
 
-The PDF is on the agency's official domain. The parent bid or RFP page that links it was
-not found. The report carries no identifiers: the patient header is blank, and the
-provider, doctor, facility and signer are placeholders such as `DOCTOR NAME` and
-`{insert correctional facility name}`. The clinical narrative (a right-ankle MRI in a
-53-year-old male) is not tied to anyone. No page text was changed. The only edit was
-clearing the PDF's document-information metadata, whose author field held a staff
-member's first name.
+The patient this report describes contributed it and gave explicit permission to publish it, on
+one condition: their name must not appear. The patient chose to remove their name only.
+Everything else is as faxed:
+
+- the clinic's staff roster
+- the referring, reading and sending staff
+- the medical record and accession numbers
+- the dates
+- the clinical content
+
+### What was removed, and how
+
+The scan arrived with the patient's name and date of birth covered by black marks. These were
+**stamp annotations drawn over an intact scan**. Remove the annotations in any PDF editor and
+the original text is still there underneath. A "redaction" like this looks complete on screen
+and is not.
+
+Three regions were burned into the page images: the patient name on both pages and the date of
+birth on page 2. The image pixels in each region were blanked and a solid black box drawn in
+their place, and the stamp annotations were deleted. The boxes are fitted to each text line, so
+the neighbouring labels (PATIENT NAME, MRN, DOB, SEX) stay legible.
+
+Checks on the output:
+
+- the raw embedded image pixels under every box read pure white
+- no annotations remain
+- the PDF metadata is empty
 
 ## Why this document
 
-The collection's first **radiology report**. Every other medical document here is a lab
-report built around a results table. This one is almost all free-text narrative: a
-radiologist's prose findings under anatomic headings, then an impression. It tests:
+It is the real thing rather than a specimen:
 
-- **Facts in prose:** the diagnosis, the recommended follow-up, and the date the findings
-  were communicated all sit in sentences, not labelled fields.
-- **A repeated, inconsistent block:** the examination, clinical indication, comparison
-  and technique appear twice on page 1, and they disagree. The first says "MRI FOOT"
-  and the second says "MRI ANKLE". The schema asks for the last statement, the one the
-  findings follow, and gets it.
-- **Template residue:** a blank patient header and `{insert …}` placeholders that an
-  extractor has to recognize as empty instead of copying.
-- **Typos as printed:** "platar spring", "signification osteochondral lesion".
+- a fax of a scan
+- a cover sheet that is mostly noise, including a roster of about 60 staff names
+- a report body in the shouting all-caps of a radiology information system export
+- burned-in redaction boxes, as real records arriving from outside usually carry
 
-## Featured fields: the clinical conclusion
+## Schema
 
-All on page 2.
+The schema was supplied with the request and used unchanged. It has 22 leaf fields across:
+
+- fax transmission details
+- sender information
+- the patient block
+- study details
+- report findings
+
+One key is spelled `oragnization`, as supplied.
+
+## Featured fields (page 2)
 
 | Field | Value |
 |---|---|
-| Impression | Non-displaced fracture of the medial cortex of the distal tibial metadiaphysis. |
-| Joint and bone finding | moderate marrow edema in the anterior/lateral aspect of the distal tibia |
-| Findings discussed | 12/15/2020 2:20 PM |
+| Exam | MR UPPER EXT WO CONTRAST SHOULDER RIGHT |
+| Study date | Mar 08, 2019 |
+| Comparison study | X-ray January 14, 2018. |
+| Technique | Coronal oblique, sagittal oblique on axial imaging. |
 
-What the radiologist concluded, the imaging finding behind it, and when the result reached
-the care team. The request suggested these three plus the recommended follow-up (CT of
-the tibia/fibula or radiographs). The follow-up extracts correctly but could not be
-featured, as explained below.
+Together they describe the study itself: what was scanned, when, against what prior image, and
+how it was imaged. The identifier fields (MRN and accession number) and the physician names
+ground correctly but were deliberately not featured, because these four fields make the same
+point without them.
 
-## What it surfaced
+## Grounding on this document
 
-**Narrative paragraphs ground one line at a time.** Each range in a long value covers one
-printed line, so no single box contains the whole value, and every multi-line field reads
-`OFF`. These fields include the impression, technique, recommended follow-up and most
-`findings[].finding` paragraphs. The values themselves are correct. To give the page
-something it could feature, the schema has short verbatim fields that fit on one line:
-`primary_diagnosis` (the impression's first sentence), `findings[].key_finding` (the
-section's first abnormality) and `follow_up_studies`. The first two ground `ok`.
-`follow_up_studies` ("CT of the rest of the tibia/fibula or radiographs") still reads
-`OFF` because the printed text wraps between "CT" and "of the rest", which is why the
-request's follow-up field did not ship.
+**One line, one value: tight boxes.** Every single-line value grounds to its own line box,
+including the fax header on both pages and the sender block in the cover sheet's footer.
 
-**Template placeholders are handled correctly, mostly.** All six patient fields and the
-exam date come back `null` with no grounding, which is the right answer for blank labels.
-`radiologist` is `null` despite `DOCTOR NAME` and `{insert …}` placeholders, but only
-after the schema told it to return JSON null. The first run returned the string
-`"null"`. Inside the `findings` array, `key_finding` for normal sections still comes back
-as the string `"null"` even with the same instruction. `imaging_provider` copies the
-placeholder `CONTRACTOR NAME` literally.
+**Several lines, one value: `OFF`.** The most interesting text on the page is the findings and
+the impression, and neither can be featured. Each spans several lines, and the range comes back
+as one piece per line. None of those pieces contains the whole value, so `inspect_fields.py`
+reports every one `OFF`. The history (two lines) does the same.
 
-**The impression first absorbed the next paragraph.** On the first run, `impression`
-included the "findings were discussed with…" sentence. Telling it to stop at the end of
-the paragraph fixed that.
+**The parse reads a black box as `[REDACTED]`.** DPT-3 renders the burned regions as
+`[REDACTED]`, on both the subject line and the patient name. Extraction returns
+`patient_name: "[REDACTED]"` rather than inventing a name, the right outcome for a redacted
+record.
 
-**The abnormal flag is right in every section.** The flag marks ligaments, muscles and
-joints/bones as abnormal (all three report edema or fracture) and the five other
-sections as normal.
+**One line disappeared.** The parse dropped the line that holds the date-of-birth box and the
+legible "SEX: F" entirely. So `date_of_birth` and `sex` both come back null (`SYNTH`), even
+though the sex is printed in clear.
 
-## Extraction
+**A value that needs reading.** `accession_number` wraps onto its own line below its label. It
+grounds `ok` to that line, with a second, `OFF` range on the label line.
 
-**27 leaf fields**: the provider and report status; the patient header (name, sex, date
-of birth, record and accession numbers, ordering physician); exam date, examination,
-modality, body part, laterality and contrast; clinical indication, comparison and
-technique; each findings section (area, finding, key finding, abnormal flag); the
-impression, primary diagnosis, recommended follow-up and follow-up studies; when the
-findings were communicated; and the radiologist. 16 of 19 top-level fields populate. The
-three empty ones (patient, exam date, radiologist) are blank or placeholders in the
-source. The `findings` array has 8 sections.
+## Credits
 
-## Cost
+5.30 credits at standard tier: parse plus extract, 2 pages.
 
-**15.10 credits** at standard tier for 3 pages: 6.50 for the parse and first extraction,
-then 4.40 and 4.20 for two extract-only runs while iterating the schema.
+## Regenerate
 
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/medical-imaging-report/source/sample-mri-report.pdf \
-  "https://doccs.ny.gov/system/files/documents/2021/04/attachment-4-sample-mri-report.pdf"
-# then clear the PDF metadata (author field), e.g. PyMuPDF set_metadata({}) + del_xml_metadata()
-.venv/bin/python document-types/scripts/run_ade.py medical-imaging-report                # 6.50 credits
-.venv/bin/python document-types/scripts/run_ade.py medical-imaging-report --extract-only # ~4.3, schema iteration
-.venv/bin/python document-types/scripts/build_images.py medical-imaging-report           # free
+```
+.venv/bin/python document-types/scripts/run_ade.py medical-imaging-report
 .venv/bin/python document-types/scripts/inspect_fields.py medical-imaging-report --page 2
+.venv/bin/python document-types/scripts/build_images.py medical-imaging-report
 ```

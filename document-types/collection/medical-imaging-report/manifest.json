@@ -2,23 +2,63 @@
   "slug": "medical-imaging-report",
   "title": "Medical Imaging Report",
   "source": {
-    "file": "sample-mri-report.pdf",
-    "pages": 3,
+    "file": "mri-report-fax.pdf",
+    "pages": 2,
     "orientation": "portrait",
     "origin": {
-      "url": "https://doccs.ny.gov/system/files/documents/2021/04/attachment-4-sample-mri-report.pdf",
-      "publisher": "New York State Department of Corrections and Community Supervision (DOCCS)",
-      "title": "Attachment #4 – Sample MRI report",
-      "retrieved": "2026-10-04",
-      "clearance": "public",
-      "clearance_note": "A sample MRI report that New York State DOCCS publishes on its official domain (doccs.ny.gov) as Attachment #4 to a procurement, to show bidders the report format it expects; downloaded directly by script. The parent bid or RFP page that links it was not found. The clinical narrative (a right-ankle MRI) carries no identifiers: every patient header field is blank, the provider letterhead reads 'CONTRACTOR NAME', and the doctor, facility and signer are '{insert ...}' placeholders. No page text was redacted or changed. The only edit was clearing the PDF's document-information metadata, whose author field held a first name, presumably the staff member who prepared it."
+      "url": "Not published online: contributed by the patient",
+      "publisher": "Rebound Orthopedics & Neurosurgery (Northwest Surgical Specialists, P.C.), Vancouver, WA",
+      "title": "Faxed shoulder MRI report with fax cover sheet (March 2019)",
+      "retrieved": "2026-11-15",
+      "clearance": "redacted",
+      "clearance_note": "A real faxed radiology report, contributed by the patient it describes, who gave explicit permission for it to be published here on the condition that their name is not shown. It is not from the internet and has no source URL. The patient chose to have only their name removed; everything else is as faxed, including the clinic's staff roster, the referring and reading physicians, the medical record and accession numbers, and the clinical findings. The scan arrived with the patient's name and date of birth covered by black stamp annotations that left the scan beneath intact; those regions were burned into the page images so the originals are gone, not hidden. PDF metadata cleared.",
+      "redactions": {
+        "method": "Image pixels burned to blank under a solid black box, replacing removable stamp annotations that had left the scan intact beneath",
+        "replaced": [
+          {
+            "what": "patient name",
+            "with": "solid black box",
+            "count": 2,
+            "pages": [
+              1,
+              2
+            ]
+          },
+          {
+            "what": "patient date of birth",
+            "with": "solid black box",
+            "count": 1,
+            "pages": [
+              2
+            ]
+          }
+        ],
+        "verified": "Raw embedded image pixels under every box read pure white (255) after burning; no annotations remain; PDF metadata empty"
+      }
     }
   },
   "feature_page": 2,
   "fields": [
-    { "path": "primary_diagnosis", "label": "Impression", "occurrence": 0 },
-    { "path": "findings[3].key_finding", "label": "Joint and bone finding", "occurrence": 0 },
-    { "path": "findings_communicated", "label": "Findings discussed", "occurrence": 0 }
+    {
+      "path": "study_details.exam_description",
+      "label": "Exam",
+      "occurrence": 1
+    },
+    {
+      "path": "study_details.study_date",
+      "label": "Study date",
+      "occurrence": 0
+    },
+    {
+      "path": "study_details.comparison",
+      "label": "Comparison study",
+      "occurrence": 1
+    },
+    {
+      "path": "report_findings.technique",
+      "label": "Technique",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features the clinical conclusion on page 2: the radiologist's impression, the bone finding behind it, and when the result was communicated. The request's notes suggested four fields as suggestions. Three shipped: the impression (non-displaced fracture of the distal tibial metadiaphysis), the joint/bones finding (moderate marrow edema in the distal tibia) and the findings-discussed date and time (12/15/2020 2:20 PM). The fourth, the recommended follow-up (CT of the tibia/fibula or radiographs), extracts correctly but could not be featured: it wraps across a line break, and its ranges are per line, so no single box contains the value (OFF). The schema gained two short verbatim fields, findings[].key_finding and follow_up_studies, because the full narrative paragraphs ground one line at a time and none can be featured whole. The patient header is blank in the source, so every patient field extracts null with no grounding."
+  "notes": "Replaces the earlier medical-imaging-report folder (a 3-page New York State DOCCS sample report), at the operator's direction. The request supplied the schema (schema_mri_report.json, used unchanged) and named no feature page or fields. Page 2 features the study itself: what was scanned, when, what it was compared against and how it was imaged. The findings and impression, the most interesting text on the page, could not be featured: each spans several lines and grounds OFF, one range per line, none of which contains the whole value. Identifier fields (MRN, accession number) and physician names ground ok but were deliberately not featured: the study fields make the same point without them."
 }

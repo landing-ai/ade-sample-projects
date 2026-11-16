@@ -1,69 +1,87 @@
 {
   "model": "pro",
   "feature_page": 2,
-  "page_count": 3,
+  "page_count": 2,
   "preview_pages": [
     1,
-    2,
-    3
+    2
   ],
   "fields": [
     {
-      "path": "primary_diagnosis",
-      "label": "Impression",
-      "value": "Non-displaced fracture of the medial cortex of the distal tibial metadiaphysis.",
+      "path": "study_details.exam_description",
+      "label": "Exam",
+      "value": "MR UPPER EXT WO CONTRAST SHOULDER RIGHT",
       "page": 2,
       "box": {
-        "xmin": 0.11441,
-        "ymin": 0.58719,
-        "xmax": 0.88539,
-        "ymax": 0.60357
+        "xmin": 0.152,
+        "ymin": 0.20615,
+        "xmax": 0.61782,
+        "ymax": 0.22305
       },
       "range": {
-        "end": 2929,
-        "start": 2823
+        "end": 3096,
+        "start": 3057
       },
-      "occurrence": 0,
+      "occurrence": 1,
       "matched": true,
-      "image": "primary_diagnosis.png"
+      "image": "study_details-exam_description.png"
     },
     {
-      "path": "findings[3].key_finding",
-      "label": "Joint and bone finding",
-      "value": "moderate marrow edema in the anterior/lateral aspect of the distal tibia",
+      "path": "study_details.study_date",
+      "label": "Study date",
+      "value": "Mar 08, 2019",
       "page": 2,
       "box": {
-        "xmin": 0.11395,
-        "ymin": 0.29956,
-        "xmax": 0.80712,
-        "ymax": 0.31559
+        "xmin": 0.15219,
+        "ymin": 0.17131,
+        "xmax": 0.39867,
+        "ymax": 0.18843
       },
       "range": {
-        "end": 2069,
-        "start": 1974
+        "end": 3038,
+        "start": 3014
       },
       "occurrence": 0,
       "matched": true,
-      "image": "findings-3-key_finding.png"
+      "image": "study_details-study_date.png"
     },
     {
-      "path": "findings_communicated",
-      "label": "Findings discussed",
-      "value": "12/15/2020 2:20 PM",
+      "path": "study_details.comparison",
+      "label": "Comparison study",
+      "value": "X-ray January 14, 2018.",
       "page": 2,
       "box": {
-        "xmin": 0.11457,
-        "ymin": 0.69375,
-        "xmax": 0.68449,
-        "ymax": 0.71059
+        "xmin": 0.15178,
+        "ymin": 0.29285,
+        "xmax": 0.35699,
+        "ymax": 0.31002
       },
       "range": {
-        "end": 3304,
-        "start": 3230
+        "end": 3226,
+        "start": 3203
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "study_details-comparison.png"
+    },
+    {
+      "path": "report_findings.technique",
+      "label": "Technique",
+      "value": "Coronal oblique, sagittal oblique on axial imaging.",
+      "page": 2,
+      "box": {
+        "xmin": 0.15273,
+        "ymin": 0.32747,
+        "xmax": 0.56823,
+        "ymax": 0.34494
+      },
+      "range": {
+        "end": 3289,
+        "start": 3238
       },
       "occurrence": 0,
       "matched": true,
-      "image": "findings_communicated.png"
+      "image": "report_findings-technique.png"
     }
   ]
 }

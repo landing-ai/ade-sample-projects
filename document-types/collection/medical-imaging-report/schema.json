@@ -1,203 +1,212 @@
 {
+  "title": "Medical Document Extraction Schema",
+  "description": "Schema for extracting structured information from a medical document, focusing on administrative details, personnel, and patient report data.",
   "type": "object",
-  "title": "Medical Imaging Report",
-  "description": "A radiology report (MRI, CT, X-ray, ultrasound) as a claims reviewer, underwriter or care coordinator reads it: the patient and order header, what was imaged and how, the findings by anatomic area, the impression, any recommended follow-up, and when the result was communicated.",
   "properties": {
-    "imaging_provider": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Name of the imaging provider or contractor in the letterhead, as printed. Null if only a placeholder or blank."
-    },
-    "report_status": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Report status as printed, e.g. 'Final Report', 'Preliminary', 'Addendum', without surrounding asterisks."
-    },
-    "patient": {
+    "fax_transmission_details": {
+      "title": "Fax Transmission Details",
+      "description": "Information related to the fax transmission itself.",
       "type": "object",
-      "description": "The patient and order header block. Copy values exactly as printed; use null for any label whose value is blank.",
       "properties": {
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Patient name, or null if blank."
+        "transmission_datetime": {
+          "title": "Transmission Date and Time",
+          "description": "The date and time the fax was transmitted, including timezone offset.",
+          "type": "string",
+          "nullable": true
         },
-        "sex": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Patient sex, or null if blank."
+        "sender_system": {
+          "title": "Sender System",
+          "description": "The system or service used to send the fax.",
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "required": [
+        "transmission_datetime",
+        "sender_system"
+      ]
+    },
+    "sender_information": {
+      "title": "Organization Contact Information",
+      "description": "General contact details for the organization sending the fax.",
+      "type": "object",
+      "properties": {
+        "oragnization": {
+          "title": "Organization Name",
+          "description": "The name of the organization sending the fax.",
+          "type": "string",
+          "nullable": true
         },
-        "date_of_birth": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Date of birth as printed, or null if blank."
+        "address": {
+          "title": "Organization Address",
+          "description": "The physical address of the organization.",
+          "type": "string",
+          "nullable": true
+        },
+        "phone_number": {
+          "title": "Organization Phone Number",
+          "description": "The main phone number for the organization.",
+          "type": "string",
+          "nullable": true
+        },
+        "fax_number": {
+          "title": "Organization Fax Number",
+          "description": "The main fax number for the organization.",
+          "type": "string",
+          "nullable": true
+        },
+        "website": {
+          "title": "Organization Website",
+          "description": "The website URL for the organization.",
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "required": [
+        "address",
+        "phone_number",
+        "fax_number",
+        "website"
+      ]
+    },
+    "patient_report": {
+      "title": "Patient Report Details",
+      "description": "Extracted information from the patient's medical report section.",
+      "type": "object",
+      "properties": {
+        "patient_name": {
+          "title": "Patient Name",
+          "description": "The full name of the patient.",
+          "type": "string",
+          "nullable": true
         },
         "medical_record_number": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Medical record number (Med. Rec. No), or null if blank."
+          "title": "Medical Record Number (MRN)",
+          "description": "The patient's unique medical record number.",
+          "type": "string",
+          "nullable": true
         },
+        "date_of_birth": {
+          "title": "Date of Birth",
+          "description": "The patient's date of birth.",
+          "type": "string",
+          "nullable": true
+        },
+        "sex": {
+          "title": "Sex",
+          "description": "The patient's biological sex.",
+          "type": "string",
+          "nullable": true
+        },
+        "referring_doctor": {
+          "title": "Referring Doctor",
+          "description": "The name and credentials of the referring physician.",
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "required": [
+        "patient_name",
+        "medical_record_number",
+        "date_of_birth",
+        "sex",
+        "referring_doctor"
+      ]
+    },
+    "study_details": {
+      "title": "Medical Study Details",
+      "description": "Details pertaining to the medical study or examination.",
+      "type": "object",
+      "properties": {
         "accession_number": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Accession number, or null if blank."
+          "title": "Accession Number",
+          "description": "The unique identifier for the medical study.",
+          "type": "string",
+          "nullable": true
         },
-        "ordering_physician": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Ordering doctor, or null if blank."
+        "study_date": {
+          "title": "Study Date",
+          "description": "The date the medical study was performed.",
+          "type": "string",
+          "nullable": true
+        },
+        "exam_description": {
+          "title": "Exam Description",
+          "description": "A description of the examination performed.",
+          "type": "string",
+          "nullable": true
+        },
+        "history": {
+          "title": "Patient History",
+          "description": "Relevant patient medical history for the study.",
+          "type": "string",
+          "nullable": true
+        },
+        "comparison": {
+          "title": "Comparison Studies",
+          "description": "Details of previous studies used for comparison.",
+          "type": "string",
+          "nullable": true
         }
-      }
+      },
+      "required": [
+        "accession_number",
+        "study_date",
+        "exam_description",
+        "history",
+        "comparison"
+      ]
     },
-    "exam_date": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Date of exam as printed; null if the label has no value."
-    },
-    "examination": {
-      "type": "string",
-      "description": "The examination as printed after 'EXAMINATION:', e.g. 'MRI ANKLE WITHOUT CONTRAST – RIGHT'. If the examination is stated more than once, use the last statement, which is the one the findings follow."
-    },
-    "modality": {
-      "type": "string",
-      "enum": [
-        "MRI",
-        "CT",
-        "X-ray",
-        "Ultrasound",
-        "PET",
-        "Nuclear medicine",
-        "Mammography",
-        "Other"
-      ],
-      "description": "The imaging modality."
-    },
-    "body_part": {
-      "type": "string",
-      "description": "The body part imaged, e.g. 'Ankle'."
-    },
-    "laterality": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "enum": [
-        "Left",
-        "Right",
-        "Bilateral",
-        null
-      ],
-      "description": "Side imaged, or null if not applicable."
-    },
-    "contrast_used": {
-      "type": [
-        "boolean",
-        "null"
-      ],
-      "description": "True if contrast was administered, false if the report says without contrast or none used."
-    },
-    "clinical_indication": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "The clinical indication (reason for exam) as printed. If stated more than once, use the last statement."
-    },
-    "comparison": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Prior studies compared against, as printed (e.g. 'None available')."
-    },
-    "technique": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "The technique paragraph as printed. If stated more than once, use the last statement."
-    },
-    "findings": {
-      "type": "array",
-      "description": "Every findings section, in order, one entry per anatomic heading (e.g. LIGAMENTS, TENDONS, MUSCLES, JOINT/BONES, and each sub-heading under OTHER such as Plantar Fascia).",
-      "items": {
-        "type": "object",
-        "properties": {
-          "area": {
-            "type": "string",
-            "description": "The anatomic heading as printed, e.g. 'LIGAMENTS', 'JOINT/BONES', 'Plantar Fascia'."
-          },
-          "finding": {
-            "type": "string",
-            "description": "The finding text under that heading, verbatim."
-          },
-          "key_finding": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "The section's first abnormality only, as a short phrase copied verbatim from the report: drop a leading 'There is', and stop at the first comma or full stop, e.g. 'edema in the flexor hallucis longus muscle and the distal leg'. Return JSON null, not the string 'null', if the section reports nothing abnormal."
-          },
-          "abnormal": {
-            "type": "boolean",
-            "description": "True if the section reports any abnormality (edema, fracture, tear, lesion); false if it reports only normal or intact structures."
-          }
+    "report_findings": {
+      "title": "Report Findings and Impression",
+      "description": "The technical findings and overall impression from the medical report.",
+      "type": "object",
+      "properties": {
+        "technique": {
+          "title": "Technique Used",
+          "description": "Description of the imaging or examination technique.",
+          "type": "string",
+          "nullable": true
+        },
+        "findings": {
+          "title": "Detailed Findings",
+          "description": "The detailed observations and findings from the examination.",
+          "type": "string",
+          "nullable": true
+        },
+        "impression": {
+          "title": "Impression",
+          "description": "The summary conclusion or diagnosis based on the findings.",
+          "type": "string",
+          "nullable": true
+        },
+        "dictated_by": {
+          "title": "Dictated By",
+          "description": "The name and credentials of the person who dictated the report.",
+          "type": "string",
+          "nullable": true
+        },
+        "signed_by": {
+          "title": "Electronically Signed By",
+          "description": "The name, credentials, and timestamp of the electronic signature.",
+          "type": "string",
+          "nullable": true
         }
-      }
-    },
-    "impression": {
-      "type": "string",
-      "description": "The IMPRESSION paragraph, verbatim. Stop at the end of that paragraph: do not include the following sentence about who the findings were discussed with."
-    },
-    "primary_diagnosis": {
-      "type": "string",
-      "description": "The principal diagnosis from the impression, as its first sentence states it."
-    },
-    "recommended_follow_up": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Any follow-up imaging or correlation the radiologist recommends, quoted from the report; null if none."
-    },
-    "follow_up_studies": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Just the imaging studies recommended for follow-up, copied verbatim, e.g. 'CT of the rest of the tibia/fibula or radiographs'; null if none."
-    },
-    "findings_communicated": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Date and time the findings were discussed with the care team, exactly as printed (e.g. '12/15/2020 2:20 PM'); null if not stated."
-    },
-    "radiologist": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "The reading or signing radiologist's name. Return JSON null, not the string 'null', if the report shows only a placeholder such as 'DOCTOR NAME' or '{insert ...}'."
+      },
+      "required": [
+        "technique",
+        "findings",
+        "impression",
+        "dictated_by",
+        "signed_by"
+      ]
     }
-  }
+  },
+  "required": [
+    "fax_transmission_details",
+    "contact_information",
+    "patient_report",
+    "study_details",
+    "report_findings"
+  ]
 }
