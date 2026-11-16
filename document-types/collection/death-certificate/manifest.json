@@ -1,0 +1,26 @@
+{
+  "slug": "death-certificate",
+  "title": "Death Certificate",
+  "source": {
+    "file": "missouri-certification-of-death.pdf",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://npr.brightspotcdn.com/dims4/default/5dd4623/2147483647/strip/true/crop/2544x2120+0+0/resize/880x733!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fkcur%2Ffiles%2F201712%2FDeathCertificate_white_out_2.png",
+      "publisher": "KCUR 89.3 (Kansas City NPR member station); certificate issued by the Missouri Department of Health and Senior Services",
+      "title": "Missouri Certification of Death, issued January 17, 2017",
+      "retrieved": "2026-11-15",
+      "clearance": "public",
+      "clearance_note": "A certified copy of a Missouri death certificate, published by KCUR as an image in a 2017 news story. Downloaded by script; the source PDF was built from the full-size 2544x2120 original behind the URL above (npr-brightspot.s3.amazonaws.com/legacy/sites/kcur/files/201712/DeathCertificate_white_out_2.png), flattened onto white, with no metadata. KCUR had already whited out the social security number and residence address; the PNG was checked and those boxes are blank in the pixels, not hidden by transparency. Published as KCUR printed it, by the operator's decision: the decedent is deceased, the registrar and funeral home appear in their official and business roles, and the surviving spouse's name, the only living private individual on the page, was kept because the operator chose to use the image as published."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "state_file_number", "label": "State file number", "occurrence": 0 },
+    { "path": "decedent.county_of_death", "label": "County of death", "occurrence": 0 },
+    { "path": "cause_of_death[0].condition", "label": "Underlying cause", "occurrence": 0 },
+    { "path": "cause_of_death[2].condition", "label": "Significant condition", "occurrence": 0 },
+    { "path": "manner_of_death", "label": "Manner of death", "occurrence": 0 }
+  ],
+  "notes": "The request asked for the document to be used as is, with no redaction; it was. No feature page or fields were requested. The featured fields are the certificate's record of the death rather than of the people: the state file number, where it happened, the first underlying cause, the contributing condition (SIG COND) and the manner. No individual is featured. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD, so the value does not appear literally in the printed text."
+}

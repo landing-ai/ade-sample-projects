@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "issuing_state": { "type": "string", "description": "State that issued the certificate, from the border or title, e.g. 'Missouri'" },
+    "document_title": { "type": "string", "description": "Title printed at the top, e.g. 'Certification of Death'" },
+    "state_file_number": { "type": ["string", "null"], "description": "STATE FILE NUMBER, as printed" },
+    "date_filed": { "type": ["string", "null"], "description": "DATE FILED, as YYYY-MM-DD" },
+    "decedent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "DECEDENT NAME, as printed" },
+        "sex": { "type": ["string", "null"], "description": "SEX" },
+        "date_of_birth": { "type": ["string", "null"], "description": "DATE OF BIRTH, as YYYY-MM-DD" },
+        "date_of_death": { "type": ["string", "null"], "description": "DATE OF DEATH, as YYYY-MM-DD" },
+        "county_of_death": { "type": ["string", "null"], "description": "COUNTY OF DEATH" },
+        "marital_status": { "type": ["string", "null"], "description": "MARITAL STATUS" },
+        "ever_in_armed_forces": { "type": ["boolean", "null"], "description": "EVER IN ARMED FORCES: true for YES, false for NO" },
+        "social_security_number": { "type": ["string", "null"], "description": "SOCIAL SECURITY NUMBER, or null if the box is blank" },
+        "residence_address": { "type": ["string", "null"], "description": "RESIDENCE ADDRESS, or null if the box is blank" }
+      },
+      "required": ["name"]
+    },
+    "surviving_spouse": { "type": ["string", "null"], "description": "SURVIVING SPOUSE name as printed (maiden name if wife)" },
+    "funeral_home": { "type": ["string", "null"], "description": "FUNERAL HOME name" },
+    "cause_of_death": {
+      "type": "array",
+      "description": "Each line under UNDERLYING CAUSE, in order, including significant conditions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "condition": { "type": "string", "description": "The condition as printed, e.g. 'LIVER FAILURE'" },
+          "interval": { "type": ["string", "null"], "description": "Interval between onset and death printed after the condition, e.g. 'HOURS'" },
+          "significant_condition": { "type": "boolean", "description": "true if the line is labelled SIG COND (a contributing condition rather than an underlying cause)" }
+        },
+        "required": ["condition", "significant_condition"]
+      }
+    },
+    "manner_of_death": { "type": ["string", "null"], "description": "MANNER, e.g. 'NATURAL'" },
+    "issued_by": { "type": ["string", "null"], "description": "The ISSUED ON BEHALF OF line: the issuing office or county" },
+    "date_issued": { "type": ["string", "null"], "description": "DATE ISSUED, as YYYY-MM-DD" },
+    "registrar": {
+      "type": "object",
+      "properties": {
+        "name": { "type": ["string", "null"], "description": "Printed name under the signature" },
+        "title": { "type": ["string", "null"], "description": "Title under the name, e.g. 'State Registrar of Vital Statistics'" }
+      }
+    }
+  },
+  "required": ["issuing_state", "decedent"]
+}
