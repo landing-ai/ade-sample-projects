@@ -1,0 +1,26 @@
+{
+  "slug": "client-risk-profile-handwritten",
+  "title": "Client Risk Profile (Handwritten)",
+  "source": {
+    "file": "wells-fargo-client-profile-risk-assessment-handwritten.pdf",
+    "pages": 4,
+    "orientation": "portrait",
+    "origin": {
+      "url": "Not published online: specimen filled in by hand by LandingAI staff",
+      "publisher": "LandingAI (form: Wells Fargo Advisors Client Profile/Risk Assessment questionnaire)",
+      "title": "Client Profile/Risk Assessment (Wells Fargo Advisors), hand-completed specimen",
+      "retrieved": "2026-11-16",
+      "clearance": "public",
+      "clearance_note": "Wells Fargo Advisors' Client Profile/Risk Assessment questionnaire, printed, filled in by hand by a LandingAI staff member with invented data, and scanned (4 pages). The client's name, address, phone number (555 range), email address and every answer are fictitious, written for this specimen; no real client's data is present. Taken from LandingAI's internal marketing document library (doc38); PDF metadata cleared. The Wells Fargo Advisors name and logo appear because they are printed on the form; Wells Fargo did not produce or endorse this specimen."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "risk_assessment_questions.q1", "label": "Age band", "occurrence": 0 },
+    { "path": "risk_assessment_questions.q2", "label": "Time horizon", "occurrence": 0 },
+    { "path": "risk_assessment_questions.q3", "label": "Primary purpose", "occurrence": 0 },
+    { "path": "risk_assessment_questions.q3_open", "label": "Secondary purpose", "occurrence": 0 },
+    { "path": "risk_assessment_questions.q4", "label": "Risk acceptance", "occurrence": 0 }
+  ],
+  "notes": "The request supplied the schema (doc38-wells-fargo-client-profile-schema.json, used unchanged, 26 leaf fields) and named no feature page or fields. Page 1's questionnaire tells one risk-profile story: the age band, the time horizon, the primary purpose and the handwritten secondary purpose, and the stated acceptance of risk. Four are hand-ticked checkboxes and one is a handwritten write-in. No personal field is featured, although all the personal data on the page is invented. The supplied schema contains a property with an empty name (\"\"); it extracts as null but carries about 38 grounding ranges scattered over pages 1 and 2 (it is reported in the README and left unchanged)."
+}

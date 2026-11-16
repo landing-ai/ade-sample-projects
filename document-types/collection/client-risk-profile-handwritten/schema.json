@@ -1,0 +1,253 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "client_contact_details": {
+      "description": "Contains personal contact information for the client.",
+      "x-alternativeNames": [
+        "Client Contact Details",
+        "Client Information",
+        "Contact Information"
+      ],
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "description": "The client's first name.",
+          "x-alternativeNames": [
+            "First Name"
+          ],
+          "type": "string"
+        },
+        "middle_name": {
+          "description": "The client's middle name or initial.",
+          "x-alternativeNames": [
+            "Middle Name"
+          ],
+          "type": "string"
+        },
+        "last_name": {
+          "description": "The client's last name.",
+          "x-alternativeNames": [
+            "Last Name"
+          ],
+          "type": "string"
+        },
+        "phone_number": {
+          "description": "The client's primary phone number for contact.",
+          "format": "XXX-XXX-XXXX",
+          "x-alternativeNames": [
+            "Phone Number"
+          ],
+          "type": "string"
+        },
+        "address": {
+          "description": "The client's street address.",
+          "x-alternativeNames": [
+            "Street Address"
+          ],
+          "type": "string"
+        },
+        "city": {
+          "description": "The city where the client resides.",
+          "x-alternativeNames": [
+            "City"
+          ],
+          "type": "string"
+        },
+        "state": {
+          "description": "The state or province where the client resides.",
+          "format": "2 letter abbreviation",
+          "x-alternativeNames": [
+            "State"
+          ],
+          "type": "string"
+        },
+        "zip": {
+          "description": "The postal code for the client's address.",
+          "format": "5 digit",
+          "x-alternativeNames": [
+            "Zip Code"
+          ],
+          "type": "string"
+        },
+        "email_address": {
+          "description": "The email address for contacting the client.",
+          "format": "email",
+          "x-alternativeNames": [
+            "Email Address"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_name",
+        "middle_name",
+        "last_name",
+        "phone_number",
+        "address",
+        "city",
+        "state",
+        "zip",
+        "email_address"
+      ]
+    },
+    "risk_assessment_questions": {
+      "description": "A collection of questions designed to assess the client's investment risk tolerance and financial situation.",
+      "type": "object",
+      "properties": {
+        "q1": {
+          "description": "The client's age range, used to determine investment horizon and risk capacity.",
+          "enum": [
+            "Under 35",
+            "Between 36 and 45",
+            "Between 46 and 55",
+            "Between 56 and 70",
+            "Over 70"
+          ]
+        },
+        "q2": {
+          "description": "The expected duration for which the client plans to invest their funds.",
+          "enum": [
+            "Immediate (Less than 3 years)",
+            "Short Term (3-5 years)",
+            "Moderate Term (5-10 years)",
+            "Long Term (10+ years)"
+          ]
+        },
+        "q3": {
+          "description": "The primary objective or purpose for the client's investment.",
+          "enum": [
+            "Provide Current Income",
+            "Preservation of Wealth",
+            "Fund Retirement",
+            "Build Long-Term Wealth"
+          ]
+        },
+        "q3_open": {
+          "description": "Response to the write-in field labeled 'Secondary' for specifying an investment goal not covered by the predefined options in question 3.",
+          "type": "string"
+        },
+        "q4": {
+          "description": "The client's general attitude and willingness to accept investment risk.",
+          "enum": [
+            "Less accepting of risk - Conservative",
+            "Accepting some degree of risk - Moderate",
+            "More accepting of risk - Long Term"
+          ]
+        },
+        "q5": {
+          "description": "This question assesses the client's primary investment objective and their comfort level with different risk-reward profiles.",
+          "enum": [
+            "Gradually increasing value with no loss of principal and modest annual returns.",
+            "Diversified in such a way that returns are somewhat less than the major indices",
+            "but with fewer loss periods and less volatility.",
+            "Achieve at or near market returns with the same or less risk.",
+            "Beat the market on a regular basis",
+            "even though short term volatility is high."
+          ]
+        },
+        "q6": {
+          "description": "This question determines the percentage of the client's total portfolio they are willing to allocate to higher-risk investments.",
+          "enum": [
+            "< 10%",
+            "10% to 25%",
+            "25% to 50%",
+            "> 50%"
+          ]
+        },
+        "q7": {
+          "description": "This question presents different historical return scenarios to gauge the client's understanding and tolerance for market fluctuations and potential returns. Which of the four rows is marked with an entry in the first column?",
+          "enum": [
+            "row 2",
+            "row 3",
+            "row 4",
+            "row 1"
+          ]
+        },
+        "q8": {
+          "description": "This question assesses the client's self-reported level of knowledge regarding investments and financial markets.",
+          "enum": [
+            "None",
+            "Some",
+            "Moderate",
+            "Significant"
+          ]
+        },
+        "q9": {
+          "description": "This question evaluates the client's overall experience level with investing in financial products.",
+          "enum": [
+            "Very Inexperienced",
+            "Inexperienced",
+            "Experienced",
+            "Very Experienced"
+          ]
+        },
+        "q9_open": {
+          "description": "Response to the write-in field 'Years of Experience' as part of question 9. ",
+          "type": "string"
+        },
+        "q10": {
+          "description": "This question determines the percentage of the client's total income that is derived from their investment portfolio.",
+          "enum": [
+            "Less than 20%",
+            "21% to 50%",
+            "51% to 75%",
+            "76% to 100%"
+          ]
+        },
+        "q10_open": {
+          "description": "Response to the write-in field 'Assets' as part of question 10. Verbatim response as written.",
+          "type": "string"
+        },
+        "q10_normalized": {
+          "description": "The normalized dollar amount entered in the write-in field 'Assets' as part of question 10 taking into account common abbreviations. Assume that K means thousand and M means Millions. Return the dollar amount as a number. .",
+          "type": "number"
+        },
+        "q11": {
+          "description": "risk_assessment_questions",
+          "enum": [
+            "Less than $100,000",
+            "$100,000 to $499,999",
+            "$500,000 to $999,999",
+            "$1,000,000"
+          ]
+        },
+        "q12": {
+          "description": "An assessment of the client's current financial stability and income reliability.",
+          "enum": [
+            "Very Stable",
+            "Stable",
+            "Unstable",
+            "Very Unstable"
+          ]
+        }
+      },
+      "required": [
+        "q1",
+        "q2",
+        "q3",
+        "q3_open",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q9_open",
+        "q10",
+        "q10_open",
+        "q10_normalized",
+        "q11",
+        "q12"
+      ]
+    },
+    "": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "client_contact_details",
+    "risk_assessment_questions",
+    ""
+  ]
+}
