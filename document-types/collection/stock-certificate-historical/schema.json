@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "company_name": { "type": "string", "description": "Issuing company as printed in the heading" },
+    "authorized_capital": { "type": ["string", "null"], "description": "Capital stock amount printed at the top, as printed, e.g. '$125,000.00'" },
+    "certificate_number": { "type": ["string", "null"], "description": "Certificate number after 'No.'" },
+    "number_of_shares": { "type": ["integer", "null"], "description": "Number of shares, from the figure in the Shares box" },
+    "shares_in_words": { "type": ["string", "null"], "description": "Number of shares as written out in words in the body" },
+    "par_value_per_share": { "type": ["string", "null"], "description": "Par value per share as written in the body, e.g. 'One Hundred Dollars'" },
+    "holder": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Shareholder named after 'This Certifies that'" },
+        "residence": { "type": ["string", "null"], "description": "City and state or province written after 'of'" }
+      },
+      "required": ["name"]
+    },
+    "issue_place": { "type": ["string", "null"], "description": "Place in the 'Dated at' line" },
+    "issue_date": { "type": ["string", "null"], "description": "Date in the 'Dated at ... this ... day of' line, as YYYY-MM-DD" },
+    "signatories": {
+      "type": "array",
+      "description": "Each signature line at the foot of the certificate",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "description": "Printed title under the signature, e.g. 'PRESIDENT'" },
+          "name": { "type": ["string", "null"], "description": "Name as legible in the signature" }
+        },
+        "required": ["title"]
+      }
+    },
+    "cancelled": { "type": ["boolean", "null"], "description": "true if the certificate carries a cancellation mark, such as 'Cancelled' written across it" }
+  },
+  "required": ["company_name", "holder"]
+}
