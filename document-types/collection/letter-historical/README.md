@@ -29,7 +29,9 @@ It is published as printed under the historical-record exemption:
 - **The record is far past the 72-year line.** The letter is dated 1682, and the print is
   19th century.
 - **William Penn**, the founder of Pennsylvania, died in 1718.
-- **Thomas Holme**, who signs the delivery note, died in 1695.
+- **Thomas Holme**, who signs the delivery note, died in 1695. Source: Irma Corcoran,
+  *Thomas Holme, 1624–1695: Surveyor General of Pennsylvania*, American Philosophical Society,
+  1992.
 
 **Requested as "Treaty (Historical)".** The document is not a treaty: it has no parties agreeing
 terms, no articles and no ratification. The treaty is only the subject of the engraving above
@@ -39,7 +41,7 @@ the letter. The operator renamed the type to Letter (Historical).
 
 It is **17th-century secretary-influenced handwriting**, reproduced as a lithograph:
 
-- long s, "ye" and "yt" abbreviations, and spellings such as "freind" and "Kumme" (rum)
+- long s, "ye" and "yt" abbreviations, and spellings such as "freind" and "Rumme" (rum)
 - an old-style dateline ("25: 2: 1682", meaning 25th of the second month)
 - a flourished signature
 - a second hand writing the delivery note
@@ -90,4 +92,4 @@ from the image, and it was not featured.
 .venv/bin/python document-types/scripts/build_images.py letter-historical
 ```
 
-The schema has 13 leaf fields.
+The schema has 12 leaf fields.
