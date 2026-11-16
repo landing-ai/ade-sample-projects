@@ -1,0 +1,195 @@
+{
+  "extraction": {
+    "authorized_capital": "$125,000.00",
+    "cancelled": false,
+    "certificate_number": "95",
+    "company_name": "The Ford Motor Company of Canada, Limited",
+    "holder": {
+      "name": "James Couzens",
+      "residence": "Detroit Michigan"
+    },
+    "issue_date": "1908-12-06",
+    "issue_place": "Walkerville, Ontario",
+    "number_of_shares": 10,
+    "par_value_per_share": "One hundred dollar",
+    "shares_in_words": "Ten",
+    "signatories": [
+      {
+        "name": "G. M. McGregor",
+        "title": "SECRETARY"
+      },
+      {
+        "name": "Henry Ford",
+        "title": "PRESIDENT."
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "authorized_capital": {
+      "ranges": [
+        {
+          "end": 26,
+          "start": 0
+        }
+      ],
+      "value": "$125,000.00"
+    },
+    "cancelled": {
+      "ranges": null,
+      "value": false
+    },
+    "certificate_number": {
+      "ranges": [
+        {
+          "end": 91,
+          "start": 69
+        }
+      ],
+      "value": "95"
+    },
+    "company_name": {
+      "ranges": [
+        {
+          "end": 68,
+          "start": 27
+        },
+        {
+          "end": 597,
+          "start": 142
+        }
+      ],
+      "value": "The Ford Motor Company of Canada, Limited"
+    },
+    "holder": {
+      "name": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 142
+          }
+        ],
+        "value": "James Couzens"
+      },
+      "residence": {
+        "ranges": [
+          {
+            "end": 210,
+            "start": 176
+          }
+        ],
+        "value": "Detroit Michigan"
+      }
+    },
+    "issue_date": {
+      "ranges": [
+        {
+          "end": 595,
+          "start": 533
+        }
+      ],
+      "value": "1908-12-06"
+    },
+    "issue_place": {
+      "ranges": [
+        {
+          "end": 595,
+          "start": 533
+        }
+      ],
+      "value": "Walkerville, Ontario"
+    },
+    "number_of_shares": {
+      "ranges": [
+        {
+          "end": 263,
+          "start": 211
+        }
+      ],
+      "value": 10
+    },
+    "par_value_per_share": {
+      "ranges": [
+        {
+          "end": 263,
+          "start": 211
+        }
+      ],
+      "value": "One hundred dollar"
+    },
+    "shares_in_words": {
+      "ranges": [
+        {
+          "end": 263,
+          "start": 211
+        }
+      ],
+      "value": "Ten"
+    },
+    "signatories": [
+      {
+        "name": {
+          "ranges": [
+            {
+              "end": 621,
+              "start": 607
+            }
+          ],
+          "value": "G. M. McGregor"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 631,
+              "start": 622
+            }
+          ],
+          "value": "SECRETARY"
+        }
+      },
+      {
+        "name": {
+          "ranges": [
+            {
+              "end": 1237,
+              "start": 1227
+            }
+          ],
+          "value": "Henry Ford"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 1248,
+              "start": 1238
+            }
+          ],
+          "value": "PRESIDENT."
+        }
+      }
+    ]
+  },
+  "markdown": "CAPITAL STOCK, $125,000.00\nThe Ford Motor Company of Canada, Limited\n№ 95 STOCK CERTIFICATE\nShares\n\n\nSTOCK CERTIFICATE\n110 Shares\nNo 95\nNo 95\nThis Certifies that James Couzens\nof Detroit Michigan is entitled to\nTen fully paid up shares of One hundred dollar each,\nin the capital Stock of the **Ford Motor Company of Canada, Limited**\nThe said Shares are transferable on the books of the Company only\nby him or his Attorney duly constituted, and upon surrender\nof this Certificate, and as provided for in the By Laws of this Company.\nDated at Walkerville, Ontario, this Sixth day of December 1908\n\n\n[SIGNED]\nG. M. McGregor\nSECRETARY\n\n\n<figure type=\"ILLUSTRATION\">\n\n<description>The image displays a circular, serrated-edged red wax seal or wafer seal centered on a document. The seal has a distinctive starburst or cogwheel perimeter. The text embossed or printed on the seal is faint but appears to read \"HALVORSEN, LIMITED\" along the curve and \"SEATTLE\" in the center. The seal is superimposed over a document that features a black and white decorative border with a repeating floral or geometric pattern at the bottom. The partial text \"...ris, 1916\" is visible at the very top of the image.</description></figure>\n\n[SIGNED]\nHenry Ford\nPRESIDENT.\n\n\n<!-- doc_id=parse-01m7hncs6qj159e0qtgpbfvkd6 -->",
+  "metadata": {
+    "job_id": "extract-01m7hnd7bz8ecjtmf8gsae0mdy",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 9657,
+    "doc_id": "parse-01m7hncs6qj159e0qtgpbfvkd6",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1299,
+    "output_extraction_chars": 461,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

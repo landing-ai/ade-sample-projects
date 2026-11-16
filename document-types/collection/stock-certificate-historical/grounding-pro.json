@@ -1,0 +1,105 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "certificate_number",
+      "label": "Certificate number",
+      "value": "95",
+      "page": 1,
+      "box": {
+        "xmin": 0.15194,
+        "ymin": 0.25422,
+        "xmax": 0.63435,
+        "ymax": 0.29616
+      },
+      "range": {
+        "end": 91,
+        "start": 69
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "certificate_number.png"
+    },
+    {
+      "path": "holder.name",
+      "label": "Shareholder",
+      "value": "James Couzens",
+      "page": 1,
+      "box": {
+        "xmin": 0.13409,
+        "ymin": 0.31258,
+        "xmax": 0.88275,
+        "ymax": 0.36279
+      },
+      "range": {
+        "end": 175,
+        "start": 142
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "holder-name.png"
+    },
+    {
+      "path": "shares_in_words",
+      "label": "Shares",
+      "value": "Ten",
+      "page": 1,
+      "box": {
+        "xmin": 0.16445,
+        "ymin": 0.39601,
+        "xmax": 0.88682,
+        "ymax": 0.48195
+      },
+      "range": {
+        "end": 263,
+        "start": 211
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "shares_in_words.png"
+    },
+    {
+      "path": "issue_place",
+      "label": "Place of issue",
+      "value": "Walkerville, Ontario",
+      "page": 1,
+      "box": {
+        "xmin": 0.1389,
+        "ymin": 0.64276,
+        "xmax": 0.8935,
+        "ymax": 0.71144
+      },
+      "range": {
+        "end": 595,
+        "start": 533
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issue_place.png"
+    },
+    {
+      "path": "signatories[1].name",
+      "label": "President",
+      "value": "Henry Ford",
+      "page": 1,
+      "box": {
+        "xmin": 0.58883,
+        "ymin": 0.79363,
+        "xmax": 0.80771,
+        "ymax": 0.86806
+      },
+      "range": {
+        "end": 1237,
+        "start": 1227
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "signatories-1-name.png"
+    }
+  ]
+}
