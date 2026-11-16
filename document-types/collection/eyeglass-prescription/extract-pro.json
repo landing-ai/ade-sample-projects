@@ -1,0 +1,225 @@
+{
+  "extraction": {
+    "clinic_info": "Perfect Eyeglasses Guide",
+    "date_of_exam": "2015-01-13",
+    "optometrist_name": "Dr. Szasz Arpad",
+    "patient_name": "JANE OLSON",
+    "prescription": {
+      "OD": {
+        "addition": "+1,00",
+        "axis": "30",
+        "cylinder": "-1,00",
+        "prism1": "",
+        "prism2": "",
+        "sphere": "-2,00"
+      },
+      "OS": {
+        "addition": "+1,50",
+        "axis": "60",
+        "cylinder": "-0,75",
+        "prism1": null,
+        "prism2": null,
+        "sphere": "-1,50"
+      }
+    }
+  },
+  "extraction_metadata": {
+    "clinic_info": {
+      "ranges": [
+        {
+          "end": 40,
+          "start": 16
+        }
+      ],
+      "value": "Perfect Eyeglasses Guide"
+    },
+    "date_of_exam": {
+      "ranges": [
+        {
+          "end": 609,
+          "start": 591
+        }
+      ],
+      "value": "2015-01-13"
+    },
+    "optometrist_name": {
+      "ranges": [
+        {
+          "end": 15,
+          "start": 0
+        }
+      ],
+      "value": "Dr. Szasz Arpad"
+    },
+    "patient_name": {
+      "ranges": [
+        {
+          "end": 568,
+          "start": 552
+        }
+      ],
+      "value": "JANE OLSON"
+    },
+    "prescription": {
+      "OD": {
+        "addition": {
+          "ranges": [
+            {
+              "end": 445,
+              "start": 440
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "+1,00"
+        },
+        "axis": {
+          "ranges": [
+            {
+              "end": 348,
+              "start": 345
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "30"
+        },
+        "cylinder": {
+          "ranges": [
+            {
+              "end": 336,
+              "start": 331
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "-1,00"
+        },
+        "prism1": {
+          "ranges": [
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": ""
+        },
+        "prism2": {
+          "ranges": [
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": ""
+        },
+        "sphere": {
+          "ranges": [
+            {
+              "end": 322,
+              "start": 317
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "-2,00"
+        }
+      },
+      "OS": {
+        "addition": {
+          "ranges": [
+            {
+              "end": 485,
+              "start": 480
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "+1,50"
+        },
+        "axis": {
+          "ranges": [
+            {
+              "end": 388,
+              "start": 385
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "60"
+        },
+        "cylinder": {
+          "ranges": [
+            {
+              "end": 376,
+              "start": 371
+            },
+            {
+              "end": 64,
+              "start": 43
+            }
+          ],
+          "value": "-0,75"
+        },
+        "prism1": {
+          "ranges": null,
+          "value": null
+        },
+        "prism2": {
+          "ranges": null,
+          "value": null
+        },
+        "sphere": {
+          "ranges": [
+            {
+              "end": 362,
+              "start": 357
+            }
+          ],
+          "value": "-1,50"
+        }
+      }
+    }
+  },
+  "markdown": "Dr. Szasz Arpad\nPerfect Eyeglasses Guide\n\n\nEYEGLASS PRESCRIPTION\n\n\n<table>\n<tr><td rowspan=\"2\"></td><td colspan=\"3\">OD</td><td colspan=\"3\">OS</td><td rowspan=\"2\">PD</td><td rowspan=\"2\">LENS<br>TYPE</td></tr>\n<tr><td>SPH</td><td>CYL</td><td>AXIS</td><td>SPH</td><td>CYL</td><td>AXIS</td></tr>\n<tr><td>Distance</td><td>-2,00</td><td>-1,00</td><td>30°</td><td>-1,50</td><td>-0,75</td><td>60°</td><td>64</td><td></td></tr>\n<tr><td>Near</td><td>+1,00</td><td>-1,00</td><td>30°</td><td>+1,50</td><td>-0,75</td><td>60°</td><td>62</td><td></td></tr>\n</table>\n\nNAME: JANE OLSON\nAGE: 41\nREMARKS: ...\n\nDATE... 13.01.2015\n\n\n[SIGNED]\nDr....................\n\n\n<!-- doc_id=parse-01m7jqxjs5tps7zzwfzvgc1x4p -->",
+  "metadata": {
+    "job_id": "extract-01m7jqxr9teckx893qra3rx1jx",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 9945,
+    "doc_id": "parse-01m7jqxjs5tps7zzwfzvgc1x4p",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.5,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 694,
+    "output_extraction_chars": 352,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'prescription.OS.prism1' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'prescription.OS.prism1' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}

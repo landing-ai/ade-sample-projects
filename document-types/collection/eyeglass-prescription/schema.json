@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "optometrist_name": {
+      "description": "Name of the optometrist.",
+      "type": "string"
+    },
+    "clinic_info": {
+      "description": "Name of the optometry clinic.",
+      "type": "string"
+    },
+    "date_of_exam": {
+      "description": "Date the exam was conducted (YYYY-MM-DD)",
+      "format": "date",
+      "type": "string"
+    },
+    "patient_name": {
+      "description": "Full name of the patient",
+      "type": "string"
+    },
+    "prescription": {
+      "type": "object",
+      "properties": {
+        "OD": {
+          "type": "object",
+          "properties": {
+            "axis": {
+              "type": "string"
+            },
+            "prism1": {
+              "type": "string"
+            },
+            "prism2": {
+              "type": "string"
+            },
+            "sphere": {
+              "type": "string"
+            },
+            "addition": {
+              "type": "string"
+            },
+            "cylinder": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "axis",
+            "prism1",
+            "prism2",
+            "sphere",
+            "addition",
+            "cylinder"
+          ]
+        },
+        "OS": {
+          "type": "object",
+          "properties": {
+            "axis": {
+              "type": "string"
+            },
+            "prism1": {
+              "type": "string"
+            },
+            "prism2": {
+              "type": "string"
+            },
+            "sphere": {
+              "type": "string"
+            },
+            "addition": {
+              "type": "string"
+            },
+            "cylinder": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "axis",
+            "prism1",
+            "prism2",
+            "sphere",
+            "addition",
+            "cylinder"
+          ]
+        }
+      },
+      "required": [
+        "OD",
+        "OS"
+      ]
+    }
+  },
+  "required": [
+    "optometrist_name",
+    "clinic_info",
+    "date_of_exam",
+    "patient_name",
+    "prescription"
+  ]
+}
