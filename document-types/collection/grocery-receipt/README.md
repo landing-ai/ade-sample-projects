@@ -51,7 +51,7 @@ receipt-specific notation:
 The request asked for a list of every item purchased, with name, quantity, unit price, total
 price and taxable status. The `items` array has all five, plus the item number and the printed
 tax-code letter. The rest of the schema covers the store, the date and time, the totals and the
-card payment. It has 33 leaf fields.
+card payment. It has 19 leaf fields.
 
 **Quantity and unit price are not printed on this receipt.** Each item is a single unit.
 Extraction fills `quantity` as 1 and `unit_price` as the line total, as the schema instructs,
