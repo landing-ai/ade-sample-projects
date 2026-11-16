@@ -1,0 +1,26 @@
+{
+  "slug": "recipe-handwritten",
+  "title": "Recipe (Handwritten)",
+  "source": {
+    "file": "moms-recipes-date-bars.jpg",
+    "pages": 1,
+    "orientation": "landscape",
+    "origin": {
+      "url": "https://i0.wp.com/www.jaydeemahs.com/wp-content/uploads/2023/11/1-Moms-Recipes-3.jpg?resize=768%2C576&ssl=1",
+      "publisher": "JayDee Mahs (jaydeemahs.com), in the post 'The Importance of Handwritten Recipes – Preserving Memories'",
+      "title": "1-Moms-Recipes-3.jpg (Date Bars recipe card)",
+      "retrieved": "2026-11-16",
+      "clearance": "public",
+      "clearance_note": "A photograph of a handwritten family recipe card, published by the blogger at https://www.jaydeemahs.com/the-importance-of-handwritten-recipes-preserving-memories/. The site is marked 'All Rights Reserved' and grants no reuse licence; the operator accepted that risk and chose to publish it. The name written in the corner is the blogger's own, written on the card by their mother (as the post says), and is the name they publish under; it is left as written. No other personal data appears. The file is the full-resolution 1600x1200 original behind the source URL (the URL serves a 768x576 resize), with its EXIF metadata stripped."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "dish_name", "label": "Dish name", "occurrence": 0 },
+    { "path": "ingredients[0].quantity", "label": "Oatmeal quantity", "occurrence": 0 },
+    { "path": "ingredients[2].unit_of_measure", "label": "Salt unit", "occurrence": 0 },
+    { "path": "ingredients[3].quantity", "label": "Flour quantity", "occurrence": 0 },
+    { "path": "ingredients[4].quantity", "label": "Oleo quantity", "occurrence": 0 }
+  ],
+  "notes": "Requested: the team's existing doc44 recipe schema, used unchanged; no feature page or fields were named. Featured: the dish name and four ingredient values, chosen because cursive fractions (1 1/2, 1 1/4, scant 3/4) and abbreviations (tsp.) are what this card tests. Handwriting grounds at line level, so each box covers its whole ingredient line. instructions cannot be featured: it is written over four lines, one range per line, and no single range contains it. other_details is empty for four ingredients and grounds to the whole card. The extraction folded '1 tsp soda', written on the oleo line, into oleo's other_details rather than listing baking soda as a sixth ingredient. The schema requires other_details on every ingredient, which pushes the model to fill it."
+}

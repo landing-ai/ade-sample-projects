@@ -1,0 +1,86 @@
+{
+  "description": "Root object",
+  "type": "object",
+  "properties": {
+    "dish_name": {
+      "description": "The name or title of the dish or recipe.",
+      "x-alternativeNames": [
+        "Dish Name",
+        "Recipe Title",
+        "Meal Name"
+      ],
+      "type": "string"
+    },
+    "ingredients": {
+      "description": "A collection of all ingredients required for the dish.",
+      "x-alternativeNames": [
+        "Ingredients List",
+        "Components",
+        "Recipe Items"
+      ],
+      "type": "array",
+      "items": {
+        "description": "Item in ingredients",
+        "type": "object",
+        "properties": {
+          "ingredient_name": {
+            "description": "The specific name of an ingredient used in the recipe.",
+            "x-alternativeNames": [
+              "Ingredient Name",
+              "Item",
+              "Component"
+            ],
+            "type": "string"
+          },
+          "unit_of_measure": {
+            "description": "The unit used to measure the quantity of an ingredient (e.g., cups, grams, pieces).",
+            "x-alternativeNames": [
+              "Unit of Measure",
+              "Measurement Unit",
+              "Quantity Unit"
+            ],
+            "type": "string"
+          },
+          "quantity": {
+            "description": "The numerical or descriptive amount of an ingredient needed.",
+            "x-alternativeNames": [
+              "Quantity",
+              "Amount",
+              "How Much"
+            ],
+            "type": "string"
+          },
+          "other_details": {
+            "description": "Additional descriptive information or preparation notes for a specific ingredient.",
+            "x-alternativeNames": [
+              "Other Details",
+              "Notes",
+              "Preparation"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "ingredient_name",
+          "unit_of_measure",
+          "quantity",
+          "other_details"
+        ]
+      }
+    },
+    "instructions": {
+      "description": "The step-by-step guide on how to prepare and cook the dish.",
+      "x-alternativeNames": [
+        "Instructions",
+        "Preparation Steps",
+        "Cooking Method"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "dish_name",
+    "ingredients",
+    "instructions"
+  ]
+}
