@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "issuing_service": { "type": "string", "description": "Issuing service in the heading, e.g. 'American Consular Service'" },
+    "issuing_post": { "type": "string", "description": "Consular post after 'at', as printed" },
+    "visa_type": { "type": "string", "description": "Kind of visa in the heading, e.g. 'Quota Immigration Visa'" },
+    "visa_number": { "type": ["string", "null"], "description": "Visa number after 'No.'" },
+    "file_number": { "type": ["string", "null"], "description": "File number handwritten at the top right of the page" },
+    "preference": { "type": ["string", "null"], "description": "Which box is checked: 'Preference' or 'Nonpreference'" },
+    "quota": { "type": ["string", "null"], "description": "The quota the immigrant is charged to, from the (Quota.) blank" },
+    "issue_date": { "type": ["string", "null"], "description": "Date the visa was issued, as YYYY-MM-DD" },
+    "expiry_date": { "type": ["string", "null"], "description": "Date the visa's validity expires, as YYYY-MM-DD" },
+    "bearer": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The bearer's name as typed" },
+        "alternate_name": { "type": ["string", "null"], "description": "Any other name typed in parentheses under the bearer's name" },
+        "nationality": { "type": ["string", "null"], "description": "Nationality, from the (Citizen or subject.) blank" }
+      },
+      "required": ["name"]
+    },
+    "passport": {
+      "type": "object",
+      "properties": {
+        "number": { "type": ["string", "null"], "description": "Passport No., as typed" },
+        "issued_by": { "type": ["string", "null"], "description": "Authority and place that issued the passport" },
+        "issue_date": { "type": ["string", "null"], "description": "Date the passport was issued, as YYYY-MM-DD" },
+        "valid_until": { "type": ["string", "null"], "description": "Date the passport is valid until, as YYYY-MM-DD" }
+      }
+    },
+    "governing_law": { "type": ["string", "null"], "description": "The act under which the visa is granted, e.g. 'Immigration Act of 1924'" },
+    "fee": { "type": ["string", "null"], "description": "Fee charged, as printed" },
+    "consular_officer_title": { "type": ["string", "null"], "description": "Title printed under the signing officer's signature, e.g. 'Vice Consul'" }
+  },
+  "required": ["issuing_service", "visa_type", "bearer"]
+}
