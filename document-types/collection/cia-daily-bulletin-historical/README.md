@@ -74,7 +74,7 @@ contents page's item numbers and page references, and figures quoted in the arti
   same way.
 
 **The `redacted` flag is unreliable.** The schema asks whether each contents line has a
-declassification box beside it. Eight of the ten headlines do, plus the annex. The extraction
+declassification box beside it. Nine of the ten headlines do, every one but item 2, and so does the annex. The extraction
 marked only item 4 `true`. The boxes are blank white rectangles, so the parse has no text to
 see, and the model mostly reported nothing.
 
