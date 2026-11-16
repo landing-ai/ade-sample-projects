@@ -1,0 +1,412 @@
+{
+  "extraction": {
+    "borrower": {
+      "date_of_birth": "1972-07-25",
+      "home_phone_number": "(346) 555-7812",
+      "mailing_address": "7710 Memorial Dr, Houston, TX 77024",
+      "name": "Stephanie Carter",
+      "social_security_number": "522-90-1147"
+    },
+    "co_borrower": {
+      "date_of_birth": "1990-01-10",
+      "home_phone_number": "",
+      "name": "Michael Carter",
+      "social_security_number": "500-77-2290"
+    },
+    "insurance_details": {
+      "insurance_company_name": "",
+      "insurance_company_phone_number": "",
+      "insurance_payer": "Lender does",
+      "is_policy_current": false
+    },
+    "loan_number": "443781220",
+    "mortgage_assistance_history": {
+      "had_hamp_permanent_modification_other_property": false,
+      "had_hamp_trial_or_permanent_modification_principal": false,
+      "other_single_family_properties_owned": null,
+      "previously_requested_assistance": false
+    },
+    "property_details": {
+      "is_property_listed_for_sale": false,
+      "property_address": "7710 Memorial Dr, Houston, TX 77024",
+      "property_occupancy_status": "Owner Occupied",
+      "property_type": "Primary Residence"
+    },
+    "real_estate_tax_details": {
+      "is_real_estate_tax_current": false,
+      "real_estate_tax_payer": "Lender does"
+    },
+    "servicemember_status": {
+      "is_active_duty_post_9_11": false,
+      "is_any_borrower_servicemember": false,
+      "is_deployed_or_PCS": false
+    }
+  },
+  "extraction_metadata": {
+    "borrower": {
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 372,
+            "start": 350
+          }
+        ],
+        "value": "1972-07-25"
+      },
+      "home_phone_number": {
+        "ranges": [
+          {
+            "end": 502,
+            "start": 403
+          }
+        ],
+        "value": "(346) 555-7812"
+      },
+      "mailing_address": {
+        "ranges": [
+          {
+            "end": 3370,
+            "start": 3316
+          }
+        ],
+        "value": "7710 Memorial Dr, Houston, TX 77024"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 288,
+            "start": 253
+          }
+        ],
+        "value": "Stephanie Carter"
+      },
+      "social_security_number": {
+        "ranges": [
+          {
+            "end": 341,
+            "start": 307
+          }
+        ],
+        "value": "522-90-1147"
+      }
+    },
+    "co_borrower": {
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 799,
+            "start": 780
+          },
+          {
+            "end": 812,
+            "start": 808
+          },
+          {
+            "end": 4528,
+            "start": 4522
+          }
+        ],
+        "value": "1990-01-10"
+      },
+      "home_phone_number": {
+        "ranges": [
+          {
+            "end": 878,
+            "start": 843
+          },
+          {
+            "end": 4528,
+            "start": 4522
+          }
+        ],
+        "value": ""
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 709,
+            "start": 673
+          },
+          {
+            "end": 4528,
+            "start": 4522
+          }
+        ],
+        "value": "Michael Carter"
+      },
+      "social_security_number": {
+        "ranges": [
+          {
+            "end": 771,
+            "start": 737
+          },
+          {
+            "end": 4528,
+            "start": 4522
+          }
+        ],
+        "value": "500-77-2290"
+      }
+    },
+    "insurance_details": {
+      "insurance_company_name": {
+        "ranges": [
+          {
+            "end": 4484,
+            "start": 4453
+          }
+        ],
+        "value": ""
+      },
+      "insurance_company_phone_number": {
+        "ranges": [
+          {
+            "end": 4520,
+            "start": 4485
+          }
+        ],
+        "value": ""
+      },
+      "insurance_payer": {
+        "ranges": [
+          {
+            "end": 4356,
+            "start": 4305
+          },
+          {
+            "end": 4383,
+            "start": 4367
+          }
+        ],
+        "value": "Lender does"
+      },
+      "is_policy_current": {
+        "ranges": [
+          {
+            "end": 4434,
+            "start": 4411
+          },
+          {
+            "end": 4443,
+            "start": 4435
+          },
+          {
+            "end": 4452,
+            "start": 4444
+          }
+        ],
+        "value": false
+      }
+    },
+    "loan_number": {
+      "ranges": [
+        {
+          "end": 172,
+          "start": 149
+        }
+      ],
+      "value": "443781220"
+    },
+    "mortgage_assistance_history": {
+      "had_hamp_permanent_modification_other_property": {
+        "ranges": [
+          {
+            "end": 2869,
+            "start": 2737
+          }
+        ],
+        "value": false
+      },
+      "had_hamp_trial_or_permanent_modification_principal": {
+        "ranges": [
+          {
+            "end": 2736,
+            "start": 2584
+          }
+        ],
+        "value": false
+      },
+      "other_single_family_properties_owned": {
+        "ranges": [
+          {
+            "end": 2583,
+            "start": 2434
+          }
+        ],
+        "value": null
+      },
+      "previously_requested_assistance": {
+        "ranges": [
+          {
+            "end": 2433,
+            "start": 2345
+          }
+        ],
+        "value": false
+      }
+    },
+    "property_details": {
+      "is_property_listed_for_sale": {
+        "ranges": [
+          {
+            "end": 3477,
+            "start": 3444
+          },
+          {
+            "end": 3486,
+            "start": 3478
+          },
+          {
+            "end": 3495,
+            "start": 3487
+          }
+        ],
+        "value": false
+      },
+      "property_address": {
+        "ranges": [
+          {
+            "end": 3370,
+            "start": 3316
+          },
+          {
+            "end": 3443,
+            "start": 3371
+          }
+        ],
+        "value": "7710 Memorial Dr, Houston, TX 77024"
+      },
+      "property_occupancy_status": {
+        "ranges": [
+          {
+            "end": 2287,
+            "start": 2270
+          },
+          {
+            "end": 2308,
+            "start": 2288
+          }
+        ],
+        "value": "Owner Occupied"
+      },
+      "property_type": {
+        "ranges": [
+          {
+            "end": 2211,
+            "start": 2191
+          },
+          {
+            "end": 2235,
+            "start": 2212
+          }
+        ],
+        "value": "Primary Residence"
+      }
+    },
+    "real_estate_tax_details": {
+      "is_real_estate_tax_current": {
+        "ranges": [
+          {
+            "end": 3855,
+            "start": 3832
+          },
+          {
+            "end": 3864,
+            "start": 3856
+          },
+          {
+            "end": 3873,
+            "start": 3865
+          }
+        ],
+        "value": false
+      },
+      "real_estate_tax_payer": {
+        "ranges": [
+          {
+            "end": 3804,
+            "start": 3788
+          }
+        ],
+        "value": "Lender does"
+      }
+    },
+    "servicemember_status": {
+      "is_active_duty_post_9_11": {
+        "ranges": [
+          {
+            "end": 1783,
+            "start": 1658
+          },
+          {
+            "end": 1793,
+            "start": 1784
+          },
+          {
+            "end": 1801,
+            "start": 1794
+          }
+        ],
+        "value": false
+      },
+      "is_any_borrower_servicemember": {
+        "ranges": [
+          {
+            "end": 1639,
+            "start": 1606
+          },
+          {
+            "end": 1649,
+            "start": 1640
+          },
+          {
+            "end": 1657,
+            "start": 1650
+          }
+        ],
+        "value": false
+      },
+      "is_deployed_or_PCS": {
+        "ranges": [
+          {
+            "end": 1933,
+            "start": 1802
+          },
+          {
+            "end": 1943,
+            "start": 1934
+          },
+          {
+            "end": 1951,
+            "start": 1944
+          }
+        ],
+        "value": false
+      }
+    }
+  },
+  "markdown": "REQUEST FOR MORTGAGE ASSISTANCE FORM\n\n\nCHASE [OCTAGON_LOGO]\n\n\n**Important!** To avoid delays, please make sure all pages are complete and accurate\n\n\nLoan Number: 443781220 \n\n<table>\n<tr><td colspan=\"2\">Section A   BORROWER</td></tr>\n<tr><td colspan=\"2\">Borrower's<br>Name Stephanie Carter</td></tr>\n<tr><td>Social Security Number 522-90-1147</td><td>Date of Birth 07/25/72</td></tr>\n<tr><td colspan=\"2\">Home Phone Number<br>With Area Code (346) 555-7812<br><br>Cell or Work Number<br>With Area Code ___</td></tr>\n<tr><td colspan=\"2\">Email Address stephanie.carter@gmail.com</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">CO-BORROWER</td><td></td></tr>\n<tr><td colspan=\"2\">Co-Borrower's<br>Name Michael Carter</td><td></td></tr>\n<tr><td>Social Security Number 500-77-2290</td><td>Date of Birth 01/10</td><td>1990</td></tr>\n<tr><td colspan=\"2\">Home Phone Number<br>With Area Code</td><td></td></tr>\n<tr><td colspan=\"2\">Cell or Work Number<br>With Area Code (346) 555-7813</td><td></td></tr>\n<tr><td colspan=\"2\">Email Address michael.carter@email.c</td><td>ow</td></tr>\n</table>\n\nWhen you give us your mobile phone number, we have your permission to contact you at that number about all your Chase or J.P. Morgan accounts.\nYour consent allows us to use text messaging, artificial or prerecorded voice messages and automatic dialing technology for informational and\naccount service calls, but not for telemarketing or sales calls. It may include contact from companies working on our behalf to service your accounts.\nMessage and data rates may apply. You may contact us anytime to change these preferences.\n\n\nIs any borrower a Servicemember? \n [ ] Yes \n [x] No\nIf yes, since 9/11/01 has the Servicemember been or is the Servicemember currently serving on active duty with the Military? \n [ ] Yes \n [ ] No\nHave you recently been deployed away from your principal residence or recently received a Permanent Change of Station (PCS) order? \n [ ] Yes \n [ ] No\nIf yes, I intend to occupy this property as my primary residence some time in the future \n [x] Yes \n [ ] No\nIs any borrower the surviving spouse of a deceased Servicemember who was on active duty at the time of death? \n [ ] Yes \n [ ] No\n\n\nThe property is my: \n [x] Primary Residence \n [ ] Second Home \n [ ] Investment\nThe property is: \n [x] Owner Occupied \n [ ] Renter Occupied \n [ ] Vacant\n\n\nHave you previously requested mortgage payment assistance through Chase? [ ] Yes [ ] No \nHow many single family properties other than your principal residence do you and/or any co-borrower(s) own individually jointly, or with others? [ ] \nHave you ever had a Home Affordable Modification Program (HAMP) Trial Period Plan or permanent modification on your principal residence? [ ] Yes [ ] No \nHave you or any co-borrower had a permanent HAMP modification on any other property you own? [ ] Yes [ ] No If \"Yes,\" how many? [ ] \nAre you or any co-borrower currently in or being considered for a HAMP Trial Period Plan on a property other than your principal residence? [ ] Yes [ ] No \nComplete this section ONLY if you are requesting mortgage assistance for a property that is not your principal residence. \nIs the mortgage on your principal residence paid? [ ] Yes [x] No If \"No,\" number of months your payment is past due (if known). 6 \n\nNumber of People in Household: 2  \nMailing Address: 7710 Memorial Dr, Houston, TX 77024  \nProperty Address (if same as mailing address, just write 'same'): Same  \nIs the property listed for sale? \n[ ] Yes \n[x] No  \nIf yes, what was the listing date?  \nHave you received an offer on the property? \n[ ] Yes \n[ ] No  \nDate of Offer:  Amount of Offer:  \nClosing Date:  \nAgent's Name:  \nAgent's Phone Number:  \nFor Sale by Owner? \n[ ] Yes \n[ ] No  \nWho pays the real estate tax bill on your property? \n[ ] I do \n[x] Lender does \n[ ] Paid by condo or HOA  \nAre the taxes current? \n[ ] Yes \n[x] No  \nCondominium or HOA Fees? \n[x] Yes \n[ ] No $ 300 per month  \nAre the fees paid current? \n[ ] Yes \n[x] No  \nName and address that fees are paid to:  \nHave you contacted a credit counseling agency for help? \n[x] Yes \n[ ] No  \nIf yes, please complete the following:  \nCounselor's Name: David Morales  \nAgency Name: Clear Path Financial Solutions  \nCounselor's Phone Number: 888-555-9026  \nCounselor's Email: dmorales@clearpathfs.com  \nWho pays the insurance premiums for your property? \n[ ] I do \n[x] Lender does \n[ ] Paid by condo or HOA  \nIs the policy current? \n[ ] Yes \n[x] No  \nName(s) of Insurance Company:  \nInsurance Company Phone Number(s): \n\nPage 1\n\n\nD19693 RMA 09'3\n\n\n<!-- doc_id=parse-01m7hxcwhxrpmm7t5bdeej8atb -->",
+  "metadata": {
+    "job_id": "extract-01m7hxdarvr3ghpq2qkgnfq1hn",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 12075,
+    "doc_id": "parse-01m7hxcwhxrpmm7t5bdeej8atb",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.1,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 4597,
+    "output_extraction_chars": 1151,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

@@ -1,0 +1,236 @@
+{
+  "type": "object",
+  "properties": {
+    "loan_number": {
+      "type": "string",
+      "title": "Loan Number",
+      "description": "The loan number associated with the mortgage assistance request.",
+      "nullable": true
+    },
+    "property_details": {
+      "type": "object",
+      "title": "Property Details",
+      "description": "Details about the mortgaged porperty.",
+      "properties": {
+        "property_address": {
+          "type": "string",
+          "title": "Property Address",
+          "description": "The full address for the property. Inherit from mailing address if left blank.",
+          "nullable": true
+        },
+        "is_property_listed_for_sale": {
+          "type": "boolean",
+          "title": "Is Property Listed for Sale?",
+          "description": "Indicates if the property is currently listed for sale.",
+          "nullable": true
+        },
+        "property_type": {
+          "type": "string",
+          "title": "Property Type",
+          "description": "The type of property.",
+          "nullable": true,
+          "enum": [
+            "Primary Residence",
+            "Second Home",
+            "Investment"
+          ]
+        },
+        "property_occupancy_status": {
+          "type": "string",
+          "title": "Property Occupancy Status",
+          "description": "The occupancy status of the property.",
+          "nullable": true,
+          "enum": [
+            "Owner Occupied",
+            "Renter Occupied",
+            "Vacant"
+          ]
+        }
+      }
+    },
+    "borrower": {
+      "type": "object",
+      "title": "Borrower Information",
+      "description": "Details about the primary borrower.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Borrower's Name",
+          "description": "The full name of the primary borrower.",
+          "nullable": true
+        },
+        "social_security_number": {
+          "type": "string",
+          "title": "Social Security Number",
+          "description": "The Social Security Number of the primary borrower.",
+          "nullable": true
+        },
+        "date_of_birth": {
+          "type": "string",
+          "title": "Date of Birth",
+          "description": "The date of birth of the primary borrower in YYYY-MM-DD format.",
+          "nullable": true
+        },
+        "home_phone_number": {
+          "type": "string",
+          "title": "Home Phone Number",
+          "description": "The home phone number of the primary borrower, including area code.",
+          "nullable": true
+        },
+        "mailing_address": {
+          "type": "string",
+          "title": "Mailing Address",
+          "description": "The mailing address for the borrowers.",
+          "nullable": true
+        }
+      }
+    },
+    "co_borrower": {
+      "type": "object",
+      "title": "Co-Borrower Information",
+      "description": "Details about the co-borrower, if applicable.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Co-Borrower's Name",
+          "description": "The full name of the co-borrower.",
+          "nullable": true
+        },
+        "social_security_number": {
+          "type": "string",
+          "title": "Social Security Number",
+          "description": "The Social Security Number of the co-borrower.",
+          "nullable": true
+        },
+        "date_of_birth": {
+          "type": "string",
+          "title": "Date of Birth",
+          "description": "The date of birth of the co-borrower in YYYY-MM-DD format.",
+          "nullable": true
+        },
+        "home_phone_number": {
+          "type": "string",
+          "title": "Home Phone Number",
+          "description": "The home phone number of the co-borrower, including area code.",
+          "nullable": true
+        }
+      }
+    },
+    "servicemember_status": {
+      "type": "object",
+      "title": "Servicemember Status",
+      "description": "Information regarding the borrower's servicemember status.",
+      "properties": {
+        "is_any_borrower_servicemember": {
+          "type": "boolean",
+          "title": "Is any borrower a Servicemember?",
+          "description": "Indicates if any borrower is a Servicemember.",
+          "nullable": true
+        },
+        "is_active_duty_post_9_11": {
+          "type": "boolean",
+          "title": "Post 911 Active Duty",
+          "description": "Indicates if the Servicemember has been on active duty since 9-11-2001.",
+          "nullable": true
+        },
+        "is_deployed_or_PCS": {
+          "type": "boolean",
+          "title": "PCS or Deployed Away from Primary Residence",
+          "description": "Indicates if the Servicemember received a Permanent Change of Station (PCS) order or been deployed away from their primary residence.",
+          "nullable": true
+        }
+      }
+    },
+    "mortgage_assistance_history": {
+      "type": "object",
+      "title": "Mortgage Assistance History",
+      "description": "Details about previous mortgage assistance requests and HAMP programs.",
+      "properties": {
+        "previously_requested_assistance": {
+          "type": "boolean",
+          "title": "Previously Requested Mortgage Assistance",
+          "description": "Indicates if mortgage payment assistance was previously requested through Chase.",
+          "nullable": true
+        },
+        "other_single_family_properties_owned": {
+          "type": "number",
+          "title": "Other Single Family Properties Owned",
+          "description": "Number of single family properties other than the principal residence owned by borrower(s).",
+          "nullable": true
+        },
+        "had_hamp_trial_or_permanent_modification_principal": {
+          "type": "boolean",
+          "title": "Had HAMP Trial/Permanent Modification on Principal Residence",
+          "description": "Indicates if there was a HAMP Trial Period Plan or permanent modification on the principal residence.",
+          "nullable": true
+        },
+        "had_hamp_permanent_modification_other_property": {
+          "type": "boolean",
+          "title": "Had HAMP Permanent Modification on Other Property",
+          "description": "Indicates if there was a permanent HAMP modification on any other property owned.",
+          "nullable": true
+        }
+      }
+    },
+    "real_estate_tax_details": {
+      "type": "object",
+      "title": "Real Estate Tax Details",
+      "description": "Details about the real estate taxes.",
+      "properties": {
+        "real_estate_tax_payer": {
+          "type": "string",
+          "title": "Real Estate Tax Payer",
+          "description": "Indicates who pays the real estate tax bill.",
+          "nullable": true,
+          "enum": [
+            "I do",
+            "Lender does",
+            "Paid by condo or HOA"
+          ]
+        },
+        "is_real_estate_tax_current": {
+          "type": "boolean",
+          "title": "Are Taxes Current?",
+          "description": "Indicates if the real estate tax payments are current.",
+          "nullable": true
+        }
+      }
+    },
+    "insurance_details": {
+      "type": "object",
+      "title": "Insurance Details",
+      "description": "Information regarding property insurance.",
+      "properties": {
+        "insurance_payer": {
+          "type": "string",
+          "title": "Insurance Payer",
+          "description": "Indicates who pays the insurance premiums for the property.",
+          "nullable": true,
+          "enum": [
+            "I do",
+            "Lender does",
+            "Paid by condo or HOA"
+          ]
+        },
+        "is_policy_current": {
+          "type": "boolean",
+          "title": "Is Policy Current?",
+          "description": "Indicates if the insurance policy is current.",
+          "nullable": true
+        },
+        "insurance_company_name": {
+          "type": "string",
+          "title": "Insurance Company Name",
+          "description": "The name of the insurance company.",
+          "nullable": true
+        },
+        "insurance_company_phone_number": {
+          "type": "string",
+          "title": "Insurance Company Phone Number",
+          "description": "If present, the phone number of the insurance company.",
+          "nullable": true
+        }
+      }
+    }
+  }
+}
