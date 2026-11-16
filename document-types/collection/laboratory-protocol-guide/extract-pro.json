@@ -1,0 +1,1598 @@
+{
+  "extraction": {
+    "document_code": "FL_AG_039",
+    "guide_title": "Immunofluorescence Assays",
+    "protocol_steps": [
+      {
+        "incubation_time": "30 minutes up to one hour",
+        "key_caution": "Excessively long blocking steps should be avoided, as this can reduce the specific binding of the primary antibody, and therefore reduce the signal.",
+        "reagents": [
+          "serum of the host, in which the secondary antibody was made",
+          "bovine serum albumin (BSA)",
+          "milk"
+        ],
+        "step_name": "Blocking",
+        "temperature": null,
+        "wash_after": null
+      },
+      {
+        "incubation_time": null,
+        "key_caution": "Antibody concentrations that are too high and incubation times that are too long can result in an unspecific background signal.",
+        "reagents": [
+          "primary antibody"
+        ],
+        "step_name": "Primary Antibody Incubation",
+        "temperature": null,
+        "wash_after": "3x for 5 minutes in a washing solution"
+      },
+      {
+        "incubation_time": "according to manufacturer's protocol",
+        "key_caution": "Since fluorophores are sensitive to light, from now on all steps of the protocol need to be carried out in the dark.",
+        "reagents": [
+          "secondary antibody solution"
+        ],
+        "step_name": "Secondary Antibody Incubation",
+        "temperature": "room temperature",
+        "wash_after": "3x for 5 minutes in a washing solution"
+      },
+      {
+        "incubation_time": "",
+        "key_caution": "In order to avoid drying out of the samples, and to guarantee a stable refractive index of the cellular environment, the sample needs to be mounted.",
+        "reagents": [
+          "mounting medium",
+          "DAPI"
+        ],
+        "step_name": "Counterstain and Mounting",
+        "temperature": "",
+        "wash_after": ""
+      },
+      {
+        "incubation_time": null,
+        "key_caution": "Since signals could fade if fluorophores are exposed to light for a longer period, the samples always must be stored in the dark.",
+        "reagents": [
+          "ibidi Mounting Medium",
+          "ibidi Mounting Medium With DAPI"
+        ],
+        "step_name": "Microscopy",
+        "temperature": null,
+        "wash_after": null
+      },
+      {
+        "incubation_time": "10 minutes",
+        "key_caution": "Optimal fixation conditions should be determined individually for each experiment.",
+        "reagents": [
+          "4% formalin solution (in PBS, pH 7.4)",
+          "100% chilled methanol",
+          "acetone"
+        ],
+        "step_name": "Sample Fixation",
+        "temperature": "room temperature",
+        "wash_after": "3x for 5 minutes in a washing solution, (e.g., PBS)"
+      },
+      {
+        "incubation_time": null,
+        "key_caution": "Especially when staining membranous proteins, the permeabilization step has to be done with caution, because Triton X-100 can destroy the cell membrane.",
+        "reagents": [
+          "detergent",
+          "Triton X-100",
+          "Tween-20",
+          "PBS solution",
+          "saponin"
+        ],
+        "step_name": "Cell Permeabilization",
+        "temperature": null,
+        "wash_after": "3x for 5 minutes in a washing solution"
+      }
+    ],
+    "publisher": "ibidi GmbH",
+    "troubleshooting": [
+      {
+        "problem": "High Background",
+        "reason": "Inappropriate or too long fixation, leading to artefacts",
+        "solution": "Reduce fixation time or change the fixative"
+      },
+      {
+        "problem": "High Background",
+        "reason": "Insufficient blocking",
+        "solution": "Prolong the incubation time, consider using a different blocking solution (we recommend using serum from the secondary antibody host)"
+      },
+      {
+        "problem": "High Background",
+        "reason": "No specificity of the primary antibody",
+        "solution": "Use a primary antibody that is proven to work for immuno-fluorescence in the chosen model system; if available, use a knockdown/knockout sample as a negative control"
+      },
+      {
+        "problem": "High Background",
+        "reason": "Too high primary/secondary antibody concentration, too long incubation time, too high incubation temperature",
+        "solution": "Optimize the antibody concentration and incubation time/temperature, consult manufacturer's protocol"
+      },
+      {
+        "problem": "High Background",
+        "reason": "Cross-reactivity of the secondary antibody",
+        "solution": "Use isotype controls for the secondary antibody to check for cross-reactivity"
+      },
+      {
+        "problem": "High Background",
+        "reason": "Not enough washing",
+        "solution": "Verify that all washing steps are carried out properly; if necessary, prolong the washing steps"
+      },
+      {
+        "problem": "High Background",
+        "reason": "Bleaching during imaging",
+        "solution": "Use a secondary antibody conjugated to a fluorophore suitable for your chosen microscopy technique"
+      },
+      {
+        "problem": "High Background",
+        "reason": "Low signal intensity, resulting in noise",
+        "solution": "Optimize the signal-to-noise ratio, e.g., by using a brighter fluorophore for detection; if applicable, increase the expression of the antigen of interest (e.g., by overexpression or by addition of inducing agents)"
+      },
+      {
+        "problem": "High Background",
+        "reason": "High autofluorescence",
+        "solution": "Check the sample autofluorescence by using unstained controls; use fresh fixation solutions (expired formalin solutions might have a high autofluorescence); use materials with low autofluorescence (e.g., ibidi Δ-Slides or Chamber Slides); use mounting medium with low autofluorescence (e.g., ibidi Mounting Medium / ibidi Mounting Medium With DAPI)"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "Drying out of the sample",
+        "solution": "Always keep the sample moist"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "Overfixation of the sample, leading to epitope damage",
+        "solution": "Reduce fixation time or change the fixative"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "Inadequate permeabilization method",
+        "solution": "Optimize or skip the permeabilization step"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "No binding of primary antibody to the antigen of interest",
+        "solution": "Use a primary antibody that is proven to work for immunofluorescence in the chosen model system; check the antibody functionality by using a positive control (e.g., by overexpression or by addition of inducing agents)"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "Too high primary/secondary antibody dilution, too short incubation time, too low incubation temperature",
+        "solution": "Increase the antibody concentration or the incubation time/temperature; consult manufacturer's protocol"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "Very low or no antigen expression",
+        "solution": "Use a positive control (e.g., an overexpression model); reconsider your experimental system"
+      },
+      {
+        "problem": "Low Signal or Lack of Signal",
+        "reason": "Inappropriate microscopy detection method",
+        "solution": "Use a more sensitive method for image acquisition; check your used filter/laser setup; use a brighter fluorophore for detection"
+      }
+    ],
+    "version": "V 1.0 2019/09",
+    "vessel_comparison": [
+      {
+        "additional_coverslips_required": "No",
+        "bottom_material": "Glass Coverslip or Polymer Coverslip",
+        "microscope_type": "Inverted",
+        "mounting_medium": "Non-hardening",
+        "sample_storage": "Short-term",
+        "vessel_type": "Chambered Coverslips"
+      },
+      {
+        "additional_coverslips_required": "No",
+        "bottom_material": "Glass Coverslip or Polymer Coverslip",
+        "microscope_type": "Inverted",
+        "mounting_medium": "Non-hardening",
+        "sample_storage": "Short-term",
+        "vessel_type": "Channel Slides"
+      },
+      {
+        "additional_coverslips_required": "Yes (for mounting)",
+        "bottom_material": "Standard glass slide",
+        "microscope_type": "Inverted & upright",
+        "mounting_medium": "Hardening",
+        "sample_storage": "Long-term",
+        "vessel_type": "Chamber Slides, removable"
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "document_code": {
+      "ranges": [
+        {
+          "end": 50257,
+          "start": 50233
+        }
+      ],
+      "value": "FL_AG_039"
+    },
+    "guide_title": {
+      "ranges": [
+        {
+          "end": 686,
+          "start": 663
+        },
+        {
+          "end": 705,
+          "start": 687
+        },
+        {
+          "end": 712,
+          "start": 706
+        }
+      ],
+      "value": "Immunofluorescence Assays"
+    },
+    "protocol_steps": [
+      {
+        "incubation_time": {
+          "ranges": [
+            {
+              "end": 16222,
+              "start": 16164
+            }
+          ],
+          "value": "30 minutes up to one hour"
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 16281,
+              "start": 16223
+            },
+            {
+              "end": 16342,
+              "start": 16282
+            },
+            {
+              "end": 16371,
+              "start": 16343
+            }
+          ],
+          "value": "Excessively long blocking steps should be avoided, as this can reduce the specific binding of the primary antibody, and therefore reduce the signal."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 16020,
+                "start": 15961
+              }
+            ],
+            "value": "serum of the host, in which the secondary antibody was made"
+          },
+          {
+            "ranges": [
+              {
+                "end": 16078,
+                "start": 16021
+              },
+              {
+                "end": 16020,
+                "start": 15007
+              }
+            ],
+            "value": "bovine serum albumin (BSA)"
+          },
+          {
+            "ranges": [
+              {
+                "end": 16078,
+                "start": 16021
+              },
+              {
+                "end": 16020,
+                "start": 15007
+              }
+            ],
+            "value": "milk"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 15039,
+              "start": 15008
+            }
+          ],
+          "value": "Blocking"
+        },
+        "temperature": {
+          "ranges": null,
+          "value": null
+        },
+        "wash_after": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      {
+        "incubation_time": {
+          "ranges": [
+            {
+              "end": 18557,
+              "start": 18105
+            }
+          ],
+          "value": null
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 18344,
+              "start": 18282
+            },
+            {
+              "end": 18411,
+              "start": 18345
+            }
+          ],
+          "value": "Antibody concentrations that are too high and incubation times that are too long can result in an unspecific background signal."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 16425,
+                "start": 16374
+              },
+              {
+                "end": 17342,
+                "start": 17286
+              },
+              {
+                "end": 17599,
+                "start": 17538
+              },
+              {
+                "end": 18104,
+                "start": 17600
+              },
+              {
+                "end": 18557,
+                "start": 18105
+              }
+            ],
+            "value": "primary antibody"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 16425,
+              "start": 16374
+            },
+            {
+              "end": 17284,
+              "start": 16427
+            }
+          ],
+          "value": "Primary Antibody Incubation"
+        },
+        "temperature": {
+          "ranges": [
+            {
+              "end": 18557,
+              "start": 18105
+            }
+          ],
+          "value": null
+        },
+        "wash_after": {
+          "ranges": [
+            {
+              "end": 18683,
+              "start": 18623
+            }
+          ],
+          "value": "3x for 5 minutes in a washing solution"
+        }
+      },
+      {
+        "incubation_time": {
+          "ranges": [
+            {
+              "end": 20400,
+              "start": 20344
+            },
+            {
+              "end": 20459,
+              "start": 20401
+            }
+          ],
+          "value": "according to manufacturer's protocol"
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 20525,
+              "start": 20460
+            },
+            {
+              "end": 20570,
+              "start": 20526
+            }
+          ],
+          "value": "Since fluorophores are sensitive to light, from now on all steps of the protocol need to be carried out in the dark."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 20400,
+                "start": 20344
+              }
+            ],
+            "value": "secondary antibody solution"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 18773,
+              "start": 18742
+            }
+          ],
+          "value": "Secondary Antibody Incubation"
+        },
+        "temperature": {
+          "ranges": [
+            {
+              "end": 20572,
+              "start": 20249
+            }
+          ],
+          "value": "room temperature"
+        },
+        "wash_after": {
+          "ranges": [
+            {
+              "end": 20627,
+              "start": 20573
+            },
+            {
+              "end": 20689,
+              "start": 20628
+            },
+            {
+              "end": 20729,
+              "start": 20690
+            }
+          ],
+          "value": "3x for 5 minutes in a washing solution"
+        }
+      },
+      {
+        "incubation_time": {
+          "ranges": [
+            {
+              "end": 22766,
+              "start": 22708
+            }
+          ],
+          "value": ""
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 22766,
+              "start": 22708
+            },
+            {
+              "end": 22827,
+              "start": 22767
+            },
+            {
+              "end": 22890,
+              "start": 22828
+            },
+            {
+              "end": 22955,
+              "start": 22891
+            },
+            {
+              "end": 22987,
+              "start": 22956
+            }
+          ],
+          "value": "In order to avoid drying out of the samples, and to guarantee a stable refractive index of the cellular environment, the sample needs to be mounted."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 23051,
+                "start": 22990
+              }
+            ],
+            "value": "mounting medium"
+          },
+          {
+            "ranges": [
+              {
+                "end": 23115,
+                "start": 23052
+              }
+            ],
+            "value": "DAPI"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 22586,
+              "start": 22561
+            }
+          ],
+          "value": "Counterstain and Mounting"
+        },
+        "temperature": {
+          "ranges": [
+            {
+              "end": 22766,
+              "start": 22708
+            }
+          ],
+          "value": ""
+        },
+        "wash_after": {
+          "ranges": [
+            {
+              "end": 22766,
+              "start": 22708
+            }
+          ],
+          "value": ""
+        }
+      },
+      {
+        "incubation_time": {
+          "ranges": [
+            {
+              "end": 24226,
+              "start": 23205
+            }
+          ],
+          "value": null
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 24964,
+              "start": 24707
+            }
+          ],
+          "value": "Since signals could fade if fluorophores are exposed to light for a longer period, the samples always must be stored in the dark."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 24705,
+                "start": 24472
+              }
+            ],
+            "value": "ibidi Mounting Medium"
+          },
+          {
+            "ranges": [
+              {
+                "end": 24705,
+                "start": 24472
+              }
+            ],
+            "value": "ibidi Mounting Medium With DAPI"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 23239,
+              "start": 23206
+            }
+          ],
+          "value": "Microscopy"
+        },
+        "temperature": {
+          "ranges": [
+            {
+              "end": 24226,
+              "start": 23205
+            }
+          ],
+          "value": null
+        },
+        "wash_after": {
+          "ranges": [
+            {
+              "end": 24226,
+              "start": 23205
+            }
+          ],
+          "value": null
+        }
+      },
+      {
+        "incubation_time": {
+          "ranges": [
+            {
+              "end": 13439,
+              "start": 13000
+            }
+          ],
+          "value": "10 minutes"
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 13502,
+              "start": 13441
+            }
+          ],
+          "value": "Optimal fixation conditions should be determined individually for each experiment."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 13439,
+                "start": 13000
+              }
+            ],
+            "value": "4% formalin solution (in PBS, pH 7.4)"
+          },
+          {
+            "ranges": [
+              {
+                "end": 13439,
+                "start": 13000
+              }
+            ],
+            "value": "100% chilled methanol"
+          },
+          {
+            "ranges": [
+              {
+                "end": 13439,
+                "start": 13000
+              }
+            ],
+            "value": "acetone"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 12883,
+              "start": 12868
+            }
+          ],
+          "value": "Sample Fixation"
+        },
+        "temperature": {
+          "ranges": [
+            {
+              "end": 13439,
+              "start": 13000
+            }
+          ],
+          "value": "room temperature"
+        },
+        "wash_after": {
+          "ranges": [
+            {
+              "end": 13757,
+              "start": 13696
+            },
+            {
+              "end": 13945,
+              "start": 13758
+            }
+          ],
+          "value": "3x for 5 minutes in a washing solution, (e.g., PBS)"
+        }
+      },
+      {
+        "incubation_time": {
+          "ranges": null,
+          "value": null
+        },
+        "key_caution": {
+          "ranges": [
+            {
+              "end": 14604,
+              "start": 14544
+            },
+            {
+              "end": 14666,
+              "start": 14605
+            }
+          ],
+          "value": "Especially when staining membranous proteins, the permeabilization step has to be done with caution, because Triton X-100 can destroy the cell membrane."
+        },
+        "reagents": [
+          {
+            "ranges": [
+              {
+                "end": 14413,
+                "start": 13946
+              }
+            ],
+            "value": "detergent"
+          },
+          {
+            "ranges": [
+              {
+                "end": 14413,
+                "start": 13946
+              },
+              {
+                "end": 14666,
+                "start": 14605
+              }
+            ],
+            "value": "Triton X-100"
+          },
+          {
+            "ranges": [
+              {
+                "end": 14413,
+                "start": 13946
+              }
+            ],
+            "value": "Tween-20"
+          },
+          {
+            "ranges": [
+              {
+                "end": 14413,
+                "start": 13946
+              }
+            ],
+            "value": "PBS solution"
+          },
+          {
+            "ranges": [
+              {
+                "end": 14725,
+                "start": 14667
+              }
+            ],
+            "value": "saponin"
+          }
+        ],
+        "step_name": {
+          "ranges": [
+            {
+              "end": 13822,
+              "start": 13801
+            }
+          ],
+          "value": "Cell Permeabilization"
+        },
+        "temperature": {
+          "ranges": null,
+          "value": null
+        },
+        "wash_after": {
+          "ranges": [
+            {
+              "end": 14960,
+              "start": 14896
+            },
+            {
+              "end": 14980,
+              "start": 14961
+            }
+          ],
+          "value": "3x for 5 minutes in a washing solution"
+        }
+      }
+    ],
+    "publisher": {
+      "ranges": [
+        {
+          "end": 49656,
+          "start": 49645
+        }
+      ],
+      "value": "ibidi GmbH"
+    },
+    "troubleshooting": [
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 25848,
+              "start": 25792
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Inappropriate or too long fixation, leading to artefacts"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 25900,
+              "start": 25857
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Reduce fixation time or change the fixative"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 25940,
+              "start": 25919
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Insufficient blocking"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 26082,
+              "start": 25949
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Prolong the incubation time, consider using a different blocking solution (we recommend using serum from the secondary antibody host)"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 26139,
+              "start": 26101
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "No specificity of the primary antibody"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 26313,
+              "start": 26148
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Use a primary antibody that is proven to work for immuno-fluorescence in the chosen model system; if available, use a knockdown/knockout sample as a negative control"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 26440,
+              "start": 26332
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Too high primary/secondary antibody concentration, too long incubation time, too high incubation temperature"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 26549,
+              "start": 26449
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Optimize the antibody concentration and incubation time/temperature, consult manufacturer's protocol"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 26610,
+              "start": 26568
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Cross-reactivity of the secondary antibody"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 26696,
+              "start": 26619
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Use isotype controls for the secondary antibody to check for cross-reactivity"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 26733,
+              "start": 26715
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Not enough washing"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 26837,
+              "start": 26742
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Verify that all washing steps are carried out properly; if necessary, prolong the washing steps"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 26880,
+              "start": 26856
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Bleaching during imaging"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 26987,
+              "start": 26889
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Use a secondary antibody conjugated to a fluorophore suitable for your chosen microscopy technique"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 27046,
+              "start": 27006
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Low signal intensity, resulting in noise"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 27269,
+              "start": 27055
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Optimize the signal-to-noise ratio, e.g., by using a brighter fluorophore for detection; if applicable, increase the expression of the antigen of interest (e.g., by overexpression or by addition of inducing agents)"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High Background"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 27309,
+              "start": 27288
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "High autofluorescence"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 27666,
+              "start": 27318
+            },
+            {
+              "end": 25732,
+              "start": 25717
+            }
+          ],
+          "value": "Check the sample autofluorescence by using unstained controls; use fresh fixation solutions (expired formalin solutions might have a high autofluorescence); use materials with low autofluorescence (e.g., ibidi Δ-Slides or Chamber Slides); use mounting medium with low autofluorescence (e.g., ibidi Mounting Medium / ibidi Mounting Medium With DAPI)"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 27799,
+              "start": 27775
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Drying out of the sample"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 27836,
+              "start": 27808
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Always keep the sample moist"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 27908,
+              "start": 27855
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Overfixation of the sample, leading to epitope damage"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 27960,
+              "start": 27917
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Reduce fixation time or change the fixative"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 28013,
+              "start": 27979
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Inadequate permeabilization method"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 28064,
+              "start": 28022
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Optimize or skip the permeabilization step"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 28140,
+              "start": 28083
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "No binding of primary antibody to the antigen of interest"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 28366,
+              "start": 28149
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Use a primary antibody that is proven to work for immunofluorescence in the chosen model system; check the antibody functionality by using a positive control (e.g., by overexpression or by addition of inducing agents)"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 28488,
+              "start": 28385
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Too high primary/secondary antibody dilution, too short incubation time, too low incubation temperature"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 28600,
+              "start": 28497
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Increase the antibody concentration or the incubation time/temperature; consult manufacturer's protocol"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 28652,
+              "start": 28619
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Very low or no antigen expression"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 28752,
+              "start": 28661
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Use a positive control (e.g., an overexpression model); reconsider your experimental system"
+        }
+      },
+      {
+        "problem": {
+          "ranges": [
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Low Signal or Lack of Signal"
+        },
+        "reason": {
+          "ranges": [
+            {
+              "end": 28812,
+              "start": 28771
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Inappropriate microscopy detection method"
+        },
+        "solution": {
+          "ranges": [
+            {
+              "end": 28948,
+              "start": 28821
+            },
+            {
+              "end": 27715,
+              "start": 27687
+            }
+          ],
+          "value": "Use a more sensitive method for image acquisition; check your used filter/laser setup; use a brighter fluorophore for detection"
+        }
+      }
+    ],
+    "version": {
+      "ranges": [
+        {
+          "end": 50257,
+          "start": 50233
+        }
+      ],
+      "value": "V 1.0 2019/09"
+    },
+    "vessel_comparison": [
+      {
+        "additional_coverslips_required": {
+          "ranges": [
+            {
+              "end": 29772,
+              "start": 29770
+            }
+          ],
+          "value": "No"
+        },
+        "bottom_material": {
+          "ranges": [
+            {
+              "end": 29672,
+              "start": 29636
+            }
+          ],
+          "value": "Glass Coverslip or Polymer Coverslip"
+        },
+        "microscope_type": {
+          "ranges": [
+            {
+              "end": 29866,
+              "start": 29858
+            }
+          ],
+          "value": "Inverted"
+        },
+        "mounting_medium": {
+          "ranges": [
+            {
+              "end": 29974,
+              "start": 29961
+            }
+          ],
+          "value": "Non-hardening"
+        },
+        "sample_storage": {
+          "ranges": [
+            {
+              "end": 30062,
+              "start": 30052
+            }
+          ],
+          "value": "Short-term"
+        },
+        "vessel_type": {
+          "ranges": [
+            {
+              "end": 29346,
+              "start": 29332
+            }
+          ],
+          "value": "Chambered Coverslips"
+        }
+      },
+      {
+        "additional_coverslips_required": {
+          "ranges": [
+            {
+              "end": 29799,
+              "start": 29781
+            }
+          ],
+          "value": "No"
+        },
+        "bottom_material": {
+          "ranges": [
+            {
+              "end": 29701,
+              "start": 29681
+            }
+          ],
+          "value": "Glass Coverslip or Polymer Coverslip"
+        },
+        "microscope_type": {
+          "ranges": [
+            {
+              "end": 29897,
+              "start": 29875
+            }
+          ],
+          "value": "Inverted"
+        },
+        "mounting_medium": {
+          "ranges": [
+            {
+              "end": 29992,
+              "start": 29983
+            }
+          ],
+          "value": "Non-hardening"
+        },
+        "sample_storage": {
+          "ranges": [
+            {
+              "end": 30080,
+              "start": 30071
+            }
+          ],
+          "value": "Short-term"
+        },
+        "vessel_type": {
+          "ranges": [
+            {
+              "end": 29380,
+              "start": 29355
+            }
+          ],
+          "value": "Channel Slides"
+        }
+      },
+      {
+        "additional_coverslips_required": {
+          "ranges": [
+            {
+              "end": 29832,
+              "start": 29817
+            }
+          ],
+          "value": "Yes (for mounting)"
+        },
+        "bottom_material": {
+          "ranges": [
+            {
+              "end": 29750,
+              "start": 29719
+            }
+          ],
+          "value": "Standard glass slide"
+        },
+        "microscope_type": {
+          "ranges": [
+            {
+              "end": 29930,
+              "start": 29915
+            }
+          ],
+          "value": "Inverted & upright"
+        },
+        "mounting_medium": {
+          "ranges": [
+            {
+              "end": 30024,
+              "start": 30010
+            }
+          ],
+          "value": "Hardening"
+        },
+        "sample_storage": {
+          "ranges": [
+            {
+              "end": 30043,
+              "start": 30033
+            }
+          ],
+          "value": "Long-term"
+        },
+        "vessel_type": {
+          "ranges": [
+            {
+              "end": 29413,
+              "start": 29413
+            }
+          ],
+          "value": "Chamber Slides, removable"
+        }
+      }
+    ]
+  },
+  "markdown": "<figure type=\"PHOTOGRAPH\">\n\n<description>This is a false-colored microscopic image (likely a fluorescence microscopy photograph) showing cellular structures. There are three distinct purple-stained nuclei in the upper center, clustered together, and one smaller purple-stained nucleus in the lower right corner. These nuclei are surrounded by a diffuse, reddish-pink stained cytoplasmic region. Woven through and around these cellular structures are vibrant green, filamentous fibers, which likely represent cytoskeletal elements like actin filaments or extracellular matrix fibers. The background is white.</description></figure>\n\ncells in focus [LOGO_IBIDI]®\n\n\nibidi Application Guide\nImmunofluorescence\nAssays\n\n\n<table>\n<tr><td>The Principle of Immunofluorescence</td><td></td></tr>\n<tr><td>Assays...</td><td>2</td></tr>\n<tr><td>Immunofluorescence Staining: A Typical Workflow...</td><td>3</td></tr>\n<tr><td>Experiment Planning and Sample Preparation...</td><td>4</td></tr>\n<tr><td>Sample Fixation...</td><td>4</td></tr>\n<tr><td>Cell Permeabilization...</td><td>5</td></tr>\n<tr><td>Blocking...</td><td>5</td></tr>\n<tr><td>Primary Antibody Incubation...</td><td>5</td></tr>\n<tr><td>Secondary Antibody Incubation...</td><td>6</td></tr>\n<tr><td>Counterstain and Mounting...</td><td>7</td></tr>\n<tr><td>Microscopy...</td><td>7</td></tr>\n<tr><td>Troubleshooting...</td><td>8</td></tr>\n</table>\n\nImmunofluorescence\nWith the ibidi Chambers ... 9\nComparison of Immunocytochemistry Protocols ... 10\nChambered Coverslips ... 11\nChannel Slides ... 11\nChamber Slides ... 12\n\n\nImmunofluorescence Applied:\nExperimental Examples...13\nRat Hippocampal Neuron and Astrocyte Staining 14\nVisualization of Endothelial Cell Junctions...13\nImmunostaining of Rat Dorsal Root Ganglionic\nCells and Schwann Cells...13\nAdherens Junctions and Actin Cytoskeleton of\nHUVECs Under Flow...14\nMitochondria Staining of MDCK cells...14\nFocal Adhesions of Differentiated Mouse\nFibroblasts on an Elastic Surface...15\n\n\n# Selected Publications\n\nC. Xu, et al. NPTX2 promotes colorectal cancer growth and liver\nmetastasis by the activation of the canonical Wnt/beta-catenin\npathway via FZD6. Cell Death & Disease, 2019, 10.1038/s41419-\n019-1467-7\nread abstract\nKobayashi, T., et al. Principles of early human development and\ngerm cell program from conserved model systems. Nature,\n2017, 10.1038/nature22812\nread abstract\nH. Tada et al. Porphyromonas gingivalis Gingipain-Dependently\nEnhances IL-33 Production in Human Gingival Epithelial Cells.\nPloS one, 2016, 10.1371/journal.pone.0152794\nread abstract\nN. J. Foy, M. Akhrymuk, A. V. Shustov, E. I. Frolova and I.\nFrolov. Hypervariable Domain of Nonstructural Protein nsP3 of\nVenezuelan Equine Encephalitis Virus Determines Cell-Specific\nMode of Virus Replication. Journal of Virology, 2013, 10.1128/\njvi.00720-13\nread abstract\n\n\nibidi.com\n\n\n<!-- PAGE BREAK -->\n\nThe Principle of\nImmunofluorescence Assays\n\n\nImmunofluorescence (IF) is a powerful approach for\ngetting insight into cellular structures and processes\nusing microscopy. Specific proteins can be\nassessed for their expression and location, making\nimmunofluorescence indispensable for scientists to\nsolve many cell biological questions.\n\n\nAn immunofluorescence experiment is based on the\nfollowing principal steps:\n 1. Specific antibodies bind to the protein of\ninterest.\n 2. Fluorescent dyes are coupled to these immune\ncomplexes in order to visualize the protein of\ninterest using microscopy.\n\n\nIt is distinguished between direct and indirect\nimmunofluorescence. In direct immunofluorescence,\nthe primary antibody is directly coupled to a\nfluorophore (also called fluorochrome), allowing for\neasy handling and quick visualization. In indirect\nimmunofluorescence, a secondary fluorophore-\ncoupled antibody, which specifically binds to the\nprimary antibody, is used to visualize the structure\nof interest.\n\n\nAlthough the second approach is more time-\nconsuming than direct immunofluorescence, it\nhas several big advantages, such as it is generally\nless expensive, because the secondary antibody\ncan be used for different primary antibodies.\nIn addition, several proteins can be specifically\nvisualized in parallel in one single sample (multicolor\nimmunofluorescence) by combining multiple primary\nantibodies with specific secondary antibodies—\neach of them labeled with a different fluorophore.\n\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A fluorescence microscopy image showing a monolayer of human umbilical vein endothelial cells (HUVECs). The image uses three-color staining: blue (DAPI) highlights the cell nuclei, green (phalloidin) highlights the actin cytoskeleton, and red marks the von-Willebrand-Factor (vWF). The actin filaments appear as long, fibrous, green structures running through the cytoplasm. The nuclei are distinct, oval-shaped blue structures distributed throughout the field of view. The vWF is visible as diffuse red staining within the cytoplasm of the cells.</description> Immunofluorescence staining of the von-Willebrand-Factor (vWF) in endothelial cells (HUVECs). Actin was stained using phalloidin (green), nuclei are stained with DAPI (blue).</figure>\n\n<figure type=\"DIAGRAM\">The figure illustrates the two primary methods of immunofluorescence: Direct Immunofluorescence and Indirect Immunofluorescence. \n\n<description>The diagram consists of two panels placed side-by-side. The left panel, titled 'Direct Immunofluorescence', depicts a single 'Antibody' (Y-shaped molecule, teal) attached directly to an 'Antigene' (a gold circle attached to a curved surface representing a cell membrane). Attached to the top of the antibody are two 'Fluorophore' molecules (green star shapes). The right panel, titled 'Indirect Immunofluorescence', depicts a 'Primary antibody' (teal, Y-shaped) attached to an 'Antigene' (gold circle on a membrane). A 'Secondary antibody' (purple, Y-shaped) is attached to the primary antibody, and two 'Fluorophore' molecules (green star shapes) are attached to the secondary antibody.</description> The principle of direct immunofluorescence and indirect immunofluorescence.</figure>\n\n2\n\n\n<!-- PAGE BREAK -->\n\nImmunofluorescence Staining:\nA Typical Workflow\n\n\nEvery immunofluorescence staining protocol consists\nof four major steps (cultivation, fixation, staining,\nimaging), which can be subdivided as follows:\n\n\n<figure type=\"FLOWCHART\">\n\n<description>A four-stage flowchart illustrating cell preparation steps for an experiment.</description> 1. Directory of Nodes (Blocks) [STEP 1] (Rounded Rectangle/Process): \"Experiment Planning Sample Preparation\" (Background: light red) [STEP 2] (Rounded Rectangle/Process): \"Sample Fixation\" (Background: light beige) [STEP 3] (Rounded Rectangle/Process): \"Cell Permeabilization\" (Background: light beige, dashed outline) [STEP 4] (Rounded Rectangle/Process): \"Blocking\" (Background: light beige, dashed outline) 2. Visual Elements within Nodes: Each node contains an illustration of a cell. The cell has a nucleus (blue oval), yellow-green square markers, and orange star-like markers. In step 3, the cell outline becomes dashed. In step 4, some orange star-like markers are replaced by grey, faded-out shapes. 3. Connections: The nodes are connected in a sequence from left to right using arrow-shaped transitions between the panels.</figure>\n\n<figure type=\"FLOWCHART\">\n\n<description>The figure illustrates a four-step process of immunofluorescence staining within a cell. The process flows from left to right, with each step represented by a cell containing organelles and specific molecular markers.</description>\n\n1. **Primary Antibody Incubation**: A cell is shown containing grey, flower-shaped structures (antigens) and a light blue oval (nucleus). A primary antibody (Y-shaped, cyan) is bound to one of the antigens (yellow circle).\n2. **Secondary Antibody Incubation**: The same cell is shown. A secondary antibody (Y-shaped, purple) is bound to the primary antibody. The secondary antibody is attached to two green, star-shaped fluorophores.\n3. **Counterstain and Mounting**: The cell's nucleus (light blue oval) has turned into a darker, solid blue, representing the counterstain (e.g., DAPI). The antibody complex (primary + secondary + fluorophores) remains bound to the antigen.\n4. **Microscopy**: The final step shows the cell under a microscope objective lens (labeled '60 x'). The nucleus glows with a bright blue light, and the fluorophores on the secondary antibody emit a green glow, indicating positive detection.</figure>\n\nImmunofluorescence staining is a very sensitive\nmethod that might require **troubleshooting**. Slight\nchanges in the protocol can lead to different results\nthat are no longer comparable. Therefore, it is very\nimportant to precisely maintain the exact same\nconditions in your specific protocol (e.g., cell density,\nantibody dilution, incubation temperature, and\nincubation time). The following is an overview of the\ndifferent steps of an **indirect immunofluorescence**\nstaining protocol.\n\n\nibidi Solutions\nThe ibidi μ-Slides and μ-Dishes with a coverslip bottom for inverted microscopy\nare available in a variety of geometries that will fit any of your specific needs for\nimmunocytochemistry. All immunofluorescence staining steps can be performed\ndirectly in the slides or dishes.\n\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A photograph showing a collection of four distinct types of plastic cell culture labware, all filled with a reddish cell culture medium. Positioned in the upper right is a standard circular petri dish. To the left of the petri dish is a rectangular multi-chamber slide with a row of individual, separate wells. In the foreground, there are two additional rectangular multi-well culture slides: one in the center with a 2x4 grid of larger, square-shaped wells, and another to the right with a 2x6 grid of smaller, rectangular wells. All containers are made of clear plastic and are arranged on a plain white background.</description></figure>\n\nThe geometry of the ibidi Channel Slides is ideal for the exact exchange of small medium amounts, which is\nnecessary during immunocytochemistry stainings. In addition, the coverslip bottom of the channel μ-Slides\neliminates the need for additional coverslips.\n\n\nIn the ibidi **Chamber Slides**, a silicone gasket with separated chambers is mounted on a standard glass\nslide. The slides are ideal for the long-term storage of samples that are mounted with a glass coverslip.\n\n\nUnlike most plastic materials used for cell culture, the ibidi labware is compatible with standard fixation\nmethods. For a full overview, please check out our [chemical compatibility table](https://ibidi.com/content/216-chemical-compatibility). All immunofluorescence\nstaining steps can be performed directly in the slides or dishes.\n\n\n3\n\n\n<!-- PAGE BREAK -->\n\nExperiment Planning and Sample Preparation\n\n\n<figure type=\"DIAGRAM\">\n\n<description>A biological diagram illustrating antigen targeting within a cell. The main panel shows a stylized cross-section of a cell containing a nucleus (represented as a central purple oval). Inside the cell, there are two types of targets: 'Target antigene' (represented by yellow circles with four purple protrusions) and 'Non-target antigene' (represented by yellow circles with four blue square protrusions). Dotted lines indicate specific interactions or targeting pathways: one dotted line connects a 'Target antigene' (yellow circle with purple protrusions) to a square-based marker (a yellow circle with four blue square protrusions), and another dotted line connects a 'Non-target antigene' (yellow circle with blue square protrusions) to a star-like marker (a yellow circle with four purple protrusions). Below the cell is a horizontal blue bar, and below that, a large, thick blue chevron shape pointing downwards, suggesting a process or step-down movement.</description></figure>\n\nBefore starting an immunostaining, a literature research should\nbe done to determine the expression levels and intracellular\nlocalization of the protein of interest in the chosen model system.\nSome proteins have a very low expression, either generally, or\nin certain cell lines. In this case, the expression might have to be\ninduced by external stimuli or overexpression techniques.\n\n\nFurther, the optimal cell density has to be determined. In\ngeneral, a confluence of 70%-80% is recommended for IF.\n\n\nIn addition, the ideal cell culture vessel geometry and substrate/\ncoating must be determined, and needs to be compatible with\nthe chosen microscopy method. During the whole experiment, it\nis crucial that the cells never dry out, which should be considered\nwhen choosing the appropriate cell culture vessel geometry.\n\n\nFinally, the number of samples to be stained and analyzed for\nstatistical significance, including the appropriate controls, should\nbe planned in advance.\n\n\nSample Fixation\n[Illustration of a cell with nucleus and various organelles inside]\n[V-shaped blue line]\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The figure is a text block describing the first step of an immunofluorescence staining protocol.</description> The first step of an immunofluorescence staining protocol is to fixate the sample. This is usually done by incubating the sample for 10 minutes at room temperature in a 4% formalin solution (in PBS, pH 7.4), which crosslinks the proteins. The sample can also be fixated in 100% chilled methanol or acetone.</figure>\n\nOptimal fixation conditions should be determined individually\nfor each experiment. Some proteins are destroyed by methanol\nfixation, and some antibodies do not detect proteins in formalin-\nfixated samples. After fixation, it is very important to wash the\nsample 3x for 5 minutes in a washing solution, (e.g., PBS) to\nremove the fixation solution completely.\n\n\nCell Permeabilization\n[Illustration of a cell with membrane-bound receptors and a nucleus]\n[V-shaped blue line graph]\n\n\n<figure type=\"DIAGRAM\">\n\n<description>A block of text explaining the necessity of cell permeabilization for intracellular protein staining.</description> In order to stain intracellular proteins, the cell needs to be permeabilized. Without this step, it is not possible for the antibodies to enter the cell through the lipid membrane. The permeabilization requires incubation in a detergent, for example Triton X-100 or Tween-20 (for a less harsh permeabilization) in a PBS solution.</figure>\n\nThis step must be optimized depending on the protein of interest,\nthe used antibody, and the experimental conditions. Especially\nwhen staining membranous proteins, the permeabilization step\nhas to be done with caution, because Triton X-100 can destroy\nthe cell membrane. In this case, using saponin might be an\nalternative to classic detergents. Don't forget that methanol-\nfixed samples are already permeabilized, since alcohols easily\nwash out the lipids of the cell membrane.\n\n\nAfter this step, the sample has to be washed 3x for 5 minutes in\na washing solution.\n\n\n4\n\n\n<!-- PAGE BREAK -->\n\n<figure type=\"DIAGRAM\">Blocking\n\n\n\n<description>This diagram illustrates the biological process of 'Blocking'. A beige-colored, amoeba-shaped cell is shown against a light background. Inside the cell is a blue oval representing the nucleus. Scattered throughout the cell are two types of entities: 'Target antigene', represented by yellow circles on green square bases, and 'Blocked non-target antigene', represented by grey, four-lobed flower-like shapes. Dashed lines connect the labels to their respective entities: the 'Target antigene' label points to the yellow-green icons, and the 'Blocked non-target antigene' label points to the grey, four-lobed icons. Below the cell is a horizontal blue bar, and at the very bottom of the figure, there is a large, thick, blue chevron shape pointing downwards.</description></figure>\n\nIn order to minimize intra- or extracellular background signals,\nnon-specific antigens should be blocked by incubating the\nsample in (1) the serum of the host, in which the secondary\nantibody was made, (2) bovine serum albumin (BSA), or (3)\nmilk. The first option is the most recommended because of its\nhighest specificity.\n\n\nTypical blocking times are from 30 minutes up to one hour.\nExcessively long blocking steps should be avoided, as this\ncan reduce the specific binding of the primary antibody, and\ntherefore reduce the signal.\n\n\n<figure type=\"DIAGRAM\">Primary Antibody Incubation \n\n<description>The diagram illustrates a biological process involving a single cell on a surface. At the top, the text reads \"Primary Antibody Incubation\". Below this, a large, light beige cell is depicted with a dashed-line membrane outline. Inside the cell, there is a prominent blue oval nucleus. There are three small grey, clover-shaped structures (representing cellular targets) distributed within the cell. One specific target, located on the lower left, is bound by a teal-colored Y-shaped antibody. Attached to the base of this antibody is a bright yellow circular marker (representing a fluorophore or detection molecule). The cell sits on a light blue rectangular base representing a substrate or slide. Below the cell, a large, thick blue chevron (V-shape) points downwards, indicating a sequential step in a larger process.</description></figure>\n\nThe selection of the primary antibody and its incubation\nconditions is the most critical step of an immunofluorescence\nstaining protocol. Especially, if the protocol has not yet been\nestablished in the lab, a literature research is crucial. A suitable\nprimary antibody must have a high specificity for the antigen\nof interest. Furthermore, whether the antibody is mono- or\npolyclonal influences its specificity. Many antibody manufacturers\nlist references on their product pages, in which the antibody was\nsuccessfully used in an immunofluorescence staining.\n\n\nAnother highly relevant property of the primary antibody is its\noriginating host, as it determines the secondary antibody. This is\nespecially important when doing multicolor stainings, because\ndifferent specific primary antibodies for the parallel detection\nof several antigens in the same sample must be produced in\ndifferent hosts, in order to avoid cross-reactivity.\n\n\nThe optimal incubation conditions must be determined carefully\nfor each experiment. Antibody concentrations that are too high\nand incubation times that are too long can result in an unspecific\nbackground signal. Conversely, concentrations that are too low\nand incubation times that are too short can lead to a very weak\nor missing signal.\n\n\nAfter incubation with the primary antibody, the samples should\nbe washed 3x for 5 minutes in a washing solution in order to\navoid background fluorescence.\n\n\n5\n\n\n<!-- PAGE BREAK -->\n\n# Secondary Antibody Incubation\n\n[Diagram showing a cell with primary antibodies bound to an antigen, and secondary antibodies with fluorophores bound to the primary antibodies]\n[Blue chevron shape]\nIn standard immunofluorescence assays, the secondary\nantibody is conjugated to a fluorophore, which emits light\nwhen excited at a defined wavelength. The secondary antibody\nspecifically binds to the first antibody. Therefore, it is essential\nthat the secondary antibody is specific to the host in which the\nprimary antibody was produced. For a successful experiment,\nthe chosen microscopy technique and the equipment (filters,\nlasers, cameras, and detectors) also need to be compatible with\nthe chosen fluorescence dye.\nTo be suitable for fluorescence microscopy, stable fluorophores\nmust be used, because the sample is generally exposed to a\nhigh number of photons. Also, fluorophore brightness should\nbe taken into account, because the antigen with the highest\nexpression level should be detected with the fluorophore\nwith the lowest brightness. When using multiple antibodies in\n\n\nto be suitable for fluorescence microscopy, stable fluorophores\nmust be used, because the sample is generally exposed to a\nhigh number of photons. Also, fluorophore brightness should\nbe taken into account, because the antigen with the highest\nexpression level should be detected with the fluorophore\nwith the lowest brightness. When doing a multicolor staining,\nthe spectral overlap of the conjugated fluorophores should be\ncarefully considered as well. Respective tables can be found on\nthe manufacturers' websites.\n\n\nThe incubation in the secondary antibody solution should\nbe carried out according to manufacturer's protocol. Since\nfluorophores are sensitive to light, from now on all steps of the\nprotocol need to be carried out in the dark.\n\n\nIn order to avoid background fluorescence, the samples\nshould be washed 3x for 5 minutes in a washing solution after\nincubation with the secondary antibody.\n\n\n<figure type=\"DIAGRAM\">Excuse: What is a fluorophore? \n\n<description>This figure displays a two-part diagram illustrating the principles of fluorescence. The top section is an energy level diagram showing electronic states (S0, S1, S2). It depicts 'Excitation' (a green upward arrow from S0 to S2), 'Radiation-free energy transfer' (a wavy orange arrow from S2 to S1), and 'Emission' (a red downward arrow from S1 to S0). The labels 'Excited states' and 'Ground state' are on the right. The bottom section is a spectral graph showing 'Intensity' versus 'Wavelength [nm]'. The x-axis features a color spectrum bar ranging from blue to red. Two overlapping bell curves are plotted: a green curve representing excitation (S0 -> S2) and a red curve representing emission (S1 -> S0). A horizontal bracket labeled 'Stokes shift' connects the peaks of the excitation and emission curves.</description></figure>\n\nA fluorophore (also called fluorochrome) is a chemical molecule,\nwhich is used to label specific structures for microscopic\nanalysis. For example, the green fluorescent protein (GFP), red\nfluorescent protein (RFP), and yellow fluorescent protein (YFP)\nare widely-used fluorophores in research.\n\n\nFluorophores are excited when they absorb light of a certain\nwavelength, leading to re-emission of light at a defined higher\nwavelength. A successful excitation by light transfers the\nfluorophore from the ground state (S0) to an excited state (S2).\nThis high-energy state is not stable and quickly undergoes\nchanges. The fluorophore vibrates, leading to light release\nand a return to the ground state after a few picoseconds.\nThe vibrations in the exited states cause the so-called Stokes\nshift, which means that the wavelength of the emitted light is\nalways higher than that of the excitation light.\n\n\n6\n\n\n<!-- PAGE BREAK -->\n\nCounterstain and Mounting\n[Cellular diagram with primary and secondary antibodies binding to a target, and a nucleus]\n[V-shaped graphic element]\n\n\nThe final step before microscopy is the counterstaining of\nthe nuclei and the mounting. In order to avoid drying out of\nthe samples, and to guarantee a stable refractive index of the\ncellular environment (a prerequisite for successful microscopy),\nthe sample needs to be mounted.\n\n\nFor this, the sample should be covered with a mounting medium\nthat has a low autofluorescence. DAPI, the standard for nuclear\ncounterstaining, is either included in the mounting medium, or\ncan be added separately.\n\n\n<figure type=\"DIAGRAM\">Microscopy\n\n\n\n<description>The image shows a diagrammatic representation of microscopy. On the left is an illustration of a biological cell sitting on a transparent surface (likely a glass slide or chamber). Inside the cell, there is a large blue circular structure (nucleus) and several antibody-antigen complexes: Y-shaped structures (antibodies) labeled with star-shaped fluorescent markers (green). Below the surface, a microscope objective lens is positioned, labeled \"60 x\". The cell is depicted as a light beige shape with a dashed outline.</description>\n\nTo get optimal results, the microscopic analysis of the immunofluorescence staining should be done directly after the mounting.\n\nMany microscopy techniques exist, each optimized for different experimental approaches. For standard immunofluorescence stainings, epifluorescence and confocal microscopy are widely-used methods. Of course, all parameters such as magnification and exposure should be carefully and individually determined.\n\nPlease find a detailed overview of the different microscopy techniques and their applications on our website, or download the \"Microscopy With the ibidi Chambers\" Application Guide as a PDF.</figure>\n\n<figure type=\"PHOTOGRAPH\">ibidi Solutions\n\nThe ibidi Mounting Medium and the ibidi Mounting Medium With DAPI have a very low autofluorescence, prevent photobleaching and allow the sample to be stored for several weeks on the μ-Slide without the need for additional coverslips.\n\nIf your experiment requires long-term storage of immunostained samples, we recommend using the ibidi Chamber Slides, removable. Since signals could fade if fluorophores are exposed to light for a longer period, the samples always must be stored in the dark.\n\n\n\n<description>The figure is a promotional layout containing two photographic panels on the right side. The top photograph shows a small, clear plastic dropper bottle labeled 'IMM' with a white cap, standing vertically. The bottom photograph displays three 'ibidi Chamber Slides, removable' arranged diagonally, each containing small wells filled with a bright pink substance, resting on white plastic bases.</description></figure>\n\n7\n\n\n<!-- PAGE BREAK -->\n\n# Troubleshooting\n\nImmunocytochemistry is a very sensitive method that requires a lot of experience and optimization. Slight\nchanges in the protocol can markedly alter the results. If you get a low signal, no signal, or a high background,\nplease consult the following troubleshooting guide.\n\n\nHigh Background\n\n<table>\n<tr><td>Reason</td><td>Solution</td></tr>\n<tr><td>Inappropriate or too long fixation, leading to artefacts</td><td>Reduce fixation time or change the fixative</td></tr>\n<tr><td>Insufficient blocking</td><td>Prolong the incubation time, consider using a different blocking solution (we recommend using serum from the secondary antibody host)</td></tr>\n<tr><td>No specificity of the primary antibody</td><td>Use a primary antibody that is proven to work for immuno-fluorescence in the chosen model system; if available, use a knockdown/knockout sample as a negative control</td></tr>\n<tr><td>Too high primary/secondary antibody concentration, too long incubation time, too high incubation temperature</td><td>Optimize the antibody concentration and incubation time/temperature, consult manufacturer's protocol</td></tr>\n<tr><td>Cross-reactivity of the secondary antibody</td><td>Use isotype controls for the secondary antibody to check for cross-reactivity</td></tr>\n<tr><td>Not enough washing</td><td>Verify that all washing steps are carried out properly; if necessary, prolong the washing steps</td></tr>\n<tr><td>Bleaching during imaging</td><td>Use a secondary antibody conjugated to a fluorophore suitable for your chosen microscopy technique</td></tr>\n<tr><td>Low signal intensity, resulting in noise</td><td>Optimize the signal-to-noise ratio, e.g., by using a brighter fluorophore for detection; if applicable, increase the expression of the antigen of interest (e.g., by overexpression or by addition of inducing agents)</td></tr>\n<tr><td>High autofluorescence</td><td>Check the sample autofluorescence by using unstained controls; use fresh fixation solutions (expired formalin solutions might have a high autofluorescence); use materials with low autofluorescence (e.g., ibidi μ-Slides or Chamber Slides); use mounting medium with low autofluorescence (e.g., ibidi Mounting Medium / ibidi Mounting Medium With DAPI)</td></tr>\n</table>\n\nLow Signal or Lack of Signal\n\n<table>\n<tr><td>Reason</td><td>Solution</td></tr>\n<tr><td>Drying out of the sample</td><td>Always keep the sample moist</td></tr>\n<tr><td>Overfixation of the sample, leading to epitope damage</td><td>Reduce fixation time or change the fixative</td></tr>\n<tr><td>Inadequate permeabilization method</td><td>Optimize or skip the permeabilization step</td></tr>\n<tr><td>No binding of primary antibody to the antigen of interest</td><td>Use a primary antibody that is proven to work for immunofluorescence in the chosen model system; check the antibody functionality by using a positive control (e.g., by overexpression or by addition of inducing agents)</td></tr>\n<tr><td>Too high primary/secondary antibody dilution, too short incubation time, too low incubation temperature</td><td>Increase the antibody concentration or the incubation time/temperature; consult manufacturer's protocol</td></tr>\n<tr><td>Very low or no antigen expression</td><td>Use a positive control (e.g., an overexpression model); reconsider your experimental system</td></tr>\n<tr><td>Inappropriate microscopy detection method</td><td>Use a more sensitive method for image acquisition; check your used filter/laser setup; use a brighter fluorophore for detection</td></tr>\n</table>\n\n8\n\n\n<!-- PAGE BREAK -->\n\nImmunofluorescence\nWith the ibidi Chambers\n\n\n<figure type=\"CHART\">ibidi provides several solutions that fit your needs for immunofluorescence assays: \n\n<description>A comparison table showcasing three types of ibidi products with product images above each column.</description> <table><thead><tr><th></th><th>Chambered Coverslips</th><th>Channel Slides</th><th>Chamber Slides, removable</th></tr></thead><tbody><tr><td></td><td>[Image of 8-well chambered coverslip]</td><td>[Image of 6-well channel slide]</td><td>[Image of 8-well removable chamber slide]</td></tr><tr><td>Bottom material</td><td>Glass Coverslip or Polymer Coverslip</td><td>Glass Coverslip or Polymer Coverslip</td><td>Standard glass slide</td></tr><tr><td>Additional coverslips required?</td><td>No</td><td>No</td><td>Yes (for mounting)</td></tr><tr><td>Microscope type</td><td>Inverted</td><td>Inverted</td><td>Inverted &amp; upright</td></tr><tr><td>Mounting medium</td><td>Non-hardening</td><td>Non-hardening</td><td>Hardening</td></tr><tr><td>Sample storage</td><td>Short-term</td><td>Short-term</td><td>Long-term</td></tr></tbody></table></figure>\n\n# Benefits of ibidi μ-Chambers\n\n1. High-resolution imaging\nThe ibidi slides are ideal for widefield fluores-\ncence, confocal imaging, FRAP, FRET, FLIM,\nand undisturbed phase contrast imaging.\n2. Fast and simple handling\nThe all-in-one chambers simplify your\nimmunofluorescence protocol.\n3. Cost-effective experiments\nOnly a small number of cells and low reagent\nvolumes are needed.\n\n\n<figure type=\"PHOTOGRAPH\">With their thin coverslip botton, the ibidi μ-Dishes and μ-Plates are also ideally suitable for immunofluorescence stainings and high-resolution microscopy. \n\n<description>The image features two photographs on the right side. The top photograph shows a black, multi-well microplate (likely a μ-Plate) with several circular wells filled with a pink liquid. The bottom photograph shows a single, circular, clear plastic petri dish (likely a μ-Dish) containing a pink liquid. The text on the left describes the suitability of these products for immunofluorescence and high-resolution microscopy due to their thin coverslip bottoms.</description></figure>\n\nFind detailed immunofluorescence staining protocols in the ibidi Application Notes:\n- AN 02: Fluorescence Staining using a μ-Slide I (PDF)\n- AN 09: Fluorescence Staining using a μ-Slide VI <sup>0.4</sup> (PDF)\n- AN 15: Fluorescence Staining using a μ-Slide y-shaped (PDF)\n- AN 16: Fluorescence Staining using a μ-Slide 8 Well (PDF)\n- AN 49: Fluorescence Staining using a 12 Well Chamber, removable (PDF)\n- AN 50: Fluorescence Staining using a 3 Well Chamber, removable (PDF)\n- AN 45: Mounting Medium Types (PDF)\n\n\n9\n\n\n<!-- PAGE BREAK -->\n\n# Comparison of Immunocytochemistry Protocols:\n\n# Traditional Staining vs. Staining With ibidi Solutions\n\nWhen using any of the ibidi solutions, the immunofluorescence staining protocol is much shorter than the\ntraditional protocol. There is no need to grow the cells on loose coverslips—the cells can be grown and stained\ndirectly in the ibidi slides.\n\n\n<figure type=\"ILLUSTRATION\">Protocol With Cells on Coverslips\nTraditional method with nail polish mounting\n\n\n\n<description>This illustration depicts a step-by-step laboratory protocol for mounting cells grown on coverslips onto microscope slides. The image consists of three main components: 1) A six-well culture plate on the left, where square coverslips are visible inside each well. A single square coverslip is shown floating above the plate, indicating the item being placed. 2) A manipulation step on the right, showing a pair of tweezers holding a square coverslip and placing it into a container filled with liquid (likely for washing or staining). 3) A finished microscope slide at the bottom, featuring a central square coverslip mounted on a rectangular glass slide, representing the final product. The drawing style is clean, line-based, and monochromatic, emphasizing the physical orientation and handling of the laboratory materials.</description></figure>\n\n\n - Sterilize coverslips and slides\n - Coat coverslips\n - Place sterile coverslips into 6-well plate\n - Seed cells in large volume\n - Peel off the coverslip\n - Wash\n - Fix – wash – permeabilize – wash – block\n - Incubate in primary antibody – wash – incubate\nin secondary antibody\n - Wash\n - Mount cells with mounting medium\n - Mount coverslip with nail polish\n\n\n<figure type=\"DIAGRAM\">Protocol With ibidi µ-Slides\nTime-saving method using all-in-one chambers\n\n\n\n<description>The diagram displays two schematic cross-sections of cell culture setups. On the left, a single-well open chamber is shown, with a blue structure housing cells at the base, submerged in a green liquid medium. On the right, a two-chambered system is depicted, featuring a closed blue top structure over two separate wells, each containing cells at the base in a green liquid medium.</description></figure>\n\n- ~~Sterilize coverslips and slides~~\n- ~~Coat coverslips~~\n- ~~Place sterile coverslips into 6-well plate~~\n- Seed cells in large volume\n- ~~Peel off the coverslip~~\n- Wash\n- Fix – wash – permeabilize – wash – block\n- Incubate in primary antibody – wash – incubate\nin secondary antibody\n- Wash\n- Mount cells with mounting medium\n- ~~Mount coverslip with nail polish~~\n\n\nibidi Solutions\nThe ibidi Mounting Medium and the ibidi Mounting Medium With DAPI have a\nvery low autofluorescence, prevent photobleaching and allow the sample to be stored\nfor several weeks on the μ-Slide without the need for additional coverslips.\nIf your experiment requires the long-term storage of immunostained samples, we\nrecommend using the ibidi Chamber Slides, removable.\n[Small bottle of mounting medium]\n[Three chamber slides in packaging]\n\n\n10\n\n\n<!-- PAGE BREAK -->\n\nChambered Coverslips\n\n\n<figure type=\"FLOWCHART\">Flowchart: Experimental Workflow for Cell Analysis\n\n1. Directory of Nodes (Process Steps)\n[Cell seeding] (Icon: pipette dispensing liquid into a multi-well slide)\n[Cultivation] (Icon: multi-well slide with red culture medium and cells at the bottom)\n[Fixation] (Icon: multi-well slide with clear liquid and cells at the bottom)\n[Staining] (Icon: multi-well slide with green stained liquid and cells at the bottom)\n[Imaging] (Icon: multi-well slide with cells at the bottom, viewed by a 60x microscope objective lens below)\n\n2. Connections (In & Out Flows)\n[Cell seeding] ----> [Cultivation] ----> [Fixation] ----> [Staining] ----> [Imaging]\n\n\n\n<description>The figure illustrates a sequential biological experimental workflow consisting of five stages arranged horizontally from left to right. The process begins with 'Cell seeding' where a pipette adds cells to a culture slide. This is followed by 'Cultivation' where the cells are maintained in a red medium. Next is 'Fixation', shown as a clear solution. Then 'Staining' is depicted, where the cells are treated with a green dye. Finally, 'Imaging' shows the slide being observed under a microscope with a 60x objective lens positioned underneath the slide.</description></figure>\n\nWhen using chambered coverslips, such as the ibidi μ-Slides, the cell culture and the whole immunofluorescence\nstaining protocol can be performed in the same well, without the necessity of any additional coverslips or tweezers.\nAfter mounting, the results can be observed through the coverslip bottom using high-resolution microscopy.\n\n\nAdvantages\n - No coverslip handling\n - Parallel assays without cross-contamination\n\n\nFind more information and technical details about\nthe coverslip bottom of the ibidi chambers on\nour website.\n\n\n# Limitations\n\n- Storage time is restricted to several weeks,\nbecause of the gas exchange through the plastic\nmaterial from which the slides are made\n\n\nThe ibidi μ-Slides are\navailable in a variety of well\nnumbers, volumes, and\ngeometries that fit your\nspecific experiment.\n[Two micro-slides with well plates]\n\n\nChannel Slides\n[VISUAL_PROCESS_FLOW] Cell seeding > Cultivation > Fixation > Staining > Imaging 60 x\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The image consists of a single paragraph of text describing the utility of ibidi channel slides for immunofluorescence and immunocytochemistry.</description> The ibidi channel slides are particularly suitable for immunofluorescence stainings: The geometry of the ibidi Channel Slides is ideal for the exact exchange of small medium amounts, which is necessary during immunocytochemistry stainings. In addition, the coverslip bottom of the channel µ-Slides eliminates the need for additional coverslips.</figure>\n\nAdvantages\n- Meniscus-free phase contrast microscopy\n- Low volumes of reagents needed\n- Homogeneous cell and antibody distribution\n\n\nFind more information and technical details about\nthe coverslip bottom of the ibidi chambers on\nour website.\n\n\n# Limitations\n\n- Storage time is restricted to several weeks,\nbecause of the gas exchange through the plastic\nmaterial from which the slides are made\n\n\nThe μ-Slide VI<sup>0.4</sup> is ideal for\ngeneral low-volume immuno-\nfluorescence assays.\nThe μ-Slide I Luer enables\nimmunofluorescence staining\nin low-density cultures in the\ncontext of flow experiments.\n[Two microfluidic slides]\n\n\n11\n\n\n<!-- PAGE BREAK -->\n\n<figure type=\"FLOWCHART\">Chamber Slides\n\n\n\n<description>This illustration depicts a six-step workflow for using chamber slides in a laboratory setting.</description>\n\n1. Directory of Steps (Sequence):\n[Seeding] (Step 1): A pipette adds liquid to the wells of a multi-well chamber slide.\n[Cultivation] (Step 2): The chamber slide, filled with liquid, sits on a surface.\n[Chamber removal] (Step 3): Tweezers are used to peel the plastic chamber frame off the glass slide.\n[Fixation & Staining] (Step 4): The glass slide remains with fixed, stained (greenish) samples on its surface.\n[Mounting & Imaging] (Step 5): A microscope objective lens (labeled '60 x') is positioned above the slide.\n[Storage] (Step 6): The processed slides are placed into a slide storage box.\n\n2. Connections (Flow):\n[Seeding] ----> [Cultivation] ----> [Chamber removal] ----> [Fixation & Staining] ----> [Mounting & Imaging] ----> [Storage]</figure>\n\nIn the ibidi **Chamber Slides**, a silicone gasket with\nseparated chambers is mounted on a standard\nglass slide. The ibidi Chamber Slides for immuno-\nfluorescence are ideal for the long-term storage of\nsamples that are mounted with a glass coverslip.\n\n\nFor high-throughput approaches, the silicone gasket\ncan be removed before start-\ning the staining. This allows\nfor the processing of several\nslides at once in a staining\njar. As an alternative to low-\nthroughput experiments, the\nsilicone gasket can be left in\nposition, allowing for separate\nstaining in each well.\n100 ml [Illustration showing a slide being transferred from one container to another]\n\n\nAdvantages\n - Ideal for long-term storage\n - High-throughput screening possible\n\n\nThe ibidi Chamber Slides,\nremovable are available\nwith 3 wells, 8 wells, and\n12 wells.\n[Three chamber slides with red liquid]\n\n\n<figure type=\"DIAGRAM\">\n\n<description>The figure illustrates two distinct stages of a biological experiment: 'Cultivation' and 'Microscopy'.</description>\n\n### Cultivation\n\n\n<description>The top section shows a cross-sectional view of a cell culture setup. It consists of a standard glass slide at the base, topped with a removable silicone gasket creating two wells containing a pink culture medium with cells attached to the slide. The setup is covered by a lid.</description>\n\n*   **Labels:**\n    *   Lid\n    *   Removable silicone gasket (wells)\n    *   Standard glass slide\n\n### Microscopy\n\n\n<description>The bottom section depicts the imaging setup. A microscope objective lens (labeled '60 x') is positioned above a glass coverslip. Beneath the coverslip, cells are visible in a layer of mounting medium, which sits on top of a standard glass slide.</description>\n\n*   **Labels:**\n    *   Glass coverslip\n    *   Mounting medium\n    *   Standard glass slide</figure>\n\n# Limitations\n\n\n - No high-resolution microscopy during cell\ncultivation\n\n\n12\n\n\n<!-- PAGE BREAK -->\n\nImmunofluorescence Applied:\nExperimental Examples\n\n\n- Visualization of Endothelial Cell Junctions\n- Immunostaining of Rat Dorsal Root Ganglionic Cells and Schwann Cells\n- Rat Hippocampal Neuron and Astrocyte Staining\n- Adherens Junctions and Actin Cytoskeleton of HUVECs Under Flow\n- Mitochondria Staining of MDCK cells\n- Focal Adhesions of Differentiated Mouse Fibroblasts on an Elastic Surface\n\n\nVisualization of Endothelial Cell Junctions\n\n\nImmunofluorescence staining of primary mouse\nbrain microvascular endothelial cells (pMBMECs),\ncultured in the ibidi 12 Well Chamber, removable.\nRed color delineates the endothelial cell junctions\nlabeled for zonula occludens (ZO)-1, highlighting\ntheir matured state. Blue color shows the nuclei\nstained with DAPI. The image was acquired with a\n20x objective on a Nikon Eclipse microscope.\n\n\n*Data by Sidar Aydin, Britta Engelhardt, Ruth Lyck, Theodor*\nKocher Institute, Bern, Switzerland.\n\n\nibidi product used: \n[12 well chamber image] \n12 Well Chamber, removable \n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A fluorescent microscopy image showing a dense monolayer of cells. The cell nuclei are stained blue (DAPI) and appear as distinct, oval-shaped structures distributed throughout the frame. The cell borders or junctions are stained red, creating a web-like, interconnected network that outlines the boundaries of individual cells. The scale bar is visible in the bottom right corner, labeled '100 μm'.</description></figure>\n\nImmunostaining of Rat Dorsal Root Ganglionic Cells and Schwann Cells\n\n\nRat dorsal root ganglionic cells and Schwann cells\ncultured in an ibidi μ-Slide 8 Well and stained for\nneurofilament (green), NGFR (magenta), and DAPI\n(white). The image was obtained with a LEICA SP8X\nlaser scanning microscope.\n\n\n*Data by Tamara Weiss, Division of Plastic and Reconstructive*\n*Surgery, Medical University of Vienna, Austria.*\n\n\nibidi product used:\n[μ-Slide 8 Well plate]\nμ-Slide 8 Well\n\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A fluorescence microscopy image capturing a central cluster of cells surrounded by radiating neural projections. The central core is densely packed with cell nuclei, which appear as small, bright white oval shapes, set against a dark background. Within this central cluster, there are patches of green fluorescence. Extending outwards from the central cell mass are numerous long, thin filaments (neurites or axons). These filaments are stained in magenta and green, creating a radial, starburst-like pattern. The magenta filaments appear more diffuse and widespread, while the green filaments are more distinct and linear. The overall composition is radial, with the highest density of cellular material in the center and fiber-like structures branching out toward the periphery of the frame.</description></figure>\n\n13\n\n\n<!-- PAGE BREAK -->\n\nRat Hippocampal Neuron and Astrocyte Staining\n\n\nConfocal microscopy of rat hippocampal neurons\nplated over astrocytes, cultured on ibidi μ-Plate\n24 Well. Red is Synapsin 1, a pre-synaptic marker,\nwhite is neuron-specific Tubulin Beta-III, and blue is\nDAPI, a nuclear counterstain.\n\n\n_Data by Daniel Hoeppner, Lieber Institute for Brain_\n_Development. Baltimore, MD, USA._\n\n\nibidi product used:\n[24-well plate]\nµ-Plate 24 Well\n\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A high-magnification fluorescence microscopy image displaying a dense network of neural filaments. The image features three distinct color channels: white filaments (likely representing neurites or axons), small red punctate structures scattered throughout the network (likely representing synaptic markers or specific protein localizations), and large, rounded blue structures (likely DAPI-stained cell nuclei). The blue nuclei are irregularly distributed throughout the field of view. The white filaments form an intricate, interconnected meshwork that dominates the background, with red puncta appearing to associate with these filaments. The overall composition shows a complex cellular environment, likely brain tissue or cultured neurons.</description></figure>\n\nAdherens Junctions and Actin Cytoskeleton of HUVECs Under Flow\n\n\nHuman umbilical vein endothelial cells (HUVECs)\nwere cultured under **flow conditions** in the ibidi\n**μ-Slide I<sup>0.4</sup> Luer**.\n\n\nRed: actin cytoskeleton (Cy5-conjugated antibody).\nGreen: adherens junctions, marked by VE-cadherin\n(Alexa 488-conjugated antibody).\nBlue: nuclear counterstaining (DAPI).\n\n\nData by S. Zahlor, Munich, Germany.\n\n\n<figure type=\"PHOTOGRAPH\">ibidi product used:\n\n\n\n<description>A photograph showing a single, rectangular, transparent microfluidic device, specifically the μ-Slide I0.4 Luer. The slide has a central, straight channel containing a reddish fluid, with two cylindrical ports or reservoirs at either end, also filled with the same reddish liquid. The background is white.</description>\n\nμ-Slide I0.4 Luer</figure>\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>This figure is a composite image consisting of four panels of fluorescent microscopy of cells, arranged in a 2x2 grid. The top-left panel displays nuclei stained in blue (likely DAPI). The top-right panel shows cell-cell boundaries or junctions stained in green. The bottom-left panel depicts the cytoskeleton, specifically actin filaments, stained in red. The bottom-right panel is a merged overlay of all three channels (blue, green, and red), showing the spatial relationship between the nuclei, cell junctions, and the actin cytoskeleton.</description></figure>\n\nMitochondria Staining of MDCK cells\nMadin-Darby canine kidney (MDCK) cells were\ncultured in the ibidi μ-Slide VI<sup>0.4</sup>.\n\n\nGreen: F-actin cytoskeleton (Alexa488-Phalloidin).\nRed: mitochondria (MitoTracker).\nBlue: nuclear counterstaining (DAPI). Widefield fluo-\nrescence using 100x objective lens with oil immersion.\n\n\nibidi product used:\n[Microscope slide with 6 channels]\nμ-Slide VI⁰.⁴\n\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A fluorescence microscopy image showing a cluster of epithelial-like cells. The image utilizes three-color staining: blue for nuclei (DAPI staining), green for cell membranes or cytoskeletal structures (likely actin filaments stained with phalloidin), and red for cytoplasmic structures (likely organelle-specific staining). The cells are arranged in a monolayer, displaying distinct, polygonal shapes with visible cell-cell junctions. The nuclei are centrally located within each cell. The background is black.</description></figure>\n\n14\n\n\n<!-- PAGE BREAK -->\n\nFocal Adhesions of Differentiated Mouse Fibroblasts on an Elastic Surface\n\n\nDifferentiated mouse fibroblasts were cultured on\nan elastic surface using the μ-Dish 35 mm, high ESS\n(28 kPa). Green: focal adhesions, marked by zyxin\n(Alexa 488-conjugated antibody). Red: alpha-smooth\nmuscle actin (Cy5-conjugated antibody).\n\n\n_Data by R. Merkel, Jülich, Germany._\n\n\nibidi product used:\n[Petri dish with pink liquid]\nµ-Dish<sup>35 mm, high</sup> ESS\n\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>The figure consists of two side-by-side fluorescence microscopy images displaying cellular structures. The left panel shows cells stained in green, highlighting a diffuse, textured distribution of proteins or organelles within the cytoplasm, with a distinct, circular, brighter region in the center of the cell body, possibly the nucleus or a specific organelle. The right panel displays the same or similar cells stained in red, emphasizing filamentous, linear structures, likely actin filaments or cytoskeletal components, which are oriented in parallel and intersecting bundles across the cell. A red scale bar labeled '25 µm' is visible in the bottom right corner of the left panel.</description></figure>\n\n15\n\n\n<!-- PAGE BREAK -->\n\n<figure type=\"PHOTOGRAPH\">\n\n<description>A high-magnification, color-enhanced micrograph showing biological cells and fibrous tissue. The image features three prominent, irregularly shaped nuclei stained in a vibrant blue, appearing to cluster together in the upper-left and center-left. These nuclei are embedded within a diffuse, reddish-pink, granular cytoplasmic or extracellular matrix. Cutting diagonally across the image from the bottom-left toward the top-right are bundles of elongated, thin, parallel green fibers, likely collagen or cytoskeleton filaments, which appear to run behind or beneath the cell cluster. A fourth, smaller blue nucleus is visible in the bottom-center, partially obscured by the green fibers. The background is a clean, bright white.</description></figure>\n\nibidi®\ncells in focus\n\n\nManufacturer \nibidi GmbH \nLochhamer Schlag 11 \n82166 Gräfelfing \nGermany \nToll free within Germany: \nPhone: 0800/00 11 11 28 \nFax: 0800/00 11 11 29 \nInternational calls: \nPhone: +49 89/520 46 17-0 \nFax: +49 89/520 46 17-59 \nE-Mail: info@ibidi.com \nibidi.com \n\nNorth American Headquarters\nibidi USA, Inc.\n2920 Marketplace Drive\nFitchburg, WI 53719\nUSA\nToll free within the US:\nPhone: +1 844 276 6363\n\nInternational calls: \nPhone: +1 608 441 8181 \nFax: +1 608 441 8383 \nE-Mail: ibidiusa@ibidi.com \nibidi.com \n\n*All ibidi products are for research use*\n*only! Errors and omissions excepted.*\n© ibidi GmbH\nFL_AG_039, V 1.0 2019/09\n\n\nFor free samples, application notes, and handling movies,\nplease visit us at:\n\n\n🪂 ibidi.com\n\n\n<!-- doc_id=parse-01m7h5v7j242w4h13m2mhhnb86 -->",
+  "metadata": {
+    "job_id": "extract-01m7h5vp4k3105dacp44jvf34e",
+    "version": null,
+    "model_version": "extract-20260903",
+    "duration_ms": 22025,
+    "doc_id": "parse-01m7h5v7j242w4h13m2mhhnb86",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 17.0,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 50402,
+    "output_extraction_chars": 6889,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

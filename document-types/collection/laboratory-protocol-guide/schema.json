@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "properties": {
+    "guide_title": {
+      "type": "string",
+      "description": "Title of the guide from the cover page, e.g. 'Immunofluorescence Assays'"
+    },
+    "publisher": {
+      "type": "string",
+      "description": "Company that published the guide, as named in the manufacturer block on the back page"
+    },
+    "document_code": {
+      "type": ["string", "null"],
+      "description": "The literature or document number printed on the back page, e.g. 'FL_AG_039'"
+    },
+    "version": {
+      "type": ["string", "null"],
+      "description": "Version and date printed beside the document code, as printed, e.g. 'V 1.0 2019/09'"
+    },
+    "protocol_steps": {
+      "type": "array",
+      "description": "The steps of the staining protocol, in the order the guide describes them, from sample preparation through microscopy",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_name": {
+            "type": "string",
+            "description": "Heading of the step as printed, e.g. 'Sample Fixation'"
+          },
+          "reagents": {
+            "type": "array",
+            "description": "Reagents or solutions the guide names for this step, each with its concentration if one is given, e.g. '4% formalin solution (in PBS, pH 7.4)'",
+            "items": { "type": "string" }
+          },
+          "incubation_time": {
+            "type": ["string", "null"],
+            "description": "How long the step's incubation lasts, as stated, e.g. '10 minutes' or '30 minutes up to one hour'; null if the guide gives none"
+          },
+          "temperature": {
+            "type": ["string", "null"],
+            "description": "Incubation temperature as stated, e.g. 'room temperature'; null if none is given"
+          },
+          "wash_after": {
+            "type": ["string", "null"],
+            "description": "The wash the guide prescribes after this step, as stated, e.g. '3x for 5 minutes in a washing solution'; null if none"
+          },
+          "key_caution": {
+            "type": ["string", "null"],
+            "description": "The single most important warning or condition the guide gives for this step, in one sentence"
+          }
+        },
+        "required": ["step_name"]
+      }
+    },
+    "troubleshooting": {
+      "type": "array",
+      "description": "Every row of the troubleshooting tables",
+      "items": {
+        "type": "object",
+        "properties": {
+          "problem": {
+            "type": "string",
+            "description": "The table the row belongs to: 'High Background' or 'Low Signal or Lack of Signal'"
+          },
+          "reason": {
+            "type": "string",
+            "description": "The Reason column, as printed"
+          },
+          "solution": {
+            "type": "string",
+            "description": "The Solution column, as printed"
+          }
+        },
+        "required": ["problem", "reason", "solution"]
+      }
+    },
+    "vessel_comparison": {
+      "type": "array",
+      "description": "One entry per column of the table comparing ibidi vessel types for immunofluorescence",
+      "items": {
+        "type": "object",
+        "properties": {
+          "vessel_type": { "type": "string", "description": "Column heading, e.g. 'Channel Slides'" },
+          "bottom_material": { "type": ["string", "null"], "description": "Bottom material row" },
+          "additional_coverslips_required": { "type": ["string", "null"], "description": "Additional coverslips required? row, as printed" },
+          "microscope_type": { "type": ["string", "null"], "description": "Microscope type row" },
+          "mounting_medium": { "type": ["string", "null"], "description": "Mounting medium row" },
+          "sample_storage": { "type": ["string", "null"], "description": "Sample storage row" }
+        },
+        "required": ["vessel_type"]
+      }
+    }
+  },
+  "required": ["guide_title", "protocol_steps", "troubleshooting"]
+}

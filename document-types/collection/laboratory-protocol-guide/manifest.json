@@ -1,0 +1,26 @@
+{
+  "slug": "laboratory-protocol-guide",
+  "title": "Laboratory Protocol Guide",
+  "source": {
+    "file": "ibidi-immunofluorescence-application-guide.pdf",
+    "pages": 16,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://ibidi.com/img/cms/resources/AG/FL_AG_039_Immunofluorescence_150dpi.pdf",
+      "publisher": "ibidi GmbH",
+      "title": "ibidi Application Guide: Immunofluorescence Assays (FL_AG_039, V 1.0 2019/09)",
+      "retrieved": "2026-11-15",
+      "clearance": "public",
+      "clearance_note": "A vendor's own application guide, published on its website as a free resource. Downloaded by script directly from the publisher's domain. PDF metadata cleared. The example-image pages carry published data credits naming the scientists who supplied the micrographs; these are professional attributions in the publisher's own document, kept as printed and not featured. Contact details are the company's corporate addresses and phone lines."
+    }
+  },
+  "feature_page": 8,
+  "fields": [
+    { "path": "troubleshooting[1].problem", "label": "Problem", "occurrence": 0 },
+    { "path": "troubleshooting[1].reason", "label": "Reason (row 2)", "occurrence": 0 },
+    { "path": "troubleshooting[1].solution", "label": "Solution (row 2)", "occurrence": 0 },
+    { "path": "troubleshooting[5].reason", "label": "Reason (row 6)", "occurrence": 0 },
+    { "path": "troubleshooting[5].solution", "label": "Solution (row 6)", "occurrence": 0 }
+  ],
+  "notes": "No feature page or fields were requested; chosen here. Page 8 (Troubleshooting) features the High Background table: its heading and two complete reason/solution rows, insufficient blocking and not enough washing, both of which tie back to protocol steps described earlier in the guide. The two ruled troubleshooting tables ground cell by cell; every reason and solution resolves to its own cell (occurrence 0 is pinned because each also grounds, OFF, to its table's heading). The protocol-step pages were not featured: page 4's fixation and permeabilization text parsed as figure blocks, so values there box the whole column, and the protocol_steps array came back out of document order."
+}
