@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "store": {
+      "type": "object",
+      "description": "The store printed in the receipt header",
+      "properties": {
+        "retailer": { "type": "string", "description": "Retailer name from the logo, e.g. 'Costco Wholesale'" },
+        "store_name_number": { "type": ["string", "null"], "description": "Store name and number as printed under the logo, e.g. 'Greenville #1005'" },
+        "address": { "type": ["string", "null"], "description": "Store street address, city, state and ZIP, as printed" }
+      },
+      "required": ["retailer"]
+    },
+    "transaction_datetime": {
+      "type": ["string", "null"],
+      "description": "Date and time of the purchase as printed near the foot of the receipt, e.g. '03/31/2019 10:31'"
+    },
+    "items": {
+      "type": "array",
+      "description": "Every item purchased, one entry per item line, in the order printed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_number": { "type": ["string", "null"], "description": "The retailer's item or SKU number printed before the description" },
+          "name": { "type": "string", "description": "Item description exactly as printed, e.g. 'GRAPE TOMATO'" },
+          "quantity": { "type": "number", "description": "Quantity purchased. Use the printed quantity if there is one; otherwise 1" },
+          "unit_price": { "type": ["number", "null"], "description": "Price of one unit. If no unit price is printed and quantity is 1, the line total" },
+          "total_price": { "type": "number", "description": "Line total printed in the price column" },
+          "tax_flag": { "type": ["string", "null"], "description": "The tax code letter printed beside the item, e.g. 'E'" },
+          "taxable": { "type": ["boolean", "null"], "description": "Whether the item was taxed. On this receipt 'E' marks an item exempt from tax; null if the receipt does not say" }
+        },
+        "required": ["name", "quantity", "total_price"]
+      }
+    },
+    "subtotal": { "type": ["number", "null"], "description": "SUBTOTAL amount" },
+    "tax": { "type": ["number", "null"], "description": "TAX amount" },
+    "total": { "type": ["number", "null"], "description": "TOTAL amount" },
+    "payment": {
+      "type": "object",
+      "description": "The card payment block",
+      "properties": {
+        "card_type": { "type": ["string", "null"], "description": "Card brand or name as printed, e.g. 'Costco Visa'" },
+        "card_last_four": { "type": ["string", "null"], "description": "The last four digits of the masked card number" },
+        "entry_method": { "type": ["string", "null"], "description": "How the card was read, e.g. 'CHIP Read'" },
+        "approval_status": { "type": ["string", "null"], "description": "Response printed for the authorization, e.g. 'APPROVED'" },
+        "amount_charged": { "type": ["number", "null"], "description": "AMOUNT charged to the card" }
+      }
+    }
+  },
+  "required": ["store", "items", "total"]
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "grocery-receipt",
+  "title": "Grocery Receipt",
+  "source": {
+    "file": "costco-grocery-receipt.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_730,h_974/k%2Farchive%2Fadc09d0a4189a5d96ed835ac0633656decdcf991",
+      "publisher": "Apartment Therapy Media (The Kitchn)",
+      "title": "Photo of a Costco Wholesale receipt, Greenville SC, March 31 2019",
+      "retrieved": "2026-11-15",
+      "clearance": "redacted",
+      "clearance_note": "A phone photo of a shopper's Costco receipt, published as an editorial image on The Kitchn (Apartment Therapy Media) and downloaded by script from the publisher's image CDN as a 730x973 JPEG. The publisher is not the receipt's owner, so it was treated as a personal record: the two identifiers tied to the shopper were replaced in the pixels before parsing. The photo was wrapped in a one-page PDF with no text layer and no metadata. The store's address, item numbers and transaction references are the retailer's and were kept.",
+      "redactions": {
+        "method": "Pixels painted over with background blended from the paper on either side and redrawn in Arial Narrow at the original size and ink colour; the PDF is rebuilt from the edited image only",
+        "replaced": [
+          {
+            "what": "Costco membership number (12 digits)",
+            "with": "randomly generated 12-digit stand-in",
+            "count": 1
+          },
+          {
+            "what": "last four digits of the masked payment card",
+            "with": "randomly generated 4-digit stand-in",
+            "count": 1
+          }
+        ],
+        "verified": "Tesseract OCR of the output finds neither original, as literals or inside any run of digits; both stand-ins read back"
+      }
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "items[1].name",
+      "label": "Item",
+      "occurrence": 0
+    },
+    {
+      "path": "items[1].total_price",
+      "label": "Item price",
+      "occurrence": 0
+    },
+    {
+      "path": "items[1].tax_flag",
+      "label": "Tax flag",
+      "occurrence": 0
+    },
+    {
+      "path": "tax",
+      "label": "Tax",
+      "occurrence": 0
+    },
+    {
+      "path": "total",
+      "label": "Total",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request asked for a schema with a list of every item purchased, with name, quantity, unit price, total price and taxable status; the items array carries all five, plus the item number and the printed tax-code letter. No feature page or fields were requested. The overlay follows one item line across the receipt: its description, its price, and the 'E' tax flag in the left margin, then the 0.00 tax line that the flag explains and the total. quantity and unit_price are not printed on this receipt (one of each item); extraction fills them as 1 and the line total, grounded to the item line. taxable is an inference from the 'E' flag and grounds OFF to it, so it is not featured; the flag itself is."
+}
