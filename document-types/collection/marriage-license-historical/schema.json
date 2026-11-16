@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "state": { "type": "string", "description": "State named in the form heading, e.g. 'Ohio'" },
+    "county": { "type": "string", "description": "County named in the form heading" },
+    "license_number": { "type": ["string", "null"], "description": "The license or record number written in the 'No.' box" },
+    "affidavit": {
+      "type": "object",
+      "description": "The sworn application at the top of the form",
+      "properties": {
+        "applicant_name": { "type": "string", "description": "The man who appeared and swore the affidavit, as written" },
+        "intended_spouse_name": { "type": "string", "description": "The woman named as the intended spouse, as written" },
+        "intended_spouse_residence_county": { "type": ["string", "null"], "description": "County the form states she is a resident of" },
+        "sworn_date": { "type": ["string", "null"], "description": "Date sworn and subscribed, as YYYY-MM-DD" },
+        "probate_judge": { "type": ["string", "null"], "description": "Name of the probate judge, as written above 'PROBATE JUDGE'" },
+        "deputy_clerk": { "type": ["string", "null"], "description": "Name written on the 'By ... Deputy Clerk' line" }
+      },
+      "required": ["applicant_name", "intended_spouse_name"]
+    },
+    "marriage_return": {
+      "type": "object",
+      "description": "The MARRIAGE RETURN section certifying the ceremony took place",
+      "properties": {
+        "marriage_date": { "type": ["string", "null"], "description": "Date of the marriage, as YYYY-MM-DD" },
+        "spouse_1": { "type": ["string", "null"], "description": "First name written in the return" },
+        "spouse_2": { "type": ["string", "null"], "description": "Second name written in the return" },
+        "officiant_title": { "type": ["string", "null"], "description": "What the officiant describes himself as, e.g. 'Minister of the Gospel'" },
+        "officiant_name": { "type": ["string", "null"], "description": "Officiant's signature name, as legible" }
+      }
+    }
+  },
+  "required": ["state", "county", "affidavit"]
+}
