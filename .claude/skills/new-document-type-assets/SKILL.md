@@ -158,7 +158,9 @@ Then establish, and be able to state:
 PDF, a government form filled with specimen data, a vendor's own sample. A historical
 record released into the public domain by an archive, a library or a government body
 (the Library of Congress, a county register of deeds, Wikimedia Commons with a
-public-domain tag) is `public` too, when Step 3 finds no living private individual in it.
+public-domain tag) is `public` too. That holds when Step 3 finds no living private
+individual's personal data in it, other than a document owner's own data published with
+their consent.
 
 **If you cannot establish this, stop and ask the user.** A document you found without a
 clear provenance story is not usable, however good a sample it is.
@@ -207,7 +209,13 @@ two groups.
 
 - **Historical records.** People who are deceased, and records more than 72 years old
   (the National Archives' release rule for census records). An 1886 marriage license is
-  not personal data.
+  not personal data. **The exemption needs evidence, recorded in `clearance_note`.**
+  - **For the 72-year rule:** the record's date, as printed on it or as given in the
+    archive's catalogue entry.
+  - **For a death:** the document itself if it records the death (a death certificate),
+    an archive or government record, or a reliable published source such as an obituary
+    or a news report. Cite it.
+  - **If you cannot establish either, the person is treated as living.**
 - **Public figures in the record of their public life.** A president's marriage license
   held by the Library of Congress, a CEO's signature on an annual report.
 - **Officials and professionals acting in that role.** Clerks, judges, notaries,
@@ -234,6 +242,11 @@ two groups.
 
 On a marriage license, that means the couple and the witnesses are replaced. The county
 clerk, the officiant and the county office's address stay as printed.
+
+**Clearance follows the data, not the names.** A document is `public` only when nothing
+on it falls in the replaced group, other than a consenting owner's own data. An exempt
+official's name does not clear the page if a private person's home address, identifier or
+photograph is also on it.
 
 A listing title claiming a document is redacted **is not evidence that it is**. The
 consolidated 1099 in this collection was titled `XXXX8634` and carried the recipient's

@@ -101,14 +101,27 @@ data, not to resolve them by guessing.
 >    the values**. These are **not** personal data, and need no redaction:
 >    - specimen values ("John Doe", "123 Main St", 000-00-0000, EIN 12-3456789): say they
 >      are specimen
->    - people who are deceased, and records more than 72 years old
+>    - people who are deceased, and records more than 72 years old, **with evidence**:
+>      - for the 72-year rule, the record's date as printed or in the archive's catalogue
+>        entry
+>      - for a death, the document itself (a death certificate), an archive or government
+>        record, or a reliable published source such as an obituary or a news report
+>
+>      Put the evidence in `exemption_evidence`. Without it, treat the person as living.
 >    - public figures in the record of their public life
 >    - officials and professionals named in that role: clerks, judges, notaries,
 >      officiants, physicians, attorneys, company officers
 >    - organizations and their contact details
 >    - signatures, which are never altered
+>    - the document owner's own data, **only** when the operator tells you the owner
+>      consented. Record the consent and its limits in `exemption_evidence`. You cannot
+>      infer consent from a document being online.
 >
->    A candidate whose only names fall in those groups is `clearance: "public"`.
+>    Clearance follows **all** the data, not just the names. A candidate is
+>    `clearance: "public"` only when nothing on it is a living private individual's
+>    personal data (name, home address, date of birth, personal contact, account or
+>    government number, photograph), apart from consented owner data. One private home
+>    address or identifier makes it `redacted`, whoever else is named.
 > 5. Name the redaction tool it would need, if any:
 >    - `redact.py` for a text layer
 >    - `redact_outlined.py` for vector glyphs
@@ -143,6 +156,7 @@ data, not to resolve them by guessing.
 >       "layer": "text | vector | raster | mixed",
 >       "redaction_tool": "none | redact.py | redact_outlined.py | redact_scan.py",
 >       "personal_data": "kinds and counts only, or 'none: specimen data' / 'none: historical' / 'none: officials and organizations only'",
+>       "exemption_evidence": "for each exemption relied on (historical date, death, owner consent): the evidence and its source, or null if none is relied on",
 >       "competitor_sample": false,
 >       "populated": true,
 >       "strengths": "why it would make a good page",
@@ -170,6 +184,10 @@ confidence is not evidence.
   claimed link that is not there demotes the candidate to `unclear`.
 - **Personal data:** if `personal_data` contains any actual value rather than a kind,
   scrub it from your own notes and never repeat it.
+- **Exemptions need evidence.** A `public` candidate that relies on the historical, death
+  or owner-consent exemption must carry `exemption_evidence` that names a source. Without
+  one, demote it to `redacted`. With one, check the source for the recommended candidate,
+  as you do its provenance.
 - **Type that came back empty:** report it with the searches tried. Do not invent a
   candidate.
 
@@ -217,6 +235,8 @@ For each chosen candidate, write `document-types/requests/<slug>.yaml` from
   - the page range, if the type is part of a packet ("Use pages 9-11 only …")
   - the layer, and the redaction tool expected
   - personal data, as kinds only
+  - the exemption evidence, if the clearance relies on one, so the build can carry it into
+    `clearance_note`
   - whether it is a competitor sample
   - the suggested feature page and fields, **as suggestions**
   - any layout risk the subagent flagged
