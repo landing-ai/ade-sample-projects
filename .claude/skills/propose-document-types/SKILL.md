@@ -74,6 +74,11 @@ data, not to resolve them by guessing.
 > - Public filings and records on the official site: SEC EDGAR, court and sheriff-sale
 >   postings, county recorders
 > - Investor-relations material
+> - Historical records released into the public domain: the Library of Congress, the
+>   National Archives, state and county archives, university digital collections, and
+>   Wikimedia Commons files with a public-domain tag. Records more than 72 years old, or
+>   about people who have died, need no redaction. They are often the best way to get a
+>   real, filled-in personal document such as a marriage license or a deed.
 > - Template galleries only when the example is filled in
 >
 > A sample from a document-AI or OCR vendor (Ocrolus, Docsumo, Nanonets, ABBYY, Veryfi,
@@ -90,10 +95,20 @@ data, not to resolve them by guessing.
 >    - `mixed`
 > 3. Render the first page, and any page you would feature, to PNG and **look at them**.
 >    Confirm the document is the requested type and is filled in.
-> 4. List the **personal data**: real people's names, addresses, account, loan or
->    government numbers, signatures, phone numbers, and dates of birth. Give **kinds and
->    counts only, never the values**. Specimen values ("John Doe", "123 Main St",
->    000-00-0000, EIN 12-3456789) are not personal data, so say they are specimen.
+> 4. List the **personal data**: a **living private individual's** name, home address,
+>    date of birth, personal phone or email, account, card, loan, policy or membership
+>    number, government identifier, or photograph. Give **kinds and counts only, never
+>    the values**. These are **not** personal data, and need no redaction:
+>    - specimen values ("John Doe", "123 Main St", 000-00-0000, EIN 12-3456789): say they
+>      are specimen
+>    - people who are deceased, and records more than 72 years old
+>    - public figures in the record of their public life
+>    - officials and professionals named in that role: clerks, judges, notaries,
+>      officiants, physicians, attorneys, company officers
+>    - organizations and their contact details
+>    - signatures, which are never altered
+>
+>    A candidate whose only names fall in those groups is `clearance: "public"`.
 > 5. Name the redaction tool it would need, if any:
 >    - `redact.py` for a text layer
 >    - `redact_outlined.py` for vector glyphs
@@ -127,7 +142,7 @@ data, not to resolve them by guessing.
 >       "orientation": "portrait | landscape | mixed",
 >       "layer": "text | vector | raster | mixed",
 >       "redaction_tool": "none | redact.py | redact_outlined.py | redact_scan.py",
->       "personal_data": "kinds and counts only, or 'none: specimen data'",
+>       "personal_data": "kinds and counts only, or 'none: specimen data' / 'none: historical' / 'none: officials and organizations only'",
 >       "competitor_sample": false,
 >       "populated": true,
 >       "strengths": "why it would make a good page",
