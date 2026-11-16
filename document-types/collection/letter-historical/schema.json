@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "salutation_opening": { "type": ["string", "null"], "description": "The opening words of the letter's body, as written" },
+    "sender": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The sender's name as signed" },
+        "closing": { "type": ["string", "null"], "description": "The complimentary close above the signature, e.g. 'Your Loving Friend'" }
+      },
+      "required": ["name"]
+    },
+    "place_written": { "type": ["string", "null"], "description": "Where the letter was written, from the dateline" },
+    "date_written": { "type": ["string", "null"], "description": "The dateline's date exactly as written, including any old-style numbering such as '25: 2: 1682'" },
+    "messenger_described": { "type": ["string", "null"], "description": "How the letter describes the person carrying it, in the writer's words" },
+    "promises": {
+      "type": "array",
+      "description": "Each commitment the writer makes to the recipients, one short sentence each in modern spelling",
+      "items": { "type": "string" }
+    },
+    "delivery_note": {
+      "type": "object",
+      "description": "The note written below the letter recording its delivery",
+      "properties": {
+        "text": { "type": ["string", "null"], "description": "The note as written" },
+        "signed_by": { "type": ["string", "null"], "description": "Name signed under the note" },
+        "date": { "type": ["string", "null"], "description": "Date given in the note, as written" }
+      }
+    },
+    "illustration_caption": { "type": ["string", "null"], "description": "What the engraving above the letter depicts, in one sentence" },
+    "printer_imprint": { "type": ["string", "null"], "description": "The lithographer's imprint printed small below the letter, as printed" }
+  },
+  "required": ["sender"]
+}
