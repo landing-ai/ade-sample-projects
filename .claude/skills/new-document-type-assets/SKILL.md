@@ -76,7 +76,10 @@ Non-negotiables, all of them learned the hard way:
   real content in it.
 - **No customer documents, ever.** Publisher-supplied, public-domain, or explicitly
   cleared. If you cannot establish where a document came from, do not use it.
-- **Personal data never enters this repo.** See Step 3. It is a public repo.
+- **A living private individual's personal data never enters this repo** without that
+  person's own consent. It is a public repo. Step 3 says what that covers, and what can
+  be published as printed: historical records, public figures, officials acting in their
+  role, businesses, and signatures.
 
 ---
 
@@ -152,7 +155,12 @@ Then establish, and be able to state:
 | Clearance | `public`, `redacted`, or stop |
 
 **`public`** means the publisher distributes it for general use: an investor relations
-PDF, a government form filled with specimen data, a vendor's own sample.
+PDF, a government form filled with specimen data, a vendor's own sample. A historical
+record released into the public domain by an archive, a library or a government body
+(the Library of Congress, a county register of deeds, Wikimedia Commons with a
+public-domain tag) is `public` too. That holds when Step 3 finds no living private
+individual's personal data in it, other than a document owner's own data published with
+their consent.
 
 **If you cannot establish this, stop and ask the user.** A document you found without a
 clear provenance story is not usable, however good a sample it is.
@@ -194,13 +202,59 @@ Render them to PDF with headless Chrome, as a local renderer only:
 **Do this before the ADE run, not after.** Once a document is parsed, the personal data
 is in the parse output too.
 
-Read enough of the document to answer: does it contain a real person's name, address,
-account number, government identifier, phone number, or signature?
+Read enough of the document to sort every person and every identifier on it into one of
+two groups.
+
+**Published as printed. Leave these alone:**
+
+- **Historical records.** People who are deceased, and records more than 72 years old
+  (the National Archives' release rule for census records). An 1886 marriage license is
+  not personal data. **The exemption needs evidence, recorded in `clearance_note`.**
+  - **For the 72-year rule:** the record's date, as printed on it or as given in the
+    archive's catalogue entry.
+  - **For a death:** the document itself if it records the death (a death certificate),
+    an archive or government record, or a reliable published source such as an obituary
+    or a news report. Cite it.
+  - **If you cannot establish either, the person is treated as living.**
+- **Public figures in the record of their public life.** A president's marriage license
+  held by the Library of Congress, a CEO's signature on an annual report.
+- **Officials and professionals acting in that role.** Clerks, judges, notaries,
+  officiants, physicians, attorneys, inspectors, company officers and agents, with their
+  titles, licence or bar numbers and work contact details.
+- **Organizations.** Business and agency names, addresses, phone and fax numbers,
+  websites, and their account or reference numbers with each other.
+- **Signatures, always.** Never remove, replace or redraw a signature: stand-ins look
+  fake, and the page stops reading as a real document. When a legible signature spells a
+  name you replaced elsewhere, leave it and say so in the README.
+- **The document owner's own data, when they consent.** The person a record is about can
+  clear it, as the patient did for the faxed MRI report. Record the consent and its
+  limits in `clearance_note`.
+
+**Replaced. These are personal data:** a living private individual's
+
+- name
+- home address
+- date of birth
+- personal phone number or email
+- account, card, loan, policy or membership number
+- government identifier: SSN, TIN, passport, licence or ID number
+- photograph
+
+On a marriage license, that means the couple and the witnesses are replaced. The county
+clerk, the officiant and the county office's address stay as printed.
+
+**Clearance follows the data, not the names.** A document is `public` only when nothing
+on it falls in the replaced group, other than a consenting owner's own data. An exempt
+official's name does not clear the page if a private person's home address, identifier or
+photograph is also on it.
 
 A listing title claiming a document is redacted **is not evidence that it is**. The
 consolidated 1099 in this collection was titled `XXXX8634` and carried the recipient's
-full name, full account number, home address, advisor's name and direct line, and the
-real last four of their TIN.
+full name, full account number, home address and the real last four of their TIN.
+
+**Black marks are not evidence of redaction either.** The faxed MRI report arrived with
+the patient's name covered by stamp annotations. Underneath, the scan was intact. Test
+whether ink survives under any existing mark before you trust it.
 
 If it contains personal data:
 
@@ -245,8 +299,7 @@ If it contains personal data:
 
    | On the page | Option |
    |---|---|
-   | A signature or photo image, including an inline image in the content stream (court e-filing orders) | `--remove-images` |
-   | A stand-in signature where one was removed | `--draw-signature PAGE:…=TEXT` with `--handwriting-font document-types/scripts/fonts/IndieFlower-Regular.ttf` |
+   | A photograph of a private individual, including an inline image in the content stream | `--remove-images` (never on a signature image: signatures stay) |
    | A mailing barcode — text in a barcode font, or vector bars — and rotated reference text | `--remove-marks` (keep the box tight: text touching it goes too) |
    | Values in a fillable form's fields | nothing: the rules are applied to field values and their display automatically, and verification reads them |
 
