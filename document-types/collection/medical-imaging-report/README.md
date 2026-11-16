@@ -51,6 +51,11 @@ Checks on the output:
 - no annotations remain
 - the PDF metadata is empty
 
+The usual text sweep for the original strings was not run. The patient did not supply them, by
+choice. The burn happened before the document was parsed, so the originals never reached ADE:
+the parse reads the boxes as `[REDACTED]`. There is no text layer and no metadata in which they
+could survive.
+
 ## Why this document
 
 It is the real thing rather than a specimen:
