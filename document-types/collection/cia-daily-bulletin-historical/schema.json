@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "description": "Publication title from the cover, e.g. 'Current Intelligence Bulletin'" },
+    "issuing_office": { "type": "string", "description": "Office and agency named on the cover" },
+    "bulletin_date": { "type": "string", "description": "Date of the issue as printed on the cover, e.g. '25 January 1957'" },
+    "copy_number": { "type": ["string", "null"], "description": "Copy No. printed on the cover" },
+    "classification": { "type": ["string", "null"], "description": "Original security classification marked on the pages, e.g. 'TOP SECRET'" },
+    "release": {
+      "type": "object",
+      "description": "The declassification release stamp printed at the top and foot of each page",
+      "properties": {
+        "release_date": { "type": ["string", "null"], "description": "Date in 'Approved for Release: YYYY/MM/DD', as YYYY-MM-DD" },
+        "document_id": { "type": ["string", "null"], "description": "The document identifier after the release date, e.g. 'C03161983'" }
+      }
+    },
+    "contents": {
+      "type": "array",
+      "description": "Every numbered item in the CONTENTS list, in order, plus the annex",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_number": { "type": ["integer", "null"], "description": "The item's number in the list; null for the annex" },
+          "headline": { "type": "string", "description": "The item's headline as printed, without the page reference" },
+          "page": { "type": ["integer", "null"], "description": "Page number given in parentheses" },
+          "redacted": { "type": "boolean", "description": "true if a blank declassification box appears in or after the headline" }
+        },
+        "required": ["headline"]
+      }
+    },
+    "articles": {
+      "type": "array",
+      "description": "Each numbered article in the body of the bulletin",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_number": { "type": ["integer", "null"], "description": "The article's number" },
+          "headline": { "type": "string", "description": "The article's headline" },
+          "countries": { "type": "array", "items": { "type": "string" }, "description": "Countries the article concerns" },
+          "key_figures": { "type": "array", "items": { "type": "string" }, "description": "Monetary amounts or other figures stated in the article, as printed, e.g. '$50,000,000'" },
+          "comment_summary": { "type": ["string", "null"], "description": "One-sentence summary of the article's 'Comment' paragraph, or null if it has none" }
+        },
+        "required": ["headline"]
+      }
+    }
+  },
+  "required": ["title", "bulletin_date", "contents"]
+}
