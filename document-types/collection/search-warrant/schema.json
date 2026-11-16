@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "warrant_number": { "type": "string", "description": "The search warrant number (SW No.), usually handwritten or stamped at the top right." },
+    "court": {
+      "type": "object",
+      "description": "The issuing court.",
+      "properties": {
+        "state": { "type": "string", "description": "State named in the heading." },
+        "county": { "type": "string", "description": "County named in the heading." },
+        "judicial_district": { "type": "string", "description": "Judicial district written beside the judge's signature, if any." },
+        "department": { "type": "string", "description": "Department or division number." }
+      }
+    },
+    "affiant": {
+      "type": "object",
+      "description": "The officer who swore the affidavit.",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the affiant as printed in the affidavit." },
+        "hobbs_sealing_requested": { "type": "boolean", "description": "True if the affiant marked YES for Hobbs sealing requested." },
+        "night_search_requested": { "type": "boolean", "description": "True if the affiant marked YES for night search requested." }
+      }
+    },
+    "grounds": {
+      "type": "array",
+      "description": "The statutory grounds (Penal Code 1524) marked with an X. Include only the marked ones.",
+      "items": { "type": "string", "description": "The text of a marked ground." }
+    },
+    "search_scope": { "type": "string", "description": "What the warrant commands to be searched, as printed after 'COMMANDED TO SEARCH'." },
+    "issuance": {
+      "type": "object",
+      "description": "Where the magistrate signs and issues the warrant.",
+      "properties": {
+        "issuing_judge": { "type": "string", "description": "Printed name of the magistrate or judge." },
+        "judge_title": { "type": "string", "description": "Title printed under the judge's name." },
+        "date_issued": { "type": "string", "format": "date", "description": "Date the warrant was sworn and issued (YYYY-MM-DD)." },
+        "time_issued": { "type": "string", "description": "Time of issuance with a.m. or p.m." },
+        "hobbs_sealing_approved": { "type": "boolean", "description": "True if YES is marked for Hobbs sealing in the issuance section." },
+        "night_search_approved": { "type": "boolean", "description": "True if YES is marked for night search approved." }
+      }
+    }
+  }
+}

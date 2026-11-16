@@ -1,0 +1,41 @@
+{
+  "slug": "search-warrant",
+  "title": "Search Warrant",
+  "source": {
+    "file": "search-warrant-page-3.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.scribd.com/document/81929901/Chris-Brown-Police-Report",
+      "publisher": "Superior Court of California, County of Los Angeles (court filing, Los Angeles Police Department affidavit), as uploaded to Scribd",
+      "title": "Chris Brown Police Report, page 3 (Search Warrant and Affidavit, SW No. 58168)",
+      "retrieved": "2026-11-16",
+      "clearance": "public",
+      "clearance_note": "Page 3 of an 11-page fax of the search warrant and affidavit filed with the Los Angeles Superior Court in the 2009 Chris Brown case. The affidavit was widely published by news media in March 2009 (for example, NBC Washington, 'LAPD Detective's Affidavit Details Alleged Beating By Chris Brown Of Rihanna'). Scribd is not the publisher; the uploader there is the source of this copy. This page names only officials acting in their role: the LAPD detective who swore the affidavit and the issuing Superior Court judge. It also carries the court's seal, a filing stamp and the sending fax header. The operator extracted page 3 and downloaded it manually. Its metadata was cleared, and nothing else was changed."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    {
+      "path": "affiant.name",
+      "label": "Affiant (sworn officer)",
+      "occurrence": 0
+    },
+    {
+      "path": "grounds[0]",
+      "label": "Ground marked (Penal Code 1524)",
+      "occurrence": 0
+    },
+    {
+      "path": "issuance.issuing_judge",
+      "label": "Issuing judge",
+      "occurrence": 0
+    },
+    {
+      "path": "court.department",
+      "label": "Department",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Requested: feature page 3 of the original 11-page fax. The operator supplied that page as a one-page file, so it is page 1 here. No schema was supplied, so one was written. The request said the page was already redacted. It had nothing to redact: no private individual appears on it, and its text layer was checked to confirm that. Featured: the sworn affiant, the warrant's ground (the one Penal Code 1524 box marked X), the issuing judge and the department. The judge's title, judicial district and department all ground to the same single line box, so only the department is featured from that line. Not featured, because the extraction is wrong: warrant_number came back as 581168, but the page reads 58168, with an extra 1 inserted. date_issued came back as 2007-07-20. The handwritten month and year are hard to read, but the warrant cannot predate the February 2009 case, and the page was faxed on 03/05/2009. time_issued came back as '4:55 a.m./p.m.', with the circled p.m. left unresolved. The four Hobbs sealing and night search booleans are correct but ground OFF (a boolean has no text to match)."
+}

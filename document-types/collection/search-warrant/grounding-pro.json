@@ -1,0 +1,86 @@
+{
+  "model": "pro",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "affiant.name",
+      "label": "Affiant (sworn officer)",
+      "value": "De Shon Andrews",
+      "page": 1,
+      "box": {
+        "xmin": 0.13022,
+        "ymin": 0.16958,
+        "xmax": 0.87097,
+        "ymax": 0.18585
+      },
+      "range": {
+        "end": 218,
+        "start": 108
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "affiant-name.png"
+    },
+    {
+      "path": "grounds[0]",
+      "label": "Ground marked (Penal Code 1524)",
+      "value": "tends to show that a felony has been committed or that a particular person has committed a felony.",
+      "page": 1,
+      "box": {
+        "xmin": 0.12041,
+        "ymin": 0.48912,
+        "xmax": 0.81862,
+        "ymax": 0.50604
+      },
+      "range": {
+        "end": 1810,
+        "start": 1707
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "grounds-0.png"
+    },
+    {
+      "path": "issuance.issuing_judge",
+      "label": "Issuing judge",
+      "value": "Patricia M. Schnegg",
+      "page": 1,
+      "box": {
+        "xmin": 0.12349,
+        "ymin": 0.78146,
+        "xmax": 0.82672,
+        "ymax": 0.80929
+      },
+      "range": {
+        "end": 2852,
+        "start": 2833
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuance-issuing_judge.png"
+    },
+    {
+      "path": "court.department",
+      "label": "Department",
+      "value": "123",
+      "page": 1,
+      "box": {
+        "xmin": 0.13013,
+        "ymin": 0.79381,
+        "xmax": 0.82133,
+        "ymax": 0.81412
+      },
+      "range": {
+        "end": 2925,
+        "start": 2853
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "court-department.png"
+    }
+  ]
+}
