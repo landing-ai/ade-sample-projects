@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "document_title": {
+      "type": "string",
+      "description": "Title of the guidance document from the cover page, e.g. 'Deciding When to Submit a 510(k) for a Change to an Existing Device'"
+    },
+    "issuing_agency": {
+      "type": "string",
+      "description": "Agency that issued the guidance, as printed at the foot of the cover page"
+    },
+    "issue_date": {
+      "type": ["string", "null"],
+      "description": "Date the final guidance was issued, from the cover page, as YYYY-MM-DD"
+    },
+    "flowcharts": {
+      "type": "array",
+      "description": "One entry per flowchart figure in the document, in page order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "figure_caption": {
+            "type": "string",
+            "description": "The figure caption printed beneath the flowchart, exactly as printed, e.g. 'Figure 2 - Flowchart A: Labeling Changes'"
+          },
+          "chart_letter": {
+            "type": ["string", "null"],
+            "description": "The chart's letter (A, B, C or D) from its caption, or null for the main flowchart"
+          },
+          "entry_point": {
+            "type": ["string", "null"],
+            "description": "Text of the start terminal at the top of the chart, e.g. 'From Main Chart', or null if the chart has none"
+          },
+          "decisions": {
+            "type": "array",
+            "description": "Every decision (diamond) box in the chart",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node_id": {
+                  "type": ["string", "null"],
+                  "description": "The identifier printed above the question inside the diamond, e.g. 'A1.2'; null if the diamond has none"
+                },
+                "question": {
+                  "type": "string",
+                  "description": "The question inside the diamond, exactly as printed"
+                },
+                "if_yes": {
+                  "type": "string",
+                  "description": "Where the Yes arrow leads: the node_id of the next decision, the text of the outcome box (e.g. 'New 510(k)', 'Documentation'), or the chart it sends you to (e.g. 'Go to Chart A')"
+                },
+                "if_no": {
+                  "type": "string",
+                  "description": "Where the No arrow leads, in the same form as if_yes"
+                }
+              },
+              "required": ["question", "if_yes", "if_no"]
+            }
+          }
+        },
+        "required": ["figure_caption", "decisions"]
+      }
+    }
+  },
+  "required": ["document_title", "flowcharts"]
+}
