@@ -30,6 +30,9 @@ It is published as printed under the historical-record exemption. The evidence:
   - Henry Ford died in 1947.
   - Gordon M. McGregor, founder of Ford of Canada, died in 1922.
 
+  Sources: the Detroit Historical Society's *Encyclopedia of Detroit* entry for Couzens, the
+  Windsor Public Library's history of McGregor, and Henry Ford's biographies.
+
 The Commons description names the holder as "Henry Couzens". The certificate clearly reads
 **James** Couzens.
 
@@ -90,4 +93,4 @@ handwritten "Ten" line rather than the "10" in the Shares box.
 .venv/bin/python document-types/scripts/build_images.py stock-certificate-historical
 ```
 
-The schema has 15 leaf fields.
+The schema has 13 leaf fields.
