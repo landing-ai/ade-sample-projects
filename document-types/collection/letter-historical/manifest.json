@@ -1,0 +1,26 @@
+{
+  "slug": "letter-historical",
+  "title": "Letter (Historical)",
+  "source": {
+    "file": "penn-letter-to-the-indians-1682.pdf",
+    "pages": 1,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://tile.loc.gov/storage-services/service/pnp/pga/08500/08522v.jpg",
+      "publisher": "Library of Congress, Prints and Photographs Division (pga.08522)",
+      "title": "Lithographed facsimile of William Penn's letter to the Lenape, England, 1682, with an engraving after Benjamin West's 'Penn's Treaty with the Indians' (19th century)",
+      "retrieved": "2026-11-16",
+      "clearance": "public",
+      "clearance_note": "A 19th-century lithograph from the Library of Congress Prints and Photographs Division, handle hdl.loc.gov/loc.pnp/pga.08522 (embedded in the JPEG's comment field). loc.gov refuses scripted access, so the operator downloaded the 704x1024 JPEG by hand (file dated 2026-11-15) and the item's catalogue record and rights statement could not be read by script; LOC Prints and Photographs items of this age are normally 'no known restrictions on publication'. Wrapped in a one-page PDF with no metadata. Published as printed under the historical-record exemption. Evidence: the letter is dated 1682 on its face and the print is 19th century, both far more than 72 years ago; the writer, William Penn, founder of Pennsylvania, died in 1718, and Thomas Holme, Penn's surveyor general who signs the delivery note, died in 1695."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "salutation_opening", "label": "Opening line", "occurrence": 0 },
+    { "path": "date_written", "label": "Dateline", "occurrence": 0 },
+    { "path": "sender.closing", "label": "Closing", "occurrence": 0 },
+    { "path": "sender.name", "label": "Signature", "occurrence": 0 },
+    { "path": "delivery_note.signed_by", "label": "Delivered by", "occurrence": 0 }
+  ],
+  "notes": "Requested as 'Treaty (Historical)'. The document is not a treaty: it is William Penn's 1682 letter to the Lenape, printed beneath an engraving of Benjamin West's painting of Penn's treaty. The operator renamed the type to 'Letter (Historical)' after that was pointed out. No feature page or fields were requested. The overlay follows the letter as a letter: how it opens, where and when it was written, how it closes and who signed it, and the note recording its delivery. place_written (England) shares the dateline's box and is not featured separately; the delivery note's date shares Holme's line. The promises are paraphrased into modern English by the schema's instruction and ground OFF, as paraphrase should."
+}
