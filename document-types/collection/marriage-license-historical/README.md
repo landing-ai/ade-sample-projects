@@ -28,7 +28,8 @@ exemptions:
 
 - **The record is more than 72 years old.** It is dated June 19, 1886 on its face.
 - **Both people named in it are deceased public figures.** William Howard Taft, 27th President
-  of the United States, died March 8, 1930. Helen Herron Taft died May 22, 1943.
+  of the United States, died March 8, 1930. Helen Herron Taft died May 22, 1943. Source:
+  Encyclopaedia Britannica's biographies of each.
 - **The other names appear in official roles.** These are the probate judge, the deputy clerk
   and the officiant.
 
