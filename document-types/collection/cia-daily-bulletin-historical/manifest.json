@@ -1,0 +1,25 @@
+{
+  "slug": "cia-daily-bulletin-historical",
+  "title": "CIA Daily Bulletin (Historical)",
+  "source": {
+    "file": "cia-current-intelligence-bulletin-1957-01-25.pdf",
+    "pages": 14,
+    "orientation": "portrait",
+    "origin": {
+      "url": "https://www.cia.gov/readingroom/docs/CURRENT%20INTELLIGENCE%20BULL%5B15755607%5D.pdf",
+      "publisher": "Central Intelligence Agency, Office of Current Intelligence (released via the CIA FOIA Electronic Reading Room)",
+      "title": "Current Intelligence Bulletin, 25 January 1957 (C03161983)",
+      "retrieved": "2026-11-15",
+      "clearance": "public",
+      "clearance_note": "A declassified CIA daily intelligence bulletin, released by the agency itself ('Approved for Release: 2019/12/04 C03161983' on every page) and published in its FOIA Electronic Reading Room; a work of the US federal government. cia.gov served a bot-check page to a scripted download, so the operator downloaded the PDF by hand on 2026-11-15; PDF metadata cleared. The blank boxes throughout are the CIA's own declassification redactions, gaps in the released scan. The bulletin is dated 25 January 1957, under the 72-year line, so clearance rests on the publisher's release rather than the historical exemption: every person named is a head of government, minister, diplomat or military officer acting in an official role (among them Nasser, Chou En-lai, Prime Minister Daud, Harold Macmillan, Duncan Sandys and Air Chief Marshal Sir William Dickson). No private individual appears."
+    }
+  },
+  "feature_page": 1,
+  "fields": [
+    { "path": "bulletin_date", "label": "Bulletin date", "occurrence": 0 },
+    { "path": "classification", "label": "Classification", "occurrence": 0 },
+    { "path": "copy_number", "label": "Copy number", "occurrence": 0 },
+    { "path": "release.release_date", "label": "Approved for release", "occurrence": 0 }
+  ],
+  "notes": "No feature page or fields were requested. The cover tells the document's whole life: a Top Secret bulletin of 25 January 1957, copy 131 of a numbered distribution, approved for public release on 2019-12-04. release.document_id (C03161983) grounds to the same release-stamp line as the date, so only the date is featured. The cover title and issuing office ground OFF: each is stacked across three or two lines and no single line holds the whole value. The contents list's 'redacted' flags are unreliable (see README)."
+}
