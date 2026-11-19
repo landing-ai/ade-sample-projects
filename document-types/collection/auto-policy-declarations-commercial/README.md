@@ -1,35 +1,127 @@
 # Auto Policy Declarations (Commercial)
 
-Source assets for `landing.ai/document-type/auto-policy-declarations-commercial`.
+**On the website:** [landing.ai/document-type/auto-policy-declarations-commercial](https://landing.ai/document-type/auto-policy-declarations-commercial)
 
-## Sample document
+The Automobile Policy Declarations of an Owners Insurance Company commercial auto
+renewal for a small excavation contractor, for the term 12-29-2015 to 12-29-2016. Ten
+vehicles and trailers each have their own block with a VIN, coverages, limits, premiums
+and interested parties. The last page totals the premium by coverage.
 
-`source/owners-insurance-commercial-auto-declarations-redacted.pdf` — the Automobile
+| | |
+|---|---|
+| Pages | 6 |
+| Fields in the extraction schema | 25 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:31 | 2026-11-19 02:30 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 17,441 | 18,031 |
+| Words under 0.95 confidence | 68 | n/a |
+| Words under 0.80 confidence | 34 | n/a |
+| Words under 0.50 confidence | 3 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.7 s | 14.2 s |
+| Per page | 1.3 s | 2.4 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.7 credits | 7.6 credits |
+| Per page | 0.45 credits | 1.27 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:31 | 2026-11-19 02:30 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 25 | 25 |
+| Non-null fields returned | 25 | 25 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 436.1 s | 147.7 s |
+| Per schema field (25) | 17.44 s | 5.91 s |
+| Per value returned | 1.73 s | 0.59 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 11.6 credits | 11.8 credits |
+| Per schema field (25) | 0.464 credits | 0.472 credits |
+| Per value returned | 0.046 credits | 0.047 credits |
+
+## Origin
+
+`source/owners-insurance-commercial-auto-declarations-redacted.pdf` is the Automobile
 Policy Declarations of an Owners Insurance Company (Auto-Owners Insurance Group)
-commercial auto renewal for a small excavation contractor, term 12-29-2015 to
-12-29-2016. **6 pages, portrait.** Born-digital, with a text layer.
+commercial auto renewal for a small excavation contractor, for the term 12-29-2015 to
+12-29-2016. It is **6 pages, portrait**, born-digital with a text layer.
 
 | | |
 |---|---|
 | Publisher | Owners Insurance Company (Auto-Owners Insurance Group) |
 | Source | [scribd.com/doc/297561971](https://www.scribd.com/doc/297561971/commercial-auto-policy-12-29-2015-5-3) |
 | Retrieved | 2026-10-26, downloaded manually (Scribd blocks scripted downloads) |
-| Clearance | **Redacted** — see below |
-
-## This document was redacted before it entered the repo
+| Clearance | **Redacted** |
 
 Scribd is a user-upload site, so the account that posted this file is not its publisher.
-It is a real policy for a real business, and it was treated as a private record.
+It is a real policy for a real business, and it was treated as a private record and
+redacted before it entered the repo.
 
-**Pages kept.** The original file is 58 pages. Only the six declarations pages (original
-pages 2–7) were kept:
+**Pages kept.** The original file is 58 pages. Only the six declarations pages
+(original pages 2 to 7) were kept:
 
 - Page 1, the agency's cover letter, was dropped. It carried the policy number and an
   online-account enrollment code.
 - Page 8, the Scheduled Drivers List, was dropped. It lists eight individual drivers
   with their full names and dates of birth, and adds nothing the vehicle schedule does
   not already show.
-- Pages 9–58 are the policy form, endorsements and the insurer's signature page. They
+- Pages 9 to 58 are the policy form, endorsements and the insurer's signature page. They
   are not the declarations and were dropped.
 
 **Values replaced** on the six kept pages:
@@ -46,77 +138,46 @@ pages 2–7) were kept:
 | VINs, one per vehicle | 10 | random VINs of the same shape |
 | Individual named in care of a lienholder | 2 | `PAT EXAMPLE` |
 
-Names and the address are obviously fake. Numeric identifiers are randomly drawn by
-`document-types/scripts/plausible.py`, so the page still reads as a real policy rather
-than a page of zeros. Kept as printed: the insurer and its address, the two lienholder
-institutions, the territory county, the vehicle descriptions, and every limit and
-premium.
+Names and the address are obviously fake. Numeric identifiers are randomly drawn
+stand-ins of the same shape, so the page still reads as a real policy. Kept as printed:
+the insurer and its address, the two lienholder institutions, the territory county, the
+vehicle descriptions, and every limit and premium.
 
-Done with `document-types/scripts/redact.py`, which removes the underlying text rather
-than drawing a box over it, and clears the PDF metadata. It re-extracts afterwards and
-verified that no original string survives; `ship.py check` swept every file in this
-folder, on literals and on runs of digits. The rules file stays outside the repo.
+The redaction used `document-types/scripts/redact.py`, which removes the underlying text
+rather than drawing a box over it, and clears the PDF metadata. A check afterwards found
+no original string in the committed PDF or anywhere in this folder. The rules file stays
+outside the repo. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection already has `auto-policy-declarations-page`: one page, a coverage
-schedule keyed by covered-auto symbols, and no vehicles listed. This is the other shape
-of commercial auto declarations, the **fleet schedule**. Each of ten vehicles and
-trailers has its own block, with a VIN, territory, coverage rows, limits, premiums, a
-total, interested parties and rating details, spread over five pages. Page 6 rolls them
-up into totals by coverage, a paid-in-full discount and the term premium.
+### Who processes it
 
-It tests a repeating structure across page breaks, and arrays nested two deep
-(vehicles → coverages). The numbers also check themselves: the eight coverage totals sum
-to the $11,558.40 policy premium, which is the ten vehicle totals ($11,508.15) plus a
-$50.25 designated-insured endorsement.
+The declarations pages are the summary of an insurance policy: who and what is covered,
+for how much, and at what premium. A commercial fleet policy repeats that summary for
+every vehicle.
 
-## Featured fields
+- **Commercial insurance agents and brokers:** they compare declarations at renewal and
+  re-market fleets to other carriers.
+- **Underwriters:** they review the vehicle schedule, coverages and rating details of a
+  prior policy when quoting a new one.
+- **Equipment lenders and lessors:** they confirm that each financed vehicle is listed
+  and that they appear as lienholder or interested party.
+- **Fleet managers and risk managers:** they track coverage and cost per vehicle across
+  a fleet.
+- **Contractors' clients and general contractors:** they check auto liability limits
+  before work starts.
 
-Page 1, one scheduled vehicle and what it costs:
+### What it contains
 
-| Field | Label | Value |
-|---|---|---|
-| `policy_number` | Policy number | 95-342-160-75 |
-| `vehicles[0].description` | Scheduled vehicle | 2001 DODG RAM 3500 ST/SLT/SPT |
-| `vehicles[0].coverages[0].limit` | Combined liability limit | $1Million ea occ |
-| `vehicles[0].coverages[0].premium` | Combined liability premium | 718.69 |
-| `vehicles[0].total_premium` | Vehicle total premium | 860.51 |
-
-Together they read as one row of the fleet schedule. Page 6, the premium totals, was the
-alternative; every field there grounds cleanly too.
-
-## Grounding
-
-Clean throughout. All ten vehicles, all 58 coverage rows and all eight coverage totals
-extract correctly, and every printed value grounds to its own line, across the page
-breaks.
-
-- Vehicle description and VIN are one parse block, so both crops show the same two
-  lines.
-- Blanks come back as empty strings rather than JSON null, despite the schema allowing
-  null. That applies to `lienholder` where Interested Parties reads `None`, and to the
-  limit of every Terrorism Coverage row, which has no limit printed. Twice the value was
-  the literal string `null`. The two real lienholders extract in full.
-- The two trailers' Terrorism Coverage premiums print as `.61` and extract as 0.61;
-  `inspect_fields.py` marks them OFF only because the formats differ.
-- The insured's address is printed on two lines and grounds as two ranges, one per line.
-- `insurer` comes back as the abbreviated running header `OWNERS INS. CO.` from a later
-  page, not the logo and `INSURANCE COMPANY` line on page 1.
-- `gross_vehicle_weight` is null for the trailers, which state none.
-
-The schema has 25 leaf fields.
-
-## Credits
-
-19.20 credits at the standard tier (parse and extract, 6 pages).
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py auto-policy-declarations-commercial
-.venv/bin/python document-types/scripts/build_images.py auto-policy-declarations-commercial
-```
-
-`run_ade.py --extract-only` re-runs extraction against the committed parse when only
-`schema.json` changes.
+- **A repeating block per vehicle,** ten in all, each with a description, VIN,
+  territory, coverage rows, limits, premiums, a total, interested parties and rating
+  details.
+- **A schedule that runs across page breaks,** with blocks spread over five pages.
+- **Nested lists:** vehicles, each with its own list of coverages.
+- **Blank and "None" entries,** such as coverage rows with no limit printed and vehicles
+  with no lienholder.
+- **A totals page** with premiums by coverage, a paid-in-full discount and the term
+  premium. The coverage totals sum to the policy premium, so the figures can be checked
+  against each other.
+- **Abbreviated running headers** that repeat the insurer's name in short form on later
+  pages.

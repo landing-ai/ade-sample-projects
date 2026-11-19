@@ -1,98 +1,154 @@
 # Loan history
 
-Source assets for `landing.ai/document-type/loan-history`.
+**On the website:** [landing.ai/document-type/loan-history](https://landing.ai/document-type/loan-history)
 
-## Sample document
+A Loan Payment History report for loan C-2, a $50,000 loan with an impound (escrow)
+account, covering every payment from February 2010 to October 2014. A header names the
+servicer, the loan and the borrower. One table lists 57 payments across thirteen
+columns, from due and received dates to principal, interest, impound and fees, and
+ends in a Total row. The data is fictitious.
 
-`source/loan-servicing-soft-loan-payment-history-sample.pdf` — a Loan Payment History
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 27 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:16 | 2026-11-19 03:34 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 12,550 | 12,669 |
+| Words under 0.95 confidence | 0 | n/a |
+| Words under 0.80 confidence | 0 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 4.0 s | 10.2 s |
+| Per page | 2.0 s | 5.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.6 credits | 4.2 credits |
+| Per page | 0.80 credits | 2.10 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:17 | 2026-11-19 03:34 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 27 | 27 |
+| Non-null fields returned | 27 | 27 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 136.4 s | 173.7 s |
+| Per schema field (27) | 5.05 s | 6.43 s |
+| Per value returned | 0.19 s | 0.24 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 18.6 credits | 18.6 credits |
+| Per schema field (27) | 0.689 credits | 0.689 credits |
+| Per value returned | 0.026 credits | 0.026 credits |
+
+## Origin
+
+`source/loan-servicing-soft-loan-payment-history-sample.pdf` is a Loan Payment History
 report for loan C-2, a $50,000 loan with an impound (escrow) account, covering every
-payment from February 2010 to October 2014. **2 pages, landscape (US Letter)**: a header
-with the servicer, loan and borrower, then one ruled table of 57 payments with
+payment from February 2010 to October 2014. It is **2 pages, landscape (US Letter)**: a
+header with the servicer, loan and borrower, then one ruled table of 57 payments with
 thirteen columns, carried over the page break with its header repeated, and a Total row.
 
 | | |
 |---|---|
 | Publisher | Loan Servicing Soft Inc. (loan servicing software vendor) |
 | Source | [loanservicingsoft.com/…/Loan_Payment_History-LOAN_SERVICING_SOFT-www.loanservicingsoft.com.pdf](https://www.loanservicingsoft.com/reports/Loan_Payment_History-LOAN_SERVICING_SOFT-www.loanservicingsoft.com.pdf) |
+| Linked from | [loanservicingsoft.com/reports.html](https://www.loanservicingsoft.com/reports.html) |
 | Retrieved | 2026-10-01 |
 | Clearance | Public |
 
-Demonstration output of the vendor's product, published on its
-[sample reports page](https://www.loanservicingsoft.com/reports.html). The data is
-fictitious: the servicer is "YOUR SERVICING COMPANY NAME" at 1234 Main St, and the
-borrower is "Irene Impound", a pun on the report's impound column. No redaction was
-needed.
+This is demonstration output of the vendor's product, published on its sample reports
+page. The data is fictitious: the servicer is "YOUR SERVICING COMPANY NAME" at 1234 Main
+St, and the borrower is "Irene Impound", a pun on the report's impound column. No
+redaction was needed.
 
-**How it was chosen.** Web research for a document showing the complete payment and
-servicing history of an existing mortgage found that the most authoritative version,
-the loan payment history in bankruptcy Official Form 410A (Mortgage Proof of Claim
-Attachment), is published only blank; completed ones exist only in real bankruptcy
-filings. A software vendor's sample report shows the same content with fictitious data.
-It has no real servicer's branding.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+Web research for a document showing the complete payment and servicing history of an
+existing mortgage found that the most authoritative version, the loan payment history in
+bankruptcy Official Form 410A (Mortgage Proof of Claim Attachment), is published only
+blank; completed ones exist only in real bankruptcy filings. A software vendor's sample
+report shows the same content with fictitious data. It has no real servicer's branding.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **loan servicing history**, and its densest numeric table:
+### Who processes it
 
-- **One table, 57 rows, 13 columns,** over two landscape pages, nearly all numbers.
-- **Irregular rows among regular ones.** A partial first payment numbered 0.3, two late
-  payments with $43.88 late fees, one short payment with $0.00 to principal, and an
-  impound increase from $100.00 to $108.33 in 2014.
-- **Blank cells next to filled ones.** The reference column is blank, "000" or a number
-  from row to row.
-- **A Total row** that the rows must add up to, and a wrapped column header ("Impoun /
-  d").
+A loan payment history shows every payment made on a loan and how each one was applied.
+It is the record people turn to when a loan changes hands or comes into dispute.
 
-## Featured fields: one problem payment
+- **Mortgage servicers:** they produce and reconcile payment histories, and pass them on
+  when servicing transfers.
+- **Bankruptcy and foreclosure:** creditors attach a payment history to a proof of claim,
+  and debtors' attorneys and trustees check it.
+- **Loan sale and securitization due diligence:** buyers review pay histories to judge
+  how a loan has performed.
+- **Borrowers and housing counselors:** they review payments, fees and escrow to resolve
+  disputes and plan modifications.
+- **Auditors and regulators:** they test that payments, late fees and escrow were
+  applied correctly.
 
-All on page 1, from a single row, payment 7. The request named no fields, so these were
-chosen:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Date due | 2010-09-01 |
-| Date received | 2010-09-20 |
-| Late fee | 22.25 |
-| Applied to principal | 0.00 |
-| Principal balance | 49864.47 |
-
-The kind of row a servicing review is looking for: due September 1, received September
-20 with a late fee, and short of the scheduled payment, so nothing was applied to
-principal and the balance stayed where it was the month before.
-
-## What it surfaced
-
-**Every value grounds to its own cell.** Across all 57 rows the boxes land on single
-table cells, dates included, so any row can be illustrated cleanly.
-
-**The table extracts completely and adds up.** All 57 rows come back across the page
-break, every value matches the page, no payment number is missing, and the column sums
-equal the printed Total row to the cent: $30,581.66 received, of which $1,570.25
-principal, $23,238.12 interest, $5,641.65 impound and $131.64 late fees.
-
-**Blank is an empty string.** Blank reference numbers come back as empty strings rather
-than null, which is harmless here.
-
-## Extraction
-
-**27 leaf fields**: servicer, loan and borrower, the date range, every payment row's
-thirteen columns, and the totals.
-
-## Cost
-
-**22.80 credits** at standard tier for 2 pages: 4.20 to parse, 18.60 to extract. The
-extraction cost is driven by the 57-row array.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/loan-history/source/loan-servicing-soft-loan-payment-history-sample.pdf \
-  "https://www.loanservicingsoft.com/reports/Loan_Payment_History-LOAN_SERVICING_SOFT-www.loanservicingsoft.com.pdf"
-.venv/bin/python document-types/scripts/run_ade.py loan-history                # 22.80 credits
-.venv/bin/python document-types/scripts/run_ade.py loan-history --extract-only # 18.60, schema iteration
-.venv/bin/python document-types/scripts/build_images.py loan-history           # free
-.venv/bin/python document-types/scripts/inspect_fields.py loan-history --page 1
-```
+- **One dense numeric table,** 57 rows by 13 columns, over two landscape pages.
+- **A table split across a page break,** with its header repeated.
+- **Irregular rows among regular ones:** a partial first payment numbered 0.3, late
+  payments with late fees, a short payment with $0.00 to principal, and an impound
+  increase in 2014.
+- **Blank cells next to filled ones,** with the reference column blank, "000" or a
+  number from row to row.
+- **A wrapped column header** ("Impoun / d") and a Total row.

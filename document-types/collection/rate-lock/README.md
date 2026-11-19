@@ -1,14 +1,107 @@
 # Rate lock
 
-Source assets for `landing.ai/document-type/rate-lock`.
+**On the website:** [landing.ai/document-type/rate-lock](https://landing.ai/document-type/rate-lock)
 
-## Sample document
+WHEDA's sample mortgage rate lock confirmation for its correspondent lending channel,
+dated February 24, 2014. It records the locked loan program, amount, rate, price, lock
+date, lock period and expiration, the pricing adjustments, the loan officer, and a
+summary of the borrower, property, loan, underwriting and mortgage insurance details.
 
-`source/wheda-sample-rate-lock-confirmation.pdf` — WHEDA's sample mortgage rate lock
-confirmation for its correspondent lending channel, dated February 24, 2014. **1 page,
-portrait (legal, 8.5 × 14 in)**: the lock itself, pricing adjustments, the loan officer,
-and a loan summary of borrower, property, loan, automated underwriting and mortgage
-insurance details.
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 34 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:28 | 2026-11-19 03:48 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 3,268 | 3,383 |
+| Words under 0.95 confidence | 11 | n/a |
+| Words under 0.80 confidence | 3 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.5 s | 7.5 s |
+| Per page | 7.5 s | 7.5 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.5 credits | 1.4 credits |
+| Per page | 0.50 credits | 1.40 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:28 | 2026-11-19 03:49 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 34 | 34 |
+| Non-null fields returned | 34 | 34 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 277.4 s | 76.2 s |
+| Per schema field (34) | 8.16 s | 2.24 s |
+| Per value returned | 8.16 s | 2.24 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 1.7 credits | 1.7 credits |
+| Per schema field (34) | 0.050 credits | 0.050 credits |
+| Per value returned | 0.050 credits | 0.050 credits |
+
+## Origin
+
+`source/wheda-sample-rate-lock-confirmation.pdf` is WHEDA's sample mortgage rate lock
+confirmation for its correspondent lending channel, dated February 24, 2014. It is **1
+page, portrait (legal, 8.5 × 14 in)**, with a text layer: the lock itself, pricing
+adjustments, the loan officer, and a loan summary of borrower, property, loan,
+automated underwriting and mortgage insurance details.
 
 | | |
 |---|---|
@@ -19,81 +112,37 @@ insurance details.
 
 WHEDA, Wisconsin's housing finance agency, publishes this as a sample in its mortgage
 lending materials. The borrower and property are placeholders ("John S Correspondent",
-123 Main Street, Waukesha). The loan officer contact is a named WHEDA staff member with
-a work phone and email, which WHEDA itself publishes as a business contact in the sample;
-it is kept as printed, and not featured. No redaction was needed.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+123 Main Street, Waukesha). The loan officer contact is a named WHEDA staff member with a
+work phone and email, which WHEDA itself publishes as a business contact in the sample;
+it is kept as printed. No redaction was needed. Full provenance is in `manifest.json`
+under `source.origin`.
 
 ## Why this document
 
-The collection's first **mortgage origination document**, from the middle of a loan's
-life rather than its end:
+### Who processes it
 
-- **The terms that matter fit in one table row.** Program, payment type, amount, rate,
-  price, lock date, lock period and expiry, in eight narrow columns.
-- **A dense two-column summary** of borrower, property and loan attributes, mostly
-  label and value pairs, many of them yes or no.
-- **Pricing inputs next to the price.** Credit score, LTV and occupancy sit alongside
-  the rate they produced.
+A rate lock confirmation fixes a mortgage's rate and price for a set period while the
+loan is processed, so every party to the loan checks its terms before closing.
 
-## Featured fields: the lock
+- **Mortgage lenders and loan processors:** staff check the locked rate, program and
+  expiry, and extend or relock before the lock runs out.
+- **Correspondent lenders and housing finance agencies:** they match the lock to the
+  loan they deliver for purchase.
+- **Secondary marketing and hedging desks:** they track open locks and their expiry
+  dates to manage pipeline risk.
+- **Mortgage brokers:** they confirm the terms the borrower was quoted.
+- **Quality control and compliance:** reviewers compare the lock with the closing
+  disclosure and the pricing inputs.
 
-All on the page. The request named no fields, so these were chosen:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Reference number | 800203 |
-| Loan program | HFA Preferred with MI Correspondent 30 year |
-| Locked rate | 4.625% |
-| Lock expiration date | 2014-04-10 |
-| Middle credit score | 715 |
-
-What a loan processor checks: which lock, on which program, at what rate, until when,
-and the credit score the pricing assumed.
-
-**The locked rate's box is the whole row.** See below. **The expiration date is flagged,
-and correct:** it is extracted as the ISO date 2014-04-10 and boxed on the printed
-"4/10/2014", so `build_images.py` warns that the value is not in the boxed text; the
-crop was checked by eye.
-
-## What it surfaced
-
-**The key row did not split into columns.** The Rate Lock table's data row parses as one
-run of text in a single cell, "$95,000.00 4.625% 102.000 2/24/2014 45 days 4/10/2014",
-from Loan Amount to Lock Period. Every value is still extracted correctly, but loan
-amount, rate, price, lock date and lock period all ground to that one box, so only one of
-them can be featured; the rate is, and its box shows the whole run. The expiry date
-parses as its own cell.
-
-**Labels instead of values, one cell adrift.** In the property column, property type and
-occupancy ground to their labels ("Property Type", "Property Purpose") rather than to
-"SFR" and "Primary Residence". The property address grounds across two lines.
-
-**Yes and no become booleans.** First-time home buyer and self-employed come back as
-false from the printed "No", so they are flagged as not matching their boxed text.
-
-**Everything extracts correctly,** including the pricing adjustment totals, LTV and CLTV
-from the combined "95.000% / 95.000%", and the term from "360 / 360".
-
-## Extraction
-
-**34 leaf fields**: lender, confirmation time, reference and borrower; the lock's
-program, payment type, amount, rate, price, dates and period; the pricing adjustment
-totals; the loan officer; and borrower, property and loan attributes.
-
-## Cost
-
-**3.10 credits** at standard tier for 1 page: 1.40 to parse, 1.70 to extract.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/rate-lock/source/wheda-sample-rate-lock-confirmation.pdf \
-  "https://www.wheda.com/globalassets/documents/mortgage-lending/sample-rate-lock-confirmation---correspondent-channel.pdf"
-.venv/bin/python document-types/scripts/run_ade.py rate-lock                # 3.10 credits
-.venv/bin/python document-types/scripts/run_ade.py rate-lock --extract-only # 1.70, schema iteration
-.venv/bin/python document-types/scripts/build_images.py rate-lock           # free
-.venv/bin/python document-types/scripts/inspect_fields.py rate-lock --page 1
-```
+- **A key table row** with program, payment type, amount, rate, price, lock date, lock
+  period and expiry in eight narrow columns.
+- **A dense two-column summary** of borrower, property and loan attributes, mostly label
+  and value pairs.
+- **Many yes or no values,** such as first-time home buyer and self-employed.
+- **Combined values in one cell,** such as LTV and CLTV ("95.000% / 95.000%") and term
+  ("360 / 360").
+- **Pricing inputs next to the price,** with credit score, LTV and occupancy alongside
+  the rate.
+- **A legal-size page** with a text layer.

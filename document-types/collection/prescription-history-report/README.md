@@ -1,16 +1,105 @@
 # Prescription history report
 
-Source assets for `landing.ai/document-type/prescription-history-report`.
+**On the website:** [landing.ai/document-type/prescription-history-report](https://landing.ai/document-type/prescription-history-report)
 
-## Sample document
+A generic prescription drug monitoring program (PDMP) patient report with fictitious
+data, as printed in PDMP TTAC's overview of how PDMPs operate. Four indicator boxes give
+the patient's morphine milligram equivalent average, multiple provider episodes,
+overlapping prescriptions and overall risk score. Below them are the patient's details
+and a table of seven dispensed prescriptions with prescriber, pharmacy, dates, drug,
+strength, quantity, days supply and refills.
 
-`source/pdmp-sample-patient-report.png` — a **prescription drug monitoring program (PDMP)
-patient report**, the generic sample with fictitious data that PDMP TTAC prints on page 9
-of its overview of how PDMPs operate. **1 page, landscape**, a 2365 x 1312 PNG. Four
-summary indicator boxes (MME assessment, multiple provider episodes, overlapping
-prescriptions, overall risk score) sit over a patient identification row and a
-dispensation table of seven prescriptions, each with prescriber, dispensing pharmacy,
-three dates, Rx number, drug, strength, quantity, days supply and refills.
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 30 |
+
+DPT-3 Pro ran at standard tier through the jobs API, and the extraction used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Pro |
+|---|---|
+| Snapshot | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:42 |
+| Region | US |
+
+### Parse accuracy
+
+| | DPT-3 Pro |
+|---|---|
+| Characters returned | 2,838 |
+| Accuracy | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 14.1 s |
+| Per page | 14.1 s |
+
+### Parse cost
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 1.3 credits |
+| Per page | 1.30 credits |
+
+## Extract performance
+
+The Pro markdown was extracted with the schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Pro markdown |
+|---|---|
+| Snapshot | `extract-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:42 |
+| Region | US |
+
+### Extract accuracy
+
+| | Pro markdown |
+|---|---|
+| Fields requested | 30 |
+| Non-null fields returned | 30 |
+| Accuracy | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Pro markdown |
+|---|---|
+| Total | 93.1 s |
+| Per schema field (30) | 3.10 s |
+| Per value returned | 0.78 s |
+
+### Extract cost
+
+| | Pro markdown |
+|---|---|
+| Total | 4.2 credits |
+| Per schema field (30) | 0.140 credits |
+| Per value returned | 0.035 credits |
+
+## Origin
+
+`source/pdmp-sample-patient-report.png` is a **prescription drug monitoring program
+(PDMP) patient report**, the generic sample with fictitious data that PDMP TTAC prints
+on page 9 of its overview of how PDMPs operate. It is **1 page, landscape**, a 2365 x
+1312 PNG image with no text layer. Four summary indicator boxes (MME assessment,
+multiple provider episodes, overlapping prescriptions, overall risk score) sit over a
+patient identification row and a dispensation table of seven prescriptions.
 
 **This is a PDMP report, not an insurer's prescription history report.** State PDMPs
 collect controlled-substance dispensing data and report it to prescribers, pharmacists
@@ -39,89 +128,42 @@ pdmpassist.org footer reads "All Rights Reserved". It is a federally funded publ
 but not a work of the federal government itself. The operator chose this candidate with
 its clearance marked unclear.
 
-### How the page was cropped
-
-The 11-page PDF is not committed; only the sample report is. Page 9 holds it as two
-embedded raster images (the indicator boxes, and the patient and dispensation tables),
-with prose above and below. The page was rendered with PyMuPDF at 300 dpi, clipped to
-the rectangle (22, 67) to (589.25, 381.64) in PDF points. That rectangle is the union of
-the two images' bounding boxes, (27, 72) to (584.25, 376.64), plus a 5-point margin. It
+**How the page was cropped.** The 11-page PDF is not committed; only the sample report
+is. Page 9 holds it as two embedded raster images (the indicator boxes, and the patient
+and dispensation tables), with prose above and below. The page was rendered at 300 dpi
+and clipped to the union of the two images' bounding boxes plus a 5-point margin, which
 excludes the surrounding prose and the page number. Rendering the page, rather than
 extracting the embedded images, composites their transparency masks over white as the
 PDF displays them. Nothing else was altered.
 
-```python
-import fitz
-page = fitz.open("PDMPs_Overview_2023.pdf")[8]
-page.get_pixmap(dpi=300, clip=fitz.Rect(22, 67, 589.25, 381.64), alpha=False) \
-    .save("source/pdmp-sample-patient-report.png")
-```
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first prescription or pharmacy record, and its first document led by
-**indicator tiles**: coloured boxes in which a bare number ("66.04", "8 Dr / 5 Rx", "4",
-"5") takes its meaning from a caption beside it. It also tests:
+### Who processes it
 
-- **Multi-line table cells** that pack name, address and DEA number into one cell, split
-  here into three schema fields each for prescriber and dispenser.
-- **Repeated rows** (the same prescriber, pharmacy and drug a month apart), which must not
-  be merged or deduplicated.
-- **A raster source**, cropped from a larger page.
+A prescription history report lists the medications a person has filled over time.
+PDMP reports cover controlled substances for clinical and regulatory use, and insurer
+Rx history reports cover pharmacy benefit data for underwriting.
 
-## Featured fields: the risk summary
+- **Prescribers and pharmacists:** they check a patient's PDMP report before prescribing
+  or dispensing controlled substances.
+- **State PDMP administrators:** they produce reports and review risk indicators across
+  patients.
+- **Life and disability insurers:** underwriters read Rx history reports to check an
+  applicant's medical disclosures.
+- **Health systems and care managers:** they review fill histories when reconciling a
+  patient's medications.
+- **Regulators and law enforcement:** under the conditions state law sets, they use PDMP
+  data in investigations of diversion.
 
-| Field | Value |
-|---|---|
-| MME (30-day average) | 66.04 |
-| Prescribers in 6 months | 8 |
-| Overlapping prescriptions | 4 |
-| Risk score | 5 |
-| Dispensed drug | Hydrocodone |
+### What it contains
 
-The four indicators are what a reviewer reads first, and the request suggested them. The
-fifth field is the drug on the second dispensation row, Hydrocodone 7.5 MG x 180, the
-opioid behind the MME figure, so the overlay links the summary to the fill list. The
-patient's name and address are left out, as impersonal fields make the same point.
-
-## What it surfaced
-
-**Every field grounds `ok`, all 30 leaves on all 7 rows.** The parse renders the
-dispensation table as an HTML table with `<br>` inside cells, and extraction splits each
-prescriber and dispenser cell into name, address and DEA number correctly, keeping the
-printed space in "AP 44488891" and "AC 45454545".
-
-**The indicator boxes ground as whole tiles.** The parse reads each tile as a single line
-("66.04 MME Assessment * 30-day average"), so the four indicator values, their periods and
-their maxima all ground to that tile's whole box, not to the number alone. The crops
-contain the right values but are tile-sized. `build_images.py` warned that OCR could not
-read 66.04, 8 and 5 inside their boxes; on inspection all three are present, and the
-misses come from dark text on the red and yellow tiles under the highlight.
-
-**The split counts are read correctly.** "8 Dr" and "5 Rx" in one tile became 8
-prescribers and 5 pharmacies, and "Max Score=7" became a separate maximum of 7.
-
-## Extraction
-
-**30 leaf fields**: nine risk indicators (MME value and period; prescriber and pharmacy
-counts and period for multiple provider episodes; overlapping count and period; risk score
-and its maximum); six patient fields; and fifteen per dispensation row (prescriber name,
-address and DEA number; dispenser name, address and DEA number; dates issued, filled and
-sold; Rx number; drug; strength; quantity; days supply; refills). All 3 top-level fields
-populate, with all 7 rows.
-
-## Cost
-
-**5.50 credits** at standard tier for 1 page, parse and extract together.
-
-## Regenerating
-
-```bash
-curl -sSL -o PDMPs_Overview_2023.pdf \
-  "https://www.pdmpassist.org/pdf/resources/PDMPs_Overview_2023.pdf"
-# crop page 9 with the PyMuPDF snippet above, into source/
-.venv/bin/python document-types/scripts/run_ade.py prescription-history-report                # 5.50 credits
-.venv/bin/python document-types/scripts/run_ade.py prescription-history-report --extract-only # schema iteration
-.venv/bin/python document-types/scripts/build_images.py prescription-history-report           # free
-.venv/bin/python document-types/scripts/inspect_fields.py prescription-history-report --page 1
-```
+- **Indicator tiles:** colored boxes in which a bare number ("66.04", "8 Dr / 5 Rx", "4",
+  "5") takes its meaning from a caption beside it.
+- **A dispensation table** of seven rows with prescriber, pharmacy, three dates, Rx
+  number, drug, strength, quantity, days supply and refills.
+- **Multi-line table cells** that pack a name, an address and a DEA number into one cell.
+- **Repeated rows** (the same prescriber, pharmacy and drug a month apart) that must stay
+  separate.
+- **A raster image,** cropped from a larger page, with no text layer.

@@ -1,16 +1,110 @@
 # AIA G703 continuation sheet
 
-Source assets for `landing.ai/document-type/aia-g703-continuation-sheet`.
+**On the website:** [landing.ai/document-type/aia-g703-continuation-sheet](https://landing.ai/document-type/aia-g703-continuation-sheet)
 
-## Sample document
+Pay application #10 for the remodel of the City of Lake Elmo, MN City Hall, Fire
+Department and Washington County Sheriff Substation, for the period ending October 31,
+2022. Page 1 is a G702-style application and certificate for payment. Page 2 is the
+G703-style continuation sheet: a 32-line schedule of values with change orders, work
+completed, balance to finish and retainage for each line.
 
-`source/aia-g703-lake-elmo-pay-application-10-redacted.pdf`: pay application #10 on the
-City of Lake Elmo, MN City Hall, Fire Department and Washington County Sheriff
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 35 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:25 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 10,751 | 10,988 |
+| Words under 0.95 confidence | 29 | n/a |
+| Words under 0.80 confidence | 8 | n/a |
+| Words under 0.50 confidence | 2 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 20.8 s | 30.0 s |
+| Per page | 10.4 s | 15.0 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.4 credits | 3.8 credits |
+| Per page | 0.70 credits | 1.90 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:26 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 35 | 35 |
+| Non-null fields returned | 35 | 35 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 88.1 s | 59.3 s |
+| Per schema field (35) | 2.52 s | 1.69 s |
+| Per value returned | 0.23 s | 0.16 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 14.6 credits | 14.6 credits |
+| Per schema field (35) | 0.417 credits | 0.417 credits |
+| Per value returned | 0.039 credits | 0.039 credits |
+
+## Origin
+
+`source/aia-g703-lake-elmo-pay-application-10-redacted.pdf` is pay application #10 on
+the City of Lake Elmo, MN City Hall, Fire Department and Washington County Sheriff
 Substation remodel, for the period ending October 31, 2022. Page 1 is the **G702-style
-application and certificate for payment**; page 2 is the overall **G703-style
-continuation sheet**, the schedule of values the G702 summarises. **2 pages,
-landscape**, with a text layer. Prepared by the city's construction manager, Hoffmann +
-Uhlhorn Construction, Inc.
+application and certificate for payment**. Page 2 is the overall **G703-style
+continuation sheet**, the schedule of values the G702 summarizes. It is **2 pages,
+landscape**, with a text layer. The city's construction manager, Hoffmann + Uhlhorn
+Construction, Inc., prepared it.
 
 | | |
 |---|---|
@@ -20,21 +114,19 @@ Uhlhorn Construction, Inc.
 | Clearance | Redacted |
 
 The file is a consent item from the city council's November 15, 2022 packet, posted on
-the city's public Laserfiche WebLink records portal, and was downloaded directly. The
-90-page packet was trimmed to its pages 2–3: page 1 is a staff report, and pages 4–90
+the city's public Laserfiche WebLink records portal. It was downloaded directly. The
+90-page packet was trimmed to its pages 2–3. Page 1 is a staff report, and pages 4–90
 are a second G702/G703 pair, invoices, subcontractor pay applications, insurance
 certificates and emails.
 
 **Redaction.** The G703 carries no personal data. The G702 carried three signature
 images (construction manager, architect, notary) and a notary stamp image bearing the
-notary's name and commission expiry. All four images were deleted with
-`document-types/scripts/redact.py`, which removes them from the file rather than
-covering them, and the typed commission-expiry date was replaced with `30-Jun-25`.
+notary's name and commission expiry. All four images were deleted from the file rather
+than covered, and the typed commission-expiry date was replaced with `30-Jun-25`.
 Stand-in signatures in a handwriting font ("J. Sample", "A. Example", "N. Public") were
 drawn where the three signatures were. Every page carried a `/Rotate 90` flag, which was
-folded into the page content first, since `redact.py` mis-sizes boxes on rotated pages.
-Document metadata was cleared. Verified: no removed image or original string remains in
-the committed PDF, and the folder was swept for them.
+folded into the page content before redaction. Document metadata was cleared. No removed
+image or original string remains in the committed PDF.
 
 **Licensing.** AIA's terms forbid posting completed AIA documents for marketing without
 a licence. This sheet is the contractor's own spreadsheet edition of the G703 layout
@@ -45,81 +137,32 @@ Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **construction pay application**, and one of its widest tables:
+### Who processes it
 
-- **A 10-column schedule of values, 32 rows** keyed by CSI division codes (`#0330`,
-  `#2300`) mixed with free-text item numbers (`Insurance`, `Reimburse`, `Contingency`).
-- **Change orders and negatives.** A change orders column and a revised scheduled value
-  per line, with deductions printed in parentheses.
-- **Arithmetic that can be checked.** Revised value = scheduled + change orders; total
-  completed = previous + this period; balance = revised − completed; 5% retainage per
-  line; a totals row; and a G702 summary page whose lines must agree with the G703.
-- **A non-standard edition.** Column letters A–H differ from AIA's own G703, and the
-  header misnames the G702 as "G723", so a schema that relies on AIA lettering breaks.
+A G702 and G703 pair is how a contractor bills for construction work each month. The
+G703 lists every line of the contract's schedule of values, and the G702 totals it into
+the amount due.
 
-## Featured fields: one line revised by a change order
+- **Project owners and public agencies:** they approve each pay application before
+  paying it, as the Lake Elmo city council did here.
+- **Architects and construction managers:** they certify that the work billed matches
+  the work in place.
+- **Construction lenders:** they fund loan draws against the percent complete on each
+  line.
+- **Sureties:** they track billing and retainage on bonded jobs.
+- **General contractors and subcontractors:** they prepare the applications and
+  reconcile them against change orders and payments received.
 
-All on page 2. The request named no page or fields; its notes suggested several, and
-these were chosen from them:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Period ending | 10/31/2022 |
-| HVAC and Controls scheduled value | 962,000.00 |
-| HVAC and Controls change orders | 154,703.00 |
-| HVAC and Controls revised value | 1,116,703.00 |
-| Total completed and stored to date | 6,849,725.77 |
-
-The HVAC line is the largest change order on the job, and the three values show the
-arithmetic the sheet exists for. The application number grounds only on the G702, so it
-is not featured; on page 2 it shares a header box with the period ending date. The
-this-period total, overall % complete and total retainage also ground correctly on
-page 2 and were left out to keep to five.
-
-## What it surfaced
-
-**The table came back whole and consistent.** All 32 rows were extracted (the request
-notes said 33; the sheet has 32). Every column sums to the extracted totals row, with
-retainage within 3 cents, a rounding difference in the source itself. The G702's total
-completed and total retainage match the G703 totals. Parenthesised change orders came
-back negative.
-
-**Amount and percentage grounding is exact.** These fields on page 2 ground to their
-own cells. However, `schedule_of_values[12]` through `[17]` have incorrect `item_number`
-ranges: each points to its scheduled-value cell rather than its item-number cell.
-
-**Two text quirks.** Descriptions containing `&` are marked OFF by `inspect_fields.py`
-only because the parse markdown escapes `&` as `&amp;`; the boxes are right. The
-G702's three-line project name came back with its middle line, "& PUBLIC WORKS
-FACILITIES REMODEL", missing.
-
-## Extraction
-
-**35 leaf fields** (counted from `schema.json`): the application header, the ten
-numbered G702 lines, eleven fields per schedule-of-values row and the nine-column totals
-row.
-
-## Cost
-
-**18.30 credits** at standard tier for 2 pages, parse and extract together.
-
-## Regenerating
-
-The redaction rules file is kept outside the repo. Image boxes are in PDF points on
-page 1 after folding the rotation.
-
-```bash
-curl -sSL -o /tmp/pay-request.pdf "https://miweblink.metro-inet.us/LakeElmoPublic/0/edoc/444946/03%20-%20City%20Center%20Pay%20Request.pdf"
-# keep pages 2-3 and fold the /Rotate 90 into the content
-.venv/bin/python -c "import fitz;d=fitz.open('/tmp/pay-request.pdf');d.select([1,2]);[p.remove_rotation() for p in d];d.save('/tmp/pre.pdf',garbage=4,deflate=True)"
-.venv/bin/python document-types/scripts/redact.py /tmp/pre.pdf \
-    document-types/collection/aia-g703-continuation-sheet/source/aia-g703-lake-elmo-pay-application-10-redacted.pdf \
-    --rules <outside-the-repo>/rules.json \
-    --remove-images 1:50,469,147,511 1:478,485,544,498 1:752,440,791,544 1:405,548,603,612 \
-    --draw-signature "1:60,478,140,506=J. Sample" "1:430,560,560,600=A. Example" "1:482,486,540,497=N. Public" \
-    --handwriting-font document-types/scripts/fonts/IndieFlower-Regular.ttf
-.venv/bin/python document-types/scripts/run_ade.py aia-g703-continuation-sheet                # 18.30 credits
-.venv/bin/python document-types/scripts/run_ade.py aia-g703-continuation-sheet --extract-only # schema iteration
-.venv/bin/python document-types/scripts/build_images.py aia-g703-continuation-sheet           # free
-.venv/bin/python document-types/scripts/inspect_fields.py aia-g703-continuation-sheet --page 2
-```
+- **A 10-column, 32-row schedule of values** on a landscape page, keyed by CSI division
+  codes (`#0330`, `#2300`) mixed with free-text item numbers (`Insurance`, `Reimburse`,
+  `Contingency`).
+- **Change orders and negative amounts,** with deductions printed in parentheses.
+- **Arithmetic that can be checked.** Revised value, total completed, balance and 5%
+  retainage per line, a totals row, and a summary page whose lines must agree with the
+  schedule.
+- **A non-standard edition.** The column letters differ from AIA's own G703, and the
+  header misnames the G702 as "G723".
+- **A certificate page with signature blocks** for the construction manager, the
+  architect and a notary, here carrying stand-in signatures.

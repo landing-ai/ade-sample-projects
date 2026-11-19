@@ -1,8 +1,101 @@
 # Equipment Technical Manual
 
-Source assets for `landing.ai/document-type/equipment-technical-manual`.
+**On the website:** [landing.ai/document-type/equipment-technical-manual](https://landing.ai/document-type/equipment-technical-manual)
 
-## Sample document
+Five service-reference pages from John Deere's 1996 Technical Manual TM1360, the repair
+manual for the 655, 755, 855, 955, 756 and 856 Compact Utility Tractors. They give
+metric and inch fastener torque tables, torque charts and service steps for O-ring face
+seal and O-ring boss fittings, and the diesel fuel specifications for North America.
+
+| | |
+|---|---|
+| Pages | 5 |
+| Fields in the extraction schema | 66 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:54 | 2026-11-19 03:00 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 20,526 | 20,327 |
+| Words under 0.95 confidence | 40 | n/a |
+| Words under 0.80 confidence | 30 | n/a |
+| Words under 0.50 confidence | 7 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 8.1 s | 12.8 s |
+| Per page | 1.6 s | 2.6 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.9 credits | 7.6 credits |
+| Per page | 0.58 credits | 1.52 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:55 | 2026-11-19 03:00 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 66 | 66 |
+| Non-null fields returned | 66 | 66 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 214.7 s | 157.1 s |
+| Per schema field (66) | 3.25 s | 2.38 s |
+| Per value returned | 0.34 s | 0.25 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 19.4 credits | 20.3 credits |
+| Per schema field (66) | 0.294 credits | 0.308 credits |
+| Per value returned | 0.031 credits | 0.033 credits |
+
+## Origin
 
 `source/john-deere-tm1360-torque-and-fuel.pdf` is five pages from **Deere & Company's
 Technical Manual TM1360** (John Deere Lawn & Grounds Care Division, June 1996), the
@@ -24,17 +117,15 @@ the service-reference pages a technician looks things up on:
 - Page 5 (printed 10-20-1): **Diesel fuel** specifications for North America: ASTM D975
   grades, cetane, cold filter plugging point, sulfur, lubricity (BOCLE) and storage.
 
-5 pages, portrait, born-digital text layer throughout (producer VERSACOMP/MASTER), with
-the fastener markings and fitting drawings as vector paths.
+It is **5 pages, portrait**, with a born-digital text layer throughout (producer
+VERSACOMP/MASTER), and the fastener markings and fitting drawings as vector paths.
 
 | | |
 |---|---|
 | Publisher | Deere & Company (John Deere Lawn & Grounds Care Division) |
 | Source | [golftechs.us/Manuals/JDtractors.pdf](http://www.golftechs.us/Manuals/JDtractors.pdf) |
 | Retrieved | 2026-10-14, by script |
-| Clearance | **Public**, by the operator's decision (see below) |
-
-### Provenance
+| Clearance | Public, by the operator's decision (see below) |
 
 The manual is marked COPYRIGHT 1996 Deere & Company, and Deere still sells it (for
 example through deeremanuals.com as TM1360). The copy used here is hosted on
@@ -45,82 +136,35 @@ document with clearance `public` on 2026-10-14.
 
 The original is 570 pages. This sample keeps original pages 21-25 only, in order, and
 the PDF metadata was cleared. The pages carry no personal data, so nothing was redacted.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is a reference manual rather than a form or a statement: dense numeric lookup tables
-whose meaning depends on multi-tier column headers, with diagrams, numbered procedures
-and footnotes around them. The question it tests is whether every number lands under
-the right size, class, condition and unit, which is exactly how a technician reads it.
-Nothing else in the collection has a two-tier header grid of this size (16 value columns
-per row).
+### Who processes it
 
-## Schema
+Equipment manufacturers publish technical manuals for every model they build, and the
+specifications inside them drive repair, maintenance and parts work long after the
+equipment is sold.
 
-`schema.json` has 66 leaf fields: the group headings; both fastener torque tables as
-arrays of rows, each row an object per class or grade with lubricated and dry torque in
-N·m and lb-ft; the two O-ring fitting charts with their service steps and tolerances;
-and the diesel fuel specifications. Across all four tables the extraction returns 624
-values.
+- **Dealers and service technicians:** they look up torque values, fitting procedures
+  and fluid specifications during repairs.
+- **Fleet and facilities maintenance:** golf courses, grounds crews and municipalities
+  build maintenance schedules from manufacturer specifications.
+- **Equipment manufacturers:** service and documentation teams maintain and reissue
+  manuals across model years.
+- **Parts and aftermarket suppliers:** they map specifications to fasteners, fittings
+  and fluids they sell.
+- **Field service and knowledge-base tools:** maintenance software turns manual pages
+  into searchable reference data.
 
-## Featured fields
+### What it contains
 
-Page 2, one complete lookup: the 1/2-inch row and its four SAE grade 5 torque values.
-
-| Field | Value |
-|---|---|
-| Bolt size (in) | 1/2 |
-| SAE grade 5 lubricated torque (N·m) | 85 |
-| SAE grade 5 lubricated torque (lb-ft) | 63 |
-| SAE grade 5 dry torque (N·m) | 110 |
-| SAE grade 5 dry torque (lb-ft) | 80 |
-
-The overlay shows the point of the document type: a value is only correct if it is
-paired with its row and with all three header tiers above it.
-
-The request suggested the metric table on page 1 (M12 class 10.9 lubricated torque, M20
-class 8.8 dry torque, the JDS-G200 reference) or the O-ring boss page. Those are not
-featured because of the grounding instability described next.
-
-## Grounding
-
-Every value extracted correctly in every run, including all 624 table cells. The ranges
-did not.
-
-- **The first extraction grounded every table cell on all five pages**, each to its own
-  cell. After a one-line fix to a schema description, five further runs (four
-  extraction-only, one full parse and extract) each returned one or more whole table
-  sections with correct values but **no ranges at all**: the metric table and the O-ring
-  boss table in all five, the O-ring face seal table and the inch table in four each.
-  No warning or schema violation was reported. The committed output is the full run, in
-  which the inch table grounds cell for cell and the other three tables do not. That is
-  why page 2 is featured rather than page 1.
-- **Where the tables ground, they ground exactly**: the featured crops sit on the right
-  cell of a 17-column grid with no drift. The OCR check flags all five crops only
-  because they are small single-number cells; each was opened and is correct.
-- **The numbered service steps ground OFF** on pages 3 and 4: each step wraps across
-  several printed lines and is matched line by line, so no single line contains the
-  whole value. The text extracted is right.
-- **A printed error passes straight through.** The metric table prints M14 class 12.9
-  dry as 260 N·m and 109 lb-ft; 260 N·m is about 192 lb-ft, so the 109 looks like a
-  transposition in the source. Extraction reports what is printed, which is correct
-  behaviour, and does not flag it.
-- Page 2's running header reads "Metric Cap Screw Torque Values" above the inch table, as
-  printed.
-
-## Credits
-
-The committed output (one parse of 5 pages and one extraction, DPT-3 Pro, standard tier)
-cost **26.70 credits**. Building it cost 130.20 in all: two full runs at 26.70 and four
-extraction-only runs at 19.20, spent chasing the grounding instability above.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py equipment-technical-manual
-.venv/bin/python document-types/scripts/build_images.py equipment-technical-manual
-.venv/bin/python document-types/scripts/inspect_fields.py equipment-technical-manual --page 2
-```
-
-A re-run may ground different tables from the committed one; check with
-`inspect_fields.py` before featuring anything.
+- **Dense numeric lookup tables** with multi-tier column headers: size rows under class
+  or grade, then lubricated or dry, then N·m and lb-ft, for 16 value columns per row.
+- **Footnote markers** on header cells.
+- **Vector diagrams** of fastener head markings and fittings beside the tables.
+- **Numbered procedures** interleaved with drawings, with steps that wrap across lines.
+- **Specification text** with standards references and units (ASTM D975, cetane,
+  sulfur, lubricity).
+- **A printed error** in the metric table, where one lb-ft value does not match its N·m
+  value.

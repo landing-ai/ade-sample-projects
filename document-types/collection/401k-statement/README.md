@@ -1,16 +1,109 @@
 # 401(k) statement
 
-Source assets for `landing.ai/document-type/401k-statement`.
+**On the website:** [landing.ai/document-type/401k-statement](https://landing.ai/document-type/401k-statement)
 
-## Sample document
+A quarterly participant statement for the Publix Super Markets, Inc. 401(k) SMART Plan,
+administered by Voya Financial, for January 1 to March 31, 2023. It shows the account
+value and its history, an estimated retirement income, holdings by fund, contribution
+rates and elections, and the quarter's account activity.
 
-`source/401k-statement-redacted.pdf` — a quarterly statement for the Publix Super
-Markets, Inc. 401(k) SMART Plan, administered by Voya Financial, January 1 to March 31,
-2023. **7 pages, portrait (US Letter)**: an account summary with a balance history chart,
-an estimated retirement income illustration, holdings by fund, contribution rates and
-investment elections, an account activity table, fees and messages, and two scanned
-plan-sponsor inserts (fund performance, and news about the company match and Publix
-stock dividends).
+| | |
+|---|---|
+| Pages | 7 |
+| Fields in the extraction schema | 25 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:25 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 25,400 | 26,966 |
+| Words under 0.95 confidence | 75 | n/a |
+| Words under 0.80 confidence | 24 | n/a |
+| Words under 0.50 confidence | 5 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 30.3 s | 42.1 s |
+| Per page | 4.3 s | 6.0 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.6 credits | 10.3 credits |
+| Per page | 0.51 credits | 1.47 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:26 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 25 | 25 |
+| Non-null fields returned | 25 | 25 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 303.6 s | 57.4 s |
+| Per schema field (25) | 12.15 s | 2.30 s |
+| Per value returned | 6.46 s | 1.22 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 6.5 credits | 6.8 credits |
+| Per schema field (25) | 0.260 credits | 0.272 credits |
+| Per value returned | 0.138 credits | 0.145 credits |
+
+## Origin
+
+`source/401k-statement-redacted.pdf` is a quarterly statement for the Publix Super
+Markets, Inc. 401(k) SMART Plan, administered by Voya Financial, for January 1 to March
+31, 2023. It is **7 pages, portrait (US Letter)**: an account summary with a balance
+history chart, an estimated retirement income illustration, holdings by fund,
+contribution rates and investment elections, an account activity table, fees and
+messages, and two scanned plan-sponsor inserts (fund performance, and news about the
+company match and Publix stock dividends).
 
 | | |
 |---|---|
@@ -19,12 +112,13 @@ stock dividends).
 | Retrieved | 2026-09-29, downloaded manually |
 | Clearance | Redacted |
 
-A real participant's statement, saved to PDF from Safari on an iPhone and uploaded to
-Scribd under the title "Safari". Scribd is not the publisher, so it is treated as a
-personal record, and it was downloaded by hand because Scribd blocks scripted requests.
+This is a real participant's statement, saved to PDF from Safari on an iPhone and
+uploaded to Scribd under the title "Safari". Scribd is not the publisher, so the file is
+treated as a personal record. It was downloaded by hand because Scribd blocks scripted
+requests.
 
-Replaced with `document-types/scripts/redact.py`, which removes the underlying text
-rather than covering it:
+The personal details were replaced with `document-types/scripts/redact.py`, which removes
+the underlying text rather than covering it:
 
 | What | With |
 |---|---|
@@ -34,90 +128,38 @@ rather than covering it:
 | Employee number | A plausible random stand-in, keeping the leading zeros |
 
 Kept as printed: the plan, sponsor and recordkeeper, every balance, fund and price, the
-contribution rates and elections, the payroll location code, and the two scanned inserts.
-None identifies the participant once the name, address and employee number are gone. The
-PDF metadata was cleared. Verified: no original value is extractable from the committed
-PDF, no other line of text changed, and none appears in any file in this folder.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+contribution rates and elections, the payroll location code, and the two scanned
+inserts. None of these identifies the participant once the name, address and employee
+number are gone. The PDF metadata was cleared. No original value is extractable from the
+committed PDF, no other line of text changed, and no original value appears in any file
+in this folder. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **401(k) statement**, and different from the TIAA statement at
-`retirement-statement`:
+### Who processes it
 
-- **Employer stock.** Nearly half the account is Publix stock, with a cash component and
-  an internal transfer between them in the activity table.
-- **A recordkeeper's layout.** Voya's orange panels, icon rows and a balance history bar
-  chart, where the TIAA statement is plain tables.
-- **Scanned pages in a digital PDF.** Pages 6 and 7 are images of the plan sponsor's
-  inserts, so the parse has to read them by OCR; the fund performance table on page 6
-  comes back as a table.
-- **Payroll detail.** Contribution rates by category and investment elections for future
-  contributions.
+A 401(k) statement is the quarterly record of a worker's retirement savings: what went
+in, how it is invested and what it is worth.
 
-## Featured fields: what a lender verifies
+- **Mortgage and consumer lending:** lenders verify retirement assets as reserves, and
+  check the balance and the statement date.
+- **Financial advisors and wealth managers:** they consolidate statements from many
+  recordkeepers to see a client's full holdings and contribution rates.
+- **Rollover and account transfer teams:** receiving institutions read the plan,
+  holdings and balances to move money out of an employer plan.
+- **Divorce and estate attorneys:** retirement accounts are divided or valued from the
+  statements as of a given date.
+- **Plan sponsors and auditors:** employers and their auditors check contributions and
+  the company match against payroll.
 
-All on page 1, as the document owner asked:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Account holder | JANE Q SAMPLE |
-| Statement date | 2023-03-31 |
-| Account balance | $13,650.02 |
-| Plan provider | Voya |
-| Employee contributions | $542.08 |
-
-The account holder is the stand-in name. The account balance is the closing value in the
-summary table, on March 31, 2023. The plan provider is Voya, the recordkeeper, boxed on
-the VOYA logo at the foot of the page, which the parse reads as text. All five were
-already in the schema, so extraction was not re-run.
-
-**The statement date is flagged, and correct.** It is extracted as the ISO date
-2023-03-31 and boxed on the printed period "January 1, 2023 - March 31, 2023", so
-`build_images.py` warns that the value is not in the boxed text. The box contains the
-date in another format; the crop was checked by eye.
-
-The summary reconciles: $11,412.38 opening, plus $542.08 and $572.87 in contributions and
-$1,122.69 in gains, is $13,650.02.
-
-## What it surfaced
-
-**The employer's name is inside a panel that grounds as one block.** The plan sponsor,
-"PUBLIX SUPER MARKETS, INC. 401(K) SMART PLAN", is printed as the banner of the orange
-panel that also holds the Account Balance History chart, and extraction grounds it to the
-whole panel. It extracts correctly but its box is far too loose to feature, so it is
-not featured.
-
-**The headline figure grounds to its neighbour.** The large "$13,650.02" in the orange
-account value banner is not where `account_value` points; its range lands on a nearby
-block. The same figure in the summary table grounds exactly, and is the one featured.
-
-**Everything extracts correctly.** All five holdings with units, prices and values, both
-contribution rates, both annuity estimates, the summary, and the plan, sponsor and
-recordkeeper. The employee number comes back with its leading zeros, as the schema asks.
-
-**Dates are normalized.** The period dates come back as ISO dates, so they are flagged as
-not matching the printed "January 1, 2023 - March 31, 2023", though they are right.
-
-## Extraction
-
-**25 leaf fields**: plan, sponsor, recordkeeper, participant and employee number, the
-period, the account value and seven-line activity summary, performance, holdings,
-contribution rates and the estimated monthly income. Everything extracts correctly.
-
-## Cost
-
-**17.10 credits** at standard tier for 7 pages: 10.30 to parse, 6.80 to extract.
-
-## Regenerating
-
-```bash
-# The source is a manual download from the url, redacted with redact.py and a rules
-# file kept outside the repo. The committed PDF is the redacted one.
-.venv/bin/python document-types/scripts/run_ade.py 401k-statement                # 17.10 credits
-.venv/bin/python document-types/scripts/run_ade.py 401k-statement --extract-only # 6.80, schema iteration
-.venv/bin/python document-types/scripts/build_images.py 401k-statement           # free
-.venv/bin/python document-types/scripts/inspect_fields.py 401k-statement --page 1
-```
+- **Designed panels and icon rows** in the recordkeeper's colors, with figures set in
+  large type inside banners.
+- **A bar chart** of the account balance history.
+- **Tables of holdings and account activity,** with units, prices and values per fund,
+  and an internal transfer between employer stock and its cash component.
+- **Contribution rates and investment elections** by category.
+- **Scanned pages inside a digital PDF.** Pages 6 and 7 are images of the plan sponsor's
+  inserts, including a fund performance table, so their text has to be read from the
+  page image.

@@ -1,12 +1,106 @@
 # IRA statement
 
-Source assets for `landing.ai/document-type/ira-statement`.
+**On the website:** [landing.ai/document-type/ira-statement](https://landing.ai/document-type/ira-statement)
 
-## Sample document
+A monthly Premiere Select Rollover IRA statement for September 2025, issued through
+Commonwealth Financial Network and carried by National Financial Services. It has a
+summary with a portfolio value chart, an account overview with allocation, change in
+value, retirement contributions and distributions, income and fees, a beneficiary
+summary, holdings, activity, bank deposit detail, footnotes and a glossary.
 
-`source/ira-statement-redacted.pdf` — a monthly Premiere Select Rollover IRA statement
-for September 1 to September 30, 2025. **10 pages, landscape (US Letter)**: a summary
-with a portfolio value chart, an account overview (allocation, change in value,
+| | |
+|---|---|
+| Pages | 10 |
+| Fields in the extraction schema | 30 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:11 | 2026-11-19 03:23 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 42,884 | 43,058 |
+| Words under 0.95 confidence | 111 | n/a |
+| Words under 0.80 confidence | 36 | n/a |
+| Words under 0.50 confidence | 1 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 10.4 s | 18.8 s |
+| Per page | 1.0 s | 1.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 5.8 credits | 15.8 credits |
+| Per page | 0.58 credits | 1.58 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:11 | 2026-11-19 03:24 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 30 | 30 |
+| Non-null fields returned | 30 | 30 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 188.1 s | 721.3 s |
+| Per schema field (30) | 6.27 s | 24.04 s |
+| Per value returned | 2.07 s | 7.93 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 11.3 credits | 11.3 credits |
+| Per schema field (30) | 0.377 credits | 0.377 credits |
+| Per value returned | 0.124 credits | 0.124 credits |
+
+## Origin
+
+`source/ira-statement-redacted.pdf` is a monthly Premiere Select Rollover IRA statement
+for September 1 to September 30, 2025. It is **10 pages, landscape (US Letter)**: a
+summary with a portfolio value chart, an account overview (allocation, change in value,
 retirement contributions and distributions, income, fees), a beneficiary summary and
 messages, holdings, activity, bank deposit detail, footnotes and a glossary.
 
@@ -17,13 +111,12 @@ messages, holdings, activity, bank deposit detail, footnotes and a glossary.
 | Retrieved | 2026-09-29, downloaded manually |
 | Clearance | Redacted |
 
-A real account holder's statement, uploaded to Scribd by a third party and downloaded by
-hand, because Scribd blocks scripted requests. Scribd is not the publisher, so it is
-treated as a personal record. The listing's title ends in the account number's last
-digits, so the url is recorded without it.
+This is a real account holder's statement, uploaded to Scribd by a third party. It was
+downloaded by hand, because Scribd blocks scripted requests. Scribd is not the
+publisher, so the file is treated as a personal record. The listing's title ends in the
+account number's last digits, so the URL is recorded without it.
 
-Replaced with `document-types/scripts/redact.py`, which removes the underlying text
-rather than covering it:
+These values were replaced, removing the underlying text rather than covering it:
 
 | What | With |
 |---|---|
@@ -41,81 +134,35 @@ extractable from the committed PDF, no other line of text changed, and none appe
 any file in this folder. The stand-in name is shorter than the original, so the page
 header leaves a gap before "- Premiere Select Rollover IRA".
 
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **IRA statement**, and different from the workplace plans at
-`401k-statement` and `retirement-statement`:
+### Who processes it
 
-- **Three firms on one statement.** The broker-dealer, the clearing firm that carries the
-  account and the advisory firm each appear, and a schema has to tell them apart.
-- **Beneficiaries.** Designated beneficiaries with allocations, relationships and
-  primary or contingent status, which neither workplace statement carries.
-- **IRA-specific activity.** Contributions for the current and prior tax year, and
-  distributions, reported separately from ordinary income.
-- **Landscape pages and a brokerage layout,** with multi-line security descriptions and
-  estimated yield and income per holding.
+An IRA statement is the monthly record of an individual retirement account held at a
+brokerage. It is a standard proof of retirement assets.
 
-## Featured fields: what a lender verifies
+- **Mortgage lending:** underwriters count vested retirement assets toward reserves
+  and verify them from recent statements.
+- **Wealth management and financial planning:** advisers consolidate IRA holdings
+  held at other firms into one plan.
+- **Rollovers and account transfers:** receiving custodians use statements to set up
+  incoming transfers.
+- **Tax preparation:** preparers check contributions by tax year and distributions.
+- **Estate settlement:** executors and attorneys identify designated beneficiaries and
+  their allocations.
 
-All on page 1. The request named no page or fields; following the lending framing chosen
-for the 401(k), bank and HELOC statements:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Account holder | JOHN Q SAMPLE |
-| Account number | B19-187999 |
-| Statement date | 2025-09-30 |
-| Account value | $164,145.49 |
-| Provider | Commonwealth Financial Network |
-
-The account holder and account number are the stand-ins. The account holder's box covers
-the whole header line, which also carries the account type. The provider is the
-broker-dealer, boxed on its name in the return-address block.
-
-**The statement date is flagged, and correct.** It is extracted as the ISO date
-2025-09-30 and boxed on the printed "STATEMENT FOR THE PERIOD SEPTEMBER 1, 2025 TO
-SEPTEMBER 30, 2025", so `build_images.py` warns that the value is not in the boxed text.
-The box contains the date in another format; the crop was checked by eye.
-
-## What it surfaced
-
-**The three firms come back right.** Broker-dealer, custodian and advisory firm are each
-extracted correctly, although the advisory firm appears only as a logo and in small
-print.
-
-**Every value extracts correctly.** The nine holdings sum to the $164,145.49 total, the
-change in value and retirement activity match, and the beneficiaries come back with
-their allocations and designations.
-
-**Descriptions are inconsistent across rows.** Seven of the nine holding descriptions
-absorb the "Estimated Yield ... Dividend Option Cash" lines printed beneath the security
-name, and two do not. The cash sweep's estimated annual income comes back as 0 where
-nothing is printed.
-
-**Dates are normalized.** The period dates come back as ISO dates, so they are flagged as
-not matching the printed period, though they are right.
-
-## Extraction
-
-**30 leaf fields**: account holder, type and number, the three firms, the period, the
-beginning and ending values, the change in value, retirement contributions and
-distributions, allocation, holdings and beneficiaries. Everything extracts correctly
-apart from the small inconsistencies above.
-
-## Cost
-
-**27.80 credits** at standard tier for 10 pages: 15.90 to parse, 11.90 to extract.
-
-## Regenerating
-
-```bash
-# The source is a manual download from the url, redacted with redact.py and a rules
-# file kept outside the repo. The committed PDF is the redacted one.
-.venv/bin/python document-types/scripts/run_ade.py ira-statement                # 27.80 credits
-.venv/bin/python document-types/scripts/run_ade.py ira-statement --extract-only # 11.90, schema iteration
-.venv/bin/python document-types/scripts/build_images.py ira-statement           # free
-.venv/bin/python document-types/scripts/inspect_fields.py ira-statement --page 1
-```
+- **Three firms on one statement:** the broker-dealer, the clearing firm that carries the
+  account and the advisory firm. The advisory firm appears only as a logo and in small
+  print.
+- **A beneficiary table** with allocations, relationships and primary or contingent
+  status.
+- **IRA-specific activity,** with contributions for the current and prior tax year and
+  distributions reported apart from ordinary income.
+- **A portfolio value chart** on the summary page.
+- **Landscape pages with a brokerage holdings layout,** with multi-line security
+  descriptions and estimated yield and income per holding.
+- **Footnotes and a glossary** in small print.

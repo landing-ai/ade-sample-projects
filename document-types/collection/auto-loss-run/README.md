@@ -1,15 +1,109 @@
 # Auto Loss Run
 
-Source assets for `landing.ai/document-type/auto-loss-run`.
+**On the website:** [landing.ai/document-type/auto-loss-run](https://landing.ai/document-type/auto-loss-run)
 
-## Sample document
+The Automobile Physical Damage section of a claim/loss report that the Texas
+Association of Counties Risk Management Pool produced for Cameron County, Texas. It
+covers five policy years, July 2011 to July 2016, and lists 112 claims with their loss
+dates, causes and amounts paid, recovered and incurred. Each year closes with a Totals
+row, and a summary block repeats the five totals.
 
-`source/cameron-county-apd-loss-runs-2011-2016.pdf`: the Automobile Physical Damage
+| | |
+|---|---|
+| Pages | 4 |
+| Fields in the extraction schema | 24 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:31 | 2026-11-19 02:30 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 23,603 | 24,800 |
+| Words under 0.95 confidence | 19 | n/a |
+| Words under 0.80 confidence | 3 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.2 s | 11.4 s |
+| Per page | 1.8 s | 2.8 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.0 credits | 8.2 credits |
+| Per page | 0.75 credits | 2.05 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:31 | 2026-11-19 02:30 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 24 | 24 |
+| Non-null fields returned | 24 | 24 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 239.4 s | 181.6 s |
+| Per schema field (24) | 9.98 s | 7.56 s |
+| Per value returned | 0.20 s | 0.16 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 33.8 credits | 34.0 credits |
+| Per schema field (24) | 1.408 credits | 1.417 credits |
+| Per value returned | 0.029 credits | 0.029 credits |
+
+## Origin
+
+`source/cameron-county-apd-loss-runs-2011-2016.pdf` is the Automobile Physical Damage
 section of a Claim/Loss Report produced by the Texas Association of Counties Risk
-Management Pool for its member Cameron County, Texas, covering five policy years
-(July 2011 to July 2016). **4 pages, landscape.** Pages 1 to 3 list 112 claims under
-five policy headers, each closed by a Totals row; page 3 ends and page 4 continues a
-summary block that repeats the five Totals rows.
+Management Pool for its member Cameron County, Texas, covering five policy years (July
+2011 to July 2016). It is **4 pages, landscape**. Pages 1 to 3 list 112 claims under five
+policy headers, each closed by a Totals row; page 3 ends and page 4 continues a summary
+block that repeats the five Totals rows.
 
 | | |
 |---|---|
@@ -28,69 +122,36 @@ compensation run behind the [`loss-run`](../loss-run/) page; this one is the aut
 across three lines of coverage. Only original pages 5 to 8, Automobile Physical Damage,
 are kept, unaltered. On those pages every claimant is the county itself. The Automobile
 Liability pages (1 to 4) and General Liability pages (9 to 13) name private claimants;
-they were removed whole with `redact.py --drop-pages` before the file entered the repo
-or was parsed. The output was verified to carry none of the dropped pages' claimant
-strings, and the PDF's document metadata was cleared.
+they were removed whole before the file entered the repo or was parsed. The output was
+verified to carry none of the dropped pages' claimant strings, and the PDF's document
+metadata was cleared. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The `loss-run` page is a long workers' compensation run summarised by period. This one
-is a commercial auto run read at claim level: a 10-column table where most rows are $0,
-with a policy header and a Totals row bracketing each year, and two years that break
-across a page. Recoveries can exceed what was paid, so Total Incurred ($48) is sometimes
-far below Pool Paid ($4,970); the columns cannot be reconstructed from one another and
-have to be read by position.
+### Who processes it
 
-## Schema
+A loss run is an insurer's or pool's history of claims on an account. Underwriters ask
+for one at every new quote and renewal.
 
-`schema.json` resolves to **24 leaf fields**: report details (title, report date,
-carrier, insured member, year range), and for each policy year its line of coverage,
-policy ID and effective date range, every claim row (ten columns), and the Totals row.
-It does not extract the cross-year summary block on pages 3 and 4, which repeats the
-Totals rows.
+- **Commercial insurance underwriting:** carriers price an account from its claim
+  frequency, severity and open reserves across recent years.
+- **Insurance brokers:** brokers collect loss runs from the incumbent carrier and send
+  them to markets when they shop a renewal.
+- **Public entities and risk pools:** counties and cities publish loss runs with
+  insurance RFPs, as Cameron County did here, so bidders can price the account.
+- **Fleet and risk management:** risk managers track causes of loss across years to
+  target safety programs.
+- **Mergers and acquisitions:** buyers review a target's loss history during due
+  diligence.
 
-The first extraction read the 2015-16 year one column to the left: each claim's Pool
-Paid landed in Total Incurred, Recoveries in Pool Paid, and so on, while the other four
-years were right. The parse was correct. Spelling out the ten-column order in the
-`claims` description fixed it; the committed extraction has every year's claim rows
-summing to its printed Totals row, within the source's own $1 rounding.
+### What it contains
 
-## Featured fields: one claim in its policy year
-
-All on page 1 (original page 5):
-
-| Field | Value |
-|---|---|
-| Policy ID | RMP-00370-201107 |
-| Claim number | APD201102084-1 |
-| Cause of loss | STRUCK AN ANIMAL |
-| Claim total incurred | $13,043 |
-| Policy-year total incurred | $17,240 |
-
-The overlay reads from the policy header down through the year's largest claim to the
-Totals row it rolls into. The request's notes suggested page 5 and, as suggestions only,
-the line of coverage and policy ID, effective date range, this claim's number, loss date,
-total incurred, pool paid and cause, the year's claim count and total incurred, and the
-report date. All of them ground `ok` on this page; five were picked to tell one story
-within the overlay limit.
-
-## Grounding
-
-Clean on the featured page: every claim cell, policy header and Totals cell on page 1
-resolves to its own cell at its first occurrence. Report-level fields ground to the page
-header, and the carrier name to the logo's figure description.
-
-## Credits
-
-At standard tier: **40.9** for the parse and first extraction, and 32.8 for one
-extraction-only rerun to fix the column shift. **73.7 in total**. Re-creating the
-committed output from scratch costs about 41.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py auto-loss-run                 # parse + extract
-.venv/bin/python document-types/scripts/run_ade.py auto-loss-run --extract-only  # extract only
-.venv/bin/python document-types/scripts/inspect_fields.py auto-loss-run --page 1
-.venv/bin/python document-types/scripts/build_images.py auto-loss-run
-```
+- **A wide 10-column claim table** on landscape pages, with most rows showing $0 in
+  several columns.
+- **Policy headers and Totals rows** that bracket each year's claims inside one
+  continuous table.
+- **Tables that break across pages,** with two policy years split over a page break.
+- **Columns that cannot be derived from one another,** since recoveries can exceed
+  what was paid, so each amount has to be read by position.
+- **A summary block that spans two pages** and repeats the yearly totals.
+- **A logo** in the page header.

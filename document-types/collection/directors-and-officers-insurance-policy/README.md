@@ -1,13 +1,107 @@
 # D&O Insurance Policy
 
-Source assets for `landing.ai/document-type/directors-and-officers-insurance-policy`.
+**On the website:** [landing.ai/document-type/directors-and-officers-insurance-policy](https://landing.ai/document-type/directors-and-officers-insurance-policy)
 
-## Sample document
+A complete, issued Travelers SelectOne+ policy with Mutual Fund Liability coverage for
+Monteagle Funds, a registered investment company, for March 2022 to March 2023. The
+declarations give the policy number, insured, policy period, limit of liability,
+retention, premium and extended reporting terms. The rest is the general terms,
+the coverage part and the endorsements.
 
-`source/directors-and-officers-insurance-policy-travelers.pdf`: a complete, issued
+| | |
+|---|---|
+| Pages | 26 |
+| Fields in the extraction schema | 45 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:48 | 2026-11-19 02:55 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 84,418 | 90,118 |
+| Words under 0.95 confidence | 57 | n/a |
+| Words under 0.80 confidence | 31 | n/a |
+| Words under 0.50 confidence | 2 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 16.7 s | 24.6 s |
+| Per page | 0.6 s | 0.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 12.4 credits | 35.6 credits |
+| Per page | 0.48 credits | 1.37 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:49 | 2026-11-19 02:56 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 45 | 45 |
+| Non-null fields returned | 44 | 44 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 91.8 s | 153.3 s |
+| Per schema field (45) | 2.04 s | 3.41 s |
+| Per value returned | 1.37 s | 2.29 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 19.4 credits | 20.5 credits |
+| Per schema field (45) | 0.431 credits | 0.456 credits |
+| Per value returned | 0.290 credits | 0.306 credits |
+
+## Origin
+
+`source/directors-and-officers-insurance-policy-travelers.pdf` is a complete, issued
 **Travelers SelectOne+ Investment Advisers and Funds** policy with **Mutual Fund
-Liability** coverage, for the policy year March 16, 2022 to March 16, 2023. **26 pages,
-portrait**, with a text layer.
+Liability** coverage, for the policy year March 16, 2022 to March 16, 2023. It is **26
+pages, portrait**, with a text layer.
 
 The named insured is Monteagle Funds, a registered investment company (a fund trust with
 seven series). The policy is laid out the way most management liability policies are:
@@ -19,17 +113,16 @@ seven series). The policy is laid out the way most management liability policies
 - **Terrorism endorsements** (pages 4-5).
 - **General Terms and Conditions** (pages 6-16), the common definitions and conditions.
 - **Endorsements** (pages 17-18 and 25-26): specified entities (the seven funds), global
-  coverage compliance, defense expenses for investigating and monitoring claims, and mock
-  regulatory examination.
+  coverage compliance, defense expenses for investigating and monitoring claims, and
+  mock regulatory examination.
 - **Mutual Fund Liability Coverage part** (pages 19-24): insuring agreements,
   definitions and exclusions.
 
-**This is a mutual-fund management liability policy, not a classic corporate D&O
-policy.** It covers the fund trust and its directors, trustees and officers (with
-optional independent-director coverage, not purchased here) rather than the board of an
-operating company. The structure and the key terms (claims-made basis, defense inside
-limits, retention, prior or pending proceeding date, extended reporting period) are the
-same as a corporate D&O policy, which is why it serves as the sample.
+This is a mutual-fund management liability policy, not a classic corporate D&O policy.
+It covers the fund trust and its directors, trustees and officers rather than the board
+of an operating company. The structure and the key terms (claims-made basis, defense
+inside limits, retention, prior or pending proceeding date, extended reporting period)
+are the same as a corporate D&O policy, which is why it serves as the sample.
 
 | | |
 |---|---|
@@ -37,7 +130,7 @@ same as a corporate D&O policy, which is why it serves as the sample.
 | Source | [SEC EDGAR, monteagle4017g.pdf](https://www.sec.gov/Archives/edgar/data/1045701/000116204422000446/monteagle4017g.pdf) |
 | Filing | Form 40-17G (fidelity bond and insurance filing by a registered investment company), accession 0001162044-22-000446, CIK 1045701 |
 | Retrieved | 2026-10-04, by script |
-| Clearance | **Public** |
+| Clearance | Public |
 
 Registered investment companies file their bonds and insurance policies on EDGAR under
 Rule 17g-1, so this policy is a public record. The kept pages name only organizations:
@@ -49,95 +142,45 @@ Two changes from the filed PDF:
 - **Pages 1-3 were dropped.** They are the fund's cover letter, a secretary's
   certificate and the board resolutions approving the coverage, which are not part of
   the policy and name individuals and a direct phone line. Page numbers here are the
-  filing's minus three. (The cover letter also describes a different policy from the one
-  attached, a filing error; dropping it removes that inconsistency too.)
+  filing's minus three. The cover letter also describes a different policy from the one
+  attached, a filing error; dropping it removes that inconsistency too.
 - **PDF metadata was cleared** (the filer's Word document title, author initials,
   producer and dates). The policy pages are otherwise unchanged.
 
 The declarations carry the insurer's two pre-printed facsimile officer signatures
 (President and Corporate Secretary), with no printed names. They are part of every
-Travelers policy of this form and were left in place.
+Travelers policy of this form and were left in place. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is a real, issued policy rather than a specimen form, so the declarations are filled
-in, and it is long: 26 pages in which the values that matter sit on two declarations
-pages and the rest is dense two-level legal prose. That is the realistic shape of an
-insurance policy, and it tests two things:
+### Who processes it
 
-- **Finding the declarations among the boilerplate.** The limit, retention and premium
-  appear once, on page 2. Terms such as "Limit of Liability" and "Retention" are used
-  dozens of times in the conditions that follow.
-- **Reading terms that are stated in prose, not fields.** Whether the policy is
-  claims-made, whether defense costs erode the limit and whether the insurer has a duty
-  to defend are never labelled values. They are stated in the capitalized warning on the
-  declarations and repeated in the conditions. The 60-day deadline for electing the
-  extended reporting period appears only in the general terms on page 9.
+A management liability policy protects an organization's directors and officers against
+claims over their decisions. The declarations set the price and limits, and the
+conditions decide how claims are paid.
 
-## Schema
+- **Insurance brokers:** they compare limits, retentions, premiums and endorsements
+  across carriers at each renewal.
+- **Carriers and underwriters:** they check issued policies against the bound terms and
+  review prior coverage on submissions.
+- **Corporate legal and risk management:** they track policy periods, notice addresses
+  and claims-made deadlines.
+- **Fund boards and compliance:** registered investment companies file these policies
+  with the SEC and review the coverage each year.
+- **M&A and financing due diligence:** counsel confirm D&O coverage and its extended
+  reporting terms before a deal closes.
 
-`schema.json` covers the policy number and form title, the insurer, the named insured
-and address, the policy period, claim notice contacts, coverages included, coverage
-details (limit, derivative investigation limit, independent-director coverage,
-retention, prior or pending proceeding date), premium, the extended reporting period
-(premium percentage, months, election deadline), shared limit, forms attached, the
-producer, three policy-character flags (claims-made, defense inside limits, duty to
-defend), the specified entities, and the attached endorsements.
+### What it contains
 
-**45 leaf fields** (counted from the schema). Every value extracted correctly on the
-first run, including all three prose-derived flags and the 60-day election deadline.
-
-## Featured fields: the economics, from page 2
-
-| Field | Value |
-|---|---|
-| Limit of liability | 1,000,000 |
-| Retention per claim | 75,000 |
-| Policy premium | 14,366 |
-| Extended reporting premium (%) | 125 |
-| Extended reporting months | 12 |
-
-Read together: how much cover the fund bought, what it pays itself on each claim before
-the cover starts, what the year costs, and what it would cost to keep reporting claims
-for a year after the policy ends. All five come from ITEMs 5-7 on one page. The request
-suggested these plus the prior or pending proceeding date, which could not be featured
-(see below). No person is featured.
-
-## Grounding notes
-
-- **The declarations ground cleanly, line by line.** Each amount boxes its own row
-  ("$1,000,000 for all Claims", "$75,000 for each Claim"), and the two extended reporting
-  lines get separate boxes.
-- **The prior or pending proceeding date grounds `OFF`.** The value is right
-  (1998-03-16, reformatted from "March 16, 1998"), but its range points at the
-  "Not Applicable / Supplemental Independent Director" lines above it rather than its
-  own line, one line below the retention. `retention_basis` ("for each Claim") has the
-  same misplaced range, although it is printed on the retention line itself.
-- **Policy period dates ground `OFF`** because the ISO dates are not printed; the box is
-  the right line ("Inception Date: March 16, 2022 Expiration Date: ...").
-- **The prose flags point at the right sentences.** `duty_to_defend` grounds to "THE
-  COMPANY HAS NO DUTY TO DEFEND ANY CLAIM" and to the matching condition on page 10, and
-  `defense_expenses_within_limits` to the capitalized warning and the limits condition on
-  page 9. They are `OFF` only because a boolean is never printed.
-- **The policy number grounds on five pages**: the declarations and every endorsement
-  that repeats it, which is what the occurrence index is for.
-- **Endorsement titles split across two lines ground `OFF`**: "Cap On Losses From
-  Certified Acts Of / Terrorism Endorsement" is two blocks, and each half alone does not
-  contain the whole title. Single-line titles ground `ok`.
-- **The parse transcribed the facsimile signatures as names.** Each signature becomes
-  `[SIGNED]` followed by a reading of the handwriting, which is approximate. The schema
-  does not ask for the signers.
-- **Every form number in ITEM 9 grounds to the same line**, since the eight numbers are
-  one semicolon-separated run of text.
-
-## Cost
-
-**55.50 credits** at standard tier: one 26-page parse and one extraction. No reruns.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py directors-and-officers-insurance-policy
-.venv/bin/python document-types/scripts/build_images.py directors-and-officers-insurance-policy
-.venv/bin/python document-types/scripts/inspect_fields.py directors-and-officers-insurance-policy --page 2
-```
+- **A long policy** whose key values sit on two declarations pages among 26 pages of
+  dense, two-level legal prose.
+- **Terms that repeat throughout the conditions,** such as "Limit of Liability" and
+  "Retention", so the declarations values have to be found among them.
+- **Policy terms stated in prose, not fields:** the claims-made basis, defense costs
+  inside the limit and no duty to defend appear in a capitalized warning and in the
+  conditions.
+- **Numbered ITEMs** on the declarations, with a semicolon-separated run of form numbers
+  in one line.
+- **Endorsement titles that wrap across two lines.**
+- **Facsimile officer signatures** on the declarations.

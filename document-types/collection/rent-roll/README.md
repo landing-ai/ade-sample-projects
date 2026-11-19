@@ -1,97 +1,148 @@
 # Rent Roll
 
-Source assets for `landing.ai/document-type/rent-roll`.
+**On the website:** [landing.ai/document-type/rent-roll](https://landing.ai/document-type/rent-roll)
 
-## Sample document
-
-The rent roll for Lund Pointe Apartments, a 25-unit multifamily property in Port Orchard,
-Washington, taken from the offering memorandum the listing broker, Neil Walter Company,
-published to market the property in 2016.
+The rent roll for Lund Pointe Apartments, a 25-unit multifamily property in Port
+Orchard, Washington, from the broker's 2016 offering memorandum. It is one table with a
+row per unit (unit, bed/bath, status, square feet, total rent and other charges) and a
+totals row, under a header naming the property and its address.
 
 | | |
 |---|---|
-| File | `source/lund-pointe-rent-roll.pdf` |
-| Pages | 1 (page 11 of the 17-page offering memorandum) |
-| Orientation | Landscape |
-| Layer | Native text, no scanning |
+| Pages | 1 |
+| Fields in the extraction schema | 16 |
 
-One table: 25 unit rows (unit, bed/bath, status, square feet, total rent, other charges)
-and a totals row, under a header line giving the property name, address range, unit list,
-city, state and ZIP.
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
 
-## Provenance
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:28 | 2026-11-19 03:48 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 2,845 | 2,875 |
+| Words under 0.95 confidence | 2 | n/a |
+| Words under 0.80 confidence | 0 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.4 s | 6.8 s |
+| Per page | 2.4 s | 6.8 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.5 credits | 1.3 credits |
+| Per page | 0.50 credits | 1.30 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:28 | 2026-11-19 03:49 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 16 | 16 |
+| Non-null fields returned | 16 | 16 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 386.2 s | 111.3 s |
+| Per schema field (16) | 24.14 s | 6.96 s |
+| Per value returned | 2.10 s | 0.60 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 4.3 credits | 4.3 credits |
+| Per schema field (16) | 0.269 credits | 0.269 credits |
+| Per value returned | 0.023 credits | 0.023 credits |
+
+## Origin
+
+`source/lund-pointe-rent-roll.pdf` is the **rent roll** for Lund Pointe Apartments, a
+25-unit multifamily property in Port Orchard, Washington. It comes from the offering
+memorandum the listing broker, Neil Walter Company, published to market the property in
+2016. It is **1 page, landscape** (page 11 of the 17-page offering memorandum), with a
+native text layer and no scanning.
 
 | | |
 |---|---|
 | Publisher | Neil Walter Company Commercial Real Estate |
-| Source URL | https://www.neilwalter.com/wp-content/uploads/2016/02/Lund-PointeApts_OfferingMemorandum.pdf |
+| Source | [neilwalter.com/…/Lund-PointeApts_OfferingMemorandum.pdf](https://www.neilwalter.com/wp-content/uploads/2016/02/Lund-PointeApts_OfferingMemorandum.pdf) |
 | Retrieved | 2026-10-03, downloaded by script |
-| Clearance | `public` |
+| Clearance | Public |
 
 The broker publishes the offering memorandum on its own website for prospective buyers.
-Only the rent roll page was kept, split out with PyMuPDF. The page carries no personal
-data: no tenant names, lease dates, deposits or contact details. Nothing was redacted.
-The source PDF's document metadata named the preparer's user account, so it was cleared
-when the page was split out, and the committed file carries none.
+Only the rent roll page was kept. The page carries no personal data: no tenant names,
+lease dates, deposits or contact details. Nothing was redacted. The source PDF's
+document metadata named the preparer's user account, so it was cleared when the page was
+split out, and the committed file carries none.
+
+The `Other Charges` column repeats the `Total` column on every row, which is an error in
+the source. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is a clean, complete rent roll with a totals row that reconciles: the 25 unit rents sum
-to the printed $22,280 and the unit areas to the printed 23,760 square feet. A rent roll
-is one long, repetitive table where every row looks like its neighbours, which tests
-whether extraction keeps 25 rows aligned without dropping, duplicating or shifting one.
-It also splits a combined `3/2.00` cell into bedrooms and bathrooms.
+### Who processes it
 
-It is thin as rent rolls go: there are no tenant names, lease start and end dates,
-deposits or market rents, so the schema does not ask for them.
+A rent roll lists every unit in a rental property with its status and rent. It is the
+first schedule anyone reads when valuing or lending on an income property.
 
-The `Other Charges` column repeats the `Total` column on every row, which is an error in
-the source. The schema extracts it as printed and it is not featured.
+- **Commercial real estate investors:** buyers underwrite a property's income from the
+  rent roll in the offering memorandum.
+- **Multifamily and commercial lenders:** underwriters check occupancy and rents to size
+  a loan, and ask for updated rent rolls during the loan.
+- **Brokers:** listing brokers publish rent rolls to market properties, as Neil Walter
+  Company does here.
+- **Appraisers:** appraisers compare in-place rents with market rents to value the
+  property.
+- **Property management and asset management:** managers reconcile rent rolls against
+  leases and collections each month.
 
-## Featured fields
+### What it contains
 
-All on page 1, the totals row, so the overlay reads as one summary of the property:
-
-| Field | Label | Value |
-|---|---|---|
-| `totals.total_units` | Total units | 25 |
-| `totals.occupancy_percent` | Occupancy | 100 |
-| `totals.total_square_feet` | Total square feet | 23760 |
-| `totals.total_monthly_rent` | Total monthly rent | 22280 |
-
-The request file named no fields. Its research notes also suggested unit A-101's rent
-($1,215); that was dropped for the reason under Grounding.
-
-## Extraction
-
-`schema.json` has 16 leaf fields: five for the property, seven per unit and four for the
-totals row. The run returned 184 leaf values, including all 25 units.
-
-Every one of the 175 unit cells was checked against the PDF's text layer and all match,
-including the bedroom and bathroom split. The property header was split correctly into
-street address range, city, state and ZIP, with the unit list left out.
-
-## Grounding
-
-Every value is grounded, on the right page and in the right cell. Where two columns hold
-the same number, as `Total` and `Other Charges` do on every row, the ranges point at
-different cells, so the model is tracking columns rather than matching the first
-occurrence of a value.
-
-`inspect_fields.py` nonetheless marks the 75 per-unit square-foot and dollar values `OFF`.
-Extraction returned them as floats (`1215.0`) and the matcher does not equate that with
-the boxed `$1,215`. The boxed cells are the right ones; the flag is a formatting mismatch.
-The totals came back as integers and match. Only rows marked `ok` are featured, which is
-why A-101's rent is not.
-
-## Credits
-
-**5.60 credits** at standard tier: one-page parse and extraction. Most of it is the
-extraction of the 25-row array.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py rent-roll      # spends credits
-.venv/bin/python document-types/scripts/build_images.py rent-roll # free
-```
+- **One long, repetitive table** of 25 unit rows that all look alike, so rows must stay
+  aligned without dropping, duplicating or shifting.
+- **A totals row** that reconciles to the unit rows for rent and square footage.
+- **Combined cells,** such as `3/2.00` for bedrooms and bathrooms.
+- **Two columns with the same values** on every row.
+- **A header line** that packs the property name, address range, unit list, city, state
+  and ZIP into one line.

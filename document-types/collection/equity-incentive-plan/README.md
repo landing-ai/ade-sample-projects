@@ -1,12 +1,105 @@
 # Equity Incentive Plan
 
-Source assets for `landing.ai/document-type/equity-incentive-plan`.
+**On the website:** [landing.ai/document-type/equity-incentive-plan](https://landing.ai/document-type/equity-incentive-plan)
 
-## Sample document
+The Alcoa Corporation Stock and Incentive Compensation Plan, as amended and restated on
+May 6, 2026. It is the plan document every equity grant is made under: definitions,
+administration, the share reserve and share-counting rules, eligibility, the terms of
+each award type, change-in-control treatment, amendment and the plan term.
 
-`source/alcoa-stock-and-incentive-compensation-plan-2026.pdf`: the **Alcoa Corporation
-Stock and Incentive Compensation Plan (as Amended and Restated)**, dated May 6, 2026.
-**18 pages, portrait**, native text, single column.
+| | |
+|---|---|
+| Pages | 18 |
+| Fields in the extraction schema | 27 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:55 | 2026-11-19 03:01 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 74,153 | 74,892 |
+| Words under 0.95 confidence | 15 | n/a |
+| Words under 0.80 confidence | 6 | n/a |
+| Words under 0.50 confidence | 2 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 13.2 s | 61.1 s |
+| Per page | 0.7 s | 3.4 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 10.2 credits | 27.8 credits |
+| Per page | 0.57 credits | 1.54 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:55 | 2026-11-19 03:02 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 27 | 27 |
+| Non-null fields returned | 27 | 27 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 242.0 s | 126.6 s |
+| Per schema field (27) | 8.96 s | 4.69 s |
+| Per value returned | 6.20 s | 3.33 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 16.4 credits | 16.5 credits |
+| Per schema field (27) | 0.607 credits | 0.611 credits |
+| Per value returned | 0.421 credits | 0.434 credits |
+
+## Origin
+
+`source/alcoa-stock-and-incentive-compensation-plan-2026.pdf` is the **Alcoa
+Corporation Stock and Incentive Compensation Plan (as Amended and Restated)**, dated
+May 6, 2026. It is **18 pages, portrait**, native text in a single column.
 
 This is the plan document itself, the instrument stockholders approve and every equity
 grant is made under: purpose and definitions, administration, the share reserve and
@@ -18,87 +111,41 @@ provisions and the plan term.
 | | |
 |---|---|
 | Publisher | Alcoa Corporation |
-| Source | [alcoa.com, plan PDF](https://www.alcoa.com/equity-plan/pdfs/alcoa-corporation-stock-and-incentive-compensation-plan-as-amended-and-restated-06-May-2026.pdf), linked from [alcoa.com/equity-plan](https://www.alcoa.com/equity-plan/) |
+| Source | [alcoa.com, plan PDF](https://www.alcoa.com/equity-plan/pdfs/alcoa-corporation-stock-and-incentive-compensation-plan-as-amended-and-restated-06-May-2026.pdf) |
+| Linked from | [alcoa.com/equity-plan](https://www.alcoa.com/equity-plan/) |
 | Retrieved | 2026-10-28, by script |
-| Clearance | **Public** |
+| Clearance | Public |
 
 Alcoa publishes the plan on its own equity-plan page for stockholders and participants.
 It names no individual, carries no signatures, and its PDF metadata holds only Word's
 placeholder author. Nothing was replaced and the file is unchanged from the download.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The other contracts in the collection are forms with values typed into blanks. This one
-has no blanks: every number a reader wants is buried in running legal prose, often
-several to a sentence, and qualified by the clauses around it. The share-counting rule
-alone packs three ratios and six dates into four lines. It tests whether extraction can
-pull clean figures out of dense drafting, and whether grounding can point at the exact
-line within a long paragraph rather than at the paragraph.
+### Who processes it
 
-## Schema
+An equity incentive plan sets the rules for every stock award a company grants, so the
+same terms are read by the people who vote on it, administer it and value it.
 
-`schema.json` covers the plan's identity (name, former name, company, state of
-incorporation, restatement date), eligibility and award types, the share reserve (total
-reserve, incentive stock option limit, the full-value award counting ratios by period,
-and the option/SAR counting rate), the director award cap, minimum vesting and its
-carve-out, option and SAR terms and the 10% stockholder rules, par value, the Fair
-Market Value exchange, the change-in-control ownership trigger, the clawback policy,
-governing law, the last grant date and the approving meeting date.
+- **Proxy advisers and institutional investors:** they read the share reserve, counting
+  ratios and director caps before recommending a vote on the plan.
+- **Compensation consultants and HR:** they check proposed grants against the plan's
+  limits and vesting rules.
+- **Stock plan administrators and transfer agents:** they track the share pool and
+  apply the counting rules to each grant.
+- **Corporate and securities lawyers:** they draft amendments and review the plan in
+  financings and acquisitions.
+- **Auditors and finance teams:** they read award terms to account for stock-based
+  compensation.
 
-**27 leaf fields** (counted from the schema). Every field came back populated.
+### What it contains
 
-## Featured fields: the share pool, from page 5
-
-| Field | Value |
-|---|---|
-| Shares reserved | 38,000,000 |
-| Incentive stock option limit | 38,000,000 |
-| Full-value award counting ratio | 1.69 |
-| Ratio effective from | May 6, 2026 |
-| Director annual award cap | $750,000 |
-
-Read together: how big the pool is, how much of it may go out as incentive stock
-options, how fast restricted stock and other full-value awards draw it down under the
-ratio this restatement introduced, and how much any one director can be granted a year.
-These are the terms a proxy adviser or compensation analyst reads a plan for, and they
-all sit in Section 4(a) and the paragraph just above it on one page.
-
-The request suggested page 5 with the reserve, the ISO limit, the counting ratio and the
-director cap. All four ground correctly on page 5 and shipped; the ratio's effective
-date was added as a fifth. No person is featured.
-
-## Grounding notes
-
-- **Line-level grounding inside prose works well.** Each featured value boxes the
-  single line of the paragraph that holds it, not the paragraph. All five crops contain
-  their value and the OCR check passed on every one.
-- **Pin the occurrence.** Several values ground twice, once on the line that holds them
-  and once on a neighbouring line of the same sentence. The incentive stock option limit
-  is pinned to occurrence 1 ("shall not exceed 38,000,000"); occurrence 0 boxes the line
-  before, which does not contain the number. The ratio's start date is pinned to
-  occurrence 1 ("May 6, 2026 and thereafter").
-- **Numbers written as words ground off.** "One year", "ten years", "five years" and
-  "one Share" were all extracted correctly as numbers, but their ranges land on the
-  sentence around the word rather than containing a digit match, so `inspect_fields.py`
-  marks them `OFF`. The plan name grounds `OFF` the same way, split across its two title
-  lines. None of these is featured.
-- **An open-ended period came back as the text "null".** The current ratio applies
-  "from May 6, 2026 and thereafter", with no end date. Extraction returned `period_end`
-  as the string `"null"` rather than a JSON null, even after the field description was
-  rewritten to ask for a JSON null. The value is semantically right but a consumer
-  should treat the string as empty.
-
-## Credits
-
-60.4 credits at the standard tier: 44.0 for the first parse and extract, then 16.4 for
-one re-extraction after editing a field description (`--extract-only`, reusing the
-parse).
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py equity-incentive-plan           # parse + extract (spends credits)
-.venv/bin/python document-types/scripts/run_ade.py equity-incentive-plan --extract-only
-.venv/bin/python document-types/scripts/build_images.py equity-incentive-plan      # images, no API calls
-.venv/bin/python document-types/scripts/inspect_fields.py equity-incentive-plan --page 5
-```
+- **Dense legal prose with no blanks or tables.** Every figure sits inside a sentence,
+  often several to a sentence, and is qualified by the clauses around it.
+- **Packed numeric rules.** The share-counting rule alone holds three ratios and six
+  dates in four lines.
+- **Numbers written as words,** such as "one year" and "ten years".
+- **Numbered sections and lettered subsections** that cross-reference each other.
+- **Open-ended periods** that run "from May 6, 2026 and thereafter", with no end date.
+- **A native text layer** in a single column.

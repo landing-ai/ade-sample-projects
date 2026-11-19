@@ -1,12 +1,107 @@
 # SSA-1099
 
-Source assets for `landing.ai/document-type/ssa-1099`.
+**On the website:** [landing.ai/document-type/ssa-1099](https://landing.ai/document-type/ssa-1099)
 
-## Sample document
+A Form SSA-1099, Social Security Benefit Statement, for benefit year 2026, filled with
+IRS test data for a fictitious beneficiary. It shows the benefits paid, the benefits
+repaid, the net benefits and the federal tax withheld in numbered boxes, with a panel
+that breaks the year's benefits into what was deposited and what was withheld for
+Medicare.
 
-`source/ssa-1099-irs-form-6744-specimen.pdf`: a Form SSA-1099, Social Security Benefit
-Statement, for benefit year 2026, filled with IRS test data. **1 page, landscape**
-(612 x 470 pt, the top of a letter page).
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 16 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:38 | 2026-11-19 03:54 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 1,112 | 1,192 |
+| Words under 0.95 confidence | 6 | n/a |
+| Words under 0.80 confidence | 0 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 4.0 s | 4.9 s |
+| Per page | 4.0 s | 4.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.3 credits | 0.8 credits |
+| Per page | 0.30 credits | 0.80 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:38 | 2026-11-19 03:54 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 16 | 16 |
+| Non-null fields returned | 11 | 11 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 203.5 s | 74.2 s |
+| Per schema field (16) | 12.72 s | 4.64 s |
+| Per value returned | 18.50 s | 6.75 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 0.8 credits | 0.8 credits |
+| Per schema field (16) | 0.050 credits | 0.050 credits |
+| Per value returned | 0.073 credits | 0.073 credits |
+
+## Origin
+
+`source/ssa-1099-irs-form-6744-specimen.pdf` is a **Form SSA-1099, Social Security
+Benefit Statement**, for benefit year 2026, filled with IRS test data. It is **1 page,
+landscape** (612 x 470 pt, the top of a letter page). The form is a raster image on the
+page with a text layer drawn over it, so the PDF has both an image and selectable text.
 
 | | |
 |---|---|
@@ -16,102 +111,47 @@ Statement, for benefit year 2026, filled with IRS test data. **1 page, landscape
 | Clearance | **Public** (US government work, public domain) |
 
 Form 6744 is the IRS's certification test booklet for Volunteer Income Tax Assistance
-and Tax Counseling for the Elderly volunteers. It is served as `application/pdf` from
-the IRS's own forms path. Its scenarios print filled specimen tax documents for
-fictitious taxpayers, and this SSA-1099 is one of them.
+and Tax Counseling for the Elderly volunteers. It is served as a PDF from the IRS's own
+forms path. Its scenarios print filled specimen tax documents for fictitious taxpayers,
+and this SSA-1099 is one of them.
 
 Every value is IRS test data: a fictitious beneficiary at 1234 Charity Avenue, Your
 City, Your State, with the Social Security number already masked to `417-00-XXXX` in
 the source. Nothing needed redacting. The PDF metadata was reset to the IRS as author
 and a title naming the source page.
 
-### How the page was cut out
-
 The source is 210 pages. The SSA-1099 is the top half of PDF page 93 (printed page 88);
 the bottom half of that page is an unrelated Form 1099-C for a different fictitious
-taxpayer. The crop was done with PyMuPDF:
-
-1. `insert_pdf` copied page 93 alone into a new document.
-2. A redaction annotation over everything below y = 470 pt, applied with
-   `apply_redactions(images=PDF_REDACT_IMAGE_NONE)`, removed the 1099-C's text and
-   vector art. Without this the 1099-C's text would still be in the file, outside the
-   visible area, and extractable.
-3. The page's **MediaBox and CropBox were both set to `[0 322 612 792]`**, the top
-   470 pt of the 612 x 792 page in PDF coordinates (origin bottom-left). The SSA-1099
-   ends at about 440 pt from the top and the 1099-C started at about 505 pt, so the cut
-   falls in the white space between them.
-
-```python
-import fitz
-src = fitz.open("f6744.pdf")
-doc = fitz.open()
-doc.insert_pdf(src, from_page=92, to_page=92)
-page = doc[0]
-page.add_redact_annot(fitz.Rect(0, 470, 612, 792))
-page.apply_redactions(images=fitz.PDF_REDACT_IMAGE_NONE)
-page.set_mediabox(fitz.Rect(0, 322, 612, 792))          # PDF space
-doc.xref_set_key(page.xref, "CropBox", "[0 322 612 792]")
-```
-
-The SSA-1099 itself is a raster image on the source page with a text layer drawn over
-it, so the PDF has both an image and selectable text.
+taxpayer. The 1099-C's text and vector art were removed, so they are not hidden in the
+file outside the visible area. The page was then cropped to its top 470 pt, in the white
+space between the two forms. Full provenance is in `manifest.json` under
+`source.origin`.
 
 ## Why this document
 
-The SSA-1099 is the statement every Social Security recipient gets, and it feeds line
-6a of Form 1040. It is small, but it is a different shape from the collection's other
-tax forms: a government statement rather than an IRS information return, with the
-year printed as a large standalone figure, a pair of boxes (3 and 5) that print the same
-amount, and a free-form "Description of amount in Box 3" panel that breaks the
-benefits into what was deposited and what was withheld for Medicare.
+### Who processes it
 
-`schema.json` covers the beneficiary, every numbered box and the box 3 and box 4
-description panels. **16 leaf fields** (counted from the schema).
+The Social Security Administration sends an SSA-1099 to every person who received
+Social Security benefits in the year. Its net benefits feed line 6a of Form 1040.
 
-## Featured fields: the boxes a preparer copies
+- **Tax preparation:** preparers and volunteer programs such as VITA and TCE copy the
+  boxes onto the return, which is why the IRS uses it in its volunteer test.
+- **Mortgage and consumer lending:** lenders use the benefit statement to verify fixed
+  income for retired and disabled borrowers.
+- **Public benefits and housing programs:** agencies check Social Security income for
+  eligibility for assistance such as Medicaid or housing subsidies.
+- **Financial planning and wealth management:** advisers use it to plan income and tax
+  withholding for retired clients.
+- **Elder law and estate administration:** attorneys and fiduciaries gather it when
+  managing a beneficiary's finances.
 
-All on page 1.
+### What it contains
 
-| Field | Value |
-|---|---|
-| Benefit year | 2026 |
-| Benefits paid (box 3) | 25182 |
-| Net benefits (box 5) | 25182 |
-| Federal tax withheld (box 6) | 2518 |
-
-Box 5 is what goes on the return and box 6 is the withholding credit; box 3 and box 5
-print the same $25,182 and each grounds to its own ruled box. No person is featured.
-
-The request suggested two more, the direct-deposit amount ($20,229) and the Medicare
-Part B premium ($2,435). Both extract correctly and read `ok` in `inspect_fields.py`,
-but see below: they ground to the whole description panel, so their crops would be two
-identical full-panel boxes. The benefit year replaces them.
-
-## Grounding and extraction notes
-
-- **The ruled boxes ground exactly.** Box 3, box 5 and box 6 each ground to their own
-  cell, and the large `2026` grounds to just the figure.
-- **The description panel grounds coarsely.** The parse returns the "Description of
-  amount in Box 3" panel as one tall table cell holding all four lines, and Extract
-  gives every value in it (direct deposit, Part B premium, benefits for the year) the
-  same range: the whole cell. The values are right; the highlight covers the panel
-  rather than the line. Line-level `atomic_grounding` exists on this parse for text
-  blocks, but not inside table cells.
-- **Blank box 4 extracts as 0**, not null, although the schema description asks for
-  null when the box is blank. Its range is the empty box 4 cell.
-- **`form_variant` comes back `SSA-1099-SM`**, the form revision code printed in the
-  footer, rather than the `SSA-1099` heading.
-- Blank box 8, the empty box 4 panel, and the absent Part D and total-additions amounts
-  are correctly null with no ranges.
-
-## Cost
-
-**1.60 credits** at standard tier, for one parse and one extraction.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py ssa-1099
-.venv/bin/python document-types/scripts/build_images.py ssa-1099
-.venv/bin/python document-types/scripts/inspect_fields.py ssa-1099 --page 1
-```
+- **Numbered ruled boxes** for benefits paid, repaid, net benefits and tax withheld.
+- **Two boxes (3 and 5) that print the same amount.**
+- **A free-form description panel** that breaks the benefits into what was deposited
+  and what was withheld for Medicare, in one tall cell.
+- **The year as a large standalone figure** in the header.
+- **Blank boxes** that should come back empty.
+- **A form image with a text layer drawn over it.**
+- **A Social Security number masked** in the source.

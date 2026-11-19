@@ -1,19 +1,112 @@
 # Articles of Incorporation
 
-Source assets for `landing.ai/document-type/articles-of-incorporation`.
+**On the website:** [landing.ai/document-type/articles-of-incorporation](https://landing.ai/document-type/articles-of-incorporation)
 
-## Sample document
+Profit Corporation Articles of Incorporation for Top Tier Sports (USA) Inc., filed with
+the Wyoming Secretary of State on November 5, 2024. It sets out the corporation's name,
+registered agent, office addresses, authorized common and preferred shares with their
+par values, and incorporator, and ends with the state's Certificate of Incorporation.
 
-`source/articles-of-incorporation-wyoming-top-tier-sports.pdf` — **Profit Corporation
-Articles of Incorporation** for Top Tier Sports (USA) Inc., generated and filed by the
-**Wyoming Secretary of State** on November 5, 2024. **4 pages, portrait**, a native PDF
-with a text layer:
+| | |
+|---|---|
+| Pages | 4 |
+| Fields in the extraction schema | 24 |
 
-1. The articles: office-use filing stamp and Original ID, then Articles I–VI (name,
-   registered agent, mailing and principal office addresses, authorized shares and par
-   values, incorporator) and a typed e-signature block.
-2. The filer's checkbox attestations, the statutory penalty notice, and the signature block
-   again.
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:26 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 6,722 | 5,827 |
+| Words under 0.95 confidence | 5 | n/a |
+| Words under 0.80 confidence | 1 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 15.8 s | 18.5 s |
+| Per page | 4.0 s | 4.6 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.3 credits | 3.5 credits |
+| Per page | 0.33 credits | 0.88 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:26 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 24 | 24 |
+| Non-null fields returned | 24 | 24 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 254.8 s | 113.8 s |
+| Per schema field (24) | 10.61 s | 4.74 s |
+| Per value returned | 9.44 s | 4.22 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 2.5 credits | 2.3 credits |
+| Per schema field (24) | 0.104 credits | 0.096 credits |
+| Per value returned | 0.093 credits | 0.085 credits |
+
+## Origin
+
+`source/articles-of-incorporation-wyoming-top-tier-sports.pdf` is a set of **Profit
+Corporation Articles of Incorporation** for Top Tier Sports (USA) Inc., generated and
+filed by the **Wyoming Secretary of State** on November 5, 2024. It is **4 pages,
+portrait**, a native PDF with a text layer:
+
+1. The articles: the office-use filing stamp and Original ID, then Articles I to VI
+   (name, registered agent, mailing and principal office addresses, authorized shares
+   and par values, incorporator) and a typed e-signature block.
+2. The filer's checkbox attestations, the statutory penalty notice, and the signature
+   block again.
 3. The registered agent's consent to appointment.
 4. The Secretary of State's Certificate of Incorporation, with the Great Seal and the
    Secretary's signature.
@@ -27,101 +120,43 @@ with a text layer:
 | Clearance | Public |
 
 The company filed these articles with the SEC as an exhibit to a Regulation
-Crowdfunding offering statement, so the document sits in a public government repository.
-EDGAR served it as a PDF, so no HTML rendering was needed.
+Crowdfunding offering statement, so the document sits in a public government
+repository. EDGAR served it as a PDF.
 
-**Used as published, unredacted, by explicit decision of the operator.** The filing names
-one incorporator, an attorney at the registered-agent law firm acting in a professional
-capacity, with a typed e-signature, a business email and a business phone on pages 1–3,
-and the Secretary of State, a public official, with his signature and the state seal on
-page 4. This follows the business-registration and arbitration-award folders, where the
-operator likewise chose to keep a public record as published. None of the individuals or
-their contact details is featured. The PDF metadata holds only the producing software
-(PDFium) and a creation timestamp.
+The document is used as published, unredacted, by explicit decision of the operator. The
+filing names one incorporator, an attorney at the registered-agent law firm acting in a
+professional capacity, with a typed e-signature, a business email and a business phone
+on pages 1 to 3. Page 4 names the Secretary of State, a public official, with his
+signature and the state seal. The PDF metadata holds only the producing software (PDFium)
+and a creation timestamp. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **articles of incorporation**, and its first corporate formation
-document with a **capital structure**. Business registration covers an LLC's certificate
-of organization, which has no shares. This one tests:
+### Who processes it
 
+Articles of incorporation are the founding record of a corporation. They prove that the
+company exists, who its registered agent is, and what shares it may issue.
+
+- **Banking and KYB onboarding:** banks and payment providers collect the articles to
+  verify a business's legal name, formation date and registered address.
+- **Commercial lending:** lenders confirm that the borrower is a validly formed
+  corporation before they sign loan documents.
+- **Investors and securities filings:** crowdfunding portals, venture investors and
+  their counsel check the authorized share classes and par values, as in the SEC filing
+  this copy comes from.
+- **Corporate law and registered agent services:** firms file, track and reconcile
+  formation documents across states.
+- **Due diligence in M&A:** acquirers review the charter documents of each entity they
+  buy.
+
+### What it contains
+
+- **Numbered articles** with labels and values mixed into a state-generated form.
 - **Two-column label/value pairs.** Article V prints the share counts and par values side
-  by side on two lines, which is the layout most likely to cross values between columns.
-- **A non-numeric quantity.** Common shares are authorized as "Unlimited", not a number.
+  by side on two lines.
+- **A non-numeric quantity.** Common shares are authorized as "Unlimited".
 - **Repeated addresses.** The mailing and principal office addresses are identical, and
   the registered agent's address reappears on page 3 in running prose.
-- **A state certificate page** with seal and signature, and a page of checkbox
-  attestations.
-
-## Featured fields: what the state filed
-
-All on page 1. The request suggested the filed stamp and Original ID, the corporation name,
-the registered agent, and both share counts and par values, as suggestions only.
-
-| Field | Value |
-|---|---|
-| Original ID | 2024-001549080 |
-| Corporation name | Top Tier Sports (USA) Inc. |
-| Registered agent | Cloud Peak Law, LLC |
-| Common shares authorized | Unlimited |
-| Preferred shares authorized | 110,000 |
-
-What the state assigned, what was formed, who accepts service for it, and the capital it
-may issue. With a five-field limit, three suggestions were left out, though all three
-ground `ok`: the filed timestamp (`Nov 5 2024 12:37PM`) and the two par values. Both par
-values read `$0.0001`, so featuring them would add two identical crops. The registered
-agent is featured by its firm name, an organization, and not by the attorney who signed.
-
-## What it surfaced
-
-**The side-by-side shares layout grounds cleanly.** Each share-count box covers
-"Number of Common Shares: Unlimited" or "Number of Preferred Shares: 110,000" and stops
-before the par-value column beside it. The par values ground to their own
-"Common Par Value" and "Preferred Par Value" boxes. Nothing crossed between columns.
-
-**Multi-line addresses ground OFF.** The registered agent, mailing and principal office
-addresses all extract correctly, but each value joins two printed lines and each range
-covers only one line, so `inspect_fields.py` reports them `OFF`. The incorporator's address,
-printed on one line, grounds `ok`.
-
-**Page 2's checkboxes come through.** The parse renders each attestation as `[x]`, and the
-"Filer is" choice as `[ ] An Individual` / `[x] An Organization`, so the filer type is
-readable from the markdown. Only two signatures are tagged `[SIGNED]`: the typed
-e-signature on page 1 and the Secretary's handwritten one on page 4. The identical typed
-e-signatures on pages 2 and 3 come through as plain text, and the seal on page 4 as
-`[GREAT SEAL OF THE STATE OF WYOMING]`.
-
-**Dates are kept as printed.** The schema asks for dates exactly as printed, so the filed
-timestamp and signature date ground `ok`. Elsewhere in the collection, dates normalised to
-ISO have grounded `OFF`.
-
-**Inferred booleans ground OFF by design.** `registered_agent_consent_given` and
-`certificate_of_incorporation.great_seal_affixed` are `true`, grounded to the consent
-paragraph on page 3 and to the certificate text and seal on page 4, which support the
-value without containing it.
-
-## Extraction
-
-**24 leaf fields** in the schema, written for this run: the filing office's record
-(office, state, entity type, Original ID, filed timestamp), corporation name, registered
-agent, mailing and principal office addresses, authorized share classes, incorporators,
-signatory, registered-agent consent, and the certificate of incorporation. All 10 top-level
-fields populate.
-
-## Cost
-
-**5.80 credits** at standard tier for 4 pages (parse and extract).
-
-## Regenerating
-
-```bash
-curl -sS -A "LandingAI research <your email>" \
-  -o document-types/collection/articles-of-incorporation/source/articles-of-incorporation-wyoming-top-tier-sports.pdf \
-  "https://www.sec.gov/Archives/edgar/data/2045455/000204545524000001/exhibit_d.pdf"
-.venv/bin/python document-types/scripts/run_ade.py articles-of-incorporation                # 5.80 credits
-.venv/bin/python document-types/scripts/run_ade.py articles-of-incorporation --extract-only # schema iteration
-.venv/bin/python document-types/scripts/build_images.py articles-of-incorporation           # free
-.venv/bin/python document-types/scripts/inspect_fields.py articles-of-incorporation --page 1
-```
-
-SEC EDGAR requires a descriptive User-Agent and rate-limits scripted downloads.
+- **A page of checkbox attestations** and a statutory penalty notice.
+- **Typed e-signatures, a handwritten signature and the state seal** on the certificate
+  page.

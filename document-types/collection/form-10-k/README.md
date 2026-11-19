@@ -1,102 +1,156 @@
 # Form 10-K
 
-## Sample document
+**On the website:** [landing.ai/document-type/form-10-k](https://landing.ai/document-type/form-10-k)
 
-NVIDIA Corporation's annual report on Form 10-K for the fiscal year ended January 25, 2026.
-It is 93 pages, all portrait. The filing has the full standard structure: the SEC cover
-page, Parts I to IV (business, risk factors, MD&A, the audited consolidated financial
-statements and notes), the signatures section, and the exhibits filed with it (insider
-trading policy, auditor consent, and the Section 302 and 906 certifications).
+NVIDIA Corporation's annual report on Form 10-K for the fiscal year ended January 25,
+2026. It has the SEC cover page, the business description and risk factors, MD&A, the
+audited consolidated financial statements and notes, the signatures section, and the
+exhibits filed with it, including the Section 302 and 906 certifications.
+
+| | |
+|---|---|
+| Pages | 93 |
+| Fields in the extraction schema | 49 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:00 | 2026-11-19 03:07 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 391,886 | 395,061 |
+| Words under 0.95 confidence | 337 | n/a |
+| Words under 0.80 confidence | 110 | n/a |
+| Words under 0.50 confidence | 8 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 84.0 s | 73.8 s |
+| Per page | 0.9 s | 0.8 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 53.2 credits | 145.3 credits |
+| Per page | 0.57 credits | 1.56 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:02 | 2026-11-19 03:08 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 49 | 49 |
+| Non-null fields returned | 49 | 49 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 170.4 s | 488.8 s |
+| Per schema field (49) | 3.48 s | 9.98 s |
+| Per value returned | 2.30 s | 6.61 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 80.9 credits | 81.5 credits |
+| Per schema field (49) | 1.651 credits | 1.663 credits |
+| Per value returned | 1.093 credits | 1.101 credits |
+
+## Origin
+
+`source/nvidia-form-10-k.pdf` is NVIDIA Corporation's annual report on Form 10-K for the
+fiscal year ended January 25, 2026. It is **93 pages, all portrait**. The filing has the
+full standard structure: the SEC cover page, Parts I to IV (business, risk factors, MD&A, the audited
+consolidated financial statements and notes), the signatures section, and the exhibits
+filed with it (insider trading policy, auditor consent, and the Section 302 and 906
+certifications).
 
 | | |
 |---|---|
 | Publisher | NVIDIA Corporation |
-| Source URL | https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/e361e58a-7483-44f5-bc62-a9080ae6ec72.pdf |
+| Source | https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/e361e58a-7483-44f5-bc62-a9080ae6ec72.pdf |
 | Filed | 2026-02-25 (SEC accession 0001045810-26-000021) |
 | Retrieved | 2026-10-28, downloaded by script |
-| Clearance | `public` |
+| Clearance | Public |
 
 A 10-K is a mandatory public SEC filing. This copy is the PDF that NVIDIA's investor
 relations site serves, an EDGAR Online rendering of the filing. It is committed
 unmodified, including its EDGAR Online metadata and an owner-only permissions flag that
 needs no password to open.
 
-The filing names the company's executive officers and directors in their official
-roles. They appear in the executive officer table on page 11, in the conformed `/s/`
-signatures on pages 84–85 and in the CEO and CFO certifications on pages 90–93. The
-operator decided to keep these names as published. No private individual's personal
-data appears: the only phone number is the corporate main line, and there are no
-emails, home addresses or personal identifiers. The featured fields are all impersonal.
+The filing names the company's executive officers and directors in their official roles.
+They appear in the executive officer table on page 11, in the conformed `/s/` signatures
+on pages 84–85 and in the CEO and CFO certifications on pages 90–93. The operator
+decided to keep these names as published. No private individual's personal data
+appears: the only phone number is the corporate main line, and there are no emails, home
+addresses or personal identifiers. Full provenance is in `manifest.json` under
+`source.origin`.
 
 ## Why this document
 
-Long-form financial reporting is not covered anywhere else in the collection. The
-investor presentation is a slide deck, and Form 1120 is a tax form. A 10-K is dense
-prose broken up by about 60 financial tables. The values a reader needs are scattered
-across it: the cover page, the statements in Item 8 and the narrative sections. The same
-figure often appears in several places, too: the cash flow totals appear both in the
-MD&A summary (page 43) and in the statement itself (page 55).
+### Who processes it
 
-At 93 pages it is also the longest document in the collection, more than twice the size
-of the next largest, the 43-page investor presentation.
+Every US public company files a 10-K each year. It is the most complete public record of
+a company's business, risks and audited financial results.
 
-## Extraction
+- **Equity research and investment management:** analysts pull revenue, margins,
+  earnings and segment data into models and compare them year over year.
+- **Credit analysis and lending:** credit analysts and rating agencies read the balance
+  sheet, cash flows and debt notes.
+- **Financial data providers:** they extract the statements and cover-page facts from
+  thousands of filings into standardized databases.
+- **Audit, compliance and legal:** reviewers check disclosures, risk factors and
+  certifications.
+- **Corporate development and competitive intelligence:** teams track competitors'
+  segments, headcount and strategy.
 
-`schema.json` has 49 leaf fields in five groups:
+### What it contains
 
-- `cover_page`: registrant name, fiscal year end, commission file number, EIN, state of
-  incorporation, address, phone, ticker, exchange, filer category, the WKSI and shell
-  company check boxes, public float and shares outstanding, with their dates
-- `income_statement`: an array with one entry per fiscal year column, holding revenue
-  through diluted EPS and diluted share count
-- `balance_sheet`: the current year-end column
-- `cash_flow`: the three activity totals and capital expenditure for the current year
-- `company_facts`: headcount, auditor, reportable segments
-
-Every value came back correct, and each of the three income statement columns went to the
-right array entry.
-
-## Featured fields
-
-Page 51 shows the Consolidated Statements of Income. The featured fields are the fiscal
-2026 column, top to bottom: **Revenue**, **Gross profit**, **Operating income**, **Net
-income** and **Diluted EPS**. The overlay therefore follows one year from the top line to
-the bottom line. Because the table has three year columns, it also shows that the model
-picked the right column. All five fields are `ok` from `inspect_fields.py`, and each box
-sits exactly on its cell. The two cells printed with a `$` include it in the box.
-
-## What the grounding did
-
-- **Financial tables ground cleanly.** Every income statement, balance sheet and cash
-  flow figure grounds to its own cell, including all three columns of the income
-  statement.
-- **Repeated values ground to every place they appear.** The cash flow totals ground both
-  to the MD&A summary table on page 43 and to the statement on page 55.
-- **Normalized dates read `OFF`.** The fiscal year ends ground to column headers such as
-  `Jan 25, 2026`, which do not literally contain `2026-01-25`. The grounding is right,
-  but the strict check fails, so no date is featured.
-- **Cover page check boxes read `OFF`.** `well_known_seasoned_issuer` and `shell_company`
-  ground to the question text and both boxes, which is right for a boolean but cannot be
-  shown as a single value. `filer_category` grounds correctly to the "Large accelerated
-  filer" label.
-- **Some values are grounded to whole sentences.** Headcount, public float and shares
-  outstanding are stated in prose, so they ground to the whole sentence. The auditor
-  name grounds to a paragraph that names the firm.
-
-## Cost
-
-**226.80 credits** at standard tier for 93 pages, parse and extract together. This is far
-more per page than the investor presentation (65.50 for 43 pages). The markdown is about
-395,000 characters and contains around 60 HTML tables.
-
-To iterate on the schema, use `run_ade.py --extract-only`, which reuses the committed
-parse and runs extraction only.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py form-10-k                 # 226.80 credits
-.venv/bin/python document-types/scripts/run_ade.py form-10-k --extract-only  # schema iteration
-.venv/bin/python document-types/scripts/build_images.py form-10-k            # free
-.venv/bin/python document-types/scripts/inspect_fields.py form-10-k --page 51
-```
+- **A long document:** 93 pages of dense prose broken up by about 60 financial tables.
+- **Multi-year financial statements,** with three fiscal-year columns side by side in
+  the income statement.
+- **The same figures in several places,** such as cash flow totals in both the MD&A
+  summary and the statement itself.
+- **A cover page with checkboxes** for filer category, well-known seasoned issuer and
+  shell company status.
+- **Values stated in prose,** such as headcount, public float and shares outstanding.
+- **Conformed `/s/` signatures** and signed certifications in the exhibits.

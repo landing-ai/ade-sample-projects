@@ -1,12 +1,107 @@
 # Purchase and Sale Agreement
 
-Source assets for `landing.ai/document-type/purchase-and-sale-agreement`.
+**On the website:** [landing.ai/document-type/purchase-and-sale-agreement](https://landing.ai/document-type/purchase-and-sale-agreement)
 
-## Sample document
+A fully executed Arizona Association of REALTORS Residential Resale Real Estate
+Purchase Contract, in which one LLC buys a single-family home in Tucson from another for
+$845,000, all cash. It sets out the property and price, title and escrow, disclosures,
+warranties, due diligence, remedies and additional terms, with DocuSign signatures and
+initials on every page.
 
-`source/purchase-and-sale-agreement-az-realtors.pdf`: a fully executed Arizona
+| | |
+|---|---|
+| Pages | 10 |
+| Fields in the extraction schema | 43 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:26 | 2026-11-19 03:47 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 54,078 | 56,528 |
+| Words under 0.95 confidence | 234 | n/a |
+| Words under 0.80 confidence | 125 | n/a |
+| Words under 0.50 confidence | 47 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 12.1 s | 24.2 s |
+| Per page | 1.2 s | 2.4 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.0 credits | 19.2 credits |
+| Per page | 0.70 credits | 1.92 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:27 | 2026-11-19 03:47 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 43 | 43 |
+| Non-null fields returned | 42 | 42 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 132.3 s | 158.6 s |
+| Per schema field (43) | 3.08 s | 3.69 s |
+| Per value returned | 2.88 s | 3.37 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 12.7 credits | 13.2 credits |
+| Per schema field (43) | 0.295 credits | 0.307 credits |
+| Per value returned | 0.276 credits | 0.281 credits |
+
+## Origin
+
+`source/purchase-and-sale-agreement-az-realtors.pdf` is a fully executed Arizona
 Association of REALTORS **Residential Resale Real Estate Purchase Contract** (form dated
-February 2020). **10 pages, portrait.**
+February 2020). It is **10 pages, portrait**. The pre-printed form has a text layer, but
+the filled-in values are drawn without one.
 
 An LLC buys a single-family home in Tucson from another LLC for $845,000, all cash. The
 form is the standard Arizona resale contract: property and price (Section 1), financing
@@ -23,8 +118,8 @@ signatures and initials on every page.
 | Clearance | **Public** |
 
 Here Collection filed this contract publicly on EDGAR as a material contract of its
-Regulation A offering; the filing index lists `here_ex6z17.pdf`. Buyer and seller are
-both LLCs. Everyone else named acts in a professional capacity: the seller's listing
+Regulation A offering, and the filing index lists `here_ex6z17.pdf`. Buyer and seller
+are both LLCs. Everyone else named acts in a professional capacity: the seller's listing
 agent and brokerage with their license numbers, the escrow officer at the title company,
 and the LLC signers whose e-signatures and initials are on the form. No private
 individual's personal data is present, so nothing was replaced.
@@ -37,84 +132,34 @@ Two changes from the filed PDF:
 - **PDF metadata was cleared** (PDFium creator/producer and a creation date). The pages
   are otherwise unchanged.
 
+Full provenance is in `manifest.json` under `source.origin`.
+
 ## Why this document
 
-It is a real, signed, filled-in contract rather than a blank form, and every core term
-of the deal sits on one clean page. Two things make it a useful test:
+### Who processes it
 
-- **The typed values have no text layer.** The pre-printed form is text, but every
-  filled-in value (names, address, amounts, dates) is drawn without one, so the parse has
-  to read them from the image while reading the form around them from text.
-- **Values are threaded through numbered form lines**, with checkboxes, split date
-  blanks (month, day and year in separate blanks) and printed defaults that a typed value
-  overrides. That is the shape of most real-estate forms.
+A purchase contract sets the terms of a real estate sale: the parties, the property, the
+price, and the dates and conditions that lead to closing. Every transaction file starts
+from one.
 
-## Schema
+- **Title and escrow companies:** they open escrow from the contract and follow its
+  price, earnest money, close-of-escrow date and addenda.
+- **Mortgage lenders:** underwriters check the price, parties and property against the
+  loan application and appraisal.
+- **Real estate brokerages:** transaction coordinators track the inspection period,
+  deadlines and signatures for compliance files.
+- **Real estate investors and funds:** they keep contracts as records of each
+  acquisition, as Here Collection did in its SEC filing.
+- **Real estate attorneys:** they review the terms, remedies and additional terms when
+  a deal is negotiated or disputed.
 
-`schema.json` covers the form identity, the parties, the premises (address, parcel
-number, legal description), price and payment (purchase price, earnest money and its
-form and holder, cash at closing, all-cash flag), close of escrow, addenda, the escrow
-company, inspection period, home-warranty election, the typed additional terms, offer
-expiration, the seller's broker, and both signature blocks.
+### What it contains
 
-**43 leaf fields** (counted from the schema).
-
-## Featured fields: the deal, from page 1
-
-| Field | Value |
-|---|---|
-| Full purchase price | 845,000 |
-| Earnest money | 10,000 |
-| Cash due at closing | 835,000 |
-| Assessor's parcel number | 114-18-0490 |
-| Legal description | Rockcliff Lot 37 |
-
-Read together: which parcel is being sold, for how much, and how the price is paid
-($10,000 earnest money + $835,000 at closing = $845,000). The request suggested the
-first four plus the seller. The seller could not be featured (see below), nor could the
-buyer, so the legal description took its place. No person is featured.
-
-## Grounding notes
-
-- **Section 1 grounds line by line, and the money lines are clean.** Each amount boxes
-  exactly its numbered line (10, 11, 12), with the value inside.
-- **The seller's range is far too wide.** `seller_name` is right, but its extraction
-  range runs from the "1. PROPERTY" heading through the city line, about seven lines.
-  The first block it touches is the heading, so the crop boxed "1. PROPERTY".
-  `inspect_fields.py` still marks it `ok`, because the over-wide range does contain the
-  value. Only opening the crop showed the problem.
-- **The buyer's line box is one line low.** `buyer_name` has a tight range, but the
-  parse's line-level box for "1a. 1. BUYER: HCO 1, LLC" covers the printed
-  "BUYER'S NAME(S)" caption under the value. The real line's box is attached to a
-  zero-length entry just before it. Also marked `ok`, also wrong by eye.
-- **The close-of-escrow date is assembled correctly** ("October / 3rd / 2022" becomes
-  2022-10-03) but grounds `OFF`, because the ISO date is not printed. As the request
-  warned, it is not featured.
-- **The typed additional terms (Section 8a) come back synthesized.** All five are
-  verbatim and correct, but none has ranges, even though the parse reads them as table
-  cells.
-- **One parse error: an a.m./p.m. checkbox.** The offer expires "August 5, 2022 at
-  11:00" with the **a.m.** box checked. The parse wrote `[ ] a.m./ [x] p.m.`, so
-  `offer_expiration.time` reads "11:00 p.m.".
-- **One extraction error: the inspection period.** The form prints "ten (10) days or
-  ___ days" and the blank is filled with 7. The parse reads "ten (10) days or 7 days"
-  correctly, but extraction returned the printed default, 10, even after the field
-  description was rewritten to say a filled blank overrides the default.
-- **`is_all_cash_sale` needed a better description.** The first extraction returned
-  `false`, apparently reading line 19's "IF THIS IS AN ALL CASH SALE" literally. A
-  description saying earnest money plus cash at closing equals the full price fixed it.
-- Booleans and signature flags ground `OFF` to `[SIGNED]` tags and checkbox lines, as
-  usual.
-
-## Cost
-
-**59.20 credits** at standard tier: one 10-page parse and extraction (32.60), plus two
-extraction-only reruns (13.30 each) while tuning field descriptions.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py purchase-and-sale-agreement
-.venv/bin/python document-types/scripts/build_images.py purchase-and-sale-agreement
-.venv/bin/python document-types/scripts/inspect_fields.py purchase-and-sale-agreement --page 1
-```
+- **Filled-in values with no text layer,** set on a pre-printed form that does have
+  one, so the values have to be read from the page image.
+- **Values threaded through numbered form lines.**
+- **Checkboxes** for financing, addenda, warranties and other elections.
+- **Split date blanks,** with month, day and year in separate blanks.
+- **Printed defaults** that a typed value overrides.
+- **DocuSign signatures and initials** on every page.
+- **A typed additional terms section** in free text.

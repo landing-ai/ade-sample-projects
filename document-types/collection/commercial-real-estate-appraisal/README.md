@@ -1,13 +1,112 @@
 # Commercial Real Estate Appraisal
 
-A narrative commercial appraisal by Integra Realty Resources - DFW, LLP. It values the
-"GSA Office", a 39,329 SF single-tenant Class B office building at 4211 Cedar Springs Drive,
-Dallas, leased to the U.S. General Services Administration. The premise is **Fair Value As
-Is**, compliant with FAS 157 and effective March 2, 2011, at **$4,600,000**. The client was
+**On the website:** [landing.ai/document-type/commercial-real-estate-appraisal](https://landing.ai/document-type/commercial-real-estate-appraisal)
+
+Eight pages from a narrative commercial appraisal by Integra Realty Resources - DFW, LLP
+of the "GSA Office", a 39,329 SF Class B office building in Dallas leased to the U.S.
+General Services Administration. They hold the cover, the transmittal letter, the
+summary of salient facts, the identification of the property and the reconciliation,
+which concludes a Fair Value As Is of $4,600,000 as of March 2, 2011.
+
+| | |
+|---|---|
+| Pages | 8 |
+| Fields in the extraction schema | 50 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:42 | 2026-11-19 02:44 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 14,067 | 14,407 |
+| Words under 0.95 confidence | 26 | n/a |
+| Words under 0.80 confidence | 4 | n/a |
+| Words under 0.50 confidence | 2 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 11.5 s | 12.8 s |
+| Per page | 1.4 s | 1.6 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.7 credits | 7.7 credits |
+| Per page | 0.34 credits | 0.96 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:42 | 2026-11-19 02:44 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 50 | 50 |
+| Non-null fields returned | 49 | 49 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 138.4 s | 129.5 s |
+| Per schema field (50) | 2.77 s | 2.59 s |
+| Per value returned | 2.39 s | 2.23 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 5.2 credits | 5.3 credits |
+| Per schema field (50) | 0.104 credits | 0.106 credits |
+| Per value returned | 0.090 credits | 0.091 credits |
+
+## Origin
+
+`source/commercial-real-estate-appraisal-irr-gsa-office-dallas.pdf` is part of a
+narrative commercial appraisal by Integra Realty Resources - DFW, LLP. It values the "GSA
+Office", a 39,329 SF single-tenant Class B office building at 4211 Cedar Springs Drive,
+Dallas, leased to the U.S. General Services Administration. The premise is Fair Value As
+Is, compliant with FAS 157 and effective March 2, 2011, at $4,600,000. The client was
 Kent International Holdings, Inc., which filed the full report with the SEC as an exhibit
 to its going-private Schedule 13E-3.
 
-This folder keeps **8 of the report's 166 pages**. All are portrait, US Letter.
+The file keeps **8 of the report's 166 pages**, all **portrait (US Letter)**:
 
 | Page here | Source page | Content |
 |---|---|---|
@@ -17,123 +116,65 @@ This folder keeps **8 of the report's 166 pages**. All are portrait, US Letter.
 | 6 | 8 | Identification of Subject (tax ID, legal description, ownership history) |
 | 7-8 | 83-84 | Reconciliation and Conclusion of Value |
 
-The other 158 pages were left out to keep the parse cost proportionate to the page this
-folder feeds. They cover the market and area analysis, land and improvements, the sales
-comparison and income approach detail, the certification, limiting conditions,
-qualifications and addenda. The kept pages still read as a complete summary of the
-assignment.
-
-## Provenance
+The other 158 pages were left out to keep the parse cost proportionate. They cover the
+market and area analysis, land and improvements, the sales comparison and income
+approach detail, the certification, limiting conditions, qualifications and addenda. The
+kept pages still read as a complete summary of the assignment.
 
 | | |
 |---|---|
 | Publisher | Integra Realty Resources - DFW, LLP (appraiser); filed by Kent International Holdings, Inc. |
-| Source URL | https://www.sec.gov/Archives/edgar/data/728478/000109690611002287/ex16e.pdf |
+| Source | [sec.gov/Archives/edgar/data/728478/000109690611002287/ex16e.pdf](https://www.sec.gov/Archives/edgar/data/728478/000109690611002287/ex16e.pdf) |
 | Filing | Schedule SC 13E3/A (Amendment No. 2), filed 2011-09-29, accession 0001096906-11-002287, Exhibit 16(e) |
 | Retrieved | 2026-10-13, downloaded by script |
-| Clearance | `redacted` |
+| Clearance | Redacted |
 
 The report is a public SEC filing. The EDGAR filing index describes this exhibit as the
 Integra Realty Resources appraisal of the Dallas, Texas GSA office property. The firm's
-copyright footer limits reliance on the report; it does not ban reproduction.
+copyright footer limits reliance on the report. It does not ban reproduction.
 
-**What was changed.** I used `document-types/scripts/redact.py`, which removes content
+Two changes were made with `document-types/scripts/redact.py`, which removes content
 rather than covering it:
 
-- **Signature images: 3 removed** from the transmittal letter (page 3). These are the three
-  appraisers' signatures. Each was replaced with a blank 1x1 image, and no stand-in
+- **Signature images: 3 removed** from the transmittal letter (page 3). These are the
+  three appraisers' signatures. Each was replaced with a blank image and no stand-in
   signature was drawn, so the signature lines are empty.
 - **Addressee street line: 1 string, replaced in 2 places** (cover and letter) with
   `100 Main Street`. It is not the company's EDGAR business address and could be a
   residence. City, state and ZIP are unchanged.
-- **Document metadata cleared.**
 
-**What was kept, deliberately.** The appraisers' names, titles and Texas certificate
-numbers, and the client CFO's name and title. These are professional details printed in a
-public filing. The firm's office addresses and phone numbers were also kept.
-
-The output was verified: redact.py re-extracted the text and found no original string, and
-no image remains in the removed regions. The rules file lives outside the repo.
+The document metadata was cleared. The appraisers' names, titles and Texas certificate
+numbers, and the client CFO's name and title, were kept on purpose. They are professional
+details printed in a public filing. The firm's office addresses and phone numbers were
+also kept. A re-extraction found no original string, and no image remains in the removed
+regions. The rules file lives outside the repo. Full provenance is in `manifest.json`
+under `source.origin`.
 
 ## Why this document
 
-The collection already has a residential appraisal (`appraisal-report`), which is a
-GSE-standard URAR form with ruled grids. This one is the other kind of appraisal: a
-narrative report written in a word processor, where the facts sit in tables and prose and
-nothing is a form field. It also has a quirk real underwriting pipelines run into. The
-**same Value Conclusions table is printed three times**: in the transmittal letter, in the
-Salient Facts and in the reconciliation.
+### Who processes it
 
-## Featured fields
+A commercial appraisal states what a property is worth and how the appraiser got there.
+Lenders, investors and auditors rely on it for transactions and for the books.
 
-All five are on **page 4**, the Summary of Salient Facts:
+- **Commercial real estate lending:** banks and CMBS lenders underwrite loans against
+  the appraised value and check it against the loan amount.
+- **Investors and fund managers:** buyers and REITs read appraisals during acquisitions
+  and to value portfolios.
+- **Accounting and audit:** fair value appraisals like this one support financial
+  statement values under FAS 157.
+- **Corporate transactions:** companies file appraisals with the SEC to support the price
+  in going-private and other transactions, as Kent International did here.
+- **Property tax consultants and assessors:** they use appraisals to argue or set
+  assessed values.
 
-| Field | Label | Value |
-|---|---|---|
-| `property.tax_id` | Tax ID | 001616000901A0000 |
-| `property.gross_building_area_sf` | Gross building area | 39,329 SF |
-| `property.percent_leased` | Percent leased | 100% |
-| `property.year_built` | Year built | 1985 |
-| `value_conclusions[1].value_conclusion` | Fair value as is | $4,600,000 |
+### What it contains
 
-Read top to bottom, they cover the parcel, its size, occupancy and age, and the value the
-appraisers concluded. The request suggested eight values from this page. All of them ground
-correctly, but a page carries at most five, so I left out property type (printed as
-"Office - Office") and the premise, interest and date columns of the value conclusion row.
-The label carries the premise. No person is featured.
-
-## Grounding notes
-
-- **The Salient Facts table grounds cleanly.** Each value boxes exactly its own cell on the
-  right row, including the alphanumeric tax ID.
-- **Dates must be extracted as printed to be featurable.** In the first run, the schema
-  asked for ISO dates and both `date_of_value` and `report_date` grounded OFF: the value
-  2011-03-02 does not appear in the cell, which reads "March 2, 2011". Asking for the date
-  as printed fixed it.
-- **The repeated table makes array extraction unstable.** Over four extract-only runs with
-  slightly different descriptions for `value_conclusions`:
-  - Two runs returned three identical rows, one per printed copy, all grounded.
-  - A run asked to de-duplicate returned one row with **no ranges at all** (synthesized).
-  - A run pinned to the Salient Facts copy returned two synthesized rows.
-  - The committed run returned three rows, and only the middle one (page 4) carries ranges.
-
-  That is why the featured path is `value_conclusions[1]`. On documents that repeat a
-  summary table, asking the model to merge the copies costs grounding.
-- **The extraordinary assumption is repeated three times as well**, and grounds OFF because
-  its range is split across the two lines of the wrapped sentence.
-- **"Not Used" became 0.** `valuation_approaches.cost_approach_value` came back 0 for a cost
-  approach printed as "Not Used", although the description asks for null. Treat it as a
-  known extraction error.
-- `year_built` grounded OFF in the first run, boxing the "Year Built" label. Once the
-  description named the Year Built row it grounded to the 1985 cell.
-
-The schema has **50 leaf fields**.
-
-## Credits
-
-Standard tier, jobs API, DPT-3 Pro:
-
-| Run | Credits |
-|---|---|
-| Parse and first extract | 13.80 |
-| Four extract-only reruns while refining the schema | 6.20 + 5.90 + 6.10 + 6.20 |
-| **Total** | **38.20** |
-
-A fresh parse plus extract of these 8 pages costs about 14 credits.
-
-## Regenerate
-
-```bash
-# Trim and redact (the rules file is kept outside the repo)
-.venv/bin/python -c "import fitz; d=fitz.open('ex16e.pdf'); d.select([0,2,3,5,6,7,82,83]); d.save('trimmed.pdf', garbage=4, deflate=True)"
-.venv/bin/python document-types/scripts/redact.py trimmed.pdf \
-    document-types/collection/commercial-real-estate-appraisal/source/commercial-real-estate-appraisal-irr-gsa-office-dallas.pdf \
-    --rules <outside-the-repo>/rules.json \
-    --remove-images 3:85,410,440,475 3:88,534,280,593
-
-.venv/bin/python document-types/scripts/run_ade.py commercial-real-estate-appraisal
-.venv/bin/python document-types/scripts/build_images.py commercial-real-estate-appraisal
-```
-
-Re-running extraction may return a different number of `value_conclusions` rows; see the
-grounding notes above.
+- **A narrative report, not a form.** The facts sit in tables, labeled lists and prose
+  paragraphs, written in a word processor.
+- **The same value conclusions table printed three times:** in the transmittal letter,
+  in the salient facts and in the reconciliation.
+- **Two-column summary tables** of salient facts that run across two pages.
+- **A legal description and ownership history** in running text.
+- **A letter with a signature block,** with the signature images removed.
+- **A cover page** with the addressee block and the appraiser's logo.

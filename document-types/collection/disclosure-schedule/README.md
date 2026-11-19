@@ -1,13 +1,107 @@
 # Disclosure Schedules
 
-Source assets for `landing.ai/document-type/disclosure-schedule`.
+**On the website:** [landing.ai/document-type/disclosure-schedule](https://landing.ai/document-type/disclosure-schedule)
 
-## Sample document
+The Disclosure Schedules to the Asset Purchase Agreement between the four Finch
+Therapeutics sellers and Ferring Asset Holding LLC, filed in the Finch Therapeutics
+chapter 11 cases. It holds a cover page and preamble and a run of numbered schedules:
+assigned agreements, patents, trademarks and software, excluded insurance policies and
+causes of action, and the sellers' representations.
 
-`source/finch-ferring-apa-disclosure-schedules-redacted.pdf`: the Disclosure Schedules
+| | |
+|---|---|
+| Pages | 13 |
+| Fields in the extraction schema | 57 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:50 | 2026-11-19 02:56 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 10,870 | 11,340 |
+| Words under 0.95 confidence | 27 | n/a |
+| Words under 0.80 confidence | 1 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 8.0 s | 32.0 s |
+| Per page | 0.6 s | 2.5 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.1 credits | 9.4 credits |
+| Per page | 0.24 credits | 0.72 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:50 | 2026-11-19 02:57 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 57 | 57 |
+| Non-null fields returned | 57 | 57 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 246.5 s | 245.9 s |
+| Per schema field (57) | 4.32 s | 4.31 s |
+| Per value returned | 1.39 s | 1.39 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 11.5 credits | 11.5 credits |
+| Per schema field (57) | 0.202 credits | 0.202 credits |
+| Per value returned | 0.065 credits | 0.065 credits |
+
+## Origin
+
+`source/finch-ferring-apa-disclosure-schedules-redacted.pdf` is the Disclosure Schedules
 (Execution Version) to the Asset Purchase Agreement between the four Finch Therapeutics
 sellers and Ferring Asset Holding LLC, as filed in the Finch Therapeutics chapter 11
-cases. **13 pages, portrait**, trimmed from a 66-page filing.
+cases. It is **13 pages, portrait**, trimmed from a 66-page filing.
 
 | | |
 |---|---|
@@ -36,75 +130,39 @@ original page numbers (`Page N of 64`).
 **What was replaced.** Schedule 1.1(b) names three individual contacts in its notice
 addresses. Each was replaced with an obviously fake name: **Jane Sample** (an Attn line
 in a University of Minnesota address), **John Sample** and **Alex Q. Sample** (in the
-Skysong Innovations address); the job titles beside them were kept. The replacements were
-made with `redact.py`, which removes the original text rather than covering it, and set
-in Helvetica, so they look slightly different from the surrounding Times. Every other
-party (sellers, purchaser, universities, insurers) is an organization and was kept, as
-were the debtors' partial federal tax-ID digits, which are corporate. The PDF's metadata
-was cleared. Verified by text search on the committed PDF and this folder: no original
-name survives.
+Skysong Innovations address); the job titles beside them were kept. The replacements
+remove the original text rather than covering it, and are set in Helvetica, so they look
+slightly different from the surrounding Times. Every other party (sellers, purchaser,
+universities, insurers) is an organization and was kept, as were the debtors' partial
+federal tax-ID digits, which are corporate. The PDF's metadata was cleared. Verified by
+text search on the committed PDF and this folder: no original name survives. Full
+provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is the collection's first set of M&A disclosure schedules: not a form, but a legal
-deliverable built from many short, independently numbered schedules, each with its own
-heading and its own shape. Some are tables (assigned contracts with multi-address notice
-blocks, patents, trademarks, a 19-row insurance schedule), some are numbered lists, and
-several are just "None." The test is whether extraction keeps each schedule's contents
-under the right schedule number.
+### Who processes it
 
-`schema.json` covers the cover page and preamble (agreement, date, sellers, purchaser)
-and one object per schedule, each with its schedule number and title. **57 leaf fields**
-(counted from the schema); all 16 top-level fields were populated.
+Disclosure schedules sit alongside a purchase agreement and list the contracts, assets
+and exceptions behind the seller's representations. They are where much of a deal's
+detail lives.
 
-## Featured fields: the excluded insurance schedule
+- **M&A and corporate law firms:** lawyers draft, negotiate and review schedules
+  against the representations in the agreement.
+- **Buyers and due diligence teams:** they check which contracts, IP and liabilities
+  transfer and which are excluded.
+- **Bankruptcy courts, trustees and claims agents:** in a section 363 sale like this
+  one, the schedules define what the buyer acquires from the estate.
+- **Representations and warranties insurers:** underwriters review disclosed exceptions
+  when pricing a policy for the deal.
+- **Contract management and integration teams:** after closing, they take over the
+  assigned agreements and their notice addresses.
 
-All on page 6.
+### What it contains
 
-| Field | Value |
-|---|---|
-| Schedule title | Excluded Insurance Policies |
-| Primary D&O policy number | 06-584-17-94 |
-| Primary D&O policy term | 3/19/2026 - 3/19/2028 |
-| Automobile policy number | 73595419 |
-
-The request's notes suggested this page with these four fields plus the primary D&O
-insurer. The insurer was left out: its value wraps across three lines of its cell, and
-`inspect_fields.py` reads its range as off. The crops and the page overlay were checked by eye. No person is
-featured.
-
-## Grounding and extraction notes
-
-- **The insurance table is clean.** All 19 rows extract correctly, and every policy
-  number and policy term grounds to its own cell, including `HN-0303-7264-031925`, which
-  wraps across two lines. Insurer and coverage cells are less even: eight of the 38
-  read as off (both cells of the Global Package Policy, primary D&O and first excess
-  D&O rows, plus two more insurers), while other wrapped insurers (Hudson, XL) read
-  ok and no pattern by line count holds. The policy number and term columns are the
-  reliable ones to feature.
-- **Schedule numbers and titles** ground to their own headings on every schedule.
-- **The patent table** extracts all four rows correctly despite its mid-word wraps
-  (`Countr`/`y`, `0100833.004`/`10`). One quirk: the Algeria row's co-ownership note,
-  which sits in the Application No. cell, was folded into `application_number`.
-  Application dates are normalized to ISO, so their ranges read as off by text match
-  though they point at the right cell.
-- **Long numbered items** (the excluded cause of action, the No Violation item) ground
-  as several line ranges each, as expected for multi-line prose.
-- **The redacted contacts** extracted as the fake names, inside the notice-address
-  strings, confirming the parse saw only the replacements.
-
-## Credits
-
-20.90 credits at standard tier (parse and extract, 13 pages).
-
-## Regenerate
-
-```bash
-# trimming and redaction (rules file kept outside the repo)
-.venv/bin/python document-types/scripts/redact.py <original>.pdf \
-    document-types/collection/disclosure-schedule/source/finch-ferring-apa-disclosure-schedules-redacted.pdf \
-    --rules <outside-the-repo>/rules.json --drop-pages 1 2 $(seq 7 57)
-
-.venv/bin/python document-types/scripts/run_ade.py disclosure-schedule
-.venv/bin/python document-types/scripts/build_images.py disclosure-schedule
-```
+- **Many short schedules,** each with its own number, heading and shape.
+- **Tables** of assigned contracts with multi-address notice blocks, patents,
+  trademarks and a 19-row insurance schedule.
+- **Narrow table columns that wrap words mid-token** in the patent table.
+- **Numbered lists and one-word schedules** that read only "None."
+- **A court-stamped header** on every page carrying the original filing's page numbers.
+- **A born-digital text layer,** with three replacement names set in a different font.

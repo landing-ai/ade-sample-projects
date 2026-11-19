@@ -1,16 +1,110 @@
 # Trademark registration certificate
 
-Source assets for `landing.ai/document-type/trademark-registration-certificate`.
+**On the website:** [landing.ai/document-type/trademark-registration-certificate](https://landing.ai/document-type/trademark-registration-certificate)
 
-## Sample document
+The USPTO registration certificate for U.S. Reg. No. 5,886,375, the AMERICAN NINJA
+WARRIOR shield design mark, registered October 15, 2019 in International Class 21. It
+gives the registration and serial numbers, the owner, the goods, first-use dates, the
+description of the mark and its drawing, and a second page on the filings needed to keep
+the registration in force.
 
-`source/uspto-reg-5886375-registration-certificate.pdf` — the USPTO registration
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 25 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:39 | 2026-11-19 03:56 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 4,428 | 4,860 |
+| Words under 0.95 confidence | 16 | n/a |
+| Words under 0.80 confidence | 10 | n/a |
+| Words under 0.50 confidence | 8 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 5.1 s | 8.2 s |
+| Per page | 2.5 s | 4.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.8 credits | 2.3 credits |
+| Per page | 0.40 credits | 1.15 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:39 | 2026-11-19 03:56 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 25 | 25 |
+| Non-null fields returned | 24 | 24 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 198.0 s | 54.2 s |
+| Per schema field (25) | 7.92 s | 2.17 s |
+| Per value returned | 8.25 s | 2.26 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 2.5 credits | 2.6 credits |
+| Per schema field (25) | 0.100 credits | 0.104 credits |
+| Per value returned | 0.104 credits | 0.108 credits |
+
+## Origin
+
+`source/uspto-reg-5886375-registration-certificate.pdf` is the USPTO registration
 certificate for U.S. Reg. No. 5,886,375, the AMERICAN NINJA WARRIOR shield design mark,
-registered October 15, 2019 in International Class 21. **2 pages, portrait, A4.** Page 1
-is the certificate; page 2 is the USPTO's standard statement of the filings needed to
-keep the registration alive. Both are kept, as the request asked.
+registered October 15, 2019 in International Class 21. It is **2 pages, portrait, A4**.
+Page 1 is the certificate, and page 2 is the USPTO's standard statement of the filings
+needed to keep the registration alive. Both are kept, as the request asked.
 
-The page is a mixed layer: the text is a real text layer, while the blackletter "United
+The pages are mixed-layer. The text is a real text layer, while the blackletter "United
 States of America" banner, the mark itself, the USPTO seal and the Director's signature
 are images.
 
@@ -23,98 +117,40 @@ are images.
 | Clearance | Public |
 
 Trademark registrations and their file histories are public records, published by the
-USPTO in TSDR; this is the "Registration Certificate" document in that file. The owner is
-a corporation, Tokyo Broadcasting System Television, Inc. The only personal element is
-the facsimile signature of the USPTO Director, a public official, which appears on every
-certificate of the period; it is kept, and **no redaction was made**. The PDF metadata
+USPTO in TSDR. This is the "Registration Certificate" document in that file. The owner
+is a corporation, Tokyo Broadcasting System Television, Inc. The only personal element
+is the facsimile signature of the USPTO Director, a public official, which appears on
+every certificate of the period. It is kept, and no redaction was made. The PDF metadata
 holds only the PD4ML creator and producer and a creation date. The mark is a well-known
-third-party television brand logo, shown here as part of the public record.
+third-party television brand logo, shown here as part of the public record. Full
+provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **trademark registration certificate**, and a different layout from
-the forms around it:
+### Who processes it
+
+A registration certificate is the official proof that a trademark is registered, who
+owns it and for which goods or services. It travels with the brand through licensing,
+sales and disputes.
+
+- **Trademark attorneys and IP firms:** they docket registration dates and maintenance
+  deadlines and file the certificates as evidence of rights.
+- **Brand owners and licensing teams:** they track their portfolio by registration
+  number, class and goods.
+- **E-commerce marketplaces:** brand registry programs ask sellers for a registration to
+  prove they own a brand.
+- **M&A and IP due diligence:** buyers verify ownership, status and coverage of the
+  trademarks they acquire.
+- **Customs and anti-counterfeiting:** rights holders record registrations so that
+  infringing goods can be stopped.
+
+### What it contains
 
 - **Two columns that are not a table.** Bold left-column labels ("Reg. No.", "Int. Cl.",
   "Principal Register") sit beside a right column of prose, with no rules between them.
-  Each left-column line came back as its own block, so the identifiers ground tightly.
-- **Values inside prose.** The serial number and filing date share one line; the first-use
-  dates share another; the disclaimer is a quoted word at the end of a sentence.
-- **The mark is an image.** Whether it is a design mark, and what its words are, has to be
-  read from the description paragraph and the drawing.
+- **Values inside prose.** The serial number and filing date share one line, the
+  first-use dates share another, and the disclaimer is a quoted word at the end of a
+  sentence.
+- **The mark as an image,** described in words in a separate paragraph.
+- **A blackletter banner, a seal and a facsimile signature** as images.
 - **A second page of boilerplate** whose deadlines are relative to a date on page 1.
-
-## Featured fields: the registration's identity
-
-All on page 1. The request named no fields; its notes suggested registration number,
-registration date, international class, owner, serial number and filing date.
-
-| Field | Value |
-|---|---|
-| Registration number | 5,886,375 |
-| International class | 21 |
-| Register | Principal Register |
-| Owner | Tokyo Broadcasting System Television, Inc. |
-| Serial number | 87-981,735 |
-
-Which registration, in which class, on which register, held by whom, and from which
-application.
-
-**Registration date and filing date were not featured,** though both were suggested and
-both extract correctly. The schema normalizes dates to ISO (`2019-10-15` from "Registered
-Oct. 15, 2019", `2017-07-18` from "FILED 07-18-2017"), so the range check reads them OFF
-and a crop would print a value that does not match the text inside it. Register takes the
-fifth place.
-
-The owner crop takes in "(JAPAN CORPORATION)" on the same line, which is extracted
-separately as the entity type. The serial number crop takes in the filing date beside it.
-
-## What it surfaced
-
-**The left column grounds cleanly.** Each label-and-value line in the bold column is a
-block of its own, so every crop is a tight box around exactly one identifier.
-
-**The goods-and-services class number grounds twice,** to "Int. Cl.: 21" and to the "CLASS 21:" prefix of the
-goods paragraph. Both are right.
-
-**First-use dates are kept as printed.** The USPTO writes `7-00-2017`, with `00` for an
-unknown day; the schema asks for the printed form rather than inventing a day.
-
-**The parse names the signatory.** The signature is an image with only the title printed
-beneath it, yet the parse writes the Director's name under a `[SIGNED]` tag, read from the
-signature itself. The schema extracts only the printed title.
-
-**The seal is described, not dropped.** It appears in the markdown as a bracketed
-description of the USPTO / Department of Commerce seal.
-
-**Page 2 values read OFF as paraphrase.** The maintenance windows are extracted as phrases
-("between the 5th and 6th years after the registration date") from longer sentences, and
-the blocks span several lines, so the range check marks most of them OFF. The values are
-right.
-
-**`color_claimed` is null with no range,** as it should be: this certificate has no color
-claim.
-
-## Extraction
-
-**25 leaf fields**: issuing office, registration number and date, international classes,
-mark type, register, serial number and filing date; the owner (name, entity type, address,
-country); goods and services per class (class, description, first use, first use in
-commerce); the mark (literal element, design-mark flag, description, color claim); the
-disclaimer; the signatory's title; and the three maintenance windows from page 2. All 14
-top-level fields populate.
-
-## Cost
-
-**4.70 credits** at standard tier for 2 pages, parse and extract together.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/trademark-registration-certificate/source/uspto-reg-5886375-registration-certificate.pdf \
-  "https://tmng-al.uspto.gov/resting2/api/casedoc/cms/case/87981735/registration-certificate/5886375_87981735_101519_ORC.pdf"
-.venv/bin/python document-types/scripts/run_ade.py trademark-registration-certificate                # 4.70 credits
-.venv/bin/python document-types/scripts/run_ade.py trademark-registration-certificate --extract-only # schema iteration
-.venv/bin/python document-types/scripts/build_images.py trademark-registration-certificate           # free
-.venv/bin/python document-types/scripts/inspect_fields.py trademark-registration-certificate --page 1
-```

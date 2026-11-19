@@ -1,13 +1,101 @@
 # Foreclosure Judgment
 
-Source assets for `landing.ai/document-type/foreclosure-judgment`.
+**On the website:** [landing.ai/document-type/foreclosure-judgment](https://landing.ai/document-type/foreclosure-judgment)
 
-## Sample document
+A General Judgment of Foreclosure and Sale from the Multnomah County Circuit Court in
+Oregon, with its Certificate of Readiness. It orders a foreclosed home sold and awards
+the lender $443,537.60 plus fees and costs. The award is set out in a table of
+principal, interest, charges and fees, surrounded by numbered findings and orders.
 
-`source/foreclosure-judgment-redacted.pdf`: a General Judgment of Foreclosure and Sale
-from the Multnomah County Circuit Court, with its Certificate of Readiness under UTCR
-5.100. It orders a foreclosed home sold and awards the lender $443,537.60 plus fees and
-costs. **6 pages, portrait, scanned** on 28-line pleading paper.
+| | |
+|---|---|
+| Pages | 6 |
+| Fields in the extraction schema | 30 |
+
+DPT-3 Pro ran at standard tier through the jobs API, and the extraction used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Pro |
+|---|---|
+| Snapshot | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:06 |
+| Region | US |
+
+### Parse accuracy
+
+| | DPT-3 Pro |
+|---|---|
+| Characters returned | 10,682 |
+| Accuracy | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 15.6 s |
+| Per page | 2.6 s |
+
+### Parse cost
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 5.7 credits |
+| Per page | 0.95 credits |
+
+## Extract performance
+
+The Pro markdown was extracted with the schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Pro markdown |
+|---|---|
+| Snapshot | `extract-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:06 |
+| Region | US |
+
+### Extract accuracy
+
+| | Pro markdown |
+|---|---|
+| Fields requested | 30 |
+| Non-null fields returned | 30 |
+| Accuracy | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Pro markdown |
+|---|---|
+| Total | 128.3 s |
+| Per schema field (30) | 4.28 s |
+| Per value returned | 3.89 s |
+
+### Extract cost
+
+| | Pro markdown |
+|---|---|
+| Total | 3.4 credits |
+| Per schema field (30) | 0.113 credits |
+| Per value returned | 0.103 credits |
+
+## Origin
+
+`source/foreclosure-judgment-redacted.pdf` is a **General Judgment of Foreclosure and
+Sale** from the Multnomah County Circuit Court, with its Certificate of Readiness under
+UTCR 5.100. It orders a foreclosed home sold and awards the lender $443,537.60 plus fees
+and costs. It is **6 pages, portrait**, a scan on 28-line pleading paper.
 
 | | |
 |---|---|
@@ -16,10 +104,12 @@ costs. **6 pages, portrait, scanned** on 28-line pleading paper.
 | Retrieved | 2026-10-02, by script |
 | Clearance | **Redacted**, see below |
 
-It sits in a sheriff's-sale packet with the writ that enforces it, the note and the
-note's allonge. All four are separate samples sharing the same stand-ins.
+It sits in a 13-page sheriff's-sale packet with the writ that enforces it, the note and
+the note's allonge. Only the judgment and its certificate of readiness are used here.
+All four documents are separate samples sharing the same stand-ins.
 
-## Redaction
+The judgment is a public court record, but the defendants are a deceased private
+borrower's heirs, so these values were replaced:
 
 | Data | Replaced with |
 |---|---|
@@ -40,71 +130,39 @@ Kept, because they appear in an official or professional capacity:
 The money award is kept too: with the parties and the property replaced, it identifies
 no one.
 
-This was done in the pixels with `document-types/scripts/redact_scan.py`. The
-judgment's body text set the last fix in it. In mixed case, the busy band of ink is the
-x-height, so a name like "Doe, Jr." was redrawn at half size, with the tops of the
-original capitals left as specks. The measurement now climbs through the ascenders to
-the capitals. The judgment was re-redacted and re-run after that fix.
-
-Verified by OCR of the output, on literals and bare digits. A separate sweep of every
-file in this folder found none of the original values.
+The pages are scans, so the redaction was done in the pixels. OCR located each value,
+the stand-in was drawn in its place, and the pages were rebuilt from the edited images
+alone. OCR of the output, on literals and bare digits, and a separate sweep of every
+file in this folder found none of the original values. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-This is where the money in a foreclosure is set out. The award is a ruled table of
-principal, interest, charges and fees, with nested sub-items and a negative in
-parentheses. A second table lists fees and costs. Around them run five pages of numbered
-findings and orders. It tests table extraction from a scan, alongside facts written in
-legal prose.
+### Who processes it
 
-`schema.json`: **30 leaf fields** (counted from the schema), all populated.
+A judgment of foreclosure is where the court sets out the money owed on a defaulted
+mortgage and orders the property sold to pay it.
 
-## Featured fields: the award table
+- **Mortgage servicing and default management:** servicers track the judgment amount,
+  interest rates and sale terms for each foreclosed loan.
+- **Foreclosure law firms:** attorneys draft the judgment and use its figures to prepare
+  the writ and the sale.
+- **Sheriffs and sale officers:** the sale is conducted under the judgment, and its
+  amounts set the credit bid and the payoff.
+- **Title insurance:** examiners confirm the judgment, the parties and the legal
+  description before insuring a post-foreclosure sale.
+- **Distressed-property investors:** buyers at sheriff's sales read the judgment to
+  understand what is being sold and what liens are cut off.
 
-| Field | Value |
-|---|---|
-| Principal | 352970.28 |
-| Prejudgment interest | 59253.99 |
-| Prejudgment interest rate (%) | 3.875 |
-| Late charges | 98.6 |
-| Other costs and fees | 31214.73 |
+### What it contains
 
-All five are on page 3, in the paragraph 11 table. The subtotal ($384,283.61) and the
-total with prejudgment interest ($443,537.60) are on page 4, where the table continues.
-
-## Grounding and extraction notes
-
-- **Every table amount grounds to its own cell**, across the award table's page break
-  and in the fees table. The suspense balance, printed "($2,214.32)", extracts as
-  −2214.32. The prejudgment rate and per-diem interest ground to the row-label cell that
-  states them ("…at 3.875% … at $37.47 per diem").
-- **The caption's line breaks split the defendants.** The borrower's name wraps across
-  two caption lines, so `defendants[0]` ends "… OF JOHN" and `defendants[1]` begins
-  "Q SAMPLE. AKA …". The writ shows the same pattern.
-- **Findings in prose extract cleanly:** the deed of trust's dates and recording number,
-  the note's date and amount, the 9% post-judgment rate, no deficiency judgment, and no
-  homestead exemption. The booleans and the long-form dates read `OFF`, as they do in
-  every sample.
-- **The judge's signature** is a proxy signature. The parse labels it `[SIGNED]` and
-  transcribes "Proxy signed by HCW". `judgment_signed_date` is the printed timestamp,
-  "12/3/2024 3:09:22 PM".
-
-## Cost
-
-**9.20 credits** at standard tier for the committed output: 6-page parse and extraction.
-The first run, before the redaction fix, cost another 9.20.
-
-## Regenerating
-
-```bash
-# From the original packet; the rules file stays outside the repo.
-.venv/bin/python document-types/scripts/redact_scan.py <packet>.pdf \
-    source/foreclosure-judgment-redacted.pdf --rules <outside-the-repo>/rules.json \
-    --pages 3 4 5 6 7 8 --verify-also <the surnames, street number and original numbers>
-
-.venv/bin/python document-types/scripts/run_ade.py foreclosure-judgment
-.venv/bin/python document-types/scripts/build_images.py foreclosure-judgment
-.venv/bin/python document-types/scripts/inspect_fields.py foreclosure-judgment --page 3
-```
-
-Requires `tesseract` on the PATH (`brew install tesseract`).
+- **A ruled award table** of principal, interest, charges and fees, with nested
+  sub-items and a negative amount in parentheses.
+- **A table that continues across a page break,** with its subtotal and total on the
+  next page.
+- **A second table** listing fees and costs.
+- **Five pages of numbered findings and orders** in legal prose, with dates, rates and
+  amounts inside sentences.
+- **A caption** whose party names wrap across lines.
+- **A scan on pleading paper** with numbered margin lines and no text layer.
+- **A proxy signature and timestamp** for the judge, and attorney signatures.

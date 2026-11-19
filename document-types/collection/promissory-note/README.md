@@ -1,25 +1,113 @@
 # Promissory Note
 
-Source assets for `landing.ai/document-type/promissory-note`.
+**On the website:** [landing.ai/document-type/promissory-note](https://landing.ai/document-type/promissory-note)
 
-## Sample document
+A residential mortgage note on the Fannie Mae / Freddie Mac Multistate Fixed Rate Note
+(Form 3200), VA-guaranteed, recording a $360,000 loan at 3.875% over 30 years owed to
+Mortgage Express, LLC. It sets out the principal, interest rate, monthly payment,
+maturity, late charges and default terms, with the borrower's signature and initials on
+every page.
 
-`source/promissory-note-redacted.pdf`: a residential mortgage note on the Fannie Mae /
+| | |
+|---|---|
+| Pages | 3 |
+| Fields in the extraction schema | 24 |
+
+DPT-3 Pro ran at standard tier through the jobs API, and the extraction used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Pro |
+|---|---|
+| Snapshot | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:44 |
+| Region | US |
+
+### Parse accuracy
+
+| | DPT-3 Pro |
+|---|---|
+| Characters returned | 10,326 |
+| Accuracy | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 21.4 s |
+| Per page | 7.1 s |
+
+### Parse cost
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 4.1 credits |
+| Per page | 1.37 credits |
+
+## Extract performance
+
+The Pro markdown was extracted with the schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Pro markdown |
+|---|---|
+| Snapshot | `extract-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:45 |
+| Region | US |
+
+### Extract accuracy
+
+| | Pro markdown |
+|---|---|
+| Fields requested | 24 |
+| Non-null fields returned | 23 |
+| Accuracy | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Pro markdown |
+|---|---|
+| Total | 155.1 s |
+| Per schema field (24) | 6.46 s |
+| Per value returned | 6.74 s |
+
+### Extract cost
+
+| | Pro markdown |
+|---|---|
+| Total | 2.9 credits |
+| Per schema field (24) | 0.121 credits |
+| Per value returned | 0.126 credits |
+
+## Origin
+
+`source/promissory-note-redacted.pdf` is a residential mortgage note on the Fannie Mae /
 Freddie Mac Multistate Fixed Rate Note (Form 3200), VA-guaranteed. It records $360,000
-at 3.875% over 30 years, owed to Mortgage Express, LLC. **3 pages, portrait, scanned.**
+at 3.875% over 30 years, owed to Mortgage Express, LLC. It is **3 pages, portrait,
+scanned** at low resolution.
 
 | | |
 |---|---|
 | Publisher | Multnomah County Circuit Court record, posted by the Oregon State Sheriffs' Association sales site |
 | Source | [oregonsheriffssales.org/…/384277-Writ.pdf](https://oregonsheriffssales.org/wp-content/uploads/2025/01/384277-Writ.pdf), pages 9–11 of 13 |
 | Retrieved | 2026-10-02, by script |
-| Clearance | **Redacted**, see below |
+| Clearance | Redacted |
 
-It was filed as Exhibit 1 (pages 1–3 of 5) to a foreclosure judgment, in a sheriff's-sale
-packet. Its allonge, the writ and the judgment from the same packet are separate samples,
-and all four share the same stand-ins.
-
-## Redaction
+It was filed as Exhibit 1 (pages 1–3 of 5) to a foreclosure judgment, in a
+sheriff's-sale packet. Its allonge, the writ and the judgment from the same packet are
+separate samples, and all four share the same stand-ins.
 
 | Data | Replaced with |
 |---|---|
@@ -30,86 +118,53 @@ and all four share the same stand-ins.
 | Property ZIP code | `97000` |
 
 The loan number, case number and MIN were blacked out by whoever filed it, before
-scanning, and those blackouts are kept.
+scanning, and those blackouts are kept. The lender's office address and the loan
+originator's name and NMLS ID are kept. They appear in a professional capacity, and NMLS
+IDs are public registrations.
 
-The lender's office address and the loan originator's name and NMLS ID are kept. They
-appear in a professional capacity, and NMLS IDs are public registrations.
+All of it was done in the pixels with `document-types/scripts/redact_scan.py`:
 
-All of it was done in the pixels with `document-types/scripts/redact_scan.py`, which
-this sample extended:
-
-- **Signature and initials.** `--erase` paints out a region and redraws a stand-in in
+- **Signature and initials.** Each region was painted out and a stand-in redrawn in
   Indie Flower, an openly licensed handwriting font, in the region's own ink. The note
   still shows it was signed and initialled. Where the original strokes crossed a
-  signature line or an initials line, that segment of line is redrawn (`=__`).
-- **Bold.** The property address is printed in bold, so it is replaced in bold with
-  `--bold`. Measuring stroke weight did not separate bold from regular on type this
-  small: the bold address measured only 1.08× its neighbours. So bold is set explicitly
-  rather than detected.
-- **Rules that survive OCR.** The scan's small type reads "Ave" as "Avo" and "Jr." as
-  "Yr.". So the address rule matches the house number and street only, leaving the
-  printed suffix, and the name has an explicit `YR` variant in the rules file.
+  signature line or an initials line, that segment of line was redrawn. The redrawn
+  signature line is a little heavier than the original segment beside it.
+- **Bold.** The property address is printed in bold, so it was replaced in bold.
+- **OCR variants.** The scan's small type reads "Ave" as "Avo" and "Jr." as "Yr.", so
+  the replacement rules match the house number and street only and cover the misread
+  variant of the name.
 
-The redrawn signature line is a little heavier than the original segment beside it.
-
-Verified by OCR of the output, on literals and bare digits. A separate sweep of every
-file in this folder found none of the original values.
+The redaction was verified by OCR of the output, on literals and bare digits. A separate
+sweep of every file in this folder found none of the original values. Full provenance is
+in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-A promissory note is the core loan document: amount, rate, payment, maturity, late
-charges. This one is a standard uniform instrument, scanned at low resolution with small
-type. It tests whether the terms come out correctly from dense, slightly degraded print.
+### Who processes it
 
-`schema.json`: **24 leaf fields** (counted from the schema). 19 of the 20 top-level
-fields populate. `loan_number` stays blank because it is blacked out.
+A promissory note is the borrower's promise to repay a loan and the core document of
+every mortgage. It is read at origination, when the loan is sold and when it goes into
+default.
 
-## Featured fields: the loan's terms
+- **Mortgage lending and servicing:** servicers board the principal, rate, payment and
+  maturity date from the note.
+- **Secondary market and loan acquisitions:** buyers and custodians check each note
+  against the loan tape during due diligence.
+- **Document custodians:** they certify that the original note and its endorsements are
+  in the file.
+- **Foreclosure and default law:** attorneys file the note as an exhibit to prove the
+  debt and the right to enforce it, as here.
+- **Title and court-record services:** they read notes filed in court and county
+  records.
 
-| Field | Value |
-|---|---|
-| Lender | Mortgage Express, LLC |
-| Principal | 360000.0 |
-| Interest rate (%) | 3.875 |
-| Monthly payment | 1692.85 |
+### What it contains
 
-All four are on page 1, and each boxes the sentence that states it. No person is
-featured.
-
-## Grounding and extraction notes
-
-- **"Oregon" was read as "Orogon"** by the parse, in the small bold date line, and
-  `state` extracts it that way. Everything else on the page read correctly, including
-  the dates, payment terms and the lender's office address.
-- **A blank field grounds to the whole page.** `loan_number` is blacked out and comes
-  back as an empty string with **57 ranges** spanning nearly all of page 1, where it
-  should have no ranges at all.
-- **Dates read `OFF`** (`note_date` 2019-03-08 against "March 8, 2019") because the
-  check compares digits. The crops are correct.
-- **Signed and initialled.** `borrower.is_signed` grounds to the parse's
-  `[SIGNED][SEALED]` label on the stand-in signature. `initialed_pages` is 3.
-
-## Cost
-
-**7.00 credits** at standard tier: 3-page parse and extraction.
-
-## Regenerating
-
-```bash
-# From the original packet; the rules file stays outside the repo.
-.venv/bin/python document-types/scripts/redact_scan.py <packet>.pdf \
-    source/promissory-note-redacted.pdf --rules <outside-the-repo>/rules.json \
-    --pages 9 10 11 --bold "9:<the house number and street rule>" \
-    --handwriting-font document-types/scripts/fonts/IndieFlower-Regular.ttf \
-    --erase "9:448,653,495,676=JQS" "10:452,654,499,675=JQS" "10:452,675,466,678.3" \
-            "10:452,675.2,466,675.9=__" "11:452,654,493,676.4=JQS" "11:452,676.4,467,679" \
-            "11:452,676.6,467,677.3=__" "11:204,172,421,198=John Q Sample" \
-            "11:204,198,421,203.5" "11:300,203.5,421,212" "11:204,199.4,421,200.2=__" \
-    --verify-also <the surnames and street number>
-
-.venv/bin/python document-types/scripts/run_ade.py promissory-note
-.venv/bin/python document-types/scripts/build_images.py promissory-note
-.venv/bin/python document-types/scripts/inspect_fields.py promissory-note --page 1
-```
-
-Requires `tesseract` on the PATH (`brew install tesseract`).
+- **A standard uniform instrument in dense prose,** with the loan terms embedded in
+  numbered sections.
+- **A low-resolution scan with small type,** so some words are hard to read.
+- **Handwritten signature and initials** on every page (here, stand-ins in a handwriting
+  font).
+- **Black boxes** over the loan number, case number and MIN, applied before scanning.
+- **Bold text** in the property address and date line.
+- **Handwritten exhibit labels** ("EXHIBIT 1, PAGE 1 OF 5") added for the court filing,
+  plus scan specks and punch-hole marks.

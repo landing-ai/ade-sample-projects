@@ -1,114 +1,158 @@
 # Customer Concentration Schedule
 
-Source assets for `landing.ai/document-type/customer-concentration-schedule`.
+**On the website:** [landing.ai/document-type/customer-concentration-schedule](https://landing.ai/document-type/customer-concentration-schedule)
 
-## Sample document
-
-Two exhibits from the statistical section of the FY2025 Annual Comprehensive Financial
-Report of the District of Columbia Water and Sewer Authority (DC Water): Exhibit 6, *Ten
-Largest Commercial Customers, Last Ten Fiscal Years*, and Exhibit 7, *Ten Largest
-Government Customers, Last Ten Fiscal Years*, both in thousands of dollars.
+Two exhibits from DC Water's FY2025 Annual Comprehensive Financial Report: its ten
+largest commercial customers and its ten largest government customers, each over the
+last ten fiscal years. Each page is one grid of revenue by customer and year, in
+thousands of dollars, with a total row and that total's share of operating revenues.
 
 | | |
 |---|---|
-| File | `source/dc-water-fy2025-largest-customers.pdf` |
-| Pages | 2 (pages 11 and 12 of the 34-page statistical section; printed pages 88 and 89) |
-| Orientation | Landscape |
-| Layer | Native text, no scanning |
+| Pages | 2 |
+| Fields in the extraction schema | 13 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:48 | 2026-11-19 02:54 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 6,193 | 6,284 |
+| Words under 0.95 confidence | 6 | n/a |
+| Words under 0.80 confidence | 2 | n/a |
+| Words under 0.50 confidence | 1 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.3 s | 6.1 s |
+| Per page | 1.6 s | 3.0 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.0 credits | 2.6 credits |
+| Per page | 0.50 credits | 1.30 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:48 | 2026-11-19 02:54 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 13 | 13 |
+| Non-null fields returned | 13 | 13 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 106.8 s | 94.4 s |
+| Per schema field (13) | 8.22 s | 7.26 s |
+| Per value returned | 0.76 s | 0.67 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 6.3 credits | 6.3 credits |
+| Per schema field (13) | 0.485 credits | 0.485 credits |
+| Per value returned | 0.045 credits | 0.045 credits |
+
+## Origin
+
+`source/dc-water-fy2025-largest-customers.pdf` holds two exhibits from the statistical
+section of the FY2025 Annual Comprehensive Financial Report of the District of Columbia
+Water and Sewer Authority (DC Water): Exhibit 6, *Ten Largest Commercial Customers, Last
+Ten Fiscal Years*, and Exhibit 7, *Ten Largest Government Customers, Last Ten Fiscal
+Years*, both in thousands of dollars. It is **2 pages, landscape**, with a native text
+layer. They are pages 11 and 12 of the 34-page statistical section (printed pages 88 and
+89).
 
 Each page is one ten-year grid: a customer column, ten fiscal-year columns (2025 back to
-2016), a Total row and a `% of Total Operating Revenues` row. The commercial grid lists 16
-customers and the government grid 11, because a customer that left the top ten still has
-a row, with `-` in the years it did not qualify.
+2016), a Total row and a `% of Total Operating Revenues` row. The commercial grid lists
+16 customers and the government grid 11, because a customer that left the top ten still
+has a row, with `-` in the years it did not qualify.
 
 A public utility stands in for a diligence schedule here. A private company's customer
 concentration schedule, with revenue and share by customer, is not something anyone
 publishes; a utility's ACFR is the public document that carries the same table.
 
-## Provenance
-
 | | |
 |---|---|
 | Publisher | District of Columbia Water and Sewer Authority (DC Water) |
-| Source URL | https://www.dcwater.com/sites/default/files/finance/ACFR/2025/FY25%20ACFR%20Statistical%20Section.pdf |
+| Source | [dcwater.com/…/FY25 ACFR Statistical Section.pdf](https://www.dcwater.com/sites/default/files/finance/ACFR/2025/FY25%20ACFR%20Statistical%20Section.pdf), pages 11-12 of 34 |
 | Retrieved | 2026-10-28, downloaded by script |
-| Clearance | `public` |
+| Clearance | Public |
 
 DC Water publishes its ACFR on its own website for bondholders and the public. The two
-pages the operator chose were split out with PyMuPDF and the rest of the section dropped.
-There is no personal data: every customer is a university, hospital, company or government
-agency. Nothing was redacted. The split file's document metadata was cleared, and the
-committed PDF carries none.
+pages the operator chose were split out and the rest of the section dropped. There is no
+personal data: every customer is a university, hospital, company or government agency.
+Nothing was redacted. The split file's document metadata was cleared, and the committed
+PDF carries none. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The layout is the test. Each amount row puts a `$` sign in its own column on the first
-and Total rows only, and most of the grid is `-` cells, so a parser that drops a `-` or
-treats a `$` as a value shifts every number after it one year to the left. Extraction has
-to keep sixteen rows by ten columns aligned, and say which customers were *not* in the top
-ten in a given year rather than inventing a zero.
+### Who processes it
 
-The schema asks for what a reader of a concentration schedule wants: each customer's two
-most recent years, and the full ten-year run of the total and its share of revenue.
+A customer concentration schedule shows how much of a business's revenue depends on a
+few customers. Buyers, lenders and analysts ask for it whenever that dependence could
+change the value of the business.
 
-## Featured fields
+- **M&A and private equity due diligence:** deal teams use it to size the risk of losing
+  a top customer.
+- **Commercial lending:** credit analysts check whether one customer's loss would break
+  the borrower's cash flow.
+- **Municipal bond analysis:** analysts and rating agencies read the largest-customer
+  exhibits in utility ACFRs to judge the stability of the revenue base.
+- **Auditors and financial reporting:** concentration disclosures are checked against
+  the revenue ledger.
+- **Investors and equity research:** analysts track the trend in the top customers'
+  share over time.
 
-All on page 1, in the FY2025 column of Exhibit 6, so the overlay reads as one answer to
-"how concentrated is commercial revenue?":
+### What it contains
 
-| Field | Label | Value |
-|---|---|---|
-| `schedules[0].most_recent_fiscal_year` | Fiscal year | 2025 |
-| `schedules[0].customers[0].customer_name` | Largest commercial customer | Georgetown University |
-| `schedules[0].customers[0].most_recent_year_amount` | Largest customer revenue ($000) | 7184 |
-| `schedules[0].yearly_totals[0].total_amount` | Top-ten total ($000) | 37071 |
-| `schedules[0].yearly_totals[0].percent_of_total_operating_revenues` | Share of operating revenues | 3.69 |
-
-The request file named no fields; its notes suggested the top customer and amount, the
-top-ten total, the percentage and the schedule title. The title was dropped for the reason
-under Grounding, and the fiscal-year header added so the overlay shows which column the
-values come from.
-
-## Extraction
-
-`schema.json` has 13 leaf fields: one for the reporting entity, six per schedule, three per
-customer row and three per yearly total. The run returned 154 leaf values: both schedules,
-all 27 customer rows and all 20 yearly totals.
-
-Every value matches the PDF, including all 54 two-year customer amounts and every total
-and percentage across both ten-year runs. The columns did not shift. The government
-FY2025 amounts sum exactly to the printed total of $69,930 thousand; the commercial ones
-sum to $37,072 thousand against a printed $37,071, a rounding difference in the source.
-
-The first extraction, with the customer amounts typed as plain `number`, returned `0` for
-every `-` cell, although the description asked for null. Making those two fields nullable
-(`["number", "null"]`) fixed it: the second extraction returned null for every `-` and
-left the real amounts unchanged.
-
-## Grounding
-
-Every featured value grounds to its own cell, including the `$ 7,184` and `$ 37,071`
-cells whose dollar sign sits in a separate column. The `-` cells ground to the `-` in the
-right column too, so even a null can be pointed at.
-
-`inspect_fields.py` marks three values `OFF`. `schedule_title` on both pages joins the
-title's lines, while its range covers the whole title block (`EXHIBIT 6<br>TEN LARGEST
-...`); the value is right but the crop would not match it, so the suggested title field is
-not featured. `William C Smith & Co` is marked `OFF` only because the markdown escapes the
-ampersand.
-
-Extraction also returned a second, zero-length range for most fields, which resolves to no
-page and shows as occurrence 1 with page `None`. Every featured field is pinned to
-occurrence 0, the real cell.
-
-## Credits
-
-**15.40 credits** at standard tier: 8.90 for the two-page parse and first extraction, and
-6.50 for the re-extraction after the schema change.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py customer-concentration-schedule      # spends credits
-.venv/bin/python document-types/scripts/build_images.py customer-concentration-schedule # free
-```
+- **Wide multi-year grids,** with sixteen rows by ten fiscal-year columns on one page.
+- **Dollar signs in their own column,** on the first and Total rows only.
+- **Dash cells** that mark years a customer was not in the top ten, which make up much
+  of each grid.
+- **A total row and a percentage row** under each grid.
+- **Multi-line exhibit titles** and a units note (thousands of dollars).
+- **Landscape pages** with a native text layer.
+- **Small rounding differences** between the rows and the printed totals, as published.

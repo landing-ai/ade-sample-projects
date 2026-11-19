@@ -1,16 +1,105 @@
 # Motor Vehicle Report
 
-Source assets for `landing.ai/document-type/motor-vehicle-report`.
+**On the website:** [landing.ai/document-type/motor-vehicle-report](https://landing.ai/document-type/motor-vehicle-report)
 
-## Sample document
+The New York State DMV's sample Standard Abstract of a driving record, published as
+form DS-242.1 to show drivers what an abstract contains. Each page repeats the
+motorist's identification header, then shows one part of the record: license status
+and credentials, credential history, suspensions, convictions, crashes and mailing
+address history. The motorist is a specimen, and every page carries a SAMPLE watermark.
 
-`source/ds2421.pdf`: the sample *Standard Abstract* of a driving record from the New
+| | |
+|---|---|
+| Pages | 6 |
+| Fields in the extraction schema | 41 |
+
+DPT-3 Pro ran at standard tier through the jobs API, and the extraction used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Pro |
+|---|---|
+| Snapshot | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:37 |
+| Region | US |
+
+### Parse accuracy
+
+| | DPT-3 Pro |
+|---|---|
+| Characters returned | 18,556 |
+| Accuracy | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 16.4 s |
+| Per page | 2.7 s |
+
+### Parse cost
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 7.7 credits |
+| Per page | 1.28 credits |
+
+## Extract performance
+
+The Pro markdown was extracted with the schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Pro markdown |
+|---|---|
+| Snapshot | `extract-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:38 |
+| Region | US |
+
+### Extract accuracy
+
+| | Pro markdown |
+|---|---|
+| Fields requested | 41 |
+| Non-null fields returned | 41 |
+| Accuracy | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Pro markdown |
+|---|---|
+| Total | 179.8 s |
+| Per schema field (41) | 4.39 s |
+| Per value returned | 2.22 s |
+
+### Extract cost
+
+| | Pro markdown |
+|---|---|
+| Total | 6.3 credits |
+| Per schema field (41) | 0.154 credits |
+| Per value returned | 0.078 credits |
+
+## Origin
+
+`source/ds2421.pdf` is the sample *Standard Abstract* of a driving record from the New
 York State Department of Motor Vehicles. The DMV publishes it as form DS-242.1 (2/26),
 *Description of Standard Abstract of Driving Record*, to show drivers what an abstract
 contains. Every page carries a diagonal "SAMPLE - TEST LETTER" watermark, and the
-motorist is a specimen. **6 pages, portrait, raster.** The DMV's PDF has 13 pages. Only
-pages 1 to 6, the six-page sample abstract, are kept. Pages 7 to 13 are reference tables
-of license classes and codes, and were dropped.
+motorist is a specimen. It is **6 pages, portrait, raster**. The DMV's PDF has 13 pages.
+Only pages 1 to 6, the six-page sample abstract, are kept. Pages 7 to 13 are reference
+tables of license classes and codes, and were dropped.
 
 Each page of the abstract repeats the same identification header, then shows one part of
 the record:
@@ -31,8 +120,6 @@ the record:
 | Retrieved | 2026-10-13. The operator downloaded it by hand, because the host blocks scripted downloads. |
 | Clearance | **Redacted**, see below |
 
-## Redaction
-
 The motorist is a DMV specimen, but the sample uses a realistic full name, and four
 mailing addresses on real streets in Troy and Manhattan with real ZIP+4 codes. A
 realistic name can belong to a real person, and the addresses belong to real buildings,
@@ -44,88 +131,42 @@ so these were replaced before anything was parsed:
 | Full name in the page 3 Merges table | `JANE Q SAMPLE` | 1 |
 | Four mailing addresses (page 1 current address, page 6 address history) | `100 MAIN ST`, `200 OAK ST`, `300 ELM ST` and `400 ASH ST`, each `ANYTOWN NY 00000-0000`. The county and country cells were kept. | 5 |
 
-The originals are not recorded anywhere in this folder. The rules file stays outside the
-repo. All other values were left as published: the dates, the ticket, order, case and
-letter numbers, the specimen client ID numbers and the birth date.
+The originals are not recorded anywhere in this folder. All other values were left as
+published: the dates, the ticket, order, case and letter numbers, the specimen client ID
+numbers and the birth date.
 
 The abstract pages are images, with a text layer that held only the footer, so the
-replacement used `document-types/scripts/redact_scan.py`, unmodified. It rebuilds each
-kept page from a 300 dpi render of the edited image, so the original rasters are not
-carried into the output. Three things needed more than one rule per value:
-
-- **A full-name rule matched across the header cells.** OCR reads the First, Middle and
-  Last Name cells as one line, so a rule for the whole name painted over all three cells
-  and their borders. The build ran in two passes. The first pass used one rule per name
-  part and the addresses. The second pass replaced the page 3 full name with `--place`,
-  and its pages were spliced back in.
-- **One address could not be read by OCR**, so it was replaced with `--place`.
-- **OCR boxes started slightly to the right of the glyphs** in some cells. That left a
-  sliver of the original first letter in front of five stand-ins, three on page 1 and
-  two on page 6. These were painted out with `--erase`.
-
-The output was verified by `redact_scan.py`'s OCR check, by a second OCR sweep for every
-token of every original, by eye on 150 to 300 dpi renders, and by
-`ship.py check --rules` over every file in this folder. The PDF's metadata is empty.
+replacements were made in the pixels. Each kept page was rebuilt from a 300 dpi render
+of the edited image, so the original rasters are not carried into the output. The output
+was verified by OCR, by a second OCR sweep for every token of every original, by eye on
+150 to 300 dpi renders, and by a sweep of every file in this folder. The PDF's metadata
+is empty. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-A motor vehicle report is what an auto insurer or an employer screening drivers actually
-reads, and real ones are never published. This is the issuing agency's own specimen,
-generated by the DMV's system, so it has the real layout. It tests:
+### Who processes it
 
-- **Repeated record blocks.** Convictions, suspensions and credential history are
-  stacked label/value grids, one per event, rather than tables with a header row. Each
-  must be read as one record.
-- **The same header on every page.** Identification fields repeat six times. The
-  extraction grounds them to several pages.
-- **Records of the same shape under different headings.** Vessel and snowmobile
-  convictions look like motor vehicle convictions. Scofflaw and non-scofflaw suspensions
-  share fields under different labels ("Violation" against "Reason").
-- **A watermark across the values.** The diagonal "SAMPLE - TEST LETTER" crosses several
-  values on every page.
+A motor vehicle report is the state's record of a person's license, violations,
+suspensions and crashes. Real ones are never published, so this is the issuing agency's
+own specimen with the real layout.
 
-## Featured fields
+- **Auto insurance underwriting:** insurers order MVRs to rate new policies and review
+  drivers at renewal.
+- **Employment screening:** employers check MVRs for anyone who will drive on the job.
+- **Commercial fleets and trucking:** carriers review drivers' records each year, as
+  federal rules require for commercial drivers.
+- **Rideshare and delivery platforms:** they screen drivers before onboarding and
+  monitor them afterward.
+- **Traffic and criminal defense attorneys:** they review a client's record before a
+  hearing or plea.
 
-Page 5 features one complete conviction, the first under Convictions / Bail
-Forfeitures: the violation date, conviction date, violation, court location (Queens
-South TVB) and points assessed. That is the part of the report an underwriter rates a
-driver on, and the overlay reads as one event. The request suggested these fields and
-the CMV flag. The CMV flag was left out because it is extracted as a boolean, and its
-range points at the printed "No", which `inspect_fields.py` reports as `OFF`. The
-driver's name and identifiers were deliberately not featured.
+### What it contains
 
-## Grounding notes
-
-- Every featured field grounds to its own cell. The one exception is the conviction
-  date, whose box takes in the "Conviction Date" label cell beside the value. The crop
-  still shows the value plainly.
-- `build_images.py` warned that OCR could not read the single-digit points value `3`
-  inside its box. The crop was checked by eye, and the box sits on the right cell.
-- The watermark did not disturb extraction: the conviction violation it crosses
-  ("Failure to stop at stop sign") extracted whole.
-- The schema has 41 leaf fields. Extraction filled every top-level field. All 3
-  convictions, all 4 suspensions (2 non-scofflaw, 2 scofflaw), both vessel and
-  snowmobile convictions and the crash came back as separate records with the right
-  categories.
-- Dates are normalized to `YYYY-MM-DD`, so the date fields read `OFF` in
-  `inspect_fields.py` wherever the printed form differs, as with the print date. Yes/No
-  values typed as booleans (CMV, Hazmat, Organ Donor) also read `OFF`.
-- The issuing agency is extracted as "New York State Department of Motor Vehicles". That
-  string is not printed verbatim on the page: the header reads "State of New York
-  DEPARTMENT OF MOTOR VEHICLES". The field grounds to the header and to the certification
-  paragraph on several pages, and half of those grounds read `OFF`.
-
-## Credits
-
-13.60 credits for parse and extract, at standard tier.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py motor-vehicle-report     # spends credits
-.venv/bin/python document-types/scripts/build_images.py motor-vehicle-report
-.venv/bin/python document-types/scripts/inspect_fields.py motor-vehicle-report
-```
-
-The redaction is not reproducible from this folder by design, because its rules file
-holds the originals.
+- **Repeated record blocks:** convictions, suspensions and credential history are
+  stacked label/value grids, one per event, rather than tables with a header row.
+- **The same identification header on every page.**
+- **Records of the same shape under different headings,** such as vessel and snowmobile
+  convictions, and suspensions labelled "Violation" or "Reason".
+- **A diagonal watermark** that crosses several values on every page.
+- **Raster pages with no usable text layer,** so every value has to be read from the
+  page image.

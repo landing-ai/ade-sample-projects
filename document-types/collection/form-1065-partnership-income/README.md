@@ -1,107 +1,145 @@
 # Form 1065 - Partnership Income
 
-Source assets for `landing.ai/document-type/form-1065-partnership-income`.
+**On the website:** [landing.ai/document-type/form-1065-partnership-income](https://landing.ai/document-type/form-1065-partnership-income)
 
-## Sample document
+Page 1 of the 2023 IRS Form 1065, U.S. Return of Partnership Income, filled with
+synthetic data. It identifies the partnership and its business, reports income,
+deductions and ordinary business income on 32 numbered lines, and closes with the
+signature and paid preparer sections. Its header carries 13 checkboxes in rows G to K.
 
-`source/form-1065-2023-ocrolus-sample.pdf`: page 1 of the 2023 IRS Form 1065, U.S.
-Return of Partnership Income, filled with synthetic data. **1 page, portrait.**
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 75 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:03 | 2026-11-19 03:08 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 7,868 | 8,648 |
+| Words under 0.95 confidence | 31 | n/a |
+| Words under 0.80 confidence | 13 | n/a |
+| Words under 0.50 confidence | 6 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 10.7 s | 11.0 s |
+| Per page | 10.7 s | 11.0 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.0 credits | 2.7 credits |
+| Per page | 1.00 credits | 2.70 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:03 | 2026-11-19 03:09 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 75 | 75 |
+| Non-null fields returned | 74 | 74 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 141.2 s | 273.4 s |
+| Per schema field (75) | 1.88 s | 3.64 s |
+| Per value returned | 1.91 s | 3.69 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 3.8 credits | 4.0 credits |
+| Per schema field (75) | 0.051 credits | 0.053 credits |
+| Per value returned | 0.051 credits | 0.054 credits |
+
+## Origin
+
+`source/form-1065-2023-ocrolus-sample.pdf` is page 1 of the 2023 IRS Form 1065, U.S.
+Return of Partnership Income, filled with synthetic data. It is **1 page, portrait**.
 
 | | |
 |---|---|
 | Publisher | Ocrolus |
-| Source | [Google Drive](https://drive.google.com/file/d/1PHpnyYjTsGCb4puiZJtKtZKu8Gu2ilsw/edit), linked as the sample from [docs.ocrolus.com/docs/irs-form-1065-2023-us-return-of-partnership-income](https://docs.ocrolus.com/docs/irs-form-1065-2023-us-return-of-partnership-income) |
+| Source | [Google Drive](https://drive.google.com/file/d/1PHpnyYjTsGCb4puiZJtKtZKu8Gu2ilsw/edit) |
+| Linked from | [docs.ocrolus.com/docs/irs-form-1065-2023-us-return-of-partnership-income](https://docs.ocrolus.com/docs/irs-form-1065-2023-us-return-of-partnership-income) |
 | Retrieved | 2026-10-02, by script (Drive's standard download link) |
 | Clearance | **Public** |
 
 The Drive link alone does not say who made the file. The Ocrolus documentation page for
-this form links this exact file as its sample, which establishes the publisher.
+this form links this exact file as its sample, which establishes the publisher. Ocrolus
+sells document AI, so this is a competitor's published sample.
 
-Every value is a placeholder:
-- partnership "Sample Software Service" at "123 Fake Memorial Ave."
-- EIN 12-3456789
-- preparer "John Sample" with PTIN P00001234
-- phone (800) 123-4567
-- round-number line amounts
-
-The signatures are drawn to match those invented names. The PDF metadata holds only the
-print driver and Acrobat Distiller. Nothing needed redacting.
-
-> Ocrolus sells document AI, so this is a competitor's published sample. The same is
-> true of the bailee letter.
+Every value is a placeholder: partnership "Sample Software Service" at "123 Fake
+Memorial Ave.", EIN 12-3456789, preparer "John Sample" with PTIN P00001234, phone (800)
+123-4567, and round-number line amounts. The signatures are drawn to match those
+invented names. The PDF metadata holds only the print driver and Acrobat Distiller.
+Nothing needed redacting. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is the collection's first tax return, and the densest checkbox form in it. Rows G–K
-carry 13 checkboxes in a few lines of the header, beside 32 numbered amount lines. It
-tests reading a checkbox's state and grounding it to the right box.
+### Who processes it
 
-`schema.json` follows Ocrolus's field list for this form, with each checkbox as its own
-boolean. **75 leaf fields** (counted from the schema), all populated. All 13 checkboxes
-extract correctly as checked or unchecked.
+Every US partnership, including most multi-member LLCs, files Form 1065 each year. Page 1
+summarizes the business's income and deductions.
 
-## Featured fields: the return's headline, plus a checkbox
+- **Commercial and small-business lending:** lenders read business returns to verify
+  income and cash flow before approving a loan.
+- **Mortgage lending:** underwriters review the partnership returns of self-employed
+  borrowers who own a share of a business.
+- **Accounting and tax preparation:** CPAs prepare the return and reconcile it with the
+  partners' K-1s.
+- **Investors and fund administrators:** they review partnership returns when
+  evaluating or administering an investment.
+- **Tax authorities and auditors:** examiners check reported income and deductions
+  against the partnership's books.
 
-| Field | Value |
-|---|---|
-| Partnership name | Sample Software Service |
-| EIN | 12-3456789 |
-| Schedules C and M-3 attached (row J) | true |
-| Total income (line 8) | 15000.0 |
-| Ordinary business income (line 23) | -76000.0 |
+### What it contains
 
-The other four fields say who is filing and its bottom line. No person is featured.
-
-## The requested checkbox could not be shown
-
-The request asked for the **cash accounting method checkbox in row H**. Extraction got
-it right: `accounting_method.cash` is `true`, and its range is exactly `[x] (1) Cash`.
-The highlight did not: **it lands on row I**, the Schedules K-1 count, one row below.
-
-The cause is the parse's line-level boxes (`atomic_grounding`) for the rows G–K block:
-
-| Line | Text it carries | Its box is on row |
-|---|---|---|
-| 0 | `G Check applicable boxes:` | G |
-| 1 | G's checkboxes, then `H Check accounting method:` | H (one row low) |
-| 2 | H's checkboxes (`[x] (1) Cash` …) and all of row I | I (one row low) |
-| 3 | Row J | J |
-| 4 | Row K | K |
-
-The parse writes each row's label on a line of its own, separate from that row's
-checkboxes. So for rows G–I its lines fall one row behind the boxes, and they line up
-again at row J.
-
-ADE's grounding API (`client.v2.ground`) returns the same shifted line, at 0 credits.
-So `build_images.py`'s own range-to-box join is not the cause. The API also returns
-that one line for Cash, Accrual, Other and the row I count alike, because a line is the
-smallest unit it grounds to.
-
-At the requester's choice, the row J checkbox replaces it. It is the only checkbox on
-its line, so the line's box is effectively that box, and it lands on the right row. Row
-K's checkboxes also land correctly, but that line holds two of them, so its box would
-cover both.
-
-Row J reads `OFF` in `inspect_fields.py` only because "true" is not printed, as for
-every boolean. The crop was checked by eye. These findings are written up for the
-product team, with job IDs.
-
-## Other notes
-
-- **The sample's arithmetic is invented.** Line 1c reads 2,000 although 1a − 1b = 0.
-  Extraction copies the printed values rather than recomputing them, which is the right
-  behaviour.
-- **Every amount line, 1a through 32, grounds to the box holding its own value**: all 36 read `ok`.
-
-## Cost
-
-**6.00 credits** at standard tier: one-page parse and extraction. The grounding API
-check cost 0 credits.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py form-1065-partnership-income
-.venv/bin/python document-types/scripts/build_images.py form-1065-partnership-income
-.venv/bin/python document-types/scripts/inspect_fields.py form-1065-partnership-income --page 1
-```
+- **A dense checkbox header,** with 13 checkboxes in rows G to K.
+- **32 numbered amount lines** in a right-hand column.
+- **Header boxes** for the partnership's name, address, EIN and business details.
+- **Signature blocks** for the partner and the paid preparer, with drawn signatures.
+- **A text layer** under the printed form and its filled-in values.

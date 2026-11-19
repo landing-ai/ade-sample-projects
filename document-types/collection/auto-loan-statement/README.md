@@ -1,13 +1,106 @@
 # Auto loan statement
 
-Source assets for `landing.ai/document-type/auto-loan-statement`.
+**On the website:** [landing.ai/document-type/auto-loan-statement](https://landing.ai/document-type/auto-loan-statement)
 
-## Sample document
+GM Financial's sample monthly statement for a retail auto loan on a 2021 GMC Acadia
+Denali, dated September 15, 2022. It shows the amount due, the payment due date, recent
+transactions, the current principal balance and loan term, a tear-off payment coupon,
+and on the back how the last payment was split between principal and interest.
 
-`source/gm-financial-sample-auto-loan-statement.pdf` — GM Financial's sample monthly
-account statement for a retail auto loan on a 2021 GMC Acadia Denali, dated
-September 15, 2022. **2 pages, portrait, US Legal (8.5 × 14 in)**: page 1 is the
-statement with a tear-off payment coupon; page 2 is the reverse side with the payment
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 23 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:29 | 2026-11-19 02:29 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 8,260 | 8,968 |
+| Words under 0.95 confidence | 28 | n/a |
+| Words under 0.80 confidence | 5 | n/a |
+| Words under 0.50 confidence | 1 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 6.8 s | 18.9 s |
+| Per page | 3.4 s | 9.4 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.2 credits | 3.3 credits |
+| Per page | 0.60 credits | 1.65 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:30 | 2026-11-19 02:29 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 23 | 23 |
+| Non-null fields returned | 23 | 23 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 326.9 s | 91.4 s |
+| Per schema field (23) | 14.21 s | 3.98 s |
+| Per value returned | 14.21 s | 3.98 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 2.4 credits | 2.5 credits |
+| Per schema field (23) | 0.104 credits | 0.109 credits |
+| Per value returned | 0.104 credits | 0.109 credits |
+
+## Origin
+
+`source/gm-financial-sample-auto-loan-statement.pdf` is GM Financial's sample monthly
+account statement for a retail auto loan on a 2021 GMC Acadia Denali, dated September
+15, 2022. It is **2 pages, portrait, US Legal (8.5 × 14 in)**: page 1 is the statement
+with a tear-off payment coupon, and page 2 is the reverse side with the payment
 allocation, payment options, general disclosures and a contact-update coupon.
 
 | | |
@@ -17,78 +110,47 @@ allocation, payment options, general disclosures and a contact-update coupon.
 | Retrieved | 2026-10-03, downloaded by script |
 | Clearance | Public |
 
-The lender's own specimen, served from its own domain. It is plainly a template: a large
-SAMPLE watermark, a dealer block of "Dealership name / Address line 1 / City, State
-01234 / 555-555-5555", business hours of "H a.m. to H p.m.", a lorem ipsum Account
-Details block, and the placeholder borrower JOHN Q SMITH. The coupon's mailing address is
-a commercial office address, not a residence. No redaction was needed.
+This is the lender's own specimen, served from its own domain. It is plainly a template:
+a large SAMPLE watermark, a dealer block of "Dealership name / Address line 1 / City,
+State 01234 / 555-555-5555", business hours of "H a.m. to H p.m.", a lorem ipsum Account
+Details block, and the placeholder borrower JOHN Q SMITH. The coupon's mailing address
+is a commercial office address, not a residence. No redaction was needed.
 
 The page content is used exactly as published. The PDF metadata's author field carried a
 GM Financial employee's user ID, so the metadata (Info dictionary and XMP) was cleared.
 
-Full provenance is in `manifest.json` under `source.origin`.
+The template does not agree with itself on dates. The header and transactions are dated
+2022, the coupon's due date is October 15, 2020, and the payment allocation on page 2 is
+dated 8/21/20 against 8/21/22 on page 1. Full provenance is in `manifest.json` under
+`source.origin`.
 
 ## Why this document
 
-The collection's first **auto loan statement**, and a different shape from the mortgage
-and HELOC statements already here:
+### Who processes it
 
-- **A designed, marketing-style layout** (it was produced in Illustrator), with the key
-  loan facts set as a large-type header and a graphical Account Details panel rather than
-  in ruled tables.
-- **A payment coupon that repeats the header values**, so the same amount appears more
-  than once on the page and the occurrence matters.
-- **A template that does not agree with itself.** The header and transactions are dated
-  2022, the coupon's due date is October 15, 2020, and the payment allocation on page 2
-  is dated 8/21/20 against 8/21/22 on page 1. Extraction returns each date as printed.
+An auto loan statement is the monthly record of what a borrower owes on a vehicle loan.
+Borrowers hand it to third parties whenever the loan or the car changes hands.
 
-## Featured fields: what is owed on which car
+- **Auto lending and refinancing:** a new lender reads the current balance and payment
+  to price a refinance and arrange the payoff.
+- **Mortgage and consumer underwriting:** underwriters count the monthly car payment in
+  the borrower's debt-to-income ratio.
+- **Dealerships:** when a financed car is traded in, the dealer needs the lender and the
+  balance to pay off the old loan.
+- **Loan servicing and collections:** servicers and their vendors reconcile payments,
+  due dates and balances across accounts.
+- **Personal finance and bankruptcy:** counselors, attorneys and trustees list the loan
+  and its payment among the borrower's obligations.
 
-All on page 1.
+### What it contains
 
-| Field | Value |
-|---|---|
-| Model year | 2021 |
-| Vehicle | GMC ACADIA DENALI |
-| Total amount due | $496.31 (statement header) |
-| Current payment | $496.31 |
-| Last payment received | $496.31 |
-
-Total amount due is pinned to occurrence 1, the statement header; occurrence 0 is the
-same figure on the payment coupon, which the request asked to avoid. Dates are avoided
-for the reason above.
-
-The request suggested the principal balance, term and account number too. They extract
-correctly (12-digit account number, $42,328.50, 48 months) but cannot be illustrated:
-see below.
-
-## Grounding on this document
-
-- **The Account Details panel was parsed as a chart.** DPT-3 Pro classified the panel
-  (account number, payment progress bar, account opened, current principal balance,
-  terms) as a `CHART` figure and reconstructed it as a two-column table. Values read from
-  a figure carry no cell-level boxes: `account_number` grounds to the "Account Opened"
-  label and `current_principal_balance` to "Terms", both one row adrift, and
-  `term_months` has no ranges at all. The progress bar is probably what made the panel
-  look like a chart.
-- **Dates ground correctly** to their printed form ("SEPTEMBER 15, 2022", "9/17/22");
-  `inspect_fields.py` flags them `OFF` only because they are normalized to ISO.
-- **The dealer name lost a line.** The three-line "Chevrolet Buick GMC Cadillac" sits
-  beside a three-line address, and the parse paired them line by line as key-value
-  text, so `dealer_name` came back as "Chevrolet Buick GMC".
-- The header, transaction table and page-2 payment allocation (principal $461.56,
-  interest $34.75) all ground cleanly.
-
-The schema has 23 leaf fields.
-
-## Credits
-
-6.00 credits at the standard tier (parse and extract, DPT-3 Pro, jobs API).
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py auto-loan-statement      # spends credits
-.venv/bin/python document-types/scripts/build_images.py auto-loan-statement # free
-.venv/bin/python document-types/scripts/inspect_fields.py auto-loan-statement
-```
+- **A designed, marketing-style layout,** with the key loan facts set as a large-type
+  header and a graphical Account Details panel with a payment progress bar, not in
+  ruled tables.
+- **A payment coupon that repeats the header values,** so the same amount appears more
+  than once on the page.
+- **A transaction table** and, on page 2, a payment allocation that splits the last
+  payment into principal and interest.
+- **Dates that disagree across the template,** printed in different formats.
+- **Side-by-side text blocks,** such as a dealer name and address set in parallel lines.
+- **A diagonal SAMPLE watermark** and placeholder template text.

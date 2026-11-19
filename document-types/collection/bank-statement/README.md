@@ -1,14 +1,108 @@
 # Bank statement
 
-Source assets for `landing.ai/document-type/bank-statement`.
+**On the website:** [landing.ai/document-type/bank-statement](https://landing.ai/document-type/bank-statement)
 
-## Sample document
+Carson Bank's sample statement for a TRUE CHECKING account, for July 2019. It has an
+account activity summary with a pie chart, a 47-row transaction register, a checks list,
+a daily balance summary, and a linked overdraft line of credit with its interest
+calculation, followed by a reconciliation form and disclosures.
 
-`source/carson-bank-sample-statement.pdf` — Carson Bank's sample statement for a TRUE
-CHECKING account, July 2019. **6 pages, portrait (US Letter)**: an account activity
-summary with a debits and credits pie chart, a 47-row transaction register across two
-pages, a checks list, a daily balance summary, a linked Ready Reserve overdraft line of
-credit with its interest calculation, and a reconciliation form and disclosures.
+| | |
+|---|---|
+| Pages | 6 |
+| Fields in the extraction schema | 33 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:35 | 2026-11-19 02:32 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 18,763 | 20,820 |
+| Words under 0.95 confidence | 65 | n/a |
+| Words under 0.80 confidence | 37 | n/a |
+| Words under 0.50 confidence | 5 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 6.6 s | 24.4 s |
+| Per page | 1.1 s | 4.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.8 credits | 8.3 credits |
+| Per page | 0.47 credits | 1.38 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:35 | 2026-11-19 02:32 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 33 | 33 |
+| Non-null fields returned | 33 | 33 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 104.0 s | 115.1 s |
+| Per schema field (33) | 3.15 s | 3.49 s |
+| Per value returned | 0.43 s | 0.47 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 10.2 credits | 10.6 credits |
+| Per schema field (33) | 0.309 credits | 0.321 credits |
+| Per value returned | 0.042 credits | 0.043 credits |
+
+## Origin
+
+`source/carson-bank-sample-statement.pdf` is Carson Bank's sample statement for a **TRUE
+CHECKING** account, July 2019. It is **6 pages, portrait (US Letter)**, created
+digitally with a text layer. It has an account activity summary with a debits and
+credits pie chart, a 47-row transaction register across two pages, a checks list, a
+daily balance summary, a linked Ready Reserve overdraft line of credit with its interest
+calculation, and a reconciliation form and disclosures.
 
 | | |
 |---|---|
@@ -17,94 +111,44 @@ credit with its interest calculation, and a reconciliation form and disclosures.
 | Retrieved | 2026-09-29 |
 | Clearance | Public |
 
-The bank's own sample, published on its website. The holder and address are specimen data
-("JOHN TEST", "123 TEST", "YOUR CITY, KS"), the statement date is printed "July 31, 20XX",
-and the account numbers are four-digit placeholders. The transactions name a retailer,
-C&J Clark, and a store number, which is an organization rather than a person. No
-redaction was needed.
+This is the bank's own sample, published on its website. The holder and address are
+specimen data ("JOHN TEST", "123 TEST", "YOUR CITY, KS"), the statement date is printed
+"July 31, 20XX", and the account numbers are four-digit placeholders. The transactions
+name a retailer, C&J Clark, and a store number, which is an organization rather than a
+person. No redaction was needed.
 
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
-
-**This replaces a first choice.** The page was first built from Manulife Bank's Manulife
-One sample statement, which turned out to be a home-equity line of credit combined with a
-mortgage rather than a standard bank statement. It now lives at `heloc-statement`.
+This replaces a first choice. The page was first built from Manulife Bank's Manulife
+One sample statement, which turned out to be a home-equity line of credit combined with
+a mortgage. It now lives at `heloc-statement`. Full provenance is in `manifest.json`
+under `source.origin`.
 
 ## Why this document
 
-The collection's first **standard checking statement**:
+### Who processes it
 
-- **A register that runs over a page break.** 47 transactions across pages 1 and 2, with
-  descriptions that wrap onto a second line.
-- **The same figures in several forms.** The summary totals are printed again as pie
-  chart labels, and balances appear in the summary, the register and a daily balance
-  table.
-- **Two accounts on one statement.** The checking account and a linked overdraft line of
-  credit, each with its own account number and summary.
-- **Checks in a three-column list,** with asterisks marking breaks in the number sequence.
+A bank statement is the standard proof of what passed through an account and what was in
+it on a given date.
 
-## Featured fields: what a lender verifies
+- **Mortgage and consumer lending:** lenders verify an applicant's funds, deposits and
+  recurring payments from recent statements.
+- **Small-business lending:** underwriters read cash flow and balances to judge whether
+  a business can carry a loan.
+- **Accounting and bookkeeping:** statements are reconciled against the general ledger
+  each month.
+- **Tenant screening and income verification:** landlords and agencies check deposits
+  to confirm stated income.
+- **Audit and fraud review:** auditors and investigators trace transactions and check
+  that the summary totals agree with the register.
 
-All on page 1. At the document owner's request, these are the fields a lender reads from a
-bank statement to verify an applicant's funds:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Institution | CARSON BANK |
-| Account holder | JOHN TEST |
-| Account number | 6547 |
-| Statement date | July 31, 20XX |
-| Ending balance | $6,682.22 |
-
-Inflows and outflows are extracted but not featured; for lending, what matters is who
-holds the account, where, and what was in it on the statement date. The account holder
-is specimen data. The ending balance grounds to its whole row of the summary table
-(label, date and amount). The statement date is kept as printed, since the sample's year
-is "20XX".
-
-## What it surfaced
-
-**The sample does not agree with itself, and extraction does not smooth it over.** The
-summary's previous and ending balances are $3,005.93 and $6,682.22. The transaction
-register runs from $445.28 to $942.82, and its own running balance is consistent row by
-row. The page 3 daily balance summary follows neither. The summary's $6.00 service charge
-differs from the register's $10.00 service charge and $3.00 paper statement charge.
-Extraction returns every figure as printed, so a reconciliation check downstream would
-catch every one of these.
-
-**The register extracts completely.** All 47 transactions match the page on date,
-description, amount and running balance, including across the page break and where
-descriptions wrap. All 8 checks come back, with both sequence breaks flagged.
-
-**The bank name is read from artwork.** The CARSON BANK wordmark is vector drawing
-with no text behind it, so a PDF text extractor finds nothing there. The parse reads the
-name off the drawing, and extraction grounds the institution to it.
-
-**The chart labels ground too.** The pie chart's "$18,041.50" and "$14,365.21" labels are
-the second occurrence of the deposits and withdrawals totals, so the values are found in
-the graphic as well as in the table.
-
-**Two small misses.** An empty Credits cell sometimes comes back as 0 rather than null.
-The checks list is read column by column in a different order from the page's, though
-every check is there.
-
-## Extraction
-
-**33 leaf fields**: the bank, holder, account and statement date, the twelve-value
-activity summary, the transactions, the checks, and the overdraft line. Everything
-extracts correctly apart from the small misses above.
-
-## Cost
-
-**18.20 credits** at standard tier for 6 pages: 7.90 to parse, 10.30 to extract.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/bank-statement/source/carson-bank-sample-statement.pdf \
-  "https://www.carsonbank.com/wp-content/uploads/2021/01/Sample-Statement.pdf"
-.venv/bin/python document-types/scripts/run_ade.py bank-statement                # 18.20 credits
-.venv/bin/python document-types/scripts/run_ade.py bank-statement --extract-only # 10.30, schema iteration
-.venv/bin/python document-types/scripts/build_images.py bank-statement           # free
-.venv/bin/python document-types/scripts/inspect_fields.py bank-statement --page 1
-```
+- **A transaction register that runs over a page break,** with 47 rows and descriptions
+  that wrap onto a second line.
+- **A pie chart** whose labels repeat the deposit and withdrawal totals.
+- **The same figures in several places:** balances appear in the summary, the register
+  and a daily balance table, and in this sample they do not all agree.
+- **Two accounts on one statement:** the checking account and a linked overdraft line
+  of credit, each with its own account number and summary.
+- **Checks in a three-column list,** with asterisks marking breaks in the number
+  sequence.
+- **A bank name drawn as vector artwork,** with no text behind it.
