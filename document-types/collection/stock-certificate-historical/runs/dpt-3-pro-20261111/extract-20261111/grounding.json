@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "certificate_number",
+      "label": "Certificate number",
+      "value": "95",
+      "page": 1,
+      "box": {
+        "xmin": 0.13025,
+        "ymin": 0.11639,
+        "xmax": 0.89061,
+        "ymax": 0.30073
+      },
+      "range": {
+        "end": 97,
+        "start": 95
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "certificate_number.png"
+    },
+    {
+      "path": "holder.name",
+      "label": "Shareholder",
+      "value": "James Couzen",
+      "page": 1,
+      "box": {
+        "xmin": 0.12824,
+        "ymin": 0.25582,
+        "xmax": 0.9009,
+        "ymax": 0.71363
+      },
+      "range": {
+        "end": 183,
+        "start": 171
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "holder-name.png"
+    },
+    {
+      "path": "authorized_capital",
+      "label": "Authorized capital",
+      "value": "$125,000.00",
+      "page": 1,
+      "box": {
+        "xmin": 0.54222,
+        "ymin": 0.14252,
+        "xmax": 0.67403,
+        "ymax": 0.1679
+      },
+      "range": {
+        "end": 26,
+        "start": 15
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "authorized_capital.png"
+    },
+    {
+      "path": "issue_place",
+      "label": "Place of issue",
+      "value": "Walkerville, Ontario",
+      "page": 1,
+      "box": {
+        "xmin": 0.12824,
+        "ymin": 0.25582,
+        "xmax": 0.9009,
+        "ymax": 0.71363
+      },
+      "range": {
+        "end": 565,
+        "start": 545
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issue_place.png"
+    },
+    {
+      "path": "signatories[1].title",
+      "label": "Title",
+      "value": "PRESIDENT",
+      "page": 1,
+      "box": {
+        "xmin": 0.58741,
+        "ymin": 0.7854,
+        "xmax": 0.88696,
+        "ymax": 0.87286
+      },
+      "range": {
+        "end": 1314,
+        "start": 1305
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "signatories-1-title.png"
+    }
+  ]
+}

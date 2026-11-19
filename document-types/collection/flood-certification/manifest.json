@@ -77,5 +77,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features the determination itself on page 1: the NFIP community the property sits in and its community number, the flood zone it was mapped to, the resulting answer to the Special Flood Hazard Area question (the checked NO box), and the date of determination. Read in order, they are the chain of reasoning the form exists to record. The request's notes suggested seven impersonal fields: NFIP community name and number, map panel number, map panel effective date, flood zone, the SFHA NO checkbox and the determination date. Five shipped. The map panel number and effective date extract correctly and their ranges are right, but the parse collapsed the whole Section II.B grid (panel number, effective date, LOMC, flood zone, No NFIP Map) into one table cell, so they would share one box with the flood zone. Three highlights on the same region would read as one, so only the flood zone was kept from that section. No personal field is featured. The origin URL is a Scribd listing; the website shows it as plain text, not as a link, as the request asks."
+  "notes": "Features the determination itself on page 1: the NFIP community the property sits in and its community number, the flood zone it was mapped to, the resulting answer to the Special Flood Hazard Area question (the checked NO box), and the date of determination. Read in order, they are the chain of reasoning the form exists to record. The request's notes suggested seven impersonal fields: NFIP community name and number, map panel number, map panel effective date, flood zone, the SFHA NO checkbox and the determination date. Five shipped. The map panel number and effective date extract correctly and their ranges are right, but the parse collapsed the whole Section II.B grid (panel number, effective date, LOMC, flood zone, No NFIP Map) into one table cell, so they would share one box with the flood zone. Three highlights on the same region would read as one, so only the flood zone was kept from that section. No personal field is featured. The origin URL is a Scribd listing; the website shows it as plain text, not as a link, as the request asks.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.1,
+      "extract_credits": 3.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.1,
+      "extract_credits": 3.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.5,
+      "extract_credits": 3.4
+    }
+  ]
 }

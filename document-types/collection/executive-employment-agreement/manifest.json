@@ -16,11 +16,51 @@
   },
   "feature_page": 2,
   "fields": [
-    { "path": "term.start_date", "label": "Term start", "occurrence": 0 },
-    { "path": "term.end_date", "label": "Term end", "occurrence": 0 },
-    { "path": "compensation.base_salary", "label": "Base salary", "occurrence": 1 },
-    { "path": "compensation.annual_increase_percent", "label": "Annual increase", "occurrence": 1 },
-    { "path": "compensation.longevity_payments[2].amount", "label": "Longevity payment", "occurrence": 0 }
+    {
+      "path": "term.start_date",
+      "label": "Term start",
+      "occurrence": 0
+    },
+    {
+      "path": "term.end_date",
+      "label": "Term end",
+      "occurrence": 0
+    },
+    {
+      "path": "compensation.base_salary",
+      "label": "Base salary",
+      "occurrence": 0
+    },
+    {
+      "path": "compensation.annual_increase_percent",
+      "label": "Annual increase",
+      "occurrence": 0
+    },
+    {
+      "path": "compensation.longevity_payments[2].amount",
+      "label": "Longevity payment",
+      "occurrence": 0
+    }
   ],
-  "notes": "Page 2 carries the commercial core of the contract: the five-year term, the first-year base salary, the 4.0% annual increase and the longevity schedule, so one overlay reads as the deal itself. The request suggested exactly this page and these terms. Base salary and the annual increase are pinned to their second occurrence, the numeric forms ($235,553.00 and 4.0%), because the first occurrence grounds to the spelled-out salary line, which does not contain the figure. Of the three longevity payments the $7,500 one is featured, since its grounded line carries the amount and its effective date together. No personal name is featured, by design: the role is enough to tell the story."
+  "notes": "Page 2 carries the commercial core of the contract: the five-year term, the first-year base salary, the 4.0% annual increase and the longevity schedule, so one overlay reads as the deal itself. The request suggested exactly this page and these terms. Base salary and the annual increase are pinned to their second occurrence, the numeric forms ($235,553.00 and 4.0%), because the first occurrence grounds to the spelled-out salary line, which does not contain the figure. Of the three longevity payments the $7,500 one is featured, since its grounded line carries the amount and its effective date together. No personal name is featured, by design: the role is enough to tell the story.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 15.1,
+      "extract_credits": 8.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 15.1,
+      "extract_credits": 8.2
+    }
+  ]
 }

@@ -55,7 +55,7 @@
     {
       "path": "court",
       "label": "Court",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "reason",
@@ -73,5 +73,34 @@
       "occurrence": 1
     }
   ],
-  "notes": "The request named only the document type (as Driving Safety Certificate) and the source; feature page and fields were chosen here. Page 1 is the only page. It prints the certificate twice, a court copy above an insurance copy, and every featured field is pinned to an occurrence in the top court copy so the overlay reads as one filing: which certificate, for which court, why the course was taken, and when it was completed and issued. All five ground ok. Student name, licence number and date of birth (all replaced stand-ins) also ground ok but are not featured, because the impersonal fields make the same point; the instructor licence number grounds ok but identifies a real instructor, so it is not featured either. school_classroom was not used because its first range points into the bottom (insurance) copy and its second at a whole-panel block. student_signed came back true although both signature lines are blank: DPT-3 attached an [E-SIGNED] attestation label to the insurance copy's signature area, apparently triggered by the orange SIGN tab, and extraction followed it. The schema was left as written so the miss stays visible. The listing title was a bare number; the page title here is Driving Course Certificate to match the slug."
+  "notes": "The request named only the document type (as Driving Safety Certificate) and the source; feature page and fields were chosen here. Page 1 is the only page. It prints the certificate twice, a court copy above an insurance copy, and every featured field is pinned to an occurrence in the top court copy so the overlay reads as one filing: which certificate, for which court, why the course was taken, and when it was completed and issued. All five ground ok. Student name, licence number and date of birth (all replaced stand-ins) also ground ok but are not featured, because the impersonal fields make the same point; the instructor licence number grounds ok but identifies a real instructor, so it is not featured either. school_classroom was not used because its first range points into the bottom (insurance) copy and its second at a whole-panel block. student_signed came back true although both signature lines are blank: DPT-3 attached an [E-SIGNED] attestation label to the insurance copy's signature area, apparently triggered by the orange SIGN tab, and extraction followed it. The schema was left as written so the miss stays visible. The listing title was a bare number; the page title here is Driving Course Certificate to match the slug.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 1.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 1.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 1.4
+    }
+  ]
 }

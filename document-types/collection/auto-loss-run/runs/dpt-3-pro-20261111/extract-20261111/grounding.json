@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "policies[1].policy_id",
+      "label": "Policy ID",
+      "value": "RMP-00370-201207",
+      "page": 1,
+      "box": {
+        "xmin": 0.26748,
+        "ymin": 0.8224,
+        "xmax": 0.35524,
+        "ymax": 0.83495
+      },
+      "range": {
+        "end": 6014,
+        "start": 5998
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-policy_id.png"
+    },
+    {
+      "path": "policies[1].claims[1].claim_number",
+      "label": "Claim number",
+      "value": "APD201203832-1",
+      "page": 1,
+      "box": {
+        "xmin": 0.02453,
+        "ymin": 0.85656,
+        "xmax": 0.08549,
+        "ymax": 0.86656
+      },
+      "range": {
+        "end": 6295,
+        "start": 6281
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-1-claim_number.png"
+    },
+    {
+      "path": "policies[1].claims[1].cause_of_loss",
+      "label": "Cause of loss",
+      "value": "BACKED INTO VEHICLE OR OBJECT",
+      "page": 1,
+      "box": {
+        "xmin": 0.74682,
+        "ymin": 0.85656,
+        "xmax": 0.88066,
+        "ymax": 0.86656
+      },
+      "range": {
+        "end": 6439,
+        "start": 6410
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-1-cause_of_loss.png"
+    },
+    {
+      "path": "policies[1].claims[1].claimant",
+      "label": "Claimant",
+      "value": "Cameron County",
+      "page": 1,
+      "box": {
+        "xmin": 0.19045,
+        "ymin": 0.85656,
+        "xmax": 0.24856,
+        "ymax": 0.86656
+      },
+      "range": {
+        "end": 6318,
+        "start": 6304
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-1-claimant.png"
+    },
+    {
+      "path": "policies[1].claims[0].cause_of_loss",
+      "label": "Cause of loss",
+      "value": "STRUCK AN OBJECT",
+      "page": 1,
+      "box": {
+        "xmin": 0.74681,
+        "ymin": 0.84009,
+        "xmax": 0.82428,
+        "ymax": 0.85009
+      },
+      "range": {
+        "end": 6262,
+        "start": 6246
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policies-1-claims-0-cause_of_loss.png"
+    }
+  ]
+}

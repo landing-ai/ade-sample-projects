@@ -22,11 +22,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "policies[1].policy_id", "label": "Policy ID", "occurrence": 0 },
-    { "path": "policies[1].claims[1].claim_number", "label": "Claim number", "occurrence": 0 },
-    { "path": "policies[1].claims[1].cause_of_loss", "label": "Cause of loss", "occurrence": 0 },
-    { "path": "policies[1].claims[1].total_incurred", "label": "Claim total incurred", "occurrence": 0 },
-    { "path": "policies[1].totals.total_incurred", "label": "Policy-year total incurred", "occurrence": 0 }
+    {
+      "path": "policies[1].policy_id",
+      "label": "Policy ID",
+      "occurrence": 0
+    },
+    {
+      "path": "policies[1].claims[1].claim_number",
+      "label": "Claim number",
+      "occurrence": 0
+    },
+    {
+      "path": "policies[1].claims[1].cause_of_loss",
+      "label": "Cause of loss",
+      "occurrence": 0
+    },
+    {
+      "path": "policies[1].claims[1].claimant",
+      "label": "Claimant",
+      "occurrence": 0
+    },
+    {
+      "path": "policies[1].claims[0].cause_of_loss",
+      "label": "Cause of loss",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features one claim inside its policy year on page 1 (original page 5): policy RMP-00370-201107, claim APD201102084-1 (STRUCK AN ANIMAL, $13,043 incurred), and that year's $17,240 total incurred, so the overlay reads from the policy header down through a claim row to the year's Totals row. The request file set no feature_page or fields. Its notes asked for pages 5-8 only (honoured: they are pages 1-4 here), suggested original page 5 (honoured), and suggested as fields the line of coverage and policy ID, the effective date range, one claim row (claim number, loss date, total incurred, pool paid, cause STRUCK AN ANIMAL), the policy-year claim count and total incurred, and the report date. All of these ground ok on page 1; five were chosen to stay within the overlay limit, and the line of coverage, effective date range, loss date, pool paid, claim count and report date were left out to keep one story. policies[] is extracted in an order that puts the 2015-16 year first, so the 2011-12 year shown on page 1 is policies[1]. The schema extracts all 112 claim rows; every year's claim rows sum to its printed Totals row within the source's own $1 rounding."
+  "notes": "Features one claim inside its policy year on page 1 (original page 5): policy RMP-00370-201107, claim APD201102084-1 (STRUCK AN ANIMAL, $13,043 incurred), and that year's $17,240 total incurred, so the overlay reads from the policy header down through a claim row to the year's Totals row. The request file set no feature_page or fields. Its notes asked for pages 5-8 only (honoured: they are pages 1-4 here), suggested original page 5 (honoured), and suggested as fields the line of coverage and policy ID, the effective date range, one claim row (claim number, loss date, total incurred, pool paid, cause STRUCK AN ANIMAL), the policy-year claim count and total incurred, and the report date. All of these ground ok on page 1; five were chosen to stay within the overlay limit, and the line of coverage, effective date range, loss date, pool paid, claim count and report date were left out to keep one story. policies[] is extracted in an order that puts the 2015-16 year first, so the 2011-12 year shown on page 1 is policies[1]. The schema extracts all 112 claim rows; every year's claim rows sum to its printed Totals row within the source's own $1 rounding.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 8.2,
+      "extract_credits": 32.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 8.2,
+      "extract_credits": 34.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 3.0,
+      "extract_credits": 33.8
+    }
+  ]
 }

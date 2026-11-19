@@ -1,0 +1,194 @@
+{
+  "extraction": {
+    "aba_routing_number": "796630226",
+    "account_name": "First Integrity Title Company, a California Corporation - California IOLTA Account",
+    "account_number": "6677087",
+    "account_type": "IOLTA",
+    "ach_accepted": false,
+    "attention": "REO Title Unit",
+    "issuer": {
+      "address": "18201 Von Karman Ave, Suite 330, Irvine, CA 92612",
+      "name": "First Integrity Title Company, a California Corporation",
+      "phone": "888-346-8485"
+    },
+    "property_address": "100 SAMPLE RD, Anytown, CA 90000",
+    "receiving_bank": {
+      "address": "1900 16TH Street, Suite 1200, Denver, CO 80202",
+      "attention": "Wire Department",
+      "name": "First Western Trust Bank"
+    },
+    "reference_number": "FIN-78796415",
+    "wire_only": true
+  },
+  "extraction_metadata": {
+    "aba_routing_number": {
+      "ranges": [
+        {
+          "end": 666,
+          "start": 657
+        }
+      ],
+      "value": "796630226"
+    },
+    "account_name": {
+      "ranges": [
+        {
+          "end": 771,
+          "start": 689
+        },
+        {
+          "end": 785,
+          "start": 772
+        }
+      ],
+      "value": "First Integrity Title Company, a California Corporation - California IOLTA Account"
+    },
+    "account_number": {
+      "ranges": [
+        {
+          "end": 688,
+          "start": 681
+        }
+      ],
+      "value": "6677087"
+    },
+    "account_type": {
+      "ranges": [
+        {
+          "end": 777,
+          "start": 772
+        }
+      ],
+      "value": "IOLTA"
+    },
+    "ach_accepted": {
+      "ranges": null,
+      "value": false
+    },
+    "attention": {
+      "ranges": [
+        {
+          "end": 896,
+          "start": 882
+        }
+      ],
+      "value": "REO Title Unit"
+    },
+    "issuer": {
+      "address": {
+        "ranges": [
+          {
+            "end": 61,
+            "start": 12
+          }
+        ],
+        "value": "18201 Von Karman Ave, Suite 330, Irvine, CA 92612"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 241,
+            "start": 125
+          },
+          {
+            "end": 275,
+            "start": 242
+          }
+        ],
+        "value": "First Integrity Title Company, a California Corporation"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 80,
+            "start": 68
+          }
+        ],
+        "value": "888-346-8485"
+      }
+    },
+    "property_address": {
+      "ranges": [
+        {
+          "end": 851,
+          "start": 820
+        },
+        {
+          "end": 870,
+          "start": 852
+        }
+      ],
+      "value": "100 SAMPLE RD, Anytown, CA 90000"
+    },
+    "receiving_bank": {
+      "address": {
+        "ranges": [
+          {
+            "end": 599,
+            "start": 571
+          },
+          {
+            "end": 616,
+            "start": 600
+          }
+        ],
+        "value": "1900 16TH Street, Suite 1200, Denver, CO 80202"
+      },
+      "attention": {
+        "ranges": [
+          {
+            "end": 638,
+            "start": 623
+          }
+        ],
+        "value": "Wire Department"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 570,
+            "start": 546
+          }
+        ],
+        "value": "First Western Trust Bank"
+      }
+    },
+    "reference_number": {
+      "ranges": [
+        {
+          "end": 819,
+          "start": 807
+        }
+      ],
+      "value": "FIN-78796415"
+    },
+    "wire_only": {
+      "ranges": null,
+      "value": true
+    }
+  },
+  "markdown": "FIN\nTITLE\n\n\n18201 Von Karman Ave, Suite 330, Irvine, CA 92612\nMain: 888-346-8485 | Direct: (888) 346-8485\n\nWIRE INSTRUCTIONS\nFor incoming wire transfers please use the following information for the transfer of funds to: First Integrity Title\nCompany, a California Corporation\n\nAll closing funds MUST be deposited by wire transfer.\n\nPLEASE NOTE: ACH transfers are not accepted and will be rejected.\n\nIf you have any questions regarding this matter, please call our escrow closing team using the toll-free number\nlisted above. Thank you!\n\nWire To: First Western Trust Bank\n1900 16TH Street, Suite 1200\nDenver, CO 80202\nAttn: Wire Department\n\nABA/Routing No.: 796630226\nBank Account: 6677087\nAccount Name: First Integrity Title Company, a California Corporation - California\nIOLTA Account\nReference Order No.: FIN-78796415\nProperty Address: 100 SAMPLE RD\nAnytown , CA 90000\nAttention: REO Title Unit\n\n<!-- doc_id=parse-01m7ryeshk6qft1cmq96wnfh9f -->",
+  "metadata": {
+    "job_id": "extract-01m7ryez0cr8mpvt5230cw9bk8",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 248442,
+    "doc_id": "parse-01m7ryeshk6qft1cmq96wnfh9f",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.9,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 946,
+    "output_extraction_chars": 642,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

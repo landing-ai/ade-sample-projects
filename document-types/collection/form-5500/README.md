@@ -44,7 +44,7 @@ search: the original name survives nowhere in the committed PDF or in this folde
 **A hidden text layer.** Under every field sits invisible white text holding EFAST
 placeholder strings (`ABCDEFGHI`, `123456789`, `YYYY-MM-DD`) rather than the values. It
 carries no personal data and was left in place. Parse ignored it completely: no
-placeholder appears in `parse-pro.md`.
+placeholder appears in `runs/dpt-3-pro-20260710/parse.md`.
 
 ## Why this document
 

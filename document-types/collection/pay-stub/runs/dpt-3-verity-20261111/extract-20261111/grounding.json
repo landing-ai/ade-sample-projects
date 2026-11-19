@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "totals.gross_pay",
+      "label": "Gross pay",
+      "value": 5361.6,
+      "page": 1,
+      "box": {
+        "xmin": 0.41701,
+        "ymin": 0.4687,
+        "xmax": 0.49561,
+        "ymax": 0.47899
+      },
+      "range": {
+        "end": 1145,
+        "start": 1136
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-gross_pay.png"
+    },
+    {
+      "path": "taxes[0].amount",
+      "label": "Medicare tax",
+      "value": 77.74,
+      "page": 1,
+      "box": {
+        "xmin": 0.67544,
+        "ymin": 0.30358,
+        "xmax": 0.72782,
+        "ymax": 0.31404
+      },
+      "range": {
+        "end": 718,
+        "start": 713
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "taxes-0-amount.png"
+    },
+    {
+      "path": "totals.total_taxes",
+      "label": "Total taxes",
+      "value": 1387.3,
+      "page": 1,
+      "box": {
+        "xmin": 0.65001,
+        "ymin": 0.46926,
+        "xmax": 0.72848,
+        "ymax": 0.47959
+      },
+      "range": {
+        "end": 1177,
+        "start": 1168
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_taxes.png"
+    },
+    {
+      "path": "deductions[0].amount",
+      "label": "401(k) deduction",
+      "value": 268.08,
+      "page": 1,
+      "box": {
+        "xmin": 0.28858,
+        "ymin": 0.52637,
+        "xmax": 0.34881,
+        "ymax": 0.53606
+      },
+      "range": {
+        "end": 1429,
+        "start": 1423
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "deductions-0-amount.png"
+    },
+    {
+      "path": "totals.net_pay",
+      "label": "Net pay",
+      "value": 3706.22,
+      "page": 1,
+      "box": {
+        "xmin": 0.50325,
+        "ymin": 0.84584,
+        "xmax": 0.58443,
+        "ymax": 0.85598
+      },
+      "range": {
+        "end": 1869,
+        "start": 1859
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-net_pay.png"
+    }
+  ]
+}

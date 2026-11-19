@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20260710",
+  "extract_model": "extract-20260819",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "itin",
+      "label": "ITIN",
+      "value": "NNN-NN-NNNN",
+      "page": 1,
+      "box": {
+        "xmin": 0.09261,
+        "ymin": 0.27431,
+        "xmax": 0.28729,
+        "ymax": 0.29568
+      },
+      "range": {
+        "end": 683,
+        "start": 672
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "itin.png"
+    },
+    {
+      "path": "notice.notice_number",
+      "label": "Notice number",
+      "value": "CP565",
+      "page": 1,
+      "box": {
+        "xmin": 0.74714,
+        "ymin": 0.04748,
+        "xmax": 0.94217,
+        "ymax": 0.06301
+      },
+      "range": {
+        "end": 160,
+        "start": 155
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notice-notice_number.png"
+    },
+    {
+      "path": "notice.notice_date",
+      "label": "Notice date",
+      "value": "January 26, 2017",
+      "page": 1,
+      "box": {
+        "xmin": 0.74716,
+        "ymin": 0.06301,
+        "xmax": 0.94216,
+        "ymax": 0.07862
+      },
+      "range": {
+        "end": 215,
+        "start": 199
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notice-notice_date.png"
+    },
+    {
+      "path": "notice.case_reference_number",
+      "label": "Case reference number",
+      "value": "99999",
+      "page": 1,
+      "box": {
+        "xmin": 0.74724,
+        "ymin": 0.12049,
+        "xmax": 0.94214,
+        "ymax": 0.13606
+      },
+      "range": {
+        "end": 376,
+        "start": 371
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notice-case_reference_number.png"
+    },
+    {
+      "path": "recipient.date_of_birth",
+      "label": "Date of birth",
+      "value": "January 20, 1990",
+      "page": 1,
+      "box": {
+        "xmin": 0.74726,
+        "ymin": 0.13604,
+        "xmax": 0.94214,
+        "ymax": 0.1515
+      },
+      "range": {
+        "end": 433,
+        "start": 417
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "recipient-date_of_birth.png"
+    }
+  ]
+}

@@ -1,0 +1,883 @@
+{
+  "extraction": {
+    "filing_detail": {
+      "debtor_parties": [
+        {
+          "address": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647",
+          "name": "WALLY WORLD"
+        },
+        {
+          "address": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647",
+          "name": "COMPANY CORPORATION CINEMA"
+        },
+        {
+          "address": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647",
+          "name": "WALLY WORLD MEGA VISION CINEMA"
+        },
+        {
+          "address": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647",
+          "name": "THE ANY COMPANY FILM FORUM"
+        }
+      ],
+      "events": [
+        {
+          "date_filed": "1998-06-17",
+          "document_number": "98-168-XXXX",
+          "filing_type_code": "0801",
+          "type_of_filing": "UCC FINANCE STATEMENT FILED"
+        }
+      ],
+      "filing_state": "WA",
+      "filing_state_name": "Washington",
+      "original_date_filed": "1998-06-17",
+      "original_document_number": "98-168-XXXX",
+      "secured_parties": [
+        {
+          "address": "SEATTLE 474 ANYSTREET ST SEATTLE WA 12345",
+          "name": "ANY COMPANY"
+        }
+      ]
+    },
+    "report_provider": "Microbilt Corporation",
+    "result_count": 5,
+    "search_results": [
+      {
+        "collateral": null,
+        "date_filed": "1998-12-30",
+        "debtor_address": "3345 ANYSTREET ST SEATTLE, WA 12345-4408",
+        "debtor_count": 1,
+        "debtor_name": null,
+        "document_number": "98-364-XXXX",
+        "filing_count": 1,
+        "filing_description": "UCC Y FINANCE STATEMENT FILED",
+        "filing_state": "WA",
+        "original_document_number": "98-364-XXXX",
+        "secured_count": 2,
+        "secured_party_address": "3434 NE 171ST ST SEATTLE, WA 12345-6022",
+        "secured_party_name": "ANY COMPANY"
+      },
+      {
+        "collateral": null,
+        "date_filed": "1998-06-17",
+        "debtor_address": "4005 ANYSTREET SEATTLE, WA 12345-3642",
+        "debtor_count": 4,
+        "debtor_name": "COMPANY CORPORATION",
+        "document_number": "98-168-XXXX",
+        "filing_count": 1,
+        "filing_description": "UCC FINANCE STATEMENT FILED",
+        "filing_state": "WA",
+        "original_document_number": "98-168-XXXX",
+        "secured_count": 1,
+        "secured_party_address": "SEATTLE, WA 12345",
+        "secured_party_name": "ANY COMPANY"
+      },
+      {
+        "collateral": null,
+        "date_filed": "1999-06-11",
+        "debtor_address": "647 ANYSTREET AVE SEATTLE, WA 12345-1701",
+        "debtor_count": 3,
+        "debtor_name": null,
+        "document_number": "99-162-XXXX",
+        "filing_count": 1,
+        "filing_description": "UCC FINANCE STATEMENT FILED",
+        "filing_state": "WA",
+        "original_document_number": "99-162-XXXX",
+        "secured_count": null,
+        "secured_party_address": "SEATTLE, WA 12345",
+        "secured_party_name": "ANY COMPANY"
+      },
+      {
+        "collateral": null,
+        "date_filed": "1996-04-22",
+        "debtor_address": "3345 NE ANYSTREET ST SEATTLE, WA 12345-4408",
+        "debtor_count": null,
+        "debtor_name": null,
+        "document_number": "96-113-XXXX",
+        "filing_count": null,
+        "filing_description": "UCC FINANCE STATEMENT FILED",
+        "filing_state": "WA",
+        "original_document_number": "96-113-XXXX",
+        "secured_count": null,
+        "secured_party_address": "3745 NE 47TH PL SEATTLE, WA 12345-5945",
+        "secured_party_name": "ANY COMPANY"
+      },
+      {
+        "collateral": null,
+        "date_filed": "1998-06-17",
+        "debtor_address": "4005 ANYSTREET WAY SEATTLE, WA 12345-3642",
+        "debtor_count": 4,
+        "debtor_name": "WALLY WORLD MEGA VISION CINEMA",
+        "document_number": "98-168-XXXX",
+        "filing_count": 1,
+        "filing_description": "UCC FINANCE STATEMENT FILED",
+        "filing_state": "WA",
+        "original_document_number": "98-168-XXXX",
+        "secured_count": null,
+        "secured_party_address": "SEATTLE, WA 12345",
+        "secured_party_name": "ANY COMPANY"
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "filing_detail": {
+      "debtor_parties": [
+        {
+          "address": {
+            "ranges": [
+              {
+                "end": 3169,
+                "start": 3127
+              }
+            ],
+            "value": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 3118,
+                "start": 3107
+              }
+            ],
+            "value": "WALLY WORLD"
+          }
+        },
+        {
+          "address": {
+            "ranges": [
+              {
+                "end": 3265,
+                "start": 3223
+              }
+            ],
+            "value": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 3214,
+                "start": 3188
+              }
+            ],
+            "value": "COMPANY CORPORATION CINEMA"
+          }
+        },
+        {
+          "address": {
+            "ranges": [
+              {
+                "end": 3365,
+                "start": 3323
+              }
+            ],
+            "value": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 3314,
+                "start": 3284
+              }
+            ],
+            "value": "WALLY WORLD MEGA VISION CINEMA"
+          }
+        },
+        {
+          "address": {
+            "ranges": [
+              {
+                "end": 3461,
+                "start": 3419
+              }
+            ],
+            "value": "4005 ANYSTREET E WAY SEATTLE WA 12345-3647"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 3410,
+                "start": 3384
+              }
+            ],
+            "value": "THE ANY COMPANY FILM FORUM"
+          }
+        }
+      ],
+      "events": [
+        {
+          "date_filed": {
+            "ranges": [
+              {
+                "end": 3804,
+                "start": 3794
+              }
+            ],
+            "value": "1998-06-17"
+          },
+          "document_number": {
+            "ranges": [
+              {
+                "end": 3849,
+                "start": 3838
+              }
+            ],
+            "value": "98-168-XXXX"
+          },
+          "filing_type_code": {
+            "ranges": [
+              {
+                "end": 3755,
+                "start": 3751
+              }
+            ],
+            "value": "0801"
+          },
+          "type_of_filing": {
+            "ranges": [
+              {
+                "end": 3716,
+                "start": 3689
+              }
+            ],
+            "value": "UCC FINANCE STATEMENT FILED"
+          }
+        }
+      ],
+      "filing_state": {
+        "ranges": [
+          {
+            "end": 2969,
+            "start": 2967
+          }
+        ],
+        "value": "WA"
+      },
+      "filing_state_name": {
+        "ranges": [
+          {
+            "end": 3005,
+            "start": 2995
+          }
+        ],
+        "value": "Washington"
+      },
+      "original_date_filed": {
+        "ranges": [
+          {
+            "end": 2946,
+            "start": 2909
+          }
+        ],
+        "value": "1998-06-17"
+      },
+      "original_document_number": {
+        "ranges": [
+          {
+            "end": 2908,
+            "start": 2897
+          }
+        ],
+        "value": "98-168-XXXX"
+      },
+      "secured_parties": [
+        {
+          "address": {
+            "ranges": [
+              {
+                "end": 3587,
+                "start": 3528
+              }
+            ],
+            "value": "SEATTLE 474 ANYSTREET ST SEATTLE WA 12345"
+          },
+          "name": {
+            "ranges": [
+              {
+                "end": 3527,
+                "start": 3516
+              }
+            ],
+            "value": "ANY COMPANY"
+          }
+        }
+      ]
+    },
+    "report_provider": {
+      "ranges": [
+        {
+          "end": 2067,
+          "start": 2046
+        }
+      ],
+      "value": "Microbilt Corporation"
+    },
+    "result_count": {
+      "ranges": [
+        {
+          "end": 116,
+          "start": 115
+        }
+      ],
+      "value": 5
+    },
+    "search_results": [
+      {
+        "collateral": {
+          "ranges": null,
+          "value": null
+        },
+        "date_filed": {
+          "ranges": [
+            {
+              "end": 322,
+              "start": 306
+            }
+          ],
+          "value": "1998-12-30"
+        },
+        "debtor_address": {
+          "ranges": [
+            {
+              "end": 285,
+              "start": 242
+            }
+          ],
+          "value": "3345 ANYSTREET ST SEATTLE, WA 12345-4408"
+        },
+        "debtor_count": {
+          "ranges": [
+            {
+              "end": 538,
+              "start": 537
+            }
+          ],
+          "value": 1
+        },
+        "debtor_name": {
+          "ranges": null,
+          "value": null
+        },
+        "document_number": {
+          "ranges": [
+            {
+              "end": 457,
+              "start": 446
+            }
+          ],
+          "value": "98-364-XXXX"
+        },
+        "filing_count": {
+          "ranges": [
+            {
+              "end": 538,
+              "start": 537
+            }
+          ],
+          "value": 1
+        },
+        "filing_description": {
+          "ranges": [
+            {
+              "end": 233,
+              "start": 204
+            }
+          ],
+          "value": "UCC Y FINANCE STATEMENT FILED"
+        },
+        "filing_state": {
+          "ranges": [
+            {
+              "end": 308,
+              "start": 306
+            }
+          ],
+          "value": "WA"
+        },
+        "original_document_number": {
+          "ranges": [
+            {
+              "end": 457,
+              "start": 446
+            }
+          ],
+          "value": "98-364-XXXX"
+        },
+        "secured_count": {
+          "ranges": [
+            {
+              "end": 575,
+              "start": 574
+            }
+          ],
+          "value": 2
+        },
+        "secured_party_address": {
+          "ranges": [
+            {
+              "end": 415,
+              "start": 343
+            }
+          ],
+          "value": "3434 NE 171ST ST SEATTLE, WA 12345-6022"
+        },
+        "secured_party_name": {
+          "ranges": [
+            {
+              "end": 354,
+              "start": 343
+            }
+          ],
+          "value": "ANY COMPANY"
+        }
+      },
+      {
+        "collateral": {
+          "ranges": null,
+          "value": null
+        },
+        "date_filed": {
+          "ranges": [
+            {
+              "end": 797,
+              "start": 781
+            }
+          ],
+          "value": "1998-06-17"
+        },
+        "debtor_address": {
+          "ranges": [
+            {
+              "end": 677,
+              "start": 663
+            },
+            {
+              "end": 772,
+              "start": 750
+            }
+          ],
+          "value": "4005 ANYSTREET SEATTLE, WA 12345-3642"
+        },
+        "debtor_count": {
+          "ranges": [
+            {
+              "end": 1051,
+              "start": 1050
+            }
+          ],
+          "value": 4
+        },
+        "debtor_name": {
+          "ranges": [
+            {
+              "end": 652,
+              "start": 633
+            }
+          ],
+          "value": "COMPANY CORPORATION"
+        },
+        "document_number": {
+          "ranges": [
+            {
+              "end": 880,
+              "start": 869
+            }
+          ],
+          "value": "98-168-XXXX"
+        },
+        "filing_count": {
+          "ranges": [
+            {
+              "end": 1032,
+              "start": 1031
+            }
+          ],
+          "value": 1
+        },
+        "filing_description": {
+          "ranges": [
+            {
+              "end": 741,
+              "start": 714
+            }
+          ],
+          "value": "UCC FINANCE STATEMENT FILED"
+        },
+        "filing_state": {
+          "ranges": [
+            {
+              "end": 783,
+              "start": 781
+            }
+          ],
+          "value": "WA"
+        },
+        "original_document_number": {
+          "ranges": [
+            {
+              "end": 880,
+              "start": 869
+            }
+          ],
+          "value": "98-168-XXXX"
+        },
+        "secured_count": {
+          "ranges": [
+            {
+              "end": 1032,
+              "start": 1031
+            }
+          ],
+          "value": 1
+        },
+        "secured_party_address": {
+          "ranges": [
+            {
+              "end": 838,
+              "start": 821
+            }
+          ],
+          "value": "SEATTLE, WA 12345"
+        },
+        "secured_party_name": {
+          "ranges": [
+            {
+              "end": 817,
+              "start": 806
+            }
+          ],
+          "value": "ANY COMPANY"
+        }
+      },
+      {
+        "collateral": {
+          "ranges": null,
+          "value": null
+        },
+        "date_filed": {
+          "ranges": [
+            {
+              "end": 1308,
+              "start": 1292
+            }
+          ],
+          "value": "1999-06-11"
+        },
+        "debtor_address": {
+          "ranges": [
+            {
+              "end": 1216,
+              "start": 1176
+            }
+          ],
+          "value": "647 ANYSTREET AVE SEATTLE, WA 12345-1701"
+        },
+        "debtor_count": {
+          "ranges": [
+            {
+              "end": 1590,
+              "start": 1589
+            }
+          ],
+          "value": 3
+        },
+        "debtor_name": {
+          "ranges": null,
+          "value": null
+        },
+        "document_number": {
+          "ranges": [
+            {
+              "end": 1378,
+              "start": 1367
+            }
+          ],
+          "value": "99-162-XXXX"
+        },
+        "filing_count": {
+          "ranges": [
+            {
+              "end": 1541,
+              "start": 1540
+            }
+          ],
+          "value": 1
+        },
+        "filing_description": {
+          "ranges": [
+            {
+              "end": 1167,
+              "start": 1140
+            }
+          ],
+          "value": "UCC FINANCE STATEMENT FILED"
+        },
+        "filing_state": {
+          "ranges": [
+            {
+              "end": 1294,
+              "start": 1292
+            }
+          ],
+          "value": "WA"
+        },
+        "original_document_number": {
+          "ranges": [
+            {
+              "end": 1378,
+              "start": 1367
+            }
+          ],
+          "value": "99-162-XXXX"
+        },
+        "secured_count": {
+          "ranges": null,
+          "value": null
+        },
+        "secured_party_address": {
+          "ranges": [
+            {
+              "end": 1425,
+              "start": 1408
+            }
+          ],
+          "value": "SEATTLE, WA 12345"
+        },
+        "secured_party_name": {
+          "ranges": [
+            {
+              "end": 1328,
+              "start": 1317
+            }
+          ],
+          "value": "ANY COMPANY"
+        }
+      },
+      {
+        "collateral": {
+          "ranges": null,
+          "value": null
+        },
+        "date_filed": {
+          "ranges": [
+            {
+              "end": 1794,
+              "start": 1778
+            }
+          ],
+          "value": "1996-04-22"
+        },
+        "debtor_address": {
+          "ranges": [
+            {
+              "end": 1757,
+              "start": 1711
+            }
+          ],
+          "value": "3345 NE ANYSTREET ST SEATTLE, WA 12345-4408"
+        },
+        "debtor_count": {
+          "ranges": null,
+          "value": null
+        },
+        "debtor_name": {
+          "ranges": null,
+          "value": null
+        },
+        "document_number": {
+          "ranges": [
+            {
+              "end": 1932,
+              "start": 1921
+            }
+          ],
+          "value": "96-113-XXXX"
+        },
+        "filing_count": {
+          "ranges": null,
+          "value": null
+        },
+        "filing_description": {
+          "ranges": [
+            {
+              "end": 1690,
+              "start": 1663
+            }
+          ],
+          "value": "UCC FINANCE STATEMENT FILED"
+        },
+        "filing_state": {
+          "ranges": [
+            {
+              "end": 1780,
+              "start": 1778
+            }
+          ],
+          "value": "WA"
+        },
+        "original_document_number": {
+          "ranges": [
+            {
+              "end": 1932,
+              "start": 1921
+            }
+          ],
+          "value": "96-113-XXXX"
+        },
+        "secured_count": {
+          "ranges": null,
+          "value": null
+        },
+        "secured_party_address": {
+          "ranges": [
+            {
+              "end": 1890,
+              "start": 1815
+            }
+          ],
+          "value": "3745 NE 47TH PL SEATTLE, WA 12345-5945"
+        },
+        "secured_party_name": {
+          "ranges": [
+            {
+              "end": 1826,
+              "start": 1815
+            }
+          ],
+          "value": "ANY COMPANY"
+        }
+      },
+      {
+        "collateral": {
+          "ranges": null,
+          "value": null
+        },
+        "date_filed": {
+          "ranges": [
+            {
+              "end": 2454,
+              "start": 2438
+            }
+          ],
+          "value": "1998-06-17"
+        },
+        "debtor_address": {
+          "ranges": [
+            {
+              "end": 2363,
+              "start": 2253
+            }
+          ],
+          "value": "4005 ANYSTREET WAY SEATTLE, WA 12345-3642"
+        },
+        "debtor_count": {
+          "ranges": [
+            {
+              "end": 2733,
+              "start": 2732
+            }
+          ],
+          "value": 4
+        },
+        "debtor_name": {
+          "ranges": [
+            {
+              "end": 2285,
+              "start": 2255
+            }
+          ],
+          "value": "WALLY WORLD MEGA VISION CINEMA"
+        },
+        "document_number": {
+          "ranges": [
+            {
+              "end": 2530,
+              "start": 2519
+            }
+          ],
+          "value": "98-168-XXXX"
+        },
+        "filing_count": {
+          "ranges": [
+            {
+              "end": 2681,
+              "start": 2680
+            }
+          ],
+          "value": 1
+        },
+        "filing_description": {
+          "ranges": [
+            {
+              "end": 2318,
+              "start": 2291
+            }
+          ],
+          "value": "UCC FINANCE STATEMENT FILED"
+        },
+        "filing_state": {
+          "ranges": [
+            {
+              "end": 2440,
+              "start": 2438
+            }
+          ],
+          "value": "WA"
+        },
+        "original_document_number": {
+          "ranges": [
+            {
+              "end": 2530,
+              "start": 2519
+            }
+          ],
+          "value": "98-168-XXXX"
+        },
+        "secured_count": {
+          "ranges": null,
+          "value": null
+        },
+        "secured_party_address": {
+          "ranges": [
+            {
+              "end": 2480,
+              "start": 2463
+            }
+          ],
+          "value": "SEATTLE, WA 12345"
+        },
+        "secured_party_name": {
+          "ranges": [
+            {
+              "end": 2392,
+              "start": 2381
+            }
+          ],
+          "value": "ANY COMPANY"
+        }
+      }
+    ]
+  },
+  "markdown": "[logo: UCC Search Report]\n\n# Sample Report\n\n[logo: microbilt]\n\nAdditional Descriptions Below.\n\nUCC Search Results (5)\n\n<table>\n<tr><td colspan=\"2\">DEBTOR</td><td>FILING</td><td>CREDITOR</td></tr>\n<tr><td>UCC Y FINANCE STATEMENT FILED</td><td>3345 ANYSTREET ST<br>SEATTLE, WA 12345-4408</td><td rowspan=\"2\">WA<br>12/30/1998</td><td rowspan=\"2\">ANY COMPANY<br>3434 NE 171ST ST<br>SEATTLE, WA 12345-6022<br>COLLATERAL:</td></tr>\n<tr><td>DOC NUMBER: 98-364-XXXX<br>ORIGINAL: 98-364-XXXX</td><td></td></tr>\n<tr><td colspan=\"2\">FILING COUNT [ 1] DEBTOR COUNT [ 1] SECURED COUNT [ 2]</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>**COMPANY CORPORATION**</td><td>4005 ANYSTREET</td><td></td><td></td></tr>\n<tr><td>UCC FINANCE STATEMENT FILED</td><td>SEATTLE, WA 12345-3642</td><td>WA<br>06/17/1998</td><td>ANY COMPANY<br>SEATTLE, WA 12345</td></tr>\n<tr><td>DOC NUMBER: 98-168-XXXX</td><td></td><td></td><td></td></tr>\n<tr><td>ORIGINAL: 98-168-XXXX</td><td></td><td></td><td>COLLATERAL:</td></tr>\n<tr><td colspan=\"2\">FILING COUNT [ 1 ] DEBTOR COUNT [ 4 ] SECURED COUNT [ 1 ]</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">UCC FINANCE STATEMENT FILED</td><td>647 ANYSTREET AVE SEATTLE, WA 12345-1701</td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td rowspan=\"2\">WA<br>06/11/1999</td><td>ANY COMPANY</td></tr>\n<tr><td>DOC NUMBER:</td><td>99-162-XXXX</td><td></td><td rowspan=\"2\">SEATTLE, WA 12345<br>COLLATERAL:</td></tr>\n<tr><td>ORIGINAL:</td><td>99-162-XXXX</td><td></td><td></td></tr>\n<tr><td>FILING COUNT [ 1] COUNT [ 1]</td><td colspan=\"2\">DEBTOR COUNT [ 3]          SECURED</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>UCC FINANCE STATEMENT FILED</td><td rowspan=\"2\">3345 NE ANYSTREET ST<br>SEATTLE, WA 12345-4408</td><td rowspan=\"2\">WA<br>04/22/1996</td><td rowspan=\"2\">ANY COMPANY<br>3745 NE 47TH PL<br>SEATTLE, WA 12345-5945<br><br>COLLATERAL:</td></tr>\n<tr><td>DOC NUMBER: 96-113-XXXX<br>ORIGINAL: 96-113-XXXX</td></tr>\n</table>\n\nLearn more today. Visit microbilt.com or call 1-800-884-4747\n\n©2024 Microbilt Corporation, All Rights Reserved\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td>FILING COUNT [ 1]<br>COUNT [ 1]</td><td colspan=\"2\">DEBTOR COUNT [ 4] SECURED</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**WALLY WORLD MEGA VISION CINEMA**<br>UCC FINANCE STATEMENT FILED 4005 ANYSTREET WAY<br>SEATTLE, WA 12345-3642</td><td></td><td>ANY COMPANY</td></tr>\n<tr><td></td><td></td><td></td><td>WA<br>06/17/1998</td><td>SEATTLE, WA 12345</td></tr>\n<tr><td>DOC NUMBER:</td><td>98-168-XXXX</td><td></td><td></td><td rowspan=\"2\">COLLATERAL:</td></tr>\n<tr><td>ORIGINAL:</td><td>98-168-XXXX</td><td></td><td></td></tr>\n<tr><td>FILING COUNT [ 1]<br>COUNT [ 1]</td><td colspan=\"2\">DEBTOR COUNT [ 4] SECURED</td><td></td><td></td></tr>\n</table>\n\n# SAMPLE REPORT REQUESTED FROM ABOVE SEARCH\n\n**Additional Data Sources - UCC Report**\n\n- **Original Document Nr.**: 98-168-XXXX\n- **Original Date Filed**: 06/17/1998\n- **Filing State**: WA\n- **Filing State Name**: Washington\n\n<table>\n<tr><td></td><td>Debtor Parties:</td></tr>\n<tr><td>Name:</td><td>Address:</td></tr>\n<tr><td>WALLY WORLD</td><td>4005 ANYSTREET E WAY SEATTLE WA 12345-3647</td></tr>\n<tr><td>COMPANY CORPORATION CINEMA</td><td>4005 ANYSTREET E WAY SEATTLE WA 12345-3647</td></tr>\n<tr><td>WALLY WORLD MEGA VISION CINEMA</td><td>4005 ANYSTREET E WAY SEATTLE WA 12345-3647</td></tr>\n<tr><td>THE ANY COMPANY FILM FORUM</td><td>4005 ANYSTREET E WAY SEATTLE WA 12345-3647</td></tr>\n</table>\n\n**Secured Parties:**\n\n- **Name**: ANY COMPANY\n- **Address**: SEATTLE 474 ANYSTREET ST SEATTLE WA<br>12345\n\n<table>\n<tr><td></td><td colspan=\"2\">**Events:**</td><td></td></tr>\n<tr><td>Type Of Filing:</td><td>UCC FINANCE STATEMENT FILED</td><td>Filing Type Code:</td><td>0801</td></tr>\n<tr><td>Date Filed:</td><td>06/17/1998</td><td>Document Number:</td><td>98-168-XXXX</td></tr>\n</table>\n\n**Learn more today. Visit microbilt.com or call 1-800-884-4747**\n\n©2024 Microbilt Corporation, All Rights Reserved\n\n<!-- doc_id=parse-01m7rz6sbhkhdfy0vt7cs7xe57 -->",
+  "metadata": {
+    "job_id": "extract-01m7rz72e2shrfhqhf63jv7jd0",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 124917,
+    "doc_id": "parse-01m7rz6sbhkhdfy0vt7cs7xe57",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 4034,
+    "output_extraction_chars": 2953,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

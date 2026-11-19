@@ -15,27 +15,106 @@
       "redactions": {
         "note": "Redaction was done by the publisher before release; this build replaced no text. Originals are not known and not recorded.",
         "replaced_by_publisher": [
-          { "what": "owner/occupant, property address and property location", "with": "***REDACTED***", "occurrences": 3 },
-          { "what": "legal description section, township and range", "with": "***", "occurrences": 3 },
-          { "what": "file number in each page header", "with": "***REDACTED***", "occurrences": 5 },
-          { "what": "comparable sales' grantor (seller) and grantee (buyer)", "with": "***REDACTED***", "occurrences": 20 },
-          { "what": "ranch name in the reconciliation narrative", "with": "***REDACTED***", "occurrences": 1 }
+          {
+            "what": "owner/occupant, property address and property location",
+            "with": "***REDACTED***",
+            "occurrences": 3
+          },
+          {
+            "what": "legal description section, township and range",
+            "with": "***",
+            "occurrences": 3
+          },
+          {
+            "what": "file number in each page header",
+            "with": "***REDACTED***",
+            "occurrences": 5
+          },
+          {
+            "what": "comparable sales' grantor (seller) and grantee (buyer)",
+            "with": "***REDACTED***",
+            "occurrences": 20
+          },
+          {
+            "what": "ranch name in the reconciliation narrative",
+            "with": "***REDACTED***",
+            "occurrences": 1
+          }
         ],
         "removed_in_this_build": [
-          { "what": "PDF document metadata including the author field" },
-          { "what": "unused shared image resources (photos, maps, resume scans) not drawn on any kept page" }
+          {
+            "what": "PDF document metadata including the author field"
+          },
+          {
+            "what": "unused shared image resources (photos, maps, resume scans) not drawn on any kept page"
+          }
         ],
-        "kept_source_pages": [6, 40, 41, 43, 44]
+        "kept_source_pages": [
+          6,
+          40,
+          41,
+          43,
+          44
+        ]
       }
     }
   },
   "feature_page": 2,
   "fields": [
-    { "path": "comparable_sales[0].sale_date", "label": "Sale #1 date", "occurrence": 0 },
-    { "path": "comparable_sales[0].acres", "label": "Sale #1 acres", "occurrence": 0 },
-    { "path": "comparable_sales[0].sale_price", "label": "Sale #1 price", "occurrence": 0 },
-    { "path": "comparable_sales[0].net_adjustments", "label": "Net adjustment per acre", "occurrence": 0 },
-    { "path": "comparable_sales[0].adjusted_price_per_acre", "label": "Adjusted price per acre", "occurrence": 0 }
+    {
+      "path": "comparable_sales[0].sale_date",
+      "label": "Sale #1 date",
+      "occurrence": 0
+    },
+    {
+      "path": "comparable_sales[0].acres",
+      "label": "Sale #1 acres",
+      "occurrence": 0
+    },
+    {
+      "path": "comparable_sales[0].sale_price",
+      "label": "Sale #1 price",
+      "occurrence": 0
+    },
+    {
+      "path": "comparable_sales[0].net_adjustments",
+      "label": "Net adjustment per acre",
+      "occurrence": 0
+    },
+    {
+      "path": "comparable_sales[0].adjusted_price_per_acre",
+      "label": "Adjusted price per acre",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features one column of the Sales Comparison Approach grid on page 2 (source page 40, report page 36 of 70): comparable Sale #1 (D155), when it sold, its size, its price, the net per-acre adjustment and the resulting adjusted price per acre. Read top to bottom it is the arithmetic of one comparable. The request named no feature page or fields; its notes suggested the reconciliation (source page 44) or the sales grid (40-41), and suggested the three approach values, the opinion of value and marketing time, total deeded acres and overall value per acre. The sales grid was chosen because the reconciliation page received no groundings at all: every value printed there also appears on the summary page and the extraction grounded to the summary instead. On the summary page the Cost Approach, Sales Comparison Approach, Opinion of Value and Total Deeded Acres ground correctly, but the Income Approach value grounds off (to a dash), and the marketing time (12 months) and overall value per acre ($482) come back synthesized with no ranges, as does the whole allocation block and the sales comparison summary box. No person is featured; every name on these pages was already ***REDACTED*** by the publisher."
+  "notes": "Features one column of the Sales Comparison Approach grid on page 2 (source page 40, report page 36 of 70): comparable Sale #1 (D155), when it sold, its size, its price, the net per-acre adjustment and the resulting adjusted price per acre. Read top to bottom it is the arithmetic of one comparable. The request named no feature page or fields; its notes suggested the reconciliation (source page 44) or the sales grid (40-41), and suggested the three approach values, the opinion of value and marketing time, total deeded acres and overall value per acre. The sales grid was chosen because the reconciliation page received no groundings at all: every value printed there also appears on the summary page and the extraction grounded to the summary instead. On the summary page the Cost Approach, Sales Comparison Approach, Opinion of Value and Total Deeded Acres ground correctly, but the Income Approach value grounds off (to a dash), and the marketing time (12 months) and overall value per acre ($482) come back synthesized with no ranges, as does the whole allocation block and the sales comparison summary box. No person is featured; every name on these pages was already ***REDACTED*** by the publisher.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 8.9,
+      "extract_credits": 8.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 8.8,
+      "extract_credits": 8.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 3.1,
+      "extract_credits": 7.9
+    }
+  ]
 }

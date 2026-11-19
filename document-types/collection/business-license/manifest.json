@@ -27,8 +27,8 @@
       "occurrence": 0
     },
     {
-      "path": "business.date_opened",
-      "label": "Business opened",
+      "path": "business.location_address",
+      "label": "Location address",
       "occurrence": 0
     },
     {
@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no page or fields; its notes suggested receipt number, business type, tax amount or total paid, and employees, as suggestions only. Featured: issuing county, receipt number, date opened, employees and total paid, so the overlay reads as one record: who issued it, which receipt, since when the business has operated, the count it is assessed on, and what was paid. Business type was not featured: the parse puts the Receipt # line and both Business Type lines in one block, so its box would be the same region as the receipt number's. Business name was tried in its place and rejected after viewing the crop: its box covers only the 'Business Name:' label, not the typed value beside it. The receipt number crop also takes in the business type lines below it, because they share that block; it contains the value. Total paid stands for the amount, since Tax Amount and Total Paid are both 16.50. The owner name and business phone are placeholder specimen values and are not featured. valid_from, valid_through and paid_date read OFF only because they are normalized to ISO from 'OCTOBER 1, 2019' style text. The two blank optional fields typed string-or-null came back as the literal string 'null' rather than JSON null; the blank capacity counts typed integer-or-null came back as real nulls."
+  "notes": "The request named no page or fields; its notes suggested receipt number, business type, tax amount or total paid, and employees, as suggestions only. Featured: issuing county, receipt number, date opened, employees and total paid, so the overlay reads as one record: who issued it, which receipt, since when the business has operated, the count it is assessed on, and what was paid. Business type was not featured: the parse puts the Receipt # line and both Business Type lines in one block, so its box would be the same region as the receipt number's. Business name was tried in its place and rejected after viewing the crop: its box covers only the 'Business Name:' label, not the typed value beside it. The receipt number crop also takes in the business type lines below it, because they share that block; it contains the value. Total paid stands for the amount, since Tax Amount and Total Paid are both 16.50. The owner name and business phone are placeholder specimen values and are not featured. valid_from, valid_through and paid_date read OFF only because they are normalized to ISO from 'OCTOBER 1, 2019' style text. The two blank optional fields typed string-or-null came back as the literal string 'null' rather than JSON null; the blank capacity counts typed integer-or-null came back as real nulls.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 1.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 1.4
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.4,
+      "extract_credits": 1.4
+    }
+  ]
 }

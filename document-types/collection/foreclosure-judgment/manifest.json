@@ -15,25 +15,103 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
         "replaced": [
-          { "what": "the borrower's and the defendants' names", "with": "JOHN Q SAMPLE, JOHN QUINCY SAMPLE, JAMES Q SAMPLE, JANE Q SAMPLE, JUNE Q SAMPLE (case-matched to the page)", "occurrences": 16 },
-          { "what": "property house number and street", "with": "100 Sample", "occurrences": 1 },
-          { "what": "property ZIP code", "with": "97000", "occurrences": 1 },
-          { "what": "subdivision name in the legal description", "with": "SAMPLE", "occurrences": 1 },
-          { "what": "deed of trust recording number", "with": "2019-201618", "occurrences": 1 },
-          { "what": "case number", "with": "24CV32513", "occurrences": 2 },
-          { "what": "law firm file number", "with": "84-556087", "occurrences": 6 }
+          {
+            "what": "the borrower's and the defendants' names",
+            "with": "JOHN Q SAMPLE, JOHN QUINCY SAMPLE, JAMES Q SAMPLE, JANE Q SAMPLE, JUNE Q SAMPLE (case-matched to the page)",
+            "occurrences": 16
+          },
+          {
+            "what": "property house number and street",
+            "with": "100 Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "property ZIP code",
+            "with": "97000",
+            "occurrences": 1
+          },
+          {
+            "what": "subdivision name in the legal description",
+            "with": "SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "deed of trust recording number",
+            "with": "2019-201618",
+            "occurrences": 1
+          },
+          {
+            "what": "case number",
+            "with": "24CV32513",
+            "occurrences": 2
+          },
+          {
+            "what": "law firm file number",
+            "with": "84-556087",
+            "occurrences": 6
+          }
         ]
       },
-      "split_from": { "pages": [3, 4, 5, 6, 7, 8], "of": 13 }
+      "split_from": {
+        "pages": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "of": 13
+      }
     }
   },
   "feature_page": 3,
   "fields": [
-    { "path": "amounts_due.principal", "label": "Principal", "occurrence": 0 },
-    { "path": "amounts_due.prejudgment_interest", "label": "Prejudgment interest", "occurrence": 0 },
-    { "path": "amounts_due.prejudgment_interest_rate_percent", "label": "Prejudgment interest rate (%)", "occurrence": 0 },
-    { "path": "amounts_due.late_charges", "label": "Late charges", "occurrence": 0 },
-    { "path": "amounts_due.other_costs_and_fees", "label": "Other costs and fees", "occurrence": 0 }
+    {
+      "path": "amounts_due.principal",
+      "label": "Principal",
+      "occurrence": 0
+    },
+    {
+      "path": "amounts_due.prejudgment_interest",
+      "label": "Prejudgment interest",
+      "occurrence": 0
+    },
+    {
+      "path": "amounts_due.prejudgment_interest_rate_percent",
+      "label": "Prejudgment interest rate (%)",
+      "occurrence": 0
+    },
+    {
+      "path": "amounts_due.late_charges",
+      "label": "Late charges",
+      "occurrence": 0
+    },
+    {
+      "path": "amounts_due.other_costs_and_fees",
+      "label": "Other costs and fees",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request asked for pages 3-8 of the packet on their own and named no fields. Features the money award table on page 3 (paragraph 11): principal, prejudgment interest and its rate, late charges, and other recoverable costs and fees. Every amount in the award and fee tables grounds to its own cell. The subtotal and the total with prejudgment interest are on page 4, the table's continuation, so they are not on this overlay. No person is featured. The caption's line breaks split the defendants: defendants[0] ends '... OF JOHN' and defendants[1] begins 'Q SAMPLE. AKA ...', because the caption wraps the borrower's name across two lines. The judge's name and the signing timestamp are correct and kept; is_signed grounds to the parse's [SIGNED] label and reads OFF, as booleans do."
+  "notes": "The request asked for pages 3-8 of the packet on their own and named no fields. Features the money award table on page 3 (paragraph 11): principal, prejudgment interest and its rate, late charges, and other recoverable costs and fees. Every amount in the award and fee tables grounds to its own cell. The subtotal and the total with prejudgment interest are on page 4, the table's continuation, so they are not on this overlay. No person is featured. The caption's line breaks split the defendants: defendants[0] ends '... OF JOHN' and defendants[1] begins 'Q SAMPLE. AKA ...', because the caption wraps the borrower's name across two lines. The judge's name and the signing timestamp are correct and kept; is_signed grounds to the parse's [SIGNED] label and reads OFF, as booleans do.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 5.7,
+      "extract_credits": 3.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 5.7,
+      "extract_credits": 3.4
+    }
+  ]
 }

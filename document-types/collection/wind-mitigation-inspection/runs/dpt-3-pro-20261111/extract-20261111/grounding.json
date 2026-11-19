@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "inspection_date",
+      "label": "Inspection date",
+      "value": "2026-07-29",
+      "page": 1,
+      "box": {
+        "xmin": 0.07529,
+        "ymin": 0.07348,
+        "xmax": 0.26882,
+        "ymax": 0.08751
+      },
+      "range": {
+        "end": 195,
+        "start": 168
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inspection_date.png"
+    },
+    {
+      "path": "year_of_home",
+      "label": "Year of home",
+      "value": 1999,
+      "page": 1,
+      "box": {
+        "xmin": 0.18954,
+        "ymin": 0.27248,
+        "xmax": 0.22043,
+        "ymax": 0.28322
+      },
+      "range": {
+        "end": 650,
+        "start": 646
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "year_of_home.png"
+    },
+    {
+      "path": "form_revision",
+      "label": "Form revision",
+      "value": "OIR-B1-1802 (Rev. 04/26)",
+      "page": 1,
+      "box": {
+        "xmin": 0.05881,
+        "ymin": 0.96042,
+        "xmax": 0.24011,
+        "ymax": 0.973
+      },
+      "range": {
+        "end": 4360,
+        "start": 4336
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_revision.png"
+    },
+    {
+      "path": "wind_region",
+      "label": "Wind region",
+      "value": "Region 1",
+      "page": 1,
+      "box": {
+        "xmin": 0.1451,
+        "ymin": 0.56681,
+        "xmax": 0.20461,
+        "ymax": 0.57938
+      },
+      "range": {
+        "end": 2619,
+        "start": 2611
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "wind_region.png"
+    },
+    {
+      "path": "roof_coverings[0].permit_application_date",
+      "label": "Roof permit application date",
+      "value": "2019-04-04",
+      "page": 1,
+      "box": {
+        "xmin": 0.28758,
+        "ymin": 0.73713,
+        "xmax": 0.35705,
+        "ymax": 0.74786
+      },
+      "range": {
+        "end": 3563,
+        "start": 3553
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_coverings-0-permit_application_date.png"
+    }
+  ]
+}

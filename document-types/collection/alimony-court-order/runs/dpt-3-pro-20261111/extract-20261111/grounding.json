@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 3,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "support_order.attached_to",
+      "label": "Attached to",
+      "value": "Judgment (form FL-180)",
+      "page": 3,
+      "box": {
+        "xmin": 0.50262,
+        "ymin": 0.13684,
+        "xmax": 0.69304,
+        "ymax": 0.15338
+      },
+      "range": {
+        "end": 8144,
+        "start": 8114
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-attached_to.png"
+    },
+    {
+      "path": "support_order.petitioner_gross_monthly_income",
+      "label": "Petitioner gross monthly income",
+      "value": 3010,
+      "page": 3,
+      "box": {
+        "xmin": 0.46616,
+        "ymin": 0.2664,
+        "xmax": 0.53459,
+        "ymax": 0.28112
+      },
+      "range": {
+        "end": 8586,
+        "start": 8579
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-petitioner_gross_monthly_income.png"
+    },
+    {
+      "path": "support_order.petitioner_net_monthly_disposable_income",
+      "label": "Petitioner net monthly disposable income",
+      "value": 2754,
+      "page": 3,
+      "box": {
+        "xmin": 0.8587,
+        "ymin": 0.27219,
+        "xmax": 0.90904,
+        "ymax": 0.28661
+      },
+      "range": {
+        "end": 8602,
+        "start": 8597
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-petitioner_net_monthly_disposable_income.png"
+    },
+    {
+      "path": "support_order.respondent_gross_monthly_income",
+      "label": "Respondent gross monthly income",
+      "value": 7000,
+      "page": 3,
+      "box": {
+        "xmin": 0.46545,
+        "ymin": 0.28792,
+        "xmax": 0.5338,
+        "ymax": 0.30276
+      },
+      "range": {
+        "end": 8661,
+        "start": 8654
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-respondent_gross_monthly_income.png"
+    },
+    {
+      "path": "support_order.marriage_length_years",
+      "label": "Length of marriage (years)",
+      "value": 15,
+      "page": 3,
+      "box": {
+        "xmin": 0.44138,
+        "ymin": 0.37505,
+        "xmax": 0.46476,
+        "ymax": 0.38845
+      },
+      "range": {
+        "end": 9021,
+        "start": 9019
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "support_order-marriage_length_years.png"
+    }
+  ]
+}

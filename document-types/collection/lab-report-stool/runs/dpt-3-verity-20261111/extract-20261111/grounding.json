@@ -1,0 +1,108 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "report_title",
+      "label": "Report",
+      "value": "Stool Chemistries",
+      "page": 1,
+      "box": {
+        "xmin": 0.07142,
+        "ymin": 0.05995,
+        "xmax": 0.2484,
+        "ymax": 0.07439
+      },
+      "range": {
+        "end": 17,
+        "start": 0
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report_title.png"
+    },
+    {
+      "path": "order.order_number",
+      "label": "Order number",
+      "value": "999999-9999",
+      "page": 1,
+      "box": {
+        "xmin": 0.0596,
+        "ymin": 0.11536,
+        "xmax": 0.20522,
+        "ymax": 0.12859
+      },
+      "range": {
+        "end": 156,
+        "start": 145
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order-order_number.png"
+    },
+    {
+      "path": "specimen_dates.collected",
+      "label": "Collected",
+      "value": "06/28/2026",
+      "page": 1,
+      "box": {
+        "xmin": 0.84724,
+        "ymin": 0.1322,
+        "xmax": 0.92675,
+        "ymax": 0.14423
+      },
+      "range": {
+        "end": 401,
+        "start": 391
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "specimen_dates-collected.png"
+    },
+    {
+      "path": "specimen_dates.received",
+      "label": "Received",
+      "value": "07/01/2026",
+      "page": 1,
+      "box": {
+        "xmin": 0.84772,
+        "ymin": 0.14775,
+        "xmax": 0.927,
+        "ymax": 0.1588
+      },
+      "range": {
+        "end": 426,
+        "start": 416
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "specimen_dates-received.png"
+    },
+    {
+      "path": "specimen_dates.reported",
+      "label": "Reported",
+      "value": "07/07/2026",
+      "page": 1,
+      "box": {
+        "xmin": 0.84763,
+        "ymin": 0.16296,
+        "xmax": 0.9271,
+        "ymax": 0.17433
+      },
+      "range": {
+        "end": 451,
+        "start": 441
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "specimen_dates-reported.png"
+    }
+  ]
+}

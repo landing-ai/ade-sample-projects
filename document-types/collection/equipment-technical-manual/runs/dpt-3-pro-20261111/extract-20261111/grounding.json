@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "inch_fastener_torque.rows[4].size",
+      "label": "Bolt size (in)",
+      "value": "1/2",
+      "page": 2,
+      "box": {
+        "xmin": 0.08001,
+        "ymin": 0.48179,
+        "xmax": 0.09814,
+        "ymax": 0.49189
+      },
+      "range": {
+        "end": 8729,
+        "start": 8726
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inch_fastener_torque-rows-4-size.png"
+    },
+    {
+      "path": "inch_fastener_torque.rows[4].grade_5.lubricated_nm",
+      "label": "SAE grade 5 lubricated torque (N·m)",
+      "value": 85.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.51644,
+        "ymin": 0.48179,
+        "xmax": 0.53094,
+        "ymax": 0.49189
+      },
+      "range": {
+        "end": 8828,
+        "start": 8826
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inch_fastener_torque-rows-4-grade_5-lubricated_nm.png"
+    },
+    {
+      "path": "inch_fastener_torque.rows[4].grade_5.lubricated_lb_ft",
+      "label": "SAE grade 5 lubricated torque (lb-ft)",
+      "value": 63.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.5648,
+        "ymin": 0.48179,
+        "xmax": 0.57938,
+        "ymax": 0.49189
+      },
+      "range": {
+        "end": 8839,
+        "start": 8837
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inch_fastener_torque-rows-4-grade_5-lubricated_lb_ft.png"
+    },
+    {
+      "path": "inch_fastener_torque.rows[4].grade_5.dry_nm",
+      "label": "SAE grade 5 dry torque (N·m)",
+      "value": 110.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.61325,
+        "ymin": 0.48179,
+        "xmax": 0.63395,
+        "ymax": 0.49189
+      },
+      "range": {
+        "end": 8851,
+        "start": 8848
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inch_fastener_torque-rows-4-grade_5-dry_nm.png"
+    },
+    {
+      "path": "inch_fastener_torque.rows[4].grade_5.dry_lb_ft",
+      "label": "SAE grade 5 dry torque (lb-ft)",
+      "value": 80.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.66162,
+        "ymin": 0.48179,
+        "xmax": 0.67619,
+        "ymax": 0.49189
+      },
+      "range": {
+        "end": 8862,
+        "start": 8860
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inch_fastener_torque-rows-4-grade_5-dry_lb_ft.png"
+    }
+  ]
+}

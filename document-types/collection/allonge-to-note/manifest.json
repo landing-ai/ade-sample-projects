@@ -15,21 +15,76 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
         "replaced": [
-          { "what": "borrower's name", "with": "JOHN Q SAMPLE", "occurrences": 1 },
-          { "what": "property street address", "with": "100 SAMPLE AVE", "occurrences": 1 },
-          { "what": "property ZIP code", "with": "97000", "occurrences": 1 }
+          {
+            "what": "borrower's name",
+            "with": "JOHN Q SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "property street address",
+            "with": "100 SAMPLE AVE",
+            "occurrences": 1
+          },
+          {
+            "what": "property ZIP code",
+            "with": "97000",
+            "occurrences": 1
+          }
         ],
-        "already_blacked_out_at_source": ["loan number"]
+        "already_blacked_out_at_source": [
+          "loan number"
+        ]
       },
-      "split_from": { "pages": [12], "of": 13 }
+      "split_from": {
+        "pages": [
+          12
+        ],
+        "of": 13
+      }
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "property_address", "label": "Property address", "occurrence": 0 },
-    { "path": "principal_balance", "label": "Principal balance", "occurrence": 0 },
-    { "path": "pay_to_the_order_of", "label": "Pay to the order of", "occurrence": 0 },
-    { "path": "endorser", "label": "Endorser (without recourse)", "occurrence": 0 }
+    {
+      "path": "property_address",
+      "label": "Property address",
+      "occurrence": 0
+    },
+    {
+      "path": "principal_balance",
+      "label": "Principal balance",
+      "occurrence": 0
+    },
+    {
+      "path": "pay_to_the_order_of",
+      "label": "Pay to the order of",
+      "occurrence": 0
+    },
+    {
+      "path": "endorser",
+      "label": "Endorser (without recourse)",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request asked for page 12 of the packet on its own, the allonge with a specific endorsement, and named no fields. Features the transfer: which note (by its property and principal), to whom it is endorsed, and by whom. The borrower is left out although the name is a stand-in. The signer's name and title are correct but ground to the parse's figure description of the signature, not to the printed title line, so they are not featured. without_recourse and endorsement_type are correct but read OFF, being a boolean and an inferred category. loan_number and co_borrower come back as the string 'null' rather than JSON null; the parse reads the blackout as [ILLEGIBLE_TEXT]."
+  "notes": "The request asked for page 12 of the packet on its own, the allonge with a specific endorsement, and named no fields. Features the transfer: which note (by its property and principal), to whom it is endorsed, and by whom. The borrower is left out although the name is a stand-in. The signer's name and title are correct but ground to the parse's figure description of the signature, not to the printed title line, so they are not featured. without_recourse and endorsement_type are correct but read OFF, being a boolean and an inferred category. loan_number and co_borrower come back as the string 'null' rather than JSON null; the parse reads the blackout as [ILLEGIBLE_TEXT].",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.7,
+      "extract_credits": 0.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.8,
+      "extract_credits": 0.6
+    }
+  ]
 }

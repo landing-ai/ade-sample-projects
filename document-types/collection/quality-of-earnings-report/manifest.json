@@ -50,5 +50,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features the TTM column of the EBITDA bridge on the QoE slide, so the overlay reads as one walk from reported EBITDA, through management and due diligence adjustments, to adjusted EBITDA and its margin. This is the slide the request suggested as page 9: it is page 8 here because the testimonials page before it was dropped, so the feature page is the same slide, not a substitute. All five suggested fields were honoured; the request left the diligence adjustment open, and the Remove Legal Settlement line was chosen because its amount grounds to the TTM cell and its commentary is the most concrete on the next slide. The same table is printed again on page 9; every featured value grounds to the page 8 copy. Amounts are as printed: the table header says $000s but the figures are whole dollars, which the Key Findings prose confirms ($8.7M revenue against 8,657,602)."
+  "notes": "Features the TTM column of the EBITDA bridge on the QoE slide, so the overlay reads as one walk from reported EBITDA, through management and due diligence adjustments, to adjusted EBITDA and its margin. This is the slide the request suggested as page 9: it is page 8 here because the testimonials page before it was dropped, so the feature page is the same slide, not a substitute. All five suggested fields were honoured; the request left the diligence adjustment open, and the Remove Legal Settlement line was chosen because its amount grounds to the TTM cell and its commentary is the most concrete on the next slide. The same table is printed again on page 9; every featured value grounds to the page 8 copy. Amounts are as printed: the table header says $000s but the figures are whole dollars, which the Key Findings prose confirms ($8.7M revenue against 8,657,602).",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 25,
+      "service_tier": "standard",
+      "parse_credits": 25.5,
+      "extract_credits": 14.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 25,
+      "service_tier": "standard",
+      "parse_credits": 25.8,
+      "extract_credits": 14.4
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 25,
+      "service_tier": "standard",
+      "parse_credits": 9.1,
+      "extract_credits": 14.4
+    }
+  ]
 }

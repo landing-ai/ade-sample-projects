@@ -1,0 +1,318 @@
+{
+  "extraction": {
+    "bailee_agent_for": "First Fake Inc.",
+    "bank_name": "XYZ Bank",
+    "funding_expiration_days": 10,
+    "lender_name": "Fake Home Mortgage",
+    "letter_date": "2024-12-12",
+    "loan_amount": 50000.0,
+    "loan_number": "123456789",
+    "mortgagor": {
+      "address_line_1": "123 Fake Street",
+      "city": "Any town",
+      "name": "John Sample",
+      "state": "NY",
+      "zip": "12345"
+    },
+    "payee": {
+      "address_line_1": "123 FakeTower Road",
+      "city": "Fake City",
+      "name": "Fake Home Mortgage",
+      "state": "NY",
+      "zip": "11111"
+    },
+    "purchase_price": 250000.0,
+    "signature_blocks": [
+      {
+        "company_name": "Sample Inc.",
+        "is_signed": true,
+        "signer_name": null,
+        "signer_title": null
+      },
+      {
+        "company_name": "First Fake Inc.",
+        "is_signed": true,
+        "signer_name": "James Fake",
+        "signer_title": "President"
+      }
+    ],
+    "warehouse_lender_name": "ABC Sample Inc."
+  },
+  "extraction_metadata": {
+    "bailee_agent_for": {
+      "ranges": [
+        {
+          "end": 420,
+          "start": 405
+        }
+      ],
+      "value": "First Fake Inc."
+    },
+    "bank_name": {
+      "ranges": [
+        {
+          "end": 67,
+          "start": 59
+        }
+      ],
+      "value": "XYZ Bank"
+    },
+    "funding_expiration_days": {
+      "ranges": [
+        {
+          "end": 1898,
+          "start": 1896
+        }
+      ],
+      "value": 10
+    },
+    "lender_name": {
+      "ranges": [
+        {
+          "end": 342,
+          "start": 324
+        }
+      ],
+      "value": "Fake Home Mortgage"
+    },
+    "letter_date": {
+      "ranges": [
+        {
+          "end": 91,
+          "start": 69
+        }
+      ],
+      "value": "2024-12-12"
+    },
+    "loan_amount": {
+      "ranges": [
+        {
+          "end": 5067,
+          "start": 5038
+        }
+      ],
+      "value": 50000.0
+    },
+    "loan_number": {
+      "ranges": [
+        {
+          "end": 40,
+          "start": 31
+        },
+        {
+          "end": 5037,
+          "start": 5005
+        }
+      ],
+      "value": "123456789"
+    },
+    "mortgagor": {
+      "address_line_1": {
+        "ranges": [
+          {
+            "end": 274,
+            "start": 259
+          }
+        ],
+        "value": "123 Fake Street"
+      },
+      "city": {
+        "ranges": [
+          {
+            "end": 284,
+            "start": 276
+          }
+        ],
+        "value": "Any town"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 257,
+            "start": 246
+          }
+        ],
+        "value": "John Sample"
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 279,
+            "start": 277
+          }
+        ],
+        "value": "NY"
+      },
+      "zip": {
+        "ranges": [
+          {
+            "end": 293,
+            "start": 288
+          }
+        ],
+        "value": "12345"
+      }
+    },
+    "payee": {
+      "address_line_1": {
+        "ranges": [
+          {
+            "end": 175,
+            "start": 157
+          }
+        ],
+        "value": "123 FakeTower Road"
+      },
+      "city": {
+        "ranges": [
+          {
+            "end": 218,
+            "start": 209
+          }
+        ],
+        "value": "Fake City"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 132,
+            "start": 114
+          }
+        ],
+        "value": "Fake Home Mortgage"
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 222,
+            "start": 220
+          }
+        ],
+        "value": "NY"
+      },
+      "zip": {
+        "ranges": [
+          {
+            "end": 228,
+            "start": 223
+          }
+        ],
+        "value": "11111"
+      }
+    },
+    "purchase_price": {
+      "ranges": [
+        {
+          "end": 3472,
+          "start": 2662
+        }
+      ],
+      "value": 250000.0
+    },
+    "signature_blocks": [
+      {
+        "company_name": {
+          "ranges": [
+            {
+              "end": 4180,
+              "start": 4169
+            }
+          ],
+          "value": "Sample Inc."
+        },
+        "is_signed": {
+          "ranges": [
+            {
+              "end": 4193,
+              "start": 4182
+            }
+          ],
+          "value": true
+        },
+        "signer_name": {
+          "ranges": null,
+          "value": null
+        },
+        "signer_title": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      {
+        "company_name": {
+          "ranges": [
+            {
+              "end": 4125,
+              "start": 4110
+            }
+          ],
+          "value": "First Fake Inc."
+        },
+        "is_signed": {
+          "ranges": [
+            {
+              "end": 4220,
+              "start": 4195
+            }
+          ],
+          "value": true
+        },
+        "signer_name": {
+          "ranges": [
+            {
+              "end": 4250,
+              "start": 4240
+            }
+          ],
+          "value": "James Fake"
+        },
+        "signer_title": {
+          "ranges": [
+            {
+              "end": 4272,
+              "start": 4263
+            }
+          ],
+          "value": "President"
+        }
+      }
+    ],
+    "warehouse_lender_name": {
+      "ranges": [
+        {
+          "end": 610,
+          "start": 595
+        },
+        {
+          "end": 3472,
+          "start": 2662
+        }
+      ],
+      "value": "ABC Sample Inc."
+    }
+  },
+  "markdown": "BAILEE LETTER\n\n- **Loan No.**: 123456789\n\n- **Bank Name**: XYZ Bank\n\n- **Date**: 12/12/2024\n\n- **Investor Name**: Fake Home Mortgage\n- **Investor Address**: 123 FakeTower Road\n- **Investor City, State, Zip**: Fake City, NY 11111\n\n- **Borrower**: John Sample, 123 Fake Street, Any town NY 12345<br>- **Loan No.**: 123456789\n\nFake Home Mortgage hereby conditionally tenders to you as bailee and agent for **First Fake Inc.** the note and related complete file for the mortgage loan referenced above. This letter shall apply to and govern each mortgage originated by Fake Home Mortgage and which **ABC Sample Inc.** has a beneficial and/or security interest, pursuant to warehousing accommodations delivered to you by **First Fake Inc**. If you do not, upon receipt of the Mortgage Note, immediately return the Mortgage Note attached to this Bailee Letter you, your successors, assigns or any other party deemed to be acting on your behalf shall be considered to have accepted the terms of this bailment This letter does not alter any contract between Fake Home Mortgage, Inc. and **ABC Sample Inc.** You further agree, except as stated herein, to not take action to sell, transfer, encumber or endorse same without obtaining the prior consent of **ABC Sample Inc.** The rights and security interests of **ABC Sample Inc.** in the Mortgage Note shall continue until final payment in good funds to purchase such Mortgage Loan has been made by Fake Home Mortgage, INC and accepted by **ABC Sample Inc**. Title to the Mortgage Note shall pass to Fake Home Mortgage, INC Only after ABC Sample Inc has received proper remittance for the Mortgage Note as per the following wire transfer instruction. You have the option to purchase the mortgage loans within ten days from this date on condition that you wire the proceeds of said purchase to:\n\nThe purchaser shall fund this transaction no later than ten (10) business days from the date of delivery of the Mortgage Note and related loan documents. Failure to fund within this period shall require the immediate return of all collateral to **ABC Sample Inc**.\n\nUpon receipt of proceeds by **ABC Sample Inc.**, we agree that the conditions of delivery will have been satisfied and that you will be discharged of further obligation to us as bailee and agent for First Fake Inc., as to said note and without further action.\n\nFake Home Mortgage has purchased or holds a perfected security interest in the mortgage loan and delivers the mortgagee loans to you in bailment but does not assume or agree to perform any obligation to you or does it make any warranty to you, except as expressly state herein.\n\n<!-- PAGE BREAK -->\n\nUnless and until you buy and pay for the loan, **ABC Sample Inc.** shall retain full ownership thereof or retain its perfected security interest therein and you shall hold possession of each loan and the documentation evidencing the same as agent and bailee for and on behalf of **ABC Sample Inc.** This letter is also to set forth the conditions to the release of our interest in such loan. Upon confirmed transmittal by wire to the account referenced above in the amount of $ 250,000.00 any security interest, claim, lien, encumbrance, or other related interest, which we have in such note, the note representing such loan, and the mortgage securing such note, will be released, terminated and discharged. We will have no further claim with respect to such loan, note and mortgage from and after such wiring.\n\nIf payment by Fake Home Mortgage, INC of the Purchase Price for the Mortgage Note, delivered to you and under this Bailee Letter in which **ABC Sample Inc.** has a security interest, is not made to **ABC Sample Inc.** within ten business days of the delivery of the Mortgage Note and other pertinent loan documentation, the Mortgage Note and other pertinent loan documentation shall be returned to **ABC Sample Inc**. In the event such item is unacceptable to you or if you fail to complete the purchase and payment within 10 days, you as our agent must return such mortgage loan and its file to:\n\n<!-- PAGE BREAK -->\n\n# BAILEE LETTER\n\nFirst Fake Inc.\n123 Fake Grant Avenue,\nFake City NY 12345\n\nSample Inc.\n\n[signature]\n\n**Signature** [signature]\n\n**Printed Name:** James Fake\n\n**Title:** President\n\nhereby acknowledges receipt of the foregoing notice it is bailee for **First Fake Inc.** in respect of the promissory note, executed by **John Sample** and payable to the order of or endorsed by its payee to be payable to **ABC Sample Inc.**, and which has been endorsed by Fake Home Mortgage, Inc. We are not accepting the loan for which we were originally agreeing to purchase and are today faxing a copy of the executed and properly endorsed note to **ABC Sample Inc.** and mailing to it the original.\n\n<!-- PAGE BREAK -->\n\n# SCHEDULE A\n\nThis Schedule A relates to the Mortgage Loan delivered under the Bailee Letter. Only limited identifying information is listed below for reference purposes.\n\n- **Borrower**: John Sample<br>\n- **Loan Number**: 123456789<br>\n- **Loan Amount**: $50,000.00\n\nThe Mortgage Note and related documents have been conditionally tendered to the Bailee. The Bailee shall hold the collateral solely for the purpose of facilitating the transaction and must return the documents if funding does not occur within the required period.\n\nNo additional details are included in this schedule, and this document serves only as a brief reference to the collateral associated with the Bailee Letter.\n\n<!-- doc_id=parse-01m7rt9hzaqzsnzznjmyyv8wfa -->",
+  "metadata": {
+    "job_id": "extract-01m7rta096qx12sgtzvq5w6dmj",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 79838,
+    "doc_id": "parse-01m7rt9hzaqzsnzznjmyyv8wfa",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.9,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 5540,
+    "output_extraction_chars": 719,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

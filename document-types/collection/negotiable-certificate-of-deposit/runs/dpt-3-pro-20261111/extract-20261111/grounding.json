@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "issuing_bank",
+      "label": "Issuing bank",
+      "value": "The National Bank of South Africa Limited",
+      "page": 1,
+      "box": {
+        "xmin": 0.27907,
+        "ymin": 0.20568,
+        "xmax": 0.72112,
+        "ymax": 0.23447
+      },
+      "range": {
+        "end": 295,
+        "start": 254
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuing_bank.png"
+    },
+    {
+      "path": "principal_amount",
+      "label": "Principal",
+      "value": 100000,
+      "page": 1,
+      "box": {
+        "xmin": 0.14139,
+        "ymin": 0.39617,
+        "xmax": 0.8558,
+        "ymax": 0.50723
+      },
+      "range": {
+        "end": 577,
+        "start": 399
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "principal_amount.png"
+    },
+    {
+      "path": "interest_rate_percent",
+      "label": "Interest rate",
+      "value": 3.65,
+      "page": 1,
+      "box": {
+        "xmin": 0.2444,
+        "ymin": 0.58627,
+        "xmax": 0.29854,
+        "ymax": 0.61567
+      },
+      "range": {
+        "end": 648,
+        "start": 644
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "interest_rate_percent.png"
+    },
+    {
+      "path": "term_days",
+      "label": "Term in days",
+      "value": 180,
+      "page": 1,
+      "box": {
+        "xmin": 0.21716,
+        "ymin": 0.54791,
+        "xmax": 0.2667,
+        "ymax": 0.5793
+      },
+      "range": {
+        "end": 582,
+        "start": 579
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "term_days.png"
+    },
+    {
+      "path": "value_at_maturity",
+      "label": "Value at maturity",
+      "value": 101800,
+      "page": 1,
+      "box": {
+        "xmin": 0.13715,
+        "ymin": 0.08306,
+        "xmax": 0.90062,
+        "ymax": 0.2369
+      },
+      "range": {
+        "end": 295,
+        "start": 95
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "value_at_maturity.png"
+    }
+  ]
+}

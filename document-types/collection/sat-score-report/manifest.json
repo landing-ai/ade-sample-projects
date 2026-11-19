@@ -52,5 +52,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features the total score and the two section scores that sum to it (680 + 790 = 1470), plus the test date, so the overlay reads as one result. No named individual is featured; the replaced name and record locator are extracted but deliberately left off the page, since the scores make the same point. Every one of the 59 extracted leaves grounds to text containing its value, but percentile does not box the right place: the stacked '400-' / '1600' scale label was split across two atomic lines, '400-1600' took the upper line's box and '96th*' took the lower one's, so the percentile crop shows the scale label instead of the 96th pill. The value is right and the consistency check passes; only looking at the crop shows it. Percentiles are not featured for that reason. The score range and 3-year average lines are about 7pt, too small for the highlight border to leave legible at crop size."
+  "notes": "Features the total score and the two section scores that sum to it (680 + 790 = 1470), plus the test date, so the overlay reads as one result. No named individual is featured; the replaced name and record locator are extracted but deliberately left off the page, since the scores make the same point. Every one of the 59 extracted leaves grounds to text containing its value, but percentile does not box the right place: the stacked '400-' / '1600' scale label was split across two atomic lines, '400-1600' took the upper line's box and '96th*' took the lower one's, so the percentile crop shows the scale label instead of the 96th pill. The value is right and the consistency check passes; only looking at the crop shows it. Percentiles are not featured for that reason. The score range and 3-year average lines are about 7pt, too small for the highlight border to leave legible at crop size.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 2.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 2.1
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 2.2
+    }
+  ]
 }

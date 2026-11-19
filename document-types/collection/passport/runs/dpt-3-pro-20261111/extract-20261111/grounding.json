@@ -1,0 +1,87 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "document_type",
+      "label": "Document type",
+      "value": "Passport",
+      "page": 1,
+      "box": {
+        "xmin": 0.00089,
+        "ymin": 0.06925,
+        "xmax": 0.99926,
+        "ymax": 0.99912
+      },
+      "range": {
+        "end": 13,
+        "start": 5
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_type.png"
+    },
+    {
+      "path": "document_info.document_number",
+      "label": "Passport number",
+      "value": "ZZ0000826",
+      "page": 1,
+      "box": {
+        "xmin": 0.00089,
+        "ymin": 0.06925,
+        "xmax": 0.99926,
+        "ymax": 0.99912
+      },
+      "range": {
+        "end": 116,
+        "start": 107
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_info-document_number.png"
+    },
+    {
+      "path": "document_info.issuing_country",
+      "label": "Issuing country",
+      "value": "JPN",
+      "page": 1,
+      "box": {
+        "xmin": 0.00089,
+        "ymin": 0.06925,
+        "xmax": 0.99926,
+        "ymax": 0.99912
+      },
+      "range": {
+        "end": 79,
+        "start": 76
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_info-issuing_country.png"
+    },
+    {
+      "path": "personal_info.sex",
+      "label": "Sex",
+      "value": "F",
+      "page": 1,
+      "box": {
+        "xmin": 0.00089,
+        "ymin": 0.06925,
+        "xmax": 0.99926,
+        "ymax": 0.99912
+      },
+      "range": {
+        "end": 258,
+        "start": 257
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "personal_info-sex.png"
+    }
+  ]
+}

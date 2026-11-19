@@ -72,7 +72,7 @@ Read top to bottom, they follow one boring from its header to its first sample: 
 hole, where the ground surface is, where water was hit, and what the first soil is and
 how dense. The request suggested nine fields on this page. All nine ground correctly, but
 a page carries at most five, so date drilled, first sample moisture, drill rig and hammer
-type were left off the overlay. They are in `extract-pro.json`. No person is featured.
+type were left off the overlay. They are in `runs/dpt-3-pro-20260710/extract-20260819/extract.json`. No person is featured.
 
 ## Grounding notes
 

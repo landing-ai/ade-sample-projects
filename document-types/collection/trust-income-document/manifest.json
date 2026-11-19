@@ -26,10 +26,55 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "estate_or_trust.name", "label": "Trust name (item B)", "occurrence": 0 },
-    { "path": "estate_or_trust.ein", "label": "Trust EIN (item A)", "occurrence": 0 },
-    { "path": "income.interest_income", "label": "Interest income (box 1)", "occurrence": 0 },
-    { "path": "income.ordinary_dividends", "label": "Ordinary dividends (box 2a)", "occurrence": 0 }
+    {
+      "path": "tax_year",
+      "label": "Tax year",
+      "occurrence": 0
+    },
+    {
+      "path": "estate_or_trust.ein",
+      "label": "Trust EIN (item A)",
+      "occurrence": 0
+    },
+    {
+      "path": "income.interest_income",
+      "label": "Interest income (box 1)",
+      "occurrence": 0
+    },
+    {
+      "path": "income.ordinary_dividends",
+      "label": "Ordinary dividends (box 2a)",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request suggested, as suggestions only, the trust EIN, the trust name, box 1 interest, box 2a ordinary dividends and the Final K-1 checkbox. The first four shipped: the overlay reads as one story, which trust paid the beneficiary and what income it passed through. The Final K-1 checkbox was dropped because a boolean cannot ground as a literal: its range covers the checked box and label, which inspect_fields reports as OFF, and the crop would show a check mark beside the value True. No person is featured; the beneficiary's name and identifying number are on the page but not highlighted. Known extraction faults, left visible: blank amount boxes extract as 0 rather than null, with ranges pointing at the box labels; box 13 credit code O was parsed as a circle glyph and extracted with the code A (borrowed from box 14), though its amount of 125 is right; and the parse reads box 4c's label as 'Uncaptured section 1250 gain'. Item C (fiduciary) and the tax-period dates are blank on the form and extract as null or empty."
+  "notes": "The request suggested, as suggestions only, the trust EIN, the trust name, box 1 interest, box 2a ordinary dividends and the Final K-1 checkbox. The first four shipped: the overlay reads as one story, which trust paid the beneficiary and what income it passed through. The Final K-1 checkbox was dropped because a boolean cannot ground as a literal: its range covers the checked box and label, which inspect_fields reports as OFF, and the crop would show a check mark beside the value True. No person is featured; the beneficiary's name and identifying number are on the page but not highlighted. Known extraction faults, left visible: blank amount boxes extract as 0 rather than null, with ranges pointing at the box labels; box 13 credit code O was parsed as a circle glyph and extracted with the code A (borrowed from box 14), though its amount of 125 is right; and the parse reads box 4c's label as 'Uncaptured section 1250 gain'. Item C (fiduciary) and the tax-period dates are blank on the form and extract as null or empty.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 1.7
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 1.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 1.6
+    }
+  ]
 }

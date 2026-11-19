@@ -40,16 +40,71 @@
         "dropped_page_reason": "pages 4 to 8 were photo pages with no extractable data, some showing the licence plate and printouts carrying identifiers",
         "kept": "vehicle make, model, year, odometer reading, colour and specification; every condition rating; brake test and tyre measurements; the dealer's business name; DEKRA's corporate address and phone number."
       },
-      "dropped_pages": [4, 5, 6, 7, 8]
+      "dropped_pages": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "vehicle.manufacturer", "label": "Manufacturer", "occurrence": 0 },
-    { "path": "vehicle.model", "label": "Model", "occurrence": 0 },
-    { "path": "vehicle.model_year", "label": "Model year", "occurrence": 0 },
-    { "path": "vehicle.odometer_km", "label": "Odometer (km)", "occurrence": 0 },
-    { "path": "component_ratings[12].condition", "label": "Vehicle body condition", "occurrence": 0 }
+    {
+      "path": "vehicle.manufacturer",
+      "label": "Manufacturer",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.model",
+      "label": "Model",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.model_year",
+      "label": "Model year",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.odometer_km",
+      "label": "Odometer (km)",
+      "occurrence": 0
+    },
+    {
+      "path": "component_ratings[12].condition",
+      "label": "Vehicle body condition",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields. Page 1 is featured because it carries both halves of an inspection report: which vehicle was inspected and how far it has gone (manufacturer, model, model year, odometer reading from the Vehicle Data block) and what the inspector found (the Vehicle Body row of the Exterior condition table, rated As Expected). The VIN, registration number and technician are redacted stand-ins and are not featured. The odometer reading is pinned to occurrence 0, the printed '143,723 KM' in the Vehicle Data block; occurrence 1 is grounded to the odometer photo on the same page, which the parser described as a figure. Each condition rating's occurrence 1 grounds OFF to its table heading, so occurrence 0 is used. The spare tyre's production date is printed as '////' and came back as the string 'null' rather than a JSON null. The front-left tyre's Load/Speed Index is printed as 3323 (the same as its production date), apparently a data-entry error in the original; extraction reproduced it faithfully."
+  "notes": "The request named no feature page or fields. Page 1 is featured because it carries both halves of an inspection report: which vehicle was inspected and how far it has gone (manufacturer, model, model year, odometer reading from the Vehicle Data block) and what the inspector found (the Vehicle Body row of the Exterior condition table, rated As Expected). The VIN, registration number and technician are redacted stand-ins and are not featured. The odometer reading is pinned to occurrence 0, the printed '143,723 KM' in the Vehicle Data block; occurrence 1 is grounded to the odometer photo on the same page, which the parser described as a figure. Each condition rating's occurrence 1 grounds OFF to its table heading, so occurrence 0 is used. The spare tyre's production date is printed as '////' and came back as the string 'null' rather than a JSON null. The front-left tyre's Load/Speed Index is printed as 3323 (the same as its production date), apparently a data-entry error in the original; extraction reproduced it faithfully.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.0,
+      "extract_credits": 10.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.0,
+      "extract_credits": 10.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.5,
+      "extract_credits": 10.0
+    }
+  ]
 }

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    4,
+    5,
+    6
+  ],
+  "fields": [
+    {
+      "path": "policy_number",
+      "label": "Policy number",
+      "value": "95-342-160-75",
+      "page": 1,
+      "box": {
+        "xmin": 0.84444,
+        "ymin": 0.1253,
+        "xmax": 0.93769,
+        "ymax": 0.13629
+      },
+      "range": {
+        "end": 329,
+        "start": 316
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policy_number.png"
+    },
+    {
+      "path": "vehicles[0].description",
+      "label": "Scheduled vehicle",
+      "value": "2001 DODG RAM 3500 ST/SLT/SPT",
+      "page": 1,
+      "box": {
+        "xmin": 0.10882,
+        "ymin": 0.27362,
+        "xmax": 0.37685,
+        "ymax": 0.28623
+      },
+      "range": {
+        "end": 862,
+        "start": 833
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-description.png"
+    },
+    {
+      "path": "vehicles[0].coverages[0].limit",
+      "label": "Combined liability limit",
+      "value": "$1Million ea occ",
+      "page": 1,
+      "box": {
+        "xmin": 0.34314,
+        "ymin": 0.32131,
+        "xmax": 0.44853,
+        "ymax": 0.33272
+      },
+      "range": {
+        "end": 1079,
+        "start": 1063
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-coverages-0-limit.png"
+    },
+    {
+      "path": "vehicles[0].coverages[0].premium",
+      "label": "Combined liability premium",
+      "value": 718.69,
+      "page": 1,
+      "box": {
+        "xmin": 0.72397,
+        "ymin": 0.3214,
+        "xmax": 0.7768,
+        "ymax": 0.3327
+      },
+      "range": {
+        "end": 1104,
+        "start": 1098
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-coverages-0-premium.png"
+    },
+    {
+      "path": "vehicles[0].total_premium",
+      "label": "Vehicle total premium",
+      "value": 860.51,
+      "page": 1,
+      "box": {
+        "xmin": 0.72397,
+        "ymin": 0.40701,
+        "xmax": 0.7768,
+        "ymax": 0.41831
+      },
+      "range": {
+        "end": 1726,
+        "start": 1720
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicles-0-total_premium.png"
+    }
+  ]
+}

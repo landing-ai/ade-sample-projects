@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request suggested, as suggestions only, box 1 ordinary business income, box 19A distributions, item L ending capital account, item J profit share ending and item K1 nonrecourse liabilities ending. Box 1 and the ending capital account shipped. Box 19A, J profit ending and K1 nonrecourse ending were dropped because their crops would not read cleanly: the parse merged boxes 18, 19 and 20 into one table cell (and their code letters into another), so 7,514,031 can only be boxed together with 77,513 and 9,265; the J Profit row was merged into the I1/I2/J cell, so the box covers the entity type line and both 10% values; and the K1 nonrecourse range covers both the empty beginning column and the ending column. In their place the overlay features the item L capital account roll-forward, each line grounding to its own amount cell: beginning 4,488,892 plus other increase 12,143,540 less withdrawals and distributions 7,514,031 equals ending 9,118,401, and the withdrawal is the same amount as box 19 code A, so the distribution still appears on the page. The extraction itself paired every Part III code letter with the right amount (15 P 3,560; 17 A 19,946; 18 C 77,513; 19 A 7,514,031; 20 A 9,265) despite the merged cells. No person is featured. Known extraction fault, left visible: blank amount lines extract as 0 rather than null, with ranges pointing at labels or empty cells."
+  "notes": "The request suggested, as suggestions only, box 1 ordinary business income, box 19A distributions, item L ending capital account, item J profit share ending and item K1 nonrecourse liabilities ending. Box 1 and the ending capital account shipped. Box 19A, J profit ending and K1 nonrecourse ending were dropped because their crops would not read cleanly: the parse merged boxes 18, 19 and 20 into one table cell (and their code letters into another), so 7,514,031 can only be boxed together with 77,513 and 9,265; the J Profit row was merged into the I1/I2/J cell, so the box covers the entity type line and both 10% values; and the K1 nonrecourse range covers both the empty beginning column and the ending column. In their place the overlay features the item L capital account roll-forward, each line grounding to its own amount cell: beginning 4,488,892 plus other increase 12,143,540 less withdrawals and distributions 7,514,031 equals ending 9,118,401, and the withdrawal is the same amount as box 19 code A, so the distribution still appears on the page. The extraction itself paired every Part III code letter with the right amount (15 P 3,560; 17 A 19,946; 18 C 77,513; 19 A 7,514,031; 20 A 9,265) despite the merged cells. No person is featured. Known extraction fault, left visible: blank amount lines extract as 0 rather than null, with ranges pointing at labels or empty cells.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 2.1,
+      "extract_credits": 3.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 2.1,
+      "extract_credits": 3.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.8,
+      "extract_credits": 3.2
+    }
+  ]
 }

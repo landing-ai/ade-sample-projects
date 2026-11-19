@@ -58,8 +58,8 @@
       "occurrence": 0
     },
     {
-      "path": "odometer.date_read",
-      "label": "Date read",
+      "path": "odometer.odometer_digits",
+      "label": "Odometer digits",
       "occurrence": 0
     },
     {
@@ -68,5 +68,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request suggested feature page 1 and, as suggestions only: the odometer reading; the 'reflects actual mileage' checkbox; the date read; the odometer type (5-digit checkbox); and vehicle year and make. Page 1 is the only page. Shipped: vehicle year, vehicle make, odometer reading, date read and the mileage certification, so the overlay reads as one disclosure: which car, what its odometer showed, when, and what the seller certified about it. The checkbox was first modelled as three booleans; a boolean grounds to the right line ('[x] 1. REFLECTS ACTUAL MILEAGE.') but inspect_fields marks it OFF because the value 'true' is not in the boxed text, so the schema was changed to one enum holding the checked statement's printed wording, which grounds ok on the same line. The odometer type (5 digits) was dropped to stay within five fields: it is ok, but it grounds to the same line box as the odometer reading, so it would have added a duplicate highlight. The year is printed '2,018' (a fill artifact from the form filler); the schema asks for an integer and extraction returned 2018. The odometer digits sit in spaced boxes with a printed comma (7 5 1, 2 3 in the parse); extraction joined them correctly into 75123. The date-read crop triggers build_images' OCR warning only because the value is ISO formatted (2026-03-15) while the form prints 03 / 15 / 2026; the box is on the right line. Seller and buyer are specimen names, replaced with obviously fake ones; they are not featured. Instafill.ai is a form-automation vendor, adjacent to document AI, so the page should attribute the filled sample to it and the form itself to the Florida DHSMV."
+  "notes": "The request suggested feature page 1 and, as suggestions only: the odometer reading; the 'reflects actual mileage' checkbox; the date read; the odometer type (5-digit checkbox); and vehicle year and make. Page 1 is the only page. Shipped: vehicle year, vehicle make, odometer reading, date read and the mileage certification, so the overlay reads as one disclosure: which car, what its odometer showed, when, and what the seller certified about it. The checkbox was first modelled as three booleans; a boolean grounds to the right line ('[x] 1. REFLECTS ACTUAL MILEAGE.') but inspect_fields marks it OFF because the value 'true' is not in the boxed text, so the schema was changed to one enum holding the checked statement's printed wording, which grounds ok on the same line. The odometer type (5 digits) was dropped to stay within five fields: it is ok, but it grounds to the same line box as the odometer reading, so it would have added a duplicate highlight. The year is printed '2,018' (a fill artifact from the form filler); the schema asks for an integer and extraction returned 2018. The odometer digits sit in spaced boxes with a printed comma (7 5 1, 2 3 in the parse); extraction joined them correctly into 75123. The date-read crop triggers build_images' OCR warning only because the value is ISO formatted (2026-03-15) while the form prints 03 / 15 / 2026; the box is on the right line. Seller and buyer are specimen names, replaced with obviously fake ones; they are not featured. Instafill.ai is a form-automation vendor, adjacent to document AI, so the page should attribute the filled sample to it and the form itself to the Florida DHSMV.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 1.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 1.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 1.3
+    }
+  ]
 }

@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "receiving_bank.name",
+      "label": "Receiving bank",
+      "value": "First Western Trust Bank",
+      "page": 1,
+      "box": {
+        "xmin": 0.41133,
+        "ymin": 0.31818,
+        "xmax": 0.60722,
+        "ymax": 0.32981
+      },
+      "range": {
+        "end": 605,
+        "start": 581
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "receiving_bank-name.png"
+    },
+    {
+      "path": "aba_routing_number",
+      "label": "ABA routing number",
+      "value": "796630226",
+      "page": 1,
+      "box": {
+        "xmin": 0.41294,
+        "ymin": 0.39358,
+        "xmax": 0.49053,
+        "ymax": 0.40594
+      },
+      "range": {
+        "end": 732,
+        "start": 723
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "aba_routing_number.png"
+    },
+    {
+      "path": "account_number",
+      "label": "Account number",
+      "value": "6677087",
+      "page": 1,
+      "box": {
+        "xmin": 0.41235,
+        "ymin": 0.42359,
+        "xmax": 0.47378,
+        "ymax": 0.43613
+      },
+      "range": {
+        "end": 764,
+        "start": 757
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_number.png"
+    },
+    {
+      "path": "account_type",
+      "label": "Account type",
+      "value": "IOLTA",
+      "page": 1,
+      "box": {
+        "xmin": 0.41108,
+        "ymin": 0.46785,
+        "xmax": 0.46105,
+        "ymax": 0.47957
+      },
+      "range": {
+        "end": 866,
+        "start": 861
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_type.png"
+    },
+    {
+      "path": "reference_number",
+      "label": "Reference order number",
+      "value": "FIN-78796415",
+      "page": 1,
+      "box": {
+        "xmin": 0.41294,
+        "ymin": 0.49813,
+        "xmax": 0.51496,
+        "ymax": 0.51067
+      },
+      "range": {
+        "end": 918,
+        "start": 906
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reference_number.png"
+    }
+  ]
+}

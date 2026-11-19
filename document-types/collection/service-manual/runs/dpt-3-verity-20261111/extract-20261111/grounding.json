@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "cooling_analysis_chart.chart_title",
+      "label": "Chart title",
+      "value": "COOLING ANALYSIS CHART",
+      "page": 2,
+      "box": {
+        "xmin": 0.33957,
+        "ymin": 0.0902,
+        "xmax": 0.61081,
+        "ymax": 0.10465
+      },
+      "range": {
+        "end": 1399,
+        "start": 1377
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cooling_analysis_chart-chart_title.png"
+    },
+    {
+      "path": "cooling_analysis_chart.rows[18].possible_cause",
+      "label": "Possible cause",
+      "value": "Shortage of Refrigerant",
+      "page": 2,
+      "box": {
+        "xmin": 0.04818,
+        "ymin": 0.56111,
+        "xmax": 0.16755,
+        "ymax": 0.57077
+      },
+      "range": {
+        "end": 6479,
+        "start": 6456
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cooling_analysis_chart-rows-18-possible_cause.png"
+    },
+    {
+      "path": "cooling_analysis_chart.rows[18].test_method_remedy",
+      "label": "Test method / remedy",
+      "value": "Test For Leaks, Add Refrigerant",
+      "page": 2,
+      "box": {
+        "xmin": 0.59156,
+        "ymin": 0.56096,
+        "xmax": 0.7538,
+        "ymax": 0.57064
+      },
+      "range": {
+        "end": 6667,
+        "start": 6636
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cooling_analysis_chart-rows-18-test_method_remedy.png"
+    },
+    {
+      "path": "cooling_analysis_chart.rows[18].service_procedure_ref",
+      "label": "Service procedure reference",
+      "value": "S-103",
+      "page": 2,
+      "box": {
+        "xmin": 0.85808,
+        "ymin": 0.56124,
+        "xmax": 0.88867,
+        "ymax": 0.56905
+      },
+      "range": {
+        "end": 6681,
+        "start": 6676
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cooling_analysis_chart-rows-18-service_procedure_ref.png"
+    }
+  ]
+}

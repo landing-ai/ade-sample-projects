@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 15,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    9
+  ],
+  "fields": [
+    {
+      "path": "portfolio_summary.beginning_balance",
+      "label": "Beginning balance",
+      "value": 460806.88,
+      "page": 2,
+      "box": {
+        "xmin": 0.3408,
+        "ymin": 0.16354,
+        "xmax": 0.44104,
+        "ymax": 0.1768
+      },
+      "range": {
+        "end": 2552,
+        "start": 2541
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "portfolio_summary-beginning_balance.png"
+    },
+    {
+      "path": "portfolio_summary.employee_contributions",
+      "label": "Your contributions",
+      "value": 8250.02,
+      "page": 2,
+      "box": {
+        "xmin": 0.37137,
+        "ymin": 0.18625,
+        "xmax": 0.44103,
+        "ymax": 0.19951
+      },
+      "range": {
+        "end": 2626,
+        "start": 2618
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "portfolio_summary-employee_contributions.png"
+    },
+    {
+      "path": "portfolio_summary.employer_contributions",
+      "label": "Employer contributions",
+      "value": 7425.03,
+      "page": 2,
+      "box": {
+        "xmin": 0.37137,
+        "ymin": 0.20595,
+        "xmax": 0.44103,
+        "ymax": 0.2192
+      },
+      "range": {
+        "end": 2701,
+        "start": 2693
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "portfolio_summary-employer_contributions.png"
+    },
+    {
+      "path": "portfolio_summary.gains_losses",
+      "label": "Gains and losses",
+      "value": 25492.73,
+      "page": 2,
+      "box": {
+        "xmin": 0.36118,
+        "ymin": 0.23079,
+        "xmax": 0.44103,
+        "ymax": 0.24405
+      },
+      "range": {
+        "end": 2765,
+        "start": 2756
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "portfolio_summary-gains_losses.png"
+    },
+    {
+      "path": "portfolio_summary.ending_balance",
+      "label": "Ending balance",
+      "value": 501974.66,
+      "page": 2,
+      "box": {
+        "xmin": 0.34078,
+        "ymin": 0.25686,
+        "xmax": 0.44103,
+        "ymax": 0.27011
+      },
+      "range": {
+        "end": 2836,
+        "start": 2825
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "portfolio_summary-ending_balance.png"
+    }
+  ]
+}

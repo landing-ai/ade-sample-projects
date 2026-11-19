@@ -12,16 +12,67 @@
       "retrieved": "2026-10-03",
       "clearance": "public",
       "clearance_note": "Onity Mortgage's own sample escrow analysis statement, hosted on its MortgageQuestions.com domain and linked from its escrow guide (https://www.mortgagequestions.com/Escrow/Guide). Every personal value is specimen data: borrower 'JOHN SMITH', '123 YOUR ST.', 'CITY, ST', account number 1234567890. The only phone, fax and PO box numbers are Onity's own published contact details. No redaction was needed. The third page, a generic FAQ, was dropped; nothing else was changed.",
-      "dropped_pages": [3]
+      "dropped_pages": [
+        3
+      ]
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "new_monthly_payment.new_total_monthly_payment", "label": "New monthly mortgage payment", "occurrence": 1 },
-    { "path": "new_monthly_payment.current_escrow_payment", "label": "Current escrow payment", "occurrence": 0 },
-    { "path": "new_monthly_payment.new_escrow_payment", "label": "New escrow payment", "occurrence": 0 },
-    { "path": "escrow_details.shortage_amount", "label": "Shortage amount", "occurrence": 0 },
-    { "path": "new_annual_escrow_total", "label": "New annual escrow total", "occurrence": 0 }
+    {
+      "path": "new_monthly_payment.new_total_monthly_payment",
+      "label": "New monthly mortgage payment",
+      "occurrence": 0
+    },
+    {
+      "path": "new_monthly_payment.current_escrow_payment",
+      "label": "Current escrow payment",
+      "occurrence": 0
+    },
+    {
+      "path": "new_monthly_payment.new_escrow_payment",
+      "label": "New escrow payment",
+      "occurrence": 0
+    },
+    {
+      "path": "escrow_details.shortage_amount",
+      "label": "Shortage amount",
+      "occurrence": 0
+    },
+    {
+      "path": "new_annual_escrow_total",
+      "label": "New annual escrow total",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested page 1 and a shortage-and-payment-change story built from the statement date, the new monthly payment and its effective date, the new escrow payment against the old, the shortage amount and the new annual escrow total. All of those shipped except the two dates. The statement date and effective date extract correctly but are normalized (2026-03-23, 2025-11) from 'March 23, 2026' and 'November 2025', so inspect_fields marks them OFF and they were not featured. The new monthly payment pins occurrence 1, the large headline figure in the Section 1 callout, rather than occurrence 0 in the payment table. The specimen's dates disagree with each other (statement dated March 2026, new payment effective November 2025); extraction reports both as printed."
+  "notes": "The request named no feature page or fields; its notes suggested page 1 and a shortage-and-payment-change story built from the statement date, the new monthly payment and its effective date, the new escrow payment against the old, the shortage amount and the new annual escrow total. All of those shipped except the two dates. The statement date and effective date extract correctly but are normalized (2026-03-23, 2025-11) from 'March 23, 2026' and 'November 2025', so inspect_fields marks them OFF and they were not featured. The new monthly payment pins occurrence 1, the large headline figure in the Section 1 callout, rather than occurrence 0 in the payment table. The specimen's dates disagree with each other (statement dated March 2026, new payment effective November 2025); extraction reports both as printed.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.6,
+      "extract_credits": 8.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.6,
+      "extract_credits": 8.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 8.3
+    }
+  ]
 }

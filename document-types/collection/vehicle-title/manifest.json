@@ -77,11 +77,51 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "vehicle.vin", "label": "VIN", "occurrence": 0 },
-    { "path": "vehicle.year", "label": "Model year", "occurrence": 0 },
-    { "path": "vehicle.make", "label": "Make", "occurrence": 0 },
-    { "path": "title_number", "label": "Title number", "occurrence": 0 },
-    { "path": "date_issued", "label": "Date issued", "occurrence": 0 }
+    {
+      "path": "vehicle.vin",
+      "label": "VIN",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.make",
+      "label": "Make",
+      "occurrence": 0
+    },
+    {
+      "path": "title_number",
+      "label": "Title number",
+      "occurrence": 0
+    },
+    {
+      "path": "date_issued",
+      "label": "Date issued",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named only the document type and source, so the fields were chosen here. They are the vehicle-identity row and title number on the face: what a lender, insurer or buyer checks first, all in typed print in one ruled band, and all ground to their own cells. The stamped title number is distinct from the red control number printed beside 'This is not a title number', and extraction kept them apart. Handwritten transfer fields were not featured because several came back wrong (see the README). Provenance caveat: the request was rejected on 2026-10-03 as a possibly fabricated vector print-to-PDF; the file downloaded on 2026-10-26 is a raster scan that does not match that description, and its authenticity is not established."
+  "notes": "The request named only the document type and source, so the fields were chosen here. They are the vehicle-identity row and title number on the face: what a lender, insurer or buyer checks first, all in typed print in one ruled band, and all ground to their own cells. The stamped title number is distinct from the red control number printed beside 'This is not a title number', and extraction kept them apart. Handwritten transfer fields were not featured because several came back wrong (see the README). Provenance caveat: the request was rejected on 2026-10-03 as a possibly fabricated vector print-to-PDF; the file downloaded on 2026-10-26 is a raster scan that does not match that description, and its authenticity is not established.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.5,
+      "extract_credits": 4.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.3,
+      "extract_credits": 4.1
+    }
+  ]
 }

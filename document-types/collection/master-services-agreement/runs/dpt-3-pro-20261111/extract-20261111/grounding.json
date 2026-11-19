@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    2,
+    5,
+    6
+  ],
+  "fields": [
+    {
+      "path": "order_form.payment_term",
+      "label": "Payment term",
+      "value": "Net 60",
+      "page": 6,
+      "box": {
+        "xmin": 0.19118,
+        "ymin": 0.39193,
+        "xmax": 0.22716,
+        "ymax": 0.40208
+      },
+      "range": {
+        "end": 14381,
+        "start": 14375
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-payment_term.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].item",
+      "label": "Subscription",
+      "value": "PowerPolicy Professional Subscription",
+      "page": 6,
+      "box": {
+        "xmin": 0.06706,
+        "ymin": 0.6462,
+        "xmax": 0.31334,
+        "ymax": 0.6581
+      },
+      "range": {
+        "end": 15318,
+        "start": 15281
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-line_items-2-item.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].quantity",
+      "label": "Users",
+      "value": 89,
+      "page": 6,
+      "box": {
+        "xmin": 0.77941,
+        "ymin": 0.6462,
+        "xmax": 0.79512,
+        "ymax": 0.6581
+      },
+      "range": {
+        "end": 15384,
+        "start": 15382
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-line_items-2-quantity.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].total_usd",
+      "label": "Total usd",
+      "value": 993.21,
+      "page": 6,
+      "box": {
+        "xmin": 0.88314,
+        "ymin": 0.6462,
+        "xmax": 0.93492,
+        "ymax": 0.6581
+      },
+      "range": {
+        "end": 15400,
+        "start": 15394
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-line_items-2-total_usd.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].period_total_usd",
+      "label": "Prorated total",
+      "value": 1260.69,
+      "page": 6,
+      "box": {
+        "xmin": 0.87078,
+        "ymin": 0.69907,
+        "xmax": 0.93507,
+        "ymax": 0.71043
+      },
+      "range": {
+        "end": 15861,
+        "start": 15852
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-period_total_usd.png"
+    }
+  ]
+}

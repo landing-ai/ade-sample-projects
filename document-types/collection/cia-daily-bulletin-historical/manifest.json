@@ -16,10 +16,46 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "bulletin_date", "label": "Bulletin date", "occurrence": 0 },
-    { "path": "classification", "label": "Classification", "occurrence": 0 },
-    { "path": "copy_number", "label": "Copy number", "occurrence": 0 },
-    { "path": "release.release_date", "label": "Approved for release", "occurrence": 0 }
+    {
+      "path": "bulletin_date",
+      "label": "Bulletin date",
+      "occurrence": 0
+    },
+    {
+      "path": "classification",
+      "label": "Classification",
+      "occurrence": 0
+    },
+    {
+      "path": "copy_number",
+      "label": "Copy number",
+      "occurrence": 0
+    },
+    {
+      "path": "release.release_date",
+      "label": "Approved for release",
+      "occurrence": 0
+    }
   ],
-  "notes": "No feature page or fields were requested. The cover tells the document's whole life: a Top Secret bulletin of 25 January 1957, copy 131 of a numbered distribution, approved for public release on 2019-12-04. release.document_id (C03161983) grounds to the same release-stamp line as the date, so only the date is featured. The cover title and issuing office ground OFF: each is stacked across three or two lines and no single line holds the whole value. The contents list's 'redacted' flags are unreliable (see README)."
+  "notes": "No feature page or fields were requested. The cover tells the document's whole life: a Top Secret bulletin of 25 January 1957, copy 131 of a numbered distribution, approved for public release on 2019-12-04. release.document_id (C03161983) grounds to the same release-stamp line as the date, so only the date is featured. The cover title and issuing office ground OFF: each is stacked across three or two lines and no single line holds the whole value. The contents list's 'redacted' flags are unreliable (see README).",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 14,
+      "service_tier": "standard",
+      "parse_credits": 12.0,
+      "extract_credits": 9.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 14,
+      "service_tier": "standard",
+      "parse_credits": 12.0,
+      "extract_credits": 8.9
+    }
+  ]
 }

@@ -86,7 +86,7 @@ is otherwise blank. The schema skips blank coverage rows, so this does not reach
 extraction.
 
 **One value was dropped by the parse.** The producer's phone number is missing from
-`parse-pro.md`: the PHONE cell came back as a label alone, so `producer.phone`
+`runs/dpt-3-pro-20260710/parse.md`: the PHONE cell came back as a label alone, so `producer.phone`
 extracted as an empty string. The fax and email beside it came through.
 
 **The signature is tagged, not transcribed.** It parses as `[Signature]`. The

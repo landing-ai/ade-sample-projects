@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "vehicle.year",
+      "label": "Vehicle year",
+      "value": 2018,
+      "page": 1,
+      "box": {
+        "xmin": 0.48534,
+        "ymin": 0.15781,
+        "xmax": 0.52211,
+        "ymax": 0.18584
+      },
+      "range": {
+        "end": 418,
+        "start": 405
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-year.png"
+    },
+    {
+      "path": "vehicle.make",
+      "label": "Vehicle make",
+      "value": "Honda",
+      "page": 1,
+      "box": {
+        "xmin": 0.54812,
+        "ymin": 0.17322,
+        "xmax": 0.59168,
+        "ymax": 0.18584
+      },
+      "range": {
+        "end": 440,
+        "start": 435
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-make.png"
+    },
+    {
+      "path": "odometer.reading_miles",
+      "label": "Odometer reading (miles)",
+      "value": 75123,
+      "page": 1,
+      "box": {
+        "xmin": 0.09265,
+        "ymin": 0.27185,
+        "xmax": 0.87463,
+        "ymax": 0.32357
+      },
+      "range": {
+        "end": 1008,
+        "start": 812
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "odometer-reading_miles.png"
+    },
+    {
+      "path": "odometer.odometer_digits",
+      "label": "Odometer digits",
+      "value": 5,
+      "page": 1,
+      "box": {
+        "xmin": 0.26383,
+        "ymin": 0.27759,
+        "xmax": 0.27108,
+        "ymax": 0.28766
+      },
+      "range": {
+        "end": 838,
+        "start": 837
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "odometer-odometer_digits.png"
+    },
+    {
+      "path": "mileage_certification",
+      "label": "Mileage certification",
+      "value": "REFLECTS ACTUAL MILEAGE",
+      "page": 1,
+      "box": {
+        "xmin": 0.29276,
+        "ymin": 0.32986,
+        "xmax": 0.48127,
+        "ymax": 0.33994
+      },
+      "range": {
+        "end": 1094,
+        "start": 1071
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "mileage_certification.png"
+    }
+  ]
+}

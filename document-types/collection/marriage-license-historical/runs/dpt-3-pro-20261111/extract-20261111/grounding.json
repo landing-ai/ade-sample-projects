@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "license_number",
+      "label": "License number",
+      "value": "165 83",
+      "page": 1,
+      "box": {
+        "xmin": 0.70903,
+        "ymin": 0.11483,
+        "xmax": 0.84512,
+        "ymax": 0.19979
+      },
+      "range": {
+        "end": 59,
+        "start": 53
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "license_number.png"
+    },
+    {
+      "path": "affidavit.applicant_name",
+      "label": "Applicant",
+      "value": "William A Saft",
+      "page": 1,
+      "box": {
+        "xmin": 0.25007,
+        "ymin": 0.2031,
+        "xmax": 0.83492,
+        "ymax": 0.48877
+      },
+      "range": {
+        "end": 189,
+        "start": 175
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "affidavit-applicant_name.png"
+    },
+    {
+      "path": "affidavit.intended_spouse_name",
+      "label": "Intended spouse",
+      "value": "Helen L Herron",
+      "page": 1,
+      "box": {
+        "xmin": 0.25007,
+        "ymin": 0.2031,
+        "xmax": 0.83492,
+        "ymax": 0.48877
+      },
+      "range": {
+        "end": 332,
+        "start": 318
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "affidavit-intended_spouse_name.png"
+    },
+    {
+      "path": "affidavit.intended_spouse_residence_county",
+      "label": "Intended spouse residence county",
+      "value": "Hamilton",
+      "page": 1,
+      "box": {
+        "xmin": 0.39067,
+        "ymin": 0.23687,
+        "xmax": 0.44852,
+        "ymax": 0.25725
+      },
+      "range": {
+        "end": 174,
+        "start": 166
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "affidavit-intended_spouse_residence_county.png"
+    },
+    {
+      "path": "marriage_return.officiant_title",
+      "label": "Officiant",
+      "value": "Minister of the Gospel",
+      "page": 1,
+      "box": {
+        "xmin": 0.23299,
+        "ymin": 0.70944,
+        "xmax": 0.82619,
+        "ymax": 0.95199
+      },
+      "range": {
+        "end": 989,
+        "start": 967
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "marriage_return-officiant_title.png"
+    }
+  ]
+}

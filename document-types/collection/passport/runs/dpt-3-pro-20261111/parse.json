@@ -1,0 +1,93 @@
+{
+  "markdown": "**旅券 PASSPORT**\n\n日本国 JAPAN\n\n- **Type / 型**: PP\n- **Issuing country / 発行国**: JPN\n- **Passport No. / 旅券番号**: ZZ0000826\n- **Surname / 姓**: GAIMU\n- **Given name / 名**: SAKURA\n- **Nationality / 国籍**: JAPAN\n- **Date of birth / 生年月日**: 20 FEB 2000\n- **Sex / 性別**: F\n- **Registered Domicile / 本籍**: TOKYO\n- **Date of issue / 発行年月日**: 24 MAR 2025\n- **Date of expiry / 有効期間満了日**: 24 MAR 2030\n- **Authority / 発行官庁**: MINISTRY OF FOREIGN AFFAIRS\n- **Signature of bearer / 所持人自署**: 外務 さくら\n\n[image: passport photo of woman]\n\n[seal: SPECIMEN]\n\nPPJPNGAIMU<<SAKURA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\nZZ00008268JPN0002200F3003242<<<<<<<<<<<<<<<<<<<<<<06\n\n<!-- doc_id=parse-01m7rya49ztrpqt83zknmccwas -->",
+  "structure": {
+    "type": "document",
+    "markdown": null,
+    "children": [
+      {
+        "type": "page",
+        "page": null,
+        "span": null,
+        "width": null,
+        "height": null,
+        "dpi": null,
+        "grounding": {
+          "page": 1,
+          "range": {
+            "start": 0,
+            "end": 638
+          },
+          "box": {
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "xmax": 1.0,
+            "ymax": 1.0
+          }
+        },
+        "markdown": null,
+        "status": "ok",
+        "reason": null,
+        "children": [
+          {
+            "type": "card",
+            "id": "card-0",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 0,
+                "end": 636
+              },
+              "box": {
+                "xmin": 0.00089,
+                "ymin": 0.06925,
+                "xmax": 0.99926,
+                "ymax": 0.99912
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 0,
+                  "end": 636
+                },
+                "box": {
+                  "xmin": 0.00089,
+                  "ymin": 0.06925,
+                  "xmax": 0.99926,
+                  "ymax": 0.99912
+                }
+              }
+            ],
+            "markdown": null,
+            "children": null,
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          }
+        ]
+      }
+    ]
+  },
+  "grounding": null,
+  "metadata": {
+    "req_id": null,
+    "job_id": "parse-01m7rya49ztrpqt83zknmccwas",
+    "model_version": "dpt-3-pro-20261111",
+    "page_count": 1,
+    "markdown_chars": null,
+    "output_markdown_chars": 686,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "failed_pages": [],
+    "duration_ms": 4021,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.7
+    },
+    "filename": "japan-passport-specimen-2025.jpg",
+    "org_id": "u3z0u1hn4acl"
+  }
+}

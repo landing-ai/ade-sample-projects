@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "principal.name",
+      "label": "Principal",
+      "value": "Fake Mortgage Company",
+      "page": 1,
+      "box": {
+        "xmin": 0.18889,
+        "ymin": 0.13822,
+        "xmax": 0.37428,
+        "ymax": 0.15189
+      },
+      "range": {
+        "end": 80,
+        "start": 59
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "principal-name.png"
+    },
+    {
+      "path": "agent.name",
+      "label": "Agent",
+      "value": "Sample Financial Services, Inc.",
+      "page": 1,
+      "box": {
+        "xmin": 0.30532,
+        "ymin": 0.19715,
+        "xmax": 0.5094,
+        "ymax": 0.21017
+      },
+      "range": {
+        "end": 405,
+        "start": 374
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "agent-name.png"
+    },
+    {
+      "path": "execution_date",
+      "label": "Execution date",
+      "value": "2025-01-01",
+      "page": 1,
+      "box": {
+        "xmin": 0.11675,
+        "ymin": 0.60343,
+        "xmax": 0.5663,
+        "ymax": 0.61727
+      },
+      "range": {
+        "end": 3069,
+        "start": 3026
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "execution_date.png"
+    },
+    {
+      "path": "notary.acknowledgment_date",
+      "label": "Notarized on",
+      "value": "2025-01-15",
+      "page": 1,
+      "box": {
+        "xmin": 0.11624,
+        "ymin": 0.73298,
+        "xmax": 0.86298,
+        "ymax": 0.74817
+      },
+      "range": {
+        "end": 3302,
+        "start": 3247
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notary-acknowledgment_date.png"
+    },
+    {
+      "path": "notary.commission_expiration",
+      "label": "Notary commission expires",
+      "value": "2029-12-14",
+      "page": 1,
+      "box": {
+        "xmin": 0.13457,
+        "ymin": 0.7915,
+        "xmax": 0.21751,
+        "ymax": 0.80367
+      },
+      "range": {
+        "end": 3562,
+        "start": 3552
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notary-commission_expiration.png"
+    }
+  ]
+}

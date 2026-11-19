@@ -34,14 +34,14 @@
       "occurrence": 0
     },
     {
-      "path": "building_code",
-      "label": "Building code answer",
+      "path": "form_revision",
+      "label": "Form revision",
       "occurrence": 0
     },
     {
       "path": "wind_region",
       "label": "Wind region",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "roof_coverings[0].permit_application_date",
@@ -49,5 +49,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested the inspection date, year of home and stories, the Building Code answer, wind region and roof slope, and the roof covering with its permit date. Five of those are featured, all on page 1 (form page 1 of 6): the inspection date, the year of home, the Building Code answer (D), the wind region (Region 1) and the asphalt shingle roof's permit application date. Together they are the facts an insurer reads first to price a wind discount. Number of stories and roof slope also ground ok on page 1 and were left out to stay within five fields. The fictional owner name and address are on the same page and not featured. wind_region is pinned to occurrence 1: occurrence 0 grounds to the question heading (OFF). Its box covers the whole line of four region options, with the X beside Region 1 visible inside it; roof slope would box its whole line the same way. Checkboxes: the X glyphs are drawn beside empty box glyphs, and DPT-3 Pro resolved nearly all of them correctly into [x] and [ ], including the opening protection answers A and A.1, roof deck C, single wraps with minimal condition 2, and hip roof. Two misreads: in the 4.1 roof covering table, Built Up, Membrane and Other were rendered [x] although only Asphalt/Fiberglass Shingle is marked, so extraction returns four roof coverings; and under 8.A the 'fully adhered polymer-modified bitumen' sub-option was rendered [ ] although it is marked, so swr_method comes back null. Neither is featured. Nullable fields with nothing written come back as empty strings or 0 rather than null (insurance company, policy number, product approval number, year installed). The opening protection chart values are correct but each grounds to a bare 'X' cell, so inspect_fields.py marks them OFF."
+  "notes": "The request named no feature page or fields; its notes suggested the inspection date, year of home and stories, the Building Code answer, wind region and roof slope, and the roof covering with its permit date. Five of those are featured, all on page 1 (form page 1 of 6): the inspection date, the year of home, the Building Code answer (D), the wind region (Region 1) and the asphalt shingle roof's permit application date. Together they are the facts an insurer reads first to price a wind discount. Number of stories and roof slope also ground ok on page 1 and were left out to stay within five fields. The fictional owner name and address are on the same page and not featured. wind_region is pinned to occurrence 1: occurrence 0 grounds to the question heading (OFF). Its box covers the whole line of four region options, with the X beside Region 1 visible inside it; roof slope would box its whole line the same way. Checkboxes: the X glyphs are drawn beside empty box glyphs, and DPT-3 Pro resolved nearly all of them correctly into [x] and [ ], including the opening protection answers A and A.1, roof deck C, single wraps with minimal condition 2, and hip roof. Two misreads: in the 4.1 roof covering table, Built Up, Membrane and Other were rendered [x] although only Asphalt/Fiberglass Shingle is marked, so extraction returns four roof coverings; and under 8.A the 'fully adhered polymer-modified bitumen' sub-option was rendered [ ] although it is marked, so swr_method comes back null. Neither is featured. Nullable fields with nothing written come back as empty strings or 0 rather than null (insurance company, policy number, product approval number, year installed). The opening protection chart values are correct but each grounds to a bare 'X' cell, so inspect_fields.py marks them OFF.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 9.4,
+      "extract_credits": 7.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 9.4,
+      "extract_credits": 6.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 3.4,
+      "extract_credits": 6.3
+    }
+  ]
 }

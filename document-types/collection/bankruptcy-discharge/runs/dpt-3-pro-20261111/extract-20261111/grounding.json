@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "court",
+      "label": "Court",
+      "value": "United States Bankruptcy Court – District of South Carolina",
+      "page": 1,
+      "box": {
+        "xmin": 0.28193,
+        "ymin": 0.0777,
+        "xmax": 0.71966,
+        "ymax": 0.08932
+      },
+      "range": {
+        "end": 223,
+        "start": 164
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "court.png"
+    },
+    {
+      "path": "chapter",
+      "label": "Chapter",
+      "value": 7,
+      "page": 1,
+      "box": {
+        "xmin": 0.57129,
+        "ymin": 0.15149,
+        "xmax": 0.57988,
+        "ymax": 0.1631
+      },
+      "range": {
+        "end": 371,
+        "start": 370
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "chapter.png"
+    },
+    {
+      "path": "order_titles[0]",
+      "label": "Order",
+      "value": "ORDER",
+      "page": 1,
+      "box": {
+        "xmin": 0.46635,
+        "ymin": 0.29831,
+        "xmax": 0.52218,
+        "ymax": 0.30993
+      },
+      "range": {
+        "end": 729,
+        "start": 724
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_titles-0.png"
+    },
+    {
+      "path": "discharge_statute",
+      "label": "Statute cited",
+      "value": "section 727 of title 11, United States Code",
+      "page": 1,
+      "box": {
+        "xmin": 0.36854,
+        "ymin": 0.4156,
+        "xmax": 0.66163,
+        "ymax": 0.42721
+      },
+      "range": {
+        "end": 1063,
+        "start": 1020
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "discharge_statute.png"
+    },
+    {
+      "path": "ecf_entered_timestamp",
+      "label": "Entered (ECF timestamp)",
+      "value": "11/30/09 02:00:37",
+      "page": 1,
+      "box": {
+        "xmin": 0.60584,
+        "ymin": 0.01661,
+        "xmax": 0.76833,
+        "ymax": 0.03176
+      },
+      "range": {
+        "end": 70,
+        "start": 53
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ecf_entered_timestamp.png"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 14,
+  "preview_pages": [
+    1,
+    5,
+    7,
+    9
+  ],
+  "fields": [
+    {
+      "path": "bulletin_date",
+      "label": "Bulletin date",
+      "value": "25 January 1957",
+      "page": 1,
+      "box": {
+        "xmin": 0.67973,
+        "ymin": 0.10467,
+        "xmax": 0.83925,
+        "ymax": 0.12301
+      },
+      "range": {
+        "end": 82,
+        "start": 67
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bulletin_date.png"
+    },
+    {
+      "path": "classification",
+      "label": "Classification",
+      "value": "TOP SECRET",
+      "page": 1,
+      "box": {
+        "xmin": 0.31579,
+        "ymin": 0.92795,
+        "xmax": 0.6468,
+        "ymax": 0.99857
+      },
+      "range": {
+        "end": 376,
+        "start": 366
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "classification.png"
+    },
+    {
+      "path": "copy_number",
+      "label": "Copy number",
+      "value": "131",
+      "page": 1,
+      "box": {
+        "xmin": 0.7849,
+        "ymin": 0.16757,
+        "xmax": 0.83161,
+        "ymax": 0.18825
+      },
+      "range": {
+        "end": 113,
+        "start": 110
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "copy_number.png"
+    },
+    {
+      "path": "release.release_date",
+      "label": "Approved for release",
+      "value": "2019-12-04",
+      "page": 1,
+      "box": {
+        "xmin": 0.34007,
+        "ymin": 0.0184,
+        "xmax": 0.6868,
+        "ymax": 0.03399
+      },
+      "range": {
+        "end": 42,
+        "start": 0
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "release-release_date.png"
+    }
+  ]
+}

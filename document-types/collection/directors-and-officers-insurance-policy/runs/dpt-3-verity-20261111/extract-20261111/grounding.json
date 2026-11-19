@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 26,
+  "preview_pages": [
+    1,
+    2,
+    6,
+    17
+  ],
+  "fields": [
+    {
+      "path": "coverage_details.limit_of_liability",
+      "label": "Limit of liability",
+      "value": 1000000,
+      "page": 2,
+      "box": {
+        "xmin": 0.06021,
+        "ymin": 0.32981,
+        "xmax": 0.1441,
+        "ymax": 0.34433
+      },
+      "range": {
+        "end": 1658,
+        "start": 1648
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_details-limit_of_liability.png"
+    },
+    {
+      "path": "coverage_details.retention",
+      "label": "Retention per claim",
+      "value": 75000,
+      "page": 2,
+      "box": {
+        "xmin": 0.06018,
+        "ymin": 0.51297,
+        "xmax": 0.12142,
+        "ymax": 0.52694
+      },
+      "range": {
+        "end": 2024,
+        "start": 2017
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_details-retention.png"
+    },
+    {
+      "path": "policy_premium",
+      "label": "Policy premium",
+      "value": 14366.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.06065,
+        "ymin": 0.60667,
+        "xmax": 0.74797,
+        "ymax": 0.6211
+      },
+      "range": {
+        "end": 2216,
+        "start": 2146
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "policy_premium.png"
+    },
+    {
+      "path": "extended_reporting_period.additional_premium_percentage",
+      "label": "Extended reporting premium (%)",
+      "value": 125,
+      "page": 2,
+      "box": {
+        "xmin": 0.3097,
+        "ymin": 0.68364,
+        "xmax": 0.33747,
+        "ymax": 0.69514
+      },
+      "range": {
+        "end": 2310,
+        "start": 2307
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "extended_reporting_period-additional_premium_percentage.png"
+    },
+    {
+      "path": "extended_reporting_period.additional_months",
+      "label": "Extended reporting months",
+      "value": 12,
+      "page": 2,
+      "box": {
+        "xmin": 0.30949,
+        "ymin": 0.70181,
+        "xmax": 0.3287,
+        "ymax": 0.71325
+      },
+      "range": {
+        "end": 2334,
+        "start": 2332
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "extended_reporting_period-additional_months.png"
+    }
+  ]
+}

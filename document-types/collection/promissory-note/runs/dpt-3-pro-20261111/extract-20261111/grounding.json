@@ -1,0 +1,89 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "lender",
+      "label": "Lender",
+      "value": "Mortgage Express, LLC",
+      "page": 1,
+      "box": {
+        "xmin": 0.50895,
+        "ymin": 0.345,
+        "xmax": 0.63547,
+        "ymax": 0.35539
+      },
+      "range": {
+        "end": 489,
+        "start": 468
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "lender.png"
+    },
+    {
+      "path": "principal_amount",
+      "label": "Principal",
+      "value": 360000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.23054,
+        "ymin": 0.33372,
+        "xmax": 0.81025,
+        "ymax": 0.36598
+      },
+      "range": {
+        "end": 527,
+        "start": 297
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "principal_amount.png"
+    },
+    {
+      "path": "interest_rate_percent",
+      "label": "Interest rate (%)",
+      "value": 3.875,
+      "page": 1,
+      "box": {
+        "xmin": 0.30082,
+        "ymin": 0.44908,
+        "xmax": 0.33003,
+        "ymax": 0.45774
+      },
+      "range": {
+        "end": 963,
+        "start": 958
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "interest_rate_percent.png"
+    },
+    {
+      "path": "monthly_payment",
+      "label": "Monthly payment",
+      "value": 1692.85,
+      "page": 1,
+      "box": {
+        "xmin": 0.24999,
+        "ymin": 0.62274,
+        "xmax": 0.55656,
+        "ymax": 0.63454
+      },
+      "range": {
+        "end": 1980,
+        "start": 1921
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "monthly_payment.png"
+    }
+  ]
+}

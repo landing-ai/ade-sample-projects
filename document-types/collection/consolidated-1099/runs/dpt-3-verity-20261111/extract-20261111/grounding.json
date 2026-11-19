@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 4,
+  "page_count": 13,
+  "preview_pages": [
+    1,
+    4,
+    5,
+    8
+  ],
+  "fields": [
+    {
+      "path": "form_1099_b.details[1].description_of_property",
+      "label": "Security sold",
+      "value": "AMERICAN CAP INC BUILDER A / 140193103 / CAIBX",
+      "page": 4,
+      "box": {
+        "xmin": 0.04943,
+        "ymin": 0.58118,
+        "xmax": 0.34566,
+        "ymax": 0.595
+      },
+      "range": {
+        "end": 10181,
+        "start": 10135
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_1099_b-details-1-description_of_property.png"
+    },
+    {
+      "path": "form_1099_b.details[1].date_acquired",
+      "label": "Date acquired",
+      "value": "2023-09-02",
+      "page": 4,
+      "box": {
+        "xmin": 0.25115,
+        "ymin": 0.60008,
+        "xmax": 0.30843,
+        "ymax": 0.613
+      },
+      "range": {
+        "end": 10239,
+        "start": 10229
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_1099_b-details-1-date_acquired.png"
+    },
+    {
+      "path": "form_1099_b.details[1].proceeds",
+      "label": "Gross proceeds",
+      "value": 3071.56,
+      "page": 4,
+      "box": {
+        "xmin": 0.4515,
+        "ymin": 0.59995,
+        "xmax": 0.49648,
+        "ymax": 0.61467
+      },
+      "range": {
+        "end": 10275,
+        "start": 10267
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_1099_b-details-1-proceeds.png"
+    },
+    {
+      "path": "form_1099_b.details[1].cost_basis",
+      "label": "Cost basis",
+      "value": 2982.67,
+      "page": 4,
+      "box": {
+        "xmin": 0.54706,
+        "ymin": 0.60012,
+        "xmax": 0.59211,
+        "ymax": 0.61476
+      },
+      "range": {
+        "end": 10292,
+        "start": 10284
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_1099_b-details-1-cost_basis.png"
+    },
+    {
+      "path": "form_1099_b.details[1].gain_or_loss",
+      "label": "Gain or loss",
+      "value": 88.89,
+      "page": 4,
+      "box": {
+        "xmin": 0.65395,
+        "ymin": 0.60009,
+        "xmax": 0.68279,
+        "ymax": 0.61298
+      },
+      "range": {
+        "end": 10306,
+        "start": 10301
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_1099_b-details-1-gain_or_loss.png"
+    }
+  ]
+}

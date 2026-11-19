@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "properties[0].rents_received",
+      "label": "Rents received (line 3)",
+      "value": 73900,
+      "page": 1,
+      "box": {
+        "xmin": 0.58357,
+        "ymin": 0.39718,
+        "xmax": 0.64881,
+        "ymax": 0.40797
+      },
+      "range": {
+        "end": 2226,
+        "start": 2219
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "properties-0-rents_received.png"
+    },
+    {
+      "path": "properties[0].expenses.mortgage_interest",
+      "label": "Mortgage interest (line 12)",
+      "value": 19332,
+      "page": 1,
+      "box": {
+        "xmin": 0.58352,
+        "ymin": 0.54892,
+        "xmax": 0.64877,
+        "ymax": 0.55997
+      },
+      "range": {
+        "end": 3638,
+        "start": 3631
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "properties-0-expenses-mortgage_interest.png"
+    },
+    {
+      "path": "properties[0].expenses.taxes",
+      "label": "Taxes (line 16)",
+      "value": 10344,
+      "page": 1,
+      "box": {
+        "xmin": 0.58332,
+        "ymin": 0.61033,
+        "xmax": 0.6483,
+        "ymax": 0.62115
+      },
+      "range": {
+        "end": 4217,
+        "start": 4210
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "properties-0-expenses-taxes.png"
+    },
+    {
+      "path": "properties[0].expenses.depreciation_or_depletion",
+      "label": "Depreciation (line 18)",
+      "value": 3661,
+      "page": 1,
+      "box": {
+        "xmin": 0.59325,
+        "ymin": 0.63986,
+        "xmax": 0.64878,
+        "ymax": 0.65046
+      },
+      "range": {
+        "end": 4515,
+        "start": 4509
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "properties-0-expenses-depreciation_or_depletion.png"
+    },
+    {
+      "path": "properties[0].income_or_loss",
+      "label": "Net rental income (line 21)",
+      "value": 31185,
+      "page": 1,
+      "box": {
+        "xmin": 0.58315,
+        "ymin": 0.71416,
+        "xmax": 0.6487,
+        "ymax": 0.72505
+      },
+      "range": {
+        "end": 5122,
+        "start": 5115
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "properties-0-income_or_loss.png"
+    }
+  ]
+}

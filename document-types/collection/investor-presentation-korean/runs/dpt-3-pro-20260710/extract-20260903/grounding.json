@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20260710",
+  "extract_model": "extract-20260903",
+  "feature_page": 3,
+  "page_count": 10,
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "results_summary.revenue.q3_2026",
+      "label": "Revenue (3Q26)",
+      "value": 3472.4,
+      "page": 3,
+      "box": {
+        "xmin": 0.64246,
+        "ymin": 0.29893,
+        "xmax": 0.73948,
+        "ymax": 0.33796
+      },
+      "range": {
+        "end": 935,
+        "start": 928
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "results_summary-revenue-q3_2026.png"
+    },
+    {
+      "path": "results_summary.revenue.yoy_change",
+      "label": "Revenue growth YoY",
+      "value": "10.7%",
+      "page": 3,
+      "box": {
+        "xmin": 0.73947,
+        "ymin": 0.29892,
+        "xmax": 0.8365,
+        "ymax": 0.33802
+      },
+      "range": {
+        "end": 949,
+        "start": 944
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "results_summary-revenue-yoy_change.png"
+    },
+    {
+      "path": "results_summary.operating_profit.q3_2026",
+      "label": "Operating profit (3Q26)",
+      "value": 451.3,
+      "page": 3,
+      "box": {
+        "xmin": 0.64247,
+        "ymin": 0.73501,
+        "xmax": 0.73945,
+        "ymax": 0.77492
+      },
+      "range": {
+        "end": 2175,
+        "start": 2170
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "results_summary-operating_profit-q3_2026.png"
+    },
+    {
+      "path": "results_summary.operating_profit.yoy_change",
+      "label": "Operating profit change YoY",
+      "value": "-20.9%",
+      "page": 3,
+      "box": {
+        "xmin": 0.73945,
+        "ymin": 0.73502,
+        "xmax": 0.8364,
+        "ymax": 0.77497
+      },
+      "range": {
+        "end": 2190,
+        "start": 2184
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "results_summary-operating_profit-yoy_change.png"
+    },
+    {
+      "path": "results_summary.net_income.q3_2026",
+      "label": "Net income (3Q26)",
+      "value": 402.5,
+      "page": 3,
+      "box": {
+        "xmin": 0.64247,
+        "ymin": 0.82231,
+        "xmax": 0.73944,
+        "ymax": 0.86301
+      },
+      "range": {
+        "end": 2427,
+        "start": 2422
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "results_summary-net_income-q3_2026.png"
+    }
+  ]
+}

@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "number_of_cases.days_away_from_work", "label": "Cases with days away from work (H)", "occurrence": 0 },
-    { "path": "number_of_cases.job_transfer_or_restriction", "label": "Cases with job transfer or restriction (I)", "occurrence": 0 },
-    { "path": "number_of_days.days_away_from_work", "label": "Total days away from work (K)", "occurrence": 0 },
-    { "path": "employment.annual_average_employees", "label": "Annual average employees", "occurrence": 0 },
-    { "path": "employment.total_hours_worked", "label": "Total hours worked", "occurrence": 0 }
+    {
+      "path": "number_of_cases.days_away_from_work",
+      "label": "Cases with days away from work (H)",
+      "occurrence": 0
+    },
+    {
+      "path": "number_of_cases.job_transfer_or_restriction",
+      "label": "Cases with job transfer or restriction (I)",
+      "occurrence": 0
+    },
+    {
+      "path": "number_of_days.days_away_from_work",
+      "label": "Total days away from work (K)",
+      "occurrence": 0
+    },
+    {
+      "path": "employment.annual_average_employees",
+      "label": "Annual average employees",
+      "occurrence": 0
+    },
+    {
+      "path": "employment.total_hours_worked",
+      "label": "Total hours worked",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested cases with days away from work (H), cases with job transfer or restriction (I), total days away from work (K), annual average employees and total hours worked, as suggestions only. All five read ok on page 1 and are featured as suggested. Together they are the inputs to OSHA's DART incidence rate and its severity: the serious cases, the days they cost, and the workforce and hours they are measured against, so the overlay spans both halves of the form as one calculation. The certifier's signature, title and phone are not featured. All 29 extracted values are correct. The industry description, SIC and NAICS lines are blank on the form and came back as empty strings rather than null, despite string-or-null types; they read OFF only because there is no value to find. certification.is_signed reads OFF because it is a boolean grounded to the 'Sign here' line."
+  "notes": "The request named no feature page or fields; its notes suggested cases with days away from work (H), cases with job transfer or restriction (I), total days away from work (K), annual average employees and total hours worked, as suggestions only. All five read ok on page 1 and are featured as suggested. Together they are the inputs to OSHA's DART incidence rate and its severity: the serious cases, the days they cost, and the workforce and hours they are measured against, so the overlay spans both halves of the form as one calculation. The certifier's signature, title and phone are not featured. All 29 extracted values are correct. The industry description, SIC and NAICS lines are blank on the form and came back as empty strings rather than null, despite string-or-null types; they read OFF only because there is no value to find. certification.is_signed reads OFF because it is a boolean grounded to the 'Sign here' line.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.5,
+      "extract_credits": 1.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.5,
+      "extract_credits": 1.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.6,
+      "extract_credits": 1.5
+    }
+  ]
 }

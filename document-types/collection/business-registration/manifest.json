@@ -16,10 +16,46 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "business_name", "label": "Business name", "occurrence": 0 },
-    { "path": "business_type", "label": "Entity type", "occurrence": 0 },
-    { "path": "filing_state_details.state_name", "label": "Filing state (stamp)", "occurrence": 0 },
-    { "path": "filing_number", "label": "Filing number", "occurrence": 0 }
+    {
+      "path": "business_name",
+      "label": "Business name",
+      "occurrence": 0
+    },
+    {
+      "path": "business_type",
+      "label": "Entity type",
+      "occurrence": 0
+    },
+    {
+      "path": "filing_state_details.state_name",
+      "label": "Filing state (stamp)",
+      "occurrence": 0
+    },
+    {
+      "path": "principal_office_address.mailing_address",
+      "label": "Mailing address",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields. Four impersonal fields are featured: the LLC's name (box 1), the entity type from the form title, the state read from the Secretary of State's FILED EFFECTIVE stamp, and the handwritten filing number in the 'Secretary of State use only' box. All read ok. Every date on the page (the stamp's '2018 APR-9 PM 2:51', the register line '04/09/2018 05:00') extracted correctly but was normalised to ISO, so it grounds OFF and cannot be featured. The individuals on the form (organizers, governors, registered agent) and their address were deliberately not featured, although they ground ok. The schema is the team's existing business_registration_schema.json, used unchanged; it requires contact.email, which a Certificate of Organization does not carry, so extraction returned null with a nonconformant_output warning."
+  "notes": "The request named no feature page or fields. Four impersonal fields are featured: the LLC's name (box 1), the entity type from the form title, the state read from the Secretary of State's FILED EFFECTIVE stamp, and the handwritten filing number in the 'Secretary of State use only' box. All read ok. Every date on the page (the stamp's '2018 APR-9 PM 2:51', the register line '04/09/2018 05:00') extracted correctly but was normalised to ISO, so it grounds OFF and cannot be featured. The individuals on the form (organizers, governors, registered agent) and their address were deliberately not featured, although they ground ok. The schema is the team's existing business_registration_schema.json, used unchanged; it requires contact.email, which a Certificate of Organization does not carry, so extraction returned null with a nonconformant_output warning.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 1.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 1.8
+    }
+  ]
 }

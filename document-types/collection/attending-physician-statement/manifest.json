@@ -16,11 +16,50 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "practitioner.license_type", "label": "License type", "occurrence": 0 },
-    { "path": "practitioner.license_issuing_state", "label": "License issuing state", "occurrence": 1 },
-    { "path": "treatment_period.under_care_from", "label": "Under care from", "occurrence": 0 },
-    { "path": "treatment_period.treatment_interval", "label": "Treatment interval", "occurrence": 0 },
-    { "path": "disability.date_disability_began", "label": "Date disability began", "occurrence": 0 }
+    {
+      "path": "practitioner.license_number",
+      "label": "License number",
+      "occurrence": 0
+    },
+    {
+      "path": "form_number",
+      "label": "Form number",
+      "occurrence": 0
+    },
+    {
+      "path": "treatment_period.treatment_interval",
+      "label": "Treatment interval",
+      "occurrence": 0
+    }
   ],
-  "notes": "This is a state disability-insurance physician certificate (California SDI, DE 2501 Part B), not an insurance carrier's Attending Physician Statement; it carries the same core content an underwriter or claims examiner reads from an APS. The page overlay features the certifying practitioner's credential (license type and issuing state) and the care timeline (under care from, treatment interval checkbox, date disability began), all on page 1 (printed page 11). The request suggested these plus the 'still treating' checkbox in B12; that checkbox extracted correctly (true) but grounds OFF, as booleans do here, so it was not featured. The request's alternative of page 2 (diagnosis, treatment, ICD-10 box) was not used: the diagnosis and treatment text ground to individual comb-box characters (OFF), leaving only the ICD-10 box. The primary ICD-10 code is misprinted by the publisher (a digit 5 where the letter S belongs) and is deliberately not featured. Known extraction error: B29 (work-related) parsed as Yes although No is marked, so history.work_related is wrong."
+  "notes": "This is a state disability-insurance physician certificate (California SDI, DE 2501 Part B), not an insurance carrier's Attending Physician Statement; it carries the same core content an underwriter or claims examiner reads from an APS. The page overlay features the certifying practitioner's credential (license type and issuing state) and the care timeline (under care from, treatment interval checkbox, date disability began), all on page 1 (printed page 11). The request suggested these plus the 'still treating' checkbox in B12; that checkbox extracted correctly (true) but grounds OFF, as booleans do here, so it was not featured. The request's alternative of page 2 (diagnosis, treatment, ICD-10 box) was not used: the diagnosis and treatment text ground to individual comb-box characters (OFF), leaving only the ICD-10 box. The primary ICD-10 code is misprinted by the publisher (a digit 5 where the letter S belongs) and is deliberately not featured. Known extraction error: B29 (work-related) parsed as Yes although No is marked, so history.work_related is wrong.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 5.8,
+      "extract_credits": 4.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 5.7,
+      "extract_credits": 4.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 3.0
+    }
+  ]
 }

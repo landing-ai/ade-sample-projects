@@ -1,0 +1,926 @@
+{
+  "extraction": {
+    "agent": {
+      "address": "200 MAIN ST #100, ANYTOWN, MA 01880",
+      "agency": "ACME AGENCY",
+      "agent_code": "75S1F",
+      "name": "PAT EXAMPLE",
+      "phone": "1-781-555-0112"
+    },
+    "application_date": "October 3, 2025",
+    "coverages": [
+      {
+        "category": "Compulsory",
+        "coverage": "Bodily Injury to Others",
+        "deductible": null,
+        "limits": "$25,000 each person/$50,000 each accident",
+        "part": "Part 1",
+        "premium": 1703
+      },
+      {
+        "category": "Compulsory",
+        "coverage": "Personal Injury Protection",
+        "deductible": 8000,
+        "limits": "$8,000 each person",
+        "part": "Part 2",
+        "premium": 129
+      },
+      {
+        "category": "Compulsory",
+        "coverage": "Bodily Injury Caused by An Uninsured Auto",
+        "deductible": null,
+        "limits": "$25,000 each person/$50,000 each accident",
+        "part": "Part 3",
+        "premium": 38
+      },
+      {
+        "category": "Compulsory",
+        "coverage": "Damage to Someone Else's Property",
+        "deductible": null,
+        "limits": "$30,000 each accident",
+        "part": "Part 4",
+        "premium": 1679
+      },
+      {
+        "category": "Optional",
+        "coverage": "Optional Bodily Injury to Others",
+        "deductible": null,
+        "limits": "$25,000 each person/$50,000 each accident",
+        "part": "Part 5",
+        "premium": 10
+      }
+    ],
+    "drivers": [
+      {
+        "date_of_birth": "Jun 14, 1990",
+        "driver_status": "Rated",
+        "gender": "Male",
+        "license_type": "Operator - Personal Auto",
+        "marital_status": "Single",
+        "name": "JOHN Q SAMPLE",
+        "relationship": "Insured"
+      }
+    ],
+    "driving_history": [
+      {
+        "date": "Mar 6, 2025",
+        "description": "at fault accident",
+        "driver": "JOHN Q SAMPLE",
+        "sources": "APP, CLUE/LexisNexis, MVR/LexisNexis"
+      }
+    ],
+    "fees": {
+      "cancellation_fee": 50,
+      "installment_fee_note": "Agrees to pay the installment fees shown on the billing statement that become due during the policy term and each renewal term per the selected payment plan; amounts may change on renewal or plan change",
+      "late_fee": 25,
+      "returned_payment_fee": 25,
+      "sr22_filing_fee": 25
+    },
+    "form_number": "Form 7982 MA (12/24)",
+    "form_title": "Application for Massachusetts Motor Vehicle Insurance",
+    "insurer": {
+      "address": "PO Box 6807, Cleveland, OH 44101",
+      "name": "Progressive Casualty Insurance Co"
+    },
+    "named_insured": {
+      "address": "100 Main St, Mytown, MA 01890",
+      "name": "JOHN Q SAMPLE"
+    },
+    "payment": {
+      "initial_payment_received": 296.47,
+      "initial_payment_required": 296.47,
+      "minimum_due": 503.98,
+      "payment_plan": "12 payments",
+      "total_policy_premium": 3559,
+      "unpaid_balance": 207.51
+    },
+    "policy_number": "325288425",
+    "policy_period": {
+      "effective_date_time": "Oct 3, 2025 at 06:20PM ET",
+      "end_date": "Oct 3, 2026",
+      "start_date": "Oct 3, 2025"
+    },
+    "premium_discounts": [],
+    "prior_insurance": false,
+    "state": "Massachusetts",
+    "total_12_month_premium": 3559,
+    "total_household_residents": 1,
+    "vehicles": [
+      {
+        "annual_miles": "0 - 3,999",
+        "auto_number": 1,
+        "garaging_zip": "01890",
+        "leased": false,
+        "length_of_ownership": "Less than 1 month",
+        "make": "FORD",
+        "model": "FUSION 4 DOOR SEDAN",
+        "primary_use": "Pleasure/Personal",
+        "registration_plate": "2FSM98",
+        "vin": "3FA6P0HD2FR401300",
+        "year": 2015
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "agent": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1223,
+            "start": 1129
+          }
+        ],
+        "value": "200 MAIN ST #100, ANYTOWN, MA 01880"
+      },
+      "agency": {
+        "ranges": [
+          {
+            "end": 1155,
+            "start": 1144
+          }
+        ],
+        "value": "ACME AGENCY"
+      },
+      "agent_code": {
+        "ranges": [
+          {
+            "end": 1205,
+            "start": 1200
+          }
+        ],
+        "value": "75S1F"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1140,
+            "start": 1129
+          }
+        ],
+        "value": "PAT EXAMPLE"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 1223,
+            "start": 1209
+          }
+        ],
+        "value": "1-781-555-0112"
+      }
+    },
+    "application_date": {
+      "ranges": [
+        {
+          "end": 217,
+          "start": 202
+        }
+      ],
+      "value": "October 3, 2025"
+    },
+    "coverages": [
+      {
+        "category": {
+          "ranges": [
+            {
+              "end": 5698,
+              "start": 5688
+            }
+          ],
+          "value": "Compulsory"
+        },
+        "coverage": {
+          "ranges": [
+            {
+              "end": 5800,
+              "start": 5777
+            }
+          ],
+          "value": "Bodily Injury to Others"
+        },
+        "deductible": {
+          "ranges": null,
+          "value": null
+        },
+        "limits": {
+          "ranges": [
+            {
+              "end": 5859,
+              "start": 5818
+            }
+          ],
+          "value": "$25,000 each person/$50,000 each accident"
+        },
+        "part": {
+          "ranges": [
+            {
+              "end": 5808,
+              "start": 5802
+            }
+          ],
+          "value": "Part 1"
+        },
+        "premium": {
+          "ranges": [
+            {
+              "end": 5883,
+              "start": 5877
+            }
+          ],
+          "value": 1703
+        }
+      },
+      {
+        "category": {
+          "ranges": [
+            {
+              "end": 5698,
+              "start": 5688
+            }
+          ],
+          "value": "Compulsory"
+        },
+        "coverage": {
+          "ranges": [
+            {
+              "end": 5928,
+              "start": 5902
+            }
+          ],
+          "value": "Personal Injury Protection"
+        },
+        "deductible": {
+          "ranges": [
+            {
+              "end": 5979,
+              "start": 5973
+            }
+          ],
+          "value": 8000
+        },
+        "limits": {
+          "ranges": [
+            {
+              "end": 5964,
+              "start": 5946
+            }
+          ],
+          "value": "$8,000 each person"
+        },
+        "part": {
+          "ranges": [
+            {
+              "end": 5936,
+              "start": 5930
+            }
+          ],
+          "value": "Part 2"
+        },
+        "premium": {
+          "ranges": [
+            {
+              "end": 5991,
+              "start": 5988
+            }
+          ],
+          "value": 129
+        }
+      },
+      {
+        "category": {
+          "ranges": [
+            {
+              "end": 5698,
+              "start": 5688
+            }
+          ],
+          "value": "Compulsory"
+        },
+        "coverage": {
+          "ranges": [
+            {
+              "end": 6144,
+              "start": 6103
+            }
+          ],
+          "value": "Bodily Injury Caused by An Uninsured Auto"
+        },
+        "deductible": {
+          "ranges": null,
+          "value": null
+        },
+        "limits": {
+          "ranges": [
+            {
+              "end": 6239,
+              "start": 6198
+            }
+          ],
+          "value": "$25,000 each person/$50,000 each accident"
+        },
+        "part": {
+          "ranges": [
+            {
+              "end": 6152,
+              "start": 6146
+            }
+          ],
+          "value": "Part 3"
+        },
+        "premium": {
+          "ranges": [
+            {
+              "end": 6259,
+              "start": 6257
+            }
+          ],
+          "value": 38
+        }
+      },
+      {
+        "category": {
+          "ranges": [
+            {
+              "end": 5698,
+              "start": 5688
+            }
+          ],
+          "value": "Compulsory"
+        },
+        "coverage": {
+          "ranges": [
+            {
+              "end": 6311,
+              "start": 6278
+            }
+          ],
+          "value": "Damage to Someone Else's Property"
+        },
+        "deductible": {
+          "ranges": null,
+          "value": null
+        },
+        "limits": {
+          "ranges": [
+            {
+              "end": 6350,
+              "start": 6329
+            }
+          ],
+          "value": "$30,000 each accident"
+        },
+        "part": {
+          "ranges": [
+            {
+              "end": 6319,
+              "start": 6313
+            }
+          ],
+          "value": "Part 4"
+        },
+        "premium": {
+          "ranges": [
+            {
+              "end": 6373,
+              "start": 6368
+            }
+          ],
+          "value": 1679
+        }
+      },
+      {
+        "category": {
+          "ranges": [
+            {
+              "end": 6490,
+              "start": 6482
+            }
+          ],
+          "value": "Optional"
+        },
+        "coverage": {
+          "ranges": [
+            {
+              "end": 6601,
+              "start": 6569
+            }
+          ],
+          "value": "Optional Bodily Injury to Others"
+        },
+        "deductible": {
+          "ranges": null,
+          "value": null
+        },
+        "limits": {
+          "ranges": [
+            {
+              "end": 6660,
+              "start": 6619
+            }
+          ],
+          "value": "$25,000 each person/$50,000 each accident"
+        },
+        "part": {
+          "ranges": [
+            {
+              "end": 6609,
+              "start": 6603
+            }
+          ],
+          "value": "Part 5"
+        },
+        "premium": {
+          "ranges": [
+            {
+              "end": 6680,
+              "start": 6678
+            }
+          ],
+          "value": 10
+        }
+      }
+    ],
+    "drivers": [
+      {
+        "date_of_birth": {
+          "ranges": [
+            {
+              "end": 2700,
+              "start": 2688
+            }
+          ],
+          "value": "Jun 14, 1990"
+        },
+        "driver_status": {
+          "ranges": [
+            {
+              "end": 2756,
+              "start": 2751
+            }
+          ],
+          "value": "Rated"
+        },
+        "gender": {
+          "ranges": [
+            {
+              "end": 2821,
+              "start": 2817
+            }
+          ],
+          "value": "Male"
+        },
+        "license_type": {
+          "ranges": [
+            {
+              "end": 2801,
+              "start": 2777
+            }
+          ],
+          "value": "Operator - Personal Auto"
+        },
+        "marital_status": {
+          "ranges": [
+            {
+              "end": 2729,
+              "start": 2723
+            }
+          ],
+          "value": "Single"
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 2663,
+              "start": 2650
+            }
+          ],
+          "value": "JOHN Q SAMPLE"
+        },
+        "relationship": {
+          "ranges": [
+            {
+              "end": 2849,
+              "start": 2842
+            }
+          ],
+          "value": "Insured"
+        }
+      }
+    ],
+    "driving_history": [
+      {
+        "date": {
+          "ranges": [
+            {
+              "end": 8671,
+              "start": 8660
+            }
+          ],
+          "value": "Mar 6, 2025"
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 8651,
+              "start": 8634
+            }
+          ],
+          "value": "at fault accident"
+        },
+        "driver": {
+          "ranges": [
+            {
+              "end": 8588,
+              "start": 8575
+            }
+          ],
+          "value": "JOHN Q SAMPLE"
+        },
+        "sources": {
+          "ranges": [
+            {
+              "end": 8701,
+              "start": 8680
+            },
+            {
+              "end": 8761,
+              "start": 8747
+            }
+          ],
+          "value": "APP, CLUE/LexisNexis, MVR/LexisNexis"
+        }
+      }
+    ],
+    "fees": {
+      "cancellation_fee": {
+        "ranges": [
+          {
+            "end": 12846,
+            "start": 12844
+          }
+        ],
+        "value": 50
+      },
+      "installment_fee_note": {
+        "ranges": [
+          {
+            "end": 13658,
+            "start": 13279
+          }
+        ],
+        "value": "Agrees to pay the installment fees shown on the billing statement that become due during the policy term and each renewal term per the selected payment plan; amounts may change on renewal or plan change"
+      },
+      "late_fee": {
+        "ranges": [
+          {
+            "end": 14102,
+            "start": 14100
+          }
+        ],
+        "value": 25
+      },
+      "returned_payment_fee": {
+        "ranges": [
+          {
+            "end": 13829,
+            "start": 13827
+          }
+        ],
+        "value": 25
+      },
+      "sr22_filing_fee": {
+        "ranges": [
+          {
+            "end": 14298,
+            "start": 14296
+          }
+        ],
+        "value": 25
+      }
+    },
+    "form_number": {
+      "ranges": [
+        {
+          "end": 15108,
+          "start": 15088
+        }
+      ],
+      "value": "Form 7982 MA (12/24)"
+    },
+    "form_title": {
+      "ranges": [
+        {
+          "end": 57,
+          "start": 4
+        }
+      ],
+      "value": "Application for Massachusetts Motor Vehicle Insurance"
+    },
+    "insurer": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1095,
+            "start": 1024
+          }
+        ],
+        "value": "PO Box 6807, Cleveland, OH 44101"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1057,
+            "start": 1024
+          }
+        ],
+        "value": "Progressive Casualty Insurance Co"
+      }
+    },
+    "named_insured": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1313,
+            "start": 1265
+          }
+        ],
+        "value": "100 Main St, Mytown, MA 01890"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1278,
+            "start": 1265
+          },
+          {
+            "end": 199,
+            "start": 166
+          }
+        ],
+        "value": "JOHN Q SAMPLE"
+      }
+    },
+    "payment": {
+      "initial_payment_received": {
+        "ranges": [
+          {
+            "end": 1732,
+            "start": 1726
+          }
+        ],
+        "value": 296.47
+      },
+      "initial_payment_required": {
+        "ranges": [
+          {
+            "end": 1575,
+            "start": 1569
+          }
+        ],
+        "value": 296.47
+      },
+      "minimum_due": {
+        "ranges": [
+          {
+            "end": 1672,
+            "start": 1666
+          }
+        ],
+        "value": 503.98
+      },
+      "payment_plan": {
+        "ranges": [
+          {
+            "end": 1784,
+            "start": 1773
+          }
+        ],
+        "value": "12 payments"
+      },
+      "total_policy_premium": {
+        "ranges": [
+          {
+            "end": 1515,
+            "start": 1506
+          }
+        ],
+        "value": 3559
+      },
+      "unpaid_balance": {
+        "ranges": [
+          {
+            "end": 1625,
+            "start": 1619
+          }
+        ],
+        "value": 207.51
+      }
+    },
+    "policy_number": {
+      "ranges": [
+        {
+          "end": 165,
+          "start": 156
+        },
+        {
+          "end": 979,
+          "start": 917
+        }
+      ],
+      "value": "325288425"
+    },
+    "policy_period": {
+      "effective_date_time": {
+        "ranges": [
+          {
+            "end": 1457,
+            "start": 1432
+          }
+        ],
+        "value": "Oct 3, 2025 at 06:20PM ET"
+      },
+      "end_date": {
+        "ranges": [
+          {
+            "end": 1380,
+            "start": 1369
+          }
+        ],
+        "value": "Oct 3, 2026"
+      },
+      "start_date": {
+        "ranges": [
+          {
+            "end": 1366,
+            "start": 1355
+          }
+        ],
+        "value": "Oct 3, 2025"
+      }
+    },
+    "premium_discounts": [],
+    "prior_insurance": {
+      "ranges": [
+        {
+          "end": 8837,
+          "start": 8812
+        }
+      ],
+      "value": false
+    },
+    "state": {
+      "ranges": [
+        {
+          "end": 33,
+          "start": 20
+        }
+      ],
+      "value": "Massachusetts"
+    },
+    "total_12_month_premium": {
+      "ranges": [
+        {
+          "end": 6764,
+          "start": 6755
+        }
+      ],
+      "value": 3559
+    },
+    "total_household_residents": {
+      "ranges": [
+        {
+          "end": 2897,
+          "start": 2896
+        }
+      ],
+      "value": 1
+    },
+    "vehicles": [
+      {
+        "annual_miles": {
+          "ranges": [
+            {
+              "end": 7147,
+              "start": 7138
+            }
+          ],
+          "value": "0 - 3,999"
+        },
+        "auto_number": {
+          "ranges": [
+            {
+              "end": 5366,
+              "start": 5365
+            }
+          ],
+          "value": 1
+        },
+        "garaging_zip": {
+          "ranges": [
+            {
+              "end": 5472,
+              "start": 5467
+            }
+          ],
+          "value": "01890"
+        },
+        "leased": {
+          "ranges": [
+            {
+              "end": 7158,
+              "start": 7156
+            }
+          ],
+          "value": false
+        },
+        "length_of_ownership": {
+          "ranges": [
+            {
+              "end": 5644,
+              "start": 5627
+            }
+          ],
+          "value": "Less than 1 month"
+        },
+        "make": {
+          "ranges": [
+            {
+              "end": 5380,
+              "start": 5376
+            }
+          ],
+          "value": "FORD"
+        },
+        "model": {
+          "ranges": [
+            {
+              "end": 5400,
+              "start": 5381
+            }
+          ],
+          "value": "FUSION 4 DOOR SEDAN"
+        },
+        "primary_use": {
+          "ranges": [
+            {
+              "end": 5524,
+              "start": 5507
+            }
+          ],
+          "value": "Pleasure/Personal"
+        },
+        "registration_plate": {
+          "ranges": [
+            {
+              "end": 7129,
+              "start": 7123
+            }
+          ],
+          "value": "2FSM98"
+        },
+        "vin": {
+          "ranges": [
+            {
+              "end": 5432,
+              "start": 5415
+            }
+          ],
+          "value": "3FA6P0HD2FR401300"
+        },
+        "year": {
+          "ranges": [
+            {
+              "end": 5375,
+              "start": 5371
+            }
+          ],
+          "value": 2015
+        }
+      }
+    ]
+  },
+  "markdown": "# **Application for Massachusetts Motor Vehicle Insurance**\n\nPlease review, sign where indicated and return\n\n[logo: PROGRESSIVE AUTO]\n\n- **Policy Number**: 325288425\n- **Policyholder**: JOHN Q SAMPLE\n- October 3, 2025\n- Page 1 of 6\n\nCOVERAGE INFORMATION: Massachusetts Law requires that if a company elects to provide Compulsory Insurance Coverage (Parts 1, 2, 3, 4), it must also offer the following Optional Coverages: Optional Bodily Injury To Others, Bodily Injury Caused By An Underinsured Auto at limits up to $40,000 each person, $90,000 each accident, Medical Payments Coverage up to $5,000, Collision, Limited Collision, Comprehensive and Substitute Transportation. However, Part 7, Collision, Part 8, Limited Collision, and Part 9, Comprehensive coverages may be refused or cancelled in certain situations as provided for in the law. Roadside Assistance Coverage is available at the option of the Company.\n\n**Policy and premium information for policy number** 325288425\n\n<table>\n<tr><td>Insurance company:</td><td>Progressive Casualty Insurance Co<br>PO Box 6807<br>Cleveland, OH 44101</td></tr>\n<tr><td>Agent:</td><td>PAT EXAMPLE<br>ACME AGENCY<br>200 MAIN ST #100<br>ANYTOWN, MA 01880<br>75S1F<br>1-781-555-0112</td></tr>\n<tr><td>Named Insured:</td><td>JOHN Q SAMPLE<br>100 Main St<br>Mytown, MA 01890</td></tr>\n<tr><td>Policy period:</td><td>Oct 3, 2025 - Oct 3, 2026</td></tr>\n<tr><td>Effective date and time:</td><td>Oct 3, 2025 at 06:20PM ET</td></tr>\n<tr><td>Total policy premium:</td><td>$3,559.00</td></tr>\n<tr><td>Initial payment required:</td><td>$296.47</td></tr>\n<tr><td>Unpaid balance:</td><td>$207.51</td></tr>\n<tr><td>Minimum due:</td><td>$503.98</td></tr>\n<tr><td>Initial payment received:</td><td>$296.47</td></tr>\n<tr><td>Payment plan:</td><td>12 payments</td></tr>\n</table>\n\n[icon: stacked pages] \nContinued\n\n<!-- PAGE BREAK -->\n\n- **Policy Number**: 325288425\n\n- **JOHN Q SAMPLE**: [blank]\n\n- **Page 2 of 6**: [blank]\n\n## **Drivers and household members**\n\nThe following are listed below:\n\n* You and your spouse\n* All household members 16 years of age or older\n* All individuals who customarily operate the auto(s) listed in this application\n* All children who live away from home who drive these auto(s), even occasionally\n* All persons who are titled owners of the listed auto(s), other than those who are not household members and do not operate any listed auto(s)\n\nYour total policy premium can be affected by all persons of driving age. While designating drivers as List Only or Excluded may increase policy premium, the violation and accident history of Excluded and List Only drivers does not affect premium.\n\n**JOHN Q SAMPLE**\n\n- **Date of birth**: Jun 14, 1990\n- **Marital status**: Single\n- **Driver status**: Rated\n- **License type**: Operator - Personal Auto\n\n- **Gender**: Male\n- **Relationship**: Insured\n\n## **Household residents**\n\nTotal residents: 1\n\nThe total number of residents currently residing in your household, including listed drivers, young children, roommates or anyone else living in the home for 60 days or more during the next 12 months.\n\nNOTICE: If you or someone else on your behalf knowingly gives us false, deceptive, misleading or incomplete information in this application and if such false, deceptive, misleading or incomplete information increases our risk of loss, we may refuse to pay claims under any or all of the Optional Insurance Parts and we may cancel your policy. Such information includes the description and the place of garaging of the vehicle(s) to be insured, the names of all household members and customary operators required to be listed and the answers given above for all listed operators. We may also limit our payments under Part 3 and Part 4.\n\nWe will not pay for a collision or limited collision loss for an accident which occurs while your auto is being operated by a household member who is not listed as an operator on your policy. Payment is withheld when the household member, if listed, would require the payment of additional premium on your policy because the household member would be classified as an inexperienced operator or would require payment of additional premium on your policy under our rates.\n\n## License information\n\nOnce you or the principal operator listed on this application become a resident of Massachusetts, you or the principal operator must obtain a Massachusetts driver's license. A resident of another state may drive in Massachusetts with a currently valid license issued by the individual's state of residence. A visitor from another country who is at least 18 years old and has a valid license issued by a country accepted by the Registrar of Motor Vehicles (in accordance with the 1949 Road Traffic Convention or the 1943 Inter-American Automotive Traffic Convention) may legally drive in Massachusetts for up to one year from the date of arrival in the United States. The failure by you or the principal operator to be properly licensed to operate a motor vehicle in Massachusetts may result in the non-renewal of the automobile insurance policy. For information about the Massachusetts requirements for driver's licenses, please consult the Registry of Motor Vehicle's website at www.massrmv.com.\n\n[icon: stack of pages]\nContinued\n\n<!-- PAGE BREAK -->\n\nPolicy Number: 325288425\nJOHN Q SAMPLE\nPage 3 of 6\n\nOutline of coverage\n\n**Auto 1**\n**2015 FORD FUSION 4 DOOR SEDAN**\n\n- **VIN**: 3FA6P0HD2FR401300\n- **Principal garaging address**: 01890\n- **Primary use of the vehicle**: Pleasure/Personal\n- **Annual miles**: 0 - 3,999\n- **Length of vehicle ownership when policy started or vehicle added**: Less than 1 month\n\n**Coverages Parts 1-12**\n\n<table>\n<tr><td>Compulsory insurance</td><td>Limits</td><td>Deductible</td><td>Premium</td></tr>\n<tr><td>Bodily Injury to Others (Part 1)</td><td>$25,000 each person/$50,000 each accident</td><td></td><td>$1,703</td></tr>\n<tr><td>Personal Injury Protection (Part 2)</td><td>$8,000 each person</td><td>$8,000</td><td>129</td></tr>\n<tr><td>Deductible applies to You and household members</td><td></td><td></td><td></td></tr>\n<tr><td>Bodily Injury Caused by An Uninsured Auto (Part 3) (Compulsory Limits $25,000/$50,000)</td><td>$25,000 each person/$50,000 each accident</td><td></td><td>38</td></tr>\n<tr><td>Damage to Someone Else's Property (Part 4)</td><td>$30,000 each accident</td><td></td><td>1,679</td></tr>\n<tr><td>(Compulsory Limit $30,000)</td><td></td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td>Optional insurance</td><td>Limits</td><td>Deductible</td><td>Premium</td></tr>\n<tr><td>Optional Bodily Injury to Others (Part 5)</td><td>$25,000 each person/$50,000 each accident</td><td></td><td>10</td></tr>\n<tr><td>Total 12 month policy premium</td><td></td><td></td><td>$3,559.00</td></tr>\n</table>\n\n# Vehicle information\n\n**Auto 1**\n**2015 FORD FUSION 4 DOOR SEDAN**\n\n- **VIN**: 3FA6P0HD2FR401300\n- **Principal garaging address**: 01890\n- **Primary use of the vehicle**: Pleasure\n\n| Registration plate number | Miles auto was driven in past 12 mos. | Leased auto (Yes/No) |\n|---|---|---|\n| [blank] | [blank] | [blank] |\n\n<table>\n<tr><td>2FSM98</td><td>0 - 3,999</td><td>No</td><td></td></tr>\n</table>\n\n**Premium discount**\n\n- **Policy**: 325288425\n\n- **Electronic Funds Transfer (EFT)**: [blank]\n\n## Driving history\n\nIf any listed operator had a driver's license in the United States or certain countries whose records are electronically available, we will obtain that official driving record(s), which will be used to determine your rate. See \"Your Consumer Guide\" for additional information.\n\nPlease review the following information carefully because driving history is used to determine your premium. All accidents are considered at-fault and over any applicable payment threshold unless we receive additional information from you or another source that proves otherwise. We obtain driving and claims history from one or more of the following sources:\n\n* Your application (APP)\n* Progressive claims history (PROG)\n* Motor Vehicle Reports and/or court data (MVR) - provided by a consumer reporting agency\n* Comprehensive Loss Underwriting Exchange (CLUE) - provided by a consumer reporting agency\n\nDriver and Description | Date | Source/Consumer reporting agency\n\n[icon: stacked pages]\nContinued\n\n<!-- PAGE BREAK -->\n\n- **Policy Number**: 325288425\n\nJOHN Q SAMPLE\n\nPage 4 of 6\n\n<table>\n<tr><td colspan=\"2\">**Driving history** (continued)</td><td></td><td></td></tr>\n<tr><td></td><td>Driver and Description</td><td>Date</td><td>Source/Consumer reporting agency</td></tr>\n<tr><td></td><td>JOHN Q SAMPLE</td><td></td><td></td></tr>\n<tr><td></td><td>at fault accident</td><td>Mar 6, 2025</td><td>APP, CLUE/LexisNexis,</td></tr>\n<tr><td></td><td></td><td></td><td>MVR/LexisNexis</td></tr>\n</table>\n\n**Underwriting information**\n\n- **Prior insurance**: No\n\n[icon: stacked pages]\nContinued\n\n<!-- PAGE BREAK -->\n\nPolicy Number: 325288425\nJOHN Q SAMPLE\nPage 5 of 6\n\n# Application agreement\n\n**Verification of content**\nI declare that the statements contained herein are true to the best of my knowledge and belief. I declare that I have disclosed all persons required to be disclosed in the \"Drivers and household members\" section of this application. I declare that none of the vehicles listed in this application will be used to carry persons or property for compensation or a fee, or for retail or wholesale delivery, including, but not limited to, the pickup, transport, or delivery of magazines, newspapers, mail, or food, except for rideshare use of any such vehicle for which Progressive Rideshare Insurance has been purchased. I understand that this policy may be rescinded and declared void if this application contains any false information or if any information that would alter the Company's exposure is omitted or misrepresented. If the policy is not rescinded and declared void, I agree to pay any surcharges applicable under the Company rules, which are necessitated by corrections to the policy due to my inaccurate statements.\n\n**Notice of information practices**\nI understand that to calculate an accurate price for my insurance, the Company may obtain information from third parties, such as consumer reporting agencies that provide driving and claims histories. The Company may also use a credit report to verify the information I provide. The Company or its affiliates may obtain new or updated information to calculate my renewal premium or service my insurance. I may access information about me and correct it if inaccurate. In some cases, the law permits the Company to disclose the information it collects without authorization. However, the Company will not share personal information with nonaffiliated companies for their marketing purposes without consent. Complete details are in the Company's Privacy Policy, which will be provided with this insurance policy and upon request.\n\n## Acknowledgement and agreement\n\n* If I make my initial payment by electronic funds transfer, check, draft, or other remittance, the coverage afforded under this policy is conditioned on payment to the Company by the financial institution. If the transfer, check, draft, or other remittance is not honored by the financial institution, the Company shall be deemed not to have accepted the payment and this policy shall be void.\n\n* If I make my initial payment by credit card, the coverage afforded under this policy is conditioned on payment to the Company by the card issuer. I understand that if the Company is unable to collect my initial payment from the card issuer, the Company shall be deemed not to have accepted the payment and this policy shall be void. I also understand that if I authorize a credit card transaction for any payment other than the initial payment, this policy will be subject to cancellation for nonpayment of premium if the Company is unable to collect payment from the card issuer. The Company is deemed \"unable to collect\" in the following instances: (1) when I reach my credit limit on my credit card and the card issuer refuses the charge; (2) when the card issuer cancels or revokes my credit card; or (3) when the card issuer does not pay the Company, for any reason whatsoever, upon the Company's request.\n\n* This insurance and personalized service is available at this price exclusively through this Progressive independent agent. Other Progressive independent agents and affiliated companies selling insurance directly may have different prices or products. The Snapshot<sup>®</sup> Program is not available from all agents.\n\n* The Company may obtain information, including vehicle history information, from third parties. I understand that this information may affect my policy premium or could result in a policy declination, cancellation, or nonrenewal.\n\n**Other charges**\n\nI understand that I will be charged a $50.00 fee if, during the initial policy period, I cancel this policy for any reason or the Company cancels it due to my failure to pay any premium when due. This fee is in addition to any premium the Company has earned for the coverage provided by this policy and may be deducted from any refund to which I am entitled. When I renew this policy, I understand that the Company will waive any fees that may apply to the renewal policy.\n\nI agree to pay the installment fees shown on my billing statement that become due during the policy term and each renewal policy term in accordance with the payment plan I have selected. I understand that the amount of these fees may change upon policy renewal or if I change my payment plan. Any change in the amount of installment fees will be reflected on my payment schedule.\n\n[icon: pages with text lines]\nContinued\n\n<!-- PAGE BREAK -->\n\n- **Policy Number**: 325288425\n\nJOHN Q SAMPLE\n\nPage 6 of 6\n\nI understand that a returned payment fee of $25.00 will be assessed to the balance due on my policy if any check offered in payment is not honored by my bank or other financial institution. Imposition of such charge shall not deem the Company to have accepted the check unconditionally.\n\nI agree to pay a late fee of $25.00 when the payment for the minimum amount due is not received or postmarked by the premium due date. The amount of this fee may change upon policy renewal.\n\nI understand that a filing fee of $25.00 will be charged to the policy if any driver on the policy has an SR22 filing issued by the Company.\n\nI understand that Massachusetts law requires that every insurer offer twelve-month term private passenger motor vehicle insurance policies at the customer's option. A six-month term policy is shorter than a twelve-month term policy. If this policy is for a six-month term, the premium shown above is half as much as the premium for a twelve-month term policy that starts on the same initial effective date. The renewal premium for each additional six-month term will be based on the rates in effect for the insurance company on the renewal effective date.\n\nSignature of named insured    Date\n\nX ........................................................................................\n\nForm 7982 MA (12/24)\n\n<!-- doc_id=parse-01m7rt33mdr69qgzcx8me4ykex -->",
+  "metadata": {
+    "job_id": "extract-01m7rt3j1x3chk6k7h9mhnx444",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 131002,
+    "doc_id": "parse-01m7rt33mdr69qgzcx8me4ykex",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 5.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 15158,
+    "output_extraction_chars": 2721,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

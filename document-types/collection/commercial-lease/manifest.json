@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "tenant.name", "label": "Tenant", "occurrence": 0 },
-    { "path": "premises.rentable_square_feet", "label": "Rentable square feet", "occurrence": 0 },
-    { "path": "term_months", "label": "Term (months)", "occurrence": 0 },
-    { "path": "base_rent_schedule[1].monthly_base_rent", "label": "Monthly base rent (months 2-12)", "occurrence": 0 },
-    { "path": "security_deposit", "label": "Security deposit", "occurrence": 0 }
+    {
+      "path": "tenant.name",
+      "label": "Tenant",
+      "occurrence": 0
+    },
+    {
+      "path": "premises.rentable_square_feet",
+      "label": "Rentable square feet",
+      "occurrence": 0
+    },
+    {
+      "path": "term_months",
+      "label": "Term (months)",
+      "occurrence": 0
+    },
+    {
+      "path": "base_rent_schedule[1].monthly_base_rent",
+      "label": "Monthly base rent (months 2-12)",
+      "occurrence": 0
+    },
+    {
+      "path": "security_deposit",
+      "label": "Security deposit",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested five as suggestions only: tenant, rentable square feet, term, monthly base rent for months 2-12, and security deposit. All five ground ok on page 1 and ship as suggested, so the overlay reads as the deal summary: who leases how much space, for how long, at what rent, against what deposit. The tenant is a company; no person is featured. The source exhibit is 27 rendered pages; the request asked for page 1 only, the Basic Lease Information, so the sample is that one page. Lease date, permitted use, landlord notice address and rent-waiver months ground OFF (ISO date, multi-line address, a count inferred from prose) and were not candidates."
+  "notes": "The request named no feature page or fields; its notes suggested five as suggestions only: tenant, rentable square feet, term, monthly base rent for months 2-12, and security deposit. All five ground ok on page 1 and ship as suggested, so the overlay reads as the deal summary: who leases how much space, for how long, at what rent, against what deposit. The tenant is a company; no person is featured. The source exhibit is 27 rendered pages; the request asked for page 1 only, the Basic Lease Information, so the sample is that one page. Lease date, permitted use, landlord notice address and rent-waiver months ground OFF (ISO date, multi-line address, a count inferred from prose) and were not candidates.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.2,
+      "extract_credits": 2.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.2,
+      "extract_credits": 2.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.4,
+      "extract_credits": 2.0
+    }
+  ]
 }

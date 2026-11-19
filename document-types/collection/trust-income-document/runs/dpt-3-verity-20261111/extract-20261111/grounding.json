@@ -1,0 +1,87 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "tax_year",
+      "label": "Tax year",
+      "value": "2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.41073,
+        "ymin": 0.06143,
+        "xmax": 0.49776,
+        "ymax": 0.08343
+      },
+      "range": {
+        "end": 252,
+        "start": 248
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "tax_year.png"
+    },
+    {
+      "path": "estate_or_trust.ein",
+      "label": "Trust EIN (item A)",
+      "value": "00-4012343",
+      "page": 1,
+      "box": {
+        "xmin": 0.24473,
+        "ymin": 0.2208,
+        "xmax": 0.33262,
+        "ymax": 0.23206
+      },
+      "range": {
+        "end": 521,
+        "start": 511
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "estate_or_trust-ein.png"
+    },
+    {
+      "path": "income.interest_income",
+      "label": "Interest income (box 1)",
+      "value": 8500,
+      "page": 1,
+      "box": {
+        "xmin": 0.55926,
+        "ymin": 0.09209,
+        "xmax": 0.72518,
+        "ymax": 0.11974
+      },
+      "range": {
+        "end": 1225,
+        "start": 1204
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-interest_income.png"
+    },
+    {
+      "path": "income.ordinary_dividends",
+      "label": "Ordinary dividends (box 2a)",
+      "value": 189300,
+      "page": 1,
+      "box": {
+        "xmin": 0.55915,
+        "ymin": 0.12236,
+        "xmax": 0.72514,
+        "ymax": 0.14977
+      },
+      "range": {
+        "end": 1321,
+        "start": 1295
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-ordinary_dividends.png"
+    }
+  ]
+}

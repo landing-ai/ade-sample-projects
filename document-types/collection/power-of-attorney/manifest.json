@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "principal.name", "label": "Principal", "occurrence": 0 },
-    { "path": "agent.name", "label": "Agent", "occurrence": 0 },
-    { "path": "execution_date", "label": "Execution date", "occurrence": 0 },
-    { "path": "notary.acknowledgment_date", "label": "Notarized on", "occurrence": 0 },
-    { "path": "notary.commission_expiration", "label": "Notary commission expires", "occurrence": 0 }
+    {
+      "path": "principal.name",
+      "label": "Principal",
+      "occurrence": 0
+    },
+    {
+      "path": "agent.name",
+      "label": "Agent",
+      "occurrence": 0
+    },
+    {
+      "path": "execution_date",
+      "label": "Execution date",
+      "occurrence": 0
+    },
+    {
+      "path": "notary.acknowledgment_date",
+      "label": "Notarized on",
+      "occurrence": 0
+    },
+    {
+      "path": "notary.commission_expiration",
+      "label": "Notary commission expires",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no page or fields; its notes suggested the principal, the agent, the execution date, the notary's state, county and acknowledgment date, the commission expiry, and a signed or notarized flag. Featured are five of those that tell the document's story top to bottom: who grants the power, to whom, when it was executed, when it was acknowledged before a notary, and how long that notary's commission runs. Both parties are companies, so no person is featured. The two dates are assembled from split blanks ('01 day of 01, 20 25' and '01, 15, 2025') and both ground to their lines. Notary state and county also ground ok but were left out to keep to five. The signed and notarized flags are correct but ground OFF (to the 'By:' line and a '[SIGNED]' tag), so they cannot be featured. The side-by-side signature blocks, which cross-paired on the bailee letter, were read in the right order here: see README."
+  "notes": "The request named no page or fields; its notes suggested the principal, the agent, the execution date, the notary's state, county and acknowledgment date, the commission expiry, and a signed or notarized flag. Featured are five of those that tell the document's story top to bottom: who grants the power, to whom, when it was executed, when it was acknowledged before a notary, and how long that notary's commission runs. Both parties are companies, so no person is featured. The two dates are assembled from split blanks ('01 day of 01, 20 25' and '01, 15, 2025') and both ground to their lines. Notary state and county also ground ok but were left out to keep to five. The signed and notarized flags are correct but ground OFF (to the 'By:' line and a '[SIGNED]' tag), so they cannot be featured. The side-by-side signature blocks, which cross-paired on the bailee letter, were read in the right order here: see README.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.5,
+      "extract_credits": 1.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.5,
+      "extract_credits": 2.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.6,
+      "extract_credits": 1.8
+    }
+  ]
 }

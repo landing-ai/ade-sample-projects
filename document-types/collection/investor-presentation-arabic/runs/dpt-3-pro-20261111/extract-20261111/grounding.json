@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 13,
+  "page_count": 34,
+  "preview_pages": [
+    1,
+    12,
+    13,
+    22
+  ],
+  "fields": [
+    {
+      "path": "capital_structure.debt",
+      "label": "Debt (QAR m)",
+      "value": 12976,
+      "page": 13,
+      "box": {
+        "xmin": 0.28167,
+        "ymin": 0.38244,
+        "xmax": 0.32352,
+        "ymax": 0.40127
+      },
+      "range": {
+        "end": 14167,
+        "start": 14161
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_structure-debt.png"
+    },
+    {
+      "path": "capital_structure.bank_balances",
+      "label": "Bank balances (QAR m)",
+      "value": 1244,
+      "page": 13,
+      "box": {
+        "xmin": 0.28879,
+        "ymin": 0.41774,
+        "xmax": 0.32342,
+        "ymax": 0.43656
+      },
+      "range": {
+        "end": 14205,
+        "start": 14200
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_structure-bank_balances.png"
+    },
+    {
+      "path": "capital_structure.net_debt",
+      "label": "Net debt (QAR m)",
+      "value": 11732,
+      "page": 13,
+      "box": {
+        "xmin": 0.28364,
+        "ymin": 0.45322,
+        "xmax": 0.32353,
+        "ymax": 0.47204
+      },
+      "range": {
+        "end": 14254,
+        "start": 14248
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_structure-net_debt.png"
+    },
+    {
+      "path": "capital_structure.net_debt_to_assets",
+      "label": "Net debt to assets",
+      "value": 0.32,
+      "page": 13,
+      "box": {
+        "xmin": 0.29455,
+        "ymin": 0.66615,
+        "xmax": 0.32353,
+        "ymax": 0.68497
+      },
+      "range": {
+        "end": 14534,
+        "start": 14530
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_structure-net_debt_to_assets.png"
+    }
+  ]
+}

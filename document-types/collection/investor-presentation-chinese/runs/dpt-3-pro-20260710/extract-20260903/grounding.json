@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20260710",
+  "extract_model": "extract-20260903",
+  "feature_page": 7,
+  "page_count": 21,
+  "preview_pages": [
+    1,
+    7,
+    10,
+    14
+  ],
+  "fields": [
+    {
+      "path": "asset_quality.npl_ratio_percent",
+      "label": "NPL ratio",
+      "value": 1.22,
+      "page": 7,
+      "box": {
+        "xmin": 0.0945,
+        "ymin": 0.3768,
+        "xmax": 0.43342,
+        "ymax": 0.44275
+      },
+      "range": {
+        "end": 7162,
+        "start": 7139
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "asset_quality-npl_ratio_percent.png"
+    },
+    {
+      "path": "asset_quality.allowance_to_npl_percent",
+      "label": "Allowance to NPLs",
+      "value": 200.85,
+      "page": 7,
+      "box": {
+        "xmin": 0.09361,
+        "ymin": 0.52735,
+        "xmax": 0.4392,
+        "ymax": 0.60784
+      },
+      "range": {
+        "end": 7194,
+        "start": 7164
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "asset_quality-allowance_to_npl_percent.png"
+    },
+    {
+      "path": "capital_adequacy.cet1_ratio_percent",
+      "label": "CET1 ratio",
+      "value": 12.04,
+      "page": 7,
+      "box": {
+        "xmin": 0.52834,
+        "ymin": 0.27373,
+        "xmax": 0.89408,
+        "ymax": 0.40972
+      },
+      "range": {
+        "end": 7260,
+        "start": 7243
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_adequacy-cet1_ratio_percent.png"
+    },
+    {
+      "path": "capital_adequacy.tier1_ratio_percent",
+      "label": "Tier 1 ratio",
+      "value": 13.65,
+      "page": 7,
+      "box": {
+        "xmin": 0.52887,
+        "ymin": 0.42151,
+        "xmax": 0.89261,
+        "ymax": 0.55546
+      },
+      "range": {
+        "end": 7278,
+        "start": 7262
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_adequacy-tier1_ratio_percent.png"
+    },
+    {
+      "path": "capital_adequacy.total_capital_ratio_percent",
+      "label": "Total capital ratio",
+      "value": 18.31,
+      "page": 7,
+      "box": {
+        "xmin": 0.5294,
+        "ymin": 0.56847,
+        "xmax": 0.90691,
+        "ymax": 0.70217
+      },
+      "range": {
+        "end": 7294,
+        "start": 7280
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capital_adequacy-total_capital_ratio_percent.png"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "current_benefits.period_start",
+      "label": "Benefit amounts effective from",
+      "value": "December 2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.21521,
+        "ymin": 0.45388,
+        "xmax": 0.3616,
+        "ymax": 0.47025
+      },
+      "range": {
+        "end": 412,
+        "start": 399
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-period_start.png"
+    },
+    {
+      "path": "current_benefits.gross_monthly_benefit",
+      "label": "Monthly benefit before deductions",
+      "value": 1137.3,
+      "page": 1,
+      "box": {
+        "xmin": 0.11704,
+        "ymin": 0.46939,
+        "xmax": 0.33462,
+        "ymax": 0.48503
+      },
+      "range": {
+        "end": 490,
+        "start": 466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-gross_monthly_benefit.png"
+    },
+    {
+      "path": "current_benefits.medical_insurance_premium_deduction",
+      "label": "Medicare premium deduction",
+      "value": 81.9,
+      "page": 1,
+      "box": {
+        "xmin": 0.2178,
+        "ymin": 0.49965,
+        "xmax": 0.27908,
+        "ymax": 0.51571
+      },
+      "range": {
+        "end": 507,
+        "start": 503
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-medical_insurance_premium_deduction.png"
+    },
+    {
+      "path": "current_benefits.net_monthly_payment",
+      "label": "Net monthly payment",
+      "value": 1055,
+      "page": 1,
+      "box": {
+        "xmin": 0.11687,
+        "ymin": 0.52951,
+        "xmax": 0.65103,
+        "ymax": 0.54545
+      },
+      "range": {
+        "end": 610,
+        "start": 553
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_benefits-net_monthly_payment.png"
+    }
+  ]
+}

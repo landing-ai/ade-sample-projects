@@ -99,7 +99,7 @@ A subagent's report is not evidence. For each finished slug, in its worktree:
 
 1. Run `ship.py check <slug>`, with `--rules` from the report if it gave one. It must
    pass.
-2. Open the page overlay `images/pro/page-<n>.png` and look at it. Are the boxes on the
+2. Open the page overlay `runs/<parse>/<extract>/images/page-<n>.png` and look at it. Are the boxes on the
    values they claim? Open any crop that looks doubtful.
 3. **Redacted documents:** open the first page of the source PDF and confirm no original
    is visible.

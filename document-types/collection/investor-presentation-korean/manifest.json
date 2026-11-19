@@ -42,5 +42,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "No feature page or fields were requested; chosen here. Page 3 (실적요약, results summary) features the quarter's headline story: revenue up 10.7% YoY to 3,472.4 billion KRW while operating profit fell 20.9% to 451.3 billion, with net income of 402.5 billion. That is the same story the slide's two bullets tell. Every value grounds to its own table cell in the 3Q26 and Y/Y columns. Occurrence 0 is pinned for the YoY changes because the same figures are repeated on page 7 (costs) and, for revenue, the footnote's ex-acquisition sentence also grounds (OFF, it says 9.0%, not 10.7%)."
+  "notes": "No feature page or fields were requested; chosen here. Page 3 (실적요약, results summary) features the quarter's headline story: revenue up 10.7% YoY to 3,472.4 billion KRW while operating profit fell 20.9% to 451.3 billion, with net income of 402.5 billion. That is the same story the slide's two bullets tell. Every value grounds to its own table cell in the 3Q26 and Y/Y columns. Occurrence 0 is pinned for the YoY changes because the same figures are repeated on page 7 (costs) and, for revenue, the footnote's ex-acquisition sentence also grounds (OFF, it says 9.0%, not 10.7%).",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 10,
+      "service_tier": "standard",
+      "parse_credits": 8.9,
+      "extract_credits": 4.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 10,
+      "service_tier": "standard",
+      "parse_credits": 8.5,
+      "extract_credits": 4.6
+    }
+  ]
 }

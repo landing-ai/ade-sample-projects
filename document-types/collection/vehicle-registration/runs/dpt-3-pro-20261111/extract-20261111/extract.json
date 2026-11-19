@@ -1,0 +1,285 @@
+{
+  "extraction": {
+    "fees": {
+      "county_fee": null,
+      "grand_total": 71.15,
+      "initial_registration_fee": 3.0,
+      "mail_fee": null,
+      "registration_tax": 68.15,
+      "sales_tax": null,
+      "voluntary_fees": null
+    },
+    "is_test_document": true,
+    "issuing_state": "Florida",
+    "registrant": {
+      "address": "2900 NEIL KIRKMAN BLDG, TALLAHASSEE, FL 32399-0001",
+      "name": "SAMPLE SAMPLE, SAMMY D SAMPLE JR"
+    },
+    "registration": {
+      "class_code": "1",
+      "date_issued": "11/05/2013",
+      "decal_number": "00019601",
+      "expiration_date": "01/01/2015",
+      "plate_issued_date": "01/22/2013",
+      "plate_number": "429MAI",
+      "plate_type": "RGR",
+      "tax_months": 12,
+      "title_number": "100020689"
+    },
+    "vehicle": {
+      "body_type": "4D",
+      "color": "BLU",
+      "make": "CHEV",
+      "net_weight": 4500,
+      "vin": "1POLKTESTPR",
+      "year": 2005
+    }
+  },
+  "extraction_metadata": {
+    "fees": {
+      "county_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "grand_total": {
+        "ranges": [
+          {
+            "end": 1075,
+            "start": 1070
+          }
+        ],
+        "value": 71.15
+      },
+      "initial_registration_fee": {
+        "ranges": [
+          {
+            "end": 494,
+            "start": 491
+          }
+        ],
+        "value": 3.0
+      },
+      "mail_fee": {
+        "ranges": null,
+        "value": null
+      },
+      "registration_tax": {
+        "ranges": [
+          {
+            "end": 487,
+            "start": 482
+          }
+        ],
+        "value": 68.15
+      },
+      "sales_tax": {
+        "ranges": null,
+        "value": null
+      },
+      "voluntary_fees": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "is_test_document": {
+      "ranges": null,
+      "value": true
+    },
+    "issuing_state": {
+      "ranges": [
+        {
+          "end": 78,
+          "start": 71
+        }
+      ],
+      "value": "Florida"
+    },
+    "registrant": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1169,
+            "start": 1147
+          },
+          {
+            "end": 1197,
+            "start": 1170
+          }
+        ],
+        "value": "2900 NEIL KIRKMAN BLDG, TALLAHASSEE, FL 32399-0001"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1146,
+            "start": 1114
+          }
+        ],
+        "value": "SAMPLE SAMPLE, SAMMY D SAMPLE JR"
+      }
+    },
+    "registration": {
+      "class_code": {
+        "ranges": [
+          {
+            "end": 554,
+            "start": 553
+          }
+        ],
+        "value": "1"
+      },
+      "date_issued": {
+        "ranges": [
+          {
+            "end": 870,
+            "start": 861
+          }
+        ],
+        "value": "11/05/2013"
+      },
+      "decal_number": {
+        "ranges": [
+          {
+            "end": 174,
+            "start": 166
+          }
+        ],
+        "value": "00019601"
+      },
+      "expiration_date": {
+        "ranges": null,
+        "value": "01/01/2015"
+      },
+      "plate_issued_date": {
+        "ranges": [
+          {
+            "end": 909,
+            "start": 900
+          }
+        ],
+        "value": "01/22/2013"
+      },
+      "plate_number": {
+        "ranges": [
+          {
+            "end": 137,
+            "start": 131
+          }
+        ],
+        "value": "429MAI"
+      },
+      "plate_type": {
+        "ranges": [
+          {
+            "end": 325,
+            "start": 322
+          }
+        ],
+        "value": "RGR"
+      },
+      "tax_months": {
+        "ranges": [
+          {
+            "end": 560,
+            "start": 558
+          }
+        ],
+        "value": 12
+      },
+      "title_number": {
+        "ranges": [
+          {
+            "end": 428,
+            "start": 419
+          }
+        ],
+        "value": "100020689"
+      }
+    },
+    "vehicle": {
+      "body_type": {
+        "ranges": [
+          {
+            "end": 368,
+            "start": 366
+          }
+        ],
+        "value": "4D"
+      },
+      "color": {
+        "ranges": [
+          {
+            "end": 415,
+            "start": 412
+          }
+        ],
+        "value": "BLU"
+      },
+      "make": {
+        "ranges": [
+          {
+            "end": 303,
+            "start": 299
+          }
+        ],
+        "value": "CHEV"
+      },
+      "net_weight": {
+        "ranges": [
+          {
+            "end": 380,
+            "start": 376
+          }
+        ],
+        "value": 4500
+      },
+      "vin": {
+        "ranges": [
+          {
+            "end": 318,
+            "start": 307
+          }
+        ],
+        "value": "1POLKTESTPR"
+      },
+      "year": {
+        "ranges": [
+          {
+            "end": 298,
+            "start": 294
+          }
+        ],
+        "value": 2005
+      }
+    }
+  },
+  "markdown": "TEST DOCUMENT\n\nCO/AGY    13   / 94        T#    526326759\nB#    73944\n\nFLORIDA VEHICLE REGISTRATION\n\n<table>\n<tr><td>PLATE</td><td>429MAI</td><td colspan=\"5\">DECAL **00019601** Expires **Midnight Thu 1/1/2015**</td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>YR/MK<br>VIN<br>Plate Type</td><td>2005/CHEV<br>1POLKTESTPR<br>RGR</td><td>BODY<br>NT123<br>NET WT</td><td>4D<br><br>4500</td><td>COLOR<br>TITLE</td><td>BLU<br>100020689</td><td>Reg. Tax<br>Init. Reg.<br>County Fee</td><td>68.15<br>3.00</td><td>Class Code<br>Tax Months<br>Back Tax Mos</td><td>1<br>12</td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Mail Fee</td><td></td><td>Credit Class</td><td></td></tr>\n<tr><td>DL/FEID</td><td>S101074959542</td><td></td><td></td><td></td><td></td><td>Sales Tax</td><td></td><td>Credit Months</td><td></td></tr>\n<tr><td>Date Issued</td><td>11/5/2013</td><td>Plate Issued</td><td>1/22/2013</td><td></td><td></td><td>Voluntary Fees</td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Grand Total</td><td>71.15</td><td></td><td></td></tr>\n</table>\n\nSAMPLE SAMPLE, SAMMY D SAMPLE JR\n2900 NEIL KIRKMAN BLDG\nTALLAHASSEE, FL  32399-0001\n\n**IMPORTANT INFORMATION**\n\n1. The Florida license plate must remain with the registrant upon sale of vehicle.\n2. The registration must be delivered to a Tax Collector or Tag Agent for transfer to a replacement vehicle.\n3. Your registration must be updated to your new address within 20 days of moving.\n4. Registration renewals are the responsibility of the registrant and shall occur during the 30-day period prior to the expiration date shown on this registration. Renewal notices are provided as a courtesy and are not required for renewal purposes.\n5. I understand that my driver license and registrations will be suspended immediately if the insurer denies the insurance information submitted for this registration.\n\n[logo]\n\nRGR - FLORIDA REGULAR\n\n<!-- doc_id=parse-01m7rz9j6br0ymtqbfkdj4xwvj -->",
+  "metadata": {
+    "job_id": "extract-01m7rz9ve4c3hz14gdnscfbwcx",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 85446,
+    "doc_id": "parse-01m7rz9j6br0ymtqbfkdj4xwvj",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.1,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1999,
+    "output_extraction_chars": 673,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'fees.county_fee' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'fees.county_fee' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}

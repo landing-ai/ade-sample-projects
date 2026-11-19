@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 3,
+  "page_count": 19,
+  "preview_pages": [
+    1,
+    3,
+    7,
+    11
+  ],
+  "fields": [
+    {
+      "path": "target_companies[2]",
+      "label": "Target company",
+      "value": "CSL Services (Industrial) Limited",
+      "page": 3,
+      "box": {
+        "xmin": 0.55741,
+        "ymin": 0.24646,
+        "xmax": 0.78174,
+        "ymax": 0.25782
+      },
+      "range": {
+        "end": 2739,
+        "start": 2706
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "target_companies-2.png"
+    },
+    {
+      "path": "seller.name",
+      "label": "Seller",
+      "value": "BDO Canada Limited",
+      "page": 3,
+      "box": {
+        "xmin": 0.1422,
+        "ymin": 0.78489,
+        "xmax": 0.2898,
+        "ymax": 0.79625
+      },
+      "range": {
+        "end": 5324,
+        "start": 5306
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "seller-name.png"
+    },
+    {
+      "path": "seller.capacity",
+      "label": "Seller capacity",
+      "value": "Court-appointed Receiver",
+      "page": 3,
+      "box": {
+        "xmin": 0.69059,
+        "ymin": 0.2307,
+        "xmax": 0.85965,
+        "ymax": 0.24206
+      },
+      "range": {
+        "end": 2646,
+        "start": 2622
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "seller-capacity.png"
+    },
+    {
+      "path": "memorandum_date",
+      "label": "Memorandum date",
+      "value": "May 2018",
+      "page": 3,
+      "box": {
+        "xmin": 0.14122,
+        "ymin": 0.11035,
+        "xmax": 0.20517,
+        "ymax": 0.12232
+      },
+      "range": {
+        "end": 2369,
+        "start": 2361
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "memorandum_date.png"
+    }
+  ]
+}

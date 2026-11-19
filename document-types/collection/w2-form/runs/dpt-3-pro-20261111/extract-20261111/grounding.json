@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "federal.wages_tips_other_compensation",
+      "label": "Wages (box 1)",
+      "value": 2323.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.58373,
+        "ymin": 0.12226,
+        "xmax": 0.64909,
+        "ymax": 0.1445
+      },
+      "range": {
+        "end": 305,
+        "start": 299
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "federal-wages_tips_other_compensation.png"
+    },
+    {
+      "path": "federal.social_security_wages",
+      "label": "Social security wages (box 3)",
+      "value": 2323.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.58357,
+        "ymin": 0.18886,
+        "xmax": 0.64908,
+        "ymax": 0.2112
+      },
+      "range": {
+        "end": 539,
+        "start": 533
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "federal-social_security_wages.png"
+    },
+    {
+      "path": "box_12[0].amount",
+      "label": "Amount",
+      "value": 220.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.83415,
+        "ymin": 0.43268,
+        "xmax": 0.89005,
+        "ymax": 0.45547
+      },
+      "range": {
+        "end": 1082,
+        "start": 1077
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "box_12-0-amount.png"
+    },
+    {
+      "path": "box_14_other",
+      "label": "Other (box 14 write-in)",
+      "value": "Other Income $100",
+      "page": 1,
+      "box": {
+        "xmin": 0.55905,
+        "ymin": 0.56476,
+        "xmax": 0.7114,
+        "ymax": 0.59081
+      },
+      "range": {
+        "end": 1411,
+        "start": 1394
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "box_14_other.png"
+    },
+    {
+      "path": "state_and_local.local_income_tax",
+      "label": "Local income tax (box 19)",
+      "value": 675.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.75936,
+        "ymin": 0.71393,
+        "xmax": 0.81501,
+        "ymax": 0.73652
+      },
+      "range": {
+        "end": 1768,
+        "start": 1763
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "state_and_local-local_income_tax.png"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "totals.total_units",
+      "label": "Total units",
+      "value": 25,
+      "page": 1,
+      "box": {
+        "xmin": 0.19205,
+        "ymin": 0.84476,
+        "xmax": 0.20748,
+        "ymax": 0.86271
+      },
+      "range": {
+        "end": 2683,
+        "start": 2681
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_units.png"
+    },
+    {
+      "path": "totals.occupancy_percent",
+      "label": "Occupancy",
+      "value": 100,
+      "page": 1,
+      "box": {
+        "xmin": 0.41101,
+        "ymin": 0.84476,
+        "xmax": 0.44666,
+        "ymax": 0.86271
+      },
+      "range": {
+        "end": 2710,
+        "start": 2707
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-occupancy_percent.png"
+    },
+    {
+      "path": "totals.total_square_feet",
+      "label": "Total square feet",
+      "value": 23760.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.53346,
+        "ymin": 0.84476,
+        "xmax": 0.57593,
+        "ymax": 0.86271
+      },
+      "range": {
+        "end": 2730,
+        "start": 2724
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_square_feet.png"
+    },
+    {
+      "path": "totals.total_monthly_rent",
+      "label": "Total monthly rent",
+      "value": 22280.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.64284,
+        "ymin": 0.84476,
+        "xmax": 0.69302,
+        "ymax": 0.86271
+      },
+      "range": {
+        "end": 2746,
+        "start": 2739
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_monthly_rent.png"
+    }
+  ]
+}

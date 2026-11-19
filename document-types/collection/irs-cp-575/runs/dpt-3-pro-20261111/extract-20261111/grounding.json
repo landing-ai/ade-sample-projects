@@ -1,0 +1,108 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "ein",
+      "label": "Employer Identification Number",
+      "value": "88-8888888",
+      "page": 1,
+      "box": {
+        "xmin": 0.61941,
+        "ymin": 0.15927,
+        "xmax": 0.71385,
+        "ymax": 0.17185
+      },
+      "range": {
+        "end": 234,
+        "start": 224
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ein.png"
+    },
+    {
+      "path": "entity.legal_name",
+      "label": "Legal name",
+      "value": "ABC Behavioral LCSW PC",
+      "page": 1,
+      "box": {
+        "xmin": 0.17922,
+        "ymin": 0.22124,
+        "xmax": 0.38015,
+        "ymax": 0.23382
+      },
+      "range": {
+        "end": 491,
+        "start": 469
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "entity-legal_name.png"
+    },
+    {
+      "path": "notice.notice_number",
+      "label": "Notice number",
+      "value": "CP 575 A",
+      "page": 1,
+      "box": {
+        "xmin": 0.83979,
+        "ymin": 0.21048,
+        "xmax": 0.91309,
+        "ymax": 0.22305
+      },
+      "range": {
+        "end": 289,
+        "start": 281
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notice-notice_number.png"
+    },
+    {
+      "path": "notice.form",
+      "label": "Application form",
+      "value": "SS-4",
+      "page": 1,
+      "box": {
+        "xmin": 0.68176,
+        "ymin": 0.18533,
+        "xmax": 0.72094,
+        "ymax": 0.1979
+      },
+      "range": {
+        "end": 251,
+        "start": 247
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "notice-form.png"
+    },
+    {
+      "path": "required_filings[0].form",
+      "label": "Required filing",
+      "value": "Form 1120",
+      "page": 1,
+      "box": {
+        "xmin": 0.3051,
+        "ymin": 0.66321,
+        "xmax": 0.38877,
+        "ymax": 0.67578
+      },
+      "range": {
+        "end": 1744,
+        "start": 1735
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "required_filings-0-form.png"
+    }
+  ]
+}

@@ -85,7 +85,7 @@ has to guess the pairing. A rerun with descriptions anchored to the columns did 
 block 1 kept the wrong company and block 2 lost its company entirely. That rerun was
 discarded, and the committed output is the first run.
 
-The boxes in `parse-pro.json` still show the two columns, so a pipeline could re-pair
+The boxes in `runs/dpt-3-pro-20260710/parse.json` still show the two columns, so a pipeline could re-pair
 by position. Anyone extracting Ocrolus's `signatureBlock1/2:companyName` from
 side-by-side layouts should check this.
 

@@ -16,11 +16,60 @@
   },
   "feature_page": 3,
   "fields": [
-    { "path": "locations[0].section_name", "label": "Department section", "occurrence": 0 },
-    { "path": "locations[0].vehicles[0].body_type", "label": "Body type", "occurrence": 0 },
-    { "path": "locations[0].vehicles[0].vin", "label": "VIN", "occurrence": 0 },
-    { "path": "locations[0].vehicles[0].agreed_value", "label": "Agreed value", "occurrence": 0 },
-    { "path": "locations[0].vehicles[0].unique_id", "label": "Station ID", "occurrence": 0 }
+    {
+      "path": "locations[0].section_name",
+      "label": "Department section",
+      "occurrence": 0
+    },
+    {
+      "path": "locations[0].vehicles[0].body_type",
+      "label": "Body type",
+      "occurrence": 0
+    },
+    {
+      "path": "locations[0].vehicles[0].vin",
+      "label": "VIN",
+      "occurrence": 0
+    },
+    {
+      "path": "locations[0].vehicles[0].agreed_value",
+      "label": "Agreed value",
+      "occurrence": 0
+    },
+    {
+      "path": "locations[0].vehicles[0].unique_id",
+      "label": "Station ID",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features the first scheduled unit, Veh # 1 under the Louisa Vol. Fire Dept. header on page 3: the department section it is listed under, its body type, VIN, agreed value and station ID, so the overlay reads as one fleet line from section header to insured value. The request suggested page 3 and these fields, plus Veh # 1's year, make and Loc column. All eight suggestions grounded ok on page 3; year, make and location were left out only because a page features at most five fields, and the station ID carries the same location information as the Loc column. The schedule is entity-prepared for an insurance RFP, not an ACORD 129 form; the operator accepted that when choosing this sample."
+  "notes": "Features the first scheduled unit, Veh # 1 under the Louisa Vol. Fire Dept. header on page 3: the department section it is listed under, its body type, VIN, agreed value and station ID, so the overlay reads as one fleet line from section header to insured value. The request suggested page 3 and these fields, plus Veh # 1's year, make and Loc column. All eight suggestions grounded ok on page 3; year, make and location were left out only because a page features at most five fields, and the station ID carries the same location information as the Loc column. The schedule is entity-prepared for an insurance RFP, not an ACORD 129 form; the operator accepted that when choosing this sample.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 6.2,
+      "extract_credits": 22.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 6.3,
+      "extract_credits": 22.1
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 2.3,
+      "extract_credits": 22.2
+    }
+  ]
 }

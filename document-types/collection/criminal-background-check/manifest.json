@@ -15,25 +15,112 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
         "replaced": [
-          { "what": "subject's full name (header band, candidate name, case 'identified by' name)", "with": "Doe, Jane / DOE, JANE", "occurrences": 3 },
-          { "what": "subject's surname and first name in the names-searched table", "with": "Doe / Jane", "occurrences": 1 },
-          { "what": "subject's street address", "with": "100 Main St", "occurrences": 1 },
-          { "what": "subject's city", "with": "Anytown", "occurrences": 1 },
-          { "what": "subject's ZIP code", "with": "a randomly drawn 5-digit stand-in", "occurrences": 1 },
-          { "what": "requestor reference", "with": "SAMPLE", "occurrences": 1 }
+          {
+            "what": "subject's full name (header band, candidate name, case 'identified by' name)",
+            "with": "Doe, Jane / DOE, JANE",
+            "occurrences": 3
+          },
+          {
+            "what": "subject's surname and first name in the names-searched table",
+            "with": "Doe / Jane",
+            "occurrences": 1
+          },
+          {
+            "what": "subject's street address",
+            "with": "100 Main St",
+            "occurrences": 1
+          },
+          {
+            "what": "subject's city",
+            "with": "Anytown",
+            "occurrences": 1
+          },
+          {
+            "what": "subject's ZIP code",
+            "with": "a randomly drawn 5-digit stand-in",
+            "occurrences": 1
+          },
+          {
+            "what": "requestor reference",
+            "with": "SAMPLE",
+            "occurrences": 1
+          }
         ],
         "dropped_page_reason": "pages 4-16 hold sections beyond the criminal search (employment, education, references, MVR with a real-looking driver's identity, drug test, credit, global watch) and add personal data without demonstrating the criminal record"
       },
-      "dropped_pages": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      "dropped_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
     }
   },
   "feature_page": 3,
   "fields": [
-    { "path": "criminal_searches[0].jurisdiction", "label": "Jurisdiction searched", "occurrence": 0 },
-    { "path": "criminal_searches[0].cases[0].case_number", "label": "Case number", "occurrence": 0 },
-    { "path": "criminal_searches[0].cases[0].charges[0].description", "label": "Charge", "occurrence": 0 },
-    { "path": "criminal_searches[0].cases[0].charges[0].disposition", "label": "Disposition", "occurrence": 0 },
-    { "path": "criminal_searches[0].cases[0].charges[0].sentence.restitution", "label": "Restitution ordered", "occurrence": 0 }
+    {
+      "path": "criminal_searches[0].jurisdiction",
+      "label": "Jurisdiction searched",
+      "occurrence": 0
+    },
+    {
+      "path": "criminal_searches[0].cases[0].case_number",
+      "label": "Case number",
+      "occurrence": 0
+    },
+    {
+      "path": "criminal_searches[0].cases[0].charges[0].description",
+      "label": "Charge",
+      "occurrence": 0
+    },
+    {
+      "path": "criminal_searches[0].cases[0].charges[0].disposition",
+      "label": "Disposition",
+      "occurrence": 0
+    },
+    {
+      "path": "criminal_searches[0].cases[0].charges[0].sentence.restitution",
+      "label": "Restitution ordered",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features one criminal record end to end on page 3: where the search was run, the case it found, the first charge, its disposition, and the restitution ordered. No named individual is featured. The request had no fields key, only suggestions in its notes, and every suggested field grounds ok on page 3: jurisdiction, status, case number, filing date, charge #1 description, level and disposition, charge #1 fines, fees, costs and restitution, and the charge #2 prison term. Five were picked to tell one story. Status, filing date, level and the other amounts were left out only because of the five-field limit. Absent sentence items (prison on charge #1; fines, fees, costs and restitution on charge #2) correctly extract as null."
+  "notes": "Features one criminal record end to end on page 3: where the search was run, the case it found, the first charge, its disposition, and the restitution ordered. No named individual is featured. The request had no fields key, only suggestions in its notes, and every suggested field grounds ok on page 3: jurisdiction, status, case number, filing date, charge #1 description, level and disposition, charge #1 fines, fees, costs and restitution, and the charge #2 prison term. Five were picked to tell one story. Status, filing date, level and the other amounts were left out only because of the five-field limit. Absent sentence items (prison on charge #1; fines, fees, costs and restitution on charge #2) correctly extract as null.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 2.9,
+      "extract_credits": 3.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 3.0,
+      "extract_credits": 3.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 3.2
+    }
+  ]
 }

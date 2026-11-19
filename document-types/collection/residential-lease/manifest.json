@@ -53,5 +53,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Built as a proof-of-address example. The document owner asked for page 1 with the property address highlighted; the other fields were chosen to support it: who the tenant is, how long the lease runs, and the deposit paid. The tenant shown is the stand-in name. property.address grounds to the opening lines of the Term and Description paragraph, which contain the typed address: values typed onto the form's blank lines parse into the surrounding paragraph, so the box is those three lines rather than the address alone. parties.tenant grounds to the whole opening block, for the same reason. Every rent-section value grounds to the entire Rent paragraph and would render identical crops, so none is featured. The signatures array pairs names and roles across the signature page's two columns (the tenant's name under Management, the agents under Tenant) and is not featured. An earlier version of this folder replaced every name, contact detail and identifier; the owner asked for only the tenant's name to be replaced. preview_pages includes page 6, the signature page, in place of the default's page 3."
+  "notes": "Built as a proof-of-address example. The document owner asked for page 1 with the property address highlighted; the other fields were chosen to support it: who the tenant is, how long the lease runs, and the deposit paid. The tenant shown is the stand-in name. property.address grounds to the opening lines of the Term and Description paragraph, which contain the typed address: values typed onto the form's blank lines parse into the surrounding paragraph, so the box is those three lines rather than the address alone. parties.tenant grounds to the whole opening block, for the same reason. Every rent-section value grounds to the entire Rent paragraph and would render identical crops, so none is featured. The signatures array pairs names and roles across the signature page's two columns (the tenant's name under Management, the agents under Tenant) and is not featured. An earlier version of this folder replaced every name, contact detail and identifier; the owner asked for only the tenant's name to be replaced. preview_pages includes page 6, the signature page, in place of the default's page 3.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 10.0,
+      "extract_credits": 6.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 10.0,
+      "extract_credits": 6.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 3.7,
+      "extract_credits": 6.5
+    }
+  ]
 }

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 5,
+  "page_count": 18,
+  "preview_pages": [
+    1,
+    5,
+    6,
+    12
+  ],
+  "fields": [
+    {
+      "path": "share_reserve.total_shares_reserved",
+      "label": "Shares reserved",
+      "value": 38000000,
+      "page": 5,
+      "box": {
+        "xmin": 0.17586,
+        "ymin": 0.77731,
+        "xmax": 0.88075,
+        "ymax": 0.7914
+      },
+      "range": {
+        "end": 19776,
+        "start": 19681
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "share_reserve-total_shares_reserved.png"
+    },
+    {
+      "path": "share_reserve.incentive_stock_option_limit",
+      "label": "Incentive stock option limit",
+      "value": 38000000,
+      "page": 5,
+      "box": {
+        "xmin": 0.17604,
+        "ymin": 0.83586,
+        "xmax": 0.85434,
+        "ymax": 0.84941
+      },
+      "range": {
+        "end": 20149,
+        "start": 20060
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "share_reserve-incentive_stock_option_limit.png"
+    },
+    {
+      "path": "share_reserve.full_value_award_ratios[2].shares_counted",
+      "label": "Full-value award counting ratio",
+      "value": 1.69,
+      "page": 5,
+      "box": {
+        "xmin": 0.73313,
+        "ymin": 0.86475,
+        "xmax": 0.76549,
+        "ymax": 0.87665
+      },
+      "range": {
+        "end": 20328,
+        "start": 20324
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "share_reserve-full_value_award_ratios-2-shares_counted.png"
+    },
+    {
+      "path": "share_reserve.full_value_award_ratios[2].period_start",
+      "label": "Ratio effective from",
+      "value": "May 6, 2026",
+      "page": 5,
+      "box": {
+        "xmin": 0.17619,
+        "ymin": 0.87922,
+        "xmax": 0.26689,
+        "ymax": 0.89304
+      },
+      "range": {
+        "end": 20352,
+        "start": 20341
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "share_reserve-full_value_award_ratios-2-period_start.png"
+    },
+    {
+      "path": "director_annual_award_limit",
+      "label": "Director annual award cap",
+      "value": 750000,
+      "page": 5,
+      "box": {
+        "xmin": 0.1169,
+        "ymin": 0.49953,
+        "xmax": 0.82337,
+        "ymax": 0.51384
+      },
+      "range": {
+        "end": 18321,
+        "start": 18226
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "director_annual_award_limit.png"
+    }
+  ]
+}

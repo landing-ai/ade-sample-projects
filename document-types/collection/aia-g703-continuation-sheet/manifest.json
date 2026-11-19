@@ -137,9 +137,9 @@
   "feature_page": 2,
   "fields": [
     {
-      "path": "application.period_to",
-      "label": "Period ending",
-      "occurrence": 1
+      "path": "schedule_of_values[0].balance_to_finish",
+      "label": "Balance to finish",
+      "occurrence": 0
     },
     {
       "path": "schedule_of_values[26].scheduled_value",
@@ -162,5 +162,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields. Its notes suggested, as suggestions only: application number and period ending; line #2300 HVAC and Controls scheduled value, change orders and revised value; work completed this period total; total completed and stored to date with %; and total retainage. Featured on page 2 (the G703 continuation sheet, source page 3): the period ending date from the sheet header, the #2300 HVAC and Controls scheduled value, change orders and revised scheduled value, and the total completed and stored to date. Together they show one schedule-of-values line being revised by a change order, inside the sheet's billing period and against the contract total. Not featured: the application number grounds only on page 1 (the G702); on page 2 it shares a header box with the period ending date, whose crop shows both. The work-completed-this-period total, overall % complete and total retainage all ground ok on page 2 and were left out to keep to five fields. application.period_to is pinned to occurrence 1, its G703 header; occurrence 0 is on the G702. The request notes said 33 schedule-of-values rows; the sheet has 32, and extraction returned all 32. Every column of the 32 rows sums to the extracted totals row (retainage to within 3 cents, a rounding difference in the source), and the G702 line 4 and line 5 figures match the G703 totals. Negatives printed in parentheses, such as the contingency's (389,374.00) change order, came back negative. Description-of-work values containing '&' are marked OFF by inspect_fields.py only because the parse markdown escapes it as '&amp;'; the boxes are on the right cells. The three-line project name on the G702 came back with its middle line ('& PUBLIC WORKS FACILITIES REMODEL') missing. Licensing: AIA's terms forbid posting completed AIA documents for marketing without a licence. This sheet is the contractor's own spreadsheet edition of the G703 layout with no AIA copyright notice; the operator chose it knowing that, on 2026-10-14. Its header misnames the G702 as 'G723', and its column letters (A-H, with a change orders column and a revised scheduled value) differ from AIA's standard G703 lettering."
+  "notes": "The request named no feature page or fields. Its notes suggested, as suggestions only: application number and period ending; line #2300 HVAC and Controls scheduled value, change orders and revised value; work completed this period total; total completed and stored to date with %; and total retainage. Featured on page 2 (the G703 continuation sheet, source page 3): the period ending date from the sheet header, the #2300 HVAC and Controls scheduled value, change orders and revised scheduled value, and the total completed and stored to date. Together they show one schedule-of-values line being revised by a change order, inside the sheet's billing period and against the contract total. Not featured: the application number grounds only on page 1 (the G702); on page 2 it shares a header box with the period ending date, whose crop shows both. The work-completed-this-period total, overall % complete and total retainage all ground ok on page 2 and were left out to keep to five fields. application.period_to is pinned to occurrence 1, its G703 header; occurrence 0 is on the G702. The request notes said 33 schedule-of-values rows; the sheet has 32, and extraction returned all 32. Every column of the 32 rows sums to the extracted totals row (retainage to within 3 cents, a rounding difference in the source), and the G702 line 4 and line 5 figures match the G703 totals. Negatives printed in parentheses, such as the contingency's (389,374.00) change order, came back negative. Description-of-work values containing '&' are marked OFF by inspect_fields.py only because the parse markdown escapes it as '&amp;'; the boxes are on the right cells. The three-line project name on the G702 came back with its middle line ('& PUBLIC WORKS FACILITIES REMODEL') missing. Licensing: AIA's terms forbid posting completed AIA documents for marketing without a licence. This sheet is the contractor's own spreadsheet edition of the G703 layout with no AIA copyright notice; the operator chose it knowing that, on 2026-10-14. Its header misnames the G702 as 'G723', and its column letters (A-H, with a change orders column and a revised scheduled value) differ from AIA's standard G703 lettering.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.8,
+      "extract_credits": 14.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.8,
+      "extract_credits": 14.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 14.6
+    }
+  ]
 }

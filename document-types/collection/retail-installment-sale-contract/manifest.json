@@ -103,5 +103,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields. Features the Federal Truth-in-Lending disclosure box on page 1 and the monthly payment beneath it: the rate, what the credit costs, the total repaid, the total sale price and the payment that produces them, so the overlay reads as one financing decision. All five are impersonal amounts; the buyer's name was not featured. Amount Financed was deliberately left out: the document is internally inconsistent there. The printed Amount Financed (27,492.56, on page 1 and on itemization line 7) is exactly 10,000.00 more than both Total of Payments less Finance Charge and itemization line 5 less line 6 (17,492.56). Extraction reads the printed value correctly, but featuring it would put a figure on the page that visibly contradicts its neighbours. The five featured values agree with each other: 60 payments of 503.32 make the Total of Payments, and that plus the 2,500.00 down payment makes the Total Sale Price."
+  "notes": "The request named no feature page or fields. Features the Federal Truth-in-Lending disclosure box on page 1 and the monthly payment beneath it: the rate, what the credit costs, the total repaid, the total sale price and the payment that produces them, so the overlay reads as one financing decision. All five are impersonal amounts; the buyer's name was not featured. Amount Financed was deliberately left out: the document is internally inconsistent there. The printed Amount Financed (27,492.56, on page 1 and on itemization line 7) is exactly 10,000.00 more than both Total of Payments less Finance Charge and itemization line 5 less line 6 (17,492.56). Extraction reads the printed value correctly, but featuring it would put a figure on the page that visibly contradicts its neighbours. The five featured values agree with each other: 60 payments of 503.32 make the Total of Payments, and that plus the 2,500.00 down payment makes the Total Sale Price.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 13.7,
+      "extract_credits": 9.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 13.8,
+      "extract_credits": 9.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 5.0,
+      "extract_credits": 9.2
+    }
+  ]
 }

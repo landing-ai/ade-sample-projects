@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 3,
+  "page_count": 8,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    7
+  ],
+  "fields": [
+    {
+      "path": "loan_and_property.loan_amount",
+      "label": "Loan amount",
+      "value": 404500.0,
+      "page": 3,
+      "box": {
+        "xmin": 0.02869,
+        "ymin": 0.38443,
+        "xmax": 0.97357,
+        "ymax": 0.39828
+      },
+      "range": {
+        "end": 9744,
+        "start": 9654
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_and_property-loan_amount.png"
+    },
+    {
+      "path": "loan_and_property.loan_purpose",
+      "label": "Loan purpose",
+      "value": "Refinance",
+      "page": 3,
+      "box": {
+        "xmin": 0.55255,
+        "ymin": 0.38553,
+        "xmax": 0.61209,
+        "ymax": 0.39593
+      },
+      "range": {
+        "end": 9722,
+        "start": 9713
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_and_property-loan_purpose.png"
+    },
+    {
+      "path": "loan_and_property.property_value",
+      "label": "Property value",
+      "value": 608200.0,
+      "page": 3,
+      "box": {
+        "xmin": 0.15582,
+        "ymin": 0.43505,
+        "xmax": 0.55487,
+        "ymax": 0.4479
+      },
+      "range": {
+        "end": 9882,
+        "start": 9837
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_and_property-property_value.png"
+    },
+    {
+      "path": "loan_and_property.occupancy",
+      "label": "Occupancy",
+      "value": "Primary Residence",
+      "page": 3,
+      "box": {
+        "xmin": 0.17128,
+        "ymin": 0.45272,
+        "xmax": 0.28237,
+        "ymax": 0.4646
+      },
+      "range": {
+        "end": 9914,
+        "start": 9897
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_and_property-occupancy.png"
+    },
+    {
+      "path": "loan_and_property.number_of_units",
+      "label": "Number of units",
+      "value": 1,
+      "page": 3,
+      "box": {
+        "xmin": 0.26088,
+        "ymin": 0.43559,
+        "xmax": 0.27051,
+        "ymax": 0.44487
+      },
+      "range": {
+        "end": 9854,
+        "start": 9853
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_and_property-number_of_units.png"
+    }
+  ]
+}

@@ -29,7 +29,7 @@
     {
       "path": "subject_name",
       "label": "Sanctioned subject",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "listing.list_name",
@@ -42,8 +42,8 @@
       "occurrence": 0
     },
     {
-      "path": "listing.date_of_publication",
-      "label": "Date of publication",
+      "path": "listing.entity_type",
+      "label": "Entity type",
       "occurrence": 0
     },
     {
@@ -52,5 +52,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request asked for page 1 and named no fields. These tell one story, the listing a screening hit returns: who, on which list, under which programme, since when, and why. The subject's name is featured: a sanctions screen is a name match, so this document type cannot be shown without one, and the subject is a publicly sanctioned individual whose listing is US government data. subject_name occurrence 1 is the report heading; occurrence 0 is the Full name row of the Names table. The remark ends mid-name ('Compagnie Aerienne des Grands') because Lursoft's report truncates it; extraction returns it as printed. Extraction varied between runs on the same parse. One run returned null for the alias Vitali SERGITOV's quality, 'Strong', which is printed alone at the top of page 2, split from the rest of that alias's rows by the page break (the parse keeps it, as 'Quality: Strong' after the page break). Another grounded the remark to its 'Remark' label rather than to the text. The committed extraction has both right. The page 2 dates read OFF in inspect_fields.py only because they are normalized to ISO dates, and none is featured."
+  "notes": "The request asked for page 1 and named no fields. These tell one story, the listing a screening hit returns: who, on which list, under which programme, since when, and why. The subject's name is featured: a sanctions screen is a name match, so this document type cannot be shown without one, and the subject is a publicly sanctioned individual whose listing is US government data. subject_name occurrence 1 is the report heading; occurrence 0 is the Full name row of the Names table. The remark ends mid-name ('Compagnie Aerienne des Grands') because Lursoft's report truncates it; extraction returns it as printed. Extraction varied between runs on the same parse. One run returned null for the alias Vitali SERGITOV's quality, 'Strong', which is printed alone at the top of page 2, split from the rest of that alias's rows by the page break (the parse keeps it, as 'Quality: Strong' after the page break). Another grounded the remark to its 'Remark' label rather than to the text. The committed extraction has both right. The page 2 dates read OFF in inspect_fields.py only because they are normalized to ISO dates, and none is featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 2.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.7,
+      "extract_credits": 2.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 0.6,
+      "extract_credits": 2.1
+    }
+  ]
 }

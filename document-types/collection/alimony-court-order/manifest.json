@@ -26,23 +26,23 @@
   "feature_page": 3,
   "fields": [
     {
-      "path": "case_number",
-      "label": "Case number",
-      "occurrence": 2
-    },
-    {
-      "path": "support_order.payor",
-      "label": "Paid by",
+      "path": "support_order.attached_to",
+      "label": "Attached to",
       "occurrence": 0
     },
     {
-      "path": "support_order.support_type",
-      "label": "Support type",
+      "path": "support_order.petitioner_gross_monthly_income",
+      "label": "Petitioner gross monthly income",
       "occurrence": 0
     },
     {
-      "path": "support_order.monthly_amount",
-      "label": "Monthly amount",
+      "path": "support_order.petitioner_net_monthly_disposable_income",
+      "label": "Petitioner net monthly disposable income",
+      "occurrence": 0
+    },
+    {
+      "path": "support_order.respondent_gross_monthly_income",
+      "label": "Respondent gross monthly income",
       "occurrence": 0
     },
     {
@@ -51,5 +51,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no fields formally but suggested five in its notes: case number, the spousal support checkbox, the monthly amount, the day it is payable and the length of the marriage. Four ship as suggested. The payable day ('1st') was dropped: inspect_fields marks it ok, but the crop boxes the 'Other (specify):' line below it. The parse returns ', payable through (specify end date):' as its own line although it prints at the end of the amount line, and from there each line-level box on this part of the page is assigned one line late. It was replaced by the payor ('respondent', label 'Paid by'), from item 6a above, whose crop is correct. The overlay reads as the order itself: which case, who pays, what kind of support, how much, and the marriage length the court found. case_number is pinned to occurrence 2, the FL-343 caption; occurrences 0 and 1 are on the two FL-180 pages. No person is featured. The start date (2011-08-01) is correct but reads OFF, since it is normalized from '8/1/2011' and shares the amount's line. Booleans read OFF, as they do. The packet leaves the end date blank, and extraction returns an empty string rather than null for it."
+  "notes": "The request named no fields formally but suggested five in its notes: case number, the spousal support checkbox, the monthly amount, the day it is payable and the length of the marriage. Four ship as suggested. The payable day ('1st') was dropped: inspect_fields marks it ok, but the crop boxes the 'Other (specify):' line below it. The parse returns ', payable through (specify end date):' as its own line although it prints at the end of the amount line, and from there each line-level box on this part of the page is assigned one line late. It was replaced by the payor ('respondent', label 'Paid by'), from item 6a above, whose crop is correct. The overlay reads as the order itself: which case, who pays, what kind of support, how much, and the marriage length the court found. case_number is pinned to occurrence 2, the FL-343 caption; occurrences 0 and 1 are on the two FL-180 pages. No person is featured. The start date (2011-08-01) is correct but reads OFF, since it is normalized from '8/1/2011' and shares the amount's line. Booleans read OFF, as they do. The packet leaves the end date blank, and extraction returns an empty string rather than null for it.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 5.2,
+      "extract_credits": 3.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 5.0,
+      "extract_credits": 3.4
+    }
+  ]
 }

@@ -42,5 +42,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "No feature page or fields were requested; chosen here. Page 7 (资产质量整体稳定, asset quality and capital) features the bank's soundness picture as one story: the NPL ratio and its provision coverage on the left, and the three regulatory capital ratios (CET1, tier 1, total) on the right. Each value grounds to its own row, with the Chinese label and the figure inside the same box, so the overlay shows five distinct label-value pairs. Two other pages were tried first. Page 5 (operating results) has several chart values grounding to an axis label ('1H2026') or a word ('Growth') rather than the figure. Page 6 (assets and liabilities) extracts and text-matches every value, but each grounds only to its whole chart figure, so all five crops came out as the same half-slide. The source is an image-only PDF with no text layer, so every value here comes from OCR of Chinese slides."
+  "notes": "No feature page or fields were requested; chosen here. Page 7 (资产质量整体稳定, asset quality and capital) features the bank's soundness picture as one story: the NPL ratio and its provision coverage on the left, and the three regulatory capital ratios (CET1, tier 1, total) on the right. Each value grounds to its own row, with the Chinese label and the figure inside the same box, so the overlay shows five distinct label-value pairs. Two other pages were tried first. Page 5 (operating results) has several chart values grounding to an axis label ('1H2026') or a word ('Growth') rather than the figure. Page 6 (assets and liabilities) extracts and text-matches every value, but each grounds only to its whole chart figure, so all five crops came out as the same half-slide. The source is an image-only PDF with no text layer, so every value here comes from OCR of Chinese slides.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 21,
+      "service_tier": "standard",
+      "parse_credits": 15.4,
+      "extract_credits": 5.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 21,
+      "service_tier": "standard",
+      "parse_credits": 15.1,
+      "extract_credits": 5.1
+    }
+  ]
 }

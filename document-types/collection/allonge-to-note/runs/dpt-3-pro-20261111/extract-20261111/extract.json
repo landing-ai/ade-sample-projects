@@ -1,0 +1,139 @@
+{
+  "extraction": {
+    "borrower": "JOHN Q SAMPLE",
+    "co_borrower": null,
+    "endorsement_type": "specific",
+    "endorser": "PennyMac Corp.",
+    "exhibit_reference": "EXHIBIT 1 PAGE 4 OF 5",
+    "loan_number": null,
+    "pay_to_the_order_of": "PennyMac Loan Services, LLC",
+    "principal_balance": 360000.0,
+    "property_address": "100 SAMPLE AVE, PORTLAND, OR 97000",
+    "signer": {
+      "is_signed": true,
+      "name": "Kateryna Kolysnichenko",
+      "title": "Authorized Representative"
+    },
+    "without_recourse": true
+  },
+  "extraction_metadata": {
+    "borrower": {
+      "ranges": [
+        {
+          "end": 165,
+          "start": 152
+        }
+      ],
+      "value": "JOHN Q SAMPLE"
+    },
+    "co_borrower": {
+      "ranges": null,
+      "value": null
+    },
+    "endorsement_type": {
+      "ranges": [
+        {
+          "end": 248,
+          "start": 194
+        }
+      ],
+      "value": "specific"
+    },
+    "endorser": {
+      "ranges": [
+        {
+          "end": 282,
+          "start": 268
+        }
+      ],
+      "value": "PennyMac Corp."
+    },
+    "exhibit_reference": {
+      "ranges": null,
+      "value": "EXHIBIT 1 PAGE 4 OF 5"
+    },
+    "loan_number": {
+      "ranges": null,
+      "value": null
+    },
+    "pay_to_the_order_of": {
+      "ranges": [
+        {
+          "end": 248,
+          "start": 221
+        }
+      ],
+      "value": "PennyMac Loan Services, LLC"
+    },
+    "principal_balance": {
+      "ranges": [
+        {
+          "end": 134,
+          "start": 100
+        }
+      ],
+      "value": 360000.0
+    },
+    "property_address": {
+      "ranges": [
+        {
+          "end": 98,
+          "start": 39
+        }
+      ],
+      "value": "100 SAMPLE AVE, PORTLAND, OR 97000"
+    },
+    "signer": {
+      "is_signed": {
+        "ranges": null,
+        "value": true
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 353,
+            "start": 331
+          }
+        ],
+        "value": "Kateryna Kolysnichenko"
+      },
+      "title": {
+        "ranges": [
+          {
+            "end": 380,
+            "start": 355
+          }
+        ],
+        "value": "Authorized Representative"
+      }
+    },
+    "without_recourse": {
+      "ranges": null,
+      "value": true
+    }
+  },
+  "markdown": "ALLONGE TO NOTE\n\n- **LOAN#**: [blank]\n\n- **PROPERTY ADDRESS**: 100 SAMPLE AVE , PORTLAND, OR 97000\n\n- **PRINCIPAL BALANCE**: $360000 .\n\n- **BORROWER**: JOHN Q SAMPLE\n- **CO-BORROWER**: [blank]\n\n- **PAY TO THE ORDER OF**: PennyMac Loan Services, LLC\n\nWITHOUT RECOURSE: PennyMac Corp.\n\n<figure type=\"ILLUSTRATION\">BY ________ TITLE: Kateryna Kolysnichenko, Authorized Representative \n\n<description>A large handwritten cursive signature in black ink, with a long looping stroke that starts at the top right, sweeps down the left side in a wide arc, and curves back at the bottom. A horizontal signature line sits above the printed text, with the signature crossing over the line near its middle.</description></figure>\n\nEXHIBIT 1 (handwritten over a line)\nPAGE 4 OF 5\n\n¦\n\n<!-- doc_id=parse-01m7rsytm7vkemty6c4yb998xd -->",
+  "metadata": {
+    "job_id": "extract-01m7rszet502ttv00ymz34rqvb",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 43403,
+    "doc_id": "parse-01m7rsytm7vkemty6c4yb998xd",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.6,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 817,
+    "output_extraction_chars": 425,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

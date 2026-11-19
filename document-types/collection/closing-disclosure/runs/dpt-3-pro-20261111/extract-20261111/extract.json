@@ -1,0 +1,725 @@
+{
+  "extraction": {
+    "borrower_transaction": {
+      "deposit": 10000.0,
+      "seller_credit": 2500.0,
+      "total_due_from_borrower": 189762.3,
+      "total_paid_by_or_on_behalf_of_borrower": 175615.04
+    },
+    "closing_cost_details": {
+      "lender_credits": null,
+      "origination_charges": 1802.0,
+      "services_did_not_shop_for": 236.55,
+      "services_did_shop_for": 2655.5,
+      "total_closing_costs": 9712.1,
+      "total_loan_costs": 4694.05,
+      "total_other_costs": 5018.05
+    },
+    "closing_information": {
+      "closing_date": "2013-04-15",
+      "date_issued": "2013-04-15",
+      "disbursement_date": "2013-04-15",
+      "file_number": "12-3456",
+      "property_address": "456 Somewhere Ave Anytown, ST 12345",
+      "sale_price": 180000.0,
+      "settlement_agent": "Epsilon Title Co."
+    },
+    "costs_at_closing": {
+      "cash_to_close": 14147.26,
+      "closing_costs": 9712.1
+    },
+    "escrow_account": {
+      "escrowed_property_costs_year_1": 2473.56,
+      "has_escrow_account": true,
+      "initial_escrow_payment": 412.25,
+      "monthly_escrow_payment": 206.13
+    },
+    "estimated_taxes_insurance_assessments_monthly": 356.13,
+    "late_payment": {
+      "grace_period_days": 15,
+      "late_fee_percent": 5.0
+    },
+    "lender_contact": {
+      "contact_name": "Joe Smith",
+      "contact_nmls_id": "12345",
+      "name": "Ficus Bank",
+      "nmls_id": null
+    },
+    "loan_calculations": {
+      "amount_financed": 162000.0,
+      "apr_percent": 4.174,
+      "finance_charge": 118830.27,
+      "total_interest_percentage": 69.46,
+      "total_of_payments": 285803.36
+    },
+    "loan_information": {
+      "loan_id": "123456789",
+      "loan_term": "30 years",
+      "loan_type": "Conventional",
+      "mic_number": "000654321",
+      "product": "Fixed Rate",
+      "purpose": "Purchase"
+    },
+    "loan_terms": {
+      "has_balloon_payment": false,
+      "has_prepayment_penalty": true,
+      "interest_rate_percent": 3.875,
+      "loan_amount": 162000.0,
+      "monthly_principal_and_interest": 761.78,
+      "prepayment_penalty_max": 3240.0
+    },
+    "projected_payments": [
+      {
+        "estimated_escrow": 206.13,
+        "estimated_total_monthly_payment": 1050.26,
+        "mortgage_insurance": 82.35,
+        "principal_and_interest": 761.78,
+        "years": "Years 1-7"
+      },
+      {
+        "estimated_escrow": 206.13,
+        "estimated_total_monthly_payment": 967.91,
+        "mortgage_insurance": 0,
+        "principal_and_interest": 761.78,
+        "years": "Years 8-30"
+      }
+    ],
+    "seller_transaction": {
+      "cash_to_seller": 64414.96,
+      "total_due_from_seller": 115665.04,
+      "total_due_to_seller": 180080.0
+    },
+    "transaction_information": {
+      "borrowers": "Michael Jones and Mary Stone",
+      "lender": "Ficus Bank",
+      "sellers": "Steve Cole and Amy Doe"
+    }
+  },
+  "extraction_metadata": {
+    "borrower_transaction": {
+      "deposit": {
+        "ranges": [
+          {
+            "end": 12283,
+            "start": 12273
+          }
+        ],
+        "value": 10000.0
+      },
+      "seller_credit": {
+        "ranges": [
+          {
+            "end": 12527,
+            "start": 12518
+          }
+        ],
+        "value": 2500.0
+      },
+      "total_due_from_borrower": {
+        "ranges": [
+          {
+            "end": 11184,
+            "start": 11173
+          }
+        ],
+        "value": 189762.3
+      },
+      "total_paid_by_or_on_behalf_of_borrower": {
+        "ranges": [
+          {
+            "end": 12227,
+            "start": 12216
+          }
+        ],
+        "value": 175615.04
+      }
+    },
+    "closing_cost_details": {
+      "lender_credits": {
+        "ranges": null,
+        "value": null
+      },
+      "origination_charges": {
+        "ranges": [
+          {
+            "end": 3164,
+            "start": 3151
+          }
+        ],
+        "value": 1802.0
+      },
+      "services_did_not_shop_for": {
+        "ranges": [
+          {
+            "end": 3981,
+            "start": 3975
+          }
+        ],
+        "value": 236.55
+      },
+      "services_did_shop_for": {
+        "ranges": [
+          {
+            "end": 5133,
+            "start": 5120
+          }
+        ],
+        "value": 2655.5
+      },
+      "total_closing_costs": {
+        "ranges": [
+          {
+            "end": 9485,
+            "start": 9472
+          }
+        ],
+        "value": 9712.1
+      },
+      "total_loan_costs": {
+        "ranges": [
+          {
+            "end": 6174,
+            "start": 6161
+          }
+        ],
+        "value": 4694.05
+      },
+      "total_other_costs": {
+        "ranges": [
+          {
+            "end": 9211,
+            "start": 9202
+          }
+        ],
+        "value": 5018.05
+      }
+    },
+    "closing_information": {
+      "closing_date": {
+        "ranges": [
+          {
+            "end": 215,
+            "start": 186
+          }
+        ],
+        "value": "2013-04-15"
+      },
+      "date_issued": {
+        "ranges": [
+          {
+            "end": 185,
+            "start": 157
+          }
+        ],
+        "value": "2013-04-15"
+      },
+      "disbursement_date": {
+        "ranges": [
+          {
+            "end": 250,
+            "start": 216
+          }
+        ],
+        "value": "2013-04-15"
+      },
+      "file_number": {
+        "ranges": [
+          {
+            "end": 314,
+            "start": 307
+          }
+        ],
+        "value": "12-3456"
+      },
+      "property_address": {
+        "ranges": [
+          {
+            "end": 369,
+            "start": 315
+          }
+        ],
+        "value": "456 Somewhere Ave Anytown, ST 12345"
+      },
+      "sale_price": {
+        "ranges": [
+          {
+            "end": 396,
+            "start": 370
+          }
+        ],
+        "value": 180000.0
+      },
+      "settlement_agent": {
+        "ranges": [
+          {
+            "end": 292,
+            "start": 275
+          }
+        ],
+        "value": "Epsilon Title Co."
+      }
+    },
+    "costs_at_closing": {
+      "cash_to_close": {
+        "ranges": [
+          {
+            "end": 2697,
+            "start": 2603
+          }
+        ],
+        "value": 14147.26
+      },
+      "closing_costs": {
+        "ranges": [
+          {
+            "end": 2562,
+            "start": 2438
+          }
+        ],
+        "value": 9712.1
+      }
+    },
+    "escrow_account": {
+      "escrowed_property_costs_year_1": {
+        "ranges": [
+          {
+            "end": 18620,
+            "start": 18611
+          }
+        ],
+        "value": 2473.56
+      },
+      "has_escrow_account": {
+        "ranges": [
+          {
+            "end": 18512,
+            "start": 18207
+          }
+        ],
+        "value": true
+      },
+      "initial_escrow_payment": {
+        "ranges": [
+          {
+            "end": 19032,
+            "start": 19026
+          }
+        ],
+        "value": 412.25
+      },
+      "monthly_escrow_payment": {
+        "ranges": [
+          {
+            "end": 19175,
+            "start": 19169
+          }
+        ],
+        "value": 206.13
+      }
+    },
+    "estimated_taxes_insurance_assessments_monthly": {
+      "ranges": [
+        {
+          "end": 2066,
+          "start": 2060
+        }
+      ],
+      "value": 356.13
+    },
+    "late_payment": {
+      "grace_period_days": {
+        "ranges": [
+          {
+            "end": 16704,
+            "start": 16702
+          }
+        ],
+        "value": 15
+      },
+      "late_fee_percent": {
+        "ranges": [
+          {
+            "end": 16806,
+            "start": 16672
+          }
+        ],
+        "value": 5.0
+      }
+    },
+    "lender_contact": {
+      "contact_name": {
+        "ranges": [
+          {
+            "end": 23847,
+            "start": 23838
+          }
+        ],
+        "value": "Joe Smith"
+      },
+      "contact_nmls_id": {
+        "ranges": [
+          {
+            "end": 23966,
+            "start": 23961
+          }
+        ],
+        "value": "12345"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 23317,
+            "start": 23307
+          }
+        ],
+        "value": "Ficus Bank"
+      },
+      "nmls_id": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "loan_calculations": {
+      "amount_financed": {
+        "ranges": [
+          {
+            "end": 21017,
+            "start": 21006
+          }
+        ],
+        "value": 162000.0
+      },
+      "apr_percent": {
+        "ranges": [
+          {
+            "end": 21162,
+            "start": 21157
+          }
+        ],
+        "value": 4.174
+      },
+      "finance_charge": {
+        "ranges": [
+          {
+            "end": 20894,
+            "start": 20883
+          }
+        ],
+        "value": 118830.27
+      },
+      "total_interest_percentage": {
+        "ranges": [
+          {
+            "end": 21331,
+            "start": 21326
+          }
+        ],
+        "value": 69.46
+      },
+      "total_of_payments": {
+        "ranges": [
+          {
+            "end": 20798,
+            "start": 20787
+          }
+        ],
+        "value": 285803.36
+      }
+    },
+    "loan_information": {
+      "loan_id": {
+        "ranges": [
+          {
+            "end": 815,
+            "start": 806
+          }
+        ],
+        "value": "123456789"
+      },
+      "loan_term": {
+        "ranges": [
+          {
+            "end": 664,
+            "start": 656
+          }
+        ],
+        "value": "30 years"
+      },
+      "loan_type": {
+        "ranges": [
+          {
+            "end": 753,
+            "start": 741
+          }
+        ],
+        "value": "Conventional"
+      },
+      "mic_number": {
+        "ranges": [
+          {
+            "end": 838,
+            "start": 829
+          }
+        ],
+        "value": "000654321"
+      },
+      "product": {
+        "ranges": [
+          {
+            "end": 714,
+            "start": 704
+          }
+        ],
+        "value": "Fixed Rate"
+      },
+      "purpose": {
+        "ranges": [
+          {
+            "end": 688,
+            "start": 680
+          }
+        ],
+        "value": "Purchase"
+      }
+    },
+    "loan_terms": {
+      "has_balloon_payment": {
+        "ranges": [
+          {
+            "end": 1453,
+            "start": 1451
+          }
+        ],
+        "value": false
+      },
+      "has_prepayment_penalty": {
+        "ranges": [
+          {
+            "end": 1399,
+            "start": 1323
+          }
+        ],
+        "value": true
+      },
+      "interest_rate_percent": {
+        "ranges": [
+          {
+            "end": 1027,
+            "start": 1022
+          }
+        ],
+        "value": 3.875
+      },
+      "loan_amount": {
+        "ranges": [
+          {
+            "end": 970,
+            "start": 962
+          }
+        ],
+        "value": 162000.0
+      },
+      "monthly_principal_and_interest": {
+        "ranges": [
+          {
+            "end": 1186,
+            "start": 1180
+          }
+        ],
+        "value": 761.78
+      },
+      "prepayment_penalty_max": {
+        "ranges": [
+          {
+            "end": 1399,
+            "start": 1323
+          }
+        ],
+        "value": 3240.0
+      }
+    },
+    "projected_payments": [
+      {
+        "estimated_escrow": {
+          "ranges": [
+            {
+              "end": 1826,
+              "start": 1820
+            }
+          ],
+          "value": 206.13
+        },
+        "estimated_total_monthly_payment": {
+          "ranges": [
+            {
+              "end": 1911,
+              "start": 1902
+            }
+          ],
+          "value": 1050.26
+        },
+        "mortgage_insurance": {
+          "ranges": [
+            {
+              "end": 1729,
+              "start": 1724
+            }
+          ],
+          "value": 82.35
+        },
+        "principal_and_interest": {
+          "ranges": [
+            {
+              "end": 1660,
+              "start": 1654
+            }
+          ],
+          "value": 761.78
+        },
+        "years": {
+          "ranges": [
+            {
+              "end": 1582,
+              "start": 1573
+            }
+          ],
+          "value": "Years 1-7"
+        }
+      },
+      {
+        "estimated_escrow": {
+          "ranges": [
+            {
+              "end": 1843,
+              "start": 1837
+            }
+          ],
+          "value": 206.13
+        },
+        "estimated_total_monthly_payment": {
+          "ranges": [
+            {
+              "end": 1927,
+              "start": 1921
+            }
+          ],
+          "value": 967.91
+        },
+        "mortgage_insurance": {
+          "ranges": [
+            {
+              "end": 1741,
+              "start": 1738
+            }
+          ],
+          "value": 0
+        },
+        "principal_and_interest": {
+          "ranges": [
+            {
+              "end": 1676,
+              "start": 1670
+            }
+          ],
+          "value": 761.78
+        },
+        "years": {
+          "ranges": [
+            {
+              "end": 1601,
+              "start": 1591
+            }
+          ],
+          "value": "Years 8-30"
+        }
+      }
+    ],
+    "seller_transaction": {
+      "cash_to_seller": {
+        "ranges": [
+          {
+            "end": 16032,
+            "start": 16022
+          }
+        ],
+        "value": 64414.96
+      },
+      "total_due_from_seller": {
+        "ranges": [
+          {
+            "end": 14638,
+            "start": 14627
+          }
+        ],
+        "value": 115665.04
+      },
+      "total_due_to_seller": {
+        "ranges": [
+          {
+            "end": 13679,
+            "start": 13668
+          }
+        ],
+        "value": 180080.0
+      }
+    },
+    "transaction_information": {
+      "borrowers": {
+        "ranges": [
+          {
+            "end": 469,
+            "start": 441
+          }
+        ],
+        "value": "Michael Jones and Mary Stone"
+      },
+      "lender": {
+        "ranges": [
+          {
+            "end": 619,
+            "start": 609
+          }
+        ],
+        "value": "Ficus Bank"
+      },
+      "sellers": {
+        "ranges": [
+          {
+            "end": 550,
+            "start": 528
+          }
+        ],
+        "value": "Steve Cole and Amy Doe"
+      }
+    }
+  },
+  "markdown": "# Closing Disclosure\n\n*This form is a statement of final loan terms and closing costs. Compare this document with your Loan Estimate.*\n\nClosing Information\n\n- **Date Issued**: 4/15/2013\n- **Closing Date**: 4/15/2013\n- **Disbursement Date**: 4/15/2013\n- **Settlement Agent**: Epsilon Title Co.\n- **File #**: 12-3456\n- **Property**: 456 Somewhere Ave<br>Anytown, ST 12345\n- **Sale Price**: $180,000\n\n# Transaction Information\n\n- **Borrower**: Michael Jones and Mary Stone<br>123 Anywhere Street<br>Anytown, ST 12345\n- **Seller**: Steve Cole and Amy Doe<br>321 Somewhere Drive<br>Anytown, ST 12345\n- **Lender**: Ficus Bank\n\nLoan Information\n\n- **Loan Term**: 30 years\n- **Purpose**: Purchase\n- **Product**: Fixed Rate\n\n- **Loan Type**:\n  - [x] Conventional\n  - [ ] FHA\n  - [ ] VA\n  - [ ] ___\n- **Loan ID #**: 123456789\n- **MIC #**: 000654321\n\n<table>\n<tr><td>Loan Terms</td><td></td><td>Can this amount increase after closing?</td></tr>\n<tr><td>Loan Amount</td><td>$162,000</td><td>NO</td></tr>\n<tr><td>Interest Rate</td><td>3.875%</td><td>NO</td></tr>\n<tr><td>Monthly Principal &amp; Interest<br><i>See Projected Payments below for your Estimated Total Monthly Payment</i></td><td>$761.78</td><td>NO</td></tr>\n<tr><td></td><td></td><td>Does the loan have these features?</td></tr>\n<tr><td>Prepayment Penalty</td><td></td><td>YES <br>• As high as $3,240 if you pay off the loan during the first 2 years</td></tr>\n<tr><td>Balloon Payment</td><td></td><td>NO</td></tr>\n</table>\n\n<table>\n<tr><td>Projected Payments</td><td></td><td></td></tr>\n<tr><td>Payment Calculation</td><td>Years 1-7</td><td>Years 8-30</td></tr>\n<tr><td>Principal &amp; Interest</td><td>$761.78</td><td>$761.78</td></tr>\n<tr><td>Mortgage Insurance</td><td>+ 82.35</td><td>+ —</td></tr>\n<tr><td>Estimated Escrow<br>Amount can increase over time</td><td>+ 206.13</td><td>+ 206.13</td></tr>\n<tr><td>Estimated Total Monthly Payment</td><td>$1,050.26</td><td>$967.91</td></tr>\n</table>\n\n- **Estimated Taxes, Insurance & Assessments**: *Amount can increase over time* *See page 4 for details*\n\n- **\\$356.13**: a month\n\n- **This estimate includes**:\n  - [x] Property Taxes\n  - [x] Homeowner's Insurance\n  - [x] Other: Homeowner's Association Dues\n\n- **In escrow?**:\n  - **YES**\n  - **YES**\n  - **NO**\n\n*See Escrow Account on page 4 for details. You must pay for other property costs separately.*\n\n<table>\n<tr><td>Costs at Closing</td><td></td></tr>\n<tr><td>Closing Costs</td><td>$9,712.10 Includes $4,694.05 in Loan Costs + $5,018.05 in Other Costs – $0 in Lender Credits. <i>See page 2 for details.</i></td></tr>\n<tr><td>Cash to Close</td><td>$14,147.26 Includes Closing Costs. <i>See Calculating Cash to Close on page 3 for details.</i></td></tr>\n</table>\n\nCLOSING DISCLOSURE\n\nPAGE 1 OF 5 • LOAN ID # 123456789\n\n<!-- PAGE BREAK -->\n\n## Closing Cost Details\n\n<table>\n<tr><td rowspan=\"2\">Loan Costs</td><td></td><td colspan=\"2\">Borrower-Paid</td><td colspan=\"2\">Seller-Paid</td><td rowspan=\"2\">Paid by<br>Others</td></tr>\n<tr><td></td><td>At Closing</td><td>Before Closing</td><td>At Closing</td><td>Before Closing</td></tr>\n<tr><td colspan=\"2\">**A. Origination Charges**</td><td colspan=\"2\">**$1,802.00**</td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>01 0.25 % of Loan Amount (Points)</td><td></td><td>$405.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>02 Application Fee</td><td></td><td>$300.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>03 Underwriting Fee</td><td></td><td>$1,097.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>04</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>05</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>06</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>08</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">**B. Services Borrower Did Not Shop For**</td><td colspan=\"2\">$236.55</td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">01 Appraisal Fee to John Smith Appraisers Inc.</td><td></td><td></td><td></td><td></td><td>$405.00</td></tr>\n<tr><td colspan=\"2\">02 Credit Report Fee to Information Inc.</td><td></td><td>$29.80</td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">03 Flood Determination Fee to Info Co.</td><td>$20.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">04 Flood Monitoring Fee to Info Co.</td><td>$31.75</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">05 Tax Monitoring Fee to Info Co.</td><td>$75.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">06 Tax Status Research Fee to Info Co.</td><td>$80.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>08</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>09</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">**C. Services Borrower Did Shop For**</td><td colspan=\"2\">**$2,655.50**</td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">01 Pest Inspection Fee to Pests Co.</td><td>$120.50</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">02 Survey Fee to Surveys Co.</td><td>$85.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">03 Title – Insurance Binder to Epsilon Title Co.</td><td>$650.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">04 Title – Lender's Title Insurance to Epsilon Title Co.</td><td>$500.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">05 Title – Settlement Agent Fee to Epsilon Title Co.</td><td>$500.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">06 Title – Title Search to Epsilon Title Co.</td><td>$800.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>08</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"2\">**D. TOTAL LOAN COSTS (Borrower-Paid)**</td><td colspan=\"2\">**$4,694.05**</td><td colspan=\"3\"></td></tr>\n<tr><td>Loan Costs Subtotals (A + B + C)</td><td></td><td>$4,664.25</td><td>$29.80</td><td></td><td></td><td></td></tr>\n</table>\n\nOther Costs\n\n<table>\n<tr><td>E. Taxes and Other Government Fees</td><td colspan=\"2\">**$85.00**</td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>01 Recording Fees Deed: $40.00 Mortgage: $45.00</td><td>$85.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>02 Transfer Tax to Any State</td><td></td><td></td><td>$950.00</td><td></td><td></td></tr>\n<tr><td>F. Prepaids</td><td colspan=\"2\">**$2,120.80**</td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>01 Homeowner's Insurance Premium ( 12 mo.) to Insurance Co.</td><td>$1,209.96</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>02 Mortgage Insurance Premium ( mo.)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>03 Prepaid Interest ( $17.44 per day from 4/15/13 to 5/1/13 )</td><td>$279.04</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>04 Property Taxes ( 6 mo.) to Any County USA</td><td>$631.80</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>05</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>G. Initial Escrow Payment at Closing</td><td colspan=\"2\">$412.25</td><td></td><td></td><td></td></tr>\n<tr><td>01 Homeowner's Insurance $100.83 per month for 2 mo.</td><td>$201.66</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>02 Mortgage Insurance per month for mo.</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>03 Property Taxes $105.30 per month for 2 mo.</td><td>$210.60</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>04</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>05</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>06</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>08 Aggregate Adjustment</td><td>− 0.01</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>H. Other</td><td colspan=\"2\">**$2,400.00**</td><td colspan=\"2\"></td><td></td></tr>\n<tr><td>01 HOA Capital Contribution to HOA Acre Inc.</td><td>$500.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>02 HOA Processing Fee to HOA Acre Inc.</td><td>$150.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>03 Home Inspection Fee to Engineers Inc.</td><td>$750.00</td><td></td><td></td><td>$750.00</td><td></td></tr>\n<tr><td>04 Home Warranty Fee to XYZ Warranty Inc.</td><td></td><td></td><td>$450.00</td><td></td><td></td></tr>\n<tr><td>05 Real Estate Commission to Alpha Real Estate Broker</td><td></td><td></td><td>$5,700.00</td><td></td><td></td></tr>\n<tr><td>06 Real Estate Commission to Omega Real Estate Broker</td><td></td><td></td><td>$5,700.00</td><td></td><td></td></tr>\n<tr><td>07 Title – Owner's Title Insurance (optional) to Epsilon Title Co.</td><td>$1,000.00</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>08</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>I. TOTAL OTHER COSTS (Borrower-Paid)</td><td colspan=\"2\">$5,018.05</td><td colspan=\"3\"></td></tr>\n<tr><td>Other Costs Subtotals (E + F + G + H)</td><td>$5,018.05</td><td></td><td></td><td></td><td></td></tr>\n<tr><td colspan=\"3\"></td><td colspan=\"3\"></td></tr>\n<tr><td>J. TOTAL CLOSING COSTS (Borrower-Paid)</td><td colspan=\"2\">**$9,712.10**</td><td colspan=\"3\"></td></tr>\n<tr><td>Closing Costs Subtotals (D + I)</td><td>$9,682.30</td><td>$29.80</td><td>$12,800.00</td><td>$750.00</td><td>$405.00</td></tr>\n<tr><td>Lender Credits</td><td></td><td></td><td></td><td></td><td></td></tr>\n</table>\n\n# CLOSING DISCLOSURE\n\nPAGE 2 OF 5 • LOAN ID # 123456789\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td>Calculating Cash to Close</td><td colspan=\"3\">**Use this table to see what has changed from your Loan Estimate.**</td></tr>\n<tr><td></td><td>Loan Estimate</td><td>Final</td><td>Did this change?</td></tr>\n<tr><td>Total Closing Costs (J)</td><td>$8,054.00</td><td>$9,712.10</td><td>YES • See Total Loan Costs (D) and Total Other Costs (I)</td></tr>\n<tr><td>Closing Costs Paid Before Closing</td><td>$0</td><td>− $29.80</td><td>YES • You paid these Closing Costs before closing</td></tr>\n<tr><td>Closing Costs Financed<br>(Paid from your Loan Amount)</td><td>$0</td><td>$0</td><td>NO</td></tr>\n<tr><td>Down Payment/Funds from Borrower</td><td>$18,000.00</td><td>$18,000.00</td><td>NO</td></tr>\n<tr><td>Deposit</td><td>− $10,000.00</td><td>− $10,000.00</td><td>NO</td></tr>\n<tr><td>Funds for Borrower</td><td>$0</td><td>$0</td><td>NO</td></tr>\n<tr><td>Seller Credits</td><td>$0</td><td>− $2,500.00</td><td>YES • See Seller Credits in Section L</td></tr>\n<tr><td>Adjustments and Other Credits</td><td>$0</td><td>− $1,035.04</td><td>YES • See details in Sections K and L</td></tr>\n<tr><td>Cash to Close</td><td>$16,054.00</td><td>$14,147.26</td><td></td></tr>\n</table>\n\n**Summaries of Transactions** Use this table to see a summary of your transaction.\n\nBORROWER'S TRANSACTION\n\n<table>\n<tr><td colspan=\"2\">K. Due from Borrower at Closing</td><td>$189,762.30</td></tr>\n<tr><td>01</td><td>Sale Price of Property</td><td>$180,000.00</td></tr>\n<tr><td>02</td><td>Sale Price of Any Personal Property Included in Sale</td><td></td></tr>\n<tr><td>03</td><td>Closing Costs Paid at Closing (J)</td><td>$9,682.30</td></tr>\n<tr><td>04</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**Adjustments**</td></tr>\n<tr><td>05</td><td></td><td></td></tr>\n<tr><td>06</td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**Adjustments for Items Paid by Seller in Advance**</td></tr>\n<tr><td>08</td><td>City/Town Taxes to</td><td></td></tr>\n<tr><td>09</td><td>County Taxes to</td><td></td></tr>\n<tr><td>10</td><td>Assessments to</td><td></td></tr>\n<tr><td>11</td><td>HOA Dues 4/15/13 to 4/30/13</td><td>$80.00</td></tr>\n<tr><td>12</td><td></td><td></td></tr>\n<tr><td>13</td><td></td><td></td></tr>\n<tr><td>14</td><td></td><td></td></tr>\n<tr><td>15</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">L. Paid Already by or on Behalf of Borrower at Closing</td><td>$175,615.04</td></tr>\n<tr><td>01</td><td>Deposit</td><td>$10,000.00</td></tr>\n<tr><td>02</td><td>Loan Amount</td><td>$162,000.00</td></tr>\n<tr><td>03</td><td>Existing Loan(s) Assumed or Taken Subject to</td><td></td></tr>\n<tr><td>04</td><td></td><td></td></tr>\n<tr><td>05</td><td>Seller Credit</td><td>$2,500.00</td></tr>\n<tr><td colspan=\"3\">**Other Credits**</td></tr>\n<tr><td>06</td><td>Rebate from Epsilon Title Co.</td><td>$750.00</td></tr>\n<tr><td>07</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**Adjustments**</td></tr>\n<tr><td>08</td><td></td><td></td></tr>\n<tr><td>09</td><td></td><td></td></tr>\n<tr><td>10</td><td></td><td></td></tr>\n<tr><td>11</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**Adjustments for Items Unpaid by Seller**</td></tr>\n<tr><td>12</td><td>City/Town Taxes  1/1/13  to  4/14/13</td><td>$365.04</td></tr>\n<tr><td>13</td><td>County Taxes                    to</td><td></td></tr>\n<tr><td>14</td><td>Assessments                    to</td><td></td></tr>\n<tr><td>15</td><td></td><td></td></tr>\n<tr><td>16</td><td></td><td></td></tr>\n<tr><td>17</td><td></td><td></td></tr>\n</table>\n\n**CALCULATION**\n\n- **Total Due from Borrower at Closing (K)**: $189,762.30\n- **Total Paid Already by or on Behalf of Borrower at Closing (L)**: – $175,615.04\n- **Cash to Close**: $14,147.26\n  - [x] From\n  - [ ] To Borrower\n\n<table>\n<tr><td colspan=\"3\">**SELLER'S TRANSACTION**</td></tr>\n<tr><td>M.</td><td>Due to Seller at Closing</td><td>$180,080.00</td></tr>\n<tr><td>01</td><td>Sale Price of Property</td><td>$180,000.00</td></tr>\n<tr><td>02</td><td>Sale Price of Any Personal Property Included in Sale</td><td></td></tr>\n<tr><td>03</td><td></td><td></td></tr>\n<tr><td>04</td><td></td><td></td></tr>\n<tr><td>05</td><td></td><td></td></tr>\n<tr><td>06</td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td></tr>\n<tr><td>08</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**Adjustments for Items Paid by Seller in Advance**</td></tr>\n<tr><td>09</td><td>City/Town Taxes to</td><td></td></tr>\n<tr><td></td><td>County Taxes to</td><td></td></tr>\n<tr><td></td><td>Assessments to</td><td></td></tr>\n<tr><td></td><td>HOA Dues 4/15/13 to 4/30/13</td><td>$80.00</td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">**N. Due from Seller at Closing**</td><td>$115,665.04</td></tr>\n<tr><td>01</td><td>Excess Deposit</td><td></td></tr>\n<tr><td>02</td><td>Closing Costs Paid at Closing (J)</td><td>$12,800.00</td></tr>\n<tr><td>03</td><td>Existing Loan(s) Assumed or Taken Subject to</td><td></td></tr>\n<tr><td>04</td><td>Payoff of First Mortgage Loan</td><td>$100,000.00</td></tr>\n<tr><td>05</td><td>Payoff of Second Mortgage Loan</td><td></td></tr>\n<tr><td>06</td><td></td><td></td></tr>\n<tr><td>07</td><td></td><td></td></tr>\n<tr><td>08</td><td>Seller Credit</td><td>$2,500.00</td></tr>\n<tr><td>09</td><td></td><td></td></tr>\n<tr><td>10</td><td></td><td></td></tr>\n<tr><td>11</td><td></td><td></td></tr>\n<tr><td>12</td><td></td><td></td></tr>\n<tr><td>13</td><td></td><td></td></tr>\n<tr><td colspan=\"3\">**Adjustments for Items Unpaid by Seller**</td></tr>\n<tr><td>14</td><td>City/Town Taxes  1/1/13    to  4/14/13</td><td>$365.04</td></tr>\n<tr><td>15</td><td>County Taxes                    to</td><td></td></tr>\n<tr><td>16</td><td>Assessments                    to</td><td></td></tr>\n<tr><td>17</td><td></td><td></td></tr>\n<tr><td>18</td><td></td><td></td></tr>\n<tr><td>19</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">CALCULATION</td></tr>\n<tr><td>Total Due to Seller at Closing (M)</td><td>$180,080.00</td></tr>\n<tr><td>Total Due from Seller at Closing (N)</td><td>– $115,665.04</td></tr>\n<tr><td>Cash [ ] From [x] To Seller</td><td>$64,414.96</td></tr>\n</table>\n\nCLOSING DISCLOSURE\n\nPAGE 3 OF 5 • LOAN ID # 123456789\n\n<!-- PAGE BREAK -->\n\n# Additional Information About This Loan\n\n## Loan Disclosures\n\n- **Assumption**\nIf you sell or transfer this property to another person, your lender\n  - [ ] will allow, under certain conditions, this person to assume this loan on the original terms.\n  - [x] will not allow assumption of this loan on the original terms.\n\n**Demand Feature**\n\nYour loan\n\n- [ ] has a demand feature, which permits your lender to require early repayment of the loan. You should review your note for details.\n- [x] does not have a demand feature.\n\n**Late Payment**\nIf your payment is more than *15* days late, your lender will charge a late fee of *5%* of the monthly principal and interest payment.\n\n**Negative Amortization** (Increase in Loan Amount)\nUnder your loan terms, you\n\n- [ ] are scheduled to make monthly payments that do not pay all of the interest due that month. As a result, your loan amount will increase (negatively amortize), and your loan amount will likely become larger than your original loan amount. Increases in your loan amount lower the equity you have in this property.\n- [ ] may have monthly payments that do not pay all of the interest due that month. If you do, your loan amount will increase (negatively amortize), and, as a result, your loan amount may become larger than your original loan amount. Increases in your loan amount lower the equity you have in this property.\n- [x] do not have a negative amortization feature.\n\n**Partial Payments**\n\nYour lender\n\n- [x] may accept payments that are less than the full amount due (partial payments) and apply them to your loan.\n- [ ] may hold them in a separate account until you pay the rest of the payment, and then apply the full payment to your loan.\n- [ ] does not accept any partial payments.\n\nIf this loan is sold, your new lender may have a different policy.\n\n**Security Interest**\nYou are granting a security interest in\n*456 Somewhere Ave., Anytown, ST 12345*\n\nYou may lose this property if you do not make your payments or satisfy other obligations for this loan.\n\n**Escrow Account**\n\n***For now,*** your loan\n\n- [x] will have an escrow account (also called an \"impound\" or \"trust\" account) to pay the property costs listed below. Without an escrow account, you would pay them directly, possibly in one or two large payments a year. Your lender may be liable for penalties and interest for failing to make a payment.\n\n<table>\n<tr><td colspan=\"3\">Escrow</td></tr>\n<tr><td>Escrowed Property Costs over Year 1</td><td>$2,473.56</td><td>Estimated total amount over year 1 for your escrowed property costs: <br>Homeowner's Insurance <br>Property Taxes</td></tr>\n<tr><td>Non-Escrowed Property Costs over Year 1</td><td>$1,800.00</td><td>Estimated total amount over year 1 for your non-escrowed property costs: <br>Homeowner's Association Dues <br><br>You may have other property costs.</td></tr>\n<tr><td>Initial Escrow Payment</td><td>$412.25</td><td>A cushion for the escrow account you pay at closing. See Section G on page 2.</td></tr>\n<tr><td>Monthly Escrow Payment</td><td>$206.13</td><td>The amount included in your total monthly payment.</td></tr>\n</table>\n\n- [ ] will not have an escrow account because - [ ] you declined it - [ ] your lender does not offer one. You must directly pay your property costs, such as taxes and homeowner's insurance. Contact your lender to ask if your loan can have an escrow account.\n\n<table>\n<tr><td colspan=\"3\">No Escrow</td></tr>\n<tr><td>Estimated Property Costs over Year 1</td><td></td><td>Estimated total amount over year 1. You must pay these costs directly, possibly in one or two large payments a year.</td></tr>\n<tr><td>Escrow Waiver Fee</td><td></td><td></td></tr>\n</table>\n\n**In the future,**\nYour property costs may change and, as a result, your escrow payment may change. You may be able to cancel your escrow account, but if you do, you must pay your property costs directly. If you fail to pay your property taxes, your state or local government may (1) impose fines and penalties or (2) place a tax lien on this property. If you fail to pay any of your property costs, your lender may (1) add the amounts to your loan balance, (2) add an escrow account to your loan, or (3) require you to pay for property insurance that the lender buys on your behalf, which likely would cost more and provide fewer benefits than what you could buy on your own.\n\nCLOSING DISCLOSURE\n\nPAGE 4 OF 5 • LOAN ID # 123456789\n\n<!-- PAGE BREAK -->\n\n<table>\n<tr><td colspan=\"2\">Loan Calculations</td></tr>\n<tr><td>Total of Payments. Total you will have paid after you make all payments of principal, interest, mortgage insurance, and loan costs, as scheduled.</td><td>$285,803.36</td></tr>\n<tr><td>Finance Charge. The dollar amount the loan will cost you.</td><td>$118,830.27</td></tr>\n<tr><td>Amount Financed. The loan amount available after paying your upfront finance charge.</td><td>$162,000.00</td></tr>\n<tr><td>Annual Percentage Rate (APR). Your costs over the loan term expressed as a rate. This is not your interest rate.</td><td>4.174%</td></tr>\n<tr><td>Total Interest Percentage (TIP). The total amount of interest that you will pay over the loan term as a percentage of your loan amount.</td><td>69.46%</td></tr>\n</table>\n\n**Questions?** If you have questions about the loan terms or costs on this form, use the contact information below. To get more information or make a complaint, contact the Consumer Financial Protection Bureau at **www.consumerfinance.gov/mortgage-closing**\n\n## Other Disclosures\n\n**Appraisal**\nIf the property was appraised for your loan, your lender is required to give you a copy at no additional cost at least 3 days before closing. If you have not yet received it, please contact your lender at the information listed below.\n\n**Contract Details**\nSee your note and security instrument for information about\n* what happens if you fail to make your payments,\n* what is a default on the loan,\n* situations in which your lender can require early repayment of the loan, and\n* the rules for making payments before they are due.\n\n**Liability after Foreclosure**\nIf your lender forecloses on this property and the foreclosure does not cover the amount of unpaid balance on this loan,\n  - [x] state law may protect you from liability for the unpaid balance. If you refinance or take on any additional debt on this property, you may lose this protection and have to pay any debt remaining even after foreclosure. You may want to consult a lawyer for more information.\n  - [ ] state law does not protect you from liability for the unpaid balance.\n\n**Refinance**\nRefinancing this loan will depend on your future financial situation, the property value, and market conditions. You may not be able to refinance this loan.\n\n**Tax Deductions**\nIf you borrow more than this property is worth, the interest on the loan amount above this property's fair market value is not deductible from your federal income taxes. You should consult a tax advisor for more information.\n\nContact Information\n\n<table>\n<tr><td></td><td>Lender</td><td>Mortgage Broker</td><td>Real Estate Broker (B)</td><td>Real Estate Broker (S)</td><td>Settlement Agent</td></tr>\n<tr><td>Name</td><td>Ficus Bank</td><td></td><td>Omega Real Estate Broker Inc.</td><td>Alpha Real Estate Broker Co.</td><td>Epsilon Title Co.</td></tr>\n<tr><td>Address</td><td>4321 Random Blvd. Somecity, ST 12340</td><td></td><td>789 Local Lane Sometown, ST 12345</td><td>987 Suburb Ct. Someplace, ST 12340</td><td>123 Commerce Pl. Somecity, ST 12344</td></tr>\n<tr><td>NMLS ID</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>ST License ID</td><td></td><td></td><td>Z765416</td><td>Z61456</td><td>Z61616</td></tr>\n<tr><td>Contact</td><td>Joe Smith</td><td></td><td>Samuel Green</td><td>Joseph Cain</td><td>Sarah Arnold</td></tr>\n<tr><td>Contact NMLS ID</td><td>12345</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Contact<br>ST License ID</td><td></td><td></td><td>P16415</td><td>P51461</td><td>PT1234</td></tr>\n<tr><td>Email</td><td>joesmith@ ficusbank.com</td><td></td><td>sam@omegare.biz</td><td>joe@alphare.biz</td><td>sarah@ epsilontitle.com</td></tr>\n<tr><td>Phone</td><td>123-456-7890</td><td></td><td>123-555-1717</td><td>321-555-7171</td><td>987-555-4321</td></tr>\n</table>\n\n## Confirm Receipt\n\nBy signing, you are only confirming that you have received this form. You do not have to accept this loan because you have signed or received this form.\n\nApplicant Signature    Date    Co-Applicant Signature    Date\n\nCLOSING DISCLOSURE\n\nPAGE 5 OF 5 • LOAN ID # 123456789\n\n<!-- doc_id=parse-01m7rtvykabergyg51h1aawmpy -->",
+  "metadata": {
+    "job_id": "extract-01m7rtwqfp819rbq3se74vvr0c",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 696305,
+    "doc_id": "parse-01m7rtvykabergyg51h1aawmpy",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 7.2,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 24731,
+    "output_extraction_chars": 2156,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'lender_contact.nmls_id' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'lender_contact.nmls_id' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}

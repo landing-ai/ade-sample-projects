@@ -1,0 +1,108 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "increases[0].amount",
+      "label": "Compulsory course fees",
+      "value": 13509.6,
+      "page": 1,
+      "box": {
+        "xmin": 0.80975,
+        "ymin": 0.48613,
+        "xmax": 0.89766,
+        "ymax": 0.49683
+      },
+      "range": {
+        "end": 655,
+        "start": 645
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "increases-0-amount.png"
+    },
+    {
+      "path": "increases[2].amount",
+      "label": "Living costs",
+      "value": 2958.48,
+      "page": 1,
+      "box": {
+        "xmin": 0.81936,
+        "ymin": 0.53062,
+        "xmax": 0.89766,
+        "ymax": 0.54131
+      },
+      "range": {
+        "end": 761,
+        "start": 752
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "increases-2-amount.png"
+    },
+    {
+      "path": "decreases[1].amount",
+      "label": "Interest",
+      "value": -589.12,
+      "page": 1,
+      "box": {
+        "xmin": 0.82767,
+        "ymin": 0.69179,
+        "xmax": 0.89772,
+        "ymax": 0.70249
+      },
+      "range": {
+        "end": 1087,
+        "start": 1079
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "decreases-1-amount.png"
+    },
+    {
+      "path": "decreases[2].amount",
+      "label": "Salary and wage deductions",
+      "value": -2046.12,
+      "page": 1,
+      "box": {
+        "xmin": 0.81256,
+        "ymin": 0.71407,
+        "xmax": 0.89772,
+        "ymax": 0.72476
+      },
+      "range": {
+        "end": 1151,
+        "start": 1141
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "decreases-2-amount.png"
+    },
+    {
+      "path": "current_loan_balance",
+      "label": "Current loan balance",
+      "value": 26452.96,
+      "page": 1,
+      "box": {
+        "xmin": 0.09999,
+        "ymin": 0.77031,
+        "xmax": 0.89772,
+        "ymax": 0.78221
+      },
+      "range": {
+        "end": 1270,
+        "start": 1210
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "current_loan_balance.png"
+    }
+  ]
+}

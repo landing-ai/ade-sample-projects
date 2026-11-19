@@ -15,24 +15,101 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. The rules file used by redact.py stays outside the repo.",
         "replaced": [
-          { "what": "debtor's name", "with": "Jane Q Sample", "occurrences": 1 },
-          { "what": "other names used by the debtor (aka and fka)", "with": "Jane Sample, John Q Sample", "occurrences": 2 },
-          { "what": "debtor's street address", "with": "100 Main St", "occurrences": 1 },
-          { "what": "debtor's city and ZIP code (state kept)", "with": "Anytown, SC 29000", "occurrences": 1 },
-          { "what": "last four digits of the SSN", "with": "xxx-xx-4321", "occurrences": 1 },
-          { "what": "case number (body and ECF header lines)", "with": "09-30789-dd", "occurrences": 3 },
-          { "what": "judge's handwritten signature (inline image)", "with": "a stand-in signature in Indie Flower", "occurrences": 1 }
+          {
+            "what": "debtor's name",
+            "with": "Jane Q Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "other names used by the debtor (aka and fka)",
+            "with": "Jane Sample, John Q Sample",
+            "occurrences": 2
+          },
+          {
+            "what": "debtor's street address",
+            "with": "100 Main St",
+            "occurrences": 1
+          },
+          {
+            "what": "debtor's city and ZIP code (state kept)",
+            "with": "Anytown, SC 29000",
+            "occurrences": 1
+          },
+          {
+            "what": "last four digits of the SSN",
+            "with": "xxx-xx-4321",
+            "occurrences": 1
+          },
+          {
+            "what": "case number (body and ECF header lines)",
+            "with": "09-30789-dd",
+            "occurrences": 3
+          },
+          {
+            "what": "judge's handwritten signature (inline image)",
+            "with": "a stand-in signature in Indie Flower",
+            "occurrences": 1
+          }
         ]
       }
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "court", "label": "Court", "occurrence": 0 },
-    { "path": "chapter", "label": "Chapter", "occurrence": 1 },
-    { "path": "order_titles[0]", "label": "Order", "occurrence": 0 },
-    { "path": "discharge_statute", "label": "Statute cited", "occurrence": 0 },
-    { "path": "ecf_entered_timestamp", "label": "Entered (ECF timestamp)", "occurrence": 0 }
+    {
+      "path": "court",
+      "label": "Court",
+      "occurrence": 0
+    },
+    {
+      "path": "chapter",
+      "label": "Chapter",
+      "occurrence": 0
+    },
+    {
+      "path": "order_titles[0]",
+      "label": "Order",
+      "occurrence": 0
+    },
+    {
+      "path": "discharge_statute",
+      "label": "Statute cited",
+      "occurrence": 0
+    },
+    {
+      "path": "ecf_entered_timestamp",
+      "label": "Entered (ECF timestamp)",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request suggested the chapter, the court, the discharge or entry date and the statute cited, as suggestions rather than a fields list. The court, the chapter (pinned to the 'Chapter: 7' line, occurrence 1, not the ECF header's 'Desc Ch 7'), the statute and the first order title ('DISCHARGE OF DEBTOR') ship. The entry, filed and signed dates come back as ISO dates (2009-11-30) from '11/30/09' and 'November 30, 2009', so they read OFF and cannot be featured; the ECF header's printed entry timestamp, which grounds ok, stands in for the date. No person is featured. The source URL is a Scribd page: the website shows it as plain text, not as a link. Body minus signs in the case number and masked SSN became ASCII hyphens, because the replacement font cannot draw U+2212."
+  "notes": "The request suggested the chapter, the court, the discharge or entry date and the statute cited, as suggestions rather than a fields list. The court, the chapter (pinned to the 'Chapter: 7' line, occurrence 1, not the ECF header's 'Desc Ch 7'), the statute and the first order title ('DISCHARGE OF DEBTOR') ship. The entry, filed and signed dates come back as ISO dates (2009-11-30) from '11/30/09' and 'November 30, 2009', so they read OFF and cannot be featured; the ECF header's printed entry timestamp, which grounds ok, stands in for the date. No person is featured. The source URL is a Scribd page: the website shows it as plain text, not as a link. Body minus signs in the case number and masked SSN became ASCII hyphens, because the replacement font cannot draw U+2212.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.2,
+      "extract_credits": 2.7
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.2,
+      "extract_credits": 2.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 0.8,
+      "extract_credits": 2.7
+    }
+  ]
 }

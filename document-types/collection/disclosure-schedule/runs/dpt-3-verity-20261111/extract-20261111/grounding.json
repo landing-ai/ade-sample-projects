@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 13,
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "excluded_insurance_policies.title",
+      "label": "Schedule title",
+      "value": "Excluded Insurance Policies",
+      "page": 6,
+      "box": {
+        "xmin": 0.38128,
+        "ymin": 0.11853,
+        "xmax": 0.61847,
+        "ymax": 0.13173
+      },
+      "range": {
+        "end": 5480,
+        "start": 5453
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "excluded_insurance_policies-title.png"
+    },
+    {
+      "path": "excluded_insurance_policies.policies[6].policy_number",
+      "label": "Primary D&O policy number",
+      "value": "06-584-17-94",
+      "page": 6,
+      "box": {
+        "xmin": 0.65126,
+        "ymin": 0.3762,
+        "xmax": 0.74258,
+        "ymax": 0.38697
+      },
+      "range": {
+        "end": 6531,
+        "start": 6519
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "excluded_insurance_policies-policies-6-policy_number.png"
+    },
+    {
+      "path": "excluded_insurance_policies.policies[6].policy_term",
+      "label": "Primary D&O policy term",
+      "value": "3/19/2026 - 3/19/2028",
+      "page": 6,
+      "box": {
+        "xmin": 0.78883,
+        "ymin": 0.37609,
+        "xmax": 0.9357,
+        "ymax": 0.38694
+      },
+      "range": {
+        "end": 6561,
+        "start": 6540
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "excluded_insurance_policies-policies-6-policy_term.png"
+    },
+    {
+      "path": "excluded_insurance_policies.policies[1].policy_number",
+      "label": "Automobile policy number",
+      "value": "73595419",
+      "page": 6,
+      "box": {
+        "xmin": 0.66394,
+        "ymin": 0.25976,
+        "xmax": 0.7299,
+        "ymax": 0.27055
+      },
+      "range": {
+        "end": 5853,
+        "start": 5845
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "excluded_insurance_policies-policies-1-policy_number.png"
+    }
+  ]
+}

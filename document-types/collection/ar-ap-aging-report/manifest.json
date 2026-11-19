@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "totals.total_balance", "label": "Total accounts receivable", "occurrence": 0 },
-    { "path": "totals.current", "label": "Current", "occurrence": 0 },
-    { "path": "totals.days_1_30", "label": "1-30 days past due", "occurrence": 0 },
-    { "path": "totals.days_31_60", "label": "31-60 days past due", "occurrence": 0 },
-    { "path": "totals.over_oldest_bucket", "label": "Over 60 days past due", "occurrence": 0 }
+    {
+      "path": "totals.total_balance",
+      "label": "Total accounts receivable",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.current",
+      "label": "Current",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.days_1_30",
+      "label": "1-30 days past due",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.days_31_60",
+      "label": "31-60 days past due",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.over_oldest_bucket",
+      "label": "Over 60 days past due",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no page or fields; its notes suggested Total AR $11,200, Current $7,000, 1-30 days $3,000 and Over 60 days $300 as suggestions only. All four are featured, plus the 31-60 days total ($900), so the overlay shows the report's whole Total row: how $11,200 of receivables breaks down by age. The totals are featured rather than a customer row because they are the figures a lender reads first, and because every customer is a fictitious business, with no need to put one on the page. The report is AR only, despite the page title covering AR and AP, and its oldest bucket is 'Over 60 Days Past Due' rather than the more common 'Over 90'. The as-of date (June 30, 2016) is not featured, as the request asked."
+  "notes": "The request named no page or fields; its notes suggested Total AR $11,200, Current $7,000, 1-30 days $3,000 and Over 60 days $300 as suggestions only. All four are featured, plus the 31-60 days total ($900), so the overlay shows the report's whole Total row: how $11,200 of receivables breaks down by age. The totals are featured rather than a customer row because they are the figures a lender reads first, and because every customer is a fictitious business, with no need to put one on the page. The report is AR only, despite the page title covering AR and AP, and its oldest bucket is 'Over 60 Days Past Due' rather than the more common 'Over 90'. The as-of date (June 30, 2016) is not featured, as the request asked.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 2.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 2.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.4,
+      "extract_credits": 2.5
+    }
+  ]
 }

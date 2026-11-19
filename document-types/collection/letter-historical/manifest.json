@@ -16,11 +16,51 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "salutation_opening", "label": "Opening line", "occurrence": 0 },
-    { "path": "date_written", "label": "Dateline", "occurrence": 0 },
-    { "path": "sender.closing", "label": "Closing", "occurrence": 0 },
-    { "path": "sender.name", "label": "Signature", "occurrence": 0 },
-    { "path": "delivery_note.signed_by", "label": "Delivered by", "occurrence": 0 }
+    {
+      "path": "salutation_opening",
+      "label": "Opening line",
+      "occurrence": 0
+    },
+    {
+      "path": "date_written",
+      "label": "Dateline",
+      "occurrence": 0
+    },
+    {
+      "path": "sender.closing",
+      "label": "Closing",
+      "occurrence": 0
+    },
+    {
+      "path": "sender.name",
+      "label": "Signature",
+      "occurrence": 0
+    },
+    {
+      "path": "delivery_note.signed_by",
+      "label": "Delivered by",
+      "occurrence": 0
+    }
   ],
-  "notes": "Requested as 'Treaty (Historical)'. The document is not a treaty: it is William Penn's 1682 letter to the Lenape, printed beneath an engraving of Benjamin West's painting of Penn's treaty. The operator renamed the type to 'Letter (Historical)' after that was pointed out. No feature page or fields were requested. The overlay follows the letter as a letter: how it opens, where and when it was written, how it closes and who signed it, and the note recording its delivery. place_written (England) shares the dateline's box and is not featured separately; the delivery note's date shares Holme's line. The promises are paraphrased into modern English by the schema's instruction and ground OFF, as paraphrase should."
+  "notes": "Requested as 'Treaty (Historical)'. The document is not a treaty: it is William Penn's 1682 letter to the Lenape, printed beneath an engraving of Benjamin West's painting of Penn's treaty. The operator renamed the type to 'Letter (Historical)' after that was pointed out. No feature page or fields were requested. The overlay follows the letter as a letter: how it opens, where and when it was written, how it closes and who signed it, and the note recording its delivery. place_written (England) shares the dateline's box and is not featured separately; the delivery note's date shares Holme's line. The promises are paraphrased into modern English by the schema's instruction and ground OFF, as paraphrase should.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 1.8
+    }
+  ]
 }

@@ -64,7 +64,7 @@ Read these before anything else:
    **Always v2** (`client.v2.parse`, `client.v2.extract`).
 2. `document-types/README.md` and one finished folder —
    `document-types/collection/consolidated-1099/` is the richest example, including its
-   `README.md`, `manifest.json` and `grounding-pro.json`.
+   `README.md`, `manifest.json` and `runs/<parse>/<extract>/grounding.json`.
 3. `CLAUDE.md` in this repo.
 
 Non-negotiables, all of them learned the hard way:
@@ -351,8 +351,12 @@ instead of 65.
 .venv/bin/python document-types/scripts/run_ade.py <slug>
 ```
 
-Standard tier, jobs API, DPT-3 Pro. Writes `parse-pro.json`, `parse-pro.md` and
-`extract-pro.json`, and reports the credits used. Note that figure; it goes in the README.
+Standard tier, jobs API, DPT-3 Pro, with the snapshots pinned in `scripts/runs.py`.
+Writes `runs/<parse snapshot>/parse.json` and `parse.md`, and
+`runs/<parse snapshot>/<extract snapshot>/extract.json`. The run, with its credits,
+is recorded under `"runs"` in `manifest.json` (by `build_images.py` if the manifest does
+not exist yet). It reports the credits used. Note that figure; it goes
+in the README.
 
 If extraction returns a partial result, read the warning. A `nonconformant_output` warning
 usually means a required field was absent from the document — decide whether to relax the
@@ -363,7 +367,7 @@ schema or accept the null.
 ## Step 6 — Choose the featured fields
 
 This is the step that most affects whether the page is any good, and it cannot be done by
-reading `extract-pro.json`.
+reading `extract.json`.
 
 ```
 .venv/bin/python document-types/scripts/inspect_fields.py <slug> --good
@@ -496,7 +500,7 @@ with what, plus counts. Never the original values.
 ```
 
 Writes per-field crops, the annotated page overlay, clean page previews, and
-`grounding-pro.json`.
+`grounding.json`, all into the run's folder.
 
 Read every warning:
 

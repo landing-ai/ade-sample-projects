@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "value": 2021,
+      "page": 1,
+      "box": {
+        "xmin": 0.05205,
+        "ymin": 0.11403,
+        "xmax": 0.25043,
+        "ymax": 0.14467
+      },
+      "range": {
+        "end": 81,
+        "start": 77
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-year.png"
+    },
+    {
+      "path": "vehicle.make_model",
+      "label": "Vehicle",
+      "value": "GMC ACADIA DENALI",
+      "page": 1,
+      "box": {
+        "xmin": 0.05205,
+        "ymin": 0.11403,
+        "xmax": 0.25043,
+        "ymax": 0.14467
+      },
+      "range": {
+        "end": 99,
+        "start": 82
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-make_model.png"
+    },
+    {
+      "path": "total_amount_due",
+      "label": "Total amount due",
+      "value": 496.31,
+      "page": 1,
+      "box": {
+        "xmin": 0.05882,
+        "ymin": 0.20302,
+        "xmax": 0.203,
+        "ymax": 0.23278
+      },
+      "range": {
+        "end": 132,
+        "start": 126
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "total_amount_due.png"
+    },
+    {
+      "path": "current_due[0].amount",
+      "label": "Current payment",
+      "value": 496.31,
+      "page": 1,
+      "box": {
+        "xmin": 0.4311,
+        "ymin": 0.30689,
+        "xmax": 0.48,
+        "ymax": 0.31482
+      },
+      "range": {
+        "end": 351,
+        "start": 345
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "current_due-0-amount.png"
+    },
+    {
+      "path": "payments_received[0].amount",
+      "label": "Last payment received",
+      "value": 496.31,
+      "page": 1,
+      "box": {
+        "xmin": 0.4311,
+        "ymin": 0.35677,
+        "xmax": 0.48,
+        "ymax": 0.36471
+      },
+      "range": {
+        "end": 539,
+        "start": 533
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payments_received-0-amount.png"
+    }
+  ]
+}

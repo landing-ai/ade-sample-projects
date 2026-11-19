@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "project.name",
+      "label": "Project name",
+      "value": "Rock Creek Middle School",
+      "page": 1,
+      "box": {
+        "xmin": 0.09901,
+        "ymin": 0.1386,
+        "xmax": 0.23308,
+        "ymax": 0.15093
+      },
+      "range": {
+        "end": 397,
+        "start": 373
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "project-name.png"
+    },
+    {
+      "path": "payroll_number",
+      "label": "Payroll number",
+      "value": "3",
+      "page": 1,
+      "box": {
+        "xmin": 0.54804,
+        "ymin": 0.08426,
+        "xmax": 0.55507,
+        "ymax": 0.09701
+      },
+      "range": {
+        "end": 186,
+        "start": 185
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payroll_number.png"
+    },
+    {
+      "path": "workers[2].total_straight_time_hours",
+      "label": "Straight-time hours",
+      "value": 3.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.46889,
+        "ymin": 0.66903,
+        "xmax": 0.47418,
+        "ymax": 0.67961
+      },
+      "range": {
+        "end": 4924,
+        "start": 4923
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "workers-2-total_straight_time_hours.png"
+    },
+    {
+      "path": "workers[2].gross_wages_all_work",
+      "label": "Gross wages (all work)",
+      "value": 1163.75,
+      "page": 1,
+      "box": {
+        "xmin": 0.5852,
+        "ymin": 0.63061,
+        "xmax": 0.64678,
+        "ymax": 0.71914
+      },
+      "range": {
+        "end": 4571,
+        "start": 4554
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "workers-2-gross_wages_all_work.png"
+    },
+    {
+      "path": "workers[2].net_wages_paid",
+      "label": "Net wages paid",
+      "value": 872.81,
+      "page": 1,
+      "box": {
+        "xmin": 0.74049,
+        "ymin": 0.66871,
+        "xmax": 0.7781,
+        "ymax": 0.68222
+      },
+      "range": {
+        "end": 4627,
+        "start": 4621
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "workers-2-net_wages_paid.png"
+    }
+  ]
+}

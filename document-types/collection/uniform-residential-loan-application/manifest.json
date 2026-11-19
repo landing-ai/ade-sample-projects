@@ -109,7 +109,7 @@
     {
       "path": "loan_and_property.loan_amount",
       "label": "Loan amount",
-      "occurrence": 3
+      "occurrence": 0
     },
     {
       "path": "loan_and_property.loan_purpose",
@@ -119,7 +119,7 @@
     {
       "path": "loan_and_property.property_value",
       "label": "Property value",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "loan_and_property.occupancy",
@@ -138,5 +138,34 @@
     2,
     3,
     7
+  ],
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 8,
+      "service_tier": "standard",
+      "parse_credits": 11.9,
+      "extract_credits": 10.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 8,
+      "service_tier": "standard",
+      "parse_credits": 12.1,
+      "extract_credits": 10.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 8,
+      "service_tier": "standard",
+      "parse_credits": 4.3,
+      "extract_credits": 10.2
+    }
   ]
 }

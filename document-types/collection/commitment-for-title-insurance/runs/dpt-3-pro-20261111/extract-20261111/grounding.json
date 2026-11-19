@@ -1,0 +1,71 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 11,
+  "preview_pages": [
+    1,
+    4,
+    7,
+    8
+  ],
+  "fields": [
+    {
+      "path": "commitment_number",
+      "label": "Commitment number",
+      "value": "FIN-78796415",
+      "page": 1,
+      "box": {
+        "xmin": 0.44,
+        "ymin": 0.14036,
+        "xmax": 0.56298,
+        "ymax": 0.1555
+      },
+      "range": {
+        "end": 252,
+        "start": 240
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "commitment_number.png"
+    },
+    {
+      "path": "underwriter.name",
+      "label": "Underwriter",
+      "value": "Westcor Land Title Insurance Company",
+      "page": 1,
+      "box": {
+        "xmin": 0.47967,
+        "ymin": 0.56079,
+        "xmax": 0.92245,
+        "ymax": 0.57999
+      },
+      "range": {
+        "end": 2338,
+        "start": 2302
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "underwriter-name.png"
+    },
+    {
+      "path": "underwriter.state_of_incorporation",
+      "label": "State of incorporation",
+      "value": "South Carolina",
+      "page": 1,
+      "box": {
+        "xmin": 0.5437,
+        "ymin": 0.4331,
+        "xmax": 0.65357,
+        "ymax": 0.44525
+      },
+      "range": {
+        "end": 1465,
+        "start": 1451
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "underwriter-state_of_incorporation.png"
+    }
+  ]
+}

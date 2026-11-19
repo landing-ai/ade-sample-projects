@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "subject_name",
+      "label": "Sanctioned subject",
+      "value": "Viktor Anatolijevitch BOUT",
+      "page": 1,
+      "box": {
+        "xmin": 0.09033,
+        "ymin": 0.18621,
+        "xmax": 0.63039,
+        "ymax": 0.21829
+      },
+      "range": {
+        "end": 105,
+        "start": 79
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "subject_name.png"
+    },
+    {
+      "path": "listing.list_name",
+      "label": "Sanctions list",
+      "value": "SDN (OFAC)",
+      "page": 1,
+      "box": {
+        "xmin": 0.37792,
+        "ymin": 0.34401,
+        "xmax": 0.47306,
+        "ymax": 0.35648
+      },
+      "range": {
+        "end": 199,
+        "start": 189
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "listing-list_name.png"
+    },
+    {
+      "path": "listing.programs[0]",
+      "label": "Sanctions program",
+      "value": "DRCONGO",
+      "page": 1,
+      "box": {
+        "xmin": 0.37792,
+        "ymin": 0.36272,
+        "xmax": 0.46138,
+        "ymax": 0.37519
+      },
+      "range": {
+        "end": 246,
+        "start": 239
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "listing-programs-0.png"
+    },
+    {
+      "path": "listing.entity_type",
+      "label": "Entity type",
+      "value": "Individual",
+      "page": 1,
+      "box": {
+        "xmin": 0.37792,
+        "ymin": 0.3253,
+        "xmax": 0.45517,
+        "ymax": 0.33777
+      },
+      "range": {
+        "end": 152,
+        "start": 142
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "listing-entity_type.png"
+    },
+    {
+      "path": "listing.remark",
+      "label": "Listing remark",
+      "value": "Dealer and transporter of weapons and minerals; Owner, Great Lakes Business Company and Compagnie Aerienne des Grands",
+      "page": 1,
+      "box": {
+        "xmin": 0.37792,
+        "ymin": 0.40013,
+        "xmax": 0.88122,
+        "ymax": 0.43042
+      },
+      "range": {
+        "end": 454,
+        "start": 337
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "listing-remark.png"
+    }
+  ]
+}

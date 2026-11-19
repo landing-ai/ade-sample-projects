@@ -68,9 +68,9 @@ and this schema is 13 KB. Synchronous calls always
 bill at priority whatever tier you ask for, so the jobs API is the only route to the
 cheaper rate. Web content is never urgent.
 
-Output files carry the parse model — `parse-pro.json`, `extract-pro.json`,
-`images/pro/` — so a Verity run can sit beside the Pro one without overwriting it once
-that model is GA.
+Output is filed under the snapshots that produced it, in
+`runs/dpt-3-pro-20260710/extract-20260819/`, so a Verity run can sit beside the Pro one
+without overwriting it.
 
 ## A note on repeated values
 

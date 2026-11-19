@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "business.business_name",
+      "label": "Business name (line C)",
+      "value": "ENERGY BUILD",
+      "page": 1,
+      "box": {
+        "xmin": 0.06208,
+        "ymin": 0.18355,
+        "xmax": 0.16125,
+        "ymax": 0.193
+      },
+      "range": {
+        "end": 772,
+        "start": 760
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "business-business_name.png"
+    },
+    {
+      "path": "income.line_1_gross_receipts",
+      "label": "Gross receipts (line 1)",
+      "value": 35235,
+      "page": 1,
+      "box": {
+        "xmin": 0.89737,
+        "ymin": 0.33675,
+        "xmax": 0.93857,
+        "ymax": 0.34718
+      },
+      "range": {
+        "end": 2198,
+        "start": 2192
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-line_1_gross_receipts.png"
+    },
+    {
+      "path": "income.line_7_gross_income",
+      "label": "Gross income (line 7)",
+      "value": 35235,
+      "page": 1,
+      "box": {
+        "xmin": 0.89746,
+        "ymin": 0.42769,
+        "xmax": 0.9385,
+        "ymax": 0.43804
+      },
+      "range": {
+        "end": 2972,
+        "start": 2966
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-line_7_gross_income.png"
+    },
+    {
+      "path": "expenses.line_28_total_expenses",
+      "label": "Total expenses (line 28)",
+      "value": 10907,
+      "page": 1,
+      "box": {
+        "xmin": 0.89755,
+        "ymin": 0.70037,
+        "xmax": 0.93886,
+        "ymax": 0.71102
+      },
+      "range": {
+        "end": 5485,
+        "start": 5479
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "expenses-line_28_total_expenses.png"
+    },
+    {
+      "path": "line_31_net_profit_or_loss",
+      "label": "Net profit (line 31)",
+      "value": 24328,
+      "page": 1,
+      "box": {
+        "xmin": 0.89744,
+        "ymin": 0.83681,
+        "xmax": 0.93869,
+        "ymax": 0.8473
+      },
+      "range": {
+        "end": 6596,
+        "start": 6590
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "line_31_net_profit_or_loss.png"
+    }
+  ]
+}

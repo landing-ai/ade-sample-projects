@@ -1,0 +1,178 @@
+{
+  "extraction": {
+    "document_info": {
+      "date_of_expiry": "2028-01-01",
+      "date_of_issue": "2025-01-04",
+      "document_number": "12345678",
+      "issuing_country": "USA",
+      "state_issuing": "TX"
+    },
+    "document_type": "Driver License",
+    "personal_info": {
+      "date_of_birth": "1990-01-01",
+      "eye_color": "BRO",
+      "given_names": "JANE",
+      "height": "5 feet 10 inches",
+      "nationality": null,
+      "place_of_birth": null,
+      "sex": "F",
+      "surname": "SAMPLE",
+      "weight": null
+    }
+  },
+  "extraction_metadata": {
+    "document_info": {
+      "date_of_expiry": {
+        "ranges": [
+          {
+            "end": 214,
+            "start": 197
+          }
+        ],
+        "value": "2028-01-01"
+      },
+      "date_of_issue": {
+        "ranges": [
+          {
+            "end": 195,
+            "start": 178
+          }
+        ],
+        "value": "2025-01-04"
+      },
+      "document_number": {
+        "ranges": [
+          {
+            "end": 88,
+            "start": 80
+          }
+        ],
+        "value": "12345678"
+      },
+      "issuing_country": {
+        "ranges": [
+          {
+            "end": 13,
+            "start": 10
+          }
+        ],
+        "value": "USA"
+      },
+      "state_issuing": {
+        "ranges": [
+          {
+            "end": 170,
+            "start": 168
+          }
+        ],
+        "value": "TX"
+      }
+    },
+    "document_type": {
+      "ranges": [
+        {
+          "end": 31,
+          "start": 17
+        }
+      ],
+      "value": "Driver License"
+    },
+    "personal_info": {
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 115,
+            "start": 74
+          }
+        ],
+        "value": "1990-01-01"
+      },
+      "eye_color": {
+        "ranges": [
+          {
+            "end": 308,
+            "start": 305
+          }
+        ],
+        "value": "BRO"
+      },
+      "given_names": {
+        "ranges": [
+          {
+            "end": 133,
+            "start": 129
+          }
+        ],
+        "value": "JANE"
+      },
+      "height": {
+        "ranges": [
+          {
+            "end": 295,
+            "start": 268
+          }
+        ],
+        "value": "5 feet 10 inches"
+      },
+      "nationality": {
+        "ranges": null,
+        "value": null
+      },
+      "place_of_birth": {
+        "ranges": null,
+        "value": null
+      },
+      "sex": {
+        "ranges": [
+          {
+            "end": 254,
+            "start": 253
+          }
+        ],
+        "value": "F"
+      },
+      "surname": {
+        "ranges": [
+          {
+            "end": 125,
+            "start": 119
+          }
+        ],
+        "value": "SAMPLE"
+      },
+      "weight": {
+        "ranges": null,
+        "value": null
+      }
+    }
+  },
+  "markdown": "**TEXAS** USA\n\n**DRIVER LICENSE**\n\n★\n\nColonel Thomas F. Mott [signature]\n\n4d DL 12345678 3 DOB 01/01/1990 9 Class A\n\n1 SAMPLE\n\n2 JANE\n\n8 123 SAMPLE STREET\nSAMPLE CITY, TX 12345\n\n4a Iss 01/04/2025\n\n4b Exp 01/01/2028\n\n**COMMUNICATION IMPEDIMENT**\n\n15 Sex F 9a End NONE\n\n16 Hgt 5'-10'' 12 Rest NONE\n\n18 Eyes BRO\n\n5 DD 12345678901234567890\n\n[image: woman portrait]\n\n[image: Texas map with portrait]\n\nSAMPLE\n\n[logo: Texas star]\n\n[icon: heart]\n\nDONOR\n\n[logo: Disabled Veteran]\n\nJane Sample [signature]\n\nDISABLED VETERAN\n\n<!-- doc_id=parse-01m7rvs6080b4zgbkwdasf7br8 -->",
+  "metadata": {
+    "job_id": "extract-01m7rvsez0xad83vbv8nyntz78",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 135371,
+    "doc_id": "parse-01m7rvs6080b4zgbkwdasf7br8",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.5,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 563,
+    "output_extraction_chars": 383,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'personal_info.nationality' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'personal_info.nationality' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}

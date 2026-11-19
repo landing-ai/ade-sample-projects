@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "entity.name",
+      "label": "Entity name",
+      "value": "COLORADO STATE SCIENCE FAIR, INC.",
+      "page": 1,
+      "box": {
+        "xmin": 0.33609,
+        "ymin": 0.25426,
+        "xmax": 0.66561,
+        "ymax": 0.26815
+      },
+      "range": {
+        "end": 265,
+        "start": 232
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "entity-name.png"
+    },
+    {
+      "path": "entity.formation_date",
+      "label": "Formation date",
+      "value": "02/24/1977",
+      "page": 1,
+      "box": {
+        "xmin": 0.30722,
+        "ymin": 0.32952,
+        "xmax": 0.39027,
+        "ymax": 0.34214
+      },
+      "range": {
+        "end": 330,
+        "start": 320
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "entity-formation_date.png"
+    },
+    {
+      "path": "entity.entity_id_number",
+      "label": "Entity ID number",
+      "value": "19871318213",
+      "page": 1,
+      "box": {
+        "xmin": 0.28151,
+        "ymin": 0.3617,
+        "xmax": 0.37968,
+        "ymax": 0.3739
+      },
+      "range": {
+        "end": 532,
+        "start": 521
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "entity-entity_id_number.png"
+    },
+    {
+      "path": "issuance.issue_date",
+      "label": "Issue date",
+      "value": "01/23/2026",
+      "page": 1,
+      "box": {
+        "xmin": 0.43124,
+        "ymin": 0.47319,
+        "xmax": 0.51509,
+        "ymax": 0.48595
+      },
+      "range": {
+        "end": 934,
+        "start": 924
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuance-issue_date.png"
+    },
+    {
+      "path": "issuance.confirmation_number",
+      "label": "Confirmation number",
+      "value": "18120661",
+      "page": 1,
+      "box": {
+        "xmin": 0.48057,
+        "ymin": 0.48931,
+        "xmax": 0.55247,
+        "ymax": 0.5032
+      },
+      "range": {
+        "end": 1038,
+        "start": 1030
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuance-confirmation_number.png"
+    }
+  ]
+}

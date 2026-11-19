@@ -1,0 +1,108 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "vehicle.manufacturer",
+      "label": "Manufacturer",
+      "value": "BMW",
+      "page": 1,
+      "box": {
+        "xmin": 0.24298,
+        "ymin": 0.35897,
+        "xmax": 0.27277,
+        "ymax": 0.36607
+      },
+      "range": {
+        "end": 1055,
+        "start": 1052
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-manufacturer.png"
+    },
+    {
+      "path": "vehicle.model",
+      "label": "Model",
+      "value": "X6",
+      "page": 1,
+      "box": {
+        "xmin": 0.24247,
+        "ymin": 0.37232,
+        "xmax": 0.25699,
+        "ymax": 0.3795
+      },
+      "range": {
+        "end": 1107,
+        "start": 1105
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-model.png"
+    },
+    {
+      "path": "vehicle.model_year",
+      "label": "Model year",
+      "value": 2013,
+      "page": 1,
+      "box": {
+        "xmin": 0.24278,
+        "ymin": 0.40058,
+        "xmax": 0.26751,
+        "ymax": 0.40795
+      },
+      "range": {
+        "end": 1263,
+        "start": 1259
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-model_year.png"
+    },
+    {
+      "path": "vehicle.odometer_km",
+      "label": "Odometer (km)",
+      "value": 143723,
+      "page": 1,
+      "box": {
+        "xmin": 0.24333,
+        "ymin": 0.41388,
+        "xmax": 0.30597,
+        "ymax": 0.42218
+      },
+      "range": {
+        "end": 1349,
+        "start": 1339
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-odometer_km.png"
+    },
+    {
+      "path": "component_ratings[12].condition",
+      "label": "Vehicle body condition",
+      "value": "As Expected",
+      "page": 1,
+      "box": {
+        "xmin": 0.41443,
+        "ymin": 0.6758,
+        "xmax": 0.47564,
+        "ymax": 0.68388
+      },
+      "range": {
+        "end": 3341,
+        "start": 3330
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_ratings-12-condition.png"
+    }
+  ]
+}

@@ -54,5 +54,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no fields formally; its notes offered four as suggestions only: first half due, full year due, assessed value and school district tax. All four ground ok on page 1 and ship, with the 2026 levy rate added as a fifth. Together they show how the bill is computed: the 2026 assessed value ($756,979) times the levy rate (6.4423487853 per $1,000) is $4,876.72, which matches the nine levy districts in the detail (school district first, $345.47) to within a cent; the three flat assessments bring it to the $5,157.93 full-year amount, payable as a $2,579.01 first half. The levy rate is extracted as a string so its 10 decimal places survive exactly. Only page 1 of the 11-page source was kept; pages 2-11 are explainers."
+  "notes": "The request named no fields formally; its notes offered four as suggestions only: first half due, full year due, assessed value and school district tax. All four ground ok on page 1 and ship, with the 2026 levy rate added as a fifth. Together they show how the bill is computed: the 2026 assessed value ($756,979) times the levy rate (6.4423487853 per $1,000) is $4,876.72, which matches the nine levy districts in the detail (school district first, $345.47) to within a cent; the three flat assessments bring it to the $5,157.93 full-year amount, payable as a $2,579.01 first half. The levy rate is extracted as a string so its 10 decimal places survive exactly. Only page 1 of the 11-page source was kept; pages 2-11 are explainers.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 2.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 2.4
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 2.4
+    }
+  ]
 }

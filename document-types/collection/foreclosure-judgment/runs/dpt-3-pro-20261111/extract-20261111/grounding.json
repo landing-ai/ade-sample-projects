@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 3,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "amounts_due.principal",
+      "label": "Principal",
+      "value": 352970.28,
+      "page": 3,
+      "box": {
+        "xmin": 0.61254,
+        "ymin": 0.58369,
+        "xmax": 0.70663,
+        "ymax": 0.59894
+      },
+      "range": {
+        "end": 4117,
+        "start": 4106
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-principal.png"
+    },
+    {
+      "path": "amounts_due.prejudgment_interest",
+      "label": "Prejudgment interest",
+      "value": 59253.99,
+      "page": 3,
+      "box": {
+        "xmin": 0.7688,
+        "ymin": 0.59975,
+        "xmax": 0.8525,
+        "ymax": 0.6151
+      },
+      "range": {
+        "end": 4307,
+        "start": 4297
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-prejudgment_interest.png"
+    },
+    {
+      "path": "amounts_due.prejudgment_interest_rate_percent",
+      "label": "Prejudgment interest rate (%)",
+      "value": 3.875,
+      "page": 3,
+      "box": {
+        "xmin": 0.36416,
+        "ymin": 0.60234,
+        "xmax": 0.4233,
+        "ymax": 0.61569
+      },
+      "range": {
+        "end": 4186,
+        "start": 4181
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-prejudgment_interest_rate_percent.png"
+    },
+    {
+      "path": "amounts_due.late_charges",
+      "label": "Late charges",
+      "value": 98.6,
+      "page": 3,
+      "box": {
+        "xmin": 0.65474,
+        "ymin": 0.66754,
+        "xmax": 0.70764,
+        "ymax": 0.68124
+      },
+      "range": {
+        "end": 4364,
+        "start": 4360
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-late_charges.png"
+    },
+    {
+      "path": "amounts_due.other_costs_and_fees",
+      "label": "Other costs and fees",
+      "value": 31214.73,
+      "page": 3,
+      "box": {
+        "xmin": 0.63148,
+        "ymin": 0.68498,
+        "xmax": 0.70678,
+        "ymax": 0.69987
+      },
+      "range": {
+        "end": 4457,
+        "start": 4448
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-other_costs_and_fees.png"
+    }
+  ]
+}

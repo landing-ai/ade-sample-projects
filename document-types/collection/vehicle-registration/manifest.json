@@ -20,18 +20,62 @@
       "redactions": {
         "note": "The original value is deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
         "replaced": [
-          {"what": "DL/FEID (driver licence / federal employer ID) value, letter plus 12 digits", "with": "S101074959542 (letter and every digit drawn at random by plausible.py)", "occurrences": 1}
+          {
+            "what": "DL/FEID (driver licence / federal employer ID) value, letter plus 12 digits",
+            "with": "S101074959542 (letter and every digit drawn at random by plausible.py)",
+            "occurrences": 1
+          }
         ]
       }
     }
   },
   "feature_page": 1,
   "fields": [
-    {"path": "registration.plate_number", "label": "Plate number", "occurrence": 0},
-    {"path": "registration.title_number", "label": "Title number", "occurrence": 0},
-    {"path": "vehicle.year", "label": "Model year", "occurrence": 0},
-    {"path": "fees.registration_tax", "label": "Registration tax", "occurrence": 0},
-    {"path": "fees.grand_total", "label": "Grand total", "occurrence": 0}
+    {
+      "path": "registration.plate_number",
+      "label": "Plate number",
+      "occurrence": 0
+    },
+    {
+      "path": "registration.title_number",
+      "label": "Title number",
+      "occurrence": 0
+    },
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "occurrence": 0
+    },
+    {
+      "path": "fees.registration_tax",
+      "label": "Registration tax",
+      "occurrence": 0
+    },
+    {
+      "path": "fees.grand_total",
+      "label": "Grand total",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; it suggested plate, expiration, year/make, title number and the grand total with its reconciliation. The overlay tells one story: which plate and title, on what vehicle, and what was paid (registration tax 68.15 plus a 3.00 county fee gives the 71.15 grand total). The expiration date was left out because it grounds OFF: it is read off the merged 'DECAL ... Expires Midnight Thu 1/1/2015' cell and normalised to 01/01/2015. The county fee shares its box with the registration tax, so only one of the two is featured. The registrant name was avoided in favour of impersonal fields. Request asked for the Florida card only, cropped from page 3; that was done, and in addition the operator chose to replace the DL/FEID value."
+  "notes": "The request named no feature page or fields; it suggested plate, expiration, year/make, title number and the grand total with its reconciliation. The overlay tells one story: which plate and title, on what vehicle, and what was paid (registration tax 68.15 plus a 3.00 county fee gives the 71.15 grand total). The expiration date was left out because it grounds OFF: it is read off the merged 'DECAL ... Expires Midnight Thu 1/1/2015' cell and normalised to 01/01/2015. The county fee shares its box with the registration tax, so only one of the two is featured. The registrant name was avoided in favour of impersonal fields. Request asked for the Florida card only, cropped from page 3; that was done, and in addition the operator chose to replace the DL/FEID value.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 1.1
+    }
+  ]
 }

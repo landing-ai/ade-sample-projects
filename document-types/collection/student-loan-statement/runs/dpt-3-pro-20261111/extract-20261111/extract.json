@@ -1,0 +1,426 @@
+{
+  "extraction": {
+    "balance_as_at_date": "2023-04-23",
+    "borrower_name": "MISS JANE Q SAMPLE",
+    "borrower_tax_id": "269-185-411",
+    "current_loan_balance": 26452.96,
+    "decreases": [
+      {
+        "amount": -43.49,
+        "description": "Opening loan amount*"
+      },
+      {
+        "amount": -589.12,
+        "description": "Interest"
+      },
+      {
+        "amount": -2046.12,
+        "description": "Salary and wage deductions"
+      }
+    ],
+    "increases": [
+      {
+        "amount": 13509.6,
+        "description": "Compulsory course fees"
+      },
+      {
+        "amount": 3000.0,
+        "description": "Course-related costs"
+      },
+      {
+        "amount": 2958.48,
+        "description": "Living costs"
+      },
+      {
+        "amount": 180.0,
+        "description": "Establishment fee"
+      },
+      {
+        "amount": 9123.61,
+        "description": "StudyLink amounts"
+      },
+      {
+        "amount": 360.0,
+        "description": "Administration fees"
+      }
+    ],
+    "interest_rate_percent": 2.9,
+    "issue_date": "2023-04-23",
+    "issuer_name": "Inland Revenue",
+    "late_payment_interest_rate_percent": 6.9,
+    "previous_statement_balance": 26412.96,
+    "previous_statement_date": "2022-07-22",
+    "recent_transactions": [
+      {
+        "amount": 40.0,
+        "date": "2023-04-01",
+        "details": "Administration fee"
+      }
+    ],
+    "reference_number": "L9315718948",
+    "total_decreases": -2678.73,
+    "total_increases": 29131.69
+  },
+  "extraction_metadata": {
+    "balance_as_at_date": {
+      "ranges": [
+        {
+          "end": 240,
+          "start": 221
+        }
+      ],
+      "value": "2023-04-23"
+    },
+    "borrower_name": {
+      "ranges": [
+        {
+          "end": 69,
+          "start": 51
+        }
+      ],
+      "value": "MISS JANE Q SAMPLE"
+    },
+    "borrower_tax_id": {
+      "ranges": [
+        {
+          "end": 136,
+          "start": 125
+        }
+      ],
+      "value": "269-185-411"
+    },
+    "current_loan_balance": {
+      "ranges": [
+        {
+          "end": 293,
+          "start": 279
+        },
+        {
+          "end": 1270,
+          "start": 1210
+        }
+      ],
+      "value": 26452.96
+    },
+    "decreases": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1043,
+              "start": 1036
+            }
+          ],
+          "value": -43.49
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1027,
+              "start": 1007
+            }
+          ],
+          "value": "Opening loan amount*"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1087,
+              "start": 1079
+            }
+          ],
+          "value": -589.12
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1070,
+              "start": 1062
+            }
+          ],
+          "value": "Interest"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1151,
+              "start": 1141
+            }
+          ],
+          "value": -2046.12
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1132,
+              "start": 1106
+            }
+          ],
+          "value": "Salary and wage deductions"
+        }
+      }
+    ],
+    "increases": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 655,
+              "start": 645
+            }
+          ],
+          "value": 13509.6
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 636,
+              "start": 614
+            }
+          ],
+          "value": "Compulsory course fees"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 712,
+              "start": 703
+            }
+          ],
+          "value": 3000.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 694,
+              "start": 674
+            }
+          ],
+          "value": "Course-related costs"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 761,
+              "start": 752
+            }
+          ],
+          "value": 2958.48
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 743,
+              "start": 731
+            }
+          ],
+          "value": "Living costs"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 812,
+              "start": 807
+            }
+          ],
+          "value": 180.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 797,
+              "start": 780
+            }
+          ],
+          "value": "Establishment fee"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 867,
+              "start": 858
+            }
+          ],
+          "value": 9123.61
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 849,
+              "start": 832
+            }
+          ],
+          "value": "StudyLink amounts"
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 920,
+              "start": 915
+            }
+          ],
+          "value": 360.0
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 905,
+              "start": 886
+            }
+          ],
+          "value": "Administration fees"
+        }
+      }
+    ],
+    "interest_rate_percent": {
+      "ranges": [
+        {
+          "end": 3082,
+          "start": 3079
+        }
+      ],
+      "value": 2.9
+    },
+    "issue_date": {
+      "ranges": [
+        {
+          "end": 193,
+          "start": 166
+        }
+      ],
+      "value": "2023-04-23"
+    },
+    "issuer_name": {
+      "ranges": [
+        {
+          "end": 21,
+          "start": 7
+        }
+      ],
+      "value": "Inland Revenue"
+    },
+    "late_payment_interest_rate_percent": {
+      "ranges": [
+        {
+          "end": 3911,
+          "start": 3908
+        }
+      ],
+      "value": 6.9
+    },
+    "previous_statement_balance": {
+      "ranges": [
+        {
+          "end": 1863,
+          "start": 1777
+        }
+      ],
+      "value": 26412.96
+    },
+    "previous_statement_date": {
+      "ranges": [
+        {
+          "end": 1863,
+          "start": 1777
+        }
+      ],
+      "value": "2022-07-22"
+    },
+    "recent_transactions": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 2153,
+              "start": 2149
+            }
+          ],
+          "value": 40.0
+        },
+        "date": {
+          "ranges": [
+            {
+              "end": 2112,
+              "start": 2100
+            }
+          ],
+          "value": "2023-04-01"
+        },
+        "details": {
+          "ranges": [
+            {
+              "end": 2139,
+              "start": 2121
+            }
+          ],
+          "value": "Administration fee"
+        }
+      }
+    ],
+    "reference_number": {
+      "ranges": [
+        {
+          "end": 165,
+          "start": 154
+        }
+      ],
+      "value": "L9315718948"
+    },
+    "total_decreases": {
+      "ranges": [
+        {
+          "end": 1189,
+          "start": 1179
+        }
+      ],
+      "value": -2678.73
+    },
+    "total_increases": {
+      "ranges": [
+        {
+          "end": 988,
+          "start": 978
+        }
+      ],
+      "value": 29131.69
+    }
+  },
+  "markdown": "[logo: Inland Revenue Te Tari Taake]\n\nird.govt.nz\n\nMISS JANE Q SAMPLE\n100 MAIN ROAD\nANYTOWN AUCKLAND 1000\n\n- **IRD Number**: 269-185-411\n- **Reference**: L9315718948\n- **Issued**: 23 April 2023\n\n# Student Loan Statement\n\nas at 23 April 2023\n\nYour current student loan balance is\n**$26,452.96**\n\n# Your loan summary\n\nThis is a summary of your student loan including amounts StudyLink has sent us, any interest, fees and penalties charged and payments you have made. You can check up-to-date details of your student loan in myIR at any time.\n\n<table>\n<tr><td colspan=\"2\">**Increases to your loan**</td></tr>\n<tr><td>Compulsory course fees</td><td>$13,509.60</td></tr>\n<tr><td>Course-related costs</td><td>$3,000.00</td></tr>\n<tr><td>Living costs</td><td>$2,958.48</td></tr>\n<tr><td>Establishment fee</td><td>$180.00</td></tr>\n<tr><td>StudyLink amounts</td><td>$9,123.61</td></tr>\n<tr><td>Administration fees</td><td>$360.00</td></tr>\n<tr><td><b>Decreases to your loan</b></td><td>$29,131.69</td></tr>\n<tr><td>Opening loan amount*</td><td>-$43.49</td></tr>\n<tr><td>Interest</td><td>-$589.12</td></tr>\n<tr><td>Salary and wage deductions</td><td>-$2,046.12</td></tr>\n<tr><td></td><td>-$2,678.73</td></tr>\n</table>\n\n**Your current loan balance** as at 23 April 2023 $26,452.96\n\n*This is the total increases and decreases to your loan, for earlier periods.\n\nFor more information about these amounts, visit **www.ird.govt.nz/manage-my-loan**\n\nIN CONFIDENCE\nPage 1 of 3\n\n<!-- PAGE BREAK -->\n\n# Making extra payments\n\nYou can pay off your loan sooner by asking your employer to deduct more from your pay or making extra payments direct to IR.\n\nGo to **ird.govt.nz/pay** to find out about paying by:\n\n* direct debit\n* credit or debit card\n* internet banking.\n\n# Your recent loan details\n\nOn 22 July 2022 when your last statement was issued, your loan balance was $26,412.96.\n\nAny new or changed amounts since then are listed below.\n\n## Administration fees\n\nWe charge an administration fee each year to cover the cost of managing your loan.\n\n<table>\n<tr><td>Date</td><td>Details</td><td>Amount</td></tr>\n<tr><td>1 April 2023</td><td>Administration fee</td><td>$40.00</td></tr>\n</table>\n\nIN CONFIDENCE\nPage 2 of 3\n\n<!-- PAGE BREAK -->\n\n# Other useful information\n\n## Your loan balance\n\nYour loan balance is based on the details we held when we issued this statement. Your balance can change if, for example:\n\n* your employer changes any repayments they deducted from your wages\n* you travel overseas which may affect your eligibility for an interest free loan\n* we receive more information from StudyLink\n* an administration fee is charged.\n\n### Interest-free loans\n\nIf you've been living in New Zealand for 183 or more consecutive days, you're eligible for an interest free loan.\n\nIf you're not living in New Zealand or have been out of New Zealand for 184 days or more, you won't be eligible for an interest free loan, unless you're being treated as overseas based - interest free.\n\n## How loan interest is calculated\n\nIf your loan is not interest free, the current annual interest rate is 2.9%. Interest is calculated daily using this rate. Interest may be adjusted when transactions made in a previous statement period haven't been shown on your account.\n\nIf you believe the interest we've charged is incorrect then you can dispute this, but you must do this within four months of the date of this statement.\n\n**Paying off your loan in full**\n\nIf you are paying interest on your loan and want to repay your loan in full, you have 30 days from the date of this statement to pay the current loan balance before further interest will be added.\n\n**If you don't make loan payments on time**\n\nIf you do not pay on time we may charge you late payment interest on the outstanding amount each month, until you pay the overdue amount (including late payment interest) in full.\n\nThe current annual late payment interest rate is 6.9%. This is reduced to 4.9% for amounts under instalment arrangement.\n\n**Having trouble paying?**\n\nThere are a number of options available in myIR to help you manage your repayments:\n\n* If you're earning salary or wages, you can apply for a reduced deduction rate\n* You can apply for relief if you cannot afford your payments\n* You can request an instalment arrangement for amounts you owe\n* If you're going overseas you can apply for a temporary repayment suspension.\n\n**Overseas-based enquiries**\n\nIf you are paying interest because you are not in New Zealand and you have any questions, call one of the following:\n\n* Toll free New Zealand 0800 600 012\n* Toll free Australia 1800 559 653\n* Toll free UK 0808 234 0098\n* Worldwide +64 4 916 7114\n\nAvailable NZT 6.15am to 8.00pm weekdays\n\n## myIR\n\nYou can manage your tax and entitlements online with a myIR account.\n\nIn myIR you can:\n\n* keep up-to-date with your student loan\n* check and update your Working for Families Tax Credit details\n* review your KiwiSaver contributions\n* manage your child support payments\n* file returns\n* update your contact and bank account details.\n\nmyIR is available 24 hours a day, seven days a week. Find out more, and register, at **www.ird.govt.nz/myIR**\n\n**Our website**\n\nGo to **ird.govt.nz/studentloans** to find information about repaying and managing your loan, travelling or living overseas, and your rights and responsibility.\n\nIN CONFIDENCE\n\nPage 3 of 3\n\n<!-- doc_id=parse-01m7rz3y36jyyh2s764y8tyvbb -->",
+  "metadata": {
+    "job_id": "extract-01m7rz4sxqytytqb3f4s8xamvb",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 60968,
+    "doc_id": "parse-01m7rz3y36jyyh2s764y8tyvbb",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.2,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 5405,
+    "output_extraction_chars": 1025,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

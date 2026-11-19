@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20260710",
+  "extract_model": "extract-20260903",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "salutation_opening",
+      "label": "Opening line",
+      "value": "The Great God, who is the power and wisdom that made you and",
+      "page": 1,
+      "box": {
+        "xmin": 0.15775,
+        "ymin": 0.43868,
+        "xmax": 0.89587,
+        "ymax": 0.46385
+      },
+      "range": {
+        "end": 1989,
+        "start": 1929
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "salutation_opening.png"
+    },
+    {
+      "path": "date_written",
+      "label": "Dateline",
+      "value": "25: 2: 1682",
+      "page": 1,
+      "box": {
+        "xmin": 0.10753,
+        "ymin": 0.67754,
+        "xmax": 0.54914,
+        "ymax": 0.7061
+      },
+      "range": {
+        "end": 984,
+        "start": 965
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "date_written.png"
+    },
+    {
+      "path": "sender.closing",
+      "label": "Closing",
+      "value": "Your loving freind",
+      "page": 1,
+      "box": {
+        "xmin": 0.42501,
+        "ymin": 0.68919,
+        "xmax": 0.90571,
+        "ymax": 0.75798
+      },
+      "range": {
+        "end": 2010,
+        "start": 1992
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sender-closing.png"
+    },
+    {
+      "path": "sender.name",
+      "label": "Signature",
+      "value": "Wm Penn",
+      "page": 1,
+      "box": {
+        "xmin": 0.55529,
+        "ymin": 0.74949,
+        "xmax": 0.84333,
+        "ymax": 0.80838
+      },
+      "range": {
+        "end": 2126,
+        "start": 2119
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sender-name.png"
+    },
+    {
+      "path": "delivery_note.signed_by",
+      "label": "Delivered by",
+      "value": "Tho: Holme",
+      "page": 1,
+      "box": {
+        "xmin": 0.13298,
+        "ymin": 0.77526,
+        "xmax": 0.38884,
+        "ymax": 0.8022
+      },
+      "range": {
+        "end": 2084,
+        "start": 2064
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "delivery_note-signed_by.png"
+    }
+  ]
+}

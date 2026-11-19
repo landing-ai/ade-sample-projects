@@ -46,9 +46,11 @@ import pymupdf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pdfmeta  # noqa: E402
+from runs import is_current, occurrence_for, runs_in  # noqa: E402
 
 REQUIRED = ["manifest.json", "schema.json", "README.md"]
-MODEL_FILES = ["parse-{m}.json", "parse-{m}.md", "extract-{m}.json", "grounding-{m}.json"]
+# Output names from before runs/ existed. A folder still holding them was not migrated.
+LEGACY = re.compile(r"^(parse|extract|grounding)-[a-z]+\.(json|md)$")
 FORBIDDEN_NAMES = re.compile(r"(^|/)\.env|rules[^/]*\.json$|\.pem$|id_rsa|credentials", re.I)
 
 
@@ -163,6 +165,55 @@ def sweep(paths: list[Path], terms: list[str]) -> list[str]:
     return hits
 
 
+def check_runs(folder: Path, manifest: dict) -> list[str]:
+    """Every run is complete, is filed under the snapshots that actually produced it,
+    and is recorded in the manifest."""
+    fail: list[str] = []
+    legacy = sorted(p.name for p in folder.iterdir() if LEGACY.match(p.name))
+    if legacy or (folder / "images").is_dir():
+        fail.append(f"pre-runs/ layout ({', '.join(legacy) or 'images/'}): "
+                    "run migrate_runs.py on this folder")
+    runs = runs_in(folder)
+    if not runs:
+        return fail + ["no run under runs/<parse>/<extract>/"]
+
+    recorded = {(r.get("parse_model"), r.get("extract_model")) for r in manifest.get("runs", [])}
+    for run in runs:
+        where = run.label
+        for path in (run.parse_json, run.parse_md, run.extract_json, run.grounding_json):
+            if not path.is_file():
+                fail.append(f"{where}: missing {run.rel(path)}")
+        if not any(run.images_dir.glob("page-*.png")):
+            fail.append(f"{where}: no page overlay in {run.rel(run.images_dir)}/")
+        for path, expected in ((run.parse_json, run.parse_model),
+                               (run.extract_json, run.extract_model)):
+            if path.is_file():
+                ran = json.loads(path.read_text()).get("metadata", {}).get("model_version")
+                if ran != expected:
+                    fail.append(f"{where}: {run.rel(path)} was produced by {ran}, "
+                                f"but is filed under {expected}")
+        if (run.parse_model, run.extract_model) not in recorded:
+            fail.append(f"{where}: not listed under \"runs\" in manifest.json")
+        # The featured fields are chosen for the current snapshots. Older runs stay as
+        # a record of what those snapshots produced, and are not held to them.
+        if run.grounding_json.is_file() and is_current(run):
+            g = json.loads(run.grounding_json.read_text())
+            page = manifest.get("feature_page")
+            got = {(x.get("path"), x.get("occurrence")): x for x in g.get("fields", [])}
+            for spec in manifest.get("fields", []):
+                x = got.get((spec["path"], occurrence_for(spec, run)))
+                if x is None:
+                    fail.append(f"{where}: featured field {spec['path']} not boxed "
+                                "(rebuild images, or pick another field)")
+                elif not x.get("matched"):
+                    fail.append(f"{where}: featured field {spec['path']} boxes text "
+                                "that does not contain its value")
+                elif x.get("page") != page:
+                    fail.append(f"{where}: featured field {spec['path']} is on page "
+                                f"{x.get('page')}, feature_page is {page}")
+    return fail
+
+
 def check(args) -> tuple[Path, dict, list[str]]:
     """Every gate a folder must pass before it leaves this machine. Returns the working
     directory, the manifest and the failures (empty when it passes)."""
@@ -182,15 +233,9 @@ def check(args) -> tuple[Path, dict, list[str]]:
 
     source = manifest.get("source", {})
     origin = source.get("origin", {})
-    model = args.model
-    for pattern in MODEL_FILES:
-        if not (folder / pattern.format(m=model)).is_file():
-            fail.append(f"missing {pattern.format(m=model)}")
     if not (folder / "source" / source.get("file", "")).is_file():
         fail.append(f"source file {source.get('file')!r} not in source/")
-    images = folder / "images" / model
-    if not images.is_dir() or not any(images.glob("page-*.png")):
-        fail.append(f"no page overlay in images/{model}/")
+    fail += check_runs(folder, manifest)
 
     if manifest.get("slug") != slug:
         fail.append(f"manifest slug {manifest.get('slug')!r} != {slug!r}")
@@ -208,13 +253,6 @@ def check(args) -> tuple[Path, dict, list[str]]:
     for f in fields:
         if "," in f.get("label", ""):
             fail.append(f"label {f['label']!r} contains a comma")
-    grounding = folder / f"grounding-{model}.json"
-    if grounding.is_file():
-        g = json.loads(grounding.read_text())
-        pages = {x.get("page") for x in g.get("fields", [])}
-        if pages - {manifest.get("feature_page")}:
-            fail.append(f"fields resolve on page(s) {sorted(pages)}, "
-                        f"feature_page is {manifest.get('feature_page')}")
 
     # The source PDF of a redacted document must carry no metadata at all.
     pdf = folder / "source" / source.get("file", "")
@@ -265,12 +303,21 @@ def pr_body(root: Path, slug: str, manifest: dict, base: str, footer: str) -> st
     source, origin = manifest["source"], manifest["source"]["origin"]
     schema = json.loads((folder / "schema.json").read_text())
     readme = (folder / "README.md").read_text()
-    grounding = json.loads((folder / f"grounding-pro.json").read_text())
-    rows = "\n".join(f"| {f['label']} | {f.get('value')} |" for f in grounding.get("fields", []))
+    runs = runs_in(folder)
+    values = {}   # label -> {run label: value}
+    for run in runs:
+        for f in json.loads(run.grounding_json.read_text()).get("fields", []):
+            values.setdefault(f["label"], {})[run.label] = f.get("value")
+    header = "| Field | " + " | ".join(f"`{r.label}`" for r in runs) + " |"
+    rule = "|---|" + "---|" * len(runs)
+    rows = "\n".join([header, rule] + [
+        f"| {label} | " + " | ".join(str(v.get(r.label, "not grounded")) for r in runs) + " |"
+        for label, v in values.items()])
+    run_list = ", ".join(f"`{r.label}`" for r in runs)
     stacked = "" if base == "main" else f"\n**Stacked on `{base}`.** Merge that first.\n"
     cost = readme_section(readme, "Cost").split("\n\n")[0]
     return f"""## Summary
-- Adds `document-types/collection/{slug}/`: {manifest['title']}, {source.get('pages')} {source.get('orientation')} page(s), parsed with DPT-3 Pro and extracted at standard tier with a {leaf_count(schema)}-leaf schema.
+- Adds `document-types/collection/{slug}/`: {manifest['title']}, {source.get('pages')} {source.get('orientation')} page(s), run at standard tier as {run_list} with a {leaf_count(schema)}-leaf schema.
 {stacked}
 ## Provenance
 [{origin.get('title') or origin['url']}]({origin['url']}), published by {origin['publisher']}, retrieved {origin['retrieved']}. Clearance `{origin['clearance']}`.
@@ -278,8 +325,6 @@ def pr_body(root: Path, slug: str, manifest: dict, base: str, footer: str) -> st
 {origin['clearance_note']}
 
 ## Featured fields (page {manifest['feature_page']})
-| Field | Value |
-|---|---|
 {rows}
 
 Every crop and the page overlay were checked by eye.
@@ -410,7 +455,6 @@ def main() -> None:
     for name, func in (("check", check), ("ship", ship)):
         p = sub.add_parser(name)
         p.add_argument("slug")
-        p.add_argument("--model", default="pro")
         p.add_argument("--rules", help="redaction rules JSON (outside the repo): its keys "
                                        "are the originals the sweep looks for")
         p.add_argument("--verify-also", nargs="*", default=[], metavar="TERM")

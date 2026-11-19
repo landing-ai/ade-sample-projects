@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "new_monthly_payment.new_total_monthly_payment",
+      "label": "New monthly mortgage payment",
+      "value": 1448.71,
+      "page": 1,
+      "box": {
+        "xmin": 0.85322,
+        "ymin": 0.4697,
+        "xmax": 0.90686,
+        "ymax": 0.47863
+      },
+      "range": {
+        "end": 1768,
+        "start": 1759
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "new_monthly_payment-new_total_monthly_payment.png"
+    },
+    {
+      "path": "new_monthly_payment.current_escrow_payment",
+      "label": "Current escrow payment",
+      "value": 550.04,
+      "page": 1,
+      "box": {
+        "xmin": 0.76267,
+        "ymin": 0.44523,
+        "xmax": 0.80626,
+        "ymax": 0.45416
+      },
+      "range": {
+        "end": 1610,
+        "start": 1604
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "new_monthly_payment-current_escrow_payment.png"
+    },
+    {
+      "path": "new_monthly_payment.new_escrow_payment",
+      "label": "New escrow payment",
+      "value": 582.83,
+      "page": 1,
+      "box": {
+        "xmin": 0.86328,
+        "ymin": 0.44523,
+        "xmax": 0.90686,
+        "ymax": 0.45416
+      },
+      "range": {
+        "end": 1626,
+        "start": 1620
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "new_monthly_payment-new_escrow_payment.png"
+    },
+    {
+      "path": "escrow_details.shortage_amount",
+      "label": "Shortage amount",
+      "value": 814.27,
+      "page": 1,
+      "box": {
+        "xmin": 0.86328,
+        "ymin": 0.73003,
+        "xmax": 0.90686,
+        "ymax": 0.73896
+      },
+      "range": {
+        "end": 3387,
+        "start": 3381
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "escrow_details-shortage_amount.png"
+    },
+    {
+      "path": "new_annual_escrow_total",
+      "label": "New annual escrow total",
+      "value": 6993.9,
+      "page": 1,
+      "box": {
+        "xmin": 0.85322,
+        "ymin": 0.61529,
+        "xmax": 0.90686,
+        "ymax": 0.62422
+      },
+      "range": {
+        "end": 2666,
+        "start": 2657
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "new_annual_escrow_total.png"
+    }
+  ]
+}

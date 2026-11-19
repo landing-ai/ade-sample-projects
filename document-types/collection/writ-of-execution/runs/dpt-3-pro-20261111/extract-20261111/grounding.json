@@ -1,0 +1,88 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "amount_to_satisfy",
+      "label": "Amount to satisfy",
+      "value": 450797.72,
+      "page": 2,
+      "box": {
+        "xmin": 0.11799,
+        "ymin": 0.11808,
+        "xmax": 0.88429,
+        "ymax": 0.24152
+      },
+      "range": {
+        "end": 1986,
+        "start": 1685
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amount_to_satisfy.png"
+    },
+    {
+      "path": "per_diem_interest",
+      "label": "Per-diem interest",
+      "value": 110.96,
+      "page": 2,
+      "box": {
+        "xmin": 0.23599,
+        "ymin": 0.18906,
+        "xmax": 0.30768,
+        "ymax": 0.20641
+      },
+      "range": {
+        "end": 1885,
+        "start": 1879
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "per_diem_interest.png"
+    },
+    {
+      "path": "property_address",
+      "label": "Property",
+      "value": "100 Sample Avenue, Portland, OR 97000",
+      "page": 2,
+      "box": {
+        "xmin": 0.33654,
+        "ymin": 0.11841,
+        "xmax": 0.7,
+        "ymax": 0.13533
+      },
+      "range": {
+        "end": 1744,
+        "start": 1707
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property_address.png"
+    },
+    {
+      "path": "judgment_creditor",
+      "label": "Judgment creditor",
+      "value": "PennyMac Loan Services, LLC",
+      "page": 2,
+      "box": {
+        "xmin": 0.1762,
+        "ymin": 0.259,
+        "xmax": 0.42501,
+        "ymax": 0.27612
+      },
+      "range": {
+        "end": 2015,
+        "start": 1988
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "judgment_creditor.png"
+    }
+  ]
+}

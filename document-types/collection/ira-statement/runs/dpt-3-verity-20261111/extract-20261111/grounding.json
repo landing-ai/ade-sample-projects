@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 10,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "account_holder",
+      "label": "Account holder",
+      "value": "JOHN Q SAMPLE",
+      "page": 1,
+      "box": {
+        "xmin": 0.48535,
+        "ymin": 0.38115,
+        "xmax": 0.57877,
+        "ymax": 0.39559
+      },
+      "range": {
+        "end": 877,
+        "start": 864
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_holder.png"
+    },
+    {
+      "path": "account_number",
+      "label": "Account number",
+      "value": "B19-187999",
+      "page": 1,
+      "box": {
+        "xmin": 0.57714,
+        "ymin": 0.4016,
+        "xmax": 0.63757,
+        "ymax": 0.41509
+      },
+      "range": {
+        "end": 935,
+        "start": 925
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_number.png"
+    },
+    {
+      "path": "account_type",
+      "label": "Account type",
+      "value": "Premiere Select Rollover IRA",
+      "page": 1,
+      "box": {
+        "xmin": 0.60941,
+        "ymin": 0.38114,
+        "xmax": 0.75832,
+        "ymax": 0.39553
+      },
+      "range": {
+        "end": 908,
+        "start": 880
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_type.png"
+    },
+    {
+      "path": "ending_value",
+      "label": "Account value",
+      "value": 164145.49,
+      "page": 1,
+      "box": {
+        "xmin": 0.86786,
+        "ymin": 0.52269,
+        "xmax": 0.93141,
+        "ymax": 0.53766
+      },
+      "range": {
+        "end": 1072,
+        "start": 1061
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ending_value.png"
+    },
+    {
+      "path": "broker_dealer",
+      "label": "Provider",
+      "value": "Commonwealth Financial Network",
+      "page": 1,
+      "box": {
+        "xmin": 0.06176,
+        "ymin": 0.09518,
+        "xmax": 0.25051,
+        "ymax": 0.10612
+      },
+      "range": {
+        "end": 57,
+        "start": 27
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "broker_dealer.png"
+    }
+  ]
+}

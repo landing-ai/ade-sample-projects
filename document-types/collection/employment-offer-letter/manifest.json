@@ -56,7 +56,10 @@
     {
       "path": "offer.designation",
       "label": "Designation",
-      "occurrence": 1
+      "occurrence": {
+        "pro": 0,
+        "verity": 1
+      }
     },
     {
       "path": "offer.place_of_posting",
@@ -71,7 +74,7 @@
     {
       "path": "offer.annual_ctc",
       "label": "Annual cost to company (Rs.)",
-      "occurrence": 2
+      "occurrence": 0
     },
     {
       "path": "letter_date",
@@ -79,5 +82,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features the terms of the offer: the designation, where the candidate is posted, when they join, the annual cost to company, and the letter date. No person is featured. designation and annual_ctc each appear more than once and are pinned to their page 1 occurrences. The page 5 annexure extracts completely (15 salary components in the right sections, with totals) but is not on the requested page. preview_pages shows page 5, the salary annexure table, in place of page 4, the signature page, whose signature was removed."
+  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features the terms of the offer: the designation, where the candidate is posted, when they join, the annual cost to company, and the letter date. No person is featured. designation and annual_ctc each appear more than once and are pinned to their page 1 occurrences. The page 5 annexure extracts completely (15 salary components in the right sections, with totals) but is not on the requested page. preview_pages shows page 5, the salary annexure table, in place of page 4, the signature page, whose signature was removed.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 5.3,
+      "extract_credits": 3.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 5.3,
+      "extract_credits": 3.9
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 1.9,
+      "extract_credits": 4.0
+    }
+  ]
 }

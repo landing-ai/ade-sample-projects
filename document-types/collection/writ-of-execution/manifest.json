@@ -15,23 +15,89 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
         "replaced": [
-          { "what": "defendants' names in the caption (the borrower, his alias and three heirs)", "with": "JOHN Q SAMPLE, JOHN QUINCY SAMPLE, JAMES Q SAMPLE, JANE Q SAMPLE, JUNE Q SAMPLE", "occurrences": 6 },
-          { "what": "property house number and street", "with": "100 Sample", "occurrences": 1 },
-          { "what": "property ZIP code", "with": "97000", "occurrences": 1 },
-          { "what": "subdivision name in the legal description", "with": "SAMPLE", "occurrences": 1 },
-          { "what": "case number", "with": "24CV32513", "occurrences": 2 },
-          { "what": "law firm file number", "with": "84-556087", "occurrences": 2 }
+          {
+            "what": "defendants' names in the caption (the borrower, his alias and three heirs)",
+            "with": "JOHN Q SAMPLE, JOHN QUINCY SAMPLE, JAMES Q SAMPLE, JANE Q SAMPLE, JUNE Q SAMPLE",
+            "occurrences": 6
+          },
+          {
+            "what": "property house number and street",
+            "with": "100 Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "property ZIP code",
+            "with": "97000",
+            "occurrences": 1
+          },
+          {
+            "what": "subdivision name in the legal description",
+            "with": "SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "case number",
+            "with": "24CV32513",
+            "occurrences": 2
+          },
+          {
+            "what": "law firm file number",
+            "with": "84-556087",
+            "occurrences": 2
+          }
         ]
       },
-      "split_from": { "pages": [1, 2], "of": 13 }
+      "split_from": {
+        "pages": [
+          1,
+          2
+        ],
+        "of": 13
+      }
     }
   },
   "feature_page": 2,
   "fields": [
-    { "path": "amount_to_satisfy", "label": "Amount to satisfy", "occurrence": 0 },
-    { "path": "per_diem_interest", "label": "Per-diem interest", "occurrence": 0 },
-    { "path": "property_address", "label": "Property", "occurrence": 0 },
-    { "path": "judgment_creditor", "label": "Judgment creditor", "occurrence": 1 }
+    {
+      "path": "amount_to_satisfy",
+      "label": "Amount to satisfy",
+      "occurrence": 0
+    },
+    {
+      "path": "per_diem_interest",
+      "label": "Per-diem interest",
+      "occurrence": 0
+    },
+    {
+      "path": "property_address",
+      "label": "Property",
+      "occurrence": 0
+    },
+    {
+      "path": "judgment_creditor",
+      "label": "Judgment creditor",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request asked for pages 1-2 of the packet on their own and named no fields. Features page 2, what the sheriff is ordered to collect and for whom: the sum, the daily interest on it, the property, and the judgment creditor (occurrence 1, the creditor sentence on page 2; occurrence 0 is the caption on page 1). The interest rate and the return deadline are correct but print on the same lines as the sum and the per-diem interest, so they would repeat those crops. No person is featured. has_court_seal and is_signed are correct and ground to the parse's [STAMPED][SIGNED] attestation over the seal; they read OFF, as booleans do. The caption's 'AKA' splits one defendant in two: defendants[0] ends '... SAMPLE. AKA' and the alias comes back as a separate defendant."
+  "notes": "The request asked for pages 1-2 of the packet on their own and named no fields. Features page 2, what the sheriff is ordered to collect and for whom: the sum, the daily interest on it, the property, and the judgment creditor (occurrence 1, the creditor sentence on page 2; occurrence 0 is the caption on page 1). The interest rate and the return deadline are correct but print on the same lines as the sum and the per-diem interest, so they would repeat those crops. No person is featured. has_court_seal and is_signed are correct and ground to the parse's [STAMPED][SIGNED] attestation over the seal; they read OFF, as booleans do. The caption's 'AKA' splits one defendant in two: defendants[0] ends '... SAMPLE. AKA' and the alias comes back as a separate defendant.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 1.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 1.6
+    }
+  ]
 }

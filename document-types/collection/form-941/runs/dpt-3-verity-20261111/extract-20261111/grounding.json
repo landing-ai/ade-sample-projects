@@ -1,0 +1,89 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "employer.ein",
+      "label": "Employer identification number",
+      "value": "12-3456789",
+      "page": 1,
+      "box": {
+        "xmin": 0.07005,
+        "ymin": 0.08206,
+        "xmax": 0.63617,
+        "ymax": 0.10772
+      },
+      "range": {
+        "end": 440,
+        "start": 384
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "employer-ein.png"
+    },
+    {
+      "path": "quarter",
+      "label": "Quarter",
+      "value": 1,
+      "page": 1,
+      "box": {
+        "xmin": 0.71734,
+        "ymin": 0.12567,
+        "xmax": 0.72938,
+        "ymax": 0.13477
+      },
+      "range": {
+        "end": 211,
+        "start": 210
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quarter.png"
+    },
+    {
+      "path": "part_1.wages_tips_other_compensation",
+      "label": "Wages tips and other compensation (line 2)",
+      "value": 10000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.07325,
+        "ymin": 0.37445,
+        "xmax": 0.93961,
+        "ymax": 0.39038
+      },
+      "range": {
+        "end": 1000,
+        "start": 930
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_1-wages_tips_other_compensation.png"
+    },
+    {
+      "path": "part_1.total_taxes_after_adjustments",
+      "label": "Total taxes after adjustments (line 10)",
+      "value": 10840.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.06646,
+        "ymin": 0.80595,
+        "xmax": 0.93978,
+        "ymax": 0.82204
+      },
+      "range": {
+        "end": 2580,
+        "start": 2494
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_1-total_taxes_after_adjustments.png"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 14,
+  "preview_pages": [
+    1,
+    4,
+    6,
+    13
+  ],
+  "fields": [
+    {
+      "path": "borings[0].auger_type",
+      "label": "Auger type",
+      "value": "6-5/8\" O.D. Hollow Stem Auger",
+      "page": 6,
+      "box": {
+        "xmin": 0.19608,
+        "ymin": 0.24773,
+        "xmax": 0.47949,
+        "ymax": 0.26363
+      },
+      "range": {
+        "end": 3959,
+        "start": 3930
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-auger_type.png"
+    },
+    {
+      "path": "borings[0].surface_elevation_ft",
+      "label": "Surface elevation (ft AMSL)",
+      "value": 183,
+      "page": 6,
+      "box": {
+        "xmin": 0.80078,
+        "ymin": 0.23258,
+        "xmax": 0.83506,
+        "ymax": 0.24848
+      },
+      "range": {
+        "end": 4071,
+        "start": 4068
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-surface_elevation_ft.png"
+    },
+    {
+      "path": "borings[0].groundwater_first_encountered_ft",
+      "label": "Groundwater first encountered (ft)",
+      "value": 18.2,
+      "page": 6,
+      "box": {
+        "xmin": 0.81471,
+        "ymin": 0.27546,
+        "xmax": 0.85467,
+        "ymax": 0.29135
+      },
+      "range": {
+        "end": 4149,
+        "start": 4145
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-groundwater_first_encountered_ft.png"
+    },
+    {
+      "path": "borings[0].samples[0].uscs",
+      "label": "First sample USCS class",
+      "value": "SM",
+      "page": 6,
+      "box": {
+        "xmin": 0.38686,
+        "ymin": 0.35436,
+        "xmax": 0.41121,
+        "ymax": 0.36693
+      },
+      "range": {
+        "end": 4455,
+        "start": 4453
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-samples-0-uscs.png"
+    },
+    {
+      "path": "borings[0].samples[0].n_value_blows_per_ft",
+      "label": "First sample N-value (blows/ft)",
+      "value": 27,
+      "page": 6,
+      "box": {
+        "xmin": 0.86569,
+        "ymin": 0.35378,
+        "xmax": 0.88114,
+        "ymax": 0.36452
+      },
+      "range": {
+        "end": 4665,
+        "start": 4663
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borings-0-samples-0-n_value_blows_per_ft.png"
+    }
+  ]
+}

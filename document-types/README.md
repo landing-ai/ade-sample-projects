@@ -33,9 +33,9 @@ oversight.
 | `schema.json` | ● | you |
 | `manifest.json` | ● | you |
 | `README.md` | ● | you |
-| `parse-<model>.json`, `parse-<model>.md` | ● | `run_ade.py` |
-| `extract-<model>.json` | ● | `run_ade.py` |
-| `images/<model>/` | ● | `build_images.py` |
+| `runs/<parse>/parse.json`, `parse.md` | ● | `run_ade.py` |
+| `runs/<parse>/<extract>/extract.json` | ● | `run_ade.py` |
+| `runs/<parse>/<extract>/grounding.json`, `images/` | ● | `build_images.py` |
 | `cost.md` | — | you |
 | `accuracy.md`, `ground-truth.json` | — | you |
 
@@ -123,11 +123,29 @@ Everything runs through the **jobs APIs at the `standard` service tier**, which 
 of priority. Synchronous calls always bill at priority whatever tier is requested, so the
 jobs API is the only route to the cheaper rate. Nothing here is urgent.
 
-Output files and image directories carry the parse model that produced them —
-`parse-pro.json`, `images/pro/`. A document type can therefore hold more than one model's
-results side by side without either overwriting the other.
+Every run is filed under the exact snapshots that produced it, as reported in each
+response's `metadata.model_version`:
 
-**Pro only for now.** Verity is in Preview and still changing; it is added once GA.
+```
+collection/<slug>/runs/dpt-3-pro-20261111/parse.json, parse.md
+                                         extract-20261111/extract.json, grounding.json, images/
+                  runs/dpt-3-verity-20261111/...
+```
+
+The extraction sits inside the parse it came from, because it only means anything against
+that markdown. A folder can hold DPT-3 Pro and DPT-3 Verity runs side by side, and
+`manifest.json` lists each one under `"runs"` with its page count and credits, which is
+what the website compares. Every run features the same fields, from the manifest.
+
+**Snapshots are pinned, never `-latest`.** They are set in `scripts/runs.py`. When the
+collection used `extract-latest`, its extractions ended up split between
+`extract-20260819` and `extract-20260903` with nothing in the file names to say so.
+
+`run_ade.py --parse verity` runs DPT-3 Verity. It reads digitally created, Latin-script
+documents only: no scans, handwriting or non-Latin scripts. `build_images.py`,
+`inspect_fields.py` and `ship.py check` take `--parse` / `--extract` to pick a run when a
+folder holds more than one. `migrate_runs.py` moves a folder from the old
+`parse-pro.json` / `images/pro/` layout.
 
 ## API version
 

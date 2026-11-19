@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "income.ordinary_business_income",
+      "label": "Ordinary business income (box 1)",
+      "value": 8068141,
+      "page": 1,
+      "box": {
+        "xmin": 0.54563,
+        "ymin": 0.0937,
+        "xmax": 0.7263,
+        "ymax": 0.121
+      },
+      "range": {
+        "end": 3764,
+        "start": 3723
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "income-ordinary_business_income.png"
+    },
+    {
+      "path": "partner.capital_account.beginning",
+      "label": "Beginning capital account (item L)",
+      "value": 4488892,
+      "page": 1,
+      "box": {
+        "xmin": 0.42081,
+        "ymin": 0.78876,
+        "xmax": 0.49478,
+        "ymax": 0.80172
+      },
+      "range": {
+        "end": 2515,
+        "start": 2506
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "partner-capital_account-beginning.png"
+    },
+    {
+      "path": "partner.capital_account.other_increase_decrease",
+      "label": "Other increase (item L)",
+      "value": 12143540,
+      "page": 1,
+      "box": {
+        "xmin": 0.41303,
+        "ymin": 0.83416,
+        "xmax": 0.49456,
+        "ymax": 0.84702
+      },
+      "range": {
+        "end": 2826,
+        "start": 2816
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "partner-capital_account-other_increase_decrease.png"
+    },
+    {
+      "path": "partner.capital_account.withdrawals_and_distributions",
+      "label": "Withdrawals and distributions (item L)",
+      "value": 7514031,
+      "page": 1,
+      "box": {
+        "xmin": 0.41805,
+        "ymin": 0.84957,
+        "xmax": 0.49454,
+        "ymax": 0.86294
+      },
+      "range": {
+        "end": 2931,
+        "start": 2921
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "partner-capital_account-withdrawals_and_distributions.png"
+    },
+    {
+      "path": "partner.capital_account.ending",
+      "label": "Ending capital account (item L)",
+      "value": 9118401,
+      "page": 1,
+      "box": {
+        "xmin": 0.42106,
+        "ymin": 0.86573,
+        "xmax": 0.49177,
+        "ymax": 0.87866
+      },
+      "range": {
+        "end": 3028,
+        "start": 3019
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "partner-capital_account-ending.png"
+    }
+  ]
+}

@@ -67,9 +67,9 @@
   "feature_page": 4,
   "fields": [
     {
-      "path": "account_info.account_number",
-      "label": "Account number",
-      "occurrence": 4
+      "path": "electric_charges.usage_kwh",
+      "label": "Usage kwh",
+      "occurrence": 0
     },
     {
       "path": "electric_charges.meter_number",
@@ -92,5 +92,34 @@
       "occurrence": 1
     }
   ],
-  "notes": "The request named page 4 and five fields: account number, meter number, delivery charges, service charges and total electric charges. All five ship. The supplied schema (Use_Cases/Utility_Bills/utility_bill.json) had no field for delivery or service charges, so at the document owner's decision this copy adds electric_charges.monthly_service_charge and electric_charges.total_delivery_charges and nothing else; extraction was re-run on the same parse. total_electric_charges extracts correctly but the parse folds the 'Total electric charges $46.42' bar into the usage chart figure below it, so its box covers the bar and the whole chart. account_number is pinned to occurrence 4, the page 4 header, and total_electric_charges to occurrence 1, the page 4 bar (occurrence 0 is page 2's summary). The account, invoice, PoD and meter numbers shown are plausible random stand-ins, not the originals."
+  "notes": "The request named page 4 and five fields: account number, meter number, delivery charges, service charges and total electric charges. All five ship. The supplied schema (Use_Cases/Utility_Bills/utility_bill.json) had no field for delivery or service charges, so at the document owner's decision this copy adds electric_charges.monthly_service_charge and electric_charges.total_delivery_charges and nothing else; extraction was re-run on the same parse. total_electric_charges extracts correctly but the parse folds the 'Total electric charges $46.42' bar into the usage chart figure below it, so its box covers the bar and the whole chart. account_number is pinned to occurrence 4, the page 4 header, and total_electric_charges to occurrence 1, the page 4 bar (occurrence 0 is page 2's summary). The account, invoice, PoD and meter numbers shown are plausible random stand-ins, not the originals.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 5.5,
+      "extract_credits": 3.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 5.1,
+      "extract_credits": 3.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 2.0,
+      "extract_credits": 3.5
+    }
+  ]
 }

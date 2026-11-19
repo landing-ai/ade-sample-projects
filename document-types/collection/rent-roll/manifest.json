@@ -13,17 +13,64 @@
       "clearance": "public",
       "clearance_note": "Page 11 of a 17-page offering memorandum that the listing broker publishes on its own website to market the property to buyers; downloaded by script. Only the rent roll page is used. It carries no tenant names, lease dates, deposits or other personal data: just unit numbers, layouts, status, square footage and rents. The source PDF's document metadata, which named the preparer's user account, was cleared when the page was split out.",
       "split_from": {
-        "pages": [11],
+        "pages": [
+          11
+        ],
         "of": 17
       }
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "totals.total_units", "label": "Total units", "occurrence": 0 },
-    { "path": "totals.occupancy_percent", "label": "Occupancy", "occurrence": 0 },
-    { "path": "totals.total_square_feet", "label": "Total square feet", "occurrence": 0 },
-    { "path": "totals.total_monthly_rent", "label": "Total monthly rent", "occurrence": 0 }
+    {
+      "path": "totals.total_units",
+      "label": "Total units",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.occupancy_percent",
+      "label": "Occupancy",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.total_square_feet",
+      "label": "Total square feet",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.total_monthly_rent",
+      "label": "Total monthly rent",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features the rent roll's totals row, so the overlay reads as one summary of the property: 25 units, 100% occupied, 23,760 square feet, $22,280 a month. The request file named no fields; its research notes suggested these four plus unit A-101's rent ($1,215). A-101's rent was dropped because inspect_fields marks every per-unit dollar and square-foot value OFF: extraction returns them as floats (1215.0) and the matcher does not equate that with '$1,215', although the boxed cell is the right one. Only rows marked ok are featured. The 'Other Charges' column repeats the Total column on every row, an error in the source; the schema extracts it as printed, and it is not featured."
+  "notes": "Features the rent roll's totals row, so the overlay reads as one summary of the property: 25 units, 100% occupied, 23,760 square feet, $22,280 a month. The request file named no fields; its research notes suggested these four plus unit A-101's rent ($1,215). A-101's rent was dropped because inspect_fields marks every per-unit dollar and square-foot value OFF: extraction returns them as floats (1215.0) and the matcher does not equate that with '$1,215', although the boxed cell is the right one. Only rows marked ok are featured. The 'Other Charges' column repeats the Total column on every row, an error in the source; the schema extracts it as printed, and it is not featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 4.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 4.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 4.3
+    }
+  ]
 }

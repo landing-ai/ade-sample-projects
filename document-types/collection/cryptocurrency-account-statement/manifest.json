@@ -36,16 +36,67 @@
             "occurrences": 1
           }
         ],
-        "metadata_cleared": ["title", "producer", "format", "creationDate", "modDate"]
+        "metadata_cleared": [
+          "title",
+          "producer",
+          "format",
+          "creationDate",
+          "modDate"
+        ]
       }
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "transactions[2].time", "label": "Transaction time", "occurrence": 0 },
-    { "path": "transactions[2].direction", "label": "Direction", "occurrence": 0 },
-    { "path": "transactions[2].amount_crypto", "label": "Amount (BTC)", "occurrence": 0 },
-    { "path": "transactions[2].amount_usd", "label": "Amount (USD)", "occurrence": 0 }
+    {
+      "path": "transactions[2].time",
+      "label": "Transaction time",
+      "occurrence": 0
+    },
+    {
+      "path": "transactions[2].direction",
+      "label": "Direction",
+      "occurrence": 0
+    },
+    {
+      "path": "transactions[2].amount_crypto",
+      "label": "Amount (BTC)",
+      "occurrence": 0
+    },
+    {
+      "path": "transactions[2].amount_usd",
+      "label": "Amount (USD)",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features one complete transaction row on page 1 (row 3, a send): its time, direction, BTC amount and USD value, so the overlay reads as a single transaction. The request suggested the balance summary's total received and total sent as well; both extracted correctly (0.18467513 BTC) but ground OFF, because the parse read the page's asterisk and dash rule lines as a table grid and split each figure across two cells ('0' and '18467513'), so neither range contains the whole value and they are not featured. No transaction hash or wallet address is featured: both are stand-ins, and the hash is the least useful value to show. The source URL is a Scribd listing and the website shows it as plain text, not a link. Residual risk, accepted by the operator: the amounts and to-the-second timestamps are as printed and could be matched to the real transactions on the public Bitcoin blockchain."
+  "notes": "Features one complete transaction row on page 1 (row 3, a send): its time, direction, BTC amount and USD value, so the overlay reads as a single transaction. The request suggested the balance summary's total received and total sent as well; both extracted correctly (0.18467513 BTC) but ground OFF, because the parse read the page's asterisk and dash rule lines as a table grid and split each figure across two cells ('0' and '18467513'), so neither range contains the whole value and they are not featured. No transaction hash or wallet address is featured: both are stand-ins, and the hash is the least useful value to show. The source URL is a Scribd listing and the website shows it as plain text, not a link. Residual risk, accepted by the operator: the amounts and to-the-second timestamps are as printed and could be matched to the real transactions on the public Bitcoin blockchain.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.0,
+      "extract_credits": 5.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.0,
+      "extract_credits": 5.4
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 5.4
+    }
+  ]
 }

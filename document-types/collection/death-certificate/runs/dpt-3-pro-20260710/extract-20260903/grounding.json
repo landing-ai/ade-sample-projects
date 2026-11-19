@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20260710",
+  "extract_model": "extract-20260903",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "state_file_number",
+      "label": "State file number",
+      "value": "124-17-000830",
+      "page": 1,
+      "box": {
+        "xmin": 0.46993,
+        "ymin": 0.12472,
+        "xmax": 0.783,
+        "ymax": 0.14865
+      },
+      "range": {
+        "end": 98,
+        "start": 65
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "state_file_number.png"
+    },
+    {
+      "path": "decedent.county_of_death",
+      "label": "County of death",
+      "value": "COLE",
+      "page": 1,
+      "box": {
+        "xmin": 0.4605,
+        "ymin": 0.23939,
+        "xmax": 0.59719,
+        "ymax": 0.28885
+      },
+      "range": {
+        "end": 262,
+        "start": 240
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "decedent-county_of_death.png"
+    },
+    {
+      "path": "cause_of_death[0].condition",
+      "label": "Underlying cause",
+      "value": "LIVER FAILURE",
+      "page": 1,
+      "box": {
+        "xmin": 0.09133,
+        "ymin": 0.54759,
+        "xmax": 0.34031,
+        "ymax": 0.56995
+      },
+      "range": {
+        "end": 500,
+        "start": 478
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cause_of_death-0-condition.png"
+    },
+    {
+      "path": "cause_of_death[2].condition",
+      "label": "Significant condition",
+      "value": "HEPATITIS C",
+      "page": 1,
+      "box": {
+        "xmin": 0.09107,
+        "ymin": 0.59452,
+        "xmax": 0.34085,
+        "ymax": 0.61707
+      },
+      "range": {
+        "end": 547,
+        "start": 525
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cause_of_death-2-condition.png"
+    },
+    {
+      "path": "manner_of_death",
+      "label": "Manner of death",
+      "value": "NATURAL",
+      "page": 1,
+      "box": {
+        "xmin": 0.42772,
+        "ymin": 0.52517,
+        "xmax": 0.60865,
+        "ymax": 0.548
+      },
+      "range": {
+        "end": 477,
+        "start": 461
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "manner_of_death.png"
+    }
+  ]
+}

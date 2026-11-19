@@ -2,10 +2,14 @@
 """Build the page images from a completed parse and extract run.
 
     python document-types/scripts/build_images.py invoice
+    python document-types/scripts/build_images.py invoice --parse verity
 
-Reads  collection/<slug>/parse-<model>.json, extract-<model>.json, manifest.json,
-       source/<doc>
-Writes collection/<slug>/images/
+Reads  collection/<slug>/runs/<parse>/parse.json, runs/<parse>/<extract>/extract.json,
+       manifest.json, source/<doc>
+Writes collection/<slug>/runs/<parse>/<extract>/images/ and grounding.json
+
+With one run in the folder it is used; with several, pick one with --parse / --extract.
+Every run features the same fields, from manifest.json, so runs compare like for like.
 
 Produces, for each field named in the manifest:
   <field>.png          a zoomed crop of the value with its box drawn
@@ -16,7 +20,7 @@ so re-rendering to adjust padding, stroke weight or resolution costs nothing and
 always produces the same result for the same inputs.
 
 Box resolution, in order of preference:
-  1. atomic_grounding  line-level boxes on text blocks
+  1. atomic_grounding  line-level boxes on text blocks (word-level under DPT-3 Verity)
   2. table_cell children  tight per-cell boxes on table blocks
   3. the block box itself  last resort; covers the whole block
 
@@ -41,8 +45,9 @@ from typing import Any, Iterable
 import pymupdf
 from PIL import Image, ImageDraw
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-COLLECTION = REPO_ROOT / "document-types" / "collection"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from runs import (COLLECTION, add_run_args, occurrence_for, record_run,  # noqa: E402
+                  select_run)
 
 # One look across the whole library. Changing these changes every page, which is the
 # point — the images sit side by side and must not drift.
@@ -65,6 +70,13 @@ JPEG_QUALITY = 90
 MAX_PAGE_WIDTH_PX = 1400    # full-page renders are downscaled to this
 MAX_PREVIEW_WIDTH_PX = 700  # clean preview pages are shown small
 MAX_PREVIEW_PAGES = 4
+# Word boxes from DPT-3 Verity, and from DPT-3 Pro since dpt-3-pro-20261111, fit the
+# glyphs exactly, so a border drawn on them covers the tops and bottoms of the letters.
+# Boxes are drawn this far outside the grounding box (a fraction of the page's short
+# side). dpt-3-pro-20260710's line and cell boxes carried their own margin; its runs are
+# drawn as they were, so their images do not move if rebuilt.
+WORD_BOX_PAD = 0.006
+UNPADDED = {"dpt-3-pro-20260710"}
 
 
 def overlaps(a: dict, b: dict) -> bool:
@@ -107,12 +119,15 @@ def locate(parse: dict, field_range: dict) -> tuple[int, dict] | None:
         if tight:
             return page, tight
 
-        cells = block.get("children") or []
-        tight = union_box(
-            c["grounding"]["box"] for c in cells
-            if c.get("grounding", {}).get("range")
-            and overlaps(c["grounding"]["range"], field_range)
-        )
+        cells = [c for c in block.get("children") or []
+                 if c.get("grounding", {}).get("range")
+                 and overlaps(c["grounding"]["range"], field_range)]
+        # DPT-3 Verity grounds every word inside a table cell; DPT-3 Pro gives only the
+        # cell box. Use the words when they are there, so a value in a tall cell is not
+        # boxed together with the empty space or the other lines around it.
+        words = [a["box"] for c in cells for a in c.get("atomic_grounding") or []
+                 if a.get("range") and overlaps(a["range"], field_range)]
+        tight = union_box(words) or union_box(c["grounding"]["box"] for c in cells)
         if tight:
             return page, tight
 
@@ -240,10 +255,11 @@ def highlight(img: Image.Image, xy: list[float]) -> Image.Image:
     return out
 
 
-def draw_box(img: Image.Image, box: dict) -> Image.Image:
+def draw_box(img: Image.Image, box: dict, pad: float = 0.0) -> Image.Image:
     w, h = img.size
+    p = pad * min(w, h)
     return highlight(
-        img, [box["xmin"] * w, box["ymin"] * h, box["xmax"] * w, box["ymax"] * h]
+        img, [box["xmin"] * w - p, box["ymin"] * h - p, box["xmax"] * w + p, box["ymax"] * h + p]
     )
 
 
@@ -299,23 +315,17 @@ def preview_pages(manifest: dict, page_count: int, feature_page: int) -> list[in
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug", help="folder name under document-types/collection/")
-    parser.add_argument(
-        "--model",
-        default="pro",
-        help="which parse model's output to render (default: pro)",
-    )
+    add_run_args(parser)
     args = parser.parse_args()
 
     folder = COLLECTION / args.slug
-    parse_path = folder / f"parse-{args.model}.json"
-    extract_path = folder / f"extract-{args.model}.json"
+    run = select_run(folder, args.parse, args.extract)
+    print(f"run: {run.label}")
+    parse_path, extract_path = run.parse_json, run.extract_json
     for required in (parse_path, extract_path, folder / "manifest.json"):
         if not required.is_file():
-            sys.exit(
-                f"Missing {required}.\n"
-                f"Run: python document-types/scripts/run_ade.py {args.slug} "
-                f"--model {args.model}"
-            )
+            sys.exit(f"Missing {required}.\n"
+                     f"Run: python document-types/scripts/run_ade.py {args.slug}")
 
     parse = json.loads(parse_path.read_text(encoding="utf-8"))
     extract = json.loads(extract_path.read_text(encoding="utf-8"))
@@ -331,8 +341,8 @@ def main() -> None:
         sys.exit("manifest.json lists no fields; nothing to illustrate.")
 
     resolved = flatten(extract.get("extraction_metadata") or {})
-    # Per model: two parse models must not overwrite each other's renders.
-    images_dir = folder / "images" / args.model
+    # Per run: two runs must not overwrite each other's renders.
+    images_dir = run.images_dir
 
     located: dict[int, list[dict]] = {}
     print(f"Resolving {len(field_specs)} field(s) ...")
@@ -351,7 +361,7 @@ def main() -> None:
         # guaranteed stable across runs — on the sample invoice the total appears both
         # in CHARGE DETAILS and in INVOICE TOTALS. Set "occurrence" in the manifest to
         # pin which one gets boxed; otherwise the first is used.
-        index = int(spec.get("occurrence", 0))
+        index = occurrence_for(spec, run)
         if index >= len(ranges):
             print(f"  {path}: occurrence {index} requested but only {len(ranges)} found")
             continue
@@ -424,6 +434,7 @@ def main() -> None:
             print(f"\n  All featured fields are on page {feature_page}, as declared.")
 
     print("\nWriting images ...")
+    pad = 0.0 if run.parse_model in UNPADDED else WORD_BOX_PAD
     unseen: list[str] = []
     for page_number, items in sorted(located.items()):
         page_img = render_page(document, page_number)
@@ -434,14 +445,14 @@ def main() -> None:
             # Highlight on the full page first, then crop, so the stroke is in page
             # coordinates and every crop carries the same visual weight regardless of
             # how large the region happens to be.
-            marked = draw_box(page_img, item["box"])
+            marked = draw_box(page_img, item["box"], pad)
             crop = crop_around(marked, item["box"])
             name = item["name"]
             save(crop, images_dir / f"{name}.png")
 
         annotated = page_img
         for item in items:
-            annotated = draw_box(annotated, item["box"])
+            annotated = draw_box(annotated, item["box"], pad)
         save(annotated, images_dir / f"page-{page_number}.png", MAX_PAGE_WIDTH_PX)
 
     # Clean previews, with no boxes drawn. These establish that the sample is a real
@@ -459,7 +470,8 @@ def main() -> None:
     # block box) and it belongs in one place: re-deriving it downstream is how the two
     # repos drift apart.
     grounding = {
-        "model": args.model,
+        "parse_model": run.parse_model,
+        "extract_model": run.extract_model,
         "feature_page": feature_page,
         "page_count": page_count,
         "preview_pages": previews,
@@ -479,11 +491,12 @@ def main() -> None:
             for item in items
         ],
     }
-    grounding_path = folder / f"grounding-{args.model}.json"
+    grounding_path = run.grounding_json
     grounding_path.write_text(
         json.dumps(grounding, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(f"  {grounding_path.name}: {len(grounding['fields'])} field(s)")
+    record_run(run)   # the manifest may not have existed when run_ade.py ran
 
     if unseen:
         print("\n  WARNING: OCR could not read these values inside their boxes. The text check")

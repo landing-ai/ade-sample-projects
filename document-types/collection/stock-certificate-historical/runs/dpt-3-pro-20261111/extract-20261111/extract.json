@@ -1,0 +1,184 @@
+{
+  "extraction": {
+    "authorized_capital": "$125,000.00",
+    "cancelled": false,
+    "certificate_number": "95",
+    "company_name": "The Ford Motor Company of Canada, Limited",
+    "holder": {
+      "name": "James Couzen",
+      "residence": "Detroit, Michigan"
+    },
+    "issue_date": "1908-12-10",
+    "issue_place": "Walkerville, Ontario",
+    "number_of_shares": 10,
+    "par_value_per_share": "One Hundred Dollars",
+    "shares_in_words": null,
+    "signatories": [
+      {
+        "name": null,
+        "title": "SECRETARY"
+      },
+      {
+        "name": null,
+        "title": "PRESIDENT"
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "authorized_capital": {
+      "ranges": [
+        {
+          "end": 26,
+          "start": 15
+        }
+      ],
+      "value": "$125,000.00"
+    },
+    "cancelled": {
+      "ranges": null,
+      "value": false
+    },
+    "certificate_number": {
+      "ranges": [
+        {
+          "end": 97,
+          "start": 95
+        },
+        {
+          "end": 149,
+          "start": 116
+        }
+      ],
+      "value": "95"
+    },
+    "company_name": {
+      "ranges": [
+        {
+          "end": 71,
+          "start": 30
+        }
+      ],
+      "value": "The Ford Motor Company of Canada, Limited"
+    },
+    "holder": {
+      "name": {
+        "ranges": [
+          {
+            "end": 183,
+            "start": 171
+          }
+        ],
+        "value": "James Couzen"
+      },
+      "residence": {
+        "ranges": [
+          {
+            "end": 204,
+            "start": 187
+          }
+        ],
+        "value": "Detroit, Michigan"
+      }
+    },
+    "issue_date": {
+      "ranges": [
+        {
+          "end": 598,
+          "start": 536
+        }
+      ],
+      "value": "1908-12-10"
+    },
+    "issue_place": {
+      "ranges": [
+        {
+          "end": 565,
+          "start": 545
+        }
+      ],
+      "value": "Walkerville, Ontario"
+    },
+    "number_of_shares": {
+      "ranges": [
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 149,
+          "start": 116
+        }
+      ],
+      "value": 10
+    },
+    "par_value_per_share": {
+      "ranges": [
+        {
+          "end": 263,
+          "start": 244
+        }
+      ],
+      "value": "One Hundred Dollars"
+    },
+    "shares_in_words": {
+      "ranges": null,
+      "value": null
+    },
+    "signatories": [
+      {
+        "name": {
+          "ranges": null,
+          "value": null
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 622,
+              "start": 613
+            }
+          ],
+          "value": "SECRETARY"
+        }
+      },
+      {
+        "name": {
+          "ranges": null,
+          "value": null
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 1314,
+              "start": 1305
+            }
+          ],
+          "value": "PRESIDENT"
+        }
+      }
+    ]
+  },
+  "markdown": "CAPITAL STOCK, $125,000.00\n\n# The Ford Motor Company of Canada, Limited\n\nSTOCK CERTIFICATE\n\nNo 95 &nbsp; 10 Shares\n\nNo 95 STOCK CERTIFICATE 10 Shares\n\nThis Certifies that James Couzen of Detroit, Michigan is entitled to fully paid up shares of One Hundred Dollars each in the Capital Stock of the Ford Motor Company of Canada, Limited\n\nThe said shares are transferable on the books of the Company only by Law or his Attorney duly constituted, and upon surrender of this Certificate, and as provided for in the By-Laws of this Company.\n\nDated at Walkerville, Ontario, this Tenth day of December 1908\n\n[signature]\n\nSECRETARY.\n\n<figure type=\"ILLUSTRATION\"><description>A large red starburst seal with about 40 sharp triangular points is centered in the frame, with a slightly raised, embossed circular impression and faint, illegible embossed lettering visible across its surface. Behind the seal, a faint circular embossed outline is visible at the right edge. The background is a pale cream paper with faint blue-gray printed text lines at the top edge and left edge, cut off and not legible. At the bottom, a black ornamental engraved border with a fine scalloped, lace-like pattern and dense hatched linework runs across the lower edge, curving upward at the center.</description></figure>\n\n[signature]\n\nPRESIDENT.\n\n<!-- doc_id=parse-01m7rz36wafxzhg4tqamacs101 -->",
+  "metadata": {
+    "job_id": "extract-01m7rz486scyhhddc6drbk7qcq",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 34898,
+    "doc_id": "parse-01m7rz36wafxzhg4tqamacs101",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.8,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1365,
+    "output_extraction_chars": 440,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

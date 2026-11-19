@@ -76,5 +76,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features one complete long-term 1099-B line item on page 4 (printed page 4): the security, when it was acquired, what it sold for, what it cost, and the resulting gain. Every field is on the one page so a single overlay shows the whole transaction."
+  "notes": "Features one complete long-term 1099-B line item on page 4 (printed page 4): the security, when it was acquired, what it sold for, what it cost, and the resulting gain. Every field is on the one page so a single overlay shows the whole transaction.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 19.7,
+      "extract_credits": 19.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 20.3,
+      "extract_credits": 18.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 7.1,
+      "extract_credits": 17.3
+    }
+  ]
 }

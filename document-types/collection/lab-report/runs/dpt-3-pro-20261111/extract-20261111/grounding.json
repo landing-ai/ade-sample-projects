@@ -1,0 +1,88 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "test_results[3].test_name",
+      "label": "Test",
+      "value": "LYMPHOCYTE",
+      "page": 1,
+      "box": {
+        "xmin": 0.08327,
+        "ymin": 0.3861,
+        "xmax": 0.19526,
+        "ymax": 0.3975
+      },
+      "range": {
+        "end": 905,
+        "start": 895
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "test_results-3-test_name.png"
+    },
+    {
+      "path": "test_results[3].result",
+      "label": "Result",
+      "value": "18",
+      "page": 1,
+      "box": {
+        "xmin": 0.4125,
+        "ymin": 0.3861,
+        "xmax": 0.43038,
+        "ymax": 0.3975
+      },
+      "range": {
+        "end": 918,
+        "start": 916
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "test_results-3-result.png"
+    },
+    {
+      "path": "test_results[3].reference_values[0].referecne_high",
+      "label": "Reference high",
+      "value": 40.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.74043,
+        "ymin": 0.3861,
+        "xmax": 0.79059,
+        "ymax": 0.3975
+      },
+      "range": {
+        "end": 944,
+        "start": 937
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "test_results-3-reference_values-0-referecne_high.png"
+    },
+    {
+      "path": "test_results[3].reference_values[0].reference_low",
+      "label": "Reference range low",
+      "value": 20.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.74043,
+        "ymin": 0.3861,
+        "xmax": 0.79059,
+        "ymax": 0.3975
+      },
+      "range": {
+        "end": 944,
+        "start": 937
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "test_results-3-reference_values-0-reference_low.png"
+    }
+  ]
+}

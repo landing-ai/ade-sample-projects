@@ -16,11 +16,51 @@
   },
   "feature_page": 1,
   "fields": [
-    {"path": "property.address", "label": "Property address", "occurrence": 0},
-    {"path": "co_number", "label": "CO number", "occurrence": 0},
-    {"path": "certificate_type", "label": "Certificate type", "occurrence": 0},
-    {"path": "effective_date", "label": "Effective date", "occurrence": 0},
-    {"path": "expiration_date", "label": "Expiration date", "occurrence": 0}
+    {
+      "path": "property.address",
+      "label": "Property address",
+      "occurrence": 0
+    },
+    {
+      "path": "fire_protection_equipment[0]",
+      "label": "Fire protection equipment",
+      "occurrence": 0
+    },
+    {
+      "path": "certificate_type",
+      "label": "Certificate type",
+      "occurrence": 0
+    },
+    {
+      "path": "effective_date",
+      "label": "Effective date",
+      "occurrence": 0
+    },
+    {
+      "path": "expiration_date",
+      "label": "Expiration date",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no page or fields. These tell the certificate's status as a real-estate, lending or insurance reviewer reads it: which property, which certificate, and whether it is temporary and when it lapses. The certificate is temporary, valid for 90 days, with 18 outstanding requirements before a final certificate. The use tables on pages 2 and 3 are a scan in which the Floor To column runs into Maximum persons permitted ('001 234'); all 26 rows extract with the right capacities. Blank cells are not always null: three blank Maximum persons cells come back as 0, and the blank Floor To on the cellar and roof rows is filled in from Floor From. issuing_authority grounds to the NYC Buildings logo text and reads OFF."
+  "notes": "The request named no page or fields. These tell the certificate's status as a real-estate, lending or insurance reviewer reads it: which property, which certificate, and whether it is temporary and when it lapses. The certificate is temporary, valid for 90 days, with 18 outstanding requirements before a final certificate. The use tables on pages 2 and 3 are a scan in which the Floor To column runs into Maximum persons permitted ('001 234'); all 26 rows extract with the right capacities. Blank cells are not always null: three blank Maximum persons cells come back as 0, and the blank Floor To on the cellar and roof rows is filled in from Floor From. issuing_authority grounds to the NYC Buildings logo text and reads OFF.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 3.8,
+      "extract_credits": 6.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 3.7,
+      "extract_credits": 6.5
+    }
+  ]
 }

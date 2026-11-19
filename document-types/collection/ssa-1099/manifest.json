@@ -37,5 +37,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features the benefit year and the three money boxes a preparer copies onto a return: box 3 benefits paid, box 5 net benefits and box 6 federal tax withheld, all on page 1 and each grounded to its own ruled box. Box 3 and box 5 both print $25,182 and each grounds to its own cell. The request's notes suggested box 3, box 5, box 6, the direct-deposit amount ($20,229) and the Medicare Part B premium ($2,435) as suggestions only. Box 3, 5 and 6 shipped. The two breakdown amounts extract correctly and read ok, but Extract grounds every value in the 'Description of amount in Box 3' panel to the whole panel, which the parse returns as one tall table cell, so both crops would be the same full-panel box with no line singled out; the benefit year replaces them. No person is featured. Known extraction faults, left visible: box 4 is blank on the form but extracts as 0 rather than null despite the schema asking for null; form_variant comes back SSA-1099-SM, the form revision code from the footer, rather than the SSA-1099 heading."
+  "notes": "Features the benefit year and the three money boxes a preparer copies onto a return: box 3 benefits paid, box 5 net benefits and box 6 federal tax withheld, all on page 1 and each grounded to its own ruled box. Box 3 and box 5 both print $25,182 and each grounds to its own cell. The request's notes suggested box 3, box 5, box 6, the direct-deposit amount ($20,229) and the Medicare Part B premium ($2,435) as suggestions only. Box 3, 5 and 6 shipped. The two breakdown amounts extract correctly and read ok, but Extract grounds every value in the 'Description of amount in Box 3' panel to the whole panel, which the parse returns as one tall table cell, so both crops would be the same full-panel box with no line singled out; the benefit year replaces them. No person is featured. Known extraction faults, left visible: box 4 is blank on the form but extracts as 0 rather than null despite the schema asking for null; form_variant comes back SSA-1099-SM, the form revision code from the footer, rather than the SSA-1099 heading.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.8,
+      "extract_credits": 0.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.8,
+      "extract_credits": 0.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.3,
+      "extract_credits": 0.8
+    }
+  ]
 }
