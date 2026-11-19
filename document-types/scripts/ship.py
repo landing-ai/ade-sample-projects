@@ -46,6 +46,7 @@ import pymupdf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pdfmeta  # noqa: E402
+import build_readme  # noqa: E402
 from runs import is_current, occurrence_for, runs_in  # noqa: E402
 
 REQUIRED = ["manifest.json", "schema.json", "README.md"]
@@ -254,6 +255,15 @@ def check(args) -> tuple[Path, dict, list[str]]:
         if "," in f.get("label", ""):
             fail.append(f"label {f['label']!r} contains a comma")
 
+    # The README's performance sections are generated from the runs; they must be current.
+    if (folder / "README.md").is_file():
+        try:
+            old, new = build_readme.build(slug)
+            if old != new:
+                fail.append("README.md is out of date: run build_readme.py " + slug)
+        except SystemExit as e:
+            fail.append(f"README.md: {e}")
+
     # The source PDF of a redacted document must carry no metadata at all.
     pdf = folder / "source" / source.get("file", "")
     if clearance == "redacted" and pdf.suffix.lower() == ".pdf" and pdf.is_file():
@@ -292,17 +302,11 @@ def check(args) -> tuple[Path, dict, list[str]]:
 
 # --------------------------------------------------------------------------- ship
 
-def readme_section(readme: str, heading: str) -> str:
-    """The body of a `## heading` section, up to the next `## `."""
-    m = re.search(rf"^## {re.escape(heading)}\s*\n(.*?)(?=^## |\Z)", readme, re.M | re.S)
-    return m.group(1).strip() if m else ""
-
 
 def pr_body(root: Path, slug: str, manifest: dict, base: str, footer: str) -> str:
     folder = root / "document-types" / "collection" / slug
     source, origin = manifest["source"], manifest["source"]["origin"]
     schema = json.loads((folder / "schema.json").read_text())
-    readme = (folder / "README.md").read_text()
     runs = runs_in(folder)
     values = {}   # label -> {run label: value}
     for run in runs:
@@ -315,7 +319,9 @@ def pr_body(root: Path, slug: str, manifest: dict, base: str, footer: str) -> st
         for label, v in values.items()])
     run_list = ", ".join(f"`{r.label}`" for r in runs)
     stacked = "" if base == "main" else f"\n**Stacked on `{base}`.** Merge that first.\n"
-    cost = readme_section(readme, "Cost").split("\n\n")[0]
+    cost = "Credits at standard tier: " + "; ".join(
+        f"`{r['parse_model']}` + `{r['extract_model']}`: {r['parse_credits']} parse, "
+        f"{r['extract_credits']} extract" for r in manifest.get("runs", [])) + "."
     return f"""## Summary
 - Adds `document-types/collection/{slug}/`: {manifest['title']}, {source.get('pages')} {source.get('orientation')} page(s), run at standard tier as {run_list} with a {leaf_count(schema)}-leaf schema.
 {stacked}

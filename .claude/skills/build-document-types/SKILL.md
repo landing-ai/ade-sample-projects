@@ -103,7 +103,8 @@ A subagent's report is not evidence. For each finished slug, in its worktree:
    values they claim? Open any crop that looks doubtful.
 3. **Redacted documents:** open the first page of the source PDF and confirm no original
    is visible.
-4. Read the README's grounding notes for anything surprising.
+4. Read the README: the generated performance sections, and the Origin and Why
+   sections the subagent wrote. Read the subagent's report for grounding surprises.
 
 Then report to the operator, one row per slug:
 

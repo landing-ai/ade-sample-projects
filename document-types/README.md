@@ -32,7 +32,7 @@ oversight.
 | `source/<doc>.pdf` | ● | you |
 | `schema.json` | ● | you |
 | `manifest.json` | ● | you |
-| `README.md` | ● | you |
+| `README.md` | ● | you (title, description, Origin, Why); `build_readme.py` (the rest) |
 | `runs/<parse>/parse.json`, `parse.md` | ● | `run_ade.py` |
 | `runs/<parse>/<extract>/extract.json` | ● | `run_ade.py` |
 | `runs/<parse>/<extract>/grounding.json`, `images/` | ● | `build_images.py` |
@@ -58,14 +58,20 @@ images a pure function of it.
 
 ```bash
 mkdir -p collection/<slug>/source
-# add the document, write schema.json, manifest.json and README.md
+# add the document, write schema.json and manifest.json
 
 .venv/bin/python document-types/scripts/run_ade.py <slug>
 .venv/bin/python document-types/scripts/build_images.py <slug>
+# write README.md: title, description, ## Origin, ## Why this document
+.venv/bin/python document-types/scripts/build_readme.py <slug>
 ```
 
-Then check `collection/<slug>/images/` by eye before committing. A bad crop is not
-obvious from a file listing.
+Then check `collection/<slug>/runs/<parse>/<extract>/images/` by eye before committing.
+A bad crop is not obvious from a file listing.
+
+`build_readme.py` writes the README's website link, page and schema-field counts, and
+its Parse performance and Extract performance sections from the runs on the pinned
+snapshots, Verity first where it ran. `ship.py check` fails when they are out of date.
 
 ## Samples must be publishable
 
