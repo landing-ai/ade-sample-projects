@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    2,
+    5,
+    6
+  ],
+  "fields": [
+    {
+      "path": "order_form.payment_term",
+      "label": "Payment term",
+      "value": "Net 60",
+      "page": 6,
+      "box": {
+        "xmin": 0.19126,
+        "ymin": 0.39152,
+        "xmax": 0.22873,
+        "ymax": 0.40073
+      },
+      "range": {
+        "end": 13764,
+        "start": 13758
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-payment_term.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].item",
+      "label": "Subscription",
+      "value": "PowerPolicy Professional Subscription",
+      "page": 6,
+      "box": {
+        "xmin": 0.06743,
+        "ymin": 0.64651,
+        "xmax": 0.3131,
+        "ymax": 0.65815
+      },
+      "range": {
+        "end": 14668,
+        "start": 14631
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-line_items-2-item.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].quantity",
+      "label": "Users",
+      "value": 89,
+      "page": 6,
+      "box": {
+        "xmin": 0.77935,
+        "ymin": 0.64673,
+        "xmax": 0.79519,
+        "ymax": 0.65577
+      },
+      "range": {
+        "end": 14735,
+        "start": 14733
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-line_items-2-quantity.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].total_usd",
+      "label": "Total usd",
+      "value": 993.21,
+      "page": 6,
+      "box": {
+        "xmin": 0.88313,
+        "ymin": 0.64653,
+        "xmax": 0.93221,
+        "ymax": 0.65686
+      },
+      "range": {
+        "end": 14751,
+        "start": 14745
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-line_items-2-total_usd.png"
+    },
+    {
+      "path": "order_form.subscription_periods[0].period_total_usd",
+      "label": "Prorated total",
+      "value": 1260.69,
+      "page": 6,
+      "box": {
+        "xmin": 0.8706,
+        "ymin": 0.69863,
+        "xmax": 0.93502,
+        "ymax": 0.71017
+      },
+      "range": {
+        "end": 15210,
+        "start": 15201
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "order_form-subscription_periods-0-period_total_usd.png"
+    }
+  ]
+}

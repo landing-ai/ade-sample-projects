@@ -1,88 +1,155 @@
 # FDA Flowcharts
 
-Five pages from the U.S. Food and Drug Administration's guidance *Deciding When to Submit a
-510(k) for a Change to an Existing Device* (October 25, 2017). The pages are the cover and the
-four decision flowcharts a manufacturer follows to decide whether a device change needs a new
-510(k) premarket notification:
+**On the website:** [landing.ai/document-type/fda-flowchart](https://landing.ai/document-type/fda-flowchart)
+
+Five pages from the FDA guidance on deciding when to submit a 510(k) for a change to an
+existing medical device: the cover and the four decision flowcharts a manufacturer
+follows. Each chart is a set of numbered yes-or-no questions joined by arrows that lead
+to further questions or to an outcome, such as a new 510(k) or documenting the change.
+
+| | |
+|---|---|
+| Pages | 5 |
+| Fields in the extraction schema | 10 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:56 | 2026-11-19 03:02 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 9,767 | 9,662 |
+| Words under 0.95 confidence | 3 | n/a |
+| Words under 0.80 confidence | 2 | n/a |
+| Words under 0.50 confidence | 1 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 6.0 s | 15.1 s |
+| Per page | 1.2 s | 3.0 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.8 credits | 5.0 credits |
+| Per page | 0.36 credits | 1.00 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:56 | 2026-11-19 03:02 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 10 | 10 |
+| Non-null fields returned | 10 | 10 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 221.4 s | 400.6 s |
+| Per schema field (10) | 22.14 s | 40.06 s |
+| Per value returned | 1.66 s | 3.01 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 7.3 credits | 7.1 credits |
+| Per schema field (10) | 0.730 credits | 0.710 credits |
+| Per value returned | 0.055 credits | 0.053 credits |
+
+## Origin
+
+`source/fda-510k-change-flowcharts.pdf` holds five pages from the U.S. Food and Drug
+Administration's guidance *Deciding When to Submit a 510(k) for a Change to an Existing
+Device* (October 25, 2017). The pages are the cover and the four decision flowcharts a
+manufacturer follows to decide whether a device change needs a new 510(k) premarket
+notification:
 
 - the main chart
 - Chart A, labeling changes
 - Chart B, technology, engineering and performance changes
 - Chart C, materials changes
 
-The PDF is 5 pages, portrait, and has a text layer.
-
-## Provenance
+It is **5 pages, portrait**, with a text layer.
 
 | | |
 |---|---|
 | Publisher | U.S. Food and Drug Administration (CDRH and CBER) |
-| Source URL | https://www.fda.gov/media/99812/download |
+| Source | https://www.fda.gov/media/99812/download |
 | Retrieved | 2026-11-15 |
-| Clearance | `public` |
+| Clearance | Public |
 
-This is a US federal government work, published on fda.gov for general use. The original runs
-to 78 pages. The operator extracted pages 2, 13, 17, 25 and 34 into a local file, and that file
-is the source here. Each page's text was checked against the same page of a fresh download from
-the URL above, and all five match. The PDF metadata was cleared.
+This is a US federal government work, published on fda.gov for general use. The
+original runs to 78 pages. The operator extracted pages 2, 13, 17, 25 and 34 into a
+local file, and that file is the source here. Each page's text was checked against the
+same page of a fresh download from the URL above, and all five match. The PDF metadata
+was cleared.
 
 There is no personal data in it. The only contact details are FDA office phone lines.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-Every other document in the collection carries its data in text, tables or forms. Here the data
-is the *structure* of a diagram: which question leads to which, and on which answer. Extracting
-it means reading arrows, not just labels. The schema asks for each decision diamond's ID and
-question, and for where its Yes and No arrows lead.
+### Who processes it
 
-## Featured fields (page 5, Flowchart C: Materials Changes)
+Decision flowcharts turn a regulation or policy into a sequence of yes-or-no questions.
+The logic lives in the arrows, so the chart has to be read as a graph.
 
-| Field | Value |
-|---|---|
-| Figure caption | Figure 4 - Flowchart C: Materials Changes |
-| Decision C4 | Does a risk assessment identify any new or increased biocompatibility concerns? |
-| Decision C4.1 | Has the manufacturer used the same material in a similar legally marketed device (…)? |
-| C4.1 No outcome | New 510(k) |
+- **Medical device regulatory affairs:** manufacturers document their path through
+  these charts each time they change a marketed device.
+- **Quality and compliance:** quality teams tie change-control records to the chart
+  decisions that justified filing or not filing.
+- **Regulatory consultants and law firms:** advisors use the charts to support and
+  defend a client's filing decision.
+- **Regulatory intelligence:** teams turn agency guidance into rules and checklists for
+  internal tools.
 
-These fields trace the chart's only route to a new 510(k): C4 Yes, then C4.1 No. Chart C was
-chosen because it is the one chart whose logic ADE extracted with no errors (see below).
+### What it contains
 
-## Grounding on this document
-
-**Each flowchart is a single block.** DPT-3 classifies each chart as a `FLOWCHART` figure. It
-writes the chart into the markdown as a node directory plus a list of connections, such as
-`[C4.1] --No--> [TERMINAL_NEW_510K]`. That text gives extraction exact ranges, and
-`inspect_fields.py` reports `ok` for nearly every field. But each figure has one grounding box,
-around the whole chart. Every value read from inside a chart therefore crops to the same image,
-the entire flowchart. The figure captions on pages 4 and 5 parse as separate text blocks, so they
-are the only tight crops. Page 3's caption parses inside the figure.
-
-So this page can show that a value came from this chart. It cannot show which diamond it came
-from.
-
-**The edges are mostly right, but not all.** Checked against the drawn arrows:
-
-| Chart | Result |
-|---|---|
-| Main | All 4 decisions correct |
-| A | A3 Yes and A4 Yes are given as "New 510(k)". Both arrows run to the A1.1 path. The other 7 decisions are correct |
-| B | B3.1 Yes and No are swapped. The drawn Yes goes to New 510(k), and No goes to B3.2. The other 11 decisions are correct |
-| C | All 6 decisions correct |
-
-The decision text has one transcription slip. C2 reads "formulation, composition", but the chart
-says "formulation, chemical composition". The main chart's diamonds have no printed IDs, and its
-`node_id` and `chart_letter` come back null, which is correct.
-
-## Credits
-
-12.60 credits at standard tier: parse plus extract, 5 pages.
-
-## Regenerate
-
-```
-.venv/bin/python document-types/scripts/run_ade.py fda-flowchart
-.venv/bin/python document-types/scripts/inspect_fields.py fda-flowchart --page 5
-.venv/bin/python document-types/scripts/build_images.py fda-flowchart
-```
-
-The schema has 10 leaf fields.
+- **Flowcharts whose data is the structure:** which question leads to which, and on
+  which answer.
+- **Decision diamonds with printed IDs** (A1, B3.1, C4.1 and so on), except on the main
+  chart, whose diamonds carry no IDs.
+- **Yes and No arrows** that branch and rejoin between questions and outcome boxes,
+  so the answer that leads to each step has to be read from the drawing.
+- **Long question text** wrapped inside diamonds and boxes.
+- **Figure captions** such as "Figure 4 - Flowchart C: Materials Changes", plus the
+  cover page of the guidance.

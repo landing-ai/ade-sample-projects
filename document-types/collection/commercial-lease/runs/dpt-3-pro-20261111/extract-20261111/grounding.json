@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "tenant.name",
+      "label": "Tenant",
+      "value": "Serve Robotics Inc.",
+      "page": 1,
+      "box": {
+        "xmin": 0.23307,
+        "ymin": 0.28624,
+        "xmax": 0.36146,
+        "ymax": 0.29887
+      },
+      "range": {
+        "end": 363,
+        "start": 344
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "tenant-name.png"
+    },
+    {
+      "path": "premises.rentable_square_feet",
+      "label": "Rentable square feet",
+      "value": 4200,
+      "page": 1,
+      "box": {
+        "xmin": 0.05515,
+        "ymin": 0.3639,
+        "xmax": 0.94484,
+        "ymax": 0.40682
+      },
+      "range": {
+        "end": 708,
+        "start": 428
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "premises-rentable_square_feet.png"
+    },
+    {
+      "path": "term_months",
+      "label": "Term (months)",
+      "value": 48,
+      "page": 1,
+      "box": {
+        "xmin": 0.45505,
+        "ymin": 0.4245,
+        "xmax": 0.48226,
+        "ymax": 0.43712
+      },
+      "range": {
+        "end": 757,
+        "start": 755
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "term_months.png"
+    },
+    {
+      "path": "base_rent_schedule[1].monthly_base_rent",
+      "label": "Monthly base rent (months 2-12)",
+      "value": 16800.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.73196,
+        "ymin": 0.56465,
+        "xmax": 0.83701,
+        "ymax": 0.57728
+      },
+      "range": {
+        "end": 1103,
+        "start": 1090
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "base_rent_schedule-1-monthly_base_rent.png"
+    },
+    {
+      "path": "security_deposit",
+      "label": "Security deposit",
+      "value": 73431.24,
+      "page": 1,
+      "box": {
+        "xmin": 0.05515,
+        "ymin": 0.87526,
+        "xmax": 0.30658,
+        "ymax": 0.88788
+      },
+      "range": {
+        "end": 2367,
+        "start": 2333
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "security_deposit.png"
+    }
+  ]
+}

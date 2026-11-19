@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 10,
+  "page_count": 18,
+  "preview_pages": [
+    2,
+    10,
+    12,
+    17
+  ],
+  "fields": [
+    {
+      "path": "project_summary.budgeted_total_cost",
+      "label": "Project budgeted total cost",
+      "value": 59127675.84,
+      "page": 10,
+      "box": {
+        "xmin": 0.41769,
+        "ymin": 0.13024,
+        "xmax": 0.46363,
+        "ymax": 0.14032
+      },
+      "range": {
+        "end": 27700,
+        "start": 27686
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "project_summary-budgeted_total_cost.png"
+    },
+    {
+      "path": "milestones[2].start",
+      "label": "Notice to Proceed (MS-1200) start",
+      "value": "08-15-22",
+      "page": 10,
+      "box": {
+        "xmin": 0.49754,
+        "ymin": 0.21735,
+        "xmax": 0.52478,
+        "ymax": 0.22653
+      },
+      "range": {
+        "end": 28349,
+        "start": 28341
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "milestones-2-start.png"
+    },
+    {
+      "path": "milestones[8].finish",
+      "label": "Open New Slip Ramp (MS-1500) finish",
+      "value": "12-05-23",
+      "page": 10,
+      "box": {
+        "xmin": 0.53761,
+        "ymin": 0.31907,
+        "xmax": 0.5644,
+        "ymax": 0.32821
+      },
+      "range": {
+        "end": 29174,
+        "start": 29166
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "milestones-8-finish.png"
+    },
+    {
+      "path": "milestones[8].activity_id",
+      "label": "Activity id",
+      "value": "MS-1500",
+      "page": 10,
+      "box": {
+        "xmin": 0.08229,
+        "ymin": 0.31886,
+        "xmax": 0.10954,
+        "ymax": 0.32845
+      },
+      "range": {
+        "end": 29086,
+        "start": 29079
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "milestones-8-activity_id.png"
+    },
+    {
+      "path": "milestones[7].total_float_days",
+      "label": "Open Pedestrian Facility (MS-1450) total float",
+      "value": 367,
+      "page": 10,
+      "box": {
+        "xmin": 0.5799,
+        "ymin": 0.30216,
+        "xmax": 0.59133,
+        "ymax": 0.31117
+      },
+      "range": {
+        "end": 29061,
+        "start": 29058
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "milestones-7-total_float_days.png"
+    }
+  ]
+}

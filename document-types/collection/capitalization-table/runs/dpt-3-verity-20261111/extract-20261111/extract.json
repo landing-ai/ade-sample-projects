@@ -1,0 +1,966 @@
+{
+  "extraction": {
+    "company_name": "Acme, Inc.",
+    "conversion_assumption": "This example assumes that the Preferred converts into Common Stock at a 1:1 ratio.",
+    "holders": [
+      {
+        "common_shares": 0.0,
+        "holder_group": "Investors",
+        "holder_name": "New Investor",
+        "series_a_shares": 0.0,
+        "series_b_shares": 4775322.0,
+        "total_percent": 8.3,
+        "total_shares": 4775322.0
+      },
+      {
+        "common_shares": 0.0,
+        "holder_group": "Investors",
+        "holder_name": "Investor #1",
+        "series_a_shares": 10000000.0,
+        "series_b_shares": 0.0,
+        "total_percent": 17.4,
+        "total_shares": 10000000.0
+      },
+      {
+        "common_shares": 0.0,
+        "holder_group": "Investors",
+        "holder_name": "Investor #2",
+        "series_a_shares": 25000000.0,
+        "series_b_shares": 0.0,
+        "total_percent": 43.5,
+        "total_shares": 25000000.0
+      },
+      {
+        "common_shares": 0.0,
+        "holder_group": "Investors",
+        "holder_name": "Investor #3",
+        "series_a_shares": 1000000.0,
+        "series_b_shares": 0.0,
+        "total_percent": 1.7,
+        "total_shares": 1000000.0
+      },
+      {
+        "common_shares": 0.0,
+        "holder_group": "Investors",
+        "holder_name": "Investor #4",
+        "series_a_shares": 250000.0,
+        "series_b_shares": 0.0,
+        "total_percent": 0.4,
+        "total_shares": 250000.0
+      },
+      {
+        "common_shares": 0.0,
+        "holder_group": "Investors",
+        "holder_name": "Investor #5",
+        "series_a_shares": 250000.0,
+        "series_b_shares": 0.0,
+        "total_percent": 0.4,
+        "total_shares": 250000.0
+      },
+      {
+        "common_shares": 5000000.0,
+        "holder_group": "Founders",
+        "holder_name": "Founder #1",
+        "series_a_shares": 0.0,
+        "series_b_shares": 0.0,
+        "total_percent": 8.7,
+        "total_shares": 5000000.0
+      },
+      {
+        "common_shares": 5000000.0,
+        "holder_group": "Founders",
+        "holder_name": "Founder #2",
+        "series_a_shares": 0.0,
+        "series_b_shares": 0.0,
+        "total_percent": 8.7,
+        "total_shares": 5000000.0
+      },
+      {
+        "common_shares": 1000000.0,
+        "holder_group": "20 - Equity Incentive Plan",
+        "holder_name": "Granted Option Shares",
+        "series_a_shares": 0.0,
+        "series_b_shares": 0.0,
+        "total_percent": 1.7,
+        "total_shares": 1000000.0
+      },
+      {
+        "common_shares": 1000000.0,
+        "holder_group": "20 - Equity Incentive Plan",
+        "holder_name": "Available (Ungranted) Option Shares",
+        "series_a_shares": 0.0,
+        "series_b_shares": 0.0,
+        "total_percent": 1.7,
+        "total_shares": 1000000.0
+      },
+      {
+        "common_shares": 4252854.0,
+        "holder_group": "20 - Equity Incentive Plan",
+        "holder_name": "Available Option Shares (Increase)",
+        "series_a_shares": 0.0,
+        "series_b_shares": 0.0,
+        "total_percent": 7.4,
+        "total_shares": 4252854.0
+      }
+    ],
+    "option_pool_increase_shares": 4252854,
+    "share_classes": [
+      "Common Stock",
+      "Series A",
+      "Series B"
+    ],
+    "table_basis": "Pro-Forma",
+    "totals": {
+      "fully_diluted_shares": 57528176.0,
+      "total_common_shares": 16252854.0,
+      "total_series_a_shares": 36500000.0,
+      "total_series_b_shares": 4775322.0
+    }
+  },
+  "extraction_metadata": {
+    "company_name": {
+      "ranges": [
+        {
+          "end": 10,
+          "start": 0
+        }
+      ],
+      "value": "Acme, Inc."
+    },
+    "conversion_assumption": {
+      "ranges": [
+        {
+          "end": 2948,
+          "start": 2866
+        }
+      ],
+      "value": "This example assumes that the Preferred converts into Common Stock at a 1:1 ratio."
+    },
+    "holders": [
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 539,
+              "start": 538
+            }
+          ],
+          "value": 0.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 409,
+              "start": 400
+            }
+          ],
+          "value": "Investors"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 529,
+              "start": 517
+            }
+          ],
+          "value": "New Investor"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 575,
+              "start": 574
+            }
+          ],
+          "value": 0.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 608,
+              "start": 597
+            }
+          ],
+          "value": 4775322.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 669,
+              "start": 666
+            }
+          ],
+          "value": 8.3
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 657,
+              "start": 646
+            }
+          ],
+          "value": 4775322.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 709,
+              "start": 708
+            }
+          ],
+          "value": 0.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 409,
+              "start": 400
+            }
+          ],
+          "value": "Investors"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 699,
+              "start": 688
+            }
+          ],
+          "value": "Investor #1"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 756,
+              "start": 744
+            }
+          ],
+          "value": 10000000.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 780,
+              "start": 779
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 841,
+              "start": 837
+            }
+          ],
+          "value": 17.4
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 828,
+              "start": 816
+            }
+          ],
+          "value": 10000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 881,
+              "start": 880
+            }
+          ],
+          "value": 0.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 409,
+              "start": 400
+            }
+          ],
+          "value": "Investors"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 871,
+              "start": 860
+            }
+          ],
+          "value": "Investor #2"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 928,
+              "start": 916
+            }
+          ],
+          "value": 25000000.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 952,
+              "start": 951
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 1013,
+              "start": 1009
+            }
+          ],
+          "value": 43.5
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 1000,
+              "start": 988
+            }
+          ],
+          "value": 25000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 1053,
+              "start": 1052
+            }
+          ],
+          "value": 0.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 409,
+              "start": 400
+            }
+          ],
+          "value": "Investors"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 1043,
+              "start": 1032
+            }
+          ],
+          "value": "Investor #3"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 1099,
+              "start": 1088
+            }
+          ],
+          "value": 1000000.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 1122,
+              "start": 1121
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 1180,
+              "start": 1177
+            }
+          ],
+          "value": 1.7
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 1168,
+              "start": 1157
+            }
+          ],
+          "value": 1000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 1220,
+              "start": 1219
+            }
+          ],
+          "value": 0.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 409,
+              "start": 400
+            }
+          ],
+          "value": "Investors"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 1210,
+              "start": 1199
+            }
+          ],
+          "value": "Investor #4"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 1264,
+              "start": 1255
+            }
+          ],
+          "value": 250000.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 1287,
+              "start": 1286
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 1343,
+              "start": 1340
+            }
+          ],
+          "value": 0.4
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 1331,
+              "start": 1322
+            }
+          ],
+          "value": 250000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 1383,
+              "start": 1382
+            }
+          ],
+          "value": 0.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 409,
+              "start": 400
+            }
+          ],
+          "value": "Investors"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 1373,
+              "start": 1362
+            }
+          ],
+          "value": "Investor #5"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 1427,
+              "start": 1418
+            }
+          ],
+          "value": 250000.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 1450,
+              "start": 1449
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 1506,
+              "start": 1503
+            }
+          ],
+          "value": 0.4
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 1494,
+              "start": 1485
+            }
+          ],
+          "value": 250000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 1671,
+              "start": 1660
+            }
+          ],
+          "value": 5000000.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 1533,
+              "start": 1525
+            }
+          ],
+          "value": "Founders"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 1651,
+              "start": 1641
+            }
+          ],
+          "value": "Founder #1"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 1709,
+              "start": 1708
+            }
+          ],
+          "value": 0.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 1732,
+              "start": 1731
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 1790,
+              "start": 1787
+            }
+          ],
+          "value": 8.7
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 1778,
+              "start": 1767
+            }
+          ],
+          "value": 5000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 1839,
+              "start": 1828
+            }
+          ],
+          "value": 5000000.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 1533,
+              "start": 1525
+            }
+          ],
+          "value": "Founders"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 1819,
+              "start": 1809
+            }
+          ],
+          "value": "Founder #2"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 1877,
+              "start": 1876
+            }
+          ],
+          "value": 0.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 1900,
+              "start": 1899
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 1958,
+              "start": 1955
+            }
+          ],
+          "value": 8.7
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 1946,
+              "start": 1935
+            }
+          ],
+          "value": 5000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 2152,
+              "start": 2141
+            }
+          ],
+          "value": 1000000.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 2003,
+              "start": 1977
+            }
+          ],
+          "value": "20 - Equity Incentive Plan"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 2132,
+              "start": 2111
+            }
+          ],
+          "value": "Granted Option Shares"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 2188,
+              "start": 2187
+            }
+          ],
+          "value": 0.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 2211,
+              "start": 2210
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 2269,
+              "start": 2266
+            }
+          ],
+          "value": 1.7
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 2257,
+              "start": 2246
+            }
+          ],
+          "value": 1000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 2343,
+              "start": 2332
+            }
+          ],
+          "value": 1000000.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 2003,
+              "start": 1977
+            }
+          ],
+          "value": "20 - Equity Incentive Plan"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 2323,
+              "start": 2288
+            }
+          ],
+          "value": "Available (Ungranted) Option Shares"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 2379,
+              "start": 2378
+            }
+          ],
+          "value": 0.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 2402,
+              "start": 2401
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 2460,
+              "start": 2457
+            }
+          ],
+          "value": 1.7
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 2448,
+              "start": 2437
+            }
+          ],
+          "value": 1000000.0
+        }
+      },
+      {
+        "common_shares": {
+          "ranges": [
+            {
+              "end": 2533,
+              "start": 2522
+            }
+          ],
+          "value": 4252854.0
+        },
+        "holder_group": {
+          "ranges": [
+            {
+              "end": 2003,
+              "start": 1977
+            }
+          ],
+          "value": "20 - Equity Incentive Plan"
+        },
+        "holder_name": {
+          "ranges": [
+            {
+              "end": 2513,
+              "start": 2479
+            }
+          ],
+          "value": "Available Option Shares (Increase)"
+        },
+        "series_a_shares": {
+          "ranges": [
+            {
+              "end": 2570,
+              "start": 2569
+            }
+          ],
+          "value": 0.0
+        },
+        "series_b_shares": {
+          "ranges": [
+            {
+              "end": 2593,
+              "start": 2592
+            }
+          ],
+          "value": 0.0
+        },
+        "total_percent": {
+          "ranges": [
+            {
+              "end": 2651,
+              "start": 2648
+            }
+          ],
+          "value": 7.4
+        },
+        "total_shares": {
+          "ranges": [
+            {
+              "end": 2639,
+              "start": 2628
+            }
+          ],
+          "value": 4252854.0
+        }
+      }
+    ],
+    "option_pool_increase_shares": {
+      "ranges": [
+        {
+          "end": 2533,
+          "start": 2522
+        }
+      ],
+      "value": 4252854
+    },
+    "share_classes": [
+      {
+        "ranges": [
+          {
+            "end": 296,
+            "start": 284
+          }
+        ],
+        "value": "Common Stock"
+      },
+      {
+        "ranges": [
+          {
+            "end": 344,
+            "start": 336
+          }
+        ],
+        "value": "Series A"
+      },
+      {
+        "ranges": [
+          {
+            "end": 149,
+            "start": 141
+          }
+        ],
+        "value": "Series B"
+      }
+    ],
+    "table_basis": {
+      "ranges": [
+        {
+          "end": 42,
+          "start": 33
+        }
+      ],
+      "value": "Pro-Forma"
+    },
+    "totals": {
+      "fully_diluted_shares": {
+        "ranges": [
+          {
+            "end": 2827,
+            "start": 2815
+          }
+        ],
+        "value": 57528176.0
+      },
+      "total_common_shares": {
+        "ranges": [
+          {
+            "end": 2691,
+            "start": 2679
+          }
+        ],
+        "value": 16252854.0
+      },
+      "total_series_a_shares": {
+        "ranges": [
+          {
+            "end": 2741,
+            "start": 2729
+          }
+        ],
+        "value": 36500000.0
+      },
+      "total_series_b_shares": {
+        "ranges": [
+          {
+            "end": 2776,
+            "start": 2765
+          }
+        ],
+        "value": 4775322.0
+      }
+    }
+  },
+  "markdown": "Acme, Inc.\nCapitalization Table\n(Pro-Forma)\n\n<table><tr><td></td><td></td><td colspan=\"2\">Common % w/o</td><td></td><td></td><td rowspan=\"2\">Series B[1]</td><td rowspan=\"2\">Series B %</td><td rowspan=\"2\">Preferred %</td><td rowspan=\"2\">Total Shares</td><td></td></tr><tr><td></td><td>Common Stock</td><td>Common % Pool</td><td></td><td>Series A[1]</td><td>Series A %</td><td>Total %</td></tr><tr><td>Investors</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>New Investor</td><td>-</td><td>0.0%</td><td>0.0%</td><td>-</td><td>0.0%</td><td>4,775,322.0</td><td>100.0%</td><td>11.6%</td><td>4,775,322.0</td><td>8.3%</td></tr><tr><td>Investor #1</td><td>-</td><td>0.0%</td><td>0.0%</td><td>10,000,000.0</td><td>27.4%</td><td>-</td><td>0.0%</td><td>24.2%</td><td>10,000,000.0</td><td>17.4%</td></tr><tr><td>Investor #2</td><td>-</td><td>0.0%</td><td>0.0%</td><td>25,000,000.0</td><td>68.5%</td><td>-</td><td>0.0%</td><td>60.6%</td><td>25,000,000.0</td><td>43.5%</td></tr><tr><td>Investor #3</td><td>-</td><td>0.0%</td><td>0.0%</td><td>1,000,000.0</td><td>2.7%</td><td>-</td><td>0.0%</td><td>2.4%</td><td>1,000,000.0</td><td>1.7%</td></tr><tr><td>Investor #4</td><td>-</td><td>0.0%</td><td>0.0%</td><td>250,000.0</td><td>0.7%</td><td>-</td><td>0.0%</td><td>0.6%</td><td>250,000.0</td><td>0.4%</td></tr><tr><td>Investor #5</td><td>-</td><td>0.0%</td><td>0.0%</td><td>250,000.0</td><td>0.7%</td><td>-</td><td>0.0%</td><td>0.6%</td><td>250,000.0</td><td>0.4%</td></tr><tr><td>Founders</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Founder #1</td><td>5,000,000.0</td><td>30.8%</td><td>35.1%</td><td>-</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>5,000,000.0</td><td>8.7%</td></tr><tr><td>Founder #2</td><td>5,000,000.0</td><td>30.8%</td><td>35.1%</td><td>-</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>5,000,000.0</td><td>8.7%</td></tr><tr><td>20 - Equity Incentive Plan</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Granted Option Shares</td><td>1,000,000.0</td><td>6.2% n/a</td><td></td><td>-</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>1,000,000.0</td><td>1.7%</td></tr><tr><td>Available (Ungranted) Option Shares</td><td>1,000,000.0</td><td>6.2% n/a</td><td></td><td>-</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>1,000,000.0</td><td>1.7%</td></tr><tr><td>Available Option Shares (Increase)</td><td>4,252,854.0</td><td>26.2% n/a</td><td></td><td>-</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>4,252,854.0</td><td>7.4%</td></tr><tr><td></td><td>16,252,854.0</td><td>100.0%</td><td>70.2%</td><td>36,500,000.0</td><td>100.0%</td><td>4,775,322.0</td><td>100.0%</td><td>100.0%</td><td>57,528,176.0</td><td>100.0%</td></tr></table>\n\n[1] This example assumes that the Preferred converts into Common Stock at a 1:1 ratio. If the Preferred converts into Common Stock at anything other than a 1:1 ratio, then\nthe Preferred columns should be expanded into a \"nominal shares\" column and an as-converted shares columnn and all calculations in which the Preferred shares are combined with the\nshares of any other class or series (e.g., the \"Total Shares\" calculation) should draw on the as-converted shares.\n\n<!-- doc_id=parse-01m7rtn0b201jyhgv4s7vf4tcj -->",
+  "metadata": {
+    "job_id": "extract-01m7rtn5zd4w48dznsqhhya6ze",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 156384,
+    "doc_id": "parse-01m7rtn0b201jyhgv4s7vf4tcj",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.1,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 3378,
+    "output_extraction_chars": 2415,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

@@ -77,5 +77,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields. Features the paycheck calculation: gross pay $5,361.60, less total taxes $1,387.30 and the 401(k) deduction $268.08, equals net pay $3,706.22. The Medicare tax ($77.74) is included because the Taxes table prints its amounts about half a line below their codes, so 'FICA' appears to have no amount and each amount sits between two codes; the parse resolved the offset, returning an empty FICA row and each amount on its own code's row, which the rates confirm (Medicare 1.45% and Social Security 6.2% of gross). No person is featured. All 33 extracted leaves ground to text containing their value. The labels' text layer is scrambled (a font with a shifted encoding, so 'Amount' extracts from the PDF as '$PRXQW'); the parse reads every label correctly."
+  "notes": "The request named no feature page or fields. Features the paycheck calculation: gross pay $5,361.60, less total taxes $1,387.30 and the 401(k) deduction $268.08, equals net pay $3,706.22. The Medicare tax ($77.74) is included because the Taxes table prints its amounts about half a line below their codes, so 'FICA' appears to have no amount and each amount sits between two codes; the parse resolved the offset, returning an empty FICA row and each amount on its own code's row, which the rates confirm (Medicare 1.45% and Social Security 6.2% of gross). No person is featured. All 33 extracted leaves ground to text containing their value. The labels' text layer is scrambled (a font with a shifted encoding, so 'Amount' extracts from the PDF as '$PRXQW'); the parse reads every label correctly.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.4,
+      "extract_credits": 1.2
+    }
+  ]
 }

@@ -1,16 +1,110 @@
 # Life insurance policy
 
-Source assets for `landing.ai/document-type/life-insurance-policy`.
+**On the website:** [landing.ai/document-type/life-insurance-policy](https://landing.ai/document-type/life-insurance-policy)
 
-## Sample document
+Pacific Life's specimen of an issued annual renewable term life insurance policy:
+$500,000 of cover to age 95, convertible, with a premium waiver rider. The cover gives
+the policy data, the specification pages carry the guaranteed premium tables for each
+policy year, and the rest sets out the contract provisions, such as the grace period,
+reinstatement and incontestability.
 
-`source/pacific-life-term-art-sample-policy.pdf` — Pacific Life's specimen of an issued
+| | |
+|---|---|
+| Pages | 14 |
+| Fields in the extraction schema | 39 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:16 | 2026-11-19 03:32 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 26,093 | 27,189 |
+| Words under 0.95 confidence | 91 | n/a |
+| Words under 0.80 confidence | 56 | n/a |
+| Words under 0.50 confidence | 28 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.9 s | 12.4 s |
+| Per page | 0.6 s | 0.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 4.8 credits | 13.8 credits |
+| Per page | 0.34 credits | 0.99 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:16 | 2026-11-19 03:32 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 39 | 39 |
+| Non-null fields returned | 39 | 39 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 304.9 s | 138.0 s |
+| Per schema field (39) | 7.82 s | 3.54 s |
+| Per value returned | 1.42 s | 0.64 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 10.3 credits | 10.6 credits |
+| Per schema field (39) | 0.264 credits | 0.272 credits |
+| Per value returned | 0.048 credits | 0.049 credits |
+
+## Origin
+
+`source/pacific-life-term-art-sample-policy.pdf` is Pacific Life's specimen of an issued
 **annual renewable term life insurance policy** (product PAC ART, policy form P08TRM):
-$500,000 of cover to age 95, convertible, non-participating, with a premium waiver rider.
-**14 pages, portrait**, born-digital with a text layer. Page 1 is the cover with the
-policy data block, pages 3–7 are the policy specifications and the guaranteed premium
-tables, pages 8–13 are the contract provisions and index, and page 14 is the back cover.
-Page 2 is intentionally blank. Every data page carries a red SAMPLE stamp.
+$500,000 of cover to age 95, convertible, non-participating, with a premium waiver
+rider. It is **14 pages, portrait**, born-digital with a text layer. Page 1 is the cover
+with the policy data block, pages 3–7 are the policy specifications and the guaranteed
+premium tables, pages 8–13 are the contract provisions and index, and page 14 is the
+back cover. Page 2 is intentionally blank. Every data page carries a red SAMPLE stamp.
 
 | | |
 |---|---|
@@ -28,87 +122,35 @@ It is the carrier's own specimen, not a customer's policy. The insured and owner
 The two officer signatures on page 1 are the corporate signatures printed on the
 carrier's policy forms. No redaction was needed. All 14 pages are kept as published;
 only the PDF's document metadata was cleared, because it carried an author username.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **life insurance policy**, and a contract rather than a statement
-or a form:
+### Who processes it
 
-- **Two-column data block.** The cover's policy data sits in two label–value columns side
-  by side. The parse reads each column top to bottom rather than interleaving the rows.
-- **Long continuation tables.** The basic coverage premiums run 60 policy years across
-  two pages, plus a 30-year rider table on a third, each with right-aligned figures, a
-  dollar sign only on the first row and a SAMPLE stamp over the middle.
-- **Terms buried in prose.** The grace period, reinstatement window, incontestability
-  and suicide exclusion periods, claim timing and guaranteed interest rates are stated
-  once, in running text, across six pages of provisions.
-- **Arithmetic that reconciles.** The initial monthly premium ($36.00) is the year-1
-  basic premium ($350) plus the waiver rider ($50), times the monthly factor 0.090.
+A life insurance policy is the contract that defines the cover, its cost over time and
+the conditions for paying a claim. It is read long after it is issued.
 
-## Featured fields: the coverage at a glance
+- **Life insurance carriers:** policy administration and claims teams check face amount,
+  riders, premiums and provision periods.
+- **Insurance agents and brokers:** they review in-force policies when advising on
+  replacement or conversion.
+- **Lenders:** banks taking a collateral assignment of a policy confirm the face amount,
+  owner and policy number.
+- **Life settlement and policy review services:** they read premium schedules and
+  conversion dates to value a policy.
+- **Estate planning and financial advisory:** advisors and attorneys check the cover,
+  ownership and term when planning an estate.
 
-All on page 1. The request named no fields; its notes suggested five.
+### What it contains
 
-| Field | Value |
-|---|---|
-| Product | TERM LIFE INSURANCE |
-| Policy number | VF99999990 |
-| Face amount | 500000 |
-| Initial monthly premium | 36 |
-| Risk class | STANDARD NONSMOKER |
-
-What an underwriter, a lender taking a collateral assignment, or a policy-review service
-reads first: what kind of policy, which one, how much cover, what it costs and at what
-rating. Each box sits tightly on its label and value.
-
-**The suggested policy date was replaced.** The schema asks for ISO dates, so
-`2008-05-01` grounds `OFF` against the printed "MAY 1, 2008": correct, but the crop
-would not show the value printed beside it. The product type took its place. The
-insured's and owner's names ground `ok` but are not featured, because an impersonal field
-makes the same point.
-
-## What it surfaced
-
-**Everything extracted is correct.** All 21 top-level fields populate with no warnings,
-including all 90 rows of the three premium tables, every one of which grounds `ok` on its
-own row. The extraction also reads the bracketed "[20]" days of the free-look period and
-the "[MONTHLY]" interval as plain values.
-
-**Most `OFF`s are normalizations, not misreadings.** Of 262 grounded occurrences, 36 are
-`OFF`: 34 are normalized values—the four ISO dates, the convertible and participating
-booleans (27 occurrences), and three provision periods printed as words ("two years",
-"five years").
-
-**The other two `OFF`s are partial insurer-name matches on page 1:** the extracted legal
-name grounds once to the abbreviated "PACIFIC LIFE" wordmark and once to the opening
-paragraph's partial "Life Insurance Company". Its address-line occurrence grounds `ok`.
-
-**Signatures and stamps are labelled.** The parse marks the cover's officer signatures
-`[SIGNED]` and each page's SAMPLE stamp `[STAMPED]`, and transcribes the stamp's word.
-
-## Extraction
-
-**39 leaf fields**: insurer name and address; policy number and form number; product
-type and policy date; the insured (name, sex, issue age, risk class) and the owner; face
-amount; initial premium and payment interval; coverage-to-age, expiration and conversion
-end dates; convertible and participating flags; free-look days; riders (form, name, cease
-date); modal premium factors; the annual policy fee; the basic coverage and premium
-waiver premium schedules (policy year, annual premium); and eight provision terms (grace
-period, reinstatement period and interest, incontestability and suicide exclusion
-periods, claim payment period, late-claim interest, minimum income benefit interest).
-
-## Cost
-
-**24.30 credits** at standard tier for 14 pages: 13.80 to parse, 10.50 to extract.
-
-## Regenerating
-
-```bash
-curl -sSL -o source/pacific-life-term-art-sample-policy.pdf \
-  "https://www.pacificlife.com/content/dam/paclife/lid/public/sample-policies/Sample%20Policy_Term%20ART.pdf"
-# clear the document metadata with PyMuPDF (set_metadata({}), del_xml_metadata()) and save
-.venv/bin/python document-types/scripts/run_ade.py life-insurance-policy                # 24.30 credits
-.venv/bin/python document-types/scripts/run_ade.py life-insurance-policy --extract-only # 10.50, schema iteration
-.venv/bin/python document-types/scripts/build_images.py life-insurance-policy           # free
-.venv/bin/python document-types/scripts/inspect_fields.py life-insurance-policy --page 1
-```
+- **A two-column data block** on the cover, with label-value pairs side by side.
+- **Long premium tables that continue across pages:** 60 policy years over two pages
+  plus a 30-year rider table on a third, with right-aligned figures and a dollar sign on
+  the first row only.
+- **Terms stated once in running prose,** such as the grace period, reinstatement window
+  and incontestability and suicide exclusion periods, across six pages of provisions.
+- **Figures that reconcile,** such as the monthly premium computed from the annual
+  premiums and a modal factor.
+- **Bracketed variable text** such as "[20]" days and "[MONTHLY]".
+- **A red SAMPLE stamp** on every data page and two printed officer signatures.

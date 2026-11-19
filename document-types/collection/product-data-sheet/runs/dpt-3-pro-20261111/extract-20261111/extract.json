@@ -1,0 +1,1925 @@
+{
+  "extraction": {
+    "application_notes": [
+      {
+        "document_number": "PRD-08407",
+        "title": "LM Module Platform Mounting Guide"
+      },
+      {
+        "document_number": "PRD-04814",
+        "title": "Design Options for Wolfspeed® Silicon Carbide MOSFET Gate Bias Power Supplies"
+      },
+      {
+        "document_number": "PRD-09301",
+        "title": "Gate Driver Design for SiC Power Modules"
+      },
+      {
+        "document_number": "PRD-06379",
+        "title": "Environmental Considerations for Power Electronics Systems"
+      },
+      {
+        "document_number": "PRD-07845",
+        "title": "Power Module Baseplate Capacitance and Electromagnetic Compatibility"
+      },
+      {
+        "document_number": "PRD-07933",
+        "title": "Wolfspeed Power Module Thermal Interface Material Application User Guide"
+      },
+      {
+        "document_number": "PRD-08376",
+        "title": "Thermal Characterization Methods and Applications"
+      },
+      {
+        "document_number": "PRD-08710",
+        "title": "Measuring Stray Inductance in Power Electronics Systems"
+      },
+      {
+        "document_number": "PRD-08911",
+        "title": "Considerations for Current Balancing in Paralleled SiC Power Modules"
+      },
+      {
+        "document_number": "PRD-09035",
+        "title": "Power Module RC Thermal Models User Guide"
+      }
+    ],
+    "characteristics_table": [
+      {
+        "conditions": "V_GS = 0 V, T_VJ = -55 °C",
+        "max": null,
+        "min": "3300",
+        "parameter": "Drain-Source Breakdown Voltage",
+        "symbol": "V(BR)DSS",
+        "typ": null,
+        "unit": "V"
+      },
+      {
+        "conditions": "V_DS = V_GS, I_D = 530 mA",
+        "max": "4.4",
+        "min": "2.6",
+        "parameter": "Gate Threshold Voltage",
+        "symbol": "V_GS(th)",
+        "typ": "3.5",
+        "unit": "V"
+      },
+      {
+        "conditions": "V_DS = V_GS, I_D = 530 mA, T_VJ = 175 °C",
+        "max": null,
+        "min": null,
+        "parameter": "Gate Threshold Voltage",
+        "symbol": "V_GS(th)",
+        "typ": "2.6",
+        "unit": "V"
+      },
+      {
+        "conditions": "V_GS = 0 V, V_DS = 3300 V",
+        "max": "400",
+        "min": null,
+        "parameter": "Zero Gate Voltage Drain Current",
+        "symbol": "I_DSS",
+        "typ": "20",
+        "unit": "μA"
+      },
+      {
+        "conditions": "V_GS = 18 V, V_DS = 0 V",
+        "max": "5000",
+        "min": null,
+        "parameter": "Gate-Source Leakage Current",
+        "symbol": "I_GSS",
+        "typ": "200",
+        "unit": "nA"
+      },
+      {
+        "conditions": "V_GS = 18 V, I_D = 900 A",
+        "max": "2.6",
+        "min": null,
+        "parameter": "Drain-Source On-State Resistance (Devices Only)",
+        "symbol": "R_DS(on)",
+        "typ": "2.0",
+        "unit": "mΩ"
+      },
+      {
+        "conditions": "V_GS = 18 V, I_D = 900 A, T_VJ = 175 °C",
+        "max": null,
+        "min": null,
+        "parameter": "Drain-Source On-State Resistance (Devices Only)",
+        "symbol": "R_DS(on)",
+        "typ": "5.0",
+        "unit": "mΩ"
+      },
+      {
+        "conditions": "V_DS = 20 V, I_DS = 900 A",
+        "max": null,
+        "min": null,
+        "parameter": "Transconductance",
+        "symbol": "g_fs",
+        "typ": "617",
+        "unit": "S"
+      },
+      {
+        "conditions": "V_DS = 20 V, I_DS = 900 A, T_VJ = 175 °C",
+        "max": null,
+        "min": null,
+        "parameter": "Transconductance",
+        "symbol": "g_fs",
+        "typ": "619",
+        "unit": "S"
+      },
+      {
+        "conditions": "f = 100 kHz",
+        "max": null,
+        "min": null,
+        "parameter": "Internal Gate Resistance",
+        "symbol": "R_G(int)",
+        "typ": "0.5",
+        "unit": "Ω"
+      },
+      {
+        "conditions": "V_GS = 0 V, V_DS = 1800 V, V_AC = 25 mV, f = 100 kHz",
+        "max": null,
+        "min": null,
+        "parameter": "Input Capacitance",
+        "symbol": "C_iss",
+        "typ": "159.9",
+        "unit": "nF"
+      },
+      {
+        "conditions": "V_GS = 0 V, V_DS = 1800 V, V_AC = 25 mV, f = 100 kHz",
+        "max": null,
+        "min": null,
+        "parameter": "Output Capacitance",
+        "symbol": "C_oss",
+        "typ": "2.4",
+        "unit": "nF"
+      },
+      {
+        "conditions": "V_GS = 0 V, V_DS = 1800 V, V_AC = 25 mV, f = 100 kHz",
+        "max": null,
+        "min": null,
+        "parameter": "Reverse Transfer Capacitance",
+        "symbol": "C_rss",
+        "typ": "6.7",
+        "unit": "pF"
+      },
+      {
+        "conditions": null,
+        "max": null,
+        "min": null,
+        "parameter": "FET Thermal Resistance, Junction to Heatsink",
+        "symbol": "R_th JHS",
+        "typ": "0.021",
+        "unit": "°C/W"
+      }
+    ],
+    "headline_ratings": {
+      "rated_drain_source_voltage": "3300 V",
+      "rated_on_resistance": "2 mΩ"
+    },
+    "maximum_ratings": {
+      "continuous_drain_current_25c_a": 1200,
+      "continuous_drain_current_90c_a": 908,
+      "drain_source_voltage_v": 3300,
+      "gate_source_voltage_recommended": "-5/+18",
+      "max_junction_temperature_c": 175,
+      "power_dissipation_w": 7282,
+      "pulsed_drain_current_a": 3600
+    },
+    "mosfet_characteristics": {
+      "body_diode_forward_voltage_v": 5.7,
+      "gate_threshold_voltage_max_v": 4.4,
+      "gate_threshold_voltage_min_v": 2.6,
+      "gate_threshold_voltage_typ_v": 3.5,
+      "input_capacitance_nf": 159.9,
+      "on_resistance_max_mohm": 2.6,
+      "on_resistance_test_conditions": "V_GS = 18 V, I_D = 900 A",
+      "on_resistance_typ_175c_mohm": 5.0,
+      "on_resistance_typ_mohm": 2.0
+    },
+    "ntc_sensor": {
+      "beta_25_80_k": 3435,
+      "resistance_25c_ohm": 4700
+    },
+    "performance_figures": [
+      {
+        "figure_number": 1,
+        "title": "Output Characteristics for Various Junction Temperatures"
+      },
+      {
+        "figure_number": 2,
+        "title": "Normalized On-State Resistance vs. Drain Current for Various Junction Temperatures"
+      },
+      {
+        "figure_number": 3,
+        "title": "Normalized On-State Resistance vs. Junction Temperature"
+      },
+      {
+        "figure_number": 4,
+        "title": "Transfer Characteristic for Various Junction Temperatures"
+      },
+      {
+        "figure_number": 5,
+        "title": "3rd Quadrant Characteristic vs. Junction Temperatures at VGS = 18 V"
+      },
+      {
+        "figure_number": 6,
+        "title": "3rd Quadrant Characteristic vs. Junction Temperatures at VGS = 0 V (Body Diode)"
+      },
+      {
+        "figure_number": 7,
+        "title": "3rd Quadrant Characteristic vs. Junction Temperatures at VGS = -5 V (Body Diode)"
+      },
+      {
+        "figure_number": 8,
+        "title": "Typical Capacitances vs. Drain to Source Voltage (0 - 200 V)"
+      },
+      {
+        "figure_number": 9,
+        "title": "Typical Capacitances vs. Drain to Source Voltage (0 - 3300V)"
+      },
+      {
+        "figure_number": 10,
+        "title": "Threshold Voltage vs. Junction Temperature"
+      },
+      {
+        "figure_number": 11,
+        "title": "Continuous Drain Current Derating vs. Case Temperature"
+      },
+      {
+        "figure_number": 12,
+        "title": "Maximum Power Dissipation Derating vs. Case Temperature"
+      },
+      {
+        "figure_number": 13,
+        "title": "Turn-off Transient Definitions"
+      },
+      {
+        "figure_number": 14,
+        "title": "Turn-on Transient Definitions"
+      },
+      {
+        "figure_number": 15,
+        "title": "Reverse Recovery Definitions"
+      },
+      {
+        "figure_number": 16,
+        "title": "VGS Transient Definitions"
+      }
+    ],
+    "physical_characteristics": {
+      "comparative_tracking_index": 600,
+      "creepage_terminal_to_baseplate_mm": 45,
+      "isolation_voltage_kv": 6,
+      "stray_inductance_nh": 9.5,
+      "weight_g": 745
+    },
+    "product": {
+      "description": "3300 V, 900 A, Silicon Carbide, Half-Bridge Module",
+      "document_status": "Preliminary Datasheet",
+      "manufacturer": "Wolfspeed, Inc.",
+      "manufacturer_address": "4600 Silicon Drive, Durham, NC 27703 USA",
+      "manufacturer_phone": "+1.919.313.5300",
+      "part_number": "HAB900C33LM4",
+      "revision": "Preliminary Rev. 1",
+      "revision_date": "May 2026"
+    }
+  },
+  "extraction_metadata": {
+    "application_notes": [
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39063,
+              "start": 39054
+            }
+          ],
+          "value": "PRD-08407"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39098,
+              "start": 39065
+            }
+          ],
+          "value": "LM Module Platform Mounting Guide"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39123,
+              "start": 39114
+            }
+          ],
+          "value": "PRD-04814"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39202,
+              "start": 39125
+            }
+          ],
+          "value": "Design Options for Wolfspeed® Silicon Carbide MOSFET Gate Bias Power Supplies"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39227,
+              "start": 39218
+            }
+          ],
+          "value": "PRD-09301"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39269,
+              "start": 39229
+            }
+          ],
+          "value": "Gate Driver Design for SiC Power Modules"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39294,
+              "start": 39285
+            }
+          ],
+          "value": "PRD-06379"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39354,
+              "start": 39296
+            }
+          ],
+          "value": "Environmental Considerations for Power Electronics Systems"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39379,
+              "start": 39370
+            }
+          ],
+          "value": "PRD-07845"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39449,
+              "start": 39381
+            }
+          ],
+          "value": "Power Module Baseplate Capacitance and Electromagnetic Compatibility"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39474,
+              "start": 39465
+            }
+          ],
+          "value": "PRD-07933"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39548,
+              "start": 39476
+            }
+          ],
+          "value": "Wolfspeed Power Module Thermal Interface Material Application User Guide"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39573,
+              "start": 39564
+            }
+          ],
+          "value": "PRD-08376"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39624,
+              "start": 39575
+            }
+          ],
+          "value": "Thermal Characterization Methods and Applications"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39649,
+              "start": 39640
+            }
+          ],
+          "value": "PRD-08710"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39706,
+              "start": 39651
+            }
+          ],
+          "value": "Measuring Stray Inductance in Power Electronics Systems"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39731,
+              "start": 39722
+            }
+          ],
+          "value": "PRD-08911"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39801,
+              "start": 39733
+            }
+          ],
+          "value": "Considerations for Current Balancing in Paralleled SiC Power Modules"
+        }
+      },
+      {
+        "document_number": {
+          "ranges": [
+            {
+              "end": 39826,
+              "start": 39817
+            }
+          ],
+          "value": "PRD-09035"
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 39869,
+              "start": 39828
+            }
+          ],
+          "value": "Power Module RC Thermal Models User Guide"
+        }
+      }
+    ],
+    "characteristics_table": [
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 4030,
+              "start": 3985
+            }
+          ],
+          "value": "V_GS = 0 V, T_VJ = -55 °C"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": [
+            {
+              "end": 3936,
+              "start": 3932
+            }
+          ],
+          "value": "3300"
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 3895,
+              "start": 3865
+            }
+          ],
+          "value": "Drain-Source Breakdown Voltage"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 3923,
+              "start": 3904
+            }
+          ],
+          "value": "V(BR)DSS"
+        },
+        "typ": {
+          "ranges": null,
+          "value": null
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 3976,
+              "start": 3975
+            }
+          ],
+          "value": "V"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 4231,
+              "start": 4176
+            }
+          ],
+          "value": "V_DS = V_GS, I_D = 530 mA"
+        },
+        "max": {
+          "ranges": [
+            {
+              "end": 4167,
+              "start": 4164
+            }
+          ],
+          "value": "4.4"
+        },
+        "min": {
+          "ranges": [
+            {
+              "end": 4143,
+              "start": 4140
+            }
+          ],
+          "value": "2.6"
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 4092,
+              "start": 4070
+            }
+          ],
+          "value": "Gate Threshold Voltage"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 4131,
+              "start": 4113
+            }
+          ],
+          "value": "V_GS(th)"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 4155,
+              "start": 4152
+            }
+          ],
+          "value": "3.5"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 3976,
+              "start": 3975
+            }
+          ],
+          "value": "V"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 4369,
+              "start": 4289
+            }
+          ],
+          "value": "V_DS = V_GS, I_D = 530 mA, T_VJ = 175 °C"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 4092,
+              "start": 4070
+            }
+          ],
+          "value": "Gate Threshold Voltage"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 4131,
+              "start": 4113
+            }
+          ],
+          "value": "V_GS(th)"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 4271,
+              "start": 4268
+            }
+          ],
+          "value": "2.6"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 3976,
+              "start": 3975
+            }
+          ],
+          "value": "V"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 4549,
+              "start": 4504
+            }
+          ],
+          "value": "V_GS = 0 V, V_DS = 3300 V"
+        },
+        "max": {
+          "ranges": [
+            {
+              "end": 4484,
+              "start": 4481
+            }
+          ],
+          "value": "400"
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 4428,
+              "start": 4397
+            }
+          ],
+          "value": "Zero Gate Voltage Drain Current"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 4452,
+              "start": 4437
+            }
+          ],
+          "value": "I_DSS"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 4472,
+              "start": 4470
+            }
+          ],
+          "value": "20"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 4495,
+              "start": 4493
+            }
+          ],
+          "value": "μA"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 4725,
+              "start": 4682
+            }
+          ],
+          "value": "V_GS = 18 V, V_DS = 0 V"
+        },
+        "max": {
+          "ranges": [
+            {
+              "end": 4662,
+              "start": 4658
+            }
+          ],
+          "value": "5000"
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 4604,
+              "start": 4577
+            }
+          ],
+          "value": "Gate-Source Leakage Current"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 4628,
+              "start": 4613
+            }
+          ],
+          "value": "I_GSS"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 4649,
+              "start": 4646
+            }
+          ],
+          "value": "200"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 4673,
+              "start": 4671
+            }
+          ],
+          "value": "nA"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 4963,
+              "start": 4919
+            }
+          ],
+          "value": "V_GS = 18 V, I_D = 900 A"
+        },
+        "max": {
+          "ranges": [
+            {
+              "end": 4887,
+              "start": 4884
+            }
+          ],
+          "value": "2.6"
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 4815,
+              "start": 4765
+            }
+          ],
+          "value": "Drain-Source On-State Resistance (Devices Only)"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 4854,
+              "start": 4836
+            }
+          ],
+          "value": "R_DS(on)"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 4875,
+              "start": 4872
+            }
+          ],
+          "value": "2.0"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 4910,
+              "start": 4908
+            }
+          ],
+          "value": "mΩ"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5118,
+              "start": 5049
+            }
+          ],
+          "value": "V_GS = 18 V, I_D = 900 A, T_VJ = 175 °C"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 4815,
+              "start": 4765
+            }
+          ],
+          "value": "Drain-Source On-State Resistance (Devices Only)"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 4854,
+              "start": 4836
+            }
+          ],
+          "value": "R_DS(on)"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 5031,
+              "start": 5028
+            }
+          ],
+          "value": "5.0"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 4910,
+              "start": 4908
+            }
+          ],
+          "value": "mΩ"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5306,
+              "start": 5261
+            }
+          ],
+          "value": "V_DS = 20 V, I_DS = 900 A"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 5165,
+              "start": 5149
+            }
+          ],
+          "value": "Transconductance"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 5200,
+              "start": 5186
+            }
+          ],
+          "value": "g_fs"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 5221,
+              "start": 5218
+            }
+          ],
+          "value": "617"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 5252,
+              "start": 5251
+            }
+          ],
+          "value": "S"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5452,
+              "start": 5382
+            }
+          ],
+          "value": "V_DS = 20 V, I_DS = 900 A, T_VJ = 175 °C"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 5165,
+              "start": 5149
+            }
+          ],
+          "value": "Transconductance"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 5200,
+              "start": 5186
+            }
+          ],
+          "value": "g_fs"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 5364,
+              "start": 5361
+            }
+          ],
+          "value": "619"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 5252,
+              "start": 5251
+            }
+          ],
+          "value": "S"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5582,
+              "start": 5571
+            }
+          ],
+          "value": "f = 100 kHz"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 5495,
+              "start": 5471
+            }
+          ],
+          "value": "Internal Gate Resistance"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 5522,
+              "start": 5504
+            }
+          ],
+          "value": "R_G(int)"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 5543,
+              "start": 5540
+            }
+          ],
+          "value": "0.5"
+        },
+        "unit": {
+          "ranges": null,
+          "value": "Ω"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5812,
+              "start": 5727
+            }
+          ],
+          "value": "V_GS = 0 V, V_DS = 1800 V, V_AC = 25 mV, f = 100 kHz"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 5627,
+              "start": 5610
+            }
+          ],
+          "value": "Input Capacitance"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 5651,
+              "start": 5636
+            }
+          ],
+          "value": "C_iss"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 5674,
+              "start": 5669
+            }
+          ],
+          "value": "159.9"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 5706,
+              "start": 5704
+            }
+          ],
+          "value": "nF"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5812,
+              "start": 5727
+            }
+          ],
+          "value": "V_GS = 0 V, V_DS = 1800 V, V_AC = 25 mV, f = 100 kHz"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 5876,
+              "start": 5858
+            }
+          ],
+          "value": "Output Capacitance"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 5900,
+              "start": 5885
+            }
+          ],
+          "value": "C_oss"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 5921,
+              "start": 5918
+            }
+          ],
+          "value": "2.4"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 5706,
+              "start": 5704
+            }
+          ],
+          "value": "nF"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": [
+            {
+              "end": 5812,
+              "start": 5727
+            }
+          ],
+          "value": "V_GS = 0 V, V_DS = 1800 V, V_AC = 25 mV, f = 100 kHz"
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 5977,
+              "start": 5949
+            }
+          ],
+          "value": "Reverse Transfer Capacitance"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 6001,
+              "start": 5986
+            }
+          ],
+          "value": "C_rss"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 6022,
+              "start": 6019
+            }
+          ],
+          "value": "6.7"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 6042,
+              "start": 6040
+            }
+          ],
+          "value": "pF"
+        }
+      },
+      {
+        "conditions": {
+          "ranges": null,
+          "value": null
+        },
+        "max": {
+          "ranges": null,
+          "value": null
+        },
+        "min": {
+          "ranges": null,
+          "value": null
+        },
+        "parameter": {
+          "ranges": [
+            {
+              "end": 6105,
+              "start": 6061
+            }
+          ],
+          "value": "FET Thermal Resistance, Junction to Heatsink"
+        },
+        "symbol": {
+          "ranges": [
+            {
+              "end": 6132,
+              "start": 6114
+            }
+          ],
+          "value": "R_th JHS"
+        },
+        "typ": {
+          "ranges": [
+            {
+              "end": 6155,
+              "start": 6150
+            }
+          ],
+          "value": "0.021"
+        },
+        "unit": {
+          "ranges": [
+            {
+              "end": 6177,
+              "start": 6173
+            }
+          ],
+          "value": "°C/W"
+        }
+      }
+    ],
+    "headline_ratings": {
+      "rated_drain_source_voltage": {
+        "ranges": [
+          {
+            "end": 173,
+            "start": 167
+          }
+        ],
+        "value": "3300 V"
+      },
+      "rated_on_resistance": {
+        "ranges": [
+          {
+            "end": 204,
+            "start": 200
+          }
+        ],
+        "value": "2 mΩ"
+      }
+    },
+    "maximum_ratings": {
+      "continuous_drain_current_25c_a": {
+        "ranges": [
+          {
+            "end": 1722,
+            "start": 1718
+          }
+        ],
+        "value": 1200
+      },
+      "continuous_drain_current_90c_a": {
+        "ranges": [
+          {
+            "end": 1901,
+            "start": 1898
+          }
+        ],
+        "value": 908
+      },
+      "drain_source_voltage_v": {
+        "ranges": [
+          {
+            "end": 1264,
+            "start": 1260
+          }
+        ],
+        "value": 3300
+      },
+      "gate_source_voltage_recommended": {
+        "ranges": [
+          {
+            "end": 1575,
+            "start": 1569
+          }
+        ],
+        "value": "-5/+18"
+      },
+      "max_junction_temperature_c": {
+        "ranges": [
+          {
+            "end": 2670,
+            "start": 2667
+          }
+        ],
+        "value": 175
+      },
+      "power_dissipation_w": {
+        "ranges": [
+          {
+            "end": 2463,
+            "start": 2459
+          }
+        ],
+        "value": 7282
+      },
+      "pulsed_drain_current_a": {
+        "ranges": [
+          {
+            "end": 2280,
+            "start": 2276
+          }
+        ],
+        "value": 3600
+      }
+    },
+    "mosfet_characteristics": {
+      "body_diode_forward_voltage_v": {
+        "ranges": [
+          {
+            "end": 6547,
+            "start": 6544
+          }
+        ],
+        "value": 5.7
+      },
+      "gate_threshold_voltage_max_v": {
+        "ranges": [
+          {
+            "end": 4167,
+            "start": 4164
+          }
+        ],
+        "value": 4.4
+      },
+      "gate_threshold_voltage_min_v": {
+        "ranges": [
+          {
+            "end": 4143,
+            "start": 4140
+          }
+        ],
+        "value": 2.6
+      },
+      "gate_threshold_voltage_typ_v": {
+        "ranges": [
+          {
+            "end": 4155,
+            "start": 4152
+          }
+        ],
+        "value": 3.5
+      },
+      "input_capacitance_nf": {
+        "ranges": [
+          {
+            "end": 5674,
+            "start": 5669
+          }
+        ],
+        "value": 159.9
+      },
+      "on_resistance_max_mohm": {
+        "ranges": [
+          {
+            "end": 4887,
+            "start": 4884
+          }
+        ],
+        "value": 2.6
+      },
+      "on_resistance_test_conditions": {
+        "ranges": [
+          {
+            "end": 4963,
+            "start": 4919
+          }
+        ],
+        "value": "V_GS = 18 V, I_D = 900 A"
+      },
+      "on_resistance_typ_175c_mohm": {
+        "ranges": [
+          {
+            "end": 5031,
+            "start": 5028
+          }
+        ],
+        "value": 5.0
+      },
+      "on_resistance_typ_mohm": {
+        "ranges": [
+          {
+            "end": 4875,
+            "start": 4872
+          }
+        ],
+        "value": 2.0
+      }
+    },
+    "ntc_sensor": {
+      "beta_25_80_k": {
+        "ranges": [
+          {
+            "end": 9576,
+            "start": 9572
+          }
+        ],
+        "value": 3435
+      },
+      "resistance_25c_ohm": {
+        "ranges": [
+          {
+            "end": 9326,
+            "start": 9322
+          }
+        ],
+        "value": 4700
+      }
+    },
+    "performance_figures": [
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 11207,
+              "start": 11206
+            }
+          ],
+          "value": 1
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 11272,
+              "start": 11216
+            }
+          ],
+          "value": "Output Characteristics for Various Junction Temperatures"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 13683,
+              "start": 13682
+            }
+          ],
+          "value": 2
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 13769,
+              "start": 13687
+            }
+          ],
+          "value": "Normalized On-State Resistance vs. Drain Current for Various Junction Temperatures"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 13802,
+              "start": 13801
+            }
+          ],
+          "value": 3
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 13861,
+              "start": 13806
+            }
+          ],
+          "value": "Normalized On-State Resistance vs. Junction Temperature"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 14920,
+              "start": 14919
+            }
+          ],
+          "value": 4
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 14979,
+              "start": 14922
+            }
+          ],
+          "value": "Transfer Characteristic for Various Junction Temperatures"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 15868,
+              "start": 15867
+            }
+          ],
+          "value": 5
+        },
+        "title": {
+          "ranges": null,
+          "value": "3rd Quadrant Characteristic vs. Junction Temperatures at VGS = 18 V"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 17538,
+              "start": 17537
+            }
+          ],
+          "value": 6
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 17619,
+              "start": 17540
+            }
+          ],
+          "value": "3rd Quadrant Characteristic vs. Junction Temperatures at VGS = 0 V (Body Diode)"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 19055,
+              "start": 19054
+            }
+          ],
+          "value": 7
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 19137,
+              "start": 19057
+            }
+          ],
+          "value": "3rd Quadrant Characteristic vs. Junction Temperatures at VGS = -5 V (Body Diode)"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 20554,
+              "start": 20553
+            }
+          ],
+          "value": 8
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 20618,
+              "start": 20558
+            }
+          ],
+          "value": "Typical Capacitances vs. Drain to Source Voltage (0 - 200 V)"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 21776,
+              "start": 21775
+            }
+          ],
+          "value": 9
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 21840,
+              "start": 21780
+            }
+          ],
+          "value": "Typical Capacitances vs. Drain to Source Voltage (0 - 3300V)"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 23050,
+              "start": 23048
+            }
+          ],
+          "value": 10
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 23096,
+              "start": 23054
+            }
+          ],
+          "value": "Threshold Voltage vs. Junction Temperature"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 24118,
+              "start": 24116
+            }
+          ],
+          "value": 11
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 24174,
+              "start": 24120
+            }
+          ],
+          "value": "Continuous Drain Current Derating vs. Case Temperature"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 25268,
+              "start": 25266
+            }
+          ],
+          "value": 12
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 25325,
+              "start": 25270
+            }
+          ],
+          "value": "Maximum Power Dissipation Derating vs. Case Temperature"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 26533,
+              "start": 26531
+            }
+          ],
+          "value": 13
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 26567,
+              "start": 26537
+            }
+          ],
+          "value": "Turn-off Transient Definitions"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 27782,
+              "start": 27780
+            }
+          ],
+          "value": 14
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 27813,
+              "start": 27784
+            }
+          ],
+          "value": "Turn-on Transient Definitions"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 29017,
+              "start": 29015
+            }
+          ],
+          "value": 15
+        },
+        "title": {
+          "ranges": [
+            {
+              "end": 29049,
+              "start": 29021
+            }
+          ],
+          "value": "Reverse Recovery Definitions"
+        }
+      },
+      {
+        "figure_number": {
+          "ranges": [
+            {
+              "end": 29952,
+              "start": 29950
+            }
+          ],
+          "value": 16
+        },
+        "title": {
+          "ranges": null,
+          "value": "VGS Transient Definitions"
+        }
+      }
+    ],
+    "physical_characteristics": {
+      "comparative_tracking_index": {
+        "ranges": [
+          {
+            "end": 8483,
+            "start": 8480
+          }
+        ],
+        "value": 600
+      },
+      "creepage_terminal_to_baseplate_mm": {
+        "ranges": [
+          {
+            "end": 8896,
+            "start": 8894
+          }
+        ],
+        "value": 45
+      },
+      "isolation_voltage_kv": {
+        "ranges": [
+          {
+            "end": 8360,
+            "start": 8359
+          }
+        ],
+        "value": 6
+      },
+      "stray_inductance_nh": {
+        "ranges": [
+          {
+            "end": 7697,
+            "start": 7694
+          }
+        ],
+        "value": 9.5
+      },
+      "weight_g": {
+        "ranges": [
+          {
+            "end": 7928,
+            "start": 7925
+          }
+        ],
+        "value": 745
+      }
+    },
+    "product": {
+      "description": {
+        "ranges": [
+          {
+            "end": 143,
+            "start": 93
+          }
+        ],
+        "value": "3300 V, 900 A, Silicon Carbide, Half-Bridge Module"
+      },
+      "document_status": {
+        "ranges": [
+          {
+            "end": 23,
+            "start": 2
+          }
+        ],
+        "value": "Preliminary Datasheet"
+      },
+      "manufacturer": {
+        "ranges": [
+          {
+            "end": 3262,
+            "start": 3247
+          }
+        ],
+        "value": "Wolfspeed, Inc."
+      },
+      "manufacturer_address": {
+        "ranges": null,
+        "value": "4600 Silicon Drive, Durham, NC 27703 USA"
+      },
+      "manufacturer_phone": {
+        "ranges": [
+          {
+            "end": 44073,
+            "start": 44058
+          },
+          {
+            "end": 3238,
+            "start": 3156
+          }
+        ],
+        "value": "+1.919.313.5300"
+      },
+      "part_number": {
+        "ranges": [
+          {
+            "end": 91,
+            "start": 79
+          }
+        ],
+        "value": "HAB900C33LM4"
+      },
+      "revision": {
+        "ranges": [
+          {
+            "end": 3144,
+            "start": 3126
+          }
+        ],
+        "value": "Preliminary Rev. 1"
+      },
+      "revision_date": {
+        "ranges": [
+          {
+            "end": 3154,
+            "start": 3146
+          }
+        ],
+        "value": "May 2026"
+      }
+    }
+  },
+  "markdown": "# Preliminary Datasheet\nSubject to change without notice\n\n[logo: Wolfspeed]\n\n# HAB900C33LM4\n\n3300 V, 900 A, Silicon Carbide, Half-Bridge Module\n\n- **V<sub>DS</sub>**: 3300 V\n- **R<sub>DS(on)</sub>**: 2 mΩ\n\n## **Technical Features**\n\n* Fully SiC MOSFET-based for Ultra-Low Loss\n* Industry-Compatible Package Footprint\n* High Junction Temperature (175 °C) Operation\n* Low Stray Inductance (<10 nH)\n* Soft Reverse Recovery from Gen 4 Body Diode\n* Sintered Die Attach and Copper Die Top System\n* Low-Thermal Resistance Copper Baseplate\n\n**Typical Applications**\n\n* Solar & Wind-Power Infrastructure\n* Grid-Scale Energy Storage\n* Rail Traction\n* Heavy-Duty E-Mobility: Transportation and Mining\n* Marine and Aerospace Propulsion\n\n**System Benefits**\n\n* Increased System Efficiency due to Low Switching & Conduction Losses of SiC\n* Improved Power Cycling Capabilities for Increased System Lifetime\n* Enhanced Durability and Reduced System Cost\n* Enables Two-level Conversion for 2000 V or Greater DC Systems\n\n## Maximum Parameters (Verified by Design)\n\n<table>\n<tr><td>Parameter</td><td>Symbol</td><td>Min.</td><td>Typ.</td><td>Max.</td><td>Unit</td><td>Conditions</td><td>Note</td></tr>\n<tr><td>Drain-Source Voltage</td><td>V<sub>DS</sub></td><td></td><td></td><td>3300</td><td rowspan=\"3\">V</td><td></td><td></td></tr>\n<tr><td>Gate-Source Voltage, Maximum Value</td><td>V<sub>GS(max)</sub></td><td>-10</td><td></td><td>23</td><td>Transient</td><td rowspan=\"2\">Note 1<br>Fig. 16</td></tr>\n<tr><td>Gate-Source Voltage, Recommended</td><td>V<sub>GS(op)</sub></td><td></td><td>-5/+18</td><td></td><td>Static</td></tr>\n<tr><td rowspan=\"2\">DC Continuous Drain Current</td><td rowspan=\"2\">I<sub>D</sub></td><td></td><td></td><td>1200</td><td rowspan=\"4\">A</td><td>V<sub>GS</sub> = 18 V, T<sub>C</sub> = 25 °C, T<sub>VJ</sub> ≤ 175 °C</td><td rowspan=\"4\">Notes<br>2, 3, 4<br>Fig. 11</td></tr>\n<tr><td></td><td>908</td><td></td><td>V<sub>GS</sub> = 18 V,  T<sub>C</sub> = 90 °C, T<sub>VJ</sub> ≤ 175 °C</td></tr>\n<tr><td>DC Source-Drain Current (Body Diode)</td><td>I<sub>SD(BD)</sub></td><td></td><td>876</td><td></td><td>V<sub>GS</sub> = -5 V,  T<sub>C</sub> = 90 °C, T<sub>VJ</sub> ≤ 175 °C</td></tr>\n<tr><td>Pulsed Drain-Source Current</td><td>I<sub>DM</sub></td><td></td><td></td><td>3600</td><td>t<sub>Pmax</sub> limited by T<sub>VJmax</sub><br>V<sub>GS</sub> = 18 V,  T<sub>C</sub> = 25 °C</td></tr>\n<tr><td>Power Dissipation</td><td>P<sub>D</sub></td><td></td><td>7282</td><td></td><td>W</td><td>T<sub>C</sub> = 25 °C, T<sub>VJ</sub> ≤ 175 °C</td><td>Note 5<br>Fig. 12</td></tr>\n<tr><td>Virtual Junction Temperature</td><td>T<sub>VJ(op)</sub></td><td>-55</td><td></td><td>175</td><td>°C</td><td></td><td></td></tr>\n</table>\n\nNote (1): Recommended turn-on gate voltage is 18 V with ±5 % regulation tolerance\nNote (2): Current limit at T<sub>C</sub> = 25 °C imposed by package\nNote (3): Typical current limit calculated by I<sub>D(max)</sub> = √(P<sub>D</sub>/R<sub>DS(typ)</sub>(T<sub>VJ(max)</sub>,I<sub>D(max)</sub>))\nNote (4): Verified by design\nNote (5): P<sub>D</sub> = (T<sub>VJ</sub> - T<sub>C</sub>)/R<sub>TH(JC,typ)</sub>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n@ 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice..\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n**Preliminary Datasheet**\n**Subject to change without notice**\n\n[logo] 2\n\n**MOSFET Characteristics (Per Position) (T<sub>VJ</sub> = 25 °C Unless Otherwise Specified)**\n\n<table>\n<tr><td>Parameter</td><td>Symbol</td><td>Min.</td><td>Typ.</td><td>Max.</td><td>Unit</td><td>Conditions</td><td>Note</td></tr>\n<tr><td>Drain-Source Breakdown Voltage</td><td>V<sub>(BR)DSS</sub></td><td>3300</td><td></td><td></td><td rowspan=\"3\">V</td><td>V<sub>GS</sub> = 0 V, T<sub>VJ</sub> = -55 °C</td><td></td></tr>\n<tr><td rowspan=\"2\">Gate Threshold Voltage</td><td rowspan=\"2\">V<sub>GS(th)</sub></td><td>2.6</td><td>3.5</td><td>4.4</td><td>V<sub>DS</sub> = V<sub>GS</sub>, I<sub>D</sub> = 530 mA</td><td></td></tr>\n<tr><td></td><td>2.6</td><td></td><td>V<sub>DS</sub> = V<sub>GS</sub>, I<sub>D</sub> = 530 mA, T<sub>VJ</sub> = 175 °C</td><td></td></tr>\n<tr><td>Zero Gate Voltage Drain Current</td><td>I<sub>DSS</sub></td><td></td><td>20</td><td>400</td><td>μA</td><td>V<sub>GS</sub> = 0 V, V<sub>DS</sub> = 3300 V</td><td></td></tr>\n<tr><td>Gate-Source Leakage Current</td><td>I<sub>GSS</sub></td><td></td><td>200</td><td>5000</td><td>nA</td><td>V<sub>GS</sub> = 18 V, V<sub>DS</sub> = 0 V</td><td></td></tr>\n<tr><td rowspan=\"2\">Drain-Source On-State Resistance<br>(Devices Only)</td><td rowspan=\"2\">R<sub>DS(on)</sub></td><td></td><td>2.0</td><td>2.6</td><td rowspan=\"2\">mΩ</td><td>V<sub>GS</sub> = 18 V, I<sub>D</sub> = 900 A</td><td rowspan=\"2\">Fig. 2<br>Fig. 3</td></tr>\n<tr><td></td><td>5.0</td><td></td><td>V<sub>GS</sub> = 18 V, I<sub>D</sub> = 900 A, T<sub>VJ</sub> = 175 °C</td></tr>\n<tr><td rowspan=\"2\">Transconductance</td><td rowspan=\"2\">g<sub>fs</sub></td><td></td><td>617</td><td></td><td rowspan=\"2\">S</td><td>V<sub>DS</sub> = 20 V, I<sub>DS</sub> = 900 A</td><td rowspan=\"2\">Fig. 4</td></tr>\n<tr><td></td><td>619</td><td></td><td>V<sub>DS</sub> = 20 V, I<sub>DS</sub> = 900 A, T<sub>VJ</sub> = 175 °C</td></tr>\n<tr><td>Internal Gate Resistance</td><td>R<sub>G(int)</sub></td><td></td><td>0.5</td><td></td><td>Ω</td><td>f = 100 kHz</td><td></td></tr>\n<tr><td>Input Capacitance</td><td>C<sub>iss</sub></td><td></td><td>159.9</td><td></td><td rowspan=\"2\">nF</td><td rowspan=\"3\">V<sub>GS</sub> = 0 V, V<sub>DS</sub> = 1800 V,<br>V<sub>AC</sub> = 25 mV, f = 100 kHz</td><td rowspan=\"3\">Fig. 9</td></tr>\n<tr><td>Output Capacitance</td><td>C<sub>oss</sub></td><td></td><td>2.4</td><td></td></tr>\n<tr><td>Reverse Transfer Capacitance</td><td>C<sub>rss</sub></td><td></td><td>6.7</td><td></td><td>pF</td></tr>\n<tr><td>FET Thermal Resistance, Junction to Heatsink</td><td>R<sub>th JHS</sub></td><td></td><td>0.021</td><td></td><td>°C/W</td><td></td><td></td></tr>\n</table>\n\n**Diode Characteristics (Per Position) (T<sub>VJ</sub> = 25 °C Unless Otherwise Specified)**\n\n<table>\n<tr><td>Parameter</td><td>Symbol</td><td>Min.</td><td>Typ.</td><td>Max.</td><td>Unit</td><td>Conditions</td><td>Note</td></tr>\n<tr><td rowspan=\"2\">Body Diode Forward Voltage</td><td rowspan=\"2\">V<sub>SD</sub></td><td></td><td>5.7</td><td></td><td rowspan=\"2\">V</td><td>V<sub>GS</sub> = -5 V, I<sub>SD</sub> = 900 A</td><td rowspan=\"2\">Fig. 7</td></tr>\n<tr><td></td><td>4.7</td><td></td><td>V<sub>GS</sub> = -5 V, I<sub>SD</sub> = 900 A, T<sub>VJ</sub> = 175 °C</td></tr>\n</table>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed<sup>®</sup>, the Wolfspeed logo, the Wolfstreak logo, WolfPACK<sup>®</sup>, Wolfspeed WolfPACK<sup>®</sup>, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n# Preliminary Datasheet\nSubject to change without notice\n\n[logo] 3\n\n**Module Physical Characteristics**\n\n<table>\n<tr><td>Parameter</td><td>Symbol</td><td>Min.</td><td>Typ.</td><td>Max.</td><td>Unit</td><td>Conditions</td></tr>\n<tr><td>Package Resistance</td><td>R<sub>pkg</sub></td><td></td><td>0.19</td><td></td><td>mΩ</td><td>T<sub>C</sub> = 25 °C, Note 6</td></tr>\n<tr><td>Stray Inductance</td><td>L<sub>Stray</sub></td><td></td><td>9.5</td><td></td><td>nH</td><td>Between DC+ and DC-, f = 10 MHz</td></tr>\n<tr><td>Storage Temperature</td><td>T<sub>Stg</sub></td><td>-55</td><td></td><td>150</td><td>°C</td><td></td></tr>\n<tr><td>Weight</td><td>W</td><td></td><td>745</td><td></td><td>g</td><td></td></tr>\n<tr><td rowspan=\"3\">Mounting Torque</td><td rowspan=\"3\">M<sub>s</sub></td><td>3.5</td><td>4.5</td><td>5.5</td><td rowspan=\"3\">N-m</td><td>Baseplate, M6 bolts</td></tr>\n<tr><td>8</td><td>12</td><td>16</td><td>Power Terminals, M8 bolts</td></tr>\n<tr><td>0.5</td><td>0.7</td><td>1.3</td><td>Auxiliary Terminals, M3 bolts</td></tr>\n<tr><td>Case Isolation Voltage</td><td>V<sub>isol</sub></td><td>6</td><td></td><td></td><td>kV</td><td>AC, 50 Hz, 1 min</td></tr>\n<tr><td>Comparative Tracking Index</td><td>CTI</td><td>600</td><td></td><td></td><td></td><td></td></tr>\n<tr><td rowspan=\"2\">Clearance Distance</td><td rowspan=\"2\"></td><td></td><td>11</td><td></td><td rowspan=\"4\">mm</td><td>Terminal to Terminal</td></tr>\n<tr><td></td><td>33</td><td></td><td>Terminal to Baseplate</td></tr>\n<tr><td rowspan=\"2\">Creepage Distance</td><td rowspan=\"2\"></td><td></td><td>23</td><td></td><td>Terminal to Terminal</td></tr>\n<tr><td></td><td>45</td><td></td><td>Terminal to Baseplate</td></tr>\n</table>\n\nNote (6): Total Effective Resistance (Per Switch Position) = MOSFET R<sub>DS(on)</sub> + Switch Position Package Resistance\n\n**Temperature Sensor (NTC) Characteristics**\n\n<table>\n<tr><td>Parameter</td><td>Symbol</td><td>Min.</td><td>Typ.</td><td>Max.</td><td>Unit</td><td>Test Conditions</td></tr>\n<tr><td>Resistance at 25 °C</td><td>R<sub>25</sub></td><td></td><td>4700</td><td></td><td>Ω</td><td>T<sub>NTC</sub> = 25 °C</td></tr>\n<tr><td>Tolerance of R<sub>25</sub></td><td></td><td></td><td>±1</td><td></td><td>%</td><td></td></tr>\n<tr><td>Beta Value for 25 °C to 85 °C</td><td>B<sub>25/80</sub></td><td></td><td>3435</td><td></td><td>K</td><td></td></tr>\n<tr><td>Beta Value for 0 °C to 100 °C</td><td>B<sub>0/100</sub></td><td></td><td>3399</td><td></td><td>K</td><td></td></tr>\n<tr><td>Tolerance of B<sub>25/85</sub></td><td></td><td></td><td>±1</td><td></td><td>%</td><td></td></tr>\n<tr><td>Maximum Power Dissipation</td><td>P<sub>25</sub></td><td></td><td>50</td><td></td><td>mW</td><td>T<sub>NTC</sub> = 25°C</td></tr>\n</table>\n\n**Steinhart & Hart Coefficients for NTC Resistance & NTC Temperature Computation (T in K)**\n\n$$\\ln\\left(\\frac{R}{R_{25}}\\right) = A + \\frac{B}{T} + \\frac{C}{T^2} + \\frac{D}{T^3} \\qquad \\frac{1}{T} = A_1 + B_1\\ln\\left(\\frac{R}{R_{25}}\\right) + C_1\\ln^2\\left(\\frac{R}{R_{25}}\\right) + D_1\\ln^3\\left(\\frac{R}{R_{25}}\\right)$$\n\n<table>\n<tr><td>A</td><td>B</td><td>C</td><td>D</td><td>A<sub>1</sub></td><td>B<sub>1</sub></td><td>C<sub>1</sub></td><td>D<sub>1</sub></td></tr>\n<tr><td>-1.289E+01</td><td>4.245E+03</td><td>-8.749E+04</td><td>-9.588E+06</td><td>3.354E-03</td><td>3.001E-04</td><td>5.085E-06</td><td>2.188E-07</td></tr>\n</table>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n# Preliminary Datasheet\nSubject to change without notice\n\n[logo] 4\n\n<figure type=\"CHART\">Typical Performance\n\n\n\n<description>Line chart titled Figure 1 showing output characteristics for various junction temperatures. Axes: x-axis labeled Drain-Source Voltage, VDS (V), ticks 0 to 7 in steps of 1; y-axis labeled Drain-Source Current, IDS (A), ticks 0 to 2400 in steps of 400. Inset box at upper left reads tp < 350 µs and VGS = 18 V. Six straight lines radiate from the origin (0,0). The steepest two lines are labeled -40 °C and 25 °C, reaching about 2400 A at roughly 3.3 V and 5.0 V respectively. A fourth line from (1.5 V, about 1880 A) descends to (6.3 V, about 280 A) and is labeled -40 °C near its start, with labels 100 °C, 125 °C, 150 °C and 175 °C along the lower lines, which reach about 1950 A, 1620 A, 1400 A and 1200 A at 7 V respectively. Caption below reads: Figure 1. Output Characteristics for Various Junction Temperatures.</description>\n\n<table><tr><th>Junction Temperature</th><th>Approx. VDS at IDS = 2400 A</th><th>Approx. IDS at VDS = 7 V</th></tr><tr><td>-40 °C</td><td>about 3.3 V</td><td>not reached within range (line terminates near 1.5 V to 6.3 V segment)</td></tr><tr><td>25 °C</td><td>about 5.0 V</td><td>not reached within range</td></tr><tr><td>100 °C</td><td>not reached</td><td>about 1950 A</td></tr><tr><td>125 °C</td><td>not reached</td><td>about 1620 A</td></tr><tr><td>150 °C</td><td>not reached</td><td>about 1400 A</td></tr><tr><td>175 °C</td><td>not reached</td><td>about 1200 A</td></tr></table></figure>\n\n<table>\n<tr><td rowspan=\"10\">Normalized On-resistance (p.u.)</td><td></td><td>tp &lt; 350 µs</td><td></td><td></td><td></td><td></td></tr>\n<tr><td rowspan=\"2\">2.5</td><td>V<sub>GS</sub> = 18 V</td><td></td><td>175 °C</td><td>[image: curve line]</td><td>[image: curve line]</td></tr>\n<tr><td>[image: curve line]</td><td>[image: curve line]</td><td>[image: curve line]</td><td></td><td></td></tr>\n<tr><td rowspan=\"2\">2.0</td><td>[image: curve line]</td><td rowspan=\"2\"></td><td rowspan=\"3\">150 °C<br>125 °C<br>100 °C</td><td>[image: curve line]</td><td>[image: curve line]</td></tr>\n<tr><td rowspan=\"2\"></td><td>[image: curve line]</td><td>[image: curve line]</td></tr>\n<tr><td rowspan=\"3\">1.5<br>1.0</td><td></td><td></td><td></td></tr>\n<tr><td></td><td></td><td>25 °C</td><td></td><td></td></tr>\n<tr><td></td><td></td><td>0 °C</td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>0.5</td><td></td><td></td><td>-40 °C</td><td></td><td></td></tr>\n</table>\n\n0 500 1000 1500 2000\n\nDrain-Source Current, I<sub>DS</sub> (A)\n\n**Figure 2.** Normalized On-State Resistance vs. Drain Current for Various Junction Temperatures\n\n<figure type=\"CHART\">**Figure 3.** Normalized On-State Resistance vs. Junction Temperature\n\n\n\n<description>Line chart showing Normalized On-resistance (p.u.) on the y-axis (0.0 to 3.0, ticks every 0.5) versus Virtual Junction Temperature, T_VJ (°C), on the x-axis (-50 to 200, ticks every 25). A grid is present. An info box in the upper left reads: tp < 350 µs, V_GS = 18 V, I_DS = 900 A. A single black curve starts at about 0.68 p.u. at -40 °C, rises through about 0.85 at 0 °C, 1.0 at 25 °C, 1.2 at 50 °C, 1.4 at 75 °C, 1.6 at 100 °C, 1.9 at 125 °C, 2.15 at 150 °C, and ends at about 2.5 p.u. at 175 °C, with a convex upward (accelerating) slope.</description>\n\n<table><thead><tr><th>Virtual Junction Temperature, T_VJ (°C)</th><th>Normalized On-resistance (p.u.)</th></tr></thead><tbody><tr><td>-40</td><td>0.68</td></tr><tr><td>0</td><td>0.85</td></tr><tr><td>25</td><td>1.00</td></tr><tr><td>50</td><td>1.18</td></tr><tr><td>75</td><td>1.38</td></tr><tr><td>100</td><td>1.60</td></tr><tr><td>125</td><td>1.85</td></tr><tr><td>150</td><td>2.15</td></tr><tr><td>175</td><td>2.50</td></tr></tbody></table></figure>\n\n<figure type=\"CHART\">Figure 4. Transfer Characteristic for Various Junction Temperatures\n\n\n\n<description>Line chart titled with a boxed note at top-left reading \"tp < 350 µs\" and \"V_DS = 20 V\". X-axis: \"Gate-Source Voltage, V_GS (V)\" ranging from 0 to 8 (ticks at 0, 2, 4, 6, 8). Y-axis: \"Drain-Source Current, I_DS (A)\" ranging from 0 to 2400 (ticks at 0, 400, 800, 1200, 1600, 2000, 2400). Light gray grid lines. Six curves start near zero around V_GS 2.5 to 3 V and rise steeply with increasing V_GS. An arrow pointing toward upper-left labeled 175 °C, 150 °C, 125 °C, 100 °C, 25 °C, and -40 °C indicates temperature ordering: the curves for 175 °C, 150 °C, 125 °C, and 100 °C are the top-left cluster reaching 2400 A near V_GS 8-9 V, the 25 °C curve crosses about 800 A near V_GS 6 V, and the -40 °C curve is the lowest, reaching about 1200 A at V_GS 9 V. Curves are black, solid, and nearly parallel at high current.</description></figure>\n\n<figure type=\"CHART\">**Figure 5.** 3<sup>rd</sup> Quadrant Characteristic vs. Junction Temperatures at V<sub>GS</sub> = 18 V\n\n\n\n<description><table><thead><tr><th>Source-Drain Voltage, V<sub>SD</sub> (V)</th><th>Source-Drain Current, I<sub>SD</sub> (A) at -40 °C (approx.)</th><th>at 25 °C (approx.)</th><th>at 100 °C (approx.)</th><th>at 125 °C (approx.)</th><th>at 150 °C (approx.)</th><th>at 175 °C (approx.)</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>400</td><td>580</td><td>270</td><td>250</td><td>240</td><td>210</td></tr><tr><td>2</td><td>1200</td><td>1150</td><td>550</td><td>520</td><td>500</td><td>440</td></tr><tr><td>3</td><td>2000</td><td>1700</td><td>850</td><td>800</td><td>760</td><td>680</td></tr><tr><td>4</td><td>-</td><td>-</td><td>1150</td><td>1080</td><td>1030</td><td>930</td></tr><tr><td>5</td><td>-</td><td>-</td><td>1450</td><td>1380</td><td>1300</td><td>1170</td></tr><tr><td>6</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1400</td></tr><tr><td>8</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></tbody></table>Chart axes: X-axis Source-Drain Voltage, V<sub>SD</sub> (V), 0 to 8; Y-axis Source-Drain Current, I<sub>SD</sub> (A), 0 to 2400. Note inside plot: tp &lt; 350 µs, V<sub>GS</sub> = 18 V. Curves are labeled -40 °C, 25 °C, 100 °C, 125 °C, 150 °C, and 175 °C; the -40 °C and 25 °C curves are the steepest, rising to about 2400 A near 3 V and 3.2 V respectively, while the 100 °C to 175 °C curves form a fan of progressively shallower lines, with 175 °C the lowest and ending near 380 A at about 6.8 V.</description></figure>\n\n<figure type=\"CHART\">Figure 6. 3rd Quadrant Characteristic vs. Junction Temperatures at VGS = 0 V (Body Diode)\n\n\n\n<description>Line chart with x-axis labeled \"Source-Drain Voltage, VSD (V)\" ranging 0 to 8 with ticks at every 1 V, and y-axis labeled \"Source-Drain Current, ISD (A)\" ranging 0 to 2400 A with ticks at every 400 A. Inset box at upper left reads \"tp < 300 µs\" and \"VGS = 0 V\". Six curves rise from near zero current at about 1.5 to 2 V; they converge near 2.5 to 3 V at roughly 200 A, then diverge. The -40 °C curve is the steepest, reaching about 2400 A near 7 V, with the 25 °C curve close behind. Curves for 100 °C, 125 °C, 150 °C and 175 °C are progressively lower, ending near 1650, 1500, 1400 and 1350 A at 8 V. Curve labels -40 °C, 25 °C, 100 °C, 125 °C, 150 °C and 175 °C are placed along a downward-sloping arrow running from upper left to lower right, indicating decreasing temperature order from top-left to bottom-right.</description></figure>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n# Preliminary Datasheet\nSubject to change without notice\n\n[logo]\n5\n\n<figure type=\"CHART\">Typical Performance\n\n\n\n<description>Line chart titled Figure 7. 3rd Quadrant Characteristic vs. Junction Temperatures at VGS = -5 V (Body Diode). X-axis: Source-Drain Voltage, VSD (V), ticks 0 to 7. Y-axis: Source-Drain Current, ISD (A), ticks 0 to 2400 in steps of 400. Inset box in upper left reads tp < 350 µs, VGS = -5 V. Curves start near 0 current at about 2.3 V and rise nonlinearly. Five curves labeled 175 °C, 150 °C, 100 °C, 25 °C and -40 °C; the 175 °C curve is steepest and reaches the top of the plot near 2400 A at about 6.6 V, 150 °C reaches about 1900 A at 7 V, a dashed curve (100 °C) and the 25 °C and -40 °C curves finish near 1450 to 1600 A at 7 V, with -40 °C the lowest at about 1000 A at 6.5 V region. A large arrow runs from the lower right toward the upper left indicating increasing temperature.</description>\n\n<table><tr><th>Source-Drain Voltage VSD (V)</th><th>Approx. Source-Drain Current ISD (A) at 175 °C</th><th>Approx. ISD (A) at 150 °C</th><th>Approx. ISD (A) at 100 °C</th><th>Approx. ISD (A) at 25 °C</th><th>Approx. ISD (A) at -40 °C</th></tr><tr><td>3</td><td>~250</td><td>~200</td><td>~150</td><td>~120</td><td>~80</td></tr><tr><td>4</td><td>~700</td><td>~600</td><td>~500</td><td>~420</td><td>~350</td></tr><tr><td>5</td><td>~1200</td><td>~1050</td><td>~900</td><td>~800</td><td>~700</td></tr><tr><td>6</td><td>~1800</td><td>~1500</td><td>~1400</td><td>~1400</td><td>~1100</td></tr><tr><td>7</td><td>~2400</td><td>~1900</td><td>~1500</td><td>~1550</td><td>~1600</td></tr></table></figure>\n\n<figure type=\"CHART\">**Figure 8.** Typical Capacitances vs. Drain to Source Voltage (0 - 200 V)\n\n\n<description>Log-scale line chart of Capacitance (nF) on the vertical axis (ticks 0.01, 0.1, 1, 10, 100, 1000) versus Drain-Source Voltage, V_DS (V) on the horizontal axis (ticks 0, 50, 100, 150, 200). A text box in the plot reads T_VJ = 25 °C, V_AC = 25 mV, f = 100 kHz. Three curves are labeled: C_iss starts near 200 nF at 0 V, dropping quickly to about 170 nF and staying nearly flat to 200 V; C_oss starts near 70 nF at 0 V, falls to about 5 nF at 50 V, and decreases gradually to about 2.3 nF at 200 V; C_rss starts near 60 nF at 0 V, falls to about 1.8 nF at 20 V, about 0.4 nF at 50 V, about 0.1 nF at 150 V, and ends near 0.06 nF at 200 V.</description>\n<table><tr><th>V_DS (V)</th><th>C_iss (nF)</th><th>C_oss (nF)</th><th>C_rss (nF)</th></tr><tr><td>0</td><td>~200</td><td>~70</td><td>~60</td></tr><tr><td>20</td><td>~175</td><td>~20</td><td>~1.8</td></tr><tr><td>50</td><td>~170</td><td>~5</td><td>~0.4</td></tr><tr><td>100</td><td>~170</td><td>~3.5</td><td>~0.2</td></tr><tr><td>150</td><td>~170</td><td>~2.7</td><td>~0.1</td></tr><tr><td>200</td><td>~170</td><td>~2.3</td><td>~0.06</td></tr></table></figure>\n\n<figure type=\"CHART\">**Figure 9.** Typical Capacitances vs. Drain to Source Voltage (0 - 3300V)\n\n\n\n<description><table><tr><th>Drain-Source Voltage, V_DS (V)</th><th>Ciss (nF, approx.)</th><th>Coss (nF, approx.)</th><th>Crss (nF, approx.)</th></tr><tr><td>0</td><td>~150</td><td>~100</td><td>~100</td></tr><tr><td>100</td><td>~150</td><td>~5</td><td>~0.5</td></tr><tr><td>500</td><td>~150</td><td>~4</td><td>~0.2</td></tr><tr><td>1000</td><td>~150</td><td>~3</td><td>~0.1</td></tr><tr><td>1500</td><td>~150</td><td>~2.5</td><td>~0.08</td></tr><tr><td>2000</td><td>~150</td><td>~2.3</td><td>~0.07</td></tr><tr><td>2500</td><td>~150</td><td>~2.2</td><td>~0.06</td></tr><tr><td>3000</td><td>~150</td><td>~2.1</td><td>~0.06</td></tr><tr><td>3300</td><td>~150</td><td>~2.1</td><td>~0.06</td></tr></table>\n\n<description>Line chart with log-scale y-axis Capacitance (nF) from 0.01 to 1000 and linear x-axis Drain-Source Voltage, V_DS (V) from 0 to 3300. Three curves are labeled: Ciss is nearly flat at about 150 nF across the full range; Coss drops steeply from about 100 nF near 0 V to about 2 nF by 3300 V; Crss drops steeply from about 100 nF near 0 V to about 0.06 nF by 3300 V. A box in the upper right reads T_VJ = 25 °C, V_AC = 25 mV, f = 100 kHz.</description></figure>\n\n<figure type=\"CHART\">**Figure 10.** Threshold Voltage vs. Junction Temperature\n\n\n\n<description>Line chart showing Threshold Voltage, V_TH (V) on the y-axis (0 to 6, gridlines every 1 V) versus Virtual Junction Temperature, T_VJ (°C) on the x-axis (-50 to 200, ticks every 25 °C). A text box in the upper left reads \"V_GS = V_DS, I_DS = 530 mA\". A single black curve starts at about 4.2 V at -40 °C, decreases gradually to about 3.7 V at 0 °C, about 3.5 V at 25 °C, about 3.1 V at 100 °C, and ends at about 2.75 V near 175 °C, with a slightly steeper slope at low temperatures.</description>\n\n<table><thead><tr><th>Virtual Junction Temperature, T_VJ (°C)</th><th>Threshold Voltage, V_TH (V)</th></tr></thead><tbody><tr><td>-40</td><td>4.2</td></tr><tr><td>-25</td><td>4.0</td></tr><tr><td>0</td><td>3.7</td></tr><tr><td>25</td><td>3.5</td></tr><tr><td>50</td><td>3.35</td></tr><tr><td>75</td><td>3.2</td></tr><tr><td>100</td><td>3.1</td></tr><tr><td>125</td><td>2.95</td></tr><tr><td>150</td><td>2.85</td></tr><tr><td>175</td><td>2.75</td></tr></tbody></table></figure>\n\n<figure type=\"CHART\">Figure 11. Continuous Drain Current Derating vs. Case Temperature\n\n<description>Line chart with grid. X-axis: Case Temperature, TC (°C), ticks from -75 to 175 in steps of 25. Y-axis: Drain-Source DC Current, IDS (DC) (A), ticks from 0 to 1600 in steps of 200. Solid black curve: flat horizontal segment labeled 'Package Limit' at 1200 A from about -50 °C to 25 °C, then a curve decreasing from about 1200 A at 25 °C through about 850 A at 100 °C to about 500 A at 150 °C, where it drops vertically to 0 A at 150 °C. Dashed black line: continues the derating slope from about 1480 A at -55 °C down to the 1200 A point at 25 °C. Box in upper right labeled 'Conditions: TVJ ≤ 175 °C'.</description><table><thead><tr><th>Case Temperature TC (°C)</th><th>Drain-Source DC Current IDS (A)</th></tr></thead><tbody><tr><td>-55</td><td>1480</td></tr><tr><td>-50</td><td>1200</td></tr><tr><td>25</td><td>1200</td></tr><tr><td>50</td><td>1100</td></tr><tr><td>75</td><td>980</td></tr><tr><td>100</td><td>850</td></tr><tr><td>125</td><td>700</td></tr><tr><td>150</td><td>500</td></tr><tr><td>150</td><td>0</td></tr></tbody></table></figure>\n\n<figure type=\"CHART\">Figure 12. Maximum Power Dissipation Derating vs. Case Temperature\n\n\n\n<description><table><tr><th>Case Temperature, T_C (°C)</th><th>FET Power Dissipation, P_D (W)</th></tr><tr><td>-55</td><td>11100</td></tr><tr><td>-25</td><td>9700</td></tr><tr><td>0</td><td>8400</td></tr><tr><td>25</td><td>7200</td></tr><tr><td>50</td><td>6000</td></tr><tr><td>75</td><td>4800</td></tr><tr><td>100</td><td>3700</td></tr><tr><td>125</td><td>2500</td></tr><tr><td>150</td><td>1200</td></tr></table>Conditions: T_VJ ≤ 175 °C. Line chart with a single straight descending line from about 11100 W at -55 °C to about 1200 W at 150 °C, plotted on gridded axes with y-axis from 0 to 12000 W and x-axis from -75 to 175 °C.</description></figure>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n@ 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n**Preliminary Datasheet**\n**Subject to change without notice**\n\n[logo] 6\n\n<figure type=\"CHART\">**Definitions**\n\n**Figure 13.** Turn-off Transient Definitions\n\n\n\n<description>Line chart showing turn-off transient waveforms over time with three traces. The top purple trace is Gate – Source Voltage, V_GS (V), starting high in a flat region, labeled 90% V_GS at its falling edge, then decreasing gradually and leveling off at a lower value. The middle dark blue trace is Drain – Source Voltage, V_DS (V), starting low, rising sharply after the gate transition to a peak, then settling at a high plateau. The bottom cyan trace is Source Current, I_S (A), starting high, falling sharply through a peak region, then dropping to a low baseline. Horizontal dashed reference lines and bracket annotations mark intervals: t_d(off) spans from the gate 90% point to the start of the current fall; t_f is marked near the current fall; t_off spans the full turn-off interval from the gate 90% point to the end of the current fall. Labels mark 90% I_S and 10% I_S on the current trace, 10% V_DS on the drain trace, and dv/dt_OFF and di/dt_OFF as peak rate-of-change markers on the transition. A bracket labeled E_OFF = ∫ V_DS x I_S spans the overlap of voltage and current. Footnote: *Peak rate of change for a sliding 5 ns window.</description></figure>\n\n<figure type=\"CHART\">Figure 14. Turn-on Transient Definitions\n\n\n\n<description>This is a timing waveform chart showing turn-on transient definitions with time on the horizontal axis and voltage/current on the vertical axis. Three curves are plotted: Gate – Source Voltage, V_GS (V) in purple, rising from a low baseline on the left to a high plateau on the right, with a horizontal reference line at its 10% level and a sharp rise around the center; Source Current, I_S (A) in light cyan, staying high on the left, dropping sharply in the middle, then spiking and ringing with oscillations before settling at a moderate level on the right, with markers at 10% I_S and 90% I_S; Drain – Source Voltage, V_DS (V) in dark blue, starting low on the left, rising sharply in the middle, then dropping with ringing oscillations to a low level on the right, with a marker at 10% V_DS. Dashed vertical guide lines delimit the time intervals t_d(on), t_on, and t_r, and a double-headed arrow labeled E_ON = ∫ V_DS x I_S spans the switching interval at the bottom. Two markers labeled *di/dt_ON and dv/dt_ON* point to the steepest transition region, with a footnote reading *Peak rate of change for a sliding 5 ns window.</description></figure>\n\n<figure type=\"CHART\">**Figure 15.** Reverse Recovery Definitions\n\nReverse Recovery Current, I_RR (A)\n\n\n\n<description>Line chart of reverse recovery current versus time. The curve starts at a flat plateau labeled I_F on the left y-axis, then falls steeply through a 0 A crossing, reaches a negative trough labeled I_RRM, rises back through a second 0 A crossing, and then oscillates with decaying amplitude around the zero line. A dashed bracket marked t_rr spans from the first 0 A crossing to the second, subdivided into t_f (falling interval, left) and t_s (storage/softer interval, right). A hatched region between the curve and zero line, labeled Q_RR, fills the area between the two crossings below zero. A tick-marked slope annotation *di/dt_RR sits on the steep falling edge near the first crossing. A footnote at lower left reads: *Peak rate of change for a sliding 5 ns window during the falling event</description></figure>\n\n<figure type=\"CHART\">**Figure 16.** V<sub>GS</sub> Transient Definitions\n\n\n\n<description>Line chart titled \"Gate - Source Voltage, V<sub>GS</sub> (V)\" in purple on a white background with a bordered frame. The y-axis has labeled levels at 23 V, 18 V, -5 V, and -10 V, with a faint gray zero line in the middle. The waveform starts at 18 V, drops sharply with a small undershoot and ringing to -10 V, then settles at -5 V. It then rises sharply to a peak of about 23 V with a small overshoot and ringing, and settles back at 18 V. Dashed horizontal reference lines extend from 18 V, -5 V, -10 V, and 23 V across the chart. Two vertical double-headed arrows are shown: V<sub>GS-Static</sub> spans from 18 V down to -5 V, and V<sub>GS-Dynamic</sub> spans from 23 V down to -10 V.</description>\n\n<table><thead><tr><th>Level</th><th>Value</th></tr></thead><tbody><tr><td>Initial steady state</td><td>18 V</td></tr><tr><td>Transient peak (high)</td><td>23 V</td></tr><tr><td>Transient minimum (low)</td><td>-10 V</td></tr><tr><td>Static level after transient</td><td>-5 V</td></tr><tr><td>V<sub>GS-Static</sub></td><td>18 V to -5 V</td></tr><tr><td>V<sub>GS-Dynamic</sub></td><td>23 V to -10 V</td></tr></tbody></table></figure>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed<sup>®</sup>, the Wolfspeed logo, the Wolfstreak logo, WolfPACK<sup>®</sup>, Wolfspeed WolfPACK<sup>®</sup>, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n# **Preliminary Datasheet**\n**Subject to change without notice**\n\n[logo] 7\n\n<figure type=\"DIAGRAM\">Schematic and Pin Out\n\n\n\n<description>Line-drawing schematic of a rectangular power module package viewed from above, with a rounded-corner outline and mounting holes at each corner. Three large square-ended terminals with circular holes run along the top edge and three similar terminals along the bottom edge. The central area contains a stylized zigzag arrow logo. Small circular pin terminals are arranged around the perimeter: on the left side labeled 12, 13, 14, 15, and on the right side labeled 11, 10, 9, 8. Numbered pins 3, 4, 5 sit along the upper inner edge, and numbered pins 1, 2, 6, 7 sit in the lower inner area. Rectangular bays with circular holes appear in the lower and upper blocks, indicating mounting or power connections.</description>\n\nPackage Dimensions (mm)</figure>\n\n<figure type=\"DIAGRAM\">1,2\n9\n10\n11\n12\n3,4,5\n13\n14\n15\n8\n6,7\n-t°\n\n\n<description>Electrical schematic of a half-bridge power module with two stacked MOSFET switches, each with an antiparallel diode. The top MOSFET has drain terminals 1,2 connected at the top node and gate pin 10 and Kelvin/source-sense pin 11 on its left side, with pin 9 tied to the top drain node. The bottom MOSFET has gate pin 14 and source-sense pin 15 on its left side, with pin 8 tied to the bottom source node, and terminals 6,7 at the bottom. The midpoint node between the two devices connects to terminals 3,4,5 on the right and pin 12 on the left. A thermistor symbol labeled -t° connects from the lower node to pin 13 on the right, serving as a temperature sensor.</description></figure>\n\n<figure type=\"ILLUSTRATION\">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n\n\n<description>Isometric line drawing of a power semiconductor module (IGBT-style) with a rectangular plastic housing and a ribbed lower skirt with mounting holes at the corners of its base flange. Two raised terminal blocks sit at the left and right ends, each with round bolt holes; circled callout numbers 1, 2, 6 and 7 point to the left-side terminals and housing features, and 3, 4 and 5 point to the right-side terminals. The center of the top surface has a recessed control area with a raised central panel, with callouts 8 and 9 on the center-left and 10 and 11 on the front-right gate or signal terminal area. Small connector and component housings sit along the rear edge, with callouts 13, 14 and 15 on the rear-center connectors and 12 on a small rear-right feature. Thin leader lines connect each numbered circle to its part. The drawing uses black outlines on a white background with no shading or color.</description></figure>\n\n<figure type=\"DIAGRAM\"><description>Mechanical dimensioned drawing (top view) of a power module housing with a rectangular outline. Top edge has three large circular terminal screw bosses labeled 3, 4, 5 inside the housing and a callout at top reading \"8× M3 ∇ 5 MAX\" pointing to small screw holes, and \"7× M8 ∇ 15 MAX\" pointing to the large terminal bosses. Four corner mounting holes labeled A2, A3, A4 (top right area), B3, and A1, A7, A8, A9 along edges with leader-box labels C1–C10 and B1–B3 on the sides. Left and right side have small terminal posts numbered 12, 13, 14, 15 on the left and 11, 10, 9, 8 on the right with leader labels C5, C4, C2, C1 and C8, C7, C6, C3. Lower half has two large rectangular power terminal blocks each with a circular screw boss, labeled B2 and B1, and a central large arrow-like logo/marking. Bottom-left has a connector cluster labeled C10 and a circular marking. Dimension lines show overall height 68.96±0.75 on the left and width 73.24±0.30 at the bottom, with 0 datum markers at the bottom and right side. Numbered signal pins 1–7 are arranged in two groups inside the housing near the center.</description></figure>\n\n<figure type=\"DIAGRAM\">Mechanical side-view technical drawing (engineering line drawing) of a tall rectangular component oriented vertically. The left portion has stepped outline profiles with several rectangular protrusions and notches at varying heights, including a larger block near the upper-left and a recessed section in the middle-left. The central-right portion contains a series of about five evenly spaced vertical ribs or fins running top to bottom, drawn as thin parallel lines with rounded bands. A thin rectangular plate or flange lies at the far right edge. Three purple-labeled dimension/reference markers appear along the bottom, labeled \"B\", \"C1\" (or \"CT\"), and \"A\" (with a \"0\" beside it), each with a thin leader line extending upward to the body of the drawing.</figure>\n\n<table>\n<tr><td colspan=\"3\">DIMENSION TABLE</td></tr>\n<tr><td>SYMBOL</td><td>DIMENSION</td><td>TOLERANCE</td></tr>\n<tr><td>[image: A1 symbol]</td><td>2× 6.5</td><td>±1.0</td></tr>\n<tr><td>[image: A2 symbol]</td><td>2× 133.5</td><td>±1.0</td></tr>\n<tr><td>[image: A3 symbol]</td><td>140</td><td>±0.75</td></tr>\n<tr><td>[image: A4 symbol]</td><td>144</td><td>±0.5</td></tr>\n<tr><td>[image: A5 symbol]</td><td>2× 6.9</td><td>±0.75</td></tr>\n<tr><td>[image: AB tag]</td><td>2× 92.9</td><td>±0.75</td></tr>\n<tr><td>[image: A7 tag]</td><td>99.8</td><td>±0.5</td></tr>\n<tr><td>[image: A8 tag]</td><td>4</td><td>±0.3</td></tr>\n<tr><td>[image: B1 tag]</td><td>2× 11</td><td>±0.5</td></tr>\n<tr><td>[image: B2 tag]</td><td>2× 40.5</td><td>±0.5</td></tr>\n<tr><td>[image: B3 tag]</td><td>3× 133.5</td><td>±0.5</td></tr>\n<tr><td>[image: B4 tag]</td><td>3× 26.9</td><td>±0.5</td></tr>\n<tr><td>[image: B5 tag]</td><td>49.9</td><td>±0.5</td></tr>\n<tr><td>[image: B6 tag]</td><td>3× 72.9</td><td>±0.5</td></tr>\n<tr><td>[image: B7 tag]</td><td>40</td><td>±0.75</td></tr>\n<tr><td>[image: C1 tag]</td><td>57</td><td>±0.4</td></tr>\n<tr><td>[image: C2 tag]</td><td>66.5</td><td>±0.4</td></tr>\n<tr><td>[image: C3 tag]</td><td>57</td><td>±0.6</td></tr>\n<tr><td>[image: C4 tag]</td><td>79.5</td><td>±0.4</td></tr>\n<tr><td>[image: C5 label tag]</td><td>110.5</td><td>±0.4</td></tr>\n<tr><td>[image: C6 label tag]</td><td>82.3</td><td>±0.5</td></tr>\n<tr><td>[image: C7 label tag]</td><td>101</td><td>±0.4</td></tr>\n<tr><td>[image: C8 label tag]</td><td>110.5</td><td>±0.4</td></tr>\n<tr><td>[image: C9 label tag]</td><td>4× 8.9</td><td>±0.6</td></tr>\n<tr><td>[image: C10 label tag]</td><td>4× 90.9</td><td>±0.6</td></tr>\n<tr><td>[image: C11 label tag]</td><td>35</td><td>±0.75</td></tr>\n</table>\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n**Preliminary Datasheet**\n**Subject to change without notice**\n\n[logo] 8\n\n## Supporting Links & Tools\n\n### Evaluation Tools & Support\n\n* [LTspice and PLECS Models](#)\n* [SpeedFit® Design Simulator](#)\n* [Technical Support Forum](#)\n\n**Dual-Channel Gate Driver Board**\n\n* [CGD12HB00D: Differential Transceiver Daughter Board Companion Tool for Differential Gate Drivers](CGD12HB00D)\n* [CGD1700HB2M-UNA: Wolfspeed Gate Driver Board](CGD1700HB2M-UNA)\n* [EVAL-ADUM4146WHB1Z: Analog Devices® Gate Driver Board](EVAL-ADUM4146WHB1Z)\n* [UCC21710QDWEVM-054: Texas Instruments® Gate Driver Board](UCC21710QDWEVM-054)\n\n**Application Notes**\n\n* [PRD-08407: LM Module Platform Mounting Guide](PRD-08407)\n* [PRD-04814: Design Options for Wolfspeed® Silicon Carbide MOSFET Gate Bias Power Supplies](PRD-04814)\n* [PRD-09301: Gate Driver Design for SiC Power Modules](PRD-09301)\n* [PRD-06379: Environmental Considerations for Power Electronics Systems](PRD-06379)\n* [PRD-07845: Power Module Baseplate Capacitance and Electromagnetic Compatibility](PRD-07845)\n* [PRD-07933: Wolfspeed Power Module Thermal Interface Material Application User Guide](PRD-07933)\n* [PRD-08376: Thermal Characterization Methods and Applications](PRD-08376)\n* [PRD-08710: Measuring Stray Inductance in Power Electronics Systems](PRD-08710)\n* [PRD-08911: Considerations for Current Balancing in Paralleled SiC Power Modules](PRD-08911)\n* [PRD-09035: Power Module RC Thermal Models User Guide](PRD-09035)\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- PAGE BREAK -->\n\nHAB900C33LM4\n\n**Preliminary Datasheet**\n\n[logo] 9\n\n# Notes & Disclaimers\n\nWOLFSPEED PROVIDES TECHNICAL AND RELIABILITY DATA, DESIGN RESOURCES, APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, AND OTHER RESOURCES \"AS IS\" AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, WITH RESPECT THERETO, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SUITABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF THIRD-PARTY INTELLECTUAL PROPERTY RIGHTS.\n\nThis document and the information contained herein are subject to change without notice. Any such change shall be evidenced by the publication of an updated version of this document by Wolfspeed. No communication from any employee or agent of Wolfspeed or any third party shall effect an amendment or modification of this document. No responsibility is assumed by Wolfspeed for any infringement of patents or other rights of third parties which may result from use of the information contained herein. No license is granted by implication or otherwise under any patent or patent rights of Wolfspeed.\n\nThe information contained in this document (excluding examples, as well as figures or values that are labeled as “typical”) constitutes Wolfspeed’s sole published specifications for the subject product. “Typical” parameters are the average values expected by Wolfspeed in large quantities and are provided for informational purposes only. Any examples provided herein have not been produced under conditions intended to replicate any specific end use. Product performance can and does vary due to a number of factors.\n\nThis product has not been designed or tested for use in, and is not intended for use in, any application in which failure of the product would reasonably be expected to cause death, personal injury, or property damage. For purposes of (but without limiting) the foregoing, this product is not designed, intended, or authorized for use as a critical component in equipment implanted into the human body, life-support machines, cardiac defibrillators, and similar emergency medical equipment; air traffic control systems; or equipment used in the planning, construction, maintenance, or operation of nuclear facilities. Notwithstanding any application-specific information, guidance, assistance, or support that Wolfspeed may provide, the buyer of this product is solely responsible for determining the suitability of this product for the buyer's purposes, including without limitation (1) selecting the appropriate Wolfspeed products for the buyer's application, (2) designing, validating, and testing the buyer's application, and (3) ensuring the buyer's application meets applicable standards and any other legal, regulatory, and safety-related requirements.\n\n**RoHS Compliance**\n\nThe levels of RoHS restricted materials in this product are below the maximum concentration values (also referred to as the threshold limits) permitted for such substances, or are used in an exempted application, in accordance with EU Directive 2011/65/EC (RoHS2), as implemented January 2, 2013. RoHS Declarations for this product can be obtained from your Wolfspeed representative or from the Product Documentation sections of www.wolfspeed.com.\n\n## REACh Compliance\n\nREACh substances of high concern (SVHCs) information is available for this product. Since the European Chemical Agency (ECHA) has published notice of their intent to frequently revise the SVHC listing for the foreseeable future, please contact your Wolfspeed representative to ensure you get the most up-to-date REACh SVHC Declaration. REACh banned substance information (REACh Article 67) is also available upon request.\n\n- **Contact info**: 4600 Silicon Drive<br>Durham, NC 27703 USA<br>Tel: +1.919.313.5300<br>www.wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed<sup>®</sup> and the Wolfstreak logo are registered trademarks and the Wolfspeed logo is a trademark of Wolfspeed, Inc.\nPATENT: https://www.wolfspeed.com/legal/patents\n\n*The information in this document is subject to change without notice.*\n\nPreliminary Rev. 1, May 2026\n\n4600 Silicon Drive | Durham, NC 27703 | Tel: +1.919.313.5300 | wolfspeed.com/power\n\n© 2026 Wolfspeed, Inc. All rights reserved. Wolfspeed®, the Wolfspeed logo, the Wolfstreak logo, WolfPACK®, Wolfspeed WolfPACK®, and the Wolfspeed WolfPACK logo are registered trademarks of Wolfspeed, Inc. The information in this document is subject to change without notice.\n\n<!-- doc_id=parse-01m7ryd9xx7jnrr86ptwrwqtb9 -->",
+  "metadata": {
+    "job_id": "extract-01m7rye16p8h22e9wpvw37m2td",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 313118,
+    "doc_id": "parse-01m7ryd9xx7jnrr86ptwrwqtb9",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 14.9,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 44836,
+    "output_extraction_chars": 5887,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": "The value at 'characteristics_table[13].conditions' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true.",
+  "warnings": [
+    {
+      "code": "nonconformant_output",
+      "msg": "The value at 'characteristics_table[13].conditions' was not found in the document, so null was returned. Since the schema requires a non-null value, verify that the document indeed doesn't contain this data, and if so, update the schema to allow null by adding 'null' to the field's type (e.g., type: ['string', 'null']) or by setting nullable: true."
+    }
+  ]
+}

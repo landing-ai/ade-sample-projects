@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "loan_number",
+      "label": "Loan number",
+      "value": "123456789",
+      "page": 1,
+      "box": {
+        "xmin": 0.18645,
+        "ymin": 0.13598,
+        "xmax": 0.27716,
+        "ymax": 0.14861
+      },
+      "range": {
+        "end": 34,
+        "start": 25
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_number.png"
+    },
+    {
+      "path": "letter_date",
+      "label": "Letter date",
+      "value": "2024-12-12",
+      "page": 1,
+      "box": {
+        "xmin": 0.10333,
+        "ymin": 0.20987,
+        "xmax": 0.24169,
+        "ymax": 0.22256
+      },
+      "range": {
+        "end": 73,
+        "start": 57
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_date.png"
+    },
+    {
+      "path": "payee.name",
+      "label": "Investor (payee)",
+      "value": "Fake Home Mortgage",
+      "page": 1,
+      "box": {
+        "xmin": 0.23046,
+        "ymin": 0.24618,
+        "xmax": 0.40496,
+        "ymax": 0.26146
+      },
+      "range": {
+        "end": 108,
+        "start": 90
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payee-name.png"
+    },
+    {
+      "path": "warehouse_lender_name",
+      "label": "Warehouse lender",
+      "value": "ABC Sample Inc.",
+      "page": 1,
+      "box": {
+        "xmin": 0.69517,
+        "ymin": 0.41155,
+        "xmax": 0.84067,
+        "ymax": 0.42677
+      },
+      "range": {
+        "end": 553,
+        "start": 538
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "warehouse_lender_name.png"
+    },
+    {
+      "path": "funding_expiration_days",
+      "label": "Funding window (business days)",
+      "value": 10,
+      "page": 1,
+      "box": {
+        "xmin": 0.56692,
+        "ymin": 0.68692,
+        "xmax": 0.59986,
+        "ymax": 0.70253
+      },
+      "range": {
+        "end": 1819,
+        "start": 1817
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "funding_expiration_days.png"
+    }
+  ]
+}

@@ -15,9 +15,21 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. Writing them beside their replacements would republish the personal data the redaction removed. The rules file used by redact.py stays outside the repo.",
         "replaced": [
-          { "what": "name of an individual contact in a University of Minnesota notice address (Attn line, page 3)", "with": "Jane Sample", "occurrences": 1 },
-          { "what": "name of an individual contact (VP and Chief Patent Counsel) in the Skysong Innovations notice address, page 3", "with": "John Sample", "occurrences": 1 },
-          { "what": "name of a second individual contact in the Skysong Innovations notice address, page 3", "with": "Alex Q. Sample", "occurrences": 1 }
+          {
+            "what": "name of an individual contact in a University of Minnesota notice address (Attn line, page 3)",
+            "with": "Jane Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "name of an individual contact (VP and Chief Patent Counsel) in the Skysong Innovations notice address, page 3",
+            "with": "John Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "name of a second individual contact in the Skysong Innovations notice address, page 3",
+            "with": "Alex Q. Sample",
+            "occurrences": 1
+          }
         ],
         "dropped_pages": "Original pages 1-2 (court notice with attorney names, contact details and signature) and 7-57 (continuation of the patent table)",
         "cleared": [
@@ -27,12 +39,62 @@
     }
   },
   "feature_page": 6,
-  "preview_pages": [1, 3, 4, 6],
-  "fields": [
-    { "path": "excluded_insurance_policies.title", "label": "Schedule title", "occurrence": 0 },
-    { "path": "excluded_insurance_policies.policies[6].policy_number", "label": "Primary D&O policy number", "occurrence": 0 },
-    { "path": "excluded_insurance_policies.policies[6].policy_term", "label": "Primary D&O policy term", "occurrence": 0 },
-    { "path": "excluded_insurance_policies.policies[1].policy_number", "label": "Automobile policy number", "occurrence": 0 }
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
   ],
-  "notes": "The request named no fields or feature page in its keys; its notes suggested original page 59 (Schedule 1.2(c) Excluded Insurance Policies, page 6 of this sample) with the schedule title, the primary D&O insurer, policy number and policy term, and the automobile policy number, as suggestions only. Four of the five shipped. The primary D&O insurer was not featured: its value spans two lines of its cell and inspect_fields.py reads its range as OFF, as it does for seven other insurer and coverage cells on this page; every policy number and policy term reads ok. No substitute was added, so the overlay shows the one schedule, its primary D&O policy and the automobile policy. No person is featured. The page range was trimmed from 66 to 13 pages: the 2-page court notice and 51 pages of continuation of the patent table were dropped, as the request suggested."
+  "fields": [
+    {
+      "path": "excluded_insurance_policies.title",
+      "label": "Schedule title",
+      "occurrence": 0
+    },
+    {
+      "path": "excluded_insurance_policies.policies[6].policy_number",
+      "label": "Primary D&O policy number",
+      "occurrence": 0
+    },
+    {
+      "path": "excluded_insurance_policies.policies[6].policy_term",
+      "label": "Primary D&O policy term",
+      "occurrence": 0
+    },
+    {
+      "path": "excluded_insurance_policies.policies[1].policy_number",
+      "label": "Automobile policy number",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no fields or feature page in its keys; its notes suggested original page 59 (Schedule 1.2(c) Excluded Insurance Policies, page 6 of this sample) with the schedule title, the primary D&O insurer, policy number and policy term, and the automobile policy number, as suggestions only. Four of the five shipped. The primary D&O insurer was not featured: its value spans two lines of its cell and inspect_fields.py reads its range as OFF, as it does for seven other insurer and coverage cells on this page; every policy number and policy term reads ok. No substitute was added, so the overlay shows the one schedule, its primary D&O policy and the automobile policy. No person is featured. The page range was trimmed from 66 to 13 pages: the 2-page court notice and 51 pages of continuation of the patent table were dropped, as the request suggested.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 9.3,
+      "extract_credits": 11.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 9.4,
+      "extract_credits": 11.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 13,
+      "service_tier": "standard",
+      "parse_credits": 3.1,
+      "extract_credits": 11.5
+    }
+  ]
 }

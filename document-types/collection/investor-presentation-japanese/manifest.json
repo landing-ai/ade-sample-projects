@@ -48,5 +48,25 @@
     6,
     16
   ],
-  "notes": "The request named neither a feature page nor fields. Page 3 is the consolidated results slide (連結業績（実績）), and the five featured fields read as one story: the period column header and the four headline profit lines in that column, all in 億円. The slide's ruled table parsed as a table block with one cell per value, so every field grounds to its own cell rather than to the whole slide. Each is pinned to occurrence 0, the table cell; the same figures recur in the commentary below the slide and on pages 4, 8 and 9."
+  "notes": "The request named neither a feature page nor fields. Page 3 is the consolidated results slide (連結業績（実績）), and the five featured fields read as one story: the period column header and the four headline profit lines in that column, all in 億円. The slide's ruled table parsed as a table block with one cell per value, so every field grounds to its own cell rather than to the whole slide. Each is pinned to occurrence 0, the table cell; the same figures recur in the commentary below the slide and on pages 4, 8 and 9.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 18,
+      "service_tier": "standard",
+      "parse_credits": 16.0,
+      "extract_credits": 7.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 18,
+      "service_tier": "standard",
+      "parse_credits": 15.8,
+      "extract_credits": 7.1
+    }
+  ]
 }

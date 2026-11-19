@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "visa_number",
+      "label": "Visa number",
+      "value": "840",
+      "page": 1,
+      "box": {
+        "xmin": 0.6926,
+        "ymin": 0.23194,
+        "xmax": 0.73018,
+        "ymax": 0.24692
+      },
+      "range": {
+        "end": 1001,
+        "start": 998
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "visa_number.png"
+    },
+    {
+      "path": "issuing_post",
+      "label": "Consular post",
+      "value": "RIGA, LATVIA",
+      "page": 1,
+      "box": {
+        "xmin": 0.41667,
+        "ymin": 0.11193,
+        "xmax": 0.59846,
+        "ymax": 0.12959
+      },
+      "range": {
+        "end": 57,
+        "start": 45
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuing_post.png"
+    },
+    {
+      "path": "preference",
+      "label": "Quota category",
+      "value": "Preference",
+      "page": 1,
+      "box": {
+        "xmin": 0.0866,
+        "ymin": 0.28224,
+        "xmax": 0.16888,
+        "ymax": 0.29314
+      },
+      "range": {
+        "end": 128,
+        "start": 118
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "preference.png"
+    },
+    {
+      "path": "quota",
+      "label": "Quota",
+      "value": "Russian",
+      "page": 1,
+      "box": {
+        "xmin": 0.81927,
+        "ymin": 0.26299,
+        "xmax": 0.91894,
+        "ymax": 0.27881
+      },
+      "range": {
+        "end": 1014,
+        "start": 1007
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "quota.png"
+    },
+    {
+      "path": "governing_law",
+      "label": "Granted under",
+      "value": "Immigration Act of 1924",
+      "page": 1,
+      "box": {
+        "xmin": 0.58043,
+        "ymin": 0.58945,
+        "xmax": 0.77253,
+        "ymax": 0.60191
+      },
+      "range": {
+        "end": 1386,
+        "start": 1363
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "governing_law.png"
+    }
+  ]
+}

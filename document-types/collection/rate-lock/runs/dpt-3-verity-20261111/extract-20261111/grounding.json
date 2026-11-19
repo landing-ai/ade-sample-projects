@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "reference_number",
+      "label": "Reference number",
+      "value": "800203",
+      "page": 1,
+      "box": {
+        "xmin": 0.82795,
+        "ymin": 0.22467,
+        "xmax": 0.88104,
+        "ymax": 0.23191
+      },
+      "range": {
+        "end": 161,
+        "start": 155
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reference_number.png"
+    },
+    {
+      "path": "rate_lock.loan_program",
+      "label": "Loan program",
+      "value": "HFA Preferred with MI Correspondent 30 year",
+      "page": 1,
+      "box": {
+        "xmin": 0.11388,
+        "ymin": 0.28098,
+        "xmax": 0.27401,
+        "ymax": 0.29822
+      },
+      "range": {
+        "end": 388,
+        "start": 345
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "rate_lock-loan_program.png"
+    },
+    {
+      "path": "rate_lock.interest_rate_percent",
+      "label": "Locked rate",
+      "value": 4.625,
+      "page": 1,
+      "box": {
+        "xmin": 0.45208,
+        "ymin": 0.28565,
+        "xmax": 0.50728,
+        "ymax": 0.29234
+      },
+      "range": {
+        "end": 441,
+        "start": 436
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "rate_lock-interest_rate_percent.png"
+    },
+    {
+      "path": "rate_lock.loan_amount",
+      "label": "Loan amount",
+      "value": 95000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.36877,
+        "ymin": 0.28561,
+        "xmax": 0.71657,
+        "ymax": 0.29367
+      },
+      "range": {
+        "end": 468,
+        "start": 425
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "rate_lock-loan_amount.png"
+    },
+    {
+      "path": "borrower.middle_credit_score",
+      "label": "Middle credit score",
+      "value": 715,
+      "page": 1,
+      "box": {
+        "xmin": 0.35023,
+        "ymin": 0.47968,
+        "xmax": 0.37623,
+        "ymax": 0.48642
+      },
+      "range": {
+        "end": 1059,
+        "start": 1056
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borrower-middle_credit_score.png"
+    }
+  ]
+}

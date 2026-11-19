@@ -1,0 +1,512 @@
+{
+  "extraction": {
+    "base_rent_schedule": [
+      {
+        "end_month": 1,
+        "monthly_base_rent": 0.0,
+        "period": "Month 01",
+        "rate_per_square_foot": 0.0,
+        "start_month": 1
+      },
+      {
+        "end_month": 12,
+        "monthly_base_rent": 16800.0,
+        "period": "Month 02 - Month 12",
+        "rate_per_square_foot": 4.0,
+        "start_month": 2
+      },
+      {
+        "end_month": 24,
+        "monthly_base_rent": 17304.0,
+        "period": "Month 13 - Month 24",
+        "rate_per_square_foot": 4.12,
+        "start_month": 13
+      },
+      {
+        "end_month": 36,
+        "monthly_base_rent": 17823.12,
+        "period": "Month 25 - Month 36",
+        "rate_per_square_foot": 4.24,
+        "start_month": 25
+      },
+      {
+        "end_month": 48,
+        "monthly_base_rent": 18357.81,
+        "period": "Month 37 - Month 48",
+        "rate_per_square_foot": 4.37,
+        "start_month": 37
+      }
+    ],
+    "document_title": "LEASE AGREEMENT",
+    "landlord": {
+      "attention": "Jami Shaw",
+      "name": "Bauen Fund 2018-730, LLC",
+      "notice_address": "15466 Los Gatos Boulevard, #109-133, Los Gatos, California 95032"
+    },
+    "landlord_broker": "Sequoia Realty Services (Anthony Kamm)",
+    "lease_date": "2021-02-25",
+    "permitted_use": "General office and research and development as permitted under the current zoning for the Property and for no other use.",
+    "premises": {
+      "address": "730 Broadway, Redwood City, California 94063",
+      "description": "The entirety of the building",
+      "rentable_square_feet": 4200.0
+    },
+    "rent_waiver_months": 1,
+    "security_deposit": 73431.24,
+    "tenant": {
+      "attention": "Ali Kashani",
+      "name": "Serve Robotics Inc.",
+      "notice_address": "730 Broadway, Redwood City, CA"
+    },
+    "tenant_broker": "Zacuto Group",
+    "term_months": 48,
+    "term_start_reference": "Commencement Date"
+  },
+  "extraction_metadata": {
+    "base_rent_schedule": [
+      {
+        "end_month": {
+          "ranges": [
+            {
+              "end": 911,
+              "start": 910
+            }
+          ],
+          "value": 1
+        },
+        "monthly_base_rent": {
+          "ranges": [
+            {
+              "end": 925,
+              "start": 922
+            }
+          ],
+          "value": 0.0
+        },
+        "period": {
+          "ranges": [
+            {
+              "end": 911,
+              "start": 903
+            }
+          ],
+          "value": "Month 01"
+        },
+        "rate_per_square_foot": {
+          "ranges": [
+            {
+              "end": 940,
+              "start": 937
+            }
+          ],
+          "value": 0.0
+        },
+        "start_month": {
+          "ranges": [
+            {
+              "end": 911,
+              "start": 910
+            }
+          ],
+          "value": 1
+        }
+      },
+      {
+        "end_month": {
+          "ranges": [
+            {
+              "end": 987,
+              "start": 985
+            }
+          ],
+          "value": 12
+        },
+        "monthly_base_rent": {
+          "ranges": [
+            {
+              "end": 1009,
+              "start": 996
+            }
+          ],
+          "value": 16800.0
+        },
+        "period": {
+          "ranges": [
+            {
+              "end": 987,
+              "start": 968
+            }
+          ],
+          "value": "Month 02 - Month 12"
+        },
+        "rate_per_square_foot": {
+          "ranges": [
+            {
+              "end": 1023,
+              "start": 1020
+            }
+          ],
+          "value": 4.0
+        },
+        "start_month": {
+          "ranges": [
+            {
+              "end": 976,
+              "start": 975
+            }
+          ],
+          "value": 2
+        }
+      },
+      {
+        "end_month": {
+          "ranges": [
+            {
+              "end": 1070,
+              "start": 1068
+            }
+          ],
+          "value": 24
+        },
+        "monthly_base_rent": {
+          "ranges": [
+            {
+              "end": 1090,
+              "start": 1079
+            }
+          ],
+          "value": 17304.0
+        },
+        "period": {
+          "ranges": [
+            {
+              "end": 1070,
+              "start": 1051
+            }
+          ],
+          "value": "Month 13 - Month 24"
+        },
+        "rate_per_square_foot": {
+          "ranges": [
+            {
+              "end": 1105,
+              "start": 1101
+            }
+          ],
+          "value": 4.12
+        },
+        "start_month": {
+          "ranges": [
+            {
+              "end": 1059,
+              "start": 1057
+            }
+          ],
+          "value": 13
+        }
+      },
+      {
+        "end_month": {
+          "ranges": [
+            {
+              "end": 1151,
+              "start": 1149
+            }
+          ],
+          "value": 36
+        },
+        "monthly_base_rent": {
+          "ranges": [
+            {
+              "end": 1171,
+              "start": 1160
+            }
+          ],
+          "value": 17823.12
+        },
+        "period": {
+          "ranges": [
+            {
+              "end": 1151,
+              "start": 1132
+            }
+          ],
+          "value": "Month 25 - Month 36"
+        },
+        "rate_per_square_foot": {
+          "ranges": [
+            {
+              "end": 1186,
+              "start": 1182
+            }
+          ],
+          "value": 4.24
+        },
+        "start_month": {
+          "ranges": [
+            {
+              "end": 1140,
+              "start": 1138
+            }
+          ],
+          "value": 25
+        }
+      },
+      {
+        "end_month": {
+          "ranges": [
+            {
+              "end": 1232,
+              "start": 1230
+            }
+          ],
+          "value": 48
+        },
+        "monthly_base_rent": {
+          "ranges": [
+            {
+              "end": 1252,
+              "start": 1241
+            }
+          ],
+          "value": 18357.81
+        },
+        "period": {
+          "ranges": [
+            {
+              "end": 1232,
+              "start": 1213
+            }
+          ],
+          "value": "Month 37 - Month 48"
+        },
+        "rate_per_square_foot": {
+          "ranges": [
+            {
+              "end": 1267,
+              "start": 1263
+            }
+          ],
+          "value": 4.37
+        },
+        "start_month": {
+          "ranges": [
+            {
+              "end": 1221,
+              "start": 1219
+            }
+          ],
+          "value": 37
+        }
+      }
+    ],
+    "document_title": {
+      "ranges": [
+        {
+          "end": 29,
+          "start": 14
+        }
+      ],
+      "value": "LEASE AGREEMENT"
+    },
+    "landlord": {
+      "attention": {
+        "ranges": [
+          {
+            "end": 275,
+            "start": 266
+          }
+        ],
+        "value": "Jami Shaw"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 190,
+            "start": 166
+          }
+        ],
+        "value": "Bauen Fund 2018-730, LLC"
+      },
+      "notice_address": {
+        "ranges": [
+          {
+            "end": 226,
+            "start": 191
+          },
+          {
+            "end": 254,
+            "start": 227
+          }
+        ],
+        "value": "15466 Los Gatos Boulevard, #109-133, Los Gatos, California 95032"
+      }
+    },
+    "landlord_broker": {
+      "ranges": [
+        {
+          "end": 2345,
+          "start": 2307
+        }
+      ],
+      "value": "Sequoia Realty Services (Anthony Kamm)"
+    },
+    "lease_date": {
+      "ranges": [
+        {
+          "end": 155,
+          "start": 125
+        }
+      ],
+      "value": "2021-02-25"
+    },
+    "permitted_use": {
+      "ranges": [
+        {
+          "end": 2209,
+          "start": 2098
+        },
+        {
+          "end": 2223,
+          "start": 2210
+        }
+      ],
+      "value": "General office and research and development as permitted under the current zoning for the Property and for no other use."
+    },
+    "premises": {
+      "address": {
+        "ranges": [
+          {
+            "end": 521,
+            "start": 477
+          }
+        ],
+        "value": "730 Broadway, Redwood City, California 94063"
+      },
+      "description": {
+        "ranges": [
+          {
+            "end": 398,
+            "start": 370
+          }
+        ],
+        "value": "The entirety of the building"
+      },
+      "rentable_square_feet": {
+        "ranges": [
+          {
+            "end": 460,
+            "start": 360
+          }
+        ],
+        "value": 4200.0
+      }
+    },
+    "rent_waiver_months": {
+      "ranges": [
+        {
+          "end": 1505,
+          "start": 1396
+        },
+        {
+          "end": 1548,
+          "start": 1506
+        }
+      ],
+      "value": 1
+    },
+    "security_deposit": {
+      "ranges": [
+        {
+          "end": 2253,
+          "start": 2225
+        }
+      ],
+      "value": 73431.24
+    },
+    "tenant": {
+      "attention": {
+        "ranges": [
+          {
+            "end": 358,
+            "start": 347
+          }
+        ],
+        "value": "Ali Kashani"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 304,
+            "start": 285
+          }
+        ],
+        "value": "Serve Robotics Inc."
+      },
+      "notice_address": {
+        "ranges": [
+          {
+            "end": 318,
+            "start": 305
+          },
+          {
+            "end": 335,
+            "start": 319
+          }
+        ],
+        "value": "730 Broadway, Redwood City, CA"
+      }
+    },
+    "tenant_broker": {
+      "ranges": [
+        {
+          "end": 2285,
+          "start": 2273
+        }
+      ],
+      "value": "Zacuto Group"
+    },
+    "term_months": {
+      "ranges": [
+        {
+          "end": 670,
+          "start": 668
+        }
+      ],
+      "value": 48
+    },
+    "term_start_reference": {
+      "ranges": [
+        {
+          "end": 719,
+          "start": 702
+        }
+      ],
+      "value": "Commencement Date"
+    }
+  },
+  "markdown": "Exhibit 10.6\n\nLEASE AGREEMENT\n(730 Broadway, Redwood City, California)\n\nBasic Lease Information\n\nDefined Terms: Information:\nLease Date: February 25 , 2021\nLandlord: Bauen Fund 2018-730, LLC\n15466 Los Gatos Boulevard, #109-133\nLos Gatos, California 95032\nAttention: Jami Shaw\n\nTenant: Serve Robotics Inc.\n730 Broadway,\nRedwood City, CA\nAttention: Ali Kashani\n\nPremises: The entirety of the building consisting of approximately four thousand two hundred (4,200)\nfeet located at 730 Broadway, Redwood City, California 94063, as further shown on Exhibit A attached\nhereto and incorporated herein by this reference.\nrentable square\n\nTerm: The \"Term\" shall be forty-eight (48) full calendar months from the Commencement Date (as hereinafter\ndefined).\n\nBase Rent:\n\n<table><tr><td></td><td>Full Calendar Months of Term</td><td>Monthly Base Rent</td><td>Monthly Rate Per Square Foot *</td></tr><tr><td></td><td>Month 01</td><td>$ 0.00</td><td>$ 0.00</td></tr><tr><td></td><td>Month 02 - Month 12</td><td>$ 16,800.00**</td><td>$ 4.00</td></tr><tr><td></td><td>Month 13 - Month 24</td><td>$ 17,304.00</td><td>$ 4.12</td></tr><tr><td></td><td>Month 25 - Month 36</td><td>$ 17,823.12</td><td>$ 4.24</td></tr><tr><td></td><td>Month 37 - Month 48</td><td>$ 18,357.81</td><td>$ 4.37</td></tr></table>\n\n** The Base Rent for any partial month at the commencement of the Term shall be calculated using this rate.\n\nAs set forth above, Tenant shall not be required to pay the Monthly Base Rent for the first full month of the\nTerm of the Lease (\"Rent Waiver Period\" ).\n\nNotwithstanding the foregoing to the contrary, if an Event of Default shall at any time be declared under the\nLease, the foregoing rent waiver shall be deemed revoked, and any and all Monthly Base Rent, payment of\nwhich has been waived under this Lease, shall be deemed reinstated and shall become immediately due and\npayable (based upon the Monthly Base Rent payable for the month immediately following such Rent Waiver\nPeriod) upon demand by Landlord, and without impairing any other rights and remedies of Landlord\nresulting from said default.\n\nUse: General office and research and development as permitted under the current zoning for the Property and for\nno other use.\n\nSecurity Deposit: $73,431.24\nBroker for Tenant: Zacuto Group\nBroker for Landlord: Sequoia Realty Services (Anthony Kamm)\n\n<!-- doc_id=parse-01m7rtx2db67p6z3yggjedd38d -->",
+  "metadata": {
+    "job_id": "extract-01m7rtx7ynfsze5y9cwg43exet",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 79862,
+    "doc_id": "parse-01m7rtx2db67p6z3yggjedd38d",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.0,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 2395,
+    "output_extraction_chars": 1428,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

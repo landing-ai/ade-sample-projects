@@ -1,105 +1,155 @@
 # Form 6251 - AMT
 
-Source assets for `landing.ai/document-type/form-6251-amt`.
+**On the website:** [landing.ai/document-type/form-6251-amt](https://landing.ai/document-type/form-6251-amt)
 
-## Sample document
+IRS Form 6251 for 2025, Alternative Minimum Tax for individuals, completed with IRS test
+data for a fictitious married couple. It adjusts income to alternative minimum taxable
+income, subtracts the exemption, and compares the tentative minimum tax with the regular
+tax. Here no AMT is owed, and the capital gains part on page 2 is blank.
 
-`source/form-6251-2025-irs-ats-scenario-13.pdf`: IRS Form 6251 (2025), Alternative
-Minimum Tax—Individuals, completed for an IRS e-file test scenario. **2 pages, portrait.**
-It has a text layer.
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 21 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:05 | 2026-11-19 03:10 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 14,378 | 16,079 |
+| Words under 0.95 confidence | 77 | n/a |
+| Words under 0.80 confidence | 22 | n/a |
+| Words under 0.50 confidence | 5 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 6.8 s | 13.8 s |
+| Per page | 3.4 s | 6.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.8 credits | 5.1 credits |
+| Per page | 0.90 credits | 2.55 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:05 | 2026-11-19 03:11 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 21 | 21 |
+| Non-null fields returned | 14 | 14 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 367.6 s | 246.9 s |
+| Per schema field (21) | 17.50 s | 11.76 s |
+| Per value returned | 26.26 s | 17.64 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 3.5 credits | 3.8 credits |
+| Per schema field (21) | 0.167 credits | 0.181 credits |
+| Per value returned | 0.250 credits | 0.271 credits |
+
+## Origin
+
+`source/form-6251-2025-irs-ats-scenario-13.pdf` is IRS Form 6251 (2025), Alternative
+Minimum Tax—Individuals, completed for an IRS e-file test scenario. It is **2 pages,
+portrait**, with a text layer.
 
 | | |
 |---|---|
 | Publisher | Internal Revenue Service |
-| Source | [1040-mef-ats-scenario-13.pdf](https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-13.pdf), listed on the [TY2025 Form 1040 series MeF ATS information page](https://www.irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information) |
+| Source | [1040-mef-ats-scenario-13.pdf](https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-13.pdf), pages 5-6 of 9 |
+| Linked from | [TY2025 Form 1040 series MeF ATS information page](https://www.irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information) |
 | Retrieved | 2026-10-03, by script |
-| Clearance | **Public** |
+| Clearance | Public |
 
 The IRS publishes these Assurance Testing System (ATS) scenarios so that e-file software
 developers can test their returns against known answers. As a US government work, it is
 in the public domain.
 
-The source is a 9-page packet for Test Scenario 13. Pages 5–6, the completed Form 6251,
-were split out unchanged with PyMuPDF. The same packet supplies the `form-1040` folder
-(pages 2–3).
+The source is a 9-page packet for Test Scenario 13. Pages 5-6, the completed Form 6251,
+were split out unchanged. The same packet supplies the `form-1040` folder (pages 2-3).
 
-Every value is IRS test data for a fictitious taxpayer. The SSN is in the
-400-00-13xx range that the ATS keeps for test scenarios. The PDF metadata names only
-the IRS, Acrobat and Distiller. Nothing needed redacting.
+Every value is IRS test data for a fictitious taxpayer. The SSN is in the 400-00-13xx
+range that the ATS keeps for test scenarios. The PDF metadata names only the IRS, Acrobat
+and Distiller. Nothing needed redacting.
 
 The IRS replaces these undated files in place from time to time, so the committed copy
-is the record.
+is the record. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is the collection's first IRS schedule that computes something, rather than one
-that reports amounts. Form 6251 works out whether the alternative minimum tax applies:
-income is adjusted to AMTI, the exemption is subtracted, and the tentative minimum tax
-is compared with the regular tax. A consumer needs the answer and the figures that
-produced it.
+### Who processes it
 
-It tests two things about layout:
-- **Line 1a's value sits in an inner column**, to the left of the main amount column.
-- **Line 5's exemption appears twice**: once in the threshold table beside the line
-  and once as the line's own entry.
+Form 6251 decides whether a taxpayer owes the alternative minimum tax on top of the
+regular tax. It is filed with Form 1040 whenever the AMT applies or certain adjustments
+are present.
 
-Both resolve correctly: line 1a grounds to its own inner box, and line 5 grounds to the
-amount column rather than to the table.
+- **Tax preparation and CPA firms:** preparers review prior-year 6251s to carry forward
+  AMT credits and adjustments.
+- **Mortgage and consumer lending:** underwriters read the full return, including its
+  schedules, when they verify self-employed or high-income borrowers.
+- **Wealth management and financial planning:** advisers check AMT exposure before
+  exercising incentive stock options or realizing large gains.
+- **Tax software developers:** e-file vendors test their returns against IRS scenarios
+  like this one.
+- **IRS and state examiners:** they check the computation line by line during review.
 
-The form is sparse. Only about eight lines are filled, and the AMT result is zero.
-Page 2 (Part III, capital gains rates) is blank but is kept so the folder holds the
-whole form.
+### What it contains
 
-`schema.json` has **21 leaf fields** (counted from the schema). Every line on page 1
-with a value extracts correctly. The `other_adjustments` array for lines 2b–2t comes
-back empty, which is correct.
-
-## Featured fields: the AMT computation in order, on page 1
-
-| Field | Value |
-|---|---|
-| Tax year | 2025 |
-| Alternative minimum taxable income (line 4) | 31620 |
-| Exemption (line 5) | 137000 |
-| Regular tax (line 10) | 162 |
-| AMT (line 11) | 0 |
-
-These are the fields the request suggested, and all five shipped. Read top to bottom,
-they tell the story: AMTI of 31,620 is below the 137,000 exemption for a married couple
-filing jointly, so no AMT is owed against regular tax of 162. No person is featured.
-
-## Grounding and extraction notes
-
-- **Every filled amount grounds to the box holding its own value.** All 12 page-1
-  fields with a printed value read `ok`.
-- **The parse is right about blank lines, but extraction is not.** Lines 3 and 8, and
-  Part III lines 12 and 40, are empty on the form, and the parse shows those cells as
-  empty. Extraction still returns `0` for them, even after the schema descriptions were
-  changed to ask for null. Arithmetically 0 is the same, but a consumer cannot tell
-  "blank" from "0 entered". These lines read `OFF` in `inspect_fields.py`, because there
-  is no text to box, and none of them is featured.
-- `part_iii_capital_gains.completed` is a derived boolean (false). It has no single
-  span to point at, so it is not illustrable.
-
-## Cost
-
-**10.70 credits** at standard tier:
-- 7.50 for the first run, a 2-page parse plus extraction
-- 3.20 for one re-extraction after the blank-line descriptions were changed
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py form-6251-amt
-.venv/bin/python document-types/scripts/build_images.py form-6251-amt
-.venv/bin/python document-types/scripts/inspect_fields.py form-6251-amt --page 1
-```
-
-To rebuild the source from the IRS packet:
-
-```python
-import fitz
-src = fitz.open("1040-mef-ats-scenario-13.pdf")
-out = fitz.open(); out.insert_pdf(src, from_page=4, to_page=5)
-out.save("form-6251-2025-irs-ats-scenario-13.pdf")
-```
+- **A line-numbered computation,** where each line feeds the next and the result
+  depends on earlier lines.
+- **An inner amount column.** Line 1a's value sits to the left of the main amount
+  column.
+- **A value printed twice.** Line 5's exemption appears in a threshold table beside the
+  line and again as the line's own entry.
+- **Blank lines and a blank page by design.** Only about eight lines are filled, and
+  Part III on page 2 is empty.
+- **A zero result,** since no AMT is owed.
+- **A text layer** on a two-page portrait form.

@@ -68,8 +68,8 @@
       "occurrence": 0
     },
     {
-      "path": "signatures[0].is_signed",
-      "label": "Signed",
+      "path": "signatures[0].signer_title",
+      "label": "Signer title",
       "occurrence": 0
     },
     {
@@ -78,5 +78,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features when the letter was issued, by whom, for what role, and the attestation: whether it is signed and when. The signature is kept at the document owner's request to show signature detection. signatures[0].is_signed grounds to the parse's [SIGNED] attestation label, whose box is exactly the signature image; build_images.py flags it because the word 'true' is not on the page, which is expected for a boolean, and the crop was checked by eye. signed_by is correctly null: the signature is illegible and no name is printed. No person is featured. employer.name grounds only to the letterhead in this run (the sign-off line is not among its ranges), so it is pinned to occurrence 0. employed_since grounds to the same line as designation and would render an identical crop; that line shows both, so only designation is featured."
+  "notes": "The request named feature page 1 and no fields; page 1 is honoured. Features when the letter was issued, by whom, for what role, and the attestation: whether it is signed and when. The signature is kept at the document owner's request to show signature detection. signatures[0].is_signed grounds to the parse's [SIGNED] attestation label, whose box is exactly the signature image; build_images.py flags it because the word 'true' is not on the page, which is expected for a boolean, and the crop was checked by eye. signed_by is correctly null: the signature is illegible and no name is printed. No person is featured. employer.name grounds only to the letterhead in this run (the sign-off line is not among its ranges), so it is pinned to occurrence 0. employed_since grounds to the same line as designation and would render an identical crop; that line shows both, so only designation is featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.9,
+      "extract_credits": 1.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.9,
+      "extract_credits": 1.1
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.3,
+      "extract_credits": 1.1
+    }
+  ]
 }

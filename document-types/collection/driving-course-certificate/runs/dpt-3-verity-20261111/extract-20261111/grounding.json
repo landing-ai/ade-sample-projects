@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "certificate_number",
+      "label": "Certificate number",
+      "value": "CP275-63203533",
+      "page": 1,
+      "box": {
+        "xmin": 0.83492,
+        "ymin": 0.03184,
+        "xmax": 0.95171,
+        "ymax": 0.04328
+      },
+      "range": {
+        "end": 1151,
+        "start": 1137
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "certificate_number.png"
+    },
+    {
+      "path": "court",
+      "label": "Court",
+      "value": "Ellis County: Municipal Garrett (Garrett)",
+      "page": 1,
+      "box": {
+        "xmin": 0.09428,
+        "ymin": 0.289,
+        "xmax": 0.36016,
+        "ymax": 0.30224
+      },
+      "range": {
+        "end": 879,
+        "start": 838
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "court.png"
+    },
+    {
+      "path": "reason",
+      "label": "Reason for course",
+      "value": "Traffic Ticket",
+      "page": 1,
+      "box": {
+        "xmin": 0.7321,
+        "ymin": 0.92544,
+        "xmax": 0.81068,
+        "ymax": 0.9353
+      },
+      "range": {
+        "end": 2730,
+        "start": 2716
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "reason.png"
+    },
+    {
+      "path": "completion_date",
+      "label": "Completion date",
+      "value": "2022-01-24",
+      "page": 1,
+      "box": {
+        "xmin": 0.72817,
+        "ymin": 0.80593,
+        "xmax": 0.80111,
+        "ymax": 0.81816
+      },
+      "range": {
+        "end": 2661,
+        "start": 2651
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "completion_date.png"
+    },
+    {
+      "path": "issue_date",
+      "label": "Issue date",
+      "value": "2022-01-24",
+      "page": 1,
+      "box": {
+        "xmin": 0.72889,
+        "ymin": 0.84661,
+        "xmax": 0.8018,
+        "ymax": 0.85851
+      },
+      "range": {
+        "end": 2684,
+        "start": 2674
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "issue_date.png"
+    }
+  ]
+}

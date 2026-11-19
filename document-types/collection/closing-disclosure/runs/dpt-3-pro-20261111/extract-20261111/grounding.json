@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "loan_terms.interest_rate_percent",
+      "label": "Interest rate",
+      "value": 3.875,
+      "page": 1,
+      "box": {
+        "xmin": 0.31373,
+        "ymin": 0.31933,
+        "xmax": 0.38352,
+        "ymax": 0.33701
+      },
+      "range": {
+        "end": 1027,
+        "start": 1022
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_terms-interest_rate_percent.png"
+    },
+    {
+      "path": "loan_terms.monthly_principal_and_interest",
+      "label": "Monthly principal and interest",
+      "value": 761.78,
+      "page": 1,
+      "box": {
+        "xmin": 0.31373,
+        "ymin": 0.34774,
+        "xmax": 0.38887,
+        "ymax": 0.36542
+      },
+      "range": {
+        "end": 1186,
+        "start": 1180
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "loan_terms-monthly_principal_and_interest.png"
+    },
+    {
+      "path": "projected_payments[0].estimated_total_monthly_payment",
+      "label": "Estimated total monthly payment (years 1-7)",
+      "value": 1050.26,
+      "page": 1,
+      "box": {
+        "xmin": 0.41173,
+        "ymin": 0.67887,
+        "xmax": 0.50151,
+        "ymax": 0.69654
+      },
+      "range": {
+        "end": 1911,
+        "start": 1902
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "projected_payments-0-estimated_total_monthly_payment.png"
+    },
+    {
+      "path": "costs_at_closing.closing_costs",
+      "label": "Closing costs",
+      "value": 9712.1,
+      "page": 1,
+      "box": {
+        "xmin": 0.3125,
+        "ymin": 0.86113,
+        "xmax": 0.86299,
+        "ymax": 0.89164
+      },
+      "range": {
+        "end": 2562,
+        "start": 2438
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "costs_at_closing-closing_costs.png"
+    },
+    {
+      "path": "costs_at_closing.cash_to_close",
+      "label": "Cash to close",
+      "value": 14147.26,
+      "page": 1,
+      "box": {
+        "xmin": 0.3125,
+        "ymin": 0.90532,
+        "xmax": 0.89217,
+        "ymax": 0.92299
+      },
+      "range": {
+        "end": 2697,
+        "start": 2603
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "costs_at_closing-cash_to_close.png"
+    }
+  ]
+}

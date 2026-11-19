@@ -32,8 +32,8 @@
       "occurrence": 0
     },
     {
-      "path": "milestones[8].total_float_days",
-      "label": "Open New Slip Ramp total float (critical)",
+      "path": "milestones[8].activity_id",
+      "label": "Activity id",
       "occurrence": 0
     },
     {
@@ -48,5 +48,34 @@
     12,
     17
   ],
-  "notes": "Primavera P6 baseline schedule for the 95 Express Lanes Opitz Boulevard project, filed as an exhibit to a Virginia P3 agreement. Orientation is mixed: the narrative and payment schedule are portrait letter, the Gantt pages landscape tabloid and the cash curve a rotated landscape page. The whole exhibit is kept: narrative (pages 1-8, including Table 01 of contract milestones and Table 02, the WBS), the six-page P6 Gantt chart (pages 10-15), and the monthly payment schedule and cash curve (16-18), whose final cumulative total matches the Gantt's top-level budget. Feature page 10, the first Gantt page, as the request suggested. The request listed seven suggested values on page 10 (project budgeted total cost and duration; MS-1200 Notice to Proceed start; MS-1500 Open New Slip Ramp finish and total float; MS-1450 Open Pedestrian Facility finish and total float). All seven ground cleanly on page 10, but a page features at most five, so two were left out: the project duration (595) and the MS-1450 finish date. The five kept tell one story: the budget, the day work starts, and two milestones side by side, one on the critical path (0 days float) and one with more than a year of slack (367 days). Milestones are pinned by array index, which follows the printed order (MS-1200 is index 2, MS-1450 index 7, MS-1500 index 8). Dates are kept as printed (MM-DD-YY) rather than normalized, so they match the cells they ground to. The wbs_summaries description was refined once with --extract-only: the first extraction dropped the empty STAKEHOLDER band and promoted PROJECT CLOSEOUT (a level-3 band inside CONSTRUCTION) to level 2, because the band colours that carry the WBS level do not survive into the markdown; pointing the field at the narrative's WBS codes fixed it, and the seven bands now sum exactly to the project budget. Previews are pages 2, 10, 12 and 17 (milestone table, two Gantt pages, payment schedule) rather than the default sample, which picked the near-empty divider page 1."
+  "notes": "Primavera P6 baseline schedule for the 95 Express Lanes Opitz Boulevard project, filed as an exhibit to a Virginia P3 agreement. Orientation is mixed: the narrative and payment schedule are portrait letter, the Gantt pages landscape tabloid and the cash curve a rotated landscape page. The whole exhibit is kept: narrative (pages 1-8, including Table 01 of contract milestones and Table 02, the WBS), the six-page P6 Gantt chart (pages 10-15), and the monthly payment schedule and cash curve (16-18), whose final cumulative total matches the Gantt's top-level budget. Feature page 10, the first Gantt page, as the request suggested. The request listed seven suggested values on page 10 (project budgeted total cost and duration; MS-1200 Notice to Proceed start; MS-1500 Open New Slip Ramp finish and total float; MS-1450 Open Pedestrian Facility finish and total float). All seven ground cleanly on page 10, but a page features at most five, so two were left out: the project duration (595) and the MS-1450 finish date. The five kept tell one story: the budget, the day work starts, and two milestones side by side, one on the critical path (0 days float) and one with more than a year of slack (367 days). Milestones are pinned by array index, which follows the printed order (MS-1200 is index 2, MS-1450 index 7, MS-1500 index 8). Dates are kept as printed (MM-DD-YY) rather than normalized, so they match the cells they ground to. The wbs_summaries description was refined once with --extract-only: the first extraction dropped the empty STAKEHOLDER band and promoted PROJECT CLOSEOUT (a level-3 band inside CONSTRUCTION) to level 2, because the band colours that carry the WBS level do not survive into the markdown; pointing the field at the narrative's WBS codes fixed it, and the seven bands now sum exactly to the project budget. Previews are pages 2, 10, 12 and 17 (milestone table, two Gantt pages, payment schedule) rather than the default sample, which picked the near-empty divider page 1.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 18,
+      "service_tier": "standard",
+      "parse_credits": 38.9,
+      "extract_credits": 32.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 18,
+      "service_tier": "standard",
+      "parse_credits": 36.8,
+      "extract_credits": 31.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 18,
+      "service_tier": "standard",
+      "parse_credits": 13.7,
+      "extract_credits": 30.8
+    }
+  ]
 }

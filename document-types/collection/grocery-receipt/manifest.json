@@ -48,8 +48,8 @@
       "occurrence": 0
     },
     {
-      "path": "tax",
-      "label": "Tax",
+      "path": "subtotal",
+      "label": "Subtotal",
       "occurrence": 0
     },
     {
@@ -58,5 +58,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request asked for a schema with a list of every item purchased, with name, quantity, unit price, total price and taxable status; the items array carries all five, plus the item number and the printed tax-code letter. No feature page or fields were requested. The overlay follows one item line across the receipt: its description, its price, and the 'E' tax flag in the left margin, then the 0.00 tax line that the flag explains and the total. quantity and unit_price are not printed on this receipt (one of each item); extraction fills them as 1 and the line total, grounded to the item line. taxable is an inference from the 'E' flag and grounds OFF to it, so it is not featured; the flag itself is."
+  "notes": "The request asked for a schema with a list of every item purchased, with name, quantity, unit price, total price and taxable status; the items array carries all five, plus the item number and the printed tax-code letter. No feature page or fields were requested. The overlay follows one item line across the receipt: its description, its price, and the 'E' tax flag in the left margin, then the 0.00 tax line that the flag explains and the total. quantity and unit_price are not printed on this receipt (one of each item); extraction fills them as 1 and the line total, grounded to the item line. taxable is an inference from the 'E' flag and grounds OFF to it, so it is not featured; the flag itself is.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.7,
+      "extract_credits": 1.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.7,
+      "extract_credits": 1.0
+    }
+  ]
 }

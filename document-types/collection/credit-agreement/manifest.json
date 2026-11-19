@@ -15,13 +15,70 @@
     }
   },
   "feature_page": 6,
-  "preview_pages": [1, 6, 7, 12],
-  "fields": [
-    { "path": "agreement_date", "label": "Agreement date", "occurrence": 1 },
-    { "path": "borrower.name", "label": "Borrower", "occurrence": 0 },
-    { "path": "lenders[0].name", "label": "Lender (bank)", "occurrence": 0 },
-    { "path": "lenders[1].name", "label": "Lender (STI)", "occurrence": 0 },
-    { "path": "agent", "label": "Agent", "occurrence": 1 }
+  "preview_pages": [
+    1,
+    6,
+    7,
+    12
   ],
-  "notes": "Features the opening paragraph on page 6 (printed page 1), which states who the deal is between in one sentence: the date, the borrower, the two lenders and the agent. The request's notes suggested agreement date, borrower, lenders and agent, maximum commitment amount and applicable margin, as suggestions only, and noted they are on different pages. The commitment amount ($100,000,000) grounds on page 12 and the margin (46 basis points) on page 7, both ok, so neither can share an overlay with the parties; page 6 carries the other four suggestions. The schema asks for the agreement date as printed: an ISO-normalised date grounded to the right words but could not be featured, because the boxed text did not contain the value. Only impersonal fields are featured, by the operator's direction; the schema has no fields for people."
+  "fields": [
+    {
+      "path": "agreement_date",
+      "label": "Agreement date",
+      "occurrence": {
+        "pro": 0,
+        "verity": 1
+      }
+    },
+    {
+      "path": "borrower.name",
+      "label": "Borrower",
+      "occurrence": 0
+    },
+    {
+      "path": "lenders[0].name",
+      "label": "Lender (bank)",
+      "occurrence": 0
+    },
+    {
+      "path": "lenders[1].name",
+      "label": "Lender (STI)",
+      "occurrence": 0
+    },
+    {
+      "path": "agent",
+      "label": "Agent",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the opening paragraph on page 6 (printed page 1), which states who the deal is between in one sentence: the date, the borrower, the two lenders and the agent. The request's notes suggested agreement date, borrower, lenders and agent, maximum commitment amount and applicable margin, as suggestions only, and noted they are on different pages. The commitment amount ($100,000,000) grounds on page 12 and the margin (46 basis points) on page 7, both ok, so neither can share an overlay with the parties; page 6 carries the other four suggestions. The schema asks for the agreement date as printed: an ISO-normalised date grounded to the right words but could not be featured, because the boxed text did not contain the value. Only impersonal fields are featured, by the operator's direction; the schema has no fields for people.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 76,
+      "service_tier": "standard",
+      "parse_credits": 92.6,
+      "extract_credits": 45.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 76,
+      "service_tier": "standard",
+      "parse_credits": 92.7,
+      "extract_credits": 45.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 76,
+      "service_tier": "standard",
+      "parse_credits": 33.4,
+      "extract_credits": 45.4
+    }
+  ]
 }

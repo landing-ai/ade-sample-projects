@@ -1,0 +1,108 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "predominant_roof.covering_material",
+      "label": "Roof covering material",
+      "value": "Asphalt shingles",
+      "page": 1,
+      "box": {
+        "xmin": 0.17831,
+        "ymin": 0.414,
+        "xmax": 0.32393,
+        "ymax": 0.4285
+      },
+      "range": {
+        "end": 1167,
+        "start": 1151
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "predominant_roof-covering_material.png"
+    },
+    {
+      "path": "predominant_roof.roof_age_years",
+      "label": "Roof age in years",
+      "value": 30,
+      "page": 1,
+      "box": {
+        "xmin": 0.17896,
+        "ymin": 0.435,
+        "xmax": 0.2005,
+        "ymax": 0.44688
+      },
+      "range": {
+        "end": 1194,
+        "start": 1192
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "predominant_roof-roof_age_years.png"
+    },
+    {
+      "path": "predominant_roof.last_permit_date",
+      "label": "Date of last roofing permit",
+      "value": "2011",
+      "page": 1,
+      "box": {
+        "xmin": 0.22593,
+        "ymin": 0.47186,
+        "xmax": 0.26566,
+        "ymax": 0.48406
+      },
+      "range": {
+        "end": 1285,
+        "start": 1281
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "predominant_roof-last_permit_date.png"
+    },
+    {
+      "path": "predominant_roof.overall_condition",
+      "label": "Overall condition",
+      "value": "Satisfactory",
+      "page": 1,
+      "box": {
+        "xmin": 0.09954,
+        "ymin": 0.60935,
+        "xmax": 0.16909,
+        "ymax": 0.62135
+      },
+      "range": {
+        "end": 1478,
+        "start": 1466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "predominant_roof-overall_condition.png"
+    },
+    {
+      "path": "predominant_roof.visible_damage[0]",
+      "label": "Visible damage checked",
+      "value": "Visible hail damage",
+      "page": 1,
+      "box": {
+        "xmin": 0.0985,
+        "ymin": 0.79376,
+        "xmax": 0.21418,
+        "ymax": 0.80553
+      },
+      "range": {
+        "end": 1832,
+        "start": 1813
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "predominant_roof-visible_damage-0.png"
+    }
+  ]
+}

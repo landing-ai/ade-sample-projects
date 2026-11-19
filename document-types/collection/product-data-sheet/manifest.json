@@ -27,8 +27,8 @@
       "occurrence": 0
     },
     {
-      "path": "headline_ratings.rated_on_resistance",
-      "label": "Rated on-state resistance",
+      "path": "maximum_ratings.continuous_drain_current_90c_a",
+      "label": "Continuous drain current 90c a",
       "occurrence": 0
     },
     {
@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "A 9-page manufacturer data sheet for a 3300 V silicon carbide power module: characteristic tables with Min/Typ/Max columns and Unit, Note and Parameter cells merged across rows (page 1-3), 15 typical performance curves two per row (pages 4-5), timing-definition diagrams (page 6), and a schematic and package drawing (page 7). The request file named no feature_page or fields; its notes suggested page 1 or 2 and listed part number, rated VDS / RDS(on), continuous drain current at 25 C, RDS(on) typ and max, gate threshold min/typ/max and power dissipation as suggestions only. Page 1 is featured because it tells one story: which part this is, its two headline ratings from the summary box, and two absolute-maximum values from the merged-cell Maximum Parameters table. Every suggested field grounds ok, but RDS(on) typ/max and gate threshold min/typ/max are on page 2 and so cannot share the page 1 overlay. The characteristics_table array (one entry per row of the page 2 MOSFET table) extracts correctly, including the unit inherited from merged Unit cells, but came back with no ranges at all, so none of it can be illustrated; the committed extraction also carries a nonconformant_output warning because that table's last row genuinely has an empty Conditions cell and the schema's conditions field is not nullable."
+  "notes": "A 9-page manufacturer data sheet for a 3300 V silicon carbide power module: characteristic tables with Min/Typ/Max columns and Unit, Note and Parameter cells merged across rows (page 1-3), 15 typical performance curves two per row (pages 4-5), timing-definition diagrams (page 6), and a schematic and package drawing (page 7). The request file named no feature_page or fields; its notes suggested page 1 or 2 and listed part number, rated VDS / RDS(on), continuous drain current at 25 C, RDS(on) typ and max, gate threshold min/typ/max and power dissipation as suggestions only. Page 1 is featured because it tells one story: which part this is, its two headline ratings from the summary box, and two absolute-maximum values from the merged-cell Maximum Parameters table. Every suggested field grounds ok, but RDS(on) typ/max and gate threshold min/typ/max are on page 2 and so cannot share the page 1 overlay. The characteristics_table array (one entry per row of the page 2 MOSFET table) extracts correctly, including the unit inherited from merged Unit cells, but came back with no ranges at all, so none of it can be illustrated; the committed extraction also carries a nonconformant_output warning because that table's last row genuinely has an empty Conditions cell and the schema's conditions field is not nullable.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 9,
+      "service_tier": "standard",
+      "parse_credits": 16.0,
+      "extract_credits": 15.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 9,
+      "service_tier": "standard",
+      "parse_credits": 15.8,
+      "extract_credits": 14.9
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 9,
+      "service_tier": "standard",
+      "parse_credits": 6.0,
+      "extract_credits": 15.0
+    }
+  ]
 }

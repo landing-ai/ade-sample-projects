@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 32,
+  "page_count": 78,
+  "preview_pages": [
+    31,
+    32,
+    33,
+    63
+  ],
+  "fields": [
+    {
+      "path": "seller.name",
+      "label": "Seller",
+      "value": "Nuon Global Solutions USA B.V.",
+      "page": 32,
+      "box": {
+        "xmin": 0.47576,
+        "ymin": 0.16296,
+        "xmax": 0.73481,
+        "ymax": 0.17732
+      },
+      "range": {
+        "end": 41235,
+        "start": 41205
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "seller-name.png"
+    },
+    {
+      "path": "buyer.name",
+      "label": "Buyer",
+      "value": "Hydro Star, LLC",
+      "page": 32,
+      "box": {
+        "xmin": 0.71394,
+        "ymin": 0.17856,
+        "xmax": 0.84755,
+        "ymax": 0.1942
+      },
+      "range": {
+        "end": 41352,
+        "start": 41337
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "buyer-name.png"
+    },
+    {
+      "path": "company.name",
+      "label": "Company whose stock is sold",
+      "value": "Nuon Global Solutions USA Inc.",
+      "page": 32,
+      "box": {
+        "xmin": 0.59363,
+        "ymin": 0.27721,
+        "xmax": 0.84908,
+        "ymax": 0.29166
+      },
+      "range": {
+        "end": 41601,
+        "start": 41571
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "company-name.png"
+    },
+    {
+      "path": "stock.number_of_shares",
+      "label": "Shares sold",
+      "value": 1000,
+      "page": 32,
+      "box": {
+        "xmin": 0.14401,
+        "ymin": 0.26084,
+        "xmax": 0.86442,
+        "ymax": 0.32931
+      },
+      "range": {
+        "end": 41734,
+        "start": 41427
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "stock-number_of_shares.png"
+    },
+    {
+      "path": "purchase_price",
+      "label": "Purchase price",
+      "value": 192500000,
+      "page": 32,
+      "box": {
+        "xmin": 0.14842,
+        "ymin": 0.6721,
+        "xmax": 0.86984,
+        "ymax": 0.77411
+      },
+      "range": {
+        "end": 43320,
+        "start": 42769
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "purchase_price.png"
+    }
+  ]
+}

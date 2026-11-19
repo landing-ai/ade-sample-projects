@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "risk_assessment_questions.q1",
+      "label": "Age band",
+      "value": "Between 46 and 55",
+      "page": 1,
+      "box": {
+        "xmin": 0.24497,
+        "ymin": 0.50197,
+        "xmax": 0.39461,
+        "ymax": 0.51332
+      },
+      "range": {
+        "end": 893,
+        "start": 876
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_assessment_questions-q1.png"
+    },
+    {
+      "path": "risk_assessment_questions.q2",
+      "label": "Time horizon",
+      "value": "Long Term (10+ years)",
+      "page": 1,
+      "box": {
+        "xmin": 0.24472,
+        "ymin": 0.63546,
+        "xmax": 0.42523,
+        "ymax": 0.64882
+      },
+      "range": {
+        "end": 1133,
+        "start": 1112
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_assessment_questions-q2.png"
+    },
+    {
+      "path": "risk_assessment_questions.q3",
+      "label": "Primary purpose",
+      "value": "Build Long-Term Wealth",
+      "page": 1,
+      "box": {
+        "xmin": 0.24514,
+        "ymin": 0.7295,
+        "xmax": 0.4305,
+        "ymax": 0.74241
+      },
+      "range": {
+        "end": 1327,
+        "start": 1305
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_assessment_questions-q3.png"
+    },
+    {
+      "path": "risk_assessment_questions.q3_open",
+      "label": "Secondary purpose",
+      "value": "preservation of wealth",
+      "page": 1,
+      "box": {
+        "xmin": 0.05428,
+        "ymin": 0.41496,
+        "xmax": 0.95763,
+        "ymax": 0.87368
+      },
+      "range": {
+        "end": 1370,
+        "start": 1348
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_assessment_questions-q3_open.png"
+    },
+    {
+      "path": "risk_assessment_questions.q4",
+      "label": "Risk acceptance",
+      "value": "More accepting of risk - Long Term",
+      "page": 1,
+      "box": {
+        "xmin": 0.24452,
+        "ymin": 0.85526,
+        "xmax": 0.51674,
+        "ymax": 0.86884
+      },
+      "range": {
+        "end": 1626,
+        "start": 1592
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "risk_assessment_questions-q4.png"
+    }
+  ]
+}

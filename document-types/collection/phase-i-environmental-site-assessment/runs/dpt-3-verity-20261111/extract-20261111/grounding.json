@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 39,
+  "preview_pages": [
+    1,
+    6,
+    14,
+    21
+  ],
+  "fields": [
+    {
+      "path": "report.client",
+      "label": "Client",
+      "value": "City of San Jose",
+      "page": 6,
+      "box": {
+        "xmin": 0.5641,
+        "ymin": 0.19211,
+        "xmax": 0.66563,
+        "ymax": 0.20503
+      },
+      "range": {
+        "end": 7703,
+        "start": 7687
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-client.png"
+    },
+    {
+      "path": "property.earliest_record_year",
+      "label": "Earliest record year",
+      "value": 1939,
+      "page": 6,
+      "box": {
+        "xmin": 0.11753,
+        "ymin": 0.77771,
+        "xmax": 0.15525,
+        "ymax": 0.78864
+      },
+      "range": {
+        "end": 10211,
+        "start": 10207
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-earliest_record_year.png"
+    },
+    {
+      "path": "component_dates.government_records_review",
+      "label": "Government records review",
+      "value": "May 12, 2025",
+      "page": 6,
+      "box": {
+        "xmin": 0.57561,
+        "ymin": 0.66371,
+        "xmax": 0.6653,
+        "ymax": 0.67471
+      },
+      "range": {
+        "end": 9934,
+        "start": 9922
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_dates-government_records_review.png"
+    },
+    {
+      "path": "component_dates.visual_inspection",
+      "label": "Site reconnaissance date",
+      "value": "May 12, 2025",
+      "page": 6,
+      "box": {
+        "xmin": 0.57563,
+        "ymin": 0.69151,
+        "xmax": 0.66534,
+        "ymax": 0.70269
+      },
+      "range": {
+        "end": 9990,
+        "start": 9978
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_dates-visual_inspection.png"
+    },
+    {
+      "path": "component_dates.ep_declaration",
+      "label": "EP declaration date",
+      "value": "November 8, 2025",
+      "page": 6,
+      "box": {
+        "xmin": 0.57569,
+        "ymin": 0.71878,
+        "xmax": 0.69773,
+        "ymax": 0.73002
+      },
+      "range": {
+        "end": 10074,
+        "start": 10058
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "component_dates-ep_declaration.png"
+    }
+  ]
+}

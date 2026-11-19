@@ -1,0 +1,87 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "total_score.score",
+      "label": "Total score",
+      "value": 1470,
+      "page": 1,
+      "box": {
+        "xmin": 0.08362,
+        "ymin": 0.2436,
+        "xmax": 0.15671,
+        "ymax": 0.26821
+      },
+      "range": {
+        "end": 244,
+        "start": 240
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "total_score-score.png"
+    },
+    {
+      "path": "section_scores[0].score",
+      "label": "Reading and Writing score",
+      "value": 680,
+      "page": 1,
+      "box": {
+        "xmin": 0.08362,
+        "ymin": 0.33078,
+        "xmax": 0.11654,
+        "ymax": 0.34555
+      },
+      "range": {
+        "end": 378,
+        "start": 375
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "section_scores-0-score.png"
+    },
+    {
+      "path": "section_scores[1].score",
+      "label": "Math score",
+      "value": 790,
+      "page": 1,
+      "box": {
+        "xmin": 0.08362,
+        "ymin": 0.39171,
+        "xmax": 0.11654,
+        "ymax": 0.40647
+      },
+      "range": {
+        "end": 478,
+        "start": 475
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "section_scores-1-score.png"
+    },
+    {
+      "path": "test.test_date",
+      "label": "Test date",
+      "value": "Jun 7, 2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.65522,
+        "ymin": 0.09462,
+        "xmax": 0.73107,
+        "ymax": 0.1057
+      },
+      "range": {
+        "end": 163,
+        "start": 152
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "test-test_date.png"
+    }
+  ]
+}

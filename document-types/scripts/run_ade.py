@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 """Parse and extract one document type's sample, writing the output the page needs.
 
-    python document-types/scripts/run_ade.py invoice
+    python document-types/scripts/run_ade.py invoice                  # DPT-3 Pro
+    python document-types/scripts/run_ade.py invoice --parse verity
+    python document-types/scripts/run_ade.py invoice --parse verity --extract-only
 
 Reads  collection/<slug>/source/<doc>  and  collection/<slug>/schema.json
-Writes collection/<slug>/parse-<model>.json, parse-<model>.md, extract-<model>.json
+Writes collection/<slug>/runs/<parse snapshot>/parse.json, parse.md
+       collection/<slug>/runs/<parse snapshot>/<extract snapshot>/extract.json
+and records the run, with its credits, under "runs" in manifest.json.
+
+Snapshots are pinned in runs.py. The directories are named for the snapshot the API
+reports in metadata.model_version, which is normally the one requested: a superseded
+snapshot resolves to its replacement, and the files say what actually ran.
 
 This is the script that spends credits. Image generation is deliberately separate
 (build_images.py) so that re-rendering never costs anything and never depends on a
@@ -27,19 +35,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-COLLECTION = REPO_ROOT / "document-types" / "collection"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from runs import (COLLECTION, EXTRACT_MODEL, Run, extract_snapshot,  # noqa: E402
+                  parse_snapshot, record_run, runs_in)
 
-# Output files carry the parse model, because a document type may eventually be parsed
-# by more than one and the results must not overwrite each other.
-#
-# Verity is in Preview and changing; it gets added here once it is GA, at which point a
-# folder can hold parse-pro.json and parse-verity.json side by side.
-PARSE_MODELS = {
-    "pro": "dpt-3-pro-latest",
-}
-
-EXTRACT_MODEL = "extract-latest"
 SERVICE_TIER = "standard"   # half the credits of priority; turnaround is slower
 JOB_TIMEOUT_S = 900
 
@@ -92,21 +91,30 @@ def credits_of(result) -> float:
     return float(getattr(billing, "total_credits", 0) or 0)
 
 
+def resolved(result, requested: str, kind: str) -> str:
+    """The snapshot that actually ran. Superseded snapshots resolve to their
+    replacement; the files are named for what ran, not what was asked for."""
+    version = getattr(getattr(result, "metadata", None), "model_version", None) or requested
+    if version != requested:
+        print(f"  NOTE: requested {kind} {requested}, API ran {version}; filing under {version}")
+    return version
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("slug", help="folder name under document-types/collection/")
-    parser.add_argument(
-        "--model",
-        default="pro",
-        choices=sorted(PARSE_MODELS),
-        help="parse model; names the output files (default: pro)",
-    )
+    parser.add_argument("--parse", default="pro", metavar="MODEL",
+                        help="pro, verity, or an exact dpt-3 snapshot (default: pro)")
+    parser.add_argument("--extract", default=EXTRACT_MODEL, metavar="MODEL",
+                        help=f"extract snapshot (default: {EXTRACT_MODEL})")
     parser.add_argument(
         "--extract-only",
         action="store_true",
-        help="reuse the committed parse output and only re-run extraction. Use this "
-             "when iterating on schema.json: re-parsing a long document is the "
-             "expensive half and the markdown does not change.",
+        help="reuse the committed parse for this parse model and only re-run "
+             "extraction. Use this when iterating on schema.json, or to extract an "
+             "existing parse with another extract snapshot: re-parsing a long "
+             "document is the expensive half and the markdown does not change.",
     )
     args = parser.parse_args()
 
@@ -120,21 +128,32 @@ def main() -> None:
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
 
     document = find_source(folder)
-    parse_model = PARSE_MODELS[args.model]
+    parse_model = parse_snapshot(args.parse)
+    extract_model = extract_snapshot(args.extract)
     load_api_key()
 
     from landingai_ade import LandingAIADE  # imported late so --help works without a key
 
     client = LandingAIADE()
-
-    parse_md_path = folder / f"parse-{args.model}.md"
     parse_credits = 0.0
 
     if args.extract_only:
-        if not parse_md_path.is_file():
-            sys.exit(f"--extract-only needs {parse_md_path}, which does not exist.")
-        markdown = parse_md_path.read_text(encoding="utf-8")
-        print(f"Reusing {parse_md_path.name} ({len(markdown):,} chars); not re-parsing.")
+        # The parse to reuse: exactly the requested snapshot, else the only parse of
+        # that family already in the folder.
+        parse_dirs = [d for d in sorted((folder / "runs").glob("*/"))
+                      if (d / "parse.md").is_file()
+                      and (d.name == parse_model or d.name == args.parse
+                           or (args.parse in ("pro", "verity")
+                               and d.name.startswith(f"dpt-3-{args.parse}-")))]
+        exact = [d for d in parse_dirs if d.name == parse_model]
+        parse_dirs = exact or parse_dirs
+        if len(parse_dirs) != 1:
+            have = ", ".join(d.name for d in (folder / "runs").glob("*/")) or "none"
+            sys.exit(f"--extract-only needs exactly one committed parse for {args.parse}; "
+                     f"parses present: {have}")
+        parse_model = parse_dirs[0].name
+        markdown = (parse_dirs[0] / "parse.md").read_text(encoding="utf-8")
+        print(f"Reusing runs/{parse_model}/parse.md ({len(markdown):,} chars); not re-parsing.")
     else:
         print(f"Parsing {document.name} with {parse_model} ({SERVICE_TIER} tier) ...")
         parse_job = client.v2.parse_jobs.create(
@@ -146,32 +165,36 @@ def main() -> None:
             parse_job.job_id, timeout=JOB_TIMEOUT_S, raise_on_failure=True
         )
         parse_result = parse_done.result
+        parse_model = resolved(parse_result, parse_model, "parse")
 
-        write_json(parse_result, folder / f"parse-{args.model}.json")
+        parse_dir = folder / "runs" / parse_model
+        parse_dir.mkdir(parents=True, exist_ok=True)
+        write_json(parse_result, parse_dir / "parse.json")
         # Keep the trailing `doc_id` comment: v2 Extract reads it to link the extraction
         # back to this parse job.
-        parse_md_path.write_text(parse_result.markdown, encoding="utf-8")
+        (parse_dir / "parse.md").write_text(parse_result.markdown, encoding="utf-8")
         markdown = parse_result.markdown
         parse_credits = credits_of(parse_result)
 
         failed = parse_result.metadata.failed_pages or []
         print(f"  {parse_result.metadata.page_count} page(s)" + (f", FAILED: {failed}" if failed else ""))
 
-    print(f"Extracting with {EXTRACT_MODEL} ({SERVICE_TIER} tier) ...")
+    print(f"Extracting with {extract_model} ({SERVICE_TIER} tier) ...")
     extract_job = client.v2.extract_jobs.create(
         markdown=markdown,
         schema=schema,
-        model=EXTRACT_MODEL,
+        model=extract_model,
         service_tier=SERVICE_TIER,
     )
     extract_done = client.v2.extract_jobs.wait(
         extract_job.job_id, timeout=JOB_TIMEOUT_S, raise_on_failure=True
     )
     extract_result = extract_done.result
+    extract_model = resolved(extract_result, extract_model, "extract")
 
-    # Named for the parse model it came from: an extraction is only meaningful against
-    # the markdown that produced it.
-    write_json(extract_result, folder / f"extract-{args.model}.json")
+    run = Run(folder, parse_model, extract_model)
+    run.dir.mkdir(parents=True, exist_ok=True)
+    write_json(extract_result, run.extract_json)
 
     if getattr(extract_result, "schema_violation_error", None):
         print(f"  partial extraction: {extract_result.schema_violation_error}")
@@ -181,12 +204,18 @@ def main() -> None:
     found = sum(1 for v in extract_result.extraction.values() if v not in (None, "", []))
     print(f"  {found}/{len(extract_result.extraction)} top-level fields populated")
 
+    if not record_run(run):
+        print("  (no manifest.json yet: build_images.py records the run once it exists)")
+
     total = parse_credits + credits_of(extract_result)
-    written = (f"extract-{args.model}.json" if args.extract_only else
-               f"parse-{args.model}.json, parse-{args.model}.md, extract-{args.model}.json")
-    print(f"\nWrote {written} to {folder}")
+    print(f"\nWrote {run.rel(run.dir)}/" + ("" if args.extract_only else
+          f" and {run.rel(run.parse_dir)}/parse.json, parse.md"))
     print(f"Credits used: {total:.2f} ({SERVICE_TIER} tier)")
-    print(f"\nNext: python document-types/scripts/build_images.py {args.slug}")
+    others = [r.label for r in runs_in(folder) if r != run]
+    if others:
+        print(f"Other runs in this folder: {', '.join(others)}")
+    print(f"\nNext: python document-types/scripts/build_images.py {args.slug} "
+          f"--parse {run.parse_model} --extract {run.extract_model}")
 
 
 if __name__ == "__main__":

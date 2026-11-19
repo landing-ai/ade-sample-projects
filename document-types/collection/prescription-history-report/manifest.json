@@ -16,11 +16,51 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "risk_indicators.mme_average", "label": "MME (30-day average)", "occurrence": 0 },
-    { "path": "risk_indicators.multiple_provider_prescribers", "label": "Prescribers in 6 months", "occurrence": 0 },
-    { "path": "risk_indicators.overlapping_prescriptions", "label": "Overlapping prescriptions", "occurrence": 0 },
-    { "path": "risk_indicators.risk_score", "label": "Risk score", "occurrence": 0 },
-    { "path": "prescriptions[1].drug", "label": "Dispensed drug", "occurrence": 0 }
+    {
+      "path": "risk_indicators.mme_average",
+      "label": "MME (30-day average)",
+      "occurrence": 0
+    },
+    {
+      "path": "risk_indicators.multiple_provider_prescribers",
+      "label": "Prescribers in 6 months",
+      "occurrence": 0
+    },
+    {
+      "path": "risk_indicators.overlapping_prescriptions",
+      "label": "Overlapping prescriptions",
+      "occurrence": 0
+    },
+    {
+      "path": "risk_indicators.risk_score",
+      "label": "Risk score",
+      "occurrence": 0
+    },
+    {
+      "path": "prescriptions[1].drug",
+      "label": "Dispensed drug",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features the four summary risk indicators a reviewer reads first (MME average, multiple provider episodes, overlapping prescriptions and overall risk score) plus the drug on one dispensation row, Hydrocodone 7.5 MG, the opioid that drives the MME figure. The request named no fields; its suggestions were the four indicators and a dispensation row, and those are what shipped. This is a state PDMP (controlled-substance monitoring) patient report, not an insurer's prescription history report such as those from Milliman IntelliScript or ExamOne ScriptCheck; the layout and fields are close, but the purpose and recipients differ. The source PDF is not committed; source/ holds the PNG crop of page 9 described in clearance_note."
+  "notes": "Features the four summary risk indicators a reviewer reads first (MME average, multiple provider episodes, overlapping prescriptions and overall risk score) plus the drug on one dispensation row, Hydrocodone 7.5 MG, the opioid that drives the MME figure. The request named no fields; its suggestions were the four indicators and a dispensation row, and those are what shipped. This is a state PDMP (controlled-substance monitoring) patient report, not an insurer's prescription history report such as those from Milliman IntelliScript or ExamOne ScriptCheck; the layout and fields are close, but the purpose and recipients differ. The source PDF is not committed; source/ holds the PNG crop of page 9 described in clearance_note.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 4.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.3,
+      "extract_credits": 4.2
+    }
+  ]
 }

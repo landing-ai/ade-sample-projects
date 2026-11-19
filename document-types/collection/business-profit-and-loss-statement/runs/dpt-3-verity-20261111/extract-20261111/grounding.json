@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "company_name",
+      "label": "Company",
+      "value": "Craig's Design and Landscaping Services",
+      "page": 1,
+      "box": {
+        "xmin": 0.25837,
+        "ymin": 0.03777,
+        "xmax": 0.74271,
+        "ymax": 0.05956
+      },
+      "range": {
+        "end": 39,
+        "start": 0
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "company_name.png"
+    },
+    {
+      "path": "reports[0].columns[0].total_income",
+      "label": "Total income (Aug 2017)",
+      "value": 942.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.73408,
+        "ymin": 0.40536,
+        "xmax": 0.78911,
+        "ymax": 0.41791
+      },
+      "range": {
+        "end": 948,
+        "start": 943
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reports-0-columns-0-total_income.png"
+    },
+    {
+      "path": "reports[0].columns[0].total_expenses",
+      "label": "Total expenses (Aug 2017)",
+      "value": 961.68,
+      "page": 1,
+      "box": {
+        "xmin": 0.73415,
+        "ymin": 0.62504,
+        "xmax": 0.78936,
+        "ymax": 0.63795
+      },
+      "range": {
+        "end": 1645,
+        "start": 1639
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reports-0-columns-0-total_expenses.png"
+    },
+    {
+      "path": "reports[0].columns[0].net_income",
+      "label": "Net income (Aug 2017)",
+      "value": -19.68,
+      "page": 1,
+      "box": {
+        "xmin": 0.73305,
+        "ymin": 0.64713,
+        "xmax": 0.78879,
+        "ymax": 0.6583
+      },
+      "range": {
+        "end": 1716,
+        "start": 1708
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reports-0-columns-0-net_income.png"
+    },
+    {
+      "path": "reports[0].columns[1].net_income",
+      "label": "Net income (Jul 2017)",
+      "value": 112.92,
+      "page": 1,
+      "box": {
+        "xmin": 0.89863,
+        "ymin": 0.64629,
+        "xmax": 0.95378,
+        "ymax": 0.65878
+      },
+      "range": {
+        "end": 1732,
+        "start": 1726
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reports-0-columns-1-net_income.png"
+    }
+  ]
+}

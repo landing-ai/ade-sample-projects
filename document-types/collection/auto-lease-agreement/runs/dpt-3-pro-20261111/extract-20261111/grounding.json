@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "payment_calculation.base_scheduled_payment",
+      "label": "Base scheduled payment",
+      "value": 406.58,
+      "page": 1,
+      "box": {
+        "xmin": 0.83853,
+        "ymin": 0.78104,
+        "xmax": 0.87336,
+        "ymax": 0.78948
+      },
+      "range": {
+        "end": 6471,
+        "start": 6465
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payment_calculation-base_scheduled_payment.png"
+    },
+    {
+      "path": "payment_calculation.capitalized_cost_reduction",
+      "label": "Capitalized cost reduction",
+      "value": 101.29,
+      "page": 1,
+      "box": {
+        "xmin": 0.83853,
+        "ymin": 0.68607,
+        "xmax": 0.87336,
+        "ymax": 0.69451
+      },
+      "range": {
+        "end": 5694,
+        "start": 5688
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payment_calculation-capitalized_cost_reduction.png"
+    },
+    {
+      "path": "payment_calculation.adjusted_capitalized_cost",
+      "label": "Adjusted capitalized cost",
+      "value": 28437.71,
+      "page": 1,
+      "box": {
+        "xmin": 0.04746,
+        "ymin": 0.69751,
+        "xmax": 0.8892,
+        "ymax": 0.70739
+      },
+      "range": {
+        "end": 5804,
+        "start": 5695
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payment_calculation-adjusted_capitalized_cost.png"
+    },
+    {
+      "path": "payment_calculation.residual_value",
+      "label": "Residual value",
+      "value": 18070.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.04746,
+        "ymin": 0.70988,
+        "xmax": 0.8892,
+        "ymax": 0.71929
+      },
+      "range": {
+        "end": 5941,
+        "start": 5805
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payment_calculation-residual_value.png"
+    },
+    {
+      "path": "payment_calculation.total_scheduled_payment",
+      "label": "Total monthly payment",
+      "value": 435.04,
+      "page": 1,
+      "box": {
+        "xmin": 0.83853,
+        "ymin": 0.82868,
+        "xmax": 0.87336,
+        "ymax": 0.83712
+      },
+      "range": {
+        "end": 6600,
+        "start": 6594
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "payment_calculation-total_scheduled_payment.png"
+    }
+  ]
+}

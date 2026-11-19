@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 21,
+  "preview_pages": [
+    1,
+    2,
+    11,
+    20
+  ],
+  "fields": [
+    {
+      "path": "court_district",
+      "label": "Court",
+      "value": "NORTHERN DISTRICT OF CALIFORNIA",
+      "page": 1,
+      "box": {
+        "xmin": 0.33973,
+        "ymin": 0.36567,
+        "xmax": 0.71906,
+        "ymax": 0.37909
+      },
+      "range": {
+        "end": 543,
+        "start": 512
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "court_district.png"
+    },
+    {
+      "path": "case_number",
+      "label": "Case number",
+      "value": "3:25-cv-00951",
+      "page": 1,
+      "box": {
+        "xmin": 0.25155,
+        "ymin": 0.01663,
+        "xmax": 0.37768,
+        "ymax": 0.03
+      },
+      "range": {
+        "end": 18,
+        "start": 5
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case_number.png"
+    },
+    {
+      "path": "plaintiff",
+      "label": "Plaintiff",
+      "value": "UNITED STATES OF AMERICA",
+      "page": 1,
+      "box": {
+        "xmin": 0.11706,
+        "ymin": 0.41569,
+        "xmax": 0.38634,
+        "ymax": 0.43069
+      },
+      "range": {
+        "end": 571,
+        "start": 547
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "plaintiff.png"
+    },
+    {
+      "path": "defendants[0]",
+      "label": "First defendant",
+      "value": "HEWLETT PACKARD ENTERPRISE CO.",
+      "page": 1,
+      "box": {
+        "xmin": 0.11758,
+        "ymin": 0.52051,
+        "xmax": 0.46652,
+        "ymax": 0.53355
+      },
+      "range": {
+        "end": 617,
+        "start": 587
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "defendants-0.png"
+    },
+    {
+      "path": "defendants[1]",
+      "label": "Second defendant",
+      "value": "JUNIPER NETWORKS, INC.",
+      "page": 1,
+      "box": {
+        "xmin": 0.1508,
+        "ymin": 0.53785,
+        "xmax": 0.39296,
+        "ymax": 0.55314
+      },
+      "range": {
+        "end": 644,
+        "start": 622
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "defendants-1.png"
+    }
+  ]
+}

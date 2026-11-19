@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "company_name", "label": "Company", "occurrence": 0 },
-    { "path": "holders[0].series_b_shares", "label": "New investor Series B shares", "occurrence": 0 },
-    { "path": "option_pool_increase_shares", "label": "Option pool increase", "occurrence": 0 },
-    { "path": "totals.total_series_a_shares", "label": "Total Series A shares", "occurrence": 0 },
-    { "path": "totals.fully_diluted_shares", "label": "Fully diluted shares", "occurrence": 0 }
+    {
+      "path": "company_name",
+      "label": "Company",
+      "occurrence": 0
+    },
+    {
+      "path": "holders[0].series_b_shares",
+      "label": "New investor Series B shares",
+      "occurrence": 0
+    },
+    {
+      "path": "option_pool_increase_shares",
+      "label": "Option pool increase",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.total_series_a_shares",
+      "label": "Total Series A shares",
+      "occurrence": 0
+    },
+    {
+      "path": "totals.fully_diluted_shares",
+      "label": "Fully diluted shares",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named only the document and its URL. The operator chose Cooley's 1-page PDF print over the legacy .xls workbook it was printed from: ADE accepts no .xls (v1 or v2), and the PDF needs no change to the shared tooling. The featured fields tell the story of the Series B round the table models: the new investor's Series B shares, the option pool top-up that comes with the round, the Series A already outstanding, and the fully diluted share count after both. All five read ok in inspect_fields.py. No person is featured; every holder is a placeholder. Dash cells (zero holdings) extract correctly as 0 but cannot be featured, since a dash does not contain the value 0."
+  "notes": "The request named only the document and its URL. The operator chose Cooley's 1-page PDF print over the legacy .xls workbook it was printed from: ADE accepts no .xls (v1 or v2), and the PDF needs no change to the shared tooling. The featured fields tell the story of the Series B round the table models: the new investor's Series B shares, the option pool top-up that comes with the round, the Series A already outstanding, and the fully diluted share count after both. All five read ok in inspect_fields.py. No person is featured; every holder is a placeholder. Dash cells (zero holdings) extract correctly as 0 but cannot be featured, since a dash does not contain the value 0.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 3.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 3.1
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.5,
+      "extract_credits": 3.1
+    }
+  ]
 }

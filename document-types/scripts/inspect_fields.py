@@ -3,8 +3,11 @@
 
     python document-types/scripts/inspect_fields.py investor-presentation
     python document-types/scripts/inspect_fields.py investor-presentation --page 20
+    python document-types/scripts/inspect_fields.py investor-presentation --parse verity
 
-Use this to choose what a page features. Picking fields by reading `extract-*.json`
+With one run in the folder it is used; with several, pick one with --parse / --extract.
+
+Use this to choose what a page features. Picking fields by reading `extract.json`
 alone does not work, because a value can be:
 
   - **synthesized** — correct, but with no ranges at all, so it cannot be illustrated
@@ -29,23 +32,22 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_images import flatten, locate, value_appears_in  # noqa: E402
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-COLLECTION = REPO_ROOT / "document-types" / "collection"
+from runs import COLLECTION, add_run_args, select_run  # noqa: E402
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug")
-    parser.add_argument("--model", default="pro")
+    add_run_args(parser)
     parser.add_argument("--page", type=int, help="only show occurrences on this page")
     parser.add_argument("--good", action="store_true",
                         help="only show occurrences that are grounded and match")
     args = parser.parse_args()
 
-    folder = COLLECTION / args.slug
-    parse = json.loads((folder / f"parse-{args.model}.json").read_text(encoding="utf-8"))
-    extract = json.loads((folder / f"extract-{args.model}.json").read_text(encoding="utf-8"))
+    run = select_run(COLLECTION / args.slug, args.parse, args.extract)
+    print(f"run: {run.label}")
+    parse = json.loads(run.parse_json.read_text(encoding="utf-8"))
+    extract = json.loads(run.extract_json.read_text(encoding="utf-8"))
     markdown = extract["markdown"]
 
     fields = flatten(extract.get("extraction_metadata") or {})

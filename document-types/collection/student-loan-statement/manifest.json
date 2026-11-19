@@ -75,5 +75,34 @@
       "occurrence": 1
     }
   ],
-  "notes": "The request suggested rows of the 'Increases to your loan' and 'Decreases to your loan' tables and the current loan balance, and named no page or exact fields. All five featured fields are on page 1 and read as one story: what was added to the loan (compulsory course fees, living costs), what came off it (interest, salary and wage deductions), and the balance that results. current_loan_balance is pinned to occurrence 1, the teal 'Your current loan balance' bar beneath the tables; occurrence 0 is the same $26,452.96 in the teal callout at the top, which the parse describes as a graphic. All fields are impersonal amounts; the borrower name, IRD number and reference are fake stand-ins and are not featured. This is a New Zealand government (Inland Revenue) statement, not a US servicer's; amounts are New Zealand dollars. The decreases are printed negative, and the schema keeps the sign. The origin URL is a Scribd listing: the website shows it as plain text, not as a link. Dates (issue date, balance as-at date, the previous statement date, the transaction date) extract correctly but ground OFF, because the source prints them as '23 April 2023' and the schema normalises to ISO, so none is featured."
+  "notes": "The request suggested rows of the 'Increases to your loan' and 'Decreases to your loan' tables and the current loan balance, and named no page or exact fields. All five featured fields are on page 1 and read as one story: what was added to the loan (compulsory course fees, living costs), what came off it (interest, salary and wage deductions), and the balance that results. current_loan_balance is pinned to occurrence 1, the teal 'Your current loan balance' bar beneath the tables; occurrence 0 is the same $26,452.96 in the teal callout at the top, which the parse describes as a graphic. All fields are impersonal amounts; the borrower name, IRD number and reference are fake stand-ins and are not featured. This is a New Zealand government (Inland Revenue) statement, not a US servicer's; amounts are New Zealand dollars. The decreases are printed negative, and the schema keeps the sign. The origin URL is a Scribd listing: the website shows it as plain text, not as a link. Dates (issue date, balance as-at date, the previous statement date, the transaction date) extract correctly but ground OFF, because the source prints them as '23 April 2023' and the schema normalises to ISO, so none is featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 3.0,
+      "extract_credits": 2.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 2.9,
+      "extract_credits": 2.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 2.1
+    }
+  ]
 }

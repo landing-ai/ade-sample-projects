@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "report.test_name",
+      "label": "Test profile",
+      "value": "1001 IgG Food Antibodies Profile",
+      "page": 1,
+      "box": {
+        "xmin": 0.02941,
+        "ymin": 0.26096,
+        "xmax": 0.29804,
+        "ymax": 0.27361
+      },
+      "range": {
+        "end": 244,
+        "start": 212
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-test_name.png"
+    },
+    {
+      "path": "report.methodology",
+      "label": "Methodology",
+      "value": "EIA and Chemiluminescent",
+      "page": 1,
+      "box": {
+        "xmin": 0.11011,
+        "ymin": 0.27802,
+        "xmax": 0.27333,
+        "ymax": 0.28809
+      },
+      "range": {
+        "end": 291,
+        "start": 267
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-methodology.png"
+    },
+    {
+      "path": "report.specimen_type",
+      "label": "Specimen type",
+      "value": "Serum",
+      "page": 1,
+      "box": {
+        "xmin": 0.31226,
+        "ymin": 0.26096,
+        "xmax": 0.36048,
+        "ymax": 0.27361
+      },
+      "range": {
+        "end": 252,
+        "start": 247
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "report-specimen_type.png"
+    },
+    {
+      "path": "food_results[68].result",
+      "label": "Gluten result (from the results grid)",
+      "value": "3+",
+      "page": 1,
+      "box": {
+        "xmin": 0.85251,
+        "ymin": 0.40524,
+        "xmax": 0.87239,
+        "ymax": 0.4169
+      },
+      "range": {
+        "end": 1715,
+        "start": 1713
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "food_results-68-result.png"
+    }
+  ]
+}

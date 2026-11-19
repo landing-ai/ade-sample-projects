@@ -1,0 +1,783 @@
+{
+  "extraction": {
+    "accounts": [
+      {
+        "classification": "W",
+        "current": 300.0,
+        "days_1_30": 500.0,
+        "days_31_60": 500.0,
+        "days_61_90": null,
+        "name": "Quick Computer Supply",
+        "over_oldest_bucket": 300.0,
+        "program_funds_used": 1600.0,
+        "total_balance": 1600.0
+      },
+      {
+        "classification": "M",
+        "current": 2800.0,
+        "days_1_30": null,
+        "days_31_60": null,
+        "days_61_90": null,
+        "name": "Kitchens by Voels",
+        "over_oldest_bucket": null,
+        "program_funds_used": 2800.0,
+        "total_balance": 2800.0
+      },
+      {
+        "classification": null,
+        "current": 1000.0,
+        "days_1_30": null,
+        "days_31_60": null,
+        "days_61_90": null,
+        "name": "Jansa's Sport Stores",
+        "over_oldest_bucket": null,
+        "program_funds_used": null,
+        "total_balance": 1000.0
+      },
+      {
+        "classification": null,
+        "current": null,
+        "days_1_30": 1600.0,
+        "days_31_60": null,
+        "days_61_90": null,
+        "name": "Bradley Farms, Inc.",
+        "over_oldest_bucket": null,
+        "program_funds_used": null,
+        "total_balance": 1600.0
+      },
+      {
+        "classification": "W",
+        "current": 1100.0,
+        "days_1_30": 500.0,
+        "days_31_60": 400.0,
+        "days_61_90": null,
+        "name": "TrueBrew Unlimited",
+        "over_oldest_bucket": null,
+        "program_funds_used": 2000.0,
+        "total_balance": 2000.0
+      },
+      {
+        "classification": "M",
+        "current": null,
+        "days_1_30": 400.0,
+        "days_31_60": null,
+        "days_61_90": null,
+        "name": "Enneking Enterprises",
+        "over_oldest_bucket": null,
+        "program_funds_used": 400.0,
+        "total_balance": 400.0
+      },
+      {
+        "classification": "M",
+        "current": 600.0,
+        "days_1_30": null,
+        "days_31_60": null,
+        "days_61_90": null,
+        "name": "Hove and Sanborn LLC",
+        "over_oldest_bucket": null,
+        "program_funds_used": 600.0,
+        "total_balance": 600.0
+      },
+      {
+        "classification": null,
+        "current": 1200.0,
+        "days_1_30": null,
+        "days_31_60": null,
+        "days_61_90": null,
+        "name": "J. Siegel, CPA",
+        "over_oldest_bucket": null,
+        "program_funds_used": null,
+        "total_balance": 1200.0
+      }
+    ],
+    "aging_buckets": [
+      "Current",
+      "1-30 Days Past Due",
+      "31-60 Days Past Due",
+      "Over 60 Days Past Due"
+    ],
+    "report_info": {
+      "as_of_date": "2016-06-30",
+      "company_name": "NYS CDFI",
+      "report_title": "Accounts Receivable Aging Report",
+      "report_type": "accounts_receivable"
+    },
+    "totals": {
+      "classified_account_count": 5,
+      "current": 7000,
+      "days_1_30": 3000,
+      "days_31_60": 900,
+      "days_61_90": null,
+      "over_oldest_bucket": 300,
+      "program_funds_used": 7400,
+      "total_balance": 11200
+    }
+  },
+  "extraction_metadata": {
+    "accounts": [
+      {
+        "classification": {
+          "ranges": [
+            {
+              "end": 406,
+              "start": 405
+            }
+          ],
+          "value": "W"
+        },
+        "current": {
+          "ranges": [
+            {
+              "end": 450,
+              "start": 445
+            }
+          ],
+          "value": 300.0
+        },
+        "days_1_30": {
+          "ranges": [
+            {
+              "end": 464,
+              "start": 459
+            }
+          ],
+          "value": 500.0
+        },
+        "days_31_60": {
+          "ranges": [
+            {
+              "end": 478,
+              "start": 473
+            }
+          ],
+          "value": 500.0
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 396,
+              "start": 375
+            }
+          ],
+          "value": "Quick Computer Supply"
+        },
+        "over_oldest_bucket": {
+          "ranges": [
+            {
+              "end": 492,
+              "start": 487
+            }
+          ],
+          "value": 300.0
+        },
+        "program_funds_used": {
+          "ranges": [
+            {
+              "end": 421,
+              "start": 415
+            }
+          ],
+          "value": 1600.0
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 436,
+              "start": 430
+            }
+          ],
+          "value": 1600.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": [
+            {
+              "end": 538,
+              "start": 537
+            }
+          ],
+          "value": "M"
+        },
+        "current": {
+          "ranges": [
+            {
+              "end": 582,
+              "start": 577
+            }
+          ],
+          "value": 2800.0
+        },
+        "days_1_30": {
+          "ranges": null,
+          "value": null
+        },
+        "days_31_60": {
+          "ranges": null,
+          "value": null
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 528,
+              "start": 511
+            }
+          ],
+          "value": "Kitchens by Voels"
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": [
+            {
+              "end": 554,
+              "start": 547
+            }
+          ],
+          "value": 2800.0
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 568,
+              "start": 563
+            }
+          ],
+          "value": 2800.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": null,
+          "value": null
+        },
+        "current": {
+          "ranges": [
+            {
+              "end": 703,
+              "start": 698
+            }
+          ],
+          "value": 1000.0
+        },
+        "days_1_30": {
+          "ranges": null,
+          "value": null
+        },
+        "days_31_60": {
+          "ranges": null,
+          "value": null
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 657,
+              "start": 637
+            }
+          ],
+          "value": "Jansa's Sport Stores"
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": null,
+          "value": null
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 689,
+              "start": 684
+            }
+          ],
+          "value": 1000.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": null,
+          "value": null
+        },
+        "current": {
+          "ranges": null,
+          "value": null
+        },
+        "days_1_30": {
+          "ranges": [
+            {
+              "end": 839,
+              "start": 834
+            }
+          ],
+          "value": 1600.0
+        },
+        "days_31_60": {
+          "ranges": null,
+          "value": null
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 780,
+              "start": 761
+            }
+          ],
+          "value": "Bradley Farms, Inc."
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": null,
+          "value": null
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 812,
+              "start": 807
+            }
+          ],
+          "value": 1600.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": [
+            {
+              "end": 912,
+              "start": 911
+            }
+          ],
+          "value": "W"
+        },
+        "current": {
+          "ranges": [
+            {
+              "end": 956,
+              "start": 951
+            }
+          ],
+          "value": 1100.0
+        },
+        "days_1_30": {
+          "ranges": [
+            {
+              "end": 968,
+              "start": 965
+            }
+          ],
+          "value": 500.0
+        },
+        "days_31_60": {
+          "ranges": [
+            {
+              "end": 980,
+              "start": 977
+            }
+          ],
+          "value": 400.0
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 902,
+              "start": 884
+            }
+          ],
+          "value": "TrueBrew Unlimited"
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": [
+            {
+              "end": 928,
+              "start": 921
+            }
+          ],
+          "value": 2000.0
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 942,
+              "start": 937
+            }
+          ],
+          "value": 2000.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": [
+            {
+              "end": 1042,
+              "start": 1041
+            }
+          ],
+          "value": "M"
+        },
+        "current": {
+          "ranges": null,
+          "value": null
+        },
+        "days_1_30": {
+          "ranges": [
+            {
+              "end": 1092,
+              "start": 1089
+            }
+          ],
+          "value": 400.0
+        },
+        "days_31_60": {
+          "ranges": null,
+          "value": null
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 1032,
+              "start": 1012
+            }
+          ],
+          "value": "Enneking Enterprises"
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": [
+            {
+              "end": 1055,
+              "start": 1051
+            }
+          ],
+          "value": 400.0
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 1067,
+              "start": 1064
+            }
+          ],
+          "value": 400.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": [
+            {
+              "end": 1167,
+              "start": 1166
+            }
+          ],
+          "value": "M"
+        },
+        "current": {
+          "ranges": [
+            {
+              "end": 1204,
+              "start": 1201
+            }
+          ],
+          "value": 600.0
+        },
+        "days_1_30": {
+          "ranges": null,
+          "value": null
+        },
+        "days_31_60": {
+          "ranges": null,
+          "value": null
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 1157,
+              "start": 1137
+            }
+          ],
+          "value": "Hove and Sanborn LLC"
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": [
+            {
+              "end": 1180,
+              "start": 1176
+            }
+          ],
+          "value": 600.0
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 1192,
+              "start": 1189
+            }
+          ],
+          "value": 600.0
+        }
+      },
+      {
+        "classification": {
+          "ranges": null,
+          "value": null
+        },
+        "current": {
+          "ranges": [
+            {
+              "end": 1323,
+              "start": 1318
+            }
+          ],
+          "value": 1200.0
+        },
+        "days_1_30": {
+          "ranges": null,
+          "value": null
+        },
+        "days_31_60": {
+          "ranges": null,
+          "value": null
+        },
+        "days_61_90": {
+          "ranges": null,
+          "value": null
+        },
+        "name": {
+          "ranges": [
+            {
+              "end": 1276,
+              "start": 1262
+            }
+          ],
+          "value": "J. Siegel, CPA"
+        },
+        "over_oldest_bucket": {
+          "ranges": null,
+          "value": null
+        },
+        "program_funds_used": {
+          "ranges": null,
+          "value": null
+        },
+        "total_balance": {
+          "ranges": [
+            {
+              "end": 1309,
+              "start": 1304
+            }
+          ],
+          "value": 1200.0
+        }
+      }
+    ],
+    "aging_buckets": [
+      {
+        "ranges": [
+          {
+            "end": 271,
+            "start": 264
+          }
+        ],
+        "value": "Current"
+      },
+      {
+        "ranges": [
+          {
+            "end": 298,
+            "start": 280
+          }
+        ],
+        "value": "1-30 Days Past Due"
+      },
+      {
+        "ranges": [
+          {
+            "end": 326,
+            "start": 307
+          }
+        ],
+        "value": "31-60 Days Past Due"
+      },
+      {
+        "ranges": [
+          {
+            "end": 356,
+            "start": 335
+          }
+        ],
+        "value": "Over 60 Days Past Due"
+      }
+    ],
+    "report_info": {
+      "as_of_date": {
+        "ranges": null,
+        "value": "2016-06-30"
+      },
+      "company_name": {
+        "ranges": [
+          {
+            "end": 137,
+            "start": 129
+          }
+        ],
+        "value": "NYS CDFI"
+      },
+      "report_title": {
+        "ranges": [
+          {
+            "end": 121,
+            "start": 89
+          }
+        ],
+        "value": "Accounts Receivable Aging Report"
+      },
+      "report_type": {
+        "ranges": [
+          {
+            "end": 160,
+            "start": 87
+          }
+        ],
+        "value": "accounts_receivable"
+      }
+    },
+    "totals": {
+      "classified_account_count": {
+        "ranges": [
+          {
+            "end": 1396,
+            "start": 1395
+          }
+        ],
+        "value": 5
+      },
+      "current": {
+        "ranges": [
+          {
+            "end": 1442,
+            "start": 1436
+          }
+        ],
+        "value": 7000
+      },
+      "days_1_30": {
+        "ranges": [
+          {
+            "end": 1457,
+            "start": 1451
+          }
+        ],
+        "value": 3000
+      },
+      "days_31_60": {
+        "ranges": [
+          {
+            "end": 1471,
+            "start": 1468
+          }
+        ],
+        "value": 900
+      },
+      "days_61_90": {
+        "ranges": null,
+        "value": null
+      },
+      "over_oldest_bucket": {
+        "ranges": [
+          {
+            "end": 1485,
+            "start": 1482
+          }
+        ],
+        "value": 300
+      },
+      "program_funds_used": {
+        "ranges": [
+          {
+            "end": 1411,
+            "start": 1405
+          }
+        ],
+        "value": 7400
+      },
+      "total_balance": {
+        "ranges": [
+          {
+            "end": 1427,
+            "start": 1420
+          }
+        ],
+        "value": 11200
+      }
+    }
+  },
+  "markdown": "**ATTACHMENT 2: Sample Accounts Receivable Aging Report**\n\n<table>\n<tr><td colspan=\"8\">**Accounts Receivable Aging Report**<br>**NYS CDFI**<br>**June 30, 2016**</td></tr>\n<tr><td>Customer Name</td><td>MWBE</td><td>ESD Funds Used*</td><td>Total Accts. Rec.</td><td>Current</td><td>1-30 Days Past Due</td><td>31-60 Days Past Due</td><td>Over 60 Days Past Due</td></tr>\n<tr><td>Quick Computer Supply</td><td>W</td><td>$1,600</td><td>$1,600</td><td>$ 300</td><td>$ 500</td><td>$ 500</td><td>$ 300</td></tr>\n<tr><td>Kitchens by Voels</td><td>M</td><td>$2,800*</td><td>2,800</td><td>2,800</td><td>---</td><td>---</td><td>---</td></tr>\n<tr><td>Jansa's Sport Stores</td><td></td><td></td><td>1,000</td><td>1,000</td><td>----</td><td>----</td><td>----</td></tr>\n<tr><td>Bradley Farms, Inc.</td><td></td><td></td><td>1,600</td><td>----</td><td>1,600</td><td>----</td><td>----</td></tr>\n<tr><td>TrueBrew Unlimited</td><td>W</td><td>$2,000*</td><td>2,000</td><td>1,100</td><td>500</td><td>400</td><td>----</td></tr>\n<tr><td>Enneking Enterprises</td><td>M</td><td>$400</td><td>400</td><td>----</td><td>400</td><td>----</td><td>----</td></tr>\n<tr><td>Hove and Sanborn LLC</td><td>M</td><td>$600</td><td>600</td><td>600</td><td>----</td><td>----</td><td>----</td></tr>\n<tr><td>J. Siegel, CPA</td><td>-</td><td></td><td>1,200</td><td>1,200</td><td>----</td><td>----</td><td>----</td></tr>\n<tr><td>Total</td><td>5</td><td>$7,400</td><td>$11,200</td><td>$7,000</td><td>$3,000</td><td>$ 900</td><td>$ 300</td></tr>\n</table>\n\n**TIP:** If you are using one of the many available accounting software packages for billing and accounts receivable processing, check it first to see if it prepares the aging schedule automatically. Most accounting software packages will prepare an accounts receivable aging schedule at the touch of a button and all you need to do is add the MWBE status and ESD funds used.\n\n<!-- doc_id=parse-01m7rsytn54r2rp1w2m8yw29f8 -->",
+  "metadata": {
+    "job_id": "extract-01m7rsz9r530sdcr43tz9h08bv",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 47416,
+    "doc_id": "parse-01m7rsytn54r2rp1w2m8yw29f8",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.5,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1931,
+    "output_extraction_chars": 2027,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

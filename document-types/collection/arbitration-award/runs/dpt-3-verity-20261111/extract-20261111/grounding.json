@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "case.case_number",
+      "label": "Case number",
+      "value": "25-01517",
+      "page": 1,
+      "box": {
+        "xmin": 0.6783,
+        "ymin": 0.19775,
+        "xmax": 0.76206,
+        "ymax": 0.21107
+      },
+      "range": {
+        "end": 132,
+        "start": 124
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case-case_number.png"
+    },
+    {
+      "path": "parties.claimants[0].name",
+      "label": "Claimant",
+      "value": "Steven Damiani",
+      "page": 1,
+      "box": {
+        "xmin": 0.08201,
+        "ymin": 0.21524,
+        "xmax": 0.22188,
+        "ymax": 0.22891
+      },
+      "range": {
+        "end": 106,
+        "start": 92
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "parties-claimants-0-name.png"
+    },
+    {
+      "path": "parties.respondents[0].name",
+      "label": "Respondent firm",
+      "value": "Janney Montgomery Scott LLC",
+      "page": 1,
+      "box": {
+        "xmin": 0.08193,
+        "ymin": 0.30401,
+        "xmax": 0.35289,
+        "ymax": 0.32031
+      },
+      "range": {
+        "end": 212,
+        "start": 185
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "parties-respondents-0-name.png"
+    },
+    {
+      "path": "case.nature_of_dispute",
+      "label": "Nature of dispute",
+      "value": "Customer vs. Member and Associated Persons",
+      "page": 1,
+      "box": {
+        "xmin": 0.27837,
+        "ymin": 0.46797,
+        "xmax": 0.68945,
+        "ymax": 0.48182
+      },
+      "range": {
+        "end": 580,
+        "start": 538
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case-nature_of_dispute.png"
+    },
+    {
+      "path": "case.hearing_site_city",
+      "label": "Hearing site",
+      "value": "Providence",
+      "page": 1,
+      "box": {
+        "xmin": 0.66605,
+        "ymin": 0.28641,
+        "xmax": 0.76939,
+        "ymax": 0.30157
+      },
+      "range": {
+        "end": 170,
+        "start": 160
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "case-hearing_site_city.png"
+    }
+  ]
+}

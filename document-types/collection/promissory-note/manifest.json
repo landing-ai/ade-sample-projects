@@ -15,23 +15,90 @@
       "redactions": {
         "note": "The original values are deliberately NOT recorded here. The rules file used by redact_scan.py stays outside the repo.",
         "replaced": [
-          { "what": "borrower's printed name", "with": "JOHN Q SAMPLE", "occurrences": 1 },
-          { "what": "borrower's handwritten signature", "with": "'John Q Sample' in a handwriting font", "occurrences": 1 },
-          { "what": "borrower's handwritten initials", "with": "'JQS' in a handwriting font", "occurrences": 3 },
-          { "what": "property house number and street", "with": "100 Sample", "occurrences": 1 },
-          { "what": "property ZIP code", "with": "97000", "occurrences": 1 }
+          {
+            "what": "borrower's printed name",
+            "with": "JOHN Q SAMPLE",
+            "occurrences": 1
+          },
+          {
+            "what": "borrower's handwritten signature",
+            "with": "'John Q Sample' in a handwriting font",
+            "occurrences": 1
+          },
+          {
+            "what": "borrower's handwritten initials",
+            "with": "'JQS' in a handwriting font",
+            "occurrences": 3
+          },
+          {
+            "what": "property house number and street",
+            "with": "100 Sample",
+            "occurrences": 1
+          },
+          {
+            "what": "property ZIP code",
+            "with": "97000",
+            "occurrences": 1
+          }
         ],
-        "already_blacked_out_at_source": ["loan number", "case number", "MIN"]
+        "already_blacked_out_at_source": [
+          "loan number",
+          "case number",
+          "MIN"
+        ]
       },
-      "split_from": { "pages": [9, 10, 11], "of": 13 }
+      "split_from": {
+        "pages": [
+          9,
+          10,
+          11
+        ],
+        "of": 13
+      }
     }
   },
   "feature_page": 1,
   "fields": [
-    { "path": "lender", "label": "Lender", "occurrence": 0 },
-    { "path": "principal_amount", "label": "Principal", "occurrence": 0 },
-    { "path": "interest_rate_percent", "label": "Interest rate (%)", "occurrence": 0 },
-    { "path": "monthly_payment", "label": "Monthly payment", "occurrence": 0 }
+    {
+      "path": "lender",
+      "label": "Lender",
+      "occurrence": 0
+    },
+    {
+      "path": "principal_amount",
+      "label": "Principal",
+      "occurrence": 0
+    },
+    {
+      "path": "interest_rate_percent",
+      "label": "Interest rate (%)",
+      "occurrence": 0
+    },
+    {
+      "path": "monthly_payment",
+      "label": "Monthly payment",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request asked for pages 9-11 of the packet on their own and named no fields. Features the loan's terms, all on page 1: who lent, how much, at what rate, and the monthly payment. No person is featured. note_date (2019-03-08) is correct but reads OFF because the page prints 'March 8, 2019'. The parse read the small bold 'Oregon' under the date line as 'Orogon', and state extracts as 'Orogon'. loan_number, blacked out at source, comes back as an empty string grounded to 57 ranges spanning nearly all of page 1."
+  "notes": "The request asked for pages 9-11 of the packet on their own and named no fields. Features the loan's terms, all on page 1: who lent, how much, at what rate, and the monthly payment. No person is featured. note_date (2019-03-08) is correct but reads OFF because the page prints 'March 8, 2019'. The parse read the small bold 'Oregon' under the date line as 'Orogon', and state extracts as 'Orogon'. loan_number, blacked out at source, comes back as an empty string grounded to 57 ranges spanning nearly all of page 1.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.1,
+      "extract_credits": 2.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.1,
+      "extract_credits": 2.9
+    }
+  ]
 }

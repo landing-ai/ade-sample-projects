@@ -29,13 +29,33 @@
     {
       "path": "property_details.property_type",
       "label": "Property use",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "property_details.property_occupancy_status",
       "label": "Occupancy",
-      "occurrence": 1
+      "occurrence": 0
     }
   ],
-  "notes": "The request supplied the schema (doc_35_chase_mortgage_assistance_handwritten_form_schema.json, used unchanged, 27 leaf fields) and named no feature page or fields. The overlay pairs two handwritten values (the loan number and borrower name) with two hand-ticked checkboxes (primary residence, owner occupied). The borrower name is featured because the data is an invented specimen. Occurrence 1 is pinned for the two property checkboxes: occurrence 0 is the question label. A fifth field was tried twice and dropped: real_estate_tax_details.real_estate_tax_payer and insurance_details.insurance_payer both have correct ranges ('[x] Lender does') but their boxes land one and two rows low in the lower section of the form, so neither crop shows its tick. Boolean fields derived from tick marks ground OFF, to the question rather than the tick."
+  "notes": "The request supplied the schema (doc_35_chase_mortgage_assistance_handwritten_form_schema.json, used unchanged, 27 leaf fields) and named no feature page or fields. The overlay pairs two handwritten values (the loan number and borrower name) with two hand-ticked checkboxes (primary residence, owner occupied). The borrower name is featured because the data is an invented specimen. Occurrence 1 is pinned for the two property checkboxes: occurrence 0 is the question label. A fifth field was tried twice and dropped: real_estate_tax_details.real_estate_tax_payer and insurance_details.insurance_payer both have correct ranges ('[x] Lender does') but their boxes land one and two rows low in the lower section of the form, so neither crop shows its tick. Boolean fields derived from tick marks ground OFF, to the question rather than the tick.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.7,
+      "extract_credits": 2.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 2.2
+    }
+  ]
 }

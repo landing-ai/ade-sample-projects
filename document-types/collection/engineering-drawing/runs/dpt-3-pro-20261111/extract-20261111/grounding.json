@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 5,
+  "page_count": 11,
+  "preview_pages": [
+    1,
+    4,
+    5,
+    7
+  ],
+  "fields": [
+    {
+      "path": "sheets[4].detail_name",
+      "label": "Detail name",
+      "value": "DRIVEWAY/SIDEWALK DROP CURB",
+      "page": 5,
+      "box": {
+        "xmin": 0.40541,
+        "ymin": 0.87926,
+        "xmax": 0.8088,
+        "ymax": 0.89655
+      },
+      "range": {
+        "end": 9754,
+        "start": 9727
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sheets-4-detail_name.png"
+    },
+    {
+      "path": "drop_curb.max_curb_reveal",
+      "label": "Maximum curb reveal (from the notes)",
+      "value": "1/2\"",
+      "page": 5,
+      "box": {
+        "xmin": 0.29759,
+        "ymin": 0.68925,
+        "xmax": 0.33495,
+        "ymax": 0.70395
+      },
+      "range": {
+        "end": 9331,
+        "start": 9327
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "drop_curb-max_curb_reveal.png"
+    },
+    {
+      "path": "sheets[4].file_name",
+      "label": "CAD file name",
+      "value": "DW-1.DWG",
+      "page": 5,
+      "box": {
+        "xmin": 0.50421,
+        "ymin": 0.95164,
+        "xmax": 0.58559,
+        "ymax": 0.96196
+      },
+      "range": {
+        "end": 9822,
+        "start": 9814
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sheets-4-file_name.png"
+    },
+    {
+      "path": "city_engineer",
+      "label": "City Engineer",
+      "value": "Howard M. Goebel P.E.",
+      "page": 5,
+      "box": {
+        "xmin": 0.03353,
+        "ymin": 0.8076,
+        "xmax": 0.2578,
+        "ymax": 0.97347
+      },
+      "range": {
+        "end": 9608,
+        "start": 9572
+      },
+      "occurrence": 4,
+      "matched": true,
+      "image": "city_engineer.png"
+    }
+  ]
+}

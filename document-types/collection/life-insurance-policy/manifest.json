@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "product_type", "label": "Product", "occurrence": 0 },
-    { "path": "policy_number", "label": "Policy number", "occurrence": 0 },
-    { "path": "face_amount", "label": "Face amount", "occurrence": 0 },
-    { "path": "initial_modal_premium.amount", "label": "Initial monthly premium", "occurrence": 0 },
-    { "path": "insured.risk_class", "label": "Risk class", "occurrence": 0 }
+    {
+      "path": "product_type",
+      "label": "Product",
+      "occurrence": 0
+    },
+    {
+      "path": "policy_number",
+      "label": "Policy number",
+      "occurrence": 0
+    },
+    {
+      "path": "face_amount",
+      "label": "Face amount",
+      "occurrence": 0
+    },
+    {
+      "path": "insured.name",
+      "label": "Name",
+      "occurrence": 0
+    },
+    {
+      "path": "insured.risk_class",
+      "label": "Risk class",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested face amount, initial monthly premium, policy date, risk class and policy number. Four of the five ship as suggested, all from the page 1 cover block. The policy date does not: the schema asks for ISO format, so 2008-05-01 grounds OFF against 'MAY 1, 2008'. It is replaced by the product type (TERM LIFE INSURANCE), which completes the story an underwriter or lender reads first: what kind of policy, which policy, how much cover, what it costs and at what rating. The insured's and owner's names read ok but are not featured; an impersonal field carries the same point. Every other OFF on the document is a normalized value (the ISO conversion, expiration and rider cease dates; the convertible and participating booleans; provision periods written as words, 'two years' and 'five years'). All 90 rows of the three premium tables on pages 5-7 ground ok."
+  "notes": "The request named no feature page or fields; its notes suggested face amount, initial monthly premium, policy date, risk class and policy number. Four of the five ship as suggested, all from the page 1 cover block. The policy date does not: the schema asks for ISO format, so 2008-05-01 grounds OFF against 'MAY 1, 2008'. It is replaced by the product type (TERM LIFE INSURANCE), which completes the story an underwriter or lender reads first: what kind of policy, which policy, how much cover, what it costs and at what rating. The insured's and owner's names read ok but are not featured; an impersonal field carries the same point. Every other OFF on the document is a normalized value (the ISO conversion, expiration and rider cease dates; the convertible and participating booleans; provision periods written as words, 'two years' and 'five years'). All 90 rows of the three premium tables on pages 5-7 ground ok.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 14,
+      "service_tier": "standard",
+      "parse_credits": 13.8,
+      "extract_credits": 10.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 14,
+      "service_tier": "standard",
+      "parse_credits": 13.8,
+      "extract_credits": 10.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 14,
+      "service_tier": "standard",
+      "parse_credits": 4.8,
+      "extract_credits": 10.3
+    }
+  ]
 }

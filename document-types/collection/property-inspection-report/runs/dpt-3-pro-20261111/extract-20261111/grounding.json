@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 4,
+  "page_count": 30,
+  "preview_pages": [
+    4,
+    10,
+    20,
+    29
+  ],
+  "fields": [
+    {
+      "path": "roof.covering_material",
+      "label": "Roof covering material",
+      "value": "fiberglass based asphalt shingles",
+      "page": 4,
+      "box": {
+        "xmin": 0.05654,
+        "ymin": 0.21492,
+        "xmax": 0.9436,
+        "ymax": 0.4065
+      },
+      "range": {
+        "end": 9200,
+        "start": 9167
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof-covering_material.png"
+    },
+    {
+      "path": "roof_findings[1].category",
+      "label": "Recommendation category (item 2.2)",
+      "value": "IMPROVE",
+      "page": 4,
+      "box": {
+        "xmin": 0.09709,
+        "ymin": 0.45139,
+        "xmax": 0.16485,
+        "ymax": 0.46402
+      },
+      "range": {
+        "end": 10016,
+        "start": 10009
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-1-category.png"
+    },
+    {
+      "path": "roof_findings[2].category",
+      "label": "Recommendation category (item 2.3)",
+      "value": "MAINTENANCE",
+      "page": 4,
+      "box": {
+        "xmin": 0.09709,
+        "ymin": 0.47664,
+        "xmax": 0.20263,
+        "ymax": 0.48927
+      },
+      "range": {
+        "end": 10268,
+        "start": 10257
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-2-category.png"
+    },
+    {
+      "path": "roof_findings[3].item_number",
+      "label": "Damaged shingles item",
+      "value": "2.4",
+      "page": 4,
+      "box": {
+        "xmin": 0.06863,
+        "ymin": 0.50189,
+        "xmax": 0.0934,
+        "ymax": 0.51452
+      },
+      "range": {
+        "end": 10494,
+        "start": 10491
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-3-item_number.png"
+    },
+    {
+      "path": "roof_findings[3].location",
+      "label": "Damaged shingles location",
+      "value": "front upper left side",
+      "page": 4,
+      "box": {
+        "xmin": 0.43261,
+        "ymin": 0.51452,
+        "xmax": 0.56569,
+        "ymax": 0.52715
+      },
+      "range": {
+        "end": 10691,
+        "start": 10670
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "roof_findings-3-location.png"
+    }
+  ]
+}

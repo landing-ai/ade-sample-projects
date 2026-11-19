@@ -16,11 +16,60 @@
   },
   "feature_page": 6,
   "fields": [
-    { "path": "order_form.payment_term", "label": "Payment term", "occurrence": 0 },
-    { "path": "order_form.subscription_periods[0].line_items[2].item", "label": "Subscription", "occurrence": 0 },
-    { "path": "order_form.subscription_periods[0].line_items[2].quantity", "label": "Users", "occurrence": 0 },
-    { "path": "order_form.subscription_periods[0].line_items[2].end_date", "label": "Prorated period end", "occurrence": 0 },
-    { "path": "order_form.subscription_periods[0].period_total_usd", "label": "Prorated total", "occurrence": 0 }
+    {
+      "path": "order_form.payment_term",
+      "label": "Payment term",
+      "occurrence": 0
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].item",
+      "label": "Subscription",
+      "occurrence": 0
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].quantity",
+      "label": "Users",
+      "occurrence": 0
+    },
+    {
+      "path": "order_form.subscription_periods[0].line_items[2].total_usd",
+      "label": "Total usd",
+      "occurrence": 0
+    },
+    {
+      "path": "order_form.subscription_periods[0].period_total_usd",
+      "label": "Prorated total",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested page 6, the Exhibit A order form, with the customer, the Net 60 payment term, a subscription line item with dates and quantity, and the prorated total, as suggestions only. Page 6 ships. The customer grounds OFF (the name wraps across two lines in its cell) and every line item's start date grounds OFF (10/1/2024 is printed without zero padding and is extracted as an ISO date), so neither is featured. The overlay reads as one purchase: Net 60 terms, the PowerPolicy Professional Subscription for 89 users, prorated through 11/30/2024, inside the $1,260.69 prorated table. No person is featured. The signer's name and signatures are left as published at the document owner's decision. Table grounding was sensitive to the schema: rewording the description of one unrelated field (county.name, on page 1) made two further extractions ground every cell of the prorated table to its heading, 'Prorated to Shift Dates'; restoring the original wording restored cell-level grounding, and that run is the one committed. The cost is that county.name comes back as 'Williamson' rather than 'Williamson County, Texas'."
+  "notes": "The request named no feature page or fields; its notes suggested page 6, the Exhibit A order form, with the customer, the Net 60 payment term, a subscription line item with dates and quantity, and the prorated total, as suggestions only. Page 6 ships. The customer grounds OFF (the name wraps across two lines in its cell) and every line item's start date grounds OFF (10/1/2024 is printed without zero padding and is extracted as an ISO date), so neither is featured. The overlay reads as one purchase: Net 60 terms, the PowerPolicy Professional Subscription for 89 users, prorated through 11/30/2024, inside the $1,260.69 prorated table. No person is featured. The signer's name and signatures are left as published at the document owner's decision. Table grounding was sensitive to the schema: rewording the description of one unrelated field (county.name, on page 1) made two further extractions ground every cell of the prorated table to its heading, 'Prorated to Shift Dates'; restoring the original wording restored cell-level grounding, and that run is the one committed. The cost is that county.name comes back as 'Williamson' rather than 'Williamson County, Texas'.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 8.9,
+      "extract_credits": 6.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 9.0,
+      "extract_credits": 6.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 3.2,
+      "extract_credits": 6.6
+    }
+  ]
 }

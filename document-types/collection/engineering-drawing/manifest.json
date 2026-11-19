@@ -34,8 +34,28 @@
     {
       "path": "city_engineer",
       "label": "City Engineer",
-      "occurrence": 6
+      "occurrence": 4
     }
   ],
-  "notes": "Eleven AutoCAD-plotted sheets (C-1 through CW-1), one standard detail per sheet, each with a drawing, leader-line callouts, numbered notes and an identical title block (detail number, file name, date issued, revision date). The PDF has NO text layer: every label is vector geometry, so every value has to come from reading the drawing, not from embedded text. Page 5 (DW-1, Driveway/Sidewalk Drop Curb) is the feature page: an isometric view with a dense spread of leader-line callouts pointing into the drawing from all sides, and dimensions set along the skewed drawing axes rather than horizontally. It has no table; its regions are the drawing callouts, the dimension strings, three numbered notes, and the title block. Featured fields are all outside the drawing: the detail name and CAD file name from the title block table, the curb reveal limit from note 1, and the City Engineer from the text beside the logo. The drawing fields (max_gradient, transition_length, concrete_thickness and the rest) all extract correctly but are not featured: DPT-3 parses the drawing as one DIAGRAM figure and the callout labels exist only in its generated description, so every one grounds to the whole figure block and renders an identical crop of the entire drawing. city_engineer is pinned to occurrence 6 because its 11 ranges are not in page order; that is the page 5 one. max_curb_reveal is pinned to occurrence 0, the note line carrying the value; occurrence 1 is the note's second line."
+  "notes": "Eleven AutoCAD-plotted sheets (C-1 through CW-1), one standard detail per sheet, each with a drawing, leader-line callouts, numbered notes and an identical title block (detail number, file name, date issued, revision date). The PDF has NO text layer: every label is vector geometry, so every value has to come from reading the drawing, not from embedded text. Page 5 (DW-1, Driveway/Sidewalk Drop Curb) is the feature page: an isometric view with a dense spread of leader-line callouts pointing into the drawing from all sides, and dimensions set along the skewed drawing axes rather than horizontally. It has no table; its regions are the drawing callouts, the dimension strings, three numbered notes, and the title block. Featured fields are all outside the drawing: the detail name and CAD file name from the title block table, the curb reveal limit from note 1, and the City Engineer from the text beside the logo. The drawing fields (max_gradient, transition_length, concrete_thickness and the rest) all extract correctly but are not featured: DPT-3 parses the drawing as one DIAGRAM figure and the callout labels exist only in its generated description, so every one grounds to the whole figure block and renders an identical crop of the entire drawing. city_engineer is pinned to occurrence 6 because its 11 ranges are not in page order; that is the page 5 one. max_curb_reveal is pinned to occurrence 0, the note line carrying the value; occurrence 1 is the note's second line.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 11,
+      "service_tier": "standard",
+      "parse_credits": 10.5,
+      "extract_credits": 6.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 11,
+      "service_tier": "standard",
+      "parse_credits": 11.2,
+      "extract_credits": 6.7
+    }
+  ]
 }

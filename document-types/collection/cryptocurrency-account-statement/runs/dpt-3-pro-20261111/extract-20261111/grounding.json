@@ -1,0 +1,88 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "transactions[2].time",
+      "label": "Transaction time",
+      "value": "11:12:12",
+      "page": 1,
+      "box": {
+        "xmin": 0.11136,
+        "ymin": 0.60443,
+        "xmax": 0.18233,
+        "ymax": 0.61417
+      },
+      "range": {
+        "end": 4145,
+        "start": 4137
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-time.png"
+    },
+    {
+      "path": "transactions[2].direction",
+      "label": "Direction",
+      "value": "Sent",
+      "page": 1,
+      "box": {
+        "xmin": 0.23786,
+        "ymin": 0.59742,
+        "xmax": 0.273,
+        "ymax": 0.60716
+      },
+      "range": {
+        "end": 4158,
+        "start": 4154
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-direction.png"
+    },
+    {
+      "path": "transactions[2].amount_crypto",
+      "label": "Amount (BTC)",
+      "value": 0.02314739,
+      "page": 1,
+      "box": {
+        "xmin": 0.40981,
+        "ymin": 0.59742,
+        "xmax": 0.4987,
+        "ymax": 0.60716
+      },
+      "range": {
+        "end": 4177,
+        "start": 4167
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-amount_crypto.png"
+    },
+    {
+      "path": "transactions[2].amount_usd",
+      "label": "Amount (USD)",
+      "value": 1134.36,
+      "page": 1,
+      "box": {
+        "xmin": 0.56336,
+        "ymin": 0.59742,
+        "xmax": 0.63434,
+        "ymax": 0.60716
+      },
+      "range": {
+        "end": 4194,
+        "start": 4186
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-amount_usd.png"
+    }
+  ]
+}

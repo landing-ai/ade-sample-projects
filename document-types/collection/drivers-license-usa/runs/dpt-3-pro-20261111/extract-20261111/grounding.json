@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "document_info.document_number",
+      "label": "License number",
+      "value": "12345678",
+      "page": 1,
+      "box": {
+        "xmin": 0.0021,
+        "ymin": 0.00162,
+        "xmax": 0.99986,
+        "ymax": 0.99932
+      },
+      "range": {
+        "end": 88,
+        "start": 80
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_info-document_number.png"
+    },
+    {
+      "path": "document_info.state_issuing",
+      "label": "Issuing state",
+      "value": "TX",
+      "page": 1,
+      "box": {
+        "xmin": 0.0021,
+        "ymin": 0.00162,
+        "xmax": 0.99986,
+        "ymax": 0.99932
+      },
+      "range": {
+        "end": 170,
+        "start": 168
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "document_info-state_issuing.png"
+    },
+    {
+      "path": "personal_info.sex",
+      "label": "Sex",
+      "value": "F",
+      "page": 1,
+      "box": {
+        "xmin": 0.0021,
+        "ymin": 0.00162,
+        "xmax": 0.99986,
+        "ymax": 0.99932
+      },
+      "range": {
+        "end": 254,
+        "start": 253
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "personal_info-sex.png"
+    },
+    {
+      "path": "personal_info.height",
+      "label": "Height",
+      "value": "5 feet 10 inches",
+      "page": 1,
+      "box": {
+        "xmin": 0.0021,
+        "ymin": 0.00162,
+        "xmax": 0.99986,
+        "ymax": 0.99932
+      },
+      "range": {
+        "end": 295,
+        "start": 268
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "personal_info-height.png"
+    },
+    {
+      "path": "personal_info.eye_color",
+      "label": "Eye color",
+      "value": "BRO",
+      "page": 1,
+      "box": {
+        "xmin": 0.0021,
+        "ymin": 0.00162,
+        "xmax": 0.99986,
+        "ymax": 0.99932
+      },
+      "range": {
+        "end": 308,
+        "start": 305
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "personal_info-eye_color.png"
+    }
+  ]
+}

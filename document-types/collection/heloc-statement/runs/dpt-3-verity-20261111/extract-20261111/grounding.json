@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "bank_name",
+      "label": "Institution",
+      "value": "Manulife Bank",
+      "page": 1,
+      "box": {
+        "xmin": 0.05272,
+        "ymin": 0.04219,
+        "xmax": 0.27852,
+        "ymax": 0.06742
+      },
+      "range": {
+        "end": 17,
+        "start": 4
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bank_name.png"
+    },
+    {
+      "path": "snapshot.borrowing_limit",
+      "label": "Maximum borrowing limit",
+      "value": 240000.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.51434,
+        "ymin": 0.51428,
+        "xmax": 0.60049,
+        "ymax": 0.5269
+      },
+      "range": {
+        "end": 910,
+        "start": 899
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "snapshot-borrowing_limit.png"
+    },
+    {
+      "path": "snapshot.available_limit",
+      "label": "Available credit",
+      "value": 85853.51,
+      "page": 1,
+      "box": {
+        "xmin": 0.52323,
+        "ymin": 0.5482,
+        "xmax": 0.59922,
+        "ymax": 0.56074
+      },
+      "range": {
+        "end": 980,
+        "start": 970
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "snapshot-available_limit.png"
+    },
+    {
+      "path": "account_holders[0]",
+      "label": "Account holders",
+      "value": "Client name 1",
+      "page": 1,
+      "box": {
+        "xmin": 0.06939,
+        "ymin": 0.27263,
+        "xmax": 0.15046,
+        "ymax": 0.28373
+      },
+      "range": {
+        "end": 215,
+        "start": 202
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "account_holders-0.png"
+    },
+    {
+      "path": "snapshot.closing_total_borrowings",
+      "label": "Outstanding balance",
+      "value": 154146.49,
+      "page": 1,
+      "box": {
+        "xmin": 0.51449,
+        "ymin": 0.42674,
+        "xmax": 0.6003,
+        "ymax": 0.43916
+      },
+      "range": {
+        "end": 677,
+        "start": 666
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "snapshot-closing_total_borrowings.png"
+    }
+  ]
+}

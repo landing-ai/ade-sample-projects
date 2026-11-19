@@ -1,26 +1,117 @@
 # Disability Benefit Letter
 
-Source assets for `landing.ai/document-type/disability-benefit-letter`.
+**On the website:** [landing.ai/document-type/disability-benefit-letter](https://landing.ai/document-type/disability-benefit-letter)
 
-## Sample document
+A Social Security Administration Benefit Verification Letter for a Social Security
+Disability Insurance (SSDI) beneficiary, the letter used as proof of disability income.
+It states the current monthly benefit, the Medicare premium deducted and the net
+payment, the past benefit amounts, the disability onset date and Medicare entitlement
+dates, all in running prose.
 
-`source/disability-benefit-letter.pdf`: a Social Security Administration **Benefit
-Verification Letter** for a Social Security Disability Insurance (SSDI) beneficiary. This is
-the letter lenders, landlords and benefit programs ask for as proof of disability income.
-It has **2 pages, portrait**, and a native text layer.
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 25 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:49 | 2026-11-19 02:56 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 2,571 | 3,207 |
+| Words under 0.95 confidence | 10 | n/a |
+| Words under 0.80 confidence | 6 | n/a |
+| Words under 0.50 confidence | 2 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.5 s | 8.3 s |
+| Per page | 1.3 s | 4.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.6 credits | 1.9 credits |
+| Per page | 0.30 credits | 0.95 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:49 | 2026-11-19 02:56 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 25 | 25 |
+| Non-null fields returned | 24 | 24 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 324.9 s | 86.9 s |
+| Per schema field (25) | 13.00 s | 3.48 s |
+| Per value returned | 13.54 s | 3.62 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 1.6 credits | 1.7 credits |
+| Per schema field (25) | 0.064 credits | 0.068 credits |
+| Per value returned | 0.067 credits | 0.071 credits |
+
+## Origin
+
+`source/disability-benefit-letter.pdf` is a Social Security Administration **Benefit
+Verification Letter** for a Social Security Disability Insurance (SSDI) beneficiary. It
+is **2 pages, portrait**, with a native text layer.
 
 | | |
 |---|---|
 | Publisher | Social Security Administration |
 | Source | https://www.scribd.com/document/1034680635/Benefit-Verification-Letter (a user upload; shown as plain text, not linked) |
 | Retrieved | 2026-10-03, downloaded manually by the operator (Scribd blocks scripted downloads) |
-| Clearance | **Redacted** (details below) |
-
-## This document was redacted before it entered the repo
+| Clearance | Redacted |
 
 Scribd is a user-upload site, not the publisher, so this letter was treated as a real
-person's record. It was. All personal data was replaced or removed **before anything was
-parsed**:
+person's record. It was one. All personal data was replaced or removed **before anything
+was parsed**:
 
 | Personal data | Occurrences | Replaced with |
 |---|---|---|
@@ -36,90 +127,54 @@ parsed**:
 | Rotated reference line down the right edge | 1 | removed |
 
 The replacements were made with `document-types/scripts/redact.py`, which removes the
-underlying text with PyMuPDF redaction annotations. It doesn't just draw over it. The
-script also cleared the PDF metadata. The script re-extracted the output and found no
-original value. A sweep of every file in this folder, on literals and on runs of digits,
+underlying text with PyMuPDF redaction annotations instead of drawing over it. The
+script also cleared the PDF metadata. It re-extracted the output and found no original
+value, and a sweep of every file in this folder, on literals and on runs of digits,
 found none either. The rules file that maps originals to replacements stays outside the
 repo.
 
-**The barcodes were text, not pictures.** All three mailing marks were typeset, not drawn
-as images or vector paths: the Intelligent Mail barcode is a string in a USPS IMb barcode
-font, the left-edge barcode is a 72pt barcode font rotated 90°, and the right-edge line is
-rotated body text. Rotated text can't be replaced cleanly, so a one-off pre-pass removed
-those three spans with text-only redactions. It left images and line art alone, so the SSA
-seal survives. Nothing was drawn in their place. Afterwards: no rotated text remains, the
-SSA seal is the only image, neither content stream has an inline image, and the only
-drawings are the white fills under the replaced values.
+**The barcodes were text, not pictures.** All three mailing marks were typeset: the
+Intelligent Mail barcode is a string in a USPS IMb barcode font, the left-edge barcode
+is a 72pt barcode font rotated 90°, and the right-edge line is rotated body text. A
+one-off pre-pass removed those three spans with text-only redactions, leaving images and
+line art alone, so the SSA seal survives. Nothing was drawn in their place.
 
-The page 2 signature is the typeset words "Social Security Administration" in a script font.
-It names no official, so it was kept.
+The page 2 signature is the typeset words "Social Security Administration" in a script
+font. It names no official, so it was kept.
 
 Kept as printed: the SSA, Medicare and Inspector General phone numbers and URLs, the
-local field office's address (a government office), the letter date, the benefit amounts
-and dates, and the disability onset date. The operator decided to keep the onset date.
-The stand-ins are set in Helvetica, not the letter's Century Schoolbook, so they look
-slightly different on close inspection.
+local field office's address (a government office), the letter date, the benefit
+amounts and dates, and the disability onset date. The operator decided to keep the onset
+date. The stand-ins are set in Helvetica, not the letter's Century Schoolbook, so they
+look slightly different on close inspection. Full provenance is in `manifest.json` under
+`source.origin`.
 
 ## Why this document
 
-A prose letter with no tables, ruled boxes or labels: every value sits inside a sentence
-("We deduct $81.90 for medical insurance premiums each month"). That tests a different
-skill from the forms in this collection. Extract has to pull a number out of running text
-and tell two parallel sections apart. "Current" and "past" benefits use almost identical
-sentences with different amounts and periods, and every field went to the right section.
+### Who processes it
 
-## Featured fields: one benefit calculation
+A benefit verification letter is the standard proof that someone receives Social
+Security disability benefits and how much. Beneficiaries download it and hand it to
+anyone who needs to verify their income.
 
-Page 1, the *Information About Current Social Security Benefits* section, from start to
-finish:
+- **Mortgage and consumer lending:** underwriters count disability benefits as income
+  and need the monthly amount and its continuation.
+- **Property management:** landlords and affordable-housing programs verify income for
+  rental applications and recertifications.
+- **Public assistance programs:** agencies running SNAP, Medicaid, energy assistance and
+  similar programs use it to confirm eligibility.
+- **Insurance:** long-term disability carriers offset their payments by the Social
+  Security benefit the claimant receives.
+- **Legal and advocacy:** disability attorneys, benefits counselors and courts use it to
+  document a person's benefit history.
 
-| Field | Value |
-|---|---|
-| Benefit amounts effective from | December 2025 |
-| Monthly benefit before deductions | 1137.30 |
-| Medicare premium deduction | 81.90 |
-| Net monthly payment | 1055.00 |
+### What it contains
 
-Gross minus the premium, rounded down to the whole dollar, gives the net, so the overlay
-reads as one calculation. No person is featured. The Medicare entitlement dates also
-ground correctly, but they're on page 2 and can't share the overlay.
-
-## Grounding
-
-Grounding is good and lands at line level. Each amount boxes the one sentence line that
-holds it.
-
-- `gross_monthly_benefit` grounds to **both** lines of its two-line sentence. Occurrence 0
-  is the first line ("Beginning December 2025, the full monthly ..."), which doesn't
-  contain the amount, so occurrence 1, the line with `$1,137.30`, is pinned. The past
-  section's gross amount behaves the same way.
-- Multi-line values that Extract joins into one string, such as the mailing address, the
-  local office address and the payment day, ground across several lines. Each line is
-  flagged `OFF` because no single line contains the joined value. They're correct, just
-  not featurable.
-- `current_benefits.period_end` has no end month in the letter. It came back as the
-  **string** `"null"` rather than a JSON null, so it is `SYNTH`. That's a small extraction
-  fault, left as is.
-
-All 13 top-level fields populated; the schema has **25 leaf fields**.
-
-## Cost
-
-**3.30 credits** at standard tier: 2 pages.
-
-## Regenerating
-
-```bash
-# Redaction, from the original (kept outside the repo):
-python barcodes.py original.pdf nobarcodes.pdf      # one-off pre-pass, outside the repo
-.venv/bin/python document-types/scripts/redact.py nobarcodes.pdf \
-    document-types/collection/disability-benefit-letter/source/disability-benefit-letter.pdf \
-    --rules rules.json
-
-.venv/bin/python document-types/scripts/run_ade.py disability-benefit-letter
-.venv/bin/python document-types/scripts/build_images.py disability-benefit-letter
-.venv/bin/python document-types/scripts/inspect_fields.py disability-benefit-letter --page 1
-```
-
-`manifest.json` records **what** was replaced and what replaced it, under
-`source.origin.redactions`. It never records the original values.
+- **Prose with no tables, ruled boxes or labels.** Every value sits inside a sentence,
+  such as "We deduct $81.90 for medical insurance premiums each month".
+- **Two parallel sections** for current and past benefits, written in almost identical
+  sentences with different amounts and periods.
+- **Amounts split across lines,** where a sentence wraps before the figure it states.
+- **Multi-line address blocks** for the recipient and the local field office.
+- **A government seal** and a signature set in a script font.
+- **Stand-in values in a different typeface** from the rest of the letter.

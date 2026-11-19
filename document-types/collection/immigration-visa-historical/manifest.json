@@ -16,11 +16,51 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "visa_number", "label": "Visa number", "occurrence": 0 },
-    { "path": "issuing_post", "label": "Consular post", "occurrence": 0 },
-    { "path": "preference", "label": "Quota category", "occurrence": 0 },
-    { "path": "quota", "label": "Quota", "occurrence": 0 },
-    { "path": "governing_law", "label": "Granted under", "occurrence": 0 }
+    {
+      "path": "visa_number",
+      "label": "Visa number",
+      "occurrence": 0
+    },
+    {
+      "path": "issuing_post",
+      "label": "Consular post",
+      "occurrence": 0
+    },
+    {
+      "path": "preference",
+      "label": "Quota category",
+      "occurrence": 0
+    },
+    {
+      "path": "quota",
+      "label": "Quota",
+      "occurrence": 0
+    },
+    {
+      "path": "governing_law",
+      "label": "Granted under",
+      "occurrence": 0
+    }
   ],
-  "notes": "No feature page or fields were requested. The overlay shows the visa as an instrument of the 1924 quota system: its number, the consulate that issued it, the preference box checked, the national quota it was charged to, and the act it was granted under. No individual is featured, though the bearer's name and photograph are on the page. fee ($9.00) is extracted correctly but grounds to the parse's description of the photograph rather than to the fee line, so it is not featured. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD."
+  "notes": "No feature page or fields were requested. The overlay shows the visa as an instrument of the 1924 quota system: its number, the consulate that issued it, the preference box checked, the national quota it was charged to, and the act it was granted under. No individual is featured, though the bearer's name and photograph are on the page. fee ($9.00) is extracted correctly but grounds to the parse's description of the photograph rather than to the fee line, so it is not featured. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 1.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.0
+    }
+  ]
 }

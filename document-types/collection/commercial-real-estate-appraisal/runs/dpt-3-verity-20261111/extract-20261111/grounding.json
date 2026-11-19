@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 4,
+  "page_count": 8,
+  "preview_pages": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "fields": [
+    {
+      "path": "property.tax_id",
+      "label": "Tax ID",
+      "value": "001616000901A0000",
+      "page": 4,
+      "box": {
+        "xmin": 0.41607,
+        "ymin": 0.22258,
+        "xmax": 0.55305,
+        "ymax": 0.23246
+      },
+      "range": {
+        "end": 4263,
+        "start": 4246
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-tax_id.png"
+    },
+    {
+      "path": "property.gross_building_area_sf",
+      "label": "Gross building area",
+      "value": 39329,
+      "page": 4,
+      "box": {
+        "xmin": 0.41613,
+        "ymin": 0.25683,
+        "xmax": 0.48078,
+        "ymax": 0.2682
+      },
+      "range": {
+        "end": 4375,
+        "start": 4366
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-gross_building_area_sf.png"
+    },
+    {
+      "path": "property.percent_leased",
+      "label": "Percent leased",
+      "value": 100,
+      "page": 4,
+      "box": {
+        "xmin": 0.4174,
+        "ymin": 0.28942,
+        "xmax": 0.4528,
+        "ymax": 0.29939
+      },
+      "range": {
+        "end": 4468,
+        "start": 4465
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-percent_leased.png"
+    },
+    {
+      "path": "property.year_built",
+      "label": "Year built",
+      "value": 1985,
+      "page": 4,
+      "box": {
+        "xmin": 0.41737,
+        "ymin": 0.30597,
+        "xmax": 0.44718,
+        "ymax": 0.31598
+      },
+      "range": {
+        "end": 4510,
+        "start": 4506
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-year_built.png"
+    },
+    {
+      "path": "property.exposure_time",
+      "label": "Exposure time",
+      "value": "12 months",
+      "page": 4,
+      "box": {
+        "xmin": 0.41767,
+        "ymin": 0.39126,
+        "xmax": 0.48611,
+        "ymax": 0.40275
+      },
+      "range": {
+        "end": 4811,
+        "start": 4802
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-exposure_time.png"
+    }
+  ]
+}

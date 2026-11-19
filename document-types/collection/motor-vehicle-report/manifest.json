@@ -78,5 +78,25 @@
     3,
     5,
     6
+  ],
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 7.5,
+      "extract_credits": 6.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 7.7,
+      "extract_credits": 6.3
+    }
   ]
 }

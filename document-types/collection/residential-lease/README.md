@@ -1,14 +1,108 @@
 # Residential lease
 
-Source assets for `landing.ai/document-type/residential-lease`.
+**On the website:** [landing.ai/document-type/residential-lease](https://landing.ai/document-type/residential-lease)
 
-## Sample document
+A residential lease on the Arkansas REALTORS® Association's standard Residential
+Lease/Rental Agreement form, completed and e-signed through a Century 21 brokerage in
+November 2023. Page 1 holds the filled-in terms: the parties, the property, the lease
+term, rent, late charges and security deposit. Standard clauses follow, and the last
+page carries the management and tenant e-signatures.
 
-`source/residential-lease-redacted.pdf` — a residential lease on the Arkansas REALTORS®
-Association's standard Residential Lease/Rental Agreement form, completed and e-signed
-through a Century 21 brokerage on November 17, 2023, redacted. **6 pages, portrait
-(612×792)**: the filled-in terms on page 1, standard clauses on pages 2 to 5, and the
-signature page.
+| | |
+|---|---|
+| Pages | 6 |
+| Fields in the extraction schema | 18 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:29 | 2026-11-19 03:49 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 27,422 | 27,927 |
+| Words under 0.95 confidence | 50 | n/a |
+| Words under 0.80 confidence | 29 | n/a |
+| Words under 0.50 confidence | 13 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 8.5 s | 17.5 s |
+| Per page | 1.4 s | 2.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.7 credits | 10.0 credits |
+| Per page | 0.62 credits | 1.67 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:29 | 2026-11-19 03:50 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 18 | 18 |
+| Non-null fields returned | 17 | 17 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 256.3 s | 90.6 s |
+| Per schema field (18) | 14.24 s | 5.03 s |
+| Per value returned | 8.84 s | 3.36 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 6.5 credits | 6.5 credits |
+| Per schema field (18) | 0.361 credits | 0.361 credits |
+| Per value returned | 0.224 credits | 0.241 credits |
+
+## Origin
+
+`source/residential-lease-redacted.pdf` is a residential lease on the Arkansas
+REALTORS® Association's standard Residential Lease/Rental Agreement form, completed and
+e-signed through a Century 21 brokerage on November 17, 2023, redacted. It is **6 pages,
+portrait (612×792)**: the filled-in terms on page 1, standard clauses on pages 2 to 5,
+and the signature page.
 
 | | |
 |---|---|
@@ -17,13 +111,11 @@ signature page.
 | Retrieved | 2026-09-28, downloaded manually |
 | Clearance | Redacted |
 
-## Redaction
-
-This is a real lease, uploaded to Scribd by a third party and downloaded by hand, because
-Scribd blocks scripted requests. **At the document owner's decision only the tenant's name
-is replaced.** Every other detail is kept as printed: the rental property's address, which
-is what the page demonstrates, the agent's and principal broker's names, e-signatures and
-contact details, the form serial number and the e-signature session ID.
+This is a real lease, uploaded to Scribd by a third party and downloaded by hand,
+because Scribd blocks scripted requests. **At the document owner's decision only the
+tenant's name is replaced.** Every other detail is kept as printed: the rental
+property's address, the agent's and principal broker's names, e-signatures and contact
+details, the form serial number and the e-signature session ID.
 
 | What | Replaced with | Occurrences |
 |---|---|---|
@@ -33,99 +125,44 @@ The replacement was made with `document-types/scripts/redact.py`, which removes 
 underlying text rather than covering it, and the PDF metadata was cleared.
 
 **The tenant's signature still reads as a signature.** It was a typed e-signature in a
-handwriting font, so replacing it in Helvetica would have turned it into a printed name
-and removed the evidence that the tenant signed. `redact.py` now takes
-`--handwriting-font`: text set in a handwriting font is replaced in that font instead, and
-in the original's colour. The stand-in signature is in Indie Flower, an openly licensed
-(SIL OFL) handwriting font kept at `document-types/scripts/fonts/`, in the same navy as the
-two real signatures beside it. The printed name keeps its bold italic.
+handwriting font, so the stand-in is set in Indie Flower, an openly licensed (SIL OFL)
+handwriting font, in the same navy as the two real signatures beside it. The printed
+name keeps its bold italic. The redaction also covered a near-invisible "Prepared by"
+line in 2-point type on each page, and the underscore fill lines beneath the replaced
+values were drawn back, so the lease keeps its original 2,301.
 
-**Verified:** the tenant's name is not extractable from the committed PDF and appears
-nowhere in this folder. The rules file used by `redact.py` stays outside the repo.
-
-An earlier version of this folder replaced every name, contact detail and identifier in
-the lease. The owner asked for only the tenant's name to be replaced, and for the
-signatures to stay.
-
-**This sample also fixed two things in `redact.py`:**
-
-- **A 2pt line escaped redaction.** Each page carries a near-invisible "Prepared by" line
-  in 2-point type. On text that small, the fixed trim the script took off every redaction
-  rectangle emptied it, and the name survived. The narrowing to the letters now replaces
-  the fixed trim.
-- **Fill lines were broken.** A filled form types each value over a line of underscores,
-  and redacting the value took the underscores beneath it. The script now draws back
-  exactly the underscores it removed; the lease keeps its original 2,301.
+The tenant's name is not extractable from the committed PDF and appears nowhere in this
+folder. The rules file used by `redact.py` stays outside the repo. An earlier version of
+this folder replaced every name, contact detail and identifier in the lease. The owner
+asked for only the tenant's name to be replaced, and for the signatures to stay. Full
+provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **lease**, and its first **filled-in form** in the typed-over-a-blank
-sense: every value is typed on top of the form's own underscore lines, in bold italic,
-inside long clauses. That makes it a test of whether a value typed into a sentence can be
-found as precisely as a value in a table cell.
+### Who processes it
 
-## Featured fields: proof of address
+A residential lease sets the rent, term and deposit for a home, and it is often used as
+proof of where a person lives.
 
-All on **page 1**. The owner asked for the property address to be highlighted, for use as
-a **proof-of-address** example; the other fields support it:
+- **Property management:** managers record lease terms, rent due dates, late charges
+  and deposits for each unit.
+- **Mortgage lending:** underwriters use leases to count rental income on investment
+  properties.
+- **Proof of address and identity verification:** banks, schools and agencies accept a
+  signed lease as proof of residence.
+- **Real estate brokerages:** agents who arrange rentals keep the executed lease and
+  track renewals.
+- **Rental housing assistance programs:** caseworkers verify rent amounts and the lease
+  term before paying benefits.
 
-| Field | Value |
-|---|---|
-| Property address | 909 Shall Court Studio Jacksonville AR 72076 |
-| Tenant | Jane Q Sample |
-| Lease term | 12 Months |
-| Security deposit | 700.00 |
+### What it contains
 
-Where the tenant lives, who the tenant is (the stand-in name), for how long, and the
-deposit paid. The address box covers the opening lines of the Term and Description
-paragraph, which contain the typed address, and the tenant box covers the opening block;
-see below.
-
-## What it surfaced
-
-**Typed-in values ground to the paragraph they are typed into.** The address, typed onto
-the form's blank line, grounds to the opening lines of the Term and Description paragraph
-around it, and the tenant's name to the whole opening block. The Rent section is the
-extreme case: monthly rent, due day, late charge, the day after which it applies, and the
-insufficient-funds fee all ground to the entire paragraph and would render the same crop,
-so none is featured. The security deposit and the lease term, whose lines stand apart,
-ground to their own line.
-
-**Every value is right, but the signatures are paired wrongly.** The signature page sets
-Management signatures down the left and Tenant signatures down the right. Extraction
-returns all five signature lines but matches names and roles across the columns: the
-tenant's name comes back under "Management as Authorized Agent of Owner", both agents
-under "Tenant", and the signed/unsigned flags follow the wrong lines. The rest of the lease
-extracts correctly, including the fixed-term checkbox, the dates and every amount.
-
-**Normalized dates are flagged.** The agreement and term dates come back as ISO dates from
-the split "(month) November (day) 17 (year) 2023" blanks, which is right but no longer
-matches the printed text.
-
-## Extraction
-
-`schema.json` was written for this lease, with **18 leaf fields**: the agreement date, the
-parties, the property, the term (type, length, start, end), the rent terms, the security
-deposit, and a `signatures` array (role, signed, printed name). Everything populates, with
-no warnings.
-
-## Cost
-
-**16.40 credits** at standard tier for 6 pages, 10.00 to parse and 6.40 to extract. The earlier, fully redacted version cost another 16.50.
-
-## Regenerating
-
-```bash
-# Redaction, from the manual download, with the rules file kept outside the repo:
-.venv/bin/python document-types/scripts/redact.py <original>.pdf \
-    document-types/collection/residential-lease/source/residential-lease-redacted.pdf \
-    --rules <outside-the-repo>/rules.json \
-    --handwriting-font document-types/scripts/fonts/IndieFlower-Regular.ttf
-
-.venv/bin/python document-types/scripts/run_ade.py residential-lease                # 16.40 credits
-.venv/bin/python document-types/scripts/run_ade.py residential-lease --extract-only # 6.40, schema iteration
-.venv/bin/python document-types/scripts/build_images.py residential-lease           # free
-.venv/bin/python document-types/scripts/inspect_fields.py residential-lease --page 1
-```
-
-`manifest.json` sets `preview_pages` to 1, 2, 4 and 6, so the signature page is shown.
+- **A filled-in form with values typed over underscore blanks,** in bold italic, inside
+  long clauses.
+- **Values embedded in sentences,** such as several rent terms in one paragraph.
+- **Dates split across blanks,** as "(month) November (day) 17 (year) 2023".
+- **A checkbox** for the type of term.
+- **A two-column signature page,** with management signatures down the left and tenant
+  signatures down the right.
+- **E-signatures in handwriting fonts** and a near-invisible 2-point "Prepared by" line
+  on each page.

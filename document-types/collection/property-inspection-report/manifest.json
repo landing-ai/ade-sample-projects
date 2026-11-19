@@ -48,5 +48,34 @@
     20,
     29
   ],
-  "notes": "The request named no feature page or fields; its notes suggested a system page or the deficiency summary on pages 29-30, with the roof covering material, deficiency 2.4 and its location, a recommendation category and drainage item 3.1 as suggestions. Page 4 (printed 'Page 3 of 29', the Roof and Attic section) is featured, and tells one story: what the roof is, how the inspector classed two of its recommendations (IMPROVE for exposed nail heads at 2.2, MAINTENANCE for moss at 2.3), and which item records the damaged shingles and where they are. Drainage item 3.1 is not featured: its observation runs over three lines and grounds as one range per line, so inspect_fields.py marks it OFF, as it does every multi-line observation on the page; its item number alone grounds correctly but says little. The summary table on page 29 grounds cleanly too, but every value there is a full table cell of several lines, which makes a crowded overlay, and the same deficiency 2.4 appears on page 4 in context. The roof covering material grounds to a sentence ADE placed as the caption of a photograph figure, so its box is the whole figure: the sentence and the three roof photographs below it. The value is in the box and the photos show the roof it describes. The roof life cycle stage was featured at first and dropped, because it comes from the same sentence and drew the identical box. The schema was revised three times with extraction only: the first version asked for every observation in the Roof and Attic section, and extraction repeated the Report Summary rows as observations, dropped item 5.1 and lost the heading for items 9.x, so the array was narrowed to roof coverings and drainage (items 2.x and 3.x). A version asking for one summary entry per table row returned 23 of the 29 numbered deficiencies, because one cell can hold several; asking for one entry per deficiency number returned all 29. Where a nullable field has nothing to report, extraction returns an empty string or null inconsistently in the summary locations. Previews are pages 4, 10, 20 and 29 rather than the default sampling, which included the cover: the cover's only content beyond the specimen names is a wide photograph of a real house, which the request asked not to feature, and the page 29 summary table is the more useful preview."
+  "notes": "The request named no feature page or fields; its notes suggested a system page or the deficiency summary on pages 29-30, with the roof covering material, deficiency 2.4 and its location, a recommendation category and drainage item 3.1 as suggestions. Page 4 (printed 'Page 3 of 29', the Roof and Attic section) is featured, and tells one story: what the roof is, how the inspector classed two of its recommendations (IMPROVE for exposed nail heads at 2.2, MAINTENANCE for moss at 2.3), and which item records the damaged shingles and where they are. Drainage item 3.1 is not featured: its observation runs over three lines and grounds as one range per line, so inspect_fields.py marks it OFF, as it does every multi-line observation on the page; its item number alone grounds correctly but says little. The summary table on page 29 grounds cleanly too, but every value there is a full table cell of several lines, which makes a crowded overlay, and the same deficiency 2.4 appears on page 4 in context. The roof covering material grounds to a sentence ADE placed as the caption of a photograph figure, so its box is the whole figure: the sentence and the three roof photographs below it. The value is in the box and the photos show the roof it describes. The roof life cycle stage was featured at first and dropped, because it comes from the same sentence and drew the identical box. The schema was revised three times with extraction only: the first version asked for every observation in the Roof and Attic section, and extraction repeated the Report Summary rows as observations, dropped item 5.1 and lost the heading for items 9.x, so the array was narrowed to roof coverings and drainage (items 2.x and 3.x). A version asking for one summary entry per table row returned 23 of the 29 numbered deficiencies, because one cell can hold several; asking for one entry per deficiency number returned all 29. Where a nullable field has nothing to report, extraction returns an empty string or null inconsistently in the summary locations. Previews are pages 4, 10, 20 and 29 rather than the default sampling, which included the cover: the cover's only content beyond the specimen names is a wide photograph of a real house, which the request asked not to feature, and the page 29 summary table is the more useful preview.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 30,
+      "service_tier": "standard",
+      "parse_credits": 39.4,
+      "extract_credits": 33.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 30,
+      "service_tier": "standard",
+      "parse_credits": 41.0,
+      "extract_credits": 34.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 30,
+      "service_tier": "standard",
+      "parse_credits": 14.4,
+      "extract_credits": 33.2
+    }
+  ]
 }

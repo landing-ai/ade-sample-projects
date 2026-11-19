@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "tax_year", "label": "Tax year", "occurrence": 0 },
-    { "path": "part_i_amti.line_4_amti", "label": "Alternative minimum taxable income (line 4)", "occurrence": 0 },
-    { "path": "part_ii_amt.line_5_exemption", "label": "Exemption (line 5)", "occurrence": 0 },
-    { "path": "part_ii_amt.line_10_regular_tax", "label": "Regular tax (line 10)", "occurrence": 0 },
-    { "path": "part_ii_amt.line_11_amt", "label": "AMT (line 11)", "occurrence": 0 }
+    {
+      "path": "tax_year",
+      "label": "Tax year",
+      "occurrence": 0
+    },
+    {
+      "path": "part_i_amti.line_4_amti",
+      "label": "Alternative minimum taxable income (line 4)",
+      "occurrence": 0
+    },
+    {
+      "path": "part_ii_amt.line_5_exemption",
+      "label": "Exemption (line 5)",
+      "occurrence": 0
+    },
+    {
+      "path": "part_ii_amt.line_10_regular_tax",
+      "label": "Regular tax (line 10)",
+      "occurrence": 0
+    },
+    {
+      "path": "part_i_amti.line_1a_taxable_income_adjusted",
+      "label": "Line 1a taxable income adjusted",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request suggested page 1 (source page 5) and the fields tax year, line 4 AMTI, line 5 exemption, line 10 regular tax and line 11 AMT, telling the AMT computation in order. All five ground ok on page 1 and all five shipped as asked. The story: AMTI of 31,620 sits below the 137,000 married-filing-jointly exemption, so no AMT is owed (line 11 is 0) against regular tax of 162. The operator accepted a zero AMT result. No person is featured. Page 2 (Part III) is blank on the form and is kept so the folder holds the complete form. Known extraction finding: blank amount lines (3, 8, and Part III lines 12 and 40) extract as 0 rather than null, even with descriptions asking for null; the parse correctly shows those cells empty. None of them is featured."
+  "notes": "The request suggested page 1 (source page 5) and the fields tax year, line 4 AMTI, line 5 exemption, line 10 regular tax and line 11 AMT, telling the AMT computation in order. All five ground ok on page 1 and all five shipped as asked. The story: AMTI of 31,620 sits below the 137,000 married-filing-jointly exemption, so no AMT is owed (line 11 is 0) against regular tax of 162. The operator accepted a zero AMT result. No person is featured. Page 2 (Part III) is blank on the form and is kept so the folder holds the complete form. Known extraction finding: blank amount lines (3, 8, and Part III lines 12 and 40) extract as 0 rather than null, even with descriptions asking for null; the parse correctly shows those cells empty. None of them is featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.3,
+      "extract_credits": 3.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 5.1,
+      "extract_credits": 3.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 3.5
+    }
+  ]
 }

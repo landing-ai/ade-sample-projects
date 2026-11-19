@@ -1,0 +1,412 @@
+{
+  "extraction": {
+    "deductions": [
+      {
+        "amount": 268.08,
+        "code": "401K",
+        "year_to_date": 770.72
+      }
+    ],
+    "earnings": [
+      {
+        "amount": 5361.6,
+        "hours": 80.0,
+        "pay_code": "Regular Pay",
+        "rate": 67.02
+      }
+    ],
+    "employee": {
+      "employee_id": "0000",
+      "name": "Jane Q Sample"
+    },
+    "employer": {
+      "ein": "52-2449153",
+      "name": "Lenovo"
+    },
+    "hours_worked": 80.0,
+    "pay_period": {
+      "end_date": "02/01/2026",
+      "pay_date": "02/06/2026",
+      "start_date": "01/19/2026"
+    },
+    "pto_available": 0.0,
+    "taxes": [
+      {
+        "amount": 77.74,
+        "code": "Med",
+        "year_to_date": 223.5
+      },
+      {
+        "amount": 332.42,
+        "code": "SS",
+        "year_to_date": 955.7
+      },
+      {
+        "amount": 789.14,
+        "code": "Federal",
+        "year_to_date": 2214.62
+      },
+      {
+        "amount": 188.0,
+        "code": "State",
+        "year_to_date": 538.0
+      }
+    ],
+    "totals": {
+      "gross_pay": 5361.6,
+      "gross_pay_ytd": 15414.6,
+      "net_pay": 3706.22,
+      "net_pay_ytd": 10712.06,
+      "total_taxes": 1387.3
+    }
+  },
+  "extraction_metadata": {
+    "deductions": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1459,
+              "start": 1453
+            }
+          ],
+          "value": 268.08
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 1443,
+              "start": 1439
+            }
+          ],
+          "value": "401K"
+        },
+        "year_to_date": {
+          "ranges": [
+            {
+              "end": 1475,
+              "start": 1469
+            }
+          ],
+          "value": 770.72
+        }
+      }
+    ],
+    "earnings": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 635,
+              "start": 626
+            }
+          ],
+          "value": 5361.6
+        },
+        "hours": {
+          "ranges": [
+            {
+              "end": 602,
+              "start": 598
+            }
+          ],
+          "value": 80.0
+        },
+        "pay_code": {
+          "ranges": [
+            {
+              "end": 589,
+              "start": 578
+            }
+          ],
+          "value": "Regular Pay"
+        },
+        "rate": {
+          "ranges": [
+            {
+              "end": 617,
+              "start": 612
+            }
+          ],
+          "value": 67.02
+        }
+      }
+    ],
+    "employee": {
+      "employee_id": {
+        "ranges": [
+          {
+            "end": 2073,
+            "start": 2069
+          }
+        ],
+        "value": "0000"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 347,
+            "start": 334
+          }
+        ],
+        "value": "Jane Q Sample"
+      }
+    },
+    "employer": {
+      "ein": {
+        "ranges": [
+          {
+            "end": 98,
+            "start": 88
+          }
+        ],
+        "value": "52-2449153"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 21,
+            "start": 15
+          }
+        ],
+        "value": "Lenovo"
+      }
+    },
+    "hours_worked": {
+      "ranges": [
+        {
+          "end": 2156,
+          "start": 2152
+        }
+      ],
+      "value": 80.0
+    },
+    "pay_period": {
+      "end_date": {
+        "ranges": [
+          {
+            "end": 313,
+            "start": 303
+          }
+        ],
+        "value": "02/01/2026"
+      },
+      "pay_date": {
+        "ranges": [
+          {
+            "end": 275,
+            "start": 265
+          }
+        ],
+        "value": "02/06/2026"
+      },
+      "start_date": {
+        "ranges": [
+          {
+            "end": 294,
+            "start": 284
+          }
+        ],
+        "value": "01/19/2026"
+      }
+    },
+    "pto_available": {
+      "ranges": [
+        {
+          "end": 2130,
+          "start": 2127
+        }
+      ],
+      "value": 0.0
+    },
+    "taxes": [
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 739,
+              "start": 734
+            }
+          ],
+          "value": 77.74
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 724,
+              "start": 721
+            }
+          ],
+          "value": "Med"
+        },
+        "year_to_date": {
+          "ranges": [
+            {
+              "end": 754,
+              "start": 749
+            }
+          ],
+          "value": 223.5
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 828,
+              "start": 822
+            }
+          ],
+          "value": 332.42
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 812,
+              "start": 810
+            }
+          ],
+          "value": "SS"
+        },
+        "year_to_date": {
+          "ranges": [
+            {
+              "end": 843,
+              "start": 838
+            }
+          ],
+          "value": 955.7
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 922,
+              "start": 916
+            }
+          ],
+          "value": 789.14
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 906,
+              "start": 899
+            }
+          ],
+          "value": "Federal"
+        },
+        "year_to_date": {
+          "ranges": [
+            {
+              "end": 940,
+              "start": 931
+            }
+          ],
+          "value": 2214.62
+        }
+      },
+      {
+        "amount": {
+          "ranges": [
+            {
+              "end": 1015,
+              "start": 1010
+            }
+          ],
+          "value": 188.0
+        },
+        "code": {
+          "ranges": [
+            {
+              "end": 1000,
+              "start": 995
+            }
+          ],
+          "value": "State"
+        },
+        "year_to_date": {
+          "ranges": [
+            {
+              "end": 1031,
+              "start": 1026
+            }
+          ],
+          "value": 538.0
+        }
+      }
+    ],
+    "totals": {
+      "gross_pay": {
+        "ranges": [
+          {
+            "end": 1171,
+            "start": 1162
+          }
+        ],
+        "value": 5361.6
+      },
+      "gross_pay_ytd": {
+        "ranges": [
+          {
+            "end": 2010,
+            "start": 2000
+          }
+        ],
+        "value": 15414.6
+      },
+      "net_pay": {
+        "ranges": [
+          {
+            "end": 1908,
+            "start": 1899
+          }
+        ],
+        "value": 3706.22
+      },
+      "net_pay_ytd": {
+        "ranges": [
+          {
+            "end": 1958,
+            "start": 1948
+          }
+        ],
+        "value": 10712.06
+      },
+      "total_taxes": {
+        "ranges": [
+          {
+            "end": 1203,
+            "start": 1194
+          }
+        ],
+        "value": 1387.3
+      }
+    }
+  },
+  "markdown": "[logo: Lenno]\n\nLenovo\n8001 Development Dr\nMorrisville, NC 27560-7416\n(855) 253-6686\nEin:52-2449153\n\n<table>\n<tr><td colspan=\"3\">**Direct Deposit Earnings Statement**<br>DD00000000</td></tr>\n<tr><td>Pay Date</td><td>Start Period</td><td>End Period</td></tr>\n<tr><td>02/06/2026</td><td>01/19/2026</td><td>02/01/2026</td></tr>\n</table>\n\nJane Q Sample\n100 Main St\nAnytown, NC 00000\n\n<table>\n<tr><td colspan=\"4\">Earnings</td><td colspan=\"3\">Taxes</td></tr>\n<tr><td>Pay Code</td><td>Hours</td><td>Rate</td><td>Amount</td><td>Code</td><td>Amount</td><td>Year To Date</td></tr>\n<tr><td>Regular Pay</td><td>80.00</td><td>67.02</td><td>$5,361.60</td><td>FICA</td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Med</td><td>$77.74</td><td>$223.50</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>SS</td><td>$332.42</td><td>$955.70</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Federal</td><td>$789.14</td><td>$2,214.62</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>State</td><td>$188.00</td><td>$538.00</td></tr>\n<tr><td></td><td></td><td></td><td></td><td>Local</td><td></td><td></td></tr>\n<tr><td>Totals</td><td></td><td></td><td>$5,361.60</td><td>Total</td><td>$1,387.30</td><td>$3,931.82</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">Payroll Deductions</td><td colspan=\"2\">Special Note</td></tr>\n<tr><td>Code</td><td>Amount</td><td>Year To Date</td><td>Fed Taxable Wages</td><td>$0.00</td></tr>\n<tr><td>401K</td><td>$268.08</td><td>$770.72</td><td>Bus Expenses<br>(Not Taxable)</td><td></td></tr>\n<tr><td>Total</td><td>$268.08</td><td>$770.72</td><td></td><td></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">Direct Deposit Information</td></tr>\n<tr><td>Bank</td><td>Account</td><td>Amount</td></tr>\n<tr><td>XXXXXXXXX</td><td>XXXXXXXXXX</td><td>$3,706.22</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">Total Pay Amounts</td></tr>\n<tr><td>Net pay/period*</td><td>$3,706.22</td></tr>\n<tr><td>Net pay YTD*</td><td>$10,712.06</td></tr>\n<tr><td>Gross pay YTD*</td><td>$15,414.60</td></tr>\n</table>\n\n### Miscellaneous\n\n- **Employee ID**: 0000\n- **Employee SSN**: XXX-XX-0000\n- **PTO Available**: 0.00\n- **Hours Worked**: 80.00\n\n**\\* Amount includes Business Expenses. Taxes are not calculated on expenses.**\n\n<!-- doc_id=parse-01m7ryb6v4mtet61r7hz7zctpk -->",
+  "metadata": {
+    "job_id": "extract-01m7rycy66tjfvnq522b7bg8p4",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 141708,
+    "doc_id": "parse-01m7ryb6v4mtet61r7hz7zctpk",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.2,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 2288,
+    "output_extraction_chars": 725,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

@@ -61,5 +61,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no fields or feature page; its notes suggested page 2 with participants at the beginning of the year, active participants at year end, total participants, participants with account balances and the attached-schedule checkboxes. That is what shipped: the four counts and one checkbox (Schedule H, which carries the plan's financials) all read ok on page 2. Together they show the plan's headcount moving through the year and which schedules the filing carries. No person is featured; the only individual named in the filing is the signer on page 1, whose name was replaced. The PDF also carries a hidden white text layer of EFAST placeholder strings (ABCDEFGHI, 123456789) under every field; the visible values are vector outlines. The parse ignored the placeholders entirely: none appears in parse-pro.md."
+  "notes": "The request named no fields or feature page; its notes suggested page 2 with participants at the beginning of the year, active participants at year end, total participants, participants with account balances and the attached-schedule checkboxes. That is what shipped: the four counts and one checkbox (Schedule H, which carries the plan's financials) all read ok on page 2. Together they show the plan's headcount moving through the year and which schedules the filing carries. No person is featured; the only individual named in the filing is the signer on page 1, whose name was replaced. The PDF also carries a hidden white text layer of EFAST placeholder strings (ABCDEFGHI, 123456789) under every field; the visible values are vector outlines. The parse ignored the placeholders entirely: none appears in parse-pro.md.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 24,
+      "service_tier": "standard",
+      "parse_credits": 31.6,
+      "extract_credits": 19.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 24,
+      "service_tier": "standard",
+      "parse_credits": 32.3,
+      "extract_credits": 19.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 24,
+      "service_tier": "standard",
+      "parse_credits": 11.7,
+      "extract_credits": 19.4
+    }
+  ]
 }

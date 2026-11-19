@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 3,
+  "page_count": 18,
+  "preview_pages": [
+    1,
+    3,
+    6,
+    16
+  ],
+  "fields": [
+    {
+      "path": "reporting_period",
+      "label": "Reporting period",
+      "value": "FY27/Q1-Q2",
+      "page": 3,
+      "box": {
+        "xmin": 0.56625,
+        "ymin": 0.13608,
+        "xmax": 0.66342,
+        "ymax": 0.14843
+      },
+      "range": {
+        "end": 239,
+        "start": 229
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "reporting_period.png"
+    },
+    {
+      "path": "consolidated_results.net_sales",
+      "label": "Net sales (売上高)",
+      "value": 9660,
+      "page": 3,
+      "box": {
+        "xmin": 0.53469,
+        "ymin": 0.15074,
+        "xmax": 0.69362,
+        "ymax": 0.17904
+      },
+      "range": {
+        "end": 307,
+        "start": 299
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "consolidated_results-net_sales.png"
+    },
+    {
+      "path": "consolidated_results.operating_profit",
+      "label": "Operating profit (営業利益)",
+      "value": 2165,
+      "page": 3,
+      "box": {
+        "xmin": 0.53468,
+        "ymin": 0.17904,
+        "xmax": 0.69362,
+        "ymax": 0.20741
+      },
+      "range": {
+        "end": 380,
+        "start": 372
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "consolidated_results-operating_profit.png"
+    },
+    {
+      "path": "consolidated_results.ordinary_profit",
+      "label": "Ordinary profit (経常利益)",
+      "value": 3006,
+      "page": 3,
+      "box": {
+        "xmin": 0.53466,
+        "ymin": 0.23221,
+        "xmax": 0.69362,
+        "ymax": 0.26054
+      },
+      "range": {
+        "end": 524,
+        "start": 516
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "consolidated_results-ordinary_profit.png"
+    },
+    {
+      "path": "consolidated_results.net_profit",
+      "label": "Net profit (中間純利益)",
+      "value": 2209,
+      "page": 3,
+      "box": {
+        "xmin": 0.53465,
+        "ymin": 0.26053,
+        "xmax": 0.69363,
+        "ymax": 0.28891
+      },
+      "range": {
+        "end": 598,
+        "start": 590
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "consolidated_results-net_profit.png"
+    }
+  ]
+}

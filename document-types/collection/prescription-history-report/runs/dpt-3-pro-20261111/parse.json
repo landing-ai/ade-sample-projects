@@ -1,0 +1,6307 @@
+{
+  "markdown": "- **66.04**: MME Assessment<br>* 30-day average\n- **8 Dr / 5 Rx**: Multiple Provider Episodes<br>* Last 6 months\n- **4**: Overlapping Prescriptions<br>* Last 45 Days\n- **5**: Risk Score<br>Max Score=7\n\n<table>\n<tr><td>Patient Last Name</td><td>First Name</td><td>Middle Name</td><td>Date of Birth</td><td>Gender</td><td>Address</td></tr>\n<tr><td>Doe</td><td>John</td><td>Robert</td><td>1/1/1976</td><td>M</td><td>123 Main Street, Anytown, CA 90212</td></tr>\n</table>\n\n<table>\n<tr><td>Prescriber</td><td>Dispenser</td><td>Date Issued</td><td>Date Filled</td><td>Date Sold</td><td>Rx Number</td><td>Drug</td><td>Strength</td><td>Qty</td><td>Days</td><td>Refills</td></tr>\n<tr><td>Welby, Marcus MD<br>3355 Doctor Street, Anytown, CA 90212<br>AW12121212</td><td>Test Pharmacy<br>8833 Patch Drive, Anytown, CA 90212<br>BT12121212</td><td>2/3/2022</td><td>2/3/2022</td><td>2/4/2022</td><td>12225</td><td>Alprazolam</td><td>1 MG</td><td>90</td><td>30</td><td>1</td></tr>\n<tr><td>Howser, Doogie DO<br>8233 Pilladay Avenue, Place, CA 90213<br>BH98989898</td><td>Hometown Pharmacy<br>1122 Main Street, Place, CA 90213<br>AH23232323</td><td>2/5/2022</td><td>2/5/2022</td><td>2/6/2022</td><td>37921</td><td>Hydrocodone</td><td>7.5 MG</td><td>180</td><td>30</td><td>1</td></tr>\n<tr><td>House, Gregory MD<br>5558 Hospital Road, My Town, CA 90211<br>AH77776622</td><td>Made-up Drug Store<br>4466 Nurse Way, My Town, CA 90211<br>BM34343434</td><td>2/7/2022</td><td>2/7/2022</td><td>2/8/2022</td><td>897754</td><td>Morphine Sulfate</td><td>30 MG</td><td>14</td><td>14</td><td>0</td></tr>\n<tr><td>Potter, Sherman MD<br>9911 Splint Circle, Village, CA 90210<br>AP 44488891</td><td>City Pharmacy<br>7312 Wounded Road, Village, CA 90210<br>AC 45454545</td><td>2/9/2022</td><td>2/9/2022</td><td>2/10/2022</td><td>534502</td><td>Methylphenidate</td><td>10 MG</td><td>90</td><td>30</td><td>0</td></tr>\n<tr><td>Welby, Marcus MD<br>3355 Doctor Street, Anytown, CA 90212<br>AW12121212</td><td>Test Pharmacy<br>8833 Patch Drive, Anytown, CA 90212<br>BT12121212</td><td>3/3/2022</td><td>3/3/2022</td><td>3/4/2022</td><td>13100</td><td>Alprazolam</td><td>1 MG</td><td>90</td><td>30</td><td>1</td></tr>\n<tr><td>Howser, Doogie DO<br>8233 Pilladay Avenue, Place, CA 90213<br>BH98989898</td><td>Hometown Pharmacy<br>1122 Main Street, Place, CA 90213<br>AH23232323</td><td>3/5/2022</td><td>3/5/2022</td><td>3/6/2022</td><td>39572</td><td>Hydrocodone</td><td>7.5 MG</td><td>180</td><td>30</td><td>1</td></tr>\n<tr><td>Potter, Sherman MD<br>9911 Splint Circle, Village, CA 90210<br>AP 44488891</td><td>City Pharmacy<br>7312 Wounded Road, Village, CA 90210<br>AC 45454545</td><td>3/9/2022</td><td>3/9/2022</td><td>3/10/2022</td><td>550987</td><td>Methylphenidate</td><td>10 MG</td><td>90</td><td>30</td><td>0</td></tr>\n</table>\n\n<!-- doc_id=parse-01m7rycdggp8n60ywq32t9t1p9 -->",
+  "structure": {
+    "type": "document",
+    "markdown": null,
+    "children": [
+      {
+        "type": "page",
+        "page": null,
+        "span": null,
+        "width": null,
+        "height": null,
+        "dpi": null,
+        "grounding": {
+          "page": 1,
+          "range": {
+            "start": 0,
+            "end": 2790
+          },
+          "box": {
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "xmax": 1.0,
+            "ymax": 1.0
+          }
+        },
+        "markdown": null,
+        "status": "ok",
+        "reason": null,
+        "children": [
+          {
+            "type": "text",
+            "id": "text-0",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 0,
+                "end": 200
+              },
+              "box": {
+                "xmin": 0.15479,
+                "ymin": 0.0081,
+                "xmax": 0.85157,
+                "ymax": 0.15585
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 4,
+                  "end": 12
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 13,
+                  "end": 16
+                },
+                "box": {
+                  "xmin": 0.20573,
+                  "ymin": 0.04073,
+                  "xmax": 0.23851,
+                  "ymax": 0.06417
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 17,
+                  "end": 27
+                },
+                "box": {
+                  "xmin": 0.20578,
+                  "ymin": 0.07081,
+                  "xmax": 0.28032,
+                  "ymax": 0.09334
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 33,
+                  "end": 39
+                },
+                "box": {
+                  "xmin": 0.21535,
+                  "ymin": 0.10035,
+                  "xmax": 0.25629,
+                  "ymax": 0.12638
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 40,
+                  "end": 47
+                },
+                "box": {
+                  "xmin": 0.26019,
+                  "ymin": 0.10525,
+                  "xmax": 0.30817,
+                  "ymax": 0.12619
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 52,
+                  "end": 53
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 54,
+                  "end": 58
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 59,
+                  "end": 60
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 61,
+                  "end": 66
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 67,
+                  "end": 75
+                },
+                "box": {
+                  "xmin": 0.38284,
+                  "ymin": 0.04146,
+                  "xmax": 0.42865,
+                  "ymax": 0.06806
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 76,
+                  "end": 84
+                },
+                "box": {
+                  "xmin": 0.433,
+                  "ymin": 0.04146,
+                  "xmax": 0.48345,
+                  "ymax": 0.06373
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 85,
+                  "end": 93
+                },
+                "box": {
+                  "xmin": 0.38256,
+                  "ymin": 0.07044,
+                  "xmax": 0.43849,
+                  "ymax": 0.0979
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 99,
+                  "end": 103
+                },
+                "box": {
+                  "xmin": 0.39165,
+                  "ymin": 0.10048,
+                  "xmax": 0.41763,
+                  "ymax": 0.12228
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 104,
+                  "end": 105
+                },
+                "box": {
+                  "xmin": 0.42061,
+                  "ymin": 0.10108,
+                  "xmax": 0.42849,
+                  "ymax": 0.12146
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 106,
+                  "end": 112
+                },
+                "box": {
+                  "xmin": 0.43095,
+                  "ymin": 0.10124,
+                  "xmax": 0.4739,
+                  "ymax": 0.12175
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 117,
+                  "end": 121
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 122,
+                  "end": 133
+                },
+                "box": {
+                  "xmin": 0.56042,
+                  "ymin": 0.04074,
+                  "xmax": 0.6325,
+                  "ymax": 0.06888
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 134,
+                  "end": 147
+                },
+                "box": {
+                  "xmin": 0.56057,
+                  "ymin": 0.07135,
+                  "xmax": 0.63794,
+                  "ymax": 0.09745
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 153,
+                  "end": 157
+                },
+                "box": {
+                  "xmin": 0.56929,
+                  "ymin": 0.10048,
+                  "xmax": 0.5955,
+                  "ymax": 0.12238
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 158,
+                  "end": 160
+                },
+                "box": {
+                  "xmin": 0.5978,
+                  "ymin": 0.10086,
+                  "xmax": 0.61352,
+                  "ymax": 0.12216
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 161,
+                  "end": 165
+                },
+                "box": {
+                  "xmin": 0.61702,
+                  "ymin": 0.1003,
+                  "xmax": 0.64783,
+                  "ymax": 0.12678
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 170,
+                  "end": 174
+                },
+                "box": {
+                  "xmin": 0.15479,
+                  "ymin": 0.0081,
+                  "xmax": 0.85157,
+                  "ymax": 0.15585
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 175,
+                  "end": 179
+                },
+                "box": {
+                  "xmin": 0.73837,
+                  "ymin": 0.0561,
+                  "xmax": 0.76437,
+                  "ymax": 0.07802
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 180,
+                  "end": 185
+                },
+                "box": {
+                  "xmin": 0.76822,
+                  "ymin": 0.05628,
+                  "xmax": 0.80364,
+                  "ymax": 0.07811
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 189,
+                  "end": 192
+                },
+                "box": {
+                  "xmin": 0.73831,
+                  "ymin": 0.0857,
+                  "xmax": 0.76388,
+                  "ymax": 0.10785
+                }
+              },
+              {
+                "page": 1,
+                "range": {
+                  "start": 193,
+                  "end": 200
+                },
+                "box": {
+                  "xmin": 0.76731,
+                  "ymin": 0.08539,
+                  "xmax": 0.81768,
+                  "ymax": 0.10771
+                }
+              }
+            ],
+            "markdown": null,
+            "children": null,
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          },
+          {
+            "type": "table",
+            "id": "table-0",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 202,
+                "end": 466
+              },
+              "box": {
+                "xmin": 0.00959,
+                "ymin": 0.19652,
+                "xmax": 0.91224,
+                "ymax": 0.27998
+              }
+            },
+            "atomic_grounding": null,
+            "markdown": null,
+            "children": [
+              {
+                "type": "table_cell",
+                "id": "table_cell-0",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 218,
+                    "end": 235
+                  },
+                  "box": {
+                    "xmin": 0.00959,
+                    "ymin": 0.19659,
+                    "xmax": 0.21156,
+                    "ymax": 0.22577
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 218,
+                      "end": 225
+                    },
+                    "box": {
+                      "xmin": 0.01054,
+                      "ymin": 0.2057,
+                      "xmax": 0.04441,
+                      "ymax": 0.22171
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 226,
+                      "end": 230
+                    },
+                    "box": {
+                      "xmin": 0.04719,
+                      "ymin": 0.20591,
+                      "xmax": 0.06613,
+                      "ymax": 0.2216
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 231,
+                      "end": 235
+                    },
+                    "box": {
+                      "xmin": 0.06879,
+                      "ymin": 0.20583,
+                      "xmax": 0.09676,
+                      "ymax": 0.22156
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-1",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 244,
+                    "end": 254
+                  },
+                  "box": {
+                    "xmin": 0.21153,
+                    "ymin": 0.19657,
+                    "xmax": 0.41217,
+                    "ymax": 0.22577
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 244,
+                      "end": 249
+                    },
+                    "box": {
+                      "xmin": 0.21222,
+                      "ymin": 0.20577,
+                      "xmax": 0.23274,
+                      "ymax": 0.22182
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 250,
+                      "end": 254
+                    },
+                    "box": {
+                      "xmin": 0.23575,
+                      "ymin": 0.20589,
+                      "xmax": 0.26361,
+                      "ymax": 0.22156
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-2",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 263,
+                    "end": 274
+                  },
+                  "box": {
+                    "xmin": 0.41216,
+                    "ymin": 0.19655,
+                    "xmax": 0.55147,
+                    "ymax": 0.22576
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 263,
+                      "end": 269
+                    },
+                    "box": {
+                      "xmin": 0.41316,
+                      "ymin": 0.20487,
+                      "xmax": 0.44622,
+                      "ymax": 0.22156
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 270,
+                      "end": 274
+                    },
+                    "box": {
+                      "xmin": 0.44966,
+                      "ymin": 0.2059,
+                      "xmax": 0.4774,
+                      "ymax": 0.2216
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-3",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 283,
+                    "end": 296
+                  },
+                  "box": {
+                    "xmin": 0.55143,
+                    "ymin": 0.19654,
+                    "xmax": 0.66417,
+                    "ymax": 0.22575
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 283,
+                      "end": 287
+                    },
+                    "box": {
+                      "xmin": 0.5525,
+                      "ymin": 0.20593,
+                      "xmax": 0.57445,
+                      "ymax": 0.22153
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 288,
+                      "end": 290
+                    },
+                    "box": {
+                      "xmin": 0.57704,
+                      "ymin": 0.20483,
+                      "xmax": 0.58743,
+                      "ymax": 0.22163
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 291,
+                      "end": 296
+                    },
+                    "box": {
+                      "xmin": 0.58992,
+                      "ymin": 0.20467,
+                      "xmax": 0.61227,
+                      "ymax": 0.22146
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-4",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 305,
+                    "end": 311
+                  },
+                  "box": {
+                    "xmin": 0.66417,
+                    "ymin": 0.19654,
+                    "xmax": 0.70622,
+                    "ymax": 0.22575
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 305,
+                      "end": 311
+                    },
+                    "box": {
+                      "xmin": 0.66431,
+                      "ymin": 0.20493,
+                      "xmax": 0.70047,
+                      "ymax": 0.22182
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-5",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 320,
+                    "end": 327
+                  },
+                  "box": {
+                    "xmin": 0.70621,
+                    "ymin": 0.19652,
+                    "xmax": 0.91224,
+                    "ymax": 0.22574
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 320,
+                      "end": 327
+                    },
+                    "box": {
+                      "xmin": 0.78984,
+                      "ymin": 0.20463,
+                      "xmax": 0.8284,
+                      "ymax": 0.22166
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-6",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 346,
+                    "end": 349
+                  },
+                  "box": {
+                    "xmin": 0.00963,
+                    "ymin": 0.22577,
+                    "xmax": 0.21153,
+                    "ymax": 0.27995
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 346,
+                      "end": 349
+                    },
+                    "box": {
+                      "xmin": 0.01308,
+                      "ymin": 0.26028,
+                      "xmax": 0.03192,
+                      "ymax": 0.27606
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-7",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 358,
+                    "end": 362
+                  },
+                  "box": {
+                    "xmin": 0.21149,
+                    "ymin": 0.22576,
+                    "xmax": 0.41219,
+                    "ymax": 0.27995
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 358,
+                      "end": 362
+                    },
+                    "box": {
+                      "xmin": 0.21409,
+                      "ymin": 0.25938,
+                      "xmax": 0.23673,
+                      "ymax": 0.27635
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-8",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 371,
+                    "end": 377
+                  },
+                  "box": {
+                    "xmin": 0.41217,
+                    "ymin": 0.22575,
+                    "xmax": 0.55155,
+                    "ymax": 0.27996
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 371,
+                      "end": 377
+                    },
+                    "box": {
+                      "xmin": 0.41561,
+                      "ymin": 0.25927,
+                      "xmax": 0.44814,
+                      "ymax": 0.27603
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-9",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 386,
+                    "end": 394
+                  },
+                  "box": {
+                    "xmin": 0.55147,
+                    "ymin": 0.22575,
+                    "xmax": 0.66417,
+                    "ymax": 0.27997
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 386,
+                      "end": 394
+                    },
+                    "box": {
+                      "xmin": 0.58557,
+                      "ymin": 0.25808,
+                      "xmax": 0.63034,
+                      "ymax": 0.27849
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-10",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 403,
+                    "end": 404
+                  },
+                  "box": {
+                    "xmin": 0.66417,
+                    "ymin": 0.22574,
+                    "xmax": 0.70623,
+                    "ymax": 0.27997
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 403,
+                      "end": 404
+                    },
+                    "box": {
+                      "xmin": 0.68048,
+                      "ymin": 0.26001,
+                      "xmax": 0.68981,
+                      "ymax": 0.2753
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-11",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 413,
+                    "end": 447
+                  },
+                  "box": {
+                    "xmin": 0.70622,
+                    "ymin": 0.22573,
+                    "xmax": 0.91222,
+                    "ymax": 0.27998
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 413,
+                      "end": 416
+                    },
+                    "box": {
+                      "xmin": 0.72127,
+                      "ymin": 0.25988,
+                      "xmax": 0.73871,
+                      "ymax": 0.27593
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 417,
+                      "end": 421
+                    },
+                    "box": {
+                      "xmin": 0.74141,
+                      "ymin": 0.26003,
+                      "xmax": 0.76524,
+                      "ymax": 0.27593
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 422,
+                      "end": 429
+                    },
+                    "box": {
+                      "xmin": 0.76829,
+                      "ymin": 0.25998,
+                      "xmax": 0.7999,
+                      "ymax": 0.27837
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 430,
+                      "end": 438
+                    },
+                    "box": {
+                      "xmin": 0.80274,
+                      "ymin": 0.26042,
+                      "xmax": 0.84896,
+                      "ymax": 0.27893
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 439,
+                      "end": 441
+                    },
+                    "box": {
+                      "xmin": 0.85163,
+                      "ymin": 0.2604,
+                      "xmax": 0.86514,
+                      "ymax": 0.27625
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 442,
+                      "end": 447
+                    },
+                    "box": {
+                      "xmin": 0.86712,
+                      "ymin": 0.26044,
+                      "xmax": 0.89706,
+                      "ymax": 0.27633
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              }
+            ],
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          },
+          {
+            "type": "table",
+            "id": "table-1",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 468,
+                "end": 2788
+              },
+              "box": {
+                "xmin": 0.00972,
+                "ymin": 0.30966,
+                "xmax": 0.98974,
+                "ymax": 0.97087
+              }
+            },
+            "atomic_grounding": null,
+            "markdown": null,
+            "children": [
+              {
+                "type": "table_cell",
+                "id": "table_cell-12",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 484,
+                    "end": 494
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.30966,
+                    "xmax": 0.21144,
+                    "ymax": 0.35898
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 484,
+                      "end": 494
+                    },
+                    "box": {
+                      "xmin": 0.08647,
+                      "ymin": 0.33764,
+                      "xmax": 0.13519,
+                      "ymax": 0.35601
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-13",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 503,
+                    "end": 512
+                  },
+                  "box": {
+                    "xmin": 0.21142,
+                    "ymin": 0.30969,
+                    "xmax": 0.41226,
+                    "ymax": 0.359
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 503,
+                      "end": 512
+                    },
+                    "box": {
+                      "xmin": 0.28843,
+                      "ymin": 0.33807,
+                      "xmax": 0.33622,
+                      "ymax": 0.35888
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-14",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 521,
+                    "end": 532
+                  },
+                  "box": {
+                    "xmin": 0.41226,
+                    "ymin": 0.30972,
+                    "xmax": 0.47902,
+                    "ymax": 0.359
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 521,
+                      "end": 525
+                    },
+                    "box": {
+                      "xmin": 0.41797,
+                      "ymin": 0.3386,
+                      "xmax": 0.44074,
+                      "ymax": 0.35535
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 526,
+                      "end": 532
+                    },
+                    "box": {
+                      "xmin": 0.44293,
+                      "ymin": 0.33812,
+                      "xmax": 0.4732,
+                      "ymax": 0.35537
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-15",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 541,
+                    "end": 552
+                  },
+                  "box": {
+                    "xmin": 0.47901,
+                    "ymin": 0.30973,
+                    "xmax": 0.55159,
+                    "ymax": 0.35901
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 541,
+                      "end": 545
+                    },
+                    "box": {
+                      "xmin": 0.49031,
+                      "ymin": 0.33851,
+                      "xmax": 0.51313,
+                      "ymax": 0.35509
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 546,
+                      "end": 552
+                    },
+                    "box": {
+                      "xmin": 0.51548,
+                      "ymin": 0.33749,
+                      "xmax": 0.5404,
+                      "ymax": 0.35489
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-16",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 561,
+                    "end": 570
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.30974,
+                    "xmax": 0.62014,
+                    "ymax": 0.35901
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 561,
+                      "end": 565
+                    },
+                    "box": {
+                      "xmin": 0.56312,
+                      "ymin": 0.33847,
+                      "xmax": 0.58589,
+                      "ymax": 0.35505
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 566,
+                      "end": 570
+                    },
+                    "box": {
+                      "xmin": 0.58778,
+                      "ymin": 0.33762,
+                      "xmax": 0.60867,
+                      "ymax": 0.35493
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-17",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 579,
+                    "end": 588
+                  },
+                  "box": {
+                    "xmin": 0.62013,
+                    "ymin": 0.30975,
+                    "xmax": 0.70612,
+                    "ymax": 0.35902
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 579,
+                      "end": 581
+                    },
+                    "box": {
+                      "xmin": 0.63663,
+                      "ymin": 0.33862,
+                      "xmax": 0.64856,
+                      "ymax": 0.355
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 582,
+                      "end": 588
+                    },
+                    "box": {
+                      "xmin": 0.65072,
+                      "ymin": 0.33794,
+                      "xmax": 0.69026,
+                      "ymax": 0.35537
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-18",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 597,
+                    "end": 601
+                  },
+                  "box": {
+                    "xmin": 0.70612,
+                    "ymin": 0.30976,
+                    "xmax": 0.81375,
+                    "ymax": 0.35903
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 597,
+                      "end": 601
+                    },
+                    "box": {
+                      "xmin": 0.74834,
+                      "ymin": 0.33849,
+                      "xmax": 0.77193,
+                      "ymax": 0.35842
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-19",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 610,
+                    "end": 618
+                  },
+                  "box": {
+                    "xmin": 0.81374,
+                    "ymin": 0.30978,
+                    "xmax": 0.87964,
+                    "ymax": 0.35903
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 610,
+                      "end": 618
+                    },
+                    "box": {
+                      "xmin": 0.82569,
+                      "ymin": 0.33799,
+                      "xmax": 0.8672,
+                      "ymax": 0.35857
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-20",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 627,
+                    "end": 630
+                  },
+                  "box": {
+                    "xmin": 0.87963,
+                    "ymin": 0.30978,
+                    "xmax": 0.91204,
+                    "ymax": 0.35904
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 627,
+                      "end": 630
+                    },
+                    "box": {
+                      "xmin": 0.88697,
+                      "ymin": 0.33864,
+                      "xmax": 0.9049,
+                      "ymax": 0.35808
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-21",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 639,
+                    "end": 643
+                  },
+                  "box": {
+                    "xmin": 0.91203,
+                    "ymin": 0.30979,
+                    "xmax": 0.94465,
+                    "ymax": 0.35904
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 639,
+                      "end": 643
+                    },
+                    "box": {
+                      "xmin": 0.9169,
+                      "ymin": 0.33882,
+                      "xmax": 0.93992,
+                      "ymax": 0.35836
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-22",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 652,
+                    "end": 659
+                  },
+                  "box": {
+                    "xmin": 0.94465,
+                    "ymin": 0.30979,
+                    "xmax": 0.98946,
+                    "ymax": 0.35904
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 652,
+                      "end": 659
+                    },
+                    "box": {
+                      "xmin": 0.95318,
+                      "ymin": 0.33756,
+                      "xmax": 0.98144,
+                      "ymax": 0.35552
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 0,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-23",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 678,
+                    "end": 749
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.35897,
+                    "xmax": 0.21142,
+                    "ymax": 0.44569
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 678,
+                      "end": 684
+                    },
+                    "box": {
+                      "xmin": 0.0101,
+                      "ymin": 0.3738,
+                      "xmax": 0.04338,
+                      "ymax": 0.39492
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 685,
+                      "end": 691
+                    },
+                    "box": {
+                      "xmin": 0.04631,
+                      "ymin": 0.37466,
+                      "xmax": 0.08215,
+                      "ymax": 0.39185
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 692,
+                      "end": 694
+                    },
+                    "box": {
+                      "xmin": 0.0845,
+                      "ymin": 0.37456,
+                      "xmax": 0.10199,
+                      "ymax": 0.39126
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 698,
+                      "end": 702
+                    },
+                    "box": {
+                      "xmin": 0.01003,
+                      "ymin": 0.4,
+                      "xmax": 0.03418,
+                      "ymax": 0.41726
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 703,
+                      "end": 709
+                    },
+                    "box": {
+                      "xmin": 0.03641,
+                      "ymin": 0.40045,
+                      "xmax": 0.06943,
+                      "ymax": 0.41714
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 710,
+                      "end": 717
+                    },
+                    "box": {
+                      "xmin": 0.07102,
+                      "ymin": 0.40029,
+                      "xmax": 0.10309,
+                      "ymax": 0.41955
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 718,
+                      "end": 726
+                    },
+                    "box": {
+                      "xmin": 0.10527,
+                      "ymin": 0.40033,
+                      "xmax": 0.15215,
+                      "ymax": 0.42021
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 727,
+                      "end": 729
+                    },
+                    "box": {
+                      "xmin": 0.15407,
+                      "ymin": 0.40004,
+                      "xmax": 0.16829,
+                      "ymax": 0.41698
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 730,
+                      "end": 735
+                    },
+                    "box": {
+                      "xmin": 0.16984,
+                      "ymin": 0.39997,
+                      "xmax": 0.20036,
+                      "ymax": 0.41729
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 739,
+                      "end": 749
+                    },
+                    "box": {
+                      "xmin": 0.00995,
+                      "ymin": 0.42508,
+                      "xmax": 0.07537,
+                      "ymax": 0.44228
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-24",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 758,
+                    "end": 824
+                  },
+                  "box": {
+                    "xmin": 0.21138,
+                    "ymin": 0.35898,
+                    "xmax": 0.41227,
+                    "ymax": 0.44569
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 758,
+                      "end": 762
+                    },
+                    "box": {
+                      "xmin": 0.21194,
+                      "ymin": 0.37446,
+                      "xmax": 0.23248,
+                      "ymax": 0.39177
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 763,
+                      "end": 771
+                    },
+                    "box": {
+                      "xmin": 0.23464,
+                      "ymin": 0.37371,
+                      "xmax": 0.28269,
+                      "ymax": 0.39508
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 775,
+                      "end": 779
+                    },
+                    "box": {
+                      "xmin": 0.21135,
+                      "ymin": 0.40011,
+                      "xmax": 0.2361,
+                      "ymax": 0.41716
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 780,
+                      "end": 785
+                    },
+                    "box": {
+                      "xmin": 0.23815,
+                      "ymin": 0.39925,
+                      "xmax": 0.2651,
+                      "ymax": 0.41738
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 786,
+                      "end": 792
+                    },
+                    "box": {
+                      "xmin": 0.26717,
+                      "ymin": 0.40012,
+                      "xmax": 0.29516,
+                      "ymax": 0.41954
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 793,
+                      "end": 801
+                    },
+                    "box": {
+                      "xmin": 0.29765,
+                      "ymin": 0.40065,
+                      "xmax": 0.34472,
+                      "ymax": 0.42019
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 802,
+                      "end": 804
+                    },
+                    "box": {
+                      "xmin": 0.34635,
+                      "ymin": 0.40014,
+                      "xmax": 0.36027,
+                      "ymax": 0.41714
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 805,
+                      "end": 810
+                    },
+                    "box": {
+                      "xmin": 0.36196,
+                      "ymin": 0.39992,
+                      "xmax": 0.39248,
+                      "ymax": 0.41726
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 814,
+                      "end": 824
+                    },
+                    "box": {
+                      "xmin": 0.21197,
+                      "ymin": 0.42521,
+                      "xmax": 0.27197,
+                      "ymax": 0.44234
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-25",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 833,
+                    "end": 841
+                  },
+                  "box": {
+                    "xmin": 0.41226,
+                    "ymin": 0.359,
+                    "xmax": 0.47901,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 833,
+                      "end": 841
+                    },
+                    "box": {
+                      "xmin": 0.42266,
+                      "ymin": 0.39334,
+                      "xmax": 0.46823,
+                      "ymax": 0.41456
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-26",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 850,
+                    "end": 858
+                  },
+                  "box": {
+                    "xmin": 0.479,
+                    "ymin": 0.359,
+                    "xmax": 0.55159,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 850,
+                      "end": 858
+                    },
+                    "box": {
+                      "xmin": 0.49251,
+                      "ymin": 0.39347,
+                      "xmax": 0.53806,
+                      "ymax": 0.41443
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-27",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 867,
+                    "end": 875
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.35901,
+                    "xmax": 0.62013,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 867,
+                      "end": 875
+                    },
+                    "box": {
+                      "xmin": 0.563,
+                      "ymin": 0.39344,
+                      "xmax": 0.60863,
+                      "ymax": 0.41445
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-28",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 884,
+                    "end": 889
+                  },
+                  "box": {
+                    "xmin": 0.62012,
+                    "ymin": 0.35901,
+                    "xmax": 0.70612,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 884,
+                      "end": 889
+                    },
+                    "box": {
+                      "xmin": 0.64809,
+                      "ymin": 0.39467,
+                      "xmax": 0.6784,
+                      "ymax": 0.41207
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-29",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 898,
+                    "end": 908
+                  },
+                  "box": {
+                    "xmin": 0.70612,
+                    "ymin": 0.35902,
+                    "xmax": 0.81374,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 898,
+                      "end": 908
+                    },
+                    "box": {
+                      "xmin": 0.73239,
+                      "ymin": 0.39398,
+                      "xmax": 0.78737,
+                      "ymax": 0.41541
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-30",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 917,
+                    "end": 921
+                  },
+                  "box": {
+                    "xmin": 0.81373,
+                    "ymin": 0.35903,
+                    "xmax": 0.87963,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 917,
+                      "end": 918
+                    },
+                    "box": {
+                      "xmin": 0.83359,
+                      "ymin": 0.39508,
+                      "xmax": 0.83968,
+                      "ymax": 0.41173
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 919,
+                      "end": 921
+                    },
+                    "box": {
+                      "xmin": 0.8423,
+                      "ymin": 0.39484,
+                      "xmax": 0.85965,
+                      "ymax": 0.41183
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-31",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 930,
+                    "end": 932
+                  },
+                  "box": {
+                    "xmin": 0.8796,
+                    "ymin": 0.35903,
+                    "xmax": 0.91203,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 930,
+                      "end": 932
+                    },
+                    "box": {
+                      "xmin": 0.88934,
+                      "ymin": 0.39482,
+                      "xmax": 0.9021,
+                      "ymax": 0.41207
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-32",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 941,
+                    "end": 943
+                  },
+                  "box": {
+                    "xmin": 0.91201,
+                    "ymin": 0.35904,
+                    "xmax": 0.94465,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 941,
+                      "end": 943
+                    },
+                    "box": {
+                      "xmin": 0.92199,
+                      "ymin": 0.39474,
+                      "xmax": 0.93457,
+                      "ymax": 0.412
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-33",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 952,
+                    "end": 953
+                  },
+                  "box": {
+                    "xmin": 0.94464,
+                    "ymin": 0.35904,
+                    "xmax": 0.9895,
+                    "ymax": 0.44568
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 952,
+                      "end": 953
+                    },
+                    "box": {
+                      "xmin": 0.96403,
+                      "ymin": 0.39515,
+                      "xmax": 0.96999,
+                      "ymax": 0.41143
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 1,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-34",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 972,
+                    "end": 1044
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.44569,
+                    "xmax": 0.21138,
+                    "ymax": 0.53349
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 972,
+                      "end": 979
+                    },
+                    "box": {
+                      "xmin": 0.01017,
+                      "ymin": 0.46225,
+                      "xmax": 0.04933,
+                      "ymax": 0.48164
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 980,
+                      "end": 986
+                    },
+                    "box": {
+                      "xmin": 0.05193,
+                      "ymin": 0.46183,
+                      "xmax": 0.08591,
+                      "ymax": 0.48267
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 987,
+                      "end": 989
+                    },
+                    "box": {
+                      "xmin": 0.08845,
+                      "ymin": 0.46194,
+                      "xmax": 0.10371,
+                      "ymax": 0.47897
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 993,
+                      "end": 997
+                    },
+                    "box": {
+                      "xmin": 0.00998,
+                      "ymin": 0.48776,
+                      "xmax": 0.0342,
+                      "ymax": 0.50491
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 998,
+                      "end": 1006
+                    },
+                    "box": {
+                      "xmin": 0.03631,
+                      "ymin": 0.48707,
+                      "xmax": 0.07373,
+                      "ymax": 0.50825
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1007,
+                      "end": 1014
+                    },
+                    "box": {
+                      "xmin": 0.07535,
+                      "ymin": 0.48788,
+                      "xmax": 0.1152,
+                      "ymax": 0.50746
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1015,
+                      "end": 1021
+                    },
+                    "box": {
+                      "xmin": 0.11788,
+                      "ymin": 0.48704,
+                      "xmax": 0.14558,
+                      "ymax": 0.50714
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1022,
+                      "end": 1024
+                    },
+                    "box": {
+                      "xmin": 0.14819,
+                      "ymin": 0.48768,
+                      "xmax": 0.16213,
+                      "ymax": 0.50476
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1025,
+                      "end": 1030
+                    },
+                    "box": {
+                      "xmin": 0.16387,
+                      "ymin": 0.48743,
+                      "xmax": 0.19437,
+                      "ymax": 0.5049
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1034,
+                      "end": 1044
+                    },
+                    "box": {
+                      "xmin": 0.01025,
+                      "ymin": 0.51295,
+                      "xmax": 0.0722,
+                      "ymax": 0.52989
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-35",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1053,
+                    "end": 1121
+                  },
+                  "box": {
+                    "xmin": 0.21134,
+                    "ymin": 0.44568,
+                    "xmax": 0.41228,
+                    "ymax": 0.53348
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1053,
+                      "end": 1061
+                    },
+                    "box": {
+                      "xmin": 0.21134,
+                      "ymin": 0.46213,
+                      "xmax": 0.26575,
+                      "ymax": 0.47939
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1062,
+                      "end": 1070
+                    },
+                    "box": {
+                      "xmin": 0.26795,
+                      "ymin": 0.4612,
+                      "xmax": 0.31612,
+                      "ymax": 0.48214
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1074,
+                      "end": 1078
+                    },
+                    "box": {
+                      "xmin": 0.21214,
+                      "ymin": 0.48764,
+                      "xmax": 0.23604,
+                      "ymax": 0.50474
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1079,
+                      "end": 1083
+                    },
+                    "box": {
+                      "xmin": 0.23817,
+                      "ymin": 0.4876,
+                      "xmax": 0.26276,
+                      "ymax": 0.50475
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1084,
+                      "end": 1091
+                    },
+                    "box": {
+                      "xmin": 0.26479,
+                      "ymin": 0.48801,
+                      "xmax": 0.29722,
+                      "ymax": 0.50726
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1092,
+                      "end": 1098
+                    },
+                    "box": {
+                      "xmin": 0.30006,
+                      "ymin": 0.48725,
+                      "xmax": 0.32793,
+                      "ymax": 0.50735
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1099,
+                      "end": 1101
+                    },
+                    "box": {
+                      "xmin": 0.33035,
+                      "ymin": 0.48773,
+                      "xmax": 0.34439,
+                      "ymax": 0.50483
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1102,
+                      "end": 1107
+                    },
+                    "box": {
+                      "xmin": 0.34602,
+                      "ymin": 0.48757,
+                      "xmax": 0.37661,
+                      "ymax": 0.50495
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1111,
+                      "end": 1121
+                    },
+                    "box": {
+                      "xmin": 0.2111,
+                      "ymin": 0.51298,
+                      "xmax": 0.27438,
+                      "ymax": 0.53
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-36",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1130,
+                    "end": 1138
+                  },
+                  "box": {
+                    "xmin": 0.41227,
+                    "ymin": 0.44568,
+                    "xmax": 0.479,
+                    "ymax": 0.53347
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1130,
+                      "end": 1138
+                    },
+                    "box": {
+                      "xmin": 0.42269,
+                      "ymin": 0.48054,
+                      "xmax": 0.46831,
+                      "ymax": 0.50151
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-37",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1147,
+                    "end": 1155
+                  },
+                  "box": {
+                    "xmin": 0.47899,
+                    "ymin": 0.44568,
+                    "xmax": 0.55159,
+                    "ymax": 0.53347
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1147,
+                      "end": 1155
+                    },
+                    "box": {
+                      "xmin": 0.49251,
+                      "ymin": 0.48066,
+                      "xmax": 0.538,
+                      "ymax": 0.50146
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-38",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1164,
+                    "end": 1172
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.44568,
+                    "xmax": 0.62012,
+                    "ymax": 0.53346
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1164,
+                      "end": 1172
+                    },
+                    "box": {
+                      "xmin": 0.56302,
+                      "ymin": 0.48061,
+                      "xmax": 0.60867,
+                      "ymax": 0.50146
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-39",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1181,
+                    "end": 1186
+                  },
+                  "box": {
+                    "xmin": 0.62011,
+                    "ymin": 0.44568,
+                    "xmax": 0.70613,
+                    "ymax": 0.53346
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1181,
+                      "end": 1186
+                    },
+                    "box": {
+                      "xmin": 0.64788,
+                      "ymin": 0.48195,
+                      "xmax": 0.67824,
+                      "ymax": 0.49932
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-40",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1195,
+                    "end": 1206
+                  },
+                  "box": {
+                    "xmin": 0.70612,
+                    "ymin": 0.44568,
+                    "xmax": 0.81373,
+                    "ymax": 0.53346
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1195,
+                      "end": 1206
+                    },
+                    "box": {
+                      "xmin": 0.72736,
+                      "ymin": 0.48159,
+                      "xmax": 0.79286,
+                      "ymax": 0.50274
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-41",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1215,
+                    "end": 1221
+                  },
+                  "box": {
+                    "xmin": 0.81372,
+                    "ymin": 0.44568,
+                    "xmax": 0.8796,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1215,
+                      "end": 1218
+                    },
+                    "box": {
+                      "xmin": 0.82896,
+                      "ymin": 0.48208,
+                      "xmax": 0.84437,
+                      "ymax": 0.49942
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1219,
+                      "end": 1221
+                    },
+                    "box": {
+                      "xmin": 0.84676,
+                      "ymin": 0.48211,
+                      "xmax": 0.86427,
+                      "ymax": 0.49905
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-42",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1230,
+                    "end": 1233
+                  },
+                  "box": {
+                    "xmin": 0.87958,
+                    "ymin": 0.44568,
+                    "xmax": 0.91201,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1230,
+                      "end": 1233
+                    },
+                    "box": {
+                      "xmin": 0.88696,
+                      "ymin": 0.48208,
+                      "xmax": 0.90518,
+                      "ymax": 0.49912
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-43",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1242,
+                    "end": 1244
+                  },
+                  "box": {
+                    "xmin": 0.91198,
+                    "ymin": 0.44568,
+                    "xmax": 0.94464,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1242,
+                      "end": 1244
+                    },
+                    "box": {
+                      "xmin": 0.92197,
+                      "ymin": 0.48211,
+                      "xmax": 0.93466,
+                      "ymax": 0.4991
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-44",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1253,
+                    "end": 1254
+                  },
+                  "box": {
+                    "xmin": 0.94463,
+                    "ymin": 0.44567,
+                    "xmax": 0.98954,
+                    "ymax": 0.53345
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1253,
+                      "end": 1254
+                    },
+                    "box": {
+                      "xmin": 0.964,
+                      "ymin": 0.48252,
+                      "xmax": 0.97009,
+                      "ymax": 0.4988
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 2,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-45",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1273,
+                    "end": 1345
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.53348,
+                    "xmax": 0.21134,
+                    "ymax": 0.62107
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1273,
+                      "end": 1279
+                    },
+                    "box": {
+                      "xmin": 0.01023,
+                      "ymin": 0.54994,
+                      "xmax": 0.0434,
+                      "ymax": 0.56937
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1280,
+                      "end": 1287
+                    },
+                    "box": {
+                      "xmin": 0.04539,
+                      "ymin": 0.54959,
+                      "xmax": 0.08455,
+                      "ymax": 0.57027
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1288,
+                      "end": 1290
+                    },
+                    "box": {
+                      "xmin": 0.08714,
+                      "ymin": 0.54977,
+                      "xmax": 0.10463,
+                      "ymax": 0.56667
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1294,
+                      "end": 1298
+                    },
+                    "box": {
+                      "xmin": 0.01008,
+                      "ymin": 0.57552,
+                      "xmax": 0.03443,
+                      "ymax": 0.59259
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1299,
+                      "end": 1307
+                    },
+                    "box": {
+                      "xmin": 0.03643,
+                      "ymin": 0.5746,
+                      "xmax": 0.07596,
+                      "ymax": 0.59559
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1308,
+                      "end": 1313
+                    },
+                    "box": {
+                      "xmin": 0.07823,
+                      "ymin": 0.57454,
+                      "xmax": 0.10577,
+                      "ymax": 0.59504
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1314,
+                      "end": 1316
+                    },
+                    "box": {
+                      "xmin": 0.10813,
+                      "ymin": 0.57564,
+                      "xmax": 0.12403,
+                      "ymax": 0.59582
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1317,
+                      "end": 1322
+                    },
+                    "box": {
+                      "xmin": 0.12549,
+                      "ymin": 0.5752,
+                      "xmax": 0.15565,
+                      "ymax": 0.59523
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1323,
+                      "end": 1325
+                    },
+                    "box": {
+                      "xmin": 0.15791,
+                      "ymin": 0.57548,
+                      "xmax": 0.17187,
+                      "ymax": 0.5925
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1326,
+                      "end": 1331
+                    },
+                    "box": {
+                      "xmin": 0.17361,
+                      "ymin": 0.57522,
+                      "xmax": 0.20386,
+                      "ymax": 0.59238
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1335,
+                      "end": 1345
+                    },
+                    "box": {
+                      "xmin": 0.00995,
+                      "ymin": 0.60073,
+                      "xmax": 0.07254,
+                      "ymax": 0.61746
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-46",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1354,
+                    "end": 1423
+                  },
+                  "box": {
+                    "xmin": 0.21131,
+                    "ymin": 0.53347,
+                    "xmax": 0.41229,
+                    "ymax": 0.62106
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1354,
+                      "end": 1361
+                    },
+                    "box": {
+                      "xmin": 0.21211,
+                      "ymin": 0.54944,
+                      "xmax": 0.25608,
+                      "ymax": 0.57032
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1362,
+                      "end": 1366
+                    },
+                    "box": {
+                      "xmin": 0.25832,
+                      "ymin": 0.54981,
+                      "xmax": 0.28187,
+                      "ymax": 0.57023
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1367,
+                      "end": 1372
+                    },
+                    "box": {
+                      "xmin": 0.28366,
+                      "ymin": 0.54953,
+                      "xmax": 0.30992,
+                      "ymax": 0.56694
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1376,
+                      "end": 1380
+                    },
+                    "box": {
+                      "xmin": 0.21169,
+                      "ymin": 0.57567,
+                      "xmax": 0.23629,
+                      "ymax": 0.59252
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1381,
+                      "end": 1386
+                    },
+                    "box": {
+                      "xmin": 0.23841,
+                      "ymin": 0.57563,
+                      "xmax": 0.26656,
+                      "ymax": 0.59236
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1387,
+                      "end": 1391
+                    },
+                    "box": {
+                      "xmin": 0.26849,
+                      "ymin": 0.57555,
+                      "xmax": 0.29341,
+                      "ymax": 0.59537
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1392,
+                      "end": 1394
+                    },
+                    "box": {
+                      "xmin": 0.29565,
+                      "ymin": 0.57562,
+                      "xmax": 0.31169,
+                      "ymax": 0.5959
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1395,
+                      "end": 1400
+                    },
+                    "box": {
+                      "xmin": 0.31337,
+                      "ymin": 0.57541,
+                      "xmax": 0.3436,
+                      "ymax": 0.5954
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1401,
+                      "end": 1403
+                    },
+                    "box": {
+                      "xmin": 0.34547,
+                      "ymin": 0.57546,
+                      "xmax": 0.35947,
+                      "ymax": 0.59256
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1404,
+                      "end": 1409
+                    },
+                    "box": {
+                      "xmin": 0.36112,
+                      "ymin": 0.57525,
+                      "xmax": 0.3915,
+                      "ymax": 0.59261
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1413,
+                      "end": 1423
+                    },
+                    "box": {
+                      "xmin": 0.21228,
+                      "ymin": 0.60068,
+                      "xmax": 0.27664,
+                      "ymax": 0.61764
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-47",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1432,
+                    "end": 1440
+                  },
+                  "box": {
+                    "xmin": 0.41228,
+                    "ymin": 0.53347,
+                    "xmax": 0.47899,
+                    "ymax": 0.62105
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1432,
+                      "end": 1440
+                    },
+                    "box": {
+                      "xmin": 0.4227,
+                      "ymin": 0.56819,
+                      "xmax": 0.46831,
+                      "ymax": 0.58933
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-48",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1449,
+                    "end": 1457
+                  },
+                  "box": {
+                    "xmin": 0.47898,
+                    "ymin": 0.53346,
+                    "xmax": 0.55159,
+                    "ymax": 0.62105
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1449,
+                      "end": 1457
+                    },
+                    "box": {
+                      "xmin": 0.49249,
+                      "ymin": 0.56831,
+                      "xmax": 0.53816,
+                      "ymax": 0.58929
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-49",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1466,
+                    "end": 1474
+                  },
+                  "box": {
+                    "xmin": 0.55159,
+                    "ymin": 0.53346,
+                    "xmax": 0.62011,
+                    "ymax": 0.62105
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1466,
+                      "end": 1474
+                    },
+                    "box": {
+                      "xmin": 0.56307,
+                      "ymin": 0.56827,
+                      "xmax": 0.60869,
+                      "ymax": 0.58925
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-50",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1483,
+                    "end": 1489
+                  },
+                  "box": {
+                    "xmin": 0.6201,
+                    "ymin": 0.53346,
+                    "xmax": 0.70613,
+                    "ymax": 0.62104
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1483,
+                      "end": 1489
+                    },
+                    "box": {
+                      "xmin": 0.64461,
+                      "ymin": 0.56957,
+                      "xmax": 0.68144,
+                      "ymax": 0.58693
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-51",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1498,
+                    "end": 1514
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.53345,
+                    "xmax": 0.81372,
+                    "ymax": 0.62104
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1498,
+                      "end": 1506
+                    },
+                    "box": {
+                      "xmin": 0.71825,
+                      "ymin": 0.56922,
+                      "xmax": 0.76608,
+                      "ymax": 0.59039
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1507,
+                      "end": 1514
+                    },
+                    "box": {
+                      "xmin": 0.76801,
+                      "ymin": 0.56903,
+                      "xmax": 0.80231,
+                      "ymax": 0.58724
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-52",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1523,
+                    "end": 1528
+                  },
+                  "box": {
+                    "xmin": 0.8137,
+                    "ymin": 0.53345,
+                    "xmax": 0.87958,
+                    "ymax": 0.62104
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1523,
+                      "end": 1525
+                    },
+                    "box": {
+                      "xmin": 0.83047,
+                      "ymin": 0.56962,
+                      "xmax": 0.84299,
+                      "ymax": 0.58674
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1526,
+                      "end": 1528
+                    },
+                    "box": {
+                      "xmin": 0.84503,
+                      "ymin": 0.5697,
+                      "xmax": 0.86246,
+                      "ymax": 0.58652
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-53",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1537,
+                    "end": 1539
+                  },
+                  "box": {
+                    "xmin": 0.87956,
+                    "ymin": 0.53345,
+                    "xmax": 0.91198,
+                    "ymax": 0.62103
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1537,
+                      "end": 1539
+                    },
+                    "box": {
+                      "xmin": 0.88983,
+                      "ymin": 0.56982,
+                      "xmax": 0.90217,
+                      "ymax": 0.58654
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-54",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1548,
+                    "end": 1550
+                  },
+                  "box": {
+                    "xmin": 0.91196,
+                    "ymin": 0.53345,
+                    "xmax": 0.94463,
+                    "ymax": 0.62103
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1548,
+                      "end": 1550
+                    },
+                    "box": {
+                      "xmin": 0.92228,
+                      "ymin": 0.56976,
+                      "xmax": 0.93471,
+                      "ymax": 0.58654
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-55",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1559,
+                    "end": 1560
+                  },
+                  "box": {
+                    "xmin": 0.94463,
+                    "ymin": 0.53344,
+                    "xmax": 0.98958,
+                    "ymax": 0.62103
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1559,
+                      "end": 1560
+                    },
+                    "box": {
+                      "xmin": 0.96361,
+                      "ymin": 0.56982,
+                      "xmax": 0.97046,
+                      "ymax": 0.58678
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 3,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-56",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1579,
+                    "end": 1653
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.62106,
+                    "xmax": 0.21131,
+                    "ymax": 0.70806
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1579,
+                      "end": 1586
+                    },
+                    "box": {
+                      "xmin": 0.01034,
+                      "ymin": 0.63679,
+                      "xmax": 0.04311,
+                      "ymax": 0.65583
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1587,
+                      "end": 1594
+                    },
+                    "box": {
+                      "xmin": 0.04534,
+                      "ymin": 0.63588,
+                      "xmax": 0.08867,
+                      "ymax": 0.65368
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1595,
+                      "end": 1597
+                    },
+                    "box": {
+                      "xmin": 0.09111,
+                      "ymin": 0.63642,
+                      "xmax": 0.10862,
+                      "ymax": 0.65333
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1601,
+                      "end": 1605
+                    },
+                    "box": {
+                      "xmin": 0.01007,
+                      "ymin": 0.66216,
+                      "xmax": 0.03407,
+                      "ymax": 0.67928
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1606,
+                      "end": 1612
+                    },
+                    "box": {
+                      "xmin": 0.03598,
+                      "ymin": 0.66172,
+                      "xmax": 0.06401,
+                      "ymax": 0.6824
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1613,
+                      "end": 1620
+                    },
+                    "box": {
+                      "xmin": 0.06592,
+                      "ymin": 0.6615,
+                      "xmax": 0.09512,
+                      "ymax": 0.68153
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1621,
+                      "end": 1629
+                    },
+                    "box": {
+                      "xmin": 0.0975,
+                      "ymin": 0.66149,
+                      "xmax": 0.13221,
+                      "ymax": 0.68256
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1630,
+                      "end": 1632
+                    },
+                    "box": {
+                      "xmin": 0.13535,
+                      "ymin": 0.66208,
+                      "xmax": 0.14941,
+                      "ymax": 0.67912
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1633,
+                      "end": 1638
+                    },
+                    "box": {
+                      "xmin": 0.15104,
+                      "ymin": 0.66195,
+                      "xmax": 0.18179,
+                      "ymax": 0.67914
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1642,
+                      "end": 1644
+                    },
+                    "box": {
+                      "xmin": 0.00995,
+                      "ymin": 0.68748,
+                      "xmax": 0.02349,
+                      "ymax": 0.70442
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1645,
+                      "end": 1653
+                    },
+                    "box": {
+                      "xmin": 0.02527,
+                      "ymin": 0.68725,
+                      "xmax": 0.07352,
+                      "ymax": 0.70408
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-57",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1662,
+                    "end": 1730
+                  },
+                  "box": {
+                    "xmin": 0.21127,
+                    "ymin": 0.62105,
+                    "xmax": 0.4123,
+                    "ymax": 0.70804
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1662,
+                      "end": 1666
+                    },
+                    "box": {
+                      "xmin": 0.2118,
+                      "ymin": 0.63639,
+                      "xmax": 0.23076,
+                      "ymax": 0.65672
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1667,
+                      "end": 1675
+                    },
+                    "box": {
+                      "xmin": 0.23271,
+                      "ymin": 0.63567,
+                      "xmax": 0.28076,
+                      "ymax": 0.65647
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1679,
+                      "end": 1683
+                    },
+                    "box": {
+                      "xmin": 0.21218,
+                      "ymin": 0.66216,
+                      "xmax": 0.23611,
+                      "ymax": 0.67919
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1684,
+                      "end": 1691
+                    },
+                    "box": {
+                      "xmin": 0.23782,
+                      "ymin": 0.66157,
+                      "xmax": 0.28557,
+                      "ymax": 0.67937
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1692,
+                      "end": 1697
+                    },
+                    "box": {
+                      "xmin": 0.2881,
+                      "ymin": 0.66137,
+                      "xmax": 0.31562,
+                      "ymax": 0.68166
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1698,
+                      "end": 1706
+                    },
+                    "box": {
+                      "xmin": 0.31731,
+                      "ymin": 0.66146,
+                      "xmax": 0.35206,
+                      "ymax": 0.6826
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1707,
+                      "end": 1709
+                    },
+                    "box": {
+                      "xmin": 0.35512,
+                      "ymin": 0.6621,
+                      "xmax": 0.36917,
+                      "ymax": 0.67923
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1710,
+                      "end": 1715
+                    },
+                    "box": {
+                      "xmin": 0.37079,
+                      "ymin": 0.66192,
+                      "xmax": 0.40148,
+                      "ymax": 0.67922
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1719,
+                      "end": 1721
+                    },
+                    "box": {
+                      "xmin": 0.21127,
+                      "ymin": 0.68747,
+                      "xmax": 0.22556,
+                      "ymax": 0.70527
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1722,
+                      "end": 1730
+                    },
+                    "box": {
+                      "xmin": 0.22729,
+                      "ymin": 0.68749,
+                      "xmax": 0.27567,
+                      "ymax": 0.70425
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-58",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1739,
+                    "end": 1747
+                  },
+                  "box": {
+                    "xmin": 0.41229,
+                    "ymin": 0.62105,
+                    "xmax": 0.47898,
+                    "ymax": 0.70802
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1739,
+                      "end": 1747
+                    },
+                    "box": {
+                      "xmin": 0.42273,
+                      "ymin": 0.65558,
+                      "xmax": 0.46821,
+                      "ymax": 0.67664
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-59",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1756,
+                    "end": 1764
+                  },
+                  "box": {
+                    "xmin": 0.47897,
+                    "ymin": 0.62105,
+                    "xmax": 0.55159,
+                    "ymax": 0.70802
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1756,
+                      "end": 1764
+                    },
+                    "box": {
+                      "xmin": 0.49247,
+                      "ymin": 0.65566,
+                      "xmax": 0.53786,
+                      "ymax": 0.67644
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-60",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1773,
+                    "end": 1782
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.62104,
+                    "xmax": 0.6201,
+                    "ymax": 0.70801
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1773,
+                      "end": 1782
+                    },
+                    "box": {
+                      "xmin": 0.56001,
+                      "ymin": 0.65565,
+                      "xmax": 0.61138,
+                      "ymax": 0.67644
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-61",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1791,
+                    "end": 1797
+                  },
+                  "box": {
+                    "xmin": 0.62009,
+                    "ymin": 0.62104,
+                    "xmax": 0.70613,
+                    "ymax": 0.708
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1791,
+                      "end": 1797
+                    },
+                    "box": {
+                      "xmin": 0.64475,
+                      "ymin": 0.65693,
+                      "xmax": 0.68121,
+                      "ymax": 0.67428
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-62",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1806,
+                    "end": 1821
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.62104,
+                    "xmax": 0.8137,
+                    "ymax": 0.70799
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1806,
+                      "end": 1821
+                    },
+                    "box": {
+                      "xmin": 0.71858,
+                      "ymin": 0.65643,
+                      "xmax": 0.80145,
+                      "ymax": 0.6772
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-63",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1830,
+                    "end": 1835
+                  },
+                  "box": {
+                    "xmin": 0.81369,
+                    "ymin": 0.62103,
+                    "xmax": 0.87956,
+                    "ymax": 0.70799
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1830,
+                      "end": 1832
+                    },
+                    "box": {
+                      "xmin": 0.8309,
+                      "ymin": 0.65692,
+                      "xmax": 0.84311,
+                      "ymax": 0.67404
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1833,
+                      "end": 1835
+                    },
+                    "box": {
+                      "xmin": 0.84505,
+                      "ymin": 0.65694,
+                      "xmax": 0.86248,
+                      "ymax": 0.67401
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-64",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1844,
+                    "end": 1846
+                  },
+                  "box": {
+                    "xmin": 0.87953,
+                    "ymin": 0.62103,
+                    "xmax": 0.91196,
+                    "ymax": 0.70798
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1844,
+                      "end": 1846
+                    },
+                    "box": {
+                      "xmin": 0.88936,
+                      "ymin": 0.65695,
+                      "xmax": 0.90216,
+                      "ymax": 0.67411
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-65",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1855,
+                    "end": 1857
+                  },
+                  "box": {
+                    "xmin": 0.91194,
+                    "ymin": 0.62103,
+                    "xmax": 0.94463,
+                    "ymax": 0.70798
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1855,
+                      "end": 1857
+                    },
+                    "box": {
+                      "xmin": 0.92193,
+                      "ymin": 0.65693,
+                      "xmax": 0.93465,
+                      "ymax": 0.67405
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-66",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1866,
+                    "end": 1867
+                  },
+                  "box": {
+                    "xmin": 0.94462,
+                    "ymin": 0.62103,
+                    "xmax": 0.98962,
+                    "ymax": 0.70797
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1866,
+                      "end": 1867
+                    },
+                    "box": {
+                      "xmin": 0.9636,
+                      "ymin": 0.65703,
+                      "xmax": 0.97044,
+                      "ymax": 0.67417
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 4,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-67",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1886,
+                    "end": 1957
+                  },
+                  "box": {
+                    "xmin": 0.00973,
+                    "ymin": 0.70804,
+                    "xmax": 0.21127,
+                    "ymax": 0.79535
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1886,
+                      "end": 1892
+                    },
+                    "box": {
+                      "xmin": 0.01016,
+                      "ymin": 0.72357,
+                      "xmax": 0.04345,
+                      "ymax": 0.74449
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1893,
+                      "end": 1899
+                    },
+                    "box": {
+                      "xmin": 0.0463,
+                      "ymin": 0.72429,
+                      "xmax": 0.08215,
+                      "ymax": 0.74142
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1900,
+                      "end": 1902
+                    },
+                    "box": {
+                      "xmin": 0.08448,
+                      "ymin": 0.72414,
+                      "xmax": 0.10203,
+                      "ymax": 0.74108
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1906,
+                      "end": 1910
+                    },
+                    "box": {
+                      "xmin": 0.01013,
+                      "ymin": 0.7497,
+                      "xmax": 0.0342,
+                      "ymax": 0.76696
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1911,
+                      "end": 1917
+                    },
+                    "box": {
+                      "xmin": 0.03647,
+                      "ymin": 0.74984,
+                      "xmax": 0.06939,
+                      "ymax": 0.76678
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1918,
+                      "end": 1925
+                    },
+                    "box": {
+                      "xmin": 0.07104,
+                      "ymin": 0.74964,
+                      "xmax": 0.10311,
+                      "ymax": 0.76945
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1926,
+                      "end": 1934
+                    },
+                    "box": {
+                      "xmin": 0.10536,
+                      "ymin": 0.74996,
+                      "xmax": 0.15218,
+                      "ymax": 0.77025
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1935,
+                      "end": 1937
+                    },
+                    "box": {
+                      "xmin": 0.15421,
+                      "ymin": 0.74964,
+                      "xmax": 0.16825,
+                      "ymax": 0.76669
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1938,
+                      "end": 1943
+                    },
+                    "box": {
+                      "xmin": 0.16991,
+                      "ymin": 0.74953,
+                      "xmax": 0.20033,
+                      "ymax": 0.7668
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1947,
+                      "end": 1957
+                    },
+                    "box": {
+                      "xmin": 0.00985,
+                      "ymin": 0.77473,
+                      "xmax": 0.07519,
+                      "ymax": 0.79184
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-68",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 1966,
+                    "end": 2032
+                  },
+                  "box": {
+                    "xmin": 0.21123,
+                    "ymin": 0.70802,
+                    "xmax": 0.41231,
+                    "ymax": 0.79532
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1966,
+                      "end": 1970
+                    },
+                    "box": {
+                      "xmin": 0.21193,
+                      "ymin": 0.72438,
+                      "xmax": 0.23246,
+                      "ymax": 0.74132
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1971,
+                      "end": 1979
+                    },
+                    "box": {
+                      "xmin": 0.23483,
+                      "ymin": 0.72361,
+                      "xmax": 0.28259,
+                      "ymax": 0.74443
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1983,
+                      "end": 1987
+                    },
+                    "box": {
+                      "xmin": 0.21173,
+                      "ymin": 0.74979,
+                      "xmax": 0.23599,
+                      "ymax": 0.76678
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1988,
+                      "end": 1993
+                    },
+                    "box": {
+                      "xmin": 0.23832,
+                      "ymin": 0.74905,
+                      "xmax": 0.26491,
+                      "ymax": 0.76688
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 1994,
+                      "end": 2000
+                    },
+                    "box": {
+                      "xmin": 0.26722,
+                      "ymin": 0.7496,
+                      "xmax": 0.2951,
+                      "ymax": 0.76956
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2001,
+                      "end": 2009
+                    },
+                    "box": {
+                      "xmin": 0.29775,
+                      "ymin": 0.75015,
+                      "xmax": 0.34466,
+                      "ymax": 0.77
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2010,
+                      "end": 2012
+                    },
+                    "box": {
+                      "xmin": 0.34642,
+                      "ymin": 0.74967,
+                      "xmax": 0.36021,
+                      "ymax": 0.76694
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2013,
+                      "end": 2018
+                    },
+                    "box": {
+                      "xmin": 0.36202,
+                      "ymin": 0.74951,
+                      "xmax": 0.39241,
+                      "ymax": 0.76687
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2022,
+                      "end": 2032
+                    },
+                    "box": {
+                      "xmin": 0.21224,
+                      "ymin": 0.7749,
+                      "xmax": 0.27187,
+                      "ymax": 0.79189
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-69",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2041,
+                    "end": 2049
+                  },
+                  "box": {
+                    "xmin": 0.4123,
+                    "ymin": 0.70802,
+                    "xmax": 0.47897,
+                    "ymax": 0.79529
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2041,
+                      "end": 2049
+                    },
+                    "box": {
+                      "xmin": 0.42269,
+                      "ymin": 0.74263,
+                      "xmax": 0.46826,
+                      "ymax": 0.76369
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-70",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2058,
+                    "end": 2066
+                  },
+                  "box": {
+                    "xmin": 0.47896,
+                    "ymin": 0.70801,
+                    "xmax": 0.55158,
+                    "ymax": 0.79528
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2058,
+                      "end": 2066
+                    },
+                    "box": {
+                      "xmin": 0.49252,
+                      "ymin": 0.74274,
+                      "xmax": 0.53798,
+                      "ymax": 0.76371
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-71",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2075,
+                    "end": 2083
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.708,
+                    "xmax": 0.62009,
+                    "ymax": 0.79527
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2075,
+                      "end": 2083
+                    },
+                    "box": {
+                      "xmin": 0.56309,
+                      "ymin": 0.74273,
+                      "xmax": 0.60862,
+                      "ymax": 0.76362
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-72",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2092,
+                    "end": 2097
+                  },
+                  "box": {
+                    "xmin": 0.62008,
+                    "ymin": 0.70799,
+                    "xmax": 0.70613,
+                    "ymax": 0.79526
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2092,
+                      "end": 2097
+                    },
+                    "box": {
+                      "xmin": 0.64812,
+                      "ymin": 0.74396,
+                      "xmax": 0.6786,
+                      "ymax": 0.76136
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-73",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2106,
+                    "end": 2116
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.70799,
+                    "xmax": 0.81369,
+                    "ymax": 0.79524
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2106,
+                      "end": 2116
+                    },
+                    "box": {
+                      "xmin": 0.73244,
+                      "ymin": 0.74322,
+                      "xmax": 0.78712,
+                      "ymax": 0.76471
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-74",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2125,
+                    "end": 2129
+                  },
+                  "box": {
+                    "xmin": 0.81368,
+                    "ymin": 0.70798,
+                    "xmax": 0.87953,
+                    "ymax": 0.79523
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2125,
+                      "end": 2126
+                    },
+                    "box": {
+                      "xmin": 0.8336,
+                      "ymin": 0.74437,
+                      "xmax": 0.83973,
+                      "ymax": 0.76097
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2127,
+                      "end": 2129
+                    },
+                    "box": {
+                      "xmin": 0.84227,
+                      "ymin": 0.74402,
+                      "xmax": 0.85973,
+                      "ymax": 0.76117
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-75",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2138,
+                    "end": 2140
+                  },
+                  "box": {
+                    "xmin": 0.87951,
+                    "ymin": 0.70798,
+                    "xmax": 0.91194,
+                    "ymax": 0.79522
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2138,
+                      "end": 2140
+                    },
+                    "box": {
+                      "xmin": 0.88934,
+                      "ymin": 0.74415,
+                      "xmax": 0.90213,
+                      "ymax": 0.76118
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-76",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2149,
+                    "end": 2151
+                  },
+                  "box": {
+                    "xmin": 0.91191,
+                    "ymin": 0.70797,
+                    "xmax": 0.94462,
+                    "ymax": 0.79521
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2149,
+                      "end": 2151
+                    },
+                    "box": {
+                      "xmin": 0.92197,
+                      "ymin": 0.74409,
+                      "xmax": 0.93459,
+                      "ymax": 0.76117
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-77",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2160,
+                    "end": 2161
+                  },
+                  "box": {
+                    "xmin": 0.94461,
+                    "ymin": 0.70797,
+                    "xmax": 0.98966,
+                    "ymax": 0.79521
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2160,
+                      "end": 2161
+                    },
+                    "box": {
+                      "xmin": 0.96401,
+                      "ymin": 0.74441,
+                      "xmax": 0.97013,
+                      "ymax": 0.76077
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 5,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-78",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2180,
+                    "end": 2252
+                  },
+                  "box": {
+                    "xmin": 0.00972,
+                    "ymin": 0.79532,
+                    "xmax": 0.21123,
+                    "ymax": 0.88325
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2180,
+                      "end": 2187
+                    },
+                    "box": {
+                      "xmin": 0.01026,
+                      "ymin": 0.81188,
+                      "xmax": 0.04935,
+                      "ymax": 0.8314
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2188,
+                      "end": 2194
+                    },
+                    "box": {
+                      "xmin": 0.05195,
+                      "ymin": 0.81165,
+                      "xmax": 0.08586,
+                      "ymax": 0.83228
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2195,
+                      "end": 2197
+                    },
+                    "box": {
+                      "xmin": 0.08838,
+                      "ymin": 0.81182,
+                      "xmax": 0.10375,
+                      "ymax": 0.82911
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2201,
+                      "end": 2205
+                    },
+                    "box": {
+                      "xmin": 0.01002,
+                      "ymin": 0.83767,
+                      "xmax": 0.03418,
+                      "ymax": 0.85459
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2206,
+                      "end": 2214
+                    },
+                    "box": {
+                      "xmin": 0.03626,
+                      "ymin": 0.83649,
+                      "xmax": 0.07374,
+                      "ymax": 0.85791
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2215,
+                      "end": 2222
+                    },
+                    "box": {
+                      "xmin": 0.07541,
+                      "ymin": 0.83769,
+                      "xmax": 0.11513,
+                      "ymax": 0.85741
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2223,
+                      "end": 2229
+                    },
+                    "box": {
+                      "xmin": 0.11782,
+                      "ymin": 0.8367,
+                      "xmax": 0.14551,
+                      "ymax": 0.85689
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2230,
+                      "end": 2232
+                    },
+                    "box": {
+                      "xmin": 0.14818,
+                      "ymin": 0.83723,
+                      "xmax": 0.16218,
+                      "ymax": 0.85456
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2233,
+                      "end": 2238
+                    },
+                    "box": {
+                      "xmin": 0.16386,
+                      "ymin": 0.83725,
+                      "xmax": 0.19437,
+                      "ymax": 0.85467
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2242,
+                      "end": 2252
+                    },
+                    "box": {
+                      "xmin": 0.01036,
+                      "ymin": 0.86269,
+                      "xmax": 0.07217,
+                      "ymax": 0.87978
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-79",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2261,
+                    "end": 2329
+                  },
+                  "box": {
+                    "xmin": 0.2112,
+                    "ymin": 0.79529,
+                    "xmax": 0.41232,
+                    "ymax": 0.88323
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2261,
+                      "end": 2269
+                    },
+                    "box": {
+                      "xmin": 0.21178,
+                      "ymin": 0.81206,
+                      "xmax": 0.26553,
+                      "ymax": 0.82906
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2270,
+                      "end": 2278
+                    },
+                    "box": {
+                      "xmin": 0.268,
+                      "ymin": 0.81136,
+                      "xmax": 0.31612,
+                      "ymax": 0.83213
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2282,
+                      "end": 2286
+                    },
+                    "box": {
+                      "xmin": 0.21218,
+                      "ymin": 0.83756,
+                      "xmax": 0.23604,
+                      "ymax": 0.8545
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2287,
+                      "end": 2291
+                    },
+                    "box": {
+                      "xmin": 0.23819,
+                      "ymin": 0.83711,
+                      "xmax": 0.26279,
+                      "ymax": 0.85452
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2292,
+                      "end": 2299
+                    },
+                    "box": {
+                      "xmin": 0.26478,
+                      "ymin": 0.83748,
+                      "xmax": 0.29718,
+                      "ymax": 0.85713
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2300,
+                      "end": 2306
+                    },
+                    "box": {
+                      "xmin": 0.30006,
+                      "ymin": 0.83683,
+                      "xmax": 0.32781,
+                      "ymax": 0.85722
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2307,
+                      "end": 2309
+                    },
+                    "box": {
+                      "xmin": 0.33033,
+                      "ymin": 0.83724,
+                      "xmax": 0.34443,
+                      "ymax": 0.85459
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2310,
+                      "end": 2315
+                    },
+                    "box": {
+                      "xmin": 0.346,
+                      "ymin": 0.83715,
+                      "xmax": 0.37666,
+                      "ymax": 0.85476
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2319,
+                      "end": 2329
+                    },
+                    "box": {
+                      "xmin": 0.21105,
+                      "ymin": 0.8626,
+                      "xmax": 0.27441,
+                      "ymax": 0.88032
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-80",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2338,
+                    "end": 2346
+                  },
+                  "box": {
+                    "xmin": 0.41231,
+                    "ymin": 0.79528,
+                    "xmax": 0.47896,
+                    "ymax": 0.8832
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2338,
+                      "end": 2346
+                    },
+                    "box": {
+                      "xmin": 0.42274,
+                      "ymin": 0.83017,
+                      "xmax": 0.46811,
+                      "ymax": 0.85148
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-81",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2355,
+                    "end": 2363
+                  },
+                  "box": {
+                    "xmin": 0.47895,
+                    "ymin": 0.79527,
+                    "xmax": 0.55158,
+                    "ymax": 0.88319
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2355,
+                      "end": 2363
+                    },
+                    "box": {
+                      "xmin": 0.49256,
+                      "ymin": 0.83027,
+                      "xmax": 0.53795,
+                      "ymax": 0.85139
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-82",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2372,
+                    "end": 2380
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.79526,
+                    "xmax": 0.62008,
+                    "ymax": 0.88318
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2372,
+                      "end": 2380
+                    },
+                    "box": {
+                      "xmin": 0.56314,
+                      "ymin": 0.83026,
+                      "xmax": 0.60856,
+                      "ymax": 0.85142
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-83",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2389,
+                    "end": 2394
+                  },
+                  "box": {
+                    "xmin": 0.62006,
+                    "ymin": 0.79524,
+                    "xmax": 0.70613,
+                    "ymax": 0.88317
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2389,
+                      "end": 2394
+                    },
+                    "box": {
+                      "xmin": 0.64792,
+                      "ymin": 0.83179,
+                      "xmax": 0.67835,
+                      "ymax": 0.8494
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-84",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2403,
+                    "end": 2414
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.79523,
+                    "xmax": 0.81368,
+                    "ymax": 0.88316
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2403,
+                      "end": 2414
+                    },
+                    "box": {
+                      "xmin": 0.72713,
+                      "ymin": 0.83153,
+                      "xmax": 0.79289,
+                      "ymax": 0.85245
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-85",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2423,
+                    "end": 2429
+                  },
+                  "box": {
+                    "xmin": 0.81367,
+                    "ymin": 0.79522,
+                    "xmax": 0.87951,
+                    "ymax": 0.88315
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2423,
+                      "end": 2426
+                    },
+                    "box": {
+                      "xmin": 0.82897,
+                      "ymin": 0.83178,
+                      "xmax": 0.84435,
+                      "ymax": 0.84931
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2427,
+                      "end": 2429
+                    },
+                    "box": {
+                      "xmin": 0.84676,
+                      "ymin": 0.83192,
+                      "xmax": 0.86431,
+                      "ymax": 0.84903
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-86",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2438,
+                    "end": 2441
+                  },
+                  "box": {
+                    "xmin": 0.87949,
+                    "ymin": 0.79521,
+                    "xmax": 0.91191,
+                    "ymax": 0.88314
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2438,
+                      "end": 2441
+                    },
+                    "box": {
+                      "xmin": 0.88705,
+                      "ymin": 0.83192,
+                      "xmax": 0.90519,
+                      "ymax": 0.84903
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-87",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2450,
+                    "end": 2452
+                  },
+                  "box": {
+                    "xmin": 0.91189,
+                    "ymin": 0.79521,
+                    "xmax": 0.94461,
+                    "ymax": 0.88314
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2450,
+                      "end": 2452
+                    },
+                    "box": {
+                      "xmin": 0.92198,
+                      "ymin": 0.83184,
+                      "xmax": 0.93461,
+                      "ymax": 0.84902
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-88",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2461,
+                    "end": 2462
+                  },
+                  "box": {
+                    "xmin": 0.94461,
+                    "ymin": 0.7952,
+                    "xmax": 0.9897,
+                    "ymax": 0.88313
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2461,
+                      "end": 2462
+                    },
+                    "box": {
+                      "xmin": 0.96403,
+                      "ymin": 0.83225,
+                      "xmax": 0.97005,
+                      "ymax": 0.84867
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 6,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-89",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2481,
+                    "end": 2555
+                  },
+                  "box": {
+                    "xmin": 0.00972,
+                    "ymin": 0.88323,
+                    "xmax": 0.2112,
+                    "ymax": 0.97087
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2481,
+                      "end": 2488
+                    },
+                    "box": {
+                      "xmin": 0.01032,
+                      "ymin": 0.89982,
+                      "xmax": 0.04307,
+                      "ymax": 0.91896
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2489,
+                      "end": 2496
+                    },
+                    "box": {
+                      "xmin": 0.04525,
+                      "ymin": 0.89907,
+                      "xmax": 0.08871,
+                      "ymax": 0.91697
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2497,
+                      "end": 2499
+                    },
+                    "box": {
+                      "xmin": 0.09103,
+                      "ymin": 0.89948,
+                      "xmax": 0.10872,
+                      "ymax": 0.91644
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2503,
+                      "end": 2507
+                    },
+                    "box": {
+                      "xmin": 0.01004,
+                      "ymin": 0.92501,
+                      "xmax": 0.03406,
+                      "ymax": 0.94223
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2508,
+                      "end": 2514
+                    },
+                    "box": {
+                      "xmin": 0.03603,
+                      "ymin": 0.92466,
+                      "xmax": 0.06396,
+                      "ymax": 0.94541
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2515,
+                      "end": 2522
+                    },
+                    "box": {
+                      "xmin": 0.06586,
+                      "ymin": 0.92449,
+                      "xmax": 0.09514,
+                      "ymax": 0.94473
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2523,
+                      "end": 2531
+                    },
+                    "box": {
+                      "xmin": 0.09748,
+                      "ymin": 0.92433,
+                      "xmax": 0.13224,
+                      "ymax": 0.94564
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2532,
+                      "end": 2534
+                    },
+                    "box": {
+                      "xmin": 0.13532,
+                      "ymin": 0.92492,
+                      "xmax": 0.14938,
+                      "ymax": 0.94198
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2535,
+                      "end": 2540
+                    },
+                    "box": {
+                      "xmin": 0.15102,
+                      "ymin": 0.92487,
+                      "xmax": 0.18179,
+                      "ymax": 0.94219
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2544,
+                      "end": 2546
+                    },
+                    "box": {
+                      "xmin": 0.00998,
+                      "ymin": 0.95057,
+                      "xmax": 0.02329,
+                      "ymax": 0.96786
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2547,
+                      "end": 2555
+                    },
+                    "box": {
+                      "xmin": 0.02523,
+                      "ymin": 0.9504,
+                      "xmax": 0.07356,
+                      "ymax": 0.96711
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 0,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-90",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2564,
+                    "end": 2632
+                  },
+                  "box": {
+                    "xmin": 0.21116,
+                    "ymin": 0.8832,
+                    "xmax": 0.41233,
+                    "ymax": 0.97085
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2564,
+                      "end": 2568
+                    },
+                    "box": {
+                      "xmin": 0.21194,
+                      "ymin": 0.89932,
+                      "xmax": 0.2307,
+                      "ymax": 0.91975
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2569,
+                      "end": 2577
+                    },
+                    "box": {
+                      "xmin": 0.23283,
+                      "ymin": 0.89908,
+                      "xmax": 0.28063,
+                      "ymax": 0.91984
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2581,
+                      "end": 2585
+                    },
+                    "box": {
+                      "xmin": 0.2121,
+                      "ymin": 0.92511,
+                      "xmax": 0.2361,
+                      "ymax": 0.94231
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2586,
+                      "end": 2593
+                    },
+                    "box": {
+                      "xmin": 0.23779,
+                      "ymin": 0.92438,
+                      "xmax": 0.28571,
+                      "ymax": 0.94248
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2594,
+                      "end": 2599
+                    },
+                    "box": {
+                      "xmin": 0.28801,
+                      "ymin": 0.92448,
+                      "xmax": 0.3156,
+                      "ymax": 0.94508
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2600,
+                      "end": 2608
+                    },
+                    "box": {
+                      "xmin": 0.31731,
+                      "ymin": 0.92461,
+                      "xmax": 0.35204,
+                      "ymax": 0.94566
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2609,
+                      "end": 2611
+                    },
+                    "box": {
+                      "xmin": 0.35511,
+                      "ymin": 0.92508,
+                      "xmax": 0.36917,
+                      "ymax": 0.94217
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2612,
+                      "end": 2617
+                    },
+                    "box": {
+                      "xmin": 0.37075,
+                      "ymin": 0.92483,
+                      "xmax": 0.40156,
+                      "ymax": 0.94228
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2621,
+                      "end": 2623
+                    },
+                    "box": {
+                      "xmin": 0.21115,
+                      "ymin": 0.95053,
+                      "xmax": 0.22557,
+                      "ymax": 0.96978
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2624,
+                      "end": 2632
+                    },
+                    "box": {
+                      "xmin": 0.22718,
+                      "ymin": 0.95079,
+                      "xmax": 0.27578,
+                      "ymax": 0.96753
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 1,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-91",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2641,
+                    "end": 2649
+                  },
+                  "box": {
+                    "xmin": 0.41232,
+                    "ymin": 0.88319,
+                    "xmax": 0.47895,
+                    "ymax": 0.97082
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2641,
+                      "end": 2649
+                    },
+                    "box": {
+                      "xmin": 0.42277,
+                      "ymin": 0.91811,
+                      "xmax": 0.46823,
+                      "ymax": 0.93895
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 2,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-92",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2658,
+                    "end": 2666
+                  },
+                  "box": {
+                    "xmin": 0.47893,
+                    "ymin": 0.88318,
+                    "xmax": 0.55158,
+                    "ymax": 0.97081
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2658,
+                      "end": 2666
+                    },
+                    "box": {
+                      "xmin": 0.49254,
+                      "ymin": 0.91813,
+                      "xmax": 0.53791,
+                      "ymax": 0.9389
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 3,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-93",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2675,
+                    "end": 2684
+                  },
+                  "box": {
+                    "xmin": 0.55158,
+                    "ymin": 0.88317,
+                    "xmax": 0.62006,
+                    "ymax": 0.9708
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2675,
+                      "end": 2684
+                    },
+                    "box": {
+                      "xmin": 0.56008,
+                      "ymin": 0.91818,
+                      "xmax": 0.61137,
+                      "ymax": 0.93894
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 4,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-94",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2693,
+                    "end": 2699
+                  },
+                  "box": {
+                    "xmin": 0.62005,
+                    "ymin": 0.88316,
+                    "xmax": 0.70613,
+                    "ymax": 0.97079
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2693,
+                      "end": 2699
+                    },
+                    "box": {
+                      "xmin": 0.64476,
+                      "ymin": 0.9194,
+                      "xmax": 0.68132,
+                      "ymax": 0.93693
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 5,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-95",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2708,
+                    "end": 2723
+                  },
+                  "box": {
+                    "xmin": 0.70613,
+                    "ymin": 0.88315,
+                    "xmax": 0.81367,
+                    "ymax": 0.97078
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2708,
+                      "end": 2723
+                    },
+                    "box": {
+                      "xmin": 0.71848,
+                      "ymin": 0.91875,
+                      "xmax": 0.80144,
+                      "ymax": 0.94012
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 6,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-96",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2732,
+                    "end": 2737
+                  },
+                  "box": {
+                    "xmin": 0.81365,
+                    "ymin": 0.88314,
+                    "xmax": 0.87949,
+                    "ymax": 0.97077
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2732,
+                      "end": 2734
+                    },
+                    "box": {
+                      "xmin": 0.83092,
+                      "ymin": 0.91951,
+                      "xmax": 0.84302,
+                      "ymax": 0.93657
+                    }
+                  },
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2735,
+                      "end": 2737
+                    },
+                    "box": {
+                      "xmin": 0.84507,
+                      "ymin": 0.91966,
+                      "xmax": 0.8625,
+                      "ymax": 0.93654
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 7,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-97",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2746,
+                    "end": 2748
+                  },
+                  "box": {
+                    "xmin": 0.87946,
+                    "ymin": 0.88314,
+                    "xmax": 0.91189,
+                    "ymax": 0.97076
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2746,
+                      "end": 2748
+                    },
+                    "box": {
+                      "xmin": 0.88933,
+                      "ymin": 0.9195,
+                      "xmax": 0.90216,
+                      "ymax": 0.9367
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 8,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-98",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2757,
+                    "end": 2759
+                  },
+                  "box": {
+                    "xmin": 0.91187,
+                    "ymin": 0.88313,
+                    "xmax": 0.94461,
+                    "ymax": 0.97076
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2757,
+                      "end": 2759
+                    },
+                    "box": {
+                      "xmin": 0.92195,
+                      "ymin": 0.91947,
+                      "xmax": 0.9346,
+                      "ymax": 0.93657
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 9,
+                "colspan": 1,
+                "rowspan": 1
+              },
+              {
+                "type": "table_cell",
+                "id": "table_cell-99",
+                "span": null,
+                "grounding": {
+                  "page": 1,
+                  "range": {
+                    "start": 2768,
+                    "end": 2769
+                  },
+                  "box": {
+                    "xmin": 0.9446,
+                    "ymin": 0.88313,
+                    "xmax": 0.98974,
+                    "ymax": 0.97075
+                  }
+                },
+                "atomic_grounding": [
+                  {
+                    "page": 1,
+                    "range": {
+                      "start": 2768,
+                      "end": 2769
+                    },
+                    "box": {
+                      "xmin": 0.96357,
+                      "ymin": 0.91958,
+                      "xmax": 0.97046,
+                      "ymax": 0.93664
+                    }
+                  }
+                ],
+                "markdown": null,
+                "children": null,
+                "row": 7,
+                "col": 10,
+                "colspan": 1,
+                "rowspan": 1
+              }
+            ],
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          }
+        ]
+      }
+    ]
+  },
+  "grounding": null,
+  "metadata": {
+    "req_id": null,
+    "job_id": "parse-01m7rycdggp8n60ywq32t9t1p9",
+    "model_version": "dpt-3-pro-20261111",
+    "page_count": 1,
+    "markdown_chars": null,
+    "output_markdown_chars": 2838,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "failed_pages": [],
+    "duration_ms": 14148,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.3
+    },
+    "filename": "pdmp-sample-patient-report.png",
+    "org_id": "u3z0u1hn4acl"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    2,
+    4,
+    5
+  ],
+  "fields": [
+    {
+      "path": "permit_number",
+      "label": "Permit number",
+      "value": "WAR313805",
+      "page": 1,
+      "box": {
+        "xmin": 0.73239,
+        "ymin": 0.24099,
+        "xmax": 0.83121,
+        "ymax": 0.25293
+      },
+      "range": {
+        "end": 623,
+        "start": 614
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "permit_number.png"
+    },
+    {
+      "path": "entry_time",
+      "label": "Entry time",
+      "value": "11:28",
+      "page": 1,
+      "box": {
+        "xmin": 0.50529,
+        "ymin": 0.20853,
+        "xmax": 0.60343,
+        "ymax": 0.22219
+      },
+      "range": {
+        "end": 499,
+        "start": 494
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "entry_time.png"
+    },
+    {
+      "path": "inspection_type",
+      "label": "Inspection type",
+      "value": "Unannounced",
+      "page": 1,
+      "box": {
+        "xmin": 0.73317,
+        "ymin": 0.1853,
+        "xmax": 0.84452,
+        "ymax": 0.19672
+      },
+      "range": {
+        "end": 542,
+        "start": 531
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "inspection_type.png"
+    },
+    {
+      "path": "receiving_waters",
+      "label": "Receiving waters",
+      "value": "Groundwater",
+      "page": 1,
+      "box": {
+        "xmin": 0.50461,
+        "ymin": 0.24074,
+        "xmax": 0.61196,
+        "ymax": 0.25243
+      },
+      "range": {
+        "end": 589,
+        "start": 578
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "receiving_waters.png"
+    },
+    {
+      "path": "weather",
+      "label": "Weather at inspection",
+      "value": "39 degrees Fahrenheit, mostly cloudy with a WSW wind at 1 mph.",
+      "page": 1,
+      "box": {
+        "xmin": 0.30551,
+        "ymin": 0.86772,
+        "xmax": 0.83093,
+        "ymax": 0.88302
+      },
+      "range": {
+        "end": 1528,
+        "start": 1466
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "weather.png"
+    }
+  ]
+}

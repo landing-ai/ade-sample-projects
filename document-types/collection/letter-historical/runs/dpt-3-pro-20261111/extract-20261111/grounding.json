@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "salutation_opening",
+      "label": "Opening line",
+      "value": "The Great God who is the power and wisdom that made you and me incline your heart to righteousness love and peace.",
+      "page": 1,
+      "box": {
+        "xmin": 0.09699,
+        "ymin": 0.43661,
+        "xmax": 0.91591,
+        "ymax": 0.70648
+      },
+      "range": {
+        "end": 1602,
+        "start": 1488
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "salutation_opening.png"
+    },
+    {
+      "path": "date_written",
+      "label": "Dateline",
+      "value": "25: 2: 1682",
+      "page": 1,
+      "box": {
+        "xmin": 0.09699,
+        "ymin": 0.43661,
+        "xmax": 0.91591,
+        "ymax": 0.70648
+      },
+      "range": {
+        "end": 2515,
+        "start": 2504
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "date_written.png"
+    },
+    {
+      "path": "sender.closing",
+      "label": "Closing",
+      "value": "In y Love of our God yt make me to be am Ours",
+      "page": 1,
+      "box": {
+        "xmin": 0.09699,
+        "ymin": 0.43661,
+        "xmax": 0.91591,
+        "ymax": 0.70648
+      },
+      "range": {
+        "end": 2491,
+        "start": 2446
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sender-closing.png"
+    },
+    {
+      "path": "sender.name",
+      "label": "Signature",
+      "value": "Jno England",
+      "page": 1,
+      "box": {
+        "xmin": 0.09699,
+        "ymin": 0.43661,
+        "xmax": 0.91591,
+        "ymax": 0.70648
+      },
+      "range": {
+        "end": 2503,
+        "start": 2492
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sender-name.png"
+    },
+    {
+      "path": "delivery_note.signed_by",
+      "label": "Delivered by",
+      "value": "Tho. Holme",
+      "page": 1,
+      "box": {
+        "xmin": 0.10381,
+        "ymin": 0.72673,
+        "xmax": 0.4184,
+        "ymax": 0.80626
+      },
+      "range": {
+        "end": 2602,
+        "start": 2592
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "delivery_note-signed_by.png"
+    }
+  ]
+}

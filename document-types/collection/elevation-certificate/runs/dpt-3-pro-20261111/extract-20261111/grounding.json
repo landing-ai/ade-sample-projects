@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 7,
+  "preview_pages": [
+    1,
+    2,
+    6,
+    7
+  ],
+  "fields": [
+    {
+      "path": "firm.nfip_community_id",
+      "label": "NFIP community ID",
+      "value": "125144",
+      "page": 1,
+      "box": {
+        "xmin": 0.82091,
+        "ymin": 0.75099,
+        "xmax": 0.87542,
+        "ymax": 0.76362
+      },
+      "range": {
+        "end": 3045,
+        "start": 3039
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "firm-nfip_community_id.png"
+    },
+    {
+      "path": "firm.map_panel_number",
+      "label": "FIRM map panel",
+      "value": "12115C0239",
+      "page": 1,
+      "box": {
+        "xmin": 0.69128,
+        "ymin": 0.77372,
+        "xmax": 0.78485,
+        "ymax": 0.78635
+      },
+      "range": {
+        "end": 3133,
+        "start": 3123
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "firm-map_panel_number.png"
+    },
+    {
+      "path": "firm.bfe_source",
+      "label": "BFE source",
+      "value": "FIRM",
+      "page": 1,
+      "box": {
+        "xmin": 0.16759,
+        "ymin": 0.85771,
+        "xmax": 0.20353,
+        "ymax": 0.86907
+      },
+      "range": {
+        "end": 3463,
+        "start": 3459
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "firm-bfe_source.png"
+    },
+    {
+      "path": "firm.flood_zone",
+      "label": "Flood zone",
+      "value": "AE",
+      "page": 1,
+      "box": {
+        "xmin": 0.17845,
+        "ymin": 0.81917,
+        "xmax": 0.20025,
+        "ymax": 0.8318
+      },
+      "range": {
+        "end": 3275,
+        "start": 3273
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "firm-flood_zone.png"
+    },
+    {
+      "path": "firm.base_flood_elevation",
+      "label": "Base flood elevation",
+      "value": 10,
+      "page": 1,
+      "box": {
+        "xmin": 0.82353,
+        "ymin": 0.81917,
+        "xmax": 0.8417,
+        "ymax": 0.8318
+      },
+      "range": {
+        "end": 3351,
+        "start": 3349
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "firm-base_flood_elevation.png"
+    }
+  ]
+}

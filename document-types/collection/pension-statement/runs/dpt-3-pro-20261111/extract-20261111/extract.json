@@ -1,0 +1,454 @@
+{
+  "extraction": {
+    "after_tax_deductions": [
+      {
+        "current": 78.62,
+        "description": "Erie County Medical Ins",
+        "ytd": 628.96
+      }
+    ],
+    "before_tax_deductions": [
+      {
+        "current": 723.88,
+        "description": "Equitable Distribution",
+        "ytd": 5791.04
+      }
+    ],
+    "earnings": [
+      {
+        "current": 2148.58,
+        "description": "Monthly Service Annuity",
+        "ytd": 17188.64
+      }
+    ],
+    "net_pay_distribution": [
+      {
+        "account_number": "XXXXXXX1234",
+        "account_type": "Checking",
+        "deposit_amount": 1088.26
+      }
+    ],
+    "payer": {
+      "address": "110 State Street, Albany, NY 12244",
+      "name": "ERS In Pay",
+      "retirement_system": "ERI"
+    },
+    "payment": {
+      "advice_date": "8/31/2023",
+      "advice_number": "000000000846041",
+      "pay_begin_date": "8/01/2023",
+      "pay_end_date": "8/31/2023",
+      "pay_group": "KE1-Kovacs Checks 1 ERI"
+    },
+    "retiree": {
+      "address": "123 Main Street, Any Town NY 12345-0000",
+      "employee_id": "R12345678",
+      "name": "John Smith"
+    },
+    "summary": {
+      "fed_taxable_gross_current": 2148.58,
+      "net_pay_current": 1088.26,
+      "net_pay_ytd": 8706.08,
+      "total_deductions_current": 802.5,
+      "total_deductions_ytd": 6420.0,
+      "total_gross_current": 2148.58,
+      "total_gross_ytd": 17188.64,
+      "total_taxes_current": 257.82
+    },
+    "tax_data": {
+      "allowances": "N/A",
+      "tax_status": "Married"
+    },
+    "taxes": [
+      {
+        "current": 257.82,
+        "description": "Fed Withholding",
+        "ytd": 2062.56
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "after_tax_deductions": [
+      {
+        "current": {
+          "ranges": [
+            {
+              "end": 1444,
+              "start": 1439
+            }
+          ],
+          "value": 78.62
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1438,
+              "start": 1415
+            }
+          ],
+          "value": "Erie County Medical Ins"
+        },
+        "ytd": {
+          "ranges": [
+            {
+              "end": 1459,
+              "start": 1453
+            }
+          ],
+          "value": 628.96
+        }
+      }
+    ],
+    "before_tax_deductions": [
+      {
+        "current": {
+          "ranges": [
+            {
+              "end": 1365,
+              "start": 1359
+            }
+          ],
+          "value": 723.88
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 1350,
+              "start": 1328
+            }
+          ],
+          "value": "Equitable Distribution"
+        },
+        "ytd": {
+          "ranges": [
+            {
+              "end": 1394,
+              "start": 1386
+            }
+          ],
+          "value": 5791.04
+        }
+      }
+    ],
+    "earnings": [
+      {
+        "current": {
+          "ranges": [
+            {
+              "end": 845,
+              "start": 837
+            }
+          ],
+          "value": 2148.58
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 828,
+              "start": 805
+            }
+          ],
+          "value": "Monthly Service Annuity"
+        },
+        "ytd": {
+          "ranges": [
+            {
+              "end": 875,
+              "start": 866
+            }
+          ],
+          "value": 17188.64
+        }
+      }
+    ],
+    "net_pay_distribution": [
+      {
+        "account_number": {
+          "ranges": [
+            {
+              "end": 2182,
+              "start": 2171
+            }
+          ],
+          "value": "XXXXXXX1234"
+        },
+        "account_type": {
+          "ranges": [
+            {
+              "end": 2162,
+              "start": 2154
+            }
+          ],
+          "value": "Checking"
+        },
+        "deposit_amount": {
+          "ranges": [
+            {
+              "end": 2199,
+              "start": 2191
+            }
+          ],
+          "value": 1088.26
+        }
+      }
+    ],
+    "payer": {
+      "address": {
+        "ranges": [
+          {
+            "end": 31,
+            "start": 15
+          },
+          {
+            "end": 48,
+            "start": 32
+          }
+        ],
+        "value": "110 State Street, Albany, NY 12244"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 12,
+            "start": 2
+          }
+        ],
+        "value": "ERS In Pay"
+      },
+      "retirement_system": {
+        "ranges": [
+          {
+            "end": 182,
+            "start": 179
+          }
+        ],
+        "value": "ERI"
+      }
+    },
+    "payment": {
+      "advice_date": {
+        "ranges": [
+          {
+            "end": 262,
+            "start": 253
+          }
+        ],
+        "value": "8/31/2023"
+      },
+      "advice_number": {
+        "ranges": [
+          {
+            "end": 222,
+            "start": 207
+          }
+        ],
+        "value": "000000000846041"
+      },
+      "pay_begin_date": {
+        "ranges": [
+          {
+            "end": 122,
+            "start": 113
+          }
+        ],
+        "value": "8/01/2023"
+      },
+      "pay_end_date": {
+        "ranges": [
+          {
+            "end": 152,
+            "start": 143
+          }
+        ],
+        "value": "8/31/2023"
+      },
+      "pay_group": {
+        "ranges": [
+          {
+            "end": 90,
+            "start": 67
+          }
+        ],
+        "value": "KE1-Kovacs Checks 1 ERI"
+      }
+    },
+    "retiree": {
+      "address": {
+        "ranges": [
+          {
+            "end": 459,
+            "start": 404
+          }
+        ],
+        "value": "123 Main Street, Any Town NY 12345-0000"
+      },
+      "employee_id": {
+        "ranges": [
+          {
+            "end": 314,
+            "start": 305
+          }
+        ],
+        "value": "R12345678"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 414,
+            "start": 404
+          }
+        ],
+        "value": "John Smith"
+      }
+    },
+    "summary": {
+      "fed_taxable_gross_current": {
+        "ranges": [
+          {
+            "end": 1767,
+            "start": 1759
+          }
+        ],
+        "value": 2148.58
+      },
+      "net_pay_current": {
+        "ranges": [
+          {
+            "end": 1826,
+            "start": 1818
+          }
+        ],
+        "value": 1088.26
+      },
+      "net_pay_ytd": {
+        "ranges": [
+          {
+            "end": 1948,
+            "start": 1940
+          }
+        ],
+        "value": 8706.08
+      },
+      "total_deductions_current": {
+        "ranges": [
+          {
+            "end": 1808,
+            "start": 1803
+          }
+        ],
+        "value": 802.5
+      },
+      "total_deductions_ytd": {
+        "ranges": [
+          {
+            "end": 1931,
+            "start": 1923
+          }
+        ],
+        "value": 6420.0
+      },
+      "total_gross_current": {
+        "ranges": [
+          {
+            "end": 1750,
+            "start": 1742
+          }
+        ],
+        "value": 2148.58
+      },
+      "total_gross_ytd": {
+        "ranges": [
+          {
+            "end": 1867,
+            "start": 1858
+          }
+        ],
+        "value": 17188.64
+      },
+      "total_taxes_current": {
+        "ranges": [
+          {
+            "end": 1794,
+            "start": 1788
+          }
+        ],
+        "value": 257.82
+      }
+    },
+    "tax_data": {
+      "allowances": {
+        "ranges": [
+          {
+            "end": 539,
+            "start": 536
+          }
+        ],
+        "value": "N/A"
+      },
+      "tax_status": {
+        "ranges": [
+          {
+            "end": 520,
+            "start": 513
+          }
+        ],
+        "value": "Married"
+      }
+    },
+    "taxes": [
+      {
+        "current": {
+          "ranges": [
+            {
+              "end": 914,
+              "start": 908
+            }
+          ],
+          "value": 257.82
+        },
+        "description": {
+          "ranges": [
+            {
+              "end": 899,
+              "start": 884
+            }
+          ],
+          "value": "Fed Withholding"
+        },
+        "ytd": {
+          "ranges": [
+            {
+              "end": 931,
+              "start": 923
+            }
+          ],
+          "value": 2062.56
+        }
+      }
+    ]
+  },
+  "markdown": "**ERS In Pay**\n110 State Street\nAlbany, NY 12244\n\n- **Pay Group**: KE1-Kovacs Checks 1 ERI\n- **Pay Begin Date**: 8/01/2023\n- **Pay End Date**: 8/31/2023\n\n- **Retirement System**: ERI\n- **Advice #/Check #**: 000000000846041\n- **Advice Date/Check Date**: 8/31/2023\n\n<table>\n<tr><td colspan=\"2\">Employee ID: R12345678</td><td colspan=\"2\"></td><td colspan=\"3\">TAX DATA: Federal</td></tr>\n<tr><td colspan=\"2\">John Smith<br>123 Main Street<br>Any Town NY 12345-0000</td><td colspan=\"2\"></td><td colspan=\"3\">Tax Status: Married<br>Allowances: N/A</td></tr>\n<tr><td colspan=\"4\">EARNINGS</td><td colspan=\"3\">TAXES</td></tr>\n<tr><td>Description</td><td>---- Current ----<br>Earnings</td><td colspan=\"2\">---- YTD ----<br>Earnings</td><td>Description</td><td>---- Current ----</td><td>---- YTD ----</td></tr>\n<tr><td>Monthly Service Annuity</td><td>2,148.58</td><td colspan=\"2\">17,188.64</td><td>Fed Withholding</td><td>257.82</td><td>2,062.56</td></tr>\n<tr><td>Total:</td><td>2,148.58</td><td colspan=\"2\">17,188.64</td><td>Total:</td><td>257.82</td><td>2,062.56</td></tr>\n<tr><td></td><td colspan=\"3\">BEFORE-TAX DEDUCTIONS</td><td colspan=\"3\">AFTER-TAX DEDUCTIONS</td></tr>\n<tr><td>Description</td><td>---- Current ---</td><td colspan=\"2\">---- YTD ----</td><td>Description</td><td>---- Current ----</td><td>---- YTD ----</td></tr>\n<tr><td>Equitable Distribution</td><td>723.88</td><td colspan=\"2\">5,791.04</td><td colspan=\"2\">Erie County Medical Ins 78.62</td><td>628.96</td></tr>\n<tr><td>Total:</td><td>723.88</td><td colspan=\"2\">5,791.04</td><td>Total:</td><td>78.62</td><td>628.96</td></tr>\n<tr><td></td><td colspan=\"2\">TOTAL GROSS FED TAXABLE GROSS</td><td colspan=\"3\">TOTAL TAXES TOTAL DEDUCTIONS</td><td>NET PAY</td></tr>\n<tr><td>Current:</td><td>2,148.58</td><td>2,148.58</td><td colspan=\"2\">257.82</td><td>802.50</td><td>1,088.26</td></tr>\n<tr><td>YTD:</td><td>17,188.64</td><td>17,188.64</td><td colspan=\"2\">2,062.56</td><td>6,420.00</td><td>8,706.08</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">NET PAY DISTRIBUTION</td></tr>\n<tr><td></td><td>Account Type</td><td>Account Number</td><td>Deposit Amount</td></tr>\n<tr><td>Advice #000000000846041</td><td>Checking</td><td>XXXXXXX1234</td><td>1,088.26</td></tr>\n<tr><td>Total</td><td></td><td></td><td>1,088.26</td></tr>\n</table>\n\n<!-- doc_id=parse-01m7rybetb6f2qb9gy9tfz9vyj -->",
+  "metadata": {
+    "job_id": "extract-01m7ryc2r8cwa37hsdnte02mx6",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 126599,
+    "doc_id": "parse-01m7rybetb6f2qb9gy9tfz9vyj",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.7,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 2327,
+    "output_extraction_chars": 1146,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

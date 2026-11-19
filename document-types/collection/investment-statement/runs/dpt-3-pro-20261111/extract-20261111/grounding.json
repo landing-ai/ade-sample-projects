@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 28,
+  "preview_pages": [
+    1,
+    4,
+    7,
+    18
+  ],
+  "fields": [
+    {
+      "path": "accounts[1].account_category",
+      "label": "Account category",
+      "value": "PERSONAL RETIREMENT",
+      "page": 2,
+      "box": {
+        "xmin": 0.07738,
+        "ymin": 0.36181,
+        "xmax": 0.22902,
+        "ymax": 0.37652
+      },
+      "range": {
+        "end": 2211,
+        "start": 2192
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "accounts-1-account_category.png"
+    },
+    {
+      "path": "accounts[1].account_number",
+      "label": "Account number",
+      "value": "222-222222",
+      "page": 2,
+      "box": {
+        "xmin": 0.41071,
+        "ymin": 0.38271,
+        "xmax": 0.47425,
+        "ymax": 0.39742
+      },
+      "range": {
+        "end": 2289,
+        "start": 2279
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "accounts-1-account_number.png"
+    },
+    {
+      "path": "accounts[1].beginning_value",
+      "label": "Beginning value",
+      "value": 137232.44,
+      "page": 2,
+      "box": {
+        "xmin": 0.67256,
+        "ymin": 0.38271,
+        "xmax": 0.73213,
+        "ymax": 0.39742
+      },
+      "range": {
+        "end": 2308,
+        "start": 2298
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "accounts-1-beginning_value.png"
+    },
+    {
+      "path": "accounts[1].ending_value",
+      "label": "Ending value",
+      "value": 142413.12,
+      "page": 2,
+      "box": {
+        "xmin": 0.89982,
+        "ymin": 0.38271,
+        "xmax": 0.95832,
+        "ymax": 0.39742
+      },
+      "range": {
+        "end": 2327,
+        "start": 2317
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "accounts-1-ending_value.png"
+    }
+  ]
+}

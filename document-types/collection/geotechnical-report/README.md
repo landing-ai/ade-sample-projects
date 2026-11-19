@@ -1,13 +1,113 @@
 # Geotechnical Report
 
-A geotechnical engineering investigation by Moore Twining Associates, Inc. for the
-Monterey Peninsula Regional Park District: **Proposed Classroom Project, Garland Ranch
-Regional Park, 700 West Carmel Valley Road, Carmel Valley, California** (project
-H07802.01, November 21, 2023). Two hollow-stem auger borings, B-1 and B-2, were drilled
-on October 19, 2023 to about 33 feet, and the samples went to the lab for gradation,
-density, shear, consolidation and corrosion tests.
+**On the website:** [landing.ai/document-type/geotechnical-report](https://landing.ai/document-type/geotechnical-report)
 
-This folder keeps **14 of the report's 61 pages**. All are portrait, US Letter.
+Selected pages from a geotechnical engineering investigation by Moore Twining
+Associates for a classroom project at Garland Ranch Regional Park in Carmel Valley,
+California. It has the report cover, a site location map and boring location plan, the
+logs of two test borings drilled to about 33 feet, a key to the log symbols, and two
+consolidation test reports.
+
+| | |
+|---|---|
+| Pages | 14 |
+| Fields in the extraction schema | 35 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:06 | 2026-11-19 03:12 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 21,411 | 22,754 |
+| Words under 0.95 confidence | 97 | n/a |
+| Words under 0.80 confidence | 55 | n/a |
+| Words under 0.50 confidence | 31 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 15.3 s | 567.4 s |
+| Per page | 1.1 s | 40.5 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 4.3 credits | 12.2 credits |
+| Per page | 0.31 credits | 0.87 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:07 | 2026-11-19 03:21 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 35 | 35 |
+| Non-null fields returned | 35 | 35 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 537.3 s | 567.7 s |
+| Per schema field (35) | 15.35 s | 16.22 s |
+| Per value returned | 4.10 s | 4.14 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 10.9 credits | 11.2 credits |
+| Per schema field (35) | 0.311 credits | 0.320 credits |
+| Per value returned | 0.083 credits | 0.082 credits |
+
+## Origin
+
+`source/geotechnical-report-moore-twining-garland-ranch.pdf` is a **geotechnical
+engineering investigation** by Moore Twining Associates, Inc. for the Monterey Peninsula
+Regional Park District: Proposed Classroom Project, Garland Ranch Regional Park, 700 West
+Carmel Valley Road, Carmel Valley, California (project H07802.01, November 21, 2023). Two
+hollow-stem auger borings, B-1 and B-2, were drilled on October 19, 2023 to about 33
+feet, and the samples went to the lab for gradation, density, shear, consolidation and
+corrosion tests.
+
+This folder keeps **14 of the report's 61 pages**. All are **portrait, US Letter**, with
+a text layer.
 
 | Page here | Source page | Content |
 |---|---|---|
@@ -19,104 +119,58 @@ This folder keeps **14 of the report's 61 pages**. All are portrait, US Letter.
 | 12 | 44 | Log notes, abbreviations and key to symbols |
 | 13-14 | 54-55 | Consolidation test reports, two samples from B-1 |
 
-Left out: the district's Exhibit D slip sheet (page 1), the transmittal letter (page 3),
-the table of contents and the 27-page report body, the sieve analysis sheets, the direct
-shear and other lab sheets, and the corrosion lab report. That keeps the parse cost
-proportionate to the page this folder feeds, and the kept pages are the part of a
-geotechnical report that pipelines actually mine: the logs and the lab tables.
-
-## Provenance
-
 | | |
 |---|---|
 | Publisher | Moore Twining Associates, Inc. (consultant); posted by the Monterey Peninsula Regional Park District |
-| Source URL | https://www.mprpd.org/files/bee0b37d7/Item0724-6E_ApprvRFBOutdoorClassroom_Attach1.ExhibitD.GeotechRpt.pdf |
+| Source | [mprpd.org/files/bee0b37d7/…GeotechRpt.pdf](https://www.mprpd.org/files/bee0b37d7/Item0724-6E_ApprvRFBOutdoorClassroom_Attach1.ExhibitD.GeotechRpt.pdf) |
 | Context | Exhibit D to the district's July 2024 board item 6E, approving the Request for Bids for the Garland Ranch Outdoor Classroom |
 | Retrieved | 2026-10-14, downloaded by script |
-| Clearance | `public` |
+| Clearance | Public |
 
 The file is on the district's own domain, published with its board packet and bid
-documents for anyone bidding on the work. It was split out with PyMuPDF; nothing on the
-kept pages was redacted.
+documents for anyone bidding on the work. The kept pages were split out of it, and
+nothing on them was redacted.
 
-**Personal data.** The transmittal letter carries the certified engineering geologist's
-signature and licence seal and names a district staff member as addressee. That page was
-not kept. The kept pages name only the two organizations, plus the driller's, logger's
-and draftsman's initials, which are professional details in a public record. The PDF's
-metadata named a district staff member as author and was cleared.
+Left out: the district's Exhibit D slip sheet (page 1), the transmittal letter (page 3),
+the table of contents and the 27-page report body, the sieve analysis sheets, the direct
+shear and other lab sheets, and the corrosion lab report. The kept pages are the logs
+and lab tables, the part of a geotechnical report that is most often mined for data.
+
+The transmittal letter carries the certified engineering geologist's signature and
+license seal and names a district staff member as addressee. That page was not kept. The
+kept pages name only the two organizations, plus the driller's, logger's and
+draftsman's initials, which are professional details in a public record. The PDF's
+metadata named a district staff member as author and was cleared. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-Boring logs are the hardest thing in the collection to read by layout alone. Each log
-page is a narrow multi-column graphic: a depth and elevation scale, a soil symbol column
-with sampler blow counts in 6-inch increments, the USCS class, a free-text description,
-a Remarks column of stacked lab values, then N-values and moisture. Rows are positioned
-by depth, not ruled, so pairing a moisture value with its N-value means reading vertical
-position. A log also continues across pages, so one boring is three pages of the same
-header. The folder adds a CAD site plan, a topo map, and consolidation reports with a
-chart above a merged-header property table.
+### Who processes it
 
-## Featured fields
+A geotechnical report describes the soil and groundwater under a site, and engineers
+design foundations from it.
 
-All five are on **page 6**, the first page of the B-1 log (source page 38):
+- **Structural and civil engineering:** designers take bearing capacity, settlement and
+  groundwater depth from the logs and lab results.
+- **Construction and bidding:** contractors read the logs to price excavation,
+  dewatering and foundation work, which is why this report was published with the bid
+  documents.
+- **Public agencies and owners:** districts and cities commission reports for their
+  projects and keep them with the permit record.
+- **Geotechnical firms:** consultants compile boring data from past reports into
+  databases for nearby sites.
+- **Insurance and risk:** underwriters and claims teams review soil conditions for
+  settlement and subsidence risk.
 
-| Field | Label | Value |
-|---|---|---|
-| `borings[0].boring_id` | Boring | B-1 |
-| `borings[0].surface_elevation_ft` | Surface elevation (ft AMSL) | 183 |
-| `borings[0].groundwater_first_encountered_ft` | Groundwater first encountered (ft) | 18.2 |
-| `borings[0].samples[0].uscs` | First sample USCS class | SM |
-| `borings[0].samples[0].n_value_blows_per_ft` | First sample N-value (blows/ft) | 27 |
+### What it contains
 
-Read top to bottom, they follow one boring from its header to its first sample: which
-hole, where the ground surface is, where water was hit, and what the first soil is and
-how dense. The request suggested nine fields on this page. All nine ground correctly, but
-a page carries at most five, so date drilled, first sample moisture, drill rig and hammer
-type were left off the overlay. They are in `extract-pro.json`. No person is featured.
-
-## Grounding notes
-
-- **Log headers ground cleanly on the first page of each log.** Boring ID, date, rig,
-  auger, hammer, elevation and groundwater depth each box their own label-and-value line.
-  The header repeats on every log page; on B-2 it grounds line by line on all three
-  pages, but on B-1 pages 2 and 3 the repeats box a whole header block instead.
-- **Table cells box the whole depth band.** The USCS and N-value crops are tall boxes,
-  because ADE reads the log body as a table whose rows are depth intervals. The value is
-  at the top of the box. `build_images.py` warned that OCR could not read them inside the
-  box; on inspection both crops contain their values.
-- **Row pairing held on the featured page.** The request flagged the risk that the narrow
-  columns would mis-pair values with N-value rows. On B-1 page 1 every N-value, moisture
-  and Remarks entry landed on its own row, including the GP/SW-SM row at the foot of the
-  page where two USCS classes share one cell.
-- **It slipped once, on B-2 page 2 (page 10).** The page prints three moisture values
-  against three N-values, but one moisture is a second reading on the 17.5-foot sample,
-  not a row of its own. Extraction gave the 24-blow sample the second reading (15.1)
-  instead of its own (19.9), and 19.9 was lost. This is the failure a reviewer should
-  check for on logs.
-- **Descriptions that cross a page break** come back merged or split (B-1 sample 6
-  concatenates three strata), and ground OFF because of embedded line breaks.
-- **USCS is printed once per stratum**, so samples deeper in a stratum come back with
-  `uscs` null rather than inheriting the class. Correct to the page, not to the soil.
-- **The consolidation tables extract almost exactly** under a two-row merged header
-  ("Natural" over Sat. and Moist.): every printed value on both reports is right. One
-  slip: the second report heads its last-but-one column "Swell %" rather than
-  "Clpse. %" and leaves it blank, and extraction returned `collapse_pct` 0 for it
-  instead of null.
-
-The schema has **35 leaf fields**.
-
-## Credits
-
-Standard tier, jobs API, DPT-3 Pro: **24.50 credits** for one parse and one extract of
-the 14 pages.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py geotechnical-report        # spends credits
-.venv/bin/python document-types/scripts/build_images.py geotechnical-report   # free
-.venv/bin/python document-types/scripts/inspect_fields.py geotechnical-report --page 6
-```
-
-The source PDF is source pages 2, 34-44, 54 and 55 of the URL above, extracted with
-PyMuPDF and with its metadata cleared.
+- **Boring logs as narrow multi-column graphics:** a depth and elevation scale, a soil
+  symbol column with blow counts, the USCS class, a free-text description, a Remarks
+  column of stacked lab values, then N-values and moisture.
+- **Rows positioned by depth, not ruled,** so values pair by vertical position.
+- **Logs that continue across pages,** with the same header repeated on each page and
+  descriptions that cross the page break.
+- **A CAD site plan and a USGS topographic map.**
+- **Consolidation reports** with a chart above a property table with a two-row merged
+  header.
+- **A key to symbols and abbreviations** that the logs depend on.

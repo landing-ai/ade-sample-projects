@@ -36,5 +36,25 @@
       "label": "Total due"
     }
   ],
-  "notes": "currency is in the schema but not featured: on this invoice it shares a table cell with total_due, so both fields render the identical crop."
+  "notes": "currency is in the schema but not featured: on this invoice it shares a table cell with total_due, so both fields render the identical crop.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 2.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 2.0
+    }
+  ]
 }

@@ -1,0 +1,70 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "practitioner.license_number",
+      "label": "License number",
+      "value": "634-027930",
+      "page": 1,
+      "box": {
+        "xmin": 0.06577,
+        "ymin": 0.25856,
+        "xmax": 0.28905,
+        "ymax": 0.27983
+      },
+      "range": {
+        "end": 1500,
+        "start": 1490
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "practitioner-license_number.png"
+    },
+    {
+      "path": "form_number",
+      "label": "Form number",
+      "value": "DE 2501 Rev. 82 (10-24)",
+      "page": 1,
+      "box": {
+        "xmin": 0.05882,
+        "ymin": 0.96177,
+        "xmax": 0.21708,
+        "ymax": 0.97313
+      },
+      "range": {
+        "end": 4049,
+        "start": 4026
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "form_number.png"
+    },
+    {
+      "path": "treatment_period.treatment_interval",
+      "label": "Treatment interval",
+      "value": "Monthly",
+      "page": 1,
+      "box": {
+        "xmin": 0.35768,
+        "ymin": 0.67144,
+        "xmax": 0.39818,
+        "ymax": 0.68028
+      },
+      "range": {
+        "end": 2614,
+        "start": 2607
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "treatment_period-treatment_interval.png"
+    }
+  ]
+}

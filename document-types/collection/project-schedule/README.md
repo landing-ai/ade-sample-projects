@@ -1,14 +1,107 @@
 # Project Schedule
 
-Source assets for `landing.ai/document-type/project-schedule`.
+**On the website:** [landing.ai/document-type/project-schedule](https://landing.ai/document-type/project-schedule)
 
-## Sample document
+The initial baseline schedule for the 95 Express Lanes Opitz Boulevard project in
+Virginia, filed as an exhibit to a public-private partnership agreement. It combines a
+schedule narrative with milestone and work breakdown tables, a six-page Primavera P6
+Gantt chart, a monthly payment schedule and a projected cash curve.
+
+| | |
+|---|---|
+| Pages | 18 |
+| Fields in the extraction schema | 29 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:22 | 2026-11-19 03:44 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 109,071 | 111,054 |
+| Words under 0.95 confidence | 641 | n/a |
+| Words under 0.80 confidence | 363 | n/a |
+| Words under 0.50 confidence | 175 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 36.9 s | 28.1 s |
+| Per page | 2.0 s | 1.6 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 13.7 credits | 36.8 credits |
+| Per page | 0.76 credits | 2.04 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:22 | 2026-11-19 03:45 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 29 | 29 |
+| Non-null fields returned | 29 | 29 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 478.3 s | 389.6 s |
+| Per schema field (29) | 16.49 s | 13.43 s |
+| Per value returned | 1.69 s | 1.38 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 30.8 credits | 31.2 credits |
+| Per schema field (29) | 1.062 credits | 1.076 credits |
+| Per value returned | 0.109 credits | 0.110 credits |
+
+## Origin
 
 `source/exhibit-b-3b-opitz-boulevard-ramp-baseline-schedule.pdf` is the **initial
 baseline schedule** for the 95 Express Lanes Opitz Boulevard project in Virginia. The
 contractor, Shirley Contracting Company, LLC, built it in Oracle Primavera P6, and it is
 filed as Exhibit B-3B of the executed I-95/I-395 (Fredex) public-private partnership
-agreement. **18 pages, mixed orientation**, with a text layer throughout:
+agreement. It is **18 pages, mixed orientation**, with a text layer throughout:
 
 | Pages | Content | Layout |
 |---|---|---|
@@ -22,113 +115,46 @@ agreement. **18 pages, mixed orientation**, with a text layer throughout:
 |---|---|
 | Publisher | Virginia Office of Transportation Public-Private Partnerships (schedule by Shirley Contracting Company, LLC) |
 | Source | [p3.virginia.gov/…/Exhibit_B-3B_-_Initial_Opitz_Boulevard_Ramp_Baseline_Schedule.pdf](https://p3.virginia.gov/media/p3/documents/p3-agreements/i-95i-395fredex/Exhibit_B-3B_-_Initial_Opitz_Boulevard_Ramp_Baseline_Schedule.pdf) |
+| Linked from | [p3.virginia.gov/p3-agreements/](https://p3.virginia.gov/p3-agreements/) |
 | Retrieved | 2026-10-14, downloaded directly by script |
 | Clearance | Public |
 
 Virginia's P3 office posts executed agreements and their exhibits on its public
-agreements page (p3.virginia.gov/p3-agreements/), which links this file directly. The
-schedule names organizations only (the contractor, Transurban, VDOT, DEQ). It contains
-no individual's name, signature, phone number or address, so nothing was redacted and
-the whole exhibit is kept as published. The PDF metadata holds only the InDesign creator,
-producer and dates.
+agreements page, which links this file directly. The schedule names organizations only
+(the contractor, Transurban, VDOT, DEQ). It contains no individual's name, signature,
+phone number or address, so nothing was redacted and the whole exhibit is kept as
+published. The PDF metadata holds only the InDesign creator, producer and dates. Full
+provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-This is the collection's first **project schedule**, and its first Gantt chart:
+### Who processes it
 
-- **A real P6 export.** This is a contract baseline with real dates, durations,
-  budgeted costs and float, not a template.
-- **A nested WBS shown by colour.** The project rolls up through coloured band rows,
-  from project to phase to sub-phase to stage, each with its own cost, duration, dates and
-  float. The indentation and band colour show the level. Neither survives into text.
-- **Gantt bars beside the table.** Every activity name is printed a second time as a bar
-  label to its right, cut off where the page ends. The extraction must take the table's
-  version.
-- **Blank cells that mean something.** A milestone has a start or a finish, never both,
+A baseline schedule is the contractor's committed plan for a project: what gets done,
+in what order, when, and at what cost. Owners measure progress and payments against it.
+
+- **Construction contractors:** schedulers build and update the baseline, and project
+  managers track progress against it.
+- **Public agencies and infrastructure owners:** owners review the baseline for
+  approval and check monthly updates for delay.
+- **Construction lenders and P3 investors:** they tie draws and payments to schedule
+  milestones and the payment schedule.
+- **Construction claims and dispute consultants:** delay analysts compare the baseline
+  with as-built schedules to assign responsibility for late completion.
+- **Project controls and PMOs:** teams pull milestones, float and costs into reporting
+  tools.
+
+### What it contains
+
+- **A Primavera P6 Gantt chart** across six tabloid sheets, with a table of activities
+  beside the bars.
+- **A nested work breakdown shown by color and indentation,** from project to phase to
+  stage, with each band carrying its own cost, duration, dates and float.
+- **Bar labels that repeat each activity name,** cut off where the page ends.
+- **Blank cells that mean something:** a milestone has a start or a finish, never both,
   and an asterisk marks a constrained date (`05-31-22*`).
-- **Three views that must agree.** The narrative's milestone table, the Gantt milestones
-  and the payment schedule describe the same contract. The payment schedule's grand total,
-  $59,127,675.84, is the Gantt's top-level budget.
-- **Very small type** on tabloid sheets, and a project name spelled both "Opitz" and
-  "Optiz" in the source.
-
-## Featured fields: the budget, the start and two milestones
-
-All five are on page 10, the first Gantt page.
-
-| Field | Value |
-|---|---|
-| Project budgeted total cost | $59,127,675.84 |
-| Notice to Proceed (MS-1200) start | 08-15-22 |
-| Open New Slip Ramp (MS-1500) finish | 12-05-23 |
-| Open New Slip Ramp total float (critical) | 0 |
-| Open Pedestrian Facility (MS-1450) total float | 367 |
-
-These show what a scheduler reads first: the size of the job, the day work starts, and
-how much slack the key dates have. The slip ramp opening is on the critical path, with no
-float. The pedestrian facility, two rows above it, has more than a year to spare.
-
-The request suggested seven values on this page, and all seven ground cleanly. A page
-can feature only five, so the project duration (595 days) and the MS-1450 finish date
-(07-14-23) were left out.
-
-## What it surfaced
-
-**The Gantt table extracts accurately.** All 19 milestones match the page, in order, with
-their IDs, names, costs, durations, dates and float. Activity names come from the table,
-not from the bar labels beside it. MS-1700's name ends in an unclosed parenthesis
-because P6 cut it off there, and the extraction keeps it that way. All 26 rows of the
-monthly payment schedule match the PDF digit for digit.
-
-**WBS levels are lost in the markdown.** The parse turns each Gantt page into an HTML
-table where every band row looks the same: a two-column name cell followed by the
-figures. Only colour and indentation show the level, and both are lost. On the first
-extraction, `wbs_summaries` left out the empty STAKEHOLDER / ADJACENT PROJECT
-COORDINATION band and listed PROJECT CLOSEOUT at level 2, although it is a level-3 band
-inside CONSTRUCTION. The schema then pointed the field at the narrative's Table 02, which
-gives each level-2 element a one-letter code (RRC.A to RRC.G). Re-running extraction
-alone (`--extract-only`) fixed it, and the seven bands now sum exactly to the project's
-$59,127,675.84.
-
-**Blank cells come back as empty strings.** The schema asks for null when a milestone has
-no start or no finish. The committed extraction returns `""` for all 17
-of them, each grounded to the empty cell itself. The first run returned a mix of `""`
-and null. The `date_constrained` flag is right for both asterisked dates (MS-1000 and
-MS-1900). It is a yes-or-no judgement about the row rather than printed text, so none
-of its 19 values can be featured: 9 ground to a date cell, which does not contain the
-word true or false, and 10 have no ranges.
-
-**The narrative's milestone table grounds on one run and not the next.** On the first
-extraction, Table 01's ten milestones grounded to their cells on page 2. On the
-re-extraction, the values were the same but every item came back with no ranges. Nothing
-on that table changed between the two runs. The schema edit touched only
-`wbs_summaries`.
-
-**The cost crop is harder to read.** The project budget sits in a dark-blue band row, and
-the translucent yellow highlight looks muddier over dark blue than over white. The box is
-in the right place.
-
-## Extraction
-
-**29 leaf fields**: the title block (schedule title, project, contractor, data date); the
-project summary row (budgeted cost, duration, start, finish, total float); every project
-milestone (ID, name, cost, duration, start, finish, constrained flag, total float); the
-seven level-2 WBS bands; Table 01's contract milestones; and every row of the monthly
-payment schedule plus its total. Dates are kept as printed (MM-DD-YY), so they match the
-cells they ground to. All 7 top-level fields are populated.
-
-## Cost
-
-**104.50 credits** at standard tier: 71.70 for parsing and extracting the 18 pages, plus
-32.80 for one extraction-only re-run after the schema change.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/project-schedule/source/exhibit-b-3b-opitz-boulevard-ramp-baseline-schedule.pdf \
-  "https://p3.virginia.gov/media/p3/documents/p3-agreements/i-95i-395fredex/Exhibit_B-3B_-_Initial_Opitz_Boulevard_Ramp_Baseline_Schedule.pdf"
-.venv/bin/python document-types/scripts/run_ade.py project-schedule                # ~72 credits
-.venv/bin/python document-types/scripts/run_ade.py project-schedule --extract-only # ~33 credits, schema iteration
-.venv/bin/python document-types/scripts/build_images.py project-schedule           # free
-.venv/bin/python document-types/scripts/inspect_fields.py project-schedule --page 10
-```
+- **Three views of the same contract:** the narrative's milestone table, the Gantt
+  milestones and the payment schedule.
+- **Mixed page sizes and orientations,** very small type on the tabloid sheets, and a
+  rotated cash curve chart.
+- **A project name spelled two ways** ("Opitz" and "Optiz") in the source.

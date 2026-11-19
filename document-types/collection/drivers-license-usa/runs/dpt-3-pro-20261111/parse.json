@@ -1,0 +1,93 @@
+{
+  "markdown": "**TEXAS** USA\n\n**DRIVER LICENSE**\n\n★\n\nColonel Thomas F. Mott [signature]\n\n4d DL 12345678 3 DOB 01/01/1990 9 Class A\n\n1 SAMPLE\n\n2 JANE\n\n8 123 SAMPLE STREET\nSAMPLE CITY, TX 12345\n\n4a Iss 01/04/2025\n\n4b Exp 01/01/2028\n\n**COMMUNICATION IMPEDIMENT**\n\n15 Sex F 9a End NONE\n\n16 Hgt 5'-10'' 12 Rest NONE\n\n18 Eyes BRO\n\n5 DD 12345678901234567890\n\n[image: woman portrait]\n\n[image: Texas map with portrait]\n\nSAMPLE\n\n[logo: Texas star]\n\n[icon: heart]\n\nDONOR\n\n[logo: Disabled Veteran]\n\nJane Sample [signature]\n\nDISABLED VETERAN\n\n<!-- doc_id=parse-01m7rvs6080b4zgbkwdasf7br8 -->",
+  "structure": {
+    "type": "document",
+    "markdown": null,
+    "children": [
+      {
+        "type": "page",
+        "page": null,
+        "span": null,
+        "width": null,
+        "height": null,
+        "dpi": null,
+        "grounding": {
+          "page": 1,
+          "range": {
+            "start": 0,
+            "end": 515
+          },
+          "box": {
+            "xmin": 0.0,
+            "ymin": 0.0,
+            "xmax": 1.0,
+            "ymax": 1.0
+          }
+        },
+        "markdown": null,
+        "status": "ok",
+        "reason": null,
+        "children": [
+          {
+            "type": "card",
+            "id": "card-0",
+            "span": null,
+            "grounding": {
+              "page": 1,
+              "range": {
+                "start": 0,
+                "end": 513
+              },
+              "box": {
+                "xmin": 0.0021,
+                "ymin": 0.00162,
+                "xmax": 0.99986,
+                "ymax": 0.99932
+              }
+            },
+            "atomic_grounding": [
+              {
+                "page": 1,
+                "range": {
+                  "start": 0,
+                  "end": 513
+                },
+                "box": {
+                  "xmin": 0.0021,
+                  "ymin": 0.00162,
+                  "xmax": 0.99986,
+                  "ymax": 0.99932
+                }
+              }
+            ],
+            "markdown": null,
+            "children": null,
+            "row": null,
+            "col": null,
+            "colspan": null,
+            "rowspan": null
+          }
+        ]
+      }
+    ]
+  },
+  "grounding": null,
+  "metadata": {
+    "req_id": null,
+    "job_id": "parse-01m7rvs6080b4zgbkwdasf7br8",
+    "model_version": "dpt-3-pro-20261111",
+    "page_count": 1,
+    "markdown_chars": null,
+    "output_markdown_chars": 563,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "failed_pages": [],
+    "duration_ms": 4927,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 0.7
+    },
+    "filename": "texas-dl-specimen-2025.png",
+    "org_id": "u3z0u1hn4acl"
+  }
+}

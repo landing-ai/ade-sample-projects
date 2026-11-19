@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "ein", "label": "Employer Identification Number", "occurrence": 0 },
-    { "path": "entity.legal_name", "label": "Legal name", "occurrence": 0 },
-    { "path": "notice.notice_number", "label": "Notice number", "occurrence": 0 },
-    { "path": "notice.form", "label": "Application form", "occurrence": 0 },
-    { "path": "required_filings[0].form", "label": "Required filing", "occurrence": 0 }
+    {
+      "path": "ein",
+      "label": "Employer Identification Number",
+      "occurrence": 0
+    },
+    {
+      "path": "entity.legal_name",
+      "label": "Legal name",
+      "occurrence": 0
+    },
+    {
+      "path": "notice.notice_number",
+      "label": "Notice number",
+      "occurrence": 0
+    },
+    {
+      "path": "notice.form",
+      "label": "Application form",
+      "occurrence": 0
+    },
+    {
+      "path": "required_filings[0].form",
+      "label": "Required filing",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request suggested, as suggestions only, the EIN, the notice number, the form (SS-4), the legal name and the required filing (Form 1120). All five ground ok on page 1 and all five ship, so the overlay tells one story: which notice this is, what application it answers, which business got which number, and what that business must now file. The EIN uses occurrence 0, the header block, rather than the repeat in the body text. The legal name is a fictitious business's name from the specimen, not a person's. The notice date is deliberately not featured: the publisher's placeholder 01-35-2525 is an invalid date, and the stub on page 3 prints a different one, 01-25-2525."
+  "notes": "The request suggested, as suggestions only, the EIN, the notice number, the form (SS-4), the legal name and the required filing (Form 1120). All five ground ok on page 1 and all five ship, so the overlay tells one story: which notice this is, what application it answers, which business got which number, and what that business must now file. The EIN uses occurrence 0, the header block, rather than the repeat in the body text. The legal name is a fictitious business's name from the specimen, not a person's. The notice date is deliberately not featured: the publisher's placeholder 01-35-2525 is an invalid date, and the stub on page 3 prints a different one, 01-25-2525.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 3.1,
+      "extract_credits": 1.7
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 3.1,
+      "extract_credits": 1.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.7
+    }
+  ]
 }

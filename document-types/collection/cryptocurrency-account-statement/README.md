@@ -1,15 +1,109 @@
 # Cryptocurrency account statement
 
-Source assets for `landing.ai/document-type/cryptocurrency-account-statement`.
+**On the website:** [landing.ai/document-type/cryptocurrency-account-statement](https://landing.ai/document-type/cryptocurrency-account-statement)
 
-## Sample document
+A Blockchair Bitcoin wallet statement for 2021-08-25 to 2021-09-04. It gives the wallet
+address and statement period, a BTC balance summary with starting and ending balance,
+total received and total sent, and a 16-row transaction history with the date, time,
+direction, BTC and USD amounts and transaction hash of each transfer. It ends with a
+disclaimer and a QR code for checking the statement on Blockchair.
+
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 20 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:47 | 2026-11-19 02:53 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 7,443 | 7,605 |
+| Words under 0.95 confidence | 48 | n/a |
+| Words under 0.80 confidence | 18 | n/a |
+| Words under 0.50 confidence | 5 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 6.1 s | 9.9 s |
+| Per page | 3.0 s | 4.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.1 credits | 3.0 credits |
+| Per page | 0.55 credits | 1.50 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:47 | 2026-11-19 02:54 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 20 | 20 |
+| Non-null fields returned | 20 | 20 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 249.3 s | 172.4 s |
+| Per schema field (20) | 12.46 s | 8.62 s |
+| Per value returned | 1.99 s | 1.38 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 5.4 credits | 5.4 credits |
+| Per schema field (20) | 0.270 credits | 0.270 credits |
+| Per value returned | 0.043 credits | 0.043 credits |
+
+## Origin
 
 `source/cryptocurrency-account-statement.pdf` is a Blockchair Bitcoin wallet statement
-for 2021-08-25 to 2021-09-04. It has **2 pages, portrait (A4)**. Page 1 has a header with
-the provider's contact details, the wallet address and statement period, a BTC balance
-summary (starting and ending balance, total received, total sent) and the first 10 rows
-of the transaction history. Page 2 has rows 11–16, a note, a disclaimer and a QR code for
-checking the receipt on Blockchair.
+for 2021-08-25 to 2021-09-04. It is **2 pages, portrait (A4)**, with a text layer. Page 1
+has a header with the provider's contact details, the wallet address and statement
+period, a BTC balance summary and the first 10 rows of the transaction history. Page 2
+has rows 11–16, a note, a disclaimer and a QR code for checking the receipt on
+Blockchair.
 
 | | |
 |---|---|
@@ -18,15 +112,10 @@ checking the receipt on Blockchair.
 | Retrieved | 2026-10-03, downloaded by hand by the operator because Scribd blocks scripted downloads |
 | Clearance | Redacted |
 
-Full provenance is in `manifest.json` under `source.origin`. This section is the
-human-readable version of it.
-
-### Clearance
-
 Scribd is a user-upload site, not the publisher, so this file is treated as a personal
 record. The statement names no person and no postal address. However, a wallet address
 and its transaction hashes are public identifiers on the Bitcoin blockchain and can be
-traced to the owner. These items were replaced before anything was parsed:
+traced to the owner. These items were replaced:
 
 - **The wallet address** (1 printed occurrence) is now a random bech32 string of the same
   length and character set. **Its checksum is deliberately invalid, so it cannot be a
@@ -35,93 +124,51 @@ traced to the owner. These items were replaced before anything was parsed:
   hash is printed over two lines, so its two halves were replaced separately (32
   spans).
 - **33 hyperlinks** behind the address and the hash halves had URIs containing those
-  values. They were rewritten to the stand-ins and then removed by the redaction. The
-  only link left is the generic Blockchair statement link on page 2.
+  values. They were rewritten to the stand-ins and then removed. The only link left is
+  the generic Blockchair statement link on page 2.
 - **The QR code** encoded a Blockchair URL containing the wallet address. It was
   re-encoded with the stand-in address.
 - **Document metadata** was cleared.
 
-The original values are not recorded anywhere in this repo. The replacement was done
-with `document-types/scripts/redact.py`, which removes the underlying text rather than
-covering it, after a one-off pre-pass for the links and the QR code. I checked the result:
-no original address or hash, and no 12-character fragment of one, can be extracted from
-the PDF's text, objects, streams, link URIs or decoded QR code.
+The redaction removed the underlying text rather than covering it. The original values
+are not recorded anywhere in this repo. Verified: no original address or hash, and no
+12-character fragment of one, can be extracted from the PDF's text, objects, streams,
+link URIs or decoded QR code.
 
 **Residual risk, accepted by the operator.** The BTC and USD amounts and the timestamps
 (to the second) are kept as printed. Together they could still be matched to the real
 transactions on the public blockchain, and from them to the real wallet.
 
 The stand-in hashes and address are set in Courier, at a slightly smaller size, among the
-original DM Mono text. This is visible on close inspection.
+original DM Mono text. This is visible on close inspection. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is the collection's first **cryptocurrency statement**, and it differs from the bank
-and brokerage statements in several ways:
+### Who processes it
 
-- **Eight-decimal amounts** (0.02314739 BTC), shown next to a USD value at the
-  time of each transaction.
+A wallet statement is how a cryptocurrency holder documents balances and transfers when
+someone else needs to see them. It often stands in for a bank statement where crypto is
+part of a person's or a business's assets.
+
+- **Tax preparation:** preparers use dated transfers with USD values to work out gains
+  and losses.
+- **Mortgage and consumer lending:** underwriters review crypto holdings offered as
+  assets or as the source of a down payment.
+- **Compliance and AML teams:** banks and exchanges review the transaction history
+  when funds arrive from a wallet.
+- **Accounting and audit:** auditors confirm crypto balances held by a business.
+- **Legal and forensic work:** divorce, bankruptcy and estate cases trace transfers
+  between wallets.
+
+### What it contains
+
+- **Eight-decimal amounts** (0.02314739 BTC), each beside a USD value at the time of the
+  transaction.
 - **Long opaque identifiers that wrap.** Each 64-character transaction hash is printed
-  over two lines in one cell, and extraction has to join the halves back together.
-- **Typewriter-style layout.** The section dividers are rows of asterisks and dashes made
-  of text characters, not ruled lines, and the font uses a slashed zero.
-
-## Featured fields: one transaction
-
-All on page 1, row 3 of the transaction history (a send):
-
-| Field | Value |
-|---|---|
-| Transaction time | 11:12:12 (the cell also holds the date, 2021-08-26) |
-| Direction | Sent |
-| Amount (BTC) | 0.02314739 |
-| Amount (USD) | 1,134.36 |
-
-The four fields make up one complete transaction, so the overlay reads as one thing. The
-request also suggested featuring the balance summary's total received and total sent.
-Both extract correctly (0.18467513 BTC each) but ground OFF (see below), so they are not
-featured. No hash or address is featured: they are stand-ins, and an opaque string does
-not show grounding well.
-
-## What it surfaced
-
-**The asterisk and dash dividers confuse the parser's table detection.** The parse
-treats the page header's rows of `* * *` and `- - -` as a grid and merges them with the
-balance summary into one wide table. As a result each summary figure is split across
-cells: `0.18467513 BTC` becomes a `0` cell, a `18467513` cell and stray `B` / `TOC` cells,
-and the ending USD balance is read with slashed zeros as `Ø.ØØ`. Extraction still returns
-the correct numbers, but their ranges cover only part of each value, so
-`inspect_fields.py` reports them `OFF`. The statement period's dates are split in the same
-way inside that table, but they also ground `ok` to the header line, which repeats the
-period.
-
-**The transaction table is clean.** All 16 rows extract across the page break with the
-correct date, time, direction, BTC and USD amounts, and every field grounds `ok` to its
-own cell. Received and sent each sum to the printed 0.18467513 BTC totals.
-
-**Hash halves are joined correctly, with one exception.** Extraction joins both halves of
-15 of the 16 hashes into the full 64 characters. In row 12, the parse dropped one
-character from the second line of the hash, so the extracted value is 63 characters long.
-Extraction faithfully reproduces the parse's error. A downstream check on hash length
-would catch it.
-
-## Schema
-
-`schema.json` has 20 leaf fields. It covers the provider, the asset, the wallet address,
-the statement period, the balance summary, every transaction row (number, date, time,
-direction, BTC amount, USD amount, hash) and the generation timestamp.
-
-## Credits
-
-8.40 credits at standard tier (DPT-3 Pro parse plus extract, 2 pages).
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py cryptocurrency-account-statement
-.venv/bin/python document-types/scripts/build_images.py cryptocurrency-account-statement
-.venv/bin/python document-types/scripts/inspect_fields.py cryptocurrency-account-statement
-```
-
-The redaction cannot be regenerated from this repo by design: its rules file and the
-original PDF are kept outside it.
+  over two lines in one cell.
+- **A transaction table** that continues across the page break.
+- **Text-drawn dividers.** Section rules are rows of asterisks and dashes made of
+  characters, not ruled lines.
+- **A monospaced font with a slashed zero.**
+- **A QR code** on the last page.

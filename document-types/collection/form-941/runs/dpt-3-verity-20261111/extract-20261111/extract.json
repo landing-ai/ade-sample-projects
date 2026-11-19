@@ -1,0 +1,729 @@
+{
+  "extraction": {
+    "employer": {
+      "city": "FAKE CITY",
+      "ein": "12-3456789",
+      "name": "SAMPLE NAME",
+      "state": "NY",
+      "street_address": "123 ANY STREET APT 123",
+      "trade_name": "SAMPLE TRADE LLC",
+      "zip_code": "12345"
+    },
+    "form_revision": "Rev. March 2023",
+    "form_year": 2023,
+    "paid_preparer": {
+      "date": "2023-03-31",
+      "firm_address": "123 ANY SOUTH STREET APT 11, ANY CITY, NY 12345-6789",
+      "firm_ein": "12-3456789",
+      "firm_name": "SAMPLE FIRM LLC",
+      "name": "SAMPLE SMITH",
+      "phone": "222-222-2222",
+      "ptin": "P01234567",
+      "self_employed": false
+    },
+    "part_1": {
+      "additional_medicare_wages_and_tips": {
+        "tax": 9.0,
+        "wages": 1000.0
+      },
+      "adjustment_fractions_of_cents": null,
+      "adjustment_sick_pay": 250.0,
+      "adjustment_tips_and_group_term_life": 180.0,
+      "balance_due": 9695.0,
+      "federal_income_tax_withheld": 10000.0,
+      "no_wages_subject_to_ss_or_medicare": false,
+      "nonrefundable_leave_credit_april_to_october_2021": 180.0,
+      "nonrefundable_leave_credit_before_april_2021": 140.0,
+      "number_of_employees": 100,
+      "overpayment": null,
+      "overpayment_disposition": "send_a_refund",
+      "qualified_family_leave_wages": {
+        "tax": 62.0,
+        "wages": 1000.0
+      },
+      "qualified_sick_leave_wages": {
+        "tax": 62.0,
+        "wages": 1000.0
+      },
+      "qualified_small_business_research_credit": 500.0,
+      "refundable_leave_credit_april_to_october_2021": 75.0,
+      "refundable_leave_credit_before_april_2021": 75.0,
+      "section_3121q_tax": null,
+      "taxable_medicare_wages_and_tips": {
+        "tax": 29.0,
+        "wages": 1000.0
+      },
+      "taxable_social_security_tips": {
+        "tax": 124.0,
+        "wages": 1000.0
+      },
+      "taxable_social_security_wages": {
+        "tax": 124.0,
+        "wages": null
+      },
+      "total_deposits": 175.0,
+      "total_deposits_and_refundable_credits": 325.0,
+      "total_nonrefundable_credits": 820.0,
+      "total_social_security_and_medicare_taxes": 410.0,
+      "total_taxes_after_adjustments": 10840.0,
+      "total_taxes_after_adjustments_and_credits": 10020.0,
+      "total_taxes_before_adjustments": 10410.0,
+      "wages_tips_other_compensation": 10000.0
+    },
+    "part_2": {
+      "depositor_type": "semiweekly",
+      "month_1_liability": null,
+      "month_2_liability": null,
+      "month_3_liability": null,
+      "total_liability_for_quarter": null
+    },
+    "part_3": {
+      "business_closed": false,
+      "final_wages_date": null,
+      "seasonal_employer": true
+    },
+    "quarter": 1,
+    "signature": {
+      "date": "2023-03-31",
+      "daytime_phone": "333-444-5555",
+      "printed_name": "SAMPLE NAME",
+      "signed": true,
+      "title": "MANAGER"
+    },
+    "third_party_designee": {
+      "allowed": true,
+      "name": "JOHN SAMPLE",
+      "phone": "5..33-444 4-5555"
+    }
+  },
+  "extraction_metadata": {
+    "employer": {
+      "city": {
+        "ranges": [
+          {
+            "end": 592,
+            "start": 583
+          }
+        ],
+        "value": "FAKE CITY"
+      },
+      "ein": {
+        "ranges": [
+          {
+            "end": 6513,
+            "start": 6501
+          },
+          {
+            "end": 440,
+            "start": 384
+          }
+        ],
+        "value": "12-3456789"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 6492,
+            "start": 6481
+          },
+          {
+            "end": 479,
+            "start": 441
+          }
+        ],
+        "value": "SAMPLE NAME"
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 595,
+            "start": 593
+          }
+        ],
+        "value": "NY"
+      },
+      "street_address": {
+        "ranges": [
+          {
+            "end": 547,
+            "start": 525
+          }
+        ],
+        "value": "123 ANY STREET APT 123"
+      },
+      "trade_name": {
+        "ranges": [
+          {
+            "end": 516,
+            "start": 500
+          }
+        ],
+        "value": "SAMPLE TRADE LLC"
+      },
+      "zip_code": {
+        "ranges": [
+          {
+            "end": 601,
+            "start": 596
+          }
+        ],
+        "value": "12345"
+      }
+    },
+    "form_revision": {
+      "ranges": [
+        {
+          "end": 103,
+          "start": 88
+        }
+      ],
+      "value": "Rev. March 2023"
+    },
+    "form_year": {
+      "ranges": [
+        {
+          "end": 12,
+          "start": 8
+        }
+      ],
+      "value": 2023
+    },
+    "paid_preparer": {
+      "date": {
+        "ranges": [
+          {
+            "end": 1743,
+            "start": 1711
+          }
+        ],
+        "value": "2023-03-31"
+      },
+      "firm_address": {
+        "ranges": null,
+        "value": "123 ANY SOUTH STREET APT 11, ANY CITY, NY 12345-6789"
+      },
+      "firm_ein": {
+        "ranges": [
+          {
+            "end": 9215,
+            "start": 9205
+          }
+        ],
+        "value": "12-3456789"
+      },
+      "firm_name": {
+        "ranges": [
+          {
+            "end": 9200,
+            "start": 9185
+          }
+        ],
+        "value": "SAMPLE FIRM LLC"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 9076,
+            "start": 9064
+          }
+        ],
+        "value": "SAMPLE SMITH"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 9270,
+            "start": 9258
+          }
+        ],
+        "value": "222-222-2222"
+      },
+      "ptin": {
+        "ranges": [
+          {
+            "end": 9091,
+            "start": 9082
+          }
+        ],
+        "value": "P01234567"
+      },
+      "self_employed": {
+        "ranges": [
+          {
+            "end": 9047,
+            "start": 9012
+          }
+        ],
+        "value": false
+      }
+    },
+    "part_1": {
+      "additional_medicare_wages_and_tips": {
+        "tax": {
+          "ranges": [
+            {
+              "end": 1582,
+              "start": 1576
+            },
+            {
+              "end": 1575,
+              "start": 1557
+            }
+          ],
+          "value": 9.0
+        },
+        "wages": {
+          "ranges": [
+            {
+              "end": 1575,
+              "start": 1557
+            }
+          ],
+          "value": 1000.0
+        }
+      },
+      "adjustment_fractions_of_cents": {
+        "ranges": null,
+        "value": null
+      },
+      "adjustment_sick_pay": {
+        "ranges": [
+          {
+            "end": 2396,
+            "start": 2311
+          }
+        ],
+        "value": 250.0
+      },
+      "adjustment_tips_and_group_term_life": {
+        "ranges": [
+          {
+            "end": 2493,
+            "start": 2397
+          }
+        ],
+        "value": 180.0
+      },
+      "balance_due": {
+        "ranges": [
+          {
+            "end": 4886,
+            "start": 4781
+          }
+        ],
+        "value": 9695.0
+      },
+      "federal_income_tax_withheld": {
+        "ranges": [
+          {
+            "end": 1097,
+            "start": 1001
+          }
+        ],
+        "value": 10000.0
+      },
+      "no_wages_subject_to_ss_or_medicare": {
+        "ranges": [
+          {
+            "end": 1610,
+            "start": 1583
+          }
+        ],
+        "value": false
+      },
+      "nonrefundable_leave_credit_april_to_october_2021": {
+        "ranges": [
+          {
+            "end": 3538,
+            "start": 3526
+          }
+        ],
+        "value": 180.0
+      },
+      "nonrefundable_leave_credit_before_april_2021": {
+        "ranges": [
+          {
+            "end": 2846,
+            "start": 2834
+          }
+        ],
+        "value": 140.0
+      },
+      "number_of_employees": {
+        "ranges": [
+          {
+            "end": 929,
+            "start": 926
+          }
+        ],
+        "value": 100
+      },
+      "overpayment": {
+        "ranges": null,
+        "value": null
+      },
+      "overpayment_disposition": {
+        "ranges": [
+          {
+            "end": 5015,
+            "start": 4887
+          }
+        ],
+        "value": "send_a_refund"
+      },
+      "qualified_family_leave_wages": {
+        "tax": {
+          "ranges": [
+            {
+              "end": 1358,
+              "start": 1292
+            }
+          ],
+          "value": 62.0
+        },
+        "wages": {
+          "ranges": [
+            {
+              "end": 1358,
+              "start": 1292
+            }
+          ],
+          "value": 1000.0
+        }
+      },
+      "qualified_sick_leave_wages": {
+        "tax": {
+          "ranges": [
+            {
+              "end": 1291,
+              "start": 1228
+            }
+          ],
+          "value": 62.0
+        },
+        "wages": {
+          "ranges": [
+            {
+              "end": 1291,
+              "start": 1228
+            }
+          ],
+          "value": 1000.0
+        }
+      },
+      "qualified_small_business_research_credit": {
+        "ranges": [
+          {
+            "end": 2694,
+            "start": 2581
+          }
+        ],
+        "value": 500.0
+      },
+      "refundable_leave_credit_april_to_october_2021": {
+        "ranges": [
+          {
+            "end": 4516,
+            "start": 4505
+          }
+        ],
+        "value": 75.0
+      },
+      "refundable_leave_credit_before_april_2021": {
+        "ranges": [
+          {
+            "end": 4267,
+            "start": 4256
+          }
+        ],
+        "value": 75.0
+      },
+      "section_3121q_tax": {
+        "ranges": null,
+        "value": null
+      },
+      "taxable_medicare_wages_and_tips": {
+        "tax": {
+          "ranges": [
+            {
+              "end": 1485,
+              "start": 1421
+            }
+          ],
+          "value": 29.0
+        },
+        "wages": {
+          "ranges": [
+            {
+              "end": 1485,
+              "start": 1421
+            }
+          ],
+          "value": 1000.0
+        }
+      },
+      "taxable_social_security_tips": {
+        "tax": {
+          "ranges": [
+            {
+              "end": 1420,
+              "start": 1359
+            }
+          ],
+          "value": 124.0
+        },
+        "wages": {
+          "ranges": [
+            {
+              "end": 1420,
+              "start": 1359
+            }
+          ],
+          "value": 1000.0
+        }
+      },
+      "taxable_social_security_wages": {
+        "tax": {
+          "ranges": [
+            {
+              "end": 1227,
+              "start": 1198
+            }
+          ],
+          "value": 124.0
+        },
+        "wages": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      "total_deposits": {
+        "ranges": [
+          {
+            "end": 4041,
+            "start": 4029
+          }
+        ],
+        "value": 175.0
+      },
+      "total_deposits_and_refundable_credits": {
+        "ranges": [
+          {
+            "end": 4666,
+            "start": 4574
+          }
+        ],
+        "value": 325.0
+      },
+      "total_nonrefundable_credits": {
+        "ranges": [
+          {
+            "end": 3730,
+            "start": 3645
+          }
+        ],
+        "value": 820.0
+      },
+      "total_social_security_and_medicare_taxes": {
+        "ranges": [
+          {
+            "end": 2062,
+            "start": 2051
+          }
+        ],
+        "value": 410.0
+      },
+      "total_taxes_after_adjustments": {
+        "ranges": [
+          {
+            "end": 2580,
+            "start": 2494
+          }
+        ],
+        "value": 10840.0
+      },
+      "total_taxes_after_adjustments_and_credits": {
+        "ranges": [
+          {
+            "end": 3836,
+            "start": 3731
+          }
+        ],
+        "value": 10020.0
+      },
+      "total_taxes_before_adjustments": {
+        "ranges": [
+          {
+            "end": 2237,
+            "start": 2153
+          }
+        ],
+        "value": 10410.0
+      },
+      "wages_tips_other_compensation": {
+        "ranges": [
+          {
+            "end": 1000,
+            "start": 930
+          }
+        ],
+        "value": 10000.0
+      }
+    },
+    "part_2": {
+      "depositor_type": {
+        "ranges": [
+          {
+            "end": 6059,
+            "start": 6049
+          }
+        ],
+        "value": "semiweekly"
+      },
+      "month_1_liability": {
+        "ranges": null,
+        "value": null
+      },
+      "month_2_liability": {
+        "ranges": null,
+        "value": null
+      },
+      "month_3_liability": {
+        "ranges": null,
+        "value": null
+      },
+      "total_liability_for_quarter": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "part_3": {
+      "business_closed": {
+        "ranges": [
+          {
+            "end": 6727,
+            "start": 6633
+          }
+        ],
+        "value": false
+      },
+      "final_wages_date": {
+        "ranges": null,
+        "value": null
+      },
+      "seasonal_employer": {
+        "ranges": [
+          {
+            "end": 6944,
+            "start": 6828
+          }
+        ],
+        "value": true
+      }
+    },
+    "quarter": {
+      "ranges": [
+        {
+          "end": 211,
+          "start": 210
+        }
+      ],
+      "value": 1
+    },
+    "signature": {
+      "date": {
+        "ranges": [
+          {
+            "end": 1743,
+            "start": 1711
+          }
+        ],
+        "value": "2023-03-31"
+      },
+      "daytime_phone": {
+        "ranges": [
+          {
+            "end": 8987,
+            "start": 8975
+          }
+        ],
+        "value": "333-444-5555"
+      },
+      "printed_name": {
+        "ranges": [
+          {
+            "end": 8905,
+            "start": 8894
+          }
+        ],
+        "value": "SAMPLE NAME"
+      },
+      "signed": {
+        "ranges": null,
+        "value": true
+      },
+      "title": {
+        "ranges": [
+          {
+            "end": 8935,
+            "start": 8928
+          }
+        ],
+        "value": "MANAGER"
+      }
+    },
+    "third_party_designee": {
+      "allowed": {
+        "ranges": [
+          {
+            "end": 8344,
+            "start": 8274
+          }
+        ],
+        "value": true
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 8327,
+            "start": 8316
+          }
+        ],
+        "value": "JOHN SAMPLE"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 8344,
+            "start": 8328
+          }
+        ],
+        "value": "5..33-444 4-5555"
+      }
+    }
+  },
+  "markdown": "941 for 2023: Employer's QUARTERLY Federal Tax Return\n\n950122\nOMB No. 1545-0029\n\nHOfAl\n(Rev. March 2023)\n\nDepartment of the Treasury - Internal Revenue Service\n\nReport for this Quarter of 2023\n(Check one.)\n[X] 1: January, February, March\n[ ] 2: April, May, June\n[ ] 3: July, August, September\n[ ] 4: October, November, December\nGo -- - . ---\ninstructions and the latest information.\n\nEmployer identtfication number (EIN) 1 2 - 3 4 5 6 7 8 9\nName (not your trade name) SAMPLE NAME\nTrade name (ff any) SAMPLE TRADE LLC\nAddress 123 ANY STREET APT 123\nNumber Street Suite or room number\nFAKE CITY NY 12345\nCity State ZIP code\nForeign country name\nForeign province/county\nForeign postal code\n\nPart 1: Answer these questions for this quarter.\n1 Number of employees who received wages, tips, or other compensation for the pay period\nincluding: Mar. 12 (Quarter 1), June 12 (Quarter 2), Sept. 12 (Quarter 3), or Dec. 12 (Quarter 4)\n1 100\n2 Wages, tips, and other compensation .................. 2 10,000 . 00\n3 Federal income tax withheld from wages, tips, and other compensation ........... 3 10,000 . 00\n4 If no wages, tips, and other compensation are subject to social security or Medicare tax\nColumn 2\n1,000 . 00 × 0.124 = 124 . 00\n5a (i) Qualified sick leave wages* 1,000 . 00 × 0.062 = 62 . 00\n5a (ii) Qualified family leave wages* 1,000 . 00 × 0.062 = 62 . 00\n5b Taxable social security tips 1,000 . 00 × 0.124 = 124 . 00\n5c Taxable Medicare wages & tips. . 1,000 . 00 x 0.029 = 29 . 00\n5d Taxable wages & tips subject to\nAdditional Medicare Tax withholding\n1,000 . 00 × 0.009\n00 . 9\n[ ] Check and go to line 6.\n*Include taxable qualified sick and\nfamily leave wages paid in this\nquarter of 2023 for leave taken\nafter March 31, 2021, and before\nOctober 1, 2021, on line 5a. Use\nlines 5a(i) and 5a(ii) only for taxable\nqualified sick and family leave\nwages paid in this quarter of 2023\nfor leave taken after March 31,\n2020, and before April 1, 2021.\n5e Total social security and Medicare taxes. Add Column 2 from lines 5a, 5a(i), 5a(ii), 5b, 5c, and 5d\n5e 410 . 00\n5f Section 3121(9) Notice and Demand - Tax due on unreported tips (see instructions) 5f  \n6 Total taxes before adjustments. Add lines 3, 5e, and 5f ............ 6 10,410 . 00\n7 Current quarter's adjustment for fractions of cents .............. 7  \n8 Current quarter's adjustment for sick pay .............................. 8 250 . 00\n9 Current quarter's adjustments for tips and group-term life insurance .............. 9 180 . 00\n10 Total taxes after adjustments. Combine lines 6 through 9 ........... 10 10,840 . 00\n11a Qualified small business payroll tax credit for increasing research activities. Attach Form 8974 11a 500 . 00\n11b Nonrefundable portion of credit for qualified sick and family leave wages for leave taken\nbefore April 1, 2021 .......................\n11b 140 . 00\n11c Reserved for future use ..................... 11c  \n\nYou MUST complete all three pages of Form 941 and SIGN it.\n\nFor Privacy Act and Paperwork Reduction Act Notice, see the back of the Payment Voucher.\n\nCat. No. 17001Z\n\nForm 941 (Rev. 3-2023)\n\nRead the separate instructions before you complete Form 941. Type or print within the boxes.\n\n<!-- PAGE BREAK -->\n\n951222\n\nName (not your trade name)\n\nEmployer identification number (EIN)\n12 - 3456789\n\nPart 1: Answer these questions for this quarter. (continued)\n11d Nonrefundable portion of credit for qualified sick and family leave wages for leave taken\nafter March 31, 2021, and before October 1, 2021 ........................\n11d 180 . 00\n11e Reserved for future use ...................... 11e  \n11f Reserved for future use ..............L[ ]  \n11g Total nonrefundable credits. Add lines 11a, 11b, and 11d ........... 11g 820 . 00\n12 Total taxes after adjustments and nonrefundable credits. Subtract line 11g from line 10 12 10,020 . 00\n13a Total deposits for this quarter, including overpayment applied from a prior quarter and\noverpayments applied from Form 941-X, 941-X (PR), 944-X, or 944-X (SP) filed in the current quarter\n13a 175 . 00\n13b Reserved for future use ..................... 13b [ ]\n13c Refundable portion of credit for qualified sick and family leave wages for leave taken\nbefore April 1, 2021 ...........................................\n13c 75 . 00\n13d Reserved for future use ...................... 13d  \n13e Refundable portion of credit for qualified sick and family leave wages for leave taken\nafter March 31, 2021, and before October 1, 2021 . .....................................\n13e 75 . 00\n13f Reserved for future use ...................... 13f  \n13g Total deposits and refundable credits. Add lines 13a, 13c, and 13e ........ 13g 325 . 00\n13h Reserved for future use ...................... 13h  \n13i Reserved for future use ...................... 13i  \n14 Balance due. If line 12 is more than line 13g, enter the difference and see instructions 14 9,695 . 00\n15 Overpayment. If line 13g is more than line 12, enter the difference . Check one: [ ] Apply to next return. [X] Send a refund.\n\nPart 2: Tell us about your deposit schedule and tax liability for this quarter.\nIf you're unsure about whether you're a monthly schedule depositor or a semiweekly schedule depositor, see section 11 of Pub. 15.\n16 Check one:\n[ ]\nLine 12 on this return is less than $2,500 or line 12 on the return for the prior quarter was less than $2,500,\nand you didn't incur a $100,000 next-day deposit obligation during the current quarter. If line 12 for the prior\nquarter was less than $2,500 but line 12 on this return is $100,000 or more, you must provide a record of your\nfederal tax liability. If you're a monthly schedule depositor, complete the deposit schedule below; if you're a\nsemiweekly schedule depositor, attach Schedule B (Form 941). Go to Part 3.\n[ ] You were a monthly schedule depositor for the entire quarter. Enter your tax liability for each month and total\nliability for the quarter, then go to Part 3.\n\nTax liability: Month 1  \nMonth 2  \nMonth 3  \nTotal liability for quarter  \n\nTotal must equal line 12.\n\n[X] You were a semiweekly schedule depositor for any part of this quarter. Complete Schedule B (Form 941),\nReport of Tax Liability for Semiweekly Schedule Depositors, and attach it to Form 941. Go to Part 3.\n\nYou MUST complete all three pages of Form 941 and SIGN it.\n\nPage 2\n\nForm 941 (Rev. 3-2023)\n\nSAMPLE NAME\n\n<!-- PAGE BREAK -->\n\n750922\n\n<table><tr><td>Name (not your trade name)</td><td>Employer identification number (EIN)</td></tr><tr><td>SAMPLE NAME</td><td>12 - 3456789</td></tr></table>\n\nPart 3: Tell us about your business. If a question does NOT apply to your business, leave it blank.\n17 If your business has closed or you stopped paying wages ............... [ ] Check here, and\nenter the final date you paid wages / / ; also attach a statement to your return. See instructions.\n18 If you're a seasonal employer and you don't have to file a return for every quarter of the year . [X] Check here.\n19 Qualified health plan expenses allocable to qualified sick leave wages for leave taken before April 1, 2021 19 100 . 00\n20 Qualified health plan expenses allocable to qualified family leave wages for leave taken before April 1, 2021 20 100 . 00\n21 Reserved for future use ...................... 21  \n22 Reserved for future use ...................... 22  \n23 Qualified sick leave wages for leave taken after March 31, 2021, and before October 1, 2021 23 100 . 00\n24 Qualified health plan expenses allocable to qualified sick leave wages reported on line 23 24 100 . 00\n25 Amounts under certain collectively bargained agreements allocable to qualified sick\nleave wages reported on line 23 .....................................\n25 100 . 00\n26 Qualified family leave wages for leave taken after March 31, 2021, and before October 1, 2021\n26 100 . 00\n27 Qualified health plan expenses allocable to qualified family leave wages reported on line 26\n27 100 . 00\n28 Amounts under certain collectively bargained agreements allocable to qualified family\nleave wages reported on line 26 ..................................... 2&\n00 . 001 82\n\nPart 4: May we speak with your third-party designee?\nDo you want to allow an employee, a paid tax preparer, or another person to discuss this return with the IRS? See the instructions\nfor details.\n[X] Yes. Designee's name and phone number JOHN SAMPLE 5..33-444 4-5555\nSelect a 5-digit personal identification number (PIN) to use when talking to the IRS. 1 2 3 4 5\n[ ] No.\n\nPart 5: Sign here. You MUST complete all three pages of Form 941 and SIGN it.\nUnder penalties of perjury, I declare that I have examined this return, including accompanying schedules and statements, and to the best of my knowledge\nand belief, it is true, correct, and complete. Declaration of preparer (other than taxpayer) is based on all information of which preparer has any knowledge.\nSign your\nname here\nSanpaáa 1'ane\nPrint your\nname here\nSAMPLE NAME\nPrint your\ntitle here\nMANAGER\nDate 03 / 31 / 2023\nBest daytime phone 333-444-5555\n\nPaid Preparer Use Only\nCheck if you're self-employed . [ ]\nPreparer's name SAMPLE SMITH PTIN P01234567\nPreparer's signature Sanpde Smié Date 03 / 31 / 2023\nFirm's name (or yours\nif self-employed)\nSAMPLE FIRM LLC EIN 12-3456789\nAddress 123 ANY SOUTH STREET APT 11 Phone 222-222-2222\nCity ANY CITY State NY ZIP code 12345-6789\n\nPage 3\n\nForm 941 (Rev. 3-2023)\n\n<!-- doc_id=parse-01m7rw90rn67fckpqcm428fats -->",
+  "metadata": {
+    "job_id": "extract-01m7rw99v20ga5ws4y3wgtx124",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 402955,
+    "doc_id": "parse-01m7rw90rn67fckpqcm428fats",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 4.2,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 9395,
+    "output_extraction_chars": 2222,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

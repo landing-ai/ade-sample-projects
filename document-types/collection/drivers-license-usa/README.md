@@ -1,12 +1,100 @@
 # Driver's license (US state)
 
-Source assets for `landing.ai/document-type/drivers-license-usa`.
+**On the website:** [landing.ai/document-type/drivers-license-usa](https://landing.ai/document-type/drivers-license-usa)
 
-## Sample document
+The official specimen of Texas's 2025 driver license design, the front of the card. It
+carries the license number, the holder's name, address and date of birth, issue and
+expiry dates, class, restrictions and endorsements, a physical description, and the
+portrait, all filled with specimen data.
 
-`source/texas-dl-specimen-2025.png` — the official specimen of Texas's 2025 driver license
-design, the front of the card. **1 image, landscape (600×385)**, cropped from the Texas
-Department of Public Safety's news release image.
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 15 |
+
+DPT-3 Pro ran at standard tier through the jobs API, and the extraction used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Pro |
+|---|---|
+| Snapshot | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:57 |
+| Region | US |
+
+### Parse accuracy
+
+| | DPT-3 Pro |
+|---|---|
+| Characters returned | 563 |
+| Accuracy | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 4.9 s |
+| Per page | 4.9 s |
+
+### Parse cost
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 0.7 credits |
+| Per page | 0.70 credits |
+
+## Extract performance
+
+The Pro markdown was extracted with the schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Pro markdown |
+|---|---|
+| Snapshot | `extract-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:57 |
+| Region | US |
+
+### Extract accuracy
+
+| | Pro markdown |
+|---|---|
+| Fields requested | 15 |
+| Non-null fields returned | 12 |
+| Accuracy | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Pro markdown |
+|---|---|
+| Total | 135.4 s |
+| Per schema field (15) | 9.02 s |
+| Per value returned | 11.28 s |
+
+### Extract cost
+
+| | Pro markdown |
+|---|---|
+| Total | 0.5 credits |
+| Per schema field (15) | 0.033 credits |
+| Per value returned | 0.042 credits |
+
+## Origin
+
+`source/texas-dl-specimen-2025.png` is the official specimen of Texas's 2025 driver
+license design, the front of the card. It is **1 image, landscape (600×385)**, cropped
+from the Texas Department of Public Safety's news release image.
 
 | | |
 |---|---|
@@ -21,90 +109,44 @@ field is specimen data: "SAMPLE JANE", DL 12345678, 123 Sample Street, Sample Ci
 not a license holder, and the director's printed signature is part of the card design.
 No redaction was needed.
 
-**The source is the DPS release, not the url in the request.** The request gave a Google
-Images thumbnail (`encrypted-tbn0.gstatic.com`), which is Google's cached copy of an image
-hosted elsewhere, not a publisher. Tracing it led to the DPS release, whose banner image
-carries the identical card. The file here is that banner, `8.18.2025-New-DL-Design-PR.jpg`
-(1080×742), cropped to the card, box (22, 300, 622, 685), so the banner's "LATEST NEWS"
-headline is not parsed as part of the card. The card in the banner is slightly larger than
-the thumbnail, and it is the publisher's own file.
+The request gave a Google Images thumbnail (`encrypted-tbn0.gstatic.com`), which is
+Google's cached copy of an image hosted elsewhere, not a publisher. Tracing it led to the
+DPS release, whose banner image carries the identical card. The file here is that banner,
+`8.18.2025-New-DL-Design-PR.jpg` (1080×742), cropped to the card at box (22, 300, 622,
+685), so the banner's "LATEST NEWS" headline is not part of the image. The card in the
+banner is slightly larger than the thumbnail, and it is the publisher's own file.
 
-**Resolution is the limit.** DPS publishes the card at about 600 pixels wide, the largest
-version found. Everything reads correctly, but the field crops are small, around 30 pixels
-tall. DPS's card designs page carries two other specimens ("SAMPLE JANICE SOFÍA" and an
-under-21 "ZACHARY JOSÉ" card), both smaller still.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+DPS publishes the card at about 600 pixels wide, the largest version found, so the text
+is small. DPS's card designs page carries two other specimens ("SAMPLE JANICE SOFÍA" and
+an under-21 "ZACHARY JOSÉ" card), both smaller still. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **identity document**, and its smallest and densest page:
+### Who processes it
 
-- **A card, not a page.** Twenty-odd fields, each a small AAMVA field code ("4d DL",
-  "16 Hgt", "18 Eyes") followed by its value, over a guilloche background with a seal,
-  a ghost portrait and microtext.
-- **Security features as distractions.** The second, smaller portrait, the laser-engraved
-  star and the rotated ghost text all sit among the fields.
-- **A team schema written for identity documents in general,** including passport fields
-  that a US license does not carry.
+A driver's license is the most common proof of identity in the US, so it arrives as a
+photo or scan in almost every onboarding flow.
 
-## Featured fields: the card and its holder's description
+- **Banking and fintech KYC:** banks, brokerages and payment apps read the license to
+  verify a customer's name, date of birth and address when an account is opened.
+- **Car rental and car sharing:** companies check the class, expiry date and
+  restrictions before they release a vehicle.
+- **Insurance:** auto insurers capture the license number and driver details for quotes
+  and policies.
+- **Healthcare and pharmacies:** patient intake and controlled-substance pickups record
+  the ID presented.
+- **Age-restricted retail, hospitality and HR:** staff verify age and identity, and
+  employers record identity documents for employment eligibility.
 
-All on the card's front. The request named no fields, so these were chosen:
+### What it contains
 
-| Field | Value |
-|---|---|
-| License number | 12345678 |
-| Issuing state | Texas |
-| Sex | F |
-| Height | 5 feet 10 inches |
-| Eye color | BRO |
-
-The card's identity and the holder's physical description, each boxed on its code and
-value ("4d DL 12345678", "16 Hgt 5'-10""). No name is featured, although the name is
-specimen data. Height is returned as "5 feet 10 inches", normalized as the schema asks,
-from the printed 5'-10".
-
-## What it surfaced
-
-**Values that are not printed are inferred.** `nationality` comes back as "American",
-which the card does not print; it is a reasonable inference from a US license, but it has
-no range. `issuing_country` comes back as "USA" with no range either: the card does print
-a small "USA" beside TEXAS, but it is missing from the parse.
-
-**The schema asks for fields a license does not have.** `place_of_birth` and `weight` are
-not on a Texas license and correctly come back null. `place_of_birth` is required by the
-schema, so extraction returns a `nonconformant_output` warning. The schema is the team's
-and is used unchanged; the warning is a finding about the schema's fit to this document
-type.
-
-**The security features parse as noise, not as fields.** The rotated ghost text next to
-the second portrait comes back as "orero", and the second portrait as a photo tag. Neither
-leaks into any extracted field.
-
-**Dates are normalized.** Issue, expiry and birth dates come back as ISO dates, so they
-no longer match the printed 01/04/2025 style and are flagged, though they are right.
-
-## Extraction
-
-`schema.json` is the team's `doc42-driver-license-schema.json`, used unchanged: **15 leaf
-fields** across `document_type`, `document_info` and `personal_info`. Everything printed
-on the card extracts correctly.
-
-## Cost
-
-**1.10 credits** at standard tier for 1 image: 0.60 to parse, 0.50 to extract.
-
-## Regenerating
-
-```bash
-# The source is a crop of the DPS release image:
-curl -sSL -o /tmp/tx-pr.jpg "https://cdn.www3.dps.texas.gov/cdn/ff/BrbsHGfX2YEY0YqmGzl-YDiz0R2fk5b2BxyVlMprcIM/1755528566/public/news/2025-08/8.18.2025-New-DL-Design-PR.jpg"
-.venv/bin/python -c "from PIL import Image; Image.open('/tmp/tx-pr.jpg').convert('RGB').crop((22,300,622,685)).save('document-types/collection/drivers-license-usa/source/texas-dl-specimen-2025.png')"
-
-.venv/bin/python document-types/scripts/run_ade.py drivers-license-usa                # 1.10 credits
-.venv/bin/python document-types/scripts/run_ade.py drivers-license-usa --extract-only # 0.50, schema iteration
-.venv/bin/python document-types/scripts/build_images.py drivers-license-usa           # free
-.venv/bin/python document-types/scripts/inspect_fields.py drivers-license-usa --page 1
-```
+- **A card, not a page.** About twenty fields, each a small AAMVA field code ("4d DL",
+  "16 Hgt", "18 Eyes") followed by its value.
+- **A patterned security background** with a guilloche, a seal, a ghost portrait and
+  microtext behind the fields.
+- **Security features among the fields:** a second, smaller portrait, a star and rotated
+  ghost text.
+- **A portrait photo** and a printed signature.
+- **A low-resolution image** about 600 pixels wide, with very small text.
+- **Dates in a fixed US format** for birth, issue and expiry.

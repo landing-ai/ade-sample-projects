@@ -87,5 +87,25 @@
     2,
     3
   ],
-  "notes": "The request named no feature page or fields; its notes suggested page 2 and the job ID, project name, test type, the first row's date, lot and field dry density, max dry density, % compaction against spec and the pass/fail result. Page 2 was kept and the five featured fields are one complete compaction test, the first row of the table: the lot, the field dry density, the Proctor maximum dry density it is compared against, the resulting percent compaction and the result, so the overlay reads as a single calculation (101.9 / 104.1 = 97.9%, printed as 98 against a 98 min. spec, Pass). The date, job ID, project name and test type all ground ok on the same page and were dropped only to keep to five. No individual is featured. The table's Proctor Lab # column points at the Soils Summary sheets on pages 3-6, and the values reconcile: lab 191957's corrected maximum dry density (121.2) is the max used on the Romsdalen Road rows that cite it, and the featured Lot 39 row uses lab 191996's corrected values, while the Lot 43 row cites the same lab but matches its uncorrected values (102.2 and 8.6). Extraction reports what is printed and does not flag that. All 18 table rows extract with correct values, but the last six (rows 13-18) come back with no ranges at all (SYNTH) although the parse has every row, so only the first twelve rows can be illustrated. is_sealed grounds OFF to the letter's [STAMPED] attestation label, and is_signed grounds OFF to a [SIGNED] label on page 5, a Soils Summary sheet, rather than the letter. The engineer's registration number and seal date ground to the seal as a whole. This sample is six pages of a 58-page public packet (see clearance_note); the subdivision is the subject of a public subsidence dispute, which this folder does not address."
+  "notes": "The request named no feature page or fields; its notes suggested page 2 and the job ID, project name, test type, the first row's date, lot and field dry density, max dry density, % compaction against spec and the pass/fail result. Page 2 was kept and the five featured fields are one complete compaction test, the first row of the table: the lot, the field dry density, the Proctor maximum dry density it is compared against, the resulting percent compaction and the result, so the overlay reads as a single calculation (101.9 / 104.1 = 97.9%, printed as 98 against a 98 min. spec, Pass). The date, job ID, project name and test type all ground ok on the same page and were dropped only to keep to five. No individual is featured. The table's Proctor Lab # column points at the Soils Summary sheets on pages 3-6, and the values reconcile: lab 191957's corrected maximum dry density (121.2) is the max used on the Romsdalen Road rows that cite it, and the featured Lot 39 row uses lab 191996's corrected values, while the Lot 43 row cites the same lab but matches its uncorrected values (102.2 and 8.6). Extraction reports what is printed and does not flag that. All 18 table rows extract with correct values, but the last six (rows 13-18) come back with no ranges at all (SYNTH) although the parse has every row, so only the first twelve rows can be illustrated. is_sealed grounds OFF to the letter's [STAMPED] attestation label, and is_signed grounds OFF to a [SIGNED] label on page 5, a Soils Summary sheet, rather than the letter. The engineer's registration number and seal date ground to the seal as a whole. This sample is six pages of a 58-page public packet (see clearance_note); the subdivision is the subject of a public subsidence dispute, which this folder does not address.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 7.5,
+      "extract_credits": 12.7
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 7.3,
+      "extract_credits": 12.7
+    }
+  ]
 }

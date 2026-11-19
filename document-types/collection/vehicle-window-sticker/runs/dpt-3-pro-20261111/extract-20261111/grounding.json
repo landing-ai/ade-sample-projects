@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "pricing.base_msrp",
+      "label": "Base MSRP",
+      "value": 31490.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.51492,
+        "ymin": 0.15916,
+        "xmax": 0.55911,
+        "ymax": 0.17324
+      },
+      "range": {
+        "end": 2006,
+        "start": 1995
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "pricing-base_msrp.png"
+    },
+    {
+      "path": "pricing.inland_freight_and_handling",
+      "label": "Inland freight and handling",
+      "value": 1325.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.52068,
+        "ymin": 0.82688,
+        "xmax": 0.56046,
+        "ymax": 0.84126
+      },
+      "range": {
+        "end": 3136,
+        "start": 3126
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "pricing-inland_freight_and_handling.png"
+    },
+    {
+      "path": "pricing.total_msrp",
+      "label": "Total MSRP",
+      "value": 33295.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.51163,
+        "ymin": 0.86676,
+        "xmax": 0.56032,
+        "ymax": 0.88221
+      },
+      "range": {
+        "end": 3218,
+        "start": 3207
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "pricing-total_msrp.png"
+    },
+    {
+      "path": "fuel_economy.combined_mpg",
+      "label": "Combined MPG",
+      "value": 49,
+      "page": 1,
+      "box": {
+        "xmin": 0.56543,
+        "ymin": 0.15171,
+        "xmax": 0.98404,
+        "ymax": 0.37716
+      },
+      "range": {
+        "end": 4152,
+        "start": 4150
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fuel_economy-combined_mpg.png"
+    },
+    {
+      "path": "fuel_economy.annual_fuel_cost",
+      "label": "Annual fuel cost",
+      "value": 900,
+      "page": 1,
+      "box": {
+        "xmin": 0.60378,
+        "ymin": 0.41851,
+        "xmax": 0.67507,
+        "ymax": 0.46688
+      },
+      "range": {
+        "end": 4447,
+        "start": 4444
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fuel_economy-annual_fuel_cost.png"
+    }
+  ]
+}

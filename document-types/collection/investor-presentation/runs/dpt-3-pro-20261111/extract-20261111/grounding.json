@@ -1,0 +1,71 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 20,
+  "page_count": 43,
+  "preview_pages": [
+    1,
+    15,
+    20,
+    28
+  ],
+  "fields": [
+    {
+      "path": "fee_income.non_interest_income_to_operating_revenue_ratio",
+      "label": "Non-interest income ratio",
+      "value": "21.5%",
+      "page": 20,
+      "box": {
+        "xmin": 0.4156,
+        "ymin": 0.37307,
+        "xmax": 0.46309,
+        "ymax": 0.39529
+      },
+      "range": {
+        "end": 46953,
+        "start": 46948
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bullet-ratio.png"
+    },
+    {
+      "path": "fee_income.income_sources[0].source",
+      "label": "Largest income source",
+      "value": "Fiduciary Activities",
+      "page": 20,
+      "box": {
+        "xmin": 0.53714,
+        "ymin": 0.5555,
+        "xmax": 0.94452,
+        "ymax": 0.94042
+      },
+      "range": {
+        "end": 49383,
+        "start": 49363
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "pie-largest-source.png"
+    },
+    {
+      "path": "fee_income.aum_basis_footnote",
+      "label": "AUM footnote",
+      "value": "Market value of assets under management.",
+      "page": 20,
+      "box": {
+        "xmin": 0.05426,
+        "ymin": 0.83978,
+        "xmax": 0.26932,
+        "ymax": 0.85467
+      },
+      "range": {
+        "end": 47227,
+        "start": 47187
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fee_income-aum_basis_footnote.png"
+    }
+  ]
+}

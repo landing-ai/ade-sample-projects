@@ -1,15 +1,110 @@
 # Closing Disclosure
 
-Source assets for `landing.ai/document-type/closing-disclosure`.
+**On the website:** [landing.ai/document-type/closing-disclosure](https://landing.ai/document-type/closing-disclosure)
 
-## Sample document
+The Consumer Financial Protection Bureau's filled sample of the TRID Closing Disclosure
+for a purchase loan, dated April 15, 2013. It sets out the loan terms, projected payments
+and costs at closing, itemizes every closing cost, calculates the cash to close,
+summarizes the borrower's and seller's transactions, and ends with loan disclosures and
+contact information.
 
-`source/closing-disclosure.pdf` — the Consumer Financial Protection Bureau's filled
-sample of the TRID Closing Disclosure for a purchase loan, dated April 15, 2013. **5 pages,
-portrait (letter)**: loan terms, projected payments and costs at closing on page 1;
-itemized closing cost details on page 2; the cash-to-close calculation and summaries of
-the borrower's and seller's transactions on page 3; loan disclosures and the escrow
-account on page 4; loan calculations, other disclosures and contact information on page 5.
+| | |
+|---|---|
+| Pages | 5 |
+| Fields in the extraction schema | 59 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:39 | 2026-11-19 02:41 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 24,067 | 24,731 |
+| Words under 0.95 confidence | 53 | n/a |
+| Words under 0.80 confidence | 4 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.7 s | 16.0 s |
+| Per page | 1.5 s | 3.2 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.2 credits | 8.7 credits |
+| Per page | 0.64 credits | 1.74 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:39 | 2026-11-19 02:41 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 59 | 59 |
+| Non-null fields returned | 57 | 57 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 111.9 s | 696.3 s |
+| Per schema field (59) | 1.90 s | 11.80 s |
+| Per value returned | 1.80 s | 11.23 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 7.0 credits | 7.2 credits |
+| Per schema field (59) | 0.119 credits | 0.122 credits |
+| Per value returned | 0.113 credits | 0.116 credits |
+
+## Origin
+
+`source/closing-disclosure.pdf` is the Consumer Financial Protection Bureau's filled
+sample of the **TRID Closing Disclosure** for a purchase loan, dated April 15, 2013. It is
+**5 pages, portrait (US Letter)**, created digitally with a text layer: loan terms,
+projected payments and costs at closing on page 1; itemized closing cost details on page
+2; the cash-to-close calculation and summaries of the borrower's and seller's
+transactions on page 3; loan disclosures and the escrow account on page 4; loan
+calculations, other disclosures and contact information on page 5.
 
 | | |
 |---|---|
@@ -21,96 +116,39 @@ account on page 4; loan calculations, other disclosures and contact information 
 The CFPB links this file from its Closing Disclosure explainer page and publishes it for
 general use. It is the same form content as Regulation Z Appendix H-25(B), without the
 cover sheet. Every party is a specimen placeholder: the borrowers, sellers, Ficus Bank,
-Epsilon Title Co., "Anywhere Street" and "Somewhere Drive" addresses, phone numbers such as
-123-456-7890 and made-up email domains. The file was downloaded directly by script. No
-redaction was needed.
+Epsilon Title Co., "Anywhere Street" and "Somewhere Drive" addresses, phone numbers such
+as 123-456-7890 and made-up email domains. The file was downloaded directly by script.
+No redaction was needed.
 
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+The PDF's text layer holds a filled-in Mortgage Broker column on page 5, with a company,
+address, contact and IDs, but the column prints empty on the page. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's **closing-stage mortgage document**, the federally mandated summary a
-borrower receives three days before closing. It sits after the rate lock and alongside
-the title documents already here.
+### Who processes it
 
-- **A dense, regulated layout.** Five pages of fixed sections, lettered A to N, with
-  borrower-paid, seller-paid and paid-by-others columns, each split into at-closing and
-  before-closing.
-- **The same number in several places.** Closing costs and cash to close appear on page 1
-  and again on pages 2 and 3; the payment appears in Loan Terms and in Projected Payments.
-  A field has to be pinned to the occurrence a reader expects.
-- **Arithmetic across pages.** Page 1's totals are sums of page 2's sections, which a
-  consumer of the extraction can check.
+The Closing Disclosure is the federally required summary a borrower receives three days
+before closing on most US mortgages. It is the final statement of the loan's terms and
+every cost of the transaction.
 
-## Featured fields: what the loan costs, monthly and at closing
+- **Mortgage lending:** lenders issue it, and post-closing teams check it against the
+  Loan Estimate for tolerance violations.
+- **Title and escrow:** settlement agents balance the funds against it at closing.
+- **Mortgage quality control and compliance:** reviewers audit loan files for TRID
+  timing and accuracy.
+- **Secondary market and loan purchase:** investors buying closed loans check the
+  terms, fees and cash to close against the loan data.
+- **Real estate agents and attorneys:** they review it with buyers and sellers before
+  the closing.
 
-All on page 1. The request named no fields, so these were chosen:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Interest rate | 3.875% |
-| Monthly principal and interest | $761.78 |
-| Estimated total monthly payment (years 1-7) | $1,050.26 |
-| Closing costs | $9,712.10 |
-| Cash to close | $14,147.26 |
-
-Page 1 read top to bottom the way a borrower reads it: the rate, the monthly payment it
-produces, the all-in payment while mortgage insurance applies, and what is due at closing.
-
-The request's notes suggested loan amount, interest rate, monthly P&I, the prepayment
-penalty and cash to close. Interest rate, monthly P&I and cash to close are featured.
-**Loan amount** is extracted correctly but `inspect_fields.py` marks it OFF, the number
-162000 against the printed "$162,000", so it was left out. The **prepayment penalty
-maximum** ($3,240) grounds to the whole "YES • As high as $3,240…" cell, also OFF. The
-header dates the notes said to avoid are extracted as ISO dates and are OFF as well.
-
-## What it surfaced
-
-**Page 1 grounds cell by cell.** Every featured value boxes exactly its cell in the Loan
-Terms, Projected Payments and Costs at Closing tables, including the Years 1-7 column of
-a two-column table.
-
-**Ten values are right but synthesized.** The four borrower-transaction totals on page 3
-(due from borrower, paid already, deposit, seller credit), the J. Total Closing Costs
-line on page 2, and all five Loan Calculations on page 5 (total of payments, finance
-charge, amount financed, APR, TIP) came back with no ranges, although every one is in
-the parse markdown as its own table cell. They cannot be illustrated. The seller's
-transaction totals on the same page 3 ground normally.
-
-**The PDF carries text that is not on the page.** Its text layer holds a filled-in
-Mortgage Broker column on page 5, with a company, address, contact and IDs, but the
-column prints empty. ADE parsed what is visible and returned the column empty, so the
-lender's NMLS ID comes back as an empty string rather than the broker's hidden one. A
-text-layer extractor would have picked it up.
-
-**Lender credits come back null.** Page 2's Lender Credits line is blank, and page 1
-prints "– $0 in Lender Credits". The schema allows null for this field.
-
-**Booleans and percentages from prose.** The escrow-account checkbox, the late fee
-("5% of the monthly principal and interest payment") and the YES/NO features extract
-correctly, but ground to the whole sentence or cell, so they read as OFF.
-
-## Extraction
-
-**59 leaf fields**: closing, transaction and loan information from the header; loan
-terms; the projected payments table; costs at closing; the section totals of closing
-cost details; the borrower's and seller's transaction totals; the escrow account; late
-payment terms; loan calculations; and the lender's contact column.
-
-## Cost
-
-**23.10 credits** at standard tier for 5 pages: 15.90 for the first parse and extract,
-and 7.20 for one extraction re-run after making `lender_credits` nullable. A fresh run
-costs about 15.90.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/closing-disclosure/source/closing-disclosure.pdf \
-  "https://files.consumerfinance.gov/f/201311_cfpb_kbyo_closing-disclosure.pdf"
-.venv/bin/python document-types/scripts/run_ade.py closing-disclosure                # ~15.90 credits
-.venv/bin/python document-types/scripts/run_ade.py closing-disclosure --extract-only # ~7.20, schema iteration
-.venv/bin/python document-types/scripts/build_images.py closing-disclosure           # free
-.venv/bin/python document-types/scripts/inspect_fields.py closing-disclosure --page 1
-```
+- **A dense, regulated layout** of fixed sections, lettered A to N, across five pages.
+- **Multi-column cost tables** with borrower-paid, seller-paid and paid-by-others
+  columns, each split into at-closing and before-closing.
+- **The same number in several places.** Closing costs and cash to close appear on page
+  1 and again on pages 2 and 3, and the payment appears in two tables on page 1.
+- **Totals that sum across pages:** page 1's totals are sums of page 2's sections.
+- **Checkboxes and YES/NO answers** inside table cells, with terms written in prose.
+- **Hidden text** in the text layer that does not print on the page.

@@ -27,8 +27,8 @@
       "occurrence": 0
     },
     {
-      "path": "box_13.third_party_sick_pay",
-      "label": "Third-party sick pay checked (box 13)",
+      "path": "box_12[0].amount",
+      "label": "Amount",
       "occurrence": 0
     },
     {
@@ -42,5 +42,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "Fields chosen by the document owner after the first build: boxes 1, 3, 13, 14 and 19. The first build featured boxes 1, 2, 4 and 6. The owner also asked for box 12c's code 'D' with its amount; it was dropped because the parse loses the box 12 codes (each sits beside a small vertical 'Code' label), so the code extracts as null, and the owner chose not to feature box 12 at all. Box 13 is featured through third_party_sick_pay, which extracts true and has its own tight range covering the label and the ticked box. build_images.py flags it because the word 'True' never appears on the page, which is expected for a checkbox; the crop was checked by eye. statutory_employee and retirement_plan share one range covering both boxes, so either would show two ticks in one crop. Box 16 state wages (120.00) is in the parse but extracts synthesized, with no range."
+  "notes": "Fields chosen by the document owner after the first build: boxes 1, 3, 13, 14 and 19. The first build featured boxes 1, 2, 4 and 6. The owner also asked for box 12c's code 'D' with its amount; it was dropped because the parse loses the box 12 codes (each sits beside a small vertical 'Code' label), so the code extracts as null, and the owner chose not to feature box 12 at all. Box 13 is featured through third_party_sick_pay, which extracts true and has its own tight range covering the label and the ticked box. build_images.py flags it because the word 'True' never appears on the page, which is expected for a checkbox; the crop was checked by eye. statutory_employee and retirement_plan share one range covering both boxes, so either would show two ticks in one crop. Box 16 state wages (120.00) is in the parse but extracts synthesized, with no range.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.6
+    }
+  ]
 }

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 9,
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
+  ],
+  "fields": [
+    {
+      "path": "product.part_number",
+      "label": "Part number",
+      "value": "HAB900C33LM4",
+      "page": 1,
+      "box": {
+        "xmin": 0.08886,
+        "ymin": 0.14782,
+        "xmax": 0.35978,
+        "ymax": 0.17506
+      },
+      "range": {
+        "end": 81,
+        "start": 69
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "product-part_number.png"
+    },
+    {
+      "path": "headline_ratings.rated_drain_source_voltage",
+      "label": "Rated drain-source voltage",
+      "value": "3300 V",
+      "page": 1,
+      "box": {
+        "xmin": 0.83777,
+        "ymin": 0.15987,
+        "xmax": 0.89627,
+        "ymax": 0.17265
+      },
+      "range": {
+        "end": 154,
+        "start": 148
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "headline_ratings-rated_drain_source_voltage.png"
+    },
+    {
+      "path": "maximum_ratings.continuous_drain_current_90c_a",
+      "label": "Continuous drain current 90c a",
+      "value": 908,
+      "page": 1,
+      "box": {
+        "xmin": 0.50325,
+        "ymin": 0.71843,
+        "xmax": 0.52623,
+        "ymax": 0.72763
+      },
+      "range": {
+        "end": 2764,
+        "start": 2761
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "maximum_ratings-continuous_drain_current_90c_a.png"
+    },
+    {
+      "path": "maximum_ratings.continuous_drain_current_25c_a",
+      "label": "Continuous drain current at 25 °C",
+      "value": 1200,
+      "page": 1,
+      "box": {
+        "xmin": 0.55304,
+        "ymin": 0.69579,
+        "xmax": 0.58267,
+        "ymax": 0.70481
+      },
+      "range": {
+        "end": 2617,
+        "start": 2613
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "maximum_ratings-continuous_drain_current_25c_a.png"
+    },
+    {
+      "path": "maximum_ratings.power_dissipation_w",
+      "label": "Power dissipation",
+      "value": 7282,
+      "page": 1,
+      "box": {
+        "xmin": 0.49971,
+        "ymin": 0.80365,
+        "xmax": 0.52977,
+        "ymax": 0.81291
+      },
+      "range": {
+        "end": 3289,
+        "start": 3285
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "maximum_ratings-power_dissipation_w.png"
+    }
+  ]
+}

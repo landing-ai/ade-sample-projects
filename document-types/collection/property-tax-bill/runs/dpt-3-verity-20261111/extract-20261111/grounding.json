@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "value_information[1].assessed_value",
+      "label": "Assessed value",
+      "value": 756979,
+      "page": 1,
+      "box": {
+        "xmin": 0.17995,
+        "ymin": 0.56589,
+        "xmax": 0.24574,
+        "ymax": 0.57626
+      },
+      "range": {
+        "end": 1096,
+        "start": 1088
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "value_information-1-assessed_value.png"
+    },
+    {
+      "path": "value_information[1].levy_rate",
+      "label": "Levy rate",
+      "value": "6.4423487853",
+      "page": 1,
+      "box": {
+        "xmin": 0.37229,
+        "ymin": 0.56534,
+        "xmax": 0.4732,
+        "ymax": 0.57445
+      },
+      "range": {
+        "end": 1131,
+        "start": 1119
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "value_information-1-levy_rate.png"
+    },
+    {
+      "path": "district_taxes[0].tax_amount",
+      "label": "School district tax",
+      "value": 345.47,
+      "page": 1,
+      "box": {
+        "xmin": 0.87879,
+        "ymin": 0.42437,
+        "xmax": 0.93063,
+        "ymax": 0.43427
+      },
+      "range": {
+        "end": 1783,
+        "start": 1777
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "district_taxes-0-tax_amount.png"
+    },
+    {
+      "path": "amounts_due.full_year_due",
+      "label": "Full year due",
+      "value": 5157.93,
+      "page": 1,
+      "box": {
+        "xmin": 0.53196,
+        "ymin": 0.23705,
+        "xmax": 0.92919,
+        "ymax": 0.24942
+      },
+      "range": {
+        "end": 340,
+        "start": 306
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-full_year_due.png"
+    },
+    {
+      "path": "amounts_due.first_half_due",
+      "label": "First half due",
+      "value": 2579.01,
+      "page": 1,
+      "box": {
+        "xmin": 0.53172,
+        "ymin": 0.22346,
+        "xmax": 0.92936,
+        "ymax": 0.23446
+      },
+      "range": {
+        "end": 305,
+        "start": 279
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "amounts_due-first_half_due.png"
+    }
+  ]
+}

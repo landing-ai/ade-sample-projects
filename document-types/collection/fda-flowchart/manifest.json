@@ -16,10 +16,55 @@
   },
   "feature_page": 5,
   "fields": [
-    { "path": "flowcharts[3].figure_caption", "label": "Figure caption", "occurrence": 0 },
-    { "path": "flowcharts[3].decisions[3].question", "label": "Decision C4", "occurrence": 0 },
-    { "path": "flowcharts[3].decisions[4].question", "label": "Decision C4.1", "occurrence": 0 },
-    { "path": "flowcharts[3].decisions[4].if_no", "label": "C4.1 No outcome", "occurrence": 0 }
+    {
+      "path": "flowcharts[3].figure_caption",
+      "label": "Figure caption",
+      "occurrence": 0
+    },
+    {
+      "path": "flowcharts[3].decisions[3].question",
+      "label": "Decision C4",
+      "occurrence": 0
+    },
+    {
+      "path": "flowcharts[3].decisions[4].question",
+      "label": "Decision C4.1",
+      "occurrence": 0
+    },
+    {
+      "path": "flowcharts[3].decisions[4].if_no",
+      "label": "C4.1 No outcome",
+      "occurrence": 0
+    }
   ],
-  "notes": "No feature page or fields were requested; the request asked only that pages 2, 13, 17, 25 and 34 of the original be used. Page 5 (Flowchart C: Materials Changes) is featured because it is the one chart whose logic ADE extracted without error, and the featured fields trace its only route to a new 510(k): C4 (new biocompatibility concerns?) Yes, then C4.1 (same material in a similar marketed device?) No, then New 510(k). Each flowchart parses as a single FLOWCHART figure block with one grounding box, so every value read from inside a chart grounds to the whole chart: three of the four crops are the same image. Only the caption, a separate text block below the figure, grounds tightly. Extraction errors on the other charts are recorded in the README."
+  "notes": "No feature page or fields were requested; the request asked only that pages 2, 13, 17, 25 and 34 of the original be used. Page 5 (Flowchart C: Materials Changes) is featured because it is the one chart whose logic ADE extracted without error, and the featured fields trace its only route to a new 510(k): C4 (new biocompatibility concerns?) Yes, then C4.1 (same material in a similar marketed device?) No, then New 510(k). Each flowchart parses as a single FLOWCHART figure block with one grounding box, so every value read from inside a chart grounds to the whole chart: three of the four crops are the same image. Only the caption, a separate text block below the figure, grounds tightly. Extraction errors on the other charts are recorded in the README.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 5.2,
+      "extract_credits": 7.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 5.0,
+      "extract_credits": 7.1
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 7.3
+    }
+  ]
 }

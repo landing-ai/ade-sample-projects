@@ -15,13 +15,67 @@
     }
   },
   "feature_page": 1,
-  "preview_pages": [1, 2, 11, 20],
-  "fields": [
-    { "path": "court_district", "label": "Court", "occurrence": 0 },
-    { "path": "case_number", "label": "Case number", "occurrence": 0 },
-    { "path": "plaintiff", "label": "Plaintiff", "occurrence": 0 },
-    { "path": "defendants[0]", "label": "First defendant", "occurrence": 0 },
-    { "path": "defendants[1]", "label": "Second defendant", "occurrence": 0 }
+  "preview_pages": [
+    1,
+    2,
+    11,
+    20
   ],
-  "notes": "Features the caption on page 1: which court, the case number, and who is suing whom. The request suggested court, case number from the filing stamp (the caption's case-number box is blank), filed date, plaintiff and defendants. With two defendants that is six fields against a cap of five, so the filed date was left out: it shares the filing-stamp line with the case number, and the caption carries the rest of the story. It extracts and grounds correctly ('01/30/25', ok on page 1). The court is featured through court_district ('NORTHERN DISTRICT OF CALIFORNIA'), the caption's second line, because the first line ('IN THE UNITED STATES DISTRICT COURT') identifies no particular court. The schema asks for the court lines and the filed date as printed: a first run that normalized them ('United States District Court, Northern District of California', '2025-01-30') grounded OFF, because the boxed text no longer contained the value. No individual's name is featured."
+  "fields": [
+    {
+      "path": "court_district",
+      "label": "Court",
+      "occurrence": 0
+    },
+    {
+      "path": "case_number",
+      "label": "Case number",
+      "occurrence": 0
+    },
+    {
+      "path": "plaintiff",
+      "label": "Plaintiff",
+      "occurrence": 0
+    },
+    {
+      "path": "defendants[0]",
+      "label": "First defendant",
+      "occurrence": 0
+    },
+    {
+      "path": "defendants[1]",
+      "label": "Second defendant",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the caption on page 1: which court, the case number, and who is suing whom. The request suggested court, case number from the filing stamp (the caption's case-number box is blank), filed date, plaintiff and defendants. With two defendants that is six fields against a cap of five, so the filed date was left out: it shares the filing-stamp line with the case number, and the caption carries the rest of the story. It extracts and grounds correctly ('01/30/25', ok on page 1). The court is featured through court_district ('NORTHERN DISTRICT OF CALIFORNIA'), the caption's second line, because the first line ('IN THE UNITED STATES DISTRICT COURT') identifies no particular court. The schema asks for the court lines and the filed date as printed: a first run that normalized them ('United States District Court, Northern District of California', '2025-01-30') grounded OFF, because the boxed text no longer contained the value. No individual's name is featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 21,
+      "service_tier": "standard",
+      "parse_credits": 23.0,
+      "extract_credits": 12.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 21,
+      "service_tier": "standard",
+      "parse_credits": 23.0,
+      "extract_credits": 11.9
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 21,
+      "service_tier": "standard",
+      "parse_credits": 8.2,
+      "extract_credits": 11.8
+    }
+  ]
 }

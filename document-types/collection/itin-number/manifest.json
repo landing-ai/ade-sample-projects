@@ -19,7 +19,7 @@
     {
       "path": "itin",
       "label": "ITIN",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "notice.notice_number",
@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Replaces an earlier sample that was probably not a genuine IRS notice. Features the notice's identity and the number it confirms: the ITIN, the notice number, its date, the case reference and the date of birth the IRS uses alongside the ITIN to match tax documents. No name is featured, although the specimen's name is the IRS's own illustrative data. The ITIN is printed by the IRS as the placeholder NNN-NN-NNNN, which is the real value on the real page."
+  "notes": "Replaces an earlier sample that was probably not a genuine IRS notice. Features the notice's identity and the number it confirms: the ITIN, the notice number, its date, the case reference and the date of birth the IRS uses alongside the ITIN to match tax documents. No name is featured, although the specimen's name is the IRS's own illustrative data. The ITIN is printed by the IRS as the placeholder NNN-NN-NNNN, which is the real value on the real page.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.3,
+      "extract_credits": 1.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.3,
+      "extract_credits": 1.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 0.8,
+      "extract_credits": 1.5
+    }
+  ]
 }

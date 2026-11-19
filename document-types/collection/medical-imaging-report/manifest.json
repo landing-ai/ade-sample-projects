@@ -42,7 +42,7 @@
     {
       "path": "study_details.exam_description",
       "label": "Exam",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "study_details.study_date",
@@ -52,7 +52,7 @@
     {
       "path": "study_details.comparison",
       "label": "Comparison study",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "report_findings.technique",
@@ -60,5 +60,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "Replaces the earlier medical-imaging-report folder (a 3-page New York State DOCCS sample report), at the operator's direction. The request supplied the schema (schema_mri_report.json, used unchanged) and named no feature page or fields. Page 2 features the study itself: what was scanned, when, what it was compared against and how it was imaged. The findings and impression, the most interesting text on the page, could not be featured: each spans several lines and grounds OFF, one range per line, none of which contains the whole value. Identifier fields (MRN, accession number) and physician names ground ok but were deliberately not featured: the study fields make the same point without them."
+  "notes": "Replaces the earlier medical-imaging-report folder (a 3-page New York State DOCCS sample report), at the operator's direction. The request supplied the schema (schema_mri_report.json, used unchanged) and named no feature page or fields. Page 2 features the study itself: what was scanned, when, what it was compared against and how it was imaged. The findings and impression, the most interesting text on the page, could not be featured: each spans several lines and grounds OFF, one range per line, none of which contains the whole value. Identifier fields (MRN, accession number) and physician names ground ok but were deliberately not featured: the study fields make the same point without them.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.2,
+      "extract_credits": 3.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.3,
+      "extract_credits": 3.4
+    }
+  ]
 }

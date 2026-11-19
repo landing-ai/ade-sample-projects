@@ -1,16 +1,110 @@
 # Pension statement
 
-Source assets for `landing.ai/document-type/pension-statement`.
+**On the website:** [landing.ai/document-type/pension-statement](https://landing.ai/document-type/pension-statement)
 
-## Sample document
+The specimen pension pay stub that the New York State and Local Retirement System shows
+its retirees: the monthly payment advice for August 2023. It shows the monthly service
+annuity, federal tax withheld, before-tax and after-tax deductions, current and
+year-to-date totals, and how the net payment was deposited.
+
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 36 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:44 | 2026-11-19 03:42 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 2,253 | 2,327 |
+| Words under 0.95 confidence | 7 | n/a |
+| Words under 0.80 confidence | 1 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.7 s | 17.2 s |
+| Per page | 2.7 s | 17.2 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.4 credits | 1.1 credits |
+| Per page | 0.40 credits | 1.10 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:44 | 2026-11-19 03:42 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 36 | 36 |
+| Non-null fields returned | 36 | 36 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 258.4 s | 126.6 s |
+| Per schema field (36) | 7.18 s | 3.52 s |
+| Per value returned | 7.18 s | 3.52 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 1.6 credits | 1.7 credits |
+| Per schema field (36) | 0.044 credits | 0.047 credits |
+| Per value returned | 0.044 credits | 0.047 credits |
+
+## Origin
 
 `source/nys-ers-pension-pay-stub-2022-specimen.pdf` is the specimen pension pay stub
 that the New York State and Local Retirement System shows its retirees. It is the
 monthly payment advice the Employees' Retirement System (ERS) issues to a retiree, for
-the period 8/01/2023 to 8/31/2023. **1 page, landscape.** It has a header with the pay
-group, pay period, advice number and date, then a recipient block and federal tax data,
-earnings and taxes tables, before-tax and after-tax deduction tables, a summary band
-with current and year-to-date totals, and a net pay distribution table.
+the period 8/01/2023 to 8/31/2023. It is **1 page, landscape**, with no text layer. It
+has a header with the pay group, pay period, advice number and date, then a recipient
+block and federal tax data, earnings and taxes tables, before-tax and after-tax
+deduction tables, a summary band with current and year-to-date totals, and a net pay
+distribution table.
 
 | | |
 |---|---|
@@ -23,99 +117,45 @@ The Comptroller's "Your Pension Pay Stub" tutorial page for retirees embeds this
 and explains each part of the stub. Every personal value is a placeholder: John Smith,
 123 Main Street, Any Town NY 12345-0000, employee ID R12345678, and an account number
 masked as XXXXXXX1234. The only real address is the Comptroller's own office. Nothing
-needed redacting.
-
-### How the PDF was made
+needed redacting. The file is named for 2022, but the stub is for August 2023.
 
 The publisher distributes the stub as an **SVG**, not a PDF. It was exported from Adobe
 Illustrator with every character outlined as a vector path, so it has no text at all.
-PyMuPDF renders this SVG as a solid black page, so the SVG was printed to PDF with
-headless Chrome, run as a local renderer with a throwaway profile. The SVG was placed in
-a small local HTML page sized to its 615.27 x 459.91 viewBox, which gave a one-page
-11 x 8.2225 in landscape page with no margins:
-
-```bash
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
-    --disable-gpu --user-data-dir=<scratch>/chrome-profile --no-pdf-header-footer \
-    --print-to-pdf=out.pdf file://<scratch>/wrap.html
-```
-
-`wrap.html` sets `@page { size: 11in 8.2225in; margin: 0 }` and shows the SVG as an
-`<img>` filling the page. The PDF's document metadata (Chrome's title and producer
-strings) was then cleared. The result was rendered with PyMuPDF and checked by eye
-against the SVG. **The PDF has no text layer**, so ADE parses this sample from the page
-image alone.
+The SVG was printed to PDF with headless Chrome, placed in a small local HTML page sized
+to its 615.27 x 459.91 viewBox, which gave a one-page 11 x 8.2225 in landscape page with
+no margins. The PDF's document metadata (Chrome's title and producer strings) was then
+cleared, and the result was checked by eye against the SVG. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **pension payment**. It is a defined-benefit annuity, as opposed
-to a balance invested in a plan like the workplace plan at `retirement-statement`, the
-IRA at `ira-statement` or the 401(k) at `401k-statement`. Strictly it is a payment
-advice, not an award letter or an annual benefit statement: it shows one month's
-pension payment and what came out of it.
+### Who processes it
 
-- **It looks like a pay stub, but the earnings are a pension.** The single earnings line
-  is a Monthly Service Annuity. The layout matches `pay-stub`, so the schema has to name
-  the retiree, not an employee.
-- **Pension-specific deductions.** An equitable distribution, which is the share of the
-  pension paid to a former spouse under a divorce order, is taken before tax. A county
-  retiree health premium is taken after tax.
-- **Current and year-to-date figures side by side,** in every table and in the summary
+A pension payment advice shows one month's defined-benefit pension payment and what was
+taken out of it. Retirees use it as proof of income, much as workers use a pay stub.
+
+- **Mortgage and consumer lending:** underwriters verify pension income from the gross
+  annuity and its continuation.
+- **Property management and housing programs:** landlords and senior housing programs
+  verify a retiree's income.
+- **Public benefits:** agencies check pension income when deciding eligibility for
+  programs such as Medicaid or SNAP.
+- **Tax preparation and financial planning:** preparers and advisors reconcile
+  withholding and deductions against year-end tax forms.
+- **Family law:** attorneys and courts check equitable distribution payments made to a
+  former spouse under a divorce order.
+
+### What it contains
+
+- **A pay-stub layout for a pension.** The single earnings line is a Monthly Service
+  Annuity, and the recipient is a retiree, not an employee.
+- **Pension-specific deductions.** An equitable distribution, the share of the pension
+  paid to a former spouse, is taken before tax, and a county retiree health premium is
+  taken after tax.
+- **Current and year-to-date figures side by side** in every table and in the summary
   band, so each value has a twin in the next column.
-- **Outlined text, no text layer.** Nothing on the page can be read as text. Every value
-  comes from the page image.
-
-## Featured fields: one month's pension payment
-
-All on page 1. The request named no page or fields, but its notes suggested these four,
-and all four ground cleanly:
-
-| Field | Value |
-|---|---|
-| Monthly service annuity | 2,148.58 |
-| Federal withholding | 257.82 |
-| Total deductions | 802.50 |
-| Net pay | 1,088.26 |
-
-They reconcile: 2,148.58 less 257.82 withheld and 802.50 in deductions (723.88 + 78.62)
-is 1,088.26. Deductions and net pay come from the Current row of the summary band, not
-the YTD row beneath it, and not the matching 1,088.26 in the distribution table.
-
-## What it surfaced
-
-**Every value extracts correctly,** with no text layer to lean on. All 36 leaves match the
-page, including the advice number with its leading zeros and the masked account number.
-
-**The table cells ground at cell size.** The annuity and withholding boxes cover the whole
-tall data cell of their table, most of which is blank space below the value. The value is
-inside the box, so the crop is right, but the box is larger than the number. The summary
-band values ground tightly to the number.
-
-**The payer's address grounds OFF.** Its two lines ground as two separate pieces, so the
-two-line value does not match either one. It is not featured.
-
-**The date and the file name disagree.** The file is named for 2022 but the stub is for
-August 2023. Fields record what is printed.
-
-## Extraction
-
-**36 leaf fields**: the payer, the retiree, the payment period and advice identifiers,
-the federal tax data, each line of the earnings, taxes, before-tax and after-tax
-deduction tables with current and YTD amounts, the summary band, and the net pay
-distribution.
-
-## Cost
-
-**2.80 credits** at standard tier for 1 page, for parse and extract together. There was
-one run, with no schema revisions.
-
-## Regenerating
-
-```bash
-# The source is the publisher's SVG printed to PDF with headless Chrome (see above);
-# the committed PDF is that print with its metadata cleared.
-.venv/bin/python document-types/scripts/run_ade.py pension-statement                # 2.80 credits
-.venv/bin/python document-types/scripts/run_ade.py pension-statement --extract-only # schema iteration
-.venv/bin/python document-types/scripts/build_images.py pension-statement           # free
-.venv/bin/python document-types/scripts/inspect_fields.py pension-statement --page 1
-```
+- **Several small tables** for earnings, taxes, deductions and the net pay distribution.
+- **Masked and zero-padded identifiers,** such as a masked account number and an advice
+  number with leading zeros.
+- **Outlined text with no text layer,** so every value has to be read from the page
+  image.

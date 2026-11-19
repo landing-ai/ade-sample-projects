@@ -1,0 +1,406 @@
+{
+  "extraction": {
+    "borrower": {
+      "first_time_home_buyer": false,
+      "middle_credit_score": 715,
+      "self_employed": false,
+      "total_income": 7000.0
+    },
+    "borrower_name": "John S Correspondent",
+    "confirmation_datetime": "2/24/2014 11:22:22 AM PST",
+    "lender": "WHEDA",
+    "loan": {
+      "amortization_type": "Fixed",
+      "cltv_percent": 95.0,
+      "doc_type": "Full Document",
+      "lien_position": "First Lien",
+      "loan_purpose": "Purchase",
+      "ltv_percent": 95.0,
+      "sales_price": 100000.0,
+      "term_months": 360
+    },
+    "loan_officer": {
+      "company": "WHEDA",
+      "email": "marty.maloney@wheda.com",
+      "name": "Marty Maloney",
+      "phone": "(608) 266-2724"
+    },
+    "pricing_adjustments_total": {
+      "points": 0.0,
+      "rate_percent": 0.0
+    },
+    "property": {
+      "address": "123 Main Street, Waukesha, WI 53186",
+      "county": "Waukesha",
+      "occupancy": "Primary Residence",
+      "property_type": "SFR"
+    },
+    "rate_lock": {
+      "expiration_date": "2014-04-10",
+      "interest_rate_percent": 4.625,
+      "loan_amount": 95000.0,
+      "loan_program": "HFA Preferred with MI Correspondent 30 year",
+      "lock_date": "2014-02-24",
+      "lock_period_days": 45,
+      "payment_type": "P&I",
+      "price_points": 102.0
+    },
+    "reference_number": "800203"
+  },
+  "extraction_metadata": {
+    "borrower": {
+      "first_time_home_buyer": {
+        "ranges": [
+          {
+            "end": 1202,
+            "start": 1200
+          }
+        ],
+        "value": false
+      },
+      "middle_credit_score": {
+        "ranges": [
+          {
+            "end": 1097,
+            "start": 1094
+          }
+        ],
+        "value": 715
+      },
+      "self_employed": {
+        "ranges": [
+          {
+            "end": 1295,
+            "start": 1293
+          }
+        ],
+        "value": false
+      },
+      "total_income": {
+        "ranges": [
+          {
+            "end": 1344,
+            "start": 1335
+          }
+        ],
+        "value": 7000.0
+      }
+    },
+    "borrower_name": {
+      "ranges": [
+        {
+          "end": 943,
+          "start": 923
+        },
+        {
+          "end": 112,
+          "start": 78
+        }
+      ],
+      "value": "John S Correspondent"
+    },
+    "confirmation_datetime": {
+      "ranges": [
+        {
+          "end": 50,
+          "start": 25
+        }
+      ],
+      "value": "2/24/2014 11:22:22 AM PST"
+    },
+    "lender": {
+      "ranges": [
+        {
+          "end": 12,
+          "start": 7
+        },
+        {
+          "end": 798,
+          "start": 770
+        }
+      ],
+      "value": "WHEDA"
+    },
+    "loan": {
+      "amortization_type": {
+        "ranges": [
+          {
+            "end": 2453,
+            "start": 2448
+          }
+        ],
+        "value": "Fixed"
+      },
+      "cltv_percent": {
+        "ranges": [
+          {
+            "end": 2738,
+            "start": 2734
+          }
+        ],
+        "value": 95.0
+      },
+      "doc_type": {
+        "ranges": [
+          {
+            "end": 2893,
+            "start": 2880
+          }
+        ],
+        "value": "Full Document"
+      },
+      "lien_position": {
+        "ranges": [
+          {
+            "end": 2551,
+            "start": 2541
+          }
+        ],
+        "value": "First Lien"
+      },
+      "loan_purpose": {
+        "ranges": [
+          {
+            "end": 2410,
+            "start": 2402
+          }
+        ],
+        "value": "Purchase"
+      },
+      "ltv_percent": {
+        "ranges": [
+          {
+            "end": 2738,
+            "start": 2734
+          }
+        ],
+        "value": 95.0
+      },
+      "sales_price": {
+        "ranges": [
+          {
+            "end": 2601,
+            "start": 2590
+          }
+        ],
+        "value": 100000.0
+      },
+      "term_months": {
+        "ranges": [
+          {
+            "end": 2494,
+            "start": 2491
+          }
+        ],
+        "value": 360
+      }
+    },
+    "loan_officer": {
+      "company": {
+        "ranges": [
+          {
+            "end": 796,
+            "start": 791
+          }
+        ],
+        "value": "WHEDA"
+      },
+      "email": {
+        "ranges": [
+          {
+            "end": 845,
+            "start": 822
+          }
+        ],
+        "value": "marty.maloney@wheda.com"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 767,
+            "start": 754
+          }
+        ],
+        "value": "Marty Maloney"
+      },
+      "phone": {
+        "ranges": [
+          {
+            "end": 1542,
+            "start": 1528
+          }
+        ],
+        "value": "(608) 266-2724"
+      }
+    },
+    "pricing_adjustments_total": {
+      "points": {
+        "ranges": [
+          {
+            "end": 673,
+            "start": 670
+          }
+        ],
+        "value": 0.0
+      },
+      "rate_percent": {
+        "ranges": [
+          {
+            "end": 658,
+            "start": 655
+          }
+        ],
+        "value": 0.0
+      }
+    },
+    "property": {
+      "address": {
+        "ranges": [
+          {
+            "end": 2224,
+            "start": 2209
+          },
+          {
+            "end": 2270,
+            "start": 2252
+          }
+        ],
+        "value": "123 Main Street, Waukesha, WI 53186"
+      },
+      "county": {
+        "ranges": [
+          {
+            "end": 2314,
+            "start": 2306
+          }
+        ],
+        "value": "Waukesha"
+      },
+      "occupancy": {
+        "ranges": [
+          {
+            "end": 1933,
+            "start": 1916
+          }
+        ],
+        "value": "Primary Residence"
+      },
+      "property_type": {
+        "ranges": [
+          {
+            "end": 1682,
+            "start": 1679
+          }
+        ],
+        "value": "SFR"
+      }
+    },
+    "rate_lock": {
+      "expiration_date": {
+        "ranges": [
+          {
+            "end": 468,
+            "start": 459
+          }
+        ],
+        "value": "2014-04-10"
+      },
+      "interest_rate_percent": {
+        "ranges": [
+          {
+            "end": 423,
+            "start": 418
+          }
+        ],
+        "value": 4.625
+      },
+      "loan_amount": {
+        "ranges": [
+          {
+            "end": 450,
+            "start": 407
+          }
+        ],
+        "value": 95000.0
+      },
+      "loan_program": {
+        "ranges": [
+          {
+            "end": 370,
+            "start": 327
+          }
+        ],
+        "value": "HFA Preferred with MI Correspondent 30 year"
+      },
+      "lock_date": {
+        "ranges": [
+          {
+            "end": 450,
+            "start": 407
+          }
+        ],
+        "value": "2014-02-24"
+      },
+      "lock_period_days": {
+        "ranges": [
+          {
+            "end": 445,
+            "start": 443
+          }
+        ],
+        "value": 45
+      },
+      "payment_type": {
+        "ranges": [
+          {
+            "end": 386,
+            "start": 379
+          }
+        ],
+        "value": "P&I"
+      },
+      "price_points": {
+        "ranges": [
+          {
+            "end": 430,
+            "start": 425
+          }
+        ],
+        "value": 102.0
+      }
+    },
+    "reference_number": {
+      "ranges": [
+        {
+          "end": 139,
+          "start": 133
+        }
+      ],
+      "value": "800203"
+    }
+  },
+  "markdown": "[logo: WHEDA]\n\n**Date:** 2/24/2014 11:22:22 AM PST\n\n# RATE LOCK CONFIRMATION\n\n**Borrower**: John S Correspondent\n\n**Reference #**: **800203**\n\nRate Lock\n\n<table>\n<tr><td>Loan Program</td><td>Payment Type</td><td>Loan Amount</td><td>Rate</td><td>Point</td><td>Lock Date</td><td>Lock Period</td><td>Expire Date</td></tr>\n<tr><td>HFA Preferred with MI Correspondent 30 year</td><td>P&amp;I</td><td colspan=\"5\">$95,000.00 4.625% 102.000 2/24/2014 45 days</td><td>4/10/2014</td></tr>\n</table>\n\n**The following adjustments were made to create the above pricing.**\n\n<table>\n<tr><td></td><td>Rate</td><td>Point</td><td>Description</td></tr>\n<tr><td>Total</td><td>0.000%</td><td>0.000</td><td></td></tr>\n</table>\n\n# **Loan Officer Information**\n\n- **Contact**: **Marty Maloney**\n- **Broker Name**: **WHEDA**\n- **Email Address**: **marty.maloney@wheda.com**\n\n# Loan Summary\n\n## Borrower Information\n\n<table>\n<tr><td>Borrower</td><td>John S Correspondent</td></tr>\n<tr><td>Spouse</td><td></td></tr>\n<tr><td>Spouse is Primary Wage Earner</td><td></td></tr>\n<tr><td>Primary Wage Earner Middle Score</td><td>715 *</td></tr>\n<tr><td>Lowest Middle Score</td><td>715 *</td></tr>\n<tr><td>First Time Home Buyer</td><td>No</td></tr>\n<tr><td>Has Housing History</td><td>Yes</td></tr>\n<tr><td>Self Employed</td><td>No</td></tr>\n<tr><td>Total Income</td><td>$7,000.00</td></tr>\n<tr><td>Present Housing Expense</td><td>$0.00</td></tr>\n<tr><td>Total Non-mortgage Debt Payment</td><td>$0.00</td></tr>\n</table>\n\n* Has been modified by user.\n\n- **Phone**: (608) 266-2724\n- **Fax**: [blank]\n\n**Subject Property Information**\n\n<table>\n<tr><td>Property State</td><td>WI</td></tr>\n<tr><td>Property Type</td><td>SFR</td></tr>\n<tr><td>Structure Type</td><td>Detached</td></tr>\n<tr><td>Is in Rural Area</td><td>No</td></tr>\n<tr><td>Is Condotel</td><td>No</td></tr>\n<tr><td>Is Non-Warrantable Proj</td><td>No</td></tr>\n<tr><td>Property Purpose</td><td>Primary Residence</td></tr>\n<tr><td>Occupancy Rate</td><td>100.000%</td></tr>\n<tr><td>Gross Rent</td><td>$0.00</td></tr>\n<tr><td>Proposed Property Tax</td><td>$0.00</td></tr>\n<tr><td>Other Proposed Housing Expense</td><td>$0.00</td></tr>\n<tr><td colspan=\"2\">Property Address</td></tr>\n<tr><td>123 Main Street</td><td></td></tr>\n<tr><td>Waukesha, WI 53186</td><td></td></tr>\n<tr><td>County: Waukesha</td><td></td></tr>\n</table>\n\n## Loan Information\n\n<table>\n<tr><td>Loan Purpose</td><td>Purchase</td></tr>\n<tr><td>Amort Type</td><td>Fixed</td></tr>\n<tr><td>Term / Due</td><td>360 / 360</td></tr>\n<tr><td>Lien Position</td><td>First Lien</td></tr>\n<tr><td>Sales Price</td><td>$100,000.00</td></tr>\n<tr><td>Appraised Value</td><td>$0.00</td></tr>\n<tr><td>Cashout Amount</td><td>$0.00</td></tr>\n<tr><td>LTV / CLTV</td><td>95.000% / 95.000%</td></tr>\n<tr><td>Total Loan Amount</td><td>$95,000.00</td></tr>\n<tr><td>Impound</td><td>Yes</td></tr>\n<tr><td>Doc Type</td><td>Full Document</td></tr>\n<tr><td>Prepayment Penalty</td><td>No Prepay</td></tr>\n<tr><td>Reserves Available</td><td>N/A</td></tr>\n</table>\n\n**AUS Processing**\n\n<table>\n<tr><td colspan=\"2\">AU Response None/Not Submitted</td></tr>\n<tr><td>Mortgage Insurance</td><td></td></tr>\n<tr><td>Mortgage Insurance</td><td>N/A</td></tr>\n<tr><td>Is Upfront MIP Financed?</td><td>No</td></tr>\n<tr><td>Upfront MIP Fee Financed</td><td>$0.00</td></tr>\n</table>\n\nPage 1 / 1\n\n<!-- doc_id=parse-01m7ryqw310nxy7vhfcmap6mjq -->",
+  "metadata": {
+    "job_id": "extract-01m7ryr5hz4wctx0yfym3d33x1",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 76219,
+    "doc_id": "parse-01m7ryqw310nxy7vhfcmap6mjq",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.7,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 3383,
+    "output_extraction_chars": 1010,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

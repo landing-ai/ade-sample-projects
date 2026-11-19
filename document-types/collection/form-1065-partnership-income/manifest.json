@@ -27,8 +27,8 @@
       "occurrence": 0
     },
     {
-      "path": "schedules_c_and_m3_attached",
-      "label": "Schedules C and M-3 attached (row J)",
+      "path": "tax_year",
+      "label": "Tax year",
       "occurrence": 0
     },
     {
@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request asked that the featured fields include the cash accounting method checkbox in row H. It could not be illustrated: accounting_method.cash extracts correctly (true) and its range is exactly '[x] (1) Cash', but the parse's line-level boxes for rows G-I sit one row low, so its box lands on row I (the Schedules K-1 count). client.v2.ground returns the same shifted line. At the requester's choice it was replaced by the row J checkbox, schedules_c_and_m3_attached (true), the only checkbox on its line, whose box is correct. It grounds to the row J line and reads OFF only because the word 'true' is not on the page, which is expected for a boolean; the crop was checked by eye. The other four fields are the return's headline: who is filing, its EIN, its total income and the bottom line. No person is featured. Every checkbox in rows G, H, J and K extracts correctly as checked or unchecked."
+  "notes": "The request asked that the featured fields include the cash accounting method checkbox in row H. It could not be illustrated: accounting_method.cash extracts correctly (true) and its range is exactly '[x] (1) Cash', but the parse's line-level boxes for rows G-I sit one row low, so its box lands on row I (the Schedules K-1 count). client.v2.ground returns the same shifted line. At the requester's choice it was replaced by the row J checkbox, schedules_c_and_m3_attached (true), the only checkbox on its line, whose box is correct. It grounds to the row J line and reads OFF only because the word 'true' is not on the page, which is expected for a boolean; the crop was checked by eye. The other four fields are the return's headline: who is filing, its EIN, its total income and the bottom line. No person is featured. Every checkbox in rows G, H, J and K extracts correctly as checked or unchecked.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 2.3,
+      "extract_credits": 3.7
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 2.7,
+      "extract_credits": 4.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.0,
+      "extract_credits": 3.8
+    }
+  ]
 }

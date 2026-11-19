@@ -63,8 +63,8 @@
   "feature_page": 1,
   "fields": [
     {
-      "path": "payment_calculation.gross_capitalized_cost",
-      "label": "Gross capitalized cost",
+      "path": "payment_calculation.base_scheduled_payment",
+      "label": "Base scheduled payment",
       "occurrence": 0
     },
     {
@@ -88,5 +88,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named only the document and the source; no feature page or fields were requested. Features the Item 7 payment calculation on page 1, the federally required walk from vehicle price to monthly payment: gross capitalized cost, minus the capitalized cost reduction, gives the adjusted capitalized cost; the residual value is what the car is assumed to be worth at lease end; the total scheduled payment is the resulting monthly payment with tax. All five ground ok to their own right-hand column cells on page 1, so one overlay reads as a single calculation. No named individual is featured. The schema has 55 leaf fields and every one was populated; every field has at least one ok citation on its page. The OFF citations (one of the two for the first payment date, a second source for the due day, one property-damage citation, one assignee citation) are not featured."
+  "notes": "The request named only the document and the source; no feature page or fields were requested. Features the Item 7 payment calculation on page 1, the federally required walk from vehicle price to monthly payment: gross capitalized cost, minus the capitalized cost reduction, gives the adjusted capitalized cost; the residual value is what the car is assumed to be worth at lease end; the total scheduled payment is the resulting monthly payment with tax. All five ground ok to their own right-hand column cells on page 1, so one overlay reads as a single calculation. No named individual is featured. The schema has 55 leaf fields and every one was populated; every field has at least one ok citation on its page. The OFF citations (one of the two for the first payment date, a second source for the due day, one property-damage citation, one assignee citation) are not featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 18.5,
+      "extract_credits": 14.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 18.5,
+      "extract_credits": 14.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 7.2,
+      "extract_credits": 14.8
+    }
+  ]
 }

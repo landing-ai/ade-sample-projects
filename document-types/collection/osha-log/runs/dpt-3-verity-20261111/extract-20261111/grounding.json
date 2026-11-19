@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "number_of_cases.days_away_from_work",
+      "label": "Cases with days away from work (H)",
+      "value": 60,
+      "page": 1,
+      "box": {
+        "xmin": 0.14685,
+        "ymin": 0.46995,
+        "xmax": 0.156,
+        "ymax": 0.47918
+      },
+      "range": {
+        "end": 1160,
+        "start": 1158
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "number_of_cases-days_away_from_work.png"
+    },
+    {
+      "path": "number_of_cases.job_transfer_or_restriction",
+      "label": "Cases with job transfer or restriction (I)",
+      "value": 25,
+      "page": 1,
+      "box": {
+        "xmin": 0.23616,
+        "ymin": 0.46965,
+        "xmax": 0.24546,
+        "ymax": 0.47901
+      },
+      "range": {
+        "end": 1171,
+        "start": 1169
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "number_of_cases-job_transfer_or_restriction.png"
+    },
+    {
+      "path": "number_of_days.days_away_from_work",
+      "label": "Total days away from work (K)",
+      "value": 938,
+      "page": 1,
+      "box": {
+        "xmin": 0.05324,
+        "ymin": 0.63566,
+        "xmax": 0.06752,
+        "ymax": 0.6456
+      },
+      "range": {
+        "end": 1366,
+        "start": 1363
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "number_of_days-days_away_from_work.png"
+    },
+    {
+      "path": "employment.annual_average_employees",
+      "label": "Annual average employees",
+      "value": 34321,
+      "page": 1,
+      "box": {
+        "xmin": 0.85654,
+        "ymin": 0.61298,
+        "xmax": 0.88654,
+        "ymax": 0.62587
+      },
+      "range": {
+        "end": 2993,
+        "start": 2987
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employment-annual_average_employees.png"
+    },
+    {
+      "path": "employment.total_hours_worked",
+      "label": "Total hours worked",
+      "value": 46120878,
+      "page": 1,
+      "box": {
+        "xmin": 0.84677,
+        "ymin": 0.64386,
+        "xmax": 0.89822,
+        "ymax": 0.65654
+      },
+      "range": {
+        "end": 3075,
+        "start": 3065
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employment-total_hours_worked.png"
+    }
+  ]
+}

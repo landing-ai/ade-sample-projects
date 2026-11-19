@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    {"path": "loan_terms.interest_rate_percent", "label": "Interest rate", "occurrence": 0},
-    {"path": "loan_terms.monthly_principal_and_interest", "label": "Monthly principal and interest", "occurrence": 0},
-    {"path": "projected_payments[0].estimated_total_monthly_payment", "label": "Estimated total monthly payment (years 1-7)", "occurrence": 0},
-    {"path": "costs_at_closing.closing_costs", "label": "Closing costs", "occurrence": 0},
-    {"path": "costs_at_closing.cash_to_close", "label": "Cash to close", "occurrence": 0}
+    {
+      "path": "loan_terms.interest_rate_percent",
+      "label": "Interest rate",
+      "occurrence": 0
+    },
+    {
+      "path": "loan_terms.monthly_principal_and_interest",
+      "label": "Monthly principal and interest",
+      "occurrence": 0
+    },
+    {
+      "path": "projected_payments[0].estimated_total_monthly_payment",
+      "label": "Estimated total monthly payment (years 1-7)",
+      "occurrence": 0
+    },
+    {
+      "path": "costs_at_closing.closing_costs",
+      "label": "Closing costs",
+      "occurrence": 0
+    },
+    {
+      "path": "costs_at_closing.cash_to_close",
+      "label": "Cash to close",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no fields; its notes suggested loan amount, interest rate, monthly P&I, prepayment penalty and cash to close, and asked to avoid the three-column page 1 header and its dates. The featured set follows those suggestions where the grounding allows and tells page 1 the way a borrower reads it: the rate, the monthly payment it produces, the all-in monthly payment while mortgage insurance applies, and what is due at closing. Loan amount was not featured: inspect_fields.py marks it OFF (the number 162000 against the printed '$162,000'). The prepayment penalty maximum ($3,240) is OFF too, because it grounds to the whole YES bullet rather than the amount, and the YES/NO booleans ground to their YES or NO cell. The header dates are extracted as ISO dates against '4/15/2013' and are OFF as well, which matches the request's advice to avoid them."
+  "notes": "The request named no fields; its notes suggested loan amount, interest rate, monthly P&I, prepayment penalty and cash to close, and asked to avoid the three-column page 1 header and its dates. The featured set follows those suggestions where the grounding allows and tells page 1 the way a borrower reads it: the rate, the monthly payment it produces, the all-in monthly payment while mortgage insurance applies, and what is due at closing. Loan amount was not featured: inspect_fields.py marks it OFF (the number 162000 against the printed '$162,000'). The prepayment penalty maximum ($3,240) is OFF too, because it grounds to the whole YES bullet rather than the amount, and the YES/NO booleans ground to their YES or NO cell. The header dates are extracted as ISO dates against '4/15/2013' and are OFF as well, which matches the request's advice to avoid them.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 8.7,
+      "extract_credits": 7.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 8.7,
+      "extract_credits": 7.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 3.2,
+      "extract_credits": 7.0
+    }
+  ]
 }

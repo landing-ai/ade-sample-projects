@@ -59,5 +59,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no fields; its notes suggested B/L number, vessel and voyage, port of loading, port of discharge, container number and gross weight. Five of those ship, all on page 1, telling one story: which box went on which ship from where to where under which B/L. Voyage (008S) is correct and grounds ok, but shares the vessel cell, so it would repeat the vessel crop. Gross weight (7304.590KGS) is correct and grounds ok; it was left out to keep five fields. vessel and bill_of_lading_number are pinned to occurrence 0, the B/L face; occurrence 1 is the rider header on page 2. The container cell pairs the container with its partly overstruck seal number. The seal's last digits overrun the column rule, and the parse split it there ('W9300' in the marks column, '05' in the packages column; marks_and_numbers comes back starting 'W9300'), so the container crop shows the full container number followed by a seal number cut at the rule. The team schema was used unchanged and does not fully fit this B/L: shipper.address is required but the shipper box carries a name only (null); port_of_loading.country and port_of_discharge.country are required but the model put the country into city ('BEIHAI, CHINA') and returned null for both, with a nonconformant_output warning on the discharge country; freight_charges is empty because the charge rows are blank (the page-2 rider's 'OCEAN FREIGHT PREPAID' was not captured); declared_value and freight_payable_at are empty, as on the page. booking_number came back SHE11328, which is the Export References / Service Contract number; the Booking No. box is blank. Both dates are correct (2011-05-23) but read OFF, since the page prints '23 MAY 2011'."
+  "notes": "The request named no fields; its notes suggested B/L number, vessel and voyage, port of loading, port of discharge, container number and gross weight. Five of those ship, all on page 1, telling one story: which box went on which ship from where to where under which B/L. Voyage (008S) is correct and grounds ok, but shares the vessel cell, so it would repeat the vessel crop. Gross weight (7304.590KGS) is correct and grounds ok; it was left out to keep five fields. vessel and bill_of_lading_number are pinned to occurrence 0, the B/L face; occurrence 1 is the rider header on page 2. The container cell pairs the container with its partly overstruck seal number. The seal's last digits overrun the column rule, and the parse split it there ('W9300' in the marks column, '05' in the packages column; marks_and_numbers comes back starting 'W9300'), so the container crop shows the full container number followed by a seal number cut at the rule. The team schema was used unchanged and does not fully fit this B/L: shipper.address is required but the shipper box carries a name only (null); port_of_loading.country and port_of_discharge.country are required but the model put the country into city ('BEIHAI, CHINA') and returned null for both, with a nonconformant_output warning on the discharge country; freight_charges is empty because the charge rows are blank (the page-2 rider's 'OCEAN FREIGHT PREPAID' was not captured); declared_value and freight_payable_at are empty, as on the page. booking_number came back SHE11328, which is the Export References / Service Contract number; the Booking No. box is blank. Both dates are correct (2011-05-23) but read OFF, since the page prints '23 MAY 2011'.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.2,
+      "extract_credits": 2.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.2,
+      "extract_credits": 2.2
+    }
+  ]
 }

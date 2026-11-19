@@ -15,13 +15,67 @@
     }
   },
   "feature_page": 6,
-  "preview_pages": [1, 6, 14, 21],
-  "fields": [
-    { "path": "report.client", "label": "Client", "occurrence": 0 },
-    { "path": "property.acreage", "label": "Property size (acres)", "occurrence": 3 },
-    { "path": "report.astm_standard", "label": "ASTM standard", "occurrence": 0 },
-    { "path": "component_dates.visual_inspection", "label": "Site reconnaissance date", "occurrence": 0 },
-    { "path": "component_dates.ep_declaration", "label": "EP declaration date", "occurrence": 0 }
+  "preview_pages": [
+    1,
+    6,
+    14,
+    21
   ],
-  "notes": "Features the executive summary on page 6 (printed page 1), as the request suggested: who commissioned the assessment, how much land it covers, the ASTM standard it follows, and two of the Table 1.1 component dates that govern the report's 180-day viability window, so the overlay reads as the engagement and its clock. All five suggested fields grounded ok on page 6 and are featured with the suggested labels; the site reconnaissance date is the Table 1.1 'Visual Inspection' row, which is the same date as the reconnaissance table on page 13. No person is featured: the Environmental Professional's name also grounds ok on page 6 but was left off. Two quirks of the source are kept as printed: Table 1.1 gives the EP declaration date as November 8, 2025, which is the viability date on the cover and later than the June 30, 2025 issue date; and page 7 (Table 1.2) carries a copy-paste paragraph citing ASTM E1527-13 and an unrelated Mission Viejo address. Extraction reported E 1527-21 from the executive summary, not the stray E1527-13."
+  "fields": [
+    {
+      "path": "report.client",
+      "label": "Client",
+      "occurrence": 0
+    },
+    {
+      "path": "property.earliest_record_year",
+      "label": "Earliest record year",
+      "occurrence": 0
+    },
+    {
+      "path": "component_dates.government_records_review",
+      "label": "Government records review",
+      "occurrence": 0
+    },
+    {
+      "path": "component_dates.visual_inspection",
+      "label": "Site reconnaissance date",
+      "occurrence": 0
+    },
+    {
+      "path": "component_dates.ep_declaration",
+      "label": "EP declaration date",
+      "occurrence": 0
+    }
+  ],
+  "notes": "Features the executive summary on page 6 (printed page 1), as the request suggested: who commissioned the assessment, how much land it covers, the ASTM standard it follows, and two of the Table 1.1 component dates that govern the report's 180-day viability window, so the overlay reads as the engagement and its clock. All five suggested fields grounded ok on page 6 and are featured with the suggested labels; the site reconnaissance date is the Table 1.1 'Visual Inspection' row, which is the same date as the reconnaissance table on page 13. No person is featured: the Environmental Professional's name also grounds ok on page 6 but was left off. Two quirks of the source are kept as printed: Table 1.1 gives the EP declaration date as November 8, 2025, which is the viability date on the cover and later than the June 30, 2025 issue date; and page 7 (Table 1.2) carries a copy-paste paragraph citing ASTM E1527-13 and an unrelated Mission Viejo address. Extraction reported E 1527-21 from the executive summary, not the stray E1527-13.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 39,
+      "service_tier": "standard",
+      "parse_credits": 43.7,
+      "extract_credits": 31.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 39,
+      "service_tier": "standard",
+      "parse_credits": 43.6,
+      "extract_credits": 29.9
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 39,
+      "service_tier": "standard",
+      "parse_credits": 15.5,
+      "extract_credits": 29.9
+    }
+  ]
 }

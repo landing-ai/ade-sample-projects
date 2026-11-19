@@ -16,10 +16,55 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "test_results[3].test_name", "label": "Test", "occurrence": 0 },
-    { "path": "test_results[3].result", "label": "Result", "occurrence": 0 },
-    { "path": "test_results[3].unit", "label": "Unit", "occurrence": 0 },
-    { "path": "test_results[3].reference_values[0].reference_low", "label": "Reference range low", "occurrence": 0 }
+    {
+      "path": "test_results[3].test_name",
+      "label": "Test",
+      "occurrence": 0
+    },
+    {
+      "path": "test_results[3].result",
+      "label": "Result",
+      "occurrence": 0
+    },
+    {
+      "path": "test_results[3].reference_values[0].referecne_high",
+      "label": "Reference high",
+      "occurrence": 0
+    },
+    {
+      "path": "test_results[3].reference_values[0].reference_low",
+      "label": "Reference range low",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields. The four featured fields are one flagged result, the reason a lab report is read: the lymphocyte count of 18 %, below its reference range of 20-40 %. All read ok. Only the lower bound is featured because the low and high bounds share one cell ('20 - 40') and would draw the same box twice; the lower bound is the one the result falls below. The report's own 'L' flag beside the value is not captured: the team schema (used unchanged) has no field for an abnormal flag. Other schema mismatches, left as findings: lab_details requires address lines and a city that this letterhead does not print (null, with a nonconformant_output warning); report_status is required and not printed (null); the reference-range high field is spelled 'referecne_high' in the schema. The reported date-time is extracted correctly but normalised to ISO, so it grounds OFF."
+  "notes": "The request named no feature page or fields. The four featured fields are one flagged result, the reason a lab report is read: the lymphocyte count of 18 %, below its reference range of 20-40 %. All read ok. Only the lower bound is featured because the low and high bounds share one cell ('20 - 40') and would draw the same box twice; the lower bound is the one the result falls below. The report's own 'L' flag beside the value is not captured: the team schema (used unchanged) has no field for an abnormal flag. Other schema mismatches, left as findings: lab_details requires address lines and a city that this letterhead does not print (null, with a nonconformant_output warning); report_status is required and not printed (null); the reference-range high field is spelled 'referecne_high' in the schema. The reported date-time is extracted correctly but normalised to ISO, so it grounds OFF.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.0,
+      "extract_credits": 4.2
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 2.1,
+      "extract_credits": 4.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 0.7,
+      "extract_credits": 4.4
+    }
+  ]
 }

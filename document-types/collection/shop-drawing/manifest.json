@@ -81,5 +81,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Two 36x24 in CAD sheets from a reinforcing steel shop drawing submittal: P1 Footing and P2 Foundation, Rev 2, as returned with review stamps. The original's page 1, the architect's Word-made transmittal cover, was dropped because it was mostly people's names and added nothing a shop drawing needs. Each sheet carries a foundation plan or wall elevations with bar callouts, a bar list and bending schedule, concrete strength, cover and lap tables, a revision block, the fabricator's title block, and three review stamps (the architect's, the structural engineer's, and the contractor's flattened REVIEWED stamp). The request named no feature page or fields. Its notes suggested, as suggestions only, sheet P1 (the original's page 2, now page 1) with the fabricator contract number and sheet, the drawing title and project, the engineer review status and date, one bar list row, and the latest revision. Shipped on page 1: the project, the fabricator contract number, the engineer review status, and the first bar list row's quantity and bar mark, which together say which job this is, whose drawing it is, whether it was approved, and what is to be fabricated. Not featured, with the reason: the P1 drawing title ('FOOTING') extracted correctly but came back with no ranges (SYNTH), although it sits in the title block table. The engineer review date and the latest revision date are normalized to YYYY-MM-DD, so their crops ('11/13/18', '6-NOV-18') would appear to disagree with the value (OFF). The sheet number and latest revision number ground ok but were dropped to keep to five fields. build_images.py warned that OCR could not read the two bar list values inside their boxes. Both crops were opened, and each boxes exactly the right cell (32 and A5 in the first row). The warning comes from the small CAD digits. No featured field names a person."
+  "notes": "Two 36x24 in CAD sheets from a reinforcing steel shop drawing submittal: P1 Footing and P2 Foundation, Rev 2, as returned with review stamps. The original's page 1, the architect's Word-made transmittal cover, was dropped because it was mostly people's names and added nothing a shop drawing needs. Each sheet carries a foundation plan or wall elevations with bar callouts, a bar list and bending schedule, concrete strength, cover and lap tables, a revision block, the fabricator's title block, and three review stamps (the architect's, the structural engineer's, and the contractor's flattened REVIEWED stamp). The request named no feature page or fields. Its notes suggested, as suggestions only, sheet P1 (the original's page 2, now page 1) with the fabricator contract number and sheet, the drawing title and project, the engineer review status and date, one bar list row, and the latest revision. Shipped on page 1: the project, the fabricator contract number, the engineer review status, and the first bar list row's quantity and bar mark, which together say which job this is, whose drawing it is, whether it was approved, and what is to be fabricated. Not featured, with the reason: the P1 drawing title ('FOOTING') extracted correctly but came back with no ranges (SYNTH), although it sits in the title block table. The engineer review date and the latest revision date are normalized to YYYY-MM-DD, so their crops ('11/13/18', '6-NOV-18') would appear to disagree with the value (OFF). The sheet number and latest revision number ground ok but were dropped to keep to five fields. build_images.py warned that OCR could not read the two bar list values inside their boxes. Both crops were opened, and each boxes exactly the right cell (32 and A5 in the first row). The warning comes from the small CAD digits. No featured field names a person.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 7.9,
+      "extract_credits": 11.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 8.0,
+      "extract_credits": 11.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.1,
+      "extract_credits": 11.7
+    }
+  ]
 }

@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "bill_of_lading_number",
+      "label": "B/L number",
+      "value": "COSU6030603280",
+      "page": 1,
+      "box": {
+        "xmin": 0.77338,
+        "ymin": 0.09239,
+        "xmax": 0.89819,
+        "ymax": 0.10167
+      },
+      "range": {
+        "end": 272,
+        "start": 258
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bill_of_lading_number.png"
+    },
+    {
+      "path": "vessel",
+      "label": "Vessel",
+      "value": "HUI JIN QIAO 181",
+      "page": 1,
+      "box": {
+        "xmin": 0.10591,
+        "ymin": 0.36427,
+        "xmax": 0.25029,
+        "ymax": 0.37452
+      },
+      "range": {
+        "end": 1153,
+        "start": 1137
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vessel.png"
+    },
+    {
+      "path": "port_of_loading.city",
+      "label": "Port of loading",
+      "value": "BEIHAI",
+      "page": 1,
+      "box": {
+        "xmin": 0.3661,
+        "ymin": 0.36426,
+        "xmax": 0.41964,
+        "ymax": 0.373
+      },
+      "range": {
+        "end": 1195,
+        "start": 1189
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "port_of_loading-city.png"
+    },
+    {
+      "path": "port_of_discharge.city",
+      "label": "Port of discharge",
+      "value": "NEW YORK, NY",
+      "page": 1,
+      "box": {
+        "xmin": 0.10513,
+        "ymin": 0.39176,
+        "xmax": 0.2048,
+        "ymax": 0.40193
+      },
+      "range": {
+        "end": 1321,
+        "start": 1309
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "port_of_discharge-city.png"
+    },
+    {
+      "path": "containers[0].container_number",
+      "label": "Container number",
+      "value": "CBHU1842324",
+      "page": 1,
+      "box": {
+        "xmin": 0.10116,
+        "ymin": 0.43013,
+        "xmax": 0.19826,
+        "ymax": 0.43912
+      },
+      "range": {
+        "end": 1685,
+        "start": 1674
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "containers-0-container_number.png"
+    }
+  ]
+}

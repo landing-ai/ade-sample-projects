@@ -1,11 +1,110 @@
 # Confidential Information Memorandum
 
-A confidential information memorandum (CIM) for the sale of the PTL Group (PTL Holdings
-Limited, PTL Services (Equipment) Limited, CSL Services (Industrial) Limited and 9263357
-Canada Inc.), a site services, equipment rental and aggregate supply business in Southern
-Harbour, Newfoundland and Labrador. It was prepared in May 2018 by BDO Canada Limited as
-court-appointed receiver, to market the companies' assets to bidders. **19 pages,
-portrait (612×792)**: a photo cover, a covering letter to prospective purchasers, a
+**On the website:** [landing.ai/document-type/confidential-information-memorandum](https://landing.ai/document-type/confidential-information-memorandum)
+
+A confidential information memorandum (CIM) prepared in May 2018 by BDO Canada Limited,
+as court-appointed receiver, to sell the assets of the PTL Group, a site services,
+equipment rental and aggregate supply business in Newfoundland and Labrador. It has a
+covering letter to bidders, an executive summary with investment highlights and charts,
+site descriptions, historical and forecast income statements, and the sale process.
+
+| | |
+|---|---|
+| Pages | 19 |
+| Fields in the extraction schema | 48 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:43 | 2026-11-19 02:47 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 51,677 | 50,859 |
+| Words under 0.95 confidence | 68 | n/a |
+| Words under 0.80 confidence | 34 | n/a |
+| Words under 0.50 confidence | 10 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 15.2 s | 17.8 s |
+| Per page | 0.8 s | 0.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 8.1 credits | 22.3 credits |
+| Per page | 0.43 credits | 1.17 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:43 | 2026-11-19 02:47 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 48 | 48 |
+| Non-null fields returned | 48 | 48 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 140.7 s | 453.7 s |
+| Per schema field (48) | 2.93 s | 9.45 s |
+| Per value returned | 1.26 s | 4.05 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 14.0 credits | 13.8 credits |
+| Per schema field (48) | 0.292 credits | 0.288 credits |
+| Per value returned | 0.125 credits | 0.123 credits |
+
+## Origin
+
+`source/ptl-group-cim-redacted.pdf` is a **confidential information memorandum** for the
+sale of the PTL Group (PTL Holdings Limited, PTL Services (Equipment) Limited, CSL
+Services (Industrial) Limited and 9263357 Canada Inc.), a site services, equipment
+rental and aggregate supply business in Southern Harbour, Newfoundland and Labrador. BDO
+Canada Limited prepared it in May 2018 as court-appointed receiver, to market the
+companies' assets to bidders. It is **19 pages, portrait (612×792)**, created digitally
+with a text layer: a photo cover, a covering letter to prospective purchasers, a
 disclaimer, contacts, an executive summary with investment highlights and charts, site
 descriptions, a five-year historical income statement, a three-year forecast, a sale
 process summary and the full sale process as Appendix A.
@@ -15,17 +114,15 @@ process summary and the full sale process as Appendix A.
 | Publisher | BDO Canada Limited, as court-appointed receiver of the PTL Group |
 | Source | [bdo.ca/getmedia/c60b2304-857e-45ef-8825-cdc24ec12bbb/1st-App-H-PTL-Group-CIM.pdf](https://www.bdo.ca/getmedia/c60b2304-857e-45ef-8825-cdc24ec12bbb/1st-App-H-PTL-Group-CIM.pdf) |
 | Retrieved | 2026-10-28, downloaded by script |
-| Clearance | `redacted` |
-
-## Clearance
+| Clearance | **Redacted**, see below |
 
 The memorandum was filed publicly as Appendix H to the Receiver's First Report to the
 Supreme Court of Newfoundland and Labrador, and BDO publishes it on bdo.ca with the
 other receivership filings. Every page still carries the "Confidential Information
 Memorandum" legend, and page 2 the notice that it is provided under a non-disclosure
-agreement: that is its wording from the marketing stage, before it was filed. BDO's
+agreement. That is its wording from the marketing stage, before it was filed. BDO's
 engagement page for the PTL Group blocks scripted access, so the link from that page to
-this file was not confirmed; the file itself is on BDO's own domain.
+this file was not confirmed. The file itself is on BDO's own domain.
 
 The companies, the receiver and the court are kept. The receiver's individual staff are
 replaced:
@@ -36,112 +133,46 @@ replaced:
 | Their work email addresses | ja@example.com, jo@example.com | 7 |
 | Staff direct lines, and office phone and fax numbers (area codes kept) | fiction-reserved 555-01xx numbers, one stand-in per number | 9 |
 
-Text was replaced with `document-types/scripts/redact.py`, which removes the underlying
-text rather than covering it. The emails' `mailto:` links went with the text. Kept as
-printed: the firm names, the two BDO office addresses and the bid delivery address,
-which are corporate.
+The redaction removed the underlying text rather than covering it, and the emails'
+`mailto:` links went with the text. The firm names, the two BDO office addresses and the
+bid delivery address are corporate and kept as printed. One name in the covering letter
+wraps across a line break, so its stand-in is split across the two lines. The stand-ins
+are set in Helvetica, so they look slightly different from the surrounding text.
 
-Two leak paths beyond the page text were closed:
-
-- **PDF metadata.** The `/Info` author field named a staff member. Cleared.
-- **Image metadata.** One of the JPEG photographs carried XMP whose `dc:creator` named a
-  staff member, in a different name order from the page text. The EXIF, XMP, IPTC and
-  comment segments of every embedded JPEG were stripped without re-encoding, so the
-  pixels are unchanged.
-
-One name in the covering letter wraps across a line break. `redact.py` now splits a
-replacement across the lines of a wrapped match ("Jane Q" / "Sample") instead of drawing
-the whole stand-in on each line. The stand-ins are set in Helvetica, so they look
-slightly different from the surrounding text.
-
-**Verified:** no original value can be extracted from the committed PDF's page text,
-metadata, objects or decoded streams, checked as literal strings and as bare digits, and
-no original value appears anywhere in this folder. The rules file stays outside the repo.
+Two leak paths beyond the page text were closed. The PDF's author field named a staff
+member and was cleared. One embedded JPEG photograph carried XMP metadata naming a staff
+member as its creator, so the metadata segments of every embedded JPEG were stripped
+without re-encoding, which leaves the pixels unchanged. No original value can be
+extracted from the committed PDF's page text, metadata, objects or decoded streams,
+checked as literal strings and as bare digits, and none appears anywhere in this folder.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-A CIM is a long, mixed narrative: legal letter, disclaimers, marketing copy with a
-side-by-side highlights panel, image-only charts and tables, and dense numbered
-conditions. The facts a buyer needs are repeated in different words in different
-sections. The receiver, the court order and the bid deadline appear in the covering
-letter, again in the executive summary and again in Appendix A. That makes it a good
-test of where extraction decides to ground a value that appears more than once. It is
-also the first sale-side M&A document in the collection, and a distressed one.
+### Who processes it
 
-## Featured fields
+A CIM is the document a seller sends to qualified bidders to market a business. This one
+is a distressed sale run by a court-appointed receiver.
 
-All on page 3, the receiver's covering letter, which states the whole deal in one
-place:
+- **Private equity and corporate development:** deal teams screen CIMs to decide which
+  businesses to bid on, and pull the financials into their models.
+- **Investment banks and M&A advisors:** sell-side advisors write CIMs, and buy-side
+  advisors summarize them for clients.
+- **Insolvency and restructuring:** receivers, trustees and their counsel market
+  distressed assets through CIMs under court-approved sale processes.
+- **Lenders and credit funds:** acquisition lenders read the CIM's financials and
+  forecasts when sizing a loan.
+- **Due diligence and data rooms:** analysts index CIMs alongside the rest of a deal's
+  documents.
 
-- **Company for sale**: the "Re:" line, pinned to occurrence 1 (occurrence 0 is the
-  cover).
-- **Seller capacity**: "Court-appointed Receiver".
-- **Court**: the Supreme Court of Newfoundland and Labrador.
-- **Receivership order date**: May 11, 2018.
-- **Binding offer deadline**: 2:00 p.m. (NDT) on Thursday, June 14, 2018.
+### What it contains
 
-None of them is a person.
-
-The request suggested page 7, the executive summary, with the receiver, the order date,
-the court, the offer deadline and the employee count. It was a suggestion, not a
-requirement. Page 7 states all five, but grounding on this document is not stable from
-run to run: across three extraction runs, the court and the order date grounded on page
-7 in one run and on page 3 or page 15 in the others, and the deadline always grounded on
-page 3, where it is printed in full with the weekday. The page 7 version is printed as
-"June14, 2018". The committed run grounds only the receiver's name, the "over 40 years"
-founding age and the "~70" employee count on page 7. Page 3 carries four of the five
-suggested facts, all grounded correctly. The employee count appears only on page 7 and
-is not featured.
-
-## Grounding notes
-
-- **Repeated facts move.** With the same parse, re-running extraction moved the grounding
-  of the court and the order date between the covering letter, the executive summary and
-  Appendix A. Each grounding was correct where it landed. A schema description pointing
-  at the executive summary made it more likely but did not pin it.
-- **Image-only tables are read.** The five-year historical income statement on page 10
-  is an image with no text layer. DPT-3 read it into a table, and extraction returned
-  all 35 of its figures, but none of them grounds: every value in the five historical
-  columns comes back with no coordinates (`SYNTH`). The trailing-average and forecast
-  columns on page 11 ground cell by cell. 2016A and 2017E really do have the same COGS
-  (12,401); it is not a parse repeat.
-- **Charts are described.** The bar and pie charts on page 7 are images. The parse turns
-  them into data tables. Extraction then put the pie chart's revenue categories into
-  `business_overview.services`, grounded on the percentages (marked `OFF`), alongside
-  the services listed in the text.
-- **A field left null, then found.** The first schema asked for the "current year"
-  secured revenue, and extraction returned null even though "$8.9 million" is printed on
-  page 10. Renaming the field `revenue_secured_by_contracts` and describing it found and
-  grounded it.
-- **Boolean flags ground to supporting text.** `workforce_unionized` and
-  `court_approval_required` ground to the sentences that imply them, which is correct
-  but cannot be shown as a crop.
-
-## Schema
-
-48 leaf fields: the target companies, the seller and its capacity, the insolvency
-proceeding, sale process terms (deadline, offer form, delivery address, deposit, closing,
-sale basis), a business overview, investment highlights, the property sites, historical
-performance, the income statement table (historical and forecast columns), the sale
-timeline and the contacts.
-
-## Credits
-
-84.00 credits at standard tier: 37.80 for the first parse and extract, then three
-extract-only runs at 15.40 each while refining the schema and checking grounding
-stability.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/redact.py <original>.pdf \
-    document-types/collection/confidential-information-memorandum/source/ptl-group-cim-redacted.pdf \
-    --rules <outside-the-repo>/rules.json
-.venv/bin/python document-types/scripts/run_ade.py confidential-information-memorandum
-.venv/bin/python document-types/scripts/run_ade.py confidential-information-memorandum --extract-only
-.venv/bin/python document-types/scripts/build_images.py confidential-information-memorandum
-```
-
-A fresh extraction may ground the featured fields on a different page; check with
-`inspect_fields.py confidential-information-memorandum --page 3` before rebuilding the
-images.
+- **A long mixed narrative:** a legal letter, disclaimers, marketing copy, site
+  descriptions and dense numbered sale conditions.
+- **A side-by-side highlights panel** next to running text.
+- **Image-only charts and tables,** including a five-year income statement with no text
+  layer behind it.
+- **Financial tables** with historical, trailing-average and forecast columns.
+- **Facts repeated in different words** across the covering letter, executive summary
+  and appendix, such as the receiver, the court order and the bid deadline.
+- **Photographs** on the cover and in the site descriptions.

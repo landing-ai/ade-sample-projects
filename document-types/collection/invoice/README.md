@@ -1,11 +1,99 @@
 # Invoice
 
-Source assets for `landing.ai/document-type/invoice`.
+**On the website:** [landing.ai/document-type/invoice](https://landing.ai/document-type/invoice)
 
-## Sample document
+A one-page bilingual French/English sales invoice from A.E. Blake Sales Ltd., a Canadian
+industrial supplier, dated January 2022. It lists the seller, the sold-to and ship-to
+addresses, order and shipping terms, a three-row line-item table, and the subtotal, HST
+and total in Canadian dollars. This sample is a development placeholder.
 
-`source/invoice_4.pdf` — a single-page A.E. Blake Sales invoice, bilingual
-French/English, with a three-row line-item table.
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 35 |
+
+DPT-3 Pro ran at standard tier through the jobs API, and the extraction used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Pro |
+|---|---|
+| Snapshot | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:22 |
+| Region | US |
+
+### Parse accuracy
+
+| | DPT-3 Pro |
+|---|---|
+| Characters returned | 2,354 |
+| Accuracy | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 18.3 s |
+| Per page | 18.3 s |
+
+### Parse cost
+
+| | DPT-3 Pro |
+|---|---|
+| Total | 1.1 credits |
+| Per page | 1.10 credits |
+
+## Extract performance
+
+The Pro markdown was extracted with the schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Pro markdown |
+|---|---|
+| Snapshot | `extract-20261111` |
+| Output | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:23 |
+| Region | US |
+
+### Extract accuracy
+
+| | Pro markdown |
+|---|---|
+| Fields requested | 35 |
+| Non-null fields returned | 30 |
+| Accuracy | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Pro markdown |
+|---|---|
+| Total | 56.4 s |
+| Per schema field (35) | 1.61 s |
+| Per value returned | 1.28 s |
+
+### Extract cost
+
+| | Pro markdown |
+|---|---|
+| Total | 2.0 credits |
+| Per schema field (35) | 0.057 credits |
+| Per value returned | 0.045 credits |
+
+## Origin
+
+`source/invoice_4.pdf` is a single-page A.E. Blake Sales invoice, bilingual
+French/English, with a three-row line-item table. It is **1 page, portrait**.
 
 > **This is a development placeholder, not the final sample.**
 >
@@ -16,65 +104,51 @@ French/English, with a three-row line-item table.
 >
 > It should be replaced before the page ships. It is a real third-party invoice naming two
 > real companies and carrying real contact details, and it was not gathered with
-> publication on a LandingAI marketing page in mind. A purpose-sourced or synthesised
+> publication on a LandingAI marketing page in mind. A purpose-sourced or synthesized
 > invoice, with its provenance recorded here, is what belongs in this folder.
+
+| | |
+|---|---|
+| Publisher | A.E. Blake Sales Ltd. |
+| Source | None recorded; copied from `Use_Cases/Invoices/input_folder/` in this repository |
+| Retrieved | Not recorded |
+| Clearance | **Placeholder** |
 
 **Replacement checklist**
 
 - [ ] Sourced synthetically, from a vendor sample, or explicitly cleared
 - [ ] Personal data obviously non-real and not colliding with real identifiers
 - [ ] Provenance and clearance recorded in this file
-- [ ] `run_ade.py` and `build_images.py` re-run, images checked by eye
+- [ ] Assets regenerated and images checked by eye
+
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-One page and portrait, so it is the simplest case in the pilot — but it carries a real
-line-item table, which the schema and the page both need to handle. A one-line invoice
-would not have shown whether nested array fields can be grounded and boxed. They can:
-`line_items[1].description` resolves to the second row of the table.
+### Who processes it
 
-It exercises both box-resolution paths in `build_images.py`:
+An invoice is the bill a seller sends for goods or services delivered. It is the most
+common business document in accounts payable, and every supplier lays it out
+differently.
 
-| Field | Resolved via |
-|---|---|
-| `invoice_info.invoice_number`, `company_info.supplier_name`, `customer_info.sold_to_name` | `atomic_grounding` line-level boxes |
-| `line_items[1].description`, `totals_summary.total_due` | `table_cell` children |
+- **Accounts payable:** AP teams enter invoices, match them to purchase orders and
+  receipts, and schedule payment.
+- **Procurement and spend analytics:** buyers track prices, quantities and suppliers
+  across line items.
+- **Accounting firms and bookkeepers:** they post invoices to the ledger and reconcile
+  them at period end.
+- **Tax and audit:** auditors and tax teams check invoices for sales tax, such as HST
+  here, and for supporting evidence.
+- **Trade finance and factoring:** lenders verify invoices before they advance cash
+  against receivables.
 
-## Extraction
+### What it contains
 
-`schema.json` is the schema from `Use_Cases/Invoices/v2/schema/invoice_demo_schema.json`,
-unchanged: six top-level groups — `invoice_info`, `customer_info`, `company_info`,
-`order_details`, `totals_summary`, `line_items` — with currency in `totals_summary` and a
-nested array of line items. All six groups populate on this document, with three line
-items.
-
-`company_info.pan` comes back null with a schema warning. PAN is an Indian tax
-identifier and this is a Canadian invoice, so that is correct behaviour, not a failure.
-
-`manifest.json` names the five fields featured on the page. **Currency is in the schema
-but not featured**: on this invoice it shares a table cell with `total_due`, so both
-would render the identical crop.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py invoice      # spends credits
-.venv/bin/python document-types/scripts/build_images.py invoice # free
-```
-
-Both calls run through the jobs API at the **standard** service tier. This document cost
-3.10 credits; the cost is dominated by the extract step, which scales with schema size,
-and this schema is 13 KB. Synchronous calls always
-bill at priority whatever tier you ask for, so the jobs API is the only route to the
-cheaper rate. Web content is never urgent.
-
-Output files carry the parse model — `parse-pro.json`, `extract-pro.json`,
-`images/pro/` — so a Verity run can sit beside the Pro one without overwriting it once
-that model is GA.
-
-## A note on repeated values
-
-A value printed in more than one place comes back with several ranges, and their order is
-not guaranteed stable between runs — on an earlier sample, re-parsing moved a box from one
-occurrence to the other. Set `"occurrence"` on a field in `manifest.json` to pin which one
-is boxed. `build_images.py` warns whenever a field has several and none is pinned.
+- **Bilingual labels,** each field captioned in French and English.
+- **A line-item table** with item number, description, quantity, unit price, unit of
+  measure and extension.
+- **Small header tables** for account, purchase order, order dates, terms and shipping.
+- **Separate sold-to and ship-to address blocks.**
+- **A totals block** with subtotal, sales tax and total, with the currency printed under
+  the total.
+- **A company logo** and a contact block in bold italic type.

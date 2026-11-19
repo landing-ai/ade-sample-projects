@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 5,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "flowcharts[3].figure_caption",
+      "label": "Figure caption",
+      "value": "Figure 4 - Flowchart C: Materials Changes",
+      "page": 5,
+      "box": {
+        "xmin": 0.34878,
+        "ymin": 0.87147,
+        "xmax": 0.65163,
+        "ymax": 0.88511
+      },
+      "range": {
+        "end": 9713,
+        "start": 9672
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "flowcharts-3-figure_caption.png"
+    },
+    {
+      "path": "flowcharts[3].decisions[3].question",
+      "label": "Decision C4",
+      "value": "Does a risk assessment identify any new or increased biocompatibility concerns?",
+      "page": 5,
+      "box": {
+        "xmin": 0.10368,
+        "ymin": 0.15086,
+        "xmax": 0.94523,
+        "ymax": 0.83941
+      },
+      "range": {
+        "end": 8666,
+        "start": 8587
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "flowcharts-3-decisions-3-question.png"
+    },
+    {
+      "path": "flowcharts[3].decisions[4].question",
+      "label": "Decision C4.1",
+      "value": "Could the change affect performance specifications?",
+      "page": 5,
+      "box": {
+        "xmin": 0.10368,
+        "ymin": 0.15086,
+        "xmax": 0.94523,
+        "ymax": 0.83941
+      },
+      "range": {
+        "end": 8749,
+        "start": 8698
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "flowcharts-3-decisions-4-question.png"
+    },
+    {
+      "path": "flowcharts[3].decisions[4].if_no",
+      "label": "C4.1 No outcome",
+      "value": "Documentation",
+      "page": 5,
+      "box": {
+        "xmin": 0.10368,
+        "ymin": 0.15086,
+        "xmax": 0.94523,
+        "ymax": 0.83941
+      },
+      "range": {
+        "end": 8419,
+        "start": 8406
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "flowcharts-3-decisions-4-if_no.png"
+    }
+  ]
+}

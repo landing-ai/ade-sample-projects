@@ -37,5 +37,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "No feature page or fields were requested. Page 13 (financial liquidity) was chosen because its ruled table grounds one value per cell: debt, minus bank balances, gives net debt, and then the net-debt-to-assets ratio, read off an Arabic right-to-left table whose labels sit in the right-hand column. Page 22, the key highlights cards, was the other candidate, but most of its figures are printed in Arabic-Indic digits (for example ٤٨٦), and inspect_fields.py and build_images.py compare digits literally, so those values report OFF even where the boxed text contains them. On page 13 the debt maturity bars extract correctly but have no grounding (in the first extraction they grounded only to the whole chart figure), and two rows of the same table (total equity, net debt to equity) ground to the Arabic label cell beside the value instead of the value cell."
+  "notes": "No feature page or fields were requested. Page 13 (financial liquidity) was chosen because its ruled table grounds one value per cell: debt, minus bank balances, gives net debt, and then the net-debt-to-assets ratio, read off an Arabic right-to-left table whose labels sit in the right-hand column. Page 22, the key highlights cards, was the other candidate, but most of its figures are printed in Arabic-Indic digits (for example ٤٨٦), and inspect_fields.py and build_images.py compare digits literally, so those values report OFF even where the boxed text contains them. On page 13 the debt maturity bars extract correctly but have no grounding (in the first extraction they grounded only to the whole chart figure), and two rows of the same table (total equity, net debt to equity) ground to the Arabic label cell beside the value instead of the value cell.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 34,
+      "service_tier": "standard",
+      "parse_credits": 29.4,
+      "extract_credits": 11.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 34,
+      "service_tier": "standard",
+      "parse_credits": 29.1,
+      "extract_credits": 10.7
+    }
+  ]
 }

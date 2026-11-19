@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "project_name",
+      "label": "Project",
+      "value": "TURNBULL SCHOOL MUSIC ROOM ADDITION",
+      "page": 1,
+      "box": {
+        "xmin": 0.88362,
+        "ymin": 0.84033,
+        "xmax": 0.97405,
+        "ymax": 0.84587
+      },
+      "range": {
+        "end": 12359,
+        "start": 12324
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "project_name.png"
+    },
+    {
+      "path": "fabricator.contract_number",
+      "label": "Fabricator contract number",
+      "value": "CP9667F",
+      "page": 1,
+      "box": {
+        "xmin": 0.92566,
+        "ymin": 0.9609,
+        "xmax": 0.94303,
+        "ymax": 0.9665
+      },
+      "range": {
+        "end": 12810,
+        "start": 12803
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fabricator-contract_number.png"
+    },
+    {
+      "path": "sheets[0].engineer_review.status",
+      "label": "Engineer review status",
+      "value": "REVIEWED AS NOTED",
+      "page": 1,
+      "box": {
+        "xmin": 0.85946,
+        "ymin": 0.78282,
+        "xmax": 0.8937,
+        "ymax": 0.78717
+      },
+      "range": {
+        "end": 8290,
+        "start": 8273
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sheets-0-engineer_review-status.png"
+    },
+    {
+      "path": "sheets[0].bar_list[0].quantity",
+      "label": "Bar quantity (first bar list row)",
+      "value": 32,
+      "page": 1,
+      "box": {
+        "xmin": 0.43478,
+        "ymin": 0.69736,
+        "xmax": 0.43936,
+        "ymax": 0.70369
+      },
+      "range": {
+        "end": 2740,
+        "start": 2738
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sheets-0-bar_list-0-quantity.png"
+    },
+    {
+      "path": "sheets[0].bar_list[0].bar_mark",
+      "label": "Bar mark (first bar list row)",
+      "value": "A5",
+      "page": 1,
+      "box": {
+        "xmin": 0.4746,
+        "ymin": 0.69733,
+        "xmax": 0.47914,
+        "ymax": 0.70361
+      },
+      "range": {
+        "end": 2772,
+        "start": 2770
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "sheets-0-bar_list-0-bar_mark.png"
+    }
+  ]
+}

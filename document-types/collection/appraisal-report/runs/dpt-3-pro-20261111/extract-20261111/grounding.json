@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 15,
+  "page_count": 21,
+  "preview_pages": [
+    1,
+    7,
+    14,
+    15
+  ],
+  "fields": [
+    {
+      "path": "comparables[0].sale_price",
+      "label": "Comp 1 sale price",
+      "value": 460000,
+      "page": 15,
+      "box": {
+        "xmin": 0.52903,
+        "ymin": 0.32879,
+        "xmax": 0.58012,
+        "ymax": 0.33672
+      },
+      "range": {
+        "end": 47835,
+        "start": 47827
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparables-0-sale_price.png"
+    },
+    {
+      "path": "comparables[0].net_adjustment_total",
+      "label": "Comp 1 net adjustment",
+      "value": 30760,
+      "page": 15,
+      "box": {
+        "xmin": 0.53765,
+        "ymin": 0.34168,
+        "xmax": 0.58012,
+        "ymax": 0.34962
+      },
+      "range": {
+        "end": 47933,
+        "start": 47926
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparables-0-net_adjustment_total.png"
+    },
+    {
+      "path": "comparables[0].adjusted_price",
+      "label": "Comp 1 adjusted price",
+      "value": 490760,
+      "page": 15,
+      "box": {
+        "xmin": 0.53044,
+        "ymin": 0.3764,
+        "xmax": 0.58012,
+        "ymax": 0.38434
+      },
+      "range": {
+        "end": 48126,
+        "start": 48118
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparables-0-adjusted_price.png"
+    },
+    {
+      "path": "comparables[0].comparable_weight",
+      "label": "Comp 1 weight",
+      "value": "Most",
+      "page": 15,
+      "box": {
+        "xmin": 0.55246,
+        "ymin": 0.3893,
+        "xmax": 0.58012,
+        "ymax": 0.39724
+      },
+      "range": {
+        "end": 48218,
+        "start": 48214
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparables-0-comparable_weight.png"
+    }
+  ]
+}

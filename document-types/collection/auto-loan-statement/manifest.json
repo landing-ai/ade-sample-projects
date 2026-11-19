@@ -29,7 +29,7 @@
     {
       "path": "total_amount_due",
       "label": "Total amount due",
-      "occurrence": 1
+      "occurrence": 0
     },
     {
       "path": "current_due[0].amount",
@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no page or fields; its notes suggested the vehicle, total amount due, principal balance, term and account number as suggestions only, and asked to avoid the payment coupon, the lorem ipsum block and any date. Featured on page 1: the financed vehicle (model year and make/model), the total amount due in the statement header (occurrence 1; occurrence 0 is the same $496.31 on the payment coupon), the current payment in the transaction summary and the last payment received. Together they read as what is owed on which car this month, and that the last payment was made. Three suggested fields could not be featured. The Account Details panel (account number, account opened, current principal balance, terms) was parsed as a CHART figure with a reconstructed two-column table, so its values carry no cell-level grounding: account_number grounds to the 'Account Opened' label and current_principal_balance to 'Terms' (both OFF), and term_months has no ranges at all (SYNTH). The values themselves extract correctly. Dates are avoided as asked: the template's dates disagree (header and transactions 2022, coupon due date October 15, 2020, page-2 payment allocation 8/21/20 against 8/21/22 on page 1), and extraction returns each as printed. dealer_name extracts as 'Chevrolet Buick GMC' without 'Cadillac': the parse paired each dealer-name line with an address line as key-value text, so the third line became a key. There is no APR on the statement."
+  "notes": "The request named no page or fields; its notes suggested the vehicle, total amount due, principal balance, term and account number as suggestions only, and asked to avoid the payment coupon, the lorem ipsum block and any date. Featured on page 1: the financed vehicle (model year and make/model), the total amount due in the statement header (occurrence 1; occurrence 0 is the same $496.31 on the payment coupon), the current payment in the transaction summary and the last payment received. Together they read as what is owed on which car this month, and that the last payment was made. Three suggested fields could not be featured. The Account Details panel (account number, account opened, current principal balance, terms) was parsed as a CHART figure with a reconstructed two-column table, so its values carry no cell-level grounding: account_number grounds to the 'Account Opened' label and current_principal_balance to 'Terms' (both OFF), and term_months has no ranges at all (SYNTH). The values themselves extract correctly. Dates are avoided as asked: the template's dates disagree (header and transactions 2022, coupon due date October 15, 2020, page-2 payment allocation 8/21/20 against 8/21/22 on page 1), and extraction returns each as printed. dealer_name extracts as 'Chevrolet Buick GMC' without 'Cadillac': the parse paired each dealer-name line with an address line as key-value text, so the third line became a key. There is no APR on the statement.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.4,
+      "extract_credits": 2.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 3.3,
+      "extract_credits": 2.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.2,
+      "extract_credits": 2.4
+    }
+  ]
 }

@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "transport.vessel",
+      "label": "Vessel and voyage",
+      "value": "XIANG XING V. BNO2W",
+      "page": 1,
+      "box": {
+        "xmin": 0.30487,
+        "ymin": 0.30473,
+        "xmax": 0.44092,
+        "ymax": 0.31501
+      },
+      "range": {
+        "end": 1073,
+        "start": 1054
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transport-vessel.png"
+    },
+    {
+      "path": "transport.port_of_loading",
+      "label": "Port of loading",
+      "value": "XIAMEN, CHINA",
+      "page": 1,
+      "box": {
+        "xmin": 0.20716,
+        "ymin": 0.33556,
+        "xmax": 0.29913,
+        "ymax": 0.34673
+      },
+      "range": {
+        "end": 1131,
+        "start": 1118
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transport-port_of_loading.png"
+    },
+    {
+      "path": "items[0].description",
+      "label": "Goods (item 1)",
+      "value": "FOOTWEAR",
+      "page": 1,
+      "box": {
+        "xmin": 0.31061,
+        "ymin": 0.44097,
+        "xmax": 0.37254,
+        "ymax": 0.45085
+      },
+      "range": {
+        "end": 1762,
+        "start": 1754
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-0-description.png"
+    },
+    {
+      "path": "items[0].hs_code",
+      "label": "HS code (item 1)",
+      "value": "6403.99",
+      "page": 1,
+      "box": {
+        "xmin": 0.59851,
+        "ymin": 0.44203,
+        "xmax": 0.65256,
+        "ymax": 0.45198
+      },
+      "range": {
+        "end": 1778,
+        "start": 1771
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-0-hs_code.png"
+    },
+    {
+      "path": "items[0].origin_criterion",
+      "label": "Origin criterion (item 1)",
+      "value": "WO",
+      "page": 1,
+      "box": {
+        "xmin": 0.65772,
+        "ymin": 0.44054,
+        "xmax": 0.71689,
+        "ymax": 0.46533
+      },
+      "range": {
+        "end": 1790,
+        "start": 1788
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-0-origin_criterion.png"
+    }
+  ]
+}

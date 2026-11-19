@@ -1,0 +1,299 @@
+{
+  "extraction": {
+    "agent": {
+      "address": "123 Fake Grant Avenue, Auburn NY 12345",
+      "name": "Sample Financial Services, Inc."
+    },
+    "agent_signature": {
+      "company": "Sample Financial Services, Inc.",
+      "is_signed": false,
+      "signer_name": null
+    },
+    "execution_date": "2025-01-01",
+    "is_irrevocable": true,
+    "notary": {
+      "acknowledgment_date": "2025-01-15",
+      "commission_expiration": "2029-12-14",
+      "county": "Los Angeles",
+      "is_notarized": true,
+      "state": "California"
+    },
+    "powers_granted": [
+      "execute, endorse, assign and deliver promissory notes made payable to principal",
+      "execute, endorse, assign and deliver beneficial or mortgagee's interests and Mortgage Rights under mortgages, deeds of trust and security instruments",
+      "execute, endorse, assign and deliver all other documents evidencing or relating to payee's, obligee's or mortgagee's interest in the loans"
+    ],
+    "principal": {
+      "county": "Oakland County",
+      "name": "Fake Mortgage Company",
+      "office_address": "123 Main Fake Street, Anycity, CA 12345",
+      "representative_name": "James Doe",
+      "representative_title": "Senior Loan Officer",
+      "state": "California"
+    },
+    "principal_signature": {
+      "is_signed": true,
+      "signer_name": "James Doe",
+      "signer_title": "Senior Loan Officer"
+    },
+    "survives_incapacity": true
+  },
+  "extraction_metadata": {
+    "agent": {
+      "address": {
+        "ranges": [
+          {
+            "end": 447,
+            "start": 409
+          }
+        ],
+        "value": "123 Fake Grant Avenue, Auburn NY 12345"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 405,
+            "start": 374
+          }
+        ],
+        "value": "Sample Financial Services, Inc."
+      }
+    },
+    "agent_signature": {
+      "company": {
+        "ranges": [
+          {
+            "end": 3188,
+            "start": 3157
+          }
+        ],
+        "value": "Sample Financial Services, Inc."
+      },
+      "is_signed": {
+        "ranges": [
+          {
+            "end": 3221,
+            "start": 3189
+          }
+        ],
+        "value": false
+      },
+      "signer_name": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "execution_date": {
+      "ranges": [
+        {
+          "end": 3079,
+          "start": 2925
+        }
+      ],
+      "value": "2025-01-01"
+    },
+    "is_irrevocable": {
+      "ranges": [
+        {
+          "end": 2423,
+          "start": 1469
+        }
+      ],
+      "value": true
+    },
+    "notary": {
+      "acknowledgment_date": {
+        "ranges": [
+          {
+            "end": 3627,
+            "start": 3351
+          }
+        ],
+        "value": "2025-01-15"
+      },
+      "commission_expiration": {
+        "ranges": [
+          {
+            "end": 3672,
+            "start": 3629
+          }
+        ],
+        "value": "2029-12-14"
+      },
+      "county": {
+        "ranges": [
+          {
+            "end": 3349,
+            "start": 3338
+          }
+        ],
+        "value": "Los Angeles"
+      },
+      "is_notarized": {
+        "ranges": [
+          {
+            "end": 3697,
+            "start": 3674
+          }
+        ],
+        "value": true
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 3320,
+            "start": 3310
+          }
+        ],
+        "value": "California"
+      }
+    },
+    "powers_granted": [
+      {
+        "ranges": [
+          {
+            "end": 1250,
+            "start": 529
+          }
+        ],
+        "value": "execute, endorse, assign and deliver promissory notes made payable to principal"
+      },
+      {
+        "ranges": [
+          {
+            "end": 1250,
+            "start": 529
+          }
+        ],
+        "value": "execute, endorse, assign and deliver beneficial or mortgagee's interests and Mortgage Rights under mortgages, deeds of trust and security instruments"
+      },
+      {
+        "ranges": [
+          {
+            "end": 1250,
+            "start": 529
+          }
+        ],
+        "value": "execute, endorse, assign and deliver all other documents evidencing or relating to payee's, obligee's or mortgagee's interest in the loans"
+      }
+    ],
+    "principal": {
+      "county": {
+        "ranges": [
+          {
+            "end": 188,
+            "start": 174
+          }
+        ],
+        "value": "Oakland County"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 83,
+            "start": 62
+          }
+        ],
+        "value": "Fake Mortgage Company"
+      },
+      "office_address": {
+        "ranges": [
+          {
+            "end": 172,
+            "start": 133
+          }
+        ],
+        "value": "123 Main Fake Street, Anycity, CA 12345"
+      },
+      "representative_name": {
+        "ranges": [
+          {
+            "end": 278,
+            "start": 269
+          }
+        ],
+        "value": "James Doe"
+      },
+      "representative_title": {
+        "ranges": [
+          {
+            "end": 306,
+            "start": 287
+          }
+        ],
+        "value": "Senior Loan Officer"
+      },
+      "state": {
+        "ranges": [
+          {
+            "end": 209,
+            "start": 199
+          }
+        ],
+        "value": "California"
+      }
+    },
+    "principal_signature": {
+      "is_signed": {
+        "ranges": [
+          {
+            "end": 3112,
+            "start": 3097
+          }
+        ],
+        "value": true
+      },
+      "signer_name": {
+        "ranges": [
+          {
+            "end": 3128,
+            "start": 3119
+          }
+        ],
+        "value": "James Doe"
+      },
+      "signer_title": {
+        "ranges": [
+          {
+            "end": 3155,
+            "start": 3136
+          }
+        ],
+        "value": "Senior Loan Officer"
+      }
+    },
+    "survives_incapacity": {
+      "ranges": [
+        {
+          "end": 2923,
+          "start": 2425
+        }
+      ],
+      "value": true
+    }
+  },
+  "markdown": "# POWER OF ATTORNEY\n\nKNOW ALL PERSONS BY THIS DOCUMENT:\n\nThat Fake Mortgage Company (the \"Principal\"), with its principal offices at 123 Main Fake Street, Anycity, CA 12345, Oakland County, State of California, hereby represented by the following authorized individual James Doe, (name) Senior Loan Officer (title), does with this document nominate, appoint, and constitute Sample Financial Services, Inc. of 123 Fake Grant Avenue, Auburn NY 12345 (the \"Agent\"), its true and lawful attorney, and in its name, place, and stead:\n\nTo execute, endorse, assign, and deliver to third parties (1) promissory notes (the \"Promissory Notes\") made payable to the order of principal, evidencing loans secured by real property, which Promissory Notes are now or may hereafter be in the possession of Agent; (2) any beneficial or mortgagee's interest, or assignment thereof, and any and all other rights and interests, under all mortgages, deeds of trusts, security agreements, and other instruments evidencing, making or granting security for the Promissory Notes (\"Mortgage Rights\"); (3) all other documents evidencing, memorializing, or otherwise relating to payee's, obligee's, or mortgagee's interest in loans evidenced by the Promissory Notes (\"Documents\").\n\nPrincipal gives and grants to Agent full power and authority to do and perform every act necessary and proper to be done in the exercise of any of the foregoing powers as fully as Principal might or could do itself.\n\nPrincipal and Agent hereby acknowledge and agree that Agent has an interest in the subject matter of the powers granted herein, in that the loans evidenced by the Promissory Notes (and the related Mortgage Rights and Documents) were originated and closed in the name of Principal, with Principal being denominated the original payee in the Promissory Notes and the original beneficiary or mortgagee in the deeds of trust or mortgages securing payment of the Promissory Notes, and immediately upon and concurrently with the closing of the loans, Principal and Agent do hereby agree that Agent is hereby vested irrevocably with the powers granted herein and that, with respect to such loans, Principal does hereby forever renounce all right to (1) Revoke this Power of Attorney or any of the powers conferred upon Agent hereby or to appoint any other person to execute the said powers; and (2) do any of the acts that Agent is authorized to perform by this\n\nIf , prior to the exercise of the powers hereby conferred upon Agent, Principal shall have become bankrupt, dissolved, liquidated, disabled, incapacitated, or have died, and Agent sha l thereafter exercise such power, Principal hereby declares any such acts performed by Agent pursuant to this [blank] Power of Attorney binding and effective in the same manner that they would have been had such bankruptcy, dissolution, liquidation, disability, incapacity, or death of Principal not have occurred.\n\nBy signing below, I acknowledge that I have received a copy of this Power of Attorney and that I understand its terms. Executed this 01 day of 01 , 2025 .\nPRINCIPAL AGENT\n\nBy: [signature]\nName: James Doe\nTitle: Senior Loan Officer\n\nSample Financial Services, Inc.\nBy: ____________________________\nName: ____________________________\nTitle: ____________________________\n\n- **State of**: California\n- **County of**: Los Angeles\n\nI certify that on 01, 15, 2025 personally came before me and acknowledged under oath to my satisfaction that he/she is the President of the Corporation named herein and personally signed this document and that he signed, sealed and delivered this document as his act and deed.\n\n- **Notary Commission Expires**: 12/14/2029\n\n[e-signature: John Doe]\n\n<!-- doc_id=parse-01m7rycabvyvp8r84xc6pztk50 -->",
+  "metadata": {
+    "job_id": "extract-01m7ryd6zp6bdrerpvry8zda2k",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 193001,
+    "doc_id": "parse-01m7rycabvyvp8r84xc6pztk50",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 2.0,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 3747,
+    "output_extraction_chars": 1158,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

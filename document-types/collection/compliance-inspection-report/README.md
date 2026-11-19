@@ -1,15 +1,109 @@
 # Compliance inspection report
 
-Source assets for `landing.ai/document-type/compliance-inspection-report`.
+**On the website:** [landing.ai/document-type/compliance-inspection-report](https://landing.ai/document-type/compliance-inspection-report)
 
-## Sample document
+A Washington State Department of Ecology inspection report for a construction site
+covered by the Construction Stormwater General Permit, from an unannounced inspection on
+December 4, 2024. It records the permit and site data and the weather, a table of
+violations with the required action and deadline for each, the inspector's sign-off, and
+four pages of GPS-stamped site photos.
 
-`source/ecology-construction-stormwater-inspection-war313805.pdf` — a Washington State
+| | |
+|---|---|
+| Pages | 7 |
+| Fields in the extraction schema | 26 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:43 | 2026-11-19 02:46 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 8,675 | 9,287 |
+| Words under 0.95 confidence | 18 | n/a |
+| Words under 0.80 confidence | 3 | n/a |
+| Words under 0.50 confidence | 3 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 6.9 s | 19.4 s |
+| Per page | 1.0 s | 2.8 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.0 credits | 5.9 credits |
+| Per page | 0.29 credits | 0.84 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:43 | 2026-11-19 02:47 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 26 | 26 |
+| Non-null fields returned | 25 | 25 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 233.9 s | 198.1 s |
+| Per schema field (26) | 9.00 s | 7.62 s |
+| Per value returned | 5.57 s | 4.72 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 5.0 credits | 5.1 credits |
+| Per schema field (26) | 0.192 credits | 0.196 credits |
+| Per value returned | 0.119 credits | 0.121 credits |
+
+## Origin
+
+`source/ecology-construction-stormwater-inspection-war313805.pdf` is a Washington State
 Department of Ecology Construction Stormwater General Permit inspection report for the
 Good Neighbor Village construction project, permit WAR313805, inspected December 4,
-2024. **7 pages, mixed orientation**: three portrait pages (general data and background,
-a violations table, and the enforcement notice with the inspector's sign-off) and four
-landscape photo pages with GPS-stamped captions.
+2024. It is **7 pages, mixed orientation**: three portrait pages (general data and
+background, a violations table, and the enforcement notice with the inspector's
+sign-off) and four landscape photo pages with GPS-stamped captions.
 
 | | |
 |---|---|
@@ -23,92 +117,42 @@ The only person named is the Ecology inspector, acting in an official capacity; 
 on-site representative was present. The photos show the site entrance, the public road
 and machinery, with no people and no legible plates. No redaction was needed.
 
-**How it was chosen.** The request was for a report verifying that construction or
-renovation work meets required regulatory standards. Web research found the closest
-building-standards form, HUD's Form HUD-92051 "Compliance Inspection Report" for FHA
-construction, published only blank, and California's DSA inspection-card samples are
-blank forms stamped "SAMPLE – DO NOT USE". This report checks construction against
-environmental permit conditions (erosion and sediment control) rather than building
-code, but it is a completed, published compliance inspection with citations, findings
-and deadlines.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+The request was for a report verifying that construction or renovation work meets
+required regulatory standards. Web research found the closest building-standards form,
+HUD's Form HUD-92051 "Compliance Inspection Report" for FHA construction, published only
+blank, and California's DSA inspection-card samples are blank forms stamped "SAMPLE – DO
+NOT USE". This report checks construction against environmental permit conditions
+(erosion and sediment control) rather than building code, but it is a completed,
+published compliance inspection with citations, findings and deadlines. Full provenance
+is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **regulatory inspection report**:
+### Who processes it
 
-- **Findings tied to citations.** Each violation cites a permit condition (S9.D.2,
-  S9.D.11), describes what the inspector saw, states the required action and a deadline,
-  and links guidance.
-- **Free text inside a form.** A ruled general-data grid, then narrative background and
-  long table cells mixing bold, red and plain text.
-- **Photos as evidence.** Four landscape pages of site photos, each with a caption and a
-  date, time, latitude, longitude and bearing stamp.
-- **Mixed orientation** in one PDF.
+Compliance inspections record whether a site or facility meets the conditions of its
+permit, and the findings drive deadlines, penalties and follow-up visits.
 
-## Featured fields: the inspection record
+- **Construction contractors and developers:** site teams track each cited violation and
+  its deadline until the corrective action is done.
+- **Environmental regulators:** agencies log inspection findings against permits and
+  follow up on open violations.
+- **Environmental and engineering consultants:** they review inspection history for
+  permit renewals and due diligence on a site.
+- **Construction lenders and insurers:** they check open violations that could delay a
+  project or lead to fines.
+- **Legal and compliance teams:** they assemble inspection records when a violation
+  turns into an enforcement action.
 
-All on page 1. The request named no page or fields, so these were chosen:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Permit number | WAR313805 |
-| Inspection date | 2024-12-04 |
-| Inspection type | Unannounced |
-| Receiving waters | Groundwater |
-| Weather at inspection | 39 degrees Fahrenheit, mostly cloudy with a WSW wind at 1 mph. |
-
-Which permit, when, what kind of inspection, where the site drains, and the weather,
-which matters for a stormwater inspection. The inspector is named on the same page but
-not featured; the date carries the same point without a person.
-
-**The inspection date is flagged, and correct.** It is extracted as the ISO date
-2024-12-04 and boxed on the cell "Inspection Date and Entry/Exit Time: December 4, 2024,
-11:28/11:47", which contains it, so `build_images.py` warns that the value is not in the
-boxed text. The crop was checked by eye.
-
-## What it surfaced
-
-**The violations extract well but are hard to illustrate.** Both violations come back
-with the right condition, requirement, finding, action, guidance and the 12/20/2024
-deadline. But each value grounds to a whole table cell, including its empty space, and a
-violation's condition, requirement and finding all share the first cell. Featuring them
-highlighted most of page 2, so page 1 is featured instead.
-
-**The schema had to match the table, not the idea of it.** The first schema split each
-violation into a finding, an action and a due date. The table has three columns
-(violation and action, complete or submit date, guidance), and for the first violation
-the date column holds an instruction rather than a date, so its due date came back null
-with a `nonconformant_output` warning. The revised schema follows the table's columns.
-
-**"null" as a string.** Where a nullable field has nothing to report, extraction returns
-the text "null" rather than a JSON null: for the absent on-site representative, and for
-the first violation's due date.
-
-**The photo captions are read precisely.** All four photos come back with their
-descriptions and full-precision latitude and longitude. The inspector's signature on
-page 3 is transcribed as text.
-
-## Extraction
-
-**26 leaf fields**: agency, title, permit, project, date, entry and exit times, type,
-inspector, on-site representative, receiving waters, weather, precipitation and UIC
-flags, the violations, the signed date and the photos.
-
-## Cost
-
-**10.80 credits** at standard tier for 7 pages: 5.80 to parse, 5.00 to extract. The
-first extraction, before the schema revision, cost a further 5.00, for 15.80 in all.
-
-## Regenerating
-
-```bash
-curl -sSL -o document-types/collection/compliance-inspection-report/source/ecology-construction-stormwater-inspection-war313805.pdf \
-  "https://apps.ecology.wa.gov/paris/DownloadDocument.aspx?id=521477"
-.venv/bin/python document-types/scripts/run_ade.py compliance-inspection-report                # 10.80 credits
-.venv/bin/python document-types/scripts/run_ade.py compliance-inspection-report --extract-only # 5.00, schema iteration
-.venv/bin/python document-types/scripts/build_images.py compliance-inspection-report           # free
-.venv/bin/python document-types/scripts/inspect_fields.py compliance-inspection-report --page 1
-```
+- **A ruled general-data grid** with permit, site, inspection and weather fields.
+- **Findings tied to citations.** Each violation cites a permit condition, describes
+  what the inspector saw, states the required action and a deadline, and links guidance.
+- **Long table cells** that mix bold, red and plain text, with one date column holding
+  an instruction in place of a date.
+- **Narrative background** in free text.
+- **Photos as evidence,** each with a caption and a date, time, latitude, longitude and
+  bearing stamp.
+- **A signature** in the inspector's sign-off.
+- **Mixed orientation,** with portrait text pages and landscape photo pages in one PDF.

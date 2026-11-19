@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "property.address",
+      "label": "Property address",
+      "value": "192 EAST 151ST STREET",
+      "page": 1,
+      "box": {
+        "xmin": 0.19358,
+        "ymin": 0.23189,
+        "xmax": 0.3636,
+        "ymax": 0.24243
+      },
+      "range": {
+        "end": 659,
+        "start": 638
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "property-address.png"
+    },
+    {
+      "path": "fire_protection_equipment[0]",
+      "label": "Fire protection equipment",
+      "value": "Fire alarm system",
+      "page": 1,
+      "box": {
+        "xmin": 0.11393,
+        "ymin": 0.47354,
+        "xmax": 0.22984,
+        "ymax": 0.48563
+      },
+      "range": {
+        "end": 1541,
+        "start": 1524
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fire_protection_equipment-0.png"
+    },
+    {
+      "path": "certificate_type",
+      "label": "Certificate type",
+      "value": "Temporary",
+      "page": 1,
+      "box": {
+        "xmin": 0.79782,
+        "ymin": 0.21344,
+        "xmax": 0.86758,
+        "ymax": 0.22538
+      },
+      "range": {
+        "end": 610,
+        "start": 601
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "certificate_type.png"
+    },
+    {
+      "path": "effective_date",
+      "label": "Effective date",
+      "value": "2019-04-16",
+      "page": 1,
+      "box": {
+        "xmin": 0.67572,
+        "ymin": 0.23513,
+        "xmax": 0.87761,
+        "ymax": 0.2464
+      },
+      "range": {
+        "end": 719,
+        "start": 693
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "effective_date.png"
+    },
+    {
+      "path": "expiration_date",
+      "label": "Expiration date",
+      "value": "2019-07-15",
+      "page": 1,
+      "box": {
+        "xmin": 0.67569,
+        "ymin": 0.25697,
+        "xmax": 0.87775,
+        "ymax": 0.27002
+      },
+      "range": {
+        "end": 867,
+        "start": 840
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "expiration_date.png"
+    }
+  ]
+}

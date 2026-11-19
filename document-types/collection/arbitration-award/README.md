@@ -1,12 +1,107 @@
 # Arbitration award
 
-Source assets for `landing.ai/document-type/arbitration-award`.
+**On the website:** [landing.ai/document-type/arbitration-award](https://landing.ai/document-type/arbitration-award)
 
-## Sample document
+A FINRA arbitration award in case 25-01517, a customer's claim against a
+broker-dealer and three of its associated persons, heard in Providence, Rhode Island.
+It sets out the parties and counsel, the causes of action, the relief requested, the
+panel's award and the allocation of forum fees, and ends with the arbitrators'
+signatures.
 
-`source/25-01517.pdf` — a FINRA arbitration award, case 25-01517: a customer's claim
+| | |
+|---|---|
+| Pages | 5 |
+| Fields in the extraction schema | 50 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:26 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 7,736 | 8,010 |
+| Words under 0.95 confidence | 1 | n/a |
+| Words under 0.80 confidence | 1 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 9.6 s | 20.4 s |
+| Per page | 1.9 s | 4.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.6 credits | 4.6 credits |
+| Per page | 0.32 credits | 0.92 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:26 | 2026-11-19 02:26 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 50 | 50 |
+| Non-null fields returned | 36 | 37 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 111.0 s | 445.1 s |
+| Per schema field (50) | 2.22 s | 8.90 s |
+| Per value returned | 2.47 s | 9.68 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 5.9 credits | 5.6 credits |
+| Per schema field (50) | 0.118 credits | 0.112 credits |
+| Per value returned | 0.131 credits | 0.122 credits |
+
+## Origin
+
+`source/25-01517.pdf` is a FINRA arbitration award, case 25-01517: a customer's claim
 against a broker-dealer and three of its associated persons, heard in Providence, Rhode
-Island. **5 pages, portrait (612×792).** Produced from Word, so it has a full text layer.
+Island. It is **5 pages, portrait (612×792)**, produced from Word, so it has a full text
+layer.
 
 | | |
 |---|---|
@@ -17,102 +112,42 @@ Island. **5 pages, portrait (612×792).** Produced from Word, so it has a full t
 
 FINRA publishes every arbitration award in its public Arbitration Awards Online
 database. This one is used **exactly as published, unredacted**. That was a deliberate
-decision by the document owner, not an oversight. The award names the claimant, who is a
-private individual, three individual respondents, the respondent member firm, counsel
-and their firms, and the three arbitrators, all as they appear in the public record. The
-PDF metadata `author` field, the FINRA staff member who prepared it, is also left as
+decision by the document owner. The award names the claimant, who is a private
+individual, three individual respondents, the respondent member firm, counsel and their
+firms, and the three arbitrators, all as they appear in the public record. The PDF
+metadata `author` field, the FINRA staff member who prepared it, is also left as
 published.
 
-It is recent: the award was served on 2026-09-25, the day before it was retrieved.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+It is recent: the award was served on 2026-09-25, the day before it was retrieved. Full
+provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first legal document, and the first whose value is mostly in prose:
+### Who processes it
 
-- **Structured caption, narrative body.** Page 1 is a labelled caption: case number,
-  parties, hearing site, nature of dispute. Pages 2 to 4 are paragraphs: causes of
-  action, relief requested, the award itself and the fee allocation.
-- **A real team schema.** `schema.json` is the team's arbitration-awards schema from
-  `Applications/UI for Rapid Human View of Extracted Fields/schemas/`, used unchanged:
-  10 top-level groups, 50 leaf fields. It is written to cover expungement awards as well
-  as customer cases.
-- **Clean input.** A born-digital Word export, the opposite of the engineering drawing,
-  so any grounding trouble here comes from the schema and the prose rather than from
-  reading the page.
+FINRA arbitration is the forum for most disputes between investors and US brokerage
+firms, and every award is published, so a large public record builds up case by case.
 
-## Featured fields: the case caption
+- **Broker-dealer compliance and legal:** firms track awards against them and their
+  representatives, and report them on the registration forms they file.
+- **Securities litigation firms:** claimant and defense counsel research past awards by
+  firm, product and cause of action to value new cases.
+- **Investor due diligence:** investors, advisers and recruiting firms check a
+  representative's arbitration history before doing business with them.
+- **Errors and omissions insurers:** underwriters and claims teams review awards
+  against the firms and individuals they cover.
+- **Regulators and researchers:** analysts study awards for patterns in claims,
+  outcomes and damages.
 
-All on **page 1**:
+### What it contains
 
-| Field | Value |
-|---|---|
-| Case number | 25-01517 |
-| Claimant | Steven Damiani |
-| Respondent firm | Janney Montgomery Scott LLC |
-| Nature of dispute | Customer vs. Member and Associated Persons |
-| Hearing site | Providence |
-
-Each grounds to its own line in the caption, so the overlay reads as the case at a
-glance. `hearing_site_state` is not featured because it shares a line with the city and
-would render the identical crop. The claimant is pinned to occurrence 0, the caption;
-the name also appears twice in the representation paragraph below it.
-
-**Why not page 2, where the money is.** Page 2 carries the outcome, and
-`compensatory_damages` grounds correctly to the $642,000.00 line. Almost everything else
-on the page is a long narrative string or a boolean, and those crop badly, for the reason
-below.
-
-## What it surfaced
-
-**Short labelled values ground precisely; long prose grounds line by line.** Every
-caption field boxes exactly its line. A narrative field such as
-`relief_requested.claimant_requested_relief` comes back with eight ranges, one per line
-of the paragraph. That is correct, but no single crop shows the value, and the
-consistency check flags each line as a partial match. Fields like these can be
-extracted but not illustrated.
-
-**Booleans ground to their evidence.** `respondent_cost_assessment_request: true` boxes
-the sentence asking for forum fees to be assessed against the claimant. That is useful
-traceability, but the crop shows a sentence next to the word "True", so booleans are not
-featured.
-
-**Normalized dates no longer match the page.** The schema asks for ISO dates, so
-`October 27, 2025` comes back as `2025-10-27` and gets flagged, like `revision_date` on
-the engineering drawing. The values are right.
-
-**A single-value field with several answers.** `respondent_submission_agreement_signed_date`
-is one string, but four respondents signed on three dates. Extraction joined them into
-`2025-10-23, 2025-10-23, 2025-10-24, 2025-10-28` without saying which respondent signed
-when. That is a schema limitation, not an extraction error.
-
-**Three values to read with care:**
-- `claimant_injunction_denied` came back `true` although no injunction was requested.
-  It grounds to the catch-all "any and all claims for relief … are denied".
-- `filing_fee_retained_by_finra` came back `0` although the award does not state one.
-  It grounds to the filing fee footnote.
-- The monetary fields for relief that was not awarded come back as `0` rather than null.
-
-**Expungement fields are null, with a warning.** This is a customer case, so all five
-`decision.expungement` fields are null. The schema marks `affirmative_finding_of_fact`
-non-null, so extraction returns a `nonconformant_output` warning. The null is correct,
-and the team's schema is kept unchanged.
-
-## Cost
-
-**10.40 credits** at standard tier for 5 pages: 4.50 to parse, 5.90 to extract. The
-extract share is high for so few pages because the schema is 13.5 KB.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py arbitration-award                # 10.40 credits
-.venv/bin/python document-types/scripts/run_ade.py arbitration-award --extract-only # 5.90, schema iteration
-.venv/bin/python document-types/scripts/build_images.py arbitration-award           # free
-.venv/bin/python document-types/scripts/inspect_fields.py arbitration-award --page 1 --good
-```
-
-`manifest.json` sets `preview_pages` to 1, 2, 3 and 5, skipping page 4, which is mostly
-blank, in favour of the arbitration panel and signatures.
+- **A labelled caption** on page 1: case number, parties, hearing site and nature of
+  dispute.
+- **Long narrative paragraphs** for the causes of action, relief requested, the award
+  and the fee allocation.
+- **Many named parties** in roles that must be kept apart: claimant, individual
+  respondents, the member firm, counsel and arbitrators.
+- **Dates and dollar amounts inside prose,** such as damages awarded and fees assessed.
+- **A panel table and electronic signature blocks** with signature dates on the last
+  page.
+- **A born-digital text layer** from a Word export.

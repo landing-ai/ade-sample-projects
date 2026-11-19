@@ -1,23 +1,113 @@
 # Commercial Fleet Lease Quote
 
-Source assets for `landing.ai/document-type/commercial-fleet-lease-quote`.
+**On the website:** [landing.ai/document-type/commercial-fleet-lease-quote](https://landing.ai/document-type/commercial-fleet-lease-quote)
 
-## Sample document
+Seven Enterprise Fleet Management open-end lease rate quotes prepared for Hidalgo
+County, Texas, in May 2019, one per vehicle for the county's fleet. Each prices a
+60-month lease: capitalized cost, depreciation reserve, monthly lease charge,
+maintenance program, total monthly rental and the reduced book value at the end of the
+term, followed by the vehicle's pricing summary, options and configured features.
+
+| | |
+|---|---|
+| Pages | 32 |
+| Fields in the extraction schema | 33 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:41 | 2026-11-19 02:43 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 97,065 | 104,826 |
+| Words under 0.95 confidence | 210 | n/a |
+| Words under 0.80 confidence | 57 | n/a |
+| Words under 0.50 confidence | 10 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 25.1 s | 44.4 s |
+| Per page | 0.8 s | 1.4 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 14.6 credits | 42.3 credits |
+| Per page | 0.46 credits | 1.32 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:41 | 2026-11-19 02:44 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 33 | 33 |
+| Non-null fields returned | 35 | 33 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 235.7 s | 548.6 s |
+| Per schema field (33) | 7.14 s | 16.62 s |
+| Per value returned | 1.05 s | 2.58 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 26.9 credits | 28.0 credits |
+| Per schema field (33) | 0.815 credits | 0.848 credits |
+| Per value returned | 0.120 credits | 0.131 credits |
+
+## Origin
 
 `source/enterprise-fleet-lease-rate-quotes-redacted.pdf` is a set of **Open-End (Equity)
-Lease Rate Quotes** from **Enterprise Fleet Management**, with Enterprise FM Trust as the
-lessor, prepared for **Hidalgo County, Texas** in May 2019. Each quote prices one vehicle
-for the county's fleet on a 60-month open-end lease: capitalized cost, depreciation
-reserve, monthly lease charge, a full maintenance program, the all-in monthly rental and
-the reduced book value the vehicle is expected to carry at the end of the term.
-
-**32 pages, portrait, text layer.** Seven quotes run back to back, of 4 to 6 pages each:
+Lease Rate Quotes** from **Enterprise Fleet Management**, with Enterprise FM Trust as
+the lessor, prepared for **Hidalgo County, Texas** in May 2019. It is **32 pages,
+portrait, with a text layer**. Seven quotes run back to back, of 4 to 6 pages each:
 
 - A **rate page** (pages 1, 5, 9, 13, 17, 23, 28): a header block (vehicle, term, state,
   customer number), a long dollar column with its labels to the right, an Order
   Information box in the right-hand column, notes and an unsigned lessee line.
 - Sometimes an **Other Totals** or **Aftermarket Equipment** page (24, 29).
-- A **Vehicle Information** page: invoice and MSRP pricing summary, colours and a
+- A **Vehicle Information** page: invoice and MSRP pricing summary, colors and a
   selected-options table.
 - Two pages of **configured features**, as label/value lists.
 
@@ -29,102 +119,56 @@ Chevrolet Express 2500. Page 19 is blank apart from its footer, as in the origin
 | Publisher | Enterprise Fleet Management / Enterprise FM Trust (lessor); posted by the Hidalgo County, Texas Commissioners Court |
 | Source | [public.destinyhosted.com/hidaldocs/2019/CC/20190604_3330/70466_Quotes.pdf](https://public.destinyhosted.com/hidaldocs/2019/CC/20190604_3330/70466_Quotes.pdf) |
 | Retrieved | 2026-10-25, by script |
-| Clearance | **Redacted**, see below |
+| Clearance | Redacted |
 
 The county published the quotes as an attachment to agenda item 70466 of its
-Commissioners Court meeting of 4 June 2019, on its public agenda-publishing host. They
+Commissioners Court meeting of June 4, 2019, on its public agenda-publishing host. They
 are part of the public meeting record.
 
-## Redaction
-
 The quotes carry no signatures (the lessee line is blank), phone numbers or addresses.
-Three identifiers were replaced with `document-types/scripts/redact.py`, which removes the
-underlying text rather than drawing a box over it:
+Three identifiers were replaced with `document-types/scripts/redact.py`, which removes
+the underlying text rather than drawing a box over it:
 
 | What | Replaced with | Count |
 |---|---|---|
 | County employee's name under Prepared For | `Sample, Jane` | 7 |
 | Enterprise account representatives' initials (AE/AM) | `0AB/CD0` | 7 |
-| The county's Enterprise customer number (Customer#) | A random 6-digit stand-in from `plausible.py` | 7 |
+| The county's Enterprise customer number (Customer#) | A random 6-digit stand-in | 7 |
 
 The PDF metadata, which carried an Enterprise user ID, was cleared. Quote numbers,
-prices, dates and vehicle details are kept. The originals are not recorded anywhere in
-this folder, and the rules file stays outside the repo. Verified by redact.py's text
-check, by eye on renders, and by `ship.py check --rules` over every file in this folder.
+prices, dates and vehicle details are kept. The original values are not recorded
+anywhere in this folder, and the rules file stays outside the repo. The redaction was
+verified by the script's text check, by eye on renders, and by a rules check over every
+file in this folder. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is a financial quote laid out as a **two-column form whose values sit to the left of
-their labels**, with a boxed Order Information panel in the right-hand column beside
-them. A value can easily pair with the wrong label, or with text from the other column.
-It also repeats one layout seven times with different numbers, so extraction has to keep
-each quote's values with their own quote. The schema is an array of quotes for that
-reason.
+### Who processes it
 
-## Featured fields
+A fleet lease quote prices a vehicle for a business or public fleet before the lease is
+signed. Fleet managers compare quotes across vehicles and lessors, and public bodies
+attach them to approval records like this one.
 
-All on **page 5**, the rate page of the second quote (Quote No. 4270567, a 2019 Ford
-F-250 XL crew cab):
+- **Fleet management companies and lessors:** they issue quotes like these and
+  reconcile them against the signed lease schedules.
+- **Government procurement:** counties, cities and school districts review quotes
+  before a governing body approves the lease.
+- **Corporate fleet and procurement teams:** they compare monthly rental, maintenance
+  and end-of-term value across vehicles and vendors.
+- **Finance and accounting:** teams book lease obligations and track the reduced book
+  value each vehicle carries at term.
+- **Equipment and vehicle finance:** lenders and lessors use quote data to price and
+  document open-end leases.
 
-| Field | Label | Value |
-|---|---|---|
-| `quotes[1].vehicle.model` | Vehicle model | F-250 |
-| `quotes[1].term_months` | Lease term (months) | 60 |
-| `quotes[1].total_capitalized_amount` | Total capitalized amount | 38,000.00 |
-| `quotes[1].total_monthly_rental_including_services` | Total monthly rental | 679.71 |
-| `quotes[1].reduced_book_value_at_term` | Reduced book value at term | 8,360.00 |
+### What it contains
 
-Together they tell one quote: which truck, for how long, what it costs to put on the
-road, what the county pays each month, and what the truck is worth at the end of the term.
-
-The request suggested page 1 and the lessee as well. On page 1, the total monthly
-rental and the reduced book value grounded to their **labels** instead of the dollar
-amounts, so those crops would have shown the wrong text. On page 5, whose quote has the
-same amounts as page 1's and differs only in colour and quote number, both ground on the
-values. The lessee was dropped because on page 5 its range resolves to a line of the
-Notes paragraph rather than to "Prepared For" or "LESSEE". The term box covers the whole
-Vehicle Order Type / Term / State / Customer# line, including the stand-in customer
-number.
-
-## Grounding notes
-
-- **DPT-3 turned the dollar column into a two-column table**, value on the left and
-  label on the right, and paired them correctly on every rate page, including the
-  subtotal and total rows. That is the hard part of this layout, and it went well.
-- **Some text from the right-hand column ended up in the label cells.** On several rate
-  pages, fragments of the right-hand column ("All language … apply to", "Order Int",
-  "Drive") appear in the label cell of the row beside them. Extraction ignored them.
-- **The same value grounded differently on near-identical pages.** On page 1 two totals
-  ground to the label cell; on page 5, with the same layout and the same amounts, they
-  ground to the value cell. The parse of page 9 also repeats the bottom five rows of the
-  dollar column as a second table. Extraction was right in every case, but where its
-  ranges pointed varied from one copy of the layout to the next.
-- **Contract Miles grounded OFF on every quote**, usually to the maintenance fee in the
-  same table row (`$ 39.16` on page 1) and sometimes to the "Full Maintenance Program"
-  label, because the parse put the inline "Contract Miles 50,000" in the label cell of
-  that row.
-- Header fields (year, make, model, term, state) ground to whole header lines, so their
-  boxes are wide but correct.
-
-## Schema
-
-`schema.json` has **33 leaf fields**: the lessor, fleet manager and lessee, and an array
-of quotes, each with its number, date, vehicle (year, make, model, series, exterior
-colour), order type, term, state, the dollar column from capitalized price to service
-charge at termination, maintenance contract miles and over-mileage rate, estimated annual
-mileage, and the invoice/MSRP pricing summary. The individual contact and the customer
-number are left out on purpose. All 7 quotes were extracted with no warnings.
-
-## Credits
-
-**67.7 credits** at the standard tier: 40.9 for parsing 32 pages with DPT-3 Pro and 26.8
-for extraction.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py commercial-fleet-lease-quote               # spends credits
-.venv/bin/python document-types/scripts/run_ade.py commercial-fleet-lease-quote --extract-only
-.venv/bin/python document-types/scripts/build_images.py commercial-fleet-lease-quote          # free
-.venv/bin/python document-types/scripts/inspect_fields.py commercial-fleet-lease-quote --page 5
-```
+- **A two-column form whose values sit to the left of their labels,** so a value can
+  pair with the wrong label.
+- **A boxed Order Information panel** in the right-hand column, beside the dollar
+  column.
+- **One layout repeated seven times** with different numbers, so each quote's values
+  have to stay with their own quote.
+- **Subtotal and total rows** within the dollar column.
+- **Pricing summary and selected-options tables** on the vehicle information pages.
+- **Long label/value lists** of configured features, over two pages per quote.
+- **A blank page** and an unsigned lessee line, as in the original.

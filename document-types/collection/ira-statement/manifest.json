@@ -62,14 +62,17 @@
       "occurrence": 0
     },
     {
-      "path": "period_end_date",
-      "label": "Statement date",
+      "path": "account_type",
+      "label": "Account type",
       "occurrence": 0
     },
     {
       "path": "ending_value",
       "label": "Account value",
-      "occurrence": 0
+      "occurrence": {
+        "pro": 1,
+        "verity": 0
+      }
     },
     {
       "path": "broker_dealer",
@@ -83,5 +86,34 @@
     2,
     3,
     5
+  ],
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 10,
+      "service_tier": "standard",
+      "parse_credits": 15.9,
+      "extract_credits": 11.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 10,
+      "service_tier": "standard",
+      "parse_credits": 15.8,
+      "extract_credits": 11.3
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 10,
+      "service_tier": "standard",
+      "parse_credits": 5.8,
+      "extract_credits": 11.3
+    }
   ]
 }

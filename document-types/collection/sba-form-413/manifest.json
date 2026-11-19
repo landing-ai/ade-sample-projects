@@ -16,24 +16,101 @@
         "note": "The original values are deliberately NOT recorded here. The rules file used for the replacement stays outside the repo.",
         "method": "AcroForm widget values and appearance streams replaced (the values were not in page text), then document metadata cleared with redact.py.",
         "replaced": [
-          {"what": "applicant's name", "with": "Jane Q Sample", "occurrences": 2},
-          {"what": "business name", "with": "Sample Bookstore", "occurrences": 1},
-          {"what": "home street address", "with": "100 Main St.", "occurrences": 1},
-          {"what": "home city, state and ZIP code", "with": "Anytown, SD 57000", "occurrences": 1},
-          {"what": "business address", "with": "200 MAIN ST, Anytown, SD 57000", "occurrences": 1},
-          {"what": "business and home phone numbers", "with": "reserved 555-01xx numbers", "occurrences": 2},
-          {"what": "social security number", "with": "987-65-4324 (reserved advertising range)", "occurrences": 1},
-          {"what": "document metadata (/Info and XMP)", "with": "removed", "occurrences": 1}
+          {
+            "what": "applicant's name",
+            "with": "Jane Q Sample",
+            "occurrences": 2
+          },
+          {
+            "what": "business name",
+            "with": "Sample Bookstore",
+            "occurrences": 1
+          },
+          {
+            "what": "home street address",
+            "with": "100 Main St.",
+            "occurrences": 1
+          },
+          {
+            "what": "home city, state and ZIP code",
+            "with": "Anytown, SD 57000",
+            "occurrences": 1
+          },
+          {
+            "what": "business address",
+            "with": "200 MAIN ST, Anytown, SD 57000",
+            "occurrences": 1
+          },
+          {
+            "what": "business and home phone numbers",
+            "with": "reserved 555-01xx numbers",
+            "occurrences": 2
+          },
+          {
+            "what": "social security number",
+            "with": "987-65-4324 (reserved advertising range)",
+            "occurrences": 1
+          },
+          {
+            "what": "document metadata (/Info and XMP)",
+            "with": "removed",
+            "occurrences": 1
+          }
         ]
       }
     }
   },
   "feature_page": 2,
   "fields": [
-    { "path": "business.business_type", "label": "Business type", "occurrence": 0 },
-    { "path": "assets.total_assets", "label": "Total assets", "occurrence": 0 },
-    { "path": "liabilities.total_liabilities", "label": "Total liabilities", "occurrence": 0 },
-    { "path": "liabilities.net_worth", "label": "Net worth", "occurrence": 0 }
+    {
+      "path": "business.business_type",
+      "label": "Business type",
+      "occurrence": 0
+    },
+    {
+      "path": "assets.total_assets",
+      "label": "Total assets",
+      "occurrence": 0
+    },
+    {
+      "path": "liabilities.total",
+      "label": "Total",
+      "occurrence": 0
+    },
+    {
+      "path": "liabilities.net_worth",
+      "label": "Net worth",
+      "occurrence": 0
+    }
   ],
-  "notes": "Features page 2, the balance sheet: total assets, total liabilities and net worth, which together show the statement balancing, plus the checked business-type box. The request suggested the program checkbox (7(a)), total assets, total liabilities and net worth. The 7(a) checkbox is on page 1 while the totals are on page 2, so it cannot share the overlay; its grounding also reads OFF (the box covers the whole checkbox line). The sole-proprietor box replaced it, as the operator approved. The as-of date was the other candidate, but it grounds OFF: its box covers the label line. The origin URL is a Scribd listing. The website shows it as plain text, not as a link."
+  "notes": "Features page 2, the balance sheet: total assets, total liabilities and net worth, which together show the statement balancing, plus the checked business-type box. The request suggested the program checkbox (7(a)), total assets, total liabilities and net worth. The 7(a) checkbox is on page 1 while the totals are on page 2, so it cannot share the overlay; its grounding also reads OFF (the box covers the whole checkbox line). The sole-proprietor box replaced it, as the operator approved. The as-of date was the other candidate, but it grounds OFF: its box covers the label line. The origin URL is a Scribd listing. The website shows it as plain text, not as a link.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 8.6,
+      "extract_credits": 6.1
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 8.7,
+      "extract_credits": 6.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 3.2,
+      "extract_credits": 6.2
+    }
+  ]
 }

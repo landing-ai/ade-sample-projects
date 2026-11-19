@@ -1,0 +1,783 @@
+{
+  "extraction": {
+    "candidate": {
+      "address": "100 Main St, Anytown, IL, 76054, United States",
+      "date_of_birth": "04/20/1972",
+      "name": "Doe, Jane",
+      "ssn": "123-45-6789"
+    },
+    "criminal_searches": [
+      {
+        "cases": [
+          {
+            "case_number": "GH56327",
+            "charges": [
+              {
+                "charge_number": "#1",
+                "description": "ASSAULT WITH A DEADLY WEAPON",
+                "disposition": "GUILTY",
+                "disposition_date": "09/20/2019",
+                "level": "FELONY",
+                "sentence": {
+                  "classes": "COMPLETED 2 WEEKS OF SPIRITUAL HEALING",
+                  "costs": "$6,500.00",
+                  "fees": "$2,000.00",
+                  "fines": "$1,500.00",
+                  "jail": "2 HOURS",
+                  "prison": null,
+                  "restitution": "$100,000.00"
+                }
+              },
+              {
+                "charge_number": "#2",
+                "description": "BANK FRAUD",
+                "disposition": "GUILTY",
+                "disposition_date": "09/24/2019",
+                "level": "FELONY",
+                "sentence": {
+                  "classes": "CLASS - HOW TO NOT COMMIT FRAUD",
+                  "costs": null,
+                  "fees": null,
+                  "fines": null,
+                  "jail": "1 DAYS",
+                  "prison": "12 YEARS",
+                  "restitution": null
+                }
+              }
+            ],
+            "filing_date": "09/09/2019",
+            "identified_by": [
+              "NAME",
+              "SSN"
+            ]
+          }
+        ],
+        "completion_date": "2019-10-25",
+        "jurisdiction": "CA / PLACER",
+        "search_id": "143091847",
+        "search_type": "FELONY/MISDEMEANOR",
+        "status": "RECORD FOUND"
+      }
+    ],
+    "report": {
+      "client_note": "Search back 7 years.",
+      "ordered_date": "01/25/2018",
+      "overall_result": "Does Not Meet Requirements",
+      "package": "Package Two",
+      "position_location": "CA, US",
+      "requestor": "Accurate Background Sales",
+      "screening_provider": "Accurate Background",
+      "updated_date": "08/19/2019"
+    },
+    "searches": [
+      {
+        "search": "SSN TRACE & ADDRESS HISTORY",
+        "status": "COMPLETED"
+      },
+      {
+        "search": "COUNTY CRIMINAL - PLACER COUNTY, CA",
+        "status": "RECORD FOUND"
+      },
+      {
+        "search": "EMPLOYMENT - NIKE, INC.",
+        "status": "COMPLETED - Discrepancy Found"
+      },
+      {
+        "search": "EDUCATION - UNIVERSITY OF OREGON",
+        "status": "COMPLETED - Discrepancy Found"
+      },
+      {
+        "search": "PROFESSIONAL REFERENCE",
+        "status": "COMPLETED"
+      },
+      {
+        "search": "MOTOR VEHICLE REPORT - AL",
+        "status": "COMPLETED"
+      },
+      {
+        "search": "5 PANEL LAB DRUG TEST",
+        "status": "COMPLETED - Positive"
+      },
+      {
+        "search": "CREDIT REPORT- TRANS UNION",
+        "status": "COMPLETED"
+      },
+      {
+        "search": "ELECTRONIC SUBJECT NOTIFICATION",
+        "status": "COMPLETED"
+      },
+      {
+        "search": "ADJUDICATION",
+        "status": "COMPLETED"
+      },
+      {
+        "search": "GLOBAL WATCH",
+        "status": "RECORD FOUND"
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "candidate": {
+      "address": {
+        "ranges": [
+          {
+            "end": 2082,
+            "start": 2071
+          },
+          {
+            "end": 2128,
+            "start": 2110
+          },
+          {
+            "end": 2169,
+            "start": 2156
+          }
+        ],
+        "value": "100 Main St, Anytown, IL, 76054, United States"
+      },
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 1948,
+            "start": 1938
+          }
+        ],
+        "value": "04/20/1972"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 1850,
+            "start": 1841
+          }
+        ],
+        "value": "Doe, Jane"
+      },
+      "ssn": {
+        "ranges": [
+          {
+            "end": 1991,
+            "start": 1980
+          }
+        ],
+        "value": "123-45-6789"
+      }
+    },
+    "criminal_searches": [
+      {
+        "cases": [
+          {
+            "case_number": {
+              "ranges": [
+                {
+                  "end": 4142,
+                  "start": 4135
+                }
+              ],
+              "value": "GH56327"
+            },
+            "charges": [
+              {
+                "charge_number": {
+                  "ranges": [
+                    {
+                      "end": 4463,
+                      "start": 4461
+                    }
+                  ],
+                  "value": "#1"
+                },
+                "description": {
+                  "ranges": [
+                    {
+                      "end": 4500,
+                      "start": 4472
+                    }
+                  ],
+                  "value": "ASSAULT WITH A DEADLY WEAPON"
+                },
+                "disposition": {
+                  "ranges": [
+                    {
+                      "end": 4530,
+                      "start": 4524
+                    }
+                  ],
+                  "value": "GUILTY"
+                },
+                "disposition_date": {
+                  "ranges": [
+                    {
+                      "end": 4592,
+                      "start": 4582
+                    }
+                  ],
+                  "value": "09/20/2019"
+                },
+                "level": {
+                  "ranges": [
+                    {
+                      "end": 4515,
+                      "start": 4509
+                    }
+                  ],
+                  "value": "FELONY"
+                },
+                "sentence": {
+                  "classes": {
+                    "ranges": [
+                      {
+                        "end": 4994,
+                        "start": 4956
+                      }
+                    ],
+                    "value": "COMPLETED 2 WEEKS OF SPIRITUAL HEALING"
+                  },
+                  "costs": {
+                    "ranges": [
+                      {
+                        "end": 4871,
+                        "start": 4862
+                      }
+                    ],
+                    "value": "$6,500.00"
+                  },
+                  "fees": {
+                    "ranges": [
+                      {
+                        "end": 4828,
+                        "start": 4819
+                      }
+                    ],
+                    "value": "$2,000.00"
+                  },
+                  "fines": {
+                    "ranges": [
+                      {
+                        "end": 4753,
+                        "start": 4744
+                      }
+                    ],
+                    "value": "$1,500.00"
+                  },
+                  "jail": {
+                    "ranges": [
+                      {
+                        "end": 4720,
+                        "start": 4713
+                      }
+                    ],
+                    "value": "2 HOURS"
+                  },
+                  "prison": {
+                    "ranges": null,
+                    "value": null
+                  },
+                  "restitution": {
+                    "ranges": [
+                      {
+                        "end": 4922,
+                        "start": 4911
+                      }
+                    ],
+                    "value": "$100,000.00"
+                  }
+                }
+              },
+              {
+                "charge_number": {
+                  "ranges": [
+                    {
+                      "end": 5093,
+                      "start": 5091
+                    }
+                  ],
+                  "value": "#2"
+                },
+                "description": {
+                  "ranges": [
+                    {
+                      "end": 5112,
+                      "start": 5102
+                    }
+                  ],
+                  "value": "BANK FRAUD"
+                },
+                "disposition": {
+                  "ranges": [
+                    {
+                      "end": 5142,
+                      "start": 5136
+                    }
+                  ],
+                  "value": "GUILTY"
+                },
+                "disposition_date": {
+                  "ranges": [
+                    {
+                      "end": 5204,
+                      "start": 5194
+                    }
+                  ],
+                  "value": "09/24/2019"
+                },
+                "level": {
+                  "ranges": [
+                    {
+                      "end": 5127,
+                      "start": 5121
+                    }
+                  ],
+                  "value": "FELONY"
+                },
+                "sentence": {
+                  "classes": {
+                    "ranges": [
+                      {
+                        "end": 5474,
+                        "start": 5443
+                      }
+                    ],
+                    "value": "CLASS - HOW TO NOT COMMIT FRAUD"
+                  },
+                  "costs": {
+                    "ranges": null,
+                    "value": null
+                  },
+                  "fees": {
+                    "ranges": null,
+                    "value": null
+                  },
+                  "fines": {
+                    "ranges": null,
+                    "value": null
+                  },
+                  "jail": {
+                    "ranges": [
+                      {
+                        "end": 5331,
+                        "start": 5325
+                      }
+                    ],
+                    "value": "1 DAYS"
+                  },
+                  "prison": {
+                    "ranges": [
+                      {
+                        "end": 5395,
+                        "start": 5387
+                      }
+                    ],
+                    "value": "12 YEARS"
+                  },
+                  "restitution": {
+                    "ranges": null,
+                    "value": null
+                  }
+                }
+              }
+            ],
+            "filing_date": {
+              "ranges": [
+                {
+                  "end": 4182,
+                  "start": 4172
+                }
+              ],
+              "value": "09/09/2019"
+            },
+            "identified_by": [
+              {
+                "ranges": [
+                  {
+                    "end": 4265,
+                    "start": 4261
+                  }
+                ],
+                "value": "NAME"
+              },
+              {
+                "ranges": [
+                  {
+                    "end": 4310,
+                    "start": 4307
+                  }
+                ],
+                "value": "SSN"
+              }
+            ]
+          }
+        ],
+        "completion_date": {
+          "ranges": [
+            {
+              "end": 3975,
+              "start": 3965
+            }
+          ],
+          "value": "2019-10-25"
+        },
+        "jurisdiction": {
+          "ranges": [
+            {
+              "end": 3941,
+              "start": 3930
+            }
+          ],
+          "value": "CA / PLACER"
+        },
+        "search_id": {
+          "ranges": [
+            {
+              "end": 3837,
+              "start": 3828
+            }
+          ],
+          "value": "143091847"
+        },
+        "search_type": {
+          "ranges": [
+            {
+              "end": 3875,
+              "start": 3857
+            }
+          ],
+          "value": "FELONY/MISDEMEANOR"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3909,
+              "start": 3897
+            }
+          ],
+          "value": "RECORD FOUND"
+        }
+      }
+    ],
+    "report": {
+      "client_note": {
+        "ranges": [
+          {
+            "end": 2415,
+            "start": 2395
+          }
+        ],
+        "value": "Search back 7 years."
+      },
+      "ordered_date": {
+        "ranges": [
+          {
+            "end": 1719,
+            "start": 1709
+          }
+        ],
+        "value": "01/25/2018"
+      },
+      "overall_result": {
+        "ranges": [
+          {
+            "end": 1687,
+            "start": 1661
+          }
+        ],
+        "value": "Does Not Meet Requirements"
+      },
+      "package": {
+        "ranges": [
+          {
+            "end": 2312,
+            "start": 2301
+          }
+        ],
+        "value": "Package Two"
+      },
+      "position_location": {
+        "ranges": [
+          {
+            "end": 2374,
+            "start": 2368
+          }
+        ],
+        "value": "CA, US"
+      },
+      "requestor": {
+        "ranges": [
+          {
+            "end": 2267,
+            "start": 2242
+          }
+        ],
+        "value": "Accurate Background Sales"
+      },
+      "screening_provider": {
+        "ranges": [
+          {
+            "end": 2261,
+            "start": 2242
+          },
+          {
+            "end": 17,
+            "start": 0
+          }
+        ],
+        "value": "Accurate Background"
+      },
+      "updated_date": {
+        "ranges": [
+          {
+            "end": 1748,
+            "start": 1738
+          }
+        ],
+        "value": "08/19/2019"
+      }
+    },
+    "searches": [
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 2688,
+              "start": 2657
+            }
+          ],
+          "value": "SSN TRACE & ADDRESS HISTORY"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 2706,
+              "start": 2697
+            }
+          ],
+          "value": "COMPLETED"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 2760,
+              "start": 2725
+            }
+          ],
+          "value": "COUNTY CRIMINAL - PLACER COUNTY, CA"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 2781,
+              "start": 2769
+            }
+          ],
+          "value": "RECORD FOUND"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 2823,
+              "start": 2800
+            }
+          ],
+          "value": "EMPLOYMENT - NIKE, INC."
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 2861,
+              "start": 2832
+            }
+          ],
+          "value": "COMPLETED - Discrepancy Found"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 2912,
+              "start": 2880
+            }
+          ],
+          "value": "EDUCATION - UNIVERSITY OF OREGON"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 2950,
+              "start": 2921
+            }
+          ],
+          "value": "COMPLETED - Discrepancy Found"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 2991,
+              "start": 2969
+            }
+          ],
+          "value": "PROFESSIONAL REFERENCE"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3009,
+              "start": 3000
+            }
+          ],
+          "value": "COMPLETED"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 3053,
+              "start": 3028
+            }
+          ],
+          "value": "MOTOR VEHICLE REPORT - AL"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3071,
+              "start": 3062
+            }
+          ],
+          "value": "COMPLETED"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 3111,
+              "start": 3090
+            }
+          ],
+          "value": "5 PANEL LAB DRUG TEST"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3140,
+              "start": 3120
+            }
+          ],
+          "value": "COMPLETED - Positive"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 3185,
+              "start": 3159
+            }
+          ],
+          "value": "CREDIT REPORT- TRANS UNION"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3203,
+              "start": 3194
+            }
+          ],
+          "value": "COMPLETED"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 3253,
+              "start": 3222
+            }
+          ],
+          "value": "ELECTRONIC SUBJECT NOTIFICATION"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3271,
+              "start": 3262
+            }
+          ],
+          "value": "COMPLETED"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 3302,
+              "start": 3290
+            }
+          ],
+          "value": "ADJUDICATION"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3320,
+              "start": 3311
+            }
+          ],
+          "value": "COMPLETED"
+        }
+      },
+      {
+        "search": {
+          "ranges": [
+            {
+              "end": 3351,
+              "start": 3339
+            }
+          ],
+          "value": "GLOBAL WATCH"
+        },
+        "status": {
+          "ranges": [
+            {
+              "end": 3372,
+              "start": 3360
+            }
+          ],
+          "value": "RECORD FOUND"
+        }
+      }
+    ]
+  },
+  "markdown": "[logo: accurate.]\n\n**This report does not guarantee the accuracy or truthfulness of the information as to the subject of the investigation, but only that it is accurately copied from public records, and information generated as a result of identity theft, including evidence of criminal activity, may be inaccurately associated with the consumer who is the subject of the report.**\n\n**An investigative consumer reporting agency shall provide a consumer seeking to obtain a copy of a report or making a request to review a file, a written notice in simple, plain English and Spanish setting for the terms and conditions of his or her right to receive all disclosures, as provided in CA Civil Code Section 1786.26. The written notice can be found at [LINK].**\n\n**Este informe no garantiza la exactitud ni la veracidad de la información respecto del tema de la investigación, sino solo que se la ha copiado fielmente de los registros públicos y que la información generada como resultado del robo de identidad, incluida la evidencia de actividad delictiva, podría asociarse erróneamente con el consumidor que es objeto del informe.**\n\n**La agencia de informes de investigación sobre consumidores deberá proporcionar al consumidor que procura obtener la copia de un informe o solicita la revisión de un archivo, una notificación por escrito, redactada en inglés y español claro y sencillo, en la que se establezcan los términos y condiciones de su derecho a recibir todas las divulgaciones en virtud de lo dispuesto por el artículo 1786.26 del Código Civil de California. La notificación escrita se puede encontrar en [ENLACE].**\n\n# Doe, Jane\n\nBackground Report\n\n**Does Not Meet Requirements**\n\n- **ordered on**: 01/25/2018\n- **updated on**: 08/19/2019\n\n<table>\n<tr><td colspan=\"2\">CANDIDATE INFORMATION PROVIDED</td></tr>\n<tr><td>NAME:</td><td>Doe, Jane</td></tr>\n<tr><td>EMAIL:</td><td>sxxxxxxxx@xxxxxxxx.xxx</td></tr>\n<tr><td>DOB:</td><td>04/20/1972</td></tr>\n<tr><td>SSN:</td><td>123-45-6789</td></tr>\n<tr><td>PHONE:</td><td>xxxxxx0987</td></tr>\n<tr><td>ADDRESS:</td><td>100 Main St</td></tr>\n<tr><td></td><td>Anytown, IL, 76054</td></tr>\n<tr><td></td><td>United States</td></tr>\n</table>\n\n<!-- PAGE BREAK -->\n\nREQUESTED BY\n\n- **REQUESTOR**: Accurate Background Sales\n- **REF**: SAMPLE\n- **PACKAGE**: Package Two\n\n- **COUNTRY**: United States\n- **POSITION LOCATION**: CA, US\n\n- **CLIENT NOTE**: Search back 7 years.\n- **REVIEWER NOTES FOR REQUESTOR**: 03/15/2016 06:24 [ABDemo10]: Please take a look at this record. Thanks.<br>03/15/2016 06:23 [ABDemo10]: Thank You. I have looked at it. Passing it on to Compliance.\n\nSEARCHES COLLAPSE ALL\n\n<table>\n<tr><td>SSN TRACE &amp; ADDRESS HISTORY</td><td>COMPLETED</td></tr>\n<tr><td>COUNTY CRIMINAL - PLACER COUNTY, CA</td><td>RECORD FOUND</td></tr>\n<tr><td>EMPLOYMENT - NIKE, INC.</td><td>COMPLETED - Discrepancy Found</td></tr>\n<tr><td>EDUCATION - UNIVERSITY OF OREGON</td><td>COMPLETED - Discrepancy Found</td></tr>\n<tr><td>PROFESSIONAL REFERENCE</td><td>COMPLETED</td></tr>\n<tr><td>MOTOR VEHICLE REPORT - AL</td><td>COMPLETED</td></tr>\n<tr><td>5 PANEL LAB DRUG TEST</td><td>COMPLETED - Positive</td></tr>\n<tr><td>CREDIT REPORT- TRANS UNION</td><td>COMPLETED</td></tr>\n<tr><td>ELECTRONIC SUBJECT NOTIFICATION</td><td>COMPLETED</td></tr>\n<tr><td>ADJUDICATION</td><td>COMPLETED</td></tr>\n<tr><td>GLOBAL WATCH</td><td>RECORD FOUND</td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"2\">SSN TRACE &amp; ADDRESS HISTORY</td><td>COMPLETED</td></tr>\n<tr><td>SEARCH ID:</td><td>15137127</td><td></td></tr>\n<tr><td>SEARCH TYPE:</td><td>ADDRESS MOVER</td><td></td></tr>\n<tr><td>STATUS/RESULT:</td><td>COMPLETED</td><td></td></tr>\n<tr><td>COMPLETION DATE:</td><td>2019-10-10</td><td></td></tr>\n</table>\n\n<!-- PAGE BREAK -->\n\n**COUNTY CRIMINAL** - PLACER COUNTY, CA\n\n**RECORD FOUND**\n\n- **SEARCH ID**: 143091847\n- **SEARCH TYPE**: FELONY/MISDEMEANOR\n- **STATUS/RESULT**: RECORD FOUND\n- **STATE/COUNTY**: CA / PLACER\n- **COMPLETION DATE**: 2019-10-25\n- **NAME(S) SEARCHED**: | Last Name | First Name | Middle Name |<br>|---|---|---|<br>| Doe | Jane |  |\n\n**CASE FILE: 1**\n\n<table>\n<tr><td>CASE NUMBER:</td><td>GH56327</td><td>FILING DATE:</td><td>09/09/2019</td></tr>\n</table>\n\n<table>\n<tr><td rowspan=\"2\">IDENTIFIED<br>BY:</td><td>[x] NAME:</td><td>DOE, JANE</td></tr>\n<tr><td>[x] SSN:</td><td>123-45-6789</td></tr>\n</table>\n\n**CHARGES:**\n\n<table>\n<tr><td>NUMBER</td><td>DESCRIPTION</td><td>LEVEL</td><td>DISPOSITION</td></tr>\n<tr><td>#1</td><td>ASSAULT WITH A DEADLY WEAPON</td><td>FELONY</td><td>GUILTY</td></tr>\n<tr><td>Charge Disposition Date:</td><td>09/20/2019</td><td colspan=\"2\"></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"4\">CHARGE SENTENCING:</td></tr>\n<tr><td>JAIL:</td><td>2 HOURS</td><td>FINES:</td><td>$1,500.00</td></tr>\n<tr><td rowspan=\"3\" colspan=\"2\"></td><td>FEES:</td><td>$2,000.00</td></tr>\n<tr><td>COSTS:</td><td>$6,500.00</td></tr>\n<tr><td>RESTITUTION:</td><td>$100,000.00</td></tr>\n</table>\n\n**CLASSES:** COMPLETED 2 WEEKS OF SPIRITUAL HEALING\n\n<table>\n<tr><td>NUMBER</td><td>DESCRIPTION</td><td>LEVEL</td><td>DISPOSITION</td></tr>\n<tr><td>#2</td><td>BANK FRAUD</td><td>FELONY</td><td>GUILTY</td></tr>\n<tr><td>Charge Disposition Date:</td><td>09/24/2019</td><td colspan=\"2\"></td></tr>\n</table>\n\n<table>\n<tr><td colspan=\"3\">CHARGE SENTENCING:</td></tr>\n<tr><td>JAIL:</td><td>1 DAYS</td><td rowspan=\"2\"></td></tr>\n<tr><td>PRISON:</td><td>12 YEARS</td></tr>\n<tr><td>CLASSES:</td><td colspan=\"2\">CLASS - HOW TO NOT COMMIT FRAUD</td></tr>\n</table>\n\n**EMPLOYMENT** - NIKE, INC.\n\n**COMPLETED - DISCREPANCY FOUND**\n\n<!-- doc_id=parse-01m7rvj6e1brt2hmpydm9tgcr1 -->",
+  "metadata": {
+    "job_id": "extract-01m7rvjfdz27q0mmrw61v539xr",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 249551,
+    "doc_id": "parse-01m7rvj6e1brt2hmpydm9tgcr1",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.2,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 5607,
+    "output_extraction_chars": 2016,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

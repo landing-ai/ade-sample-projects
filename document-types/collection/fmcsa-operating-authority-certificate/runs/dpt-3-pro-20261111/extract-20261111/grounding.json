@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 20,
+  "preview_pages": [
+    1,
+    5,
+    8,
+    13
+  ],
+  "fields": [
+    {
+      "path": "authority_documents[0].service_date",
+      "label": "Service date",
+      "value": "February 16, 2023",
+      "page": 1,
+      "box": {
+        "xmin": 0.61765,
+        "ymin": 0.19275,
+        "xmax": 0.75116,
+        "ymax": 0.20537
+      },
+      "range": {
+        "end": 173,
+        "start": 156
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "authority_documents-0-service_date.png"
+    },
+    {
+      "path": "authority_documents[0].docket_number",
+      "label": "MC docket number",
+      "value": "MC-1179808-C",
+      "page": 1,
+      "box": {
+        "xmin": 0.40686,
+        "ymin": 0.26292,
+        "xmax": 0.51855,
+        "ymax": 0.27554
+      },
+      "range": {
+        "end": 205,
+        "start": 193
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "authority_documents-0-docket_number.png"
+    },
+    {
+      "path": "authority_documents[0].usdot_number",
+      "label": "U.S. DOT number",
+      "value": "3537401",
+      "page": 1,
+      "box": {
+        "xmin": 0.48768,
+        "ymin": 0.28083,
+        "xmax": 0.55127,
+        "ymax": 0.29345
+      },
+      "range": {
+        "end": 228,
+        "start": 221
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "authority_documents-0-usdot_number.png"
+    },
+    {
+      "path": "authority_documents[0].carrier_name",
+      "label": "Carrier name",
+      "value": "PINK SPARROW SCENIC LLC",
+      "page": 1,
+      "box": {
+        "xmin": 0.35294,
+        "ymin": 0.29598,
+        "xmax": 0.58083,
+        "ymax": 0.30861
+      },
+      "range": {
+        "end": 252,
+        "start": 229
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "authority_documents-0-carrier_name.png"
+    },
+    {
+      "path": "authority_documents[0].carrier_type",
+      "label": "Authority granted",
+      "value": "common carrier",
+      "page": 1,
+      "box": {
+        "xmin": 0.69711,
+        "ymin": 0.351,
+        "xmax": 0.8206,
+        "ymax": 0.36362
+      },
+      "range": {
+        "end": 371,
+        "start": 357
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "authority_documents-0-carrier_type.png"
+    }
+  ]
+}

@@ -1,13 +1,107 @@
 # SBA Form 413
 
-Source assets for `landing.ai/document-type/sba-form-413`.
+**On the website:** [landing.ai/document-type/sba-form-413](https://landing.ai/document-type/sba-form-413)
 
-## Sample document
+A completed SBA Form 413, the Personal Financial Statement that an SBA loan applicant,
+owner or guarantor fills in. It has program checkboxes, the applicant's details, a
+balance sheet of assets and liabilities with net worth, income and contingent
+liabilities, supporting schedules, a certification block and statutory notices. This
+one is unsigned, and only the balance sheet page carries real figures.
 
-`source/sba-form-413.pdf`: a completed SBA Form 413, Personal Financial Statement (05-21
-edition). This is the form an SBA loan applicant, owner or guarantor fills in for a
-7(a), 504, disaster or surety bond application, or for the WOSB or 8(a) programs. It is
-**6 pages, portrait**:
+| | |
+|---|---|
+| Pages | 6 |
+| Fields in the extraction schema | 53 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:34 | 2026-11-19 03:51 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 22,653 | 22,754 |
+| Words under 0.95 confidence | 59 | n/a |
+| Words under 0.80 confidence | 33 | n/a |
+| Words under 0.50 confidence | 20 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 9.1 s | 12.9 s |
+| Per page | 1.5 s | 2.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 3.2 credits | 8.7 credits |
+| Per page | 0.53 credits | 1.45 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:34 | 2026-11-19 03:52 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 53 | 53 |
+| Non-null fields returned | 51 | 51 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 103.3 s | 101.7 s |
+| Per schema field (53) | 1.95 s | 1.92 s |
+| Per value returned | 2.03 s | 1.99 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 6.2 credits | 6.2 credits |
+| Per schema field (53) | 0.117 credits | 0.117 credits |
+| Per value returned | 0.122 credits | 0.122 credits |
+
+## Origin
+
+`source/sba-form-413.pdf` is a completed **SBA Form 413, Personal Financial Statement**
+(05-21 edition). This is the form an SBA loan applicant, owner or guarantor fills in for
+a 7(a), 504, disaster or surety bond application, or for the WOSB or 8(a) programs. It
+is **6 pages, portrait**, a fillable form whose values are stored in form fields:
 
 - Page 1: program checkboxes and instructions
 - Page 2: applicant details, the assets and liabilities balance sheet, income and
@@ -21,19 +115,16 @@ edition). This is the form an SBA loan applicant, owner or guarantor fills in fo
 | Publisher | U.S. Small Business Administration (the form). It was completed by an unidentified filer |
 | Source | scribd.com/document/567494949/completed-sba-form-413 (shown as plain text, not linked) |
 | Retrieved | 2026-10-03, downloaded manually by the operator (Scribd blocks scripted downloads) |
-| Clearance | **Redacted**: see below |
-
-## This document was redacted before it was parsed
+| Clearance | **Redacted**, see below |
 
 Scribd is a user-upload site, not a publisher, so this was treated as a personal record.
 Some of the values look illustrative rather than real, but the business name and address
-could belong to a real business, so every identifying field was replaced.
+could belong to a real business, so every identifying field was replaced before the
+document was parsed.
 
-**The form is a fillable AcroForm, and the values lived only in its form fields, not in
-the page text.** Page-text redaction would have found nothing to remove. Each field's
-stored value (`/V`) and its appearance stream were replaced instead. Then
-`scripts/redact.py` cleared the PDF metadata and checked that no original text was
-extractable.
+The values lived only in the form's fillable fields, not in the page text, so each
+field's stored value and its appearance were replaced. The PDF metadata was then
+cleared.
 
 | Personal data | Occurrences | Replaced with |
 |---|---|---|
@@ -46,91 +137,46 @@ extractable.
 | Social security number | 1 | `987-65-4324` (reserved range) |
 | PDF metadata (`/Info`, XMP) | — | removed |
 
-Checks run:
+The page text, the form fields, every decompressed PDF object and the raw file bytes
+were searched, and none contains an original value. No original value appears anywhere
+in this folder, checked as literal text and as runs of digits. The rules file that maps
+originals to replacements is kept outside the repo.
 
-- The page text, the form fields, every decompressed PDF object and the raw file bytes
-  were searched, and none contains an original value.
-- `ship.py check` found no original value anywhere in this folder, checking literal text
-  and runs of digits.
+There was nothing else to replace. Both signature fields are empty, so the form is
+unsigned. There is no spouse, no account or loan number, and no real estate (Section 4
+reads N/A). Dollar amounts, checkboxes and dates were left unchanged.
 
-The rules file that maps originals to replacements is kept outside the repo.
-
-There was nothing else to replace:
-
-- **No signature.** Both signature fields are empty, so the form is unsigned.
-- **No spouse.**
-- **No account or loan numbers.**
-- **No real estate.** Section 4 reads N/A.
-
-Dollar amounts, checkboxes and dates were left unchanged.
-
-**Integrity check.** The previous Scribd candidate for this type was an altered document,
-so this one was checked before use, and nothing suggests editing:
-
-- **The figures agree.** The asset lines sum to total assets, and total liabilities plus
-  net worth equals total assets.
-- **The dates agree.** The as-of date matches the signature-block date, and both fall
-  within the form's OMB expiry date.
-- **The file is the SBA's own Word-to-Acrobat form, saved once.** It has a single
-  revision, and every value sits in a form field whose appearance matches its stored
-  value. No text has been laid over the page.
+A previous Scribd candidate for this type was an altered document, so this one was
+checked before use, and nothing suggests editing. The asset lines sum to total assets,
+and total liabilities plus net worth equals total assets. The as-of date matches the
+signature-block date, and both fall within the form's OMB expiry date. The file is the
+SBA's own Word-to-Acrobat form, saved once, with every value in a form field whose
+appearance matches its stored value. Full provenance is in `manifest.json` under
+`source.origin`.
 
 ## Why this document
 
-It is a government form completed in form fields rather than printed text, and the
-collection has few such forms. It tests a balance sheet laid out as two dotted-leader
-columns, checkbox groups for program and business type, and a section-based form whose
-supporting schedules are mostly blank. The data is sparse: only page 2 carries real
-figures, so most of the 53-leaf schema resolves to zeros or blanks.
+### Who processes it
 
-## Featured fields: the balance sheet balancing
+SBA lenders collect Form 413 from every owner and guarantor of a business applying for
+most SBA loans, and the SBA uses it in several contracting programs.
 
-All on page 2:
+- **SBA and small-business lending:** lenders read each guarantor's assets, liabilities
+  and net worth to judge the strength of a personal guarantee.
+- **Community banks and credit unions:** the same personal financial statement is often
+  used for conventional business loans.
+- **Disaster loan processing:** applicants for SBA disaster loans file it with their
+  application.
+- **SBA contracting programs:** WOSB and 8(a) applicants use it to show they meet the
+  economic disadvantage limits.
+- **Surety bonding:** surety companies review contractors' personal finances before
+  issuing bonds under the SBA program.
 
-| Field | Value |
-|---|---|
-| Business type | Sole Proprietor |
-| Total assets | 23,000 |
-| Total liabilities | 0 |
-| Net worth | 23,000 |
+### What it contains
 
-The request suggested the 7(a) program checkbox alongside the three totals. That
-checkbox is on page 1, so it cannot share page 2's overlay, and its grounding reads OFF
-in any case: the box covers the whole checkbox line. The checked business-type box
-replaced it. The as-of date was the other candidate, but its box covers the label rather
-than the date.
-
-## Grounding
-
-- **The totals ground well.** Every asset and liability line on page 2 reads `ok`.
-- **Two boxes sit slightly low.** The boxes for total liabilities and net worth clip the
-  top of their glyphs, but the value is still visibly inside each box.
-- **The business-type box covers the whole checkbox row.** That is reasonable for a
-  value picked from a group of options.
-- **The signature tabs were misread on the first extraction.** The form's printed orange
-  "SIGN" flag tabs parse as `[SIGN]`. On the first extraction, `certification.signed`
-  came back `true` for an unsigned form. Saying in the field description that a sign-here
-  tab is not a signature fixed it on a re-extract.
-- **Blank cells come back as zeros.** The blank Section 4 cells for market value and
-  mortgage balance return `0` instead of null, with no grounding (`OFF`).
-
-## Cost
-
-**20.80 credits** at standard tier:
-
-- 14.70 for the parse and the first extraction
-- 6.10 for one re-extraction (`--extract-only`) after the `signed` description was fixed
-
-## Regenerating
-
-```bash
-# Redaction, from the original download (form-field values, then metadata and verification).
-# widgets.py and rules.json are kept outside the repo.
-python widgets.py <original>.pdf stage1.pdf rules.json
-.venv/bin/python document-types/scripts/redact.py stage1.pdf \
-    document-types/collection/sba-form-413/source/sba-form-413.pdf --rules rules.json
-
-.venv/bin/python document-types/scripts/run_ade.py sba-form-413
-.venv/bin/python document-types/scripts/build_images.py sba-form-413
-.venv/bin/python document-types/scripts/inspect_fields.py sba-form-413 --page 2
-```
+- **Values stored in fillable form fields,** not in the page text.
+- **A balance sheet in two columns** with dotted leaders between labels and amounts.
+- **Checkbox groups** for the loan program and the business type.
+- **Supporting schedules that are mostly blank,** so many cells must come back empty.
+- **Printed "SIGN" flag tabs** beside empty signature fields on an unsigned form.
+- **Two pages of statutory notices** in dense prose.

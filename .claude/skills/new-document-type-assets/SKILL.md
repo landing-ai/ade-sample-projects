@@ -64,7 +64,7 @@ Read these before anything else:
    **Always v2** (`client.v2.parse`, `client.v2.extract`).
 2. `document-types/README.md` and one finished folder —
    `document-types/collection/consolidated-1099/` is the richest example, including its
-   `README.md`, `manifest.json` and `grounding-pro.json`.
+   `README.md`, `manifest.json` and `runs/<parse>/<extract>/grounding.json`.
 3. `CLAUDE.md` in this repo.
 
 Non-negotiables, all of them learned the hard way:
@@ -351,8 +351,12 @@ instead of 65.
 .venv/bin/python document-types/scripts/run_ade.py <slug>
 ```
 
-Standard tier, jobs API, DPT-3 Pro. Writes `parse-pro.json`, `parse-pro.md` and
-`extract-pro.json`, and reports the credits used. Note that figure; it goes in the README.
+Standard tier, jobs API, DPT-3 Pro, with the snapshots pinned in `scripts/runs.py`.
+Writes `runs/<parse snapshot>/parse.json` and `parse.md`, and
+`runs/<parse snapshot>/<extract snapshot>/extract.json`. The run, with its credits,
+is recorded under `"runs"` in `manifest.json` (by `build_images.py` if the manifest does
+not exist yet). It reports the credits used; `build_readme.py` reads them from the run
+for the README.
 
 If extraction returns a partial result, read the warning. A `nonconformant_output` warning
 usually means a required field was absent from the document — decide whether to relax the
@@ -363,7 +367,7 @@ schema or accept the null.
 ## Step 6 — Choose the featured fields
 
 This is the step that most affects whether the page is any good, and it cannot be done by
-reading `extract-pro.json`.
+reading `extract.json`.
 
 ```
 .venv/bin/python document-types/scripts/inspect_fields.py <slug> --good
@@ -436,15 +440,9 @@ Rules for the selection:
   without one, and say so in `notes` when you do. The arbitration award features a
   private claimant by the document owner's explicit decision; that is the exception, and
   the filing and signature dates on the same page would have made the same point.
-- **Count the schema leaves, do not estimate them.** Two READMEs shipped with invented
+- **Never type the schema field count.** Two READMEs once shipped with invented
   figures: 59 leaf fields against an actual 50, and 316 against an actual 66. The website
-  prints this number on the page. Read it from the sync output, or count it:
-
-  ```bash
-  python3 -c "import json;d=json.load(open('document-types/collection/<slug>/schema.json'))
-  f=lambda n: sum(map(f,n['properties'].values())) if n.get('type')=='object' and 'properties' in n else (f(n['items']) if n.get('type')=='array' and 'items' in n else 1)
-  print(f(d))"
-  ```
+  prints this number on the page. `build_readme.py` counts it from `schema.json`.
 
 ---
 
@@ -496,7 +494,7 @@ with what, plus counts. Never the original values.
 ```
 
 Writes per-field crops, the annotated page overlay, clean page previews, and
-`grounding-pro.json`.
+`grounding.json`, all into the run's folder.
 
 Read every warning:
 
@@ -525,18 +523,62 @@ optional and has caught real errors every time it has been done.
 
 ## Step 9 — README
 
-Write `document-types/collection/<slug>/README.md` covering:
+Every README has the same structure, and the top half is generated. Read
+`document-types/collection/certificate-of-insurance/README.md` (Verity and Pro) and
+`document-types/collection/deed/README.md` (Pro only) for the finished shape.
 
-- What the document is, publisher, page count, orientation
-- Provenance table and the clearance story, including whether the file was downloaded
-  manually. If redacted, say what was replaced and with
-  what — **never the originals** — and that the output was verified
-- Why this document was chosen — what it tests that the others do not
-- The featured fields and why
-- Anything surprising about grounding on this document, good or bad. The contrast between
-  documents is worth recording; it is how we learn what these pages can show
-- Credits used, at standard tier
-- The commands to regenerate everything
+**You write four things**, in `document-types/collection/<slug>/README.md`:
+
+```markdown
+# <Document type name>
+
+<2–4 plain sentences: what this specific document is and what it contains.>
+
+## Origin
+
+<The source file and what it is, pages, orientation, text layer or scan.>
+
+| | |
+|---|---|
+| Publisher | ... |
+| Source | ... |
+| Linked from | ... (only when a page links it) |
+| Retrieved | YYYY-MM-DD, and whether downloaded by script or by hand |
+| Clearance | Public / Redacted |
+
+<Where it came from, the clearance story, consent, and, if redacted, what was replaced
+and with what (never the originals) and that the output was verified.>
+Full provenance is in `manifest.json` under `source.origin`.
+
+## Why this document
+
+### Who processes it
+
+<One or two sentences, then 4–6 bullets: **Industry or role:** what they use it for.>
+
+### What it contains
+
+<4–7 bullets on what a parser must handle: tables, tables split across pages, merged
+cells, checkboxes, handwriting, signatures, stamps, charts, scans, non-Latin script.>
+```
+
+**Then generate the rest:**
+
+```
+.venv/bin/python document-types/scripts/build_readme.py <slug>
+```
+
+It inserts, between the description and `## Origin`: the website link, the page and
+schema-field counts, and the Parse performance and Extract performance sections (accuracy,
+speed, cost), read from the runs on the pinned snapshots. It puts DPT-3 Verity first when
+the folder has a Verity run. Re-run it whenever a run changes; `ship.py check` fails on a
+README that is out of date. Never edit the generated sections by hand.
+
+Keep out of the README:
+- **Notes on a particular run:** featured fields, grounding observations, credits,
+  regenerate commands. Featured fields, and what was asked for against what shipped,
+  belong in the manifest's `notes`. Grounding surprises go in the Step 10 report.
+- **Model suitability or roadmap.** Don't say why a model was or was not run.
 
 ---
 
@@ -554,6 +596,7 @@ It checks:
 - clearance is `public` or `redacted`, never a placeholder
 - a redacted document records its redactions, and its source PDF carries no metadata
 - 1–5 featured fields, all on `feature_page`, with no comma in any label
+- the README's generated sections match the runs (`build_readme.py` was re-run)
 - no credential- or rules-shaped path is in the change set
 - the personal-data sweep, literals **and** runs of digits
 

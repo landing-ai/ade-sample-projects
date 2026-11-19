@@ -1,0 +1,465 @@
+{
+  "extraction": {
+    "interpretation": {
+      "comments": null,
+      "statements": [
+        {
+          "code": "004",
+          "text": "Normal sinus rhythm"
+        },
+        {
+          "code": "193",
+          "text": "Anteroseptal infarction, probably old"
+        },
+        {
+          "code": "239",
+          "text": "Ischemic ST-T changes in posterior leads"
+        }
+      ],
+      "status": "Unconfirmed"
+    },
+    "leads": [
+      "I",
+      "aVR",
+      "V1",
+      "V4",
+      "II",
+      "aVL",
+      "V2",
+      "V5",
+      "III",
+      "aVF",
+      "V3",
+      "V6",
+      "II"
+    ],
+    "measurements": {
+      "heart_rate_bpm": 80,
+      "p_duration_ms": 102,
+      "p_qrs_t_axes": "49°, 50°, 49°",
+      "pr_interval_ms": 186,
+      "qrs_duration_ms": 100,
+      "qt_interval_ms": 360,
+      "qtc_interval_ms": 416
+    },
+    "patient": {
+      "age_years": 61,
+      "date_of_birth": "1/25/1950",
+      "gender": "Male",
+      "height": "6 ft 3 in",
+      "id": "123123",
+      "name": "John Sample",
+      "weight": "223 lbs"
+    },
+    "recording": {
+      "device": "CL   131568",
+      "location": null,
+      "recorded_at": "2/17/2011 2:21:27 PM"
+    },
+    "report_title": "3x4 Simultaneous ECG Report",
+    "settings": {
+      "filters": "0.05 - 150 Hz",
+      "gain": "10.0 mm/mV",
+      "paper_speed": "25.0 mm/s"
+    }
+  },
+  "extraction_metadata": {
+    "interpretation": {
+      "comments": {
+        "ranges": null,
+        "value": null
+      },
+      "statements": [
+        {
+          "code": {
+            "ranges": [
+              {
+                "end": 556,
+                "start": 553
+              }
+            ],
+            "value": "004"
+          },
+          "text": {
+            "ranges": [
+              {
+                "end": 576,
+                "start": 557
+              }
+            ],
+            "value": "Normal sinus rhythm"
+          }
+        },
+        {
+          "code": {
+            "ranges": [
+              {
+                "end": 580,
+                "start": 577
+              }
+            ],
+            "value": "193"
+          },
+          "text": {
+            "ranges": [
+              {
+                "end": 618,
+                "start": 581
+              }
+            ],
+            "value": "Anteroseptal infarction, probably old"
+          }
+        },
+        {
+          "code": {
+            "ranges": [
+              {
+                "end": 622,
+                "start": 619
+              }
+            ],
+            "value": "239"
+          },
+          "text": {
+            "ranges": [
+              {
+                "end": 663,
+                "start": 623
+              }
+            ],
+            "value": "Ischemic ST-T changes in posterior leads"
+          }
+        }
+      ],
+      "status": {
+        "ranges": [
+          {
+            "end": 549,
+            "start": 538
+          }
+        ],
+        "value": "Unconfirmed"
+      }
+    },
+    "leads": [
+      {
+        "ranges": [
+          {
+            "end": 869,
+            "start": 868
+          }
+        ],
+        "value": "I"
+      },
+      {
+        "ranges": [
+          {
+            "end": 874,
+            "start": 871
+          }
+        ],
+        "value": "aVR"
+      },
+      {
+        "ranges": [
+          {
+            "end": 878,
+            "start": 876
+          }
+        ],
+        "value": "V1"
+      },
+      {
+        "ranges": [
+          {
+            "end": 882,
+            "start": 880
+          }
+        ],
+        "value": "V4"
+      },
+      {
+        "ranges": [
+          {
+            "end": 912,
+            "start": 910
+          }
+        ],
+        "value": "II"
+      },
+      {
+        "ranges": [
+          {
+            "end": 917,
+            "start": 914
+          }
+        ],
+        "value": "aVL"
+      },
+      {
+        "ranges": [
+          {
+            "end": 921,
+            "start": 919
+          }
+        ],
+        "value": "V2"
+      },
+      {
+        "ranges": [
+          {
+            "end": 925,
+            "start": 923
+          }
+        ],
+        "value": "V5"
+      },
+      {
+        "ranges": [
+          {
+            "end": 956,
+            "start": 953
+          }
+        ],
+        "value": "III"
+      },
+      {
+        "ranges": [
+          {
+            "end": 961,
+            "start": 958
+          }
+        ],
+        "value": "aVF"
+      },
+      {
+        "ranges": [
+          {
+            "end": 965,
+            "start": 963
+          }
+        ],
+        "value": "V3"
+      },
+      {
+        "ranges": [
+          {
+            "end": 969,
+            "start": 967
+          }
+        ],
+        "value": "V6"
+      },
+      {
+        "ranges": [
+          {
+            "end": 1014,
+            "start": 1012
+          }
+        ],
+        "value": "II"
+      }
+    ],
+    "measurements": {
+      "heart_rate_bpm": {
+        "ranges": [
+          {
+            "end": 349,
+            "start": 347
+          }
+        ],
+        "value": 80
+      },
+      "p_duration_ms": {
+        "ranges": [
+          {
+            "end": 375,
+            "start": 372
+          }
+        ],
+        "value": 102
+      },
+      "p_qrs_t_axes": {
+        "ranges": [
+          {
+            "end": 518,
+            "start": 505
+          }
+        ],
+        "value": "49°, 50°, 49°"
+      },
+      "pr_interval_ms": {
+        "ranges": [
+          {
+            "end": 401,
+            "start": 398
+          }
+        ],
+        "value": 186
+      },
+      "qrs_duration_ms": {
+        "ranges": [
+          {
+            "end": 428,
+            "start": 425
+          }
+        ],
+        "value": 100
+      },
+      "qt_interval_ms": {
+        "ranges": [
+          {
+            "end": 454,
+            "start": 451
+          }
+        ],
+        "value": 360
+      },
+      "qtc_interval_ms": {
+        "ranges": [
+          {
+            "end": 481,
+            "start": 478
+          }
+        ],
+        "value": 416
+      }
+    },
+    "patient": {
+      "age_years": {
+        "ranges": [
+          {
+            "end": 147,
+            "start": 145
+          }
+        ],
+        "value": 61
+      },
+      "date_of_birth": {
+        "ranges": [
+          {
+            "end": 141,
+            "start": 132
+          }
+        ],
+        "value": "1/25/1950"
+      },
+      "gender": {
+        "ranges": [
+          {
+            "end": 110,
+            "start": 106
+          }
+        ],
+        "value": "Male"
+      },
+      "height": {
+        "ranges": [
+          {
+            "end": 178,
+            "start": 169
+          }
+        ],
+        "value": "6 ft 3 in"
+      },
+      "id": {
+        "ranges": [
+          {
+            "end": 91,
+            "start": 85
+          }
+        ],
+        "value": "123123"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 74,
+            "start": 63
+          }
+        ],
+        "value": "John Sample"
+      },
+      "weight": {
+        "ranges": [
+          {
+            "end": 200,
+            "start": 193
+          }
+        ],
+        "value": "223 lbs"
+      }
+    },
+    "recording": {
+      "device": {
+        "ranges": [
+          {
+            "end": 286,
+            "start": 275
+          }
+        ],
+        "value": "CL   131568"
+      },
+      "location": {
+        "ranges": null,
+        "value": null
+      },
+      "recorded_at": {
+        "ranges": [
+          {
+            "end": 260,
+            "start": 240
+          }
+        ],
+        "value": "2/17/2011 2:21:27 PM"
+      }
+    },
+    "report_title": {
+      "ranges": [
+        {
+          "end": 29,
+          "start": 2
+        }
+      ],
+      "value": "3x4 Simultaneous ECG Report"
+    },
+    "settings": {
+      "filters": {
+        "ranges": null,
+        "value": "0.05 - 150 Hz"
+      },
+      "gain": {
+        "ranges": null,
+        "value": "10.0 mm/mV"
+      },
+      "paper_speed": {
+        "ranges": null,
+        "value": "25.0 mm/s"
+      }
+    }
+  },
+  "markdown": "# 3x4 Simultaneous ECG Report\n\n**Patient Details**\n- **Name**: John Sample\n- **ID**: 123123\n- **Gender**: Male\n- **Date of Birth**: 1/25/1950   (61 years)\n- **Height**: 6 ft 3 in\n- **Weight**: 223 lbs\n\n**Recording Details**\n- **Recorded**: 2/17/2011 2:21:27 PM\n- **Device**: CL   131568\n- **Location**: [blank]\n\n**Measurements**\n- **Heart Rate**: 80 bpm\n- **P Duration**: 102 ms\n- **PR Interval**: 186 ms\n- **QRS Duration**: 100 ms\n- **QT Interval**: 360 ms\n- **QTc Interval**: 416 ms\n- **P,QRS,T Axis**: 49°, 50°, 49°\n\n**Interpretation (Unconfirmed)**\n004 Normal sinus rhythm\n193 Anteroseptal infarction, probably old\n239 Ischemic ST-T changes in posterior leads\n\n**Comments:**\n\n<figure type=\"CHART\">Scale: 25.0 mm/s 10.0 mm/mV 5mm/sqr. Data must be reviewed by a qualified physician. Filters: 0.05 - 150 Hz<table><tr><th>Row</th><th>Leads</th></tr><tr><td>1</td><td>I, aVR, V1, V4</td></tr><tr><td>2</td><td>II, aVL, V2, V5</td></tr><tr><td>3</td><td>III, aVF, V3, V6</td></tr><tr><td>4 (rhythm strip)</td><td>II</td></tr></table>\n\n<description>A 12-lead electrocardiogram printed on a red grid background. It has three rows of four standard and augmented leads (I, aVR, V1, V4 in the top row; II, aVL, V2, V5 in the middle row; III, aVF, V3, V6 in the third row), with a full-width lead II rhythm strip at the bottom. Each row begins with a small rectangular calibration pulse at the left edge. Vertical red separators divide the leads into four columns. The traces show narrow, sharp QRS complexes with a regular repeating rhythm, each followed by a rounded T wave, with a flat baseline between beats. Amplitude varies by lead: lead aVL is nearly flat, while V1 and V2 show deeper negative deflections and aVR shows predominantly negative complexes.</description></figure>\n\nPage 1 of 9    Printed: Wednesday, March 02, 2011\n\nCopyright QRS Diagnostic\n\nML122 Rev.6/11\n\n<!-- doc_id=parse-01m7rsv97v8yxkvcv6zqf8negx -->",
+  "metadata": {
+    "job_id": "extract-01m7rsw16atchq6f92r11e9hkf",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 76623,
+    "doc_id": "parse-01m7rsv97v8yxkvcv6zqf8negx",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 1.3,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 1919,
+    "output_extraction_chars": 863,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

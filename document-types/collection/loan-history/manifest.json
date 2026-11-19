@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    {"path": "payments[7].date_due", "label": "Date due", "occurrence": 0},
-    {"path": "payments[7].date_received", "label": "Date received", "occurrence": 0},
-    {"path": "payments[7].late_fee", "label": "Late fee", "occurrence": 0},
-    {"path": "payments[7].principal", "label": "Applied to principal", "occurrence": 0},
-    {"path": "payments[7].principal_balance", "label": "Principal balance", "occurrence": 0}
+    {
+      "path": "payments[7].date_due",
+      "label": "Date due",
+      "occurrence": 0
+    },
+    {
+      "path": "payments[7].date_received",
+      "label": "Date received",
+      "occurrence": 0
+    },
+    {
+      "path": "payments[7].late_fee",
+      "label": "Late fee",
+      "occurrence": 0
+    },
+    {
+      "path": "payments[7].impound",
+      "label": "Impound",
+      "occurrence": 0
+    },
+    {
+      "path": "payments[7].principal_balance",
+      "label": "Principal balance",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no page or fields. One row is featured, payment 7 of September 2010, because it is the kind of row a servicing review is looking for: due 09/01/2010, received 09/20/2010 with a 22.25 late fee, and short of the scheduled payment, so nothing was applied to principal and the balance stayed at 49,864.47. Every value in the report grounds to its own cell. All 57 rows extract correctly across the page break, and the column sums equal the printed Total row to the cent (30,581.66 received: 1,570.25 principal, 23,238.12 interest, 5,641.65 impound and 131.64 late fees). Blank reference numbers come back as empty strings rather than null."
+  "notes": "The request named no page or fields. One row is featured, payment 7 of September 2010, because it is the kind of row a servicing review is looking for: due 09/01/2010, received 09/20/2010 with a 22.25 late fee, and short of the scheduled payment, so nothing was applied to principal and the balance stayed at 49,864.47. Every value in the report grounds to its own cell. All 57 rows extract correctly across the page break, and the column sums equal the printed Total row to the cent (30,581.66 received: 1,570.25 principal, 23,238.12 interest, 5,641.65 impound and 131.64 late fees). Blank reference numbers come back as empty strings rather than null.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.2,
+      "extract_credits": 18.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.2,
+      "extract_credits": 18.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.6,
+      "extract_credits": 18.6
+    }
+  ]
 }

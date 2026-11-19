@@ -1,0 +1,1558 @@
+{
+  "extraction": {
+    "document_title": "Deciding When to Submit a 510(k) for a Change to an Existing Device",
+    "flowcharts": [
+      {
+        "chart_letter": null,
+        "decisions": [
+          {
+            "if_no": "Labeling change?",
+            "if_yes": "New 510(k)",
+            "node_id": null,
+            "question": "Change made with intent to significantly improve the safety or effectiveness of the device"
+          },
+          {
+            "if_no": "Technology, engineering, or performance change?",
+            "if_yes": "Go to Chart A",
+            "node_id": null,
+            "question": "Labeling change?"
+          },
+          {
+            "if_no": "Materials change?",
+            "if_yes": "Go to Chart B, or Chart D if IVD",
+            "node_id": null,
+            "question": "Technology, engineering, or performance change?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "Go to Chart C, or Chart D if IVD",
+            "node_id": null,
+            "question": "Materials change?"
+          }
+        ],
+        "entry_point": null,
+        "figure_caption": "Figure 1 - Main Flowchart"
+      },
+      {
+        "chart_letter": "A",
+        "decisions": [
+          {
+            "if_no": "A2",
+            "if_yes": "A1.1",
+            "node_id": "A1",
+            "question": "Is it a change in the indications for use statement?"
+          },
+          {
+            "if_no": "A1.2",
+            "if_yes": "New 510(k)",
+            "node_id": "A1.1",
+            "question": "Is it a change from a device labeled for single use only to a device labeled as reusable?"
+          },
+          {
+            "if_no": "A1.3",
+            "if_yes": "New 510(k)",
+            "node_id": "A1.2",
+            "question": "Is it a change from Rx to over the counter OTC use?"
+          },
+          {
+            "if_no": "A1.4",
+            "if_yes": "Documentation",
+            "node_id": "A1.3",
+            "question": "Is it a change to the device name or to solely improve readability or clarity?"
+          },
+          {
+            "if_no": "A1.5",
+            "if_yes": "New 510(k)",
+            "node_id": "A1.4",
+            "question": "Does the change describe a new disease, condition, or pt pop that the device is intended in diagnosing, treating, preventing, curing or mitigating?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "New 510(k)",
+            "node_id": "A1.5",
+            "question": "Does a risk-based assessment identify any new risks or significantly modified existing risks"
+          },
+          {
+            "if_no": "A3",
+            "if_yes": "New 510(k) (If only adding a contraindication, submit CBE 510(k))",
+            "node_id": "A2",
+            "question": "Does the change add or delete a contraindication?"
+          },
+          {
+            "if_no": "A4",
+            "if_yes": "New 510(k)",
+            "node_id": "A3",
+            "question": "Is it a change in the warnings or precautions?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "New 510(k)",
+            "node_id": "A4",
+            "question": "Could it affect the directions for use?"
+          }
+        ],
+        "entry_point": "From Main Chart",
+        "figure_caption": "Figure 2 - Flowchart A: Labeling Changes"
+      },
+      {
+        "chart_letter": "B",
+        "decisions": [
+          {
+            "if_no": "B2",
+            "if_yes": "Go to Chart D",
+            "node_id": "B1",
+            "question": "Is the device an IVD?"
+          },
+          {
+            "if_no": "B3",
+            "if_yes": "New 510(k)",
+            "node_id": "B2",
+            "question": "Is it a control mechanism, operating principle, or energy type change?"
+          },
+          {
+            "if_no": "B4",
+            "if_yes": "B3.1",
+            "node_id": "B3",
+            "question": "Is it a change in sterilization, cleaning, or disinfection?"
+          },
+          {
+            "if_no": "B3.2",
+            "if_yes": "New 510(k)",
+            "node_id": "B3.1",
+            "question": "Is it a change to a Cat B or novel method, does it lower the SAL, or is it a change to how the device is provided?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "New 510(k)",
+            "node_id": "B3.2",
+            "question": "Could the change significantly affect performance/biocompatibility?"
+          },
+          {
+            "if_no": "B5",
+            "if_yes": "B4.1",
+            "node_id": "B4",
+            "question": "Is there a change in packaging or expiration dating?"
+          },
+          {
+            "if_no": "New 510(k)",
+            "if_yes": "Documentation",
+            "node_id": "B4.1",
+            "question": "Is the same method or protocol, described in previous 510(k), used to support change?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "B5.1",
+            "node_id": "B5",
+            "question": "Is it any other change in design (e.g., dimensions, performance specifications, wireless communications, components or accessories, patient/user interface)?"
+          },
+          {
+            "if_no": "B5.2",
+            "if_yes": "New 510(k)",
+            "node_id": "B5.1",
+            "question": "Does the change significantly affect the use of the device?"
+          },
+          {
+            "if_no": "B5.3",
+            "if_yes": "New 510(k)",
+            "node_id": "B5.2",
+            "question": "Does a risk assessment identify any new or significantly modified risks?"
+          },
+          {
+            "if_no": "B5.4",
+            "if_yes": "New 510(k)",
+            "node_id": "B5.3",
+            "question": "Is clinical data necessary?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "New 510(k)",
+            "node_id": "B5.4",
+            "question": "Any unexpected issues from V&V activities?"
+          }
+        ],
+        "entry_point": "From Main Chart",
+        "figure_caption": "Figure 3 - Flowchart B: Technology, Engineering, and Performance Changes"
+      },
+      {
+        "chart_letter": "C",
+        "decisions": [
+          {
+            "if_no": "C2",
+            "if_yes": "Go to Chart D",
+            "node_id": "C1",
+            "question": "Is the device an IVD?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "C3",
+            "node_id": "C2",
+            "question": "Change in material type, formulation, chemical composition, or the material's processing?"
+          },
+          {
+            "if_no": "C5",
+            "if_yes": "C4",
+            "node_id": "C3",
+            "question": "Will the changed material directly or indirectly contact body tissues or fluids?"
+          },
+          {
+            "if_no": "C5",
+            "if_yes": "C4.1",
+            "node_id": "C4",
+            "question": "Does a risk assessment identify any new or increased biocompatibility concerns?"
+          },
+          {
+            "if_no": "Documentation",
+            "if_yes": "Go to B5",
+            "node_id": "C5",
+            "question": "Could the change affect performance specifications?"
+          },
+          {
+            "if_no": "New 510(k)",
+            "if_yes": "Refer to Section E as directed by the text for additional recommendations on use of risk assessment.",
+            "node_id": "C4.1",
+            "question": "Has the manufacturer used the same material in a similar legally marketed device (including formulation, processing, type and duration of contact, etc.)?"
+          }
+        ],
+        "entry_point": "From Main Chart",
+        "figure_caption": "Figure 4 - Flowchart C: Materials Changes"
+      }
+    ],
+    "issue_date": "2017-10-25",
+    "issuing_agency": "U.S. Department of Health and Human Services Food and Drug Administration"
+  },
+  "extraction_metadata": {
+    "document_title": {
+      "ranges": [
+        {
+          "end": 73,
+          "start": 37
+        },
+        {
+          "end": 104,
+          "start": 74
+        }
+      ],
+      "value": "Deciding When to Submit a 510(k) for a Change to an Existing Device"
+    },
+    "flowcharts": [
+      {
+        "chart_letter": {
+          "ranges": null,
+          "value": null
+        },
+        "decisions": [
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 2082,
+                  "start": 2066
+                }
+              ],
+              "value": "Labeling change?"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 1859,
+                  "start": 1849
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": null,
+              "value": null
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 1825,
+                  "start": 1735
+                }
+              ],
+              "value": "Change made with intent to significantly improve the safety or effectiveness of the device"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 2193,
+                  "start": 2146
+                }
+              ],
+              "value": "Technology, engineering, or performance change?"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 2119,
+                  "start": 2106
+                }
+              ],
+              "value": "Go to Chart A"
+            },
+            "node_id": {
+              "ranges": null,
+              "value": null
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 2082,
+                  "start": 2066
+                }
+              ],
+              "value": "Labeling change?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 2293,
+                  "start": 2276
+                }
+              ],
+              "value": "Materials change?"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 2249,
+                  "start": 2217
+                }
+              ],
+              "value": "Go to Chart B, or Chart D if IVD"
+            },
+            "node_id": {
+              "ranges": null,
+              "value": null
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 2193,
+                  "start": 2146
+                }
+              ],
+              "value": "Technology, engineering, or performance change?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 2386,
+                  "start": 2373
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 2349,
+                  "start": 2317
+                }
+              ],
+              "value": "Go to Chart C, or Chart D if IVD"
+            },
+            "node_id": {
+              "ranges": null,
+              "value": null
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 2293,
+                  "start": 2276
+                }
+              ],
+              "value": "Materials change?"
+            }
+          }
+        ],
+        "entry_point": {
+          "ranges": null,
+          "value": null
+        },
+        "figure_caption": {
+          "ranges": [
+            {
+              "end": 1526,
+              "start": 1501
+            }
+          ],
+          "value": "Figure 1 - Main Flowchart"
+        }
+      },
+      {
+        "chart_letter": {
+          "ranges": [
+            {
+              "end": 2880,
+              "start": 2879
+            }
+          ],
+          "value": "A"
+        },
+        "decisions": [
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 4037,
+                  "start": 4035
+                }
+              ],
+              "value": "A2"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 3407,
+                  "start": 3403
+                }
+              ],
+              "value": "A1.1"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 3322,
+                  "start": 3320
+                }
+              ],
+              "value": "A1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 3391,
+                  "start": 3339
+                }
+              ],
+              "value": "Is it a change in the indications for use statement?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 3531,
+                  "start": 3527
+                }
+              ],
+              "value": "A1.2"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4286,
+                  "start": 4276
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 3407,
+                  "start": 3403
+                }
+              ],
+              "value": "A1.1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 3515,
+                  "start": 3426
+                }
+              ],
+              "value": "Is it a change from a device labeled for single use only to a device labeled as reusable?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 3617,
+                  "start": 3613
+                }
+              ],
+              "value": "A1.3"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4286,
+                  "start": 4276
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 3531,
+                  "start": 3527
+                }
+              ],
+              "value": "A1.2"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 3601,
+                  "start": 3550
+                }
+              ],
+              "value": "Is it a change from Rx to over the counter OTC use?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 3730,
+                  "start": 3726
+                }
+              ],
+              "value": "A1.4"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4306,
+                  "start": 4293
+                }
+              ],
+              "value": "Documentation"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 3617,
+                  "start": 3613
+                }
+              ],
+              "value": "A1.3"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 3714,
+                  "start": 3636
+                }
+              ],
+              "value": "Is it a change to the device name or to solely improve readability or clarity?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 3912,
+                  "start": 3908
+                }
+              ],
+              "value": "A1.5"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4286,
+                  "start": 4276
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 3730,
+                  "start": 3726
+                }
+              ],
+              "value": "A1.4"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 3896,
+                  "start": 3749
+                }
+              ],
+              "value": "Does the change describe a new disease, condition, or pt pop that the device is intended in diagnosing, treating, preventing, curing or mitigating?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 4306,
+                  "start": 4293
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4286,
+                  "start": 4276
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 3912,
+                  "start": 3908
+                }
+              ],
+              "value": "A1.5"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 4023,
+                  "start": 3931
+                }
+              ],
+              "value": "Does a risk-based assessment identify any new risks or significantly modified existing risks"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 4117,
+                  "start": 4115
+                }
+              ],
+              "value": "A3"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4421,
+                  "start": 4356
+                }
+              ],
+              "value": "New 510(k) (If only adding a contraindication, submit CBE 510(k))"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 4037,
+                  "start": 4035
+                }
+              ],
+              "value": "A2"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 4103,
+                  "start": 4054
+                }
+              ],
+              "value": "Does the change add or delete a contraindication?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 4194,
+                  "start": 4192
+                }
+              ],
+              "value": "A4"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4286,
+                  "start": 4276
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 4117,
+                  "start": 4115
+                }
+              ],
+              "value": "A3"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 4180,
+                  "start": 4134
+                }
+              ],
+              "value": "Is it a change in the warnings or precautions?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 4306,
+                  "start": 4293
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 4286,
+                  "start": 4276
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 4194,
+                  "start": 4192
+                }
+              ],
+              "value": "A4"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 4250,
+                  "start": 4211
+                }
+              ],
+              "value": "Could it affect the directions for use?"
+            }
+          }
+        ],
+        "entry_point": {
+          "ranges": [
+            {
+              "end": 3308,
+              "start": 3293
+            }
+          ],
+          "value": "From Main Chart"
+        },
+        "figure_caption": {
+          "ranges": [
+            {
+              "end": 2924,
+              "start": 2884
+            }
+          ],
+          "value": "Figure 2 - Flowchart A: Labeling Changes"
+        }
+      },
+      {
+        "chart_letter": {
+          "ranges": [
+            {
+              "end": 7700,
+              "start": 7699
+            }
+          ],
+          "value": "B"
+        },
+        "decisions": [
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5502,
+                  "start": 5500
+                }
+              ],
+              "value": "B2"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5496,
+                  "start": 5483
+                }
+              ],
+              "value": "Go to Chart D"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 5419,
+                  "start": 5417
+                }
+              ],
+              "value": "B1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 5463,
+                  "start": 5442
+                }
+              ],
+              "value": "Is the device an IVD?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5634,
+                  "start": 5632
+                }
+              ],
+              "value": "B3"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 5502,
+                  "start": 5500
+                }
+              ],
+              "value": "B2"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 5595,
+                  "start": 5525
+                }
+              ],
+              "value": "Is it a control mechanism, operating principle, or energy type change?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 6006,
+                  "start": 6004
+                }
+              ],
+              "value": "B4"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5724,
+                  "start": 5720
+                }
+              ],
+              "value": "B3.1"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 5634,
+                  "start": 5632
+                }
+              ],
+              "value": "B3"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 5716,
+                  "start": 5657
+                }
+              ],
+              "value": "Is it a change in sterilization, cleaning, or disinfection?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5869,
+                  "start": 5865
+                }
+              ],
+              "value": "B3.2"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 5724,
+                  "start": 5720
+                }
+              ],
+              "value": "B3.1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 5861,
+                  "start": 5747
+                }
+              ],
+              "value": "Is it a change to a Cat B or novel method, does it lower the SAL, or is it a change to how the device is provided?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5976,
+                  "start": 5963
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 5869,
+                  "start": 5865
+                }
+              ],
+              "value": "B3.2"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 5959,
+                  "start": 5892
+                }
+              ],
+              "value": "Could the change significantly affect performance/biocompatibility?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 6203,
+                  "start": 6201
+                }
+              ],
+              "value": "B5"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 6089,
+                  "start": 6085
+                }
+              ],
+              "value": "B4.1"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6006,
+                  "start": 6004
+                }
+              ],
+              "value": "B4"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6081,
+                  "start": 6029
+                }
+              ],
+              "value": "Is there a change in packaging or expiration dating?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5976,
+                  "start": 5963
+                }
+              ],
+              "value": "Documentation"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6089,
+                  "start": 6085
+                }
+              ],
+              "value": "B4.1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6197,
+                  "start": 6112
+                }
+              ],
+              "value": "Is the same method or protocol, described in previous 510(k), used to support change?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5976,
+                  "start": 5963
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 6390,
+                  "start": 6386
+                }
+              ],
+              "value": "B5.1"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6203,
+                  "start": 6201
+                }
+              ],
+              "value": "B5"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6382,
+                  "start": 6226
+                }
+              ],
+              "value": "Is it any other change in design (e.g., dimensions, performance specifications, wireless communications, components or accessories, patient/user interface)?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 6480,
+                  "start": 6476
+                }
+              ],
+              "value": "B5.2"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6390,
+                  "start": 6386
+                }
+              ],
+              "value": "B5.1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6472,
+                  "start": 6413
+                }
+              ],
+              "value": "Does the change significantly affect the use of the device?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 6583,
+                  "start": 6579
+                }
+              ],
+              "value": "B5.3"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6480,
+                  "start": 6476
+                }
+              ],
+              "value": "B5.2"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6575,
+                  "start": 6503
+                }
+              ],
+              "value": "Does a risk assessment identify any new or significantly modified risks?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 6641,
+                  "start": 6637
+                }
+              ],
+              "value": "B5.4"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6583,
+                  "start": 6579
+                }
+              ],
+              "value": "B5.3"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6633,
+                  "start": 6606
+                }
+              ],
+              "value": "Is clinical data necessary?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 5976,
+                  "start": 5963
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 5628,
+                  "start": 5618
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 6641,
+                  "start": 6637
+                }
+              ],
+              "value": "B5.4"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 6706,
+                  "start": 6664
+                }
+              ],
+              "value": "Any unexpected issues from V&V activities?"
+            }
+          }
+        ],
+        "entry_point": {
+          "ranges": [
+            {
+              "end": 5413,
+              "start": 5398
+            }
+          ],
+          "value": "From Main Chart"
+        },
+        "figure_caption": {
+          "ranges": [
+            {
+              "end": 7750,
+              "start": 7678
+            }
+          ],
+          "value": "Figure 3 - Flowchart B: Technology, Engineering, and Performance Changes"
+        }
+      },
+      {
+        "chart_letter": {
+          "ranges": [
+            {
+              "end": 9688,
+              "start": 9687
+            }
+          ],
+          "value": "C"
+        },
+        "decisions": [
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 8287,
+                  "start": 8285
+                }
+              ],
+              "value": "C2"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 8280,
+                  "start": 8267
+                }
+              ],
+              "value": "Go to Chart D"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 8193,
+                  "start": 8191
+                }
+              ],
+              "value": "C1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 8239,
+                  "start": 8218
+                }
+              ],
+              "value": "Is the device an IVD?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 8419,
+                  "start": 8406
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 8450,
+                  "start": 8448
+                }
+              ],
+              "value": "C3"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 8287,
+                  "start": 8285
+                }
+              ],
+              "value": "C2"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 8401,
+                  "start": 8312
+                }
+              ],
+              "value": "Change in material type, formulation, chemical composition, or the material's processing?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 8673,
+                  "start": 8671
+                }
+              ],
+              "value": "C5"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 8562,
+                  "start": 8560
+                }
+              ],
+              "value": "C4"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 8450,
+                  "start": 8448
+                }
+              ],
+              "value": "C3"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 8555,
+                  "start": 8475
+                }
+              ],
+              "value": "Will the changed material directly or indirectly contact body tissues or fluids?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 8673,
+                  "start": 8671
+                }
+              ],
+              "value": "C5"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 8792,
+                  "start": 8788
+                }
+              ],
+              "value": "C4.1"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 8562,
+                  "start": 8560
+                }
+              ],
+              "value": "C4"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 8666,
+                  "start": 8587
+                }
+              ],
+              "value": "Does a risk assessment identify any new or increased biocompatibility concerns?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 8419,
+                  "start": 8406
+                }
+              ],
+              "value": "Documentation"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 9001,
+                  "start": 8993
+                }
+              ],
+              "value": "Go to B5"
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 8673,
+                  "start": 8671
+                }
+              ],
+              "value": "C5"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 8749,
+                  "start": 8698
+                }
+              ],
+              "value": "Could the change affect performance specifications?"
+            }
+          },
+          {
+            "if_no": {
+              "ranges": [
+                {
+                  "end": 8783,
+                  "start": 8773
+                }
+              ],
+              "value": "New 510(k)"
+            },
+            "if_yes": {
+              "ranges": [
+                {
+                  "end": 9310,
+                  "start": 9210
+                }
+              ],
+              "value": "Refer to Section E as directed by the text for additional recommendations on use of risk assessment."
+            },
+            "node_id": {
+              "ranges": [
+                {
+                  "end": 8792,
+                  "start": 8788
+                }
+              ],
+              "value": "C4.1"
+            },
+            "question": {
+              "ranges": [
+                {
+                  "end": 8970,
+                  "start": 8817
+                }
+              ],
+              "value": "Has the manufacturer used the same material in a similar legally marketed device (including formulation, processing, type and duration of contact, etc.)?"
+            }
+          }
+        ],
+        "entry_point": {
+          "ranges": [
+            {
+              "end": 8186,
+              "start": 8171
+            }
+          ],
+          "value": "From Main Chart"
+        },
+        "figure_caption": {
+          "ranges": [
+            {
+              "end": 9713,
+              "start": 9672
+            }
+          ],
+          "value": "Figure 4 - Flowchart C: Materials Changes"
+        }
+      }
+    ],
+    "issue_date": {
+      "ranges": [
+        {
+          "end": 204,
+          "start": 168
+        }
+      ],
+      "value": "2017-10-25"
+    },
+    "issuing_agency": {
+      "ranges": [
+        {
+          "end": 712,
+          "start": 668
+        },
+        {
+          "end": 741,
+          "start": 713
+        }
+      ],
+      "value": "U.S. Department of Health and Human Services Food and Drug Administration"
+    }
+  },
+  "markdown": "Contains Nonbinding Recommendations\n\nDeciding When to Submit a 510(k) for\na Change to an Existing Device\n\nGuidance for Industry and\nFood and Drug Administration Staff\n\nDocument issued on October 25, 2017.\n\nThe draft of this document was issued on August 8, 2016.\n\nThis document supersedes Deciding When to Submit a 510(k) for a Change to\nan Existing Device, dated January 10, 1997.\n\nFor questions about this document regarding CDRH-regulated devices, contact the 510(k) Staff at\n301-796-5640.\n\nFor questions about this document regarding CBER-regulated devices, contact the Office of\nCommunication, Outreach, and Development (OCOD) at 1-800-835-4709 or 240-402-8010.\n\nU.S. Department of Health and Human Services\nFood and Drug Administration\n\nă\nU.S. F0OD & DRUG\nADMINISTRATION\n\nCenter for Devices and Radiological Health\nCenter for Biologics Evaluation and Research\n\n-\n\n<!-- PAGE BREAK -->\n\nContains Nonbinding Recommendations\nNote that the first question is whether the change is being made with the intent to significantly\nimprove the safety or effectiveness of the device, for example, to significantly improve clinical\noutcomes, to mitigate a known risk, in response to adverse events, etc. (Figure 1 - Main Flowchart).\nIf so, the change likely could significantly affect safety or effectiveness and submission of a new\n510(k) is likely required. If not, you should continue to follow the logic scheme shown in Figure 1,\nbelow.\n\n<figure type=\"FLOWCHART\">\n\n<description>This is a flowchart titled 'Figure 1 - Main Flowchart' illustrating a decision-making process for device modifications. It begins with a decision node and branches based on the type of change.</description>1. Directory of Nodes (Blocks)\n[DECISION 1] (Diamond): \"Change made with intent to significantly improve the safety or effectiveness of the device\"\n[TERMINAL 1] (Oval): \"New 510(k)\"\n[NOTE BOX] (Rectangle): \"Reminder: Flowcharts are provided as a visual aid, but do not capture all necessary considerations. Refer to accompanying text when using this flowchart.\"\n[DECISION 2] (Diamond): \"Labeling change?\"\n[TERMINAL 2] (Oval): \"Go to Chart A\"\n[DECISION 3] (Diamond): \"Technology, engineering, or performance change?\"\n[TERMINAL 3] (Oval): \"Go to Chart B, or Chart D if IVD\"\n[DECISION 4] (Diamond): \"Materials change?\"\n[TERMINAL 4] (Oval): \"Go to Chart C, or Chart D if IVD\"\n[TERMINAL 5] (Oval): \"Documentation\"\n[NOTE CIRCLE] (Circle): \"Refer to Section E as directed by the text for additional recommendations on use of risk assessment.\"\n\n2. Connections (In & Out Flows)\n[DECISION 1] --Yes--> [TERMINAL 1]\n[DECISION 1] --No--> [DECISION 2]\n[DECISION 2] --Yes--> [TERMINAL 2]\n[DECISION 2] --No--> [DECISION 3]\n[DECISION 3] --Yes--> [TERMINAL 3]\n[DECISION 3] --No--> [DECISION 4]\n[DECISION 4] --Yes--> [TERMINAL 4]\n[DECISION 4] --No--> [TERMINAL 5]</figure>\n\n12\n\n<!-- PAGE BREAK -->\n\n<figure type=\"FLOWCHART\">Figure 2 - Flowchart A: Labeling Changes. Contains Nonbinding Recommendations. Note: Flowcharts are provided as a visual aid, but do not capture all necessary considerations. Refer to accompanying text when using this flowchart. Refer to Section E as directed by the text for additional recommendations on use of risk assessment. \n\nFlowchart: Labeling Changes\n\n1. Directory of Nodes (Blocks)\n[START] (Oval): \"From Main Chart\"\n[DECISION_A1] (Diamond): \"A1 Is it a change in the indications for use statement?\"\n[DECISION_A1.1] (Diamond): \"A1.1 Is it a change from a device labeled for single use only to a device labeled as reusable?\"\n[DECISION_A1.2] (Diamond): \"A1.2 Is it a change from Rx to over the counter OTC use?\"\n[DECISION_A1.3] (Diamond): \"A1.3 Is it a change to the device name or to solely improve readability or clarity?\"\n[DECISION_A1.4] (Diamond): \"A1.4 Does the change describe a new disease, condition, or pt pop that the device is intended in diagnosing, treating, preventing, curing or mitigating?\"\n[DECISION_A1.5] (Diamond): \"A1.5 Does a risk-based assessment identify any new risks or significantly modified existing risks\"\n[DECISION_A2] (Diamond): \"A2 Does the change add or delete a contraindication?\"\n[DECISION_A3] (Diamond): \"A3 Is it a change in the warnings or precautions?\"\n[DECISION_A4] (Diamond): \"A4 Could it affect the directions for use?\"\n[END_NEW_510K] (Oval): \"New 510(k)\"\n[END_DOCUMENTATION] (Oval): \"Documentation\"\n[END_CBE_510K] (Oval): \"New 510(k) (If only adding a contraindication, submit CBE 510(k))\"\n\n2. Connections (In & Out Flows)\n[START] ----> [DECISION_A1]\n[DECISION_A1] --No--> [DECISION_A2]\n[DECISION_A1] --Yes--> [DECISION_A1.1]\n[DECISION_A1.1] --Yes--> [END_NEW_510K]\n[DECISION_A1.1] --No--> [DECISION_A1.2]\n[DECISION_A1.2] --Yes--> [END_NEW_510K]\n[DECISION_A1.2] --No--> [DECISION_A1.3]\n[DECISION_A1.3] --Yes--> [END_DOCUMENTATION]\n[DECISION_A1.3] --No--> [DECISION_A1.4]\n[DECISION_A1.4] --Yes--> [END_NEW_510K]\n[DECISION_A1.4] --No--> [DECISION_A1.5]\n[DECISION_A1.5] --Yes--> [END_NEW_510K]\n[DECISION_A1.5] --No--> [END_DOCUMENTATION]\n[DECISION_A2] --Yes--> [END_CBE_510K]\n[DECISION_A2] --No--> [DECISION_A3]\n[DECISION_A3] --Yes--> [END_NEW_510K]\n[DECISION_A3] --No--> [DECISION_A4]\n[DECISION_A4] --Yes--> [END_NEW_510K]\n[DECISION_A4] --No--> [END_DOCUMENTATION]</figure>\n\n16\n\n<!-- PAGE BREAK -->\n\nContains Nonbinding Recommendations\n\n<figure type=\"FLOWCHART\">Flowchart: Chart B - Device Modification Decision Tree. 1. Directory of Nodes (Blocks): [START] (Oval): \"From Main Chart\"; [B1] (Diamond/Decision): \"Is the device an IVD?\"; [END_D] (Oval): \"Go to Chart D\"; [B2] (Diamond/Decision): \"Is it a control mechanism, operating principle, or energy type change?\"; [NEW_510K] (Oval): \"New 510(k)\"; [B3] (Diamond/Decision): \"Is it a change in sterilization, cleaning, or disinfection?\"; [B3.1] (Diamond/Decision): \"Is it a change to a Cat B or novel method, does it lower the SAL, or is it a change to how the device is provided?\"; [B3.2] (Diamond/Decision): \"Could the change significantly affect performance/biocompatibility?\"; [DOCUMENTATION] (Oval): \"Documentation\"; [B4] (Diamond/Decision): \"Is there a change in packaging or expiration dating?\"; [B4.1] (Diamond/Decision): \"Is the same method or protocol, described in previous 510(k), used to support change?\"; [B5] (Diamond/Decision): \"Is it any other change in design (e.g., dimensions, performance specifications, wireless communications, components or accessories, patient/user interface)?\"; [B5.1] (Diamond/Decision): \"Does the change significantly affect the use of the device?\"; [B5.2] (Diamond/Decision): \"Does a risk assessment identify any new or significantly modified risks?\"; [B5.3] (Diamond/Decision): \"Is clinical data necessary?\"; [B5.4] (Diamond/Decision): \"Any unexpected issues from V&V activities?\"; [REMINDER] (Rectangle): \"Reminder: Flowcharts are provided as a visual aid, but do not capture all necessary considerations. Refer to accompanying text when using this flowchart.\"; [REFERRAL] (Oval): \"Refer to Section E as directed by the text for additional recommendations on use of risk assessment.\". 2. Connections (In & Out Flows): [START] -> [B1]; [B1] (Yes) -> [END_D]; [B1] (No) -> [B2]; [B2] (Yes) -> [NEW_510K]; [B2] (No) -> [B3]; [B3] (Yes) -> [B3.1]; [B3] (No) -> [B4]; [B3.1] (Yes) -> [NEW_510K]; [B3.1] (No) -> [B3.2]; [B3.2] (Yes) -> [NEW_510K]; [B3.2] (No) -> [DOCUMENTATION]; [B4] (Yes) -> [B4.1]; [B4] (No) -> [B5]; [B4.1] (Yes) -> [DOCUMENTATION]; [B4.1] (No) -> [NEW_510K]; [B5] (Yes) -> [B5.1]; [B5] (No) -> [DOCUMENTATION]; [B5.1] (Yes) -> [NEW_510K]; [B5.1] (No) -> [B5.2]; [B5.2] (Yes) -> [NEW_510K]; [B5.2] (No) -> [B5.3]; [B5.3] (Yes) -> [NEW_510K]; [B5.3] (No) -> [B5.4]; [B5.4] (Yes) -> [NEW_510K]; [B5.4] (No) -> [DOCUMENTATION].</figure>\n\nFigure 3 - Flowchart B: Technology, Engineering, and Performance Changes\n\n24\n\n<!-- PAGE BREAK -->\n\nContains Nonbinding Recommendations\n\n<figure type=\"FLOWCHART\">\n\n<description>This is a decision flowchart outlining the process for evaluating device material changes. The flowchart starts at 'From Main Chart' and proceeds through a series of diamond-shaped decision nodes and rectangular or oval process nodes.</description>\n\n### 1. Directory of Nodes (Blocks)\n- [START] (Rounded Rectangle): \"From Main Chart\"\n- [C1] (Diamond / Decision): \"Is the device an IVD?\"\n- [CHART_D] (Rectangle): \"Go to Chart D\"\n- [C2] (Diamond / Decision): \"Change in material type, formulation, chemical composition, or the material's processing?\"\n- [DOCUMENTATION] (Oval): \"Documentation\"\n- [C3] (Diamond / Decision): \"Will the changed material directly or indirectly contact body tissues or fluids?\"\n- [C4] (Diamond / Decision): \"Does a risk assessment identify any new or increased biocompatibility concerns?\"\n- [C5] (Diamond / Decision): \"Could the change affect performance specifications?\"\n- [NEW_510K] (Oval): \"New 510(k)\"\n- [C4.1] (Diamond / Decision): \"Has the manufacturer used the same material in a similar legally marketed device (including formulation, processing, type and duration of contact, etc.)?\"\n- [B5] (Rectangle): \"Go to B5\"\n- [REMINDER] (Rectangle): \"Reminder: Flowcharts are provided as a visual aid, but do not capture all necessary considerations. Refer to accompanying text when using this flowchart.\"\n- [SECTION_E] (Circle): \"Refer to Section E as directed by the text for additional recommendations on use of risk assessment.\"\n\n### 2. Connections (In & Out Flows)\n- [START] ----> [C1]\n- [C1] --Yes--> [CHART_D]\n- [C1] --No--> [C2]\n- [C2] --No--> [DOCUMENTATION]\n- [C2] --Yes--> [C3]\n- [C3] --No--> [C5]\n- [C3] --Yes--> [C4]\n- [C4] --No--> [C5]\n- [C4] --Yes--> [C4.1]\n- [C4.1] --No--> [NEW_510K]\n- [C4.1] --Yes--> [SECTION_E]\n- [C5] --No--> [DOCUMENTATION]\n- [C5] --Yes--> [B5]</figure>\n\nFigure 4 - Flowchart C: Materials Changes\n\n33\n\n<!-- doc_id=parse-01m7rvqs7m1nbk2phjdfzfkntk -->",
+  "metadata": {
+    "job_id": "extract-01m7rvr25ftvv1nnr8mbvxg41f",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 221362,
+    "doc_id": "parse-01m7rvqs7m1nbk2phjdfzfkntk",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 7.3,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 9767,
+    "output_extraction_chars": 5268,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

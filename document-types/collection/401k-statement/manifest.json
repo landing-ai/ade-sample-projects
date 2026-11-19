@@ -47,9 +47,9 @@
       "occurrence": 0
     },
     {
-      "path": "period_end_date",
-      "label": "Statement date",
-      "occurrence": 4
+      "path": "account_value",
+      "label": "Account value",
+      "occurrence": 0
     },
     {
       "path": "activity_summary.closing_value",
@@ -73,5 +73,34 @@
     3,
     4,
     6
+  ],
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 10.3,
+      "extract_credits": 6.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 10.3,
+      "extract_credits": 6.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 7,
+      "service_tier": "standard",
+      "parse_credits": 3.6,
+      "extract_credits": 6.5
+    }
   ]
 }

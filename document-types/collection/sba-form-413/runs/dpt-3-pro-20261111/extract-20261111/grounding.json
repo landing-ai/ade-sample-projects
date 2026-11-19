@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 6,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "business.business_type",
+      "label": "Business type",
+      "value": "Sole Proprietor",
+      "page": 2,
+      "box": {
+        "xmin": 0.60984,
+        "ymin": 0.24631,
+        "xmax": 0.72198,
+        "ymax": 0.2583
+      },
+      "range": {
+        "end": 5961,
+        "start": 5946
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "business-business_type.png"
+    },
+    {
+      "path": "assets.total_assets",
+      "label": "Total assets",
+      "value": 23000,
+      "page": 2,
+      "box": {
+        "xmin": 0.38406,
+        "ymin": 0.60756,
+        "xmax": 0.44186,
+        "ymax": 0.61945
+      },
+      "range": {
+        "end": 8218,
+        "start": 8210
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "assets-total_assets.png"
+    },
+    {
+      "path": "liabilities.total",
+      "label": "Total",
+      "value": 23000,
+      "page": 2,
+      "box": {
+        "xmin": 0.84015,
+        "ymin": 0.58187,
+        "xmax": 0.89739,
+        "ymax": 0.59323
+      },
+      "range": {
+        "end": 8150,
+        "start": 8142
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "liabilities-total.png"
+    },
+    {
+      "path": "liabilities.net_worth",
+      "label": "Net worth",
+      "value": 23000,
+      "page": 2,
+      "box": {
+        "xmin": 0.83841,
+        "ymin": 0.55783,
+        "xmax": 0.89564,
+        "ymax": 0.56919
+      },
+      "range": {
+        "end": 8046,
+        "start": 8038
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "liabilities-net_worth.png"
+    }
+  ]
+}

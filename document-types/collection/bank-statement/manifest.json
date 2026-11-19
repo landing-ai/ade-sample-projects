@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no page or fields. At the document owner's request the featured fields are the ones a lender reads from a bank statement to verify an applicant's funds: the institution, account holder, account number, statement date and ending balance. Inflows and outflows are extracted but not featured. The account holder is specimen data. The ending balance grounds to its whole summary row (label, date and amount). The institution grounds to the CARSON BANK wordmark, which is vector artwork with no text layer: the parse read the name off the drawing. This replaces a first build from Manulife Bank's Manulife One sample, which is a home-equity line of credit rather than a standard bank statement and now lives at heloc-statement. The sample does not agree with itself, and extraction returns every figure as printed: the summary's previous and ending balances are 3,005.93 and 6,682.22, while the transaction register runs from 445.28 to 942.82 (its own running balance is internally consistent), the page 3 daily balance summary follows neither, and the summary's 6.00 service charge differs from the register's 10.00 service charge and 3.00 paper statement charge. The deposits and withdrawals totals are printed a second time as the pie chart's labels, and occurrence 1 grounds there. The period start and end dates read OFF only because they are normalized to ISO dates; the statement date is kept as printed, 'July 31, 20XX'."
+  "notes": "The request named no page or fields. At the document owner's request the featured fields are the ones a lender reads from a bank statement to verify an applicant's funds: the institution, account holder, account number, statement date and ending balance. Inflows and outflows are extracted but not featured. The account holder is specimen data. The ending balance grounds to its whole summary row (label, date and amount). The institution grounds to the CARSON BANK wordmark, which is vector artwork with no text layer: the parse read the name off the drawing. This replaces a first build from Manulife Bank's Manulife One sample, which is a home-equity line of credit rather than a standard bank statement and now lives at heloc-statement. The sample does not agree with itself, and extraction returns every figure as printed: the summary's previous and ending balances are 3,005.93 and 6,682.22, while the transaction register runs from 445.28 to 942.82 (its own running balance is internally consistent), the page 3 daily balance summary follows neither, and the summary's 6.00 service charge differs from the register's 10.00 service charge and 3.00 paper statement charge. The deposits and withdrawals totals are printed a second time as the pie chart's labels, and occurrence 1 grounds there. The period start and end dates read OFF only because they are normalized to ISO dates; the statement date is kept as printed, 'July 31, 20XX'.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 7.9,
+      "extract_credits": 10.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 8.3,
+      "extract_credits": 10.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 2.8,
+      "extract_credits": 10.2
+    }
+  ]
 }

@@ -42,5 +42,25 @@
       "occurrence": 0
     }
   ],
-  "notes": "The request named no feature page or fields. The five featured fields tell the preference story a customs broker checks: the shipment (vessel and port of loading), what it carried (item 1, footwear), its tariff classification (HS 6403.99) and the origin criterion that qualifies it for the FTA rate (WO, wholly obtained). All read ok and each box sits tightly on its value. Tried and rejected after viewing the overlay: the certificate number (ok, but its box covers the whole top-right header cell, title and 'Issued in' line included) and the invoice value (ok, but its box covers the empty lower part of box 12 and only grazes the value). Not featured: the parties, whose boxes cover the whole cell including the printed caption; every date, and the invoice date in particular, which came back truncated to 'NOV. 03, 201' where the scan clips the right edge of box 12; item 1's quantity, which came back empty although item 2's identical 216PRS was read; and the stamp and signature booleans, which ground to the parse's [STAMPED] and [SIGNED] labels rather than the marks themselves."
+  "notes": "The request named no feature page or fields. The five featured fields tell the preference story a customs broker checks: the shipment (vessel and port of loading), what it carried (item 1, footwear), its tariff classification (HS 6403.99) and the origin criterion that qualifies it for the FTA rate (WO, wholly obtained). All read ok and each box sits tightly on its value. Tried and rejected after viewing the overlay: the certificate number (ok, but its box covers the whole top-right header cell, title and 'Issued in' line included) and the invoice value (ok, but its box covers the empty lower part of box 12 and only grazes the value). Not featured: the parties, whose boxes cover the whole cell including the printed caption; every date, and the invoice date in particular, which came back truncated to 'NOV. 03, 201' where the scan clips the right edge of box 12; item 1's quantity, which came back empty although item 2's identical 216PRS was read; and the stamp and signature booleans, which ground to the parse's [STAMPED] and [SIGNED] labels rather than the marks themselves.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 2.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.4,
+      "extract_credits": 2.6
+    }
+  ]
 }

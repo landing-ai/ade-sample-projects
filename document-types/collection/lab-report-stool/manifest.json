@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "report_title", "label": "Report", "occurrence": 0 },
-    { "path": "order.order_number", "label": "Order number", "occurrence": 0 },
-    { "path": "specimen_dates.collected", "label": "Collected", "occurrence": 0 },
-    { "path": "specimen_dates.received", "label": "Received", "occurrence": 0 },
-    { "path": "specimen_dates.reported", "label": "Reported", "occurrence": 0 }
+    {
+      "path": "report_title",
+      "label": "Report",
+      "occurrence": 0
+    },
+    {
+      "path": "order.order_number",
+      "label": "Order number",
+      "occurrence": 0
+    },
+    {
+      "path": "specimen_dates.collected",
+      "label": "Collected",
+      "occurrence": 0
+    },
+    {
+      "path": "specimen_dates.received",
+      "label": "Received",
+      "occurrence": 0
+    },
+    {
+      "path": "specimen_dates.reported",
+      "label": "Reported",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request suggested results-table fields (elastase, calprotectin, secretory IgA, occult blood, total SCFAs). None could be featured. Every value in the results table extracts correctly, but every range lands one table cell after its value: the analyte grounds to its result cell, the result to its unit cell, the reference interval to the next row's analyte. The parse itself is correct cell by cell; the shift is in the extraction's ranges, it affects only this table (which the parse wraps in a <figure type=\"CHART\"> because of the range-bar graphics), and a second extract-only run reproduced it exactly. The featured fields come from the header instead: the report, its order, and the specimen's collected, received and reported dates, all printed MM/DD/YYYY and kept as printed by the schema, so they ground ok. The patient block is specimen data and is not featured."
+  "notes": "The request suggested results-table fields (elastase, calprotectin, secretory IgA, occult blood, total SCFAs). None could be featured. Every value in the results table extracts correctly, but every range lands one table cell after its value: the analyte grounds to its result cell, the result to its unit cell, the reference interval to the next row's analyte. The parse itself is correct cell by cell; the shift is in the extraction's ranges, it affects only this table (which the parse wraps in a <figure type=\"CHART\"> because of the range-bar graphics), and a second extract-only run reproduced it exactly. The featured fields come from the header instead: the report, its order, and the specimen's collected, received and reported dates, all printed MM/DD/YYYY and kept as printed by the schema, so they ground ok. The patient block is specimen data and is not featured.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.9,
+      "extract_credits": 5.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 4.7,
+      "extract_credits": 5.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 3,
+      "service_tier": "standard",
+      "parse_credits": 1.8,
+      "extract_credits": 5.9
+    }
+  ]
 }

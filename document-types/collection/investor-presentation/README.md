@@ -1,11 +1,104 @@
 # Investor presentation
 
-Source assets for `landing.ai/document-type/investor-presentation`.
+**On the website:** [landing.ai/document-type/investor-presentation](https://landing.ai/document-type/investor-presentation)
 
-## Sample document
+Park National Corporation's investor slides for the fourth quarter of 2025, a bank
+holding company's 43-slide deck. It covers the company's financial results and
+business lines in bullet points, tables, bar and pie charts and footnotes, with an
+appendix of supporting data.
 
-`source/Q4-2025-Investor-Slides.pdf` — Park National Corporation's Q4 2025 investor
-slides. **43 pages, landscape (720×540).**
+| | |
+|---|---|
+| Pages | 43 |
+| Fields in the extraction schema | 23 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:10 | 2026-11-19 03:17 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 94,561 | 96,043 |
+| Words under 0.95 confidence | 88 | n/a |
+| Words under 0.80 confidence | 22 | n/a |
+| Words under 0.50 confidence | 7 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 21.4 s | 36.6 s |
+| Per page | 0.5 s | 0.9 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 16.0 credits | 45.6 credits |
+| Per page | 0.37 credits | 1.06 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:11 | 2026-11-19 03:18 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 23 | 23 |
+| Non-null fields returned | 23 | 23 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 86.3 s | 245.0 s |
+| Per schema field (23) | 3.75 s | 10.65 s |
+| Per value returned | 1.76 s | 5.00 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 20.8 credits | 21.2 credits |
+| Per schema field (23) | 0.904 credits | 0.922 credits |
+| Per value returned | 0.424 credits | 0.433 credits |
+
+## Origin
+
+`source/Q4-2025-Investor-Slides.pdf` is Park National Corporation's Q4 2025 investor
+slides. It is **43 pages, landscape (720×540)**, with a text layer.
 
 | | |
 |---|---|
@@ -16,113 +109,33 @@ slides. **43 pages, landscape (720×540).**
 
 Investor relations material published by a listed company for general distribution, so
 it is publishable without further clearance. It names executives, but only in their
-professional capacity, which is the point of the document.
-
-Full provenance is in `manifest.json` under `source.origin`, where the authoring tooling
-can read it — this section is the human-readable version.
+professional capacity, which is the point of the document. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is the pilot's hard case, and it is in the pilot to break things early:
+### Who processes it
 
-- **Landscape**, where every other sample is portrait. Crop and render logic tuned on
-  portrait pages would produce bad output here.
-- **43 pages**, so featured fields land on different pages and the page-render path is
-  exercised properly. The five featured fields fall on pages 1, 4 and 6.
-- **A dark cover slide.** The highlight style was designed against white documents, and
-  this was the first real test of it on a dark background.
-- **Parsing matters more than extraction.** The schema is deliberately thin — seven flat
-  fields. The value in a deck is what parsing recovers from slide layouts, charts and
-  tables, not a rich field set.
+Public companies publish a deck like this each quarter alongside their earnings, and
+the figures in it are read across the investment industry.
 
-## What it surfaced
+- **Equity research and investment banking:** analysts pull results and ratios from
+  each quarter's deck into their models.
+- **Asset managers and institutional investors:** portfolio teams compare peers on the
+  same metrics quarter after quarter.
+- **Bank and credit analysis:** analysts and rating agencies track asset quality,
+  capital and income mix for lenders like this one.
+- **Financial data providers:** they capture slide figures into datasets for their
+  subscribers.
+- **Corporate development and competitive intelligence:** teams follow competitors'
+  stated strategy and results.
 
-**The highlight works on a dark slide, but looks different.** Translucent yellow over
-dark navy reads as a greenish tint rather than a warm highlight. It is legible, and the
-amber border carries it, but it is visibly not the same treatment as on a white page. If
-the library ends up with many dark documents this may need a background-aware fill.
+### What it contains
 
-**Grounding can support a value without showing it.** `total_assets` extracted as
-`$9.8 billion` and its first range grounds to a table cell reading `$ 9,805`. Both are
-correct — 9,805 million is 9.8 billion — but a crop whose text does not match the value
-printed beside it reads as an error. `build_images.py` now warns on this and names an
-occurrence that does contain the value; the manifest pins `total_assets` to occurrence 1.
-
-**Common values have many occurrences.** `company_name` appears 49 times in the deck and
-`as_of_date` 57 times, so the default first-occurrence choice is close to arbitrary. All
-five featured fields are pinned.
-
-## Extraction
-
-`schema.json` has seven company-level fields plus a `fee_income` object built around
-**page 20, "Diverse Fee Income"** — a slide from the main presentation rather than the
-appendix. That page carries all four element types in one place, which is why it was
-chosen:
-
-| Region | Featured field |
-|---|---|
-| Overview bullet | The 21.5% non-interest income ratio, in prose |
-| Bar chart | The same ratio, as a chart label |
-| Pie chart | Fiduciary Activities, the largest income source |
-| Footnotes | The $6.1MM pension settlement gain |
-
-The ratio is featured twice deliberately: the same figure grounded in a sentence and in
-a chart is a better demonstration than two unrelated values.
-
-Everything extracts correctly — all five years of the bar chart, all six pie slices with
-their percentages, the bullet figures, and the footnote detail.
-
-## Featured fields must share a page
-
-A web page can realistically embed one page overlay, so every featured field has to live
-on the same page. `manifest.json` declares `"feature_page": 20` and `build_images.py`
-warns if any field resolves elsewhere. An earlier manifest featured fields from pages 1,
-4 and 6, which no single image could show.
-
-## Choosing what to feature
-
-Reading `extract-*.json` is not enough to pick fields. Three failure modes are invisible
-until you look, and `inspect_fields.py` exists to surface all three:
-
-```bash
-python document-types/scripts/inspect_fields.py investor-presentation --page 20 --good
-```
-
-**Synthesized values.** `net_interest_income_latest_year` is correct at 437.3 but has no
-ranges at all — ADE read it from the chart without being able to point at it. It cannot
-be illustrated.
-
-**Grounding off by one.** Array elements in dense tables and charts ground one cell
-adrift: in `revenue_by_year`, `year` grounds to the net interest income figure, which
-grounds to the non-interest income figure, and so on. The values are right; the ranges
-are shifted. Not universal — the pie chart array on this same page grounds correctly, as
-does `line_items` on the invoice.
-
-**Grounded on another page.** The bar chart's series values ground to page 18, not 20.
-
-Two further traps this page hit: a field can ground to a whole `figure` block rather than
-to the value inside it, so featuring both the pie's `source` and its `share_percent`
-produced *identical* images; and a value printed in several places needs its occurrence
-pinned, or the box wanders between runs.
-
-`build_images.py` compares every extracted value against the text it boxed and warns on a
-mismatch, which is what caught the off-by-one. Never feature a field without reading its
-crop.
-
-## Cost
-
-**65.50 credits** at standard tier for 43 pages, parse and extract together. By
-comparison the one-page invoice cost 3.10.
-
-Iterating on the schema does not cost that again: `run_ade.py --extract-only` reuses the
-committed parse and re-runs extraction alone, at **21.30 credits**. Parsing is the
-expensive half and the markdown does not change.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py investor-presentation                # 65.50 credits
-.venv/bin/python document-types/scripts/run_ade.py investor-presentation --extract-only # 21.30, schema iteration
-.venv/bin/python document-types/scripts/build_images.py investor-presentation           # free
-.venv/bin/python document-types/scripts/inspect_fields.py investor-presentation --page 20 --good
-```
+- **Landscape slides** in a 43-page deck.
+- **Bar and pie charts** whose values appear only as chart labels.
+- **Financial tables,** some in an appendix, with figures in millions.
+- **Bullet points** that restate chart figures in prose.
+- **Footnotes** with detail the charts and bullets leave out.
+- **A dark cover slide** with light text.
+- **The same company name and dates repeated** on nearly every slide.

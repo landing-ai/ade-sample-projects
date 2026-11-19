@@ -1,13 +1,107 @@
 # Utility bill
 
-Source assets for `landing.ai/document-type/utility-bill`.
+**On the website:** [landing.ai/document-type/utility-bill](https://landing.ai/document-type/utility-bill)
 
-## Sample document
+A PSE&G residential electric and gas bill for May 19 to June 17, 2020, with the
+customer's details replaced. It has a summary with a payment stub, a charges overview,
+and a detail page for each service with the meter, readings, usage, delivery and supply
+charges, a total and a usage chart.
 
-`source/pseg-electric-gas-bill-redacted.pdf` — a PSE&G residential electric and gas bill
-for May 19 to June 17, 2020, redacted. **4 pages, portrait (612×792)**, with a full text
-layer: a summary with a payment stub on page 1, a charges overview on page 2, gas details
-on page 3 and electric details on page 4, each detail page with a usage chart.
+| | |
+|---|---|
+| Pages | 4 |
+| Fields in the extraction schema | 24 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:41 | 2026-11-19 03:57 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 13,135 | 12,273 |
+| Words under 0.95 confidence | 58 | n/a |
+| Words under 0.80 confidence | 21 | n/a |
+| Words under 0.50 confidence | 10 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 7.3 s | 16.5 s |
+| Per page | 1.8 s | 4.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.0 credits | 5.1 credits |
+| Per page | 0.50 credits | 1.27 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:41 | 2026-11-19 03:57 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 24 | 24 |
+| Non-null fields returned | 24 | 24 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 119.2 s | 124.4 s |
+| Per schema field (24) | 4.97 s | 5.18 s |
+| Per value returned | 4.97 s | 5.18 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 3.5 credits | 3.3 credits |
+| Per schema field (24) | 0.146 credits | 0.137 credits |
+| Per value returned | 0.146 credits | 0.137 credits |
+
+## Origin
+
+`source/pseg-electric-gas-bill-redacted.pdf` is a PSE&G residential electric and gas
+bill for May 19 to June 17, 2020, redacted. It is **4 pages, portrait (612×792)**, with a
+full text layer: a summary with a payment stub on page 1, a charges overview on page 2,
+gas details on page 3 and electric details on page 4, each detail page with a usage
+chart.
 
 | | |
 |---|---|
@@ -16,17 +110,15 @@ on page 3 and electric details on page 4, each detail page with a usage chart.
 | Retrieved | 2026-09-27 |
 | Clearance | Redacted |
 
-## Redaction
-
-Despite "Sample" in its Scribd title, this is a real customer's bill, uploaded to Scribd by
-a third party. Scribd is a user-upload site, so the uploader is not the publisher, and the
-bill is treated as a personal record. The local copy used is
+Despite "Sample" in its Scribd title, this is a real customer's bill, uploaded to Scribd
+by a third party. Scribd is a user-upload site, so the uploader is not the publisher,
+and the bill is treated as a personal record. The local copy used is
 `Use_Cases/Utility_Bills/input_folder/electric2.pdf`, **where the same bill is already
 committed to this repo unredacted.** That copy is outside this folder and is not changed
 here.
 
-Nine identifiers were replaced using `document-types/scripts/redact.py`, which removes the
-underlying text rather than covering it, 21 replacements across the four pages:
+Nine identifiers were replaced using `document-types/scripts/redact.py`, which removes
+the underlying text rather than covering it, 21 replacements across the four pages:
 
 | What | Replaced with | Occurrences |
 |---|---|---|
@@ -40,113 +132,49 @@ underlying text rather than covering it, 21 replacements across the four pages:
 | Electric meter number | 245603755 | 1 |
 | Gas meter number | 7651211 | 1 |
 
-**The numbers are plausible stand-ins, not zeros.** The name and address are obviously
-fake, but the account, invoice, point-of-delivery and meter numbers are random numbers of
-the same shape from `document-types/scripts/plausible.py`, so the bill still reads as a
-bill. The account number is one stand-in printed in both its forms, spaced and unspaced.
-None is derived from the original. This sample was first redacted with all-zero
-stand-ins and redone this way, which is now the default for every redaction.
+**The numbers are plausible stand-ins, not zeros.** The account, invoice,
+point-of-delivery and meter numbers are random numbers of the same shape from
+`document-types/scripts/plausible.py`, so the bill still reads as a bill. The account
+number is one stand-in printed in both its forms, spaced and unspaced. None is derived
+from the original.
 
 The PDF metadata was also cleared. PSE&G's name, logo, phone numbers and PO box, and the
-bill's amounts, dates and usage, are left as printed.
+bill's amounts, dates and usage, are left as printed. Some replacements are visibly
+edited: the name in the page headers came out in regular weight rather than bold, and
+the account number in the payment stub's scan line is Helvetica rather than the original
+OCR font.
 
-Some replacements are visibly edited: the name in the page headers came out in regular
-weight rather than bold, and the account number in the payment stub's scan line is
-Helvetica rather than the original OCR font.
-
-**Verified:** no original identifier is extractable from the committed PDF, and none
-appears anywhere in this folder. The original values are deliberately not recorded here
-or in `manifest.json`. The rules file used by `redact.py` stays outside the repo.
+No original identifier is extractable from the committed PDF, and none appears anywhere
+in this folder. The original values are deliberately not recorded here or in
+`manifest.json`. The rules file used by `redact.py` stays outside the repo. Full
+provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-The collection's first **utility bill**, and the first sample built on a team schema that
-had to be extended:
+### Who processes it
 
-- **Two services on one bill.** Electric and gas each have a detail page with a meter,
-  readings, usage, delivery and supply charges, and a total.
+A utility bill records a household's energy use and charges, and it is one of the most
+widely accepted proofs of address.
+
+- **Banking and identity verification:** banks and fintechs accept a recent utility bill
+  as proof of address when opening accounts.
+- **Mortgage and consumer lending:** lenders use utility bills to confirm residence and
+  recurring obligations.
+- **Energy management and sustainability reporting:** companies track usage and cost
+  across sites from monthly bills.
+- **Utility bill auditing and payment services:** they check charges, rates and meter
+  readings and pay bills on behalf of customers.
+- **Government assistance programs:** energy assistance caseworkers verify the account,
+  the service address and the amount owed.
+
+### What it contains
+
+- **Two services on one bill,** each with its own detail page, meter, readings, usage,
+  delivery and supply charges, and total.
 - **The same identifier everywhere.** The account number is printed six times in two
-  formats, across all four pages.
-- **Charges in a dotted leader list.** Each charge sits at the right end of a dotted line,
-  with subtotals in bold.
-
-## Featured fields: the electric charges
-
-All on **page 4**, as the request asked, with the request's own field names as labels:
-
-| Field | Value |
-|---|---|
-| Account number | 6873630651 |
-| Meter number | 245603755 |
-| Delivery charges | $16.71 |
-| Service charges | $4.95 |
-| Total electric charges | $46.42 |
-
-The account and meter numbers shown are plausible stand-ins, not the originals. The
-account number is pinned to its page 4 occurrence, in the page header, and the total to
-its page 4 occurrence, the bar; the total is also printed on page 2's summary.
-
-## The schema was extended
-
-`schema.json` is `Use_Cases/Utility_Bills/utility_bill.json`, the team's schema, with
-**two fields added** and nothing else changed:
-
-- `electric_charges.monthly_service_charge`
-- `electric_charges.total_delivery_charges`
-
-The request asked for delivery charges and service charges, and the team schema has no
-field for either: it covers totals per service, meters, usage and account details, not
-the charge lines. The skill's rule is to use a supplied schema unchanged, so the run
-stopped and asked, and the document owner chose to extend it. Extraction was then re-run
-on the same parse. Both new fields extract correctly and box exactly their amounts. The
-original file in `Use_Cases/` is unchanged.
-
-## What it surfaced
-
-**A total folded into a chart.** "Total electric charges $46.42" is printed on a shaded
-bar directly above the electric usage chart, and the parse includes the bar in the chart's
-figure block. The value extracts correctly, but its box covers the bar and the whole chart
-beneath it. It is featured because it was requested; the crop shows the total at the top.
-
-**A plain list grounds precisely.** The monthly service charge and the delivery total, at
-the right end of dotted leader lines, box exactly their amounts, as do the meter number
-and the kWh usage line.
-
-**Normalized dates are flagged.** The schema asks for dates it then gets as ISO
-(`2020-06-19`), or as `06-17-2020` for the service period, which no longer match the
-printed "June 19, 2020". The values are right.
-
-**A yes-or-no about charts.** `usage_bar_chart` extracts as true and grounds to the three
-chart figures, which the consistency check flags.
-
-32 of 45 rows in the grounding check are `ok`; the 13 flagged are the dates, the chart
-boolean, and the service address, which this run grounds line by line.
-
-## Extraction
-
-**24 leaf fields**: the team schema's 22 plus the two added. Provider, account and service
-address, billing summary, electric charges and gas charges all populate, with no warnings.
-Gas extracts from page 3: $20.67 for 17.806 therms.
-
-## Cost
-
-**25.30 credits** at standard tier in total, across four runs: the first run with the team
-schema (9.00), a re-extraction with the two added fields (3.60), a full re-run after the
-numbers were re-redacted with plausible stand-ins (9.10), and one more re-extraction
-(3.60). That last one was needed because the full re-run returned the account number with
-page 1 ranges only; range selection varies between runs, and the repeat restored the page 4
-range. Regenerating from scratch costs 9.10 (5.50 to parse, 3.60 to extract).
-
-## Regenerating
-
-```bash
-# Redaction, from the local copy, with the rules file kept outside the repo:
-.venv/bin/python document-types/scripts/redact.py Use_Cases/Utility_Bills/input_folder/electric2.pdf \
-    document-types/collection/utility-bill/source/pseg-electric-gas-bill-redacted.pdf \
-    --rules <outside-the-repo>/rules.json
-
-.venv/bin/python document-types/scripts/run_ade.py utility-bill                # 9.10 credits
-.venv/bin/python document-types/scripts/run_ade.py utility-bill --extract-only # 3.60, schema iteration
-.venv/bin/python document-types/scripts/build_images.py utility-bill           # free
-.venv/bin/python document-types/scripts/inspect_fields.py utility-bill --page 4
-```
+  formats across all four pages.
+- **Charges in a dotted leader list,** with each amount at the right end of a dotted
+  line and subtotals in bold.
+- **A total printed on a shaded bar** directly above a usage bar chart.
+- **Usage bar charts** on each detail page.
+- **A payment stub** with a machine-readable scan line.

@@ -1,0 +1,88 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "transactions[2].time",
+      "label": "Transaction time",
+      "value": "11:12:12",
+      "page": 1,
+      "box": {
+        "xmin": 0.11142,
+        "ymin": 0.60454,
+        "xmax": 0.18199,
+        "ymax": 0.6124
+      },
+      "range": {
+        "end": 4037,
+        "start": 4029
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-time.png"
+    },
+    {
+      "path": "transactions[2].direction",
+      "label": "Direction",
+      "value": "Sent",
+      "page": 1,
+      "box": {
+        "xmin": 0.23792,
+        "ymin": 0.59763,
+        "xmax": 0.27246,
+        "ymax": 0.60581
+      },
+      "range": {
+        "end": 4050,
+        "start": 4046
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-direction.png"
+    },
+    {
+      "path": "transactions[2].amount_crypto",
+      "label": "Amount (BTC)",
+      "value": 0.02314739,
+      "page": 1,
+      "box": {
+        "xmin": 0.40952,
+        "ymin": 0.59742,
+        "xmax": 0.49875,
+        "ymax": 0.60577
+      },
+      "range": {
+        "end": 4069,
+        "start": 4059
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-amount_crypto.png"
+    },
+    {
+      "path": "transactions[2].amount_usd",
+      "label": "Amount (USD)",
+      "value": 1134.36,
+      "page": 1,
+      "box": {
+        "xmin": 0.56327,
+        "ymin": 0.59736,
+        "xmax": 0.63433,
+        "ymax": 0.60669
+      },
+      "range": {
+        "end": 4086,
+        "start": 4078
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "transactions-2-amount_usd.png"
+    }
+  ]
+}

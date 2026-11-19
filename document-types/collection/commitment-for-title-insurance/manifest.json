@@ -96,18 +96,8 @@
       "occurrence": 0
     },
     {
-      "path": "form_edition",
-      "label": "Form edition",
-      "occurrence": 0
-    },
-    {
-      "path": "attestation.is_signed",
-      "label": "Signed",
-      "occurrence": 0
-    },
-    {
-      "path": "attestation.has_seal_or_stamp",
-      "label": "Seal or stamp",
+      "path": "underwriter.state_of_incorporation",
+      "label": "State of incorporation",
       "occurrence": 0
     }
   ],
@@ -117,5 +107,34 @@
     7,
     8
   ],
-  "notes": "The request named feature page 1 and no fields, and asked that two booleans be featured: whether the document is signed and whether it carries a seal or stamp. Both are honoured on page 1. attestation.is_signed grounds to the parse's [SIGNED] attestation label and attestation.has_seal_or_stamp to its [SEALED] label, the corporate seal on the jacket; inspect_fields.py and build_images.py flag both as OFF because the word 'true' is not on the page, which is expected for a boolean, and both crops were checked by eye. The other three fields identify the commitment: its number, the underwriter, and the ALTA form it is written on. No person is featured. issuing_agent.name was not used: its value spans two lines, so each of its two ranges holds only part of it and both read OFF."
+  "notes": "The request named feature page 1 and no fields, and asked that two booleans be featured: whether the document is signed and whether it carries a seal or stamp. Both are honoured on page 1. attestation.is_signed grounds to the parse's [SIGNED] attestation label and attestation.has_seal_or_stamp to its [SEALED] label, the corporate seal on the jacket; inspect_fields.py and build_images.py flag both as OFF because the word 'true' is not on the page, which is expected for a boolean, and both crops were checked by eye. The other three fields identify the commitment: its number, the underwriter, and the ALTA form it is written on. No person is featured. issuing_agent.name was not used: its value spans two lines, so each of its two ranges holds only part of it and both read OFF.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 11,
+      "service_tier": "standard",
+      "parse_credits": 13.4,
+      "extract_credits": 13.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 11,
+      "service_tier": "standard",
+      "parse_credits": 13.5,
+      "extract_credits": 12.1
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 11,
+      "service_tier": "standard",
+      "parse_credits": 4.8,
+      "extract_credits": 12.4
+    }
+  ]
 }

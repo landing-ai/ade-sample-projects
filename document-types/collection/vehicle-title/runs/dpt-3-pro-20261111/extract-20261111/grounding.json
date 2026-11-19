@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "vehicle.vin",
+      "label": "VIN",
+      "value": "1FTEW1E86HFB56934",
+      "page": 1,
+      "box": {
+        "xmin": 0.06052,
+        "ymin": 0.24427,
+        "xmax": 0.26231,
+        "ymax": 0.25724
+      },
+      "range": {
+        "end": 440,
+        "start": 423
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-vin.png"
+    },
+    {
+      "path": "vehicle.year",
+      "label": "Model year",
+      "value": "2017",
+      "page": 1,
+      "box": {
+        "xmin": 0.40602,
+        "ymin": 0.24504,
+        "xmax": 0.45177,
+        "ymax": 0.25653
+      },
+      "range": {
+        "end": 462,
+        "start": 458
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-year.png"
+    },
+    {
+      "path": "vehicle.make",
+      "label": "Make",
+      "value": "FORD",
+      "page": 1,
+      "box": {
+        "xmin": 0.47659,
+        "ymin": 0.24571,
+        "xmax": 0.52421,
+        "ymax": 0.25616
+      },
+      "range": {
+        "end": 475,
+        "start": 471
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "vehicle-make.png"
+    },
+    {
+      "path": "title_number",
+      "label": "Title number",
+      "value": "9440212714",
+      "page": 1,
+      "box": {
+        "xmin": 0.79435,
+        "ymin": 0.24303,
+        "xmax": 0.91323,
+        "ymax": 0.2558
+      },
+      "range": {
+        "end": 509,
+        "start": 499
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "title_number.png"
+    },
+    {
+      "path": "date_issued",
+      "label": "Date issued",
+      "value": "07/08/17",
+      "page": 1,
+      "box": {
+        "xmin": 0.84519,
+        "ymin": 0.26982,
+        "xmax": 0.9391,
+        "ymax": 0.2836
+      },
+      "range": {
+        "end": 784,
+        "start": 776
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "date_issued.png"
+    }
+  ]
+}

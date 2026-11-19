@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "loan_number", "label": "Loan number", "occurrence": 0 },
-    { "path": "letter_date", "label": "Letter date", "occurrence": 0 },
-    { "path": "payee.name", "label": "Investor (payee)", "occurrence": 0 },
-    { "path": "warehouse_lender_name", "label": "Warehouse lender", "occurrence": 0 },
-    { "path": "funding_expiration_days", "label": "Funding window (business days)", "occurrence": 1 }
+    {
+      "path": "loan_number",
+      "label": "Loan number",
+      "occurrence": 0
+    },
+    {
+      "path": "letter_date",
+      "label": "Letter date",
+      "occurrence": 0
+    },
+    {
+      "path": "payee.name",
+      "label": "Investor (payee)",
+      "occurrence": 0
+    },
+    {
+      "path": "warehouse_lender_name",
+      "label": "Warehouse lender",
+      "occurrence": 0
+    },
+    {
+      "path": "funding_expiration_days",
+      "label": "Funding window (business days)",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no page or fields, and asked that the schema follow Ocrolus's bailee-letter field list; schema.json covers 20 of its 21 fields (signature blocks as an array; mortgagor address line 2 is left out because the sample has none) plus the payee address, purchase price, bank name and the party the bailee acts for. Page 1 features the deal itself: the loan, the date, the investor it is tendered to, the warehouse lender holding the security interest, and how long the investor has to fund. funding_expiration_days is pinned to occurrence 1, the sentence giving 'ten (10) business days'; occurrence 0 grounds to a sentence about 'ten days' worded as an option to purchase, which reads OFF. No person is featured. Page 3's signature blocks extract with the companies paired wrongly: see README."
+  "notes": "The request named no page or fields, and asked that the schema follow Ocrolus's bailee-letter field list; schema.json covers 20 of its 21 fields (signature blocks as an array; mortgagor address line 2 is left out because the sample has none) plus the payee address, purchase price, bank name and the party the bailee acts for. Page 1 features the deal itself: the loan, the date, the investor it is tendered to, the warehouse lender holding the security interest, and how long the investor has to fund. funding_expiration_days is pinned to occurrence 1, the sentence giving 'ten (10) business days'; occurrence 0 grounds to a sentence about 'ten days' worded as an option to purchase, which reads OFF. No person is featured. Page 3's signature blocks extract with the companies paired wrongly: see README.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 3.4,
+      "extract_credits": 1.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 3.4,
+      "extract_credits": 1.9
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 1.2,
+      "extract_credits": 1.9
+    }
+  ]
 }

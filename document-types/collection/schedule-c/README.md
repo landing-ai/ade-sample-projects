@@ -1,99 +1,157 @@
 # Schedule C
 
-Source assets for `landing.ai/document-type/schedule-c`.
+**On the website:** [landing.ai/document-type/schedule-c](https://landing.ai/document-type/schedule-c)
 
-## Sample document
+The 2025 IRS Schedule C (Form 1040), Profit or Loss From Business, filled with IRS test
+data for a fictitious sole proprietor running a design business. It reports the
+business details and accounting method, gross receipts, the expense lines, and the net
+profit. Page 2, for cost of goods sold, vehicle information and other expenses, is blank
+on this return.
 
-`source/schedule-c-2025-irs-ats-scenario-12.pdf`: the 2025 IRS Schedule C (Form 1040),
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 60 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:34 | 2026-11-19 03:52 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 10,809 | 10,962 |
+| Words under 0.95 confidence | 52 | n/a |
+| Words under 0.80 confidence | 22 | n/a |
+| Words under 0.50 confidence | 8 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 51.5 s | 25.2 s |
+| Per page | 25.7 s | 12.6 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.4 credits | 3.8 credits |
+| Per page | 0.70 credits | 1.90 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:35 | 2026-11-19 03:53 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 60 | 60 |
+| Non-null fields returned | 26 | 26 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 125.2 s | 126.1 s |
+| Per schema field (60) | 2.09 s | 2.10 s |
+| Per value returned | 4.82 s | 4.85 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 4.1 credits | 4.1 credits |
+| Per schema field (60) | 0.068 credits | 0.068 credits |
+| Per value returned | 0.158 credits | 0.158 credits |
+
+## Origin
+
+`source/schedule-c-2025-irs-ats-scenario-12.pdf` is the 2025 IRS Schedule C (Form 1040),
 Profit or Loss From Business (Sole Proprietorship), pages 1 and 2, filled with IRS test
-data. **2 pages, portrait.**
+data. It is **2 pages, portrait**.
 
 | | |
 |---|---|
 | Publisher | Internal Revenue Service |
-| Source | [1040-mef-ats-scenario-12-10292025.pdf](https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-12-10292025.pdf), linked from the [Tax Year 2025 Form 1040 series MeF ATS information page](https://www.irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information) |
+| Source | [1040-mef-ats-scenario-12-10292025.pdf](https://www.irs.gov/pub/irs-efile/1040-mef-ats-scenario-12-10292025.pdf) |
+| Linked from | [Tax Year 2025 Form 1040 series MeF ATS information page](https://www.irs.gov/e-file-providers/tax-year-2025-form-1040-series-and-extensions-modernized-e-file-mef-assurance-testing-system-ats-information) |
 | Retrieved | 2026-10-03, by script |
-| Clearance | **Public** (US government work, public domain) |
+| Clearance | Public: US government work, public domain |
 
-The source is the IRS Modernized e-File Assurance Testing System (ATS) Test Scenario
-12 for tax year 2025, which software vendors use to test their e-file output. The
-original PDF is 15 pages: a cover sheet, Form 1040, Schedules 1, 2, C and SE, Forms
-7206 and 7217, and a W-2. This folder keeps **pages 8 and 9 only**, the two pages of
-Schedule C, split out with PyMuPDF. No content was altered.
+The source is the IRS Modernized e-File Assurance Testing System (ATS) Test Scenario 12
+for tax year 2025, which software vendors use to test their e-file output. The original
+PDF is 15 pages: a cover sheet, Form 1040, Schedules 1, 2, C and SE, Forms 7206 and
+7217, and a W-2. This folder keeps **pages 8 and 9 only**, the two pages of Schedule C,
+split out with PyMuPDF. No content was altered.
 
 Every value is IRS test data: a fictitious sole proprietor running a design business
 called ENERGY BUILD in Anytown KY, with an SSN in the 400-00 range the IRS reserves for
 ATS testing. Nothing needed redacting. The PDF metadata was reset to the IRS as author
 and a title naming the scenario.
 
-The pages carry a "TREASURY/IRS AND OMB USE ONLY DRAFT" header and "DRAFT — DO NOT
-FILE" side banners. The parse transcribes them as text blocks. Page 2 (Parts III to V:
-cost of goods sold, vehicle information, other expenses) is blank on this return and is
-kept so the folder holds the complete schedule.
+The pages carry a "TREASURY/IRS AND OMB USE ONLY DRAFT" header and "DRAFT — DO NOT FILE"
+side banners. Page 2 (Parts III to V: cost of goods sold, vehicle information, other
+expenses) is blank on this return and is kept so the folder holds the complete schedule.
+Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-Schedule C is how a sole proprietor reports business income, and it is the document a
-lender asks for to qualify a self-employed borrower. It tests things the collection's
-other tax forms do not:
+### Who processes it
+
+Schedule C is how a sole proprietor reports business income on a personal tax return.
+It is the main record of a self-employed person's earnings.
+
+- **Mortgage lending:** lenders use two years of Schedule C net profit to qualify
+  self-employed borrowers.
+- **Small-business and SBA lending:** loan officers read gross receipts, expenses and
+  net profit to size a loan.
+- **Tax preparation and accounting:** preparers carry the figures into Schedule SE and
+  Form 1040 and compare them year over year.
+- **Income verification and government programs:** agencies and verification services
+  use net profit as the income of a self-employed applicant.
+- **Tax software vendors:** they test their e-file output against IRS scenarios like
+  this one.
+
+### What it contains
 
 - **A two-column expense grid.** Part II runs lines 8-17 down the left and 18-27b down
-  the right, each with its own amount column. Every populated expense (550, 125, 1,000,
-  2,500, 6,532, 200) extracts to the right line and grounds to its own cell.
-- **The same value on four lines.** 35,235 is printed on lines 1, 3, 5 and 7, and each
-  grounds to its own line's amount cell.
-- **A header full of checkboxes and coded fields**: the accounting method, the
-  material-participation and 1099 questions, and the six-digit business code printed in
-  separate boxes (read correctly as 541310).
-
-`schema.json` covers the proprietor, business details (lines A-J), all of Parts I and
-II, line 31 and 32, and the main lines of Parts III-V. **60 leaf fields** (counted
-from the schema).
-
-## Featured fields: from the business to its bottom line
-
-All on page 1.
-
-| Field | Value |
-|---|---|
-| Business name (line C) | ENERGY BUILD |
-| Gross receipts (line 1) | 35235 |
-| Gross income (line 7) | 35235 |
-| Total expenses (line 28) | 10907 |
-| Net profit (line 31) | 24328 |
-
-These are the fields the request's notes suggested, which preferred Part I and the
-summary lines over the Part II grid. They read as one calculation down the right-hand
-column: the business takes in 35,235, spends 10,907 and nets 24,328. No person is
-featured.
-
-The line 31 amount sits low in a short cell, so the box's top edge runs close to the
-digits in the crop. The box is the right cell; the crop was checked by eye.
-
-## Grounding and extraction notes
-
-- **The parse reads every checkbox correctly**, including the empty boxes on lines H
-  and J, the line 1 statutory-employee box, and both line 32 at-risk boxes.
-- **Extraction does not, in two places.** `line_32_at_risk` comes back `all_at_risk`
-  and `filed_required_1099s` (line J) comes back `false`, although both boxes on each
-  line are unchecked. Line 32 only applies to a loss, and this return shows a profit.
-- **Blank amount lines extract as 0, not null**, with ranges pointing at empty cells:
-  every blank line in Parts I-III and line 48. The schema descriptions ask for null on
-  an empty cell. One extraction-only rerun with both points worded more strongly
-  changed nothing. For the arithmetic the two are equivalent, but a consumer who needs
-  to tell "blank" from "zero" cannot rely on this.
-- `business.ein` is correctly empty; `vehicle_placed_in_service` is correctly null.
-- Every populated amount and text field on page 1 grounds to its own cell and reads `ok`.
-
-## Cost
-
-**11.10 credits** at standard tier: 7.30 for the parse and first extraction, 3.80 for
-one extraction-only rerun with tightened descriptions.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py schedule-c
-.venv/bin/python document-types/scripts/build_images.py schedule-c
-.venv/bin/python document-types/scripts/inspect_fields.py schedule-c --page 1
-```
+  the right, each with its own amount column.
+- **The same value on several lines,** with gross receipts repeated on lines 1, 3, 5
+  and 7.
+- **A header full of checkboxes and coded fields:** the accounting method, the
+  material-participation and 1099 questions, and a six-digit business code printed in
+  separate boxes.
+- **Blank amount lines** and a blank second page.
+- **Draft banners** in the header and down the sides of each page.

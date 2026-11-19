@@ -48,5 +48,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features the case caption on page 1: case number, claimant, the respondent member firm, the nature of the dispute and the hearing site, each grounded to its own line. Page 2 carries the outcome ($642,000 compensatory damages, which grounds correctly) but was not chosen: its other fields are long narrative strings and booleans whose ranges cover only part of the value, so their crops read as mismatches. hearing_site_state is not featured because it shares a line with the city and would render the identical crop. claimants[0].name is pinned to occurrence 0, the caption; occurrences 1 and 2 are the representation paragraph. The schema is the team's arbitration-awards schema, used unchanged; it covers expungement awards too, so the expungement fields come back null on this customer case, one of them with a nonconformant_output warning because the schema marks it non-null. preview_pages skips page 4, which is mostly blank, in favour of page 5, the arbitration panel and signatures."
+  "notes": "Features the case caption on page 1: case number, claimant, the respondent member firm, the nature of the dispute and the hearing site, each grounded to its own line. Page 2 carries the outcome ($642,000 compensatory damages, which grounds correctly) but was not chosen: its other fields are long narrative strings and booleans whose ranges cover only part of the value, so their crops read as mismatches. hearing_site_state is not featured because it shares a line with the city and would render the identical crop. claimants[0].name is pinned to occurrence 0, the caption; occurrences 1 and 2 are the representation paragraph. The schema is the team's arbitration-awards schema, used unchanged; it covers expungement awards too, so the expungement fields come back null on this customer case, one of them with a nonconformant_output warning because the schema marks it non-null. preview_pages skips page 4, which is mostly blank, in favour of page 5, the arbitration panel and signatures.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 4.5,
+      "extract_credits": 5.9
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 4.6,
+      "extract_credits": 5.6
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 5,
+      "service_tier": "standard",
+      "parse_credits": 1.6,
+      "extract_credits": 5.9
+    }
+  ]
 }

@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "company_name",
+      "label": "Company",
+      "value": "*ASI DEMO - GENERAL COMPANY",
+      "page": 1,
+      "box": {
+        "xmin": 0.44489,
+        "ymin": 0.06294,
+        "xmax": 0.63453,
+        "ymax": 0.07695
+      },
+      "range": {
+        "end": 110,
+        "start": 83
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "company_name.png"
+    },
+    {
+      "path": "employees[0].employee_id",
+      "label": "Employee ID",
+      "value": "E92815",
+      "page": 1,
+      "box": {
+        "xmin": 0.18369,
+        "ymin": 0.18976,
+        "xmax": 0.22132,
+        "ymax": 0.20148
+      },
+      "range": {
+        "end": 444,
+        "start": 438
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employees-0-employee_id.png"
+    },
+    {
+      "path": "employees[0].birth_date",
+      "label": "Birth date",
+      "value": "1968-07-30",
+      "page": 1,
+      "box": {
+        "xmin": 0.40007,
+        "ymin": 0.18964,
+        "xmax": 0.45959,
+        "ymax": 0.20267
+      },
+      "range": {
+        "end": 478,
+        "start": 468
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employees-0-birth_date.png"
+    },
+    {
+      "path": "employees[0].original_hire_date",
+      "label": "Original hire date",
+      "value": "2024-02-26",
+      "page": 1,
+      "box": {
+        "xmin": 0.74717,
+        "ymin": 0.1897,
+        "xmax": 0.80663,
+        "ymax": 0.20263
+      },
+      "range": {
+        "end": 563,
+        "start": 553
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employees-0-original_hire_date.png"
+    },
+    {
+      "path": "employees[0].annual_pay",
+      "label": "Annual pay",
+      "value": 41601.6,
+      "page": 1,
+      "box": {
+        "xmin": 0.91217,
+        "ymin": 0.18977,
+        "xmax": 0.96375,
+        "ymax": 0.20282
+      },
+      "range": {
+        "end": 590,
+        "start": 581
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "employees-0-annual_pay.png"
+    }
+  ]
+}

@@ -15,13 +15,67 @@
     }
   },
   "feature_page": 1,
-  "preview_pages": [1, 3, 4, 6],
-  "fields": [
-    { "path": "corporation.total_assets", "label": "Total assets (item D)", "occurrence": 0 },
-    { "path": "income.total_income", "label": "Total income (line 11)", "occurrence": 0 },
-    { "path": "deductions.total_deductions", "label": "Total deductions (line 27)", "occurrence": 0 },
-    { "path": "tax_and_payments.total_tax", "label": "Total tax (line 31)", "occurrence": 0 },
-    { "path": "tax_and_payments.total_payments_and_credits", "label": "Total payments and credits (line 33)", "occurrence": 0 }
+  "preview_pages": [
+    1,
+    3,
+    4,
+    6
   ],
-  "notes": "The request named no fields or feature page; its notes suggested total assets (D), total income (11), total deductions (27), total tax (31) and total payments (33), all on page 1. That is what shipped: all five read ok and each grounds to its own amount cell. Together they run the return from balance-sheet size through income and deductions to tax and payments. Values that repeat on page 1 (lines 1a/1c, 28/30, 36/37) were avoided. No person is featured; the corporation is fictitious IRS test data. Previews skip page 2 (Schedule C), which carries an 'INTERNAL USE ONLY / DRAFT AS OF May 23, 2024' watermark. Known extraction faults, left visible rather than hidden: blank amount lines extract as 0 rather than null despite the schema asking for null, and line 37's 1,280,196 is printed in the Refunded column (the Credited to 2025 estimated tax box is empty, and the parse reads it so) but extraction assigns it to credited_to_next_year_estimated_tax and gives refunded 0."
+  "fields": [
+    {
+      "path": "corporation.total_assets",
+      "label": "Total assets (item D)",
+      "occurrence": 0
+    },
+    {
+      "path": "income.total_income",
+      "label": "Total income (line 11)",
+      "occurrence": 0
+    },
+    {
+      "path": "deductions.total_deductions",
+      "label": "Total deductions (line 27)",
+      "occurrence": 0
+    },
+    {
+      "path": "tax_and_payments.total_tax",
+      "label": "Total tax (line 31)",
+      "occurrence": 0
+    },
+    {
+      "path": "tax_and_payments.total_payments_and_credits",
+      "label": "Total payments and credits (line 33)",
+      "occurrence": 0
+    }
+  ],
+  "notes": "The request named no fields or feature page; its notes suggested total assets (D), total income (11), total deductions (27), total tax (31) and total payments (33), all on page 1. That is what shipped: all five read ok and each grounds to its own amount cell. Together they run the return from balance-sheet size through income and deductions to tax and payments. Values that repeat on page 1 (lines 1a/1c, 28/30, 36/37) were avoided. No person is featured; the corporation is fictitious IRS test data. Previews skip page 2 (Schedule C), which carries an 'INTERNAL USE ONLY / DRAFT AS OF May 23, 2024' watermark. Known extraction faults, left visible rather than hidden: blank amount lines extract as 0 rather than null despite the schema asking for null, and line 37's 1,280,196 is printed in the Refunded column (the Credited to 2025 estimated tax box is empty, and the parse reads it so) but extraction assigns it to credited_to_next_year_estimated_tax and gives refunded 0.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 12.3,
+      "extract_credits": 9.4
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 13.2,
+      "extract_credits": 10.2
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 6,
+      "service_tier": "standard",
+      "parse_credits": 4.9,
+      "extract_credits": 10.0
+    }
+  ]
 }

@@ -16,11 +16,60 @@
   },
   "feature_page": 8,
   "fields": [
-    { "path": "troubleshooting[1].problem", "label": "Problem", "occurrence": 0 },
-    { "path": "troubleshooting[1].reason", "label": "Reason (row 2)", "occurrence": 0 },
-    { "path": "troubleshooting[1].solution", "label": "Solution (row 2)", "occurrence": 0 },
-    { "path": "troubleshooting[5].reason", "label": "Reason (row 6)", "occurrence": 0 },
-    { "path": "troubleshooting[5].solution", "label": "Solution (row 6)", "occurrence": 0 }
+    {
+      "path": "troubleshooting[1].problem",
+      "label": "Problem",
+      "occurrence": 0
+    },
+    {
+      "path": "troubleshooting[1].reason",
+      "label": "Reason (row 2)",
+      "occurrence": 0
+    },
+    {
+      "path": "troubleshooting[1].solution",
+      "label": "Solution (row 2)",
+      "occurrence": 0
+    },
+    {
+      "path": "troubleshooting[5].reason",
+      "label": "Reason (row 6)",
+      "occurrence": 0
+    },
+    {
+      "path": "troubleshooting[5].solution",
+      "label": "Solution (row 6)",
+      "occurrence": 0
+    }
   ],
-  "notes": "No feature page or fields were requested; chosen here. Page 8 (Troubleshooting) features the High Background table: its heading and two complete reason/solution rows, insufficient blocking and not enough washing, both of which tie back to protocol steps described earlier in the guide. The two ruled troubleshooting tables ground cell by cell; every reason and solution resolves to its own cell (occurrence 0 is pinned because each also grounds, OFF, to its table's heading). The protocol-step pages were not featured: page 4's fixation and permeabilization text parsed as figure blocks, so values there box the whole column, and the protocol_steps array came back out of document order."
+  "notes": "No feature page or fields were requested; chosen here. Page 8 (Troubleshooting) features the High Background table: its heading and two complete reason/solution rows, insufficient blocking and not enough washing, both of which tie back to protocol steps described earlier in the guide. The two ruled troubleshooting tables ground cell by cell; every reason and solution resolves to its own cell (occurrence 0 is pinned because each also grounds, OFF, to its table's heading). The protocol-step pages were not featured: page 4's fixation and permeabilization text parsed as figure blocks, so values there box the whole column, and the protocol_steps array came back out of document order.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 16,
+      "service_tier": "standard",
+      "parse_credits": 20.7,
+      "extract_credits": 17.0
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 16,
+      "service_tier": "standard",
+      "parse_credits": 21.2,
+      "extract_credits": 17.7
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 16,
+      "service_tier": "standard",
+      "parse_credits": 7.8,
+      "extract_credits": 17.8
+    }
+  ]
 }

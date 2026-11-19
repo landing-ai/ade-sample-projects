@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "tax_year",
+      "label": "Tax year",
+      "value": "2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.8278,
+        "ymin": 0.06317,
+        "xmax": 0.91313,
+        "ymax": 0.08402
+      },
+      "range": {
+        "end": 243,
+        "start": 239
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "tax_year.png"
+    },
+    {
+      "path": "part_i_amti.line_4_amti",
+      "label": "Alternative minimum taxable income (line 4)",
+      "value": 31620,
+      "page": 1,
+      "box": {
+        "xmin": 0.90058,
+        "ymin": 0.56501,
+        "xmax": 0.94172,
+        "ymax": 0.57578
+      },
+      "range": {
+        "end": 4435,
+        "start": 4429
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_i_amti-line_4_amti.png"
+    },
+    {
+      "path": "part_ii_amt.line_5_exemption",
+      "label": "Exemption (line 5)",
+      "value": 137000,
+      "page": 1,
+      "box": {
+        "xmin": 0.89369,
+        "ymin": 0.65605,
+        "xmax": 0.94144,
+        "ymax": 0.66652
+      },
+      "range": {
+        "end": 5146,
+        "start": 5139
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_ii_amt-line_5_exemption.png"
+    },
+    {
+      "path": "part_ii_amt.line_10_regular_tax",
+      "label": "Regular tax (line 10)",
+      "value": 162,
+      "page": 1,
+      "box": {
+        "xmin": 0.91889,
+        "ymin": 0.92878,
+        "xmax": 0.94167,
+        "ymax": 0.93793
+      },
+      "range": {
+        "end": 7604,
+        "start": 7601
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_ii_amt-line_10_regular_tax.png"
+    },
+    {
+      "path": "part_i_amti.line_1a_taxable_income_adjusted",
+      "label": "Line 1a taxable income adjusted",
+      "value": 30000,
+      "page": 1,
+      "box": {
+        "xmin": 0.7464,
+        "ymin": 0.17136,
+        "xmax": 0.78765,
+        "ymax": 0.18186
+      },
+      "range": {
+        "end": 678,
+        "start": 672
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "part_i_amti-line_1a_taxable_income_adjusted.png"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 16,
+  "preview_pages": [
+    1,
+    6,
+    8,
+    10
+  ],
+  "fields": [
+    {
+      "path": "cash_flow_scenarios[0].total_costs",
+      "label": "Total costs",
+      "value": 64299010,
+      "page": 6,
+      "box": {
+        "xmin": 0.27481,
+        "ymin": 0.20642,
+        "xmax": 0.31149,
+        "ymax": 0.2153
+      },
+      "range": {
+        "end": 23707,
+        "start": 23696
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cash_flow_scenarios-0-total_costs.png"
+    },
+    {
+      "path": "cash_flow_scenarios[0].permanent_loan_beginning_balance",
+      "label": "Permanent loan beginning balance",
+      "value": -50971154,
+      "page": 6,
+      "box": {
+        "xmin": 0.45276,
+        "ymin": 0.44526,
+        "xmax": 0.49336,
+        "ymax": 0.45435
+      },
+      "range": {
+        "end": 26762,
+        "start": 26749
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cash_flow_scenarios-0-permanent_loan_beginning_balance.png"
+    },
+    {
+      "path": "cash_flow_scenarios[0].first_year_dscr",
+      "label": "First-year DSCR",
+      "value": 1.25,
+      "page": 6,
+      "box": {
+        "xmin": 0.47811,
+        "ymin": 0.66405,
+        "xmax": 0.49063,
+        "ymax": 0.67126
+      },
+      "range": {
+        "end": 31413,
+        "start": 31409
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cash_flow_scenarios-0-first_year_dscr.png"
+    },
+    {
+      "path": "cash_flow_scenarios[0].residual_value",
+      "label": "Residual value",
+      "value": 83029620,
+      "page": 6,
+      "box": {
+        "xmin": 0.27487,
+        "ymin": 0.5905,
+        "xmax": 0.31146,
+        "ymax": 0.59918
+      },
+      "range": {
+        "end": 29835,
+        "start": 29824
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cash_flow_scenarios-0-residual_value.png"
+    },
+    {
+      "path": "cash_flow_scenarios[0].aloha_irr",
+      "label": "Owner IRR",
+      "value": "14.25%",
+      "page": 6,
+      "box": {
+        "xmin": 0.29094,
+        "ymin": 0.78843,
+        "xmax": 0.31361,
+        "ymax": 0.79578
+      },
+      "range": {
+        "end": 33301,
+        "start": 33295
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "cash_flow_scenarios-0-aloha_irr.png"
+    }
+  ]
+}

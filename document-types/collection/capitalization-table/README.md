@@ -1,87 +1,147 @@
 # Capitalization Table
 
-Source assets for `landing.ai/document-type/capitalization-table`.
+**On the website:** [landing.ai/document-type/capitalization-table](https://landing.ai/document-type/capitalization-table)
 
-## Sample document
+The pro forma capitalization table of a fictional company, Acme, Inc., after a Series B
+financing. It lists each holder's Common, Series A and Series B shares with per-class and
+fully diluted percentages, for five existing investors, a new investor, two founders and
+three option pool rows, with a footnote on the preferred-to-common conversion ratio.
 
-`source/cooley-sample-pro-forma-cap-table.pdf`: the pro forma capitalization table of a
-fictional Acme, Inc., after a Series B financing, from Cooley LLP's startup resource site
-Cooley GO. **1 page, landscape.** It shows Common Stock, Series A and Series B columns with
-per-class and fully diluted percentages for five existing investors, a new investor, two
-founders and three option pool rows, and a footnote on the preferred-to-common conversion
-ratio.
+| | |
+|---|---|
+| Pages | 1 |
+| Fields in the extraction schema | 16 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:37 | 2026-11-19 02:36 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 3,378 | 3,397 |
+| Words under 0.95 confidence | 8 | n/a |
+| Words under 0.80 confidence | 0 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 2.6 s | 5.8 s |
+| Per page | 2.6 s | 5.8 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.5 credits | 1.4 credits |
+| Per page | 0.50 credits | 1.40 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:37 | 2026-11-19 02:36 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 16 | 16 |
+| Non-null fields returned | 16 | 16 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 156.4 s | 166.2 s |
+| Per schema field (16) | 9.77 s | 10.39 s |
+| Per value returned | 1.78 s | 1.89 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 3.1 credits | 3.1 credits |
+| Per schema field (16) | 0.194 credits | 0.194 credits |
+| Per value returned | 0.035 credits | 0.035 credits |
+
+## Origin
+
+`source/cooley-sample-pro-forma-cap-table.pdf` is the **pro forma capitalization table**
+of a fictional Acme, Inc., after a Series B financing, from Cooley LLP's startup resource
+site Cooley GO. It is **1 page, landscape**, created digitally with a text layer.
 
 | | |
 |---|---|
 | Publisher | Cooley LLP (Cooley GO) |
-| Source | [Sample-Pre-and-Post-Cap-Table-w-Pricing-Worksheet.pdf](https://www.cooleygo.com/wp-content/uploads/2014/06/Sample-Pre-and-Post-Cap-Table-w-Pricing-Worksheet.pdf), linked from [Sample Cap Table (Pro Forma)](https://www.cooleygo.com/documents/sample-cap-table-pro-forma/) |
+| Source | [Sample-Pre-and-Post-Cap-Table-w-Pricing-Worksheet.pdf](https://www.cooleygo.com/wp-content/uploads/2014/06/Sample-Pre-and-Post-Cap-Table-w-Pricing-Worksheet.pdf) |
+| Linked from | [Sample Cap Table (Pro Forma)](https://www.cooleygo.com/documents/sample-cap-table-pro-forma/) |
 | Retrieved | 2026-10-28, by script |
 | Clearance | **Public**: a sample a law firm publishes for general use |
 
-Every holder is a placeholder (Investor #1–#5, Founder #1–#2, New Investor), so no content
-was redacted. The PDF's metadata (the firm's name as author, Excel as creator, a creation
-date) and its tagged-PDF structure tree were cleared. None of it was personal data.
+Every holder is a placeholder (Investor #1–#5, Founder #1–#2, New Investor), so no
+content was redacted. The PDF's metadata (the firm's name as author, Excel as creator, a
+creation date) and its tagged-PDF structure tree were cleared. None of it was personal
+data.
 
-**Why the PDF and not the spreadsheet.** Cooley also publishes the workbook this page was
-printed from, as a legacy `.xls` with two more sheets: the pre-money cap table and an
-up-round pricing model. ADE accepts no legacy `.xls` in either API generation. v2 takes
-XLSX, but spreadsheet output is grounded by cell address with no page boxes, so the page
-overlay and crops this collection is built on would not exist. The PDF is Cooley's own
-print of the Post-$ Pro Forma sheet, and it needs no change to the shared tooling.
+Cooley also publishes the workbook this page was printed from, as a legacy `.xls` with
+two more sheets: the pre-money cap table and an up-round pricing model. The PDF is
+Cooley's own print of the Post-$ Pro Forma sheet only. Full provenance is in
+`manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is the collection's first cap table: a dense numeric grid, 11 columns wide. Share counts
-and percentages alternate, headers wrap over two lines, and zero holdings print as dashes.
-The test is whether extraction keeps each number in its share-class column across rows
-that are mostly zeros.
+### Who processes it
 
-`schema.json` covers the company, the table's basis (current or pro forma), the share
-classes, one object per holder row (group, name, shares per class, total shares, total
-percent), the totals row, the option pool increase, and the conversion footnote. **16 leaf
-fields** (counted from the schema); all 7 top-level fields were populated.
+A cap table records who owns what in a private company, by share class, and how a new
+financing changes it.
 
-## Featured fields: the Series B round
+- **Venture capital and private equity:** investors model each round's dilution and
+  check their fully diluted ownership before they close.
+- **Startup legal counsel:** law firms prepare and check pro forma tables for every
+  financing and keep them with the closing documents.
+- **M&A due diligence:** buyers reconcile the cap table against stock ledgers and
+  option grants to work out who gets paid what.
+- **Equity management platforms:** cap tables from spreadsheets and PDFs are loaded
+  into systems that track holdings over time.
+- **409A valuation firms:** valuers use the share classes and option pool to value
+  common stock.
 
-All on page 1.
+### What it contains
 
-| Field | Value |
-|---|---|
-| Company | Acme, Inc. |
-| New investor Series B shares | 4,775,322 |
-| Option pool increase | 4,252,854 |
-| Total Series A shares | 36,500,000 |
-| Fully diluted shares | 57,528,176 |
-
-Together they describe the financing the table models: the new money's shares, the pool
-top-up that comes with it, the preferred already outstanding, and the fully diluted count
-after both. All five read ok in `inspect_fields.py`. The crops and the page overlay were
-checked by eye. No person is featured.
-
-## Grounding and extraction notes
-
-- **Every value is right.** All 11 holder rows, every share count, every total percent and
-  all four totals extract correctly. The Series A and B totals and the fully diluted total
-  match the column sums.
-- **The parse table is messier than the extraction.** The two-line header did not line up:
-  "Common % w/o Pool" splits across both header rows and "Total %" lands in the wrong
-  column. The "Common %" and "w/o Pool" cells of the option rows merge into one cell
-  (`6.2% n/a`). Zero holdings come through three ways: as an em dash, as a hyphen, or as
-  an empty cell. Extraction placed every value in the right column anyway.
-- **Dashes cannot be featured.** The 22 zero holdings extract correctly as 0, but their
-  ranges point at a dash or an empty cell, so `inspect_fields.py` reads them as off.
-- **The option pool increase box is loose.** It covers the whole cell including blank
-  space to its left, with the value in its upper right. The value is legible in the crop.
-  The other four boxes fit their values tightly.
-
-## Credits
-
-4.50 credits at standard tier: 1.40 to parse, 3.10 to extract (1 page).
-
-## Regenerate
-
-```bash
-# the PDF's metadata was cleared with document-types/scripts/pdfmeta.py (clear, then save)
-.venv/bin/python document-types/scripts/run_ade.py capitalization-table
-.venv/bin/python document-types/scripts/build_images.py capitalization-table
-```
+- **A dense numeric grid, 11 columns wide,** with share counts and percentages in
+  alternating columns.
+- **Headers that wrap over two lines.**
+- **Zero holdings printed as dashes,** so most cells in many rows carry no number.
+- **Grouped rows** for investors, founders and the option pool, with a totals row.
+- **A footnote** on the preferred-to-common conversion ratio.

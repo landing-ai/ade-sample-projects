@@ -1,0 +1,90 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 49,
+  "preview_pages": [
+    1,
+    5,
+    8,
+    29
+  ],
+  "fields": [
+    {
+      "path": "letter_of_intent.buyer_name",
+      "label": "Buyer",
+      "value": "Central States Water Resources, Inc.",
+      "page": 1,
+      "box": {
+        "xmin": 0.21146,
+        "ymin": 0.38108,
+        "xmax": 0.44908,
+        "ymax": 0.39292
+      },
+      "range": {
+        "end": 272,
+        "start": 236
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_of_intent-buyer_name.png"
+    },
+    {
+      "path": "letter_of_intent.target_name",
+      "label": "Target",
+      "value": "Delaplain Disposal Company",
+      "page": 1,
+      "box": {
+        "xmin": 0.36357,
+        "ymin": 0.39565,
+        "xmax": 0.55374,
+        "ymax": 0.40908
+      },
+      "range": {
+        "end": 377,
+        "start": 351
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_of_intent-target_name.png"
+    },
+    {
+      "path": "letter_of_intent.target_business_description",
+      "label": "Target business",
+      "value": "Regulated sewer utility",
+      "page": 1,
+      "box": {
+        "xmin": 0.49138,
+        "ymin": 0.41027,
+        "xmax": 0.63303,
+        "ymax": 0.42408
+      },
+      "range": {
+        "end": 479,
+        "start": 456
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_of_intent-target_business_description.png"
+    },
+    {
+      "path": "letter_of_intent.purchase_price",
+      "label": "Purchase price",
+      "value": 849000,
+      "page": 1,
+      "box": {
+        "xmin": 0.2111,
+        "ymin": 0.4699,
+        "xmax": 0.78228,
+        "ymax": 0.52899
+      },
+      "range": {
+        "end": 948,
+        "start": 618
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_of_intent-purchase_price.png"
+    }
+  ]
+}

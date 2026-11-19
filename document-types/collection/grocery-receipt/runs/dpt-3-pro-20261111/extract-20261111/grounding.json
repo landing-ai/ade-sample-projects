@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "items[1].name",
+      "label": "Item",
+      "value": "GRAPE TOMATO",
+      "page": 1,
+      "box": {
+        "xmin": 0.37227,
+        "ymin": 0.43956,
+        "xmax": 0.59395,
+        "ymax": 0.46645
+      },
+      "range": {
+        "end": 248,
+        "start": 236
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-1-name.png"
+    },
+    {
+      "path": "items[1].total_price",
+      "label": "Item price",
+      "value": 5.99,
+      "page": 1,
+      "box": {
+        "xmin": 0.70243,
+        "ymin": 0.43604,
+        "xmax": 0.77861,
+        "ymax": 0.46146
+      },
+      "range": {
+        "end": 261,
+        "start": 257
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-1-total_price.png"
+    },
+    {
+      "path": "items[1].tax_flag",
+      "label": "Tax flag",
+      "value": "E",
+      "page": 1,
+      "box": {
+        "xmin": 0.13637,
+        "ymin": 0.44601,
+        "xmax": 0.15699,
+        "ymax": 0.46867
+      },
+      "range": {
+        "end": 221,
+        "start": 220
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "items-1-tax_flag.png"
+    },
+    {
+      "path": "subtotal",
+      "label": "Subtotal",
+      "value": 38.48,
+      "page": 1,
+      "box": {
+        "xmin": 0.68597,
+        "ymin": 0.50117,
+        "xmax": 0.77942,
+        "ymax": 0.52817
+      },
+      "range": {
+        "end": 374,
+        "start": 369
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "subtotal.png"
+    },
+    {
+      "path": "total",
+      "label": "Total",
+      "value": 38.48,
+      "page": 1,
+      "box": {
+        "xmin": 0.61059,
+        "ymin": 0.56211,
+        "xmax": 0.82593,
+        "ymax": 0.59831
+      },
+      "range": {
+        "end": 470,
+        "start": 465
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "total.png"
+    }
+  ]
+}

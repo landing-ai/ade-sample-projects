@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "entity.name", "label": "Entity name", "occurrence": 0 },
-    { "path": "entity.formation_date", "label": "Formation date", "occurrence": 0 },
-    { "path": "entity.entity_id_number", "label": "Entity ID number", "occurrence": 0 },
-    { "path": "issuance.issue_date", "label": "Issue date", "occurrence": 0 },
-    { "path": "issuance.confirmation_number", "label": "Confirmation number", "occurrence": 0 }
+    {
+      "path": "entity.name",
+      "label": "Entity name",
+      "occurrence": 0
+    },
+    {
+      "path": "entity.formation_date",
+      "label": "Formation date",
+      "occurrence": 0
+    },
+    {
+      "path": "entity.entity_id_number",
+      "label": "Entity ID number",
+      "occurrence": 0
+    },
+    {
+      "path": "issuance.issue_date",
+      "label": "Issue date",
+      "occurrence": 0
+    },
+    {
+      "path": "issuance.confirmation_number",
+      "label": "Confirmation number",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no feature page or fields; its notes suggested entity name, entity type, formation date, entity ID number, issue date and time, and confirmation number. All five fields ship, all reading ok on page 1: who the certificate is about, when it was formed, the state's ID for it, when the certificate was issued and the number that validates it. Entity type (also ok) was left out to stay within five. The issue date is the interesting one: the page prints 01/23/2026 twice (the electronic-filings-through date and the issue date) beside a paper-filings-through date of 01/22/2026, and the model took the issue date from the 'issued this official certificate ... on' sentence, not from the filings-through lines. Schema date descriptions ask for dates exactly as printed, so they stay MM/DD/YYYY and ground ok rather than OFF. Boolean fields (in_good_standing, signature and seal present, issued electronically) and issuing_office (heading split across two lines) read OFF by design. The page's stamped values sit at the end of the PDF text layer, out of reading order; DPT-3 placed every one of them in its sentence."
+  "notes": "The request named no feature page or fields; its notes suggested entity name, entity type, formation date, entity ID number, issue date and time, and confirmation number. All five fields ship, all reading ok on page 1: who the certificate is about, when it was formed, the state's ID for it, when the certificate was issued and the number that validates it. Entity type (also ok) was left out to stay within five. The issue date is the interesting one: the page prints 01/23/2026 twice (the electronic-filings-through date and the issue date) beside a paper-filings-through date of 01/22/2026, and the model took the issue date from the 'issued this official certificate ... on' sentence, not from the filings-through lines. Schema date descriptions ask for dates exactly as printed, so they stay MM/DD/YYYY and ground ok rather than OFF. Boolean fields (in_good_standing, signature and seal present, issued electronically) and issuing_office (heading split across two lines) read OFF by design. The page's stamped values sit at the end of the PDF text layer, out of reading order; DPT-3 placed every one of them in its sentence.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.3
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 1.1,
+      "extract_credits": 1.4
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.4,
+      "extract_credits": 1.3
+    }
+  ]
 }

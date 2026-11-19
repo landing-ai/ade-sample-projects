@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 31,
+  "page_count": 31,
+  "preview_pages": [
+    1,
+    11,
+    20,
+    31
+  ],
+  "fields": [
+    {
+      "path": "coverage_periods[1].period",
+      "label": "Coverage period",
+      "value": "Jan 1, 2016- Jan 1, 2017",
+      "page": 31,
+      "box": {
+        "xmin": 0.07423,
+        "ymin": 0.3163,
+        "xmax": 0.1502,
+        "ymax": 0.32585
+      },
+      "range": {
+        "end": 273580,
+        "start": 273556
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_periods-1-period.png"
+    },
+    {
+      "path": "coverage_periods[1].claim_count",
+      "label": "Count of claims",
+      "value": 276,
+      "page": 31,
+      "box": {
+        "xmin": 0.33656,
+        "ymin": 0.31628,
+        "xmax": 0.34847,
+        "ymax": 0.32448
+      },
+      "range": {
+        "end": 273617,
+        "start": 273614
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_periods-1-claim_count.png"
+    },
+    {
+      "path": "coverage_periods[1].total_paid",
+      "label": "Total paid",
+      "value": 605268.0,
+      "page": 31,
+      "box": {
+        "xmin": 0.63799,
+        "ymin": 0.31604,
+        "xmax": 0.66632,
+        "ymax": 0.32578
+      },
+      "range": {
+        "end": 273670,
+        "start": 273662
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_periods-1-total_paid.png"
+    },
+    {
+      "path": "coverage_periods[1].total_outstanding_reserve",
+      "label": "Outstanding reserve",
+      "value": 27648.0,
+      "page": 31,
+      "box": {
+        "xmin": 0.69738,
+        "ymin": 0.31607,
+        "xmax": 0.72221,
+        "ymax": 0.32573
+      },
+      "range": {
+        "end": 273686,
+        "start": 273679
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_periods-1-total_outstanding_reserve.png"
+    },
+    {
+      "path": "coverage_periods[1].total_incurred",
+      "label": "Total incurred",
+      "value": 619349.0,
+      "page": 31,
+      "box": {
+        "xmin": 0.91942,
+        "ymin": 0.31613,
+        "xmax": 0.94791,
+        "ymax": 0.32596
+      },
+      "range": {
+        "end": 273749,
+        "start": 273741
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "coverage_periods-1-total_incurred.png"
+    }
+  ]
+}

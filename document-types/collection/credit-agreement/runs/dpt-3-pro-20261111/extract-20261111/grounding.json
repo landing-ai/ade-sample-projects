@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 6,
+  "page_count": 76,
+  "preview_pages": [
+    1,
+    6,
+    7,
+    12
+  ],
+  "fields": [
+    {
+      "path": "agreement_date",
+      "label": "Agreement date",
+      "value": "April 20, 2020",
+      "page": 6,
+      "box": {
+        "xmin": 0.21319,
+        "ymin": 0.15788,
+        "xmax": 0.34471,
+        "ymax": 0.17303
+      },
+      "range": {
+        "end": 8943,
+        "start": 8929
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "agreement_date.png"
+    },
+    {
+      "path": "borrower.name",
+      "label": "Borrower",
+      "value": "Hillsborough County Aviation Authority",
+      "page": 6,
+      "box": {
+        "xmin": 0.48892,
+        "ymin": 0.15788,
+        "xmax": 0.84832,
+        "ymax": 0.17303
+      },
+      "range": {
+        "end": 8998,
+        "start": 8960
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "borrower-name.png"
+    },
+    {
+      "path": "lenders[0].name",
+      "label": "Lender (bank)",
+      "value": "Truist Bank",
+      "page": 6,
+      "box": {
+        "xmin": 0.45716,
+        "ymin": 0.1753,
+        "xmax": 0.55953,
+        "ymax": 0.19046
+      },
+      "range": {
+        "end": 9072,
+        "start": 9061
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "lenders-0-name.png"
+    },
+    {
+      "path": "lenders[1].name",
+      "label": "Lender (STI)",
+      "value": "STI Institutional & Government, Inc.",
+      "page": 6,
+      "box": {
+        "xmin": 0.23,
+        "ymin": 0.19273,
+        "xmax": 0.54969,
+        "ymax": 0.20788
+      },
+      "range": {
+        "end": 9177,
+        "start": 9141
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "lenders-1-name.png"
+    },
+    {
+      "path": "agent",
+      "label": "Agent",
+      "value": "Truist Bank",
+      "page": 6,
+      "box": {
+        "xmin": 0.45716,
+        "ymin": 0.1753,
+        "xmax": 0.55953,
+        "ymax": 0.19046
+      },
+      "range": {
+        "end": 9072,
+        "start": 9061
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "agent.png"
+    }
+  ]
+}

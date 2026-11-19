@@ -1,8 +1,102 @@
 # Attending Physician Statement
 
-Source assets for `landing.ai/document-type/attending-physician-statement`.
+**On the website:** [landing.ai/document-type/attending-physician-statement](https://landing.ai/document-type/attending-physician-statement)
 
-## Sample document
+Part B of California EDD form DE 2501, the Physician or Practitioner's Certificate
+for a State Disability Insurance claim, filled with specimen data. The treating
+physician certifies the patient's treatment period, when the disability began, the ICD
+diagnosis codes, findings and treatment, prior treatment and surgery, and whether the
+condition is work-related.
+
+| | |
+|---|---|
+| Pages | 3 |
+| Fields in the extraction schema | 35 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 02:27 | 2026-11-19 02:27 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 9,271 | 16,742 |
+| Words under 0.95 confidence | 187 | n/a |
+| Words under 0.80 confidence | 140 | n/a |
+| Words under 0.50 confidence | 95 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 9.9 s | 21.4 s |
+| Per page | 3.3 s | 7.1 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 1.4 credits | 5.7 credits |
+| Per page | 0.47 credits | 1.90 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 02:27 | 2026-11-19 02:27 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 35 | 35 |
+| Non-null fields returned | 25 | 28 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 147.0 s | 160.4 s |
+| Per schema field (35) | 4.20 s | 4.58 s |
+| Per value returned | 5.88 s | 5.73 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 3.0 credits | 4.5 credits |
+| Per schema field (35) | 0.086 credits | 0.129 credits |
+| Per value returned | 0.120 credits | 0.161 credits |
+
+## Origin
 
 `source/de2501-physician-certificate-sample.pdf` is Part B, the Physician or
 Practitioner's Certificate, of California EDD form DE 2501, Application for Disability
@@ -28,7 +122,7 @@ and this is the closest public specimen.
 | Publisher | State of California Employment Development Department (EDD), State Disability Insurance program |
 | Source | https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de2501.pdf |
 | Retrieved | 2026-10-04, downloaded by script |
-| Clearance | **Public** |
+| Clearance | Public |
 
 The EDD's Forms and Publications page links this file as "DE 2501 - Sample claim
 form", and the same filled pages appear in its paper-claim tutorial. Every page carries a
@@ -37,76 +131,36 @@ SSN is all zeros, and the physician's address is in "Anywhere, CA", so there is 
 personal data and nothing was redacted.
 
 The original has 13 pages. Pages 1-10 are instructions, the claimant's authorization
-and Part A (the claimant's own statement), so only pages 11-13 were kept, using PyMuPDF.
-The PDF metadata was cleared.
+and Part A (the claimant's own statement), so only pages 11-13 were kept. The PDF
+metadata was cleared. Full provenance is in `manifest.json` under `source.origin`.
 
 ## Why this document
 
-It is a comb-box form: almost every value is printed one character per box, and dates are
-eight digits with no separators (`01252025`). The form is also printed in red, with
-white entry boxes on a red ground. Together these test whether parsing can put a value
-back together from separate boxes and still ground it, which the collection's other
-forms do not test.
+### Who processes it
 
-## Featured fields: who certified it, and the timeline of care
+A physician's statement is the medical evidence behind a disability, life or long-term
+care claim. Insurers and benefit programs ask the treating doctor for the same core
+facts: diagnosis, treatment, and how long the patient cannot work.
 
-All on page 1:
+- **State disability insurance programs:** California's SDI requires this certificate
+  from the treating physician for every claim.
+- **Disability and long-term-care insurers:** claims examiners use an APS to approve
+  benefits and set the expected return-to-work date.
+- **Life insurance underwriting:** underwriters order an APS to review an applicant's
+  medical history.
+- **Employers and leave administrators:** they use physician certifications to manage
+  leave and return to work.
+- **Workers' compensation:** the work-relatedness answers decide which program pays.
 
-| Field | Value |
-|---|---|
-| License type | MD |
-| License issuing state | CA |
-| Under care from | 2025-01-25 |
-| Treatment interval | Monthly |
-| Date disability began | 2025-01-25 |
+### What it contains
 
-The request suggested these five fields and the B12 "still treating" checkbox. The
-checkbox extracted correctly (`true`) but grounds `OFF`, as boolean values do on this
-form, so it was left out. The request's other option was page 2: the diagnosis, the
-treatment and the ICD-10 box. It was not used because the diagnosis and treatment ground
-to individual comb boxes (see below), which would leave only the ICD-10 box.
-
-**The primary ICD-10 code is misprinted by the publisher.** It reads `552.92XA`. A
-forearm fracture code begins with the letter S, and the form has the digit 5 in its
-place. ADE transcribes it exactly as printed. It is deliberately not featured.
-
-## Grounding
-
-- **Dates in comb boxes ground well.** ADE reads `0 1 2 5 2 0 2 5` across eight boxes as
-  one date, normalizes it to `2025-01-25`, and the box covers the whole row of digits.
-- **Checkbox groups ground to the whole row.** The treatment-interval box covers the full
-  "At Intervals Of" line with the marked option in it. That is reasonable for a value
-  chosen from a set.
-- **Comb-box text does not ground as a value.** In tables, the parser makes each
-  character box its own cell. Free text such as the diagnosis, findings and treatment
-  extracts correctly ("Broken left forearm closed fracture") but grounds to more than 100
-  single-character cells each, which `inspect_fields.py` reads as `OFF`. The patient's
-  name, file number and address behave the same way.
-- **Several boxes are wide.** License type, issuing state and "under care from" each
-  cover the whole entry row, including the field caption and the empty boxes. OCR flagged
-  these three crops, but each one does contain its value.
-- **One checkbox was misread.** In B29 ("caused or aggravated by regular work?") the X
-  is on "No", but the parse reads `[x] Yes`, so `history.work_related` comes back `true`.
-  B30, the next row with the same layout, reads correctly.
-- **Unanswered questions come back as false.** In B13, neither box for "Was the
-  disability caused by an accident or trauma?" is marked, but the result is `false`
-  rather than null.
-
-## Schema
-
-`schema.json` has 35 leaf fields, grouped as patient, practitioner, treatment period,
-disability, diagnosis, history and certification. The patient's SSN is left out on
-purpose.
-
-## Cost
-
-**10.40 credits** at standard tier, for parse and extract together.
-
-## Regenerate
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py attending-physician-statement
-.venv/bin/python document-types/scripts/run_ade.py attending-physician-statement --extract-only
-.venv/bin/python document-types/scripts/build_images.py attending-physician-statement
-.venv/bin/python document-types/scripts/inspect_fields.py attending-physician-statement --good
-```
+- **Comb boxes.** Almost every value is printed one character per box, and dates are
+  eight digits with no separators (`01252025`).
+- **A red form.** White entry boxes sit on a red ground, and every page carries a red
+  SAMPLE banner.
+- **Checkbox groups** for treatment interval and yes/no questions, some left unanswered.
+- **ICD-10 diagnosis codes** in their own boxes, one of them misprinted by the publisher
+  with the digit 5 in place of the letter S.
+- **Free-text diagnosis, findings and treatment** written across rows of character
+  boxes.
+- **A signed certification** on the last page.

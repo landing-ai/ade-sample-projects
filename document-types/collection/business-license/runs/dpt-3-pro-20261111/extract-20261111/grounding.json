@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "receipt_number",
+      "label": "Receipt number",
+      "value": "327-123456",
+      "page": 1,
+      "box": {
+        "xmin": 0.71111,
+        "ymin": 0.15895,
+        "xmax": 0.81159,
+        "ymax": 0.18
+      },
+      "range": {
+        "end": 266,
+        "start": 256
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "receipt_number.png"
+    },
+    {
+      "path": "issuing_authority.name",
+      "label": "Issuing county",
+      "value": "Broward County",
+      "page": 1,
+      "box": {
+        "xmin": 0.18641,
+        "ymin": 0.05151,
+        "xmax": 0.41291,
+        "ymax": 0.07817
+      },
+      "range": {
+        "end": 16,
+        "start": 2
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "issuing_authority-name.png"
+    },
+    {
+      "path": "business.location_address",
+      "label": "Location address",
+      "value": "123 Fourth St",
+      "page": 1,
+      "box": {
+        "xmin": 0.24791,
+        "ymin": 0.24481,
+        "xmax": 0.3772,
+        "ymax": 0.26147
+      },
+      "range": {
+        "end": 417,
+        "start": 404
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "business-location_address.png"
+    },
+    {
+      "path": "capacity.employees",
+      "label": "Employees",
+      "value": 2,
+      "page": 1,
+      "box": {
+        "xmin": 0.48343,
+        "ymin": 0.3694,
+        "xmax": 0.49606,
+        "ymax": 0.38604
+      },
+      "range": {
+        "end": 608,
+        "start": 607
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "capacity-employees.png"
+    },
+    {
+      "path": "fees.total_paid",
+      "label": "Total paid",
+      "value": 16.5,
+      "page": 1,
+      "box": {
+        "xmin": 0.85655,
+        "ymin": 0.48823,
+        "xmax": 0.90107,
+        "ymax": 0.50279
+      },
+      "range": {
+        "end": 996,
+        "start": 992
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "fees-total_paid.png"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fields": [
+    {
+      "path": "offer.designation",
+      "label": "Designation",
+      "value": "Technical Manager",
+      "page": 1,
+      "box": {
+        "xmin": 0.0803,
+        "ymin": 0.42251,
+        "xmax": 0.72609,
+        "ymax": 0.43683
+      },
+      "range": {
+        "end": 375,
+        "start": 290
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "offer-designation.png"
+    },
+    {
+      "path": "offer.place_of_posting",
+      "label": "Place of posting",
+      "value": "Jalandhar",
+      "page": 1,
+      "box": {
+        "xmin": 0.3479,
+        "ymin": 0.56905,
+        "xmax": 0.42676,
+        "ymax": 0.5812
+      },
+      "range": {
+        "end": 683,
+        "start": 674
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "offer-place_of_posting.png"
+    },
+    {
+      "path": "offer.date_of_joining",
+      "label": "Date of joining",
+      "value": "07-Apr-2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.28228,
+        "ymin": 0.60281,
+        "xmax": 0.38132,
+        "ymax": 0.61687
+      },
+      "range": {
+        "end": 726,
+        "start": 715
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "offer-date_of_joining.png"
+    },
+    {
+      "path": "offer.annual_ctc",
+      "label": "Annual cost to company (Rs.)",
+      "value": 565008,
+      "page": 1,
+      "box": {
+        "xmin": 0.52518,
+        "ymin": 0.70223,
+        "xmax": 0.59487,
+        "ymax": 0.71625
+      },
+      "range": {
+        "end": 881,
+        "start": 875
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "offer-annual_ctc.png"
+    },
+    {
+      "path": "letter_date",
+      "label": "Letter date",
+      "value": "20-Mar-2025",
+      "page": 1,
+      "box": {
+        "xmin": 0.77959,
+        "ymin": 0.1264,
+        "xmax": 0.87717,
+        "ymax": 0.13749
+      },
+      "range": {
+        "end": 60,
+        "start": 49
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "letter_date.png"
+    }
+  ]
+}

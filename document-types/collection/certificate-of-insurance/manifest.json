@@ -42,5 +42,34 @@
       "occurrence": 0
     }
   ],
-  "notes": "Features the general liability policy on page 1 as one story: which insurer writes it, the policy number, the policy period and the each-occurrence limit. Read together, they answer what a certificate holder opens a COI to check: who covers the insured, under which policy, from when to when, and for how much. The request had no fields key. Its notes suggested insurer A name and NAIC number, CGL policy number, effective and expiration dates, and the each-occurrence and general aggregate limits, as suggestions only. All seven extract correctly and ground ok on page 1. Five shipped. The NAIC number and the general aggregate limit were left out to stay within five fields. The policy number and the two dates ground to the merged table cells that span the whole seven-line CGL row, so their boxes are tall but sit on the right row. The insurer box includes the 'INSURER A :' label. The contact name, phone, fax, email and signature are kept as the publisher filed them, by the operator's decision, and are not featured. The parse dropped the producer phone number: the PHONE cell came back as a label alone, and producer.phone extracted as an empty string. The pale SAMPLE watermark that crosses the umbrella row made the parse read the umbrella CLAIMS-MADE box as checked, although that row is otherwise blank."
+  "notes": "Features the general liability policy on page 1 as one story: which insurer writes it, the policy number, the policy period and the each-occurrence limit. Read together, they answer what a certificate holder opens a COI to check: who covers the insured, under which policy, from when to when, and for how much. The request had no fields key. Its notes suggested insurer A name and NAIC number, CGL policy number, effective and expiration dates, and the each-occurrence and general aggregate limits, as suggestions only. All seven extract correctly and ground ok on page 1. Five shipped. The NAIC number and the general aggregate limit were left out to stay within five fields. The policy number and the two dates ground to the merged table cells that span the whole seven-line CGL row, so their boxes are tall but sit on the right row. The insurer box includes the 'INSURER A :' label. The contact name, phone, fax, email and signature are kept as the publisher filed them, by the operator's decision, and are not featured. The parse dropped the producer phone number: the PHONE cell came back as a label alone, and producer.phone extracted as an empty string. The pale SAMPLE watermark that crosses the umbrella row made the parse read the umbrella CLAIMS-MADE box as checked, although that row is otherwise blank.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 2.2,
+      "extract_credits": 3.8
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 2.3,
+      "extract_credits": 3.9
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.9,
+      "extract_credits": 3.8
+    }
+  ]
 }

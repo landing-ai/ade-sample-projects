@@ -48,5 +48,34 @@
     7,
     9,
     20
+  ],
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260903",
+      "path": "runs/dpt-3-pro-20260710/extract-20260903",
+      "pages": 27,
+      "service_tier": "standard",
+      "parse_credits": 27.7,
+      "extract_credits": 16.7
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 27,
+      "service_tier": "standard",
+      "parse_credits": 27.6,
+      "extract_credits": 16.8
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 27,
+      "service_tier": "standard",
+      "parse_credits": 9.7,
+      "extract_credits": 16.6
+    }
   ]
 }

@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 5,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "comparable_sales[0].sale_date",
+      "label": "Sale #1 date",
+      "value": "10/14",
+      "page": 2,
+      "box": {
+        "xmin": 0.38215,
+        "ymin": 0.18338,
+        "xmax": 0.4232,
+        "ymax": 0.19727
+      },
+      "range": {
+        "end": 5386,
+        "start": 5381
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparable_sales-0-sale_date.png"
+    },
+    {
+      "path": "comparable_sales[0].acres",
+      "label": "Sale #1 acres",
+      "value": 9781,
+      "page": 2,
+      "box": {
+        "xmin": 0.38235,
+        "ymin": 0.19853,
+        "xmax": 0.423,
+        "ymax": 0.21242
+      },
+      "range": {
+        "end": 5516,
+        "start": 5511
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparable_sales-0-acres.png"
+    },
+    {
+      "path": "comparable_sales[0].sale_price",
+      "label": "Sale #1 price",
+      "value": 4050000,
+      "page": 2,
+      "box": {
+        "xmin": 0.36663,
+        "ymin": 0.21369,
+        "xmax": 0.43873,
+        "ymax": 0.22757
+      },
+      "range": {
+        "end": 5640,
+        "start": 5631
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparable_sales-0-sale_price.png"
+    },
+    {
+      "path": "comparable_sales[0].net_adjustments",
+      "label": "Net adjustment per acre",
+      "value": 58,
+      "page": 2,
+      "box": {
+        "xmin": 0.39379,
+        "ymin": 0.66823,
+        "xmax": 0.41176,
+        "ymax": 0.68212
+      },
+      "range": {
+        "end": 8788,
+        "start": 8786
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparable_sales-0-net_adjustments.png"
+    },
+    {
+      "path": "comparable_sales[0].adjusted_price_per_acre",
+      "label": "Adjusted price per acre",
+      "value": 472,
+      "page": 2,
+      "box": {
+        "xmin": 0.3893,
+        "ymin": 0.68338,
+        "xmax": 0.41626,
+        "ymax": 0.69727
+      },
+      "range": {
+        "end": 8886,
+        "start": 8883
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "comparable_sales-0-adjusted_price_per_acre.png"
+    }
+  ]
+}

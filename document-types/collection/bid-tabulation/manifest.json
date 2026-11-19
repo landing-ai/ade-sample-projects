@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "engineers_estimate.total_base_bid", "label": "Engineer's Estimate total base bid", "occurrence": 0 },
-    { "path": "bidders[0].name", "label": "Low bidder", "occurrence": 0 },
-    { "path": "bidders[0].total_base_bid", "label": "Low bidder total base bid", "occurrence": 0 },
-    { "path": "bidders[0].bid_bond", "label": "Low bidder bid bond received", "occurrence": 0 },
-    { "path": "bid_schedules[0].line_items[2].engineers_estimate_unit_price", "label": "Engineer's unit price for item 3 (railroad casing pipe)", "occurrence": 0 }
+    {
+      "path": "engineers_estimate.total_base_bid",
+      "label": "Engineer's Estimate total base bid",
+      "occurrence": 0
+    },
+    {
+      "path": "bidders[0].name",
+      "label": "Low bidder",
+      "occurrence": 0
+    },
+    {
+      "path": "bidders[0].total_base_bid",
+      "label": "Low bidder total base bid",
+      "occurrence": 0
+    },
+    {
+      "path": "bidders[0].bid_bond",
+      "label": "Low bidder bid bond received",
+      "occurrence": 0
+    },
+    {
+      "path": "bid_schedules[0].line_items[2].engineers_estimate_unit_price",
+      "label": "Engineer's unit price for item 3 (railroad casing pipe)",
+      "occurrence": 0
+    }
   ],
-  "notes": "Page 1, the base bid, is the feature page: the title block, the four-column bidder header (Engineer's Estimate plus three contractors, each a Unit Price and Total pair under a merged header cell), the submittal checklist grid, 18 base-bid line items and the TOTAL BASE BID row. The overlay tells one story: what the engineer expected the base bid to cost, who came in lowest and at what price, that the low bidder's bid bond was received, and one line item's estimated unit price read from the correct column of an 11-column table. Yarberry Companies, Inc. is the low base bidder ($1,117,809.00 against an Engineer's Estimate of $1,186,195.00) and happens to be the first bidder column, hence bidders[0]. Item 3 (Railroad Crossing Steel Casing Pipe) was chosen for the unit price because its unit price ($623.00) differs from its total ($87,220.00), so the crop shows the right column was read; lump-sum items print the same figure in both. The request suggested six fields on page 1: bid opening date, Engineer's Estimate total base bid, low bidder name, low bidder total base bid, a line item's Engineer's Estimate unit price, and bid bond received. Five shipped. The bid opening date was dropped: the schema normalizes it to ISO form (2026-06-12), so its range boxes the printed 'June 12, 2026' line and the field check marks it OFF; a page also features at most five fields. The request described the alternates as MA-1 and MA-2; the document actually carries four mandatory alternates (MA-1 to MA-4) on pages 2 and 3, and all four were extracted. The Engineer's Estimate base bid plus the four alternate totals reconcile to the $2,666,583.00 grand total on page 4."
+  "notes": "Page 1, the base bid, is the feature page: the title block, the four-column bidder header (Engineer's Estimate plus three contractors, each a Unit Price and Total pair under a merged header cell), the submittal checklist grid, 18 base-bid line items and the TOTAL BASE BID row. The overlay tells one story: what the engineer expected the base bid to cost, who came in lowest and at what price, that the low bidder's bid bond was received, and one line item's estimated unit price read from the correct column of an 11-column table. Yarberry Companies, Inc. is the low base bidder ($1,117,809.00 against an Engineer's Estimate of $1,186,195.00) and happens to be the first bidder column, hence bidders[0]. Item 3 (Railroad Crossing Steel Casing Pipe) was chosen for the unit price because its unit price ($623.00) differs from its total ($87,220.00), so the crop shows the right column was read; lump-sum items print the same figure in both. The request suggested six fields on page 1: bid opening date, Engineer's Estimate total base bid, low bidder name, low bidder total base bid, a line item's Engineer's Estimate unit price, and bid bond received. Five shipped. The bid opening date was dropped: the schema normalizes it to ISO form (2026-06-12), so its range boxes the printed 'June 12, 2026' line and the field check marks it OFF; a page also features at most five fields. The request described the alternates as MA-1 and MA-2; the document actually carries four mandatory alternates (MA-1 to MA-4) on pages 2 and 3, and all four were extracted. The Engineer's Estimate base bid plus the four alternate totals reconcile to the $2,666,583.00 grand total on page 4.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 8.1,
+      "extract_credits": 40.6
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 8.1,
+      "extract_credits": 41.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 4,
+      "service_tier": "standard",
+      "parse_credits": 3.1,
+      "extract_credits": 41.0
+    }
+  ]
 }

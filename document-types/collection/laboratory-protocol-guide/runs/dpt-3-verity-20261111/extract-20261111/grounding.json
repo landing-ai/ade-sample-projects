@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 8,
+  "page_count": 16,
+  "preview_pages": [
+    1,
+    6,
+    8,
+    10
+  ],
+  "fields": [
+    {
+      "path": "troubleshooting[1].problem",
+      "label": "Problem",
+      "value": "High Background",
+      "page": 8,
+      "box": {
+        "xmin": 0.10688,
+        "ymin": 0.16715,
+        "xmax": 0.24545,
+        "ymax": 0.18063
+      },
+      "range": {
+        "end": 27846,
+        "start": 27831
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "troubleshooting-1-problem.png"
+    },
+    {
+      "path": "troubleshooting[1].reason",
+      "label": "Reason (row 2)",
+      "value": "Insufficient blocking",
+      "page": 8,
+      "box": {
+        "xmin": 0.11216,
+        "ymin": 0.23757,
+        "xmax": 0.24828,
+        "ymax": 0.24911
+      },
+      "range": {
+        "end": 28051,
+        "start": 28030
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "troubleshooting-1-reason.png"
+    },
+    {
+      "path": "troubleshooting[1].solution",
+      "label": "Solution (row 2)",
+      "value": "Prolong the incubation time, consider using a different blocking solution (we recommend using serum from the secondary antibody host)",
+      "page": 8,
+      "box": {
+        "xmin": 0.48059,
+        "ymin": 0.23743,
+        "xmax": 0.86115,
+        "ymax": 0.27591
+      },
+      "range": {
+        "end": 28193,
+        "start": 28060
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "troubleshooting-1-solution.png"
+    },
+    {
+      "path": "troubleshooting[5].reason",
+      "label": "Reason (row 6)",
+      "value": "Not enough washing",
+      "page": 8,
+      "box": {
+        "xmin": 0.11185,
+        "ymin": 0.39582,
+        "xmax": 0.2526,
+        "ymax": 0.40738
+      },
+      "range": {
+        "end": 28842,
+        "start": 28824
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "troubleshooting-5-reason.png"
+    },
+    {
+      "path": "troubleshooting[5].solution",
+      "label": "Solution (row 6)",
+      "value": "Verify that all washing steps are carried out properly; if necessary, prolong the washing steps",
+      "page": 8,
+      "box": {
+        "xmin": 0.48001,
+        "ymin": 0.39585,
+        "xmax": 0.85013,
+        "ymax": 0.42074
+      },
+      "range": {
+        "end": 28946,
+        "start": 28851
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "troubleshooting-5-solution.png"
+    }
+  ]
+}

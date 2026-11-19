@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "engineers_estimate.total_base_bid",
+      "label": "Engineer's Estimate total base bid",
+      "value": 1186195.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.45756,
+        "ymin": 0.78467,
+        "xmax": 0.51495,
+        "ymax": 0.79937
+      },
+      "range": {
+        "end": 5725,
+        "start": 5712
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "engineers_estimate-total_base_bid.png"
+    },
+    {
+      "path": "bidders[0].name",
+      "label": "Low bidder",
+      "value": "Yarberry Companies, Inc.",
+      "page": 1,
+      "box": {
+        "xmin": 0.51851,
+        "ymin": 0.21162,
+        "xmax": 0.6201,
+        "ymax": 0.22633
+      },
+      "range": {
+        "end": 511,
+        "start": 487
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bidders-0-name.png"
+    },
+    {
+      "path": "bidders[0].total_base_bid",
+      "label": "Low bidder total base bid",
+      "value": 1117809.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.59472,
+        "ymin": 0.78467,
+        "xmax": 0.65211,
+        "ymax": 0.79937
+      },
+      "range": {
+        "end": 5756,
+        "start": 5743
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bidders-0-total_base_bid.png"
+    },
+    {
+      "path": "bidders[0].bid_bond",
+      "label": "Low bidder bid bond received",
+      "value": "Yes",
+      "page": 1,
+      "box": {
+        "xmin": 0.57805,
+        "ymin": 0.29162,
+        "xmax": 0.59337,
+        "ymax": 0.30633
+      },
+      "range": {
+        "end": 859,
+        "start": 856
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bidders-0-bid_bond.png"
+    },
+    {
+      "path": "bid_schedules[0].line_items[2].engineers_estimate_unit_price",
+      "label": "Engineer's unit price for item 3 (railroad casing pipe)",
+      "value": 623.0,
+      "page": 1,
+      "box": {
+        "xmin": 0.41399,
+        "ymin": 0.49405,
+        "xmax": 0.44641,
+        "ymax": 0.50876
+      },
+      "range": {
+        "end": 2200,
+        "start": 2195
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "bid_schedules-0-line_items-2-engineers_estimate_unit_price.png"
+    }
+  ]
+}

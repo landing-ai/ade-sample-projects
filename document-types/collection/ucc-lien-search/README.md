@@ -1,16 +1,109 @@
 # UCC lien search
 
-Source assets for `landing.ai/document-type/ucc-lien-search`.
+**On the website:** [landing.ai/document-type/ucc-lien-search](https://landing.ai/document-type/ucc-lien-search)
 
-## Sample document
+MicroBilt's sample UCC Search Report, filled with specimen data. It lists five UCC
+financing statements filed in Washington, each with its debtor, filing date, creditor,
+document numbers and counts, and then gives the detail record for one filing: its
+debtor parties, the secured party and the filing event.
 
-`source/microbilt-ucc-report-2024.pdf`: MicroBilt's sample UCC Search Report. **2 pages,
-portrait (US Letter)**, born-digital. Page 1 and the top of page 2 hold a results table of
-five UCC financing statements filed in Washington, each with its debtor, filing state and
-date, creditor, document numbers and filing, debtor and secured-party counts. The rest of
-page 2 is the detail record for one of those filings: original document number and date,
-filing state, four debtor parties, the secured party, and the filing event with its type
-code.
+| | |
+|---|---|
+| Pages | 2 |
+| Fields in the extraction schema | 27 |
+
+Both models ran at standard tier through the jobs API, and both extractions used
+`extract-20261111`.
+Times are the processing time the API reports (`metadata.duration_ms`), not counting
+time queued. Costs are the credits billed (`metadata.billing.total_credits`).
+
+## Parse performance
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Snapshot | `dpt-3-verity-20261111` | `dpt-3-pro-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/`](runs/dpt-3-verity-20261111/) | [`runs/dpt-3-pro-20261111/`](runs/dpt-3-pro-20261111/) |
+| Processed (UTC) | 2026-11-19 03:40 | 2026-11-19 03:57 |
+| Region | US | US |
+
+### Parse accuracy
+
+Word confidence is the `confidence` DPT-3 Verity reports on each word box.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Characters returned | 3,556 | 4,034 |
+| Words under 0.95 confidence | 39 | n/a |
+| Words under 0.80 confidence | 10 | n/a |
+| Words under 0.50 confidence | 0 | n/a |
+| Accuracy | To come | To come |
+
+### Parse speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 5.7 s | 7.4 s |
+| Per page | 2.8 s | 3.7 s |
+
+### Parse cost
+
+| | DPT-3 Verity | DPT-3 Pro |
+|---|---|---|
+| Total | 0.7 credits | 2.1 credits |
+| Per page | 0.35 credits | 1.05 credits |
+
+## Extract performance
+
+Each model's markdown was extracted separately with the same schema. "Per value
+returned" divides by every non-empty value extracted, so an array of six items counts
+six.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Snapshot | `extract-20261111` | `extract-20261111` |
+| Output | [`runs/dpt-3-verity-20261111/extract-20261111/`](runs/dpt-3-verity-20261111/extract-20261111/) | [`runs/dpt-3-pro-20261111/extract-20261111/`](runs/dpt-3-pro-20261111/extract-20261111/) |
+| Processed (UTC) | 2026-11-19 03:41 | 2026-11-19 03:57 |
+| Region | US | US |
+
+### Extract accuracy
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Fields requested | 27 | 27 |
+| Non-null fields returned | 25 | 26 |
+| Accuracy | To come | To come |
+
+### Extract speed
+
+Times are from a single run of each model. They vary from run to run with
+server load, so treat small differences between models as noise.
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 163.5 s | 124.9 s |
+| Per schema field (27) | 6.06 s | 4.63 s |
+| Per value returned | 2.21 s | 1.73 s |
+
+### Extract cost
+
+| | Verity markdown | Pro markdown |
+|---|---|---|
+| Total | 3.7 credits | 3.8 credits |
+| Per schema field (27) | 0.137 credits | 0.141 credits |
+| Per value returned | 0.050 credits | 0.053 credits |
+
+## Origin
+
+`source/microbilt-ucc-report-2024.pdf` is MicroBilt's sample UCC Search Report. It is
+**2 pages, portrait (US Letter)**, born-digital with a text layer. Page 1 and the top of
+page 2 hold a results table of five UCC financing statements filed in Washington, each
+with its debtor, filing state and date, creditor, document numbers and filing, debtor and
+secured-party counts. The rest of page 2 is the detail record for one of those filings:
+original document number and date, filing state, four debtor parties, the secured party,
+and the filing event with its type code.
 
 | | |
 |---|---|
@@ -19,86 +112,42 @@ code.
 | Retrieved | 2026-10-03, downloaded by script |
 | Clearance | Public |
 
-**A vendor's own published specimen, and nothing was redacted.** MicroBilt links this PDF
-from its UCC product page, and a reseller (lsiservices.net) links it from its samples page.
-It is filled with specimen data: names such as ANY COMPANY and WALLY WORLD MEGA VISION
-CINEMA, ANYSTREET addresses with ZIP 12345, and document numbers masked as XXXX. The only
-phone number is MicroBilt's toll-free sales line in the footer. The PDF metadata carries
-only InDesign producer data. Full provenance is in `manifest.json` under `source.origin`;
-this section is the human-readable version.
+**A vendor's own published specimen, and nothing was redacted.** MicroBilt links this
+PDF from its UCC product page, and a reseller (lsiservices.net) links it from its
+samples page. It is filled with specimen data: names such as ANY COMPANY and WALLY WORLD
+MEGA VISION CINEMA, ANYSTREET addresses with ZIP 12345, and document numbers masked as
+XXXX. The only phone number is MicroBilt's toll-free sales line in the footer. The PDF
+metadata carries only InDesign producer data. Full provenance is in `manifest.json` under
+`source.origin`.
 
 ## Why this document
 
-The collection's first **UCC lien search**, and the first search-result report. It has
-two layouts on two pages:
+### Who processes it
 
-- **A results grid built from free-floating text.** Each result is a block of loose text
-  in three shaded columns, with label and value pairs such as `DOC NUMBER:` and
-  `FILING COUNT [ 1]`. One block breaks across the page, so its counts sit on page 2.
-- **The same filing, twice.** Document 98-168-XXXX appears as results 2 and 5, under
-  different debtor names, and again in the detail record. Extraction has to keep the two
-  results apart instead of merging them.
-- **A labelled detail record** with key and value pairs set side by side in two columns.
+A UCC search shows which creditors have filed liens against a business's assets, so it
+is a standard step before lending to, buying or extending credit to that business.
 
-It is a thin sample: every `COLLATERAL:` label is blank, and there are no lapse dates and
-no search through-date. The schema does not ask for those.
+- **Commercial lending:** lenders search before closing to confirm their lien position
+  and find competing creditors.
+- **Equipment finance and leasing:** lessors check for existing liens on the equipment
+  and the lessee.
+- **M&A and legal due diligence:** lawyers search the target for liens that must be
+  released at closing.
+- **Trade credit and collections:** credit managers check a customer's secured debt
+  before setting terms.
+- **Title, search and filing services:** they run searches across state filing offices
+  and deliver reports like this one.
 
-## Featured fields: the filing detail record
+### What it contains
 
-All on page 2. The request named no fields. It offered four as suggestions and pointed at
-page 2's detail block, which is what is featured:
-
-| Field | Value |
-|---|---|
-| Original document number | 98-168-XXXX |
-| Original date filed | 1998-06-17 (printed 06/17/1998) |
-| Filing state | Washington |
-| Filing type code | 0801 |
-| Secured party | ANY COMPANY |
-
-Together these describe one financing statement: what it is, when and where it was filed,
-and who holds the lien. The suggested **type of filing** (UCC FINANCE STATEMENT FILED)
-was not featured, because it grounds OFF: the value wraps over two lines and each of its
-two ranges covers only part of it. The filing type code from the same Events row is
-featured in its place. The secured party is a specimen organization name, not a person.
-
-## What it surfaced
-
-**The word "null" in a description backfired.** In the first extraction, three results
-with no bold debtor name came back with the string `"null"` instead of an actual null.
-A description telling the model to "return JSON null, never the text 'null'" made it
-worse: every blank debtor name and collateral came back as `"null"`. It also merged
-result 5 into result 2, because they share a document number, so only four of the five
-results came back. Rewording to "leave it empty when…", and saying that the array should
-match the count in the heading and must not merge repeated document numbers, fixed both.
-The blank collaterals still come back as a mix of null and `""`.
-
-**Grounding is clean on the labelled pairs.** Every key and value pair in the detail
-block grounds `ok`, and each box takes in the label with its value. Values that wrap over
-two lines, such as the type of filing and the debtor addresses in the results grid, ground
-OFF, because each range covers one line.
-
-**Repeated values ground to every copy.** Result 2's document number and counts have
-ranges on page 2 as well, where result 5 repeats the same filing. The fields are right,
-but they are not unique to one block.
-
-## Extraction
-
-**27 leaf fields**: the report provider, the result count, an array of search results
-(13 fields each) and the filing detail with arrays of debtor parties, secured parties and
-events. Every value matches the page, with the collateral caveat above.
-
-## Cost
-
-**12.80 credits** at standard tier for 2 pages: 5.70 for the first parse and extract,
-then 3.30 and 3.80 for two extract-only schema revisions. The committed output is the
-first parse with the last extraction, which cost 3.80 credits.
-
-## Regenerating
-
-```bash
-.venv/bin/python document-types/scripts/run_ade.py ucc-lien-search                # parse + extract
-.venv/bin/python document-types/scripts/run_ade.py ucc-lien-search --extract-only # 3.80, schema iteration
-.venv/bin/python document-types/scripts/build_images.py ucc-lien-search           # free
-.venv/bin/python document-types/scripts/inspect_fields.py ucc-lien-search --page 2
-```
+- **A results grid built from loose text.** Each result is a block of text in three
+  shaded columns, with label and value pairs such as `DOC NUMBER:` and `FILING COUNT
+  [ 1]`.
+- **A result that breaks across the page,** so its counts sit on page 2.
+- **The same filing more than once.** One document number appears as two results under
+  different debtor names, and again in the detail record.
+- **A labelled detail record** with key and value pairs set side by side in two
+  columns.
+- **Blank labels by design.** Every `COLLATERAL:` label is empty, and there are no lapse
+  dates.
+- **Values that wrap over two lines,** such as the type of filing and debtor addresses.

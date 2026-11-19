@@ -1,0 +1,108 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 1,
+  "page_count": 3,
+  "preview_pages": [
+    1,
+    2,
+    3
+  ],
+  "fields": [
+    {
+      "path": "nfip_community.community_name",
+      "label": "NFIP community",
+      "value": "JACKSON, TOWNSHIP OF",
+      "page": 1,
+      "box": {
+        "xmin": 0.10331,
+        "ymin": 0.3227,
+        "xmax": 0.26679,
+        "ymax": 0.33334
+      },
+      "range": {
+        "end": 1036,
+        "start": 1016
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "nfip_community-community_name.png"
+    },
+    {
+      "path": "nfip_community.community_number",
+      "label": "NFIP community number",
+      "value": "340375",
+      "page": 1,
+      "box": {
+        "xmin": 0.78539,
+        "ymin": 0.32296,
+        "xmax": 0.83068,
+        "ymax": 0.3325
+      },
+      "range": {
+        "end": 1132,
+        "start": 1126
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "nfip_community-community_number.png"
+    },
+    {
+      "path": "nfip_map.flood_zone",
+      "label": "Flood zone",
+      "value": "X",
+      "page": 1,
+      "box": {
+        "xmin": 0.19561,
+        "ymin": 0.42784,
+        "xmax": 0.20537,
+        "ymax": 0.43615
+      },
+      "range": {
+        "end": 1493,
+        "start": 1492
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "nfip_map-flood_zone.png"
+    },
+    {
+      "path": "in_special_flood_hazard_area",
+      "label": "In special flood hazard area",
+      "value": "NO",
+      "page": 1,
+      "box": {
+        "xmin": 0.93515,
+        "ymin": 0.58103,
+        "xmax": 0.95742,
+        "ymax": 0.59134
+      },
+      "range": {
+        "end": 2281,
+        "start": 2279
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "in_special_flood_hazard_area.png"
+    },
+    {
+      "path": "determination_date",
+      "label": "Date of determination",
+      "value": "September 05, 2023",
+      "page": 1,
+      "box": {
+        "xmin": 0.7982,
+        "ymin": 0.89606,
+        "xmax": 0.91752,
+        "ymax": 0.90742
+      },
+      "range": {
+        "end": 3811,
+        "start": 3793
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "determination_date.png"
+    }
+  ]
+}

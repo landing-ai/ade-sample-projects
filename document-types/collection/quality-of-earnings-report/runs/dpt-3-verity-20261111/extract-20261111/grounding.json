@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-verity-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 8,
+  "page_count": 25,
+  "preview_pages": [
+    1,
+    8,
+    9,
+    16
+  ],
+  "fields": [
+    {
+      "path": "ebitda_bridge.periods[3].reported_ebitda",
+      "label": "Reported EBITDA (TTM)",
+      "value": 619882,
+      "page": 8,
+      "box": {
+        "xmin": 0.49406,
+        "ymin": 0.35667,
+        "xmax": 0.52834,
+        "ymax": 0.3686
+      },
+      "range": {
+        "end": 9815,
+        "start": 9808
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ebitda_bridge-periods-3-reported_ebitda.png"
+    },
+    {
+      "path": "ebitda_bridge.periods[3].total_management_adjustments",
+      "label": "Total management adjustments (TTM)",
+      "value": 820085,
+      "page": 8,
+      "box": {
+        "xmin": 0.49414,
+        "ymin": 0.48325,
+        "xmax": 0.52838,
+        "ymax": 0.49499
+      },
+      "range": {
+        "end": 10423,
+        "start": 10416
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ebitda_bridge-periods-3-total_management_adjustments.png"
+    },
+    {
+      "path": "ebitda_bridge.adjustments[9].ttm_amount",
+      "label": "Legal settlement add-back (TTM)",
+      "value": 285000,
+      "page": 8,
+      "box": {
+        "xmin": 0.49417,
+        "ymin": 0.62463,
+        "xmax": 0.52822,
+        "ymax": 0.6362
+      },
+      "range": {
+        "end": 11172,
+        "start": 11165
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ebitda_bridge-adjustments-9-ttm_amount.png"
+    },
+    {
+      "path": "ebitda_bridge.periods[3].adjusted_ebitda",
+      "label": "Adjusted EBITDA (TTM)",
+      "value": 1654372,
+      "page": 8,
+      "box": {
+        "xmin": 0.4868,
+        "ymin": 0.6583,
+        "xmax": 0.5284,
+        "ymax": 0.6703
+      },
+      "range": {
+        "end": 11392,
+        "start": 11383
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ebitda_bridge-periods-3-adjusted_ebitda.png"
+    },
+    {
+      "path": "ebitda_bridge.periods[3].adjusted_ebitda_margin_percent",
+      "label": "Adjusted EBITDA margin (TTM)",
+      "value": 20.1,
+      "page": 8,
+      "box": {
+        "xmin": 0.50347,
+        "ymin": 0.70868,
+        "xmax": 0.53009,
+        "ymax": 0.71953
+      },
+      "range": {
+        "end": 11641,
+        "start": 11637
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "ebitda_bridge-periods-3-adjusted_ebitda_margin_percent.png"
+    }
+  ]
+}

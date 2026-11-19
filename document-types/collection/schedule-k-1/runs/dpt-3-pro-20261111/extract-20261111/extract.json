@@ -1,0 +1,653 @@
+{
+  "extraction": {
+    "amended_k1": false,
+    "deductions_and_other_items": {
+      "amt_items": [
+        {
+          "amount": 19946,
+          "code": "A"
+        }
+      ],
+      "credits": [
+        {
+          "amount": 3560,
+          "code": "P"
+        }
+      ],
+      "distributions": [
+        {
+          "amount": 7514031,
+          "code": "A"
+        }
+      ],
+      "foreign_taxes_paid": null,
+      "multiple_activities_at_risk": false,
+      "multiple_activities_passive": false,
+      "other_deductions": [],
+      "other_information": [
+        {
+          "amount": 9265,
+          "code": "A"
+        }
+      ],
+      "schedule_k3_attached": false,
+      "section_179_deduction": null,
+      "self_employment_earnings": [],
+      "tax_exempt_and_nondeductible": [
+        {
+          "amount": 77513,
+          "code": "C"
+        }
+      ]
+    },
+    "final_k1": false,
+    "income": {
+      "guaranteed_payments_capital": null,
+      "guaranteed_payments_services": null,
+      "interest_income": 9265,
+      "net_long_term_capital_gain": null,
+      "net_rental_real_estate_income": 20300,
+      "net_section_1231_gain": null,
+      "net_short_term_capital_gain": null,
+      "ordinary_business_income": 8068141,
+      "ordinary_dividends": null,
+      "other_income": [],
+      "other_net_rental_income": null,
+      "qualified_dividends": null,
+      "royalties": null,
+      "total_guaranteed_payments": null
+    },
+    "partner": {
+      "address": "PO BOX 99 & BIRCH BRANCH ST, JOHNS, NFLD, CANADA, A1C5N5",
+      "capital_account": {
+        "beginning": 4488892,
+        "contributed": null,
+        "current_year_net_income": null,
+        "ending": 9118401,
+        "other_increase_decrease": 12143540,
+        "withdrawals_and_distributions": 7514031
+      },
+      "contributed_property_with_builtin_gain": false,
+      "domestic_or_foreign": "foreign",
+      "entity_type": "INDIVIDUAL",
+      "liabilities": {
+        "nonrecourse_beginning": null,
+        "nonrecourse_ending": 1100000,
+        "qualified_nonrecourse_beginning": null,
+        "qualified_nonrecourse_ending": null,
+        "recourse_beginning": null,
+        "recourse_ending": null
+      },
+      "name": "SAM STARLING",
+      "partner_type": "limited_partner_or_other_llc_member",
+      "retirement_plan": false,
+      "share_percentages": {
+        "capital_beginning": 10,
+        "capital_ending": 10,
+        "loss_beginning": 10,
+        "loss_ending": 10,
+        "profit_beginning": 10,
+        "profit_ending": 10
+      },
+      "tin": "000-00-0022"
+    },
+    "partnership": {
+      "address": "631 N MCKINLEY DRIVE, RENO NV 89510",
+      "ein": "00-2000001",
+      "irs_center": "EFILE",
+      "name": "SAM STARLING LLP",
+      "publicly_traded": false
+    },
+    "tax_period_beginning": "01/01/2025",
+    "tax_period_ending": "12/31/2025",
+    "tax_year": "2025"
+  },
+  "extraction_metadata": {
+    "amended_k1": {
+      "ranges": [
+        {
+          "end": 3788,
+          "start": 3771
+        }
+      ],
+      "value": false
+    },
+    "deductions_and_other_items": {
+      "amt_items": [
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 4584,
+                "start": 4539
+              }
+            ],
+            "value": 19946
+          },
+          "code": {
+            "ranges": [
+              {
+                "end": 4530,
+                "start": 4529
+              }
+            ],
+            "value": "A"
+          }
+        }
+      ],
+      "credits": [
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 4249,
+                "start": 4233
+              }
+            ],
+            "value": 3560
+          },
+          "code": {
+            "ranges": [
+              {
+                "end": 4224,
+                "start": 4223
+              }
+            ],
+            "value": "P"
+          }
+        }
+      ],
+      "distributions": [
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 4963,
+                "start": 4849
+              }
+            ],
+            "value": 7514031
+          },
+          "code": {
+            "ranges": [
+              {
+                "end": 4813,
+                "start": 4812
+              }
+            ],
+            "value": "A"
+          }
+        }
+      ],
+      "foreign_taxes_paid": {
+        "ranges": null,
+        "value": null
+      },
+      "multiple_activities_at_risk": {
+        "ranges": [
+          {
+            "end": 5867,
+            "start": 5752
+          }
+        ],
+        "value": false
+      },
+      "multiple_activities_passive": {
+        "ranges": [
+          {
+            "end": 5867,
+            "start": 5752
+          }
+        ],
+        "value": false
+      },
+      "other_deductions": [],
+      "other_information": [
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 4963,
+                "start": 4849
+              }
+            ],
+            "value": 9265
+          },
+          "code": {
+            "ranges": [
+              {
+                "end": 4813,
+                "start": 4812
+              }
+            ],
+            "value": "A"
+          }
+        }
+      ],
+      "schedule_k3_attached": {
+        "ranges": [
+          {
+            "end": 4459,
+            "start": 4410
+          }
+        ],
+        "value": false
+      },
+      "section_179_deduction": {
+        "ranges": null,
+        "value": null
+      },
+      "self_employment_earnings": [],
+      "tax_exempt_and_nondeductible": [
+        {
+          "amount": {
+            "ranges": [
+              {
+                "end": 4963,
+                "start": 4849
+              }
+            ],
+            "value": 77513
+          },
+          "code": {
+            "ranges": [
+              {
+                "end": 4798,
+                "start": 4797
+              }
+            ],
+            "value": "C"
+          }
+        }
+      ]
+    },
+    "final_k1": {
+      "ranges": [
+        {
+          "end": 3770,
+          "start": 3755
+        }
+      ],
+      "value": false
+    },
+    "income": {
+      "guaranteed_payments_capital": {
+        "ranges": null,
+        "value": null
+      },
+      "guaranteed_payments_services": {
+        "ranges": null,
+        "value": null
+      },
+      "interest_income": {
+        "ranges": [
+          {
+            "end": 4637,
+            "start": 4613
+          }
+        ],
+        "value": 9265
+      },
+      "net_long_term_capital_gain": {
+        "ranges": null,
+        "value": null
+      },
+      "net_rental_real_estate_income": {
+        "ranges": [
+          {
+            "end": 4131,
+            "start": 4085
+          }
+        ],
+        "value": 20300
+      },
+      "net_section_1231_gain": {
+        "ranges": null,
+        "value": null
+      },
+      "net_short_term_capital_gain": {
+        "ranges": null,
+        "value": null
+      },
+      "ordinary_business_income": {
+        "ranges": [
+          {
+            "end": 4005,
+            "start": 3961
+          }
+        ],
+        "value": 8068141
+      },
+      "ordinary_dividends": {
+        "ranges": null,
+        "value": null
+      },
+      "other_income": [],
+      "other_net_rental_income": {
+        "ranges": null,
+        "value": null
+      },
+      "qualified_dividends": {
+        "ranges": null,
+        "value": null
+      },
+      "royalties": {
+        "ranges": null,
+        "value": null
+      },
+      "total_guaranteed_payments": {
+        "ranges": null,
+        "value": null
+      }
+    },
+    "partner": {
+      "address": {
+        "ranges": [
+          {
+            "end": 1034,
+            "start": 866
+          }
+        ],
+        "value": "PO BOX 99 & BIRCH BRANCH ST, JOHNS, NFLD, CANADA, A1C5N5"
+      },
+      "capital_account": {
+        "beginning": {
+          "ranges": [
+            {
+              "end": 2697,
+              "start": 2688
+            }
+          ],
+          "value": 4488892
+        },
+        "contributed": {
+          "ranges": null,
+          "value": null
+        },
+        "current_year_net_income": {
+          "ranges": null,
+          "value": null
+        },
+        "ending": {
+          "ranges": [
+            {
+              "end": 3243,
+              "start": 3234
+            }
+          ],
+          "value": 9118401
+        },
+        "other_increase_decrease": {
+          "ranges": [
+            {
+              "end": 3018,
+              "start": 3008
+            }
+          ],
+          "value": 12143540
+        },
+        "withdrawals_and_distributions": {
+          "ranges": [
+            {
+              "end": 3137,
+              "start": 3116
+            }
+          ],
+          "value": 7514031
+        }
+      },
+      "contributed_property_with_builtin_gain": {
+        "ranges": [
+          {
+            "end": 3393,
+            "start": 3376
+          }
+        ],
+        "value": false
+      },
+      "domestic_or_foreign": {
+        "ranges": [
+          {
+            "end": 1204,
+            "start": 1197
+          }
+        ],
+        "value": "foreign"
+      },
+      "entity_type": {
+        "ranges": [
+          {
+            "end": 1417,
+            "start": 1407
+          }
+        ],
+        "value": "INDIVIDUAL"
+      },
+      "liabilities": {
+        "nonrecourse_beginning": {
+          "ranges": null,
+          "value": null
+        },
+        "nonrecourse_ending": {
+          "ranges": [
+            {
+              "end": 2079,
+              "start": 2046
+            }
+          ],
+          "value": 1100000
+        },
+        "qualified_nonrecourse_beginning": {
+          "ranges": null,
+          "value": null
+        },
+        "qualified_nonrecourse_ending": {
+          "ranges": null,
+          "value": null
+        },
+        "recourse_beginning": {
+          "ranges": null,
+          "value": null
+        },
+        "recourse_ending": {
+          "ranges": null,
+          "value": null
+        }
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 968,
+            "start": 956
+          }
+        ],
+        "value": "SAM STARLING"
+      },
+      "partner_type": {
+        "ranges": [
+          {
+            "end": 1305,
+            "start": 1087
+          }
+        ],
+        "value": "limited_partner_or_other_llc_member"
+      },
+      "retirement_plan": {
+        "ranges": [
+          {
+            "end": 1614,
+            "start": 1370
+          }
+        ],
+        "value": false
+      },
+      "share_percentages": {
+        "capital_beginning": {
+          "ranges": [
+            {
+              "end": 1746,
+              "start": 1744
+            }
+          ],
+          "value": 10
+        },
+        "capital_ending": {
+          "ranges": [
+            {
+              "end": 1768,
+              "start": 1766
+            }
+          ],
+          "value": 10
+        },
+        "loss_beginning": {
+          "ranges": [
+            {
+              "end": 1676,
+              "start": 1674
+            }
+          ],
+          "value": 10
+        },
+        "loss_ending": {
+          "ranges": [
+            {
+              "end": 1698,
+              "start": 1696
+            }
+          ],
+          "value": 10
+        },
+        "profit_beginning": {
+          "ranges": [
+            {
+              "end": 1605,
+              "start": 1603
+            }
+          ],
+          "value": 10
+        },
+        "profit_ending": {
+          "ranges": [
+            {
+              "end": 1605,
+              "start": 1603
+            }
+          ],
+          "value": 10
+        }
+      },
+      "tin": {
+        "ranges": [
+          {
+            "end": 835,
+            "start": 824
+          }
+        ],
+        "value": "000-00-0022"
+      }
+    },
+    "partnership": {
+      "address": {
+        "ranges": [
+          {
+            "end": 513,
+            "start": 389
+          }
+        ],
+        "value": "631 N MCKINLEY DRIVE, RENO NV 89510"
+      },
+      "ein": {
+        "ranges": [
+          {
+            "end": 387,
+            "start": 377
+          }
+        ],
+        "value": "00-2000001"
+      },
+      "irs_center": {
+        "ranges": [
+          {
+            "end": 572,
+            "start": 567
+          }
+        ],
+        "value": "EFILE"
+      },
+      "name": {
+        "ranges": [
+          {
+            "end": 472,
+            "start": 456
+          }
+        ],
+        "value": "SAM STARLING LLP"
+      },
+      "publicly_traded": {
+        "ranges": [
+          {
+            "end": 632,
+            "start": 574
+          }
+        ],
+        "value": false
+      }
+    },
+    "tax_period_beginning": {
+      "ranges": [
+        {
+          "end": 176,
+          "start": 133
+        }
+      ],
+      "value": "01/01/2025"
+    },
+    "tax_period_ending": {
+      "ranges": [
+        {
+          "end": 176,
+          "start": 133
+        }
+      ],
+      "value": "12/31/2025"
+    },
+    "tax_year": {
+      "ranges": [
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 176,
+          "start": 133
+        }
+      ],
+      "value": "2025"
+    }
+  },
+  "markdown": "# Schedule K-1 (Form 1065)\n\nDepartment of the Treasury\nInternal Revenue Service\n\n2025\n\nService\n\nFor calendar year 2025, or tax year\n\nending 01 / 01 / 2025 ending 12 / 31 / 2025\n\n# Partner's Share of Income, Deductions, Credits, etc. See separa\n\n**See separate instructions.**\n\n**Part I Information About the Partnership**\n\n- **A**: Partnership's employer identification number\n00-2000001\n\n- **B**: Partnership's name, address, city, state, and ZIP code<br>SAM STARLING LLP<br>631 N MCKINLEY DRIVE<br>RENO NV 89510\n\n- **C**: IRS center where partnership filed return: EFILE\n\n- [ ] Check if this is a publicly traded partnership (PTP)\n\n<table>\n<tr><td colspan=\"5\">Part II Information About the Partner</td></tr>\n<tr><td>E</td><td colspan=\"4\">Partner's SSN or TIN (Do not use TIN of a disregarded entity. See instructions.)<br>000-00-0022</td></tr>\n<tr><td colspan=\"5\">F Name, address, city, state, and ZIP code for partner entered in E. See instructions.<br>SAM STARLING<br>PO BOX 99 &amp; BIRCH BRANCH ST<br>JOHNS, NFLD, CANADA, A1C5N5</td></tr>\n<tr><td>G<br>H1<br>H2</td><td colspan=\"4\">[ ] General partner or LLC member-manager [x] Limited partner or other LLC member<br>[ ] Domestic partner [x] Foreign partner<br>[ ] If the partner is a disregarded entity (DE), enter the partner's:<br>TIN ___ Name ___</td></tr>\n<tr><td>I1<br>I2<br>J</td><td rowspan=\"2\" colspan=\"4\">What type of entity is this partner? INDIVIDUAL<br>If this partner is a retirement plan (IRA/SEP/Keogh/etc.), check here . [ ]<br>Partner's share of profit, loss, and capital (see instructions):<br>**Beginning** **Ending**<br>Profit 10 % | 10 %</td></tr>\n<tr><td></td></tr>\n<tr><td></td><td>Loss</td><td>10 %</td><td></td><td>10 %</td></tr>\n<tr><td></td><td>Capital</td><td>10 %</td><td></td><td>10 %</td></tr>\n<tr><td></td><td colspan=\"4\">Check if decrease is due to:<br>[ ] Sale or [ ] Exchange of partnership interest. See instructions.</td></tr>\n<tr><td>K1</td><td colspan=\"4\">Partner’s share of liabilities:</td></tr>\n<tr><td></td><td>Nonrecourse . .</td><td colspan=\"3\">Beginning Ending<br>$ $ 1,100,000</td></tr>\n<tr><td></td><td>Qualified nonrecourse financing . . . .</td><td>$</td><td colspan=\"2\">$</td></tr>\n<tr><td></td><td>Recourse . . . .</td><td colspan=\"3\">$ $</td></tr>\n<tr><td>K2<br>K3</td><td colspan=\"4\">Check this box if item K1 includes liability amounts from lower-tier partnerships ☐<br>Check if any of the above liability is subject to guarantees or other payment obligations by the partner. See instructions . . . . . ☐</td></tr>\n<tr><td>L</td><td colspan=\"4\">Partner's Capital Account Analysis</td></tr>\n<tr><td></td><td colspan=\"2\">**Beginning capital account** . . . $</td><td colspan=\"2\">4,488,892</td></tr>\n<tr><td></td><td colspan=\"2\">Capital contributed during the year . $_</td><td colspan=\"2\"></td></tr>\n<tr><td></td><td colspan=\"2\">Current year net income (loss) . . . $</td><td colspan=\"2\">\"\"</td></tr>\n<tr><td></td><td colspan=\"2\">Other increase (decrease) (attach explanation) $</td><td colspan=\"2\">12,143,540</td></tr>\n<tr><td></td><td colspan=\"2\">Withdrawals and distributions . . . $</td><td colspan=\"2\">(          7,514,031)</td></tr>\n<tr><td></td><td colspan=\"2\">**Ending capital account** . . . . $</td><td colspan=\"2\">9,118,401</td></tr>\n<tr><td>M</td><td colspan=\"4\">Did the partner contribute property with a built-in gain (loss)?</td></tr>\n<tr><td></td><td>[ ] Yes<br>[x] No</td><td colspan=\"3\">If “Yes,” attach statement. See instructions.</td></tr>\n<tr><td>N</td><td colspan=\"4\">Partner's Share of Net Unrecognized Section 704(c) Gain or (Loss)</td></tr>\n<tr><td></td><td colspan=\"2\">Beginning . . . . . $ .</td><td colspan=\"2\"></td></tr>\n<tr><td></td><td colspan=\"2\">Ending . . . . . . . $ .</td><td colspan=\"2\"></td></tr>\n</table>\n\n- [ ] Final K-1\n- [ ] Amended K-1\n\n651123\nOMB No. 1545-0123\n\n<table>\n<tr><td colspan=\"4\">Part III Partner's Share of Current Year Income,<br>Deductions, Credits, and Other Items</td></tr>\n<tr><td>1</td><td>Ordinary business income (loss)<br>8,068,141</td><td>14</td><td>Self-employment earnings (loss)</td></tr>\n<tr><td>2</td><td>Net rental real estate income (loss)<br>20,300</td><td></td><td></td></tr>\n<tr><td>3</td><td>Other net rental income (loss)</td><td>15<br>P</td><td>Credits<br>3,560</td></tr>\n<tr><td>4a</td><td>Guaranteed payments for services</td><td></td><td></td></tr>\n<tr><td>4b</td><td>Guaranteed payments for capital</td><td>16</td><td>Schedule K-3 is attached if checked . . . . . [ ]</td></tr>\n<tr><td>4c</td><td>Total guaranteed payments</td><td>17<br>A</td><td>Alternative minimum tax (AMT) items<br>19,946</td></tr>\n<tr><td>5</td><td>Interest income<br>9,265</td><td></td><td></td></tr>\n<tr><td>6a</td><td>Ordinary dividends</td><td></td><td></td></tr>\n<tr><td>6b</td><td>Qualified dividends</td><td rowspan=\"7\">18<br>C<br><br>19<br>A<br><br>20<br>A</td><td rowspan=\"7\">Tax-exempt income and nondeductible expenses<br>77,513<br>Distributions<br>7,514,031<br>Other information<br>9,265</td></tr>\n<tr><td>6c</td><td>Dividend equivalents</td></tr>\n<tr><td>7</td><td>Royalties</td></tr>\n<tr><td>8</td><td>Net short-term capital gain (loss)</td></tr>\n<tr><td>9a</td><td>Net long-term capital gain (loss)</td></tr>\n<tr><td>9b</td><td>Collectibles (28%) gain (loss)</td></tr>\n<tr><td>9c</td><td>Unrecaptured section 1250 gain</td></tr>\n<tr><td>10</td><td>Net section 1231 gain (loss)</td><td></td><td></td></tr>\n<tr><td>11</td><td>Other income (loss)</td><td></td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td></tr>\n<tr><td>12</td><td>Section 179 deduction</td><td>21</td><td>Foreign taxes paid or accrued</td></tr>\n<tr><td>13</td><td>Other deductions</td><td rowspan=\"3\" colspan=\"2\"></td></tr>\n<tr><td></td><td></td></tr>\n<tr><td></td><td></td></tr>\n<tr><td colspan=\"4\">22 [ ] More than one activity for at-risk purposes*<br>23 [ ] More than one activity for passive activity purposes*</td></tr>\n<tr><td colspan=\"4\">*See attached statement for additional information.</td></tr>\n<tr><td colspan=\"4\">For IRS Use Only</td></tr>\n</table>\n\n**For Paperwork Reduction Act Notice, see the Instructions for Form 1065.**\n\nwww.irs.gov/Form1065\n\nCat. No. 11394R\n\n# Schedule K-1 (Form 1065) 2025\n\nbeginnin\n\n<!-- doc_id=parse-01m7ryz7x1pfx0zypc6srz2t3n -->",
+  "metadata": {
+    "job_id": "extract-01m7ryzyc9sb6b0qgcge5sjqk0",
+    "version": null,
+    "model_version": "extract-20261111",
+    "duration_ms": 95890,
+    "doc_id": "parse-01m7ryz7x1pfx0zypc6srz2t3n",
+    "credit_usage": 0.0,
+    "billing": {
+      "service_tier": "standard",
+      "total_credits": 3.3,
+      "input_markdown_chars": null,
+      "output_extraction_chars": null
+    },
+    "input_markdown_chars": 6224,
+    "output_extraction_chars": 2013,
+    "range_units": "unicode_codepoints",
+    "openapi_spec": "https://api.ade.landing.ai/openapi.json",
+    "filename": "inline_markdown.md",
+    "org_id": "u3z0u1hn4acl"
+  },
+  "output_ref": null,
+  "schema_violation_error": null,
+  "warnings": []
+}

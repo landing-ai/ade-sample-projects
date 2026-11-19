@@ -16,11 +16,60 @@
   },
   "feature_page": 1,
   "fields": [
-    { "path": "addressee.name", "label": "Lender protected", "occurrence": 0 },
-    { "path": "settlement_agent.name", "label": "Settlement agent", "occurrence": 0 },
-    { "path": "file_number", "label": "File number", "occurrence": 0 },
-    { "path": "loan_number", "label": "Loan number", "occurrence": 0 },
-    { "path": "max_aggregate_funds", "label": "Maximum funds covered", "occurrence": 0 }
+    {
+      "path": "addressee.name",
+      "label": "Lender protected",
+      "occurrence": 0
+    },
+    {
+      "path": "settlement_agent.name",
+      "label": "Settlement agent",
+      "occurrence": 0
+    },
+    {
+      "path": "file_number",
+      "label": "File number",
+      "occurrence": 0
+    },
+    {
+      "path": "loan_number",
+      "label": "Loan number",
+      "occurrence": 0
+    },
+    {
+      "path": "max_aggregate_funds",
+      "label": "Maximum funds covered",
+      "occurrence": 0
+    }
   ],
-  "notes": "The request named no page or fields. Features what the letter is for, all on page 1: which lender it protects, against which settlement agent's handling of which file and loan, and up to what amount. No person is featured; the borrowers are specimen names but are left out anyway. settlement_agent.name is pinned to occurrence 0, the block under 'SETTLEMENT AGENT OR APPROVED ATTORNEY'; the name is printed twice. Addresses span two lines and read OFF. is_sample grounds to the SAMPLE watermark and is_signed to the [SIGNED] attestation on page 2; both are correct but OFF because a boolean is not printed."
+  "notes": "The request named no page or fields. Features what the letter is for, all on page 1: which lender it protects, against which settlement agent's handling of which file and loan, and up to what amount. No person is featured; the borrowers are specimen names but are left out anyway. settlement_agent.name is pinned to occurrence 0, the block under 'SETTLEMENT AGENT OR APPROVED ATTORNEY'; the name is printed twice. Addresses span two lines and read OFF. is_sample grounds to the SAMPLE watermark and is_signed to the [SIGNED] attestation on page 2; both are correct but OFF because a boolean is not printed.",
+  "runs": [
+    {
+      "parse_model": "dpt-3-pro-20260710",
+      "extract_model": "extract-20260819",
+      "path": "runs/dpt-3-pro-20260710/extract-20260819",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.2,
+      "extract_credits": 3.5
+    },
+    {
+      "parse_model": "dpt-3-pro-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-pro-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 4.3,
+      "extract_credits": 3.5
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 2,
+      "service_tier": "standard",
+      "parse_credits": 1.6,
+      "extract_credits": 3.5
+    }
+  ]
 }

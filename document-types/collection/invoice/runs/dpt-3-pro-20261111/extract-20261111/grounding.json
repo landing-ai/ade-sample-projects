@@ -1,0 +1,106 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": null,
+  "page_count": 1,
+  "preview_pages": [
+    1
+  ],
+  "fields": [
+    {
+      "path": "invoice_info.invoice_number",
+      "label": "Invoice number",
+      "value": "138277",
+      "page": 1,
+      "box": {
+        "xmin": 0.70383,
+        "ymin": 0.09798,
+        "xmax": 0.76008,
+        "ymax": 0.11012
+      },
+      "range": {
+        "end": 295,
+        "start": 289
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "invoice_info-invoice_number.png"
+    },
+    {
+      "path": "company_info.supplier_name",
+      "label": "Supplier",
+      "value": "A.E. Blake Sales Ltd.",
+      "page": 1,
+      "box": {
+        "xmin": 0.55519,
+        "ymin": 0.02236,
+        "xmax": 0.68069,
+        "ymax": 0.03107
+      },
+      "range": {
+        "end": 95,
+        "start": 74
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "company_info-supplier_name.png"
+    },
+    {
+      "path": "customer_info.sold_to_name",
+      "label": "Sold to",
+      "value": "NELSON INDUSTRIAL FABRICATORS",
+      "page": 1,
+      "box": {
+        "xmin": 0.14366,
+        "ymin": 0.15916,
+        "xmax": 0.41281,
+        "ymax": 0.1696
+      },
+      "range": {
+        "end": 382,
+        "start": 353
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "customer_info-sold_to_name.png"
+    },
+    {
+      "path": "line_items[1].description",
+      "label": "Line item description",
+      "value": "3M 777F RBC Belt 6\"x202\" 60YF 10belts/case (+/-10%)",
+      "page": 1,
+      "box": {
+        "xmin": 0.22728,
+        "ymin": 0.47389,
+        "xmax": 0.44181,
+        "ymax": 0.50043
+      },
+      "range": {
+        "end": 1520,
+        "start": 1469
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "line_items-1-description.png"
+    },
+    {
+      "path": "totals_summary.total_due",
+      "label": "Total due",
+      "value": 3099.67,
+      "page": 1,
+      "box": {
+        "xmin": 0.85429,
+        "ymin": 0.8979,
+        "xmax": 0.9217,
+        "ymax": 0.92113
+      },
+      "range": {
+        "end": 2147,
+        "start": 2130
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals_summary-total_due.png"
+    }
+  ]
+}

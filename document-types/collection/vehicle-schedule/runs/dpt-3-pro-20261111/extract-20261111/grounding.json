@@ -1,0 +1,109 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 3,
+  "page_count": 4,
+  "preview_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fields": [
+    {
+      "path": "locations[0].section_name",
+      "label": "Department section",
+      "value": "Louisa Vol. Fire Dept.",
+      "page": 3,
+      "box": {
+        "xmin": 0.39969,
+        "ymin": 0.09686,
+        "xmax": 0.52024,
+        "ymax": 0.10595
+      },
+      "range": {
+        "end": 2216,
+        "start": 2194
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-section_name.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].body_type",
+      "label": "Body type",
+      "value": "Pumper",
+      "page": 3,
+      "box": {
+        "xmin": 0.34376,
+        "ymin": 0.10868,
+        "xmax": 0.38455,
+        "ymax": 0.11777
+      },
+      "range": {
+        "end": 2288,
+        "start": 2282
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-body_type.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].vin",
+      "label": "VIN",
+      "value": "4PICV01E5BA011783",
+      "page": 3,
+      "box": {
+        "xmin": 0.48812,
+        "ymin": 0.10868,
+        "xmax": 0.6031,
+        "ymax": 0.11777
+      },
+      "range": {
+        "end": 2314,
+        "start": 2297
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-vin.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].agreed_value",
+      "label": "Agreed value",
+      "value": 580000,
+      "page": 3,
+      "box": {
+        "xmin": 0.63639,
+        "ymin": 0.10883,
+        "xmax": 0.6786,
+        "ymax": 0.11792
+      },
+      "range": {
+        "end": 2330,
+        "start": 2323
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-agreed_value.png"
+    },
+    {
+      "path": "locations[0].vehicles[0].unique_id",
+      "label": "Station ID",
+      "value": "FS1",
+      "page": 3,
+      "box": {
+        "xmin": 0.73722,
+        "ymin": 0.10883,
+        "xmax": 0.75886,
+        "ymax": 0.11792
+      },
+      "range": {
+        "end": 2342,
+        "start": 2339
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "locations-0-vehicles-0-unique_id.png"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "parse_model": "dpt-3-pro-20261111",
+  "extract_model": "extract-20261111",
+  "feature_page": 2,
+  "page_count": 2,
+  "preview_pages": [
+    1,
+    2
+  ],
+  "fields": [
+    {
+      "path": "schedule_of_values[0].balance_to_finish",
+      "label": "Balance to finish",
+      "value": 3796.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.67727,
+        "ymin": 0.26512,
+        "xmax": 0.71014,
+        "ymax": 0.27591
+      },
+      "range": {
+        "end": 4342,
+        "start": 4334
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedule_of_values-0-balance_to_finish.png"
+    },
+    {
+      "path": "schedule_of_values[26].scheduled_value",
+      "label": "HVAC and Controls scheduled value",
+      "value": 962000.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.25758,
+        "ymin": 0.66787,
+        "xmax": 0.29997,
+        "ymax": 0.67865
+      },
+      "range": {
+        "end": 9577,
+        "start": 9567
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedule_of_values-26-scheduled_value.png"
+    },
+    {
+      "path": "schedule_of_values[26].change_orders",
+      "label": "HVAC and Controls change orders",
+      "value": 154703.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.31879,
+        "ymin": 0.66787,
+        "xmax": 0.36119,
+        "ymax": 0.67865
+      },
+      "range": {
+        "end": 9596,
+        "start": 9586
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedule_of_values-26-change_orders.png"
+    },
+    {
+      "path": "schedule_of_values[26].revised_scheduled_value",
+      "label": "HVAC and Controls revised value",
+      "value": 1116703.0,
+      "page": 2,
+      "box": {
+        "xmin": 0.37848,
+        "ymin": 0.66787,
+        "xmax": 0.42769,
+        "ymax": 0.67865
+      },
+      "range": {
+        "end": 9617,
+        "start": 9605
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "schedule_of_values-26-revised_scheduled_value.png"
+    },
+    {
+      "path": "totals.total_completed_and_stored_to_date",
+      "label": "Total completed and stored to date",
+      "value": 6849725.77,
+      "page": 2,
+      "box": {
+        "xmin": 0.56045,
+        "ymin": 0.76081,
+        "xmax": 0.60966,
+        "ymax": 0.77159
+      },
+      "range": {
+        "end": 10867,
+        "start": 10855
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "totals-total_completed_and_stored_to_date.png"
+    }
+  ]
+}
