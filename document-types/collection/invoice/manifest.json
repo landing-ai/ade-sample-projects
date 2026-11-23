@@ -6,14 +6,15 @@
     "pages": 1,
     "orientation": "portrait",
     "origin": {
-      "url": null,
+      "url": "https://github.com/landing-ai/ade-sample-projects/blob/main/Use_Cases/Invoices/input_folder/invoice_4.pdf",
       "publisher": "A.E. Blake Sales Ltd.",
       "title": "Invoice 138277",
-      "retrieved": null,
-      "clearance": "PLACEHOLDER",
-      "clearance_note": "Copied from Use_Cases/Invoices/input_folder, already public in this repo, but not gathered for publication on a marketing page. Replace before the page ships. See README.md."
+      "retrieved": "2026-09-25",
+      "clearance": "public",
+      "clearance_note": "Copied from Use_Cases/Invoices/input_folder, where it has been committed to this public repository for some time. Cleared for use on the LandingAI website by the marketing team on 2026-11-23, as published (no redaction)."
     }
   },
+  "feature_page": 1,
   "fields": [
     {
       "path": "invoice_info.invoice_number",
@@ -54,6 +55,15 @@
       "pages": 1,
       "service_tier": "standard",
       "parse_credits": 1.1,
+      "extract_credits": 2.0
+    },
+    {
+      "parse_model": "dpt-3-verity-20261111",
+      "extract_model": "extract-20261111",
+      "path": "runs/dpt-3-verity-20261111/extract-20261111",
+      "pages": 1,
+      "service_tier": "standard",
+      "parse_credits": 0.4,
       "extract_credits": 2.0
     }
   ]
