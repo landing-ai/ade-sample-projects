@@ -8,25 +8,6 @@
   ],
   "fields": [
     {
-      "path": "loan_number",
-      "label": "Loan number",
-      "value": "443781220",
-      "page": 1,
-      "box": {
-        "xmin": 0.4989,
-        "ymin": 0.0996,
-        "xmax": 0.74858,
-        "ymax": 0.12716
-      },
-      "range": {
-        "end": 172,
-        "start": 149
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "loan_number.png"
-    },
-    {
       "path": "borrower.name",
       "label": "Borrower",
       "value": "Stephanie Carter",
@@ -46,25 +27,6 @@
       "image": "borrower-name.png"
     },
     {
-      "path": "property_details.property_type",
-      "label": "Property use",
-      "value": "Primary Residence",
-      "page": 1,
-      "box": {
-        "xmin": 0.06023,
-        "ymin": 0.41567,
-        "xmax": 0.91242,
-        "ymax": 0.4335
-      },
-      "range": {
-        "end": 2235,
-        "start": 2212
-      },
-      "occurrence": 1,
-      "matched": true,
-      "image": "property_details-property_type.png"
-    },
-    {
       "path": "property_details.property_occupancy_status",
       "label": "Occupancy",
       "value": "Owner Occupied",
@@ -82,6 +44,44 @@
       "occurrence": 1,
       "matched": true,
       "image": "property_details-property_occupancy_status.png"
+    },
+    {
+      "path": "insurance_details.insurance_payer",
+      "label": "Insurance paid by",
+      "value": "Lender does",
+      "page": 1,
+      "box": {
+        "xmin": 0.50814,
+        "ymin": 0.85146,
+        "xmax": 0.87183,
+        "ymax": 0.86704
+      },
+      "range": {
+        "end": 4383,
+        "start": 4367
+      },
+      "occurrence": 1,
+      "matched": true,
+      "image": "insurance_details-insurance_payer.png"
+    },
+    {
+      "path": "real_estate_tax_details.real_estate_tax_payer",
+      "label": "Property tax paid by",
+      "value": "Lender does",
+      "page": 1,
+      "box": {
+        "xmin": 0.08073,
+        "ymin": 0.80204,
+        "xmax": 0.47724,
+        "ymax": 0.8499
+      },
+      "range": {
+        "end": 3804,
+        "start": 3788
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "real_estate_tax_details-real_estate_tax_payer.png"
     }
   ]
 }

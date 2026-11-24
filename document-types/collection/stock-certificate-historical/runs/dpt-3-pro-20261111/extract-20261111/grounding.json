@@ -8,44 +8,6 @@
   ],
   "fields": [
     {
-      "path": "certificate_number",
-      "label": "Certificate number",
-      "value": "95",
-      "page": 1,
-      "box": {
-        "xmin": 0.13025,
-        "ymin": 0.11639,
-        "xmax": 0.89061,
-        "ymax": 0.30073
-      },
-      "range": {
-        "end": 97,
-        "start": 95
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "certificate_number.png"
-    },
-    {
-      "path": "holder.name",
-      "label": "Shareholder",
-      "value": "James Couzen",
-      "page": 1,
-      "box": {
-        "xmin": 0.12824,
-        "ymin": 0.25582,
-        "xmax": 0.9009,
-        "ymax": 0.71363
-      },
-      "range": {
-        "end": 183,
-        "start": 171
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "holder-name.png"
-    },
-    {
       "path": "authorized_capital",
       "label": "Authorized capital",
       "value": "$125,000.00",
@@ -65,27 +27,46 @@
       "image": "authorized_capital.png"
     },
     {
-      "path": "issue_place",
-      "label": "Place of issue",
-      "value": "Walkerville, Ontario",
+      "path": "company_name",
+      "label": "Company",
+      "value": "The Ford Motor Company of Canada, Limited",
       "page": 1,
       "box": {
-        "xmin": 0.12824,
-        "ymin": 0.25582,
-        "xmax": 0.9009,
-        "ymax": 0.71363
+        "xmin": 0.13025,
+        "ymin": 0.11639,
+        "xmax": 0.89061,
+        "ymax": 0.30073
       },
       "range": {
-        "end": 565,
-        "start": 545
+        "end": 71,
+        "start": 30
       },
       "occurrence": 0,
       "matched": true,
-      "image": "issue_place.png"
+      "image": "company_name.png"
+    },
+    {
+      "path": "signatories[0].title",
+      "label": "Signatory 1",
+      "value": "SECRETARY",
+      "page": 1,
+      "box": {
+        "xmin": 0.09594,
+        "ymin": 0.7849,
+        "xmax": 0.40243,
+        "ymax": 0.87106
+      },
+      "range": {
+        "end": 622,
+        "start": 613
+      },
+      "occurrence": 0,
+      "matched": true,
+      "image": "secretary_title.png"
     },
     {
       "path": "signatories[1].title",
-      "label": "Title",
+      "label": "Signatory 2",
       "value": "PRESIDENT",
       "page": 1,
       "box": {
@@ -100,7 +81,7 @@
       },
       "occurrence": 0,
       "matched": true,
-      "image": "signatories-1-title.png"
+      "image": "president_title.png"
     }
   ]
 }

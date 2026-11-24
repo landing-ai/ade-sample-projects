@@ -17,32 +17,29 @@
   "feature_page": 1,
   "fields": [
     {
-      "path": "certificate_number",
-      "label": "Certificate number",
-      "occurrence": 0
-    },
-    {
-      "path": "holder.name",
-      "label": "Shareholder",
-      "occurrence": 0
-    },
-    {
       "path": "authorized_capital",
       "label": "Authorized capital",
       "occurrence": 0
     },
     {
-      "path": "issue_place",
-      "label": "Place of issue",
+      "path": "company_name",
+      "label": "Company",
       "occurrence": 0
     },
     {
+      "path": "signatories[0].title",
+      "label": "Signatory 1",
+      "occurrence": 0,
+      "name": "secretary_title"
+    },
+    {
       "path": "signatories[1].title",
-      "label": "Title",
-      "occurrence": 0
+      "label": "Signatory 2",
+      "occurrence": 0,
+      "name": "president_title"
     }
   ],
-  "notes": "The request named a Getty Images photo of Henry Ford's 1903 Ford Motor Company certificate (via Investopedia). The operator chose this CC0 Commons certificate instead, since the Getty image is licensed rather than released for reuse. No feature page or fields were requested. The overlay follows the issue of certificate No. 95: its number, the shareholder, the ten shares written out by hand, where it was issued, and Henry Ford's signature as president. Named individuals are featured because a stock certificate's substance is who holds it and who signed it, and here they are Ford's founders, all long deceased. Two extraction errors are documented in the README: the issue date and the cancellation mark.",
+  "notes": "The request named a Getty Images photo of Henry Ford's 1903 Ford Motor Company certificate (via Investopedia). The operator chose this CC0 Commons certificate instead, since the Getty image is licensed rather than released for reuse. No feature page or fields were requested. The overlay follows the issue of certificate No. 95: its number, the shareholder, the ten shares written out by hand, where it was issued, and Henry Ford's signature as president. Named individuals are featured because a stock certificate's substance is who holds it and who signed it, and here they are Ford's founders, all long deceased. Two extraction errors are documented in the README: the issue date and the cancellation mark. Changed for the website page: the shareholder and place of issue were dropped from the featured fields because the 20261111 run reads the handwritten name as \"James Couzen\" and both values' boxes cover the whole certificate body. The overlay now features the authorized capital, the company and the two signatories' titles, whose boxes sit on the values; the certificate number, number of shares and par value were also tried and dropped because their boxes cover the whole header or body.",
   "runs": [
     {
       "parse_model": "dpt-3-pro-20260710",

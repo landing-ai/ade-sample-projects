@@ -22,11 +22,6 @@
       "occurrence": 0
     },
     {
-      "path": "classification",
-      "label": "Classification",
-      "occurrence": 0
-    },
-    {
       "path": "copy_number",
       "label": "Copy number",
       "occurrence": 0
@@ -37,7 +32,7 @@
       "occurrence": 0
     }
   ],
-  "notes": "No feature page or fields were requested. The cover tells the document's whole life: a Top Secret bulletin of 25 January 1957, copy 131 of a numbered distribution, approved for public release on 2019-12-04. release.document_id (C03161983) grounds to the same release-stamp line as the date, so only the date is featured. The cover title and issuing office ground OFF: each is stacked across three or two lines and no single line holds the whole value. The contents list's 'redacted' flags are unreliable (see README).",
+  "notes": "No feature page or fields were requested. The cover tells the document's whole life: a Top Secret bulletin of 25 January 1957, copy 131 of a numbered distribution, approved for public release on 2019-12-04. release.document_id (C03161983) grounds to the same release-stamp line as the date, so only the date is featured. The cover title and issuing office ground OFF: each is stacked across three or two lines and no single line holds the whole value. The contents list's 'redacted' flags are unreliable (see README). Changed for the website page: Classification was dropped from the featured fields because its box on the 20261111 run covers the struck-through marking, the border and the release stamp.",
   "runs": [
     {
       "parse_model": "dpt-3-pro-20260710",
