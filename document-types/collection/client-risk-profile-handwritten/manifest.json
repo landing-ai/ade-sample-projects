@@ -32,17 +32,12 @@
       "occurrence": 0
     },
     {
-      "path": "risk_assessment_questions.q3_open",
-      "label": "Secondary purpose",
-      "occurrence": 0
-    },
-    {
       "path": "risk_assessment_questions.q4",
       "label": "Risk acceptance",
       "occurrence": 0
     }
   ],
-  "notes": "The request supplied the schema (doc38-wells-fargo-client-profile-schema.json, used unchanged, 26 leaf fields) and named no feature page or fields. Page 1's questionnaire tells one risk-profile story: the age band, the time horizon, the primary purpose and the handwritten secondary purpose, and the stated acceptance of risk. Four are hand-ticked checkboxes and one is a handwritten write-in. No personal field is featured, although all the personal data on the page is invented. The supplied schema contains a property with an empty name (\"\"); it extracts as null but carries about 38 grounding ranges scattered over pages 1 and 2 (it is reported in the README and left unchanged).",
+  "notes": "The request supplied the schema (doc38-wells-fargo-client-profile-schema.json, used unchanged, 26 leaf fields) and named no feature page or fields. Page 1's questionnaire tells one risk-profile story: the age band, the time horizon, the primary purpose and the handwritten secondary purpose, and the stated acceptance of risk. Four are hand-ticked checkboxes and one is a handwritten write-in. No personal field is featured, although all the personal data on the page is invented. The supplied schema contains a property with an empty name (\"\"); it extracts as null but carries about 38 grounding ranges scattered over pages 1 and 2 (it is reported in the README and left unchanged). Changed for the website page: Secondary purpose was dropped from the featured fields because its box on the 20261111 run covers the whole question block.",
   "runs": [
     {
       "parse_model": "dpt-3-pro-20260710",
