@@ -32,17 +32,12 @@
       "occurrence": 0
     },
     {
-      "path": "quota",
-      "label": "Quota",
-      "occurrence": 0
-    },
-    {
       "path": "governing_law",
       "label": "Granted under",
       "occurrence": 0
     }
   ],
-  "notes": "No feature page or fields were requested. The overlay shows the visa as an instrument of the 1924 quota system: its number, the consulate that issued it, the preference box checked, the national quota it was charged to, and the act it was granted under. No individual is featured, though the bearer's name and photograph are on the page. fee ($9.00) is extracted correctly but grounds to the parse's description of the photograph rather than to the fee line, so it is not featured. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD.",
+  "notes": "No feature page or fields were requested. The overlay shows the visa as an instrument of the 1924 quota system: its number, the consulate that issued it, the preference box checked, the national quota it was charged to, and the act it was granted under. No individual is featured, though the bearer's name and photograph are on the page. fee ($9.00) is extracted correctly but grounds to the parse's description of the photograph rather than to the fee line, so it is not featured. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD. Changed for the website page: Quota was dropped from the featured fields because its box on the 20261111 run sits on the Nationality blank.",
   "runs": [
     {
       "parse_model": "dpt-3-pro-20260710",
