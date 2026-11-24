@@ -30,14 +30,9 @@
       "path": "state",
       "label": "State",
       "occurrence": 0
-    },
-    {
-      "path": "affidavit.intended_spouse_residence_county",
-      "label": "Intended spouse residence county",
-      "occurrence": 0
     }
   ],
-  "notes": "The request asked for the photograph to be used as is; it was, unredacted, under the historical-record and public-figure exemptions with the evidence in clearance_note. No feature page or fields were requested. The overlay follows the license from issue to return: its number, the two people named in the sworn affidavit, the probate judge who granted it, and the officiant's line in the marriage return. Named individuals are featured because they are the substance of a marriage license and here they are a president and first lady, both long deceased. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD. Changed for the website page: the handwritten names were dropped from the featured fields because the 20261111 run misreads them (the applicant as \"William A Saft\", the return's spouses as \"William H. Watt\" and \"Helen L. Hearn\"), and their boxes cover the whole affidavit. The license number, county, state and the intended spouse's county of residence are featured instead; the officiant title was dropped too, since its box covers the whole marriage return.",
+  "notes": "The request asked for the photograph to be used as is; it was, unredacted, under the historical-record and public-figure exemptions with the evidence in clearance_note. No feature page or fields were requested. The overlay follows the license from issue to return: its number, the two people named in the sworn affidavit, the probate judge who granted it, and the officiant's line in the marriage return. Named individuals are featured because they are the substance of a marriage license and here they are a president and first lady, both long deceased. The dates ground OFF only because the schema normalizes them to YYYY-MM-DD. Changed for the website page: the handwritten names were dropped from the featured fields because the 20261111 run misreads them (the applicant as \"William A Saft\", the return's spouses as \"William H. Watt\" and \"Helen L. Hearn\"), and their boxes cover the whole affidavit. The license number, county and state are featured instead (the intended spouse's county of residence was tried and dropped, since its box lands on the court's county line); the officiant title was dropped too, since its box covers the whole marriage return.",
   "runs": [
     {
       "parse_model": "dpt-3-pro-20260710",

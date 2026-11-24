@@ -17,27 +17,27 @@
   "feature_page": 1,
   "fields": [
     {
-      "path": "loan_number",
-      "label": "Loan number",
-      "occurrence": 0
-    },
-    {
       "path": "borrower.name",
       "label": "Borrower",
-      "occurrence": 0
-    },
-    {
-      "path": "property_details.property_type",
-      "label": "Property use",
       "occurrence": 0
     },
     {
       "path": "property_details.property_occupancy_status",
       "label": "Occupancy",
       "occurrence": 0
+    },
+    {
+      "path": "insurance_details.insurance_payer",
+      "label": "Insurance paid by",
+      "occurrence": 0
+    },
+    {
+      "path": "real_estate_tax_details.real_estate_tax_payer",
+      "label": "Property tax paid by",
+      "occurrence": 0
     }
   ],
-  "notes": "The request supplied the schema (doc_35_chase_mortgage_assistance_handwritten_form_schema.json, used unchanged, 27 leaf fields) and named no feature page or fields. The overlay pairs two handwritten values (the loan number and borrower name) with two hand-ticked checkboxes (primary residence, owner occupied). The borrower name is featured because the data is an invented specimen. Occurrence 1 is pinned for the two property checkboxes: occurrence 0 is the question label. A fifth field was tried twice and dropped: real_estate_tax_details.real_estate_tax_payer and insurance_details.insurance_payer both have correct ranges ('[x] Lender does') but their boxes land one and two rows low in the lower section of the form, so neither crop shows its tick. Boolean fields derived from tick marks ground OFF, to the question rather than the tick.",
+  "notes": "The request supplied the schema (doc_35_chase_mortgage_assistance_handwritten_form_schema.json, used unchanged, 27 leaf fields) and named no feature page or fields. The overlay pairs two handwritten values (the loan number and borrower name) with two hand-ticked checkboxes (primary residence, owner occupied). The borrower name is featured because the data is an invented specimen. Occurrence 1 is pinned for the two property checkboxes: occurrence 0 is the question label. A fifth field was tried twice and dropped: real_estate_tax_details.real_estate_tax_payer and insurance_details.insurance_payer both have correct ranges ('[x] Lender does') but their boxes land one and two rows low in the lower section of the form, so neither crop shows its tick. Boolean fields derived from tick marks ground OFF, to the question rather than the tick. Changed for the website page: the loan number was dropped from the featured fields because the 20261111 run reads it as \"44398122O\", and the property use was dropped because its box covers both checkbox rows. The overlay now features the borrower, occupancy, and who pays the insurance premiums and the real estate tax.",
   "runs": [
     {
       "parse_model": "dpt-3-pro-20260710",
