@@ -27,80 +27,61 @@
       "image": "license_number.png"
     },
     {
-      "path": "affidavit.applicant_name",
-      "label": "Applicant",
-      "value": "William H Taft",
+      "path": "county",
+      "label": "County",
+      "value": "HAMILTON",
       "page": 1,
       "box": {
-        "xmin": 0.25721,
-        "ymin": 0.2249,
-        "xmax": 0.82785,
-        "ymax": 0.27681
+        "xmin": 0.24856,
+        "ymin": 0.16452,
+        "xmax": 0.42284,
+        "ymax": 0.19128
       },
       "range": {
-        "end": 197,
-        "start": 139
+        "end": 37,
+        "start": 19
       },
       "occurrence": 0,
       "matched": true,
-      "image": "affidavit-applicant_name.png"
+      "image": "county.png"
     },
     {
-      "path": "affidavit.intended_spouse_name",
-      "label": "Intended spouse",
-      "value": "Helen L Herron",
+      "path": "state",
+      "label": "State",
+      "value": "OHIO",
       "page": 1,
       "box": {
-        "xmin": 0.25717,
-        "ymin": 0.27974,
-        "xmax": 0.63955,
-        "ymax": 0.31913
+        "xmin": 0.26045,
+        "ymin": 0.13885,
+        "xmax": 0.45895,
+        "ymax": 0.16346
       },
       "range": {
-        "end": 332,
-        "start": 294
+        "end": 18,
+        "start": 0
       },
       "occurrence": 0,
       "matched": true,
-      "image": "affidavit-intended_spouse_name.png"
+      "image": "state.png"
     },
     {
-      "path": "affidavit.probate_judge",
-      "label": "Probate judge",
-      "value": "Herman Hoebel",
+      "path": "affidavit.intended_spouse_residence_county",
+      "label": "Intended spouse residence county",
+      "value": "Hamilton",
       "page": 1,
       "box": {
-        "xmin": 0.25004,
-        "ymin": 0.54865,
-        "xmax": 0.57011,
-        "ymax": 0.61483
+        "xmin": 0.25797,
+        "ymin": 0.31949,
+        "xmax": 0.8284,
+        "ymax": 0.35886
       },
       "range": {
-        "end": 818,
-        "start": 805
+        "end": 428,
+        "start": 333
       },
       "occurrence": 0,
-      "matched": true,
-      "image": "affidavit-probate_judge.png"
-    },
-    {
-      "path": "marriage_return.officiant_title",
-      "label": "Officiant",
-      "value": "Minister of the Gospel",
-      "page": 1,
-      "box": {
-        "xmin": 0.24959,
-        "ymin": 0.78414,
-        "xmax": 0.74787,
-        "ymax": 0.85425
-      },
-      "range": {
-        "end": 998,
-        "start": 968
-      },
-      "occurrence": 0,
-      "matched": true,
-      "image": "marriage_return-officiant_title.png"
+      "matched": false,
+      "image": "affidavit-intended_spouse_residence_county.png"
     }
   ]
 }
